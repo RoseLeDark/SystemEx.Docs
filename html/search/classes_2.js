@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['cache_0',['Cache',['../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html',1,'SystemEx::Collections::Generic']]],
+  ['cacheissharedexception_1',['CacheIsSharedException',['../d7/de5/class_system_ex_1_1_collections_1_1_generic_1_1_cache_is_shared_exception.html',1,'SystemEx::Collections::Generic']]],
+  ['cachestream_2d1_2dg_2',['CacheStream-1-g',['../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html',1,'SystemEx::IO']]],
+  ['cluster_2d1_2dg_3',['Cluster-1-g',['../d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html',1,'SystemEx::Collections::Generic']]],
+  ['colorcmy_4',['ColorCMY',['../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html',1,'SystemEx::Drawing']]],
+  ['colorgray_5',['ColorGray',['../d2/d44/class_system_ex_1_1_drawing_1_1_color_gray.html',1,'SystemEx::Drawing']]],
+  ['colorhdr_6',['ColorHDR',['../d8/de9/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_h_d_r.html',1,'SystemEx::SystemEx::Drawing']]],
+  ['colorhsl_7',['ColorHSL',['../d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l.html',1,'SystemEx::Drawing']]],
+  ['colorhsv_8',['ColorHSV',['../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html',1,'SystemEx::Drawing']]],
+  ['colorhwb_9',['ColorHWB',['../df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b.html',1,'SystemEx::Drawing']]],
+  ['colorncol_10',['ColorNCol',['../d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html',1,'SystemEx::Drawing']]],
+  ['colorr10g10b10a2_11',['ColorR10G10B10A2',['../d1/d6d/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2.html',1,'SystemEx::SystemEx::Drawing']]],
+  ['colorr10g10b10formatschema_12',['ColorR10G10B10FormatSchema',['../d0/d3e/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html',1,'SystemEx::SystemEx::Drawing']]],
+  ['colorr10g10b10serializer_13',['ColorR10G10B10Serializer',['../d5/d07/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer.html',1,'SystemEx::SystemEx::Drawing']]],
+  ['colorr16g16b16_14',['ColorR16G16B16',['../d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html',1,'SystemEx::SystemEx::Drawing']]],
+  ['colorr8g8b8_15',['ColorR8G8B8',['../db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html',1,'SystemEx::Drawing']]],
+  ['colorxyz_16',['ColorXYZ',['../d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z.html',1,'SystemEx::Drawing']]],
+  ['coloryuv_17',['ColorYUV',['../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html',1,'SystemEx::Drawing']]]
+];

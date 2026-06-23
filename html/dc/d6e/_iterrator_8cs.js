@@ -1,0 +1,10 @@
+var _iterrator_8cs =
+[
+    [ "SystemEx.Collections.Generic.Interfaces.IIterator", "de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html", "de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator" ],
+    [ "SystemEx.Collections.Generic.Interfaces.IIterator&lt; T &gt;", "d0/d0c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator-1-g.html", "d0/d0c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator-1-g" ],
+    [ "SystemEx.Collections.Generic.Interfaces.IForwardIterator&lt; T &gt;", "d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g.html", "d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g" ],
+    [ "SystemEx.Collections.Generic.Interfaces.IBidirectionalIterator&lt; T &gt;", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g" ],
+    [ "SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g" ],
+    [ "SystemEx.Collections.Generic.Interfaces.IPairForwardIterator&lt; T, TU &gt;", "d1/d9c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair_forward_iterator-2-g.html", "d1/d9c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair_forward_iterator-2-g" ],
+    [ "SystemEx.Collections.Generic.Interfaces.IForeachIterator&lt; T &gt;", "d2/db2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_foreach_iterator-1-g.html", null ]
+];

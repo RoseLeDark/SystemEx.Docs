@@ -1,0 +1,23 @@
+var class_system_ex_1_1_collections_1_1_generic_1_1_stack_1_g =
+[
+    [ "Peek", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#aa04fb1bd4ead74be0e68d39eb66d4998", null ],
+    [ "Peek", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a716b270a05b22e6ebfb02eda033f8945", null ],
+    [ "Pop", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ac843f7e4a3c4d7c2e77c0c71571951e4", null ],
+    [ "Pop", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a40626db6e36e54394fbd09935ddd9be9", null ],
+    [ "PopRange", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ad8f09f693bfb6f4bc561229340007a3a", null ],
+    [ "Push", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#aaacaa8d4f932befbe254f0b93990903f", null ],
+    [ "Push", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a865c014a433a43cac3da172a4bd3fe04", null ],
+    [ "PushRange", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a8e62fa7bda8b25453cc90ed0e0c1f70b", null ],
+    [ "ResetFilter", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a48b25f1a9959b399cf220c0b7a63f025", null ],
+    [ "SetLayer", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a35df22b4f027201cfac7e05cbd735cb1", null ],
+    [ "SetLayerOn", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a2d3f2d3e1f7655eeb40e979cf8e7182a", null ],
+    [ "Stack", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a9f182bd5c425a9fa71675acc121a85f4", null ],
+    [ "Current", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ae1a91ecfea18f52f0261d4e60dde1fec", null ],
+    [ "Elements", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#acc3cd699795bbc1bfc9fad3df697b7aa", null ],
+    [ "Ende", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#aab8eb42eadc10d346bedbcd0fd58fc9a", null ],
+    [ "EndFilter", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a828b2454879793f93f5cf2fb6e9385db", null ],
+    [ "IsEmpty", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ab21d836db11c4e812935c31866dbcbd9", null ],
+    [ "IsFull", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a5905601230255479410b907469491d0e", null ],
+    [ "Start", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a2ae717e434c504837aba12642317bc47", null ],
+    [ "StartFilter", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a61dc491ce8fee1f2ab3be8002e5b99fe", null ]
+];

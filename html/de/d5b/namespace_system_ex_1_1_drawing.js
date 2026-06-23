@@ -1,0 +1,34 @@
+var namespace_system_ex_1_1_drawing =
+[
+    [ "ColorCMY", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y" ],
+    [ "ColorGray", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray.html", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray" ],
+    [ "ColorHSL", "d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l.html", "d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l" ],
+    [ "ColorHSV", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v" ],
+    [ "ColorHWB", "df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b.html", "df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b" ],
+    [ "ColorNCol", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col" ],
+    [ "ColorR8G8B8", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8" ],
+    [ "ColorXYZ", "d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z.html", "d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z" ],
+    [ "ColorYUV", "d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html", "d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v" ],
+    [ "ICanvas&lt; T &gt;", "d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html", "d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" ],
+    [ "ICanvasList&lt; T &gt;", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.html", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g" ],
+    [ "IColor&lt; T &gt;", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g" ],
+    [ "ISubCanvas&lt; T &gt;", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g" ],
+    [ "PurpelColors", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html", null ],
+    [ "BlendMode", "de/d5b/namespace_system_ex_1_1_drawing.html#af2ec8d122c6ae6f77f9d5b8d55e37cb2", [
+      [ "Add", "de/d5b/namespace_system_ex_1_1_drawing.html#af2ec8d122c6ae6f77f9d5b8d55e37cb2aec211f7c20af43e742bf2570c3cb84f9", null ],
+      [ "Subtract", "de/d5b/namespace_system_ex_1_1_drawing.html#af2ec8d122c6ae6f77f9d5b8d55e37cb2a1d9baf077ee87921f57a8fe42d510b65", null ],
+      [ "Multiply", "de/d5b/namespace_system_ex_1_1_drawing.html#af2ec8d122c6ae6f77f9d5b8d55e37cb2ae257376d913f3b53cbb4a9b19d770648", null ],
+      [ "Screen", "de/d5b/namespace_system_ex_1_1_drawing.html#af2ec8d122c6ae6f77f9d5b8d55e37cb2a2fc3359e12b2a9104121dcf04246f6a0", null ],
+      [ "Overlay", "de/d5b/namespace_system_ex_1_1_drawing.html#af2ec8d122c6ae6f77f9d5b8d55e37cb2a6b551379c3c0b59326abdaf3b4395bd3", null ],
+      [ "Replace", "de/d5b/namespace_system_ex_1_1_drawing.html#af2ec8d122c6ae6f77f9d5b8d55e37cb2a0ebe6df8a3ac338e0512acc741823fdb", null ],
+      [ "Divide", "de/d5b/namespace_system_ex_1_1_drawing.html#af2ec8d122c6ae6f77f9d5b8d55e37cb2a0b914e196182d02615487e9793ecff3d", null ],
+      [ "Light", "de/d5b/namespace_system_ex_1_1_drawing.html#af2ec8d122c6ae6f77f9d5b8d55e37cb2a9914a0ce04a7b7b6a8e39bec55064b82", null ],
+      [ "Dark", "de/d5b/namespace_system_ex_1_1_drawing.html#af2ec8d122c6ae6f77f9d5b8d55e37cb2aa18366b217ebf811ad1886e4f4f865b2", null ]
+    ] ],
+    [ "ContrastLevel", "de/d5b/namespace_system_ex_1_1_drawing.html#a1738673316f8d96453eda571bae3f460", [
+      [ "VeryLow", "de/d5b/namespace_system_ex_1_1_drawing.html#a1738673316f8d96453eda571bae3f460a89655e31f5f56a0f7860c4a85b7e9752", null ],
+      [ "Low", "de/d5b/namespace_system_ex_1_1_drawing.html#a1738673316f8d96453eda571bae3f460a28d0edd045e05cf5af64e35ae0c4c6ef", null ],
+      [ "High", "de/d5b/namespace_system_ex_1_1_drawing.html#a1738673316f8d96453eda571bae3f460a655d20c1ca69519ca647684edbb2db35", null ],
+      [ "Perfect", "de/d5b/namespace_system_ex_1_1_drawing.html#a1738673316f8d96453eda571bae3f460a56cdd7e9e3cef1974f4075c03a80332d", null ]
+    ] ]
+];

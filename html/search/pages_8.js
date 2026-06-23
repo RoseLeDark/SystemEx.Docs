@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['add_0',['Add',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md2',1,'Add'],['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md13',1,'Add']]],
+  ['added_1',['Added',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md5',1,'Added'],['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md7',1,'Added'],['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md19',1,'Added'],['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md25',1,'Added'],['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md31',1,'Added'],['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md36',1,'Added'],['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md41',1,'Added'],['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md46',1,'Added'],['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md51',1,'Added']]],
+  ['algorithms_2',['🧮 Generic Algorithms',['../index.html#autotoc_md59',1,'']]],
+  ['and_20replace_20with_20the_20new_20targets_3',['- Search your codebase for the old namespace tokens (&lt;span class=&quot;tt&quot;&gt;Missings&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;Intertropt&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;System.Memory.Missings&lt;/span&gt;) and replace with the new targets.',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md23',1,'']]],
+  ['and_20sysrtemex_20utils_20is_20ready_4',['- The Doku in &lt;span class=&quot;tt&quot;&gt;SystemEx.Collections.Generic&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;SystemEx.IO&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;SysrtemEx&lt;/span&gt; and &lt;span class=&quot;tt&quot;&gt;SysrtemEx.Utils&lt;/span&gt; is ready',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md15',1,'']]]
+];
