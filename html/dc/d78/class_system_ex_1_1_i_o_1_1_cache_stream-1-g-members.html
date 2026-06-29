@@ -8,8 +8,6 @@
 <title>SystemEX: Member List</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -128,40 +129,40 @@ document.addEventListener('DOMContentLoaded', () => {
   <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a99e308a787ed26e0178ee2b2e33c642c">CanWrite</a></td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#af1c905cfccea458d0f23a0a9dd1c8524">CopyTo</a>(Stream destination, int bufferSize)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#aec8e957a240fd0e0cb05135f073c0ac2">Flush</a>()</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#aea7942679477c6e5d291b4c69ced60d0">IsEmpty</a></td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>IsEmpty</b> (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a9fdadb3bba284c11838baf8f0a66b250">Length</a></td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a71cb49613e02c7d4aa51c059655c41c6">LongLength</a></td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a65bdb9fb4637d650f412f7b7015c2db9">m_cache</a></td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#ae0e2b5be243c1352e298b43174ee51fe">Position</a></td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#aef8dc020b070216376cd134c2124075f">Read</a>(byte[] buffer, int offset, int count)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a32a950841c18fa85f9c8d23e8d521833">ReadAsync</a>(ICache dest, CancellationToken cancellationToken=default)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a4e8b020f68c16e6cf45bba62590df39c">ReadChar</a>(ulong position)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a5f76d2a4900281ab6afb5aa9b8502f1c">ReadDouble</a>(Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#ac113311557b2fe7d5d68dd265f2427d4">ReadFloat</a>(Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a45af748adfb7e407f39aad8cb1f53df8">ReadInt</a>(Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a78c79768734d020b8b39b7cf0fc55801">ReadLong</a>(Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a0dd377da0c04fab8501b2a7638cc36ef">ReadRange</a>(uint count)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a404efece47b36f5991b1cee6b74721fc">ReadShort</a>(Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a99fbc66e663a2f152f656b45006320ed">ReadUInt</a>(Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a9ade3ead25654d674db57e73772dc8fb">ReadULong</a>(Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#aa0acbaa419192354ab73c08efc6572aa">ReadUShort</a>(Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>ReadChar</b>(ulong position) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ReadDouble</b>(Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>ReadFloat</b>(Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ReadInt</b>(Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>ReadLong</b>(Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ReadRange</b>(uint count) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>ReadShort</b>(Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ReadUInt</b>(Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>ReadULong</b>(Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ReadUShort</b>(Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#aa0813a270673d446f3ad79e0da79f200">Seek</a>(long offset, SeekOrigin origin)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#abf5d36545f96af89ed3865ac61bd6af5">SetLength</a>(long value)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>SetLength</b>(long value) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a9df80068ddab87268580e239fd4ca46d">ToArray</a>()</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a4c4a1de59895a1a05fcbe28e5234a46c">Write</a>(byte[] buffer, int offset, int count)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a9ad06bccbb945dde9ff74525c9157ab7">Write</a>(char value)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a06e54e2c9c1f259e1fe977148e584054">Write</a>(byte value)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a3ea40b76bc0878e2c95ff28003970daf">Write</a>(uint value, Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a806ec145bcca60514cd056385057ec6c">Write</a>(int value, Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#ae05cca62276451c81c39c2340486cedf">Write</a>(short value, Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#aa8c4731f8271998cf01b2e3ec00fe9b4">Write</a>(ushort value, Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a60f9ccc39d2b7f061b0baa60dcffa6e2">Write</a>(long value, Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a551bbc37a685bc5f479603c571e1491a">Write</a>(ulong value, Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a38b13d375214f3793db592f503d1b96e">Write</a>(float value, Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a873cae4631b762bd692684499a9a7387">Write</a>(double value, Endian endian)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Write</b>(char value) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Write</b>(byte value) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Write</b>(uint value, Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Write</b>(int value, Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Write</b>(short value, Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Write</b>(ushort value, Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Write</b>(long value, Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Write</b>(ulong value, Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Write</b>(float value, Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Write</b>(double value, Endian endian) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a7247aa57930bca40972564eb90c57386">WriteAsync</a>(ICache src, CancellationToken cancellationToken=default)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#abc8c28e82f6c1855890f41712b59206d">WriteRange</a>(byte[] data)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#ae1f8a7702573d2e7d0aab018bf34f7f6">WriteRange</a>(ulong iend, byte[] data)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>WriteRange</b>(byte[] data) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>WriteRange</b>(ulong iend, byte[] data) (defined in <a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a989d441329476cbe91e609e036529556">WriteTo</a>(Stream stream)</td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a1db422b9805c5c98b4e93aec596913ea">Written</a></td><td class="entry"><a class="el" href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html">SystemEx.IO.CacheStream&lt; TCache &gt;</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->

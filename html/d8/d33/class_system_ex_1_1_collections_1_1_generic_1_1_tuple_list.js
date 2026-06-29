@@ -10,7 +10,6 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list =
     [ "CopyTo", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a071290fb86545e20511f75bebc310343", null ],
     [ "GetAll< TU >", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ad20f35e9386725eb36e8ac1f915eabaa", null ],
     [ "GetByCount", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ab761f0a89038c7169a6f41ecd27e11c0", null ],
-    [ "GetEnumerator", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#aa53173f268b3332640c0038b81d9bbbd", null ],
     [ "GetEnumerator", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ad69bd9bb094c1d5487b37b6887231ea4", null ],
     [ "IndexOf", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a29b50790308c81dab43b1ea246a3deac", null ],
     [ "Insert", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ab34071f8590dccaaaff6df6dd252a6a7", null ],

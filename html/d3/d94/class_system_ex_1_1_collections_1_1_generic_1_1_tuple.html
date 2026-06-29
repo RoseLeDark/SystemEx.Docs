@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Collections.Generic.Tuple Class Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d3/d94/class_system_ex_1_1_collections_1_1_generic_1_1_tuple.html','../../','d2/d4f/class_system_ex_1_1_collections_1_1_generic_1_1_tuple-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,10 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Tuple Class Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.Tuple:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Inheritance diagram for SystemEx.Collections.Generic.Tuple:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../d0/dde/class_system_ex_1_1_collections_1_1_generic_1_1_tuple__inherit__graph.png" border="0" usemap="#a_system_ex_8_collections_8_generic_8_tuple_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="a_system_ex_8_collections_8_generic_8_tuple_inherit__map" id="a_system_ex_8_collections_8_generic_8_tuple_inherit__map">
 <area shape="rect" title=" " alt="" coords="5,96,210,139"/>
@@ -130,10 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <area shape="poly" title=" " alt="" coords="109,62,110,97,105,95,106,66"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Collections.Generic.Tuple:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Collaboration diagram for SystemEx.Collections.Generic.Tuple:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../dd/d48/class_system_ex_1_1_collections_1_1_generic_1_1_tuple__coll__graph.png" border="0" usemap="#a_system_ex_8_collections_8_generic_8_tuple_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_system_ex_8_collections_8_generic_8_tuple_coll__map" id="a_system_ex_8_collections_8_generic_8_tuple_coll__map">
 <area shape="rect" title=" " alt="" coords="844,39,1048,81"/>
@@ -141,10 +140,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <area shape="poly" title=" " alt="" coords="732,36,847,50,841,50,732,41"/>
 <area shape="rect" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html" title="A dynamic array implementation that supports optional auto&#45;growth, indexed access,..." alt="" coords="513,72,717,115"/>
 <area shape="poly" title=" " alt="" coords="732,82,820,73,841,74,846,73,820,79,733,87"/>
+<area shape="rect" title=" " alt="" coords="314,21,408,48"/>
+<area shape="poly" title=" " alt="" coords="424,46,522,71,517,72,423,52"/>
 <area shape="rect" href="../../d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html" title="Extends IArray&lt;T&gt; with dynamic resizing capabilities." alt="" coords="259,72,463,115"/>
-<area shape="poly" title=" " alt="" coords="479,91,515,93,509,93,479,96"/>
+<area shape="poly" title=" " alt="" coords="479,91,515,93,510,94,479,96"/>
 <area shape="rect" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html" title=" " alt="" coords="5,72,210,115"/>
-<area shape="poly" title=" " alt="" coords="225,91,261,93,256,93,225,96"/>
+<area shape="poly" title=" " alt="" coords="225,91,261,93,256,94,226,96"/>
+<area shape="rect" title=" " alt="" coords="304,139,418,165"/>
+<area shape="poly" title=" " alt="" coords="433,133,517,116,522,115,434,138"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -198,10 +201,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00055">55</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>                       {</div>
-<div class="line"><span class="lineno">   56</span>            m_elements = <span class="keyword">new</span> Array&lt;object&gt;(5);</div>
-<div class="line"><span class="lineno">   57</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a948f485205b18ad9bae249bb16ebf134" name="a948f485205b18ad9bae249bb16ebf134"></a>
@@ -226,10 +226,7 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00063">63</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>                            {</div>
-<div class="line"><span class="lineno">   64</span>            m_elements = <span class="keyword">new</span> Array&lt;object&gt;(N);</div>
-<div class="line"><span class="lineno">   65</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ade7ca8c87b4302be2b81e927d4c0b056" name="ade7ca8c87b4302be2b81e927d4c0b056"></a>
@@ -254,10 +251,7 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00071">71</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>                                             {</div>
-<div class="line"><span class="lineno">   72</span>            m_elements = elements;</div>
-<div class="line"><span class="lineno">   73</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -294,10 +288,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">SystemEx.Collections.Generic.Interfaces.ITuple</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00115">115</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>                                           {</div>
-<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> NotImplementedException();</div>
-<div class="line"><span class="lineno">  117</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a4f432061e8ff836fbb5ce2db144fa2e0" name="a4f432061e8ff836fbb5ce2db144fa2e0"></a>
@@ -331,15 +322,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a6ac2652df477f044a0fa26d60594f196">SystemEx.Collections.Generic.Interfaces.ITuple</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00083">83</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>                                      {</div>
-<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">if</span> ( index &lt; 0 || index &gt;= Count )</div>
-<div class="line"><span class="lineno">   85</span><span class="preprocessor">#pragma warning disable CA2201</span></div>
-<div class="line"><span class="lineno">   86</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> IndexOutOfRangeException(<span class="stringliteral">&quot;index&quot;</span>);</div>
-<div class="line"><span class="lineno">   87</span><span class="preprocessor">#pragma warning restore CA2201</span></div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">return</span> m_elements.ElementAt(index);</div>
-<div class="line"><span class="lineno">   90</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6f1b6e77308a20277d58528ccc193245" name="a6f1b6e77308a20277d58528ccc193245"></a>
@@ -370,13 +353,7 @@ Private Attributes</h2></td></tr>
 <p>If the index is out of range, the operation is ignored. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00100">100</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>                                                 {</div>
-<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">if</span> ( index &lt; 0 || index &gt;= m_elements.Count )</div>
-<div class="line"><span class="lineno">  102</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>            m_elements.Insert(index, value);</div>
-<div class="line"><span class="lineno">  105</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -464,11 +441,7 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00047">47</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>                                      {</div>
-<div class="line"><span class="lineno">   48</span>            <span class="keyword">get</span> =&gt; m_elements.ElementAt(index);</div>
-<div class="line"><span class="lineno">   49</span>            <span class="keyword">set</span> =&gt; Set(index, value);</div>
-<div class="line"><span class="lineno">   50</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

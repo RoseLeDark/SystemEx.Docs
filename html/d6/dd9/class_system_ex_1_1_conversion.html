@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Conversion Class Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d6/dd9/class_system_ex_1_1_conversion.html','../../','d5/d52/class_system_ex_1_1_conversion-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -210,17 +211,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00528">528</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  528</span>                                                               {</div>
-<div class="line"><span class="lineno">  529</span>            <span class="keywordflow">if</span> ( a.Length != b.Length )</div>
-<div class="line"><span class="lineno">  530</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  531</span> </div>
-<div class="line"><span class="lineno">  532</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; a.Length; i++ ) {</div>
-<div class="line"><span class="lineno">  533</span>                <span class="keywordflow">if</span> ( a[i] != b[i] )</div>
-<div class="line"><span class="lineno">  534</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  535</span>            }</div>
-<div class="line"><span class="lineno">  536</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  537</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aeba9ff414f61ff32229f865d4c81a48f" name="aeba9ff414f61ff32229f865d4c81a48f"></a>
@@ -259,24 +250,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00301">301</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  301</span>                                                                                 : unmanaged {</div>
-<div class="line"><span class="lineno">  302</span>            T value = <span class="keywordflow">default</span>;</div>
-<div class="line"><span class="lineno">  303</span> </div>
-<div class="line"><span class="lineno">  304</span>            <span class="keywordtype">int</span> size = <span class="keyword">sizeof</span>(T);</div>
-<div class="line"><span class="lineno">  305</span>            <span class="keywordflow">if</span> ( bytes.Length &lt; size )  <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException($<span class="stringliteral">&quot;Byte array too small for type {typeof(T).Name}&quot;</span>);</div>
-<div class="line"><span class="lineno">  306</span> </div>
-<div class="line"><span class="lineno">  307</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  308</span>                Array.Reverse(bytes);</div>
-<div class="line"><span class="lineno">  309</span>            }</div>
-<div class="line"><span class="lineno">  310</span> </div>
-<div class="line"><span class="lineno">  311</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes ) {</div>
-<div class="line"><span class="lineno">  312</span>                value = *(T*)b;</div>
-<div class="line"><span class="lineno">  313</span>            }</div>
-<div class="line"><span class="lineno">  314</span> </div>
-<div class="line"><span class="lineno">  315</span>            <span class="keywordflow">return</span> value;</div>
-<div class="line"><span class="lineno">  316</span>        }</div>
-<div class="ttc" id="anamespace_system_ex_html_ab37b6205838476a6d1b48cfa0440cacd"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">SystemEx.Endian</a></div><div class="ttdeci">Endian</div><div class="ttdoc">Specifies the byte order used when converting values to and from raw byte sequences.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d81/_conversion_8cs_source.html#l00028">Conversion.cs:28</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac91f9b94aa0c6c28e283ee1386c80d1c" name="ac91f9b94aa0c6c28e283ee1386c80d1c"></a>
@@ -329,13 +303,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00242">242</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  243</span>                    : IIsByteSeriablize {</div>
-<div class="line"><span class="lineno">  244</span>            var x = <span class="keyword">new</span> Cache(bytes, <a class="code hl_enumeration" href="../../dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a>.OnlySystem);</div>
-<div class="line"><span class="lineno">  245</span> </div>
-<div class="line"><span class="lineno">  246</span>            <span class="keywordflow">return</span> provider.FromBytes&lt;T&gt;(x)!;</div>
-<div class="line"><span class="lineno">  247</span>        }</div>
-<div class="ttc" id="agroup__collections_html_gaf02ddb6084404bb267c0629f20ed8b53"><div class="ttname"><a href="../../dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53">SystemEx.Collections.Generic.CacheType</a></div><div class="ttdeci">CacheType</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d82/_cache_8cs_source.html#l00028">Cache.cs:28</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab1b458822068f8304f03e733b615266c" name="ab1b458822068f8304f03e733b615266c"></a>
@@ -370,20 +338,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00320">320</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  320</span>                                                                         : unmanaged {</div>
-<div class="line"><span class="lineno">  321</span>            <span class="keywordtype">int</span> size = <span class="keyword">sizeof</span>(T);</div>
-<div class="line"><span class="lineno">  322</span>            <span class="keywordtype">int</span> count = bytes.Length / size;</div>
-<div class="line"><span class="lineno">  323</span> </div>
-<div class="line"><span class="lineno">  324</span>            T[] array = <span class="keyword">new</span> T[count];</div>
-<div class="line"><span class="lineno">  325</span> </div>
-<div class="line"><span class="lineno">  326</span>            fixed ( <span class="keywordtype">byte</span>* src = bytes )</div>
-<div class="line"><span class="lineno">  327</span>            fixed ( T* dst = array ) {</div>
-<div class="line"><span class="lineno">  328</span>                Buffer.MemoryCopy(src, dst, bytes.Length, bytes.Length);</div>
-<div class="line"><span class="lineno">  329</span>            }</div>
-<div class="line"><span class="lineno">  330</span> </div>
-<div class="line"><span class="lineno">  331</span>            <span class="keywordflow">return</span> array;</div>
-<div class="line"><span class="lineno">  332</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a2352fd5006bf92f8418d52a8820629aa" name="a2352fd5006bf92f8418d52a8820629aa"></a>
@@ -410,29 +365,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00503">503</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  503</span>                                                  {</div>
-<div class="line"><span class="lineno">  504</span>            <span class="keywordtype">string</span> str = value.ToUpper(System.Globalization.CultureInfo.CurrentCulture).Trim();</div>
-<div class="line"><span class="lineno">  505</span>            uint multiplier = 1;</div>
-<div class="line"><span class="lineno">  506</span> </div>
-<div class="line"><span class="lineno">  507</span>            <span class="keywordflow">if</span> ( str.EndsWith(<span class="stringliteral">&quot;G&quot;</span>, StringComparison.OrdinalIgnoreCase) ) {</div>
-<div class="line"><span class="lineno">  508</span>                multiplier = 1024u * 1024u * 1024u;</div>
-<div class="line"><span class="lineno">  509</span>                str = str[..^1];</div>
-<div class="line"><span class="lineno">  510</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( str.EndsWith(<span class="stringliteral">&quot;M&quot;</span>, StringComparison.OrdinalIgnoreCase) ) {</div>
-<div class="line"><span class="lineno">  511</span>                multiplier = 1024u * 1024u;</div>
-<div class="line"><span class="lineno">  512</span>                str = str[..^1];</div>
-<div class="line"><span class="lineno">  513</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( str.EndsWith(<span class="stringliteral">&quot;K&quot;</span>, StringComparison.OrdinalIgnoreCase) ) {</div>
-<div class="line"><span class="lineno">  514</span>                multiplier = 1024u;</div>
-<div class="line"><span class="lineno">  515</span>                str = str[..^1];</div>
-<div class="line"><span class="lineno">  516</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( str.EndsWith(<span class="stringliteral">&quot;B&quot;</span>, StringComparison.OrdinalIgnoreCase) ) {</div>
-<div class="line"><span class="lineno">  517</span>                multiplier = 1;</div>
-<div class="line"><span class="lineno">  518</span>                str = str[..^1];</div>
-<div class="line"><span class="lineno">  519</span>            }</div>
-<div class="line"><span class="lineno">  520</span> </div>
-<div class="line"><span class="lineno">  521</span>            <span class="keywordflow">return</span> uint.TryParse(str, out uint size)</div>
-<div class="line"><span class="lineno">  522</span>                ? size * multiplier</div>
-<div class="line"><span class="lineno">  523</span>                : 512 * multiplier;</div>
-<div class="line"><span class="lineno">  524</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a48dae677593a1f76c4f62fc68d4304b8" name="a48dae677593a1f76c4f62fc68d4304b8"></a>
@@ -463,13 +396,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00050">50</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>                                                                      {</div>
-<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">if</span> ( boundary == 0 ) <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)number;</div>
-<div class="line"><span class="lineno">   52</span>            uint div = number / boundary;</div>
-<div class="line"><span class="lineno">   53</span>            uint mod = number % boundary;</div>
-<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)(mod == 0 ? div * boundary : (div + 1) * boundary);</div>
-<div class="line"><span class="lineno">   55</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a5fa536cc449245469c94f92b31d7996a" name="a5fa536cc449245469c94f92b31d7996a"></a>
@@ -500,12 +427,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00071">71</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>                                                                    {</div>
-<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">if</span> ( bytes.Length &lt; 1 ) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;byte requires exactly 1 byte&quot;</span>);</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">return</span> (<span class="keywordtype">byte</span>)bytes[0];</div>
-<div class="line"><span class="lineno">   75</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad489b53dd4157235c2cc0366c6a02b3c" name="ad489b53dd4157235c2cc0366c6a02b3c"></a>
@@ -536,23 +458,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00267">267</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  267</span>                                                                          {</div>
-<div class="line"><span class="lineno">  268</span>            var type = obj.GetType();</div>
-<div class="line"><span class="lineno">  269</span>            <span class="keywordtype">int</span> size = System.Runtime.InteropServices.Marshal.SizeOf(type);</div>
-<div class="line"><span class="lineno">  270</span>            <span class="keywordtype">byte</span>[] bytes = <span class="keyword">new</span> <span class="keywordtype">byte</span>[size];</div>
-<div class="line"><span class="lineno">  271</span> </div>
-<div class="line"><span class="lineno">  272</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes ) {</div>
-<div class="line"><span class="lineno">  273</span><span class="preprocessor">#pragma warning disable CS8500 </span><span class="comment">// Erfasst die Adresse, ermittelt die Größe oder deklariert einen Zeiger auf einen verwalteten Typ.</span></div>
-<div class="line"><span class="lineno">  274</span>                *(<span class="keywordtype">object</span>*)b = obj; <span class="comment">// funktioniert, wenn obj wirklich unmanaged ist</span></div>
-<div class="line"><span class="lineno">  275</span><span class="preprocessor">#pragma warning restore CS8500 </span><span class="comment">// Erfasst die Adresse, ermittelt die Größe oder deklariert einen Zeiger auf einen verwalteten Typ.</span></div>
-<div class="line"><span class="lineno">  276</span>            }</div>
-<div class="line"><span class="lineno">  277</span> </div>
-<div class="line"><span class="lineno">  278</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian )</div>
-<div class="line"><span class="lineno">  279</span>                Array.Reverse(bytes);</div>
-<div class="line"><span class="lineno">  280</span> </div>
-<div class="line"><span class="lineno">  281</span>            <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><span class="lineno">  282</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aa0cde818a89d0d15f94474295684ee74" name="aa0cde818a89d0d15f94474295684ee74"></a>
@@ -583,12 +489,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00063">63</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>                                                                            {</div>
-<div class="line"><span class="lineno">   64</span>            <span class="keywordtype">byte</span>[] bytes = <span class="keyword">new</span> <span class="keywordtype">byte</span>[1];</div>
-<div class="line"><span class="lineno">   65</span>            bytes[0] = (byte)value;</div>
-<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><span class="lineno">   67</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6fd2cbe7223fab50b7460bb1a1613818" name="a6fd2cbe7223fab50b7460bb1a1613818"></a>
@@ -619,24 +520,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00377">377</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  377</span>                                                                              {</div>
-<div class="line"><span class="lineno">  378</span>            <span class="keywordtype">byte</span>[] bytes = <span class="keyword">new</span> <span class="keywordtype">byte</span>[8];</div>
-<div class="line"><span class="lineno">  379</span> </div>
-<div class="line"><span class="lineno">  380</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  381</span>                *(<span class="keywordtype">double</span>*)b = value;</div>
-<div class="line"><span class="lineno">  382</span> </div>
-<div class="line"><span class="lineno">  383</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  384</span>                <span class="comment">// reverse 8 bytes</span></div>
-<div class="line"><span class="lineno">  385</span>                <span class="keywordtype">byte</span> tmp;</div>
-<div class="line"><span class="lineno">  386</span>                tmp = bytes[0]; bytes[0] = bytes[7]; bytes[7] = tmp;</div>
-<div class="line"><span class="lineno">  387</span>                tmp = bytes[1]; bytes[1] = bytes[6]; bytes[6] = tmp;</div>
-<div class="line"><span class="lineno">  388</span>                tmp = bytes[2]; bytes[2] = bytes[5]; bytes[5] = tmp;</div>
-<div class="line"><span class="lineno">  389</span>                tmp = bytes[3]; bytes[3] = bytes[4]; bytes[4] = tmp;</div>
-<div class="line"><span class="lineno">  390</span>            }</div>
-<div class="line"><span class="lineno">  391</span> </div>
-<div class="line"><span class="lineno">  392</span>            <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><span class="lineno">  393</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a42104b6a0651a58edd9c2bdac83ee978" name="a42104b6a0651a58edd9c2bdac83ee978"></a>
@@ -667,21 +551,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00340">340</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  340</span>                                                                             {</div>
-<div class="line"><span class="lineno">  341</span>            <span class="keywordtype">byte</span>[] bytes = <span class="keyword">new</span> <span class="keywordtype">byte</span>[4];</div>
-<div class="line"><span class="lineno">  342</span> </div>
-<div class="line"><span class="lineno">  343</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  344</span>                *(<span class="keywordtype">float</span>*)b = value;</div>
-<div class="line"><span class="lineno">  345</span> </div>
-<div class="line"><span class="lineno">  346</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  347</span>                <span class="keywordtype">byte</span> tmp;</div>
-<div class="line"><span class="lineno">  348</span>                tmp = bytes[0]; bytes[0] = bytes[3]; bytes[3] = tmp;</div>
-<div class="line"><span class="lineno">  349</span>                tmp = bytes[1]; bytes[1] = bytes[2]; bytes[2] = tmp;</div>
-<div class="line"><span class="lineno">  350</span>            }</div>
-<div class="line"><span class="lineno">  351</span> </div>
-<div class="line"><span class="lineno">  352</span>            <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><span class="lineno">  353</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="af1ea34039f8a2dc05946db8568af762c" name="af1ea34039f8a2dc05946db8568af762c"></a>
@@ -712,21 +582,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00102">102</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  102</span>                                                                           {</div>
-<div class="line"><span class="lineno">  103</span>            <span class="keywordtype">byte</span>[] bytes = <span class="keyword">new</span> <span class="keywordtype">byte</span>[4];</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  106</span>                *(<span class="keywordtype">int</span>*)b = value;</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  109</span>                <span class="keywordtype">byte</span> tmp;</div>
-<div class="line"><span class="lineno">  110</span>                tmp = bytes[0]; bytes[0] = bytes[3]; bytes[3] = tmp;</div>
-<div class="line"><span class="lineno">  111</span>                tmp = bytes[1]; bytes[1] = bytes[2]; bytes[2] = tmp;</div>
-<div class="line"><span class="lineno">  112</span>            }</div>
-<div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>            <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><span class="lineno">  115</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="abe8faf1c4ae09a99c06adee66627a604" name="abe8faf1c4ae09a99c06adee66627a604"></a>
@@ -757,24 +613,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00422">422</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  422</span>                                                                            {</div>
-<div class="line"><span class="lineno">  423</span>            <span class="keywordtype">byte</span>[] bytes = <span class="keyword">new</span> <span class="keywordtype">byte</span>[8];</div>
-<div class="line"><span class="lineno">  424</span> </div>
-<div class="line"><span class="lineno">  425</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  426</span>                *(<span class="keywordtype">long</span>*)b = value;</div>
-<div class="line"><span class="lineno">  427</span> </div>
-<div class="line"><span class="lineno">  428</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  429</span>                <span class="comment">// reverse 8 bytes</span></div>
-<div class="line"><span class="lineno">  430</span>                <span class="keywordtype">byte</span> tmp;</div>
-<div class="line"><span class="lineno">  431</span>                tmp = bytes[0]; bytes[0] = bytes[7]; bytes[7] = tmp;</div>
-<div class="line"><span class="lineno">  432</span>                tmp = bytes[1]; bytes[1] = bytes[6]; bytes[6] = tmp;</div>
-<div class="line"><span class="lineno">  433</span>                tmp = bytes[2]; bytes[2] = bytes[5]; bytes[5] = tmp;</div>
-<div class="line"><span class="lineno">  434</span>                tmp = bytes[3]; bytes[3] = bytes[4]; bytes[4] = tmp;</div>
-<div class="line"><span class="lineno">  435</span>            }</div>
-<div class="line"><span class="lineno">  436</span> </div>
-<div class="line"><span class="lineno">  437</span>            <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><span class="lineno">  438</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a381bf46e59ee17a5caa15d3d64883497" name="a381bf46e59ee17a5caa15d3d64883497"></a>
@@ -805,21 +644,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00154">154</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  154</span>                                                                             {</div>
-<div class="line"><span class="lineno">  155</span>            <span class="keywordtype">byte</span>[] bytes = <span class="keyword">new</span> <span class="keywordtype">byte</span>[2];</div>
-<div class="line"><span class="lineno">  156</span> </div>
-<div class="line"><span class="lineno">  157</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  158</span>                *(<span class="keywordtype">short</span>*)b = value;</div>
-<div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  161</span>                <span class="keywordtype">byte</span> tmp = bytes[0];</div>
-<div class="line"><span class="lineno">  162</span>                bytes[0] = bytes[1];</div>
-<div class="line"><span class="lineno">  163</span>                bytes[1] = tmp;</div>
-<div class="line"><span class="lineno">  164</span>            }</div>
-<div class="line"><span class="lineno">  165</span> </div>
-<div class="line"><span class="lineno">  166</span>            <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><span class="lineno">  167</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a58aa31fef96ea51cf0d5a7a98a31da03" name="a58aa31fef96ea51cf0d5a7a98a31da03"></a>
@@ -850,22 +675,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00083">83</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>                                                                            {</div>
-<div class="line"><span class="lineno">   84</span>            <span class="keywordtype">byte</span>[] bytes = <span class="keyword">new</span> <span class="keywordtype">byte</span>[4];</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">   87</span>                *(uint*)b = value;</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">   90</span>                <span class="comment">// reverse in-place</span></div>
-<div class="line"><span class="lineno">   91</span>                <span class="keywordtype">byte</span> tmp;</div>
-<div class="line"><span class="lineno">   92</span>                tmp = bytes[0]; bytes[0] = bytes[3]; bytes[3] = tmp;</div>
-<div class="line"><span class="lineno">   93</span>                tmp = bytes[1]; bytes[1] = bytes[2]; bytes[2] = tmp;</div>
-<div class="line"><span class="lineno">   94</span>            }</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><span class="lineno">   97</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad55ba0a18cc3e165df75a0ceaf2e23c0" name="ad55ba0a18cc3e165df75a0ceaf2e23c0"></a>
@@ -896,24 +706,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00459">459</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  459</span>                                                                             {</div>
-<div class="line"><span class="lineno">  460</span>            <span class="keywordtype">byte</span>[] bytes = <span class="keyword">new</span> <span class="keywordtype">byte</span>[8];</div>
-<div class="line"><span class="lineno">  461</span> </div>
-<div class="line"><span class="lineno">  462</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  463</span>                *(ulong*)b = value;</div>
-<div class="line"><span class="lineno">  464</span> </div>
-<div class="line"><span class="lineno">  465</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  466</span>                <span class="comment">// reverse 8 bytes</span></div>
-<div class="line"><span class="lineno">  467</span>                <span class="keywordtype">byte</span> tmp;</div>
-<div class="line"><span class="lineno">  468</span>                tmp = bytes[0]; bytes[0] = bytes[7]; bytes[7] = tmp;</div>
-<div class="line"><span class="lineno">  469</span>                tmp = bytes[1]; bytes[1] = bytes[6]; bytes[6] = tmp;</div>
-<div class="line"><span class="lineno">  470</span>                tmp = bytes[2]; bytes[2] = bytes[5]; bytes[5] = tmp;</div>
-<div class="line"><span class="lineno">  471</span>                tmp = bytes[3]; bytes[3] = bytes[4]; bytes[4] = tmp;</div>
-<div class="line"><span class="lineno">  472</span>            }</div>
-<div class="line"><span class="lineno">  473</span> </div>
-<div class="line"><span class="lineno">  474</span>            <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><span class="lineno">  475</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a7237e6367b1d6e0aaaa6535d215ec938" name="a7237e6367b1d6e0aaaa6535d215ec938"></a>
@@ -944,21 +737,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00171">171</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  171</span>                                                                              {</div>
-<div class="line"><span class="lineno">  172</span>            <span class="keywordtype">byte</span>[] bytes = <span class="keyword">new</span> <span class="keywordtype">byte</span>[2];</div>
-<div class="line"><span class="lineno">  173</span> </div>
-<div class="line"><span class="lineno">  174</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  175</span>                *(ushort*)b = value;</div>
-<div class="line"><span class="lineno">  176</span> </div>
-<div class="line"><span class="lineno">  177</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  178</span>                <span class="keywordtype">byte</span> tmp = bytes[0];</div>
-<div class="line"><span class="lineno">  179</span>                bytes[0] = bytes[1];</div>
-<div class="line"><span class="lineno">  180</span>                bytes[1] = tmp;</div>
-<div class="line"><span class="lineno">  181</span>            }</div>
-<div class="line"><span class="lineno">  182</span> </div>
-<div class="line"><span class="lineno">  183</span>            <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><span class="lineno">  184</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="af1205adcd507f6ddd39e5e2e2e314493" name="af1205adcd507f6ddd39e5e2e2e314493"></a>
@@ -1011,13 +790,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00227">227</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  228</span>                    : IIsByteSeriablize  {</div>
-<div class="line"><span class="lineno">  229</span> </div>
-<div class="line"><span class="lineno">  230</span>            var x = provider.ToBytes&lt;T&gt;(value);</div>
-<div class="line"><span class="lineno">  231</span>            <span class="keywordflow">if</span>(x == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">byte</span>[]  {  0 };</div>
-<div class="line"><span class="lineno">  232</span>            <span class="keywordflow">else</span> <span class="keywordflow">return</span> x.ToArray();</div>
-<div class="line"><span class="lineno">  233</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a14540d2d4ae86723aa8e779d4ed6bfc9" name="a14540d2d4ae86723aa8e779d4ed6bfc9"></a>
@@ -1056,20 +829,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00252">252</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  252</span>                                                                                    : unmanaged {</div>
-<div class="line"><span class="lineno">  253</span>            <span class="keywordtype">int</span> size = <span class="keyword">sizeof</span>(T);</div>
-<div class="line"><span class="lineno">  254</span>            <span class="keywordtype">byte</span>[] bytes = <span class="keyword">new</span> <span class="keywordtype">byte</span>[size];</div>
-<div class="line"><span class="lineno">  255</span> </div>
-<div class="line"><span class="lineno">  256</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes ) {</div>
-<div class="line"><span class="lineno">  257</span>                *(T*)b = value;</div>
-<div class="line"><span class="lineno">  258</span>            }</div>
-<div class="line"><span class="lineno">  259</span> </div>
-<div class="line"><span class="lineno">  260</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian )</div>
-<div class="line"><span class="lineno">  261</span>                Array.Reverse(bytes);</div>
-<div class="line"><span class="lineno">  262</span> </div>
-<div class="line"><span class="lineno">  263</span>            <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><span class="lineno">  264</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="acc944d6ef15fcbe9f947055542944917" name="acc944d6ef15fcbe9f947055542944917"></a>
@@ -1104,18 +864,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00287">287</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  287</span>                                                                       : unmanaged {</div>
-<div class="line"><span class="lineno">  288</span>            <span class="keywordtype">int</span> size = <span class="keyword">sizeof</span>(T) * array.Length;</div>
-<div class="line"><span class="lineno">  289</span>            <span class="keywordtype">byte</span>[] bytes = <span class="keyword">new</span> <span class="keywordtype">byte</span>[size];</div>
-<div class="line"><span class="lineno">  290</span> </div>
-<div class="line"><span class="lineno">  291</span>            fixed ( T* src = array )</div>
-<div class="line"><span class="lineno">  292</span>            fixed ( <span class="keywordtype">byte</span>* dst = bytes ) {</div>
-<div class="line"><span class="lineno">  293</span>                Buffer.MemoryCopy(src, dst, size, size);</div>
-<div class="line"><span class="lineno">  294</span>            }</div>
-<div class="line"><span class="lineno">  295</span> </div>
-<div class="line"><span class="lineno">  296</span>            <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><span class="lineno">  297</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a3ff752d76df211af87c85c7eef4459f4" name="a3ff752d76df211af87c85c7eef4459f4"></a>
@@ -1146,21 +895,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00398">398</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  398</span>                                                                               {</div>
-<div class="line"><span class="lineno">  399</span>            <span class="keywordflow">if</span> ( bytes.Length &lt; 8 ) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;Double requires at least 8 bytes&quot;</span>);</div>
-<div class="line"><span class="lineno">  400</span> </div>
-<div class="line"><span class="lineno">  401</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  402</span>                <span class="keywordtype">byte</span> tmp;</div>
-<div class="line"><span class="lineno">  403</span>                tmp = bytes[0]; bytes[0] = bytes[7]; bytes[7] = tmp;</div>
-<div class="line"><span class="lineno">  404</span>                tmp = bytes[1]; bytes[1] = bytes[6]; bytes[6] = tmp;</div>
-<div class="line"><span class="lineno">  405</span>                tmp = bytes[2]; bytes[2] = bytes[5]; bytes[5] = tmp;</div>
-<div class="line"><span class="lineno">  406</span>                tmp = bytes[3]; bytes[3] = bytes[4]; bytes[4] = tmp;</div>
-<div class="line"><span class="lineno">  407</span>            }</div>
-<div class="line"><span class="lineno">  408</span> </div>
-<div class="line"><span class="lineno">  409</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  410</span>                <span class="keywordflow">return</span> *(<span class="keywordtype">double</span>*)b;</div>
-<div class="line"><span class="lineno">  411</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a691cf9a843a55d5df78169e813cfc42a" name="a691cf9a843a55d5df78169e813cfc42a"></a>
@@ -1191,19 +926,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00358">358</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  358</span>                                                                             {</div>
-<div class="line"><span class="lineno">  359</span>            <span class="keywordflow">if</span> ( bytes.Length &lt; 4 ) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;Float requires exactly 4 bytes&quot;</span>);</div>
-<div class="line"><span class="lineno">  360</span> </div>
-<div class="line"><span class="lineno">  361</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  362</span>                <span class="keywordtype">byte</span> tmp;</div>
-<div class="line"><span class="lineno">  363</span>                tmp = bytes[0]; bytes[0] = bytes[3]; bytes[3] = tmp;</div>
-<div class="line"><span class="lineno">  364</span>                tmp = bytes[1]; bytes[1] = bytes[2]; bytes[2] = tmp;</div>
-<div class="line"><span class="lineno">  365</span>            }</div>
-<div class="line"><span class="lineno">  366</span> </div>
-<div class="line"><span class="lineno">  367</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  368</span>                <span class="keywordflow">return</span> *(<span class="keywordtype">float</span>*)b;</div>
-<div class="line"><span class="lineno">  369</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a8f0e00c75e384e3726abe28971a632f3" name="a8f0e00c75e384e3726abe28971a632f3"></a>
@@ -1234,19 +957,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00120">120</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  120</span>                                                                         {</div>
-<div class="line"><span class="lineno">  121</span>            <span class="keywordflow">if</span> ( bytes.Length &lt; 4 ) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;uint requires exactly 4 bytes&quot;</span>);</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  124</span>                <span class="keywordtype">byte</span> tmp;</div>
-<div class="line"><span class="lineno">  125</span>                tmp = bytes[0]; bytes[0] = bytes[3]; bytes[3] = tmp;</div>
-<div class="line"><span class="lineno">  126</span>                tmp = bytes[1]; bytes[1] = bytes[2]; bytes[2] = tmp;</div>
-<div class="line"><span class="lineno">  127</span>            }</div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  130</span>                <span class="keywordflow">return</span> *(<span class="keywordtype">int</span>*)b;</div>
-<div class="line"><span class="lineno">  131</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac955b9ffb6906583d222b2a5b7f4a417" name="ac955b9ffb6906583d222b2a5b7f4a417"></a>
@@ -1277,21 +988,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00442">442</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  442</span>                                                                           {</div>
-<div class="line"><span class="lineno">  443</span>            <span class="keywordflow">if</span> ( bytes.Length &lt; 8 ) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;long requires at least 8 bytes&quot;</span>);</div>
-<div class="line"><span class="lineno">  444</span> </div>
-<div class="line"><span class="lineno">  445</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  446</span>                <span class="keywordtype">byte</span> tmp;</div>
-<div class="line"><span class="lineno">  447</span>                tmp = bytes[0]; bytes[0] = bytes[7]; bytes[7] = tmp;</div>
-<div class="line"><span class="lineno">  448</span>                tmp = bytes[1]; bytes[1] = bytes[6]; bytes[6] = tmp;</div>
-<div class="line"><span class="lineno">  449</span>                tmp = bytes[2]; bytes[2] = bytes[5]; bytes[5] = tmp;</div>
-<div class="line"><span class="lineno">  450</span>                tmp = bytes[3]; bytes[3] = bytes[4]; bytes[4] = tmp;</div>
-<div class="line"><span class="lineno">  451</span>            }</div>
-<div class="line"><span class="lineno">  452</span> </div>
-<div class="line"><span class="lineno">  453</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  454</span>                <span class="keywordflow">return</span> *(<span class="keywordtype">long</span>*)b;</div>
-<div class="line"><span class="lineno">  455</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6c75c53d10c6fc17e459f10575583ade" name="a6c75c53d10c6fc17e459f10575583ade"></a>
@@ -1322,19 +1019,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00204">204</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  204</span>                                                                             {</div>
-<div class="line"><span class="lineno">  205</span>            <span class="keywordflow">if</span> ( bytes.Length &lt; 2 ) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;short requires exactly 2 bytes&quot;</span>);</div>
-<div class="line"><span class="lineno">  206</span> </div>
-<div class="line"><span class="lineno">  207</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  208</span>                <span class="keywordtype">byte</span> tmp = bytes[0];</div>
-<div class="line"><span class="lineno">  209</span>                bytes[0] = bytes[1];</div>
-<div class="line"><span class="lineno">  210</span>                bytes[1] = tmp;</div>
-<div class="line"><span class="lineno">  211</span>            }</div>
-<div class="line"><span class="lineno">  212</span> </div>
-<div class="line"><span class="lineno">  213</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  214</span>                <span class="keywordflow">return</span> *(<span class="keywordtype">short</span>*)b;</div>
-<div class="line"><span class="lineno">  215</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a4bab0bfd358b32c4e822e183ceab8848" name="a4bab0bfd358b32c4e822e183ceab8848"></a>
@@ -1365,19 +1050,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00135">135</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>                                                                           {</div>
-<div class="line"><span class="lineno">  136</span>            <span class="keywordflow">if</span> ( bytes.Length &lt; 4 ) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;uint requires exactly 4 bytes&quot;</span>);</div>
-<div class="line"><span class="lineno">  137</span> </div>
-<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  139</span>                <span class="keywordtype">byte</span> tmp;</div>
-<div class="line"><span class="lineno">  140</span>                tmp = bytes[0]; bytes[0] = bytes[3]; bytes[3] = tmp;</div>
-<div class="line"><span class="lineno">  141</span>                tmp = bytes[1]; bytes[1] = bytes[2]; bytes[2] = tmp;</div>
-<div class="line"><span class="lineno">  142</span>            }</div>
-<div class="line"><span class="lineno">  143</span> </div>
-<div class="line"><span class="lineno">  144</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  145</span>                <span class="keywordflow">return</span> *(uint*)b;</div>
-<div class="line"><span class="lineno">  146</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a597f2375582222e796a5adefb97be105" name="a597f2375582222e796a5adefb97be105"></a>
@@ -1408,21 +1081,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00479">479</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  479</span>                                                                             {</div>
-<div class="line"><span class="lineno">  480</span>            <span class="keywordflow">if</span> ( bytes.Length &lt; 8 ) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;ulong requires at least 8 bytes&quot;</span>);</div>
-<div class="line"><span class="lineno">  481</span> </div>
-<div class="line"><span class="lineno">  482</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  483</span>                <span class="keywordtype">byte</span> tmp;</div>
-<div class="line"><span class="lineno">  484</span>                tmp = bytes[0]; bytes[0] = bytes[7]; bytes[7] = tmp;</div>
-<div class="line"><span class="lineno">  485</span>                tmp = bytes[1]; bytes[1] = bytes[6]; bytes[6] = tmp;</div>
-<div class="line"><span class="lineno">  486</span>                tmp = bytes[2]; bytes[2] = bytes[5]; bytes[5] = tmp;</div>
-<div class="line"><span class="lineno">  487</span>                tmp = bytes[3]; bytes[3] = bytes[4]; bytes[4] = tmp;</div>
-<div class="line"><span class="lineno">  488</span>            }</div>
-<div class="line"><span class="lineno">  489</span> </div>
-<div class="line"><span class="lineno">  490</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  491</span>                <span class="keywordflow">return</span> *(ulong*)b;</div>
-<div class="line"><span class="lineno">  492</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a7199cac57fa29b2ee1910e13fcc9607c" name="a7199cac57fa29b2ee1910e13fcc9607c"></a>
@@ -1453,19 +1112,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00188">188</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  188</span>                                                                               {</div>
-<div class="line"><span class="lineno">  189</span>            <span class="keywordflow">if</span> ( bytes.Length &lt; 2) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;short requires exactly 2 bytes&quot;</span>);</div>
-<div class="line"><span class="lineno">  190</span> </div>
-<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">if</span> ( endian == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian ) {</div>
-<div class="line"><span class="lineno">  192</span>                <span class="keywordtype">byte</span> tmp = bytes[0];</div>
-<div class="line"><span class="lineno">  193</span>                bytes[0] = bytes[1];</div>
-<div class="line"><span class="lineno">  194</span>                bytes[1] = tmp;</div>
-<div class="line"><span class="lineno">  195</span>            }</div>
-<div class="line"><span class="lineno">  196</span> </div>
-<div class="line"><span class="lineno">  197</span>            fixed ( <span class="keywordtype">byte</span>* b = bytes )</div>
-<div class="line"><span class="lineno">  198</span>                <span class="keywordflow">return</span> *(ushort*)b;</div>
-<div class="line"><span class="lineno">  199</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

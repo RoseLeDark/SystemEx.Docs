@@ -8,8 +8,6 @@
 <title>SystemEX: Queue.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d1/d3d/_queue_8cs_source.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">Queue.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d1/d3d/_queue_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * SPDX-License-Identifier: EUPL-1.2</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Copyright (c) 2026 Amber-Sophia Schröck &lt;ambersophia.schroeck@mail.de&gt;</span></div>
@@ -143,37 +144,37 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="stringliteral">&quot;Naming&quot;</span>, <span class="stringliteral">&quot;CA1711:Identifiers should not have incorrect suffix&quot;</span>,</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        Justification = <span class="stringliteral">&quot;&lt;Pending&gt;&quot;</span>)]</div>
 <div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html">   33</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#abbe21d2ab89d45206b318f9ae549e5e2">Queue</a>&lt;T&gt; {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html">   33</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#abbe21d2ab89d45206b318f9ae549e5e2" title="Creates a new queue with the specified capacity.">Queue</a>&lt;T&gt; {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">   38</a></span>        <span class="keyword">private</span> Deque&lt;T&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">m_deque</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">   38</a></span>        <span class="keyword">private</span> Deque&lt;T&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd" title="Internal deque used to implement queue behavior.">m_deque</a>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#aa4591aab94618a64a42c5bfa19820edd">   43</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_property" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#aa4591aab94618a64a42c5bfa19820edd">Size</a> =&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">m_deque</a>.Size;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#aa4591aab94618a64a42c5bfa19820edd">   43</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_property" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#aa4591aab94618a64a42c5bfa19820edd" title="Gets the total capacity of the queue.">Size</a> =&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd" title="Internal deque used to implement queue behavior.">m_deque</a>.Size;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ae693bc6ce447cbe40d516ba2d80f0740">   48</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ae693bc6ce447cbe40d516ba2d80f0740">IsEmpty</a> =&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">m_deque</a>.IsEmpty;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ae693bc6ce447cbe40d516ba2d80f0740">   48</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ae693bc6ce447cbe40d516ba2d80f0740" title="Indicates whether the queue contains no elements.">IsEmpty</a> =&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd" title="Internal deque used to implement queue behavior.">m_deque</a>.IsEmpty;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a4bb5064b1403962da59d6aa5d937a61c">   53</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a4bb5064b1403962da59d6aa5d937a61c">IsFull</a> =&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">m_deque</a>.IsFull;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a4bb5064b1403962da59d6aa5d937a61c">   53</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a4bb5064b1403962da59d6aa5d937a61c" title="Indicates whether the queue has reached its maximum capacity.">IsFull</a> =&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd" title="Internal deque used to implement queue behavior.">m_deque</a>.IsFull;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ac52ca0c612f0f79a3358d121db73e6fa">   58</a></span>        <span class="keyword">public</span> T <a class="code hl_property" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ac52ca0c612f0f79a3358d121db73e6fa">Front</a> =&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">m_deque</a>.Front;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ac52ca0c612f0f79a3358d121db73e6fa">   58</a></span>        <span class="keyword">public</span> T <a class="code hl_property" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ac52ca0c612f0f79a3358d121db73e6fa" title="Gets the element at the front of the queue without removing it.">Front</a> =&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd" title="Internal deque used to implement queue behavior.">m_deque</a>.Front;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
 <div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#abbe21d2ab89d45206b318f9ae549e5e2">   64</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#abbe21d2ab89d45206b318f9ae549e5e2">Queue</a>(<span class="keywordtype">int</span> size) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">m_deque</a> = <span class="keyword">new</span> Deque&lt;T&gt;(size);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#abbe21d2ab89d45206b318f9ae549e5e2">   64</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#abbe21d2ab89d45206b318f9ae549e5e2" title="Creates a new queue with the specified capacity.">Queue</a>(<span class="keywordtype">int</span> size) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd" title="Internal deque used to implement queue behavior.">m_deque</a> = <span class="keyword">new</span> Deque&lt;T&gt;(size);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
 </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
 <div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a014cd70f3f8b07d91ff08954cee41404">   72</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a014cd70f3f8b07d91ff08954cee41404">Queue</a>(Deque&lt;T&gt; d) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">m_deque</a> = d;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a014cd70f3f8b07d91ff08954cee41404">   72</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a014cd70f3f8b07d91ff08954cee41404" title="Creates a new queue that wraps an existing deque.">Queue</a>(Deque&lt;T&gt; d) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd" title="Internal deque used to implement queue behavior.">m_deque</a> = d;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
 </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a3436658ddf770f88a4f650344b903395">   80</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a3436658ddf770f88a4f650344b903395">Enqueue</a>(T value) =&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">m_deque</a>.PushBack(value);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a3436658ddf770f88a4f650344b903395">   80</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a3436658ddf770f88a4f650344b903395" title="Adds an element to the back of the queue.">Enqueue</a>(T value) =&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd" title="Internal deque used to implement queue behavior.">m_deque</a>.PushBack(value);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a284c2d6c8d3d13ded89b1f003d2ff1d6">   87</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a284c2d6c8d3d13ded89b1f003d2ff1d6">Dequeue</a>(ref T value) =&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">m_deque</a>.PopFront(ref value);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a284c2d6c8d3d13ded89b1f003d2ff1d6">   87</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a284c2d6c8d3d13ded89b1f003d2ff1d6" title="Removes the element at the front of the queue.">Dequeue</a>(ref T value) =&gt; <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd" title="Internal deque used to implement queue behavior.">m_deque</a>.PopFront(ref value);</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
 <div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a6ae9ddefacc20a0340bdf9044bafbeb8">   92</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a6ae9ddefacc20a0340bdf9044bafbeb8">Clear</a>() {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">m_deque</a>.Clear();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a6ae9ddefacc20a0340bdf9044bafbeb8">   92</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a6ae9ddefacc20a0340bdf9044bafbeb8" title="Removes all elements from the queue.">Clear</a>() {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <a class="code hl_variable" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd" title="Internal deque used to implement queue behavior.">m_deque</a>.Clear();</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
 </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
@@ -182,25 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>#pragma warning restore CS1587 <span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g_html_a014cd70f3f8b07d91ff08954cee41404"><div class="ttname"><a href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a014cd70f3f8b07d91ff08954cee41404">SystemEx.Collections.Generic.Queue-1-g.Queue</a></div><div class="ttdeci">Queue(Deque&lt; T &gt; d)</div><div class="ttdoc">Creates a new queue that wraps an existing deque.</div><div class="ttdef"><b>Definition</b> <a href="#l00072">Queue.cs:72</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g_html_a284c2d6c8d3d13ded89b1f003d2ff1d6"><div class="ttname"><a href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a284c2d6c8d3d13ded89b1f003d2ff1d6">SystemEx.Collections.Generic.Queue-1-g.Dequeue</a></div><div class="ttdeci">bool Dequeue(ref T value)</div><div class="ttdoc">Removes the element at the front of the queue.</div><div class="ttdef"><b>Definition</b> <a href="#l00087">Queue.cs:87</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g_html_a3436658ddf770f88a4f650344b903395"><div class="ttname"><a href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a3436658ddf770f88a4f650344b903395">SystemEx.Collections.Generic.Queue-1-g.Enqueue</a></div><div class="ttdeci">void Enqueue(T value)</div><div class="ttdoc">Adds an element to the back of the queue.</div><div class="ttdef"><b>Definition</b> <a href="#l00080">Queue.cs:80</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g_html_a4bb5064b1403962da59d6aa5d937a61c"><div class="ttname"><a href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a4bb5064b1403962da59d6aa5d937a61c">SystemEx.Collections.Generic.Queue-1-g.IsFull</a></div><div class="ttdeci">bool IsFull</div><div class="ttdoc">Indicates whether the queue has reached its maximum capacity.</div><div class="ttdef"><b>Definition</b> <a href="#l00053">Queue.cs:53</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g_html_a6ae9ddefacc20a0340bdf9044bafbeb8"><div class="ttname"><a href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a6ae9ddefacc20a0340bdf9044bafbeb8">SystemEx.Collections.Generic.Queue-1-g.Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Removes all elements from the queue.</div><div class="ttdef"><b>Definition</b> <a href="#l00092">Queue.cs:92</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g_html_aa4591aab94618a64a42c5bfa19820edd"><div class="ttname"><a href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#aa4591aab94618a64a42c5bfa19820edd">SystemEx.Collections.Generic.Queue-1-g.Size</a></div><div class="ttdeci">int Size</div><div class="ttdoc">Gets the total capacity of the queue.</div><div class="ttdef"><b>Definition</b> <a href="#l00043">Queue.cs:43</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g_html_ab24ac7249d1c2966a6f6c06b825d16dd"><div class="ttname"><a href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ab24ac7249d1c2966a6f6c06b825d16dd">SystemEx.Collections.Generic.Queue-1-g.m_deque</a></div><div class="ttdeci">Deque&lt; T &gt; m_deque</div><div class="ttdoc">Internal deque used to implement queue behavior.</div><div class="ttdef"><b>Definition</b> <a href="#l00038">Queue.cs:38</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g_html_abbe21d2ab89d45206b318f9ae549e5e2"><div class="ttname"><a href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#abbe21d2ab89d45206b318f9ae549e5e2">SystemEx.Collections.Generic.Queue-1-g.Queue</a></div><div class="ttdeci">Queue(int size)</div><div class="ttdoc">Creates a new queue with the specified capacity.</div><div class="ttdef"><b>Definition</b> <a href="#l00064">Queue.cs:64</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g_html_ac52ca0c612f0f79a3358d121db73e6fa"><div class="ttname"><a href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ac52ca0c612f0f79a3358d121db73e6fa">SystemEx.Collections.Generic.Queue-1-g.Front</a></div><div class="ttdeci">T Front</div><div class="ttdoc">Gets the element at the front of the queue without removing it.</div><div class="ttdef"><b>Definition</b> <a href="#l00058">Queue.cs:58</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g_html_ae693bc6ce447cbe40d516ba2d80f0740"><div class="ttname"><a href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ae693bc6ce447cbe40d516ba2d80f0740">SystemEx.Collections.Generic.Queue-1-g.IsEmpty</a></div><div class="ttdeci">bool IsEmpty</div><div class="ttdoc">Indicates whether the queue contains no elements.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">Queue.cs:48</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d16/_i_array_8cs_source.html#l00018">IArray.cs:18</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00023">Array.cs:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../dir_ea42b4d93f9bdb625a057e7516a96ce1.html">Collections</a></li><li class="navelem"><a href="../../dir_25e6c8c70f23d2240a215c68defa5226.html">Generic</a></li><li class="navelem"><a href="../../d1/d3d/_queue_8cs.html">Queue.cs</a></li>
+    <li class="navelem"><b>Collections</b></li><li class="navelem"><b>Generic</b></li><li class="navelem"><b>Queue.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

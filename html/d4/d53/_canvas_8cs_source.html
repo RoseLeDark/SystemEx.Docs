@@ -8,8 +8,6 @@
 <title>SystemEX: Canvas.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d53/_canvas_8cs_source.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">Canvas.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d4/d53/_canvas_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System;</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System;</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections.Generic;</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>System.Drawing;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>System.Text;</div>
@@ -131,44 +132,30 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html">   13</a></span>    <span class="keyword">public</span> <span class="keyword">interface </span>ICanvas&lt;T&gt; {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a72725b0eec47c5c97f7a4e8e0bec73c5">   14</a></span>        T <a class="code hl_function" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a72725b0eec47c5c97f7a4e8e0bec73c5">GetPixel</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        T GetPixel(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a4b0ab0e3e74115c37b005e19707947c7">   19</a></span>        <span class="keywordtype">int</span> <a class="code hl_property" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a4b0ab0e3e74115c37b005e19707947c7">Height</a> { <span class="keyword">get</span>;  }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a28d54d8b9207f24d63a3a6f8f78971ae">   23</a></span>        <span class="keywordtype">int</span> <a class="code hl_property" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a28d54d8b9207f24d63a3a6f8f78971ae">Width</a> { <span class="keyword">get</span>; }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#ad40390089d37f39c92390af693bdb199">   27</a></span>        IEnumerable&lt;T&gt; <a class="code hl_property" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#ad40390089d37f39c92390af693bdb199">Buffer</a> { <span class="keyword">get</span>; }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#ab1c9faf58087c0f319453703331d2c17">   31</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#ab1c9faf58087c0f319453703331d2c17">Resize</a>(<span class="keywordtype">int</span> size);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a35deb2cd1f99bab6642156254871e53b">   35</a></span>        ICanvas&lt;T&gt; <a class="code hl_function" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a35deb2cd1f99bab6642156254871e53b">CopyRegion</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a2503504ee768f34e3f4f22d0e51be2c8">   39</a></span>        ICanvas&lt;T&gt; <a class="code hl_function" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a2503504ee768f34e3f4f22d0e51be2c8">Clone</a>();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#aa4c0ffc2295eb778669a8a9f5e1b643e">   43</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#aa4c0ffc2295eb778669a8a9f5e1b643e">Fill</a>(T objcolor);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a3ca6167e3a1144e8ccbdc6e68ca6ba84">   47</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a3ca6167e3a1144e8ccbdc6e68ca6ba84">FillRect</a>(<span class="keywordtype">int</span> x1, <span class="keywordtype">int</span> y1, <span class="keywordtype">int</span> x2, <span class="keywordtype">int</span> y2);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#afd5b20bdffb13afcc73caf1e06ab33cf">   51</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#afd5b20bdffb13afcc73caf1e06ab33cf">Clear</a>();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a1d5df6442eebe297315ed829ca9d8974">   55</a></span>        Pair&lt;int, int&gt; <a class="code hl_function" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a1d5df6442eebe297315ed829ca9d8974">Find</a>(T color);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a7f42a1742cc7bf424903a51627c15cfa">   59</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a7f42a1742cc7bf424903a51627c15cfa">FindLast</a>(T color);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">int</span> Height { <span class="keyword">get</span>;  }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">int</span> Width { <span class="keyword">get</span>; }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        IEnumerable&lt;T&gt; Buffer { <span class="keyword">get</span>; }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">bool</span> Resize(<span class="keywordtype">int</span> size);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        ICanvas&lt;T&gt; CopyRegion(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        ICanvas&lt;T&gt; Clone();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">void</span> Fill(T objcolor);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">void</span> FillRect(<span class="keywordtype">int</span> x1, <span class="keywordtype">int</span> y1, <span class="keywordtype">int</span> x2, <span class="keywordtype">int</span> y2);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordtype">void</span> Clear();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        Pair&lt;int, int&gt; Find(T color);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordtype">int</span> FindLast(T color);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
 </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
 </div>
-<div class="ttc" id="ainterface_system_ex_1_1_drawing_1_1_i_canvas-1-g_html_a1d5df6442eebe297315ed829ca9d8974"><div class="ttname"><a href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a1d5df6442eebe297315ed829ca9d8974">SystemEx.Drawing.ICanvas-1-g.Find</a></div><div class="ttdeci">Pair&lt; int, int &gt; Find(T color)</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_drawing_1_1_i_canvas-1-g_html_a2503504ee768f34e3f4f22d0e51be2c8"><div class="ttname"><a href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a2503504ee768f34e3f4f22d0e51be2c8">SystemEx.Drawing.ICanvas-1-g.Clone</a></div><div class="ttdeci">ICanvas&lt; T &gt; Clone()</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_drawing_1_1_i_canvas-1-g_html_a28d54d8b9207f24d63a3a6f8f78971ae"><div class="ttname"><a href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a28d54d8b9207f24d63a3a6f8f78971ae">SystemEx.Drawing.ICanvas-1-g.Width</a></div><div class="ttdeci">int Width</div><div class="ttdef"><b>Definition</b> <a href="#l00023">Canvas.cs:23</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_drawing_1_1_i_canvas-1-g_html_a35deb2cd1f99bab6642156254871e53b"><div class="ttname"><a href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a35deb2cd1f99bab6642156254871e53b">SystemEx.Drawing.ICanvas-1-g.CopyRegion</a></div><div class="ttdeci">ICanvas&lt; T &gt; CopyRegion(int x, int y, int width, int height)</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_drawing_1_1_i_canvas-1-g_html_a3ca6167e3a1144e8ccbdc6e68ca6ba84"><div class="ttname"><a href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a3ca6167e3a1144e8ccbdc6e68ca6ba84">SystemEx.Drawing.ICanvas-1-g.FillRect</a></div><div class="ttdeci">void FillRect(int x1, int y1, int x2, int y2)</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_drawing_1_1_i_canvas-1-g_html_a4b0ab0e3e74115c37b005e19707947c7"><div class="ttname"><a href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a4b0ab0e3e74115c37b005e19707947c7">SystemEx.Drawing.ICanvas-1-g.Height</a></div><div class="ttdeci">int Height</div><div class="ttdef"><b>Definition</b> <a href="#l00019">Canvas.cs:19</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_drawing_1_1_i_canvas-1-g_html_a72725b0eec47c5c97f7a4e8e0bec73c5"><div class="ttname"><a href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a72725b0eec47c5c97f7a4e8e0bec73c5">SystemEx.Drawing.ICanvas-1-g.GetPixel</a></div><div class="ttdeci">T GetPixel(int x, int y)</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_drawing_1_1_i_canvas-1-g_html_a7f42a1742cc7bf424903a51627c15cfa"><div class="ttname"><a href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a7f42a1742cc7bf424903a51627c15cfa">SystemEx.Drawing.ICanvas-1-g.FindLast</a></div><div class="ttdeci">int FindLast(T color)</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_drawing_1_1_i_canvas-1-g_html_aa4c0ffc2295eb778669a8a9f5e1b643e"><div class="ttname"><a href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#aa4c0ffc2295eb778669a8a9f5e1b643e">SystemEx.Drawing.ICanvas-1-g.Fill</a></div><div class="ttdeci">void Fill(T objcolor)</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_drawing_1_1_i_canvas-1-g_html_ab1c9faf58087c0f319453703331d2c17"><div class="ttname"><a href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#ab1c9faf58087c0f319453703331d2c17">SystemEx.Drawing.ICanvas-1-g.Resize</a></div><div class="ttdeci">bool Resize(int size)</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_drawing_1_1_i_canvas-1-g_html_ad40390089d37f39c92390af693bdb199"><div class="ttname"><a href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#ad40390089d37f39c92390af693bdb199">SystemEx.Drawing.ICanvas-1-g.Buffer</a></div><div class="ttdeci">IEnumerable&lt; T &gt; Buffer</div><div class="ttdef"><b>Definition</b> <a href="#l00027">Canvas.cs:27</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_drawing_1_1_i_canvas-1-g_html_afd5b20bdffb13afcc73caf1e06ab33cf"><div class="ttname"><a href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#afd5b20bdffb13afcc73caf1e06ab33cf">SystemEx.Drawing.ICanvas-1-g.Clear</a></div><div class="ttdeci">void Clear()</div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00023">Array.cs:23</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_drawing_html"><div class="ttname"><a href="../../de/d5b/namespace_system_ex_1_1_drawing.html">SystemEx.Drawing</a></div><div class="ttdef"><b>Definition</b> <a href="#l00007">Canvas.cs:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../dir_7bc43d1faf255742d8330d975d2cd579.html">Drawing</a></li><li class="navelem"><a href="../../d4/d53/_canvas_8cs.html">Canvas.cs</a></li>
+    <li class="navelem"><b>Drawing</b></li><li class="navelem"><b>Canvas.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

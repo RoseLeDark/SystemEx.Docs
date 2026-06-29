@@ -8,8 +8,6 @@
 <title>SystemEX: Member List</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -123,21 +124,21 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>This is the complete list of members for <a class="el" href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html">SystemEx.Collections.Generic.FixedArray&lt; T &gt;</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ab22f10f19aacddb564e1fd42507beb59">Add</a>(T entry)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a3fb069f630273d548c0b6d674a0f1568">Add</a>(T item)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Add</b>(T item) (defined in <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#afc1c32444b4ee3851dcdf10f08f305a4">AddRange</a>(T[] entry)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a293f0eea6a232101ea6021a193c6cf47">Array</a>(int growSize=16)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Array</b>(int growSize=16) (defined in <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a808a7b713dcac53439a94269898c20f9">Array</a>(int size, int growSize=16)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad0ae0e40ca9ca5d2597a24d7347e5f14">Array</a>(T[] e, int growSize=16)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a8f23b48290bdbbc26278a7057a1168d5">Array</a>(IEnumerable&lt; T &gt; e, int growSize=16)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a2698d72008f39661653cad336ac59e0b">At</a>(int index)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html#a884e1d5d1b15b504fd42f23cb169b6a9">AutoGrow</a></td><td class="entry"><a class="el" href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html">SystemEx.Collections.Generic.FixedArray&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aaf28cb993ae5784674aba8c567ba047d">Back</a></td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#adc5a74ffb90433d79ad39e65c7dfe67e">Clear</a>()</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Clear</b>() (defined in <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a99e18da48136d38be92d8b4476f11180">Contains</a>(T item)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a828fb2088592add5264920888c2ef336">CopyFrom</a>(T[] source, uint sourceOffset, uint destinationOffset, uint count)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a32ad2f2c6dd087f7856dadb8f505694a">CopyTo</a>(uint sourceOffset, T[] destination, uint destinationOffset, uint count)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a7d5e2a167de5fbd7dab2553280e91f65">CopyTo</a>(T[] array, int arrayIndex)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a60580f21345858baf290bbd93efb4ee0">Count</a></td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Count</b> (defined in <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aee392d216ba803ad2002a080852b6de0">End</a></td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa98ef7439853e26a9a1846fa84b727a0">FindFirst</a>(T key)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae6e74a0ba839454f349dc3479dcf92d3">FindLast</a>(T key)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
@@ -147,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#acc355d9dd79350e23f172625ab4b0054">Front</a></td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a194979f139cd04ca32b6a191271d052a">Get</a>(int index, ref T item)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#af34be5b6b26c93c0000024010563ca44">GetEnumerator</a>()</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a8a0c86c0fe4918ef72aaa1303a27917f">GetEnumerator</a>()</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>GetEnumerator</b>() (defined in <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a038e698269968ae2e74ffdecb502d0f9">GrowSize</a></td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a417401d6a3f00bf93fc658ec36ea063b">IndexOf</a>(T item)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html#a76dfbc784f4db0586abb3bcce36cb49f">Insert</a>(int pos, T item)</td><td class="entry"><a class="el" href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html">SystemEx.Collections.Generic.FixedArray&lt; T &gt;</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
@@ -156,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a69b0d3e66727e815047684d8f79347d4">IsEmpty</a></td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a637ea5e9434d327ee5d7d9e5b8912c89">IsFixed</a></td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa378bee6379c1ecae0483a9ff9272fc9">IsFull</a></td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae7b88d32cc887ba9331b84633fedfe0f">IsReadOnly</a></td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>IsReadOnly</b> (defined in <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad9ffc9f588a6a83788fe7ac4ad813199">m_elements</a></td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#af7ae7141a943af3c0636e5ce72aba2b3">m_index</a></td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a624a36369a89ec4c305575469815f374">NumberOfElements</a>(T Key)</td><td class="entry"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td><td class="entry"></td></tr>

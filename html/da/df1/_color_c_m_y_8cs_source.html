@@ -8,8 +8,6 @@
 <title>SystemEX: ColorCMY.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('da/df1/_color_c_m_y_8cs_source.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,53 +120,39 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">ColorCMY.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../da/df1/_color_c_m_y_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System;</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System;</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections.Generic;</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>System.Text;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/d5b/namespace_system_ex_1_1_drawing.html">SystemEx.Drawing</a> {</div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html">    9</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a052816b4b5aa8bfa0e2096ae26e19531">ColorCMY</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4b02e92ae567a6c676ac131a433730e3">   10</a></span>        <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4b02e92ae567a6c676ac131a433730e3">m_c</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4ebc280028f0d423b9bef1812c69d355">   11</a></span>        <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4ebc280028f0d423b9bef1812c69d355">m_m</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a29e568a3649740fbf04537a0177f6622">   12</a></span>        <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a29e568a3649740fbf04537a0177f6622">m_y</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#ac1f64fb8cc61722c7a5d4dfcb5ec0d1e">   16</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#ac1f64fb8cc61722c7a5d4dfcb5ec0d1e">C</a> =&gt; <a class="code hl_variable" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4b02e92ae567a6c676ac131a433730e3">m_c</a>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4e6f670b9b7728bd579b9cff93828f07">   20</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4e6f670b9b7728bd579b9cff93828f07">M</a> =&gt; <a class="code hl_variable" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4ebc280028f0d423b9bef1812c69d355">m_m</a>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#ac21647adff38fc165f4cc95c2953b350">   24</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#ac21647adff38fc165f4cc95c2953b350">Y</a> =&gt; <a class="code hl_variable" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a29e568a3649740fbf04537a0177f6622">m_y</a>;</div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a052816b4b5aa8bfa0e2096ae26e19531">   28</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a052816b4b5aa8bfa0e2096ae26e19531">ColorCMY</a>(<span class="keywordtype">float</span>[] x) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <a class="code hl_variable" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4b02e92ae567a6c676ac131a433730e3">m_c</a> = x[0];</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <a class="code hl_variable" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4ebc280028f0d423b9bef1812c69d355">m_m</a> = x[1];</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <a class="code hl_variable" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a29e568a3649740fbf04537a0177f6622">m_y</a> = x[3];</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html">    9</a></span>    <span class="keyword">public</span> <span class="keyword">class </span>ColorCMY {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_c;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_m;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_y;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">public</span> <span class="keywordtype">float</span> C =&gt; m_c;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">public</span> <span class="keywordtype">float</span> M =&gt; m_m;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">public</span> <span class="keywordtype">float</span> Y =&gt; m_y;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keyword">public</span> ColorCMY(<span class="keywordtype">float</span>[] x) {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            m_c = x[0];</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            m_m = x[1];</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            m_y = x[3];</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        }</div>
-</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#aaa8ac9d36c8101815508a9f041de3a54">   36</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#aaa8ac9d36c8101815508a9f041de3a54">ColorCMY</a>(<span class="keywordtype">float</span> c, <span class="keywordtype">float</span> m, <span class="keywordtype">float</span> y) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_variable" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4b02e92ae567a6c676ac131a433730e3">m_c</a> = c;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <a class="code hl_variable" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4ebc280028f0d423b9bef1812c69d355">m_m</a> = m;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <a class="code hl_variable" href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a29e568a3649740fbf04537a0177f6622">m_y</a> = y;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">public</span> ColorCMY(<span class="keywordtype">float</span> c, <span class="keywordtype">float</span> m, <span class="keywordtype">float</span> y) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            m_c = c;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            m_m = m;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            m_y = y;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
-</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
 </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_c_m_y_html_a052816b4b5aa8bfa0e2096ae26e19531"><div class="ttname"><a href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a052816b4b5aa8bfa0e2096ae26e19531">SystemEx.Drawing.ColorCMY.ColorCMY</a></div><div class="ttdeci">ColorCMY(float[] x)</div><div class="ttdef"><b>Definition</b> <a href="#l00028">ColorCMY.cs:28</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_c_m_y_html_a29e568a3649740fbf04537a0177f6622"><div class="ttname"><a href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a29e568a3649740fbf04537a0177f6622">SystemEx.Drawing.ColorCMY.m_y</a></div><div class="ttdeci">float m_y</div><div class="ttdef"><b>Definition</b> <a href="#l00012">ColorCMY.cs:12</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_c_m_y_html_a4b02e92ae567a6c676ac131a433730e3"><div class="ttname"><a href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4b02e92ae567a6c676ac131a433730e3">SystemEx.Drawing.ColorCMY.m_c</a></div><div class="ttdeci">float m_c</div><div class="ttdef"><b>Definition</b> <a href="#l00010">ColorCMY.cs:10</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_c_m_y_html_a4e6f670b9b7728bd579b9cff93828f07"><div class="ttname"><a href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4e6f670b9b7728bd579b9cff93828f07">SystemEx.Drawing.ColorCMY.M</a></div><div class="ttdeci">float M</div><div class="ttdef"><b>Definition</b> <a href="#l00020">ColorCMY.cs:20</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_c_m_y_html_a4ebc280028f0d423b9bef1812c69d355"><div class="ttname"><a href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#a4ebc280028f0d423b9bef1812c69d355">SystemEx.Drawing.ColorCMY.m_m</a></div><div class="ttdeci">float m_m</div><div class="ttdef"><b>Definition</b> <a href="#l00011">ColorCMY.cs:11</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_c_m_y_html_aaa8ac9d36c8101815508a9f041de3a54"><div class="ttname"><a href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#aaa8ac9d36c8101815508a9f041de3a54">SystemEx.Drawing.ColorCMY.ColorCMY</a></div><div class="ttdeci">ColorCMY(float c, float m, float y)</div><div class="ttdef"><b>Definition</b> <a href="#l00036">ColorCMY.cs:36</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_c_m_y_html_ac1f64fb8cc61722c7a5d4dfcb5ec0d1e"><div class="ttname"><a href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#ac1f64fb8cc61722c7a5d4dfcb5ec0d1e">SystemEx.Drawing.ColorCMY.C</a></div><div class="ttdeci">float C</div><div class="ttdef"><b>Definition</b> <a href="#l00016">ColorCMY.cs:16</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_c_m_y_html_ac21647adff38fc165f4cc95c2953b350"><div class="ttname"><a href="../../d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html#ac21647adff38fc165f4cc95c2953b350">SystemEx.Drawing.ColorCMY.Y</a></div><div class="ttdeci">float Y</div><div class="ttdef"><b>Definition</b> <a href="#l00024">ColorCMY.cs:24</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_drawing_html"><div class="ttname"><a href="../../de/d5b/namespace_system_ex_1_1_drawing.html">SystemEx.Drawing</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d53/_canvas_8cs_source.html#l00007">Canvas.cs:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../dir_7bc43d1faf255742d8330d975d2cd579.html">Drawing</a></li><li class="navelem"><a href="../../da/df1/_color_c_m_y_8cs.html">ColorCMY.cs</a></li>
+    <li class="navelem"><b>Drawing</b></li><li class="navelem"><b>ColorCMY.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

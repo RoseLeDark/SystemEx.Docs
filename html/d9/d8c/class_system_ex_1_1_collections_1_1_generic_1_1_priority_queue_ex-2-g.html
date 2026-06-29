@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt; Class Template Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html','../../','d1/d20/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -124,26 +125,37 @@ document.addEventListener('DOMContentLoaded', () => {
  Elements are stored as Pair&lt;T, TU&gt; where <code>T</code> is the value and <code>TU</code> is the priority. <br  />
  Supports enqueue, dequeue, peek, priority updates, cloning, and median‑based selection.  
  <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Collaboration diagram for SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt;:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../d7/dd9/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g__coll__graph.png" border="0" usemap="#a_system_ex_8_collections_8_generic_8_priority_queue_ex_3_01_t_00_01_t_u_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_system_ex_8_collections_8_generic_8_priority_queue_ex_3_01_t_00_01_t_u_01_4_coll__map" id="a_system_ex_8_collections_8_generic_8_priority_queue_ex_3_01_t_00_01_t_u_01_4_coll__map">
-<area shape="rect" title="A priority queue implemented on top of SortedMap&lt;T, TU&gt;. &#160;&#160;Elements are stored as Pair&lt;T,..." alt="" coords="1071,40,1275,83"/>
-<area shape="rect" href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html" title=" " alt="" coords="767,40,972,83"/>
-<area shape="poly" title=" " alt="" coords="987,59,1073,61,1067,61,987,64"/>
-<area shape="rect" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html" title=" " alt="" coords="513,72,718,115"/>
-<area shape="poly" title=" " alt="" coords="732,76,764,74,769,74,733,81"/>
-<area shape="rect" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html" title="Defines a typed map structure that stores key/value pairs as Pair&lt;T, TU&gt;. Provides insertion,..." alt="" coords="259,5,463,48"/>
-<area shape="poly" title=" " alt="" coords="460,50,534,71,529,71,460,55"/>
-<area shape="rect" href="../../d6/d5e/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_map-2-g.html" title="Extends IMap&lt;T, TU&gt; with sorting capabilities for key/value pairs. Sorting can be performed using a d..." alt="" coords="513,5,718,48"/>
-<area shape="poly" title=" " alt="" coords="479,24,515,26,510,27,479,29"/>
-<area shape="rect" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html" title=" " alt="" coords="5,5,210,48"/>
-<area shape="poly" title=" " alt="" coords="225,24,261,26,256,27,226,29"/>
-<area shape="rect" href="../../d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html" title="Defines a read‑only associative container mapping keys of type T &#160;to values of type TU ." alt="" coords="259,72,463,131"/>
-<area shape="poly" title=" " alt="" coords="479,95,515,96,510,97,479,100"/>
-<area shape="poly" title=" " alt="" coords="734,40,770,47,764,47,734,45"/>
+<area shape="rect" title="A priority queue implemented on top of SortedMap&lt;T, TU&gt;. &#160;&#160;Elements are stored as Pair&lt;T,..." alt="" coords="1071,253,1275,296"/>
+<area shape="rect" href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html" title=" " alt="" coords="767,253,972,296"/>
+<area shape="poly" title=" " alt="" coords="987,272,1073,275,1067,275,987,277"/>
+<area shape="rect" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html" title=" " alt="" coords="513,197,718,240"/>
+<area shape="poly" title=" " alt="" coords="730,241,772,253,767,253,730,247"/>
+<area shape="rect" title=" " alt="" coords="60,76,155,103"/>
+<area shape="poly" title=" " alt="" coords="169,80,233,77,307,79,387,88,464,108,503,126,539,149,595,197,590,197,535,153,500,131,462,113,386,94,307,84,233,83,171,85"/>
+<area shape="rect" href="../../d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html" title="Defines a read‑only associative container mapping keys of type T &#160;to values of type TU ." alt="" coords="259,123,463,181"/>
+<area shape="poly" title=" " alt="" coords="169,102,261,125,256,128,170,107"/>
+<area shape="rect" title=" " alt="" coords="66,231,149,257"/>
+<area shape="poly" title=" " alt="" coords="165,239,513,221,512,226,165,244"/>
+<area shape="rect" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html" title="Defines a typed map structure that stores key/value pairs as Pair&lt;T, TU&gt;. Provides insertion,..." alt="" coords="259,307,463,349"/>
+<area shape="poly" title=" " alt="" coords="164,260,260,292,296,306,290,306,258,297,163,265"/>
+<area shape="rect" title=" " alt="" coords="314,256,408,283"/>
+<area shape="poly" title=" " alt="" coords="423,254,516,238,510,240,424,260"/>
+<area shape="poly" title=" " alt="" coords="446,299,462,292,572,241,577,240,464,297,448,304"/>
+<area shape="rect" href="../../d6/d5e/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_map-2-g.html" title="Extends IMap&lt;T, TU&gt; with sorting capabilities for key/value pairs. Sorting can be performed using a d..." alt="" coords="513,285,718,328"/>
+<area shape="poly" title=" " alt="" coords="479,315,510,316,515,315,479,321"/>
+<area shape="rect" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html" title=" " alt="" coords="5,307,210,349"/>
+<area shape="poly" title=" " alt="" coords="225,325,261,328,256,328,225,331"/>
+<area shape="poly" title=" " alt="" coords="479,180,534,197,528,197,478,185"/>
+<area shape="rect" title=" " alt="" coords="37,131,178,173"/>
+<area shape="poly" title=" " alt="" coords="193,149,261,151,256,153,194,155"/>
+<area shape="rect" title=" " alt="" coords="294,5,428,48"/>
+<area shape="poly" title=" " alt="" coords="442,42,490,64,527,95,559,131,604,198,599,197,555,134,524,99,487,69,442,47"/>
+<area shape="poly" title=" " alt="" coords="733,289,764,288,770,287,734,294"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -246,10 +258,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00258">258</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  258</span>                                        {</div>
-<div class="line"><span class="lineno">  259</span>            <span class="keywordflow">return</span> value &lt; TU.Zero ? -value : value;</div>
-<div class="line"><span class="lineno">  260</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a591111b176886a8acd0b98053fe7a595" name="a591111b176886a8acd0b98053fe7a595"></a>
@@ -268,14 +277,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00182">182</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  182</span>                                              {</div>
-<div class="line"><span class="lineno">  183</span>            var c = <span class="keyword">new</span> PriorityQueueEx&lt;T, TU&gt;(m_map);</div>
-<div class="line"><span class="lineno">  184</span>            c.SortFunctions = SortFunctions;</div>
-<div class="line"><span class="lineno">  185</span>            c.Comparer = Comparer;</div>
-<div class="line"><span class="lineno">  186</span>            c.m_map.AutoSort = m_map.AutoSort;</div>
-<div class="line"><span class="lineno">  187</span>            <span class="keywordflow">return</span> c;</div>
-<div class="line"><span class="lineno">  188</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a1ef2bbd0767e98252a6d702c99f7e0f2" name="a1ef2bbd0767e98252a6d702c99f7e0f2"></a>
@@ -294,12 +296,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00208">208</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  208</span>                           {</div>
-<div class="line"><span class="lineno">  209</span>            var p = m_map[0];</div>
-<div class="line"><span class="lineno">  210</span>            m_map.RemoveAt(0);</div>
-<div class="line"><span class="lineno">  211</span>            <span class="keywordflow">return</span> p.First;</div>
-<div class="line"><span class="lineno">  212</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a637bed6572d38bbc8e860d96f015724d" name="a637bed6572d38bbc8e860d96f015724d"></a>
@@ -322,10 +319,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00194">194</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  194</span>                                                 {</div>
-<div class="line"><span class="lineno">  195</span>            <span class="keywordflow">return</span> m_map.TryAdd(item, priority);</div>
-<div class="line"><span class="lineno">  196</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac83302523735609c8bd1ad206a39aa4f" name="ac83302523735609c8bd1ad206a39aa4f"></a>
@@ -352,40 +346,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00224">224</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  224</span>                                                  {</div>
-<div class="line"><span class="lineno">  225</span>            <span class="keywordtype">int</span> n = m_map.Size;</div>
-<div class="line"><span class="lineno">  226</span>            <span class="keywordflow">if</span> ( n == 0 )</div>
-<div class="line"><span class="lineno">  227</span>                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  228</span> </div>
-<div class="line"><span class="lineno">  229</span>            SortedArray&lt;TU&gt; prios = <span class="keyword">new</span> SortedArray&lt;TU&gt;(n, SortByPriorityArray);</div>
-<div class="line"><span class="lineno">  230</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; n; i++ )</div>
-<div class="line"><span class="lineno">  231</span>                prios.Add(m_map[i].Second);</div>
-<div class="line"><span class="lineno">  232</span> </div>
-<div class="line"><span class="lineno">  233</span>            TU median;</div>
-<div class="line"><span class="lineno">  234</span>            <span class="keywordflow">if</span> ( (n &amp; 1) == 1 ) {</div>
-<div class="line"><span class="lineno">  235</span>                median = prios[n / 2];</div>
-<div class="line"><span class="lineno">  236</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  237</span>                TU a = prios[(n / 2) - 1];</div>
-<div class="line"><span class="lineno">  238</span>                TU b = prios[n / 2];</div>
-<div class="line"><span class="lineno">  239</span>                median = (a + b) / TU.CreateChecked(2);</div>
-<div class="line"><span class="lineno">  240</span>            }</div>
-<div class="line"><span class="lineno">  241</span> </div>
-<div class="line"><span class="lineno">  242</span>            Pair&lt;T, TU&gt; best = m_map[0];</div>
-<div class="line"><span class="lineno">  243</span>            TU bestDist = Abs(best.Second - median);</div>
-<div class="line"><span class="lineno">  244</span> </div>
-<div class="line"><span class="lineno">  245</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 1; i &lt; n; i++ ) {</div>
-<div class="line"><span class="lineno">  246</span>                var p = m_map[i];</div>
-<div class="line"><span class="lineno">  247</span>                TU dist = Abs(p.Second - median);</div>
-<div class="line"><span class="lineno">  248</span> </div>
-<div class="line"><span class="lineno">  249</span>                <span class="keywordflow">if</span> ( dist &lt; bestDist ) {</div>
-<div class="line"><span class="lineno">  250</span>                    best = p;</div>
-<div class="line"><span class="lineno">  251</span>                    bestDist = dist;</div>
-<div class="line"><span class="lineno">  252</span>                }</div>
-<div class="line"><span class="lineno">  253</span>            }</div>
-<div class="line"><span class="lineno">  254</span> </div>
-<div class="line"><span class="lineno">  255</span>            <span class="keywordflow">return</span> best;</div>
-<div class="line"><span class="lineno">  256</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a39ce4d09ba7b98aaffdda82447f9184a" name="a39ce4d09ba7b98aaffdda82447f9184a"></a>
@@ -404,10 +365,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00201">201</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  201</span>                        {</div>
-<div class="line"><span class="lineno">  202</span>            <span class="keywordflow">return</span> m_map[0].First;</div>
-<div class="line"><span class="lineno">  203</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a74b7440bfe7574c5edd08df98a8c1a1e" name="a74b7440bfe7574c5edd08df98a8c1a1e"></a>
@@ -426,10 +384,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00154">154</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  154</span>                                 {</div>
-<div class="line"><span class="lineno">  155</span>            m_map = <span class="keyword">new</span> SortedMap&lt;T, TU&gt;(SortByPriority);</div>
-<div class="line"><span class="lineno">  156</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a39a5016239b2a114bca2598fa7c8fb29" name="a39a5016239b2a114bca2598fa7c8fb29"></a>
@@ -448,10 +403,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00161">161</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  161</span>                                                                 {</div>
-<div class="line"><span class="lineno">  162</span>            m_map = <span class="keyword">new</span> SortedMap&lt;T, TU&gt;(comparer);</div>
-<div class="line"><span class="lineno">  163</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a22c9779cc0e6ee1cc3eacac698bf2db7" name="a22c9779cc0e6ee1cc3eacac698bf2db7"></a>
@@ -470,10 +422,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00175">175</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  175</span>                                                             {</div>
-<div class="line"><span class="lineno">  176</span>            m_map = <span class="keyword">new</span> SortedMap&lt;T, TU&gt;(map, SortByPriority);</div>
-<div class="line"><span class="lineno">  177</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a1030b26399cdaf6eb48f58f819becadb" name="a1030b26399cdaf6eb48f58f819becadb"></a>
@@ -492,10 +441,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00168">168</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  168</span>                                                     {</div>
-<div class="line"><span class="lineno">  169</span>            m_map = <span class="keyword">new</span> SortedMap&lt;T, TU&gt;(sort);</div>
-<div class="line"><span class="lineno">  170</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab08dc825c68cbb08a955fe4a48be374f" name="ab08dc825c68cbb08a955fe4a48be374f"></a>
@@ -526,13 +472,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00268">268</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  268</span>                                                                                  {</div>
-<div class="line"><span class="lineno">  269</span>            <span class="keywordflow">if</span> ( a.Second &lt; b.Second ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.AIsSmallerB;</div>
-<div class="line"><span class="lineno">  270</span>            <span class="keywordflow">if</span> ( a.Second &gt; b.Second ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.AIsLargerB;</div>
-<div class="line"><span class="lineno">  271</span>            <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.Equal;</div>
-<div class="line"><span class="lineno">  272</span>        }</div>
-<div class="ttc" id="anamespace_system_ex_1_1_utils_html_aef01215d2eb8aecad75ce70ce26c8c3a"><div class="ttname"><a href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">SystemEx.Utils.CompareResult</a></div><div class="ttdeci">CompareResult</div><div class="ttdoc">Specifies the result of a comparison between two values.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d35/_algorithm_8cs_source.html#l00025">Algorithm.cs:25</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a140f3e75c800476341df027a5670f599" name="a140f3e75c800476341df027a5670f599"></a>
@@ -563,12 +503,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00262">262</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  262</span>                                                                     {</div>
-<div class="line"><span class="lineno">  263</span>            <span class="keywordflow">if</span> ( a &lt; b ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.AIsSmallerB;</div>
-<div class="line"><span class="lineno">  264</span>            <span class="keywordflow">if</span> ( a &gt; b ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.AIsLargerB;</div>
-<div class="line"><span class="lineno">  265</span>            <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.Equal;</div>
-<div class="line"><span class="lineno">  266</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aa10c7212c181db331f6f9a3712c0f6e2" name="aa10c7212c181db331f6f9a3712c0f6e2"></a>
@@ -591,10 +526,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00217">217</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  217</span>                                                           {</div>
-<div class="line"><span class="lineno">  218</span>            m_map[item] = newPriority;</div>
-<div class="line"><span class="lineno">  219</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -644,11 +576,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00122">122</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  122</span>                                                 {</div>
-<div class="line"><span class="lineno">  123</span>            <span class="keyword">get</span> =&gt; m_map.Comparer;</div>
-<div class="line"><span class="lineno">  124</span>            <span class="keyword">set</span> =&gt; m_map.Comparer = value;</div>
-<div class="line"><span class="lineno">  125</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad0a74f46afb4d4698930865e2824b713" name="ad0a74f46afb4d4698930865e2824b713"></a>
@@ -816,11 +744,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00130">130</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  130</span>                                              {</div>
-<div class="line"><span class="lineno">  131</span>            <span class="keyword">get</span> =&gt; m_map.SortFunctions;</div>
-<div class="line"><span class="lineno">  132</span>            <span class="keyword">set</span> =&gt; m_map.SortFunctions = value;</div>
-<div class="line"><span class="lineno">  133</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

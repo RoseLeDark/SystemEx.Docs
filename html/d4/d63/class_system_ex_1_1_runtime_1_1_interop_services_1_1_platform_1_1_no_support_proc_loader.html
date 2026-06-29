@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Runtime.InteropServices.Platform.NoSupportProcLoader Class Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d63/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_no_support_proc_loader.html','../../','d5/dfb/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_no_support_proc_loader-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -180,11 +181,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Always <code>0</code>, indicating a successful simulated unload. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d48/_no_support_proc_loader_8cs_source.html#l00081">81</a> of file <a class="el" href="../../da/d48/_no_support_proc_loader_8cs_source.html">NoSupportProcLoader.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>                                                     {</div>
-<div class="line"><span class="lineno">   82</span>            Console.WriteLine(<span class="stringliteral">&quot;Load Simulator: free your library &#39;{0}&#39;&quot;</span>, m_name);</div>
-<div class="line"><span class="lineno">   83</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   84</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6debbdfe0d64e490b7418b023cfe8442" name="a6debbdfe0d64e490b7418b023cfe8442"></a>
@@ -218,11 +215,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Always NO_PATH because this backend does not support library discovery. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d48/_no_support_proc_loader_8cs_source.html#l00096">96</a> of file <a class="el" href="../../da/d48/_no_support_proc_loader_8cs_source.html">NoSupportProcLoader.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>                                                              {</div>
-<div class="line"><span class="lineno">   97</span>            Console.WriteLine(<span class="stringliteral">&quot;Load Simulator: GetLibaryPath &#39;{0}&#39;&quot;</span>, dllname);</div>
-<div class="line"><span class="lineno">   98</span>            <span class="keywordflow">return</span> NO_PATH;</div>
-<div class="line"><span class="lineno">   99</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a346f3d9dab1db96c277930fd72f3f15d" name="a346f3d9dab1db96c277930fd72f3f15d"></a>
@@ -261,11 +254,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Always IntPtr.Zero, because no real symbol resolution occurs. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d48/_no_support_proc_loader_8cs_source.html#l00068">68</a> of file <a class="el" href="../../da/d48/_no_support_proc_loader_8cs_source.html">NoSupportProcLoader.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>                                                                      {</div>
-<div class="line"><span class="lineno">   69</span>            Console.WriteLine(<span class="stringliteral">&quot;Load Simulator: your function &#39;{0}&#39; in &#39;{1}&#39;&quot;</span>, name, m_name);</div>
-<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">return</span> IntPtr.Zero;</div>
-<div class="line"><span class="lineno">   71</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a7aff1d2f5869525cf3a2fe0bbecb4256" name="a7aff1d2f5869525cf3a2fe0bbecb4256"></a>
@@ -299,13 +288,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A Module instance with IntPtr.Zero as its handle. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d48/_no_support_proc_loader_8cs_source.html#l00052">52</a> of file <a class="el" href="../../da/d48/_no_support_proc_loader_8cs_source.html">NoSupportProcLoader.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>                                                         {</div>
-<div class="line"><span class="lineno">   53</span>            m_name = path;</div>
-<div class="line"><span class="lineno">   54</span>            Console.WriteLine(<span class="stringliteral">&quot;Load Simulator: your library &#39;{0}&#39;&quot;</span>, path);</div>
-<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_typedef" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>(IntPtr.Zero, path);</div>
-<div class="line"><span class="lineno">   56</span>        }</div>
-<div class="ttc" id="a_native_r_a_m_kernel_8cs_html_ac108a8ab3a325c58d6d2dfab43fecb66"><div class="ttname"><a href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a></div><div class="ttdeci">SystemEx.Runtime.Module Module</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00022">NativeRAMKernel.cs:22</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>

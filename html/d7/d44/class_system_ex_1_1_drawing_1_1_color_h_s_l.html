@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Drawing.ColorHSL Class Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l.html','../../','d7/d2f/class_system_ex_1_1_drawing_1_1_color_h_s_l-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -123,8 +124,26 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Represents a color in the HSL (Hue–Saturation–Lightness) color space using floating‑point components. <br  />
  Provides hue‑aware interpolation, component manipulation, arithmetic operations, and normalization utilities.  
  <a href="#details">More...</a></p>
-
-<p>Inherits IEquatable.</p>
+<div class="dynheader">
+Inheritance diagram for SystemEx.Drawing.ColorHSL:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d95/class_system_ex_1_1_drawing_1_1_color_h_s_l__inherit__graph.png" border="0" usemap="#a_system_ex_8_drawing_8_color_h_s_l_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_system_ex_8_drawing_8_color_h_s_l_inherit__map" id="a_system_ex_8_drawing_8_color_h_s_l_inherit__map">
+<area shape="rect" title="Represents a color in the HSL (Hue–Saturation–Lightness) color space using floating‑point components...." alt="" coords="5,80,201,107"/>
+<area shape="rect" title=" " alt="" coords="61,5,145,32"/>
+<area shape="poly" title=" " alt="" coords="105,46,105,81,101,79,101,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for SystemEx.Drawing.ColorHSL:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d77/class_system_ex_1_1_drawing_1_1_color_h_s_l__coll__graph.png" border="0" usemap="#a_system_ex_8_drawing_8_color_h_s_l_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_system_ex_8_drawing_8_color_h_s_l_coll__map" id="a_system_ex_8_drawing_8_color_h_s_l_coll__map">
+<area shape="rect" title="Represents a color in the HSL (Hue–Saturation–Lightness) color space using floating‑point components...." alt="" coords="5,80,201,107"/>
+<area shape="rect" title=" " alt="" coords="61,5,145,32"/>
+<area shape="poly" title=" " alt="" coords="105,46,105,81,101,79,101,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -180,12 +199,7 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00034">34</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>                                   {</div>
-<div class="line"><span class="lineno">   35</span>            m_h = x[0];</div>
-<div class="line"><span class="lineno">   36</span>            m_s = x[1];</div>
-<div class="line"><span class="lineno">   37</span>            m_l = x[2];</div>
-<div class="line"><span class="lineno">   38</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad762a79a09135f22aea3913b74b3ca7f" name="ad762a79a09135f22aea3913b74b3ca7f"></a>
@@ -213,12 +227,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00042">42</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>                                                   {</div>
-<div class="line"><span class="lineno">   43</span>            m_h = h;</div>
-<div class="line"><span class="lineno">   44</span>            m_s = s;</div>
-<div class="line"><span class="lineno">   45</span>            m_l = l;</div>
-<div class="line"><span class="lineno">   46</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -245,13 +254,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the components match; otherwise <code>false</code>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00054">54</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   54</span>                                           {</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">return</span> m_h.Equals(other.m_h) &amp;&amp;</div>
-<div class="line"><span class="lineno">   57</span>                m_s.Equals(other.m_s) &amp;&amp;</div>
-<div class="line"><span class="lineno">   58</span>                m_l.Equals(other.m_h);</div>
-<div class="line"><span class="lineno">   59</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a9b409891e8af8c35429bb30e4e657b5b" name="a9b409891e8af8c35429bb30e4e657b5b"></a>
@@ -270,12 +273,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00069">69</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>                                                 {</div>
-<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">if</span> ( obj == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">if</span> ( obj is ColorHSL ) <span class="keywordflow">return</span> Equals(obj as ColorHSL);</div>
-<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   73</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aff6e261a5fbe0009d34e57c6fc5ed5a2" name="aff6e261a5fbe0009d34e57c6fc5ed5a2"></a>
@@ -295,10 +293,7 @@ Private Attributes</h2></td></tr>
 <p>&lt;summarH&gt; Returns a hash code based on the H, S, and L components. &lt;/summarH&gt; </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00063">63</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>                                          {</div>
-<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">return</span> HashCode.Combine(m_h, m_s, m_l);</div>
-<div class="line"><span class="lineno">   65</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aa6ee07468d91f55c01fdf3449c746ada" name="aa6ee07468d91f55c01fdf3449c746ada"></a>
@@ -317,10 +312,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00077">77</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>                                          {</div>
-<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;[{m_h}, {m_s}, {m_l}]&quot;</span>);</div>
-<div class="line"><span class="lineno">   79</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -418,8 +410,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00017">17</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>{ <span class="keyword">get</span> =&gt; m_h; } </div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac1adf8c4f0c522cacb7b7b0aad3e3fef" name="ac1adf8c4f0c522cacb7b7b0aad3e3fef"></a>
@@ -443,8 +434,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00027">27</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span>{ <span class="keyword">get</span> =&gt; m_l; } </div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a329fc3775d7831be45a7ff3b5f94952a" name="a329fc3775d7831be45a7ff3b5f94952a"></a>
@@ -468,8 +458,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00022">22</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <span class="keyword">get</span> =&gt; m_s; } </div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

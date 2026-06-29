@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Device.NativeRAMKernel&lt; TD &gt; Class Template Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html','../../','d4/db9/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -124,10 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
  This class handles module loading, buffer management, backend initialization, locking/unlocking of shared buffers, and asynchronous kernel execution. <br  />
  Derived classes only need to implement backend‑specific behavior such as buffer creation (OnCreate) and kernel invocation (OnRun).  
  <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Device.NativeRAMKernel&lt; TD &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Inheritance diagram for SystemEx.Device.NativeRAMKernel&lt; TD &gt;:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../dd/d4b/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g__inherit__graph.png" border="0" usemap="#a_system_ex_8_device_8_native_r_a_m_kernel_3_01_t_d_01_4_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="a_system_ex_8_device_8_native_r_a_m_kernel_3_01_t_d_01_4_inherit__map" id="a_system_ex_8_device_8_native_r_a_m_kernel_3_01_t_d_01_4_inherit__map">
 <area shape="rect" title="Provides a base implementation for RAM‑based compute kernels that operate on DeviceSharedBuffer&lt;RamSh..." alt="" coords="5,96,242,139"/>
@@ -137,27 +137,38 @@ document.addEventListener('DOMContentLoaded', () => {
 <area shape="poly" title=" " alt="" coords="125,61,126,96,121,95,122,66"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Device.NativeRAMKernel&lt; TD &gt;:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Collaboration diagram for SystemEx.Device.NativeRAMKernel&lt; TD &gt;:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../dc/ded/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g__coll__graph.png" border="0" usemap="#a_system_ex_8_device_8_native_r_a_m_kernel_3_01_t_d_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_system_ex_8_device_8_native_r_a_m_kernel_3_01_t_d_01_4_coll__map" id="a_system_ex_8_device_8_native_r_a_m_kernel_3_01_t_d_01_4_coll__map">
-<area shape="rect" title="Provides a base implementation for RAM‑based compute kernels that operate on DeviceSharedBuffer&lt;RamSh..." alt="" coords="858,80,1094,123"/>
-<area shape="rect" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html" title="Defines the interface for a compute kernel that operates on one or more DeviceSharedBuffer&lt;TDeviceSha..." alt="" coords="513,13,735,56"/>
-<area shape="poly" title=" " alt="" coords="750,54,835,69,874,79,868,79,833,75,750,59"/>
-<area shape="rect" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html" title=" " alt="" coords="522,80,726,123"/>
-<area shape="poly" title=" " alt="" coords="741,99,861,101,855,102,742,104"/>
-<area shape="rect" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html" title="Defines a typed map structure that stores key/value pairs as Pair&lt;T, TU&gt;. Provides insertion,..." alt="" coords="259,5,463,48"/>
-<area shape="poly" title=" " alt="" coords="454,50,549,79,543,80,453,55"/>
-<area shape="rect" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html" title=" " alt="" coords="5,5,210,48"/>
-<area shape="poly" title=" " alt="" coords="225,24,261,26,256,28,226,29"/>
-<area shape="rect" href="../../d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html" title="Defines a read‑only associative container mapping keys of type T &#160;to values of type TU ." alt="" coords="259,72,463,131"/>
-<area shape="poly" title=" " alt="" coords="479,99,524,101,518,102,479,104"/>
-<area shape="rect" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html" title=" " alt="" coords="530,151,718,193"/>
-<area shape="poly" title=" " alt="" coords="732,148,833,128,867,124,873,123,835,133,733,154"/>
-<area shape="rect" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html" title="Defines the low‑level backend interface used by DeviceSharedBuffer and related shared‑memory abstract..." alt="" coords="268,155,455,197"/>
-<area shape="poly" title=" " alt="" coords="470,172,532,173,527,174,470,177"/>
+<area shape="rect" title="Provides a base implementation for RAM‑based compute kernels that operate on DeviceSharedBuffer&lt;RamSh..." alt="" coords="858,200,1094,242"/>
+<area shape="rect" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html" title="Defines the interface for a compute kernel that operates on one or more DeviceSharedBuffer&lt;TDeviceSha..." alt="" coords="513,133,735,176"/>
+<area shape="poly" title=" " alt="" coords="750,173,835,189,874,199,868,199,833,194,750,179"/>
+<area shape="rect" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html" title=" " alt="" coords="522,200,726,242"/>
+<area shape="poly" title=" " alt="" coords="741,218,861,220,855,221,742,224"/>
+<area shape="rect" title=" " alt="" coords="60,20,155,46"/>
+<area shape="poly" title=" " alt="" coords="169,16,236,6,313,4,354,8,393,17,430,31,465,52,480,67,489,84,492,119,495,153,502,170,515,186,531,199,525,199,511,190,497,172,490,154,487,119,483,86,476,71,462,56,428,36,391,22,353,14,313,9,236,11,171,20"/>
+<area shape="rect" href="../../d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html" title="Defines a read‑only associative container mapping keys of type T &#160;to values of type TU ." alt="" coords="259,66,463,125"/>
+<area shape="poly" title=" " alt="" coords="169,45,261,69,256,72,170,51"/>
+<area shape="rect" title=" " alt="" coords="66,153,149,180"/>
+<area shape="poly" title=" " alt="" coords="164,164,301,170,464,185,532,198,526,199,463,190,300,175,165,170"/>
+<area shape="rect" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html" title="Defines a typed map structure that stores key/value pairs as Pair&lt;T, TU&gt;. Provides insertion,..." alt="" coords="259,200,463,242"/>
+<area shape="poly" title=" " alt="" coords="164,176,261,198,257,200,165,181"/>
+<area shape="rect" title=" " alt="" coords="314,266,408,293"/>
+<area shape="poly" title=" " alt="" coords="423,263,528,242,523,244,424,268"/>
+<area shape="poly" title=" " alt="" coords="478,218,524,220,518,222,479,224"/>
+<area shape="rect" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html" title=" " alt="" coords="5,208,210,250"/>
+<area shape="poly" title=" " alt="" coords="224,223,261,223,256,225,226,228"/>
+<area shape="poly" title=" " alt="" coords="475,131,491,142,499,153,503,165,506,176,514,186,533,199,528,199,511,190,502,178,498,167,495,156,487,145,475,136"/>
+<area shape="rect" title=" " alt="" coords="37,74,178,117"/>
+<area shape="poly" title=" " alt="" coords="193,93,261,94,256,97,195,98"/>
+<area shape="rect" title=" " alt="" coords="294,317,428,360"/>
+<area shape="poly" title=" " alt="" coords="441,311,462,302,527,271,583,244,588,242,530,276,464,307,443,316"/>
+<area shape="rect" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html" title=" " alt="" coords="530,325,718,368"/>
+<area shape="poly" title=" " alt="" coords="700,317,911,243,916,242,702,322"/>
+<area shape="rect" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html" title="Defines the low‑level backend interface used by DeviceSharedBuffer and related shared‑memory abstract..." alt="" coords="268,384,455,426"/>
+<area shape="poly" title=" " alt="" coords="470,378,527,368,532,367,471,383"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -211,7 +222,7 @@ Protected Member Functions</h2></td></tr>
 Properties</h2></td></tr>
 <tr class="memitem:ad8bcb7852de07c2a6490b634d1f8ece4" id="r_ad8bcb7852de07c2a6490b634d1f8ece4"><td class="memItemLeft"><a class="el" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html">RamSharedBackend</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad8bcb7852de07c2a6490b634d1f8ece4">Backend</a><code> [get]</code></td></tr>
 <tr class="memdesc:ad8bcb7852de07c2a6490b634d1f8ece4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the backend instance used for RAM‑based shared buffer operations.  <br /></td></tr>
-<tr class="memitem:a54eac8be3de33baf1d1345938561e659" id="r_a54eac8be3de33baf1d1345938561e659"><td class="memItemLeft"><a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>?&#160;</td><td class="memItemRight"><a class="el" href="#a54eac8be3de33baf1d1345938561e659">Module</a><code> [get, protected set]</code></td></tr>
+<tr class="memitem:a54eac8be3de33baf1d1345938561e659" id="r_a54eac8be3de33baf1d1345938561e659"><td class="memItemLeft">Module?&#160;</td><td class="memItemRight"><a class="el" href="#a54eac8be3de33baf1d1345938561e659">Module</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:a54eac8be3de33baf1d1345938561e659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native module loaded for this kernel. <br  />
  The module represents the underlying shared library (DLL, SO, DYLIB) from which the kernel function delegate is resolved. <br  />
  This property is assigned during Create and remains available for the entire lifetime of the kernel instance.  <br /></td></tr>
@@ -237,7 +248,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a44550184e7ba1dcccf4fc84c4af581d2" id="r_a44550184e7ba1dcccf4fc84c4af581d2"><td class="memItemLeft">readonly Map&lt; string, DeviceSharedBuffer&lt; <a class="el" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html">RamSharedBackend</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a44550184e7ba1dcccf4fc84c4af581d2">m_buffers</a></td></tr>
 <tr class="memitem:aae8e6d3b0aee4eb0d5ae7d73cdf91b40" id="r_aae8e6d3b0aee4eb0d5ae7d73cdf91b40"><td class="memItemLeft">Task?&#160;</td><td class="memItemRight"><a class="el" href="#aae8e6d3b0aee4eb0d5ae7d73cdf91b40">m_task</a></td></tr>
 <tr class="memitem:ac460097ca7d8f109b9615557fb384756" id="r_ac460097ca7d8f109b9615557fb384756"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac460097ca7d8f109b9615557fb384756">m_running</a></td></tr>
-<tr class="memitem:a6f34820ceb936353d76bd59cd50039cd" id="r_a6f34820ceb936353d76bd59cd50039cd"><td class="memItemLeft"><a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>?&#160;</td><td class="memItemRight"><a class="el" href="#a6f34820ceb936353d76bd59cd50039cd">m_module</a></td></tr>
+<tr class="memitem:a6f34820ceb936353d76bd59cd50039cd" id="r_a6f34820ceb936353d76bd59cd50039cd"><td class="memItemLeft"><a class="el" href="#a54eac8be3de33baf1d1345938561e659">Module</a>?&#160;</td><td class="memItemRight"><a class="el" href="#a6f34820ceb936353d76bd59cd50039cd">m_module</a></td></tr>
 <tr class="memitem:aea42eb43518039cc3d23817d909491f5" id="r_aea42eb43518039cc3d23817d909491f5"><td class="memItemLeft">TD?&#160;</td><td class="memItemRight"><a class="el" href="#aea42eb43518039cc3d23817d909491f5">m_function</a></td></tr>
 <tr class="memitem:a2039f9b1288d9fb86cba109efb6cdb3f" id="r_a2039f9b1288d9fb86cba109efb6cdb3f"><td class="memItemLeft"><a class="el" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html">RamSharedBackend</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2039f9b1288d9fb86cba109efb6cdb3f">m_backend</a></td></tr>
 </table>
@@ -292,18 +303,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a7bc4002350665b4fe10aeeaebfed8ee1">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00117">117</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  117</span>                                                                                            {</div>
-<div class="line"><span class="lineno">  118</span>            var x = buffer.ToShared&lt;RamSharedBackend&gt;(m_backend, flags, configs);</div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>            <span class="keywordtype">int</span> _ret = -1;</div>
-<div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>            <span class="keywordflow">if</span> ( OnAddBuffer(name, x) ) {</div>
-<div class="line"><span class="lineno">  123</span>                m_buffers.Add(name, x);</div>
-<div class="line"><span class="lineno">  124</span>                _ret = m_buffers.Count;</div>
-<div class="line"><span class="lineno">  125</span>            }</div>
-<div class="line"><span class="lineno">  126</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><span class="lineno">  127</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab766799c460f0c8252a3ae8827ac9598" name="ab766799c460f0c8252a3ae8827ac9598"></a>
@@ -332,15 +332,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a003fc294274846fba616b3d4e7b3a55d">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00164">164</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  164</span>                                                         {</div>
-<div class="line"><span class="lineno">  165</span>            <span class="keywordtype">bool</span> _ret = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  166</span> </div>
-<div class="line"><span class="lineno">  167</span>            <span class="keywordflow">if</span> ( OnBegin(strFunction) ) {</div>
-<div class="line"><span class="lineno">  168</span>                _ret = LockedAllBuffer();</div>
-<div class="line"><span class="lineno">  169</span>            }</div>
-<div class="line"><span class="lineno">  170</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><span class="lineno">  171</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad8e93b21bd945f5f4c47a36df12787ed" name="ad8e93b21bd945f5f4c47a36df12787ed"></a>
@@ -368,17 +360,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#adc2f30a0d3b0b9f94fdcb83bad7dd2f9">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00101">101</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>                                             {</div>
-<div class="line"><span class="lineno">  102</span>            <span class="keywordtype">bool</span> _ret = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  103</span>            m_dllPath = dllPath;</div>
-<div class="line"><span class="lineno">  104</span>            <a class="code hl_typedef" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a> = NativeHost.LoadModule(m_dllPath);</div>
-<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">if</span>(<a class="code hl_typedef" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a> != <span class="keyword">null</span>) {</div>
-<div class="line"><span class="lineno">  106</span>                _ret = ( OnCreate() ) ; </div>
-<div class="line"><span class="lineno">  107</span>            }</div>
-<div class="line"><span class="lineno">  108</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><span class="lineno">  109</span>        }</div>
-<div class="ttc" id="a_native_r_a_m_kernel_8cs_html_ac108a8ab3a325c58d6d2dfab43fecb66"><div class="ttname"><a href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a></div><div class="ttdeci">SystemEx.Runtime.Module Module</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00022">NativeRAMKernel.cs:22</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a032c141a88a3147133906351ef6d4604" name="a032c141a88a3147133906351ef6d4604"></a>
@@ -407,12 +389,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a23aa92269514ccc3f2cab9edc47b3460">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00177">177</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  177</span>                                      {</div>
-<div class="line"><span class="lineno">  178</span>            OnEnd();</div>
-<div class="line"><span class="lineno">  179</span>            </div>
-<div class="line"><span class="lineno">  180</span>            UnLoockedAllBuffer();</div>
-<div class="line"><span class="lineno">  181</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a286d5a9df4b3c11e9970fde1bd2f86ef" name="a286d5a9df4b3c11e9970fde1bd2f86ef"></a>
@@ -433,10 +410,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a5680e822b8842aa8d863e557ba40f9ec">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00131">131</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  131</span>                                                                               {</div>
-<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">return</span> m_buffers.Get(name);</div>
-<div class="line"><span class="lineno">  133</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ade2a98971bc67a80d6a5a0ceead25644" name="ade2a98971bc67a80d6a5a0ceead25644"></a>
@@ -457,10 +431,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ac0021bf73172da0bc789fece42f3b246">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00185">185</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  185</span>                                {</div>
-<div class="line"><span class="lineno">  186</span>            <span class="keywordflow">return</span> m_running;</div>
-<div class="line"><span class="lineno">  187</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a829e7ce5f03b89047f5c41115dcb2001" name="a829e7ce5f03b89047f5c41115dcb2001"></a>
@@ -487,27 +458,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00261">261</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  261</span>                                       {</div>
-<div class="line"><span class="lineno">  262</span>            <span class="keywordtype">bool</span> _ret = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  263</span>            <span class="keywordtype">int</span> _i = 0;</div>
-<div class="line"><span class="lineno">  264</span> </div>
-<div class="line"><span class="lineno">  265</span>            <span class="keywordflow">try</span> {</div>
-<div class="line"><span class="lineno">  266</span>                <span class="keywordflow">for</span>(; _i &lt; m_buffers.Count ; _i ++) {</div>
-<div class="line"><span class="lineno">  267</span>    </div>
-<div class="line"><span class="lineno">  268</span>                    <span class="keywordflow">if</span> ( m_buffers[_i].Second.Begin() == <span class="keyword">false</span> ) {</div>
-<div class="line"><span class="lineno">  269</span>                        _ret = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  270</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  271</span>                    }</div>
-<div class="line"><span class="lineno">  272</span>                }</div>
-<div class="line"><span class="lineno">  273</span>            } <span class="keywordflow">catch</span>(Exception ) {</div>
-<div class="line"><span class="lineno">  274</span>                _ret = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  275</span>            }</div>
-<div class="line"><span class="lineno">  276</span>            <span class="keywordflow">if</span>(_ret == <span class="keyword">false</span>) {</div>
-<div class="line"><span class="lineno">  277</span>                UnLoockedAllBuffer(_i);</div>
-<div class="line"><span class="lineno">  278</span>            }</div>
-<div class="line"><span class="lineno">  279</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><span class="lineno">  280</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="acc520ef898e02719edb70e9899d2363f" name="acc520ef898e02719edb70e9899d2363f"></a>
@@ -526,14 +477,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00084">84</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>                                    {</div>
-<div class="line"><span class="lineno">   85</span>            </div>
-<div class="line"><span class="lineno">   86</span>            m_buffers = <span class="keyword">new</span> Map&lt;string, DeviceSharedBuffer&lt;RamSharedBackend&gt;&gt;();</div>
-<div class="line"><span class="lineno">   87</span>            m_backend = <span class="keyword">new</span> RamSharedBackend();</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6d0a99790afae1f1360615d3b382ce09" name="a6d0a99790afae1f1360615d3b382ce09"></a>
@@ -564,10 +508,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00245">245</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  245</span>                                                                                                       {</div>
-<div class="line"><span class="lineno">  246</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  247</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a62b7b0576a23a010474785b102c8064c" name="a62b7b0576a23a010474785b102c8064c"></a>
@@ -594,12 +535,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00228">228</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  228</span>                                                            {</div>
-<div class="line"><span class="lineno">  229</span>            m_function = NativeHost.GetFunction&lt;TD&gt;(<a class="code hl_typedef" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>, strFunction);</div>
-<div class="line"><span class="lineno">  230</span> </div>
-<div class="line"><span class="lineno">  231</span>            <span class="keywordflow">return</span> (Function != <span class="keyword">null</span>);</div>
-<div class="line"><span class="lineno">  232</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac66cfcf35971a3387269e4e4bdc2cf8e" name="ac66cfcf35971a3387269e4e4bdc2cf8e"></a>
@@ -628,10 +564,7 @@ Private Attributes</h2></td></tr>
 <p>Reimplemented in <a class="el" href="../../de/d89/class_examples_1_1_example_ram_kernel_add.html#a6256c48c3bb8a96497fed9b5d5528f1f">Examples.ExampleRamKernelAdd</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00220">220</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  220</span>                                          {</div>
-<div class="line"><span class="lineno">  221</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  222</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6e508104aceae1d9b63976a0267a09b4" name="a6e508104aceae1d9b63976a0267a09b4"></a>
@@ -658,10 +591,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00237">237</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  237</span>                                       {</div>
-<div class="line"><span class="lineno">  238</span>            </div>
-<div class="line"><span class="lineno">  239</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aa8d1e2546210d0d78b63b1a9c6f6b344" name="aa8d1e2546210d0d78b63b1a9c6f6b344"></a>
@@ -688,10 +618,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00253">253</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  253</span>                                                    {</div>
-<div class="line"><span class="lineno">  254</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  255</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a5b641993d8c1d508760d7c640a066dc9" name="a5b641993d8c1d508760d7c640a066dc9"></a>
@@ -719,12 +646,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ad6d9c0b9112797e6bd094e8e56abec3c">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00152">152</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>                                              {</div>
-<div class="line"><span class="lineno">  153</span>            var pair = m_buffers.ElementAt(index);</div>
-<div class="line"><span class="lineno">  154</span> </div>
-<div class="line"><span class="lineno">  155</span>            <span class="keywordflow">return</span> RemoveBuffer(pair.First);</div>
-<div class="line"><span class="lineno">  156</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a70c4311a4517b2ed20c4f3d278785ea9" name="a70c4311a4517b2ed20c4f3d278785ea9"></a>
@@ -752,10 +674,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a7611094d330cd73aa03c3e406dd54739">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00142">142</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  142</span>                                                {</div>
-<div class="line"><span class="lineno">  143</span>            <span class="keywordflow">return</span> m_buffers.Remove(name);</div>
-<div class="line"><span class="lineno">  144</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad8935fd64a0955755725a40a4474a1e2" name="ad8935fd64a0955755725a40a4474a1e2"></a>
@@ -776,26 +695,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a950dfa83692a5e63f062a846e859d6ae">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00195">195</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  195</span>                                                   {</div>
-<div class="line"><span class="lineno">  196</span>            <span class="keywordflow">if</span> ( m_running )</div>
-<div class="line"><span class="lineno">  197</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// läuft schon</span></div>
-<div class="line"><span class="lineno">  198</span> </div>
-<div class="line"><span class="lineno">  199</span>            m_running = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  200</span> </div>
-<div class="line"><span class="lineno">  201</span>            m_task = Task.Run(() =&gt; {</div>
-<div class="line"><span class="lineno">  202</span>                <span class="keywordflow">try</span> {</div>
-<div class="line"><span class="lineno">  203</span>                    <span class="keywordflow">if</span>(m_function != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  204</span>                        OnRun(m_function);</div>
-<div class="line"><span class="lineno">  205</span>                    </div>
-<div class="line"><span class="lineno">  206</span> </div>
-<div class="line"><span class="lineno">  207</span>                } <span class="keywordflow">finally</span> {</div>
-<div class="line"><span class="lineno">  208</span>                    m_running = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  209</span>                }</div>
-<div class="line"><span class="lineno">  210</span>            });</div>
-<div class="line"><span class="lineno">  211</span> </div>
-<div class="line"><span class="lineno">  212</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  213</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a1032d6ee0980ef533f568770cb97c326" name="a1032d6ee0980ef533f568770cb97c326"></a>
@@ -822,16 +722,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00285">285</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  285</span>                                                 {</div>
-<div class="line"><span class="lineno">  286</span>            <span class="keywordtype">int</span> count = (k != 0) ? k : m_buffers.Count;</div>
-<div class="line"><span class="lineno">  287</span> </div>
-<div class="line"><span class="lineno">  288</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = count ; i &gt;= 0 ; i-- ) {</div>
-<div class="line"><span class="lineno">  289</span>                <span class="keywordflow">if</span>( m_buffers[i].Second.IsLocked)</div>
-<div class="line"><span class="lineno">  290</span>                    m_buffers[i].Second.End();</div>
-<div class="line"><span class="lineno">  291</span>            }</div>
-<div class="line"><span class="lineno">  292</span>            </div>
-<div class="line"><span class="lineno">  293</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -941,7 +832,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>? SystemEx.Device.NativeRAMKernel&lt; TD &gt;.m_module</td>
+          <td class="memname"><a class="el" href="#a54eac8be3de33baf1d1345938561e659">Module</a>? SystemEx.Device.NativeRAMKernel&lt; TD &gt;.m_module</td>
         </tr>
       </table>
   </td>
@@ -1051,8 +942,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00071">71</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>{ <span class="keyword">get</span> =&gt; m_function; <span class="keyword">protected</span> <span class="keyword">set</span> =&gt; m_function = value; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a54eac8be3de33baf1d1345938561e659" name="a54eac8be3de33baf1d1345938561e659"></a>
@@ -1065,7 +955,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>? SystemEx.Device.NativeRAMKernel&lt; TD &gt;.<a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a></td>
+          <td class="memname">Module? SystemEx.Device.NativeRAMKernel&lt; TD &gt;.Module</td>
         </tr>
       </table>
   </td>
@@ -1076,8 +966,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00062">62</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span>{ <span class="keyword">get</span> =&gt; m_module; <span class="keyword">protected</span> <span class="keyword">set</span> =&gt; m_module = value; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a93a66a7819998947381c6ef5fc2d4915" name="a93a66a7819998947381c6ef5fc2d4915"></a>
@@ -1101,8 +990,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00077">77</a> of file <a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html">NativeRAMKernel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>{ <span class="keyword">get</span> =&gt; m_running;  }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

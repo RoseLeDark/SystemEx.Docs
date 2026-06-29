@@ -15,7 +15,6 @@ var searchData=
   ['darkslategray_12',['DarkSlateGray',['../d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors.html#a1c3f586528ff2e081df7cfaba86b2ab8',1,'SystemEx::Drawing::GreyColors']]],
   ['darkturquoise_13',['DarkTurquoise',['../d8/d88/class_system_ex_1_1_drawing_1_1_cyan_colors.html#a4f2a9b2ca967f57d330deb1cd8fceaa5',1,'SystemEx::Drawing::CyanColors']]],
   ['darkviolet_14',['DarkViolet',['../d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#af4a6de1575dd79e1f5f5b236353ca3a3',1,'SystemEx::Drawing::PurpelColors']]],
-  ['data_15',['Data',['../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html#a301a6542499c4ac865e5157b412d9551',1,'SystemEx::Device::Intertropt::UnmanagedObject']]],
-  ['deeppink_16',['DeepPink',['../db/df0/class_system_ex_1_1_drawing_1_1_pink_colors.html#a0f82945a9fc1eda8e00dca5f46e9e6eb',1,'SystemEx::Drawing::PinkColors']]],
-  ['dimgray_17',['DimGray',['../d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors.html#a2fa9a8710736d10460ef7a623a9d8954',1,'SystemEx::Drawing::GreyColors']]]
+  ['deeppink_15',['DeepPink',['../db/df0/class_system_ex_1_1_drawing_1_1_pink_colors.html#a0f82945a9fc1eda8e00dca5f46e9e6eb',1,'SystemEx::Drawing::PinkColors']]],
+  ['dimgray_16',['DimGray',['../d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors.html#a2fa9a8710736d10460ef7a623a9d8954',1,'SystemEx::Drawing::GreyColors']]]
 ];

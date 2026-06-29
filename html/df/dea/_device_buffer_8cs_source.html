@@ -8,8 +8,6 @@
 <title>SystemEX: DeviceBuffer.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('df/dea/_device_buffer_8cs_source.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">DeviceBuffer.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../df/dea/_device_buffer_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * SPDX-License-Identifier: EUPL-1.2</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Copyright (c) 2026 Amber-Sophia Schröck &lt;ambersophia.schroeck@mail.de&gt;</span></div>
@@ -162,35 +163,35 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html">SystemEx.Device.Memory</a> {</div>
 <div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html">   49</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#af8268870fb6e0c4bb5dfb8ceaebeed02">DeviceBuffer</a> : <a class="code hl_function" href="../../dd/dbc/group__collections.html#gab82675a111868495f95dec9f71cf2a75">Cache</a> {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#adeb7a97494d5b076c4a68615438d2b0c">   54</a></span>        <span class="keyword">private</span> <a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7565e03c11460224fe47120f150c743a">Lock</a> <a class="code hl_variable" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#adeb7a97494d5b076c4a68615438d2b0c">m_lockObj</a> = <span class="keyword">new</span> <a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7565e03c11460224fe47120f150c743a">Lock</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html">   49</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#af8268870fb6e0c4bb5dfb8ceaebeed02" title="Creates a new device buffer with the specified capacity and cache type.">DeviceBuffer</a> : <a class="code hl_function" href="../../dd/dbc/group__collections.html#gab82675a111868495f95dec9f71cf2a75" title="Initializes a new cache with the specified capacity and type.">Cache</a> {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#adeb7a97494d5b076c4a68615438d2b0c">   54</a></span>        <span class="keyword">private</span> <a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7565e03c11460224fe47120f150c743a" title="Locks the buffer for shared access.   Prevents modifications while a hardware backend is reading or w...">Lock</a> <a class="code hl_variable" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#adeb7a97494d5b076c4a68615438d2b0c" title="Internal lock object used to mark the buffer as shared and prevent concurrent modifications while a h...">m_lockObj</a> = <span class="keyword">new</span> <a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7565e03c11460224fe47120f150c743a" title="Locks the buffer for shared access.   Prevents modifications while a hardware backend is reading or w...">Lock</a>();</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#ae999c0185de7bae4e6c34dd3198c2050">   59</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#ae999c0185de7bae4e6c34dd3198c2050">IsShared</a> =&gt; <a class="code hl_property" href="../../dd/dbc/group__collections.html#ga9d8f97c19e763ed795d4ad2d97ab8ebd">IsLocked</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#ae999c0185de7bae4e6c34dd3198c2050">   59</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#ae999c0185de7bae4e6c34dd3198c2050" title="Indicates whether the buffer is currently locked for shared access.">IsShared</a> =&gt; <a class="code hl_property" href="../../dd/dbc/group__collections.html#ga9d8f97c19e763ed795d4ad2d97ab8ebd" title="Gets or sets the internal lock state.">IsLocked</a>;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
 <div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#af8268870fb6e0c4bb5dfb8ceaebeed02">   64</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#af8268870fb6e0c4bb5dfb8ceaebeed02">DeviceBuffer</a>(<span class="keywordtype">int</span> capacity, <a class="code hl_enumeration" href="../../dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a> type)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#af8268870fb6e0c4bb5dfb8ceaebeed02">   64</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#af8268870fb6e0c4bb5dfb8ceaebeed02" title="Creates a new device buffer with the specified capacity and cache type.">DeviceBuffer</a>(<span class="keywordtype">int</span> capacity, <a class="code hl_enumeration" href="../../dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a> type)</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            : base(capacity, type) { }</div>
 </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
 <div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#ab0b55e4acb01ce97c2a7f42354ce81db">   81</a></span>        <span class="keyword">public</span> DeviceSharedBuffer&lt;TDeviceSharedBackend&gt; <a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#ab0b55e4acb01ce97c2a7f42354ce81db">ToShared&lt;TDeviceSharedBackend&gt;</a>( TDeviceSharedBackend shared, <span class="keywordtype">int</span> flags, <span class="keywordtype">object</span>? config) </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            where TDeviceSharedBackend : <a class="code hl_interface" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html">IDeviceSharedBackend</a> {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#ab0b55e4acb01ce97c2a7f42354ce81db">   81</a></span>        <span class="keyword">public</span> DeviceSharedBuffer&lt;TDeviceSharedBackend&gt; <a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#ab0b55e4acb01ce97c2a7f42354ce81db" title="Creates a DeviceSharedBuffer&lt;TDeviceSharedBackend&gt; wrapper for this buffer using the specified backen...">ToShared&lt;TDeviceSharedBackend&gt;</a>( TDeviceSharedBackend shared, <span class="keywordtype">int</span> flags, <span class="keywordtype">object</span>? config) </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            where TDeviceSharedBackend : <a class="code hl_interface" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html" title="Defines the low‑level backend interface used by DeviceSharedBuffer and related shared‑memory abstract...">IDeviceSharedBackend</a> {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> DeviceSharedBuffer&lt;TDeviceSharedBackend&gt;(<span class="keyword">this</span>, shared, flags, config);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
 </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
 <div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7565e03c11460224fe47120f150c743a">   91</a></span>        <span class="keyword">internal</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7565e03c11460224fe47120f150c743a">Lock</a>() {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <a class="code hl_variable" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#adeb7a97494d5b076c4a68615438d2b0c">m_lockObj</a>.EnterScope();</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <a class="code hl_property" href="../../dd/dbc/group__collections.html#ga9d8f97c19e763ed795d4ad2d97ab8ebd">IsLocked</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7565e03c11460224fe47120f150c743a">   91</a></span>        <span class="keyword">internal</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7565e03c11460224fe47120f150c743a" title="Locks the buffer for shared access.   Prevents modifications while a hardware backend is reading or w...">Lock</a>() {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <a class="code hl_variable" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#adeb7a97494d5b076c4a68615438d2b0c" title="Internal lock object used to mark the buffer as shared and prevent concurrent modifications while a h...">m_lockObj</a>.EnterScope();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <a class="code hl_property" href="../../dd/dbc/group__collections.html#ga9d8f97c19e763ed795d4ad2d97ab8ebd" title="Gets or sets the internal lock state.">IsLocked</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
 </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
 <div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7a511a05957bd35999350016b3b0e1fb">   99</a></span>        <span class="keyword">internal</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7a511a05957bd35999350016b3b0e1fb">Unlock</a>() {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <a class="code hl_variable" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#adeb7a97494d5b076c4a68615438d2b0c">m_lockObj</a>.Exit();</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <a class="code hl_property" href="../../dd/dbc/group__collections.html#ga9d8f97c19e763ed795d4ad2d97ab8ebd">IsLocked</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7a511a05957bd35999350016b3b0e1fb">   99</a></span>        <span class="keyword">internal</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7a511a05957bd35999350016b3b0e1fb" title="Unlocks the buffer after shared access has completed.">Unlock</a>() {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <a class="code hl_variable" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#adeb7a97494d5b076c4a68615438d2b0c" title="Internal lock object used to mark the buffer as shared and prevent concurrent modifications while a h...">m_lockObj</a>.Exit();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <a class="code hl_property" href="../../dd/dbc/group__collections.html#ga9d8f97c19e763ed795d4ad2d97ab8ebd" title="Gets or sets the internal lock state.">IsLocked</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
 </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
@@ -203,26 +204,13 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="ttc" id="aclass_system_ex_1_1_device_1_1_memory_1_1_device_buffer_html_a7565e03c11460224fe47120f150c743a"><div class="ttname"><a href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7565e03c11460224fe47120f150c743a">SystemEx.Device.Memory.DeviceBuffer.Lock</a></div><div class="ttdeci">void Lock()</div><div class="ttdoc">Locks the buffer for shared access.   Prevents modifications while a hardware backend is reading or w...</div><div class="ttdef"><b>Definition</b> <a href="#l00091">DeviceBuffer.cs:91</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_device_1_1_memory_1_1_device_buffer_html_a7a511a05957bd35999350016b3b0e1fb"><div class="ttname"><a href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#a7a511a05957bd35999350016b3b0e1fb">SystemEx.Device.Memory.DeviceBuffer.Unlock</a></div><div class="ttdeci">void Unlock()</div><div class="ttdoc">Unlocks the buffer after shared access has completed.</div><div class="ttdef"><b>Definition</b> <a href="#l00099">DeviceBuffer.cs:99</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_device_1_1_memory_1_1_device_buffer_html_ab0b55e4acb01ce97c2a7f42354ce81db"><div class="ttname"><a href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#ab0b55e4acb01ce97c2a7f42354ce81db">SystemEx.Device.Memory.DeviceBuffer.ToShared&lt; TDeviceSharedBackend &gt;</a></div><div class="ttdeci">DeviceSharedBuffer&lt; TDeviceSharedBackend &gt; ToShared&lt; TDeviceSharedBackend &gt;(TDeviceSharedBackend shared, int flags, object? config)</div><div class="ttdoc">Creates a DeviceSharedBuffer&lt;TDeviceSharedBackend&gt; wrapper for this buffer using the specified backen...</div><div class="ttdef"><b>Definition</b> <a href="#l00081">DeviceBuffer.cs:81</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_device_1_1_memory_1_1_device_buffer_html_adeb7a97494d5b076c4a68615438d2b0c"><div class="ttname"><a href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#adeb7a97494d5b076c4a68615438d2b0c">SystemEx.Device.Memory.DeviceBuffer.m_lockObj</a></div><div class="ttdeci">Lock m_lockObj</div><div class="ttdoc">Internal lock object used to mark the buffer as shared and prevent concurrent modifications while a h...</div><div class="ttdef"><b>Definition</b> <a href="#l00054">DeviceBuffer.cs:54</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_device_1_1_memory_1_1_device_buffer_html_ae999c0185de7bae4e6c34dd3198c2050"><div class="ttname"><a href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#ae999c0185de7bae4e6c34dd3198c2050">SystemEx.Device.Memory.DeviceBuffer.IsShared</a></div><div class="ttdeci">bool IsShared</div><div class="ttdoc">Indicates whether the buffer is currently locked for shared access.</div><div class="ttdef"><b>Definition</b> <a href="#l00059">DeviceBuffer.cs:59</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_device_1_1_memory_1_1_device_buffer_html_af8268870fb6e0c4bb5dfb8ceaebeed02"><div class="ttname"><a href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html#af8268870fb6e0c4bb5dfb8ceaebeed02">SystemEx.Device.Memory.DeviceBuffer.DeviceBuffer</a></div><div class="ttdeci">DeviceBuffer(int capacity, CacheType type)</div><div class="ttdoc">Creates a new device buffer with the specified capacity and cache type.</div><div class="ttdef"><b>Definition</b> <a href="#l00064">DeviceBuffer.cs:64</a></div></div>
-<div class="ttc" id="agroup__collections_html_ga9d8f97c19e763ed795d4ad2d97ab8ebd"><div class="ttname"><a href="../../dd/dbc/group__collections.html#ga9d8f97c19e763ed795d4ad2d97ab8ebd">SystemEx.Collections.Generic.Cache.IsLocked</a></div><div class="ttdeci">bool IsLocked</div><div class="ttdoc">Gets or sets the internal lock state.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d82/_cache_8cs_source.html#l00079">Cache.cs:79</a></div></div>
-<div class="ttc" id="agroup__collections_html_gab82675a111868495f95dec9f71cf2a75"><div class="ttname"><a href="../../dd/dbc/group__collections.html#gab82675a111868495f95dec9f71cf2a75">SystemEx.Collections.Generic.Cache.Cache</a></div><div class="ttdeci">Cache(int capacity, CacheType type=CacheType.OnlySystem)</div><div class="ttdoc">Initializes a new cache with the specified capacity and type.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d82/_cache_8cs_source.html#l00133">Cache.cs:133</a></div></div>
-<div class="ttc" id="agroup__collections_html_gaf02ddb6084404bb267c0629f20ed8b53"><div class="ttname"><a href="../../dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53">SystemEx.Collections.Generic.CacheType</a></div><div class="ttdeci">CacheType</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d82/_cache_8cs_source.html#l00028">Cache.cs:28</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend_html"><div class="ttname"><a href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html">SystemEx.Device.Intertropt.IDeviceSharedBackend</a></div><div class="ttdoc">Defines the low‑level backend interface used by DeviceSharedBuffer and related shared‑memory abstract...</div><div class="ttdef"><b>Definition</b> <a href="../../dc/df2/_i_device_shared_backend_8cs_source.html#l00027">IDeviceSharedBackend.cs:27</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00023">Array.cs:23</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_device_1_1_intertropt_html"><div class="ttname"><a href="../../d7/d29/namespace_system_ex_1_1_device_1_1_intertropt.html">SystemEx.Device.Intertropt</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/df2/_i_device_shared_backend_8cs_source.html#l00018">IDeviceSharedBackend.cs:18</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_device_1_1_memory_html"><div class="ttname"><a href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html">SystemEx.Device.Memory</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d91/_ikernel_8cs_source.html#l00020">Ikernel.cs:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../dir_4c76ddfc10a27668d6c42d3412320ee0.html">Device</a></li><li class="navelem"><a href="../../dir_2833a799fd0af8c30fc1445dfea2025e.html">Memory</a></li><li class="navelem"><a href="../../df/dea/_device_buffer_8cs.html">DeviceBuffer.cs</a></li>
+    <li class="navelem"><b>Device</b></li><li class="navelem"><b>Memory</b></li><li class="navelem"><b>DeviceBuffer.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

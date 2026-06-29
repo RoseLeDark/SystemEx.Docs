@@ -8,8 +8,6 @@
 <title>SystemEX: Class Members - Functions</title>
 <link rel="icon" href="Logo_256.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_func_f.html','',''); });
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -116,21 +117,20 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all functions with links to the classes they belong to:</div><br/>
+<div class="textblock">Here is a list of all documented functions with links to the class documentation for each member:</div><br/>
 <div class="qindex"><a class="qindex" href="functions_func.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_func_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_func_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_func_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_func_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_func_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_func_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_func_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_func_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_func_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_func_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_func_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_func_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_func_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_func_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_func_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_func_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_func_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_func_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_func_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions_func_z.html#index_z">Z</a></div>
 
 
 <h3 class="doxsection"><a id="index_f" name="index_f"></a>- f -</h3><ul>
-<li>Fill()&#160;:&#160;<a class="el" href="d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html#a61ec6fbb31b536ea4959c40da476f1b9">SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;</a>, <a class="el" href="dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#a16437e5caa074fa75f78ddf425b13f28">SystemEx.Collections.Generic.TypeBuffer&lt; T &gt;</a>, <a class="el" href="d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#aa4c0ffc2295eb778669a8a9f5e1b643e">SystemEx.Drawing.ICanvas&lt; T &gt;</a></li>
+<li>Fill()&#160;:&#160;<a class="el" href="d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html#a61ec6fbb31b536ea4959c40da476f1b9">SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;</a>, <a class="el" href="dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#a16437e5caa074fa75f78ddf425b13f28">SystemEx.Collections.Generic.TypeBuffer&lt; T &gt;</a></li>
 <li>Fill&lt; T &gt;()&#160;:&#160;<a class="el" href="db/d0a/class_system_ex_1_1_utils_1_1_algorithm.html#aba14d1d2791eb8fb0b985c9699df4d42">SystemEx.Utils.Algorithm</a></li>
 <li>FillN&lt; T &gt;()&#160;:&#160;<a class="el" href="db/d0a/class_system_ex_1_1_utils_1_1_algorithm.html#a6f29cf395b9db16d2c9e2b9b6c5b59a4">SystemEx.Utils.Algorithm</a></li>
-<li>FillRect()&#160;:&#160;<a class="el" href="d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a3ca6167e3a1144e8ccbdc6e68ca6ba84">SystemEx.Drawing.ICanvas&lt; T &gt;</a></li>
-<li>Find()&#160;:&#160;<a class="el" href="d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a80d2f81c0439dd212f367b613ebd504a">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#acd764322e50a58595d3069f2ee7115df">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>, <a class="el" href="d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html#a978bb2a9543ee4b5cdcb894fdf72b954">SystemEx.Collections.Generic.Interfaces.ITupleMap</a>, <a class="el" href="db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#ad37f9e314239ac3ca7e1beeef989b16e">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, <a class="el" href="d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#af7ddaa28d86c041f4830566b102cdf20">SystemEx.Collections.Generic.TupleMap</a>, <a class="el" href="d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a1d5df6442eebe297315ed829ca9d8974">SystemEx.Drawing.ICanvas&lt; T &gt;</a></li>
+<li>Find()&#160;:&#160;<a class="el" href="d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a80d2f81c0439dd212f367b613ebd504a">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#acd764322e50a58595d3069f2ee7115df">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>, <a class="el" href="d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html#a978bb2a9543ee4b5cdcb894fdf72b954">SystemEx.Collections.Generic.Interfaces.ITupleMap</a>, <a class="el" href="db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#ad37f9e314239ac3ca7e1beeef989b16e">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, <a class="el" href="d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#af7ddaa28d86c041f4830566b102cdf20">SystemEx.Collections.Generic.TupleMap</a></li>
 <li>find()&#160;:&#160;<a class="el" href="d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#a14304f8ca140ef6b0189169c56760040">SystemEx.Collections.Generic.Cluster&lt; T &gt;</a>, <a class="el" href="de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#a635e93bcb9c06aa40bb80dd9a589aaa8">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a></li>
 <li>Find&lt; T &gt;()&#160;:&#160;<a class="el" href="db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html#a3e987215c2171c16307ada8afb43c013">SystemEx.Collections.Generic.Interfaces.Iterator</a></li>
 <li>Findex()&#160;:&#160;<a class="el" href="d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#aab08034f19e97118c34c9747fdbf9ddb">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a784037cabb24982025e324203e2584cc">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, <a class="el" href="d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#a4e5af640f8d92534edef868bb373dc0a">SystemEx.Collections.Generic.TupleMap</a></li>
 <li>FindFirst()&#160;:&#160;<a class="el" href="d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa98ef7439853e26a9a1846fa84b727a0">SystemEx.Collections.Generic.Array&lt; T &gt;</a>, <a class="el" href="d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#ae6ecf82e4b79eb8a153aaffe79da9348">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#a517c367c7ba0acefc2cc43a7b91eb9fe">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>, <a class="el" href="df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#aa34c88e68796c5509ea0d3c6167e3b8a">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>, <a class="el" href="d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html#a552682a4afa82d9042b7a7c6f58987b3">SystemEx.Collections.Generic.Interfaces.ITupleMap</a>, <a class="el" href="db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a4deda0e289f215b0a38c14d23fa6ab96">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, <a class="el" href="d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#a6746e294ccda0d2beb8bea8a24a1713f">SystemEx.Collections.Generic.TupleMap</a></li>
-<li>FindLast()&#160;:&#160;<a class="el" href="d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae6e74a0ba839454f349dc3479dcf92d3">SystemEx.Collections.Generic.Array&lt; T &gt;</a>, <a class="el" href="d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#aba0812ff31f0c14f0e3b6d75be72f8a6">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#afb7050f9fb677851c46cb06e34510bf2">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>, <a class="el" href="df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#ad83e042fc33545f5939f1524e0b5400a">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>, <a class="el" href="d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html#aefda70c34c148d5528462ca90f95dd4b">SystemEx.Collections.Generic.Interfaces.ITupleMap</a>, <a class="el" href="db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a1708dfb50b2a756ed5297ddd1b5cb1b6">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, <a class="el" href="d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#ae0c19b42baf7d48fc168f08603f016f3">SystemEx.Collections.Generic.TupleMap</a>, <a class="el" href="d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a7f42a1742cc7bf424903a51627c15cfa">SystemEx.Drawing.ICanvas&lt; T &gt;</a></li>
+<li>FindLast()&#160;:&#160;<a class="el" href="d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae6e74a0ba839454f349dc3479dcf92d3">SystemEx.Collections.Generic.Array&lt; T &gt;</a>, <a class="el" href="d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#aba0812ff31f0c14f0e3b6d75be72f8a6">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#afb7050f9fb677851c46cb06e34510bf2">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>, <a class="el" href="df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#ad83e042fc33545f5939f1524e0b5400a">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>, <a class="el" href="d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html#aefda70c34c148d5528462ca90f95dd4b">SystemEx.Collections.Generic.Interfaces.ITupleMap</a>, <a class="el" href="db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a1708dfb50b2a756ed5297ddd1b5cb1b6">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, <a class="el" href="d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#ae0c19b42baf7d48fc168f08603f016f3">SystemEx.Collections.Generic.TupleMap</a></li>
 <li>First&lt; T &gt;()&#160;:&#160;<a class="el" href="db/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator_extensions.html#a908f740afc09f3837884bda05d34142b">SystemEx.Collections.Generic.Interfaces.ListIteratorExtensions</a></li>
 <li>FixedArray()&#160;:&#160;<a class="el" href="dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html#a23d0fb8a81e8ef70fe1e31d72a21a4db">SystemEx.Collections.Generic.FixedArray&lt; T &gt;</a></li>
 <li>FixedMap()&#160;:&#160;<a class="el" href="d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a7dc739a09345f376532e076c66d955a5">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a></li>

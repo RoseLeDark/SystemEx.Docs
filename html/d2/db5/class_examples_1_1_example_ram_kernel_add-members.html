@@ -8,8 +8,6 @@
 <title>SystemEX: Member List</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('de/d89/class_examples_1_1_example_ram_kernel_add.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -132,13 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
   <tr class="odd"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a286d5a9df4b3c11e9970fde1bd2f86ef">GetBuffer</a>(string name)</td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ade2a98971bc67a80d6a5a0ceead25644">IsRunning</a>()</td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a829e7ce5f03b89047f5c41115dcb2001">LockedAllBuffer</a>()</td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a2039f9b1288d9fb86cba109efb6cdb3f">m_backend</a></td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a44550184e7ba1dcccf4fc84c4af581d2">m_buffers</a></td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a7bed585c6aa0dafd680ff12118a78ca7">m_dllPath</a></td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#aea42eb43518039cc3d23817d909491f5">m_function</a></td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a6f34820ceb936353d76bd59cd50039cd">m_module</a></td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ac460097ca7d8f109b9615557fb384756">m_running</a></td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#aae8e6d3b0aee4eb0d5ae7d73cdf91b40">m_task</a></td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>m_backend</b> (defined in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>)</td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>m_buffers</b> (defined in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>)</td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>m_dllPath</b> (defined in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>)</td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>m_function</b> (defined in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>)</td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>m_module</b> (defined in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>)</td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>m_running</b> (defined in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>)</td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>m_task</b> (defined in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>)</td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a54eac8be3de33baf1d1345938561e659">Module</a></td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#acc520ef898e02719edb70e9899d2363f">NativeRAMKernel</a>()</td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a6d0a99790afae1f1360615d3b382ce09">OnAddBuffer</a>(string name, DeviceSharedBuffer&lt; RamSharedBackend &gt; buffer)</td><td class="entry"><a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>

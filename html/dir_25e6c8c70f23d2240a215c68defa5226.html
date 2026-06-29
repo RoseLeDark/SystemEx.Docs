@@ -8,8 +8,6 @@
 <title>SystemEX: Generic Directory Reference</title>
 <link rel="icon" href="Logo_256.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('dir_25e6c8c70f23d2240a215c68defa5226.html','',''); });
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,10 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">Generic Directory Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Directory dependency graph for Generic:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Directory dependency graph for Generic:</div>
+<div class="dyncontent">
 <div class="center"><img src="dir_25e6c8c70f23d2240a215c68defa5226_dep.png" border="0" usemap="#adir__25e6c8c70f23d2240a215c68defa5226__dep" loading="lazy" alt="Generic"/></div>
 <map name="adir__25e6c8c70f23d2240a215c68defa5226__dep" id="adir__25e6c8c70f23d2240a215c68defa5226__dep">
 <area shape="rect" href="dir_0247c331de6a32c0c72a11f5938a9cfd.html" title="Interfaces" alt="" coords="128,64,208,91"/>
@@ -137,41 +137,41 @@ Directories</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-files" class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
-<tr class="memitem:Array_2Ecs" id="r_Array_2Ecs"><td class="memItemLeft"><a href="d6/d47/_array_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d6/d47/_array_8cs.html">Array.cs</a></td></tr>
-<tr class="memitem:BinQueue_2Ecs" id="r_BinQueue_2Ecs"><td class="memItemLeft"><a href="d4/df3/_bin_queue_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d4/df3/_bin_queue_8cs.html">BinQueue.cs</a></td></tr>
-<tr class="memitem:Cache_2Ecs" id="r_Cache_2Ecs"><td class="memItemLeft"><a href="d7/d82/_cache_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d7/d82/_cache_8cs.html">Cache.cs</a></td></tr>
-<tr class="memitem:Cluster_2Ecs" id="r_Cluster_2Ecs"><td class="memItemLeft"><a href="d4/dd7/_cluster_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d4/dd7/_cluster_8cs.html">Cluster.cs</a></td></tr>
-<tr class="memitem:Deque_2Ecs" id="r_Deque_2Ecs"><td class="memItemLeft"><a href="d3/dd4/_deque_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d3/dd4/_deque_8cs.html">Deque.cs</a></td></tr>
-<tr class="memitem:FixedArray_2Ecs" id="r_FixedArray_2Ecs"><td class="memItemLeft"><a href="da/d0a/_fixed_array_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="da/d0a/_fixed_array_8cs.html">FixedArray.cs</a></td></tr>
-<tr class="memitem:FixedMap_2Ecs" id="r_FixedMap_2Ecs"><td class="memItemLeft"><a href="df/d1b/_fixed_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="df/d1b/_fixed_map_8cs.html">FixedMap.cs</a></td></tr>
-<tr class="memitem:GroupNode_2Ecs" id="r_GroupNode_2Ecs"><td class="memItemLeft"><a href="dd/d8c/_group_node_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="dd/d8c/_group_node_8cs.html">GroupNode.cs</a></td></tr>
-<tr class="memitem:Map_2Ecs" id="r_Map_2Ecs"><td class="memItemLeft"><a href="dd/d69/_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="dd/d69/_map_8cs.html">Map.cs</a></td></tr>
-<tr class="memitem:MirroredCache_20_2Ecs" id="r_MirroredCache_20_2Ecs"><td class="memItemLeft"><a href="d3/d44/_mirrored_cache_01_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d3/d44/_mirrored_cache_01_8cs.html">MirroredCache .cs</a></td></tr>
-<tr class="memitem:MultiMap_2Ecs" id="r_MultiMap_2Ecs"><td class="memItemLeft"><a href="db/d8b/_multi_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="db/d8b/_multi_map_8cs.html">MultiMap.cs</a></td></tr>
-<tr class="memitem:MultiTupleMap_2Ecs" id="r_MultiTupleMap_2Ecs"><td class="memItemLeft"><a href="dc/d4f/_multi_tuple_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="dc/d4f/_multi_tuple_map_8cs.html">MultiTupleMap.cs</a></td></tr>
-<tr class="memitem:Node_2Ecs" id="r_Node_2Ecs"><td class="memItemLeft"><a href="db/de0/_node_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="db/de0/_node_8cs.html">Node.cs</a></td></tr>
-<tr class="memitem:NodeChain_2Ecs" id="r_NodeChain_2Ecs"><td class="memItemLeft"><a href="d6/d84/_node_chain_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d6/d84/_node_chain_8cs.html">NodeChain.cs</a></td></tr>
-<tr class="memitem:NodeRange_2Ecs" id="r_NodeRange_2Ecs"><td class="memItemLeft"><a href="d6/d15/_node_range_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d6/d15/_node_range_8cs.html">NodeRange.cs</a></td></tr>
-<tr class="memitem:NodeSlice_2Ecs" id="r_NodeSlice_2Ecs"><td class="memItemLeft"><a href="d4/d0a/_node_slice_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d4/d0a/_node_slice_8cs.html">NodeSlice.cs</a></td></tr>
-<tr class="memitem:Pair_2Ecs" id="r_Pair_2Ecs"><td class="memItemLeft"><a href="dd/d56/_pair_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="dd/d56/_pair_8cs.html">Pair.cs</a></td></tr>
-<tr class="memitem:PriorityQueue_2Ecs" id="r_PriorityQueue_2Ecs"><td class="memItemLeft"><a href="d0/d98/_priority_queue_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d0/d98/_priority_queue_8cs.html">PriorityQueue.cs</a></td></tr>
-<tr class="memitem:Quad_2Ecs" id="r_Quad_2Ecs"><td class="memItemLeft"><a href="d9/df6/_quad_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d9/df6/_quad_8cs.html">Quad.cs</a></td></tr>
-<tr class="memitem:Queue_2Ecs" id="r_Queue_2Ecs"><td class="memItemLeft"><a href="d1/d3d/_queue_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d1/d3d/_queue_8cs.html">Queue.cs</a></td></tr>
-<tr class="memitem:SortedArray_2Ecs" id="r_SortedArray_2Ecs"><td class="memItemLeft"><a href="d2/dfa/_sorted_array_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d2/dfa/_sorted_array_8cs.html">SortedArray.cs</a></td></tr>
-<tr class="memitem:SortedMap_2Ecs" id="r_SortedMap_2Ecs"><td class="memItemLeft"><a href="d3/d60/_sorted_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d3/d60/_sorted_map_8cs.html">SortedMap.cs</a></td></tr>
-<tr class="memitem:SortedMultiMap_2Ecs" id="r_SortedMultiMap_2Ecs"><td class="memItemLeft"><a href="d3/db7/_sorted_multi_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d3/db7/_sorted_multi_map_8cs.html">SortedMultiMap.cs</a></td></tr>
-<tr class="memitem:SortedMultiTupleMap_2Ecs" id="r_SortedMultiTupleMap_2Ecs"><td class="memItemLeft"><a href="dc/dd5/_sorted_multi_tuple_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="dc/dd5/_sorted_multi_tuple_map_8cs.html">SortedMultiTupleMap.cs</a></td></tr>
-<tr class="memitem:SortedTupleList_2Ecs" id="r_SortedTupleList_2Ecs"><td class="memItemLeft"><a href="d3/d2d/_sorted_tuple_list_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d3/d2d/_sorted_tuple_list_8cs.html">SortedTupleList.cs</a></td></tr>
-<tr class="memitem:SortedTupleMap_2Ecs" id="r_SortedTupleMap_2Ecs"><td class="memItemLeft"><a href="d7/d30/_sorted_tuple_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d7/d30/_sorted_tuple_map_8cs.html">SortedTupleMap.cs</a></td></tr>
-<tr class="memitem:SportedFixedArray_2Ecs" id="r_SportedFixedArray_2Ecs"><td class="memItemLeft"><a href="d4/d77/_sported_fixed_array_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d4/d77/_sported_fixed_array_8cs.html">SportedFixedArray.cs</a></td></tr>
-<tr class="memitem:Stack_2Ecs" id="r_Stack_2Ecs"><td class="memItemLeft"><a href="db/d28/_stack_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="db/d28/_stack_8cs.html">Stack.cs</a></td></tr>
-<tr class="memitem:StarNode_2Ecs" id="r_StarNode_2Ecs"><td class="memItemLeft"><a href="dc/d10/_star_node_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="dc/d10/_star_node_8cs.html">StarNode.cs</a></td></tr>
-<tr class="memitem:StrippedCache_2Ecs" id="r_StrippedCache_2Ecs"><td class="memItemLeft"><a href="d2/d04/_stripped_cache_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d2/d04/_stripped_cache_8cs.html">StrippedCache.cs</a></td></tr>
-<tr class="memitem:Triple_2Ecs" id="r_Triple_2Ecs"><td class="memItemLeft"><a href="d4/d07/_collections_2_generic_2_triple_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d4/d07/_collections_2_generic_2_triple_8cs.html">Triple.cs</a></td></tr>
-<tr class="memitem:Tuple_2Ecs" id="r_Tuple_2Ecs"><td class="memItemLeft"><a href="d6/d73/_tuple_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d6/d73/_tuple_8cs.html">Tuple.cs</a></td></tr>
-<tr class="memitem:TupleList_2Ecs" id="r_TupleList_2Ecs"><td class="memItemLeft"><a href="d0/d69/_tuple_list_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d0/d69/_tuple_list_8cs.html">TupleList.cs</a></td></tr>
-<tr class="memitem:TupleMap_2Ecs" id="r_TupleMap_2Ecs"><td class="memItemLeft"><a href="d1/d29/_tuple_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="d1/d29/_tuple_map_8cs.html">TupleMap.cs</a></td></tr>
-<tr class="memitem:TypeBuffer_2Ecs" id="r_TypeBuffer_2Ecs"><td class="memItemLeft"><a href="db/d1b/_type_buffer_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><a class="el" href="db/d1b/_type_buffer_8cs.html">TypeBuffer.cs</a></td></tr>
+<tr class="memitem:Array_2Ecs" id="r_Array_2Ecs"><td class="memItemLeft"><a href="d6/d47/_array_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>Array.cs</b></td></tr>
+<tr class="memitem:BinQueue_2Ecs" id="r_BinQueue_2Ecs"><td class="memItemLeft"><a href="d4/df3/_bin_queue_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>BinQueue.cs</b></td></tr>
+<tr class="memitem:Cache_2Ecs" id="r_Cache_2Ecs"><td class="memItemLeft"><a href="d7/d82/_cache_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>Cache.cs</b></td></tr>
+<tr class="memitem:Cluster_2Ecs" id="r_Cluster_2Ecs"><td class="memItemLeft"><a href="d4/dd7/_cluster_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>Cluster.cs</b></td></tr>
+<tr class="memitem:Deque_2Ecs" id="r_Deque_2Ecs"><td class="memItemLeft"><a href="d3/dd4/_deque_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>Deque.cs</b></td></tr>
+<tr class="memitem:FixedArray_2Ecs" id="r_FixedArray_2Ecs"><td class="memItemLeft"><a href="da/d0a/_fixed_array_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>FixedArray.cs</b></td></tr>
+<tr class="memitem:FixedMap_2Ecs" id="r_FixedMap_2Ecs"><td class="memItemLeft"><a href="df/d1b/_fixed_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>FixedMap.cs</b></td></tr>
+<tr class="memitem:GroupNode_2Ecs" id="r_GroupNode_2Ecs"><td class="memItemLeft"><a href="dd/d8c/_group_node_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>GroupNode.cs</b></td></tr>
+<tr class="memitem:Map_2Ecs" id="r_Map_2Ecs"><td class="memItemLeft"><a href="dd/d69/_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>Map.cs</b></td></tr>
+<tr class="memitem:MirroredCache_20_2Ecs" id="r_MirroredCache_20_2Ecs"><td class="memItemLeft"><a href="d3/d44/_mirrored_cache_01_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>MirroredCache .cs</b></td></tr>
+<tr class="memitem:MultiMap_2Ecs" id="r_MultiMap_2Ecs"><td class="memItemLeft"><a href="db/d8b/_multi_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>MultiMap.cs</b></td></tr>
+<tr class="memitem:MultiTupleMap_2Ecs" id="r_MultiTupleMap_2Ecs"><td class="memItemLeft"><a href="dc/d4f/_multi_tuple_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>MultiTupleMap.cs</b></td></tr>
+<tr class="memitem:Node_2Ecs" id="r_Node_2Ecs"><td class="memItemLeft"><a href="db/de0/_node_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>Node.cs</b></td></tr>
+<tr class="memitem:NodeChain_2Ecs" id="r_NodeChain_2Ecs"><td class="memItemLeft"><a href="d6/d84/_node_chain_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>NodeChain.cs</b></td></tr>
+<tr class="memitem:NodeRange_2Ecs" id="r_NodeRange_2Ecs"><td class="memItemLeft"><a href="d6/d15/_node_range_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>NodeRange.cs</b></td></tr>
+<tr class="memitem:NodeSlice_2Ecs" id="r_NodeSlice_2Ecs"><td class="memItemLeft"><a href="d4/d0a/_node_slice_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>NodeSlice.cs</b></td></tr>
+<tr class="memitem:Pair_2Ecs" id="r_Pair_2Ecs"><td class="memItemLeft"><a href="dd/d56/_pair_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>Pair.cs</b></td></tr>
+<tr class="memitem:PriorityQueue_2Ecs" id="r_PriorityQueue_2Ecs"><td class="memItemLeft"><a href="d0/d98/_priority_queue_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>PriorityQueue.cs</b></td></tr>
+<tr class="memitem:Quad_2Ecs" id="r_Quad_2Ecs"><td class="memItemLeft"><a href="d9/df6/_quad_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>Quad.cs</b></td></tr>
+<tr class="memitem:Queue_2Ecs" id="r_Queue_2Ecs"><td class="memItemLeft"><a href="d1/d3d/_queue_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>Queue.cs</b></td></tr>
+<tr class="memitem:SortedArray_2Ecs" id="r_SortedArray_2Ecs"><td class="memItemLeft"><a href="d2/dfa/_sorted_array_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>SortedArray.cs</b></td></tr>
+<tr class="memitem:SortedMap_2Ecs" id="r_SortedMap_2Ecs"><td class="memItemLeft"><a href="d3/d60/_sorted_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>SortedMap.cs</b></td></tr>
+<tr class="memitem:SortedMultiMap_2Ecs" id="r_SortedMultiMap_2Ecs"><td class="memItemLeft"><a href="d3/db7/_sorted_multi_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>SortedMultiMap.cs</b></td></tr>
+<tr class="memitem:SortedMultiTupleMap_2Ecs" id="r_SortedMultiTupleMap_2Ecs"><td class="memItemLeft"><a href="dc/dd5/_sorted_multi_tuple_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>SortedMultiTupleMap.cs</b></td></tr>
+<tr class="memitem:SortedTupleList_2Ecs" id="r_SortedTupleList_2Ecs"><td class="memItemLeft"><a href="d3/d2d/_sorted_tuple_list_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>SortedTupleList.cs</b></td></tr>
+<tr class="memitem:SortedTupleMap_2Ecs" id="r_SortedTupleMap_2Ecs"><td class="memItemLeft"><a href="d7/d30/_sorted_tuple_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>SortedTupleMap.cs</b></td></tr>
+<tr class="memitem:SportedFixedArray_2Ecs" id="r_SportedFixedArray_2Ecs"><td class="memItemLeft"><a href="d4/d77/_sported_fixed_array_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>SportedFixedArray.cs</b></td></tr>
+<tr class="memitem:Stack_2Ecs" id="r_Stack_2Ecs"><td class="memItemLeft"><a href="db/d28/_stack_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>Stack.cs</b></td></tr>
+<tr class="memitem:StarNode_2Ecs" id="r_StarNode_2Ecs"><td class="memItemLeft"><a href="dc/d10/_star_node_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>StarNode.cs</b></td></tr>
+<tr class="memitem:StrippedCache_2Ecs" id="r_StrippedCache_2Ecs"><td class="memItemLeft"><a href="d2/d04/_stripped_cache_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>StrippedCache.cs</b></td></tr>
+<tr class="memitem:Triple_2Ecs" id="r_Triple_2Ecs"><td class="memItemLeft"><a href="d4/d07/_collections_2_generic_2_triple_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>Triple.cs</b></td></tr>
+<tr class="memitem:Tuple_2Ecs" id="r_Tuple_2Ecs"><td class="memItemLeft"><a href="d6/d73/_tuple_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>Tuple.cs</b></td></tr>
+<tr class="memitem:TupleList_2Ecs" id="r_TupleList_2Ecs"><td class="memItemLeft"><a href="d0/d69/_tuple_list_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>TupleList.cs</b></td></tr>
+<tr class="memitem:TupleMap_2Ecs" id="r_TupleMap_2Ecs"><td class="memItemLeft"><a href="d1/d29/_tuple_map_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>TupleMap.cs</b></td></tr>
+<tr class="memitem:TypeBuffer_2Ecs" id="r_TypeBuffer_2Ecs"><td class="memItemLeft"><a href="db/d1b/_type_buffer_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight"><b>TypeBuffer.cs</b></td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -186,7 +186,7 @@ Files</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_ea42b4d93f9bdb625a057e7516a96ce1.html">Collections</a></li><li class="navelem"><a href="dir_25e6c8c70f23d2240a215c68defa5226.html">Generic</a></li>
+    <li class="navelem"><b>Collections</b></li><li class="navelem"><b>Generic</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

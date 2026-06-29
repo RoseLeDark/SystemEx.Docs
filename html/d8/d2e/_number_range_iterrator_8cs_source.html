@@ -8,8 +8,6 @@
 <title>SystemEX: NumberRangeIterrator.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d8/d2e/_number_range_iterrator_8cs_source.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">NumberRangeIterrator.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d8/d2e/_number_range_iterrator_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * SPDX-License-Identifier: EUPL-1.2</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Copyright (c) 2026 Amber-Sophia Schröck &lt;ambersophia.schroeck@mail.de&gt;</span></div>
@@ -144,80 +145,68 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> {</div>
 <div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html">   30</a></span>    <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de">NumberRangeIterator</a>&lt;T&gt; : IForwardIterator&lt;T&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html">   30</a></span>    <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de" title="Initializes a new iterator positioned at start  and iterating until end .">NumberRangeIterator</a>&lt;T&gt; : IForwardIterator&lt;T&gt;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        where T : INumber&lt;T&gt; {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515">   33</a></span>        <span class="keyword">private</span> T <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515">m_current</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515">   33</a></span>        <span class="keyword">private</span> T <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515" title="Current iterator position.">m_current</a>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9">   36</a></span>        <span class="keyword">private</span> readonly T <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9">m_end</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9">   36</a></span>        <span class="keyword">private</span> readonly T <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9" title="End boundary of the range (inclusive).">m_end</a>;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
 <div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de">   44</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de">NumberRangeIterator</a> ( T start, T end ) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515">m_current</a> = start;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9">m_end</a> = end;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de">   44</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de" title="Initializes a new iterator positioned at start  and iterating until end .">NumberRangeIterator</a> ( T start, T end ) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515" title="Current iterator position.">m_current</a> = start;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9" title="End boundary of the range (inclusive).">m_end</a> = end;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        }</div>
 </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a19931fdd83cad8454fc1ce5b358e6b01">   52</a></span>        <span class="keyword">public</span> T <a class="code hl_property" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a19931fdd83cad8454fc1ce5b358e6b01">Current</a> =&gt; <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515">m_current</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a19931fdd83cad8454fc1ce5b358e6b01">   52</a></span>        <span class="keyword">public</span> T <a class="code hl_property" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a19931fdd83cad8454fc1ce5b358e6b01" title="Gets the element at the current iterator position.">Current</a> =&gt; <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515" title="Current iterator position.">m_current</a>;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a6596c3a7fa884cfae8725fee73e0e37c">   57</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a6596c3a7fa884cfae8725fee73e0e37c">IsEnd</a> =&gt; <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515">m_current</a> &gt; <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9">m_end</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a6596c3a7fa884cfae8725fee73e0e37c">   57</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a6596c3a7fa884cfae8725fee73e0e37c" title="Indicates whether the iterator has reached the end boundary.">IsEnd</a> =&gt; <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515" title="Current iterator position.">m_current</a> &gt; <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9" title="End boundary of the range (inclusive).">m_end</a>;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
 <div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab442ebbf9ee3ba8e9d764e257bf09680">   62</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab442ebbf9ee3ba8e9d764e257bf09680">Forward</a> () {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">if</span> ( !<a class="code hl_property" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a6596c3a7fa884cfae8725fee73e0e37c">IsEnd</a> )</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515">m_current</a> += T.One;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab442ebbf9ee3ba8e9d764e257bf09680">   62</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab442ebbf9ee3ba8e9d764e257bf09680" title="Moves the iterator one step forward.">Forward</a> () {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">if</span> ( !<a class="code hl_property" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a6596c3a7fa884cfae8725fee73e0e37c" title="Indicates whether the iterator has reached the end boundary.">IsEnd</a> )</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515" title="Current iterator position.">m_current</a> += T.One;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
 </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
 <div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a3191ecd7c83a8fa916e34e0084aa1abb">   71</a></span>        <span class="keyword">public</span> <a class="code hl_interface" href="../../de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html">IIterator&lt;T&gt;</a> <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a3191ecd7c83a8fa916e34e0084aa1abb">Clone</a> ()</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            =&gt; <span class="keyword">new</span> <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de">NumberRangeIterator&lt;T&gt;</a>(<a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515">m_current</a>, <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9">m_end</a>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a3191ecd7c83a8fa916e34e0084aa1abb">   71</a></span>        <span class="keyword">public</span> <a class="code hl_interface" href="../../de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html">IIterator&lt;T&gt;</a> <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a3191ecd7c83a8fa916e34e0084aa1abb" title="Creates a copy of this iterator at its current position.">Clone</a> ()</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            =&gt; <span class="keyword">new</span> <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de" title="Initializes a new iterator positioned at start  and iterating until end .">NumberRangeIterator&lt;T&gt;</a>(<a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515" title="Current iterator position.">m_current</a>, <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9" title="End boundary of the range (inclusive).">m_end</a>);</div>
 </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
 <div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a8a11ae2a06eb331d2f4ab725b588e357">   78</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a8a11ae2a06eb331d2f4ab725b588e357">Equals</a> ( <span class="keywordtype">object</span>? obj )</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            =&gt; obj is <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de">NumberRangeIterator&lt;T&gt;</a> it &amp;&amp;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>               it.m_current.Equals(<a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515">m_current</a>) &amp;&amp;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>               it.m_end.Equals(<a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9">m_end</a>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a8a11ae2a06eb331d2f4ab725b588e357">   78</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a8a11ae2a06eb331d2f4ab725b588e357" title="Compares two iterators for equality based on their current position and end boundary.">Equals</a> ( <span class="keywordtype">object</span>? obj )</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            =&gt; obj is <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de" title="Initializes a new iterator positioned at start  and iterating until end .">NumberRangeIterator&lt;T&gt;</a> it &amp;&amp;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>               it.m_current.Equals(<a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515" title="Current iterator position.">m_current</a>) &amp;&amp;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>               it.m_end.Equals(<a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9" title="End boundary of the range (inclusive).">m_end</a>);</div>
 </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
 <div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a759d742f58a3055c8c8d89af44b47526">   86</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a759d742f58a3055c8c8d89af44b47526">GetHashCode</a> ()</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            =&gt; HashCode.Combine(<a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515">m_current</a>, <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9">m_end</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a759d742f58a3055c8c8d89af44b47526">   86</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a759d742f58a3055c8c8d89af44b47526" title="Computes a hash code for this iterator.">GetHashCode</a> ()</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            =&gt; HashCode.Combine(<a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515" title="Current iterator position.">m_current</a>, <a class="code hl_variable" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9" title="End boundary of the range (inclusive).">m_end</a>);</div>
 </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
 <div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ae61c3172c43e168ffc66e5c251a5629e">   97</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> operator == ( <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de">NumberRangeIterator&lt;T&gt;</a> left, <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de">NumberRangeIterator&lt;T&gt;</a> right ) {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordflow">return</span> left.<a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a8a11ae2a06eb331d2f4ab725b588e357">Equals</a>(right);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ae61c3172c43e168ffc66e5c251a5629e">   97</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> operator == ( <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de" title="Initializes a new iterator positioned at start  and iterating until end .">NumberRangeIterator&lt;T&gt;</a> left, <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de" title="Initializes a new iterator positioned at start  and iterating until end .">NumberRangeIterator&lt;T&gt;</a> right ) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordflow">return</span> left.<a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a8a11ae2a06eb331d2f4ab725b588e357" title="Compares two iterators for equality based on their current position and end boundary.">Equals</a>(right);</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
 </div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
 <div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a98b2671eb0dd888b4271d804c96f15c0">  107</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> operator != ( <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de">NumberRangeIterator&lt;T&gt;</a> left, <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de">NumberRangeIterator&lt;T&gt;</a> right ) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordflow">return</span> !left.<a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a8a11ae2a06eb331d2f4ab725b588e357">Equals</a>(right);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a98b2671eb0dd888b4271d804c96f15c0">  107</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> operator != ( <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de" title="Initializes a new iterator positioned at start  and iterating until end .">NumberRangeIterator&lt;T&gt;</a> left, <a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de" title="Initializes a new iterator positioned at start  and iterating until end .">NumberRangeIterator&lt;T&gt;</a> right ) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordflow">return</span> !left.<a class="code hl_function" href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a8a11ae2a06eb331d2f4ab725b588e357" title="Compares two iterators for equality based on their current position and end boundary.">Equals</a>(right);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
 </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
 </div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator_html"><div class="ttname"><a href="../../de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html">SystemEx.Collections.Generic.Interfaces.IIterator</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/d6e/_iterrator_8cs_source.html#l00028">Iterrator.cs:28</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d16/_i_array_8cs_source.html#l00018">IArray.cs:18</a></div></div>
-<div class="ttc" id="anamespace_system_ex_html"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d9d/_i_range_8cs_source.html#l00020">IRange.cs:20</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_number_range_iterator-1-g_html_a19931fdd83cad8454fc1ce5b358e6b01"><div class="ttname"><a href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a19931fdd83cad8454fc1ce5b358e6b01">SystemEx.NumberRangeIterator-1-g.Current</a></div><div class="ttdeci">T Current</div><div class="ttdoc">Gets the element at the current iterator position.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">NumberRangeIterrator.cs:52</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_number_range_iterator-1-g_html_a3191ecd7c83a8fa916e34e0084aa1abb"><div class="ttname"><a href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a3191ecd7c83a8fa916e34e0084aa1abb">SystemEx.NumberRangeIterator-1-g.Clone</a></div><div class="ttdeci">IIterator&lt; T &gt; Clone()</div><div class="ttdoc">Creates a copy of this iterator at its current position.</div><div class="ttdef"><b>Definition</b> <a href="#l00071">NumberRangeIterrator.cs:71</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_number_range_iterator-1-g_html_a6596c3a7fa884cfae8725fee73e0e37c"><div class="ttname"><a href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a6596c3a7fa884cfae8725fee73e0e37c">SystemEx.NumberRangeIterator-1-g.IsEnd</a></div><div class="ttdeci">bool IsEnd</div><div class="ttdoc">Indicates whether the iterator has reached the end boundary.</div><div class="ttdef"><b>Definition</b> <a href="#l00057">NumberRangeIterrator.cs:57</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_number_range_iterator-1-g_html_a759d742f58a3055c8c8d89af44b47526"><div class="ttname"><a href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a759d742f58a3055c8c8d89af44b47526">SystemEx.NumberRangeIterator-1-g.GetHashCode</a></div><div class="ttdeci">override int GetHashCode()</div><div class="ttdoc">Computes a hash code for this iterator.</div><div class="ttdef"><b>Definition</b> <a href="#l00086">NumberRangeIterrator.cs:86</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_number_range_iterator-1-g_html_a8a11ae2a06eb331d2f4ab725b588e357"><div class="ttname"><a href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a8a11ae2a06eb331d2f4ab725b588e357">SystemEx.NumberRangeIterator-1-g.Equals</a></div><div class="ttdeci">override bool Equals(object? obj)</div><div class="ttdoc">Compares two iterators for equality based on their current position and end boundary.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">NumberRangeIterrator.cs:78</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_number_range_iterator-1-g_html_a9e70a472ee74ff67871bb8ddd0f458de"><div class="ttname"><a href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a9e70a472ee74ff67871bb8ddd0f458de">SystemEx.NumberRangeIterator-1-g.NumberRangeIterator</a></div><div class="ttdeci">NumberRangeIterator(T start, T end)</div><div class="ttdoc">Initializes a new iterator positioned at start  and iterating until end .</div><div class="ttdef"><b>Definition</b> <a href="#l00044">NumberRangeIterrator.cs:44</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_number_range_iterator-1-g_html_ab442ebbf9ee3ba8e9d764e257bf09680"><div class="ttname"><a href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab442ebbf9ee3ba8e9d764e257bf09680">SystemEx.NumberRangeIterator-1-g.Forward</a></div><div class="ttdeci">void Forward()</div><div class="ttdoc">Moves the iterator one step forward.</div><div class="ttdef"><b>Definition</b> <a href="#l00062">NumberRangeIterrator.cs:62</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_number_range_iterator-1-g_html_ab5e305275856458625bbc6a603d91515"><div class="ttname"><a href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab5e305275856458625bbc6a603d91515">SystemEx.NumberRangeIterator-1-g.m_current</a></div><div class="ttdeci">T m_current</div><div class="ttdoc">Current iterator position.</div><div class="ttdef"><b>Definition</b> <a href="#l00033">NumberRangeIterrator.cs:33</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_number_range_iterator-1-g_html_ab7479c134a2ed38f53a6921393d46dc9"><div class="ttname"><a href="../../dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9">SystemEx.NumberRangeIterator-1-g.m_end</a></div><div class="ttdeci">readonly T m_end</div><div class="ttdoc">End boundary of the range (inclusive).</div><div class="ttdef"><b>Definition</b> <a href="#l00036">NumberRangeIterrator.cs:36</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../dir_628593db0cdce5a76fb85526ae5aa762.html">Base</a></li><li class="navelem"><a href="../../d8/d2e/_number_range_iterrator_8cs.html">NumberRangeIterrator.cs</a></li>
+    <li class="navelem"><b>Base</b></li><li class="navelem"><b>NumberRangeIterrator.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

@@ -8,8 +8,6 @@
 <title>SystemEX: ColorYUV.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/def/_color_y_u_v_8cs_source.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,91 +120,78 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">ColorYUV.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d4/def/_color_y_u_v_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System;</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System;</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections.Generic;</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>System.Text;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/d5b/namespace_system_ex_1_1_drawing.html">SystemEx.Drawing</a> {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
 <div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html">   11</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3">ColorYUV</a> : IEquatable&lt;ColorYUV&gt; {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a3f6cb86cadcb728bf33a13e363ca8b90">   12</a></span>        <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a3f6cb86cadcb728bf33a13e363ca8b90">m_y</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a8043ea1407bf999a1170a96218375716">   13</a></span>        <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a8043ea1407bf999a1170a96218375716">m_u</a>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ad31860e596cb6eacacafe31609ff4bdc">   14</a></span>        <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ad31860e596cb6eacacafe31609ff4bdc">m_v</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html">   11</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3" title="Initializes a new YUV color from an array of three floating‑point values.">ColorYUV</a> : IEquatable&lt;ColorYUV&gt; {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_y;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_u;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_v;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a4e5a715c2184061561f7caacfd4314e8">   19</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a4e5a715c2184061561f7caacfd4314e8">Y</a> { <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a3f6cb86cadcb728bf33a13e363ca8b90">m_y</a>; <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a3f6cb86cadcb728bf33a13e363ca8b90">m_y</a> = value; }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a4e5a715c2184061561f7caacfd4314e8">   19</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a4e5a715c2184061561f7caacfd4314e8" title="Gets or sets the Y (luma) component.">Y</a> { <span class="keyword">get</span> =&gt; m_y; <span class="keyword">set</span> =&gt; m_y = value; }</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ae469b6e35e25c51e8c394e7bd5ecbd17">   24</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ae469b6e35e25c51e8c394e7bd5ecbd17">U</a> { <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a8043ea1407bf999a1170a96218375716">m_u</a>; <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a8043ea1407bf999a1170a96218375716">m_u</a> = value; }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ae469b6e35e25c51e8c394e7bd5ecbd17">   24</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ae469b6e35e25c51e8c394e7bd5ecbd17" title="Gets or sets the U (chrominance blue) component.">U</a> { <span class="keyword">get</span> =&gt; m_u; <span class="keyword">set</span> =&gt; m_u = value; }</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a154df444d5bdce3e66362a2aab06ec7b">   29</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a154df444d5bdce3e66362a2aab06ec7b">V</a> { <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ad31860e596cb6eacacafe31609ff4bdc">m_v</a>; <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ad31860e596cb6eacacafe31609ff4bdc">m_v</a> = value; }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a154df444d5bdce3e66362a2aab06ec7b">   29</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a154df444d5bdce3e66362a2aab06ec7b" title="Gets or sets the V (chrominance red) component.">V</a> { <span class="keyword">get</span> =&gt; m_v; <span class="keyword">set</span> =&gt; m_v = value; }</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
 <div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3">   35</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3">ColorYUV</a>(<span class="keywordtype">float</span>[] x) {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a3f6cb86cadcb728bf33a13e363ca8b90">m_y</a> = x[0];</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a8043ea1407bf999a1170a96218375716">m_u</a> = x[1];</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ad31860e596cb6eacacafe31609ff4bdc">m_v</a> = x[2]; </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3">   35</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3" title="Initializes a new YUV color from an array of three floating‑point values.">ColorYUV</a>(<span class="keywordtype">float</span>[] x) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            m_y = x[0];</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            m_u = x[1];</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            m_v = x[2]; </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        }</div>
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
 <div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a6b044317c98fadf6344c326610d5ce2b">   43</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a6b044317c98fadf6344c326610d5ce2b">ColorYUV</a>(<span class="keywordtype">float</span> y, <span class="keywordtype">float</span> u, <span class="keywordtype">float</span> v) { </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a3f6cb86cadcb728bf33a13e363ca8b90">m_y</a> = y;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a8043ea1407bf999a1170a96218375716">m_u</a> = u;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ad31860e596cb6eacacafe31609ff4bdc">m_v</a> = v;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a6b044317c98fadf6344c326610d5ce2b">   43</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a6b044317c98fadf6344c326610d5ce2b" title="Initializes a new YUV color with the specified component values.">ColorYUV</a>(<span class="keywordtype">float</span> y, <span class="keywordtype">float</span> u, <span class="keywordtype">float</span> v) { </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            m_y = y;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            m_u = u;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            m_v = v;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        }</div>
 </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
 <div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a56db38f3081a9d808277b1eacfd51a25">   55</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a56db38f3081a9d808277b1eacfd51a25">Equals</a>(<a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3">ColorYUV</a> other) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a56db38f3081a9d808277b1eacfd51a25">   55</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a56db38f3081a9d808277b1eacfd51a25" title="Determines whether this instance is equal to another YUV color.">Equals</a>(<a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3" title="Initializes a new YUV color from an array of three floating‑point values.">ColorYUV</a> other) {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a3f6cb86cadcb728bf33a13e363ca8b90">m_y</a>.Equals(other.<a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a3f6cb86cadcb728bf33a13e363ca8b90">m_y</a>) &amp;&amp;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a8043ea1407bf999a1170a96218375716">m_u</a>.Equals(other.<a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a8043ea1407bf999a1170a96218375716">m_u</a>) &amp;&amp;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ad31860e596cb6eacacafe31609ff4bdc">m_v</a>.Equals(other.<a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a3f6cb86cadcb728bf33a13e363ca8b90">m_y</a>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">return</span> m_y.Equals(other.m_y) &amp;&amp;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                m_u.Equals(other.m_u) &amp;&amp;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                m_v.Equals(other.m_y);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
 </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
 <div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ae550b80cdb800113eca30858b4000ea7">   64</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ae550b80cdb800113eca30858b4000ea7">GetHashCode</a>() {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">return</span> HashCode.Combine(<a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a3f6cb86cadcb728bf33a13e363ca8b90">m_y</a>, <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a8043ea1407bf999a1170a96218375716">m_u</a>, <a class="code hl_variable" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ad31860e596cb6eacacafe31609ff4bdc">m_v</a>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ae550b80cdb800113eca30858b4000ea7">   64</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ae550b80cdb800113eca30858b4000ea7" title="Returns a hash code based on the Y, U, and V components.">GetHashCode</a>() {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">return</span> HashCode.Combine(m_y, m_u, m_v);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
 </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
 <div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a026a19eea44954df92a2712f2b9f5b6d">   70</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a026a19eea44954df92a2712f2b9f5b6d">Equals</a>(<span class="keywordtype">object</span>? obj) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a026a19eea44954df92a2712f2b9f5b6d">   70</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a026a19eea44954df92a2712f2b9f5b6d" title="Determines whether this instance is equal to another object.">Equals</a>(<span class="keywordtype">object</span>? obj) {</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">if</span> ( obj == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">if</span> ( obj is <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3">ColorYUV</a> ) <span class="keywordflow">return</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a56db38f3081a9d808277b1eacfd51a25">Equals</a>(obj as <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3">ColorYUV</a>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">if</span> ( obj is <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3" title="Initializes a new YUV color from an array of three floating‑point values.">ColorYUV</a> ) <span class="keywordflow">return</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a56db38f3081a9d808277b1eacfd51a25" title="Determines whether this instance is equal to another YUV color.">Equals</a>(obj as <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3" title="Initializes a new YUV color from an array of three floating‑point values.">ColorYUV</a>);</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
 </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
 <div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a877fde1f33ac52b5c34676bcfbc88e91">   78</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a877fde1f33ac52b5c34676bcfbc88e91">ToString</a>() {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a877fde1f33ac52b5c34676bcfbc88e91">   78</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a877fde1f33ac52b5c34676bcfbc88e91" title="Returns a string representation of the YUV color.">ToString</a>() {</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;[{m_y}, {m_u}, {m_v}]&quot;</span>);</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
 </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
 </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_y_u_v_html_a026a19eea44954df92a2712f2b9f5b6d"><div class="ttname"><a href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a026a19eea44954df92a2712f2b9f5b6d">SystemEx.Drawing.ColorYUV.Equals</a></div><div class="ttdeci">override bool Equals(object? obj)</div><div class="ttdoc">Determines whether this instance is equal to another object.</div><div class="ttdef"><b>Definition</b> <a href="#l00070">ColorYUV.cs:70</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_y_u_v_html_a154df444d5bdce3e66362a2aab06ec7b"><div class="ttname"><a href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a154df444d5bdce3e66362a2aab06ec7b">SystemEx.Drawing.ColorYUV.V</a></div><div class="ttdeci">float V</div><div class="ttdoc">Gets or sets the V (chrominance red) component.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">ColorYUV.cs:29</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_y_u_v_html_a3f6cb86cadcb728bf33a13e363ca8b90"><div class="ttname"><a href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a3f6cb86cadcb728bf33a13e363ca8b90">SystemEx.Drawing.ColorYUV.m_y</a></div><div class="ttdeci">float m_y</div><div class="ttdef"><b>Definition</b> <a href="#l00012">ColorYUV.cs:12</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_y_u_v_html_a4e5a715c2184061561f7caacfd4314e8"><div class="ttname"><a href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a4e5a715c2184061561f7caacfd4314e8">SystemEx.Drawing.ColorYUV.Y</a></div><div class="ttdeci">float Y</div><div class="ttdoc">Gets or sets the Y (luma) component.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">ColorYUV.cs:19</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_y_u_v_html_a56db38f3081a9d808277b1eacfd51a25"><div class="ttname"><a href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a56db38f3081a9d808277b1eacfd51a25">SystemEx.Drawing.ColorYUV.Equals</a></div><div class="ttdeci">bool Equals(ColorYUV other)</div><div class="ttdoc">Determines whether this instance is equal to another YUV color.</div><div class="ttdef"><b>Definition</b> <a href="#l00055">ColorYUV.cs:55</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_y_u_v_html_a6b044317c98fadf6344c326610d5ce2b"><div class="ttname"><a href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a6b044317c98fadf6344c326610d5ce2b">SystemEx.Drawing.ColorYUV.ColorYUV</a></div><div class="ttdeci">ColorYUV(float y, float u, float v)</div><div class="ttdoc">Initializes a new YUV color with the specified component values.</div><div class="ttdef"><b>Definition</b> <a href="#l00043">ColorYUV.cs:43</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_y_u_v_html_a8043ea1407bf999a1170a96218375716"><div class="ttname"><a href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a8043ea1407bf999a1170a96218375716">SystemEx.Drawing.ColorYUV.m_u</a></div><div class="ttdeci">float m_u</div><div class="ttdef"><b>Definition</b> <a href="#l00013">ColorYUV.cs:13</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_y_u_v_html_a877fde1f33ac52b5c34676bcfbc88e91"><div class="ttname"><a href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a877fde1f33ac52b5c34676bcfbc88e91">SystemEx.Drawing.ColorYUV.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">Returns a string representation of the YUV color.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">ColorYUV.cs:78</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_y_u_v_html_aa0d359dcbfce7a9db542f057ceb9c5a3"><div class="ttname"><a href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#aa0d359dcbfce7a9db542f057ceb9c5a3">SystemEx.Drawing.ColorYUV.ColorYUV</a></div><div class="ttdeci">ColorYUV(float[] x)</div><div class="ttdoc">Initializes a new YUV color from an array of three floating‑point values.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">ColorYUV.cs:35</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_y_u_v_html_ad31860e596cb6eacacafe31609ff4bdc"><div class="ttname"><a href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ad31860e596cb6eacacafe31609ff4bdc">SystemEx.Drawing.ColorYUV.m_v</a></div><div class="ttdeci">float m_v</div><div class="ttdef"><b>Definition</b> <a href="#l00014">ColorYUV.cs:14</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_y_u_v_html_ae469b6e35e25c51e8c394e7bd5ecbd17"><div class="ttname"><a href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ae469b6e35e25c51e8c394e7bd5ecbd17">SystemEx.Drawing.ColorYUV.U</a></div><div class="ttdeci">float U</div><div class="ttdoc">Gets or sets the U (chrominance blue) component.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">ColorYUV.cs:24</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_drawing_1_1_color_y_u_v_html_ae550b80cdb800113eca30858b4000ea7"><div class="ttname"><a href="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#ae550b80cdb800113eca30858b4000ea7">SystemEx.Drawing.ColorYUV.GetHashCode</a></div><div class="ttdeci">override int GetHashCode()</div><div class="ttdoc">Returns a hash code based on the Y, U, and V components.</div><div class="ttdef"><b>Definition</b> <a href="#l00064">ColorYUV.cs:64</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_drawing_html"><div class="ttname"><a href="../../de/d5b/namespace_system_ex_1_1_drawing.html">SystemEx.Drawing</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d53/_canvas_8cs_source.html#l00007">Canvas.cs:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../dir_7bc43d1faf255742d8330d975d2cd579.html">Drawing</a></li><li class="navelem"><a href="../../d4/def/_color_y_u_v_8cs.html">ColorYUV.cs</a></li>
+    <li class="navelem"><b>Drawing</b></li><li class="navelem"><b>ColorYUV.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

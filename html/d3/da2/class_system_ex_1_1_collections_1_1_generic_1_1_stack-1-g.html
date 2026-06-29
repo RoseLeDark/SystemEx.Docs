@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Collections.Generic.Stack&lt; T &gt; Class Template Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html','../../','dd/da7/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -122,10 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <p>A fixed‑size, backward‑growing stack implementation that supports multiple independent virtual stack layers sharing the same underlying buffer.  
  <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Collections.Generic.Stack&lt; T &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Collaboration diagram for SystemEx.Collections.Generic.Stack&lt; T &gt;:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../dc/da4/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g__coll__graph.png" border="0" usemap="#a_system_ex_8_collections_8_generic_8_stack_3_01_t_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_system_ex_8_collections_8_generic_8_stack_3_01_t_01_4_coll__map" id="a_system_ex_8_collections_8_generic_8_stack_3_01_t_01_4_coll__map">
 <area shape="rect" title="A fixed‑size, backward‑growing stack implementation that supports multiple independent virtual stack ..." alt="" coords="5,120,210,163"/>
@@ -227,12 +227,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00209">209</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  209</span>                                     {</div>
-<div class="line"><span class="lineno">  210</span>            <span class="keywordflow">if</span> ( IsEmpty ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  211</span>            item = m_elements[m_current];</div>
-<div class="line"><span class="lineno">  212</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  213</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a716b270a05b22e6ebfb02eda033f8945" name="a716b270a05b22e6ebfb02eda033f8945"></a>
@@ -255,16 +250,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00284">284</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  284</span>                                                   {</div>
-<div class="line"><span class="lineno">  285</span>            <span class="keywordflow">if</span>(LayerID &gt;= 4) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  286</span>            <span class="keywordflow">if</span> ( (m_stackLayer[LayerID].Enable != <span class="keyword">true</span>) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  287</span> </div>
-<div class="line"><span class="lineno">  288</span>            <span class="keywordflow">if</span> ( m_stackLayer[LayerID].Current == m_stackLayer[LayerID].StartMarker - 1 ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  289</span>            item = m_elements[m_stackLayer[LayerID].Current];</div>
-<div class="line"><span class="lineno">  290</span> </div>
-<div class="line"><span class="lineno">  291</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  292</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac843f7e4a3c4d7c2e77c0c71571951e4" name="ac843f7e4a3c4d7c2e77c0c71571951e4"></a>
@@ -290,13 +276,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was popped; otherwise <code>false</code>.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00199">199</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  199</span>                                     {</div>
-<div class="line"><span class="lineno">  200</span>            <span class="keywordflow">if</span> ( IsEmpty ) { item = <span class="keywordflow">default</span>; <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><span class="lineno">  201</span>            item = m_elements[m_current];</div>
-<div class="line"><span class="lineno">  202</span>            m_current++;</div>
-<div class="line"><span class="lineno">  203</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  204</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a40626db6e36e54394fbd09935ddd9be9" name="a40626db6e36e54394fbd09935ddd9be9"></a>
@@ -319,19 +299,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00268">268</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  268</span>                                                   {</div>
-<div class="line"><span class="lineno">  269</span>            <span class="keywordflow">if</span> ( LayerID &gt;= 4 ) { item = <span class="keywordflow">default</span>; <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><span class="lineno">  270</span>            <span class="keywordflow">if</span> ( (m_stackLayer[LayerID].Enable != <span class="keyword">true</span>) ) { item = <span class="keywordflow">default</span>; <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><span class="lineno">  271</span>            <span class="comment">// IsEmpty </span></div>
-<div class="line"><span class="lineno">  272</span>            <span class="keywordflow">if</span> ( m_stackLayer[LayerID].Current == m_stackLayer[LayerID].StartMarker - 1 ) { item = <span class="keywordflow">default</span>; <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><span class="lineno">  273</span>            item = m_elements[m_stackLayer[LayerID].Current];</div>
-<div class="line"><span class="lineno">  274</span> </div>
-<div class="line"><span class="lineno">  275</span>            m_stackLayer[LayerID].Current++;</div>
-<div class="line"><span class="lineno">  276</span> </div>
-<div class="line"><span class="lineno">  277</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  278</span> </div>
-<div class="line"><span class="lineno">  279</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad8f09f693bfb6f4bc561229340007a3a" name="ad8f09f693bfb6f4bc561229340007a3a"></a>
@@ -362,27 +330,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>An array of popped elements, or <code>null</code> if invalid.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00245">245</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  245</span>                                                         {</div>
-<div class="line"><span class="lineno">  246</span>            <span class="keywordflow">if</span> ( LayerID &gt;= 4 ) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  247</span> </div>
-<div class="line"><span class="lineno">  248</span>            List&lt;T&gt; popped = <span class="keyword">new</span> List&lt;T&gt;();</div>
-<div class="line"><span class="lineno">  249</span>            T? item;</div>
-<div class="line"><span class="lineno">  250</span> </div>
-<div class="line"><span class="lineno">  251</span>            <span class="keywordtype">bool</span> layered = LayerID &lt;= m_stackLayer.Length;</div>
-<div class="line"><span class="lineno">  252</span> </div>
-<div class="line"><span class="lineno">  253</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; size; i++ ) {</div>
-<div class="line"><span class="lineno">  254</span>                <span class="keywordflow">if</span> ( layered ) {</div>
-<div class="line"><span class="lineno">  255</span>                    <span class="keywordflow">if</span> ( !Pop(out item, LayerID) ) <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  256</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  257</span>                    <span class="keywordflow">if</span> ( !Pop(out item) ) <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  258</span>                }</div>
-<div class="line"><span class="lineno">  259</span> </div>
-<div class="line"><span class="lineno">  260</span>                <span class="keywordflow">if</span> ( item != <span class="keyword">null</span> ) popped.Add(item);</div>
-<div class="line"><span class="lineno">  261</span>            }</div>
-<div class="line"><span class="lineno">  262</span> </div>
-<div class="line"><span class="lineno">  263</span>            <span class="keywordflow">return</span> popped.ToArray();</div>
-<div class="line"><span class="lineno">  264</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aaacaa8d4f932befbe254f0b93990903f" name="aaacaa8d4f932befbe254f0b93990903f"></a>
@@ -402,13 +350,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the element was pushed; otherwise <code>false</code>.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00172">172</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  172</span>                                    {</div>
-<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">if</span> ( IsFull ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  174</span>            m_elements[m_current] = element;</div>
-<div class="line"><span class="lineno">  175</span>            m_current--;</div>
-<div class="line"><span class="lineno">  176</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  177</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a865c014a433a43cac3da172a4bd3fe04" name="a865c014a433a43cac3da172a4bd3fe04"></a>
@@ -431,18 +373,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00182">182</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  182</span>                                               {</div>
-<div class="line"><span class="lineno">  183</span>            <span class="keywordflow">if</span> ( LayerID &gt;= 4 ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  184</span>            <span class="keywordflow">if</span> ( !m_stackLayer[LayerID].Enable ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  185</span> </div>
-<div class="line"><span class="lineno">  186</span>            <span class="keywordflow">if</span> ( m_stackLayer[LayerID].Current == m_stackLayer[LayerID].EndMarker )</div>
-<div class="line"><span class="lineno">  187</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  188</span> </div>
-<div class="line"><span class="lineno">  189</span>            m_elements[m_stackLayer[LayerID].Current] = item;</div>
-<div class="line"><span class="lineno">  190</span>            m_stackLayer[LayerID].Current--;</div>
-<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  192</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a8e62fa7bda8b25453cc90ed0e0c1f70b" name="a8e62fa7bda8b25453cc90ed0e0c1f70b"></a>
@@ -473,24 +404,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The number of successfully pushed elements.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00221">221</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  221</span>                                                          {</div>
-<div class="line"><span class="lineno">  222</span>            <span class="keywordflow">if</span> ( LayerID &gt;= 4 ) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  223</span>            <span class="keywordflow">if</span> ( items == <span class="keyword">null</span> ) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  224</span> </div>
-<div class="line"><span class="lineno">  225</span>            <span class="keywordtype">bool</span> layered = LayerID &lt;= m_stackLayer.Length;</div>
-<div class="line"><span class="lineno">  226</span>            <span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><span class="lineno">  227</span> </div>
-<div class="line"><span class="lineno">  228</span>            <span class="keywordflow">for</span> ( i = 0; i &lt; items.Length; i++ ) {</div>
-<div class="line"><span class="lineno">  229</span>                <span class="keywordflow">if</span> ( layered ) {</div>
-<div class="line"><span class="lineno">  230</span>                    <span class="keywordflow">if</span> ( !Push(items[i], LayerID) ) <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  231</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  232</span>                    <span class="keywordflow">if</span> ( !Push(items[i]) ) <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  233</span>                }</div>
-<div class="line"><span class="lineno">  234</span>            }</div>
-<div class="line"><span class="lineno">  235</span> </div>
-<div class="line"><span class="lineno">  236</span>            <span class="keywordflow">return</span> i;</div>
-<div class="line"><span class="lineno">  237</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a48b25f1a9959b399cf220c0b7a63f025" name="a48b25f1a9959b399cf220c0b7a63f025"></a>
@@ -509,12 +423,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00143">143</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  143</span>                                  {</div>
-<div class="line"><span class="lineno">  144</span>            m_end = 0;</div>
-<div class="line"><span class="lineno">  145</span>            m_start = m_elements.Length-1;</div>
-<div class="line"><span class="lineno">  146</span> </div>
-<div class="line"><span class="lineno">  147</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a9f25096bc69923c9da3aa27a43413766" name="a9f25096bc69923c9da3aa27a43413766"></a>
@@ -541,11 +450,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00314">314</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  314</span>                                       {</div>
-<div class="line"><span class="lineno">  315</span>            <span class="keywordflow">if</span> ( m_current &lt; value ) <span class="keywordflow">throw</span> <span class="keyword">new</span> InvalidOperationException();</div>
-<div class="line"><span class="lineno">  316</span>            m_end = value;</div>
-<div class="line"><span class="lineno">  317</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a35df22b4f027201cfac7e05cbd735cb1" name="a35df22b4f027201cfac7e05cbd735cb1"></a>
@@ -578,15 +483,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00303">303</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  303</span>                                                                                 {</div>
-<div class="line"><span class="lineno">  304</span>            <span class="keywordflow">if</span>(<span class="keywordtype">id</span> &gt;= m_stackLayer.Length) <span class="keywordflow">throw</span> <span class="keyword">new</span> InvalidOperationException();</div>
-<div class="line"><span class="lineno">  305</span>            m_stackLayer[id] = <span class="keyword">new</span> StackLayer {</div>
-<div class="line"><span class="lineno">  306</span>                EndMarker = startLayer &lt; 0 ? 0 : startLayer,</div>
-<div class="line"><span class="lineno">  307</span>                StartMarker =  endLayer &gt;= m_elements.Length ? m_elements.Length - 2 : endLayer,</div>
-<div class="line"><span class="lineno">  308</span>                Enable = enable</div>
-<div class="line"><span class="lineno">  309</span>            };</div>
-<div class="line"><span class="lineno">  310</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a2d3f2d3e1f7655eeb40e979cf8e7182a" name="a2d3f2d3e1f7655eeb40e979cf8e7182a"></a>
@@ -609,11 +506,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00296">296</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  296</span>                                                     {</div>
-<div class="line"><span class="lineno">  297</span>            <span class="keywordflow">if</span> ( <span class="keywordtype">id</span> &gt;= m_stackLayer.Length ) <span class="keywordflow">throw</span> <span class="keyword">new</span> InvalidOperationException();</div>
-<div class="line"><span class="lineno">  298</span>            m_stackLayer[id].Enable = enable;</div>
-<div class="line"><span class="lineno">  299</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a9f182bd5c425a9fa71675acc121a85f4" name="a9f182bd5c425a9fa71675acc121a85f4"></a>
@@ -638,21 +531,7 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00153">153</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  153</span>                               {</div>
-<div class="line"><span class="lineno">  154</span>            m_elements = <span class="keyword">new</span> T[size];</div>
-<div class="line"><span class="lineno">  155</span>            m_end = 0;</div>
-<div class="line"><span class="lineno">  156</span>            m_start = m_elements.Length - 1;</div>
-<div class="line"><span class="lineno">  157</span>            m_current = size-1;</div>
-<div class="line"><span class="lineno">  158</span> </div>
-<div class="line"><span class="lineno">  159</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; m_stackLayer.Length; i++) {</div>
-<div class="line"><span class="lineno">  160</span>                m_stackLayer[i] = <span class="keyword">new</span> StackLayer(m_end, m_start, m_current);</div>
-<div class="line"><span class="lineno">  161</span>                m_stackLayer[i].Enable = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  162</span>                m_stackLayer[i].EndMarker = m_end;</div>
-<div class="line"><span class="lineno">  163</span>                m_stackLayer[i].StartMarker = m_start;</div>
-<div class="line"><span class="lineno">  164</span>                m_stackLayer[i].Current = m_current;</div>
-<div class="line"><span class="lineno">  165</span>            }</div>
-<div class="line"><span class="lineno">  166</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -870,8 +749,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00134">134</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>{ <span class="keyword">get</span> =&gt; m_end; <span class="keyword">set</span> =&gt; SetEnd(value); }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab21d836db11c4e812935c31866dbcbd9" name="ab21d836db11c4e812935c31866dbcbd9"></a>

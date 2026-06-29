@@ -8,8 +8,6 @@
 <title>SystemEX: Class Members - Functions</title>
 <link rel="icon" href="Logo_256.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_func_s.html','',''); });
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -116,28 +117,24 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all functions with links to the classes they belong to:</div><br/>
+<div class="textblock">Here is a list of all documented functions with links to the class documentation for each member:</div><br/>
 <div class="qindex"><a class="qindex" href="functions_func.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_func_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_func_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_func_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_func_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_func_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_func_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_func_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_func_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_func_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_func_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_func_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_func_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_func_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_func_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_func_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_func_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_func_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_func_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_func_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions_func_z.html#index_z">Z</a></div>
 
 
 <h3 class="doxsection"><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>Saturation()&#160;:&#160;<a class="el" href="de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a8a124579c7820d0aa4c635c07277c791">SystemEx.Drawing.ColorHSV</a>, <a class="el" href="db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a879cf0d462fb66142a28fd4124ac0f69">SystemEx.Drawing.ColorR8G8B8</a>, <a class="el" href="df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a3b5eafed3c47bea555a5889dd433b775">SystemEx.Drawing.IColor&lt; T &gt;</a>, <a class="el" href="d8/de9/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_h_d_r.html#ae30af29121966d5baee46ae4926a9b73">SystemEx.SystemEx.Drawing.ColorHDR</a>, <a class="el" href="d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html#ac3f174e8010d4942bbe3bcdc205def34">SystemEx.SystemEx.Drawing.ColorR16G16B16</a></li>
+<li>Saturation()&#160;:&#160;<a class="el" href="de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a8a124579c7820d0aa4c635c07277c791">SystemEx.Drawing.ColorHSV</a>, <a class="el" href="db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a879cf0d462fb66142a28fd4124ac0f69">SystemEx.Drawing.ColorR8G8B8</a>, <a class="el" href="d8/de9/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_h_d_r.html#ae30af29121966d5baee46ae4926a9b73">SystemEx.SystemEx.Drawing.ColorHDR</a>, <a class="el" href="d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html#ac3f174e8010d4942bbe3bcdc205def34">SystemEx.SystemEx.Drawing.ColorR16G16B16</a></li>
 <li>Seek()&#160;:&#160;<a class="el" href="dd/dbc/group__collections.html#ga1e6cbff2a5de7fe6c185d7ca23f266e5">SystemEx.Collections.Generic.Cache</a>, <a class="el" href="df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#aa0813a270673d446f3ad79e0da79f200">SystemEx.IO.CacheStream&lt; TCache &gt;</a></li>
 <li>Set()&#160;:&#160;<a class="el" href="db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a339433cd99e82fc0b4194065ef445dc2">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, <a class="el" href="d3/d94/class_system_ex_1_1_collections_1_1_generic_1_1_tuple.html#a6f1b6e77308a20277d58528ccc193245">SystemEx.Collections.Generic.Tuple</a></li>
 <li>SetBit()&#160;:&#160;<a class="el" href="df/d58/class_system_ex_1_1_bit_utils.html#ab79e150fc07de7148743dec96aa5e7ec">SystemEx.BitUtils</a></li>
 <li>SetEnd()&#160;:&#160;<a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a9f25096bc69923c9da3aa27a43413766">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>
 <li>SetLayer()&#160;:&#160;<a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a35df22b4f027201cfac7e05cbd735cb1">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>
 <li>SetLayerOn()&#160;:&#160;<a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a2d3f2d3e1f7655eeb40e979cf8e7182a">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>
-<li>SetLength()&#160;:&#160;<a class="el" href="df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#abf5d36545f96af89ed3865ac61bd6af5">SystemEx.IO.CacheStream&lt; TCache &gt;</a></li>
 <li>SetSavePosition()&#160;:&#160;<a class="el" href="dd/dbc/group__collections.html#gaa613f8a5c01ba38957e562d79107dedd">SystemEx.Collections.Generic.Cache</a></li>
-<li>SetShowing()&#160;:&#160;<a class="el" href="d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.html#a9bca918edb98bdfcf0e4358a4a19e236">SystemEx.Drawing.ICanvasList&lt; T &gt;</a></li>
 <li>SetZero()&#160;:&#160;<a class="el" href="dd/dbc/group__collections.html#ga8992101c929020cc3312b701470a0f89">SystemEx.Collections.Generic.Cache</a></li>
 <li>SizeCalc()&#160;:&#160;<a class="el" href="d6/dd9/class_system_ex_1_1_conversion.html#a2352fd5006bf92f8418d52a8820629aa">SystemEx.Conversion</a></li>
 <li>SizeMismatchException()&#160;:&#160;<a class="el" href="d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception.html#ab3ffc2d5d7dc8b6c8613fe8dad8c16e5">SystemEx.Utils.SizeMismatchException</a></li>
 <li>Slice()&#160;:&#160;<a class="el" href="d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#ae0edeb61c5bb6209adbec482350b7e84">SystemEx.Collections.Generic.Node&lt; T &gt;</a></li>
 <li>Sort()&#160;:&#160;<a class="el" href="db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g.html#afe063e2f40d28d7e61c7f25045f858c2">SystemEx.Collections.Generic.Interfaces.ISortedArray&lt; T &gt;</a>, <a class="el" href="d6/d5e/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_map-2-g.html#a2a0377fb7f8b927806ef484f3b1f4182">SystemEx.Collections.Generic.Interfaces.ISortedMap&lt; T, TU &gt;</a>, <a class="el" href="dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html#a3c185fd4516ec8bfd8ef6e4e8558e81f">SystemEx.Collections.Generic.Interfaces.ISortedTupleMap</a>, <a class="el" href="d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#a856050a49db335a285d8f2957ba92e24">SystemEx.Collections.Generic.SortedArray&lt; T &gt;</a>, <a class="el" href="d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#ab209b6f945c1d7419048fc7fc836af75">SystemEx.Collections.Generic.SortedMap&lt; T, TU &gt;</a>, <a class="el" href="d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#a8752859eb616991df3d08f2f7e14ff48">SystemEx.Collections.Generic.SortedTupleList</a>, <a class="el" href="da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a03d62f26e8d1089bb6fd8c148fc94b78">SystemEx.Collections.Generic.SortedTupleMap</a>, <a class="el" href="d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#a1f2c078036ede6276cc7b04c51e0437f">SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;</a></li>
-<li>SortByPriority()&#160;:&#160;<a class="el" href="d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#ab08dc825c68cbb08a955fe4a48be374f">SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt;</a></li>
-<li>SortByPriorityArray()&#160;:&#160;<a class="el" href="d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#a140f3e75c800476341df027a5670f599">SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt;</a></li>
 <li>SortedArray()&#160;:&#160;<a class="el" href="d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#a1ca72678cbc5d045c94497162edcde88">SystemEx.Collections.Generic.SortedArray&lt; T &gt;</a></li>
 <li>SortedMap()&#160;:&#160;<a class="el" href="d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#aa7b24e6b91c7be383fd813bdacc91b40">SystemEx.Collections.Generic.SortedMap&lt; T, TU &gt;</a></li>
 <li>SortedMultiMap()&#160;:&#160;<a class="el" href="d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#a121712d24b76d3f5e84f0c1bf9e64b83">SystemEx.Collections.Generic.SortedMultiMap&lt; T, TU &gt;</a></li>
@@ -150,10 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <li>StackLayer()&#160;:&#160;<a class="el" href="d3/d62/struct_system_ex_1_1_collections_1_1_generic_1_1_stack_layer.html#abfed11b5d62c7f60b813d66366c19f69">SystemEx.Collections.Generic.StackLayer</a></li>
 <li>StarNode()&#160;:&#160;<a class="el" href="db/d90/class_system_ex_1_1_collections_1_1_generic_1_1_star_node-1-g.html#abaa6fe572e5d9a61ef702ab281b985e8">SystemEx.Collections.Generic.StarNode&lt; T &gt;</a></li>
 <li>StrippedCache()&#160;:&#160;<a class="el" href="d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#aedd6d2db8ba958464aadc7a7f0294aea">SystemEx.Collections.Generic.StrippedCache</a></li>
-<li>Subtraction()&#160;:&#160;<a class="el" href="de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a821d86749b08f3bf7a0c1c692b978101">SystemEx.Drawing.ColorHSV</a>, <a class="el" href="db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#ac5074de05087491285f501de4b305772">SystemEx.Drawing.ColorR8G8B8</a>, <a class="el" href="df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a2e68feb2f7121a89a66759cf655f0e7c">SystemEx.Drawing.IColor&lt; T &gt;</a>, <a class="el" href="d8/de9/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_h_d_r.html#ae36f1d4fd46dca143a2fb6993f3c2933">SystemEx.SystemEx.Drawing.ColorHDR</a>, <a class="el" href="d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html#a2c5daf23695360a58e7df034534b6495">SystemEx.SystemEx.Drawing.ColorR16G16B16</a></li>
+<li>Subtraction()&#160;:&#160;<a class="el" href="de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a821d86749b08f3bf7a0c1c692b978101">SystemEx.Drawing.ColorHSV</a>, <a class="el" href="db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#ad5a5a935eecf9ae3fbf024b4b56f18ee">SystemEx.Drawing.ColorR8G8B8</a>, <a class="el" href="d8/de9/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_h_d_r.html#ae36f1d4fd46dca143a2fb6993f3c2933">SystemEx.SystemEx.Drawing.ColorHDR</a>, <a class="el" href="d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html#a2c5daf23695360a58e7df034534b6495">SystemEx.SystemEx.Drawing.ColorR16G16B16</a></li>
 <li>Swap()&#160;:&#160;<a class="el" href="d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#a6ff8a2533066de90d02a53bed2a3996e">SystemEx.Collections.Generic.Node&lt; T &gt;</a>, <a class="el" href="d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#aa29dcfa7cf9eaf34a13e1b9d5ff2f52c">SystemEx.Collections.Generic.SortedArray&lt; T &gt;</a>, <a class="el" href="d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#a92111b994b7839d1696d8ad3530c39d1">SystemEx.Collections.Generic.SortedMap&lt; T, TU &gt;</a>, <a class="el" href="d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#afc3970def7902ed5c2d1bcb63316df58">SystemEx.Collections.Generic.SortedTupleList</a>, <a class="el" href="da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a27a68e3e2c5d36ecdb1ecef25e4a230d">SystemEx.Collections.Generic.SortedTupleMap</a>, <a class="el" href="d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#a3d8015e1147d6325aecf60da35997201">SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;</a></li>
 <li>Swap&lt; T &gt;()&#160;:&#160;<a class="el" href="db/d0a/class_system_ex_1_1_utils_1_1_algorithm.html#a2ad9699b354941edf38629cd714136fb">SystemEx.Utils.Algorithm</a></li>
-<li>SwapIn()&#160;:&#160;<a class="el" href="d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.html#ac5f05cbc80da0ea2ff15cbacd1d22a32">SystemEx.Drawing.ICanvasList&lt; T &gt;</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

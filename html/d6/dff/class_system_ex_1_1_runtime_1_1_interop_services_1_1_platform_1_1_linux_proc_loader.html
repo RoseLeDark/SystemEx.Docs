@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Runtime.InteropServices.Platform.LinuxProcLoader Class Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d6/dff/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_linux_proc_loader.html','../../','d4/dde/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_linux_proc_loader-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -139,15 +140,18 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ab1013afc7cb6763cb67cc2377ab9814b" id="r_ab1013afc7cb6763cb67cc2377ab9814b"><td class="memItemLeft">static IntPtr&#160;</td><td class="memItemRight"><a class="el" href="#ab1013afc7cb6763cb67cc2377ab9814b">dlopen</a> (string path, int mode)</td></tr>
+<tr class="memitem:ab1013afc7cb6763cb67cc2377ab9814b" id="r_ab1013afc7cb6763cb67cc2377ab9814b"><td class="memItemLeft"><a id="ab1013afc7cb6763cb67cc2377ab9814b" name="ab1013afc7cb6763cb67cc2377ab9814b"></a>
+static IntPtr&#160;</td><td class="memItemRight"><b>dlopen</b> (string path, int mode)</td></tr>
 <tr class="memdesc:ab1013afc7cb6763cb67cc2377ab9814b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a shared object (.so) using <code>dlopen</code>. <br  />
- Returns a native handle that can be used for symbol resolution.  <br /></td></tr>
-<tr class="memitem:a3774f699f7dace3a594494025305089e" id="r_a3774f699f7dace3a594494025305089e"><td class="memItemLeft">static IntPtr&#160;</td><td class="memItemRight"><a class="el" href="#a3774f699f7dace3a594494025305089e">dlsym</a> (IntPtr handle, string name)</td></tr>
+ Returns a native handle that can be used for symbol resolution. <br /></td></tr>
+<tr class="memitem:a3774f699f7dace3a594494025305089e" id="r_a3774f699f7dace3a594494025305089e"><td class="memItemLeft"><a id="a3774f699f7dace3a594494025305089e" name="a3774f699f7dace3a594494025305089e"></a>
+static IntPtr&#160;</td><td class="memItemRight"><b>dlsym</b> (IntPtr handle, string name)</td></tr>
 <tr class="memdesc:a3774f699f7dace3a594494025305089e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves an exported symbol from a loaded module using <code>dlsym</code>. <br  />
- Returns a raw function pointer or IntPtr.Zero if not found.  <br /></td></tr>
-<tr class="memitem:acc94dfb7f465b9bd0d47a54b87e8ef34" id="r_acc94dfb7f465b9bd0d47a54b87e8ef34"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#acc94dfb7f465b9bd0d47a54b87e8ef34">dlclose</a> (IntPtr handle)</td></tr>
+ Returns a raw function pointer or IntPtr.Zero if not found. <br /></td></tr>
+<tr class="memitem:acc94dfb7f465b9bd0d47a54b87e8ef34" id="r_acc94dfb7f465b9bd0d47a54b87e8ef34"><td class="memItemLeft"><a id="acc94dfb7f465b9bd0d47a54b87e8ef34" name="acc94dfb7f465b9bd0d47a54b87e8ef34"></a>
+static int&#160;</td><td class="memItemRight"><b>dlclose</b> (IntPtr handle)</td></tr>
 <tr class="memdesc:acc94dfb7f465b9bd0d47a54b87e8ef34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unloads a previously loaded module using <code>dlclose</code>. <br  />
- Decrements the reference count of the shared object.  <br /></td></tr>
+ Decrements the reference count of the shared object. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -166,89 +170,6 @@ Static Private Attributes</h2></td></tr>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_linux_proc_loader_8cs_source.html#l00034">34</a> of file <a class="el" href="../../d9/d04/_linux_proc_loader_8cs_source.html">LinuxProcLoader.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="acc94dfb7f465b9bd0d47a54b87e8ef34" name="acc94dfb7f465b9bd0d47a54b87e8ef34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc94dfb7f465b9bd0d47a54b87e8ef34">&#9670;&#160;</a></span>dlclose()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int SystemEx.Runtime.InteropServices.Platform.LinuxProcLoader.dlclose </td>
-          <td>(</td>
-          <td class="paramtype">IntPtr</td>          <td class="paramname"><span class="paramname"><em>handle</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab1013afc7cb6763cb67cc2377ab9814b" name="ab1013afc7cb6763cb67cc2377ab9814b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1013afc7cb6763cb67cc2377ab9814b">&#9670;&#160;</a></span>dlopen()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">IntPtr SystemEx.Runtime.InteropServices.Platform.LinuxProcLoader.dlopen </td>
-          <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3774f699f7dace3a594494025305089e" name="a3774f699f7dace3a594494025305089e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3774f699f7dace3a594494025305089e">&#9670;&#160;</a></span>dlsym()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">IntPtr SystemEx.Runtime.InteropServices.Platform.LinuxProcLoader.dlsym </td>
-          <td>(</td>
-          <td class="paramtype">IntPtr</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a50be835dd0282f98dc55642db6621e9c" name="a50be835dd0282f98dc55642db6621e9c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a50be835dd0282f98dc55642db6621e9c">&#9670;&#160;</a></span>FreeLibrary()</h2>
 
@@ -273,10 +194,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_linux_proc_loader_8cs_source.html#l00093">93</a> of file <a class="el" href="../../d9/d04/_linux_proc_loader_8cs_source.html">LinuxProcLoader.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   93</span>                                                     {</div>
-<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">return</span> dlclose(lib.Handle);</div>
-<div class="line"><span class="lineno">   95</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab7dd8630bcd5f9806b97d5a73b75faf5" name="ab7dd8630bcd5f9806b97d5a73b75faf5"></a>
@@ -307,18 +225,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_linux_proc_loader_8cs_source.html#l00131">131</a> of file <a class="el" href="../../d9/d04/_linux_proc_loader_8cs_source.html">LinuxProcLoader.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  131</span>                                                                         {</div>
-<div class="line"><span class="lineno">  132</span>            <span class="keywordtype">string</span> _ret = NO_PATH;</div>
-<div class="line"><span class="lineno">  133</span> </div>
-<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">foreach</span> ( var file <span class="keywordflow">in</span> Directory.GetFiles(path) ) {</div>
-<div class="line"><span class="lineno">  135</span>                <span class="keywordflow">if</span> ( Path.GetFileName(file) == module ) {</div>
-<div class="line"><span class="lineno">  136</span>                    _ret = Path.Combine(path, file);</div>
-<div class="line"><span class="lineno">  137</span>                }</div>
-<div class="line"><span class="lineno">  138</span>            }</div>
-<div class="line"><span class="lineno">  139</span> </div>
-<div class="line"><span class="lineno">  140</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><span class="lineno">  141</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a77dd5ca3f63e25dbb5daf78699ac9d29" name="a77dd5ca3f63e25dbb5daf78699ac9d29"></a>
@@ -345,30 +252,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_linux_proc_loader_8cs_source.html#l00103">103</a> of file <a class="el" href="../../d9/d04/_linux_proc_loader_8cs_source.html">LinuxProcLoader.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  103</span>                                                               {</div>
-<div class="line"><span class="lineno">  104</span>            <span class="keywordtype">string</span> _ret = NO_PATH;</div>
-<div class="line"><span class="lineno">  105</span> </div>
-<div class="line"><span class="lineno">  106</span>            <span class="comment">// Check /usr/lib</span></div>
-<div class="line"><span class="lineno">  107</span>            _ret = GetFromPath(<span class="stringliteral">&quot;/usr/lib/&quot;</span>, somodule);</div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>            <span class="comment">// Check LD_LIBRARY_PATH</span></div>
-<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">if</span> ( _ret == NO_PATH ) {</div>
-<div class="line"><span class="lineno">  111</span>                <span class="keywordtype">string</span>? env = Environment.GetEnvironmentVariable(<span class="stringliteral">&quot;LD_LIBRARY_PATH&quot;</span>);</div>
-<div class="line"><span class="lineno">  112</span>                <span class="keywordflow">if</span> ( env != <span class="keyword">null</span> ) {</div>
-<div class="line"><span class="lineno">  113</span>                    var paths = env.Split(<span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><span class="lineno">  114</span>                    <span class="keywordflow">foreach</span> ( <span class="keywordtype">string</span> path <span class="keywordflow">in</span> paths ) {</div>
-<div class="line"><span class="lineno">  115</span>                        <span class="keywordtype">string</span> candidate = GetFromPath(path, somodule);</div>
-<div class="line"><span class="lineno">  116</span>                        <span class="keywordflow">if</span> ( candidate != NO_PATH ) {</div>
-<div class="line"><span class="lineno">  117</span>                            _ret = candidate;</div>
-<div class="line"><span class="lineno">  118</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  119</span>                        }</div>
-<div class="line"><span class="lineno">  120</span>                    }</div>
-<div class="line"><span class="lineno">  121</span>                }</div>
-<div class="line"><span class="lineno">  122</span>            }</div>
-<div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><span class="lineno">  125</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a2c45d542c07783f7b49316c60e21e326" name="a2c45d542c07783f7b49316c60e21e326"></a>
@@ -399,10 +283,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_linux_proc_loader_8cs_source.html#l00086">86</a> of file <a class="el" href="../../d9/d04/_linux_proc_loader_8cs_source.html">LinuxProcLoader.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   86</span>                                                                      {</div>
-<div class="line"><span class="lineno">   87</span>            <span class="keywordflow">return</span> dlsym(lib.Handle, name);</div>
-<div class="line"><span class="lineno">   88</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="acef799e3a76d369773bbf8c4f46b1b58" name="acef799e3a76d369773bbf8c4f46b1b58"></a>
@@ -429,11 +310,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_linux_proc_loader_8cs_source.html#l00079">79</a> of file <a class="el" href="../../d9/d04/_linux_proc_loader_8cs_source.html">LinuxProcLoader.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>                                                         {</div>
-<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_typedef" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>(dlopen(path, RTLD_NOW), path);</div>
-<div class="line"><span class="lineno">   81</span>        }</div>
-<div class="ttc" id="a_native_r_a_m_kernel_8cs_html_ac108a8ab3a325c58d6d2dfab43fecb66"><div class="ttname"><a href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a></div><div class="ttdeci">SystemEx.Runtime.Module Module</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00022">NativeRAMKernel.cs:22</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>

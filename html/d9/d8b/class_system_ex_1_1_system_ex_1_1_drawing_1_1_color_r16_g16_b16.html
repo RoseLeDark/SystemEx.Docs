@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.SystemEx.Drawing.ColorR16G16B16 Class Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html','../../','de/d97/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -122,26 +123,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <p>Represents a color with 16‑bit precision per channel (R16G16B16), stored internally as normalized floating‑point values (0–1).  
  <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.SystemEx.Drawing.ColorR16G16B16:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Inheritance diagram for SystemEx.SystemEx.Drawing.ColorR16G16B16:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../d8/dc8/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16__inherit__graph.png" border="0" usemap="#a_system_ex_8_system_ex_8_drawing_8_color_r16_g16_b16_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="a_system_ex_8_system_ex_8_drawing_8_color_r16_g16_b16_inherit__map" id="a_system_ex_8_system_ex_8_drawing_8_color_r16_g16_b16_inherit__map">
-<area shape="rect" title="Represents a color with 16‑bit precision per channel (R16G16B16), stored internally as normalized flo..." alt="" coords="6,80,209,123"/>
+<area shape="rect" title="Represents a color with 16‑bit precision per channel (R16G16B16), stored internally as normalized flo..." alt="" coords="90,80,293,123"/>
 <area shape="rect" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html" title=" " alt="" coords="5,5,210,32"/>
-<area shape="poly" title=" " alt="" coords="109,46,110,81,105,79,106,50"/>
+<area shape="poly" title=" " alt="" coords="132,40,173,80,168,80,130,45"/>
+<area shape="rect" title=" " alt="" coords="234,5,317,32"/>
+<area shape="poly" title=" " alt="" coords="254,42,214,82,211,78,249,44"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.SystemEx.Drawing.ColorR16G16B16:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Collaboration diagram for SystemEx.SystemEx.Drawing.ColorR16G16B16:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../d4/da3/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16__coll__graph.png" border="0" usemap="#a_system_ex_8_system_ex_8_drawing_8_color_r16_g16_b16_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_system_ex_8_system_ex_8_drawing_8_color_r16_g16_b16_coll__map" id="a_system_ex_8_system_ex_8_drawing_8_color_r16_g16_b16_coll__map">
-<area shape="rect" title="Represents a color with 16‑bit precision per channel (R16G16B16), stored internally as normalized flo..." alt="" coords="6,80,209,123"/>
+<area shape="rect" title="Represents a color with 16‑bit precision per channel (R16G16B16), stored internally as normalized flo..." alt="" coords="90,80,293,123"/>
 <area shape="rect" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html" title=" " alt="" coords="5,5,210,32"/>
-<area shape="poly" title=" " alt="" coords="109,46,110,81,105,79,106,50"/>
+<area shape="poly" title=" " alt="" coords="132,40,173,80,168,80,130,45"/>
+<area shape="rect" title=" " alt="" coords="234,5,317,32"/>
+<area shape="poly" title=" " alt="" coords="254,42,214,82,211,78,249,44"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -199,12 +202,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aad57fa55b2b034c441ef12457e931de4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a hash code based on the R, G, and B components.  <br /></td></tr>
 <tr class="memitem:ab214ca4fd345bfe842dcb540b5b2bcd9" id="r_ab214ca4fd345bfe842dcb540b5b2bcd9"><td class="memItemLeft">override bool&#160;</td><td class="memItemRight"><a class="el" href="#ab214ca4fd345bfe842dcb540b5b2bcd9">Equals</a> (object? obj)</td></tr>
 <tr class="memdesc:ab214ca4fd345bfe842dcb540b5b2bcd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether this instance is equal to another object.  <br /></td></tr>
-<tr class="inherit_header pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a></td></tr>
-<tr class="memitem:a74af940c1c2b18f5bb55f57fcd4d4472 inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g" id="r_a74af940c1c2b18f5bb55f57fcd4d4472"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a74af940c1c2b18f5bb55f57fcd4d4472">Addition</a> (T value)</td></tr>
-<tr class="memitem:a2e68feb2f7121a89a66759cf655f0e7c inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g" id="r_a2e68feb2f7121a89a66759cf655f0e7c"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a2e68feb2f7121a89a66759cf655f0e7c">Subtraction</a> (T value)</td></tr>
-<tr class="memitem:a23735542aac5fbeac1d1f3af673ae3b0 inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g" id="r_a23735542aac5fbeac1d1f3af673ae3b0"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a23735542aac5fbeac1d1f3af673ae3b0">Multiplication</a> (T value)</td></tr>
-<tr class="memitem:a21aa11031787f8334d8c080400ecc196 inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g" id="r_a21aa11031787f8334d8c080400ecc196"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a21aa11031787f8334d8c080400ecc196">Division</a> (T value)</td></tr>
-<tr class="memitem:a3af3aefd30c7ddc53f205bd4d9b1fdf6 inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g" id="r_a3af3aefd30c7ddc53f205bd4d9b1fdf6"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a3af3aefd30c7ddc53f205bd4d9b1fdf6">Lerp</a> (T value, float amount)</td></tr>
+<tr class="inherit_header pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g"><td colspan="2">Public Member Functions inherited from <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a></td></tr>
+<tr class="memitem:a74af940c1c2b18f5bb55f57fcd4d4472 pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g" id="r_a74af940c1c2b18f5bb55f57fcd4d4472"><td class="memItemLeft">
+T&#160;</td><td class="memItemRight"><b>Addition</b> (T value)</td></tr>
+<tr class="memitem:a2e68feb2f7121a89a66759cf655f0e7c pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g" id="r_a2e68feb2f7121a89a66759cf655f0e7c"><td class="memItemLeft">
+T&#160;</td><td class="memItemRight"><b>Subtraction</b> (T value)</td></tr>
+<tr class="memitem:a23735542aac5fbeac1d1f3af673ae3b0 pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g" id="r_a23735542aac5fbeac1d1f3af673ae3b0"><td class="memItemLeft">
+T&#160;</td><td class="memItemRight"><b>Multiplication</b> (T value)</td></tr>
+<tr class="memitem:a21aa11031787f8334d8c080400ecc196 pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g" id="r_a21aa11031787f8334d8c080400ecc196"><td class="memItemLeft">
+T&#160;</td><td class="memItemRight"><b>Division</b> (T value)</td></tr>
+<tr class="memitem:a3af3aefd30c7ddc53f205bd4d9b1fdf6 pub_methods_interface_system_ex_1_1_drawing_1_1_i_color-1-g" id="r_a3af3aefd30c7ddc53f205bd4d9b1fdf6"><td class="memItemLeft">
+T&#160;</td><td class="memItemRight"><b>Lerp</b> (T value, float amount)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -247,12 +255,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00037">37</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>                                {</div>
-<div class="line"><span class="lineno">   38</span>            m_red = 0f;</div>
-<div class="line"><span class="lineno">   39</span>            m_green = 0f;</div>
-<div class="line"><span class="lineno">   40</span>            m_blue = 0f;</div>
-<div class="line"><span class="lineno">   41</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aad75cc8968531266e29ce6c0d4b0061a" name="aad75cc8968531266e29ce6c0d4b0061a"></a>
@@ -280,12 +283,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00045">45</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>                                                         {</div>
-<div class="line"><span class="lineno">   46</span>            m_red = r;</div>
-<div class="line"><span class="lineno">   47</span>            m_green = g;</div>
-<div class="line"><span class="lineno">   48</span>            m_blue = b;</div>
-<div class="line"><span class="lineno">   49</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a39c91555f94479cc5cd43eea4a67121d" name="a39c91555f94479cc5cd43eea4a67121d"></a>
@@ -313,13 +311,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00053">53</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>                                                             {</div>
-<div class="line"><span class="lineno">   54</span>            <span class="keyword">const</span> <span class="keywordtype">float</span> inv = 1f / 65535f;</div>
-<div class="line"><span class="lineno">   55</span>            m_red = r * inv;</div>
-<div class="line"><span class="lineno">   56</span>            m_green = g * inv;</div>
-<div class="line"><span class="lineno">   57</span>            m_blue = b * inv;</div>
-<div class="line"><span class="lineno">   58</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a088ec287d8646783f9eb72e7223a99fd" name="a088ec287d8646783f9eb72e7223a99fd"></a>
@@ -338,12 +330,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00062">62</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span>                                          {</div>
-<div class="line"><span class="lineno">   63</span>            m_red = gray;</div>
-<div class="line"><span class="lineno">   64</span>            m_green = gray;</div>
-<div class="line"><span class="lineno">   65</span>            m_blue = gray;</div>
-<div class="line"><span class="lineno">   66</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -363,13 +350,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00069">69</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>                                                             {</div>
-<div class="line"><span class="lineno">   70</span>            m_red += value.m_red;</div>
-<div class="line"><span class="lineno">   71</span>            m_green += value.m_green;</div>
-<div class="line"><span class="lineno">   72</span>            m_blue += value.m_blue;</div>
-<div class="line"><span class="lineno">   73</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   74</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab54f825ebf01da7d1be5fbdaff6cb9c8" name="ab54f825ebf01da7d1be5fbdaff6cb9c8"></a>
@@ -396,13 +377,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a227a021d198fd59ee8520e61c850ae92">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
+<p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00201">201</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  201</span>                                                                  {</div>
-<div class="line"><span class="lineno">  202</span>            <span class="keywordflow">return</span> Addition(<span class="keyword">new</span> ColorR16G16B16(a, b, c));</div>
-<div class="line"><span class="lineno">  203</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a81d252cf06f31dfd115ab53427eb2f5f" name="a81d252cf06f31dfd115ab53427eb2f5f"></a>
@@ -421,14 +399,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00103">103</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  103</span>                                             {</div>
-<div class="line"><span class="lineno">  104</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ColorR16G16B16(</div>
-<div class="line"><span class="lineno">  105</span>                System.Math.Clamp(m_red, 0f, 1f),</div>
-<div class="line"><span class="lineno">  106</span>                System.Math.Clamp(m_green, 0f, 1f),</div>
-<div class="line"><span class="lineno">  107</span>                System.Math.Clamp(m_blue, 0f, 1f)</div>
-<div class="line"><span class="lineno">  108</span>            );</div>
-<div class="line"><span class="lineno">  109</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad813ff475c3089541ebc5601c4f6cf22" name="ad813ff475c3089541ebc5601c4f6cf22"></a>
@@ -447,14 +418,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00114">114</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  114</span>                                         {</div>
-<div class="line"><span class="lineno">  115</span>            <span class="keywordtype">float</span> max = System.MathF.Max(m_red, System.MathF.Max(m_green, m_blue));</div>
-<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">if</span> ( max &lt;= 1f )</div>
-<div class="line"><span class="lineno">  117</span>                <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  118</span> </div>
-<div class="line"><span class="lineno">  119</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ColorR16G16B16(m_red / max, m_green / max, m_blue / max);</div>
-<div class="line"><span class="lineno">  120</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a9f4595845e4a6f1091f6dbf13e5f094d" name="a9f4595845e4a6f1091f6dbf13e5f094d"></a>
@@ -473,10 +437,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00123">123</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>                                  {</div>
-<div class="line"><span class="lineno">  124</span>            <span class="keywordflow">return</span> m_red * 0.299f + m_green * 0.587f + m_blue * 0.114f;</div>
-<div class="line"><span class="lineno">  125</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a8795cd6b008caca63b22657bfb22f49b" name="a8795cd6b008caca63b22657bfb22f49b"></a>
@@ -494,20 +455,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#ac73ac46a7d4b58a851130d6fa8baf71b">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
+<p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00187">187</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  187</span>                                                      {</div>
-<div class="line"><span class="lineno">  188</span>            var hsv = this.ToColorHSV();</div>
-<div class="line"><span class="lineno">  189</span>            var rgb = hsv.Brightness(delta).ToColorR16G16B16();</div>
-<div class="line"><span class="lineno">  190</span> </div>
-<div class="line"><span class="lineno">  191</span>            m_red = rgb.m_red;</div>
-<div class="line"><span class="lineno">  192</span>            m_green = rgb.m_green;</div>
-<div class="line"><span class="lineno">  193</span>            m_blue = rgb.m_blue;</div>
-<div class="line"><span class="lineno">  194</span> </div>
-<div class="line"><span class="lineno">  195</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  196</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aa3ccfce7b192d8c3426086c683bd17bc" name="aa3ccfce7b192d8c3426086c683bd17bc"></a>
@@ -526,10 +477,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00134">134</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>                                                    {</div>
-<div class="line"><span class="lineno">  135</span>            <span class="keywordflow">return</span> System.MathF.Abs(Brightness() - other.Brightness());</div>
-<div class="line"><span class="lineno">  136</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a7b82d3357c0bb3c30e522cb51199fc13" name="a7b82d3357c0bb3c30e522cb51199fc13"></a>
@@ -548,13 +496,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00093">93</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   93</span>                                                             {</div>
-<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">if</span> ( value.m_red != 0f ) m_red /= value.m_red;</div>
-<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">if</span> ( value.m_green != 0f ) m_green /= value.m_green;</div>
-<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">if</span> ( value.m_blue != 0f ) m_blue /= value.m_blue;</div>
-<div class="line"><span class="lineno">   97</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   98</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aca52c7b7fb98fefeb91afb2e744da811" name="aca52c7b7fb98fefeb91afb2e744da811"></a>
@@ -581,13 +523,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#aaa3846ae23cd7968f33327eb617a4572">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
+<p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00219">219</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  219</span>                                                                  {</div>
-<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">return</span> Division(<span class="keyword">new</span> ColorR16G16B16(a, b, c));</div>
-<div class="line"><span class="lineno">  221</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a44185e061906b6b7bcbe7c8448b2d3ba" name="a44185e061906b6b7bcbe7c8448b2d3ba"></a>
@@ -613,13 +552,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the components match; otherwise <code>false</code>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00230">230</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  230</span>                                                 {</div>
-<div class="line"><span class="lineno">  231</span> </div>
-<div class="line"><span class="lineno">  232</span>            <span class="keywordflow">return</span> R.Equals(other.R) &amp;&amp;</div>
-<div class="line"><span class="lineno">  233</span>                G.Equals(other.G) &amp;&amp;</div>
-<div class="line"><span class="lineno">  234</span>                B.Equals(other.B);</div>
-<div class="line"><span class="lineno">  235</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab214ca4fd345bfe842dcb540b5b2bcd9" name="ab214ca4fd345bfe842dcb540b5b2bcd9"></a>
@@ -638,12 +571,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00245">245</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  245</span>                                                 {</div>
-<div class="line"><span class="lineno">  246</span>            <span class="keywordflow">if</span> ( obj == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  247</span>            <span class="keywordflow">if</span> ( obj is ColorR16G16B16 ) <span class="keywordflow">return</span> Equals(obj as ColorR16G16B16);</div>
-<div class="line"><span class="lineno">  248</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  249</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aad57fa55b2b034c441ef12457e931de4" name="aad57fa55b2b034c441ef12457e931de4"></a>
@@ -662,10 +590,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00239">239</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  239</span>                                          {</div>
-<div class="line"><span class="lineno">  240</span>            <span class="keywordflow">return</span> HashCode.Combine(this.m_red, this.m_blue, this.m_blue);</div>
-<div class="line"><span class="lineno">  241</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a75f4f73ca19cb0d7126ec5d8cbf37923" name="a75f4f73ca19cb0d7126ec5d8cbf37923"></a>
@@ -684,16 +609,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00139">139</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>                                                               {</div>
-<div class="line"><span class="lineno">  140</span>            <span class="keywordtype">float</span> c = Contrast(other);</div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>            <span class="keywordflow">if</span> ( c &lt; 0.20f ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../de/d5b/namespace_system_ex_1_1_drawing.html#a1738673316f8d96453eda571bae3f460">ContrastLevel</a>.VeryLow;</div>
-<div class="line"><span class="lineno">  143</span>            <span class="keywordflow">if</span> ( c &lt; 0.40f ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../de/d5b/namespace_system_ex_1_1_drawing.html#a1738673316f8d96453eda571bae3f460">ContrastLevel</a>.Low;</div>
-<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">if</span> ( c &lt; 0.70f ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../de/d5b/namespace_system_ex_1_1_drawing.html#a1738673316f8d96453eda571bae3f460">ContrastLevel</a>.High;</div>
-<div class="line"><span class="lineno">  145</span>            <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../de/d5b/namespace_system_ex_1_1_drawing.html#a1738673316f8d96453eda571bae3f460">ContrastLevel</a>.Perfect;</div>
-<div class="line"><span class="lineno">  146</span>        }</div>
-<div class="ttc" id="anamespace_system_ex_1_1_drawing_html_a1738673316f8d96453eda571bae3f460"><div class="ttname"><a href="../../de/d5b/namespace_system_ex_1_1_drawing.html#a1738673316f8d96453eda571bae3f460">SystemEx.Drawing.ContrastLevel</a></div><div class="ttdeci">ContrastLevel</div><div class="ttdoc">Represents the qualitative contrast level between two colors.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/de7/_color_r8_g8_b8_8cs_source.html#l00008">ColorR8G8B8.cs:8</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="acdf5a583d94d90738df26e2351bc0601" name="acdf5a583d94d90738df26e2351bc0601"></a>
@@ -712,13 +628,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00148">148</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  148</span>                                                     {</div>
-<div class="line"><span class="lineno">  149</span>            var hsv = this.ToColorHSV();</div>
-<div class="line"><span class="lineno">  150</span>            hsv.H = (hsv.H + 180f) % 360f;</div>
-<div class="line"><span class="lineno">  151</span>            hsv.V = 1f - hsv.V;</div>
-<div class="line"><span class="lineno">  152</span>            <span class="keywordflow">return</span> hsv.ToColorR16G16B16();</div>
-<div class="line"><span class="lineno">  153</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad253ee6a66ae77f014d4b8066269f2ac" name="ad253ee6a66ae77f014d4b8066269f2ac"></a>
@@ -741,14 +651,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00156">156</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  156</span>                                                                       {</div>
-<div class="line"><span class="lineno">  157</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ColorR16G16B16(</div>
-<div class="line"><span class="lineno">  158</span>                m_red + amount * (value.m_red - m_red),</div>
-<div class="line"><span class="lineno">  159</span>                m_green + amount * (value.m_green - m_green),</div>
-<div class="line"><span class="lineno">  160</span>                m_blue + amount * (value.m_blue - m_blue)</div>
-<div class="line"><span class="lineno">  161</span>            );</div>
-<div class="line"><span class="lineno">  162</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="adb95dd5d5ca5267d56c459d5ec4ee6e2" name="adb95dd5d5ca5267d56c459d5ec4ee6e2"></a>
@@ -767,11 +670,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00128">128</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>                                        {</div>
-<div class="line"><span class="lineno">  129</span>            var lin = this.ToLinear();</div>
-<div class="line"><span class="lineno">  130</span>            <span class="keywordflow">return</span> lin.Red * 0.2126f + lin.Green * 0.7152f + lin.Blue * 0.0722f;</div>
-<div class="line"><span class="lineno">  131</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ae600ca89a225da3d1fce452509d9a563" name="ae600ca89a225da3d1fce452509d9a563"></a>
@@ -790,13 +689,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00085">85</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>                                                                   {</div>
-<div class="line"><span class="lineno">   86</span>            m_red *= value.m_red;</div>
-<div class="line"><span class="lineno">   87</span>            m_green *= value.m_green;</div>
-<div class="line"><span class="lineno">   88</span>            m_blue *= value.m_blue;</div>
-<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   90</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ae5d62c0e6bfc2061a53db0e562e357c4" name="ae5d62c0e6bfc2061a53db0e562e357c4"></a>
@@ -823,13 +716,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a1c340e53b5a28100c4a7f7bae7b9146a">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
+<p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00213">213</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  213</span>                                                                        {</div>
-<div class="line"><span class="lineno">  214</span>            <span class="keywordflow">return</span> Multiplication(<span class="keyword">new</span> ColorR16G16B16(a, b, c));</div>
-<div class="line"><span class="lineno">  215</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac3f174e8010d4942bbe3bcdc205def34" name="ac3f174e8010d4942bbe3bcdc205def34"></a>
@@ -847,20 +737,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a3b5eafed3c47bea555a5889dd433b775">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
+<p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00173">173</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  173</span>                                                      {</div>
-<div class="line"><span class="lineno">  174</span>            var hsv = this.ToColorHSV();</div>
-<div class="line"><span class="lineno">  175</span>            var rgb = hsv.Saturation(delta).ToColorR16G16B16();</div>
-<div class="line"><span class="lineno">  176</span> </div>
-<div class="line"><span class="lineno">  177</span>            m_red = rgb.m_red;</div>
-<div class="line"><span class="lineno">  178</span>            m_green = rgb.m_green;</div>
-<div class="line"><span class="lineno">  179</span>            m_blue = rgb.m_blue;</div>
-<div class="line"><span class="lineno">  180</span> </div>
-<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  182</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a2c5daf23695360a58e7df034534b6495" name="a2c5daf23695360a58e7df034534b6495"></a>
@@ -879,13 +759,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00077">77</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>                                                                {</div>
-<div class="line"><span class="lineno">   78</span>            m_red -= value.m_red;</div>
-<div class="line"><span class="lineno">   79</span>            m_green -= value.m_green;</div>
-<div class="line"><span class="lineno">   80</span>            m_blue -= value.m_blue;</div>
-<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   82</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a8c32402ce0d3852c37dc1081935e3e58" name="a8c32402ce0d3852c37dc1081935e3e58"></a>
@@ -912,13 +786,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#aa73020d4e5585c206f49b1b06906785c">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
+<p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00207">207</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  207</span>                                                                     {</div>
-<div class="line"><span class="lineno">  208</span>            <span class="keywordflow">return</span> Subtraction(<span class="keyword">new</span> ColorR16G16B16(a, b, c));</div>
-<div class="line"><span class="lineno">  209</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab19eb66ed08a194b8b4f28e6316010eb" name="ab19eb66ed08a194b8b4f28e6316010eb"></a>
@@ -937,10 +808,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html#l00167">167</a> of file <a class="el" href="../../db/d12/_color_r16_g16_b16_8cs_source.html">ColorR16G16B16.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  167</span>                                          {</div>
-<div class="line"><span class="lineno">  168</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;[{m_red}, {m_green}, {m_blue}]&quot;</span>);</div>
-<div class="line"><span class="lineno">  169</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>

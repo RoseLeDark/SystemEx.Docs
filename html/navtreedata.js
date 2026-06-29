@@ -113,11 +113,7 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Typedefs", "globals_type.html", null ]
-      ] ]
+      [ "File List", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
@@ -125,18 +121,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d2/d54/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_mac_proc_loader.html#a836bec40a3b7817eaf7ee1d2e3160c92",
-"d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a716b270a05b22e6ebfb02eda033f8945",
-"d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#a4edab6b6590c74060680729267a61fe3",
-"d6/dd9/class_system_ex_1_1_conversion.html#ad489b53dd4157235c2cc0366c6a02b3c",
-"d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#a9785f6a7a7e03baf78c00b70cd69835e",
-"d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#acd35c6c6099d27acb78b0ba7a7406f00",
-"d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a7bed585c6aa0dafd680ff12118a78ca7",
-"db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a4837a8ca556761ed31eb2ebb376b1d3b",
-"dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab7479c134a2ed38f53a6921393d46dc9",
-"de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ad8b876803886e038db8dcadf0f819db3",
-"df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a29b4b8ce15c0ce0197e2590893898784",
-"functions_i.html"
+"d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ae46d08af2aeec81c004385b0eba87bb9",
+"d4/d60/class_system_ex_1_1_drawing_1_1_white_colors.html#a8e2f3e6c20bc098a2e83443758ca3a39",
+"d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html",
+"d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html#a1e808f92506f2b64f8220381f8d141a9",
+"d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#aca521e695853c667e9a20e5648dc2a42",
+"d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors.html#a1c3f586528ff2e081df7cfaba86b2ab8",
+"db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a4bd2116db11365b1e30823fcd1a14846",
+"dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#afe9097376e02d22abaa66e70bb692c87",
+"de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors.html#acc85c12f24e37af7641cf530eacdf06d",
+"functions_func_z.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

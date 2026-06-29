@@ -10,5 +10,5 @@ var files_dup =
     [ "Properties", "dir_d051c76eebdc544d9c3d734575641c72.html", "dir_d051c76eebdc544d9c3d734575641c72" ],
     [ "Runtime", "dir_4f6666a8f2ab10bc970eb7559668f031.html", "dir_4f6666a8f2ab10bc970eb7559668f031" ],
     [ "Utils", "dir_0a824aa1f70ce3b829ef378253b085da.html", "dir_0a824aa1f70ce3b829ef378253b085da" ],
-    [ "GlobalSuppressions.cs", "d5/d0f/_global_suppressions_8cs.html", null ]
+    [ "GlobalSuppressions.cs", "d5/d0f/_global_suppressions_8cs_source.html", null ]
 ];

@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Base.NumberRangeStepper&lt; T &gt; Class Template Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html','../../','d3/d83/class_system_ex_1_1_base_1_1_number_range_stepper-1-g-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -122,19 +123,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <p>Provides a cursor-based stepper over a normalized numeric range. The stepper moves from Start to End in fixed increments and exposes forward/backward stepping, reset, and enumeration.  
  <a href="#details">More...</a></p>
-
-<p>Inherits IEnumerable, and IEquatable.</p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Base.NumberRangeStepper&lt; T &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Inheritance diagram for SystemEx.Base.NumberRangeStepper&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d33/class_system_ex_1_1_base_1_1_number_range_stepper-1-g__inherit__graph.png" border="0" usemap="#a_system_ex_8_base_8_number_range_stepper_3_01_t_01_4_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_system_ex_8_base_8_number_range_stepper_3_01_t_01_4_inherit__map" id="a_system_ex_8_base_8_number_range_stepper_3_01_t_01_4_inherit__map">
+<area shape="rect" title="Provides a cursor&#45;based stepper over a normalized numeric range. The stepper moves from Start to End ..." alt="" coords="64,96,269,139"/>
+<area shape="rect" title=" " alt="" coords="5,13,131,40"/>
+<area shape="poly" title=" " alt="" coords="95,48,146,95,141,96,93,53"/>
+<area shape="rect" title=" " alt="" coords="154,5,379,48"/>
+<area shape="poly" title=" " alt="" coords="235,57,192,98,189,93,230,59"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for SystemEx.Base.NumberRangeStepper&lt; T &gt;:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../d0/d66/class_system_ex_1_1_base_1_1_number_range_stepper-1-g__coll__graph.png" border="0" usemap="#a_system_ex_8_base_8_number_range_stepper_3_01_t_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_system_ex_8_base_8_number_range_stepper_3_01_t_01_4_coll__map" id="a_system_ex_8_base_8_number_range_stepper_3_01_t_01_4_coll__map">
-<area shape="rect" title="Provides a cursor&#45;based stepper over a normalized numeric range. The stepper moves from Start to End ..." alt="" coords="5,180,210,223"/>
-<area shape="rect" href="../../dc/d8a/class_system_ex_1_1_number_range-1-g.html" title="Represents a numeric range defined by a start and end value. Provides range validation,..." alt="" coords="7,81,208,108"/>
-<area shape="poly" title=" " alt="" coords="110,122,110,180,105,179,105,125"/>
-<area shape="rect" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html" title="Defines the basic contract for a numeric range with a start and end value. Provides validation,..." alt="" coords="28,5,187,32"/>
-<area shape="poly" title=" " alt="" coords="108,45,110,82,105,80,107,50"/>
+<area shape="rect" title="Provides a cursor&#45;based stepper over a normalized numeric range. The stepper moves from Start to End ..." alt="" coords="164,196,369,239"/>
+<area shape="rect" title=" " alt="" coords="5,89,131,116"/>
+<area shape="poly" title=" " alt="" coords="104,121,232,194,228,197,103,127"/>
+<area shape="rect" title=" " alt="" coords="154,81,379,124"/>
+<area shape="poly" title=" " alt="" coords="269,138,269,197,264,194,265,141"/>
+<area shape="rect" href="../../dc/d8a/class_system_ex_1_1_number_range-1-g.html" title="Represents a numeric range defined by a start and end value. Provides range validation,..." alt="" coords="403,89,605,116"/>
+<area shape="poly" title=" " alt="" coords="466,123,311,198,309,193,461,123"/>
+<area shape="rect" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html" title="Defines the basic contract for a numeric range with a start and end value. Provides validation,..." alt="" coords="279,5,438,32"/>
+<area shape="poly" title=" " alt="" coords="394,37,484,89,479,89,394,42"/>
+<area shape="rect" title=" " alt="" coords="462,5,546,32"/>
+<area shape="poly" title=" " alt="" coords="506,45,506,90,502,87,502,49"/>
+<area shape="rect" title=" " alt="" coords="570,5,664,32"/>
+<area shape="poly" title=" " alt="" coords="590,40,523,91,520,87,586,42"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -222,13 +240,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if both steppers are equivalent.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00160">160</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  160</span>                                                          {</div>
-<div class="line"><span class="lineno">  161</span>            <span class="keywordflow">if</span> ( other == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>            <span class="keywordflow">return</span> m_current.Equals(other.m_current) &amp;&amp; </div>
-<div class="line"><span class="lineno">  164</span>                   m_step.Equals(other.m_step)    ;</div>
-<div class="line"><span class="lineno">  165</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a5a694593d0af3386c79493c699663051" name="a5a694593d0af3386c79493c699663051"></a>
@@ -247,10 +259,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00167">167</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  167</span>                                                 {</div>
-<div class="line"><span class="lineno">  168</span>            <span class="keywordflow">return</span> Equals(obj as NumberRangeStepper&lt;T&gt;);</div>
-<div class="line"><span class="lineno">  169</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a88a05bf239e388a72a0fdd3525b88cb8" name="a88a05bf239e388a72a0fdd3525b88cb8"></a>
@@ -277,8 +286,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00059">59</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>            =&gt; GetEnumerator();</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a7fb8624371ab32c1e1795ec07af6bf63" name="a7fb8624371ab32c1e1795ec07af6bf63"></a>
@@ -298,12 +306,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Sequence of stepped values.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00054">54</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   54</span>                                              {</div>
-<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">for</span> ( T i = m_current.From; i &lt;= m_current.To; i += m_step ) {</div>
-<div class="line"><span class="lineno">   56</span>                yield <span class="keywordflow">return</span> i;</div>
-<div class="line"><span class="lineno">   57</span>            }</div>
-<div class="line"><span class="lineno">   58</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a63527c344a97155fa354a847377ae1d5" name="a63527c344a97155fa354a847377ae1d5"></a>
@@ -322,10 +325,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00174">174</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  174</span>                                          {</div>
-<div class="line"><span class="lineno">  175</span>            <span class="keywordflow">return</span> HashCode.Combine(m_current, m_current, m_step);</div>
-<div class="line"><span class="lineno">  176</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a52e65f15ca01daf41b73128738552970" name="a52e65f15ca01daf41b73128738552970"></a>
@@ -344,9 +344,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00121">121</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  121</span>                              =&gt; </div>
-<div class="line"><span class="lineno">  122</span>            ( (m_current.From + m_step) &lt; m_current.To ) ;</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a02341393da81c65dd07dfe06bbdd9ce0" name="a02341393da81c65dd07dfe06bbdd9ce0"></a>
@@ -372,8 +370,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if <code>Start + step</code> is still strictly below <code>End</code>; otherwise false. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00138">138</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>            =&gt; (m_current.From + step) &lt; m_current.To;</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a4ce870aae85dc093ff780e531409c493" name="a4ce870aae85dc093ff780e531409c493"></a>
@@ -392,9 +389,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00127">127</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  127</span>                              =&gt; </div>
-<div class="line"><span class="lineno">  128</span>            ((m_current.From - m_step) &gt;= m_startOld);</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a9d05cc0b06c712291bf0276a55e75f22" name="a9d05cc0b06c712291bf0276a55e75f22"></a>
@@ -420,8 +415,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if <code>Start - step</code> is still greater than or equal to the original start value; otherwise false. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00149">149</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  150</span>            =&gt; (m_current.From - step) &gt;= m_startOld;</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a899d8c0ac3086a2f07f42fcb9fd4d96a" name="a899d8c0ac3086a2f07f42fcb9fd4d96a"></a>
@@ -441,13 +435,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The updated cursor position.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00067">67</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>                        {</div>
-<div class="line"><span class="lineno">   68</span>            <span class="keywordflow">if</span>( HasNext() ) m_current.From += m_step;</div>
-<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">else</span> m_current.From = m_current.To;</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">return</span> m_current.From;</div>
-<div class="line"><span class="lineno">   72</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a2924826dc20077057ebc3f3a54be6bad" name="a2924826dc20077057ebc3f3a54be6bad"></a>
@@ -473,13 +461,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The updated cursor position.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00079">79</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>                              {</div>
-<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">if</span> ( HasNext(step) ) m_current.From += step;</div>
-<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">else</span> m_current.From = m_current.To;</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>            <span class="keywordflow">return</span> m_current.From;</div>
-<div class="line"><span class="lineno">   84</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a4965afe0f0e3c3511098cc073b2cf925" name="a4965afe0f0e3c3511098cc073b2cf925"></a>
@@ -509,12 +491,7 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00044">44</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>                                                               {</div>
-<div class="line"><span class="lineno">   45</span>            m_step = step;</div>
-<div class="line"><span class="lineno">   46</span>            m_current = orig.Normalize();</div>
-<div class="line"><span class="lineno">   47</span>            m_startOld = m_current.From;</div>
-<div class="line"><span class="lineno">   48</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ae4f40f995df3bf7dda0a78349ff5a739" name="ae4f40f995df3bf7dda0a78349ff5a739"></a>
@@ -534,12 +511,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The updated cursor position.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00103">103</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  103</span>                        {</div>
-<div class="line"><span class="lineno">  104</span>            <span class="keywordflow">if</span> ( HasPrev() ) m_current.From -= m_step;</div>
-<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">else</span> m_current.From = m_startOld;</div>
-<div class="line"><span class="lineno">  106</span>            <span class="keywordflow">return</span> m_current.From;</div>
-<div class="line"><span class="lineno">  107</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a1e47ab32e2127a80152d23a20557ebdb" name="a1e47ab32e2127a80152d23a20557ebdb"></a>
@@ -565,12 +537,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The updated cursor position.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00092">92</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   92</span>                              {</div>
-<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">if</span> ( HasPrev(step) ) m_current.From -= step;</div>
-<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">else</span> m_current.From = m_startOld;</div>
-<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">return</span> m_current.From;</div>
-<div class="line"><span class="lineno">   96</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="af4294160b11dfedc42ef6d4b8a1eba33" name="af4294160b11dfedc42ef6d4b8a1eba33"></a>
@@ -590,11 +557,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The reset cursor position.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html#l00113">113</a> of file <a class="el" href="../../da/dd4/_number_range_stepper_8cs_source.html">NumberRangeStepper.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  113</span>                         {</div>
-<div class="line"><span class="lineno">  114</span>            m_current.From = m_startOld;</div>
-<div class="line"><span class="lineno">  115</span>            <span class="keywordflow">return</span> m_current.From;</div>
-<div class="line"><span class="lineno">  116</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>

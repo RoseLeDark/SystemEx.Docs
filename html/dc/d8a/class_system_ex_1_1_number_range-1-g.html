@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.NumberRange&lt; T &gt; Class Template Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/d8a/class_system_ex_1_1_number_range-1-g.html','../../','dc/dd4/class_system_ex_1_1_number_range-1-g-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -122,26 +123,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <p>Represents a numeric range defined by a start and end value. Provides range validation, containment checks, normalization, intersection, adjacency, union, and enumeration.  
  <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.NumberRange&lt; T &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Inheritance diagram for SystemEx.NumberRange&lt; T &gt;:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../d2/def/class_system_ex_1_1_number_range-1-g__inherit__graph.png" border="0" usemap="#a_system_ex_8_number_range_3_01_t_01_4_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="a_system_ex_8_number_range_3_01_t_01_4_inherit__map" id="a_system_ex_8_number_range_3_01_t_01_4_inherit__map">
-<area shape="rect" title="Represents a numeric range defined by a start and end value. Provides range validation,..." alt="" coords="5,80,207,107"/>
-<area shape="rect" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html" title="Defines the basic contract for a numeric range with a start and end value. Provides validation,..." alt="" coords="26,5,186,32"/>
-<area shape="poly" title=" " alt="" coords="108,46,108,81,104,79,104,50"/>
+<area shape="rect" title="Represents a numeric range defined by a start and end value. Provides range validation,..." alt="" coords="130,80,331,107"/>
+<area shape="rect" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html" title="Defines the basic contract for a numeric range with a start and end value. Provides validation,..." alt="" coords="5,5,165,32"/>
+<area shape="poly" title=" " alt="" coords="124,37,207,78,202,80,123,42"/>
+<area shape="rect" title=" " alt="" coords="189,5,272,32"/>
+<area shape="poly" title=" " alt="" coords="232,46,233,81,228,78,228,50"/>
+<area shape="rect" title=" " alt="" coords="296,5,391,32"/>
+<area shape="poly" title=" " alt="" coords="314,40,251,82,249,77,309,41"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.NumberRange&lt; T &gt;:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Collaboration diagram for SystemEx.NumberRange&lt; T &gt;:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../df/d91/class_system_ex_1_1_number_range-1-g__coll__graph.png" border="0" usemap="#a_system_ex_8_number_range_3_01_t_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_system_ex_8_number_range_3_01_t_01_4_coll__map" id="a_system_ex_8_number_range_3_01_t_01_4_coll__map">
-<area shape="rect" title="Represents a numeric range defined by a start and end value. Provides range validation,..." alt="" coords="5,80,207,107"/>
-<area shape="rect" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html" title="Defines the basic contract for a numeric range with a start and end value. Provides validation,..." alt="" coords="26,5,186,32"/>
-<area shape="poly" title=" " alt="" coords="108,46,108,81,104,79,104,50"/>
+<area shape="rect" title="Represents a numeric range defined by a start and end value. Provides range validation,..." alt="" coords="130,80,331,107"/>
+<area shape="rect" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html" title="Defines the basic contract for a numeric range with a start and end value. Provides validation,..." alt="" coords="5,5,165,32"/>
+<area shape="poly" title=" " alt="" coords="124,37,207,78,202,80,123,42"/>
+<area shape="rect" title=" " alt="" coords="189,5,272,32"/>
+<area shape="poly" title=" " alt="" coords="232,46,233,81,228,78,228,50"/>
+<area shape="rect" title=" " alt="" coords="296,5,391,32"/>
+<area shape="poly" title=" " alt="" coords="314,40,251,82,249,77,309,41"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -238,8 +245,7 @@ Private Member Functions</h2></td></tr>
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a07d2023132aa7ce6fc3bd3e1bf46ec24">SystemEx.IRange&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00098">98</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>=&gt; (x - this.To) * (x - this.From) &lt;= T.Zero;</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a82e928b4a27284eaa085530a8d1af312" name="a82e928b4a27284eaa085530a8d1af312"></a>
@@ -265,11 +271,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if both ranges are equal.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00087">87</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   87</span>                                                  =&gt;</div>
-<div class="line"><span class="lineno">   88</span>            other is not <span class="keyword">null</span> &amp;&amp;</div>
-<div class="line"><span class="lineno">   89</span>            From.Equals(other.From) &amp;&amp;</div>
-<div class="line"><span class="lineno">   90</span>            this.To.Equals(other.To);</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="af7ad32127988f52c2d95dd63263353d7" name="af7ad32127988f52c2d95dd63263353d7"></a>
@@ -288,9 +290,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00079">79</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>                                                 =&gt;</div>
-<div class="line"><span class="lineno">   80</span>            Equals(obj as NumberRange&lt;T&gt;);</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad4219825a1c1d4848dccd377f006b91d" name="ad4219825a1c1d4848dccd377f006b91d"></a>
@@ -310,11 +310,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Sequence of values in the range.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00126">126</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  126</span>                                              {</div>
-<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">for</span> ( T i = From; i &lt;= this.To; i += T.One )</div>
-<div class="line"><span class="lineno">  128</span>                yield <span class="keywordflow">return</span> i;</div>
-<div class="line"><span class="lineno">  129</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aa57916e7e9600a2c3f658f2ace718d3c" name="aa57916e7e9600a2c3f658f2ace718d3c"></a>
@@ -341,9 +337,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00108">108</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  108</span>                                                =&gt; </div>
-<div class="line"><span class="lineno">  109</span>            GetEnumerator();</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a1b86c763867b5e381d4ee7af67152561" name="a1b86c763867b5e381d4ee7af67152561"></a>
@@ -362,9 +356,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00075">75</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   75</span>                                          =&gt; </div>
-<div class="line"><span class="lineno">   76</span>            HashCode.Combine(this.From, this.To);</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a0c6afcea4abb49a3e982c2e62c67cfdb" name="a0c6afcea4abb49a3e982c2e62c67cfdb"></a>
@@ -397,11 +389,7 @@ Private Member Functions</h2></td></tr>
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a39f8cc23849b2473bbe5b161258362c8">SystemEx.IRange&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00117">117</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  117</span>                                                      {</div>
-<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> NumberRange&lt;T&gt;((tstart != <span class="keyword">null</span>) ? tstart : this.From,</div>
-<div class="line"><span class="lineno">  119</span>                                      (tend != <span class="keyword">null</span>) ? tend : this.To);</div>
-<div class="line"><span class="lineno">  120</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a2618ae052d82d08334c47033e75ebd52" name="a2618ae052d82d08334c47033e75ebd52"></a>
@@ -429,17 +417,7 @@ Private Member Functions</h2></td></tr>
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a20f9baa7b7e30520bbc507a047aad0b1">SystemEx.IRange&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00152">152</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>                                                     {</div>
-<div class="line"><span class="lineno">  153</span>            NumberRange&lt;T&gt;? _ret = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  154</span> </div>
-<div class="line"><span class="lineno">  155</span>            <span class="keywordflow">if</span> ( Overlaps(other) ) {</div>
-<div class="line"><span class="lineno">  156</span>                _ret = <span class="keyword">new</span> NumberRange&lt;T&gt;(T.Max(<span class="keyword">this</span>.From, other.From),</div>
-<div class="line"><span class="lineno">  157</span>                                          T.Min(<span class="keyword">this</span>.To, other.To));</div>
-<div class="line"><span class="lineno">  158</span>            }</div>
-<div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><span class="lineno">  161</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab4d622f96d77102d1e3af79bbb10adbd" name="ab4d622f96d77102d1e3af79bbb10adbd"></a>
@@ -467,17 +445,7 @@ Private Member Functions</h2></td></tr>
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a6d75f4b599538af14e0ff651c10ef745">SystemEx.IRange&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00168">168</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  168</span>                                                {</div>
-<div class="line"><span class="lineno">  169</span>            <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  170</span> </div>
-<div class="line"><span class="lineno">  171</span>            <span class="keywordflow">if</span> ( IsValid &amp;&amp; other.IsValid )</div>
-<div class="line"><span class="lineno">  172</span>                result =</div>
-<div class="line"><span class="lineno">  173</span>                    this.To == other.From ||</div>
-<div class="line"><span class="lineno">  174</span>                    other.To == this.From;</div>
-<div class="line"><span class="lineno">  175</span> </div>
-<div class="line"><span class="lineno">  176</span>            <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  177</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a8cd1313f10d7c3195bd4ff368fcb1fa3" name="a8cd1313f10d7c3195bd4ff368fcb1fa3"></a>
@@ -497,9 +465,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A normalized range.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00104">104</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  104</span>                                          =&gt;</div>
-<div class="line"><span class="lineno">  105</span>            (this.From &lt;= this.To) ? <span class="keyword">this</span> : new NumberRange&lt;T&gt;(this.To, this.From);</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aadbe726773c514b462d7d1cd14e6736c" name="aadbe726773c514b462d7d1cd14e6736c"></a>
@@ -518,11 +484,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00040">40</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>                              {</div>
-<div class="line"><span class="lineno">   41</span>            this.From = T.Zero;</div>
-<div class="line"><span class="lineno">   42</span>            this.To = T.One;</div>
-<div class="line"><span class="lineno">   43</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a0867f2b58fc6acc1264720833ed96d06" name="a0867f2b58fc6acc1264720833ed96d06"></a>
@@ -552,11 +514,7 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00049">49</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>                                            {</div>
-<div class="line"><span class="lineno">   50</span>            this.From = start;</div>
-<div class="line"><span class="lineno">   51</span>            this.To = end;</div>
-<div class="line"><span class="lineno">   52</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab187e932d6da5042613b57c957da0a7f" name="ab187e932d6da5042613b57c957da0a7f"></a>
@@ -584,15 +542,7 @@ Private Member Functions</h2></td></tr>
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a361b62aca6eb8fc68770d86f5dbc708b">SystemEx.IRange&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00136">136</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  136</span>                                              {</div>
-<div class="line"><span class="lineno">  137</span>            <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span>            <span class="keywordflow">if</span> ( IsValid &amp;&amp; other.IsValid )</div>
-<div class="line"><span class="lineno">  140</span>                result = !(other.To &lt; From || other.From &gt; this.To);</div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>            <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  143</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a3f0ac4715299766f4726a3d14ba78e06" name="a3f0ac4715299766f4726a3d14ba78e06"></a>
@@ -611,12 +561,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00200">200</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  200</span>                                          {</div>
-<div class="line"><span class="lineno">  201</span>            <span class="keywordflow">return</span> (IsValid) ?</div>
-<div class="line"><span class="lineno">  202</span>                <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;Range: [{this.From} ... $[{this.To}]&quot;</span>) :</div>
-<div class="line"><span class="lineno">  203</span>                <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;Not Valid Range: [{this.From} ... $[{this.To}]&quot;</span>);</div>
-<div class="line"><span class="lineno">  204</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aa9bee31b5a40640b076ec33553ba0c8d" name="aa9bee31b5a40640b076ec33553ba0c8d"></a>
@@ -644,18 +589,7 @@ Private Member Functions</h2></td></tr>
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ac206e7fa0e7e60ffab22e4af76d56c92">SystemEx.IRange&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00185">185</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  185</span>                                                  {</div>
-<div class="line"><span class="lineno">  186</span>            IRange&lt;T&gt;? result = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  187</span> </div>
-<div class="line"><span class="lineno">  188</span>            <span class="keywordflow">if</span> ( Overlaps(other) || IsAdjacent(other) ) {</div>
-<div class="line"><span class="lineno">  189</span>                T start = T.Min(this.From, other.From);</div>
-<div class="line"><span class="lineno">  190</span>                T end   = T.Max(this.To, other.To);</div>
-<div class="line"><span class="lineno">  191</span>                result = <span class="keyword">new</span> NumberRange&lt;T&gt;(start, end);</div>
-<div class="line"><span class="lineno">  192</span>            }</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>            <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  195</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
@@ -734,8 +668,7 @@ Private Member Functions</h2></td></tr>
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae275f6eb758dd085b845265ef1480d19">SystemEx.IRange&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00033">33</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad9a03a2d3893229a5d2cb1c5d12fa62d" name="ad9a03a2d3893229a5d2cb1c5d12fa62d"></a>
@@ -837,8 +770,7 @@ Private Member Functions</h2></td></tr>
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae292c65780ca87bf2f6a8d4d1af728af">SystemEx.IRange&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00035">35</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

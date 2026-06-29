@@ -8,8 +8,6 @@
 <title>SystemEX: IDeviceSharedBackend.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/df2/_i_device_shared_backend_8cs_source.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">IDeviceSharedBackend.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../dc/df2/_i_device_shared_backend_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * SPDX-License-Identifier: EUPL-1.2</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Copyright (c) 2026 Amber-Sophia Schröck &lt;ambersophia.schroeck@mail.de&gt;</span></div>
@@ -139,33 +140,27 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d7/d29/namespace_system_ex_1_1_device_1_1_intertropt.html">   18</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d29/namespace_system_ex_1_1_device_1_1_intertropt.html">SystemEx.Device.Intertropt</a> {</div>
 <div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html">   27</a></span>    <span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html">IDeviceSharedBackend</a> {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#a833aff35554009c28025b975f13d4dfe">   39</a></span>        <span class="keywordtype">long</span> <a class="code hl_function" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#a833aff35554009c28025b975f13d4dfe">CreateReadHardwareBuffer</a>(<span class="keywordtype">int</span> size, out <span class="keywordtype">object</span> hardwareBuffer);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html">   27</a></span>    <span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html" title="Defines the low‑level backend interface used by DeviceSharedBuffer and related shared‑memory abstract...">IDeviceSharedBackend</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#a833aff35554009c28025b975f13d4dfe">   39</a></span>        <span class="keywordtype">long</span> <a class="code hl_function" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#a833aff35554009c28025b975f13d4dfe" title="Creates a hardware buffer intended for reading operations.   The backend allocates a device‑specific ...">CreateReadHardwareBuffer</a>(<span class="keywordtype">int</span> size, out <span class="keywordtype">object</span> hardwareBuffer);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ae46d08af2aeec81c004385b0eba87bb9">   52</a></span>        <span class="keywordtype">long</span> <a class="code hl_function" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ae46d08af2aeec81c004385b0eba87bb9">CreateWriteHardwareBuffer</a>(<span class="keywordtype">byte</span>[] cache, out <span class="keywordtype">object</span> hardwareBuffer);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ae46d08af2aeec81c004385b0eba87bb9">   52</a></span>        <span class="keywordtype">long</span> <a class="code hl_function" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ae46d08af2aeec81c004385b0eba87bb9" title="Creates a hardware buffer intended for writing operations and initializes it with the provided cache ...">CreateWriteHardwareBuffer</a>(<span class="keywordtype">byte</span>[] cache, out <span class="keywordtype">object</span> hardwareBuffer);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ad1a998c4c1c2bcf87d3cc71848521729">   63</a></span>        <span class="keywordtype">long</span> <a class="code hl_function" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ad1a998c4c1c2bcf87d3cc71848521729">ReciveFromHardwareBuffer</a>(out <span class="keywordtype">byte</span>[] data, ref <span class="keywordtype">object</span> hardwareBuffer);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ad1a998c4c1c2bcf87d3cc71848521729">   63</a></span>        <span class="keywordtype">long</span> <a class="code hl_function" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ad1a998c4c1c2bcf87d3cc71848521729" title="Reads data from the hardware buffer into a managed byte array.   The backend determines how the buffe...">ReciveFromHardwareBuffer</a>(out <span class="keywordtype">byte</span>[] data, ref <span class="keywordtype">object</span> hardwareBuffer);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#a9f914e66eb1f111f799049c827bef125">   70</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#a9f914e66eb1f111f799049c827bef125">CloseHardwareBuffer</a>(ref <span class="keywordtype">object</span> hardwareBuffer);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#a9f914e66eb1f111f799049c827bef125">   70</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#a9f914e66eb1f111f799049c827bef125" title="Releases and invalidates the backend‑specific hardware buffer handle.   After this call,...">CloseHardwareBuffer</a>(ref <span class="keywordtype">object</span> hardwareBuffer);</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
 </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
 </div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend_html"><div class="ttname"><a href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html">SystemEx.Device.Intertropt.IDeviceSharedBackend</a></div><div class="ttdoc">Defines the low‑level backend interface used by DeviceSharedBuffer and related shared‑memory abstract...</div><div class="ttdef"><b>Definition</b> <a href="#l00027">IDeviceSharedBackend.cs:27</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend_html_a833aff35554009c28025b975f13d4dfe"><div class="ttname"><a href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#a833aff35554009c28025b975f13d4dfe">SystemEx.Device.Intertropt.IDeviceSharedBackend.CreateReadHardwareBuffer</a></div><div class="ttdeci">long CreateReadHardwareBuffer(int size, out object hardwareBuffer)</div><div class="ttdoc">Creates a hardware buffer intended for reading operations.   The backend allocates a device‑specific ...</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend_html_a9f914e66eb1f111f799049c827bef125"><div class="ttname"><a href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#a9f914e66eb1f111f799049c827bef125">SystemEx.Device.Intertropt.IDeviceSharedBackend.CloseHardwareBuffer</a></div><div class="ttdeci">void CloseHardwareBuffer(ref object hardwareBuffer)</div><div class="ttdoc">Releases and invalidates the backend‑specific hardware buffer handle.   After this call,...</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend_html_ad1a998c4c1c2bcf87d3cc71848521729"><div class="ttname"><a href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ad1a998c4c1c2bcf87d3cc71848521729">SystemEx.Device.Intertropt.IDeviceSharedBackend.ReciveFromHardwareBuffer</a></div><div class="ttdeci">long ReciveFromHardwareBuffer(out byte[] data, ref object hardwareBuffer)</div><div class="ttdoc">Reads data from the hardware buffer into a managed byte array.   The backend determines how the buffe...</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend_html_ae46d08af2aeec81c004385b0eba87bb9"><div class="ttname"><a href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ae46d08af2aeec81c004385b0eba87bb9">SystemEx.Device.Intertropt.IDeviceSharedBackend.CreateWriteHardwareBuffer</a></div><div class="ttdeci">long CreateWriteHardwareBuffer(byte[] cache, out object hardwareBuffer)</div><div class="ttdoc">Creates a hardware buffer intended for writing operations and initializes it with the provided cache ...</div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_device_1_1_intertropt_html"><div class="ttname"><a href="../../d7/d29/namespace_system_ex_1_1_device_1_1_intertropt.html">SystemEx.Device.Intertropt</a></div><div class="ttdef"><b>Definition</b> <a href="#l00018">IDeviceSharedBackend.cs:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../dir_4c76ddfc10a27668d6c42d3412320ee0.html">Device</a></li><li class="navelem"><a href="../../dir_f27268727addf81ccbf843694c57cd2c.html">Interop</a></li><li class="navelem"><a href="../../dc/df2/_i_device_shared_backend_8cs.html">IDeviceSharedBackend.cs</a></li>
+    <li class="navelem"><b>Device</b></li><li class="navelem"><b>Interop</b></li><li class="navelem"><b>IDeviceSharedBackend.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

@@ -1,14 +1,11 @@
 var class_system_ex_1_1_collections_1_1_generic_1_1_array_1_g =
 [
     [ "Add", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ab22f10f19aacddb564e1fd42507beb59", null ],
-    [ "Add", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a3fb069f630273d548c0b6d674a0f1568", null ],
     [ "AddRange", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#afc1c32444b4ee3851dcdf10f08f305a4", null ],
     [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a8f23b48290bdbbc26278a7057a1168d5", null ],
-    [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a293f0eea6a232101ea6021a193c6cf47", null ],
     [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a808a7b713dcac53439a94269898c20f9", null ],
     [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad0ae0e40ca9ca5d2597a24d7347e5f14", null ],
     [ "At", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a2698d72008f39661653cad336ac59e0b", null ],
-    [ "Clear", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#adc5a74ffb90433d79ad39e65c7dfe67e", null ],
     [ "Contains", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a99e18da48136d38be92d8b4476f11180", null ],
     [ "CopyFrom", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a828fb2088592add5264920888c2ef336", null ],
     [ "CopyTo", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a7d5e2a167de5fbd7dab2553280e91f65", null ],
@@ -16,7 +13,6 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_array_1_g =
     [ "FindFirst", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa98ef7439853e26a9a1846fa84b727a0", null ],
     [ "FindLast", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae6e74a0ba839454f349dc3479dcf92d3", null ],
     [ "Get", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a194979f139cd04ca32b6a191271d052a", null ],
-    [ "GetEnumerator", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a8a0c86c0fe4918ef72aaa1303a27917f", null ],
     [ "GetEnumerator", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#af34be5b6b26c93c0000024010563ca44", null ],
     [ "IndexOf", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a417401d6a3f00bf93fc658ec36ea063b", null ],
     [ "Insert", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a4daf278aee3b930b1e68ee5b4c415415", null ],
@@ -33,7 +29,6 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_array_1_g =
     [ "m_index", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#af7ae7141a943af3c0636e5ce72aba2b3", null ],
     [ "AutoGrow", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa084a36ebf46797f20d9e4210e40fb49", null ],
     [ "Back", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aaf28cb993ae5784674aba8c567ba047d", null ],
-    [ "Count", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a60580f21345858baf290bbd93efb4ee0", null ],
     [ "End", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aee392d216ba803ad2002a080852b6de0", null ],
     [ "First", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a802180c62e21d4d23f21cb3e806063a9", null ],
     [ "Front", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#acc355d9dd79350e23f172625ab4b0054", null ],
@@ -41,7 +36,6 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_array_1_g =
     [ "IsEmpty", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a69b0d3e66727e815047684d8f79347d4", null ],
     [ "IsFixed", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a637ea5e9434d327ee5d7d9e5b8912c89", null ],
     [ "IsFull", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa378bee6379c1ecae0483a9ff9272fc9", null ],
-    [ "IsReadOnly", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae7b88d32cc887ba9331b84633fedfe0f", null ],
     [ "Size", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad8fa965485d8d36dd87d86732d802eac", null ],
     [ "this[int adress]", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a05c69f834e8666d7f04ab8a9bd2462ea", null ]
 ];

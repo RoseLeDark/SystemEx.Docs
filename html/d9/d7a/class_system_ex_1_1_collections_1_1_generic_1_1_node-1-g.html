@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Collections.Generic.Node&lt; T &gt; Class Template Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html','../../','d8/d9e/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -122,10 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <p>Represents a doubly linked node with optional child and sibling arrays. Supports list-style navigation (Prev/Next), tree-style traversal, splicing, swapping, reversing, and random access movement.  
  <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.Node&lt; T &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Inheritance diagram for SystemEx.Collections.Generic.Node&lt; T &gt;:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../dc/d53/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g__inherit__graph.png" border="0" usemap="#a_system_ex_8_collections_8_generic_8_node_3_01_t_01_4_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="a_system_ex_8_collections_8_generic_8_node_3_01_t_01_4_inherit__map" id="a_system_ex_8_collections_8_generic_8_node_3_01_t_01_4_inherit__map">
 <area shape="rect" title="Represents a doubly linked node with optional child and sibling arrays. Supports list&#45;style navigatio..." alt="" coords="5,96,210,139"/>
@@ -135,21 +135,24 @@ document.addEventListener('DOMContentLoaded', () => {
 <area shape="poly" title=" " alt="" coords="109,61,110,96,105,95,106,66"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Collections.Generic.Node&lt; T &gt;:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Collaboration diagram for SystemEx.Collections.Generic.Node&lt; T &gt;:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../d8/da7/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g__coll__graph.png" border="0" usemap="#a_system_ex_8_collections_8_generic_8_node_3_01_t_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_system_ex_8_collections_8_generic_8_node_3_01_t_01_4_coll__map" id="a_system_ex_8_collections_8_generic_8_node_3_01_t_01_4_coll__map">
 <area shape="rect" title="Represents a doubly linked node with optional child and sibling arrays. Supports list&#45;style navigatio..." alt="" coords="844,39,1048,81"/>
 <area shape="rect" href="../../dd/df2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_node-1-g.html" title=" " alt="" coords="513,5,717,48"/>
-<area shape="poly" title=" " alt="" coords="733,34,820,43,846,48,841,48,820,48,732,39"/>
+<area shape="poly" title=" " alt="" coords="732,34,820,43,846,48,841,48,820,48,733,39"/>
 <area shape="rect" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html" title="A dynamic array implementation that supports optional auto&#45;growth, indexed access,..." alt="" coords="513,72,717,115"/>
-<area shape="poly" title=" " alt="" coords="733,98,820,93,879,82,885,82,820,99,733,104"/>
+<area shape="poly" title=" " alt="" coords="733,98,820,93,879,82,885,81,820,99,733,104"/>
+<area shape="rect" title=" " alt="" coords="314,21,408,48"/>
+<area shape="poly" title=" " alt="" coords="424,46,522,71,517,72,423,52"/>
 <area shape="rect" href="../../d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html" title="Extends IArray&lt;T&gt; with dynamic resizing capabilities." alt="" coords="259,72,463,115"/>
-<area shape="poly" title=" " alt="" coords="479,91,515,93,509,93,479,96"/>
+<area shape="poly" title=" " alt="" coords="479,91,515,93,510,94,479,96"/>
 <area shape="rect" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html" title=" " alt="" coords="5,72,210,115"/>
-<area shape="poly" title=" " alt="" coords="225,91,261,93,256,93,225,96"/>
+<area shape="poly" title=" " alt="" coords="225,91,261,93,256,94,226,96"/>
+<area shape="rect" title=" " alt="" coords="304,139,418,165"/>
+<area shape="poly" title=" " alt="" coords="433,133,517,116,522,115,434,138"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -281,10 +284,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00516">516</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  516</span>                                      {</div>
-<div class="line"><span class="lineno">  517</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> NodeChain&lt;T&gt;().Add(First, End);</div>
-<div class="line"><span class="lineno">  518</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab5a0f353398a8b294087cac6c97a98ab" name="ab5a0f353398a8b294087cac6c97a98ab"></a>
@@ -304,10 +304,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00500">500</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  500</span>                                      {</div>
-<div class="line"><span class="lineno">  501</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> NodeRange&lt;T&gt;(First, End);</div>
-<div class="line"><span class="lineno">  502</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a92005b1f522c7ffa32aff6e1e64fe91e" name="a92005b1f522c7ffa32aff6e1e64fe91e"></a>
@@ -326,8 +323,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00242">242</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  242</span>=&gt; <span class="keyword">new</span> NodeIterrator&lt;T&gt;(Last(), index);</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a1737fa506bf472850e88d33fe21ceb34" name="a1737fa506bf472850e88d33fe21ceb34"></a>
@@ -346,10 +342,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00493">493</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  493</span>                               {</div>
-<div class="line"><span class="lineno">  494</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Node&lt;T&gt;(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  495</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac3638caf30bbf27f05ed262f1a593863" name="ac3638caf30bbf27f05ed262f1a593863"></a>
@@ -368,15 +361,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00457">457</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  457</span>                                {</div>
-<div class="line"><span class="lineno">  458</span>            ulong _temp = 0;</div>
-<div class="line"><span class="lineno">  459</span>            <span class="keywordflow">while</span>(HasPrev) {</div>
-<div class="line"><span class="lineno">  460</span>                _temp++;</div>
-<div class="line"><span class="lineno">  461</span> </div>
-<div class="line"><span class="lineno">  462</span>            }</div>
-<div class="line"><span class="lineno">  463</span>            <span class="keywordflow">return</span> _temp;</div>
-<div class="line"><span class="lineno">  464</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aa22e199d99a8710f1bb5ea53a7be10c1" name="aa22e199d99a8710f1bb5ea53a7be10c1"></a>
@@ -399,26 +384,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00334">334</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  334</span>                                                   {</div>
-<div class="line"><span class="lineno">  335</span>            Node&lt;T&gt; temp = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  336</span>            <span class="keywordtype">int</span> n = index;</div>
-<div class="line"><span class="lineno">  337</span> </div>
-<div class="line"><span class="lineno">  338</span>            <span class="keywordflow">if</span> ( n &gt; 0 ) {</div>
-<div class="line"><span class="lineno">  339</span>                <span class="keywordflow">while</span> ( n != 0 &amp;&amp; temp.HasNext ) {</div>
-<div class="line"><span class="lineno">  340</span>                    temp = temp.Next;</div>
-<div class="line"><span class="lineno">  341</span>                    n--;</div>
-<div class="line"><span class="lineno">  342</span>                }</div>
-<div class="line"><span class="lineno">  343</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( n &lt; 0 ) {</div>
-<div class="line"><span class="lineno">  344</span>                <span class="keywordflow">while</span> ( n != 0 &amp;&amp; temp.HasPrev ) {</div>
-<div class="line"><span class="lineno">  345</span>                    temp = temp.Prev;</div>
-<div class="line"><span class="lineno">  346</span>                    n++;</div>
-<div class="line"><span class="lineno">  347</span>                }</div>
-<div class="line"><span class="lineno">  348</span>            }</div>
-<div class="line"><span class="lineno">  349</span> </div>
-<div class="line"><span class="lineno">  350</span>            r = n;</div>
-<div class="line"><span class="lineno">  351</span>            <span class="keywordflow">return</span> temp;</div>
-<div class="line"><span class="lineno">  352</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a8f530569c0abeaeb0be36adcb51a709b" name="a8f530569c0abeaeb0be36adcb51a709b"></a>
@@ -437,20 +403,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00356">356</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  356</span>                                             {</div>
-<div class="line"><span class="lineno">  357</span>            <span class="comment">// detach this if already linked</span></div>
-<div class="line"><span class="lineno">  358</span>            <span class="keywordflow">if</span> ( HasNext || HasPrev )</div>
-<div class="line"><span class="lineno">  359</span>                <span class="keyword">remove</span>();</div>
-<div class="line"><span class="lineno">  360</span> </div>
-<div class="line"><span class="lineno">  361</span>            <span class="comment">// now insert</span></div>
-<div class="line"><span class="lineno">  362</span>            m_pChilds[NEXT] = pNext;</div>
-<div class="line"><span class="lineno">  363</span>            m_pChilds[PREV] = pNext.Prev;</div>
-<div class="line"><span class="lineno">  364</span>            pNext.Prev.m_pChilds[NEXT] = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  365</span>            pNext.m_pChilds[PREV] = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  366</span> </div>
-<div class="line"><span class="lineno">  367</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  368</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a16d84a214007b04a1948b31ce83152d7" name="a16d84a214007b04a1948b31ce83152d7"></a>
@@ -473,11 +426,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00414">414</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  414</span>                                                                        {</div>
-<div class="line"><span class="lineno">  415</span>            m_pChilds[PREV].m_pChilds[NEXT] = pFirst; pFirst.m_pChilds[PREV] = m_pChilds[PREV];</div>
-<div class="line"><span class="lineno">  416</span>            m_pChilds[PREV] = pFinal; pFinal.m_pChilds[NEXT] = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  417</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="af392a77c6d306b1e64c51968968b41a2" name="af392a77c6d306b1e64c51968968b41a2"></a>
@@ -496,17 +445,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00321">321</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  321</span>                              {</div>
-<div class="line"><span class="lineno">  322</span>            Node&lt;T&gt; temp =  <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  323</span> </div>
-<div class="line"><span class="lineno">  324</span>            <span class="keywordflow">while</span> ( temp.HasNext ) {</div>
-<div class="line"><span class="lineno">  325</span> </div>
-<div class="line"><span class="lineno">  326</span>                temp = temp.Next;</div>
-<div class="line"><span class="lineno">  327</span>            } ;</div>
-<div class="line"><span class="lineno">  328</span> </div>
-<div class="line"><span class="lineno">  329</span>            <span class="keywordflow">return</span> temp;</div>
-<div class="line"><span class="lineno">  330</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a738c44aa037b031a0d6c5470e8388034" name="a738c44aa037b031a0d6c5470e8388034"></a>
@@ -533,15 +472,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00260">260</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  260</span>                         {</div>
-<div class="line"><span class="lineno">  261</span>            m_value = <span class="keywordflow">default</span>(T);</div>
-<div class="line"><span class="lineno">  262</span> </div>
-<div class="line"><span class="lineno">  263</span>            m_pChilds = <span class="keyword">new</span> Array&lt;Node&lt;T&gt;&gt;(MINSIZE);</div>
-<div class="line"><span class="lineno">  264</span>            m_pSiblings = <span class="keyword">new</span> Array&lt;Node&lt;T&gt;&gt;(MINSIZE);</div>
-<div class="line"><span class="lineno">  265</span> </div>
-<div class="line"><span class="lineno">  266</span>            m_pChilds[PREV] = m_pChilds[NEXT] = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  267</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac2abb1b0e38cb544da8f591b92f257f8" name="ac2abb1b0e38cb544da8f591b92f257f8"></a>
@@ -569,14 +500,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00282">282</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  282</span>                                                          {</div>
-<div class="line"><span class="lineno">  283</span>            m_pChilds = <span class="keyword">new</span> Array&lt;Node&lt;T&gt;&gt;(nChilds);</div>
-<div class="line"><span class="lineno">  284</span>            m_pSiblings = <span class="keyword">new</span> Array&lt;Node&lt;T&gt;&gt;(nSiblings);</div>
-<div class="line"><span class="lineno">  285</span>            Value = iValue;</div>
-<div class="line"><span class="lineno">  286</span> </div>
-<div class="line"><span class="lineno">  287</span>            m_pChilds[PREV] = m_pChilds[NEXT] = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  288</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ae0fc96345a5814ab8a73534d9e5ab220" name="ae0fc96345a5814ab8a73534d9e5ab220"></a>
@@ -595,12 +519,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00300">300</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  300</span>                                  {</div>
-<div class="line"><span class="lineno">  301</span>            Value = node.Value;</div>
-<div class="line"><span class="lineno">  302</span>            m_pChilds = node.m_pChilds;</div>
-<div class="line"><span class="lineno">  303</span>            m_pSiblings = node.m_pSiblings;</div>
-<div class="line"><span class="lineno">  304</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a1131962844dd94958f97a8338e6cb5ec" name="a1131962844dd94958f97a8338e6cb5ec"></a>
@@ -619,15 +538,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00271">271</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  271</span>                            {</div>
-<div class="line"><span class="lineno">  272</span>            Value = val;</div>
-<div class="line"><span class="lineno">  273</span>            </div>
-<div class="line"><span class="lineno">  274</span>            m_pChilds = <span class="keyword">new</span> Array&lt;Node&lt;T&gt;&gt;(MINSIZE);</div>
-<div class="line"><span class="lineno">  275</span>            m_pSiblings = <span class="keyword">new</span> Array&lt;Node&lt;T&gt;&gt;(MINSIZE);</div>
-<div class="line"><span class="lineno">  276</span> </div>
-<div class="line"><span class="lineno">  277</span>            m_pChilds[PREV] = m_pChilds[NEXT] = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  278</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a2dccc82e2c13d647c488596d050bc8ba" name="a2dccc82e2c13d647c488596d050bc8ba"></a>
@@ -655,12 +566,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00292">292</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  292</span>                                                                             {</div>
-<div class="line"><span class="lineno">  293</span>            Value = val;</div>
-<div class="line"><span class="lineno">  294</span>            m_pChilds = pChilds;</div>
-<div class="line"><span class="lineno">  295</span>            m_pSiblings = pSiblings;</div>
-<div class="line"><span class="lineno">  296</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="af5011f9ca179ece248e3965650d0bb58" name="af5011f9ca179ece248e3965650d0bb58"></a>
@@ -679,8 +585,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00247">247</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  247</span>=&gt; <span class="keyword">new</span> NodeIterrator&lt;T&gt;(<span class="keyword">this</span>, offset);</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aaaa585ca2ed9857fc0316f293e394a9c" name="aaaa585ca2ed9857fc0316f293e394a9c"></a>
@@ -699,17 +604,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00372">372</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  372</span>                             {</div>
-<div class="line"><span class="lineno">  373</span>            m_pChilds[NEXT].m_pChilds[PREV] = m_pChilds[PREV];</div>
-<div class="line"><span class="lineno">  374</span>            m_pChilds[PREV].m_pChilds[NEXT] = m_pChilds[NEXT];</div>
-<div class="line"><span class="lineno">  375</span> </div>
-<div class="line"><span class="lineno">  376</span><span class="preprocessor">#if TRACE</span></div>
-<div class="line"><span class="lineno">  377</span>            <span class="comment">// optional: isolieren</span></div>
-<div class="line"><span class="lineno">  378</span>            m_pChilds[NEXT] = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  379</span>            m_pChilds[PREV] = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  380</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  381</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab150bb7190384d9e671dbab91f7da268" name="ab150bb7190384d9e671dbab91f7da268"></a>
@@ -728,19 +623,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00399">399</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  399</span>                              {</div>
-<div class="line"><span class="lineno">  400</span>            Node&lt;T&gt;  pNode = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  401</span> </div>
-<div class="line"><span class="lineno">  402</span>            <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">  403</span>                <span class="keywordflow">if</span> ( pNode != <span class="keyword">null</span> ) {</div>
-<div class="line"><span class="lineno">  404</span>                    Node&lt;T&gt; pTemp = pNode.m_pChilds[NEXT];</div>
-<div class="line"><span class="lineno">  405</span>                    pNode.m_pChilds[NEXT] = pNode.m_pChilds[PREV];</div>
-<div class="line"><span class="lineno">  406</span>                    pNode.m_pChilds[PREV] = pTemp;</div>
-<div class="line"><span class="lineno">  407</span>                    pNode = pNode.m_pChilds[PREV];</div>
-<div class="line"><span class="lineno">  408</span>                }</div>
-<div class="line"><span class="lineno">  409</span>            } <span class="keywordflow">while</span> ( pNode != <span class="keyword">this</span> );</div>
-<div class="line"><span class="lineno">  410</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac174a17181ed81f80788e1a467860809" name="ac174a17181ed81f80788e1a467860809"></a>
@@ -759,17 +642,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00308">308</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  308</span>                              {</div>
-<div class="line"><span class="lineno">  309</span>            Node&lt;T&gt; temp =  <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  310</span> </div>
-<div class="line"><span class="lineno">  311</span>            <span class="keywordflow">while</span>(temp.HasPrev) {</div>
-<div class="line"><span class="lineno">  312</span> </div>
-<div class="line"><span class="lineno">  313</span>                temp = temp.Prev;</div>
-<div class="line"><span class="lineno">  314</span>            } ;</div>
-<div class="line"><span class="lineno">  315</span> </div>
-<div class="line"><span class="lineno">  316</span>            <span class="keywordflow">return</span> temp;</div>
-<div class="line"><span class="lineno">  317</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ae0edeb61c5bb6209adbec482350b7e84" name="ae0edeb61c5bb6209adbec482350b7e84"></a>
@@ -800,10 +673,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00509">509</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  509</span>                                                         {</div>
-<div class="line"><span class="lineno">  510</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> NodeSlice&lt;T&gt;((NodeIterrator&lt;T&gt;)First.Advance(start), length);</div>
-<div class="line"><span class="lineno">  511</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a8e85f9d8eeffd12adc1871f32cd37ee5" name="a8e85f9d8eeffd12adc1871f32cd37ee5"></a>
@@ -826,17 +696,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00385">385</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  385</span>                                                                {</div>
-<div class="line"><span class="lineno">  386</span>            last.m_pChilds[PREV].m_pChilds[NEXT] = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  387</span>            first.m_pChilds[PREV].m_pChilds[NEXT] = last;</div>
-<div class="line"><span class="lineno">  388</span>            this.m_pChilds[PREV].m_pChilds[NEXT] = first;</div>
-<div class="line"><span class="lineno">  389</span> </div>
-<div class="line"><span class="lineno">  390</span>            Node&lt;T&gt; pTemp = this.m_pChilds[PREV];</div>
-<div class="line"><span class="lineno">  391</span>            this.m_pChilds[PREV] = last.m_pChilds[PREV];</div>
-<div class="line"><span class="lineno">  392</span>            last.m_pChilds[PREV] = first.m_pChilds[PREV];</div>
-<div class="line"><span class="lineno">  393</span>            first.m_pChilds[PREV] = pTemp;</div>
-<div class="line"><span class="lineno">  394</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6ff8a2533066de90d02a53bed2a3996e" name="a6ff8a2533066de90d02a53bed2a3996e"></a>
@@ -855,39 +715,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00421">421</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  421</span>                                            {</div>
-<div class="line"><span class="lineno">  422</span>            <span class="keywordflow">if</span> ( <span class="keyword">this</span> == other )</div>
-<div class="line"><span class="lineno">  423</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  424</span> </div>
-<div class="line"><span class="lineno">  425</span>            <span class="comment">// Backup A</span></div>
-<div class="line"><span class="lineno">  426</span>            var aPrev = this.Prev;</div>
-<div class="line"><span class="lineno">  427</span>            var aNext = this.Next;</div>
-<div class="line"><span class="lineno">  428</span>            var aValue = this.Value;</div>
-<div class="line"><span class="lineno">  429</span> </div>
-<div class="line"><span class="lineno">  430</span>            <span class="comment">// Backup B</span></div>
-<div class="line"><span class="lineno">  431</span>            var bPrev = other.Prev;</div>
-<div class="line"><span class="lineno">  432</span>            var bNext = other.Next;</div>
-<div class="line"><span class="lineno">  433</span>            var bValue = other.Value;</div>
-<div class="line"><span class="lineno">  434</span> </div>
-<div class="line"><span class="lineno">  435</span>            <span class="comment">// Copy B into A</span></div>
-<div class="line"><span class="lineno">  436</span>            this.Prev = bPrev;</div>
-<div class="line"><span class="lineno">  437</span>            this.Next = bNext;</div>
-<div class="line"><span class="lineno">  438</span>            this.Value = bValue;</div>
-<div class="line"><span class="lineno">  439</span> </div>
-<div class="line"><span class="lineno">  440</span>            <span class="comment">// Copy A into B</span></div>
-<div class="line"><span class="lineno">  441</span>            other.Prev = aPrev;</div>
-<div class="line"><span class="lineno">  442</span>            other.Next = aNext;</div>
-<div class="line"><span class="lineno">  443</span>            other.Value = aValue;</div>
-<div class="line"><span class="lineno">  444</span> </div>
-<div class="line"><span class="lineno">  445</span>            <span class="comment">// Fix neighbors of A</span></div>
-<div class="line"><span class="lineno">  446</span>            this.Prev.Next = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  447</span>            this.Next.Prev = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  448</span> </div>
-<div class="line"><span class="lineno">  449</span>            <span class="comment">// Fix neighbors of B</span></div>
-<div class="line"><span class="lineno">  450</span>            other.Prev.Next = other;</div>
-<div class="line"><span class="lineno">  451</span>            other.Next.Prev = other;</div>
-<div class="line"><span class="lineno">  452</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a851ddf291704627c324e6c4188d5dff0" name="a851ddf291704627c324e6c4188d5dff0"></a>
@@ -918,30 +746,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00468">468</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  468</span>                                                                                {</div>
-<div class="line"><span class="lineno">  469</span>            <span class="keywordflow">switch</span> ( order ) {</div>
-<div class="line"><span class="lineno">  470</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../dd/dbc/group__collections.html#ga5d4c0e8a1b447d651da25c01c3acde4b">TraversOrder</a>.ListOrder:</div>
-<div class="line"><span class="lineno">  471</span>                TraversListForward(action);</div>
-<div class="line"><span class="lineno">  472</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  473</span> </div>
-<div class="line"><span class="lineno">  474</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../dd/dbc/group__collections.html#ga5d4c0e8a1b447d651da25c01c3acde4b">TraversOrder</a>.ReservListOrder:</div>
-<div class="line"><span class="lineno">  475</span>                TraversListBackward(action);</div>
-<div class="line"><span class="lineno">  476</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  477</span> </div>
-<div class="line"><span class="lineno">  478</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../dd/dbc/group__collections.html#ga5d4c0e8a1b447d651da25c01c3acde4b">TraversOrder</a>.Preorder:</div>
-<div class="line"><span class="lineno">  479</span>                TraversPreorder(<span class="keyword">this</span>, action);</div>
-<div class="line"><span class="lineno">  480</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  481</span> </div>
-<div class="line"><span class="lineno">  482</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../dd/dbc/group__collections.html#ga5d4c0e8a1b447d651da25c01c3acde4b">TraversOrder</a>.Inorder:</div>
-<div class="line"><span class="lineno">  483</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  484</span> </div>
-<div class="line"><span class="lineno">  485</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../dd/dbc/group__collections.html#ga5d4c0e8a1b447d651da25c01c3acde4b">TraversOrder</a>.Postorder:</div>
-<div class="line"><span class="lineno">  486</span>                TraversPostorder(<span class="keyword">this</span>, action);</div>
-<div class="line"><span class="lineno">  487</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  488</span>            }</div>
-<div class="line"><span class="lineno">  489</span>        }</div>
-<div class="ttc" id="agroup__collections_html_ga5d4c0e8a1b447d651da25c01c3acde4b"><div class="ttname"><a href="../../dd/dbc/group__collections.html#ga5d4c0e8a1b447d651da25c01c3acde4b">SystemEx.Collections.Generic.TraversOrder</a></div><div class="ttdeci">TraversOrder</div><div class="ttdef"><b>Definition</b> <a href="../../db/de0/_node_8cs_source.html#l00029">Node.cs:29</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac4d56c41aa76107f92f0254486d3958a" name="ac4d56c41aa76107f92f0254486d3958a"></a>
@@ -968,15 +773,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00529">529</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  529</span>                                                                 {</div>
-<div class="line"><span class="lineno">  530</span>            var temp = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  531</span>            <span class="keywordflow">while</span> ( temp.HasPrev ) {</div>
-<div class="line"><span class="lineno">  532</span>                action(temp);</div>
-<div class="line"><span class="lineno">  533</span>                temp = temp.Prev;</div>
-<div class="line"><span class="lineno">  534</span>            }</div>
-<div class="line"><span class="lineno">  535</span>            action(temp); <span class="comment">// erstes Element</span></div>
-<div class="line"><span class="lineno">  536</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a2d65ef45fcfbf029d48afc92ee74b6bc" name="a2d65ef45fcfbf029d48afc92ee74b6bc"></a>
@@ -1003,15 +800,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00520">520</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  520</span>                                                                {</div>
-<div class="line"><span class="lineno">  521</span>            var temp = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  522</span>            <span class="keywordflow">while</span> ( temp.HasNext ) {</div>
-<div class="line"><span class="lineno">  523</span>                action(temp);</div>
-<div class="line"><span class="lineno">  524</span>                temp = temp.Next;</div>
-<div class="line"><span class="lineno">  525</span>            }</div>
-<div class="line"><span class="lineno">  526</span>            action(temp); <span class="comment">// letztes Element</span></div>
-<div class="line"><span class="lineno">  527</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a7c86871da7e4ce2f91f97d1dc0fd7b35" name="a7c86871da7e4ce2f91f97d1dc0fd7b35"></a>
@@ -1042,18 +831,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00550">550</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  550</span>                                                                                   {</div>
-<div class="line"><span class="lineno">  551</span>            <span class="keywordflow">if</span> ( node == <span class="keyword">null</span> ) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  552</span> </div>
-<div class="line"><span class="lineno">  553</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 2; i &lt; node.m_pChilds.Size; i++ )</div>
-<div class="line"><span class="lineno">  554</span>                TraversPostorder(node.m_pChilds[i], action);</div>
-<div class="line"><span class="lineno">  555</span> </div>
-<div class="line"><span class="lineno">  556</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; node.m_pSiblings.Size; i++ )</div>
-<div class="line"><span class="lineno">  557</span>                TraversPostorder(node.m_pSiblings[i], action);</div>
-<div class="line"><span class="lineno">  558</span> </div>
-<div class="line"><span class="lineno">  559</span>            action(node);</div>
-<div class="line"><span class="lineno">  560</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="adee47ec2b80df7ff314e67b032d39a4b" name="adee47ec2b80df7ff314e67b032d39a4b"></a>
@@ -1084,20 +862,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00537">537</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  537</span>                                                                                  {</div>
-<div class="line"><span class="lineno">  538</span>            <span class="keywordflow">if</span> ( node == <span class="keyword">null</span> ) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  539</span> </div>
-<div class="line"><span class="lineno">  540</span>            action(node);</div>
-<div class="line"><span class="lineno">  541</span> </div>
-<div class="line"><span class="lineno">  542</span>            <span class="comment">// Childs</span></div>
-<div class="line"><span class="lineno">  543</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 2; i &lt; node.m_pChilds.Size; i++ )</div>
-<div class="line"><span class="lineno">  544</span>                TraversPreorder(node.m_pChilds[i], action);</div>
-<div class="line"><span class="lineno">  545</span> </div>
-<div class="line"><span class="lineno">  546</span>            <span class="comment">// Siblings</span></div>
-<div class="line"><span class="lineno">  547</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; node.m_pSiblings.Size; i++ )</div>
-<div class="line"><span class="lineno">  548</span>                TraversPreorder(node.m_pSiblings[i], action);</div>
-<div class="line"><span class="lineno">  549</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -1389,8 +1154,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00194">194</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  194</span>{  <span class="keyword">get</span> =&gt; m_pChilds[NEXT];  <span class="keyword">set</span> =&gt; m_pChilds[NEXT] = value; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab241a3d4beb28a828dc677391d3a91cb" name="ab241a3d4beb28a828dc677391d3a91cb"></a>
@@ -1464,8 +1228,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00199">199</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  199</span>{  <span class="keyword">get</span> =&gt; m_pChilds[PREV];  <span class="keyword">set</span> =&gt; m_pChilds[PREV] = value; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a817696927b78750c21f577e26ae9f8ca" name="a817696927b78750c21f577e26ae9f8ca"></a>
@@ -1539,8 +1302,7 @@ Static Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="../../dd/df2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_node-1-g.html#a150342fb902d762ce04bc23634d31c59">SystemEx.Collections.Generic.Interfaces.INode&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00203">203</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  203</span>{ <span class="keyword">get</span> =&gt; m_value; <span class="keyword">set</span> =&gt; m_value = value; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

@@ -24,10 +24,5 @@ var namespace_system_ex =
     [ "RandPasswordLevel", "d0/d48/namespace_system_ex.html#a79eb295adf6d58748538b4c064fedeb9", [
       [ "Simple", "d0/d48/namespace_system_ex.html#a79eb295adf6d58748538b4c064fedeb9a1fbb1e3943c2c6c560247ac8f9289780", null ],
       [ "Strong", "d0/d48/namespace_system_ex.html#a79eb295adf6d58748538b4c064fedeb9ac43e0fd449c758dab8f891d8e19eb1a9", null ]
-    ] ],
-    [ "triple", "d0/d48/namespace_system_ex.html#aa60c11b2d2d4ff5084ed2276d3e06697", [
-      [ "True", "d0/d48/namespace_system_ex.html#aa60c11b2d2d4ff5084ed2276d3e06697af827cf462f62848df37c5e1e94a4da74", null ],
-      [ "False", "d0/d48/namespace_system_ex.html#aa60c11b2d2d4ff5084ed2276d3e06697af8320b26d30ab433c5a54546d21f414c", null ],
-      [ "Nin", "d0/d48/namespace_system_ex.html#aa60c11b2d2d4ff5084ed2276d3e06697af6becb7bb76db0da62691c2318c85004", null ]
     ] ]
 ];

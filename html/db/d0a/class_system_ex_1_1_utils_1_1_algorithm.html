@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Utils.Algorithm Class Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('db/d0a/class_system_ex_1_1_utils_1_1_algorithm.html','../../','db/da5/class_system_ex_1_1_utils_1_1_algorithm-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -209,13 +210,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00156">156</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  156</span>                                                                         {</div>
-<div class="line"><span class="lineno">  157</span>            <span class="keywordflow">if</span> ( cmp(value, min) == <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.AIsSmallerB ) <span class="keywordflow">return</span> min;</div>
-<div class="line"><span class="lineno">  158</span>            <span class="keywordflow">if</span> ( cmp(value, max) == <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.AIsLargerB ) <span class="keywordflow">return</span> max;</div>
-<div class="line"><span class="lineno">  159</span>            <span class="keywordflow">return</span> value;</div>
-<div class="line"><span class="lineno">  160</span>        }</div>
-<div class="ttc" id="anamespace_system_ex_1_1_utils_html_aef01215d2eb8aecad75ce70ce26c8c3a"><div class="ttname"><a href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">SystemEx.Utils.CompareResult</a></div><div class="ttdeci">CompareResult</div><div class="ttdoc">Specifies the result of a comparison between two values.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d35/_algorithm_8cs_source.html#l00025">Algorithm.cs:25</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="af9a6c3472cd81f7d7626057c23714771" name="af9a6c3472cd81f7d7626057c23714771"></a>
@@ -261,16 +256,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00165">165</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  165</span>                                                                                               {</div>
-<div class="line"><span class="lineno">  166</span>            <span class="keywordflow">if</span> ( srcIndex + count &gt; src.Length )</div>
-<div class="line"><span class="lineno">  167</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;src out of range&quot;</span>);</div>
-<div class="line"><span class="lineno">  168</span>            <span class="keywordflow">if</span> ( dstIndex + count &gt; dst.Length )</div>
-<div class="line"><span class="lineno">  169</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;dst out of range&quot;</span>);</div>
-<div class="line"><span class="lineno">  170</span> </div>
-<div class="line"><span class="lineno">  171</span>            <span class="keywordflow">for</span> ( uint i = 0; i &lt; count; i++ )</div>
-<div class="line"><span class="lineno">  172</span>                dst[dstIndex + i] = src[srcIndex + i];</div>
-<div class="line"><span class="lineno">  173</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac113f8c29cfe43ab9fd372f4b1729542" name="ac113f8c29cfe43ab9fd372f4b1729542"></a>
@@ -306,16 +292,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00234">234</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  234</span>                                                                   {</div>
-<div class="line"><span class="lineno">  235</span>            <span class="keywordflow">if</span> ( a.Length != b.Length ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  236</span> </div>
-<div class="line"><span class="lineno">  237</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; a.Length; i++ )</div>
-<div class="line"><span class="lineno">  238</span>                <span class="keywordflow">if</span> ( cmp(a[i], b[i]) != <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.Equal )</div>
-<div class="line"><span class="lineno">  239</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  240</span> </div>
-<div class="line"><span class="lineno">  241</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  242</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aba14d1d2791eb8fb0b985c9699df4d42" name="aba14d1d2791eb8fb0b985c9699df4d42"></a>
@@ -346,11 +323,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00080">80</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>                                                            {</div>
-<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; items.Length; i++ )</div>
-<div class="line"><span class="lineno">   82</span>                items[i] = value;</div>
-<div class="line"><span class="lineno">   83</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6f29cf395b9db16d2c9e2b9b6c5b59a4" name="a6f29cf395b9db16d2c9e2b9b6c5b59a4"></a>
@@ -391,15 +364,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00088">88</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   88</span>                                                                                     {</div>
-<div class="line"><span class="lineno">   89</span>            uint end = start + count;</div>
-<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">if</span> ( end &gt; items.Length )</div>
-<div class="line"><span class="lineno">   91</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;Index out of range&quot;</span>);</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">for</span> ( uint i = start; i &lt; start + count; i++ )</div>
-<div class="line"><span class="lineno">   94</span>                items[i] = value;</div>
-<div class="line"><span class="lineno">   95</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ab96a02c40e4545bc4b7dbf19c8a2dd14" name="ab96a02c40e4545bc4b7dbf19c8a2dd14"></a>
@@ -435,18 +400,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00247">247</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  247</span>                                                                                    {</div>
-<div class="line"><span class="lineno">  248</span>            <span class="keywordtype">int</span> n = System.Math.Min(a.Length, b.Length);</div>
-<div class="line"><span class="lineno">  249</span> </div>
-<div class="line"><span class="lineno">  250</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; n; i++ ) {</div>
-<div class="line"><span class="lineno">  251</span>                var r = cmp(a[i], b[i]);</div>
-<div class="line"><span class="lineno">  252</span>                <span class="keywordflow">if</span> ( r == <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.AIsSmallerB ) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  253</span>                <span class="keywordflow">if</span> ( r == <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.AIsLargerB ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  254</span>            }</div>
-<div class="line"><span class="lineno">  255</span> </div>
-<div class="line"><span class="lineno">  256</span>            <span class="keywordflow">return</span> a.Length &lt; b.Length;</div>
-<div class="line"><span class="lineno">  257</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aa1cb87e315ba7c867b5d4b0e8d0e55ba" name="aa1cb87e315ba7c867b5d4b0e8d0e55ba"></a>
@@ -482,9 +436,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00150">150</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  150</span>                                                          =&gt;</div>
-<div class="line"><span class="lineno">  151</span>            cmp(a, b) == CompareResult.AIsLargerB ? a : b;</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aebf4597ebf80c8fd63c5651434ec23d6" name="aebf4597ebf80c8fd63c5651434ec23d6"></a>
@@ -515,16 +467,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00100">100</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>                                                                        {</div>
-<div class="line"><span class="lineno">  101</span>            T? largest = items[0];</div>
-<div class="line"><span class="lineno">  102</span> </div>
-<div class="line"><span class="lineno">  103</span>            <span class="keywordflow">foreach</span> ( T item <span class="keywordflow">in</span> items ) {</div>
-<div class="line"><span class="lineno">  104</span>                <span class="keywordflow">if</span> ( cmp(largest, item) == <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.AIsLargerB )</div>
-<div class="line"><span class="lineno">  105</span>                    largest = item;</div>
-<div class="line"><span class="lineno">  106</span>            }</div>
-<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">return</span> largest;</div>
-<div class="line"><span class="lineno">  108</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a506ba323fe92a67da61afbdcdf5bfa01" name="a506ba323fe92a67da61afbdcdf5bfa01"></a>
@@ -560,9 +503,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00144">144</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  144</span>                                                          =&gt;</div>
-<div class="line"><span class="lineno">  145</span>            cmp(a, b) == CompareResult.AIsSmallerB ? a : b;</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="abd50fb747e38d904d5911c67624f77f5" name="abd50fb747e38d904d5911c67624f77f5"></a>
@@ -593,16 +534,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00113">113</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  113</span>                                                                        {</div>
-<div class="line"><span class="lineno">  114</span>            T? smallest = items[0];</div>
-<div class="line"><span class="lineno">  115</span> </div>
-<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">foreach</span> ( T item <span class="keywordflow">in</span> items ) {</div>
-<div class="line"><span class="lineno">  117</span>                <span class="keywordflow">if</span> ( cmp(smallest, item) == <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">CompareResult</a>.AIsSmallerB )</div>
-<div class="line"><span class="lineno">  118</span>                    smallest = item;</div>
-<div class="line"><span class="lineno">  119</span>            }</div>
-<div class="line"><span class="lineno">  120</span>            <span class="keywordflow">return</span> smallest;</div>
-<div class="line"><span class="lineno">  121</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a10eb56f2bb48ad2d846837b54a3d7671" name="a10eb56f2bb48ad2d846837b54a3d7671"></a>
@@ -638,12 +570,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00135">135</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>                                                                      {</div>
-<div class="line"><span class="lineno">  136</span>            <span class="keywordflow">return</span> cmp(a, b) == CompareResult.AIsSmallerB</div>
-<div class="line"><span class="lineno">  137</span>                ? <span class="keyword">new</span> Pair&lt;T, T&gt;(b, a)</div>
-<div class="line"><span class="lineno">  138</span>                : new Pair&lt;T, T&gt;(a, b);</div>
-<div class="line"><span class="lineno">  139</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad45d1560feef829070f4c57d44633a6d" name="ad45d1560feef829070f4c57d44633a6d"></a>
@@ -674,12 +601,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00126">126</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  126</span>                                                                                   {</div>
-<div class="line"><span class="lineno">  127</span>            T? min = MinElement(items, cmp);</div>
-<div class="line"><span class="lineno">  128</span>            T? max = MaxElement(items, cmp);</div>
-<div class="line"><span class="lineno">  129</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Pair&lt;T, T&gt;(min!, max!);</div>
-<div class="line"><span class="lineno">  130</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ae3a179c6a23441c3af816fcec2368dc8" name="ae3a179c6a23441c3af816fcec2368dc8"></a>
@@ -725,21 +647,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00178">178</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  178</span>                                                                                               {</div>
-<div class="line"><span class="lineno">  179</span>            <span class="keywordflow">if</span> ( srcIndex + count &gt; src.Length )</div>
-<div class="line"><span class="lineno">  180</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;src out of range&quot;</span>);</div>
-<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">if</span> ( dstIndex + count &gt; dst.Length )</div>
-<div class="line"><span class="lineno">  182</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;dst out of range&quot;</span>);</div>
-<div class="line"><span class="lineno">  183</span> </div>
-<div class="line"><span class="lineno">  184</span>            <span class="keywordflow">if</span> ( src == dst &amp;&amp; dstIndex &gt; srcIndex ) {</div>
-<div class="line"><span class="lineno">  185</span>                <span class="keywordflow">for</span> ( uint i = count; i &gt; 0; i-- )</div>
-<div class="line"><span class="lineno">  186</span>                    dst[dstIndex + i - 1] = src[srcIndex + i - 1];</div>
-<div class="line"><span class="lineno">  187</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  188</span>                <span class="keywordflow">for</span> ( uint i = 0; i &lt; count; i++ )</div>
-<div class="line"><span class="lineno">  189</span>                    dst[dstIndex + i] = src[srcIndex + i];</div>
-<div class="line"><span class="lineno">  190</span>            }</div>
-<div class="line"><span class="lineno">  191</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a2a45094ae25b91b2c40a3fe5cf4d605b" name="a2a45094ae25b91b2c40a3fe5cf4d605b"></a>
@@ -775,8 +683,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00065">65</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>            =&gt; RandUtils.RandLong(min, max, endian);</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ae9e11d2b867faf87293e1ee590044819" name="ae9e11d2b867faf87293e1ee590044819"></a>
@@ -812,8 +719,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00059">59</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>            =&gt; RandUtils.RandULong(min, max, endian);</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="af8241426f5e3abb474314799a5b8f55c" name="af8241426f5e3abb474314799a5b8f55c"></a>
@@ -840,17 +746,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00196">196</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  196</span>                                                 {</div>
-<div class="line"><span class="lineno">  197</span>            uint i = 0;</div>
-<div class="line"><span class="lineno">  198</span>            uint j = (uint)items.Length - 1;</div>
-<div class="line"><span class="lineno">  199</span> </div>
-<div class="line"><span class="lineno">  200</span>            <span class="keywordflow">while</span> ( i &lt; j ) {</div>
-<div class="line"><span class="lineno">  201</span>                Swap(ref items[i], ref items[j]);</div>
-<div class="line"><span class="lineno">  202</span>                i++;</div>
-<div class="line"><span class="lineno">  203</span>                j--;</div>
-<div class="line"><span class="lineno">  204</span>            }</div>
-<div class="line"><span class="lineno">  205</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aa5aca553b40f71287e7995ebf38df486" name="aa5aca553b40f71287e7995ebf38df486"></a>
@@ -886,14 +782,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00223">223</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  223</span>                                                                             {</div>
-<div class="line"><span class="lineno">  224</span>            <span class="keywordflow">while</span> ( start &lt; end ) {</div>
-<div class="line"><span class="lineno">  225</span>                Swap(ref items[start], ref items[end]);</div>
-<div class="line"><span class="lineno">  226</span>                start++;</div>
-<div class="line"><span class="lineno">  227</span>                end--;</div>
-<div class="line"><span class="lineno">  228</span>            }</div>
-<div class="line"><span class="lineno">  229</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a372e79f3f558688808718b5178763733" name="a372e79f3f558688808718b5178763733"></a>
@@ -924,15 +813,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00211">211</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  211</span>                                                             {</div>
-<div class="line"><span class="lineno">  212</span>            uint n = (uint)items.Length;</div>
-<div class="line"><span class="lineno">  213</span>            <span class="keywordflow">if</span> ( middle &gt;= n ) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  214</span> </div>
-<div class="line"><span class="lineno">  215</span>            ReverseRange(items, 0, middle - 1);</div>
-<div class="line"><span class="lineno">  216</span>            ReverseRange(items, middle, n - 1);</div>
-<div class="line"><span class="lineno">  217</span>            ReverseRange(items, 0, n - 1);</div>
-<div class="line"><span class="lineno">  218</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a2ad9699b354941edf38629cd714136fb" name="a2ad9699b354941edf38629cd714136fb"></a>
@@ -963,12 +844,7 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d35/_algorithm_8cs_source.html#l00071">71</a> of file <a class="el" href="../../d3/d35/_algorithm_8cs_source.html">Algorithm.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>                                                     {</div>
-<div class="line"><span class="lineno">   72</span>            T temp = x;</div>
-<div class="line"><span class="lineno">   73</span>            x = y;</div>
-<div class="line"><span class="lineno">   74</span>            y = temp;</div>
-<div class="line"><span class="lineno">   75</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

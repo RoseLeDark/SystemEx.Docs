@@ -38,7 +38,6 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_cache =
     [ "WriteRange", "dd/dbc/group__collections.html#gaa4a0abe0cb00fa5734afb3dee647575b", null ],
     [ "WriteRange", "dd/dbc/group__collections.html#gadc39086417a0f19c444987f4a4ae2aae", null ],
     [ "m_isLocked", "dd/dbc/group__collections.html#ga3fe693b576570a78fed25700ddb20fa2", null ],
-    [ "m_maxUsedAdress", "dd/dbc/group__collections.html#gabb5804c291c792dce5a9b9c3a1992fe5", null ],
     [ "m_position", "dd/dbc/group__collections.html#ga386a998fcf736e41e154484e33bd8c98", null ],
     [ "m_rawBuffer", "dd/dbc/group__collections.html#ga6fe2a964665384a05145f96e4df942bb", null ],
     [ "CanRead", "dd/dbc/group__collections.html#ga0d581d5cc35d448a491bee207076b03d", null ],

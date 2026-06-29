@@ -8,8 +8,6 @@
 <title>SystemEX: Class Members</title>
 <link rel="icon" href="Logo_256.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_h.html','',''); });
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -116,26 +117,19 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div><br/>
+<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div><br/>
 <div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions_x.html#index_x">X</a><div class="alphasepar"></div><a class="qindex" href="functions_y.html#index_y">Y</a><div class="alphasepar"></div><a class="qindex" href="functions_z.html#index_z">Z</a></div>
 
 
 <h3 class="doxsection"><a id="index_h" name="index_h"></a>- h -</h3><ul>
 <li>H&#160;:&#160;<a class="el" href="d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l.html#a99be0b6fc68a1a1af638d2cbf687f163">SystemEx.Drawing.ColorHSL</a>, <a class="el" href="de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a7634c5ebcb188f0f7d8aa48052b589ad">SystemEx.Drawing.ColorHSV</a>, <a class="el" href="d8/de9/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_h_d_r.html#a8e2aded25567e3ef4fd285deac9a1914">SystemEx.SystemEx.Drawing.ColorHDR</a></li>
-<li>Handle&#160;:&#160;<a class="el" href="dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html#a1d1977cb3ec2a3b9645dd44c451733d8">SystemEx.Device.Intertropt.UnmanagedObject</a>, <a class="el" href="d4/ddf/class_system_ex_1_1_runtime_1_1_module.html#a8da297ca89891146193940f0a402d1b5">SystemEx.Runtime.Module</a></li>
+<li>Handle&#160;:&#160;<a class="el" href="d4/ddf/class_system_ex_1_1_runtime_1_1_module.html#a8da297ca89891146193940f0a402d1b5">SystemEx.Runtime.Module</a></li>
 <li>HardwareBuffer&#160;:&#160;<a class="el" href="dd/d13/class_system_ex_1_1_device_1_1_memory_1_1_device_shared_buffer-1-g.html#ab7b4b00f05b6ee124d0f1b3bc3e1f18a">SystemEx.Device.Memory.DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;</a></li>
-<li>Hash32()&#160;:&#160;<a class="el" href="d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html#af2883bc620bd81c3efa0c7f5c4a635a2">SystemEx.Hash.Hash32</a></li>
-<li>Hash64()&#160;:&#160;<a class="el" href="da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html#af108e972db3e47c3604d21f4ed4b9de5">SystemEx.Hash.Hash64</a></li>
-<li>HashAlgorithmAttribute()&#160;:&#160;<a class="el" href="d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html#a4a26a6ec3b1a5e9023c08ee010fa9670">SystemEx.Hash.HashAlgorithmAttribute</a></li>
-<li>HasherType&#160;:&#160;<a class="el" href="d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html#a631aae3c5509226dd1a7c03799707da2">SystemEx.Hash.HashAlgorithmAttribute</a></li>
-<li>HasMask&#160;:&#160;<a class="el" href="de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html#a62b6fd8c6a5ac8c760fa5b8cd3eb1908">SystemEx.Drawing.ISubCanvas&lt; T &gt;</a></li>
 <li>HasNext()&#160;:&#160;<a class="el" href="d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#a52e65f15ca01daf41b73128738552970">SystemEx.Base.NumberRangeStepper&lt; T &gt;</a>, <a class="el" href="db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g.html#a6537e00a90ee96575dee72473f547a93">SystemEx.Collections.Generic.GroupNode&lt; T &gt;</a>, <a class="el" href="d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#a19f16d8f0114e79223e007903388399c">SystemEx.Collections.Generic.Node&lt; T &gt;</a></li>
 <li>HasPrev()&#160;:&#160;<a class="el" href="d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#a4ce870aae85dc093ff780e531409c493">SystemEx.Base.NumberRangeStepper&lt; T &gt;</a>, <a class="el" href="db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g.html#a4010215e7e11a2c835cf739415044d7d">SystemEx.Collections.Generic.GroupNode&lt; T &gt;</a>, <a class="el" href="d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#abf5e6890bce249be4dca7235074b9f6a">SystemEx.Collections.Generic.Node&lt; T &gt;</a></li>
 <li>HeaderSize&#160;:&#160;<a class="el" href="d2/d66/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_format_schema.html#aae4f5f9c04b6acc20131ffdb9f17c417">SystemEx.IO.Provider.IByteFormatSchema</a>, <a class="el" href="d0/d3e/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#ab115cbb7ff0d4a7999f32fc5cdd133fc">SystemEx.SystemEx.Drawing.ColorR10G10B10FormatSchema</a></li>
-<li>Height&#160;:&#160;<a class="el" href="d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a4b0ab0e3e74115c37b005e19707947c7">SystemEx.Drawing.ICanvas&lt; T &gt;</a></li>
 <li>HoneyDew&#160;:&#160;<a class="el" href="d4/d60/class_system_ex_1_1_drawing_1_1_white_colors.html#ab8f6314d370e564dd8110d98bd019001">SystemEx.Drawing.WhiteColors</a></li>
 <li>HotPink&#160;:&#160;<a class="el" href="db/df0/class_system_ex_1_1_drawing_1_1_pink_colors.html#a67557651b024e03710ee68cd60c5f549">SystemEx.Drawing.PinkColors</a></li>
-<li>Hue&#160;:&#160;<a class="el" href="df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b.html#a895839af89d98ca064643bb12402371e">SystemEx.Drawing.ColorHWB</a></li>
 <li>HUENAME&#160;:&#160;<a class="el" href="d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#aafbc8a4178e50b1ca0d37995dc433f64">SystemEx.Drawing.ColorNCol</a></li>
 </ul>
 </div><!-- contents -->

@@ -2,7 +2,7 @@ var annotated_dup =
 [
     [ "Examples", "d3/d06/namespace_examples.html", [
       [ "ExampleRamKernelAdd", "de/d89/class_examples_1_1_example_ram_kernel_add.html", "de/d89/class_examples_1_1_example_ram_kernel_add" ],
-      [ "Programm", "d4/dbc/class_examples_1_1_programm.html", "d4/dbc/class_examples_1_1_programm" ],
+      [ "Programm", "d4/dbc/class_examples_1_1_programm.html", null ],
       [ "SensorData", "db/dfb/class_examples_1_1_sensor_data.html", "db/dfb/class_examples_1_1_sensor_data" ],
       [ "SimpleHasher", "d4/de6/class_examples_1_1_simple_hasher.html", "d4/de6/class_examples_1_1_simple_hasher" ]
     ] ],
@@ -87,7 +87,7 @@ var annotated_dup =
         [ "Intertropt", "d7/d29/namespace_system_ex_1_1_device_1_1_intertropt.html", [
           [ "IDeviceSharedBackend", "d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html", "d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend" ],
           [ "RamSharedBackend", "d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html", "d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend" ],
-          [ "UnmanagedObject", "dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html", "dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object" ]
+          [ "UnmanagedObject", "dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html", null ]
         ] ],
         [ "Memory", "dd/d82/namespace_system_ex_1_1_device_1_1_memory.html", [
           [ "DeviceBuffer", "da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html", "da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer" ],
@@ -99,9 +99,9 @@ var annotated_dup =
       [ "Drawing", "de/d5b/namespace_system_ex_1_1_drawing.html", [
         [ "BlueColors", "da/dba/class_system_ex_1_1_drawing_1_1_blue_colors.html", null ],
         [ "BrownColors", "d3/d1b/class_system_ex_1_1_drawing_1_1_brown_colors.html", null ],
-        [ "ColorCMY", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y" ],
+        [ "ColorCMY", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html", null ],
         [ "ColorConverter", "de/d73/class_system_ex_1_1_drawing_1_1_color_converter.html", "de/d73/class_system_ex_1_1_drawing_1_1_color_converter" ],
-        [ "ColorGray", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray.html", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray" ],
+        [ "ColorGray", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray.html", null ],
         [ "ColorHSL", "d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l.html", "d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l" ],
         [ "ColorHSV", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v" ],
         [ "ColorHWB", "df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b.html", "df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b" ],
@@ -112,10 +112,10 @@ var annotated_dup =
         [ "CyanColors", "d8/d88/class_system_ex_1_1_drawing_1_1_cyan_colors.html", "d8/d88/class_system_ex_1_1_drawing_1_1_cyan_colors" ],
         [ "GreenColors", "d6/deb/class_system_ex_1_1_drawing_1_1_green_colors.html", "d6/deb/class_system_ex_1_1_drawing_1_1_green_colors" ],
         [ "GreyColors", "d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors.html", "d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors" ],
-        [ "ICanvas&lt; T &gt;", "d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html", "d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" ],
-        [ "ICanvasList&lt; T &gt;", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.html", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g" ],
-        [ "IColor&lt; T &gt;", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g" ],
-        [ "ISubCanvas&lt; T &gt;", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g" ],
+        [ "ICanvas&lt; T &gt;", "d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html", null ],
+        [ "ICanvasList&lt; T &gt;", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.html", null ],
+        [ "IColor&lt; T &gt;", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html", null ],
+        [ "ISubCanvas&lt; T &gt;", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html", null ],
         [ "OrangeColors", "dc/d52/class_system_ex_1_1_drawing_1_1_orange_colors.html", "dc/d52/class_system_ex_1_1_drawing_1_1_orange_colors" ],
         [ "PinkColors", "db/df0/class_system_ex_1_1_drawing_1_1_pink_colors.html", "db/df0/class_system_ex_1_1_drawing_1_1_pink_colors" ],
         [ "PurpelColors", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors" ],
@@ -124,11 +124,11 @@ var annotated_dup =
         [ "YellowColors", "de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors.html", "de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors" ]
       ] ],
       [ "Hash", "d4/d32/namespace_system_ex_1_1_hash.html", [
-        [ "Hash32", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32" ],
-        [ "Hash64", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64" ],
-        [ "HashableObject", "d2/d59/class_system_ex_1_1_hash_1_1_hashable_object.html", "d2/d59/class_system_ex_1_1_hash_1_1_hashable_object" ],
-        [ "HashAlgorithmAttribute", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute" ],
-        [ "IHasher", "da/d26/interface_system_ex_1_1_hash_1_1_i_hasher.html", "da/d26/interface_system_ex_1_1_hash_1_1_i_hasher" ],
+        [ "Hash32", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html", null ],
+        [ "Hash64", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html", null ],
+        [ "HashableObject", "d2/d59/class_system_ex_1_1_hash_1_1_hashable_object.html", null ],
+        [ "HashAlgorithmAttribute", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html", null ],
+        [ "IHasher", "da/d26/interface_system_ex_1_1_hash_1_1_i_hasher.html", null ],
         [ "Murmur3Hasher", "d5/db0/class_system_ex_1_1_hash_1_1_murmur3_hasher.html", null ],
         [ "XXHash3Hasher", "d6/dfc/class_system_ex_1_1_hash_1_1_x_x_hash3_hasher.html", null ]
       ] ],

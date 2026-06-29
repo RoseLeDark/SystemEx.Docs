@@ -6,16 +6,12 @@ var group___examples =
     ] ],
     [ "Examples.SensorData", "db/dfb/class_examples_1_1_sensor_data.html", [
       [ "ToBytes", "db/dfb/class_examples_1_1_sensor_data.html#adc39c04ebc08c651543d7b56da5b2c4d", null ],
-      [ "Id", "db/dfb/class_examples_1_1_sensor_data.html#a00f4fafafb6a2ad73f06abda5a7d294b", null ],
-      [ "Value", "db/dfb/class_examples_1_1_sensor_data.html#a0707804c4a9058760da23473e2318250", null ]
+      [ "Id", "db/dfb/class_examples_1_1_sensor_data.html#a00f4fafafb6a2ad73f06abda5a7d294b", null ]
     ] ],
-    [ "Examples.Programm", "d4/dbc/class_examples_1_1_programm.html", [
-      [ "Main", "d4/dbc/class_examples_1_1_programm.html#ac759bf99fad3a3e543d2d39a05e890ea", null ]
-    ] ],
+    [ "Examples.Programm", "d4/dbc/class_examples_1_1_programm.html", null ],
     [ "Examples.ExampleRamKernelAdd", "de/d89/class_examples_1_1_example_ram_kernel_add.html", [
       [ "ExampleRamKernelAdd", "de/d89/class_examples_1_1_example_ram_kernel_add.html#a2c8db1797df22fdac732544d262dd33d", null ],
       [ "OnCreate", "de/d89/class_examples_1_1_example_ram_kernel_add.html#a6256c48c3bb8a96497fed9b5d5528f1f", null ],
       [ "OnRun", "de/d89/class_examples_1_1_example_ram_kernel_add.html#a0a6b78b7784078d5dc33f978aed2ce88", null ]
-    ] ],
-    [ "Examples.MyKernelFunction", "d7/dfd/group___examples.html#ga2a2851be44b1daeeecacd8d9294397d6", null ]
+    ] ]
 ];

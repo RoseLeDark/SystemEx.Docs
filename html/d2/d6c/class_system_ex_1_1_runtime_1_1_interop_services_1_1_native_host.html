@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Runtime.InteropServices.NativeHost Class Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d2/d6c/class_system_ex_1_1_runtime_1_1_interop_services_1_1_native_host.html','../../','db/d77/class_system_ex_1_1_runtime_1_1_interop_services_1_1_native_host-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,21 +120,32 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">SystemEx.Runtime.InteropServices.NativeHost Class Reference<div class="ingroups"><a class="el" href="../../da/d89/group___runtime.html">Runtime</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Runtime.InteropServices.NativeHost:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Collaboration diagram for SystemEx.Runtime.InteropServices.NativeHost:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../da/dda/class_system_ex_1_1_runtime_1_1_interop_services_1_1_native_host__coll__graph.png" border="0" usemap="#a_system_ex_8_runtime_8_interop_services_8_native_host_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_system_ex_8_runtime_8_interop_services_8_native_host_coll__map" id="a_system_ex_8_runtime_8_interop_services_8_native_host_coll__map">
-<area shape="rect" title=" " alt="" coords="871,64,1050,107"/>
-<area shape="rect" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html" title=" " alt="" coords="513,64,717,107"/>
-<area shape="poly" title=" " alt="" coords="732,83,873,85,868,85,732,88"/>
-<area shape="rect" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html" title="Defines a typed map structure that stores key/value pairs as Pair&lt;T, TU&gt;. Provides insertion,..." alt="" coords="259,5,463,48"/>
-<area shape="poly" title=" " alt="" coords="471,49,522,63,517,63,471,55"/>
-<area shape="rect" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html" title=" " alt="" coords="5,5,210,48"/>
-<area shape="poly" title=" " alt="" coords="225,24,261,26,256,27,226,29"/>
-<area shape="rect" href="../../d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html" title="Defines a read‑only associative container mapping keys of type T &#160;to values of type TU ." alt="" coords="259,72,463,131"/>
-<area shape="poly" title=" " alt="" coords="479,91,515,92,510,92,479,97"/>
+<area shape="rect" title=" " alt="" coords="871,144,1050,187"/>
+<area shape="rect" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html" title=" " alt="" coords="513,144,717,187"/>
+<area shape="poly" title=" " alt="" coords="732,163,873,165,868,166,733,168"/>
+<area shape="rect" title=" " alt="" coords="60,5,155,32"/>
+<area shape="poly" title=" " alt="" coords="169,9,233,5,308,6,387,16,464,38,506,59,543,87,598,144,593,143,539,91,503,64,462,42,386,21,307,11,233,10,171,13"/>
+<area shape="rect" href="../../d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html" title="Defines a read‑only associative container mapping keys of type T &#160;to values of type TU ." alt="" coords="259,52,463,111"/>
+<area shape="poly" title=" " alt="" coords="169,31,261,55,256,57,170,36"/>
+<area shape="rect" title=" " alt="" coords="66,139,149,165"/>
+<area shape="poly" title=" " alt="" coords="165,151,513,160,511,165,165,156"/>
+<area shape="rect" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html" title="Defines a typed map structure that stores key/value pairs as Pair&lt;T, TU&gt;. Provides insertion,..." alt="" coords="259,185,463,228"/>
+<area shape="poly" title=" " alt="" coords="164,161,261,183,257,186,165,167"/>
+<area shape="rect" title=" " alt="" coords="314,252,408,279"/>
+<area shape="poly" title=" " alt="" coords="423,250,462,237,522,212,573,188,578,186,524,217,464,243,424,255"/>
+<area shape="poly" title=" " alt="" coords="478,185,515,181,510,183,480,190"/>
+<area shape="rect" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html" title=" " alt="" coords="5,193,210,236"/>
+<area shape="poly" title=" " alt="" coords="225,208,261,209,256,211,226,214"/>
+<area shape="poly" title=" " alt="" coords="466,113,551,143,545,144,466,119"/>
+<area shape="rect" title=" " alt="" coords="37,60,178,103"/>
+<area shape="poly" title=" " alt="" coords="193,79,261,80,256,83,194,84"/>
+<area shape="rect" title=" " alt="" coords="294,303,428,345"/>
+<area shape="poly" title=" " alt="" coords="441,298,462,288,500,264,535,237,590,188,595,186,539,241,503,269,465,293,443,303"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -197,24 +209,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the module was found and successfully removed; otherwise <code>false</code>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d63/_native_host_01_8cs_source.html#l00074">74</a> of file <a class="el" href="../../df/d63/_native_host_01_8cs_source.html">NativeHost .cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>                                                        {</div>
-<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">if</span> ( !m_loadedModule.ContainsValue(module) )</div>
-<div class="line"><span class="lineno">   76</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>            <a class="code hl_typedef" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>.Unload(module);</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>            <span class="comment">// Key finden und entfernen</span></div>
-<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">foreach</span> ( var kv <span class="keywordflow">in</span> m_loadedModule ) {</div>
-<div class="line"><span class="lineno">   82</span>                <span class="keywordflow">if</span> ( kv.EqualSecond(module) ) {</div>
-<div class="line"><span class="lineno">   83</span>                    m_loadedModule.Remove(kv.First);</div>
-<div class="line"><span class="lineno">   84</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   85</span>                }</div>
-<div class="line"><span class="lineno">   86</span>            }</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   89</span>        }</div>
-<div class="ttc" id="a_native_r_a_m_kernel_8cs_html_ac108a8ab3a325c58d6d2dfab43fecb66"><div class="ttname"><a href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a></div><div class="ttdeci">SystemEx.Runtime.Module Module</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00022">NativeRAMKernel.cs:22</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6091e3bc4b98142b027eee9a89c94150" name="a6091e3bc4b98142b027eee9a89c94150"></a>
@@ -267,15 +262,7 @@ Static Private Attributes</h2></td></tr>
 </div>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d63/_native_host_01_8cs_source.html#l00126">126</a> of file <a class="el" href="../../df/d63/_native_host_01_8cs_source.html">NativeHost .cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  126</span>                                                                               : Delegate {</div>
-<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">if</span> ( module == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>            IntPtr _func = module.LoadFunc(func);</div>
-<div class="line"><span class="lineno">  130</span>            <span class="keywordflow">if</span> ( _func == IntPtr.Zero ) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  131</span> </div>
-<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">return</span> Marshal.GetDelegateForFunctionPointer&lt;T&gt;(_func);</div>
-<div class="line"><span class="lineno">  133</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a673a8c6ff46533e2b0ac458a7454b998" name="a673a8c6ff46533e2b0ac458a7454b998"></a>
@@ -328,16 +315,7 @@ Static Private Attributes</h2></td></tr>
 </div>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d63/_native_host_01_8cs_source.html#l00103">103</a> of file <a class="el" href="../../df/d63/_native_host_01_8cs_source.html">NativeHost .cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  103</span>                                                                              : Delegate {</div>
-<div class="line"><span class="lineno">  104</span>            <a class="code hl_typedef" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>? x = m_loadedModule.Get(module);</div>
-<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">if</span>(x != <span class="keyword">null</span>) {</div>
-<div class="line"><span class="lineno">  106</span>                <span class="keywordflow">return</span> GetFunction&lt;T&gt;(x, func);</div>
-<div class="line"><span class="lineno">  107</span>            }</div>
-<div class="line"><span class="lineno">  108</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>            </div>
-<div class="line"><span class="lineno">  111</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6e52e3a3bb5aca7f0317978c29a9a200" name="a6e52e3a3bb5aca7f0317978c29a9a200"></a>
@@ -371,19 +349,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A Module instance representing the loaded library, or <code>null</code> if loading fails. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d63/_native_host_01_8cs_source.html#l00052">52</a> of file <a class="el" href="../../df/d63/_native_host_01_8cs_source.html">NativeHost .cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>                                                         {</div>
-<div class="line"><span class="lineno">   53</span>            <a class="code hl_typedef" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>? _ret =  <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">if</span> ( !m_loadedModule.ContainsKey(strPath) ) {</div>
-<div class="line"><span class="lineno">   56</span>                _ret =  <a class="code hl_typedef" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>.LoadModule(strPath);</div>
-<div class="line"><span class="lineno">   57</span>                <span class="keywordflow">if</span>(_ret != <span class="keyword">null</span>) m_loadedModule.Add(strPath, _ret);</div>
-<div class="line"><span class="lineno">   58</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   59</span>                _ret = m_loadedModule[strPath];</div>
-<div class="line"><span class="lineno">   60</span>            }</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><span class="lineno">   63</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>

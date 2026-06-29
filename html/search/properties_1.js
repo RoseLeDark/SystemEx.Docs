@@ -6,8 +6,6 @@ var searchData=
   ['begin_3',['Begin',['../df/d28/interface_system_ex_1_1_i_range-1-g.html#a63fa52cff2a598131d8b192112a4975b',1,'SystemEx.IRange-1-g.Begin'],['../dc/d8a/class_system_ex_1_1_number_range-1-g.html#ab94e649bfe995432a898b03f90f029cd',1,'SystemEx.NumberRange-1-g.Begin']]],
   ['beige_4',['Beige',['../d4/d60/class_system_ex_1_1_drawing_1_1_white_colors.html#abb70aaf3e4114590d99084687b480661',1,'SystemEx::Drawing::WhiteColors']]],
   ['black_5',['Black',['../d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors.html#ac120629df64292153ec843dd188858db',1,'SystemEx::Drawing::GreyColors']]],
-  ['blackness_6',['Blackness',['../df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b.html#a80b798bd0ca8651816c82b38c0b63359',1,'SystemEx::Drawing::ColorHWB']]],
-  ['blue_7',['Blue',['../d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html#a2b64b8e1b4f0b091c557bfcc37d82963',1,'SystemEx.SystemEx.Drawing.ColorR16G16B16.Blue'],['../db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#af45ae3cbfe921ff3e312fd9123d86385',1,'SystemEx.Drawing.ColorR8G8B8.Blue']]],
-  ['blueviolet_8',['BlueViolet',['../d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a7c0236c69fe15cd53b8938ee91cddadc',1,'SystemEx::Drawing::PurpelColors']]],
-  ['buffer_9',['Buffer',['../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#ad40390089d37f39c92390af693bdb199',1,'SystemEx::Drawing::ICanvas-1-g']]]
+  ['blue_6',['Blue',['../d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html#a2b64b8e1b4f0b091c557bfcc37d82963',1,'SystemEx.SystemEx.Drawing.ColorR16G16B16.Blue'],['../db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#af45ae3cbfe921ff3e312fd9123d86385',1,'SystemEx.Drawing.ColorR8G8B8.Blue']]],
+  ['blueviolet_7',['BlueViolet',['../d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a7c0236c69fe15cd53b8938ee91cddadc',1,'SystemEx::Drawing::PurpelColors']]]
 ];

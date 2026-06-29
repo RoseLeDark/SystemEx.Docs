@@ -8,8 +8,6 @@
 <title>SystemEX: IRange.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d8/d9d/_i_range_8cs_source.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">IRange.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d8/d9d/_i_range_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * SPDX-License-Identifier: EUPL-1.2</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Copyright (c) 2026 Amber-Sophia Schröck &lt;ambersophia.schroeck@mail.de&gt;</span></div>
@@ -142,49 +143,35 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d0/d48/namespace_system_ex.html">   20</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> {</div>
 <div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html">   27</a></span>    <span class="keyword">public</span> <span class="keyword">interface </span>IRange&lt;T&gt; {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a63fa52cff2a598131d8b192112a4975b">   32</a></span>        <span class="keyword">public</span> IForwardIterator&lt;T&gt; <a class="code hl_property" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a63fa52cff2a598131d8b192112a4975b">Begin</a> { <span class="keyword">get</span>; }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a1e8481f103a9a76a4361f51407842be1">   37</a></span>        <span class="keyword">public</span> IForwardIterator&lt;T&gt; <a class="code hl_property" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a1e8481f103a9a76a4361f51407842be1">End</a> { <span class="keyword">get</span>;  }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae275f6eb758dd085b845265ef1480d19">   42</a></span>        <span class="keyword">public</span> T <a class="code hl_property" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae275f6eb758dd085b845265ef1480d19">From</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae292c65780ca87bf2f6a8d4d1af728af">   47</a></span>        <span class="keyword">public</span> T <a class="code hl_property" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae292c65780ca87bf2f6a8d4d1af728af">To</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a693d922264544cd26108d2e129166d50">   52</a></span>        <span class="keywordtype">bool</span> <a class="code hl_property" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a693d922264544cd26108d2e129166d50">IsValid</a> { <span class="keyword">get</span>; }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a9e584fb545a58d310f3b9c43bfae65ab">   57</a></span>        <span class="keywordtype">bool</span> <a class="code hl_property" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a9e584fb545a58d310f3b9c43bfae65ab">IsSame</a> { <span class="keyword">get</span>; }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a39f8cc23849b2473bbe5b161258362c8">   65</a></span>        <span class="keyword">public</span> IRange&lt;T&gt; <a class="code hl_function" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a39f8cc23849b2473bbe5b161258362c8">GetRange</a>(T? tstart, T? tend);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a63fa52cff2a598131d8b192112a4975b">   32</a></span>        <span class="keyword">public</span> IForwardIterator&lt;T&gt; <a class="code hl_property" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a63fa52cff2a598131d8b192112a4975b" title="Returns an iterator positioned at the start of the range.">Begin</a> { <span class="keyword">get</span>; }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a1e8481f103a9a76a4361f51407842be1">   37</a></span>        <span class="keyword">public</span> IForwardIterator&lt;T&gt; <a class="code hl_property" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a1e8481f103a9a76a4361f51407842be1" title="Returns an iterator positioned past the end of the range.">End</a> { <span class="keyword">get</span>;  }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae275f6eb758dd085b845265ef1480d19">   42</a></span>        <span class="keyword">public</span> T <a class="code hl_property" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae275f6eb758dd085b845265ef1480d19" title="Gets or sets the start value of the range.">From</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae292c65780ca87bf2f6a8d4d1af728af">   47</a></span>        <span class="keyword">public</span> T <a class="code hl_property" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae292c65780ca87bf2f6a8d4d1af728af" title="Gets or sets the end value of the range.">To</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a693d922264544cd26108d2e129166d50">   52</a></span>        <span class="keywordtype">bool</span> <a class="code hl_property" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a693d922264544cd26108d2e129166d50" title="Indicates whether the range is valid (Start ≤ End).">IsValid</a> { <span class="keyword">get</span>; }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a9e584fb545a58d310f3b9c43bfae65ab">   57</a></span>        <span class="keywordtype">bool</span> <a class="code hl_property" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a9e584fb545a58d310f3b9c43bfae65ab" title="Indicates whether the range represents a single value (Start == End).">IsSame</a> { <span class="keyword">get</span>; }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a39f8cc23849b2473bbe5b161258362c8">   65</a></span>        <span class="keyword">public</span> IRange&lt;T&gt; <a class="code hl_function" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a39f8cc23849b2473bbe5b161258362c8" title="Creates a new range using optional override values for start and end.">GetRange</a>(T? tstart, T? tend);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ac206e7fa0e7e60ffab22e4af76d56c92">   74</a></span>        <span class="keyword">public</span> IRange&lt;T&gt;? <a class="code hl_function" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ac206e7fa0e7e60ffab22e4af76d56c92">Union</a> ( IRange&lt;T&gt; other );</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ac206e7fa0e7e60ffab22e4af76d56c92">   74</a></span>        <span class="keyword">public</span> IRange&lt;T&gt;? <a class="code hl_function" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ac206e7fa0e7e60ffab22e4af76d56c92" title="Computes the union of this range with another range if they overlap or are adjacent....">Union</a> ( IRange&lt;T&gt; other );</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a6d75f4b599538af14e0ff651c10ef745">   81</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a6d75f4b599538af14e0ff651c10ef745">IsAdjacent</a> ( IRange&lt;T&gt; other );</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a6d75f4b599538af14e0ff651c10ef745">   81</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a6d75f4b599538af14e0ff651c10ef745" title="Determines whether this range touches another range at exactly one boundary.">IsAdjacent</a> ( IRange&lt;T&gt; other );</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a07d2023132aa7ce6fc3bd3e1bf46ec24">   88</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a07d2023132aa7ce6fc3bd3e1bf46ec24">Contains</a>(T x);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a07d2023132aa7ce6fc3bd3e1bf46ec24">   88</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a07d2023132aa7ce6fc3bd3e1bf46ec24" title="Determines whether the specified value lies within the range.">Contains</a>(T x);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a20f9baa7b7e30520bbc507a047aad0b1">   97</a></span>        <span class="keyword">public</span> IRange&lt;T&gt;? <a class="code hl_function" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a20f9baa7b7e30520bbc507a047aad0b1">Intersect</a> ( IRange&lt;T&gt; other );</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a20f9baa7b7e30520bbc507a047aad0b1">   97</a></span>        <span class="keyword">public</span> IRange&lt;T&gt;? <a class="code hl_function" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a20f9baa7b7e30520bbc507a047aad0b1" title="Computes the intersection of this range with another range.">Intersect</a> ( IRange&lt;T&gt; other );</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a361b62aca6eb8fc68770d86f5dbc708b">  104</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a361b62aca6eb8fc68770d86f5dbc708b">Overlaps</a> ( IRange&lt;T&gt; other );</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a361b62aca6eb8fc68770d86f5dbc708b">  104</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a361b62aca6eb8fc68770d86f5dbc708b" title="Determines whether this range overlaps with another range.">Overlaps</a> ( IRange&lt;T&gt; other );</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
 </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
 </div>
-<div class="ttc" id="ainterface_system_ex_1_1_i_range-1-g_html_a07d2023132aa7ce6fc3bd3e1bf46ec24"><div class="ttname"><a href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a07d2023132aa7ce6fc3bd3e1bf46ec24">SystemEx.IRange-1-g.Contains</a></div><div class="ttdeci">bool Contains(T x)</div><div class="ttdoc">Determines whether the specified value lies within the range.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_i_range-1-g_html_a1e8481f103a9a76a4361f51407842be1"><div class="ttname"><a href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a1e8481f103a9a76a4361f51407842be1">SystemEx.IRange-1-g.End</a></div><div class="ttdeci">IForwardIterator&lt; T &gt; End</div><div class="ttdoc">Returns an iterator positioned past the end of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00037">IRange.cs:37</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_i_range-1-g_html_a20f9baa7b7e30520bbc507a047aad0b1"><div class="ttname"><a href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a20f9baa7b7e30520bbc507a047aad0b1">SystemEx.IRange-1-g.Intersect</a></div><div class="ttdeci">IRange&lt; T &gt;? Intersect(IRange&lt; T &gt; other)</div><div class="ttdoc">Computes the intersection of this range with another range.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_i_range-1-g_html_a361b62aca6eb8fc68770d86f5dbc708b"><div class="ttname"><a href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a361b62aca6eb8fc68770d86f5dbc708b">SystemEx.IRange-1-g.Overlaps</a></div><div class="ttdeci">bool Overlaps(IRange&lt; T &gt; other)</div><div class="ttdoc">Determines whether this range overlaps with another range.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_i_range-1-g_html_a39f8cc23849b2473bbe5b161258362c8"><div class="ttname"><a href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a39f8cc23849b2473bbe5b161258362c8">SystemEx.IRange-1-g.GetRange</a></div><div class="ttdeci">IRange&lt; T &gt; GetRange(T? tstart, T? tend)</div><div class="ttdoc">Creates a new range using optional override values for start and end.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_i_range-1-g_html_a63fa52cff2a598131d8b192112a4975b"><div class="ttname"><a href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a63fa52cff2a598131d8b192112a4975b">SystemEx.IRange-1-g.Begin</a></div><div class="ttdeci">IForwardIterator&lt; T &gt; Begin</div><div class="ttdoc">Returns an iterator positioned at the start of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">IRange.cs:32</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_i_range-1-g_html_a693d922264544cd26108d2e129166d50"><div class="ttname"><a href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a693d922264544cd26108d2e129166d50">SystemEx.IRange-1-g.IsValid</a></div><div class="ttdeci">bool IsValid</div><div class="ttdoc">Indicates whether the range is valid (Start ≤ End).</div><div class="ttdef"><b>Definition</b> <a href="#l00052">IRange.cs:52</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_i_range-1-g_html_a6d75f4b599538af14e0ff651c10ef745"><div class="ttname"><a href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a6d75f4b599538af14e0ff651c10ef745">SystemEx.IRange-1-g.IsAdjacent</a></div><div class="ttdeci">bool IsAdjacent(IRange&lt; T &gt; other)</div><div class="ttdoc">Determines whether this range touches another range at exactly one boundary.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_i_range-1-g_html_a9e584fb545a58d310f3b9c43bfae65ab"><div class="ttname"><a href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a9e584fb545a58d310f3b9c43bfae65ab">SystemEx.IRange-1-g.IsSame</a></div><div class="ttdeci">bool IsSame</div><div class="ttdoc">Indicates whether the range represents a single value (Start == End).</div><div class="ttdef"><b>Definition</b> <a href="#l00057">IRange.cs:57</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_i_range-1-g_html_ac206e7fa0e7e60ffab22e4af76d56c92"><div class="ttname"><a href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ac206e7fa0e7e60ffab22e4af76d56c92">SystemEx.IRange-1-g.Union</a></div><div class="ttdeci">IRange&lt; T &gt;? Union(IRange&lt; T &gt; other)</div><div class="ttdoc">Computes the union of this range with another range if they overlap or are adjacent....</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_i_range-1-g_html_ae275f6eb758dd085b845265ef1480d19"><div class="ttname"><a href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae275f6eb758dd085b845265ef1480d19">SystemEx.IRange-1-g.From</a></div><div class="ttdeci">T From</div><div class="ttdoc">Gets or sets the start value of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00042">IRange.cs:42</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_i_range-1-g_html_ae292c65780ca87bf2f6a8d4d1af728af"><div class="ttname"><a href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae292c65780ca87bf2f6a8d4d1af728af">SystemEx.IRange-1-g.To</a></div><div class="ttdeci">T To</div><div class="ttdoc">Gets or sets the end value of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">IRange.cs:47</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d16/_i_array_8cs_source.html#l00018">IArray.cs:18</a></div></div>
-<div class="ttc" id="anamespace_system_ex_html"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="#l00020">IRange.cs:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../dir_628593db0cdce5a76fb85526ae5aa762.html">Base</a></li><li class="navelem"><a href="../../d8/d9d/_i_range_8cs.html">IRange.cs</a></li>
+    <li class="navelem"><b>Base</b></li><li class="navelem"><b>IRange.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

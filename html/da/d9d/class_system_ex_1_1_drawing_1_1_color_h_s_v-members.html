@@ -8,8 +8,6 @@
 <title>SystemEX: Member List</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -124,40 +125,40 @@ document.addEventListener('DOMContentLoaded', () => {
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a9296381d473721b060064d7210429a27">Addition</a>(ColorHSV a)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a061e12219ee32d83cd4a00e51f7a5a2f">Addition</a>(float a, float b, float c)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a74af940c1c2b18f5bb55f57fcd4d4472">SystemEx::Drawing::IColor-1-g.Addition</a>(T value)</td><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Addition</b>(T value) (defined in <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ae364e562a0e9dd6bda104fa85d6bdfcb">Brightness</a>(float delta)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ad8b876803886e038db8dcadf0f819db3">ClampHue</a>(float h)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a962c8121119034a6c86d529e063555ba">ColorHSV</a>(float h, float s, float v)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a4761a5c5c343ff88d2b45bf8d4c36be2">CompareTo</a>(ColorHSV other)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>CompareTo</b>(ColorHSV other) (defined in <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a>)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ab33339670ce49d574902be59b72d4a1b">Division</a>(ColorHSV a)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a7da093e9fa7bf32bdd882e2d610c1eb6">Division</a>(float a, float b, float c)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a21aa11031787f8334d8c080400ecc196">SystemEx::Drawing::IColor-1-g.Division</a>(T value)</td><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Division</b>(T value) (defined in <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a6f5a1d72055c9f949dae2df15aea4f3b">Equals</a>(ColorHSV? other)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a17f08200f8b4716951ea515730f9dbfe">Equals</a>(object? obj)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a38dd5a10cc0b6b4472f5f9a329e32005">GetHashCode</a>()</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a7634c5ebcb188f0f7d8aa48052b589ad">H</a></td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a25fae7109e0e77c3e22f6dc8e71192ba">Lerp</a>(ColorHSV value, float amount)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a3af3aefd30c7ddc53f205bd4d9b1fdf6">SystemEx::Drawing::IColor-1-g.Lerp</a>(T value, float amount)</td><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a06b5d2ce1aec75e037e4d1cdd2d3e66f">m_hue</a></td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">package</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#acdccaa71d477911557cfbf0603a9b7cf">m_saturation</a></td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">package</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a4e50d211c83dd48c0879a86a5acd9403">m_value</a></td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">package</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Lerp</b>(T value, float amount) (defined in <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>m_hue</b> (defined in <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a>)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">package</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>m_saturation</b> (defined in <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a>)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">package</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>m_value</b> (defined in <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a>)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">package</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a0b6ba4ae89bd5ef90d507f6b2b82a3b8">Multiplication</a>(ColorHSV a)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a4c73cb713a8f79257f05ec1c023a5efe">Multiplication</a>(float a, float b, float c)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a23735542aac5fbeac1d1f3af673ae3b0">SystemEx::Drawing::IColor-1-g.Multiplication</a>(T value)</td><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ad5616d7199b33601e7ca8a87f3befed6">operator!=</a>(ColorHSV left, ColorHSV right)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#afc86913745e70fd1ec0ff618efaa120f">operator&lt;</a>(ColorHSV left, ColorHSV right)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a97d41fcb4020620e5071d25499299a94">operator&lt;=</a>(ColorHSV left, ColorHSV right)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a6adcf42fa4ab92e78c8c460e52acea1d">operator==</a>(ColorHSV left, ColorHSV right)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a24d14f94676304fa6dbc16ecce07abad">operator&gt;</a>(ColorHSV left, ColorHSV right)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a1764ee4fc4137f9832ef38eb649b834d">operator&gt;=</a>(ColorHSV left, ColorHSV right)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Multiplication</b>(T value) (defined in <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator!=</b>(ColorHSV left, ColorHSV right) (defined in <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a>)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>operator&lt;</b>(ColorHSV left, ColorHSV right) (defined in <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a>)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator&lt;=</b>(ColorHSV left, ColorHSV right) (defined in <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a>)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>operator==</b>(ColorHSV left, ColorHSV right) (defined in <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a>)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator&gt;</b>(ColorHSV left, ColorHSV right) (defined in <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a>)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>operator&gt;=</b>(ColorHSV left, ColorHSV right) (defined in <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a>)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ab332963dc629e8f62e11315520bcb5ee">S</a></td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a8a124579c7820d0aa4c635c07277c791">Saturation</a>(float delta)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a821d86749b08f3bf7a0c1c692b978101">Subtraction</a>(ColorHSV a)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a3b94792df86f9b01e2347bf108285ef8">Subtraction</a>(float a, float b, float c)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a2e68feb2f7121a89a66759cf655f0e7c">SystemEx::Drawing::IColor-1-g.Subtraction</a>(T value)</td><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Subtraction</b>(T value) (defined in <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html">SystemEx.Drawing.IColor&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#adf64424f236fd4f9504b594cb0f83d64">ToString</a>()</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a89ca29edf3a853d667e55bff0923c3b0">V</a></td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a009097819b259e985c51bbd28d6753bd">Zero</a></td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Zero</b> (defined in <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a>)</td><td class="entry"><a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">SystemEx.Drawing.ColorHSV</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

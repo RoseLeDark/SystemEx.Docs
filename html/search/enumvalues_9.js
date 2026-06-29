@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['nin_0',['Nin',['../d0/d48/namespace_system_ex.html#aa60c11b2d2d4ff5084ed2276d3e06697af6becb7bb76db0da62691c2318c85004',1,'SystemEx']]]
+  ['readonly_0',['ReadOnly',['../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#afe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197',1,'SystemEx::Device::Memory']]],
+  ['readwrite_1',['ReadWrite',['../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#afe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723',1,'SystemEx::Device::Memory']]],
+  ['reservlistorder_2',['ReservListOrder',['../dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316',1,'SystemEx::Collections::Generic']]]
 ];

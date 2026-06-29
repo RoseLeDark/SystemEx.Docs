@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Device.Memory Namespace Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('dd/d82/namespace_system_ex_1_1_device_1_1_memory.html','../../',''); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -166,17 +167,7 @@ Enumerations</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d72/_device_shared_buffer_8cs_source.html#l00034">34</a> of file <a class="el" href="../../de/d72/_device_shared_buffer_8cs_source.html">DeviceSharedBuffer.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>                                : <span class="keywordtype">byte</span> {</div>
-<div class="line"><span class="lineno">   39</span>        <a class="code hl_enumvalue" href="#afe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197">ReadOnly</a>,</div>
-<div class="line"><span class="lineno">   40</span></div>
-<div class="line"><span class="lineno">   45</span>        <a class="code hl_enumvalue" href="#afe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5">WriteOnly</a>,</div>
-<div class="line"><span class="lineno">   46</span></div>
-<div class="line"><span class="lineno">   52</span>        <a class="code hl_enumvalue" href="#afe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723">ReadWrite</a></div>
-<div class="line"><span class="lineno">   53</span>    }</div>
-<div class="ttc" id="anamespace_system_ex_1_1_device_1_1_memory_html_afe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197"><div class="ttname"><a href="#afe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197">SystemEx.Device.Memory.SharedCacheType.ReadOnly</a></div><div class="ttdeci">@ ReadOnly</div><div class="ttdoc">Data flows from the cache to the hardware buffer only.   Hardware cannot write back into the cache.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d72/_device_shared_buffer_8cs_source.html#l00039">DeviceSharedBuffer.cs:39</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_device_1_1_memory_html_afe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5"><div class="ttname"><a href="#afe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5">SystemEx.Device.Memory.SharedCacheType.WriteOnly</a></div><div class="ttdeci">@ WriteOnly</div><div class="ttdoc">Data flows from the hardware buffer into the cache only.   The cache does not upload its contents to ...</div><div class="ttdef"><b>Definition</b> <a href="../../de/d72/_device_shared_buffer_8cs_source.html#l00045">DeviceSharedBuffer.cs:45</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_device_1_1_memory_html_afe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723"><div class="ttname"><a href="#afe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723">SystemEx.Device.Memory.SharedCacheType.ReadWrite</a></div><div class="ttdeci">@ ReadWrite</div><div class="ttdoc">Bidirectional synchronization between cache and hardware buffer.   The cache uploads its data to the ...</div><div class="ttdef"><b>Definition</b> <a href="../../de/d72/_device_shared_buffer_8cs_source.html#l00052">DeviceSharedBuffer.cs:52</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 </div><!-- contents -->

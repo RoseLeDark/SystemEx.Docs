@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Runtime.Module Class Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/ddf/class_system_ex_1_1_runtime_1_1_module.html','../../','d2/dd6/class_system_ex_1_1_runtime_1_1_module-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -193,12 +194,7 @@ Properties</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00044">44</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>                                                 {</div>
-<div class="line"><span class="lineno">   45</span>            this.Handle = v;</div>
-<div class="line"><span class="lineno">   46</span>            this.Name = System.IO.Path.GetFileName(strPath);</div>
-<div class="line"><span class="lineno">   47</span>            this.Path = System.IO.Path.GetDirectoryName(strPath)!;</div>
-<div class="line"><span class="lineno">   48</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -234,11 +230,7 @@ Properties</h2></td></tr>
  Returns IntPtr.Zero if the function cannot be resolved. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00133">133</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  133</span>                                                 {</div>
-<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">return</span> <a class="code hl_typedef" href="../../d2/dee/_module_8cs.html#af80507c03eb6d1a1e524fc4699935091">ProcLoader</a>.LoadFunction(<span class="keyword">this</span>, func);</div>
-<div class="line"><span class="lineno">  135</span>        }</div>
-<div class="ttc" id="a_module_8cs_html_af80507c03eb6d1a1e524fc4699935091"><div class="ttname"><a href="../../d2/dee/_module_8cs.html#af80507c03eb6d1a1e524fc4699935091">ProcLoader</a></div><div class="ttdeci">SystemEx.Runtime.InteropServices.Platform.NoSupportProcLoader ProcLoader</div><div class="ttdef"><b>Definition</b> <a href="../../d2/dee/_module_8cs_source.html#l00016">Module.cs:16</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6cc2878fbe57907285de49a853fe51fe" name="a6cc2878fbe57907285de49a853fe51fe"></a>
@@ -272,19 +264,7 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A new Module instance if loading succeeds; otherwise <code>null</code>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00103">103</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  103</span>                                                           {</div>
-<div class="line"><span class="lineno">  104</span>            <a class="code hl_typedef" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>? _ret = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  105</span>            <span class="keywordtype">string</span> new_path = <a class="code hl_typedef" href="../../d2/dee/_module_8cs.html#af80507c03eb6d1a1e524fc4699935091">ProcLoader</a>.NO_PATH;</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>            new_path = <a class="code hl_typedef" href="../../d2/dee/_module_8cs.html#af80507c03eb6d1a1e524fc4699935091">ProcLoader</a>.GetLibaryPath(name);</div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">if</span> ( new_path != <a class="code hl_typedef" href="../../d2/dee/_module_8cs.html#af80507c03eb6d1a1e524fc4699935091">ProcLoader</a>.NO_PATH ) {</div>
-<div class="line"><span class="lineno">  110</span>                _ret = <a class="code hl_typedef" href="../../d2/dee/_module_8cs.html#af80507c03eb6d1a1e524fc4699935091">ProcLoader</a>.LoadLibrary(new_path);</div>
-<div class="line"><span class="lineno">  111</span>            }</div>
-<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><span class="lineno">  113</span>        }</div>
-<div class="ttc" id="a_native_r_a_m_kernel_8cs_html_ac108a8ab3a325c58d6d2dfab43fecb66"><div class="ttname"><a href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a></div><div class="ttdeci">SystemEx.Runtime.Module Module</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d21/_native_r_a_m_kernel_8cs_source.html#l00022">NativeRAMKernel.cs:22</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6111d4e0b2e28c727233bda6eb3426c5" name="a6111d4e0b2e28c727233bda6eb3426c5"></a>
@@ -323,16 +303,7 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A new Module instance if loading succeeds; otherwise <code>null</code>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00084">84</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>                                                                        {</div>
-<div class="line"><span class="lineno">   85</span>            <a class="code hl_typedef" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a>? _ret = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   86</span>            <span class="keywordtype">string</span> new_path = System.IO.Path.Combine(path, name);</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">if</span> ( System.IO.File.Exists(new_path) )</div>
-<div class="line"><span class="lineno">   89</span>                _ret = <a class="code hl_typedef" href="../../d2/dee/_module_8cs.html#af80507c03eb6d1a1e524fc4699935091">ProcLoader</a>.LoadLibrary(new_path);</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><span class="lineno">   92</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a24cb6ae0474ba046f35988c8d974578b" name="a24cb6ae0474ba046f35988c8d974578b"></a>
@@ -366,10 +337,7 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Zero on success, or a non‑zero error code depending on the backend. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00070">70</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span>                                                     {</div>
-<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">return</span> <a class="code hl_typedef" href="../../d2/dee/_module_8cs.html#af80507c03eb6d1a1e524fc4699935091">ProcLoader</a>.FreeLibrary(module);</div>
-<div class="line"><span class="lineno">   72</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
@@ -394,8 +362,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00034">34</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <span class="keyword">get</span>; <span class="keyword">internal</span> <span class="keyword">set</span>; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a385ab09cf7efbef052c06bd1f542ca6f" name="a385ab09cf7efbef052c06bd1f542ca6f"></a>
@@ -419,8 +386,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00054">54</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   54</span>{ <span class="keyword">get</span>; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ac1fb270588a618e7524ad6b2b22c768b" name="ac1fb270588a618e7524ad6b2b22c768b"></a>
@@ -444,8 +410,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00059">59</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>{ <span class="keyword">get</span>; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

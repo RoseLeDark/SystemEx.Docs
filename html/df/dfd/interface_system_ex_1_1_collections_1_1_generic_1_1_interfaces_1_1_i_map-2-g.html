@@ -8,8 +8,6 @@
 <title>SystemEX: SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt; Interface Template Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">var page_layout=1;</script>
-<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +17,6 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = 'dark';
@@ -30,7 +25,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -42,18 +36,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -65,7 +47,40 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -78,22 +93,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html','../../','d3/df5/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g-members'); });
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('../../',true);
-});
-</script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -122,10 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <p>Defines a typed map structure that stores key/value pairs as Pair&lt;T, TU&gt;. Provides insertion, removal, searching, traversal, and conversion utilities.  
  <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Inheritance diagram for SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../d1/d13/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g__inherit__graph.png" border="0" usemap="#a_system_ex_8_collections_8_generic_8_interfaces_8_i_map_3_01_t_00_01_t_u_01_4_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="a_system_ex_8_collections_8_generic_8_interfaces_8_i_map_3_01_t_00_01_t_u_01_4_inherit__map" id="a_system_ex_8_collections_8_generic_8_interfaces_8_i_map_3_01_t_00_01_t_u_01_4_inherit__map">
 <area shape="rect" title="Defines a typed map structure that stores key/value pairs as Pair&lt;T, TU&gt;. Provides insertion,..." alt="" coords="258,72,462,115"/>
@@ -135,8 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
 <area shape="poly" title=" " alt="" coords="478,91,512,93,507,94,478,96"/>
 <area shape="rect" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html" title=" " alt="" coords="510,139,715,181"/>
 <area shape="poly" title=" " alt="" coords="458,116,532,138,526,138,458,122"/>
-<area shape="rect" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html" title=" " alt="" coords="5,72,210,115"/>
-<area shape="poly" title=" " alt="" coords="225,91,260,93,255,94,225,96"/>
+<area shape="rect" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html" title=" " alt="" coords="5,43,210,85"/>
+<area shape="poly" title=" " alt="" coords="225,75,260,81,255,82,225,80"/>
+<area shape="rect" title=" " alt="" coords="66,109,149,136"/>
+<area shape="poly" title=" " alt="" coords="164,114,260,104,255,106,165,119"/>
 <area shape="rect" href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html" title=" " alt="" coords="763,72,968,115"/>
 <area shape="poly" title=" " alt="" coords="731,91,766,93,760,94,731,96"/>
 <area shape="rect" href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html" title="A map that allows multiple entries with the same key. &#160;&#160;Unlike Map&lt;T, TU&gt;, which prevents duplicate p..." alt="" coords="1016,72,1220,115"/>
@@ -146,15 +148,16 @@ document.addEventListener('DOMContentLoaded', () => {
 <area shape="poly" title=" " alt="" coords="731,157,766,160,760,160,731,163"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="dynheader">
+Collaboration diagram for SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;:</div>
+<div class="dyncontent">
 <div class="center"><img src="../../d9/dde/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g__coll__graph.png" border="0" usemap="#a_system_ex_8_collections_8_generic_8_interfaces_8_i_map_3_01_t_00_01_t_u_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_system_ex_8_collections_8_generic_8_interfaces_8_i_map_3_01_t_00_01_t_u_01_4_coll__map" id="a_system_ex_8_collections_8_generic_8_interfaces_8_i_map_3_01_t_00_01_t_u_01_4_coll__map">
-<area shape="rect" title="Defines a typed map structure that stores key/value pairs as Pair&lt;T, TU&gt;. Provides insertion,..." alt="" coords="5,96,210,139"/>
+<area shape="rect" title="Defines a typed map structure that stores key/value pairs as Pair&lt;T, TU&gt;. Provides insertion,..." alt="" coords="89,96,294,139"/>
 <area shape="rect" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html" title=" " alt="" coords="5,5,210,48"/>
-<area shape="poly" title=" " alt="" coords="109,62,110,97,105,95,106,66"/>
+<area shape="poly" title=" " alt="" coords="139,57,175,96,169,96,136,62"/>
+<area shape="rect" title=" " alt="" coords="234,13,317,40"/>
+<area shape="poly" title=" " alt="" coords="255,51,213,98,209,93,251,53"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -180,13 +183,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aaaf712e74b9fc9cdbf083caef197f10b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all key/value pairs stored in the map as an array.  <br /></td></tr>
 <tr class="memitem:af848b2866e0e3a460742e20943c874f2" id="r_af848b2866e0e3a460742e20943c874f2"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af848b2866e0e3a460742e20943c874f2">TryGeValue</a> (T key, [MaybeNullWhen(false)] out TU value)</td></tr>
 <tr class="memdesc:af848b2866e0e3a460742e20943c874f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first key/value pair whose key matches the specified value.  <br /></td></tr>
-<tr class="inherit_header pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html">SystemEx.Collections.Generic.Interfaces.IMap</a></td></tr>
-<tr class="memitem:ac2df96f1ab1f5b30ef8da4ce5c8f0ecb inherit pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_ac2df96f1ab1f5b30ef8da4ce5c8f0ecb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#ac2df96f1ab1f5b30ef8da4ce5c8f0ecb">RemoveAt</a> (int pos)</td></tr>
-<tr class="memdesc:ac2df96f1ab1f5b30ef8da4ce5c8f0ecb inherit pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the element at the specified position.  <br /></td></tr>
-<tr class="memitem:a8feb7d375ad836228ff6c2304f1d1a90 inherit pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_a8feb7d375ad836228ff6c2304f1d1a90"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a8feb7d375ad836228ff6c2304f1d1a90">RemoveAt</a> (int start, int iend)</td></tr>
-<tr class="memdesc:a8feb7d375ad836228ff6c2304f1d1a90 inherit pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a range of elements from <em>start</em>  to <em>iend</em>  (exclusive).  <br /></td></tr>
-<tr class="memitem:a1e303eb89bb86166bbc5edaba4e8239e inherit pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_a1e303eb89bb86166bbc5edaba4e8239e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a1e303eb89bb86166bbc5edaba4e8239e">Clear</a> ()</td></tr>
-<tr class="memdesc:a1e303eb89bb86166bbc5edaba4e8239e inherit pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements from the map.  <br /></td></tr>
+<tr class="inherit_header pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td colspan="2">Public Member Functions inherited from <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html">SystemEx.Collections.Generic.Interfaces.IMap</a></td></tr>
+<tr class="memitem:ac2df96f1ab1f5b30ef8da4ce5c8f0ecb pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_ac2df96f1ab1f5b30ef8da4ce5c8f0ecb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#ac2df96f1ab1f5b30ef8da4ce5c8f0ecb">RemoveAt</a> (int pos)</td></tr>
+<tr class="memdesc:ac2df96f1ab1f5b30ef8da4ce5c8f0ecb pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the element at the specified position.  <br /></td></tr>
+<tr class="memitem:a8feb7d375ad836228ff6c2304f1d1a90 pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_a8feb7d375ad836228ff6c2304f1d1a90"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a8feb7d375ad836228ff6c2304f1d1a90">RemoveAt</a> (int start, int iend)</td></tr>
+<tr class="memdesc:a8feb7d375ad836228ff6c2304f1d1a90 pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a range of elements from <em>start</em>  to <em>iend</em>  (exclusive).  <br /></td></tr>
+<tr class="memitem:a1e303eb89bb86166bbc5edaba4e8239e pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_a1e303eb89bb86166bbc5edaba4e8239e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a1e303eb89bb86166bbc5edaba4e8239e">Clear</a> ()</td></tr>
+<tr class="memdesc:a1e303eb89bb86166bbc5edaba4e8239e pub_methods_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements from the map.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -199,17 +202,17 @@ Properties</h2></td></tr>
 <tr class="memdesc:af77a62fd86b9ffeee6bc3a322b669165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the first element in the map, or <code>null</code> if the map is empty.  <br /></td></tr>
 <tr class="memitem:ae9ff5e7f06607f15500a29895d34742d" id="r_ae9ff5e7f06607f15500a29895d34742d"><td class="memItemLeft">Pair&lt; T, TU &gt;?&#160;</td><td class="memItemRight"><a class="el" href="#ae9ff5e7f06607f15500a29895d34742d">Last</a><code> [get]</code></td></tr>
 <tr class="memdesc:ae9ff5e7f06607f15500a29895d34742d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last element in the map, or <code>null</code> if the map is empty.  <br /></td></tr>
-<tr class="inherit_header properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Properties inherited from <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html">SystemEx.Collections.Generic.Interfaces.IMap</a></td></tr>
-<tr class="memitem:abe187b405c1765e4039e5aff482e0f84 inherit properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_abe187b405c1765e4039e5aff482e0f84"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#abe187b405c1765e4039e5aff482e0f84">Count</a><code> [get]</code></td></tr>
-<tr class="memdesc:abe187b405c1765e4039e5aff482e0f84 inherit properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements currently stored in the map.  <br /></td></tr>
-<tr class="memitem:aaac7edf1535fb73f8889ab3b84d3f226 inherit properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_aaac7edf1535fb73f8889ab3b84d3f226"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#aaac7edf1535fb73f8889ab3b84d3f226">IsReadOnly</a><code> [get]</code></td></tr>
-<tr class="memdesc:aaac7edf1535fb73f8889ab3b84d3f226 inherit properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the map is read-only.  <br /></td></tr>
-<tr class="memitem:a6c55f12803e024ef50ec20bb859fe6c6 inherit properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_a6c55f12803e024ef50ec20bb859fe6c6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a6c55f12803e024ef50ec20bb859fe6c6">IsEmpty</a><code> [get]</code></td></tr>
-<tr class="memdesc:a6c55f12803e024ef50ec20bb859fe6c6 inherit properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the map contains no elements.  <br /></td></tr>
-<tr class="memitem:a7104df0a663c57e0e096e6e81d14b511 inherit properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_a7104df0a663c57e0e096e6e81d14b511"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a7104df0a663c57e0e096e6e81d14b511">IsFull</a><code> [get]</code></td></tr>
-<tr class="memdesc:a7104df0a663c57e0e096e6e81d14b511 inherit properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the map has reached its maximum capacity.  <br /></td></tr>
-<tr class="memitem:afd011dfb1a7a035fe2428b3b9772e6fe inherit properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_afd011dfb1a7a035fe2428b3b9772e6fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#afd011dfb1a7a035fe2428b3b9772e6fe">Size</a><code> [get]</code></td></tr>
-<tr class="memdesc:afd011dfb1a7a035fe2428b3b9772e6fe inherit properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total capacity of the map.  <br /></td></tr>
+<tr class="inherit_header properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td colspan="2">Properties inherited from <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html">SystemEx.Collections.Generic.Interfaces.IMap</a></td></tr>
+<tr class="memitem:abe187b405c1765e4039e5aff482e0f84 properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_abe187b405c1765e4039e5aff482e0f84"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#abe187b405c1765e4039e5aff482e0f84">Count</a><code> [get]</code></td></tr>
+<tr class="memdesc:abe187b405c1765e4039e5aff482e0f84 properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements currently stored in the map.  <br /></td></tr>
+<tr class="memitem:aaac7edf1535fb73f8889ab3b84d3f226 properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_aaac7edf1535fb73f8889ab3b84d3f226"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#aaac7edf1535fb73f8889ab3b84d3f226">IsReadOnly</a><code> [get]</code></td></tr>
+<tr class="memdesc:aaac7edf1535fb73f8889ab3b84d3f226 properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the map is read-only.  <br /></td></tr>
+<tr class="memitem:a6c55f12803e024ef50ec20bb859fe6c6 properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_a6c55f12803e024ef50ec20bb859fe6c6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a6c55f12803e024ef50ec20bb859fe6c6">IsEmpty</a><code> [get]</code></td></tr>
+<tr class="memdesc:a6c55f12803e024ef50ec20bb859fe6c6 properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the map contains no elements.  <br /></td></tr>
+<tr class="memitem:a7104df0a663c57e0e096e6e81d14b511 properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_a7104df0a663c57e0e096e6e81d14b511"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a7104df0a663c57e0e096e6e81d14b511">IsFull</a><code> [get]</code></td></tr>
+<tr class="memdesc:a7104df0a663c57e0e096e6e81d14b511 properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the map has reached its maximum capacity.  <br /></td></tr>
+<tr class="memitem:afd011dfb1a7a035fe2428b3b9772e6fe properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" id="r_afd011dfb1a7a035fe2428b3b9772e6fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#afd011dfb1a7a035fe2428b3b9772e6fe">Size</a><code> [get]</code></td></tr>
+<tr class="memdesc:afd011dfb1a7a035fe2428b3b9772e6fe properties_interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total capacity of the map.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -543,8 +546,7 @@ Properties</h2></td></tr>
 <p>Implemented in <a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#abf5cdbcb9b2509515c20b6ba9be1cdb6">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, and <a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a71ba59a65b98199b6ac0781baf82dc16">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00111">111</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  111</span>{ <span class="keyword">get</span>; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a151034354090632137da18d66fa44bd6" name="a151034354090632137da18d66fa44bd6"></a>
@@ -570,10 +572,7 @@ Properties</h2></td></tr>
 <p>Implemented in <a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#ac83ff61cab85ac194dde15d2db1fd459">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a7b9d41e7826409b5359ed8a22c42055d">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a48290fb059fad1bb71ac932650c87afd">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, and <a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a41d16f545ff20f8c88496f5b6a7df9be">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00099">99</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   99</span>                            {</div>
-<div class="line"><span class="lineno">  100</span>            <span class="keyword">get</span>;</div>
-<div class="line"><span class="lineno">  101</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ae9ff5e7f06607f15500a29895d34742d" name="ae9ff5e7f06607f15500a29895d34742d"></a>
@@ -599,8 +598,7 @@ Properties</h2></td></tr>
 <p>Implemented in <a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#ac0ef14ad026c3822713699742d8f79a9">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, and <a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a5b614280546011e7ad8fb0a75df5798b">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00116">116</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  116</span>{ <span class="keyword">get</span>; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a63c4444fc8cef243fa39586c389d0e00" name="a63c4444fc8cef243fa39586c389d0e00"></a>
@@ -633,11 +631,7 @@ Properties</h2></td></tr>
 <p>Implemented in <a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a822b180fbf2d9217595a94b1b2890c07">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, and <a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#ab404da9a4a9718b1881d66d3f12ba6e5">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00091">91</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   91</span>                       {</div>
-<div class="line"><span class="lineno">   92</span>            <span class="keyword">get</span>;</div>
-<div class="line"><span class="lineno">   93</span>            <span class="keyword">set</span>;</div>
-<div class="line"><span class="lineno">   94</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a70dac17776b669dbd10aaf01a68f071d" name="a70dac17776b669dbd10aaf01a68f071d"></a>
@@ -663,10 +657,7 @@ Properties</h2></td></tr>
 <p>Implemented in <a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a5b769d5fc4f4b07561115541605571df">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#aff321a47fbba28bd3b4068f381723993">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#ada804dfab66dc5b8fd674ec0f5eb3d44">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, and <a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#ad33d8ebaa17488c94a3a4c37aaf604c7">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00105">105</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>                               {</div>
-<div class="line"><span class="lineno">  106</span>            <span class="keyword">get</span>;</div>
-<div class="line"><span class="lineno">  107</span>        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
