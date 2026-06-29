@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -167,7 +127,9 @@ Namespaces</h2></td></tr>
 <tr class="memitem:Collections" id="r_Collections"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../d8/d51/namespace_system_ex_1_1_collections.html">Collections</a></td></tr>
 <tr class="memitem:Device" id="r_Device"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../d7/d59/namespace_system_ex_1_1_device.html">Device</a></td></tr>
 <tr class="memitem:Drawing" id="r_Drawing"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../de/d5b/namespace_system_ex_1_1_drawing.html">Drawing</a></td></tr>
+<tr class="memitem:Hash" id="r_Hash"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../d4/d32/namespace_system_ex_1_1_hash.html">Hash</a></td></tr>
 <tr class="memitem:IO" id="r_IO"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../d4/d5d/namespace_system_ex_1_1_i_o.html">IO</a></td></tr>
+<tr class="memitem:Runtime" id="r_Runtime"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../d4/d8e/namespace_system_ex_1_1_runtime.html">Runtime</a></td></tr>
 <tr class="memitem:SystemEx" id="r_SystemEx"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../d5/d9e/namespace_system_ex_1_1_system_ex.html">SystemEx</a></td></tr>
 <tr class="memitem:Utils" id="r_Utils"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../d2/d14/namespace_system_ex_1_1_utils.html">Utils</a></td></tr>
 </table><table class="memberdecls">
@@ -268,7 +230,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="aa60c11b2d2d4ff5084ed2276d3e06697af6becb7bb76db0da62691c2318c85004" name="aa60c11b2d2d4ff5084ed2276d3e06697af6becb7bb76db0da62691c2318c85004"></a>Nin&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dd1/_base_2_triple_8cs_source.html#l00007">7</a> of file <a class="el" href="../../d6/dd1/_base_2_triple_8cs_source.html">Triple.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/dd1/_base_2_triple_8cs_source.html#l00007">7</a> of file <a class="el" href="../../d6/dd1/_base_2_triple_8cs_source.html">Base/Triple.cs</a>.</p>
 
 </div>
 </div>

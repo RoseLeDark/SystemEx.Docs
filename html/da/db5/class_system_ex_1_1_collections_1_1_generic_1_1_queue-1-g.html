@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,13 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Queue&lt; T &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Queue&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>A simple fixed‑size FIFO queue implemented as a thin wrapper around a Deque&lt;T&gt;. <br  />
- Provides enqueue and dequeue operations using the deque’s front/back insertion and removal semantics.  
- <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -190,14 +146,8 @@ Properties</h2></td></tr>
 <tr class="memdesc:ac52ca0c612f0f79a3358d121db73e6fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the front of the queue without removing it.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of elements stored in the queue.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00032">32</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00033">33</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a6ae9ddefacc20a0340bdf9044bafbeb8" name="a6ae9ddefacc20a0340bdf9044bafbeb8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ae9ddefacc20a0340bdf9044bafbeb8">&#9670;&#160;</a></span>Clear()</h2>
@@ -214,7 +164,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00091">91</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00092">92</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
 
 </div>
 </div>
@@ -240,7 +190,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was removed; otherwise <code>false</code>.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00086">86</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00087">87</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
 
 </div>
 </div>
@@ -265,7 +215,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00079">79</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00080">80</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
 
 </div>
 </div>
@@ -290,7 +240,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00071">71</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00072">72</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
 
 </div>
 </div>
@@ -315,7 +265,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00063">63</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00064">64</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
 
 </div>
 </div>
@@ -340,7 +290,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00057">57</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00058">58</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
 
 </div>
 </div>
@@ -364,7 +314,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00047">47</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00048">48</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
 
 </div>
 </div>
@@ -388,7 +338,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00052">52</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00053">53</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
 
 </div>
 </div>
@@ -412,12 +362,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00042">42</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00043">43</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Collections/Generic/<a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a></li>
+<li><a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

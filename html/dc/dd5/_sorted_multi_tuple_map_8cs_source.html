@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: Collections/Generic/SortedMultiTupleMap.cs Source File</title>
+<title>SystemEX: SortedMultiTupleMap.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -182,40 +142,41 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">using </span><a class="code hl_namespace" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a> {</div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html">   29</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a9c53a73fcf926762c77de1c9231c6679">SortedMultiTupleMap</a> : <a class="code hl_function" href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#adc70b11c941317c5d5c9ebb35dc4c0f6">SortedTupleMap</a> {</div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a9c53a73fcf926762c77de1c9231c6679">   34</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a9c53a73fcf926762c77de1c9231c6679">SortedMultiTupleMap</a>(<a class="code hl_function" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#adb5f200840bf1bdef594d6aaab2acb41">SortTupleFunc</a> sort)</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            : base(sort) { }</div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html">   31</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a9c53a73fcf926762c77de1c9231c6679">SortedMultiTupleMap</a> : <a class="code hl_function" href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#adc70b11c941317c5d5c9ebb35dc4c0f6">SortedTupleMap</a> {</div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a9c53a73fcf926762c77de1c9231c6679">   36</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a9c53a73fcf926762c77de1c9231c6679">SortedMultiTupleMap</a>(<a class="code hl_function" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#adb5f200840bf1bdef594d6aaab2acb41">SortTupleFunc</a> sort)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            : base(sort) { }</div>
 </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#ad6f920b3e3454a834541a51f9177f98e">   43</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#ad6f920b3e3454a834541a51f9177f98e">SortedMultiTupleMap</a>(<a class="code hl_interface" href="../../d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html">ITupleMap</a> source, <a class="code hl_function" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#adb5f200840bf1bdef594d6aaab2acb41">SortTupleFunc</a> sort)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            : base(source, sort) { }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#ad6f920b3e3454a834541a51f9177f98e">   45</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#ad6f920b3e3454a834541a51f9177f98e">SortedMultiTupleMap</a>(<a class="code hl_interface" href="../../d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html">ITupleMap</a> source, <a class="code hl_function" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#adb5f200840bf1bdef594d6aaab2acb41">SortTupleFunc</a> sort)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            : base(source, sort) { }</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a1c21394a01085e55da1a5b9dae83378f">   52</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a1c21394a01085e55da1a5b9dae83378f">Add</a>(<a class="code hl_namespace" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">Interfaces</a>.<a class="code hl_interface" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> item) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            m_elements.Add(item);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a35bc43f1e596fc76339ec734ab781ef5">AutoSort</a> )</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <a class="code hl_function" href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a03d62f26e8d1089bb6fd8c148fc94b78">Sort</a>();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a1c21394a01085e55da1a5b9dae83378f">   54</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a1c21394a01085e55da1a5b9dae83378f">Add</a>(<a class="code hl_namespace" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">Interfaces</a>.<a class="code hl_interface" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> item) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            m_elements.Add(item);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a35bc43f1e596fc76339ec734ab781ef5">AutoSort</a> )</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                <a class="code hl_function" href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a03d62f26e8d1089bb6fd8c148fc94b78">Sort</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
 </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map_html_a1c21394a01085e55da1a5b9dae83378f"><div class="ttname"><a href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a1c21394a01085e55da1a5b9dae83378f">SystemEx.Collections.Generic.SortedMultiTupleMap.Add</a></div><div class="ttdeci">override void Add(Interfaces.ITuple item)</div><div class="ttdoc">Adds a tuple to the map without performing duplicate checks.   Sorting is applied automatically when ...</div><div class="ttdef"><b>Definition</b> <a href="#l00052">SortedMultiTupleMap.cs:52</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map_html_a9c53a73fcf926762c77de1c9231c6679"><div class="ttname"><a href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a9c53a73fcf926762c77de1c9231c6679">SystemEx.Collections.Generic.SortedMultiTupleMap.SortedMultiTupleMap</a></div><div class="ttdeci">SortedMultiTupleMap(SortTupleFunc sort)</div><div class="ttdoc">Creates a new multi‑tuple sorted map using the specified sorting function.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">SortedMultiTupleMap.cs:34</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map_html_ad6f920b3e3454a834541a51f9177f98e"><div class="ttname"><a href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#ad6f920b3e3454a834541a51f9177f98e">SystemEx.Collections.Generic.SortedMultiTupleMap.SortedMultiTupleMap</a></div><div class="ttdeci">SortedMultiTupleMap(ITupleMap source, SortTupleFunc sort)</div><div class="ttdoc">Creates a new multi‑tuple sorted map initialized with the contents of another tuple map and using the...</div><div class="ttdef"><b>Definition</b> <a href="#l00043">SortedMultiTupleMap.cs:43</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map_html_a03d62f26e8d1089bb6fd8c148fc94b78"><div class="ttname"><a href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a03d62f26e8d1089bb6fd8c148fc94b78">SystemEx.Collections.Generic.SortedTupleMap.Sort</a></div><div class="ttdeci">void Sort()</div><div class="ttdoc">Sorts the tuple map using either the comparer or the delegate-based function.   Implements a simple O...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d30/_sorted_tuple_map_8cs_source.html#l00127">SortedTupleMap.cs:127</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map_html_a35bc43f1e596fc76339ec734ab781ef5"><div class="ttname"><a href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a35bc43f1e596fc76339ec734ab781ef5">SystemEx.Collections.Generic.SortedTupleMap.AutoSort</a></div><div class="ttdeci">bool AutoSort</div><div class="ttdoc">Indicates whether the map should automatically sort itself after insertions or modifications.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d30/_sorted_tuple_map_8cs_source.html#l00075">SortedTupleMap.cs:75</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map_html_adc70b11c941317c5d5c9ebb35dc4c0f6"><div class="ttname"><a href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#adc70b11c941317c5d5c9ebb35dc4c0f6">SystemEx.Collections.Generic.SortedTupleMap.SortedTupleMap</a></div><div class="ttdeci">SortedTupleMap(SortTupleFunc sort)</div><div class="ttdoc">Creates a new sorted tuple map using the specified sorting function.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d30/_sorted_tuple_map_8cs_source.html#l00081">SortedTupleMap.cs:81</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">SystemEx.Collections.Generic.Interfaces.ITuple</a></div><div class="ttdoc">A lightweight interface for serializable N‑element tuple consisting of strongly typed.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d4b/_i_tuple_8cs_source.html#l00022">ITuple.cs:22</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map_html"><div class="ttname"><a href="../../d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html">SystemEx.Collections.Generic.Interfaces.ITupleMap</a></div><div class="ttdoc">Defines a map structure specialized for storing and retrieving ITuple objects. Provides tuple‑based s...</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d1a/_i_tuple_map_8cs_source.html#l00023">ITupleMap.cs:23</a></div></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>#pragma warning restore CS1587 <span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map_html_a1c21394a01085e55da1a5b9dae83378f"><div class="ttname"><a href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a1c21394a01085e55da1a5b9dae83378f">SystemEx.Collections.Generic.SortedMultiTupleMap.Add</a></div><div class="ttdeci">override void Add(Interfaces.ITuple item)</div><div class="ttdoc">Adds a tuple to the map without performing duplicate checks.   Sorting is applied automatically when ...</div><div class="ttdef"><b>Definition</b> <a href="#l00054">SortedMultiTupleMap.cs:54</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map_html_a9c53a73fcf926762c77de1c9231c6679"><div class="ttname"><a href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#a9c53a73fcf926762c77de1c9231c6679">SystemEx.Collections.Generic.SortedMultiTupleMap.SortedMultiTupleMap</a></div><div class="ttdeci">SortedMultiTupleMap(SortTupleFunc sort)</div><div class="ttdoc">Creates a new multi‑tuple sorted map using the specified sorting function.</div><div class="ttdef"><b>Definition</b> <a href="#l00036">SortedMultiTupleMap.cs:36</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map_html_ad6f920b3e3454a834541a51f9177f98e"><div class="ttname"><a href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html#ad6f920b3e3454a834541a51f9177f98e">SystemEx.Collections.Generic.SortedMultiTupleMap.SortedMultiTupleMap</a></div><div class="ttdeci">SortedMultiTupleMap(ITupleMap source, SortTupleFunc sort)</div><div class="ttdoc">Creates a new multi‑tuple sorted map initialized with the contents of another tuple map and using the...</div><div class="ttdef"><b>Definition</b> <a href="#l00045">SortedMultiTupleMap.cs:45</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map_html_a03d62f26e8d1089bb6fd8c148fc94b78"><div class="ttname"><a href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a03d62f26e8d1089bb6fd8c148fc94b78">SystemEx.Collections.Generic.SortedTupleMap.Sort</a></div><div class="ttdeci">void Sort()</div><div class="ttdoc">Sorts the tuple map using either the comparer or the delegate-based function.   Implements a simple O...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d30/_sorted_tuple_map_8cs_source.html#l00129">SortedTupleMap.cs:129</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map_html_a35bc43f1e596fc76339ec734ab781ef5"><div class="ttname"><a href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a35bc43f1e596fc76339ec734ab781ef5">SystemEx.Collections.Generic.SortedTupleMap.AutoSort</a></div><div class="ttdeci">bool AutoSort</div><div class="ttdoc">Indicates whether the map should automatically sort itself after insertions or modifications.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d30/_sorted_tuple_map_8cs_source.html#l00077">SortedTupleMap.cs:77</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map_html_adc70b11c941317c5d5c9ebb35dc4c0f6"><div class="ttname"><a href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#adc70b11c941317c5d5c9ebb35dc4c0f6">SystemEx.Collections.Generic.SortedTupleMap.SortedTupleMap</a></div><div class="ttdeci">SortedTupleMap(SortTupleFunc sort)</div><div class="ttdoc">Creates a new sorted tuple map using the specified sorting function.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d30/_sorted_tuple_map_8cs_source.html#l00083">SortedTupleMap.cs:83</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">SystemEx.Collections.Generic.Interfaces.ITuple</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d4b/_i_tuple_8cs_source.html#l00026">ITuple.cs:26</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map_html"><div class="ttname"><a href="../../d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html">SystemEx.Collections.Generic.Interfaces.ITupleMap</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d1a/_i_tuple_map_8cs_source.html#l00027">ITupleMap.cs:27</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d16/_i_array_8cs_source.html#l00018">IArray.cs:18</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html_adb5f200840bf1bdef594d6aaab2acb41"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#adb5f200840bf1bdef594d6aaab2acb41">SystemEx.Collections.Generic.Interfaces.SortTupleFunc</a></div><div class="ttdeci">delegate CompareResult SortTupleFunc(ITuple a, ITuple b)</div><div class="ttdoc">Delegate used to compare two tuples and return their ordering relation.</div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00022">Array.cs:22</a></div></div>
+<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00023">Array.cs:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

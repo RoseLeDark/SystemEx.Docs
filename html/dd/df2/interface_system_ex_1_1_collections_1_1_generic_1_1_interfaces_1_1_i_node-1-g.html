@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,21 +117,19 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Interfaces.INode&lt; T &gt; Interface Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Interfaces.INode&lt; T &gt; Interface Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a> &raquo; <a class="el" href="../../d5/d4f/group__interfaces.html">Interfaces</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Defines the basic contract for a node in a multi‑linked structure, such as a tree, graph, or intrusive node network. Provides access to the stored value and metadata about child and sibling counts.  
- <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.Interfaces.INode&lt; T &gt;:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.Interfaces.INode&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../dd/df2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_node-1-g.png" usemap="#SystemEx_2ECollections_2EGeneric_2EInterfaces_2EINode_3C_20T_20_3E_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2EInterfaces_2EINode_3C_20T_20_3E_map" name="SystemEx_2ECollections_2EGeneric_2EInterfaces_2EINode_3C_20T_20_3E_map">
-<area href="../../db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g.html" title="Represents a grouping node that stores an arbitrary number of intrusive Node&lt;T&gt; instances inside a st..." alt="SystemEx.Collections.Generic.GroupNode&lt; T &gt;" shape="rect" coords="0,56,309,80"/>
+<area href="../../db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g.html" alt="SystemEx.Collections.Generic.GroupNode&lt; T &gt;" shape="rect" coords="0,56,309,80"/>
 <area href="../../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html" title="Represents a doubly linked node with optional child and sibling arrays. Supports list-style navigatio..." alt="SystemEx.Collections.Generic.Node&lt; T &gt;" shape="rect" coords="319,56,628,80"/>
-<area href="../../db/d90/class_system_ex_1_1_collections_1_1_generic_1_1_star_node-1-g.html" title="A specialized Node&lt;T&gt; that represents a star‑shaped structure, where the node may have an arbitrary n..." alt="SystemEx.Collections.Generic.StarNode&lt; T &gt;" shape="rect" coords="319,112,628,136"/>
+<area href="../../db/d90/class_system_ex_1_1_collections_1_1_generic_1_1_star_node-1-g.html" alt="SystemEx.Collections.Generic.StarNode&lt; T &gt;" shape="rect" coords="319,112,628,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -185,14 +143,8 @@ Properties</h2></td></tr>
 <tr class="memdesc:ae45562bda271fcb32418b1fbec5a3c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of sibling nodes associated with this node. Returns <code>null</code> if the implementation does not support sibling tracking.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of value stored in the node.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="../../de/daa/_i_node_8cs_source.html#l00025">25</a> of file <a class="el" href="../../de/daa/_i_node_8cs_source.html">INode.cs</a>.</p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="../../de/daa/_i_node_8cs_source.html#l00029">29</a> of file <a class="el" href="../../de/daa/_i_node_8cs_source.html">INode.cs</a>.</p>
 </div><a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
 <a id="ab69ade89a9e2510ac2c005c37bf02b45" name="ab69ade89a9e2510ac2c005c37bf02b45"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab69ade89a9e2510ac2c005c37bf02b45">&#9670;&#160;</a></span>NChilds</h2>
@@ -216,7 +168,7 @@ Properties</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g.html#a4c2f0e2d98e37170f237880d3871d188">SystemEx.Collections.Generic.GroupNode&lt; T &gt;</a>, and <a class="el" href="../../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#ac18b6312899020c76365c5114714c2ef">SystemEx.Collections.Generic.Node&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../de/daa/_i_node_8cs_source.html#l00036">36</a> of file <a class="el" href="../../de/daa/_i_node_8cs_source.html">INode.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/daa/_i_node_8cs_source.html#l00040">40</a> of file <a class="el" href="../../de/daa/_i_node_8cs_source.html">INode.cs</a>.</p>
 
 </div>
 </div>
@@ -242,7 +194,7 @@ Properties</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g.html#af36bfc007618367574cf41f88dd30faf">SystemEx.Collections.Generic.GroupNode&lt; T &gt;</a>, and <a class="el" href="../../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#a005f05ff2e4d72d5cee84c748d0e87f1">SystemEx.Collections.Generic.Node&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../de/daa/_i_node_8cs_source.html#l00042">42</a> of file <a class="el" href="../../de/daa/_i_node_8cs_source.html">INode.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/daa/_i_node_8cs_source.html#l00046">46</a> of file <a class="el" href="../../de/daa/_i_node_8cs_source.html">INode.cs</a>.</p>
 
 </div>
 </div>
@@ -268,12 +220,12 @@ Properties</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g.html#a0e5b8c1ad676a3ea364d2292abd2153c">SystemEx.Collections.Generic.GroupNode&lt; T &gt;</a>, and <a class="el" href="../../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#a1cdbfd520d0f094926598b4e83be42fe">SystemEx.Collections.Generic.Node&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../de/daa/_i_node_8cs_source.html#l00030">30</a> of file <a class="el" href="../../de/daa/_i_node_8cs_source.html">INode.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/daa/_i_node_8cs_source.html#l00034">34</a> of file <a class="el" href="../../de/daa/_i_node_8cs_source.html">INode.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>Collections/Generic/Interfaces/<a class="el" href="../../de/daa/_i_node_8cs_source.html">INode.cs</a></li>
+<li><a class="el" href="../../de/daa/_i_node_8cs_source.html">INode.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

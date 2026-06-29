@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: Collections/Generic/SortedMultiMap.cs Source File</title>
+<title>SystemEX: SortedMultiMap.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -186,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a> {</div>
 <div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html">   35</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#a121712d24b76d3f5e84f0c1bf9e64b83">SortedMultiMap</a>&lt;T, TU&gt; : <a class="code hl_function" href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#aa7b24e6b91c7be383fd813bdacc91b40">SortedMap</a>&lt;T, TU&gt; {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html">   35</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#a121712d24b76d3f5e84f0c1bf9e64b83">SortedMultiMap</a>&lt;T, TU&gt; : <a class="code hl_function" href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#aa7b24e6b91c7be383fd813bdacc91b40">SortedMap</a>&lt;T, TU&gt; where T : notnull {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#a121712d24b76d3f5e84f0c1bf9e64b83">   39</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#a121712d24b76d3f5e84f0c1bf9e64b83">SortedMultiMap</a>(<a class="code hl_function" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#ae2adeaf7f2e733dfce357a80b27d5bac">SortFunc&lt;T, TU&gt;</a> sort) : base(sort) { }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#abc0ce54063299fb1591fde0787f58520">   43</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#abc0ce54063299fb1591fde0787f58520">SortedMultiMap</a>(<a class="code hl_interface" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html">IMap&lt;T, TU&gt;</a> source, <a class="code hl_function" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#ae2adeaf7f2e733dfce357a80b27d5bac">SortFunc&lt;T, TU&gt;</a> sort) : base(source, sort) { }</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#a6ac264f11f9af990a5c9dc576045237e">   47</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#a6ac264f11f9af990a5c9dc576045237e">SortedMultiMap</a>(ICompared&lt;IPair&lt;T, TU&gt;&gt; comparer) : base(comparer) { }</div>
@@ -199,19 +159,21 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
 </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g_html_a547ace75a6d3f973aba22e8281089d6a"><div class="ttname"><a href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#a547ace75a6d3f973aba22e8281089d6a">SystemEx.Collections.Generic.SortedMap-2-g.AutoSort</a></div><div class="ttdeci">bool AutoSort</div><div class="ttdoc">Indicates whether the map should automatically sort itself after insertions or modifications.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d60/_sorted_map_8cs_source.html#l00076">SortedMap.cs:76</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g_html_aa7b24e6b91c7be383fd813bdacc91b40"><div class="ttname"><a href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#aa7b24e6b91c7be383fd813bdacc91b40">SystemEx.Collections.Generic.SortedMap-2-g.SortedMap</a></div><div class="ttdeci">SortedMap(ICompared&lt; IPair&lt; T, TU &gt; &gt; comparer)</div><div class="ttdoc">Creates a sorted map using a custom comparer.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d60/_sorted_map_8cs_source.html#l00081">SortedMap.cs:81</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g_html_ab209b6f945c1d7419048fc7fc836af75"><div class="ttname"><a href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#ab209b6f945c1d7419048fc7fc836af75">SystemEx.Collections.Generic.SortedMap-2-g.Sort</a></div><div class="ttdeci">void Sort()</div><div class="ttdoc">Sorts the map using either the comparer or the delegate-based function.   Implements a simple O(n²) c...</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d60/_sorted_map_8cs_source.html#l00145">SortedMap.cs:145</a></div></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>#pragma warning restore CS1587 <span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g_html_a547ace75a6d3f973aba22e8281089d6a"><div class="ttname"><a href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#a547ace75a6d3f973aba22e8281089d6a">SystemEx.Collections.Generic.SortedMap-2-g.AutoSort</a></div><div class="ttdeci">bool AutoSort</div><div class="ttdoc">Indicates whether the map should automatically sort itself after insertions or modifications.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d60/_sorted_map_8cs_source.html#l00078">SortedMap.cs:78</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g_html_aa7b24e6b91c7be383fd813bdacc91b40"><div class="ttname"><a href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#aa7b24e6b91c7be383fd813bdacc91b40">SystemEx.Collections.Generic.SortedMap-2-g.SortedMap</a></div><div class="ttdeci">SortedMap(ICompared&lt; IPair&lt; T, TU &gt; &gt; comparer)</div><div class="ttdoc">Creates a sorted map using a custom comparer.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d60/_sorted_map_8cs_source.html#l00083">SortedMap.cs:83</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g_html_ab209b6f945c1d7419048fc7fc836af75"><div class="ttname"><a href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#ab209b6f945c1d7419048fc7fc836af75">SystemEx.Collections.Generic.SortedMap-2-g.Sort</a></div><div class="ttdeci">void Sort()</div><div class="ttdoc">Sorts the map using either the comparer or the delegate-based function.   Implements a simple O(n²) c...</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d60/_sorted_map_8cs_source.html#l00147">SortedMap.cs:147</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g_html_a121712d24b76d3f5e84f0c1bf9e64b83"><div class="ttname"><a href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#a121712d24b76d3f5e84f0c1bf9e64b83">SystemEx.Collections.Generic.SortedMultiMap-2-g.SortedMultiMap</a></div><div class="ttdeci">SortedMultiMap(SortFunc&lt; T, TU &gt; sort)</div><div class="ttdoc">Creates a sorted map using a delegate-based sorting function.</div><div class="ttdef"><b>Definition</b> <a href="#l00039">SortedMultiMap.cs:39</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g_html_a6ac264f11f9af990a5c9dc576045237e"><div class="ttname"><a href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#a6ac264f11f9af990a5c9dc576045237e">SystemEx.Collections.Generic.SortedMultiMap-2-g.SortedMultiMap</a></div><div class="ttdeci">SortedMultiMap(ICompared&lt; IPair&lt; T, TU &gt; &gt; comparer)</div><div class="ttdoc">Creates a sorted map using a custom comparer.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">SortedMultiMap.cs:47</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g_html_abc0ab747b401c6b2f450d4535fd3dc1b"><div class="ttname"><a href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#abc0ab747b401c6b2f450d4535fd3dc1b">SystemEx.Collections.Generic.SortedMultiMap-2-g.SortedMultiMap</a></div><div class="ttdeci">SortedMultiMap(IEnumerable&lt; Pair&lt; T, TU &gt; &gt; elements, SortFunc&lt; T, TU &gt; sort)</div><div class="ttdoc">Creates a sorted map initialized with the specified elements and sorting function.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">SortedMultiMap.cs:51</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g_html_abc0ce54063299fb1591fde0787f58520"><div class="ttname"><a href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#abc0ce54063299fb1591fde0787f58520">SystemEx.Collections.Generic.SortedMultiMap-2-g.SortedMultiMap</a></div><div class="ttdeci">SortedMultiMap(IMap&lt; T, TU &gt; source, SortFunc&lt; T, TU &gt; sort)</div><div class="ttdoc">Creates a sorted map from another map using the specified sorting function.</div><div class="ttdef"><b>Definition</b> <a href="#l00043">SortedMultiMap.cs:43</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g_html_af9d66cad67728dceb4de2c1c59225d29"><div class="ttname"><a href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html#af9d66cad67728dceb4de2c1c59225d29">SystemEx.Collections.Generic.SortedMultiMap-2-g.Add</a></div><div class="ttdeci">override void Add(Pair&lt; T, TU &gt; item)</div><div class="ttdoc">Adds an element and re-sorts the map if SortedMap&lt;T, TU&gt;.AutoSort is enabled.</div><div class="ttdef"><b>Definition</b> <a href="#l00055">SortedMultiMap.cs:55</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map_html"><div class="ttname"><a href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html">SystemEx.Collections.Generic.Interfaces.IMap</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d19/_i_map_8cs_source.html#l00030">IMap.cs:30</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map_html"><div class="ttname"><a href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html">SystemEx.Collections.Generic.Interfaces.IMap</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d19/_i_map_8cs_source.html#l00032">IMap.cs:32</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d16/_i_array_8cs_source.html#l00018">IArray.cs:18</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html_ae2adeaf7f2e733dfce357a80b27d5bac"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#ae2adeaf7f2e733dfce357a80b27d5bac">SystemEx.Collections.Generic.Interfaces.SortFunc&lt; T, TU &gt;</a></div><div class="ttdeci">delegate CompareResult SortFunc&lt; T, TU &gt;(Pair&lt; T, TU &gt; a, Pair&lt; T, TU &gt; b)</div><div class="ttdoc">Delegate used to compare two key/value pairs and return their ordering relation.</div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00022">Array.cs:22</a></div></div>
+<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00023">Array.cs:23</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_utils_html"><div class="ttname"><a href="../../d2/d14/namespace_system_ex_1_1_utils.html">SystemEx.Utils</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d35/_algorithm_8cs_source.html#l00021">Algorithm.cs:21</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -164,33 +124,50 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Defines the interface for a compute kernel that operates on one or more DeviceSharedBuffer&lt;TDeviceSharedBackend&gt; instances. <br  />
  A kernel represents a unit of computation that may run on different backends such as RAM, OpenCL, Vulkan, CUDA, or custom hardware.  
  <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.png" usemap="#SystemEx_2EDevice_2EMemory_2EIKernel_3C_20TIDeviceSharedBackend_20_3E_map" alt=""/>
   <map id="SystemEx_2EDevice_2EMemory_2EIKernel_3C_20TIDeviceSharedBackend_20_3E_map" name="SystemEx_2EDevice_2EMemory_2EIKernel_3C_20TIDeviceSharedBackend_20_3E_map">
-<area href="../../d1/d2e/class_system_ex_1_1_device_1_1_ram_kernel.html" alt="SystemEx.Device.RamKernel" shape="rect" coords="0,56,368,80"/>
+<area href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html" title="Provides a base implementation for RAM‑based compute kernels that operate on DeviceSharedBuffer&lt;RamSh..." alt="SystemEx.Device.NativeRAMKernel&lt; TD &gt;" shape="rect" coords="0,56,368,80"/>
+<area href="../../de/d89/class_examples_1_1_example_ram_kernel_add.html" title="Example implementation of a RAM‑based compute kernel that adds two integer values stored in device bu..." alt="Examples.ExampleRamKernelAdd" shape="rect" coords="0,112,368,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3f77fa65f84cbc08323009a6bad406e0" id="r_a3f77fa65f84cbc08323009a6bad406e0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a3f77fa65f84cbc08323009a6bad406e0">AddBuffer</a> (DeviceSharedBuffer&lt; TIDeviceSharedBackend &gt; buffer, string name, <a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">BufferType</a> type, object? confgs)</td></tr>
-<tr class="memdesc:a3f77fa65f84cbc08323009a6bad406e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a shared buffer to the kernel with the specified name and usage type.  <br /></td></tr>
-<tr class="memitem:a2f1f48adf5593d1ffd52a355abc51a7a" id="r_a2f1f48adf5593d1ffd52a355abc51a7a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a2f1f48adf5593d1ffd52a355abc51a7a">RemoveBuffer</a> (string name, <a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">BufferType</a> type)</td></tr>
-<tr class="memdesc:a2f1f48adf5593d1ffd52a355abc51a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a buffer by name and buffer type.  <br /></td></tr>
-<tr class="memitem:aa53e76c8b8f253b12f986cdf5c927aa9" id="r_aa53e76c8b8f253b12f986cdf5c927aa9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aa53e76c8b8f253b12f986cdf5c927aa9">RemoveBuffer</a> (int index, <a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">BufferType</a> type)</td></tr>
-<tr class="memdesc:aa53e76c8b8f253b12f986cdf5c927aa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a buffer by index and buffer type.  <br /></td></tr>
-<tr class="memitem:a5e21bd58f56cab651980ce79f3118202" id="r_a5e21bd58f56cab651980ce79f3118202"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a5e21bd58f56cab651980ce79f3118202">Begin</a> (string strFunction)</td></tr>
-<tr class="memdesc:a5e21bd58f56cab651980ce79f3118202"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins a kernel execution session and prepares the backend function identified by <em>strFunction</em> . <br  />
- Typically uploads buffers and performs backend‑specific setup.  <br /></td></tr>
+<tr class="memitem:adc2f30a0d3b0b9f94fdcb83bad7dd2f9" id="r_adc2f30a0d3b0b9f94fdcb83bad7dd2f9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#adc2f30a0d3b0b9f94fdcb83bad7dd2f9">Create</a> (string dllPath)</td></tr>
+<tr class="memdesc:adc2f30a0d3b0b9f94fdcb83bad7dd2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the kernel by loading the native module located at <em>dllPath</em> . <br  />
+ This typically resolves the underlying library, prepares backend‑specific resources, and performs any required setup before buffers can be added.  <br /></td></tr>
+<tr class="memitem:a7bc4002350665b4fe10aeeaebfed8ee1" id="r_a7bc4002350665b4fe10aeeaebfed8ee1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a7bc4002350665b4fe10aeeaebfed8ee1">AddBuffer</a> (<a class="el" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html">DeviceBuffer</a> buffer, string name, int flags, object? configs)</td></tr>
+<tr class="memdesc:a7bc4002350665b4fe10aeeaebfed8ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a shared buffer to the kernel with the specified name and usage type.  <br /></td></tr>
+<tr class="memitem:a5680e822b8842aa8d863e557ba40f9ec" id="r_a5680e822b8842aa8d863e557ba40f9ec"><td class="memItemLeft">DeviceSharedBuffer&lt; TIDeviceSharedBackend &gt;?&#160;</td><td class="memItemRight"><a class="el" href="#a5680e822b8842aa8d863e557ba40f9ec">GetBuffer</a> (string name)</td></tr>
+<tr class="memdesc:a5680e822b8842aa8d863e557ba40f9ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a shared buffer by its symbolic name.  <br /></td></tr>
+<tr class="memitem:a7611094d330cd73aa03c3e406dd54739" id="r_a7611094d330cd73aa03c3e406dd54739"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a7611094d330cd73aa03c3e406dd54739">RemoveBuffer</a> (string name)</td></tr>
+<tr class="memdesc:a7611094d330cd73aa03c3e406dd54739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a buffer from the kernel by its symbolic name. <br  />
+ This typically releases backend‑specific resources and detaches the buffer from the kernel execution pipeline.  <br /></td></tr>
+<tr class="memitem:ad6d9c0b9112797e6bd094e8e56abec3c" id="r_ad6d9c0b9112797e6bd094e8e56abec3c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad6d9c0b9112797e6bd094e8e56abec3c">RemoveBuffer</a> (int index)</td></tr>
+<tr class="memdesc:ad6d9c0b9112797e6bd094e8e56abec3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a buffer from the kernel by its index in the internal buffer list.  <br /></td></tr>
+<tr class="memitem:a003fc294274846fba616b3d4e7b3a55d" id="r_a003fc294274846fba616b3d4e7b3a55d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a003fc294274846fba616b3d4e7b3a55d">BeginRun</a> (string strFunction)</td></tr>
+<tr class="memdesc:a003fc294274846fba616b3d4e7b3a55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins a kernel execution session and prepares the backend function identified by <em>strFunction</em> . <br  />
+ Typically uploads buffers, locks shared memory regions, and performs backend‑specific initialization required before Run can be called.  <br /></td></tr>
 <tr class="memitem:a950dfa83692a5e63f062a846e859d6ae" id="r_a950dfa83692a5e63f062a846e859d6ae"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a950dfa83692a5e63f062a846e859d6ae">Run</a> (object? options)</td></tr>
-<tr class="memdesc:a950dfa83692a5e63f062a846e859d6ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the kernel with optional backend‑specific parameters.  <br /></td></tr>
+<tr class="memdesc:a950dfa83692a5e63f062a846e859d6ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the kernel with optional backend‑specific parameters. <br  />
+ Implementations may run synchronously or asynchronously depending on the backend and kernel type.  <br /></td></tr>
 <tr class="memitem:ac0021bf73172da0bc789fece42f3b246" id="r_ac0021bf73172da0bc789fece42f3b246"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac0021bf73172da0bc789fece42f3b246">IsRunning</a> ()</td></tr>
-<tr class="memdesc:ac0021bf73172da0bc789fece42f3b246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the kernel is currently running.  <br /></td></tr>
-<tr class="memitem:a61559c3bcc2dcb4d1b7e40e90bf0628d" id="r_a61559c3bcc2dcb4d1b7e40e90bf0628d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a61559c3bcc2dcb4d1b7e40e90bf0628d">End</a> ()</td></tr>
-<tr class="memdesc:a61559c3bcc2dcb4d1b7e40e90bf0628d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the kernel execution session, synchronizes buffers, and performs backend cleanup operations.  <br /></td></tr>
+<tr class="memdesc:ac0021bf73172da0bc789fece42f3b246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the kernel is currently executing. <br  />
+ Useful for asynchronous backends or long‑running compute operations.  <br /></td></tr>
+<tr class="memitem:a23aa92269514ccc3f2cab9edc47b3460" id="r_a23aa92269514ccc3f2cab9edc47b3460"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a23aa92269514ccc3f2cab9edc47b3460">EndRun</a> ()</td></tr>
+<tr class="memdesc:a23aa92269514ccc3f2cab9edc47b3460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the kernel execution session, synchronizes buffers, unlocks shared memory regions, and performs backend cleanup operations. <br  />
+ Must be called after Run completes.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:ab18d6f9f562f69f5ede1d56410ef306e" id="r_ab18d6f9f562f69f5ede1d56410ef306e"><td class="memItemLeft">TIDeviceSharedBackend&#160;</td><td class="memItemRight"><a class="el" href="#ab18d6f9f562f69f5ede1d56410ef306e">Backend</a><code> [get]</code></td></tr>
+<tr class="memdesc:ab18d6f9f562f69f5ede1d56410ef306e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the backend instance associated with this kernel. <br  />
+ The backend defines how shared buffers are allocated, synchronized, locked, and accessed during kernel execution.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -209,10 +186,10 @@ Public Member Functions</h2></td></tr>
 </dl>
 </div>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d91/_ikernel_8cs_source.html#l00054">54</a> of file <a class="el" href="../../d4/d91/_ikernel_8cs_source.html">Ikernel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d91/_ikernel_8cs_source.html#l00032">32</a> of file <a class="el" href="../../d4/d91/_ikernel_8cs_source.html">Ikernel.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a3f77fa65f84cbc08323009a6bad406e0" name="a3f77fa65f84cbc08323009a6bad406e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f77fa65f84cbc08323009a6bad406e0">&#9670;&#160;</a></span>AddBuffer()</h2>
+<a id="a7bc4002350665b4fe10aeeaebfed8ee1" name="a7bc4002350665b4fe10aeeaebfed8ee1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc4002350665b4fe10aeeaebfed8ee1">&#9670;&#160;</a></span>AddBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,7 +197,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">int SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;.AddBuffer </td>
           <td>(</td>
-          <td class="paramtype">DeviceSharedBuffer&lt; TIDeviceSharedBackend &gt;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+          <td class="paramtype"><a class="el" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html">DeviceBuffer</a></td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -230,12 +207,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">BufferType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">object?</td>          <td class="paramname"><span class="paramname"><em>confgs</em></span>&#160;)</td>
+          <td class="paramtype">object?</td>          <td class="paramname"><span class="paramname"><em>configs</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -243,25 +220,25 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">buffer</td><td>The shared buffer to attach.</td></tr>
     <tr><td class="paramname">name</td><td>The symbolic name used by the kernel.</td></tr>
-    <tr><td class="paramname">type</td><td>The buffer access mode.</td></tr>
-    <tr><td class="paramname">confgs</td><td>Optional backend‑specific configuration data.</td></tr>
+    <tr><td class="paramname">flags</td><td>Flags for the buffer</td></tr>
+    <tr><td class="paramname">configs</td><td>Optional backend‑specific configuration data.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The index of the added buffer, or a negative value on failure. </dd></dl>
 
-<p>Implemented in <a class="el" href="../../d1/d2e/class_system_ex_1_1_device_1_1_ram_kernel.html#ac28aac24a696441b56528a4a7262ab0f">SystemEx.Device.RamKernel</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a385552e3eb23d332fc606bbb09dd2f62">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a5e21bd58f56cab651980ce79f3118202" name="a5e21bd58f56cab651980ce79f3118202"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e21bd58f56cab651980ce79f3118202">&#9670;&#160;</a></span>Begin()</h2>
+<a id="a003fc294274846fba616b3d4e7b3a55d" name="a003fc294274846fba616b3d4e7b3a55d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a003fc294274846fba616b3d4e7b3a55d">&#9670;&#160;</a></span>BeginRun()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;.Begin </td>
+          <td class="memname">bool SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;.BeginRun </td>
           <td>(</td>
           <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>strFunction</em></span></td><td>)</td>
           <td></td>
@@ -276,18 +253,44 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if initialization succeeds.</dd></dl>
 
-<p>Implemented in <a class="el" href="../../d1/d2e/class_system_ex_1_1_device_1_1_ram_kernel.html#a823b8ba1f5092cc1cd7ce17ff3dd0e7b">SystemEx.Device.RamKernel</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ab766799c460f0c8252a3ae8827ac9598">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a61559c3bcc2dcb4d1b7e40e90bf0628d" name="a61559c3bcc2dcb4d1b7e40e90bf0628d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61559c3bcc2dcb4d1b7e40e90bf0628d">&#9670;&#160;</a></span>End()</h2>
+<a id="adc2f30a0d3b0b9f94fdcb83bad7dd2f9" name="adc2f30a0d3b0b9f94fdcb83bad7dd2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc2f30a0d3b0b9f94fdcb83bad7dd2f9">&#9670;&#160;</a></span>Create()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;.End </td>
+          <td class="memname">bool SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;.Create </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>dllPath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dllPath</td><td>The absolute or symbolic path to the native module containing the kernel function(s). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the module is successfully loaded and the kernel is ready for buffer registration; otherwise <code>false</code>. </dd></dl>
+
+<p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ad8e93b21bd945f5f4c47a36df12787ed">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a23aa92269514ccc3f2cab9edc47b3460" name="a23aa92269514ccc3f2cab9edc47b3460"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23aa92269514ccc3f2cab9edc47b3460">&#9670;&#160;</a></span>EndRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;.EndRun </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -295,7 +298,33 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../d1/d2e/class_system_ex_1_1_device_1_1_ram_kernel.html#acc9673a8e5d49cfdabfd3d7766a6e7bb">SystemEx.Device.RamKernel</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a032c141a88a3147133906351ef6d4604">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a5680e822b8842aa8d863e557ba40f9ec" name="a5680e822b8842aa8d863e557ba40f9ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5680e822b8842aa8d863e557ba40f9ec">&#9670;&#160;</a></span>GetBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DeviceSharedBuffer&lt; TIDeviceSharedBackend &gt;? SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;.GetBuffer </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The symbolic buffer name.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The associated DeviceSharedBuffer&lt;TIDeviceSharedBackend&gt;, or <code>null</code> if no buffer with the given name exists. </dd></dl>
+
+<p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a286d5a9df4b3c11e9970fde1bd2f86ef">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
 
 </div>
 </div>
@@ -314,69 +343,59 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../d1/d2e/class_system_ex_1_1_device_1_1_ram_kernel.html#ad32d33af97dde939517ba966260edb5d">SystemEx.Device.RamKernel</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ade2a98971bc67a80d6a5a0ceead25644">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
 
 </div>
 </div>
-<a id="aa53e76c8b8f253b12f986cdf5c927aa9" name="aa53e76c8b8f253b12f986cdf5c927aa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa53e76c8b8f253b12f986cdf5c927aa9">&#9670;&#160;</a></span>RemoveBuffer() <span class="overload">[1/2]</span></h2>
+<a id="ad6d9c0b9112797e6bd094e8e56abec3c" name="ad6d9c0b9112797e6bd094e8e56abec3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6d9c0b9112797e6bd094e8e56abec3c">&#9670;&#160;</a></span>RemoveBuffer() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;.RemoveBuffer </td>
+          <td class="memname">bool SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;.RemoveBuffer </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">BufferType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>The buffer index.</td></tr>
-    <tr><td class="paramname">type</td><td>The buffer access mode.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of remaining buffers, or a negative value on failure. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the buffer was successfully removed; otherwise <code>false</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="../../d1/d2e/class_system_ex_1_1_device_1_1_ram_kernel.html#afadd9f9ce8237d5fe78cda3cb4fe8020">SystemEx.Device.RamKernel</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a5b641993d8c1d508760d7c640a066dc9">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a2f1f48adf5593d1ffd52a355abc51a7a" name="a2f1f48adf5593d1ffd52a355abc51a7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f1f48adf5593d1ffd52a355abc51a7a">&#9670;&#160;</a></span>RemoveBuffer() <span class="overload">[2/2]</span></h2>
+<a id="a7611094d330cd73aa03c3e406dd54739" name="a7611094d330cd73aa03c3e406dd54739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7611094d330cd73aa03c3e406dd54739">&#9670;&#160;</a></span>RemoveBuffer() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;.RemoveBuffer </td>
+          <td class="memname">bool SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;.RemoveBuffer </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">BufferType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The symbolic buffer name.</td></tr>
-    <tr><td class="paramname">type</td><td>The buffer access mode.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of remaining buffers, or a negative value on failure. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the buffer was successfully removed; otherwise <code>false</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="../../d1/d2e/class_system_ex_1_1_device_1_1_ram_kernel.html#a5aaa82d1f051f92944a2346e61ec7cb4">SystemEx.Device.RamKernel</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a70c4311a4517b2ed20c4f3d278785ea9">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
 
 </div>
 </div>
@@ -400,14 +419,41 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the kernel starts successfully.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the kernel starts successfully; otherwise <code>false</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="../../d1/d2e/class_system_ex_1_1_device_1_1_ram_kernel.html#aee85b472f63dc0b7adf7a2f81048cfce">SystemEx.Device.RamKernel</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ad8935fd64a0955755725a40a4474a1e2">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
+<a id="ab18d6f9f562f69f5ede1d56410ef306e" name="ab18d6f9f562f69f5ede1d56410ef306e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab18d6f9f562f69f5ede1d56410ef306e">&#9670;&#160;</a></span>Backend</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIDeviceSharedBackend SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;.Backend</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ad8bcb7852de07c2a6490b634d1f8ece4">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d4/d91/_ikernel_8cs_source.html#l00040">40</a> of file <a class="el" href="../../d4/d91/_ikernel_8cs_source.html">Ikernel.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>Device/<a class="el" href="../../d4/d91/_ikernel_8cs_source.html">Ikernel.cs</a></li>
+<li><a class="el" href="../../d4/d91/_ikernel_8cs_source.html">Ikernel.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

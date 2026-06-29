@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: Collections/Generic/Quad.cs Source File</title>
+<title>SystemEX: Quad.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -180,149 +140,150 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span><a class="code hl_namespace" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a> {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    [Serializable]</div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html">   31</a></span>    <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#aeecf63c202498829d76736ea4017a206">Quad</a>&lt;TT, TU, TW, TJ&gt; : <a class="code hl_interface" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">private</span> TT m_first;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">private</span> TU m_second;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">private</span> TW m_third;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">private</span> TJ m_fourth;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="};">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#af7974819ba19ecfb258a30a6b4eb9b2b">   56</a></span>        <span class="keyword">public</span> TT <a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#af7974819ba19ecfb258a30a6b4eb9b2b">First</a> {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            readonly <span class="keyword">get</span> =&gt; m_first;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keyword">set</span> =&gt; m_first = value;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    [Serializable]</div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html">   33</a></span>    <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#aeecf63c202498829d76736ea4017a206">Quad</a>&lt;TT, TU, TW, TJ&gt; : <a class="code hl_interface" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">private</span> TT m_first;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keyword">private</span> TU m_second;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">private</span> TW m_third;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keyword">private</span> TJ m_fourth;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#af7974819ba19ecfb258a30a6b4eb9b2b">   58</a></span>        <span class="keyword">public</span> TT <a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#af7974819ba19ecfb258a30a6b4eb9b2b">First</a> {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            readonly <span class="keyword">get</span> =&gt; m_first;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keyword">set</span> =&gt; m_first = value;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
 </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="foldopen" id="foldopen00064" data-start="{" data-end="};">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a7c7c41f2559ef377fa63bd02699fc744">   64</a></span>        <span class="keyword">public</span> TU <a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a7c7c41f2559ef377fa63bd02699fc744">Second</a> {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            readonly <span class="keyword">get</span> =&gt; m_second;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keyword">set</span> =&gt; m_second = value;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="};">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a7c7c41f2559ef377fa63bd02699fc744">   66</a></span>        <span class="keyword">public</span> TU <a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a7c7c41f2559ef377fa63bd02699fc744">Second</a> {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            readonly <span class="keyword">get</span> =&gt; m_second;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keyword">set</span> =&gt; m_second = value;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
 </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
-<div class="foldopen" id="foldopen00072" data-start="{" data-end="};">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ab32bf5fe3aec9e4db1de70f1dee86462">   72</a></span>        <span class="keyword">public</span> TW <a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ab32bf5fe3aec9e4db1de70f1dee86462">Third</a> {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            readonly <span class="keyword">get</span> =&gt; m_third;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keyword">set</span> =&gt; m_third = value;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="};">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ab32bf5fe3aec9e4db1de70f1dee86462">   74</a></span>        <span class="keyword">public</span> TW <a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ab32bf5fe3aec9e4db1de70f1dee86462">Third</a> {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            readonly <span class="keyword">get</span> =&gt; m_third;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keyword">set</span> =&gt; m_third = value;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        }</div>
 </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="foldopen" id="foldopen00080" data-start="{" data-end="};">
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a129b1c60033338f708f2ff093f0e692d">   80</a></span>        <span class="keyword">public</span> TJ <a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a129b1c60033338f708f2ff093f0e692d">Fourth</a> {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            readonly <span class="keyword">get</span> =&gt; m_fourth;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keyword">set</span> =&gt; m_fourth = value;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="};">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a129b1c60033338f708f2ff093f0e692d">   82</a></span>        <span class="keyword">public</span> TJ <a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a129b1c60033338f708f2ff093f0e692d">Fourth</a> {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            readonly <span class="keyword">get</span> =&gt; m_fourth;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keyword">set</span> =&gt; m_fourth = value;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
 </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a19e10a9205dcf6537fc55dc99bb770af">   88</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">int</span> <a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a19e10a9205dcf6537fc55dc99bb770af">Count</a> =&gt; 4;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
-<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#aeecf63c202498829d76736ea4017a206">   93</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#aeecf63c202498829d76736ea4017a206">Quad</a>(TT first, TU second, TW third, TJ fourth) {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            m_first = first;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            m_second = second;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            m_third = third;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            m_fourth = fourth;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a19e10a9205dcf6537fc55dc99bb770af">   90</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">int</span> <a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a19e10a9205dcf6537fc55dc99bb770af">Count</a> =&gt; 4;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#aeecf63c202498829d76736ea4017a206">   95</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#aeecf63c202498829d76736ea4017a206">Quad</a>(TT first, TU second, TW third, TJ fourth) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            m_first = first;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            m_second = second;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            m_third = third;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            m_fourth = fourth;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
 </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
-<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a76f8e658ee13884d76583008217a4d93">  104</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a76f8e658ee13884d76583008217a4d93">Equals</a>(<a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#aeecf63c202498829d76736ea4017a206">Quad&lt;TT, TU, TW, TJ&gt;</a> other) {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordflow">return</span> this.<a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#adacffb42976d9790e98def69341ca888">EqualFirst</a>(other.<a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#af7974819ba19ecfb258a30a6b4eb9b2b">First</a>)</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                &amp;&amp; this.<a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a66c6d7c653c8db7bb1df1fe9e453dd6d">EqualSecond</a>(other.<a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a7c7c41f2559ef377fa63bd02699fc744">Second</a>)</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                &amp;&amp; this.<a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a119a95e72a8b1ba8a75b9f69f81dfa28">EqualThird</a>(other.<a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ab32bf5fe3aec9e4db1de70f1dee86462">Third</a>)</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                &amp;&amp; this.<a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a8f771ec10d778334ccebc25446285259">EqualFourth</a>(other.<a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a129b1c60033338f708f2ff093f0e692d">Fourth</a>);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a76f8e658ee13884d76583008217a4d93">  106</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a76f8e658ee13884d76583008217a4d93">Equals</a>(<a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#aeecf63c202498829d76736ea4017a206">Quad&lt;TT, TU, TW, TJ&gt;</a> other) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keywordflow">return</span> this.<a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#adacffb42976d9790e98def69341ca888">EqualFirst</a>(other.<a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#af7974819ba19ecfb258a30a6b4eb9b2b">First</a>)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                &amp;&amp; this.<a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a66c6d7c653c8db7bb1df1fe9e453dd6d">EqualSecond</a>(other.<a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a7c7c41f2559ef377fa63bd02699fc744">Second</a>)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                &amp;&amp; this.<a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a119a95e72a8b1ba8a75b9f69f81dfa28">EqualThird</a>(other.<a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ab32bf5fe3aec9e4db1de70f1dee86462">Third</a>)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                &amp;&amp; this.<a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a8f771ec10d778334ccebc25446285259">EqualFourth</a>(other.<a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a129b1c60033338f708f2ff093f0e692d">Fourth</a>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
 </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
-<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a469d8f113eeb83cb0cc70cbf442e588b">  116</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a469d8f113eeb83cb0cc70cbf442e588b">ToString</a>() {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[512],</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                $<span class="stringliteral">&quot;[{m_first}, {m_second}, {m_third}, {m_fourth}]&quot;</span>);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a469d8f113eeb83cb0cc70cbf442e588b">  118</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a469d8f113eeb83cb0cc70cbf442e588b">ToString</a>() {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[512],</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                $<span class="stringliteral">&quot;[{m_first}, {m_second}, {m_third}, {m_fourth}]&quot;</span>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        }</div>
 </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
-<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#adacffb42976d9790e98def69341ca888">  124</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#adacffb42976d9790e98def69341ca888">EqualFirst</a>(TT? other) {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keywordflow">if</span> ( this.m_first == <span class="keyword">null</span> )</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentNullException(nameof(other), <span class="stringliteral">&quot;All Quad have a first&quot;</span>);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordflow">return</span> this.m_first.Equals(other);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#adacffb42976d9790e98def69341ca888">  126</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#adacffb42976d9790e98def69341ca888">EqualFirst</a>(TT? other) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordflow">if</span> ( this.m_first == <span class="keyword">null</span> )</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentNullException(nameof(other), <span class="stringliteral">&quot;All Quad have a first&quot;</span>);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">return</span> this.m_first.Equals(other);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        }</div>
 </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span></div>
-<div class="foldopen" id="foldopen00133" data-start="{" data-end="}">
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a66c6d7c653c8db7bb1df1fe9e453dd6d">  133</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a66c6d7c653c8db7bb1df1fe9e453dd6d">EqualSecond</a>(TU? other) {</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            <span class="keywordflow">if</span> ( this.m_second == <span class="keyword">null</span> )</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentNullException(nameof(other), <span class="stringliteral">&quot;All Quad have a second&quot;</span>);</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <span class="keywordflow">return</span> this.m_second.Equals(other);</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a66c6d7c653c8db7bb1df1fe9e453dd6d">  135</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a66c6d7c653c8db7bb1df1fe9e453dd6d">EqualSecond</a>(TU? other) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <span class="keywordflow">if</span> ( this.m_second == <span class="keyword">null</span> )</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentNullException(nameof(other), <span class="stringliteral">&quot;All Quad have a second&quot;</span>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <span class="keywordflow">return</span> this.m_second.Equals(other);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        }</div>
 </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span></div>
-<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a119a95e72a8b1ba8a75b9f69f81dfa28">  142</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a119a95e72a8b1ba8a75b9f69f81dfa28">EqualThird</a>(TW? other) {</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <span class="keywordflow">if</span> ( this.m_third == <span class="keyword">null</span> )</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentNullException(nameof(other), <span class="stringliteral">&quot;All Quad have a third&quot;</span>);</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">return</span> this.m_third.Equals(other);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a119a95e72a8b1ba8a75b9f69f81dfa28">  144</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a119a95e72a8b1ba8a75b9f69f81dfa28">EqualThird</a>(TW? other) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">if</span> ( this.m_third == <span class="keyword">null</span> )</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentNullException(nameof(other), <span class="stringliteral">&quot;All Quad have a third&quot;</span>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <span class="keywordflow">return</span> this.m_third.Equals(other);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
 </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
-<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a8f771ec10d778334ccebc25446285259">  151</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a8f771ec10d778334ccebc25446285259">EqualFourth</a>(TJ? other) {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            <span class="keywordflow">if</span> ( this.m_fourth == <span class="keyword">null</span> )</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentNullException(nameof(other), <span class="stringliteral">&quot;All Quad have a fourth&quot;</span>);</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keywordflow">return</span> this.m_fourth.Equals(other);</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
+<div class="foldopen" id="foldopen00153" data-start="{" data-end="}">
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a8f771ec10d778334ccebc25446285259">  153</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a8f771ec10d778334ccebc25446285259">EqualFourth</a>(TJ? other) {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keywordflow">if</span> ( this.m_fourth == <span class="keyword">null</span> )</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentNullException(nameof(other), <span class="stringliteral">&quot;All Quad have a fourth&quot;</span>);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keywordflow">return</span> this.m_fourth.Equals(other);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
 </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span></div>
-<div class="foldopen" id="foldopen00165" data-start="{" data-end="}">
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ac2a615180e1a93a838fec4c46da048a9">  165</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">object</span>? <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ac2a615180e1a93a838fec4c46da048a9">Get</a>(<span class="keywordtype">int</span> index) {</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">if</span> ( index &lt; 0 || index &gt;= <a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a19e10a9205dcf6537fc55dc99bb770af">Count</a> )</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">#pragma warning disable CA2201</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> IndexOutOfRangeException(<span class="stringliteral">&quot;index&quot;</span>);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">#pragma warning restore CA2201</span></div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="keywordflow">return</span> index <span class="keywordflow">switch</span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            {</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                0 =&gt; m_first,</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                1 =&gt; m_second,</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                2 =&gt; m_third,</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                3 =&gt; m_fourth,</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                _ =&gt; <span class="keyword">null</span> <span class="comment">// unreachable, but included for safety</span></div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            };</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ac2a615180e1a93a838fec4c46da048a9">  167</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">object</span>? <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ac2a615180e1a93a838fec4c46da048a9">Get</a>(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            <span class="keywordflow">if</span> ( index &lt; 0 || index &gt;= <a class="code hl_property" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a19e10a9205dcf6537fc55dc99bb770af">Count</a> )</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">#pragma warning disable CA2201</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> IndexOutOfRangeException(<span class="stringliteral">&quot;index&quot;</span>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">#pragma warning restore CA2201</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <span class="keywordflow">return</span> index <span class="keywordflow">switch</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                0 =&gt; m_first,</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                1 =&gt; m_second,</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                2 =&gt; m_third,</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                3 =&gt; m_fourth,</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                _ =&gt; <span class="keyword">null</span> <span class="comment">// unreachable, but included for safety</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            };</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        }</div>
 </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span></div>
-<div class="foldopen" id="foldopen00185" data-start="{" data-end="}">
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a5ef6deea3e1a188d5aa7790670f9ed51">  185</a></span>        <span class="keywordtype">bool</span> <a class="code hl_interface" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a>.<a class="code hl_function" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">EqualFirst</a>(<span class="keywordtype">object</span> key) {</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#adacffb42976d9790e98def69341ca888">EqualFirst</a>((TT)key);</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span></div>
+<div class="foldopen" id="foldopen00187" data-start="{" data-end="}">
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a5ef6deea3e1a188d5aa7790670f9ed51">  187</a></span>        <span class="keywordtype">bool</span> <a class="code hl_interface" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a>.<a class="code hl_function" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">EqualFirst</a>(<span class="keywordtype">object</span> key) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#adacffb42976d9790e98def69341ca888">EqualFirst</a>((TT)key);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        }</div>
 </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }</div>
 </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>}</div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">SystemEx.Collections.Generic.Interfaces.ITuple</a></div><div class="ttdoc">A lightweight interface for serializable N‑element tuple consisting of strongly typed.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d4b/_i_tuple_8cs_source.html#l00022">ITuple.cs:22</a></div></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>#pragma warning restore CS1587 <span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>}</div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">SystemEx.Collections.Generic.Interfaces.ITuple</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d4b/_i_tuple_8cs_source.html#l00026">ITuple.cs:26</a></div></div>
 <div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html_aa447498dc18510050c907d9639c4e421"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">SystemEx.Collections.Generic.Interfaces.ITuple.EqualFirst</a></div><div class="ttdeci">bool EqualFirst(object key)</div><div class="ttdoc">Determines whether the first element of the tuple is equal to the specified key.</div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d16/_i_array_8cs_source.html#l00018">IArray.cs:18</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00022">Array.cs:22</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a119a95e72a8b1ba8a75b9f69f81dfa28"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a119a95e72a8b1ba8a75b9f69f81dfa28">SystemEx.Collections.Generic.Quad-4-g.EqualThird</a></div><div class="ttdeci">readonly bool EqualThird(TW? other)</div><div class="ttdoc">Determines whether the third element equals the specified value.</div><div class="ttdef"><b>Definition</b> <a href="#l00142">Quad.cs:142</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a129b1c60033338f708f2ff093f0e692d"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a129b1c60033338f708f2ff093f0e692d">SystemEx.Collections.Generic.Quad-4-g.Fourth</a></div><div class="ttdeci">TJ Fourth</div><div class="ttdoc">Gets or sets the fourth element of the quad.</div><div class="ttdef"><b>Definition</b> <a href="#l00080">Quad.cs:80</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a19e10a9205dcf6537fc55dc99bb770af"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a19e10a9205dcf6537fc55dc99bb770af">SystemEx.Collections.Generic.Quad-4-g.Count</a></div><div class="ttdeci">readonly int Count</div><div class="ttdoc">Gets the number of elements in the tuple (always 4).</div><div class="ttdef"><b>Definition</b> <a href="#l00088">Quad.cs:88</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a469d8f113eeb83cb0cc70cbf442e588b"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a469d8f113eeb83cb0cc70cbf442e588b">SystemEx.Collections.Generic.Quad-4-g.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">Returns a string representation of the quad in the form [first, second, third, fourth]....</div><div class="ttdef"><b>Definition</b> <a href="#l00116">Quad.cs:116</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a66c6d7c653c8db7bb1df1fe9e453dd6d"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a66c6d7c653c8db7bb1df1fe9e453dd6d">SystemEx.Collections.Generic.Quad-4-g.EqualSecond</a></div><div class="ttdeci">readonly bool EqualSecond(TU? other)</div><div class="ttdoc">Determines whether the second element equals the specified value.</div><div class="ttdef"><b>Definition</b> <a href="#l00133">Quad.cs:133</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a76f8e658ee13884d76583008217a4d93"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a76f8e658ee13884d76583008217a4d93">SystemEx.Collections.Generic.Quad-4-g.Equals</a></div><div class="ttdeci">bool Equals(Quad&lt; TT, TU, TW, TJ &gt; other)</div><div class="ttdoc">Determines whether this quad is equal to another quad by comparing all four elements.</div><div class="ttdef"><b>Definition</b> <a href="#l00104">Quad.cs:104</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a7c7c41f2559ef377fa63bd02699fc744"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a7c7c41f2559ef377fa63bd02699fc744">SystemEx.Collections.Generic.Quad-4-g.Second</a></div><div class="ttdeci">TU Second</div><div class="ttdoc">Gets or sets the second element of the quad.</div><div class="ttdef"><b>Definition</b> <a href="#l00064">Quad.cs:64</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a8f771ec10d778334ccebc25446285259"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a8f771ec10d778334ccebc25446285259">SystemEx.Collections.Generic.Quad-4-g.EqualFourth</a></div><div class="ttdeci">readonly bool EqualFourth(TJ? other)</div><div class="ttdoc">Determines whether the fourth element equals the specified value.</div><div class="ttdef"><b>Definition</b> <a href="#l00151">Quad.cs:151</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_ab32bf5fe3aec9e4db1de70f1dee86462"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ab32bf5fe3aec9e4db1de70f1dee86462">SystemEx.Collections.Generic.Quad-4-g.Third</a></div><div class="ttdeci">TW Third</div><div class="ttdoc">Gets or sets the third element of the quad.</div><div class="ttdef"><b>Definition</b> <a href="#l00072">Quad.cs:72</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_ac2a615180e1a93a838fec4c46da048a9"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ac2a615180e1a93a838fec4c46da048a9">SystemEx.Collections.Generic.Quad-4-g.Get</a></div><div class="ttdeci">readonly? object Get(int index)</div><div class="ttdoc">Retrieves the element at the specified index.   Index 0 returns the first element,...</div><div class="ttdef"><b>Definition</b> <a href="#l00165">Quad.cs:165</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_adacffb42976d9790e98def69341ca888"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#adacffb42976d9790e98def69341ca888">SystemEx.Collections.Generic.Quad-4-g.EqualFirst</a></div><div class="ttdeci">readonly bool EqualFirst(TT? other)</div><div class="ttdoc">Determines whether the first element equals the specified value.</div><div class="ttdef"><b>Definition</b> <a href="#l00124">Quad.cs:124</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_aeecf63c202498829d76736ea4017a206"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#aeecf63c202498829d76736ea4017a206">SystemEx.Collections.Generic.Quad-4-g.Quad</a></div><div class="ttdeci">Quad(TT first, TU second, TW third, TJ fourth)</div><div class="ttdoc">Creates a new quad with the specified values.</div><div class="ttdef"><b>Definition</b> <a href="#l00093">Quad.cs:93</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_af7974819ba19ecfb258a30a6b4eb9b2b"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#af7974819ba19ecfb258a30a6b4eb9b2b">SystemEx.Collections.Generic.Quad-4-g.First</a></div><div class="ttdeci">TT First</div><div class="ttdoc">Gets or sets the first element of the quad.</div><div class="ttdef"><b>Definition</b> <a href="#l00056">Quad.cs:56</a></div></div>
+<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00023">Array.cs:23</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a119a95e72a8b1ba8a75b9f69f81dfa28"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a119a95e72a8b1ba8a75b9f69f81dfa28">SystemEx.Collections.Generic.Quad-4-g.EqualThird</a></div><div class="ttdeci">readonly bool EqualThird(TW? other)</div><div class="ttdoc">Determines whether the third element equals the specified value.</div><div class="ttdef"><b>Definition</b> <a href="#l00144">Quad.cs:144</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a129b1c60033338f708f2ff093f0e692d"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a129b1c60033338f708f2ff093f0e692d">SystemEx.Collections.Generic.Quad-4-g.Fourth</a></div><div class="ttdeci">TJ Fourth</div><div class="ttdoc">Gets or sets the fourth element of the quad.</div><div class="ttdef"><b>Definition</b> <a href="#l00082">Quad.cs:82</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a19e10a9205dcf6537fc55dc99bb770af"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a19e10a9205dcf6537fc55dc99bb770af">SystemEx.Collections.Generic.Quad-4-g.Count</a></div><div class="ttdeci">readonly int Count</div><div class="ttdoc">Gets the number of elements in the tuple (always 4).</div><div class="ttdef"><b>Definition</b> <a href="#l00090">Quad.cs:90</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a469d8f113eeb83cb0cc70cbf442e588b"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a469d8f113eeb83cb0cc70cbf442e588b">SystemEx.Collections.Generic.Quad-4-g.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">Returns a string representation of the quad in the form [first, second, third, fourth]....</div><div class="ttdef"><b>Definition</b> <a href="#l00118">Quad.cs:118</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a66c6d7c653c8db7bb1df1fe9e453dd6d"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a66c6d7c653c8db7bb1df1fe9e453dd6d">SystemEx.Collections.Generic.Quad-4-g.EqualSecond</a></div><div class="ttdeci">readonly bool EqualSecond(TU? other)</div><div class="ttdoc">Determines whether the second element equals the specified value.</div><div class="ttdef"><b>Definition</b> <a href="#l00135">Quad.cs:135</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a76f8e658ee13884d76583008217a4d93"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a76f8e658ee13884d76583008217a4d93">SystemEx.Collections.Generic.Quad-4-g.Equals</a></div><div class="ttdeci">bool Equals(Quad&lt; TT, TU, TW, TJ &gt; other)</div><div class="ttdoc">Determines whether this quad is equal to another quad by comparing all four elements.</div><div class="ttdef"><b>Definition</b> <a href="#l00106">Quad.cs:106</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a7c7c41f2559ef377fa63bd02699fc744"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a7c7c41f2559ef377fa63bd02699fc744">SystemEx.Collections.Generic.Quad-4-g.Second</a></div><div class="ttdeci">TU Second</div><div class="ttdoc">Gets or sets the second element of the quad.</div><div class="ttdef"><b>Definition</b> <a href="#l00066">Quad.cs:66</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_a8f771ec10d778334ccebc25446285259"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a8f771ec10d778334ccebc25446285259">SystemEx.Collections.Generic.Quad-4-g.EqualFourth</a></div><div class="ttdeci">readonly bool EqualFourth(TJ? other)</div><div class="ttdoc">Determines whether the fourth element equals the specified value.</div><div class="ttdef"><b>Definition</b> <a href="#l00153">Quad.cs:153</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_ab32bf5fe3aec9e4db1de70f1dee86462"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ab32bf5fe3aec9e4db1de70f1dee86462">SystemEx.Collections.Generic.Quad-4-g.Third</a></div><div class="ttdeci">TW Third</div><div class="ttdoc">Gets or sets the third element of the quad.</div><div class="ttdef"><b>Definition</b> <a href="#l00074">Quad.cs:74</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_ac2a615180e1a93a838fec4c46da048a9"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#ac2a615180e1a93a838fec4c46da048a9">SystemEx.Collections.Generic.Quad-4-g.Get</a></div><div class="ttdeci">readonly? object Get(int index)</div><div class="ttdoc">Retrieves the element at the specified index.   Index 0 returns the first element,...</div><div class="ttdef"><b>Definition</b> <a href="#l00167">Quad.cs:167</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_adacffb42976d9790e98def69341ca888"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#adacffb42976d9790e98def69341ca888">SystemEx.Collections.Generic.Quad-4-g.EqualFirst</a></div><div class="ttdeci">readonly bool EqualFirst(TT? other)</div><div class="ttdoc">Determines whether the first element equals the specified value.</div><div class="ttdef"><b>Definition</b> <a href="#l00126">Quad.cs:126</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_aeecf63c202498829d76736ea4017a206"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#aeecf63c202498829d76736ea4017a206">SystemEx.Collections.Generic.Quad-4-g.Quad</a></div><div class="ttdeci">Quad(TT first, TU second, TW third, TJ fourth)</div><div class="ttdoc">Creates a new quad with the specified values.</div><div class="ttdef"><b>Definition</b> <a href="#l00095">Quad.cs:95</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g_html_af7974819ba19ecfb258a30a6b4eb9b2b"><div class="ttname"><a href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#af7974819ba19ecfb258a30a6b4eb9b2b">SystemEx.Collections.Generic.Quad-4-g.First</a></div><div class="ttdeci">TT First</div><div class="ttdoc">Gets or sets the first element of the quad.</div><div class="ttdef"><b>Definition</b> <a href="#l00058">Quad.cs:58</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

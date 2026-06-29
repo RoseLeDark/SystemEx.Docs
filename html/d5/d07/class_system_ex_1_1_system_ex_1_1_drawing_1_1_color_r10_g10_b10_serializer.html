@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -160,9 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">SystemEx.SystemEx.Drawing.ColorR10G10B10Serializer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for SystemEx.SystemEx.Drawing.ColorR10G10B10Serializer:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.SystemEx.Drawing.ColorR10G10B10Serializer:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../d5/d07/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer.png" usemap="#SystemEx_2ESystemEx_2EDrawing_2EColorR10G10B10Serializer_map" alt=""/>
   <map id="SystemEx_2ESystemEx_2EDrawing_2EColorR10G10B10Serializer_map" name="SystemEx_2ESystemEx_2EDrawing_2EColorR10G10B10Serializer_map">
@@ -173,20 +134,20 @@ Inheritance diagram for SystemEx.SystemEx.Drawing.ColorR10G10B10Serializer:</div
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4b08127f59c525d0142b68e4c20b10a2" id="r_a4b08127f59c525d0142b68e4c20b10a2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4b08127f59c525d0142b68e4c20b10a2">ColorR10G10B10Serializer</a> (<a class="el" href="../../d2/d66/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_format_schema.html">IByteFormatSchema</a> schema, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
-<tr class="inherit_header pub_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider"><td colspan="2">Public Member Functions inherited from <a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html">SystemEx.IO.Provider.ByteSeriablizeProvider</a></td></tr>
-<tr class="memitem:ac66be7a6fa49e97366512f39a7af52aa pub_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" id="r_ac66be7a6fa49e97366512f39a7af52aa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#ac66be7a6fa49e97366512f39a7af52aa">ByteSeriablizeProvider</a> (<a class="el" href="../../d2/d66/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_format_schema.html">IByteFormatSchema</a> schema, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
-<tr class="memitem:a86c7e02231b83d86ea4d66b67174be2e pub_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" id="r_a86c7e02231b83d86ea4d66b67174be2e"><td class="memItemLeft"><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">Cache</a>&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#a86c7e02231b83d86ea4d66b67174be2e">ToBytes&lt; T &gt;</a> (T obj)</td></tr>
-<tr class="memitem:a19bc2b34b6fdc84f0054c3c23e349977 pub_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" id="r_a19bc2b34b6fdc84f0054c3c23e349977"><td class="memItemLeft">T?&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#a19bc2b34b6fdc84f0054c3c23e349977">FromBytes&lt; T &gt;</a> (<a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">Cache</a> obj)</td></tr>
+<tr class="inherit_header pub_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html">SystemEx.IO.Provider.ByteSeriablizeProvider</a></td></tr>
+<tr class="memitem:ac66be7a6fa49e97366512f39a7af52aa inherit pub_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" id="r_ac66be7a6fa49e97366512f39a7af52aa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#ac66be7a6fa49e97366512f39a7af52aa">ByteSeriablizeProvider</a> (<a class="el" href="../../d2/d66/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_format_schema.html">IByteFormatSchema</a> schema, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memitem:aeb2ed556291d5970b0d7be01e2938241 inherit pub_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" id="r_aeb2ed556291d5970b0d7be01e2938241"><td class="memItemLeft"><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">Cache</a>?&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#aeb2ed556291d5970b0d7be01e2938241">ToBytes&lt; T &gt;</a> (T? obj)</td></tr>
+<tr class="memitem:a19bc2b34b6fdc84f0054c3c23e349977 inherit pub_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" id="r_a19bc2b34b6fdc84f0054c3c23e349977"><td class="memItemLeft">T?&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#a19bc2b34b6fdc84f0054c3c23e349977">FromBytes&lt; T &gt;</a> (<a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">Cache</a> obj)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aad3a3912165b4bf44c3fe28ea51c6c73" id="r_aad3a3912165b4bf44c3fe28ea51c6c73"><td class="memItemLeft">override? Array&lt; byte &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aad3a3912165b4bf44c3fe28ea51c6c73">GetBytesForEntry</a> (object obj, string name, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
 <tr class="memitem:a7a30981d2e74d33bb575c9b17b833b2e" id="r_a7a30981d2e74d33bb575c9b17b833b2e"><td class="memItemLeft">override long&#160;</td><td class="memItemRight"><a class="el" href="#a7a30981d2e74d33bb575c9b17b833b2e">GetEntrySize</a> (<a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">Cache</a> obj, string name, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
 <tr class="memitem:a02e95eebb1c4ee341a9076ddbdd40020" id="r_a02e95eebb1c4ee341a9076ddbdd40020"><td class="memItemLeft">override? <a class="el" href="../../d1/d6d/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2.html">ColorR10G10B10A2</a>&#160;</td><td class="memItemRight"><a class="el" href="#a02e95eebb1c4ee341a9076ddbdd40020">CreateObjectFromEntrys</a> (Map&lt; string, byte[]&gt; entries, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
-<tr class="inherit_header pro_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider"><td colspan="2">Protected Member Functions inherited from <a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html">SystemEx.IO.Provider.ByteSeriablizeProvider</a></td></tr>
-<tr class="memitem:a2f9dd21f08da0ad94c52ba998bdc3d04 pro_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" id="r_a2f9dd21f08da0ad94c52ba998bdc3d04"><td class="memItemLeft">Array&lt; byte &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#a2f9dd21f08da0ad94c52ba998bdc3d04">GetBytesForEntry</a> (object obj, string name, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
-<tr class="memitem:a9be49aa5d57457de9e4ad8a84cc04be5 pro_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" id="r_a9be49aa5d57457de9e4ad8a84cc04be5"><td class="memItemLeft">long&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#a9be49aa5d57457de9e4ad8a84cc04be5">GetEntrySize</a> (<a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">Cache</a> obj, string name, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
-<tr class="memitem:af88745b1ec42b5f1851762a870b912f3 pro_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" id="r_af88745b1ec42b5f1851762a870b912f3"><td class="memItemLeft">object?&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#af88745b1ec42b5f1851762a870b912f3">CreateObjectFromEntrys</a> (Map&lt; string, byte[]&gt; entries, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="inherit_header pro_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html">SystemEx.IO.Provider.ByteSeriablizeProvider</a></td></tr>
+<tr class="memitem:a2f9dd21f08da0ad94c52ba998bdc3d04 inherit pro_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" id="r_a2f9dd21f08da0ad94c52ba998bdc3d04"><td class="memItemLeft">Array&lt; byte &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#a2f9dd21f08da0ad94c52ba998bdc3d04">GetBytesForEntry</a> (object obj, string name, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memitem:a9be49aa5d57457de9e4ad8a84cc04be5 inherit pro_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" id="r_a9be49aa5d57457de9e4ad8a84cc04be5"><td class="memItemLeft">long&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#a9be49aa5d57457de9e4ad8a84cc04be5">GetEntrySize</a> (<a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">Cache</a> obj, string name, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memitem:af88745b1ec42b5f1851762a870b912f3 inherit pro_methods_class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" id="r_af88745b1ec42b5f1851762a870b912f3"><td class="memItemLeft">object?&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#af88745b1ec42b5f1851762a870b912f3">CreateObjectFromEntrys</a> (Map&lt; string, byte[]&gt; entries, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -353,7 +314,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Drawing/<a class="el" href="../../d2/df6/_color_r10_g10_b10_8cs_source.html">ColorR10G10B10.cs</a></li>
+<li><a class="el" href="../../d2/df6/_color_r10_g10_b10_8cs_source.html">ColorR10G10B10.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

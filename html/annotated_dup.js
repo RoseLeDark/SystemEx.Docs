@@ -1,5 +1,10 @@
 var annotated_dup =
 [
+    [ "Examples", "d3/d06/namespace_examples.html", [
+      [ "ExampleRamKernelAdd", "de/d89/class_examples_1_1_example_ram_kernel_add.html", "de/d89/class_examples_1_1_example_ram_kernel_add" ],
+      [ "SensorData", "db/dfb/class_examples_1_1_sensor_data.html", "db/dfb/class_examples_1_1_sensor_data" ],
+      [ "SimpleHasher", "d4/de6/class_examples_1_1_simple_hasher.html", "d4/de6/class_examples_1_1_simple_hasher" ]
+    ] ],
     [ "SystemEx", "d0/d48/namespace_system_ex.html", [
       [ "Base", "da/d5b/namespace_system_ex_1_1_base.html", [
         [ "NumberRangeStepper&lt; T &gt;", "d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html", "d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g" ]
@@ -57,7 +62,6 @@ var annotated_dup =
           [ "PriorityQueueExIterator&lt; T, TU &gt;", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g" ],
           [ "Quad&lt; TT, TU, TW, TJ &gt;", "d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html", "d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g" ],
           [ "Queue&lt; T &gt;", "da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html", "da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g" ],
-          [ "RingBuffer&lt; T &gt;", "d6/d1b/class_system_ex_1_1_collections_1_1_generic_1_1_ring_buffer-1-g.html", "d6/d1b/class_system_ex_1_1_collections_1_1_generic_1_1_ring_buffer-1-g" ],
           [ "SortedArray&lt; T &gt;", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g" ],
           [ "SortedMap&lt; T, TU &gt;", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g" ],
           [ "SortedMultiMap&lt; T, TU &gt;", "d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html", "d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g" ],
@@ -87,7 +91,7 @@ var annotated_dup =
           [ "DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;", "dd/d13/class_system_ex_1_1_device_1_1_memory_1_1_device_shared_buffer-1-g.html", "dd/d13/class_system_ex_1_1_device_1_1_memory_1_1_device_shared_buffer-1-g" ],
           [ "IKernel&lt; TIDeviceSharedBackend &gt;", "d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html", "d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g" ]
         ] ],
-        [ "RamKernel", "d1/d2e/class_system_ex_1_1_device_1_1_ram_kernel.html", "d1/d2e/class_system_ex_1_1_device_1_1_ram_kernel" ]
+        [ "NativeRAMKernel&lt; TD &gt;", "d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html", "d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g" ]
       ] ],
       [ "Drawing", "de/d5b/namespace_system_ex_1_1_drawing.html", [
         [ "ColorCMY", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y" ],
@@ -105,6 +109,13 @@ var annotated_dup =
         [ "ISubCanvas&lt; T &gt;", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g" ],
         [ "PurpelColors", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html", null ]
       ] ],
+      [ "Hash", "d4/d32/namespace_system_ex_1_1_hash.html", [
+        [ "Hash32", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32" ],
+        [ "Hash64", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64" ],
+        [ "HashableObject", "d2/d59/class_system_ex_1_1_hash_1_1_hashable_object.html", "d2/d59/class_system_ex_1_1_hash_1_1_hashable_object" ],
+        [ "HashAlgorithmAttribute", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute" ],
+        [ "IHasher", "da/d26/interface_system_ex_1_1_hash_1_1_i_hasher.html", "da/d26/interface_system_ex_1_1_hash_1_1_i_hasher" ]
+      ] ],
       [ "IO", "d4/d5d/namespace_system_ex_1_1_i_o.html", [
         [ "Provider", "da/da3/namespace_system_ex_1_1_i_o_1_1_provider.html", [
           [ "ByteSeriablizeProvider", "d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html", "d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" ],
@@ -113,6 +124,14 @@ var annotated_dup =
           [ "IIsByteSeriablize", "d1/d94/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_is_byte_seriablize.html", null ]
         ] ],
         [ "CacheStream&lt; TCache &gt;", "df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html", "df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g" ]
+      ] ],
+      [ "Runtime", "d4/d8e/namespace_system_ex_1_1_runtime.html", [
+        [ "InteropServices", "d4/dfc/namespace_system_ex_1_1_runtime_1_1_interop_services.html", [
+          [ "Platform", "d0/daf/namespace_system_ex_1_1_runtime_1_1_interop_services_1_1_platform.html", [
+            [ "WindowsProcLoader", "d4/d2f/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_windows_proc_loader.html", null ]
+          ] ]
+        ] ],
+        [ "Module", "d4/ddf/class_system_ex_1_1_runtime_1_1_module.html", "d4/ddf/class_system_ex_1_1_runtime_1_1_module" ]
       ] ],
       [ "SystemEx", "d5/d9e/namespace_system_ex_1_1_system_ex.html", [
         [ "Drawing", "df/d13/namespace_system_ex_1_1_system_ex_1_1_drawing.html", [

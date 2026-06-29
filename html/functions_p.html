@@ -9,6 +9,7 @@
 <link rel="icon" href="Logo_256.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -166,23 +126,21 @@ document.addEventListener('DOMContentLoaded', () => {
 <li>Pack()&#160;:&#160;<a class="el" href="dd/d4e/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_serialize-2-g.html#a98f7a931080c05739983fefb38430587">SystemEx.IO.Provider.IByteSerialize&lt; T, TSchema &gt;</a></li>
 <li>Pair()&#160;:&#160;<a class="el" href="de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af422c9184813660c7c705535c0ce5883">SystemEx.Collections.Generic.Pair&lt; T, TU &gt;</a></li>
 <li>Parent&#160;:&#160;<a class="el" href="d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#a9785f6a7a7e03baf78c00b70cd69835e">SystemEx.Collections.Generic.Cluster&lt; T &gt;</a>, <a class="el" href="de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#a2935432b2638f0986d62fd8446e73104">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a></li>
-<li>Peek()&#160;:&#160;<a class="el" href="d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#a39ce4d09ba7b98aaffdda82447f9184a">SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt;</a>, <a class="el" href="d6/d1b/class_system_ex_1_1_collections_1_1_generic_1_1_ring_buffer-1-g.html#ada2b255cd72fe73c44f02d364e3c6c75">SystemEx.Collections.Generic.RingBuffer&lt; T &gt;</a>, <a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#aa04fb1bd4ead74be0e68d39eb66d4998">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>
-<li>PeekAt()&#160;:&#160;<a class="el" href="d6/d1b/class_system_ex_1_1_collections_1_1_generic_1_1_ring_buffer-1-g.html#abbfe25ce28e82f061a0d26e2654e322b">SystemEx.Collections.Generic.RingBuffer&lt; T &gt;</a></li>
-<li>PeekLast()&#160;:&#160;<a class="el" href="d6/d1b/class_system_ex_1_1_collections_1_1_generic_1_1_ring_buffer-1-g.html#a3d3983b37c0ba5db8b7aa6b721eb57d2">SystemEx.Collections.Generic.RingBuffer&lt; T &gt;</a></li>
+<li>Path&#160;:&#160;<a class="el" href="d4/ddf/class_system_ex_1_1_runtime_1_1_module.html#ac1fb270588a618e7524ad6b2b22c768b">SystemEx.Runtime.Module</a></li>
+<li>Peek()&#160;:&#160;<a class="el" href="d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#a39ce4d09ba7b98aaffdda82447f9184a">SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt;</a>, <a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#aa04fb1bd4ead74be0e68d39eb66d4998">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>
 <li>Plum&#160;:&#160;<a class="el" href="d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#aec9c3b399f5c5d71069c96023fab83d1">SystemEx.Drawing.PurpelColors</a></li>
 <li>Point&#160;:&#160;<a class="el" href="dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html#a6c32525df6e515c3530726169834949b">SystemEx.Device.Intertropt.UnmanagedObject</a></li>
-<li>Pop()&#160;:&#160;<a class="el" href="d6/d1b/class_system_ex_1_1_collections_1_1_generic_1_1_ring_buffer-1-g.html#a464d4ef941d7e501ddcc4422fc751793">SystemEx.Collections.Generic.RingBuffer&lt; T &gt;</a>, <a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ac843f7e4a3c4d7c2e77c0c71571951e4">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>
+<li>Pop()&#160;:&#160;<a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ac843f7e4a3c4d7c2e77c0c71571951e4">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>
 <li>PopBack()&#160;:&#160;<a class="el" href="d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#aa82138f3d8737c2b427dbc31b5b55759">SystemEx.Collections.Generic.Deque&lt; T &gt;</a></li>
 <li>PopFront()&#160;:&#160;<a class="el" href="d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a4420bfa8a156365af239555c3f24785b">SystemEx.Collections.Generic.Deque&lt; T &gt;</a></li>
-<li>PopLast()&#160;:&#160;<a class="el" href="d6/d1b/class_system_ex_1_1_collections_1_1_generic_1_1_ring_buffer-1-g.html#a74ca93d2d43a8dc415ce085a459b69c9">SystemEx.Collections.Generic.RingBuffer&lt; T &gt;</a></li>
 <li>PopRange()&#160;:&#160;<a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ad8f09f693bfb6f4bc561229340007a3a">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>
-<li>Position&#160;:&#160;<a class="el" href="df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a3ba2f630d3a78dd0f2660313634a9816">SystemEx.Collections.Generic.Cache</a>, <a class="el" href="d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#aa1cd0709d936f3a38087f1cbcfbbced0">SystemEx.Collections.Generic.Interfaces.ICache</a>, <a class="el" href="df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#ae0e2b5be243c1352e298b43174ee51fe">SystemEx.IO.CacheStream&lt; TCache &gt;</a></li>
+<li>Position&#160;:&#160;<a class="el" href="dd/dbc/group__collections.html#ga3ba2f630d3a78dd0f2660313634a9816">SystemEx.Collections.Generic.Cache</a>, <a class="el" href="d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#aa1cd0709d936f3a38087f1cbcfbbced0">SystemEx.Collections.Generic.Interfaces.ICache</a>, <a class="el" href="df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#ae0e2b5be243c1352e298b43174ee51fe">SystemEx.IO.CacheStream&lt; TCache &gt;</a></li>
 <li>Prev()&#160;:&#160;<a class="el" href="d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#a1e47ab32e2127a80152d23a20557ebdb">SystemEx.Base.NumberRangeStepper&lt; T &gt;</a>, <a class="el" href="db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g.html#ae3f92cd2f59e6e2061f21cd84b418e9c">SystemEx.Collections.Generic.GroupNode&lt; T &gt;</a>, <a class="el" href="d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#a9b5169a101ae34892347260142d25780">SystemEx.Collections.Generic.Node&lt; T &gt;</a></li>
 <li>Primary&#160;:&#160;<a class="el" href="de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html#ab4e77bac69c70a4b6bde06bba15cd5b2">SystemEx.Collections.Generic.MirroredCache</a></li>
 <li>PriorityQueueEx()&#160;:&#160;<a class="el" href="d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#a74b7440bfe7574c5edd08df98a8c1a1e">SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt;</a></li>
 <li>PriorityQueueExIterator()&#160;:&#160;<a class="el" href="de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html#aa1e0b885ae1f32102af06699bfec7767">SystemEx.Collections.Generic.PriorityQueueExIterator&lt; T, TU &gt;</a></li>
 <li>Purple&#160;:&#160;<a class="el" href="d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a4be825d8a00f110f148267606c60cc0a">SystemEx.Drawing.PurpelColors</a></li>
-<li>Push()&#160;:&#160;<a class="el" href="d6/d1b/class_system_ex_1_1_collections_1_1_generic_1_1_ring_buffer-1-g.html#afc8b2bb8199791f8b95b6cb860a9b70c">SystemEx.Collections.Generic.RingBuffer&lt; T &gt;</a>, <a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#aaacaa8d4f932befbe254f0b93990903f">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>
+<li>Push()&#160;:&#160;<a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#aaacaa8d4f932befbe254f0b93990903f">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>
 <li>PushBack()&#160;:&#160;<a class="el" href="d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a4718a03bb0f7815851790f54f3deea13">SystemEx.Collections.Generic.Deque&lt; T &gt;</a></li>
 <li>PushFront()&#160;:&#160;<a class="el" href="d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#abb4db27858b25246d2edb46428813fd7">SystemEx.Collections.Generic.Deque&lt; T &gt;</a></li>
 <li>PushRange()&#160;:&#160;<a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a8e62fa7bda8b25453cc90ed0e0c1f70b">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>

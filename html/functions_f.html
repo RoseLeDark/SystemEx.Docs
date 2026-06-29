@@ -9,6 +9,7 @@
 <link rel="icon" href="Logo_256.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -176,11 +136,13 @@ document.addEventListener('DOMContentLoaded', () => {
 <li>Flush()&#160;:&#160;<a class="el" href="df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#aec8e957a240fd0e0cb05135f073c0ac2">SystemEx.IO.CacheStream&lt; TCache &gt;</a></li>
 <li>Forward()&#160;:&#160;<a class="el" href="d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html#a549d08278962a704dde94bb7d36d1cc9">SystemEx.Collections.Generic.ArrayRandomAccessIterator&lt; T &gt;</a>, <a class="el" href="de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html#aa11d9a6f8db368fe269a4f5d3df1cc83">SystemEx.Collections.Generic.Interfaces.IIterator</a>, <a class="el" href="d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#aaeb38b80d65ebcc7f134116195bf7f0c">SystemEx.Collections.Generic.Interfaces.ListIterator&lt; T &gt;</a>, <a class="el" href="dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#ad162fa5306621998247f72ccec0d6b27">SystemEx.Collections.Generic.NodeIterrator&lt; T &gt;</a>, <a class="el" href="de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html#aa0c5072b88c3bfbebd94d1c9e260035e">SystemEx.Collections.Generic.PriorityQueueExIterator&lt; T, TU &gt;</a>, <a class="el" href="dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#ab442ebbf9ee3ba8e9d764e257bf09680">SystemEx.NumberRangeIterator&lt; T &gt;</a></li>
 <li>Fourth&#160;:&#160;<a class="el" href="d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a129b1c60033338f708f2ff093f0e692d">SystemEx.Collections.Generic.Quad&lt; TT, TU, TW, TJ &gt;</a></li>
-<li>Free&#160;:&#160;<a class="el" href="df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a74a59252690c8fff0f671b7ddadfc318">SystemEx.Collections.Generic.Cache</a></li>
+<li>Free&#160;:&#160;<a class="el" href="dd/dbc/group__collections.html#ga74a59252690c8fff0f671b7ddadfc318">SystemEx.Collections.Generic.Cache</a></li>
+<li>FreeLibrary()&#160;:&#160;<a class="el" href="d4/d2f/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_windows_proc_loader.html#adef12f8d87017ebb984736c5270ce1a9">SystemEx.Runtime.InteropServices.Platform.WindowsProcLoader</a></li>
 <li>From&#160;:&#160;<a class="el" href="df/d28/interface_system_ex_1_1_i_range-1-g.html#ae275f6eb758dd085b845265ef1480d19">SystemEx.IRange&lt; T &gt;</a>, <a class="el" href="dc/d8a/class_system_ex_1_1_number_range-1-g.html#aa90ae91ed1e9d25d1998be586179e5eb">SystemEx.NumberRange&lt; T &gt;</a></li>
 <li>FromBytes&lt; T &gt;()&#160;:&#160;<a class="el" href="d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#a19bc2b34b6fdc84f0054c3c23e349977">SystemEx.IO.Provider.ByteSeriablizeProvider</a></li>
 <li>Front&#160;:&#160;<a class="el" href="d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#acc355d9dd79350e23f172625ab4b0054">SystemEx.Collections.Generic.Array&lt; T &gt;</a>, <a class="el" href="df/d60/class_system_ex_1_1_collections_1_1_generic_1_1_bin_queue-1-g.html#a543fff85e79b24021c7671052afaac29">SystemEx.Collections.Generic.BinQueue&lt; T &gt;</a>, <a class="el" href="d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a9809f2016901457c80d086f04b1bb239">SystemEx.Collections.Generic.Deque&lt; T &gt;</a>, <a class="el" href="d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#ae4773105e28195f3c84bc2e1eb3464e6">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>, <a class="el" href="da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#ac52ca0c612f0f79a3358d121db73e6fa">SystemEx.Collections.Generic.Queue&lt; T &gt;</a></li>
 <li>Fuchsia&#160;:&#160;<a class="el" href="d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a6901b7aeebc8b21bfaff0af4946ed2eb">SystemEx.Drawing.PurpelColors</a></li>
+<li>Function&#160;:&#160;<a class="el" href="d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#af2a601f815bfcd42e9f3ffc713564ae8">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

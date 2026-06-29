@@ -9,6 +9,7 @@
 <link rel="icon" href="Logo_256.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -162,13 +122,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <h3 class="doxsection"><a id="index_e" name="index_e"></a>- e -</h3><ul>
-<li>End()&#160;:&#160;<a class="el" href="dd/d13/class_system_ex_1_1_device_1_1_memory_1_1_device_shared_buffer-1-g.html#a980548d02e3a5d836fcf28cc5fb6d836">SystemEx.Device.Memory.DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;</a>, <a class="el" href="d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a61559c3bcc2dcb4d1b7e40e90bf0628d">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>, <a class="el" href="d1/d2e/class_system_ex_1_1_device_1_1_ram_kernel.html#acc9673a8e5d49cfdabfd3d7766a6e7bb">SystemEx.Device.RamKernel</a></li>
+<li>End()&#160;:&#160;<a class="el" href="dd/d13/class_system_ex_1_1_device_1_1_memory_1_1_device_shared_buffer-1-g.html#a980548d02e3a5d836fcf28cc5fb6d836">SystemEx.Device.Memory.DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;</a></li>
+<li>EndRun()&#160;:&#160;<a class="el" href="d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a23aa92269514ccc3f2cab9edc47b3460">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>, <a class="el" href="d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a032c141a88a3147133906351ef6d4604">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></li>
 <li>Enqueue()&#160;:&#160;<a class="el" href="df/d60/class_system_ex_1_1_collections_1_1_generic_1_1_bin_queue-1-g.html#a4d4f4b19b733d51472c44fbe2018ce76">SystemEx.Collections.Generic.BinQueue&lt; T &gt;</a>, <a class="el" href="d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#a637bed6572d38bbc8e860d96f015724d">SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt;</a>, <a class="el" href="da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#a3436658ddf770f88a4f650344b903395">SystemEx.Collections.Generic.Queue&lt; T &gt;</a></li>
 <li>EqualFirst()&#160;:&#160;<a class="el" href="da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g.html#a3e753a45e260e5e335cceb9bb6cc023d">SystemEx.Collections.Generic.Interfaces.IPair&lt; T, TU &gt;</a>, <a class="el" href="d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">SystemEx.Collections.Generic.Interfaces.ITuple</a>, <a class="el" href="de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a7650aeecf936f93a768c5f83e34c63ab">SystemEx.Collections.Generic.Pair&lt; T, TU &gt;</a>, <a class="el" href="d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#adacffb42976d9790e98def69341ca888">SystemEx.Collections.Generic.Quad&lt; TT, TU, TW, TJ &gt;</a>, <a class="el" href="d3/def/struct_system_ex_1_1_collections_1_1_generic_1_1_triple-3-g.html#a48856f9d487da68e434379a2a7b2b613">SystemEx.Collections.Generic.Triple&lt; TT, TU, TW &gt;</a></li>
 <li>EqualFourth()&#160;:&#160;<a class="el" href="d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a8f771ec10d778334ccebc25446285259">SystemEx.Collections.Generic.Quad&lt; TT, TU, TW, TJ &gt;</a></li>
 <li>Equals()&#160;:&#160;<a class="el" href="d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#a48b5a135434ce7076f28796474fbd81e">SystemEx.Base.NumberRangeStepper&lt; T &gt;</a>, <a class="el" href="d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html#ad4c9b1b0514185d063d9741a76ea9b25">SystemEx.Collections.Generic.ArrayRandomAccessIterator&lt; T &gt;</a>, <a class="el" href="d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#a5b31e07a895e00bc1fb2ca9c43dcbbe3">SystemEx.Collections.Generic.Interfaces.ListIterator&lt; T &gt;</a>, <a class="el" href="dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#ae13ae26c218788a0faa86e26f5436b33">SystemEx.Collections.Generic.NodeIterrator&lt; T &gt;</a>, <a class="el" href="de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a136f298cf7334af979113e9f90416307">SystemEx.Collections.Generic.Pair&lt; T, TU &gt;</a>, <a class="el" href="d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a76f8e658ee13884d76583008217a4d93">SystemEx.Collections.Generic.Quad&lt; TT, TU, TW, TJ &gt;</a>, <a class="el" href="d3/def/struct_system_ex_1_1_collections_1_1_generic_1_1_triple-3-g.html#a0f490660a3459a12aea8901ef42130db">SystemEx.Collections.Generic.Triple&lt; TT, TU, TW &gt;</a>, <a class="el" href="d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l.html#a113989d116d0f4f43579dc891b0e5e77">SystemEx.Drawing.ColorHSL</a>, <a class="el" href="de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a6f5a1d72055c9f949dae2df15aea4f3b">SystemEx.Drawing.ColorHSV</a>, <a class="el" href="df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b.html#abb8a918c2cfc16211d8c308eaf31cda2">SystemEx.Drawing.ColorHWB</a>, <a class="el" href="d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#a50e8aa09719d9202e127d75e0ad43b8e">SystemEx.Drawing.ColorNCol</a>, <a class="el" href="d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z.html#a4794f72a4181255235e2eca15db77635">SystemEx.Drawing.ColorXYZ</a>, <a class="el" href="d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a56db38f3081a9d808277b1eacfd51a25">SystemEx.Drawing.ColorYUV</a>, <a class="el" href="dc/d8a/class_system_ex_1_1_number_range-1-g.html#af7ad32127988f52c2d95dd63263353d7">SystemEx.NumberRange&lt; T &gt;</a>, <a class="el" href="dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html#a8a11ae2a06eb331d2f4ab725b588e357">SystemEx.NumberRangeIterator&lt; T &gt;</a>, <a class="el" href="d8/de9/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_h_d_r.html#adc3d505d53fe7b6b40e33cbccd67f270">SystemEx.SystemEx.Drawing.ColorHDR</a>, <a class="el" href="d1/d6d/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2.html#a40b6a03b7120c6f45d5c46aef9302ba9">SystemEx.SystemEx.Drawing.ColorR10G10B10A2</a>, <a class="el" href="d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html#a44185e061906b6b7bcbe7c8448b2d3ba">SystemEx.SystemEx.Drawing.ColorR16G16B16</a>, <a class="el" href="d7/d4e/struct_system_ex_1_1_triple.html#a1dc6e080e9065d76ebfec5d74d8112fa">SystemEx.Triple</a></li>
 <li>EqualSecond()&#160;:&#160;<a class="el" href="da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g.html#a21e13caf9026a5838ebb319b0aa014d9">SystemEx.Collections.Generic.Interfaces.IPair&lt; T, TU &gt;</a>, <a class="el" href="de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#afcf3b4a1e51c723ccf65200682fa3c2d">SystemEx.Collections.Generic.Pair&lt; T, TU &gt;</a>, <a class="el" href="d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a66c6d7c653c8db7bb1df1fe9e453dd6d">SystemEx.Collections.Generic.Quad&lt; TT, TU, TW, TJ &gt;</a>, <a class="el" href="d3/def/struct_system_ex_1_1_collections_1_1_generic_1_1_triple-3-g.html#a766f4fedc5a66f215c374a4c98e5d2d5">SystemEx.Collections.Generic.Triple&lt; TT, TU, TW &gt;</a></li>
 <li>EqualThird()&#160;:&#160;<a class="el" href="d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a119a95e72a8b1ba8a75b9f69f81dfa28">SystemEx.Collections.Generic.Quad&lt; TT, TU, TW, TJ &gt;</a>, <a class="el" href="d3/def/struct_system_ex_1_1_collections_1_1_generic_1_1_triple-3-g.html#aa356d3c3c9487594fdf66ed852ca1053">SystemEx.Collections.Generic.Triple&lt; TT, TU, TW &gt;</a></li>
+<li>ExampleRamKernelAdd()&#160;:&#160;<a class="el" href="de/d89/class_examples_1_1_example_ram_kernel_add.html#a2c8db1797df22fdac732544d262dd33d">Examples.ExampleRamKernelAdd</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,23 +117,24 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Array&lt; T &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Array&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>A dynamic array implementation that supports optional auto-growth, indexed access, insertion, removal, traversal, and basic search operations.  
  <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.Array&lt; T &gt;:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.Array&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.png" usemap="#SystemEx_2ECollections_2EGeneric_2EArray_3C_20T_20_3E_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2EArray_3C_20T_20_3E_map" name="SystemEx_2ECollections_2EGeneric_2EArray_3C_20T_20_3E_map">
 <area href="../../d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html" title="Extends IArray&lt;T&gt; with dynamic resizing capabilities." alt="SystemEx.Collections.Generic.Interfaces.IDynamicArray&lt; T &gt;" shape="rect" coords="371,56,732,80"/>
-<area href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html" title="Defines the basic operations for a fixed-size or dynamic array structure, including indexed access,..." alt="SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;" shape="rect" coords="371,0,732,24"/>
-<area href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html" title="A fixed-size array container that provides indexed access, insertion, traversal, and basic search ope..." alt="SystemEx.Collections.Generic.FixedArray&lt; T &gt;" shape="rect" coords="185,168,546,192"/>
-<area href="../../d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html" title="A dynamically sized array that supports automatic sorting using either a comparer interface or a dele..." alt="SystemEx.Collections.Generic.SortedArray&lt; T &gt;" shape="rect" coords="556,168,917,192"/>
-<area href="../../d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html" title="A fixed-size array that supports automatic sorting using either a comparer interface or a delegate-ba..." alt="SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;" shape="rect" coords="185,224,546,248"/>
+<area href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html" alt="SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;" shape="rect" coords="371,0,732,24"/>
+<area href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html" alt="SystemEx.Collections.Generic.FixedArray&lt; T &gt;" shape="rect" coords="185,168,546,192"/>
+<area href="../../d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html" alt="SystemEx.Collections.Generic.SortedArray&lt; T &gt;" shape="rect" coords="556,168,917,192"/>
+<area href="../../d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html" alt="SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;" shape="rect" coords="185,224,546,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -181,6 +142,7 @@ Inheritance diagram for SystemEx.Collections.Generic.Array&lt; T &gt;:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2698d72008f39661653cad336ac59e0b" id="r_a2698d72008f39661653cad336ac59e0b"><td class="memItemLeft">ArrayRandomAccessIterator&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a2698d72008f39661653cad336ac59e0b">At</a> (int index)</td></tr>
 <tr class="memdesc:a2698d72008f39661653cad336ac59e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a random-access iterator positioned at the specified index. The iterator operates on a copy of the current array state.  <br /></td></tr>
+<tr class="memitem:a293f0eea6a232101ea6021a193c6cf47" id="r_a293f0eea6a232101ea6021a193c6cf47"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a293f0eea6a232101ea6021a193c6cf47">Array</a> (int growSize=16)</td></tr>
 <tr class="memitem:a808a7b713dcac53439a94269898c20f9" id="r_a808a7b713dcac53439a94269898c20f9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a808a7b713dcac53439a94269898c20f9">Array</a> (int size, int growSize=16)</td></tr>
 <tr class="memdesc:a808a7b713dcac53439a94269898c20f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array with the specified initial size.  <br /></td></tr>
 <tr class="memitem:ad0ae0e40ca9ca5d2597a24d7347e5f14" id="r_ad0ae0e40ca9ca5d2597a24d7347e5f14"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad0ae0e40ca9ca5d2597a24d7347e5f14">Array</a> (T[] e, int growSize=16)</td></tr>
@@ -189,6 +151,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8f23b48290bdbbc26278a7057a1168d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array from an enumerable collection.  <br /></td></tr>
 <tr class="memitem:ab22f10f19aacddb564e1fd42507beb59" id="r_ab22f10f19aacddb564e1fd42507beb59"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#ab22f10f19aacddb564e1fd42507beb59">Add</a> (T entry)</td></tr>
 <tr class="memdesc:ab22f10f19aacddb564e1fd42507beb59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the end of the array.  <br /></td></tr>
+<tr class="memitem:afc1c32444b4ee3851dcdf10f08f305a4" id="r_afc1c32444b4ee3851dcdf10f08f305a4"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#afc1c32444b4ee3851dcdf10f08f305a4">AddRange</a> (T[] entry)</td></tr>
+<tr class="memdesc:afc1c32444b4ee3851dcdf10f08f305a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a range of elements to the end of the array.  <br /></td></tr>
 <tr class="memitem:a194979f139cd04ca32b6a191271d052a" id="r_a194979f139cd04ca32b6a191271d052a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a194979f139cd04ca32b6a191271d052a">Get</a> (int index, ref T item)</td></tr>
 <tr class="memdesc:a194979f139cd04ca32b6a191271d052a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an element at the specified index.  <br /></td></tr>
 <tr class="memitem:a90c52ff9daef7d68dd4afeb342745b56" id="r_a90c52ff9daef7d68dd4afeb342745b56"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a90c52ff9daef7d68dd4afeb342745b56">Remove</a> ()</td></tr>
@@ -205,7 +169,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aed3ecf0f60fcd1dc9739913bc741c73b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a range of elements starting at the specified position.  <br /></td></tr>
 <tr class="memitem:a624a36369a89ec4c305575469815f374" id="r_a624a36369a89ec4c305575469815f374"><td class="memItemLeft">UInt64&#160;</td><td class="memItemRight"><a class="el" href="#a624a36369a89ec4c305575469815f374">NumberOfElements</a> (T Key)</td></tr>
 <tr class="memdesc:a624a36369a89ec4c305575469815f374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts how many elements equal the specified key.  <br /></td></tr>
-<tr class="memitem:ad871e080a7e21406b2a3737528109f39" id="r_ad871e080a7e21406b2a3737528109f39"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad871e080a7e21406b2a3737528109f39">Traverse</a> (<a class="el" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#a9ffe9236ff7d52fbeb93204341959319">TraversMode</a> mode, int startIndex, int endIndex, Action&lt; T &gt; func)</td></tr>
+<tr class="memitem:ad871e080a7e21406b2a3737528109f39" id="r_ad871e080a7e21406b2a3737528109f39"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad871e080a7e21406b2a3737528109f39">Traverse</a> (<a class="el" href="../../d5/d4f/group__interfaces.html#ga9ffe9236ff7d52fbeb93204341959319">TraversMode</a> mode, int startIndex, int endIndex, Action&lt; T &gt; func)</td></tr>
 <tr class="memdesc:ad871e080a7e21406b2a3737528109f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses a range of elements in forward or backward order.  <br /></td></tr>
 <tr class="memitem:a2b131eb9e4dabbe3c08e4bede8754a29" id="r_a2b131eb9e4dabbe3c08e4bede8754a29"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2b131eb9e4dabbe3c08e4bede8754a29">Is</a> (T value)</td></tr>
 <tr class="memdesc:a2b131eb9e4dabbe3c08e4bede8754a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the array contains the specified value.  <br /></td></tr>
@@ -268,7 +232,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00169">169</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00171">171</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ab22f10f19aacddb564e1fd42507beb59" name="ab22f10f19aacddb564e1fd42507beb59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab22f10f19aacddb564e1fd42507beb59">&#9670;&#160;</a></span>Add()</h2>
@@ -295,12 +259,46 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="../../d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#a5bbc448fb9230904f3b22de039ea5e5c">SystemEx.Collections.Generic.SortedArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00283">283</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00291">291</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+
+</div>
+</div>
+<a id="afc1c32444b4ee3851dcdf10f08f305a4" name="afc1c32444b4ee3851dcdf10f08f305a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc1c32444b4ee3851dcdf10f08f305a4">&#9670;&#160;</a></span>AddRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int SystemEx.Collections.Generic.Array&lt; T &gt;.AddRange </td>
+          <td>(</td>
+          <td class="paramtype">T[]</td>          <td class="paramname"><span class="paramname"><em>entry</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry</td><td>The range of elements to add</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00307">307</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
 <a id="a8f23b48290bdbbc26278a7057a1168d5" name="a8f23b48290bdbbc26278a7057a1168d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f23b48290bdbbc26278a7057a1168d5">&#9670;&#160;</a></span>Array() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f23b48290bdbbc26278a7057a1168d5">&#9670;&#160;</a></span>Array() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -318,12 +316,31 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00274">274</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00282">282</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+
+</div>
+</div>
+<a id="a293f0eea6a232101ea6021a193c6cf47" name="a293f0eea6a232101ea6021a193c6cf47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a293f0eea6a232101ea6021a193c6cf47">&#9670;&#160;</a></span>Array() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SystemEx.Collections.Generic.Array&lt; T &gt;.Array </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>growSize</em></span><span class="paramdefsep"> = </span><span class="paramdefval">16</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00256">256</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
 <a id="a808a7b713dcac53439a94269898c20f9" name="a808a7b713dcac53439a94269898c20f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a808a7b713dcac53439a94269898c20f9">&#9670;&#160;</a></span>Array() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a808a7b713dcac53439a94269898c20f9">&#9670;&#160;</a></span>Array() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -341,12 +358,12 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00256">256</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00264">264</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
 <a id="ad0ae0e40ca9ca5d2597a24d7347e5f14" name="ad0ae0e40ca9ca5d2597a24d7347e5f14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0ae0e40ca9ca5d2597a24d7347e5f14">&#9670;&#160;</a></span>Array() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ae0e40ca9ca5d2597a24d7347e5f14">&#9670;&#160;</a></span>Array() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -364,7 +381,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00265">265</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00273">273</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -383,7 +400,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00211">211</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00213">213</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -402,7 +419,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00547">547</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00567">567</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -428,7 +445,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00555">555</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00575">575</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -461,7 +478,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00501">501</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00521">521</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -491,7 +508,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00561">561</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00581">581</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -524,7 +541,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00479">479</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00499">499</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -545,7 +562,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#a517c367c7ba0acefc2cc43a7b91eb9fe">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00442">442</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00462">462</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -566,7 +583,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#afb7050f9fb677851c46cb06e34510bf2">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00452">452</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00472">472</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -591,7 +608,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#abe573de3cd2c263856aa2f1311e633a9">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00297">297</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00317">317</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -610,7 +627,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00339">339</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00359">359</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -629,7 +646,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00331">331</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00351">351</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -664,7 +681,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html#a76dfbc784f4db0586abb3bcce36cb49f">SystemEx.Collections.Generic.FixedArray&lt; T &gt;</a>, <a class="el" href="../../d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#a0adb1988c0fbf27b8905d2a9b934e63c">SystemEx.Collections.Generic.SortedArray&lt; T &gt;</a>, and <a class="el" href="../../d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#a9c3a1efab03dc0becdab3754297a0b16">SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00349">349</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00369">369</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -699,7 +716,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html#a3af99f3efdea64f8574f9f7c3afff8a9">SystemEx.Collections.Generic.FixedArray&lt; T &gt;</a>, <a class="el" href="../../d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#a75c80000f0349274bc31561232f0fdb4">SystemEx.Collections.Generic.SortedArray&lt; T &gt;</a>, and <a class="el" href="../../d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#ab04c08957a42f363868a339a5a3b9eeb">SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00365">365</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00385">385</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -718,7 +735,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00432">432</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00452">452</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -739,7 +756,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#af3874c7381edb9c865ba8db962324f22">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00404">404</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00424">424</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -770,7 +787,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="../../d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#aba76e6a5149f99f83338e57de38af192">SystemEx.Collections.Generic.SortedArray&lt; T &gt;</a>, and <a class="el" href="../../d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#af5e401eaf4abe029d70089eb12f6a930">SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00306">306</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00326">326</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -796,7 +813,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00569">569</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00589">589</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -827,7 +844,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html#a54557df2aa9073387d80c224999d7048">SystemEx.Collections.Generic.FixedArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00315">315</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00335">335</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -848,7 +865,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#af776030450823dcc67fb89918bfff732">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00540">540</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00560">560</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -861,7 +878,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">void SystemEx.Collections.Generic.Array&lt; T &gt;.Traverse </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#a9ffe9236ff7d52fbeb93204341959319">TraversMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
+          <td class="paramtype"><a class="el" href="../../d5/d4f/group__interfaces.html#ga9ffe9236ff7d52fbeb93204341959319">TraversMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -883,7 +900,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#a5aa628ed76b7a22474af7b86b27563f5">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00417">417</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00437">437</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -908,7 +925,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#a9f9ad43b6846c1289015a99d14b271f6">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00464">464</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00484">484</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -933,7 +950,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00174">174</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00176">176</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -957,7 +974,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00178">178</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00180">180</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -984,7 +1001,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html#af49f172ce8f0943bcc83ee8b8f66434b">SystemEx.Collections.Generic.Interfaces.IDynamicArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00231">231</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00233">233</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -1010,7 +1027,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#a404b937ffa182796480bc8f52314546e">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00191">191</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00193">193</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -1034,7 +1051,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00240">240</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00242">242</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -1058,7 +1075,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00204">204</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00206">206</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -1082,7 +1099,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00197">197</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00199">199</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -1108,7 +1125,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#ae4773105e28195f3c84bc2e1eb3464e6">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00187">187</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00189">189</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -1134,7 +1151,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html#a1efeda10f5083044065b3203f02bdcb3">SystemEx.Collections.Generic.Interfaces.IDynamicArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00227">227</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00229">229</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -1160,7 +1177,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#a50d1c90fdb23d8afd71a7cf8bca7c741">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00223">223</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00225">225</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -1186,7 +1203,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#ad6eff3dfe30b08a14f4fd6625d26e586">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00235">235</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00237">237</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -1212,7 +1229,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#a51a8ee153493a0452aeb516d1cef0166">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00219">219</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00221">221</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -1236,7 +1253,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00244">244</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00246">246</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -1262,7 +1279,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#a43d7bdc985f3d03d4d6d90b44fc18d04">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00183">183</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00185">185</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -1286,12 +1303,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00249">249</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00251">251</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Collections/Generic/<a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a></li>
+<li><a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

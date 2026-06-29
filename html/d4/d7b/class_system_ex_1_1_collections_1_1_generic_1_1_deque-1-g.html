@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,13 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Deque&lt; T &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Deque&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>A simple fixed‑size double‑ended queue (deque) implemented using a linear array. Supports pushing and popping at both the front and the back. <br  />
- This implementation does not use a ring buffer; shifting is performed when inserting or removing at the front.  
- <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -198,14 +154,8 @@ Properties</h2></td></tr>
 <tr class="memdesc:a3ff0936ef62b283c084255449bf44f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the back of the deque.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of elements stored in the deque.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00029">29</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00031">31</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ad955c6ca43ad5944a411f961f4ca382e" name="ad955c6ca43ad5944a411f961f4ca382e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad955c6ca43ad5944a411f961f4ca382e">&#9670;&#160;</a></span>Clear()</h2>
@@ -222,7 +172,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00139">139</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00141">141</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -247,7 +197,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00075">75</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00077">77</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -273,7 +223,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was removed; otherwise <code>false</code>.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00094">94</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00096">96</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -299,7 +249,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was removed; otherwise <code>false</code>.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00123">123</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00125">125</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -324,7 +274,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00084">84</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00086">86</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -349,7 +299,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00106">106</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00108">108</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -374,7 +324,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00043">43</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00045">45</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -398,7 +348,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00069">69</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00071">71</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -422,7 +372,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00064">64</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00066">66</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -446,7 +396,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00054">54</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00056">56</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -470,7 +420,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00059">59</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00061">61</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -494,12 +444,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00049">49</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00051">51</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Collections/Generic/<a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a></li>
+<li><a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

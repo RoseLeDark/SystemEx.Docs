@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['–_202026_2006_2003_0',['[0.5.0] – 2026-06-03',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md50',1,'']]]
+  ['📁_20project_20structure_0',['📁 Project Structure',['../index.html#autotoc_md-project-structure',1,'']]]
 ];

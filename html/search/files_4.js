@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fixedarray_2ecs_0',['FixedArray.cs',['../da/d0a/_fixed_array_8cs.html',1,'']]],
-  ['fixedmap_2ecs_1',['FixedMap.cs',['../df/d1b/_fixed_map_8cs.html',1,'']]]
+  ['examplehasher_2ecs_0',['ExampleHasher.cs',['../d6/d1d/_example_hasher_8cs.html',1,'']]],
+  ['exampleramkerneladd_2ecs_1',['ExampleRamKernelAdd.cs',['../da/d57/_example_ram_kernel_add_8cs.html',1,'']]]
 ];

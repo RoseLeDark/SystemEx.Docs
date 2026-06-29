@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: Collections/Generic/Interfaces/ITuple.cs Source File</title>
+<title>SystemEX: ITuple.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -178,22 +138,22 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a> {</div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">   22</a></span>    <span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a8eea63c6c73f302f48fdb8832854aa87">   26</a></span>        <span class="keywordtype">int</span> <a class="code hl_property" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a8eea63c6c73f302f48fdb8832854aa87">Count</a> { <span class="keyword">get</span>; }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">   36</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">EqualFirst</a>(<span class="keywordtype">object</span> key);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        [System.Diagnostics.CodeAnalysis.SuppressMessage(<span class="stringliteral">&quot;Naming&quot;</span>, <span class="stringliteral">&quot;CA1716:Bezeichner dürfen nicht mit Schlüsselwörtern übereinstimmen&quot;</span>, Justification = <span class="stringliteral">&quot;&lt;Ausstehend&gt;&quot;</span>)]</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a6ac2652df477f044a0fa26d60594f196">   47</a></span>        <span class="keywordtype">object</span>? <a class="code hl_function" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a6ac2652df477f044a0fa26d60594f196">Get</a>(<span class="keywordtype">int</span> index);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">   26</a></span>    <span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a8eea63c6c73f302f48fdb8832854aa87">   30</a></span>        <span class="keywordtype">int</span> <a class="code hl_property" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a8eea63c6c73f302f48fdb8832854aa87">Count</a> { <span class="keyword">get</span>; }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">   40</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">EqualFirst</a>(<span class="keywordtype">object</span> key);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a6ac2652df477f044a0fa26d60594f196">   50</a></span>        <span class="keywordtype">object</span>? <a class="code hl_function" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a6ac2652df477f044a0fa26d60594f196">Get</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">SystemEx.Collections.Generic.Interfaces.ITuple</a></div><div class="ttdoc">A lightweight interface for serializable N‑element tuple consisting of strongly typed.</div><div class="ttdef"><b>Definition</b> <a href="#l00022">ITuple.cs:22</a></div></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>#pragma warning restore CS1587 <span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">SystemEx.Collections.Generic.Interfaces.ITuple</a></div><div class="ttdef"><b>Definition</b> <a href="#l00026">ITuple.cs:26</a></div></div>
 <div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html_a6ac2652df477f044a0fa26d60594f196"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a6ac2652df477f044a0fa26d60594f196">SystemEx.Collections.Generic.Interfaces.ITuple.Get</a></div><div class="ttdeci">object? Get(int index)</div><div class="ttdoc">Retrieves the element at the specified index.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html_a8eea63c6c73f302f48fdb8832854aa87"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a8eea63c6c73f302f48fdb8832854aa87">SystemEx.Collections.Generic.Interfaces.ITuple.Count</a></div><div class="ttdeci">int Count</div><div class="ttdoc">Gets the number of elements stored in the tuple.</div><div class="ttdef"><b>Definition</b> <a href="#l00026">ITuple.cs:26</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html_a8eea63c6c73f302f48fdb8832854aa87"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a8eea63c6c73f302f48fdb8832854aa87">SystemEx.Collections.Generic.Interfaces.ITuple.Count</a></div><div class="ttdeci">int Count</div><div class="ttdoc">Gets the number of elements stored in the tuple.</div><div class="ttdef"><b>Definition</b> <a href="#l00030">ITuple.cs:30</a></div></div>
 <div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html_aa447498dc18510050c907d9639c4e421"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">SystemEx.Collections.Generic.Interfaces.ITuple.EqualFirst</a></div><div class="ttdeci">bool EqualFirst(object key)</div><div class="ttdoc">Determines whether the first element of the tuple is equal to the specified key.</div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d16/_i_array_8cs_source.html#l00018">IArray.cs:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

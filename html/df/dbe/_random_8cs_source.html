@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: Utils/Random.cs Source File</title>
+<title>SystemEX: Random.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -452,8 +412,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>    }</div>
 <div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>}</div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_array-1-g_html_ad42e66a1c01f9fb59822096ef65d4881"><div class="ttname"><a href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad42e66a1c01f9fb59822096ef65d4881">SystemEx.Collections.Generic.Array-1-g.TryGet</a></div><div class="ttdeci">bool TryGet(T Key, out int index)</div><div class="ttdoc">Attempts to find the index of the specified key.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00464">Array.cs:464</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00022">Array.cs:22</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_array-1-g_html_ad42e66a1c01f9fb59822096ef65d4881"><div class="ttname"><a href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad42e66a1c01f9fb59822096ef65d4881">SystemEx.Collections.Generic.Array-1-g.TryGet</a></div><div class="ttdeci">bool TryGet(T Key, out int index)</div><div class="ttdoc">Attempts to find the index of the specified key.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00484">Array.cs:484</a></div></div>
+<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00023">Array.cs:23</a></div></div>
 <div class="ttc" id="anamespace_system_ex_html"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d9d/_i_range_8cs_source.html#l00020">IRange.cs:20</a></div></div>
 <div class="ttc" id="anamespace_system_ex_html_a79eb295adf6d58748538b4c064fedeb9"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html#a79eb295adf6d58748538b4c064fedeb9">SystemEx.RandPasswordLevel</a></div><div class="ttdeci">RandPasswordLevel</div><div class="ttdoc">Specifies predefined password lengths for random password generation.</div><div class="ttdef"><b>Definition</b> <a href="#l00025">Random.cs:25</a></div></div>
 <div class="ttc" id="anamespace_system_ex_html_a79eb295adf6d58748538b4c064fedeb9a1fbb1e3943c2c6c560247ac8f9289780"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html#a79eb295adf6d58748538b4c064fedeb9a1fbb1e3943c2c6c560247ac8f9289780">SystemEx.RandPasswordLevel.Simple</a></div><div class="ttdeci">@ Simple</div><div class="ttdoc">Generates a 16‑character password using the basic character set.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">Random.cs:29</a></div></div>

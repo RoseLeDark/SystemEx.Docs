@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -160,9 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">SystemEx.Drawing.ICanvasList&lt; T &gt; Interface Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for SystemEx.Drawing.ICanvasList&lt; T &gt;:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Drawing.ICanvasList&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.png" usemap="#SystemEx_2EDrawing_2EICanvasList_3C_20T_20_3E_map" alt=""/>
   <map id="SystemEx_2EDrawing_2EICanvasList_3C_20T_20_3E_map" name="SystemEx_2EDrawing_2EICanvasList_3C_20T_20_3E_map">
@@ -179,25 +140,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5a373d1e6e296fab5d3df6976455aad7" id="r_a5a373d1e6e296fab5d3df6976455aad7"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="#a5a373d1e6e296fab5d3df6976455aad7">GetPixel</a> (int layer, int x, int y)</td></tr>
 <tr class="memitem:ac5f05cbc80da0ea2ff15cbacd1d22a32" id="r_ac5f05cbc80da0ea2ff15cbacd1d22a32"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac5f05cbc80da0ea2ff15cbacd1d22a32">SwapIn</a> (int x, int y, int width, int height, ref ICanvas&lt; T &gt; toDraw)</td></tr>
 <tr class="memitem:a2bc51ac3d1d9f58c244cc15a3efd32d6" id="r_a2bc51ac3d1d9f58c244cc15a3efd32d6"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a2bc51ac3d1d9f58c244cc15a3efd32d6">SwapIn</a> (ref ICanvas&lt; T &gt; toDraw)</td></tr>
-<tr class="inherit_header pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g"><td colspan="2">Public Member Functions inherited from <a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html">SystemEx.Drawing.ICanvas&lt; T &gt;</a></td></tr>
-<tr class="memitem:a72725b0eec47c5c97f7a4e8e0bec73c5 pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a72725b0eec47c5c97f7a4e8e0bec73c5"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a72725b0eec47c5c97f7a4e8e0bec73c5">GetPixel</a> (int x, int y)</td></tr>
-<tr class="memitem:ab1c9faf58087c0f319453703331d2c17 pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_ab1c9faf58087c0f319453703331d2c17"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#ab1c9faf58087c0f319453703331d2c17">Resize</a> (int size)</td></tr>
-<tr class="memitem:a35deb2cd1f99bab6642156254871e53b pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a35deb2cd1f99bab6642156254871e53b"><td class="memItemLeft">ICanvas&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a35deb2cd1f99bab6642156254871e53b">CopyRegion</a> (int x, int y, int width, int height)</td></tr>
-<tr class="memitem:a2503504ee768f34e3f4f22d0e51be2c8 pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a2503504ee768f34e3f4f22d0e51be2c8"><td class="memItemLeft">ICanvas&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a2503504ee768f34e3f4f22d0e51be2c8">Clone</a> ()</td></tr>
-<tr class="memitem:aa4c0ffc2295eb778669a8a9f5e1b643e pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_aa4c0ffc2295eb778669a8a9f5e1b643e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#aa4c0ffc2295eb778669a8a9f5e1b643e">Fill</a> (T objcolor)</td></tr>
-<tr class="memitem:a3ca6167e3a1144e8ccbdc6e68ca6ba84 pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a3ca6167e3a1144e8ccbdc6e68ca6ba84"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a3ca6167e3a1144e8ccbdc6e68ca6ba84">FillRect</a> (int x1, int y1, int x2, int y2)</td></tr>
-<tr class="memitem:afd5b20bdffb13afcc73caf1e06ab33cf pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_afd5b20bdffb13afcc73caf1e06ab33cf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#afd5b20bdffb13afcc73caf1e06ab33cf">Clear</a> ()</td></tr>
-<tr class="memitem:a1d5df6442eebe297315ed829ca9d8974 pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a1d5df6442eebe297315ed829ca9d8974"><td class="memItemLeft">Pair&lt; int, int &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a1d5df6442eebe297315ed829ca9d8974">Find</a> (T color)</td></tr>
-<tr class="memitem:a7f42a1742cc7bf424903a51627c15cfa pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a7f42a1742cc7bf424903a51627c15cfa"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a7f42a1742cc7bf424903a51627c15cfa">FindLast</a> (T color)</td></tr>
+<tr class="inherit_header pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html">SystemEx.Drawing.ICanvas&lt; T &gt;</a></td></tr>
+<tr class="memitem:a72725b0eec47c5c97f7a4e8e0bec73c5 inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a72725b0eec47c5c97f7a4e8e0bec73c5"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a72725b0eec47c5c97f7a4e8e0bec73c5">GetPixel</a> (int x, int y)</td></tr>
+<tr class="memitem:ab1c9faf58087c0f319453703331d2c17 inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_ab1c9faf58087c0f319453703331d2c17"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#ab1c9faf58087c0f319453703331d2c17">Resize</a> (int size)</td></tr>
+<tr class="memitem:a35deb2cd1f99bab6642156254871e53b inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a35deb2cd1f99bab6642156254871e53b"><td class="memItemLeft">ICanvas&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a35deb2cd1f99bab6642156254871e53b">CopyRegion</a> (int x, int y, int width, int height)</td></tr>
+<tr class="memitem:a2503504ee768f34e3f4f22d0e51be2c8 inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a2503504ee768f34e3f4f22d0e51be2c8"><td class="memItemLeft">ICanvas&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a2503504ee768f34e3f4f22d0e51be2c8">Clone</a> ()</td></tr>
+<tr class="memitem:aa4c0ffc2295eb778669a8a9f5e1b643e inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_aa4c0ffc2295eb778669a8a9f5e1b643e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#aa4c0ffc2295eb778669a8a9f5e1b643e">Fill</a> (T objcolor)</td></tr>
+<tr class="memitem:a3ca6167e3a1144e8ccbdc6e68ca6ba84 inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a3ca6167e3a1144e8ccbdc6e68ca6ba84"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a3ca6167e3a1144e8ccbdc6e68ca6ba84">FillRect</a> (int x1, int y1, int x2, int y2)</td></tr>
+<tr class="memitem:afd5b20bdffb13afcc73caf1e06ab33cf inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_afd5b20bdffb13afcc73caf1e06ab33cf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#afd5b20bdffb13afcc73caf1e06ab33cf">Clear</a> ()</td></tr>
+<tr class="memitem:a1d5df6442eebe297315ed829ca9d8974 inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a1d5df6442eebe297315ed829ca9d8974"><td class="memItemLeft">Pair&lt; int, int &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a1d5df6442eebe297315ed829ca9d8974">Find</a> (T color)</td></tr>
+<tr class="memitem:a7f42a1742cc7bf424903a51627c15cfa inherit pub_methods_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a7f42a1742cc7bf424903a51627c15cfa"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a7f42a1742cc7bf424903a51627c15cfa">FindLast</a> (T color)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a791a9366402afd195b10b52322e2e513" id="r_a791a9366402afd195b10b52322e2e513"><td class="memItemLeft">IReadOnlyMap&lt; ISubCanvas&lt; T &gt;, <a class="el" href="../../de/d5b/namespace_system_ex_1_1_drawing.html#af2ec8d122c6ae6f77f9d5b8d55e37cb2">BlendMode</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a791a9366402afd195b10b52322e2e513">Layers</a><code> [get]</code></td></tr>
 <tr class="memitem:ac3913a1eba559cd27bf62f8b06fd6d62" id="r_ac3913a1eba559cd27bf62f8b06fd6d62"><td class="memItemLeft">ICanvas&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ac3913a1eba559cd27bf62f8b06fd6d62">this[int index]</a><code> [get]</code></td></tr>
-<tr class="inherit_header properties_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g"><td colspan="2">Properties inherited from <a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html">SystemEx.Drawing.ICanvas&lt; T &gt;</a></td></tr>
-<tr class="memitem:a4b0ab0e3e74115c37b005e19707947c7 properties_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a4b0ab0e3e74115c37b005e19707947c7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a4b0ab0e3e74115c37b005e19707947c7">Height</a><code> [get]</code></td></tr>
-<tr class="memitem:a28d54d8b9207f24d63a3a6f8f78971ae properties_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a28d54d8b9207f24d63a3a6f8f78971ae"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a28d54d8b9207f24d63a3a6f8f78971ae">Width</a><code> [get]</code></td></tr>
-<tr class="memitem:ad40390089d37f39c92390af693bdb199 properties_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_ad40390089d37f39c92390af693bdb199"><td class="memItemLeft">IEnumerable&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#ad40390089d37f39c92390af693bdb199">Buffer</a><code> [get]</code></td></tr>
+<tr class="inherit_header properties_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Properties inherited from <a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html">SystemEx.Drawing.ICanvas&lt; T &gt;</a></td></tr>
+<tr class="memitem:a4b0ab0e3e74115c37b005e19707947c7 inherit properties_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a4b0ab0e3e74115c37b005e19707947c7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a4b0ab0e3e74115c37b005e19707947c7">Height</a><code> [get]</code></td></tr>
+<tr class="memitem:a28d54d8b9207f24d63a3a6f8f78971ae inherit properties_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_a28d54d8b9207f24d63a3a6f8f78971ae"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a28d54d8b9207f24d63a3a6f8f78971ae">Width</a><code> [get]</code></td></tr>
+<tr class="memitem:ad40390089d37f39c92390af693bdb199 inherit properties_interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" id="r_ad40390089d37f39c92390af693bdb199"><td class="memItemLeft">IEnumerable&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#ad40390089d37f39c92390af693bdb199">Buffer</a><code> [get]</code></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -404,7 +365,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>Drawing/<a class="el" href="../../d4/d11/_i_canvas_list_8cs_source.html">ICanvasList.cs</a></li>
+<li><a class="el" href="../../d4/d11/_i_canvas_list_8cs_source.html">ICanvasList.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

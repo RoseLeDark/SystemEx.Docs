@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: Device/Ikernel.cs Source File</title>
+<title>SystemEX: Ikernel.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -182,57 +142,50 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d7/d59/namespace_system_ex_1_1_device.html">   20</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html">SystemEx.Device.Memory</a> {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">   27</a></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">BufferType</a> {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70a1129c0e4d43f2d121652a7302712cff6">   31</a></span>        <a class="code hl_enumvalue" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70a1129c0e4d43f2d121652a7302712cff6">Write</a>,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70a7a1a5f3e79fdc91edf2f5ead9d66abb4">   36</a></span>        <a class="code hl_enumvalue" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70a7a1a5f3e79fdc91edf2f5ead9d66abb4">Read</a>,</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70a130c5b3473c57faa76e2a1c54e26f88e">   41</a></span>        <a class="code hl_enumvalue" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70a130c5b3473c57faa76e2a1c54e26f88e">Both</a></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
-</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="foldopen" id="foldopen00054" data-start="{" data-end="};">
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">   54</a></span>    <span class="keyword">public</span> <span class="keyword">interface </span>IKernel&lt;TIDeviceSharedBackend&gt;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        where TIDeviceSharedBackend : <a class="code hl_interface" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html">IDeviceSharedBackend</a> {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a3f77fa65f84cbc08323009a6bad406e0">   66</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a3f77fa65f84cbc08323009a6bad406e0">AddBuffer</a>(DeviceSharedBuffer&lt;TIDeviceSharedBackend&gt; buffer,</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                      <span class="keywordtype">string</span> name,</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                      <a class="code hl_enumeration" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">BufferType</a> type,</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                      <span class="keywordtype">object</span>? confgs);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a2f1f48adf5593d1ffd52a355abc51a7a">   79</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a2f1f48adf5593d1ffd52a355abc51a7a">RemoveBuffer</a>(<span class="keywordtype">string</span> name, <a class="code hl_enumeration" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">BufferType</a> type);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#aa53e76c8b8f253b12f986cdf5c927aa9">   89</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#aa53e76c8b8f253b12f986cdf5c927aa9">RemoveBuffer</a>(<span class="keywordtype">int</span> index, <a class="code hl_enumeration" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">BufferType</a> type);</div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">   32</a></span>    <span class="keyword">public</span> <span class="keyword">interface </span>IKernel&lt;TIDeviceSharedBackend&gt;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        where TIDeviceSharedBackend : <a class="code hl_interface" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html">IDeviceSharedBackend</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ab18d6f9f562f69f5ede1d56410ef306e">   40</a></span>        TIDeviceSharedBackend <a class="code hl_property" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ab18d6f9f562f69f5ede1d56410ef306e">Backend</a> { <span class="keyword">get</span>; }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#adc2f30a0d3b0b9f94fdcb83bad7dd2f9">   56</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#adc2f30a0d3b0b9f94fdcb83bad7dd2f9">Create</a> ( <span class="keywordtype">string</span> dllPath );</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a7bc4002350665b4fe10aeeaebfed8ee1">   68</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a7bc4002350665b4fe10aeeaebfed8ee1">AddBuffer</a> ( <a class="code hl_class" href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html">DeviceBuffer</a> buffer, <span class="keywordtype">string</span> name, <span class="keywordtype">int</span> flags, <span class="keywordtype">object</span>? configs );</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a5680e822b8842aa8d863e557ba40f9ec">   78</a></span>        DeviceSharedBuffer&lt;TIDeviceSharedBackend&gt;? <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a5680e822b8842aa8d863e557ba40f9ec">GetBuffer</a> ( <span class="keywordtype">string</span> name );</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a7611094d330cd73aa03c3e406dd54739">   89</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a7611094d330cd73aa03c3e406dd54739">RemoveBuffer</a> ( <span class="keywordtype">string</span> name );</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a5e21bd58f56cab651980ce79f3118202">   98</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a5e21bd58f56cab651980ce79f3118202">Begin</a>(<span class="keywordtype">string</span> strFunction);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ad6d9c0b9112797e6bd094e8e56abec3c">   98</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ad6d9c0b9112797e6bd094e8e56abec3c">RemoveBuffer</a> ( <span class="keywordtype">int</span> index );</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a950dfa83692a5e63f062a846e859d6ae">  105</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a950dfa83692a5e63f062a846e859d6ae">Run</a>(<span class="keywordtype">object</span>? options);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ac0021bf73172da0bc789fece42f3b246">  110</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ac0021bf73172da0bc789fece42f3b246">IsRunning</a>();</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#pragma warning disable CA1716 </span><span class="comment">// Bezeichner dürfen nicht mit Schlüsselwörtern übereinstimmen</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a61559c3bcc2dcb4d1b7e40e90bf0628d">  117</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a61559c3bcc2dcb4d1b7e40e90bf0628d">End</a>();</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#pragma warning restore CA1716 </span><span class="comment">// Bezeichner dürfen nicht mit Schlüsselwörtern übereinstimmen</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a003fc294274846fba616b3d4e7b3a55d">  108</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a003fc294274846fba616b3d4e7b3a55d">BeginRun</a> ( <span class="keywordtype">string</span> strFunction );</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a950dfa83692a5e63f062a846e859d6ae">  119</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a950dfa83692a5e63f062a846e859d6ae">Run</a> ( <span class="keywordtype">object</span>? options );</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ac0021bf73172da0bc789fece42f3b246">  125</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ac0021bf73172da0bc789fece42f3b246">IsRunning</a> ();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a23aa92269514ccc3f2cab9edc47b3460">  132</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a23aa92269514ccc3f2cab9edc47b3460">EndRun</a> ();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
 </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
 </div>
+<div class="ttc" id="aclass_system_ex_1_1_device_1_1_memory_1_1_device_buffer_html"><div class="ttname"><a href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html">SystemEx.Device.Memory.DeviceBuffer</a></div><div class="ttdoc">Represents a cache that can be shared with a hardware backend through DeviceSharedBuffer&lt;TDeviceShare...</div><div class="ttdef"><b>Definition</b> <a href="../../df/dea/_device_buffer_8cs_source.html#l00049">DeviceBuffer.cs:49</a></div></div>
 <div class="ttc" id="ainterface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend_html"><div class="ttname"><a href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html">SystemEx.Device.Intertropt.IDeviceSharedBackend</a></div><div class="ttdoc">Defines the low‑level backend interface used by DeviceSharedBuffer and related shared‑memory abstract...</div><div class="ttdef"><b>Definition</b> <a href="../../dc/df2/_i_device_shared_backend_8cs_source.html#l00027">IDeviceSharedBackend.cs:27</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_a2f1f48adf5593d1ffd52a355abc51a7a"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a2f1f48adf5593d1ffd52a355abc51a7a">SystemEx.Device.Memory.IKernel-1-g.RemoveBuffer</a></div><div class="ttdeci">int RemoveBuffer(string name, BufferType type)</div><div class="ttdoc">Removes a buffer by name and buffer type.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_a3f77fa65f84cbc08323009a6bad406e0"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a3f77fa65f84cbc08323009a6bad406e0">SystemEx.Device.Memory.IKernel-1-g.AddBuffer</a></div><div class="ttdeci">int AddBuffer(DeviceSharedBuffer&lt; TIDeviceSharedBackend &gt; buffer, string name, BufferType type, object? confgs)</div><div class="ttdoc">Adds a shared buffer to the kernel with the specified name and usage type.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_a5e21bd58f56cab651980ce79f3118202"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a5e21bd58f56cab651980ce79f3118202">SystemEx.Device.Memory.IKernel-1-g.Begin</a></div><div class="ttdeci">bool Begin(string strFunction)</div><div class="ttdoc">Begins a kernel execution session and prepares the backend function identified by strFunction ....</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_a61559c3bcc2dcb4d1b7e40e90bf0628d"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a61559c3bcc2dcb4d1b7e40e90bf0628d">SystemEx.Device.Memory.IKernel-1-g.End</a></div><div class="ttdeci">void End()</div><div class="ttdoc">Ends the kernel execution session, synchronizes buffers, and performs backend cleanup operations.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_a950dfa83692a5e63f062a846e859d6ae"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a950dfa83692a5e63f062a846e859d6ae">SystemEx.Device.Memory.IKernel-1-g.Run</a></div><div class="ttdeci">bool Run(object? options)</div><div class="ttdoc">Executes the kernel with optional backend‑specific parameters.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_aa53e76c8b8f253b12f986cdf5c927aa9"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#aa53e76c8b8f253b12f986cdf5c927aa9">SystemEx.Device.Memory.IKernel-1-g.RemoveBuffer</a></div><div class="ttdeci">int RemoveBuffer(int index, BufferType type)</div><div class="ttdoc">Removes a buffer by index and buffer type.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_ac0021bf73172da0bc789fece42f3b246"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ac0021bf73172da0bc789fece42f3b246">SystemEx.Device.Memory.IKernel-1-g.IsRunning</a></div><div class="ttdeci">bool IsRunning()</div><div class="ttdoc">Indicates whether the kernel is currently running.</div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_a003fc294274846fba616b3d4e7b3a55d"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a003fc294274846fba616b3d4e7b3a55d">SystemEx.Device.Memory.IKernel-1-g.BeginRun</a></div><div class="ttdeci">bool BeginRun(string strFunction)</div><div class="ttdoc">Begins a kernel execution session and prepares the backend function identified by strFunction ....</div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_a23aa92269514ccc3f2cab9edc47b3460"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a23aa92269514ccc3f2cab9edc47b3460">SystemEx.Device.Memory.IKernel-1-g.EndRun</a></div><div class="ttdeci">void EndRun()</div><div class="ttdoc">Ends the kernel execution session, synchronizes buffers, unlocks shared memory regions,...</div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_a5680e822b8842aa8d863e557ba40f9ec"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a5680e822b8842aa8d863e557ba40f9ec">SystemEx.Device.Memory.IKernel-1-g.GetBuffer</a></div><div class="ttdeci">DeviceSharedBuffer&lt; TIDeviceSharedBackend &gt;? GetBuffer(string name)</div><div class="ttdoc">Retrieves a shared buffer by its symbolic name.</div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_a7611094d330cd73aa03c3e406dd54739"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a7611094d330cd73aa03c3e406dd54739">SystemEx.Device.Memory.IKernel-1-g.RemoveBuffer</a></div><div class="ttdeci">bool RemoveBuffer(string name)</div><div class="ttdoc">Removes a buffer from the kernel by its symbolic name.   This typically releases backend‑specific res...</div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_a7bc4002350665b4fe10aeeaebfed8ee1"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a7bc4002350665b4fe10aeeaebfed8ee1">SystemEx.Device.Memory.IKernel-1-g.AddBuffer</a></div><div class="ttdeci">int AddBuffer(DeviceBuffer buffer, string name, int flags, object? configs)</div><div class="ttdoc">Adds a shared buffer to the kernel with the specified name and usage type.</div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_a950dfa83692a5e63f062a846e859d6ae"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a950dfa83692a5e63f062a846e859d6ae">SystemEx.Device.Memory.IKernel-1-g.Run</a></div><div class="ttdeci">bool Run(object? options)</div><div class="ttdoc">Executes the kernel with optional backend‑specific parameters.   Implementations may run synchronousl...</div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_ab18d6f9f562f69f5ede1d56410ef306e"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ab18d6f9f562f69f5ede1d56410ef306e">SystemEx.Device.Memory.IKernel-1-g.Backend</a></div><div class="ttdeci">TIDeviceSharedBackend Backend</div><div class="ttdoc">Gets the backend instance associated with this kernel.   The backend defines how shared buffers are a...</div><div class="ttdef"><b>Definition</b> <a href="#l00040">Ikernel.cs:40</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_ac0021bf73172da0bc789fece42f3b246"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ac0021bf73172da0bc789fece42f3b246">SystemEx.Device.Memory.IKernel-1-g.IsRunning</a></div><div class="ttdeci">bool IsRunning()</div><div class="ttdoc">Indicates whether the kernel is currently executing.   Useful for asynchronous backends or long‑runni...</div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_ad6d9c0b9112797e6bd094e8e56abec3c"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ad6d9c0b9112797e6bd094e8e56abec3c">SystemEx.Device.Memory.IKernel-1-g.RemoveBuffer</a></div><div class="ttdeci">bool RemoveBuffer(int index)</div><div class="ttdoc">Removes a buffer from the kernel by its index in the internal buffer list.</div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g_html_adc2f30a0d3b0b9f94fdcb83bad7dd2f9"><div class="ttname"><a href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#adc2f30a0d3b0b9f94fdcb83bad7dd2f9">SystemEx.Device.Memory.IKernel-1-g.Create</a></div><div class="ttdeci">bool Create(string dllPath)</div><div class="ttdoc">Initializes the kernel by loading the native module located at dllPath .   This typically resolves th...</div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_device_1_1_intertropt_html"><div class="ttname"><a href="../../d7/d29/namespace_system_ex_1_1_device_1_1_intertropt.html">SystemEx.Device.Intertropt</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/df2/_i_device_shared_backend_8cs_source.html#l00018">IDeviceSharedBackend.cs:18</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_device_1_1_memory_html"><div class="ttname"><a href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html">SystemEx.Device.Memory</a></div><div class="ttdef"><b>Definition</b> <a href="#l00020">Ikernel.cs:20</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_device_1_1_memory_html_a4f7d4764a0cba84feaa441cc88fe2e70"><div class="ttname"><a href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">SystemEx.Device.Memory.BufferType</a></div><div class="ttdeci">BufferType</div><div class="ttdoc">Specifies how a buffer is used by a kernel during execution.   Determines whether data flows from cac...</div><div class="ttdef"><b>Definition</b> <a href="#l00027">Ikernel.cs:27</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_device_1_1_memory_html_a4f7d4764a0cba84feaa441cc88fe2e70a1129c0e4d43f2d121652a7302712cff6"><div class="ttname"><a href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70a1129c0e4d43f2d121652a7302712cff6">SystemEx.Device.Memory.BufferType.Write</a></div><div class="ttdeci">@ Write</div><div class="ttdoc">The buffer is written by the kernel (cache → hardware).</div><div class="ttdef"><b>Definition</b> <a href="#l00031">Ikernel.cs:31</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_device_1_1_memory_html_a4f7d4764a0cba84feaa441cc88fe2e70a130c5b3473c57faa76e2a1c54e26f88e"><div class="ttname"><a href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70a130c5b3473c57faa76e2a1c54e26f88e">SystemEx.Device.Memory.BufferType.Both</a></div><div class="ttdeci">@ Both</div><div class="ttdoc">The buffer is both read and written by the kernel.</div><div class="ttdef"><b>Definition</b> <a href="#l00041">Ikernel.cs:41</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_device_1_1_memory_html_a4f7d4764a0cba84feaa441cc88fe2e70a7a1a5f3e79fdc91edf2f5ead9d66abb4"><div class="ttname"><a href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70a7a1a5f3e79fdc91edf2f5ead9d66abb4">SystemEx.Device.Memory.BufferType.Read</a></div><div class="ttdeci">@ Read</div><div class="ttdoc">The buffer is read by the kernel (hardware → cache).</div><div class="ttdef"><b>Definition</b> <a href="#l00036">Ikernel.cs:36</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

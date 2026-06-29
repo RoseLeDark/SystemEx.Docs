@@ -9,6 +9,7 @@
 <link rel="icon" href="Logo_256.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -163,7 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <h3 class="doxsection"><a id="index_b" name="index_b"></a>- b -</h3><ul>
 <li>Back()&#160;:&#160;<a class="el" href="d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html#a6c1c053a5384a9349776b56d0f791ece">SystemEx.Collections.Generic.ArrayRandomAccessIterator&lt; T &gt;</a>, <a class="el" href="d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html#a606a90cad5b02656d1e3db7fd773a5c2">SystemEx.Collections.Generic.Interfaces.IBidirectionalIterator&lt; T &gt;</a>, <a class="el" href="d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#ab0531f16d2069a4f8f1026c5aea1c23b">SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;</a>, <a class="el" href="d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#af445dbdef037ce40a03869ed0db01170">SystemEx.Collections.Generic.Interfaces.ListIterator&lt; T &gt;</a>, <a class="el" href="dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#ae49d1c90f27f496be09596221bca4410">SystemEx.Collections.Generic.NodeIterrator&lt; T &gt;</a></li>
-<li>Begin()&#160;:&#160;<a class="el" href="dd/d13/class_system_ex_1_1_device_1_1_memory_1_1_device_shared_buffer-1-g.html#a2f19a7c6e682ae8d171bef58857dda86">SystemEx.Device.Memory.DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;</a>, <a class="el" href="d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a5e21bd58f56cab651980ce79f3118202">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>, <a class="el" href="d1/d2e/class_system_ex_1_1_device_1_1_ram_kernel.html#a823b8ba1f5092cc1cd7ce17ff3dd0e7b">SystemEx.Device.RamKernel</a></li>
+<li>Begin()&#160;:&#160;<a class="el" href="dd/d13/class_system_ex_1_1_device_1_1_memory_1_1_device_shared_buffer-1-g.html#a2f19a7c6e682ae8d171bef58857dda86">SystemEx.Device.Memory.DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;</a></li>
+<li>BeginRun()&#160;:&#160;<a class="el" href="d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a003fc294274846fba616b3d4e7b3a55d">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>, <a class="el" href="d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ab766799c460f0c8252a3ae8827ac9598">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a></li>
 <li>BinQueue()&#160;:&#160;<a class="el" href="df/d60/class_system_ex_1_1_collections_1_1_generic_1_1_bin_queue-1-g.html#aff347aaa61dec60bbbc4d019cacf64a0">SystemEx.Collections.Generic.BinQueue&lt; T &gt;</a></li>
 <li>Brightness()&#160;:&#160;<a class="el" href="de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ae364e562a0e9dd6bda104fa85d6bdfcb">SystemEx.Drawing.ColorHSV</a>, <a class="el" href="db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a9f5abaaad9b8faab15395b542b32b2cc">SystemEx.Drawing.ColorR8G8B8</a>, <a class="el" href="df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#ac73ac46a7d4b58a851130d6fa8baf71b">SystemEx.Drawing.IColor&lt; T &gt;</a>, <a class="el" href="d8/de9/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_h_d_r.html#a2337eed76df4bab5f0473bc9285d9b89">SystemEx.SystemEx.Drawing.ColorHDR</a>, <a class="el" href="d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html#a9f4595845e4a6f1091f6dbf13e5f094d">SystemEx.SystemEx.Drawing.ColorR16G16B16</a></li>
 <li>ByteSeriablizeProvider()&#160;:&#160;<a class="el" href="d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#ac66be7a6fa49e97366512f39a7af52aa">SystemEx.IO.Provider.ByteSeriablizeProvider</a></li>

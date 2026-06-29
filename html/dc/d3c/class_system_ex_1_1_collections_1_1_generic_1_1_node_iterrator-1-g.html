@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,22 +117,23 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.NodeIterrator&lt; T &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.NodeIterrator&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Iterator for navigating through a doubly linked Node&lt;T&gt; chain. Supports random access, forward/backward movement, foreach enumeration, and cloning of iterator state.  
  <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.NodeIterrator&lt; T &gt;:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.NodeIterrator&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.png" usemap="#SystemEx_2ECollections_2EGeneric_2ENodeIterrator_3C_20T_20_3E_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2ENodeIterrator_3C_20T_20_3E_map" name="SystemEx_2ECollections_2EGeneric_2ENodeIterrator_3C_20T_20_3E_map">
 <area href="../../d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html" title="Represents a random-access iterator that supports offset-based movement in addition to forward and ba..." alt="SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;" shape="rect" coords="0,112,406,136"/>
 <area href="../../d2/db2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_foreach_iterator-1-g.html" title="Represents an iterator that can be used directly in foreach loops. Combines IEnumerable&lt;T&gt; and IEnume..." alt="SystemEx.Collections.Generic.Interfaces.IForeachIterator&lt; T &gt;" shape="rect" coords="624,112,1030,136"/>
 <area href="../../d0/d0c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator-1-g.html" title="Extends IIterator with cloning support, allowing iterators to be duplicated without affecting the ori..." alt="SystemEx.Collections.Generic.Interfaces.IIterator&lt; T &gt;" shape="rect" coords="0,56,406,80"/>
-<area href="../../de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html" title="Defines the base functionality for all iterators. Provides forward-only movement." alt="SystemEx.Collections.Generic.Interfaces.IIterator" shape="rect" coords="0,0,406,24"/>
+<area href="../../de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html" alt="SystemEx.Collections.Generic.Interfaces.IIterator" shape="rect" coords="0,0,406,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -201,7 +162,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a47e9d5faf076c1c9ec12e630b996996b" id="r_a47e9d5faf076c1c9ec12e630b996996b"><td class="memItemLeft">override bool&#160;</td><td class="memItemRight"><a class="el" href="#a47e9d5faf076c1c9ec12e630b996996b">Equals</a> (object? obj)</td></tr>
 <tr class="memdesc:a47e9d5faf076c1c9ec12e630b996996b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the given node equels witrh this node.  <br /></td></tr>
 <tr class="memitem:affa466487abd85f9f46aa20bd1038c90" id="r_affa466487abd85f9f46aa20bd1038c90"><td class="memItemLeft">override int&#160;</td><td class="memItemRight"><a class="el" href="#affa466487abd85f9f46aa20bd1038c90">GetHashCode</a> ()</td></tr>
-<tr class="memdesc:affa466487abd85f9f46aa20bd1038c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Hash Code.  <br /></td></tr>
+<tr class="memdesc:affa466487abd85f9f46aa20bd1038c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="../../d4/d32/namespace_system_ex_1_1_hash.html">Hash</a> Code.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -222,7 +183,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00050">50</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00052">52</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a6d22e4106a0d5bcddab26965e7592167" name="a6d22e4106a0d5bcddab26965e7592167"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6d22e4106a0d5bcddab26965e7592167">&#9670;&#160;</a></span>Advance()</h2>
@@ -248,7 +209,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#a79d982a0f976bfdac57071009ee0fb94">SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00123">123</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00125">125</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -269,7 +230,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#ab0531f16d2069a4f8f1026c5aea1c23b">SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00087">87</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00089">89</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -290,7 +251,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d0/d0c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator-1-g.html#ab550b2d8c93e7ac77aabbf54cc895ed3">SystemEx.Collections.Generic.Interfaces.IIterator&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00075">75</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00077">77</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -309,7 +270,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00115">115</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00117">117</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -328,7 +289,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00147">147</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00149">149</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -354,7 +315,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true the given obj ist equal, otherwise false</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00157">157</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00159">159</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -375,7 +336,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html#aa11d9a6f8db368fe269a4f5d3df1cc83">SystemEx.Collections.Generic.Interfaces.IIterator</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00081">81</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00083">83</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -395,7 +356,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00094">94</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00096">96</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -415,7 +376,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the hash code</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00167">167</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00169">169</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -435,7 +396,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00101">101</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00103">103</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -454,7 +415,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00133">133</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00135">135</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -477,7 +438,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00139">139</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00141">141</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -496,7 +457,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00111">111</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00113">113</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -521,7 +482,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00058">58</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00060">60</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -547,7 +508,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#ab0fd5d8a4c0222abf2bc0e78e497a1d0">SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00062">62</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00064">64</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -573,7 +534,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#a4d854749f8a872bfc5f63a761169bf36">SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00071">71</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00073">73</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -599,12 +560,12 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#a25c900695e6063bc2824389eb35f9a09">SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00067">67</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00069">69</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Collections/Generic/<a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a></li>
+<li><a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

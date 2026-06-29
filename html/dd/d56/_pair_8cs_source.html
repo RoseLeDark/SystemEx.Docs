@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: Collections/Generic/Pair.cs Source File</title>
+<title>SystemEX: Pair.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -180,87 +140,89 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span><a class="code hl_namespace" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a> {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    [Serializable]</div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html">   29</a></span>    <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af422c9184813660c7c705535c0ce5883">Pair</a>&lt;T, TU&gt; : IPair&lt;T, TU&gt; {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">private</span> T m_key;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">private</span> TU m_value;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af3b99b10dafc9c73dff1560fad6c5828">   44</a></span>        <span class="keyword">public</span> T <a class="code hl_property" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af3b99b10dafc9c73dff1560fad6c5828">First</a> {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keyword">get</span> =&gt; m_key;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keyword">set</span> =&gt; m_key = value;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    [Serializable]</div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html">   31</a></span>    <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af422c9184813660c7c705535c0ce5883">Pair</a>&lt;T, TU&gt; : IPair&lt;T, TU&gt; {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">private</span> T m_key;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">private</span> TU m_value;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af3b99b10dafc9c73dff1560fad6c5828">   46</a></span>        <span class="keyword">public</span> T <a class="code hl_property" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af3b99b10dafc9c73dff1560fad6c5828">First</a> {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keyword">get</span> =&gt; m_key;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keyword">set</span> =&gt; m_key = value;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
 </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a42340ac21a55a863fd1e64c7439fbe08">   52</a></span>        <span class="keyword">public</span> TU <a class="code hl_property" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a42340ac21a55a863fd1e64c7439fbe08">Second</a> {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keyword">get</span> =&gt; m_value;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keyword">set</span> =&gt; m_value = value;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="};">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a42340ac21a55a863fd1e64c7439fbe08">   54</a></span>        <span class="keyword">public</span> TU <a class="code hl_property" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a42340ac21a55a863fd1e64c7439fbe08">Second</a> {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keyword">get</span> =&gt; m_value;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keyword">set</span> =&gt; m_value = value;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
 </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a57206c8647665e16b335ac7f0f0a6503">   60</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">int</span> <a class="code hl_property" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a57206c8647665e16b335ac7f0f0a6503">Count</a> =&gt; 2;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
-<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af422c9184813660c7c705535c0ce5883">   67</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af422c9184813660c7c705535c0ce5883">Pair</a>(T first, TU second) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            m_key = first;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            m_value = second;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a57206c8647665e16b335ac7f0f0a6503">   62</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">int</span> <a class="code hl_property" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a57206c8647665e16b335ac7f0f0a6503">Count</a> =&gt; 2;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af422c9184813660c7c705535c0ce5883">   69</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af422c9184813660c7c705535c0ce5883">Pair</a>(T first, TU second) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            m_key = first;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            m_value = second;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
-<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a136f298cf7334af979113e9f90416307">   78</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a136f298cf7334af979113e9f90416307">Equals</a>(<a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af422c9184813660c7c705535c0ce5883">Pair&lt;T, TU&gt;</a> other) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">return</span> this.<a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a7650aeecf936f93a768c5f83e34c63ab">EqualFirst</a>(other.<a class="code hl_property" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af3b99b10dafc9c73dff1560fad6c5828">First</a>) &amp;&amp; this.<a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#afcf3b4a1e51c723ccf65200682fa3c2d">EqualSecond</a>(other.<a class="code hl_property" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a42340ac21a55a863fd1e64c7439fbe08">Second</a>);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a136f298cf7334af979113e9f90416307">   80</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a136f298cf7334af979113e9f90416307">Equals</a>(<a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af422c9184813660c7c705535c0ce5883">Pair&lt;T, TU&gt;</a> other) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordflow">return</span> this.<a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a7650aeecf936f93a768c5f83e34c63ab">EqualFirst</a>(other.<a class="code hl_property" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af3b99b10dafc9c73dff1560fad6c5828">First</a>) &amp;&amp; this.<a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#afcf3b4a1e51c723ccf65200682fa3c2d">EqualSecond</a>(other.<a class="code hl_property" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a42340ac21a55a863fd1e64c7439fbe08">Second</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
-<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a4ca2689187fbb362b0327fc82c51cb97">   86</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a4ca2689187fbb362b0327fc82c51cb97">ToString</a>() {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;[{m_key}, {m_value}]&quot;</span>);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a4ca2689187fbb362b0327fc82c51cb97">   88</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a4ca2689187fbb362b0327fc82c51cb97">ToString</a>() {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;[{m_key}, {m_value}]&quot;</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
 </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a7650aeecf936f93a768c5f83e34c63ab">   95</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a7650aeecf936f93a768c5f83e34c63ab">EqualFirst</a>(T other) =&gt; this.m_key!.Equals(other);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#afcf3b4a1e51c723ccf65200682fa3c2d">  102</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#afcf3b4a1e51c723ccf65200682fa3c2d">EqualSecond</a>(TU other) =&gt; this.m_value!.Equals(other);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
-<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#aa5f1c5e85beb4c5d1ffffef5bf39b80a">  113</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">object</span>? <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#aa5f1c5e85beb4c5d1ffffef5bf39b80a">Get</a>(<span class="keywordtype">int</span> index) {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <span class="keywordflow">if</span> ( index &lt; 0 || index &gt;= <a class="code hl_property" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a57206c8647665e16b335ac7f0f0a6503">Count</a> )</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException(nameof(index));</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordflow">return</span> index == 0 ? m_key : m_value;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a7650aeecf936f93a768c5f83e34c63ab">   97</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a7650aeecf936f93a768c5f83e34c63ab">EqualFirst</a>(T other) =&gt; this.m_key!.Equals(other);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#afcf3b4a1e51c723ccf65200682fa3c2d">  104</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#afcf3b4a1e51c723ccf65200682fa3c2d">EqualSecond</a>(TU other) =&gt; this.m_value!.Equals(other);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#aa5f1c5e85beb4c5d1ffffef5bf39b80a">  115</a></span>        <span class="keyword">public</span> readonly <span class="keywordtype">object</span>? <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#aa5f1c5e85beb4c5d1ffffef5bf39b80a">Get</a>(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">if</span> ( index &lt; 0 || index &gt;= <a class="code hl_property" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a57206c8647665e16b335ac7f0f0a6503">Count</a> )</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException(nameof(index));</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">return</span> index == 0 ? m_key : m_value;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
 </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
-<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#aae29a0c84a487e1354a658943b22f63e">  126</a></span>        <span class="keywordtype">bool</span> <a class="code hl_interface" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a>.<a class="code hl_function" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">EqualFirst</a>(<span class="keywordtype">object</span> key) {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordflow">if</span> ( key is T typed )</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a7650aeecf936f93a768c5f83e34c63ab">EqualFirst</a>(typed);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#aae29a0c84a487e1354a658943b22f63e">  128</a></span>        <span class="keywordtype">bool</span> <a class="code hl_interface" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a>.<a class="code hl_function" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">EqualFirst</a>(<span class="keywordtype">object</span> key) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">if</span> ( key is T typed )</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a7650aeecf936f93a768c5f83e34c63ab">EqualFirst</a>(typed);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        }</div>
 </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
 </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">SystemEx.Collections.Generic.Interfaces.ITuple</a></div><div class="ttdoc">A lightweight interface for serializable N‑element tuple consisting of strongly typed.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d4b/_i_tuple_8cs_source.html#l00022">ITuple.cs:22</a></div></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>#pragma warning restore CS1587 <span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">SystemEx.Collections.Generic.Interfaces.ITuple</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d4b/_i_tuple_8cs_source.html#l00026">ITuple.cs:26</a></div></div>
 <div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html_aa447498dc18510050c907d9639c4e421"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">SystemEx.Collections.Generic.Interfaces.ITuple.EqualFirst</a></div><div class="ttdeci">bool EqualFirst(object key)</div><div class="ttdoc">Determines whether the first element of the tuple is equal to the specified key.</div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d16/_i_array_8cs_source.html#l00018">IArray.cs:18</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00022">Array.cs:22</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_a136f298cf7334af979113e9f90416307"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a136f298cf7334af979113e9f90416307">SystemEx.Collections.Generic.Pair-2-g.Equals</a></div><div class="ttdeci">bool Equals(Pair&lt; T, TU &gt; other)</div><div class="ttdoc">Determines whether this pair is equal to another pair by comparing both the first and second elements...</div><div class="ttdef"><b>Definition</b> <a href="#l00078">Pair.cs:78</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_a42340ac21a55a863fd1e64c7439fbe08"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a42340ac21a55a863fd1e64c7439fbe08">SystemEx.Collections.Generic.Pair-2-g.Second</a></div><div class="ttdeci">TU Second</div><div class="ttdoc">Gets or sets the second element of the pair.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">Pair.cs:52</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_a4ca2689187fbb362b0327fc82c51cb97"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a4ca2689187fbb362b0327fc82c51cb97">SystemEx.Collections.Generic.Pair-2-g.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">Returns a string representation of the pair in the form [key, value]. Uses a stack‑allocated buffer f...</div><div class="ttdef"><b>Definition</b> <a href="#l00086">Pair.cs:86</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_a57206c8647665e16b335ac7f0f0a6503"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a57206c8647665e16b335ac7f0f0a6503">SystemEx.Collections.Generic.Pair-2-g.Count</a></div><div class="ttdeci">readonly int Count</div><div class="ttdoc">Gets the number of elements in the tuple (always 2).</div><div class="ttdef"><b>Definition</b> <a href="#l00060">Pair.cs:60</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_a7650aeecf936f93a768c5f83e34c63ab"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a7650aeecf936f93a768c5f83e34c63ab">SystemEx.Collections.Generic.Pair-2-g.EqualFirst</a></div><div class="ttdeci">readonly bool EqualFirst(T other)</div><div class="ttdoc">Determines whether the first element equals the specified value.</div><div class="ttdef"><b>Definition</b> <a href="#l00095">Pair.cs:95</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_aa5f1c5e85beb4c5d1ffffef5bf39b80a"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#aa5f1c5e85beb4c5d1ffffef5bf39b80a">SystemEx.Collections.Generic.Pair-2-g.Get</a></div><div class="ttdeci">readonly? object Get(int index)</div><div class="ttdoc">Retrieves the element at the specified index. Index 0 returns the key, index 1 returns the value.</div><div class="ttdef"><b>Definition</b> <a href="#l00113">Pair.cs:113</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_af3b99b10dafc9c73dff1560fad6c5828"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af3b99b10dafc9c73dff1560fad6c5828">SystemEx.Collections.Generic.Pair-2-g.First</a></div><div class="ttdeci">T First</div><div class="ttdoc">Gets or sets the first element of the pair.</div><div class="ttdef"><b>Definition</b> <a href="#l00044">Pair.cs:44</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_af422c9184813660c7c705535c0ce5883"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af422c9184813660c7c705535c0ce5883">SystemEx.Collections.Generic.Pair-2-g.Pair</a></div><div class="ttdeci">Pair(T first, TU second)</div><div class="ttdoc">Creates a new pair with the specified key and value.</div><div class="ttdef"><b>Definition</b> <a href="#l00067">Pair.cs:67</a></div></div>
-<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_afcf3b4a1e51c723ccf65200682fa3c2d"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#afcf3b4a1e51c723ccf65200682fa3c2d">SystemEx.Collections.Generic.Pair-2-g.EqualSecond</a></div><div class="ttdeci">readonly bool EqualSecond(TU other)</div><div class="ttdoc">Determines whether the second element equals the specified value.</div><div class="ttdef"><b>Definition</b> <a href="#l00102">Pair.cs:102</a></div></div>
+<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00023">Array.cs:23</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_a136f298cf7334af979113e9f90416307"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a136f298cf7334af979113e9f90416307">SystemEx.Collections.Generic.Pair-2-g.Equals</a></div><div class="ttdeci">bool Equals(Pair&lt; T, TU &gt; other)</div><div class="ttdoc">Determines whether this pair is equal to another pair by comparing both the first and second elements...</div><div class="ttdef"><b>Definition</b> <a href="#l00080">Pair.cs:80</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_a42340ac21a55a863fd1e64c7439fbe08"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a42340ac21a55a863fd1e64c7439fbe08">SystemEx.Collections.Generic.Pair-2-g.Second</a></div><div class="ttdeci">TU Second</div><div class="ttdoc">Gets or sets the second element of the pair.</div><div class="ttdef"><b>Definition</b> <a href="#l00054">Pair.cs:54</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_a4ca2689187fbb362b0327fc82c51cb97"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a4ca2689187fbb362b0327fc82c51cb97">SystemEx.Collections.Generic.Pair-2-g.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">Returns a string representation of the pair in the form [key, value]. Uses a stack‑allocated buffer f...</div><div class="ttdef"><b>Definition</b> <a href="#l00088">Pair.cs:88</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_a57206c8647665e16b335ac7f0f0a6503"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a57206c8647665e16b335ac7f0f0a6503">SystemEx.Collections.Generic.Pair-2-g.Count</a></div><div class="ttdeci">readonly int Count</div><div class="ttdoc">Gets the number of elements in the tuple (always 2).</div><div class="ttdef"><b>Definition</b> <a href="#l00062">Pair.cs:62</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_a7650aeecf936f93a768c5f83e34c63ab"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a7650aeecf936f93a768c5f83e34c63ab">SystemEx.Collections.Generic.Pair-2-g.EqualFirst</a></div><div class="ttdeci">readonly bool EqualFirst(T other)</div><div class="ttdoc">Determines whether the first element equals the specified value.</div><div class="ttdef"><b>Definition</b> <a href="#l00097">Pair.cs:97</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_aa5f1c5e85beb4c5d1ffffef5bf39b80a"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#aa5f1c5e85beb4c5d1ffffef5bf39b80a">SystemEx.Collections.Generic.Pair-2-g.Get</a></div><div class="ttdeci">readonly? object Get(int index)</div><div class="ttdoc">Retrieves the element at the specified index. Index 0 returns the key, index 1 returns the value.</div><div class="ttdef"><b>Definition</b> <a href="#l00115">Pair.cs:115</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_af3b99b10dafc9c73dff1560fad6c5828"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af3b99b10dafc9c73dff1560fad6c5828">SystemEx.Collections.Generic.Pair-2-g.First</a></div><div class="ttdeci">T First</div><div class="ttdoc">Gets or sets the first element of the pair.</div><div class="ttdef"><b>Definition</b> <a href="#l00046">Pair.cs:46</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_af422c9184813660c7c705535c0ce5883"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#af422c9184813660c7c705535c0ce5883">SystemEx.Collections.Generic.Pair-2-g.Pair</a></div><div class="ttdeci">Pair(T first, TU second)</div><div class="ttdoc">Creates a new pair with the specified key and value.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">Pair.cs:69</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g_html_afcf3b4a1e51c723ccf65200682fa3c2d"><div class="ttname"><a href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#afcf3b4a1e51c723ccf65200682fa3c2d">SystemEx.Collections.Generic.Pair-2-g.EqualSecond</a></div><div class="ttdeci">readonly bool EqualSecond(TU other)</div><div class="ttdoc">Determines whether the second element equals the specified value.</div><div class="ttdef"><b>Definition</b> <a href="#l00104">Pair.cs:104</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

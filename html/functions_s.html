@@ -9,6 +9,7 @@
 <link rel="icon" href="Logo_256.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -166,15 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
 <li>Saturation()&#160;:&#160;<a class="el" href="de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a8a124579c7820d0aa4c635c07277c791">SystemEx.Drawing.ColorHSV</a>, <a class="el" href="db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a879cf0d462fb66142a28fd4124ac0f69">SystemEx.Drawing.ColorR8G8B8</a>, <a class="el" href="df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a3b5eafed3c47bea555a5889dd433b775">SystemEx.Drawing.IColor&lt; T &gt;</a>, <a class="el" href="d8/de9/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_h_d_r.html#ae30af29121966d5baee46ae4926a9b73">SystemEx.SystemEx.Drawing.ColorHDR</a>, <a class="el" href="d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html#ac3f174e8010d4942bbe3bcdc205def34">SystemEx.SystemEx.Drawing.ColorR16G16B16</a></li>
 <li>Second&#160;:&#160;<a class="el" href="da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g.html#a67ba820d2fb0a8b5ca32c3a81ee9f45a">SystemEx.Collections.Generic.Interfaces.IPair&lt; T, TU &gt;</a>, <a class="el" href="d1/d9c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair_forward_iterator-2-g.html#a654c14bf3e5c812a8dbe271b99cc4648">SystemEx.Collections.Generic.Interfaces.IPairForwardIterator&lt; T, TU &gt;</a>, <a class="el" href="de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#a42340ac21a55a863fd1e64c7439fbe08">SystemEx.Collections.Generic.Pair&lt; T, TU &gt;</a>, <a class="el" href="d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a7c7c41f2559ef377fa63bd02699fc744">SystemEx.Collections.Generic.Quad&lt; TT, TU, TW, TJ &gt;</a>, <a class="el" href="d3/def/struct_system_ex_1_1_collections_1_1_generic_1_1_triple-3-g.html#a05b95477a9f53e7b867c86091eecf428">SystemEx.Collections.Generic.Triple&lt; TT, TU, TW &gt;</a></li>
 <li>Secondary&#160;:&#160;<a class="el" href="de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html#aeb2d2cf1da5170ebe6b140a5edc6d148">SystemEx.Collections.Generic.MirroredCache</a></li>
-<li>Seek()&#160;:&#160;<a class="el" href="df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a1e6cbff2a5de7fe6c185d7ca23f266e5">SystemEx.Collections.Generic.Cache</a>, <a class="el" href="df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#aa0813a270673d446f3ad79e0da79f200">SystemEx.IO.CacheStream&lt; TCache &gt;</a></li>
+<li>Seek()&#160;:&#160;<a class="el" href="dd/dbc/group__collections.html#ga1e6cbff2a5de7fe6c185d7ca23f266e5">SystemEx.Collections.Generic.Cache</a>, <a class="el" href="df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#aa0813a270673d446f3ad79e0da79f200">SystemEx.IO.CacheStream&lt; TCache &gt;</a></li>
 <li>Set()&#160;:&#160;<a class="el" href="d3/d94/class_system_ex_1_1_collections_1_1_generic_1_1_tuple.html#a6f1b6e77308a20277d58528ccc193245">SystemEx.Collections.Generic.Tuple</a></li>
 <li>SetLayer()&#160;:&#160;<a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a35df22b4f027201cfac7e05cbd735cb1">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>
 <li>SetLayerOn()&#160;:&#160;<a class="el" href="d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a2d3f2d3e1f7655eeb40e979cf8e7182a">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></li>
 <li>SetLength()&#160;:&#160;<a class="el" href="df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#abf5d36545f96af89ed3865ac61bd6af5">SystemEx.IO.CacheStream&lt; TCache &gt;</a></li>
 <li>SetShowing()&#160;:&#160;<a class="el" href="d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.html#a9bca918edb98bdfcf0e4358a4a19e236">SystemEx.Drawing.ICanvasList&lt; T &gt;</a></li>
-<li>SetZero()&#160;:&#160;<a class="el" href="df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a8992101c929020cc3312b701470a0f89">SystemEx.Collections.Generic.Cache</a></li>
+<li>SetZero()&#160;:&#160;<a class="el" href="dd/dbc/group__collections.html#ga8992101c929020cc3312b701470a0f89">SystemEx.Collections.Generic.Cache</a></li>
 <li>Showíng&#160;:&#160;<a class="el" href="de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html#a9a73fbc40378ace0593ee34dfbe6396a">SystemEx.Drawing.ISubCanvas&lt; T &gt;</a></li>
-<li>Size&#160;:&#160;<a class="el" href="d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad8fa965485d8d36dd87d86732d802eac">SystemEx.Collections.Generic.Array&lt; T &gt;</a>, <a class="el" href="df/d60/class_system_ex_1_1_collections_1_1_generic_1_1_bin_queue-1-g.html#abff2dadc6c66f73b08adbdba18120711">SystemEx.Collections.Generic.BinQueue&lt; T &gt;</a>, <a class="el" href="d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#a06a1884cbcef9a18078b439d32739baa">SystemEx.Collections.Generic.Cluster&lt; T &gt;</a>, <a class="el" href="d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a8c97dccb372b26a032e47d81fbabf2de">SystemEx.Collections.Generic.Deque&lt; T &gt;</a>, <a class="el" href="d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a1b6974b80a5380a3a4352005ed115ed8">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#aae5fe60cdf6c63871f530594b219bd48">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a>, <a class="el" href="d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#a43d7bdc985f3d03d4d6d90b44fc18d04">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>, <a class="el" href="dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#afd011dfb1a7a035fe2428b3b9772e6fe">SystemEx.Collections.Generic.Interfaces.IMap</a>, <a class="el" href="db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a24f5a553174bdbfcf1b418a5de66f4a6">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, <a class="el" href="de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html#a52169da320f707d4a098524cf7f34f80">SystemEx.Collections.Generic.MirroredCache</a>, <a class="el" href="da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#aa4591aab94618a64a42c5bfa19820edd">SystemEx.Collections.Generic.Queue&lt; T &gt;</a>, <a class="el" href="d6/d1b/class_system_ex_1_1_collections_1_1_generic_1_1_ring_buffer-1-g.html#a772fd3cac622543982bd771ebe4c11ec">SystemEx.Collections.Generic.RingBuffer&lt; T &gt;</a>, <a class="el" href="d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#af68bea43f73a0e6135b05a8210d19344">SystemEx.Collections.Generic.TupleMap</a>, <a class="el" href="dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html#a55af49dd8668c7415aaa9b1faa544351">SystemEx.Device.Intertropt.UnmanagedObject</a></li>
+<li>Size&#160;:&#160;<a class="el" href="d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad8fa965485d8d36dd87d86732d802eac">SystemEx.Collections.Generic.Array&lt; T &gt;</a>, <a class="el" href="df/d60/class_system_ex_1_1_collections_1_1_generic_1_1_bin_queue-1-g.html#abff2dadc6c66f73b08adbdba18120711">SystemEx.Collections.Generic.BinQueue&lt; T &gt;</a>, <a class="el" href="d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#a06a1884cbcef9a18078b439d32739baa">SystemEx.Collections.Generic.Cluster&lt; T &gt;</a>, <a class="el" href="d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a8c97dccb372b26a032e47d81fbabf2de">SystemEx.Collections.Generic.Deque&lt; T &gt;</a>, <a class="el" href="d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a1b6974b80a5380a3a4352005ed115ed8">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#aae5fe60cdf6c63871f530594b219bd48">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a>, <a class="el" href="d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#a43d7bdc985f3d03d4d6d90b44fc18d04">SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;</a>, <a class="el" href="dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#afd011dfb1a7a035fe2428b3b9772e6fe">SystemEx.Collections.Generic.Interfaces.IMap</a>, <a class="el" href="db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a24f5a553174bdbfcf1b418a5de66f4a6">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, <a class="el" href="de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html#a52169da320f707d4a098524cf7f34f80">SystemEx.Collections.Generic.MirroredCache</a>, <a class="el" href="da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html#aa4591aab94618a64a42c5bfa19820edd">SystemEx.Collections.Generic.Queue&lt; T &gt;</a>, <a class="el" href="d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#af68bea43f73a0e6135b05a8210d19344">SystemEx.Collections.Generic.TupleMap</a>, <a class="el" href="dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html#a55af49dd8668c7415aaa9b1faa544351">SystemEx.Device.Intertropt.UnmanagedObject</a></li>
 <li>SizeMismatchException()&#160;:&#160;<a class="el" href="d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception.html#ab3ffc2d5d7dc8b6c8613fe8dad8c16e5">SystemEx.Utils.SizeMismatchException</a></li>
 <li>SlateBlue&#160;:&#160;<a class="el" href="d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a858eae7eb80ddc3ad9bbcbaa17296156">SystemEx.Drawing.PurpelColors</a></li>
 <li>Slice()&#160;:&#160;<a class="el" href="d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#ae0edeb61c5bb6209adbec482350b7e84">SystemEx.Collections.Generic.Node&lt; T &gt;</a></li>

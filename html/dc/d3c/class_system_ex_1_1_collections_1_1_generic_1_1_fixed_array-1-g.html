@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,22 +117,20 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.FixedArray&lt; T &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.FixedArray&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>A fixed-size array container that provides indexed access, insertion, traversal, and basic search operations. Unlike dynamic arrays, this structure never grows and always maintains a constant capacity.  
- <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.FixedArray&lt; T &gt;:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.FixedArray&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.png" usemap="#SystemEx_2ECollections_2EGeneric_2EFixedArray_3C_20T_20_3E_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2EFixedArray_3C_20T_20_3E_map" name="SystemEx_2ECollections_2EGeneric_2EFixedArray_3C_20T_20_3E_map">
 <area href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html" title="A dynamic array implementation that supports optional auto-growth, indexed access,..." alt="SystemEx.Collections.Generic.Array&lt; T &gt;" shape="rect" coords="371,112,732,136"/>
 <area href="../../d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html" title="Extends IArray&lt;T&gt; with dynamic resizing capabilities." alt="SystemEx.Collections.Generic.Interfaces.IDynamicArray&lt; T &gt;" shape="rect" coords="371,56,732,80"/>
-<area href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html" title="Defines the basic operations for a fixed-size or dynamic array structure, including indexed access,..." alt="SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;" shape="rect" coords="371,0,732,24"/>
-<area href="../../d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html" title="A fixed-size array that supports automatic sorting using either a comparer interface or a delegate-ba..." alt="SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;" shape="rect" coords="371,224,732,248"/>
+<area href="../../d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html" alt="SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;" shape="rect" coords="371,0,732,24"/>
+<area href="../../d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html" alt="SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;" shape="rect" coords="371,224,732,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -188,89 +146,92 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a76dfbc784f4db0586abb3bcce36cb49f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts an element at the specified position, overwriting the existing value.  <br /></td></tr>
 <tr class="memitem:a3af99f3efdea64f8574f9f7c3afff8a9" id="r_a3af99f3efdea64f8574f9f7c3afff8a9"><td class="memItemLeft">override int&#160;</td><td class="memItemRight"><a class="el" href="#a3af99f3efdea64f8574f9f7c3afff8a9">InsertRange</a> (int pos, IEnumerable&lt; T &gt; items)</td></tr>
 <tr class="memdesc:a3af99f3efdea64f8574f9f7c3afff8a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a range of elements starting at the specified position. Only as many elements as fit into the remaining space are written.  <br /></td></tr>
-<tr class="inherit_header pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td colspan="2">Public Member Functions inherited from <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td></tr>
-<tr class="memitem:a2698d72008f39661653cad336ac59e0b pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a2698d72008f39661653cad336ac59e0b"><td class="memItemLeft">ArrayRandomAccessIterator&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a2698d72008f39661653cad336ac59e0b">At</a> (int index)</td></tr>
-<tr class="memdesc:a2698d72008f39661653cad336ac59e0b pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a random-access iterator positioned at the specified index. The iterator operates on a copy of the current array state.  <br /></td></tr>
-<tr class="memitem:a808a7b713dcac53439a94269898c20f9 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a808a7b713dcac53439a94269898c20f9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a808a7b713dcac53439a94269898c20f9">Array</a> (int size, int growSize=16)</td></tr>
-<tr class="memdesc:a808a7b713dcac53439a94269898c20f9 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array with the specified initial size.  <br /></td></tr>
-<tr class="memitem:ad0ae0e40ca9ca5d2597a24d7347e5f14 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ad0ae0e40ca9ca5d2597a24d7347e5f14"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad0ae0e40ca9ca5d2597a24d7347e5f14">Array</a> (T[] e, int growSize=16)</td></tr>
-<tr class="memdesc:ad0ae0e40ca9ca5d2597a24d7347e5f14 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array using an existing buffer.  <br /></td></tr>
-<tr class="memitem:a8f23b48290bdbbc26278a7057a1168d5 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a8f23b48290bdbbc26278a7057a1168d5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a8f23b48290bdbbc26278a7057a1168d5">Array</a> (IEnumerable&lt; T &gt; e, int growSize=16)</td></tr>
-<tr class="memdesc:a8f23b48290bdbbc26278a7057a1168d5 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array from an enumerable collection.  <br /></td></tr>
-<tr class="memitem:ab22f10f19aacddb564e1fd42507beb59 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ab22f10f19aacddb564e1fd42507beb59"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ab22f10f19aacddb564e1fd42507beb59">Add</a> (T entry)</td></tr>
-<tr class="memdesc:ab22f10f19aacddb564e1fd42507beb59 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the end of the array.  <br /></td></tr>
-<tr class="memitem:a194979f139cd04ca32b6a191271d052a pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a194979f139cd04ca32b6a191271d052a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a194979f139cd04ca32b6a191271d052a">Get</a> (int index, ref T item)</td></tr>
-<tr class="memdesc:a194979f139cd04ca32b6a191271d052a pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an element at the specified index.  <br /></td></tr>
-<tr class="memitem:a90c52ff9daef7d68dd4afeb342745b56 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a90c52ff9daef7d68dd4afeb342745b56"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a90c52ff9daef7d68dd4afeb342745b56">Remove</a> ()</td></tr>
-<tr class="memdesc:a90c52ff9daef7d68dd4afeb342745b56 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the last element from the array.  <br /></td></tr>
-<tr class="memitem:a417401d6a3f00bf93fc658ec36ea063b pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a417401d6a3f00bf93fc658ec36ea063b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a417401d6a3f00bf93fc658ec36ea063b">IndexOf</a> (T item)</td></tr>
-<tr class="memdesc:a417401d6a3f00bf93fc658ec36ea063b pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the first occurrence of the specified item.  <br /></td></tr>
-<tr class="memitem:af34be5b6b26c93c0000024010563ca44 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_af34be5b6b26c93c0000024010563ca44"><td class="memItemLeft">IEnumerator&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#af34be5b6b26c93c0000024010563ca44">GetEnumerator</a> ()</td></tr>
-<tr class="memdesc:af34be5b6b26c93c0000024010563ca44 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the valid elements.  <br /></td></tr>
-<tr class="memitem:a624a36369a89ec4c305575469815f374 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a624a36369a89ec4c305575469815f374"><td class="memItemLeft">UInt64&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a624a36369a89ec4c305575469815f374">NumberOfElements</a> (T Key)</td></tr>
-<tr class="memdesc:a624a36369a89ec4c305575469815f374 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts how many elements equal the specified key.  <br /></td></tr>
-<tr class="memitem:ad871e080a7e21406b2a3737528109f39 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ad871e080a7e21406b2a3737528109f39"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad871e080a7e21406b2a3737528109f39">Traverse</a> (<a class="el" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#a9ffe9236ff7d52fbeb93204341959319">TraversMode</a> mode, int startIndex, int endIndex, Action&lt; T &gt; func)</td></tr>
-<tr class="memdesc:ad871e080a7e21406b2a3737528109f39 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses a range of elements in forward or backward order.  <br /></td></tr>
-<tr class="memitem:a2b131eb9e4dabbe3c08e4bede8754a29 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a2b131eb9e4dabbe3c08e4bede8754a29"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a2b131eb9e4dabbe3c08e4bede8754a29">Is</a> (T value)</td></tr>
-<tr class="memdesc:a2b131eb9e4dabbe3c08e4bede8754a29 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the array contains the specified value.  <br /></td></tr>
-<tr class="memitem:aa98ef7439853e26a9a1846fa84b727a0 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_aa98ef7439853e26a9a1846fa84b727a0"><td class="memItemLeft">T?&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa98ef7439853e26a9a1846fa84b727a0">FindFirst</a> (T key)</td></tr>
-<tr class="memdesc:aa98ef7439853e26a9a1846fa84b727a0 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first occurrence of the specified key.  <br /></td></tr>
-<tr class="memitem:ae6e74a0ba839454f349dc3479dcf92d3 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ae6e74a0ba839454f349dc3479dcf92d3"><td class="memItemLeft">T?&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae6e74a0ba839454f349dc3479dcf92d3">FindLast</a> (T key)</td></tr>
-<tr class="memdesc:ae6e74a0ba839454f349dc3479dcf92d3 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the last occurrence of the specified key.  <br /></td></tr>
-<tr class="memitem:ad42e66a1c01f9fb59822096ef65d4881 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ad42e66a1c01f9fb59822096ef65d4881"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad42e66a1c01f9fb59822096ef65d4881">TryGet</a> (T Key, out int index)</td></tr>
-<tr class="memdesc:ad42e66a1c01f9fb59822096ef65d4881 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to find the index of the specified key.  <br /></td></tr>
-<tr class="memitem:a32ad2f2c6dd087f7856dadb8f505694a pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a32ad2f2c6dd087f7856dadb8f505694a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a32ad2f2c6dd087f7856dadb8f505694a">CopyTo</a> (uint sourceOffset, T[] destination, uint destinationOffset, uint count)</td></tr>
-<tr class="memdesc:a32ad2f2c6dd087f7856dadb8f505694a pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a range of elements into a T array.  <br /></td></tr>
-<tr class="memitem:a828fb2088592add5264920888c2ef336 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a828fb2088592add5264920888c2ef336"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a828fb2088592add5264920888c2ef336">CopyFrom</a> (T[] source, uint sourceOffset, uint destinationOffset, uint count)</td></tr>
-<tr class="memdesc:a828fb2088592add5264920888c2ef336 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies data from a T array into this array.  <br /></td></tr>
-<tr class="memitem:ae7a19f190157b8e0c7d1018abd887afb pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ae7a19f190157b8e0c7d1018abd887afb"><td class="memItemLeft">T[]&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae7a19f190157b8e0c7d1018abd887afb">ToArray</a> ()</td></tr>
-<tr class="memdesc:ae7a19f190157b8e0c7d1018abd887afb pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a copy of the internal buffer.  <br /></td></tr>
-<tr class="memitem:adc5a74ffb90433d79ad39e65c7dfe67e pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_adc5a74ffb90433d79ad39e65c7dfe67e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#adc5a74ffb90433d79ad39e65c7dfe67e">Clear</a> ()</td></tr>
-<tr class="memitem:a99e18da48136d38be92d8b4476f11180 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a99e18da48136d38be92d8b4476f11180"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a99e18da48136d38be92d8b4476f11180">Contains</a> (T item)</td></tr>
-<tr class="memitem:a7d5e2a167de5fbd7dab2553280e91f65 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a7d5e2a167de5fbd7dab2553280e91f65"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a7d5e2a167de5fbd7dab2553280e91f65">CopyTo</a> (T[] array, int arrayIndex)</td></tr>
-<tr class="memitem:ab20e638049e90fff8a55f5af99fc9206 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ab20e638049e90fff8a55f5af99fc9206"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ab20e638049e90fff8a55f5af99fc9206">Remove</a> (T item)</td></tr>
+<tr class="inherit_header pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td></tr>
+<tr class="memitem:a2698d72008f39661653cad336ac59e0b inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a2698d72008f39661653cad336ac59e0b"><td class="memItemLeft">ArrayRandomAccessIterator&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a2698d72008f39661653cad336ac59e0b">At</a> (int index)</td></tr>
+<tr class="memdesc:a2698d72008f39661653cad336ac59e0b inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a random-access iterator positioned at the specified index. The iterator operates on a copy of the current array state.  <br /></td></tr>
+<tr class="memitem:a293f0eea6a232101ea6021a193c6cf47 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a293f0eea6a232101ea6021a193c6cf47"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a293f0eea6a232101ea6021a193c6cf47">Array</a> (int growSize=16)</td></tr>
+<tr class="memitem:a808a7b713dcac53439a94269898c20f9 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a808a7b713dcac53439a94269898c20f9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a808a7b713dcac53439a94269898c20f9">Array</a> (int size, int growSize=16)</td></tr>
+<tr class="memdesc:a808a7b713dcac53439a94269898c20f9 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array with the specified initial size.  <br /></td></tr>
+<tr class="memitem:ad0ae0e40ca9ca5d2597a24d7347e5f14 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ad0ae0e40ca9ca5d2597a24d7347e5f14"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad0ae0e40ca9ca5d2597a24d7347e5f14">Array</a> (T[] e, int growSize=16)</td></tr>
+<tr class="memdesc:ad0ae0e40ca9ca5d2597a24d7347e5f14 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array using an existing buffer.  <br /></td></tr>
+<tr class="memitem:a8f23b48290bdbbc26278a7057a1168d5 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a8f23b48290bdbbc26278a7057a1168d5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a8f23b48290bdbbc26278a7057a1168d5">Array</a> (IEnumerable&lt; T &gt; e, int growSize=16)</td></tr>
+<tr class="memdesc:a8f23b48290bdbbc26278a7057a1168d5 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array from an enumerable collection.  <br /></td></tr>
+<tr class="memitem:ab22f10f19aacddb564e1fd42507beb59 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ab22f10f19aacddb564e1fd42507beb59"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ab22f10f19aacddb564e1fd42507beb59">Add</a> (T entry)</td></tr>
+<tr class="memdesc:ab22f10f19aacddb564e1fd42507beb59 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the end of the array.  <br /></td></tr>
+<tr class="memitem:afc1c32444b4ee3851dcdf10f08f305a4 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_afc1c32444b4ee3851dcdf10f08f305a4"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#afc1c32444b4ee3851dcdf10f08f305a4">AddRange</a> (T[] entry)</td></tr>
+<tr class="memdesc:afc1c32444b4ee3851dcdf10f08f305a4 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a range of elements to the end of the array.  <br /></td></tr>
+<tr class="memitem:a194979f139cd04ca32b6a191271d052a inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a194979f139cd04ca32b6a191271d052a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a194979f139cd04ca32b6a191271d052a">Get</a> (int index, ref T item)</td></tr>
+<tr class="memdesc:a194979f139cd04ca32b6a191271d052a inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an element at the specified index.  <br /></td></tr>
+<tr class="memitem:a90c52ff9daef7d68dd4afeb342745b56 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a90c52ff9daef7d68dd4afeb342745b56"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a90c52ff9daef7d68dd4afeb342745b56">Remove</a> ()</td></tr>
+<tr class="memdesc:a90c52ff9daef7d68dd4afeb342745b56 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the last element from the array.  <br /></td></tr>
+<tr class="memitem:a417401d6a3f00bf93fc658ec36ea063b inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a417401d6a3f00bf93fc658ec36ea063b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a417401d6a3f00bf93fc658ec36ea063b">IndexOf</a> (T item)</td></tr>
+<tr class="memdesc:a417401d6a3f00bf93fc658ec36ea063b inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the first occurrence of the specified item.  <br /></td></tr>
+<tr class="memitem:af34be5b6b26c93c0000024010563ca44 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_af34be5b6b26c93c0000024010563ca44"><td class="memItemLeft">IEnumerator&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#af34be5b6b26c93c0000024010563ca44">GetEnumerator</a> ()</td></tr>
+<tr class="memdesc:af34be5b6b26c93c0000024010563ca44 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the valid elements.  <br /></td></tr>
+<tr class="memitem:a624a36369a89ec4c305575469815f374 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a624a36369a89ec4c305575469815f374"><td class="memItemLeft">UInt64&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a624a36369a89ec4c305575469815f374">NumberOfElements</a> (T Key)</td></tr>
+<tr class="memdesc:a624a36369a89ec4c305575469815f374 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts how many elements equal the specified key.  <br /></td></tr>
+<tr class="memitem:ad871e080a7e21406b2a3737528109f39 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ad871e080a7e21406b2a3737528109f39"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad871e080a7e21406b2a3737528109f39">Traverse</a> (<a class="el" href="../../d5/d4f/group__interfaces.html#ga9ffe9236ff7d52fbeb93204341959319">TraversMode</a> mode, int startIndex, int endIndex, Action&lt; T &gt; func)</td></tr>
+<tr class="memdesc:ad871e080a7e21406b2a3737528109f39 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses a range of elements in forward or backward order.  <br /></td></tr>
+<tr class="memitem:a2b131eb9e4dabbe3c08e4bede8754a29 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a2b131eb9e4dabbe3c08e4bede8754a29"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a2b131eb9e4dabbe3c08e4bede8754a29">Is</a> (T value)</td></tr>
+<tr class="memdesc:a2b131eb9e4dabbe3c08e4bede8754a29 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the array contains the specified value.  <br /></td></tr>
+<tr class="memitem:aa98ef7439853e26a9a1846fa84b727a0 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_aa98ef7439853e26a9a1846fa84b727a0"><td class="memItemLeft">T?&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa98ef7439853e26a9a1846fa84b727a0">FindFirst</a> (T key)</td></tr>
+<tr class="memdesc:aa98ef7439853e26a9a1846fa84b727a0 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first occurrence of the specified key.  <br /></td></tr>
+<tr class="memitem:ae6e74a0ba839454f349dc3479dcf92d3 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ae6e74a0ba839454f349dc3479dcf92d3"><td class="memItemLeft">T?&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae6e74a0ba839454f349dc3479dcf92d3">FindLast</a> (T key)</td></tr>
+<tr class="memdesc:ae6e74a0ba839454f349dc3479dcf92d3 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the last occurrence of the specified key.  <br /></td></tr>
+<tr class="memitem:ad42e66a1c01f9fb59822096ef65d4881 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ad42e66a1c01f9fb59822096ef65d4881"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad42e66a1c01f9fb59822096ef65d4881">TryGet</a> (T Key, out int index)</td></tr>
+<tr class="memdesc:ad42e66a1c01f9fb59822096ef65d4881 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to find the index of the specified key.  <br /></td></tr>
+<tr class="memitem:a32ad2f2c6dd087f7856dadb8f505694a inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a32ad2f2c6dd087f7856dadb8f505694a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a32ad2f2c6dd087f7856dadb8f505694a">CopyTo</a> (uint sourceOffset, T[] destination, uint destinationOffset, uint count)</td></tr>
+<tr class="memdesc:a32ad2f2c6dd087f7856dadb8f505694a inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a range of elements into a T array.  <br /></td></tr>
+<tr class="memitem:a828fb2088592add5264920888c2ef336 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a828fb2088592add5264920888c2ef336"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a828fb2088592add5264920888c2ef336">CopyFrom</a> (T[] source, uint sourceOffset, uint destinationOffset, uint count)</td></tr>
+<tr class="memdesc:a828fb2088592add5264920888c2ef336 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies data from a T array into this array.  <br /></td></tr>
+<tr class="memitem:ae7a19f190157b8e0c7d1018abd887afb inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ae7a19f190157b8e0c7d1018abd887afb"><td class="memItemLeft">T[]&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae7a19f190157b8e0c7d1018abd887afb">ToArray</a> ()</td></tr>
+<tr class="memdesc:ae7a19f190157b8e0c7d1018abd887afb inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a copy of the internal buffer.  <br /></td></tr>
+<tr class="memitem:adc5a74ffb90433d79ad39e65c7dfe67e inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_adc5a74ffb90433d79ad39e65c7dfe67e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#adc5a74ffb90433d79ad39e65c7dfe67e">Clear</a> ()</td></tr>
+<tr class="memitem:a99e18da48136d38be92d8b4476f11180 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a99e18da48136d38be92d8b4476f11180"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a99e18da48136d38be92d8b4476f11180">Contains</a> (T item)</td></tr>
+<tr class="memitem:a7d5e2a167de5fbd7dab2553280e91f65 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a7d5e2a167de5fbd7dab2553280e91f65"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a7d5e2a167de5fbd7dab2553280e91f65">CopyTo</a> (T[] array, int arrayIndex)</td></tr>
+<tr class="memitem:ab20e638049e90fff8a55f5af99fc9206 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ab20e638049e90fff8a55f5af99fc9206"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ab20e638049e90fff8a55f5af99fc9206">Remove</a> (T item)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a884e1d5d1b15b504fd42f23cb169b6a9" id="r_a884e1d5d1b15b504fd42f23cb169b6a9"><td class="memItemLeft">override bool&#160;</td><td class="memItemRight"><a class="el" href="#a884e1d5d1b15b504fd42f23cb169b6a9">AutoGrow</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a884e1d5d1b15b504fd42f23cb169b6a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns only false, disable Property.  <br /></td></tr>
-<tr class="inherit_header properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td colspan="2">Properties inherited from <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td></tr>
-<tr class="memitem:ad8fa965485d8d36dd87d86732d802eac properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ad8fa965485d8d36dd87d86732d802eac"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad8fa965485d8d36dd87d86732d802eac">Size</a><code> [get]</code></td></tr>
-<tr class="memdesc:ad8fa965485d8d36dd87d86732d802eac properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total capacity of the array.  <br /></td></tr>
-<tr class="memitem:acc355d9dd79350e23f172625ab4b0054 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_acc355d9dd79350e23f172625ab4b0054"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#acc355d9dd79350e23f172625ab4b0054">Front</a><code> [get]</code></td></tr>
-<tr class="memdesc:acc355d9dd79350e23f172625ab4b0054 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the first element of the array.  <br /></td></tr>
-<tr class="memitem:aaf28cb993ae5784674aba8c567ba047d properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_aaf28cb993ae5784674aba8c567ba047d"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aaf28cb993ae5784674aba8c567ba047d">Back</a><code> [get]</code></td></tr>
-<tr class="memdesc:aaf28cb993ae5784674aba8c567ba047d properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last element of the array.  <br /></td></tr>
-<tr class="memitem:a802180c62e21d4d23f21cb3e806063a9 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a802180c62e21d4d23f21cb3e806063a9"><td class="memItemLeft">ArrayRandomAccessIterator&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a802180c62e21d4d23f21cb3e806063a9">First</a><code> [get]</code></td></tr>
-<tr class="memdesc:a802180c62e21d4d23f21cb3e806063a9 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a random-access iterator positioned at the beginning of the array. The iterator operates on a copy of the current array state.  <br /></td></tr>
-<tr class="memitem:aee392d216ba803ad2002a080852b6de0 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_aee392d216ba803ad2002a080852b6de0"><td class="memItemLeft">ArrayRandomAccessIterator&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aee392d216ba803ad2002a080852b6de0">End</a><code> [get]</code></td></tr>
-<tr class="memdesc:aee392d216ba803ad2002a080852b6de0 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a random-access iterator positioned at the logical end of the array. The iterator operates on a copy of the current array state.  <br /></td></tr>
-<tr class="memitem:aa378bee6379c1ecae0483a9ff9272fc9 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_aa378bee6379c1ecae0483a9ff9272fc9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa378bee6379c1ecae0483a9ff9272fc9">IsFull</a><code> [get]</code></td></tr>
-<tr class="memdesc:aa378bee6379c1ecae0483a9ff9272fc9 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the array is full.  <br /></td></tr>
-<tr class="memitem:a69b0d3e66727e815047684d8f79347d4 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a69b0d3e66727e815047684d8f79347d4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a69b0d3e66727e815047684d8f79347d4">IsEmpty</a><code> [get]</code></td></tr>
-<tr class="memdesc:a69b0d3e66727e815047684d8f79347d4 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the array contains no elements.  <br /></td></tr>
-<tr class="memitem:a038e698269968ae2e74ffdecb502d0f9 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a038e698269968ae2e74ffdecb502d0f9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a038e698269968ae2e74ffdecb502d0f9">GrowSize</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a038e698269968ae2e74ffdecb502d0f9 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of elements the array grows by when AutoGrow is enabled.  <br /></td></tr>
-<tr class="memitem:aa084a36ebf46797f20d9e4210e40fb49 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_aa084a36ebf46797f20d9e4210e40fb49"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa084a36ebf46797f20d9e4210e40fb49">AutoGrow</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa084a36ebf46797f20d9e4210e40fb49 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables automatic resizing when the array becomes full.  <br /></td></tr>
-<tr class="memitem:a637ea5e9434d327ee5d7d9e5b8912c89 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a637ea5e9434d327ee5d7d9e5b8912c89"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a637ea5e9434d327ee5d7d9e5b8912c89">IsFixed</a><code> [get]</code></td></tr>
-<tr class="memdesc:a637ea5e9434d327ee5d7d9e5b8912c89 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the array has a fixed size (AutoGrow disabled).  <br /></td></tr>
-<tr class="memitem:a60580f21345858baf290bbd93efb4ee0 properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a60580f21345858baf290bbd93efb4ee0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a60580f21345858baf290bbd93efb4ee0">Count</a><code> [get]</code></td></tr>
-<tr class="memitem:ae7b88d32cc887ba9331b84633fedfe0f properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ae7b88d32cc887ba9331b84633fedfe0f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae7b88d32cc887ba9331b84633fedfe0f">IsReadOnly</a><code> [get]</code></td></tr>
-<tr class="memitem:a05c69f834e8666d7f04ab8a9bd2462ea properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a05c69f834e8666d7f04ab8a9bd2462ea"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a05c69f834e8666d7f04ab8a9bd2462ea">this[int adress]</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a05c69f834e8666d7f04ab8a9bd2462ea properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides indexed access to the array elements.  <br /></td></tr>
+<tr class="inherit_header properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Properties inherited from <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td></tr>
+<tr class="memitem:ad8fa965485d8d36dd87d86732d802eac inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ad8fa965485d8d36dd87d86732d802eac"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad8fa965485d8d36dd87d86732d802eac">Size</a><code> [get]</code></td></tr>
+<tr class="memdesc:ad8fa965485d8d36dd87d86732d802eac inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total capacity of the array.  <br /></td></tr>
+<tr class="memitem:acc355d9dd79350e23f172625ab4b0054 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_acc355d9dd79350e23f172625ab4b0054"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#acc355d9dd79350e23f172625ab4b0054">Front</a><code> [get]</code></td></tr>
+<tr class="memdesc:acc355d9dd79350e23f172625ab4b0054 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the first element of the array.  <br /></td></tr>
+<tr class="memitem:aaf28cb993ae5784674aba8c567ba047d inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_aaf28cb993ae5784674aba8c567ba047d"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aaf28cb993ae5784674aba8c567ba047d">Back</a><code> [get]</code></td></tr>
+<tr class="memdesc:aaf28cb993ae5784674aba8c567ba047d inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last element of the array.  <br /></td></tr>
+<tr class="memitem:a802180c62e21d4d23f21cb3e806063a9 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a802180c62e21d4d23f21cb3e806063a9"><td class="memItemLeft">ArrayRandomAccessIterator&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a802180c62e21d4d23f21cb3e806063a9">First</a><code> [get]</code></td></tr>
+<tr class="memdesc:a802180c62e21d4d23f21cb3e806063a9 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a random-access iterator positioned at the beginning of the array. The iterator operates on a copy of the current array state.  <br /></td></tr>
+<tr class="memitem:aee392d216ba803ad2002a080852b6de0 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_aee392d216ba803ad2002a080852b6de0"><td class="memItemLeft">ArrayRandomAccessIterator&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aee392d216ba803ad2002a080852b6de0">End</a><code> [get]</code></td></tr>
+<tr class="memdesc:aee392d216ba803ad2002a080852b6de0 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a random-access iterator positioned at the logical end of the array. The iterator operates on a copy of the current array state.  <br /></td></tr>
+<tr class="memitem:aa378bee6379c1ecae0483a9ff9272fc9 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_aa378bee6379c1ecae0483a9ff9272fc9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa378bee6379c1ecae0483a9ff9272fc9">IsFull</a><code> [get]</code></td></tr>
+<tr class="memdesc:aa378bee6379c1ecae0483a9ff9272fc9 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the array is full.  <br /></td></tr>
+<tr class="memitem:a69b0d3e66727e815047684d8f79347d4 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a69b0d3e66727e815047684d8f79347d4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a69b0d3e66727e815047684d8f79347d4">IsEmpty</a><code> [get]</code></td></tr>
+<tr class="memdesc:a69b0d3e66727e815047684d8f79347d4 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the array contains no elements.  <br /></td></tr>
+<tr class="memitem:a038e698269968ae2e74ffdecb502d0f9 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a038e698269968ae2e74ffdecb502d0f9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a038e698269968ae2e74ffdecb502d0f9">GrowSize</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a038e698269968ae2e74ffdecb502d0f9 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of elements the array grows by when AutoGrow is enabled.  <br /></td></tr>
+<tr class="memitem:aa084a36ebf46797f20d9e4210e40fb49 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_aa084a36ebf46797f20d9e4210e40fb49"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa084a36ebf46797f20d9e4210e40fb49">AutoGrow</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa084a36ebf46797f20d9e4210e40fb49 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables automatic resizing when the array becomes full.  <br /></td></tr>
+<tr class="memitem:a637ea5e9434d327ee5d7d9e5b8912c89 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a637ea5e9434d327ee5d7d9e5b8912c89"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a637ea5e9434d327ee5d7d9e5b8912c89">IsFixed</a><code> [get]</code></td></tr>
+<tr class="memdesc:a637ea5e9434d327ee5d7d9e5b8912c89 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the array has a fixed size (AutoGrow disabled).  <br /></td></tr>
+<tr class="memitem:a60580f21345858baf290bbd93efb4ee0 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a60580f21345858baf290bbd93efb4ee0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a60580f21345858baf290bbd93efb4ee0">Count</a><code> [get]</code></td></tr>
+<tr class="memitem:ae7b88d32cc887ba9331b84633fedfe0f inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ae7b88d32cc887ba9331b84633fedfe0f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae7b88d32cc887ba9331b84633fedfe0f">IsReadOnly</a><code> [get]</code></td></tr>
+<tr class="memitem:a05c69f834e8666d7f04ab8a9bd2462ea inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_a05c69f834e8666d7f04ab8a9bd2462ea"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a05c69f834e8666d7f04ab8a9bd2462ea">this[int adress]</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a05c69f834e8666d7f04ab8a9bd2462ea inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides indexed access to the array elements.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td colspan="2">Protected Attributes inherited from <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td></tr>
-<tr class="memitem:ad9ffc9f588a6a83788fe7ac4ad813199 pro_attribs_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ad9ffc9f588a6a83788fe7ac4ad813199"><td class="memItemLeft">T[]&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad9ffc9f588a6a83788fe7ac4ad813199">m_elements</a></td></tr>
-<tr class="memdesc:ad9ffc9f588a6a83788fe7ac4ad813199 pro_attribs_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal storage buffer for array elements.  <br /></td></tr>
-<tr class="memitem:af7ae7141a943af3c0636e5ce72aba2b3 pro_attribs_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_af7ae7141a943af3c0636e5ce72aba2b3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#af7ae7141a943af3c0636e5ce72aba2b3">m_index</a></td></tr>
-<tr class="memdesc:af7ae7141a943af3c0636e5ce72aba2b3 pro_attribs_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current number of valid elements stored in the array.  <br /></td></tr>
+<tr class="inherit_header pro_attribs_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td></tr>
+<tr class="memitem:ad9ffc9f588a6a83788fe7ac4ad813199 inherit pro_attribs_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_ad9ffc9f588a6a83788fe7ac4ad813199"><td class="memItemLeft">T[]&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad9ffc9f588a6a83788fe7ac4ad813199">m_elements</a></td></tr>
+<tr class="memdesc:ad9ffc9f588a6a83788fe7ac4ad813199 inherit pro_attribs_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal storage buffer for array elements.  <br /></td></tr>
+<tr class="memitem:af7ae7141a943af3c0636e5ce72aba2b3 inherit pro_attribs_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" id="r_af7ae7141a943af3c0636e5ce72aba2b3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#af7ae7141a943af3c0636e5ce72aba2b3">m_index</a></td></tr>
+<tr class="memdesc:af7ae7141a943af3c0636e5ce72aba2b3 inherit pro_attribs_class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current number of valid elements stored in the array.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00028">28</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00030">30</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a23d0fb8a81e8ef70fe1e31d72a21a4db" name="a23d0fb8a81e8ef70fe1e31d72a21a4db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a23d0fb8a81e8ef70fe1e31d72a21a4db">&#9670;&#160;</a></span>FixedArray() <span class="overload">[1/2]</span></h2>
@@ -293,7 +254,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00037">37</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00039">39</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
 
 </div>
 </div>
@@ -318,7 +279,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00042">42</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00044">44</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
 
 </div>
 </div>
@@ -361,7 +322,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="../../d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#a9c3a1efab03dc0becdab3754297a0b16">SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00058">58</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00060">60</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
 
 </div>
 </div>
@@ -404,7 +365,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="../../d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#ab04c08957a42f363868a339a5a3b9eeb">SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00071">71</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00073">73</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
 
 </div>
 </div>
@@ -434,7 +395,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a75cccf11c95a3a17957360d2b53292d8">SystemEx.Collections.Generic.Array&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00048">48</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00050">50</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
 
 </div>
 </div>
@@ -461,12 +422,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html#af49f172ce8f0943bcc83ee8b8f66434b">SystemEx.Collections.Generic.Interfaces.IDynamicArray&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00032">32</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html#l00034">34</a> of file <a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Collections/Generic/<a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a></li>
+<li><a class="el" href="../../da/d0a/_fixed_array_8cs_source.html">FixedArray.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

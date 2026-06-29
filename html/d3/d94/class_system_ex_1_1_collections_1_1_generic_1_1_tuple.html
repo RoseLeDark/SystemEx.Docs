@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,19 +117,17 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Tuple Class Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Tuple Class Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>A dynamically sized tuple storing elements as object values. Provides indexed access, mutation, and compatibility with the ITuple interface used throughout the <a class="el" href="../../d5/d9e/namespace_system_ex_1_1_system_ex.html">SystemEx</a> collection and iterator framework.  
- <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.Tuple:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.Tuple:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../d3/d94/class_system_ex_1_1_collections_1_1_generic_1_1_tuple.png" usemap="#SystemEx_2ECollections_2EGeneric_2ETuple_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2ETuple_map" name="SystemEx_2ECollections_2EGeneric_2ETuple_map">
-<area href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html" title="A lightweight interface for serializable N‑element tuple consisting of strongly typed." alt="SystemEx.Collections.Generic.Interfaces.ITuple" shape="rect" coords="0,0,279,24"/>
+<area href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html" alt="SystemEx.Collections.Generic.Interfaces.ITuple" shape="rect" coords="0,0,279,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -195,7 +153,7 @@ Properties</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00027">27</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00028">28</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4954da6514191a764c93ea5f18852500" name="a4954da6514191a764c93ea5f18852500"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4954da6514191a764c93ea5f18852500">&#9670;&#160;</a></span>Tuple() <span class="overload">[1/3]</span></h2>
@@ -212,7 +170,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00054">54</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00055">55</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
 
 </div>
 </div>
@@ -237,7 +195,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00062">62</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00063">63</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
 
 </div>
 </div>
@@ -262,7 +220,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00070">70</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00071">71</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
 
 </div>
 </div>
@@ -297,7 +255,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a6ac2652df477f044a0fa26d60594f196">SystemEx.Collections.Generic.Interfaces.ITuple</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00082">82</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00083">83</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
 
 </div>
 </div>
@@ -328,7 +286,7 @@ Properties</h2></td></tr>
 </dl>
 <p>If the index is out of range, the operation is ignored. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00099">99</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00100">100</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
 
 </div>
 </div>
@@ -355,7 +313,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a8eea63c6c73f302f48fdb8832854aa87">SystemEx.Collections.Generic.Interfaces.ITuple</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00037">37</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00038">38</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
 
 </div>
 </div>
@@ -391,12 +349,12 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00046">46</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d73/_tuple_8cs_source.html#l00047">47</a> of file <a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Collections/Generic/<a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a></li>
+<li><a class="el" href="../../d6/d73/_tuple_8cs_source.html">Tuple.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

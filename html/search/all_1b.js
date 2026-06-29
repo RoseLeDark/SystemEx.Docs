@@ -5,7 +5,6 @@ var searchData=
   ['unmanagedobject_2',['UnmanagedObject',['../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html',1,'SystemEx.Device.Intertropt.UnmanagedObject'],['../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html#a14aed2b1cfea656d65436290df59874a',1,'SystemEx.Device.Intertropt.UnmanagedObject.UnmanagedObject()']]],
   ['unpack_3',['Unpack',['../dd/d4e/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_serialize-2-g.html#ad84c30900c22a63584e72d35539e8d48',1,'SystemEx::IO::Provider::IByteSerialize-2-g']]],
   ['updatepriority_4',['UpdatePriority',['../d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#aa10c7212c181db331f6f9a3712c0f6e2',1,'SystemEx::Collections::Generic::PriorityQueueEx-2-g']]],
-  ['used_5',['Used',['../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a80b8a8c831a28ecf5f34e8c97a616542',1,'SystemEx::Collections::Generic::Cache']]],
-  ['utilities_6',['🛠 Utilities',['../index.html#autotoc_md67',1,'']]],
-  ['utils_20is_20ready_7',['- The Doku in &lt;span class=&quot;tt&quot;&gt;SystemEx.Collections.Generic&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;SystemEx.IO&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;SysrtemEx&lt;/span&gt; and &lt;span class=&quot;tt&quot;&gt;SysrtemEx.Utils&lt;/span&gt; is ready',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md15',1,'']]]
+  ['used_5',['Used',['../dd/dbc/group__collections.html#ga80b8a8c831a28ecf5f34e8c97a616542',1,'SystemEx::Collections::Generic::Cache']]],
+  ['utilities_6',['🛠 Utilities',['../index.html#autotoc_md-utilities',1,'']]]
 ];

@@ -26,7 +26,6 @@ var namespace_system_ex_1_1_collections_1_1_generic =
     [ "PriorityQueueExIterator&lt; T, TU &gt;", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g" ],
     [ "Quad&lt; TT, TU, TW, TJ &gt;", "d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html", "d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g" ],
     [ "Queue&lt; T &gt;", "da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html", "da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g" ],
-    [ "RingBuffer&lt; T &gt;", "d6/d1b/class_system_ex_1_1_collections_1_1_generic_1_1_ring_buffer-1-g.html", "d6/d1b/class_system_ex_1_1_collections_1_1_generic_1_1_ring_buffer-1-g" ],
     [ "SortedArray&lt; T &gt;", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g" ],
     [ "SortedMap&lt; T, TU &gt;", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g" ],
     [ "SortedMultiMap&lt; T, TU &gt;", "d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html", "d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g" ],
@@ -43,22 +42,22 @@ var namespace_system_ex_1_1_collections_1_1_generic =
     [ "TupleList", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" ],
     [ "TupleMap", "d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html", "d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map" ],
     [ "TypeBuffer&lt; T &gt;", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g" ],
-    [ "CacheType", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#af02ddb6084404bb267c0629f20ed8b53", [
-      [ "ToDevice", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#af02ddb6084404bb267c0629f20ed8b53ae9366abd00c5a749c84c222bab5275d4", null ],
-      [ "FromDevice", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#af02ddb6084404bb267c0629f20ed8b53a69887dd9a9eca98fa03f1b4b1592ba05", null ],
-      [ "Both", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#af02ddb6084404bb267c0629f20ed8b53a130c5b3473c57faa76e2a1c54e26f88e", null ],
-      [ "OnlySystem", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#af02ddb6084404bb267c0629f20ed8b53a26d52f0d46807d1cb3e28d40177db92e", null ]
+    [ "CacheType", "dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53", [
+      [ "ToDevice", "dd/dbc/group__collections.html#ggaf02ddb6084404bb267c0629f20ed8b53ae9366abd00c5a749c84c222bab5275d4", null ],
+      [ "FromDevice", "dd/dbc/group__collections.html#ggaf02ddb6084404bb267c0629f20ed8b53a69887dd9a9eca98fa03f1b4b1592ba05", null ],
+      [ "Both", "dd/dbc/group__collections.html#ggaf02ddb6084404bb267c0629f20ed8b53a130c5b3473c57faa76e2a1c54e26f88e", null ],
+      [ "OnlySystem", "dd/dbc/group__collections.html#ggaf02ddb6084404bb267c0629f20ed8b53a26d52f0d46807d1cb3e28d40177db92e", null ]
     ] ],
-    [ "SearchType", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#ae3c3f4a1a9d90344fce2ca3232791bd7", [
-      [ "SubtractWeight", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#ae3c3f4a1a9d90344fce2ca3232791bd7a249d801f12a641a77e8a1b27ece187ee", null ],
-      [ "SetToWeight", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#ae3c3f4a1a9d90344fce2ca3232791bd7a0fcacbd960872d9d821973ed3188b59d", null ],
-      [ "AccumulateCost", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#ae3c3f4a1a9d90344fce2ca3232791bd7a34f4669edc5c4c56ff9a2c0ffabdbccd", null ]
+    [ "SearchType", "dd/dbc/group__collections.html#gae3c3f4a1a9d90344fce2ca3232791bd7", [
+      [ "SubtractWeight", "dd/dbc/group__collections.html#ggae3c3f4a1a9d90344fce2ca3232791bd7a249d801f12a641a77e8a1b27ece187ee", null ],
+      [ "SetToWeight", "dd/dbc/group__collections.html#ggae3c3f4a1a9d90344fce2ca3232791bd7a0fcacbd960872d9d821973ed3188b59d", null ],
+      [ "AccumulateCost", "dd/dbc/group__collections.html#ggae3c3f4a1a9d90344fce2ca3232791bd7a34f4669edc5c4c56ff9a2c0ffabdbccd", null ]
     ] ],
-    [ "TraversOrder", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4b", [
-      [ "Preorder", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4ba5be8b098f9b79cf3b18767ffc5ecd169", null ],
-      [ "Inorder", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4ba23d595ba1af8a7e9eb75b7dd281c4186", null ],
-      [ "Postorder", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4baa81781f8f4fa340f10177bcce27cb714", null ],
-      [ "ListOrder", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4ba3ec389f8d12ead28a627f00bdeaca5a2", null ],
-      [ "ReservListOrder", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316", null ]
+    [ "TraversOrder", "dd/dbc/group__collections.html#ga5d4c0e8a1b447d651da25c01c3acde4b", [
+      [ "Preorder", "dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba5be8b098f9b79cf3b18767ffc5ecd169", null ],
+      [ "Inorder", "dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba23d595ba1af8a7e9eb75b7dd281c4186", null ],
+      [ "Postorder", "dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4baa81781f8f4fa340f10177bcce27cb714", null ],
+      [ "ListOrder", "dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba3ec389f8d12ead28a627f00bdeaca5a2", null ],
+      [ "ReservListOrder", "dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316", null ]
     ] ]
 ];

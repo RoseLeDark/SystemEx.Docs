@@ -1,20 +1,20 @@
 var index =
 [
-    [ "✨ Overview", "index.html#autotoc_md54", null ],
-    [ "📦 Installation", "index.html#autotoc_md55", [
-      [ "NuGet", "index.html#autotoc_md56", null ],
-      [ "Manual", "index.html#autotoc_md57", null ]
+    [ "✨ Overview", "index.html#autotoc_md-overview", null ],
+    [ "📦 Installation", "index.html#autotoc_md-installation", [
+      [ "NuGet", "index.html#nuget", null ],
+      [ "Manual", "index.html#manual", null ]
     ] ],
-    [ "🧩 Iterator System", "index.html#autotoc_md58", null ],
-    [ "🧮 Generic Algorithms", "index.html#autotoc_md59", null ],
-    [ "📚 Collections", "index.html#autotoc_md60", [
-      [ "Core Types", "index.html#autotoc_md61", null ],
-      [ "Map System", "index.html#autotoc_md62", null ],
-      [ "Tuple &amp; Pair Types", "index.html#autotoc_md63", null ]
+    [ "🧩 Iterator System", "index.html#autotoc_md-iterator-system", null ],
+    [ "🧮 Generic Algorithms", "index.html#autotoc_md-generic-algorithms", null ],
+    [ "📚 Collections", "index.html#autotoc_md-collections", [
+      [ "Core Types", "index.html#core-types", null ],
+      [ "Map System", "index.html#map-system", null ],
+      [ "Tuple &amp; Pair Types", "index.html#tuple--pair-types", null ]
     ] ],
-    [ "🧱 Cache &amp; RAID Subsystem (Future Release)", "index.html#autotoc_md65", null ],
-    [ "🛠 Utilities", "index.html#autotoc_md67", null ],
-    [ "📁 Project Structure", "index.html#autotoc_md69", null ],
-    [ "📝 License", "index.html#autotoc_md71", null ],
-    [ "🚧 Status", "index.html#autotoc_md72", null ]
+    [ "🧱 Cache &amp; RAID Subsystem (Future Release)", "index.html#autotoc_md-cache--raid-subsystem-future-release", null ],
+    [ "🛠 Utilities", "index.html#autotoc_md-utilities", null ],
+    [ "📁 Project Structure", "index.html#autotoc_md-project-structure", null ],
+    [ "📝 License", "index.html#autotoc_md-license", null ],
+    [ "🚧 Status", "index.html#autotoc_md-status", null ]
 ];

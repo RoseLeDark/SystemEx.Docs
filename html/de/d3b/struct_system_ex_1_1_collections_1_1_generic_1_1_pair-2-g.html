@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,20 +117,18 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Pair&lt; T, TU &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Pair&lt; T, TU &gt; Struct Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>A lightweight, serializable two‑element tuple consisting of a strongly typed key and value. Implements IPair&lt;T, TU&gt; and provides typed comparison helpers as well as ITuple compatibility.  
- <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.Pair&lt; T, TU &gt;:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.Pair&lt; T, TU &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.png" usemap="#SystemEx_2ECollections_2EGeneric_2EPair_3C_20T_2C_20TU_20_3E_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2EPair_3C_20T_2C_20TU_20_3E_map" name="SystemEx_2ECollections_2EGeneric_2EPair_3C_20T_2C_20TU_20_3E_map">
-<area href="../../da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g.html" title="Represents a two‑element tuple consisting of a key and a value. Extends ITuple with strongly typed ac..." alt="SystemEx.Collections.Generic.Interfaces.IPair&lt; T, TU &gt;" shape="rect" coords="0,56,326,80"/>
-<area href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html" title="A lightweight interface for serializable N‑element tuple consisting of strongly typed." alt="SystemEx.Collections.Generic.Interfaces.ITuple" shape="rect" coords="0,0,326,24"/>
+<area href="../../da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g.html" alt="SystemEx.Collections.Generic.Interfaces.IPair&lt; T, TU &gt;" shape="rect" coords="0,56,326,80"/>
+<area href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html" alt="SystemEx.Collections.Generic.Interfaces.ITuple" shape="rect" coords="0,0,326,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -201,15 +159,8 @@ Properties</h2></td></tr>
 <tr class="memdesc:a57206c8647665e16b335ac7f0f0a6503"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements in the tuple (always 2).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the first element (key).</td></tr>
-    <tr><td class="paramname">TU</td><td>The type of the second element (value).</td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00029">29</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00031">31</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aae29a0c84a487e1354a658943b22f63e" name="aae29a0c84a487e1354a658943b22f63e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae29a0c84a487e1354a658943b22f63e">&#9670;&#160;</a></span>EqualFirst() <span class="overload">[1/2]</span></h2>
@@ -235,7 +186,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#aa447498dc18510050c907d9639c4e421">SystemEx.Collections.Generic.Interfaces.ITuple</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00126">126</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00128">128</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
 
 </div>
 </div>
@@ -263,7 +214,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g.html#a3e753a45e260e5e335cceb9bb6cc023d">SystemEx.Collections.Generic.Interfaces.IPair&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00095">95</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00097">97</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
 
 </div>
 </div>
@@ -289,7 +240,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if both elements match; otherwise <code>false</code>.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00078">78</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00080">80</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
 
 </div>
 </div>
@@ -317,7 +268,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g.html#a21e13caf9026a5838ebb319b0aa014d9">SystemEx.Collections.Generic.Interfaces.IPair&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00102">102</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00104">104</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
 
 </div>
 </div>
@@ -351,7 +302,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a6ac2652df477f044a0fa26d60594f196">SystemEx.Collections.Generic.Interfaces.ITuple</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00113">113</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00115">115</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
 
 </div>
 </div>
@@ -381,7 +332,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00067">67</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00069">69</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
 
 </div>
 </div>
@@ -400,7 +351,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00086">86</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00088">88</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
 
 </div>
 </div>
@@ -427,7 +378,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html#a8eea63c6c73f302f48fdb8832854aa87">SystemEx.Collections.Generic.Interfaces.ITuple</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00060">60</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00062">62</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
 
 </div>
 </div>
@@ -453,7 +404,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g.html#ab42dbc500ee02ed845ef3d2d70c86e25">SystemEx.Collections.Generic.Interfaces.IPair&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00044">44</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00046">46</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
 
 </div>
 </div>
@@ -479,12 +430,12 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g.html#a67ba820d2fb0a8b5ca32c3a81ee9f45a">SystemEx.Collections.Generic.Interfaces.IPair&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00052">52</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d56/_pair_8cs_source.html#l00054">54</a> of file <a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Collections/Generic/<a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a></li>
+<li><a class="el" href="../../dd/d56/_pair_8cs_source.html">Pair.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

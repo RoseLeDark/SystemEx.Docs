@@ -1,7 +1,9 @@
 var class_system_ex_1_1_collections_1_1_generic_1_1_array_1_g =
 [
     [ "Add", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ab22f10f19aacddb564e1fd42507beb59", null ],
+    [ "AddRange", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#afc1c32444b4ee3851dcdf10f08f305a4", null ],
     [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a8f23b48290bdbbc26278a7057a1168d5", null ],
+    [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a293f0eea6a232101ea6021a193c6cf47", null ],
     [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a808a7b713dcac53439a94269898c20f9", null ],
     [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad0ae0e40ca9ca5d2597a24d7347e5f14", null ],
     [ "At", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a2698d72008f39661653cad336ac59e0b", null ],

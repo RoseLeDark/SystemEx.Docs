@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: Device/Ikernel.cs File Reference</title>
+<title>SystemEX: Ikernel.cs File Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -174,15 +134,6 @@ Namespaces</h2></td></tr>
 <tr class="memitem:SystemEx" id="r_SystemEx"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a></td></tr>
 <tr class="memitem:SystemEx_2EDevice" id="r_SystemEx_2EDevice"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../d7/d59/namespace_system_ex_1_1_device.html">SystemEx.Device</a></td></tr>
 <tr class="memitem:SystemEx_2EDevice_2EMemory" id="r_SystemEx_2EDevice_2EMemory"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html">SystemEx.Device.Memory</a></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a4f7d4764a0cba84feaa441cc88fe2e70" id="r_a4f7d4764a0cba84feaa441cc88fe2e70"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">SystemEx.Device.Memory.BufferType</a> { <a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70a1129c0e4d43f2d121652a7302712cff6">SystemEx.Device.Memory.Write</a>
-, <a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70a7a1a5f3e79fdc91edf2f5ead9d66abb4">SystemEx.Device.Memory.Read</a>
-, <a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70a130c5b3473c57faa76e2a1c54e26f88e">SystemEx.Device.Memory.Both</a>
- }</td></tr>
-<tr class="memdesc:a4f7d4764a0cba84feaa441cc88fe2e70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies how a buffer is used by a kernel during execution. <br  />
- Determines whether data flows from cache to hardware, hardware to cache, or both.  <a href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#a4f7d4764a0cba84feaa441cc88fe2e70">More...</a><br /></td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

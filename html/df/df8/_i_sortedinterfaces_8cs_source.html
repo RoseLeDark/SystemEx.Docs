@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: Collections/Generic/Interfaces/ISortedinterfaces.cs Source File</title>
+<title>SystemEX: ISortedinterfaces.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -233,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
 </div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>}</div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map_html"><div class="ttname"><a href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html">SystemEx.Collections.Generic.Interfaces.IMap</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d19/_i_map_8cs_source.html#l00030">IMap.cs:30</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map_html"><div class="ttname"><a href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html">SystemEx.Collections.Generic.Interfaces.IMap</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d19/_i_map_8cs_source.html#l00032">IMap.cs:32</a></div></div>
 <div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g_html_a1f9c2280752d2c34bf0f3fefe93134d9"><div class="ttname"><a href="../../db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g.html#a1f9c2280752d2c34bf0f3fefe93134d9">SystemEx.Collections.Generic.Interfaces.ISortedArray-1-g.Comparer</a></div><div class="ttdeci">ICompared&lt; T &gt;? Comparer</div><div class="ttdoc">Gets or sets the comparer interface used to compare elements. If set, it overrides the delegate-based...</div><div class="ttdef"><b>Definition</b> <a href="#l00066">ISortedinterfaces.cs:66</a></div></div>
 <div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g_html_a9a8a6f7673743cf434081b595891659b"><div class="ttname"><a href="../../db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g.html#a9a8a6f7673743cf434081b595891659b">SystemEx.Collections.Generic.Interfaces.ISortedArray-1-g.ToUnorderedArray</a></div><div class="ttdeci">IArray&lt; T &gt; ToUnorderedArray()</div><div class="ttdoc">Returns a new array containing the same elements but without sorting behavior.</div></div>
 <div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g_html_aa6567ccc1bef790e98f8befb2a7ed923"><div class="ttname"><a href="../../db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g.html#aa6567ccc1bef790e98f8befb2a7ed923">SystemEx.Collections.Generic.Interfaces.ISortedArray-1-g.SortFunctions</a></div><div class="ttdeci">SortObjectFunc&lt; T &gt; SortFunctions</div><div class="ttdoc">Gets or sets the delegate-based sort function used to compare elements.</div><div class="ttdef"><b>Definition</b> <a href="#l00060">ISortedinterfaces.cs:60</a></div></div>
@@ -250,13 +210,13 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map_html_a6ef1e6d24ecab243c1eca17e16533476"><div class="ttname"><a href="../../dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html#a6ef1e6d24ecab243c1eca17e16533476">SystemEx.Collections.Generic.Interfaces.ISortedTupleMap.AutoSort</a></div><div class="ttdeci">bool AutoSort</div><div class="ttdoc">Enables or disables automatic sorting after modification operations.</div><div class="ttdef"><b>Definition</b> <a href="#l00141">ISortedinterfaces.cs:141</a></div></div>
 <div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map_html_a9a0c6c2bc6e0f4e45abf02244d969daf"><div class="ttname"><a href="../../dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html#a9a0c6c2bc6e0f4e45abf02244d969daf">SystemEx.Collections.Generic.Interfaces.ISortedTupleMap.Comparer</a></div><div class="ttdeci">ICompared&lt; ITuple &gt;? Comparer</div><div class="ttdoc">Gets or sets the comparer interface used to compare tuples. If set, it overrides the delegate-based c...</div><div class="ttdef"><b>Definition</b> <a href="#l00136">ISortedinterfaces.cs:136</a></div></div>
 <div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map_html_aae410b8f490b5d04463ea4214dbff0c3"><div class="ttname"><a href="../../dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html#aae410b8f490b5d04463ea4214dbff0c3">SystemEx.Collections.Generic.Interfaces.ISortedTupleMap.SortFunctions</a></div><div class="ttdeci">SortTupleFunc SortFunctions</div><div class="ttdoc">Gets or sets the delegate-based sort function used to compare tuples.</div><div class="ttdef"><b>Definition</b> <a href="#l00130">ISortedinterfaces.cs:130</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">SystemEx.Collections.Generic.Interfaces.ITuple</a></div><div class="ttdoc">A lightweight interface for serializable N‑element tuple consisting of strongly typed.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d4b/_i_tuple_8cs_source.html#l00022">ITuple.cs:22</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map_html"><div class="ttname"><a href="../../d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html">SystemEx.Collections.Generic.Interfaces.ITupleMap</a></div><div class="ttdoc">Defines a map structure specialized for storing and retrieving ITuple objects. Provides tuple‑based s...</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d1a/_i_tuple_map_8cs_source.html#l00023">ITupleMap.cs:23</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_html"><div class="ttname"><a href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">SystemEx.Collections.Generic.Interfaces.ITuple</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d4b/_i_tuple_8cs_source.html#l00026">ITuple.cs:26</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map_html"><div class="ttname"><a href="../../d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html">SystemEx.Collections.Generic.Interfaces.ITupleMap</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d1a/_i_tuple_map_8cs_source.html#l00027">ITupleMap.cs:27</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d16/_i_array_8cs_source.html#l00018">IArray.cs:18</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html_a0be94400295baf8873f7101503135e61"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#a0be94400295baf8873f7101503135e61">SystemEx.Collections.Generic.Interfaces.SortObjectFunc&lt; T &gt;</a></div><div class="ttdeci">delegate CompareResult SortObjectFunc&lt; T &gt;(T a, T b)</div><div class="ttdoc">Delegate used to compare two objects of type T .</div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html_adb5f200840bf1bdef594d6aaab2acb41"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#adb5f200840bf1bdef594d6aaab2acb41">SystemEx.Collections.Generic.Interfaces.SortTupleFunc</a></div><div class="ttdeci">delegate CompareResult SortTupleFunc(ITuple a, ITuple b)</div><div class="ttdoc">Delegate used to compare two tuples and return their ordering relation.</div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html_ae2adeaf7f2e733dfce357a80b27d5bac"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#ae2adeaf7f2e733dfce357a80b27d5bac">SystemEx.Collections.Generic.Interfaces.SortFunc&lt; T, TU &gt;</a></div><div class="ttdeci">delegate CompareResult SortFunc&lt; T, TU &gt;(Pair&lt; T, TU &gt; a, Pair&lt; T, TU &gt; b)</div><div class="ttdoc">Delegate used to compare two key/value pairs and return their ordering relation.</div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00022">Array.cs:22</a></div></div>
+<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00023">Array.cs:23</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_utils_html"><div class="ttname"><a href="../../d2/d14/namespace_system_ex_1_1_utils.html">SystemEx.Utils</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d35/_algorithm_8cs_source.html#l00021">Algorithm.cs:21</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_utils_html_aef01215d2eb8aecad75ce70ce26c8c3a"><div class="ttname"><a href="../../d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a">SystemEx.Utils.CompareResult</a></div><div class="ttdeci">CompareResult</div><div class="ttdoc">Specifies the result of a comparison between two values.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d35/_algorithm_8cs_source.html#l00025">Algorithm.cs:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

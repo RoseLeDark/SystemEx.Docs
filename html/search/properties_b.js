@@ -10,5 +10,6 @@ var searchData=
   ['mediumorchid_7',['MediumOrchid',['../d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a9feca4ae667b6bdab44f4471afa8582e',1,'SystemEx::Drawing::PurpelColors']]],
   ['mediumpurple_8',['MediumPurple',['../d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a76592505edd1c15a239e1d31d1e6631c',1,'SystemEx::Drawing::PurpelColors']]],
   ['mediumslateblue_9',['MediumSlateBlue',['../d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a7deb4b0939566b6be969859fbeace09f',1,'SystemEx::Drawing::PurpelColors']]],
-  ['min_10',['Min',['../d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#a8efc56b41fd21e1b34af9528f0f9d373',1,'SystemEx::Collections::Generic::PriorityQueueEx-2-g']]]
+  ['min_10',['Min',['../d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#a8efc56b41fd21e1b34af9528f0f9d373',1,'SystemEx::Collections::Generic::PriorityQueueEx-2-g']]],
+  ['module_11',['Module',['../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a54eac8be3de33baf1d1345938561e659',1,'SystemEx::Device::NativeRAMKernel-1-g']]]
 ];

@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,19 +117,17 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.TypeBuffer&lt; T &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.TypeBuffer&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>A typed view over a raw <code><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a></code> that exposes elements of an unmanaged type <em>T</em> .  
- <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.TypeBuffer&lt; T &gt;:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.TypeBuffer&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.png" usemap="#SystemEx_2ECollections_2EGeneric_2ETypeBuffer_3C_20T_20_3E_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2ETypeBuffer_3C_20T_20_3E_map" name="SystemEx_2ECollections_2EGeneric_2ETypeBuffer_3C_20T_20_3E_map">
-<area href="../../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html" title="Defines a typed, fixed‑stride buffer abstraction for unmanaged element types." alt="SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;" shape="rect" coords="0,0,342,24"/>
+<area href="../../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html" alt="SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;" shape="rect" coords="0,0,342,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -202,15 +160,7 @@ Properties</h2></td></tr>
 <tr class="memdesc:ac99be8e42e7855236d79841f6f86d084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the element at the specified index.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><code>TypeBuffer&lt;T&gt;</code> provides element access, cloning, clearing and simple fill semantics for fixed‑stride unmanaged types. The buffer owns an internal <code><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a></code> instance sized to <code>length * sizeof(T)</code>. All reads and writes perform endian conversion using the configured Endian value. </p>
-<p>This type assumes <em>T</em>  is an unmanaged value type and uses a fixed stride equal to <code>sizeof(T)</code>. Index and offset parameters are validated by the underlying cache and may throw on out‑of‑range access. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>An unmanaged value type stored in the buffer.</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="typeconstraint">
+<div class="textblock"><div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>unmanaged</em></td><td>&#160;</td></tr>
@@ -219,7 +169,7 @@ Properties</h2></td></tr>
 </dl>
 </div>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00038">38</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00040">40</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a8fd4dd71fa5d375191b17689a9044145" name="a8fd4dd71fa5d375191b17689a9044145"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fd4dd71fa5d375191b17689a9044145">&#9670;&#160;</a></span>Clear()</h2>
@@ -239,7 +189,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html#a0b6b7924c1ddadd3733efa503d5094f5">SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00107">107</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00109">109</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
 
 </div>
 </div>
@@ -261,7 +211,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html#abde1cc332c0bcad75259bdfe9f820122">SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00115">115</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00117">117</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
 
 </div>
 </div>
@@ -290,7 +240,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html#a61ec6fbb31b536ea4959c40da476f1b9">SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00136">136</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00138">138</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
 
 </div>
 </div>
@@ -328,7 +278,7 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The element value read from the buffer.</dd></dl>
 <p>The method reads <code>count</code> bytes into a temporary buffer and converts them to <em>T</em>  using <code>Conversion.FromBytes&lt;T&gt;</code>. If the underlying cache cannot satisfy the read, the conversion may receive a zeroed or partial buffer depending on the cache semantics. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00172">172</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00174">174</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
 
 </div>
 </div>
@@ -359,7 +309,7 @@ Properties</h2></td></tr>
 </dl>
 <p>The constructor allocates an internal <code><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a></code> sized to <code>length * sizeof(T)</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00078">78</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00080">80</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
 
 </div>
 </div>
@@ -385,7 +335,7 @@ Properties</h2></td></tr>
 </dl>
 <p>The new instance receives its own <code><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a></code> copy so subsequent modifications do not affect the original buffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00093">93</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00095">95</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
 
 </div>
 </div>
@@ -429,7 +379,7 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The number of bytes written.</dd></dl>
 <p>The method converts <em>value</em>  to a byte array using <code>Conversion.ToBytes&lt;T&gt;</code> and forwards the result to the cache write implementation. The caller is responsible for providing a valid offset and count consistent with the buffer stride. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00155">155</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00157">157</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
 
 </div>
 </div>
@@ -450,7 +400,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html#a7e0066e17223350d871ee36e4e181ed5">SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00122">122</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00124">124</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
 
 </div>
 </div>
@@ -475,7 +425,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00053">53</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00055">55</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
 
 </div>
 </div>
@@ -501,7 +451,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html#ac128edb984286bde01731ef9e1efa2b0">SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00048">48</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00050">50</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
 
 </div>
 </div>
@@ -541,12 +491,12 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html#ade17c3131564ff949fcf1fbbcccd7ef2">SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00065">65</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html#l00067">67</a> of file <a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Collections/Generic/<a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a></li>
+<li><a class="el" href="../../db/d1b/_type_buffer_8cs_source.html">TypeBuffer.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

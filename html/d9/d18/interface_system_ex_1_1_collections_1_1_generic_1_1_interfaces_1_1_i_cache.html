@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,21 +117,19 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Interfaces.ICache Interface Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Interfaces.ICache Interface Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a> &raquo; <a class="el" href="../../d5/d4f/group__interfaces.html">Interfaces</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Defines a typed cache a low-level byte buffer with position tracking, typed read/write helpers, and optional locking behavior.  
- <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.Interfaces.ICache:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.Interfaces.ICache:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.png" usemap="#SystemEx_2ECollections_2EGeneric_2EInterfaces_2EICache_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2EInterfaces_2EICache_map" name="SystemEx_2ECollections_2EGeneric_2EInterfaces_2EICache_map">
 <area href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,..." alt="SystemEx.Collections.Generic.Cache" shape="rect" coords="295,56,580,80"/>
-<area href="../../de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html" title="A cache that maintains a mirrored copy of all written data.   Every write operation is performed on t..." alt="SystemEx.Collections.Generic.MirroredCache" shape="rect" coords="0,112,285,136"/>
-<area href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html" title="A segmented cache implementation that splits a large logical address space into multiple fixed-size c..." alt="SystemEx.Collections.Generic.StrippedCache" shape="rect" coords="295,112,580,136"/>
+<area href="../../de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html" alt="SystemEx.Collections.Generic.MirroredCache" shape="rect" coords="0,112,285,136"/>
+<area href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html" alt="SystemEx.Collections.Generic.StrippedCache" shape="rect" coords="295,112,580,136"/>
 <area href="../../da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html" title="Represents a cache that can be shared with a hardware backend through DeviceSharedBuffer&lt;TDeviceShare..." alt="SystemEx.Device.Memory.DeviceBuffer" shape="rect" coords="590,112,875,136"/>
   </map>
 </div></div>
@@ -241,7 +199,7 @@ Properties</h2></td></tr>
 <tr class="memdesc:a1ccb97969cb68335a12dc7721a6db856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the logical length of the cache as an unsigned 64-bit value.  <br /></td></tr>
 <tr class="memitem:af80de584cc7f719589c1d5e008e50182" id="r_af80de584cc7f719589c1d5e008e50182"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af80de584cc7f719589c1d5e008e50182">IsEmpty</a><code> [get]</code></td></tr>
 <tr class="memdesc:af80de584cc7f719589c1d5e008e50182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the cache contains no data.  <br /></td></tr>
-<tr class="memitem:ac441baddc1286d97c07335b980a2da5f" id="r_ac441baddc1286d97c07335b980a2da5f"><td class="memItemLeft"><a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#af02ddb6084404bb267c0629f20ed8b53">CacheType</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac441baddc1286d97c07335b980a2da5f">Type</a><code> [get]</code></td></tr>
+<tr class="memitem:ac441baddc1286d97c07335b980a2da5f" id="r_ac441baddc1286d97c07335b980a2da5f"><td class="memItemLeft"><a class="el" href="../../dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac441baddc1286d97c07335b980a2da5f">Type</a><code> [get]</code></td></tr>
 <tr class="memdesc:ac441baddc1286d97c07335b980a2da5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the configured cache type (read, write, or both).  <br /></td></tr>
 <tr class="memitem:abf3d52d5d149dfcf09d1928ce737808a" id="r_abf3d52d5d149dfcf09d1928ce737808a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#abf3d52d5d149dfcf09d1928ce737808a">CanWrite</a><code> [get]</code></td></tr>
 <tr class="memdesc:abf3d52d5d149dfcf09d1928ce737808a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the cache is writable.  <br /></td></tr>
@@ -252,7 +210,7 @@ Properties</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00024">24</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00028">28</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="af25903f0c7667252e01afacf25c3ae1a" name="af25903f0c7667252e01afacf25c3ae1a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af25903f0c7667252e01afacf25c3ae1a">&#9670;&#160;</a></span>Read() <span class="overload">[1/2]</span></h2>
@@ -278,7 +236,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a6c154e89bd89c078d07bb880486856fe">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga6c154e89bd89c078d07bb880486856fe">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -297,7 +255,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#ad58cc9f34179c85df7a762d5de777a94">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#gad58cc9f34179c85df7a762d5de777a94">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -316,7 +274,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a87d87c6ab3837d8f2d850a66f48e116e">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga87d87c6ab3837d8f2d850a66f48e116e">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -339,7 +297,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a246da00e9a2ca262f1fb678c1feae6e4">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga246da00e9a2ca262f1fb678c1feae6e4">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -362,7 +320,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a1a3544e5d34ff22a7c5b43a02a1b60cd">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga1a3544e5d34ff22a7c5b43a02a1b60cd">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -385,7 +343,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a48db154711ee150e00913f432f8d2250">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga48db154711ee150e00913f432f8d2250">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -408,7 +366,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#ac6c4ef8d2d3e218d15ed9000ab727cb6">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#gac6c4ef8d2d3e218d15ed9000ab727cb6">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -431,7 +389,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#ab6fbb0497f2a3560d9044988b11440f5">SystemEx.Collections.Generic.Cache</a>, and <a class="el" href="../../de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html#a2a8398371a10ea3e862705228031d383">SystemEx.Collections.Generic.MirroredCache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#gab6fbb0497f2a3560d9044988b11440f5">SystemEx.Collections.Generic.Cache</a>, and <a class="el" href="../../de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html#a2a8398371a10ea3e862705228031d383">SystemEx.Collections.Generic.MirroredCache</a>.</p>
 
 </div>
 </div>
@@ -454,7 +412,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#aab86cf28fc31411d52974dfc80777cac">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#gaab86cf28fc31411d52974dfc80777cac">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -477,7 +435,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a34399b32a4a3ebffc109460468483b51">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga34399b32a4a3ebffc109460468483b51">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -500,7 +458,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a54eea1168d4b60bd00a5b51bc23fde49">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga54eea1168d4b60bd00a5b51bc23fde49">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -523,7 +481,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a2b5b1d4f558305a04c28f2cf9578083a">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga2b5b1d4f558305a04c28f2cf9578083a">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -542,7 +500,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a72c1f04765989773477c76d4517fa6d0">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga72c1f04765989773477c76d4517fa6d0">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -561,7 +519,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a4685e640e2d3480fd1715d5fcd3b316b">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga4685e640e2d3480fd1715d5fcd3b316b">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -589,7 +547,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#aaadd93eedb3a05a013b76d12e38584d0">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#gaaadd93eedb3a05a013b76d12e38584d0">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -612,7 +570,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a8a746456b6ea06d1b04266107e90a119">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga8a746456b6ea06d1b04266107e90a119">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -635,7 +593,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#aba4dc69bf2b777f72f28b06b54be874e">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#gaba4dc69bf2b777f72f28b06b54be874e">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -663,7 +621,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a720b68ac0f7bfc03ecde929e472ab28b">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga720b68ac0f7bfc03ecde929e472ab28b">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -691,7 +649,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a3107b10a3fc86d7b94b10c1716e0e970">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga3107b10a3fc86d7b94b10c1716e0e970">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -719,7 +677,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a490a26bb63f1f348a84e1cf8c844cef9">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga490a26bb63f1f348a84e1cf8c844cef9">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -747,7 +705,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a5e242bc6f30609f38cbd923c311c9c6f">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga5e242bc6f30609f38cbd923c311c9c6f">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -775,7 +733,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#ac4eca113a51f98bd0768faff5a659ea8">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#gac4eca113a51f98bd0768faff5a659ea8">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -803,7 +761,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a7f48593fb926460c6d80cff8b8ae45f7">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga7f48593fb926460c6d80cff8b8ae45f7">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -831,7 +789,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a5a51acdf154d385a45e127caf48af5c2">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga5a51acdf154d385a45e127caf48af5c2">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -859,7 +817,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a6d4774d2ecdb5b713cc9c26f2540d9bc">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga6d4774d2ecdb5b713cc9c26f2540d9bc">SystemEx.Collections.Generic.Cache</a>.</p>
 
 </div>
 </div>
@@ -882,7 +840,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#aa4a0abe0cb00fa5734afb3dee647575b">SystemEx.Collections.Generic.Cache</a>, and <a class="el" href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#a9606104852f651b28396a7cdebe22484">SystemEx.Collections.Generic.StrippedCache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#gaa4a0abe0cb00fa5734afb3dee647575b">SystemEx.Collections.Generic.Cache</a>, and <a class="el" href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#a9606104852f651b28396a7cdebe22484">SystemEx.Collections.Generic.StrippedCache</a>.</p>
 
 </div>
 </div>
@@ -910,7 +868,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#adc39086417a0f19c444987f4a4ae2aae">SystemEx.Collections.Generic.Cache</a>, <a class="el" href="../../de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html#aa06192f5f7a43199dd83487b5895057b">SystemEx.Collections.Generic.MirroredCache</a>, and <a class="el" href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#aa221c7108e09f7a87c04cbda06ba096d">SystemEx.Collections.Generic.StrippedCache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#gadc39086417a0f19c444987f4a4ae2aae">SystemEx.Collections.Generic.Cache</a>, <a class="el" href="../../de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html#aa06192f5f7a43199dd83487b5895057b">SystemEx.Collections.Generic.MirroredCache</a>, and <a class="el" href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#aa221c7108e09f7a87c04cbda06ba096d">SystemEx.Collections.Generic.StrippedCache</a>.</p>
 
 </div>
 </div>
@@ -935,9 +893,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a0d581d5cc35d448a491bee207076b03d">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga0d581d5cc35d448a491bee207076b03d">SystemEx.Collections.Generic.Cache</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00048">48</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00052">52</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
 
 </div>
 </div>
@@ -961,9 +919,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a5f20538a57d5d8541c8b2621639ee832">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga5f20538a57d5d8541c8b2621639ee832">SystemEx.Collections.Generic.Cache</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00044">44</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00048">48</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
 
 </div>
 </div>
@@ -987,9 +945,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#ac13239ce5b4c05bcf94298b35766f628">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#gac13239ce5b4c05bcf94298b35766f628">SystemEx.Collections.Generic.Cache</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00036">36</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00040">40</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
 
 </div>
 </div>
@@ -1013,9 +971,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#ad96e10ea5020a4bedf2e3bdcb103f6be">SystemEx.Collections.Generic.Cache</a>, and <a class="el" href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#ae204b6a18b09c458e073dbef28295bbc">SystemEx.Collections.Generic.StrippedCache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#gad96e10ea5020a4bedf2e3bdcb103f6be">SystemEx.Collections.Generic.Cache</a>, and <a class="el" href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#ae204b6a18b09c458e073dbef28295bbc">SystemEx.Collections.Generic.StrippedCache</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00028">28</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00032">32</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
 
 </div>
 </div>
@@ -1039,9 +997,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a77cfbf7ad5f8b4693c570e8933a334f4">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga77cfbf7ad5f8b4693c570e8933a334f4">SystemEx.Collections.Generic.Cache</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00032">32</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00036">36</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
 
 </div>
 </div>
@@ -1065,9 +1023,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a3ba2f630d3a78dd0f2660313634a9816">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga3ba2f630d3a78dd0f2660313634a9816">SystemEx.Collections.Generic.Cache</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00052">52</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00056">56</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
 
 </div>
 </div>
@@ -1081,7 +1039,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#af02ddb6084404bb267c0629f20ed8b53">CacheType</a> SystemEx.Collections.Generic.Interfaces.ICache.Type</td>
+          <td class="memname"><a class="el" href="../../dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a> SystemEx.Collections.Generic.Interfaces.ICache.Type</td>
         </tr>
       </table>
   </td>
@@ -1091,14 +1049,14 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a17b1956a264e34cccd1d98430261ef26">SystemEx.Collections.Generic.Cache</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dbc/group__collections.html#ga17b1956a264e34cccd1d98430261ef26">SystemEx.Collections.Generic.Cache</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00040">40</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html#l00044">44</a> of file <a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>Collections/Generic/Interfaces/<a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a></li>
+<li><a class="el" href="../../d3/d2b/_i_cache_8cs_source.html">ICache.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

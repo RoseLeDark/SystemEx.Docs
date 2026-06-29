@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: Collections/Generic/Interfaces/ITraverse.cs File Reference</title>
+<title>SystemEX: ITraverse.cs File Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -177,10 +137,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a9ffe9236ff7d52fbeb93204341959319" id="r_a9ffe9236ff7d52fbeb93204341959319"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#a9ffe9236ff7d52fbeb93204341959319">SystemEx.Collections.Generic.Interfaces.TraversMode</a> { <a class="el" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#a9ffe9236ff7d52fbeb93204341959319a1e411b48c18c85a91ad46b53ebb24d6a">SystemEx.Collections.Generic.Interfaces.Forwards</a>
-, <a class="el" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#a9ffe9236ff7d52fbeb93204341959319a9d1104e419414f4c268be7211fb8fc4a">SystemEx.Collections.Generic.Interfaces.Backwards</a>
+<tr class="memitem:ga9ffe9236ff7d52fbeb93204341959319" id="r_ga9ffe9236ff7d52fbeb93204341959319"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="../../d5/d4f/group__interfaces.html#ga9ffe9236ff7d52fbeb93204341959319">SystemEx.Collections.Generic.Interfaces.TraversMode</a> { <a class="el" href="../../d5/d4f/group__interfaces.html#gga9ffe9236ff7d52fbeb93204341959319a1e411b48c18c85a91ad46b53ebb24d6a">SystemEx.Collections.Generic.Interfaces.TraversMode.Forwards</a>
+, <a class="el" href="../../d5/d4f/group__interfaces.html#gga9ffe9236ff7d52fbeb93204341959319a9d1104e419414f4c268be7211fb8fc4a">SystemEx.Collections.Generic.Interfaces.TraversMode.Backwards</a>
  }</td></tr>
-<tr class="memdesc:a9ffe9236ff7d52fbeb93204341959319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the traversal direction for iterating over a sequence.  <a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#a9ffe9236ff7d52fbeb93204341959319">More...</a><br /></td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

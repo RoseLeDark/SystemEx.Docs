@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,32 +117,33 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Interfaces.IMap Interface Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Interfaces.IMap Interface Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a> &raquo; <a class="el" href="../../d5/d4f/group__interfaces.html">Interfaces</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.Interfaces.IMap:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.Interfaces.IMap:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.png" usemap="#SystemEx_2ECollections_2EGeneric_2EInterfaces_2EIMap_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2EInterfaces_2EIMap_map" name="SystemEx_2ECollections_2EGeneric_2EInterfaces_2EIMap_map">
 <area href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html" title="Defines a typed map structure that stores key/value pairs as Pair&lt;T, TU&gt;. Provides insertion,..." alt="SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;" shape="rect" coords="375,56,740,80"/>
-<area href="../../d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html" title="Defines a map structure specialized for storing and retrieving ITuple objects. Provides tuple‑based s..." alt="SystemEx.Collections.Generic.Interfaces.ITupleMap" shape="rect" coords="1781,56,2146,80"/>
-<area href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html" title="A fixed‑size map storing Pair&lt;T, TU&gt; elements in a contiguous array.   Unlike dynamic maps,..." alt="SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;" shape="rect" coords="0,112,365,136"/>
+<area href="../../d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html" alt="SystemEx.Collections.Generic.Interfaces.ITupleMap" shape="rect" coords="1781,56,2146,80"/>
+<area href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html" alt="SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;" shape="rect" coords="0,112,365,136"/>
 <area href="../../d6/d5e/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_map-2-g.html" title="Extends IMap&lt;T, TU&gt; with sorting capabilities for key/value pairs. Sorting can be performed using a d..." alt="SystemEx.Collections.Generic.Interfaces.ISortedMap&lt; T, TU &gt;" shape="rect" coords="375,112,740,136"/>
-<area href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html" title="A dynamic map storing Pair&lt;T, TU&gt; elements in a list.   The map supports duplicate keys but prevents ..." alt="SystemEx.Collections.Generic.Map&lt; T, TU &gt;" shape="rect" coords="937,112,1302,136"/>
+<area href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html" alt="SystemEx.Collections.Generic.Map&lt; T, TU &gt;" shape="rect" coords="937,112,1302,136"/>
 <area href="../../dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html" title="Extends ITupleMap with sorting capabilities for tuple elements. Sorting can be performed using a dele..." alt="SystemEx.Collections.Generic.Interfaces.ISortedTupleMap" shape="rect" coords="1500,112,1865,136"/>
-<area href="../../d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html" title="A dynamic, list‑backed map structure that stores ITuple objects. Provides tuple‑based lookup,..." alt="SystemEx.Collections.Generic.TupleMap" shape="rect" coords="2062,112,2427,136"/>
-<area href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html" title="A map that maintains its elements in sorted order using either a custom comparer (ICompared&lt;T&gt;) or a ..." alt="SystemEx.Collections.Generic.SortedMap&lt; T, TU &gt;" shape="rect" coords="375,168,740,192"/>
-<area href="../../d3/d72/class_system_ex_1_1_collections_1_1_generic_1_1_multi_map-2-g.html" title="A map that allows multiple entries with the same key.   Unlike Map&lt;T, TU&gt;, which prevents duplicate p..." alt="SystemEx.Collections.Generic.MultiMap&lt; TT, TU &gt;" shape="rect" coords="750,168,1115,192"/>
-<area href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html" title="A map that maintains its elements in sorted order using either a custom comparer (ICompared&lt;T&gt;) or a ..." alt="SystemEx.Collections.Generic.SortedMap&lt; T, TU &gt;" shape="rect" coords="1125,168,1490,192"/>
-<area href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html" title="A tuple map that maintains its elements in sorted order.   Sorting is performed using either a custom..." alt="SystemEx.Collections.Generic.SortedTupleMap" shape="rect" coords="1500,168,1865,192"/>
-<area href="../../d5/de6/class_system_ex_1_1_collections_1_1_generic_1_1_multi_tuple_map.html" title="A tuple map that allows multiple entries with identical tuple keys.   Unlike TupleMap,..." alt="SystemEx.Collections.Generic.MultiTupleMap" shape="rect" coords="1875,168,2240,192"/>
-<area href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html" title="A tuple map that maintains its elements in sorted order.   Sorting is performed using either a custom..." alt="SystemEx.Collections.Generic.SortedTupleMap" shape="rect" coords="2250,168,2615,192"/>
+<area href="../../d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html" alt="SystemEx.Collections.Generic.TupleMap" shape="rect" coords="2062,112,2427,136"/>
+<area href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html" alt="SystemEx.Collections.Generic.SortedMap&lt; T, TU &gt;" shape="rect" coords="375,168,740,192"/>
+<area href="../../d3/d72/class_system_ex_1_1_collections_1_1_generic_1_1_multi_map-2-g.html" alt="SystemEx.Collections.Generic.MultiMap&lt; TT, TU &gt;" shape="rect" coords="750,168,1115,192"/>
+<area href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html" alt="SystemEx.Collections.Generic.SortedMap&lt; T, TU &gt;" shape="rect" coords="1125,168,1490,192"/>
+<area href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html" alt="SystemEx.Collections.Generic.SortedTupleMap" shape="rect" coords="1500,168,1865,192"/>
+<area href="../../d5/de6/class_system_ex_1_1_collections_1_1_generic_1_1_multi_tuple_map.html" alt="SystemEx.Collections.Generic.MultiTupleMap" shape="rect" coords="1875,168,2240,192"/>
+<area href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html" alt="SystemEx.Collections.Generic.SortedTupleMap" shape="rect" coords="2250,168,2615,192"/>
 <area href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html" title="A map that allows multiple entries with the same key.   Unlike Map&lt;T, TU&gt;, which prevents duplicate p..." alt="SystemEx.Collections.Generic.SortedMultiMap&lt; T, TU &gt;" shape="rect" coords="375,224,740,248"/>
 <area href="../../d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html" title="A map that allows multiple entries with the same key.   Unlike Map&lt;T, TU&gt;, which prevents duplicate p..." alt="SystemEx.Collections.Generic.SortedMultiMap&lt; T, TU &gt;" shape="rect" coords="1125,224,1490,248"/>
-<area href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html" title="A sorted tuple map that allows multiple entries with identical tuple keys.   Unlike SortedTupleMap,..." alt="SystemEx.Collections.Generic.SortedMultiTupleMap" shape="rect" coords="1500,224,1865,248"/>
-<area href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html" title="A sorted tuple map that allows multiple entries with identical tuple keys.   Unlike SortedTupleMap,..." alt="SystemEx.Collections.Generic.SortedMultiTupleMap" shape="rect" coords="2250,224,2615,248"/>
+<area href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html" alt="SystemEx.Collections.Generic.SortedMultiTupleMap" shape="rect" coords="1500,224,1865,248"/>
+<area href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html" alt="SystemEx.Collections.Generic.SortedMultiTupleMap" shape="rect" coords="2250,224,2615,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -210,7 +171,7 @@ Properties</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00030">30</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00032">32</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a1e303eb89bb86166bbc5edaba4e8239e" name="a1e303eb89bb86166bbc5edaba4e8239e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1e303eb89bb86166bbc5edaba4e8239e">&#9670;&#160;</a></span>Clear()</h2>
@@ -309,7 +270,7 @@ Properties</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a5cce35250f79de92329f3340ec9ed4ec">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a18e22d54212d47a7eb2ef83136ad1a73">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, and <a class="el" href="../../d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#a0d77592b925a15a0e2bdec8dcfed41bb">SystemEx.Collections.Generic.TupleMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00036">36</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00038">38</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
 
 </div>
 </div>
@@ -335,7 +296,7 @@ Properties</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#aca521e695853c667e9a20e5648dc2a42">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a7e4ad89675f22c5c777301cfcdbb5e27">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, and <a class="el" href="../../d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#ae73e438dbbfe7235fa14b5a751d708da">SystemEx.Collections.Generic.TupleMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00046">46</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00048">48</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
 
 </div>
 </div>
@@ -361,7 +322,7 @@ Properties</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#aadb9e69b3991c3297eb5c2780764055a">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a31e3c2926ea789c119cb7d77af5b2361">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, and <a class="el" href="../../d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#a481ffe7966a73dcda73ed9db0f7ab8a5">SystemEx.Collections.Generic.TupleMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00051">51</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00053">53</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
 
 </div>
 </div>
@@ -387,7 +348,7 @@ Properties</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a586cad0d81f7406660a52ddfa6a8be02">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#acf53ddb5dd19f809ca1c40bbf0d574d4">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, and <a class="el" href="../../d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#a5b00901824a1403491b0d83f6885c6b7">SystemEx.Collections.Generic.TupleMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00041">41</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00043">43</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
 
 </div>
 </div>
@@ -413,12 +374,12 @@ Properties</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a1b6974b80a5380a3a4352005ed115ed8">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a>, <a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a24f5a553174bdbfcf1b418a5de66f4a6">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a>, and <a class="el" href="../../d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html#af68bea43f73a0e6135b05a8210d19344">SystemEx.Collections.Generic.TupleMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00056">56</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d19/_i_map_8cs_source.html#l00058">58</a> of file <a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>Collections/Generic/Interfaces/<a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a></li>
+<li><a class="el" href="../../db/d19/_i_map_8cs_source.html">IMap.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

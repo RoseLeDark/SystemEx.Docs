@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: IO/CachStream.cs Source File</title>
+<title>SystemEX: CachStream.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -426,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>}</div>
 </div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_cache_html"><div class="ttname"><a href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">SystemEx.Collections.Generic.Cache</a></div><div class="ttdoc">Represents a low-level byte buffer with position tracking, typed read/write helpers,...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d82/_cache_8cs_source.html#l00060">Cache.cs:60</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_cache_html"><div class="ttname"><a href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">SystemEx.Collections.Generic.Cache</a></div><div class="ttdoc">Represents a low-level byte buffer with position tracking, typed read/write helpers,...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d82/_cache_8cs_source.html#l00062">Cache.cs:62</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_i_o_1_1_cache_stream-1-g_html_a0208eef35063d10673e4aac7f180719a"><div class="ttname"><a href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a0208eef35063d10673e4aac7f180719a">SystemEx.IO.CacheStream-1-g.CanRead</a></div><div class="ttdeci">override bool CanRead</div><div class="ttdoc">Indicates whether the stream supports reading.</div><div class="ttdef"><b>Definition</b> <a href="#l00087">CachStream.cs:87</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_i_o_1_1_cache_stream-1-g_html_a06e54e2c9c1f259e1fe977148e584054"><div class="ttname"><a href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a06e54e2c9c1f259e1fe977148e584054">SystemEx.IO.CacheStream-1-g.Write</a></div><div class="ttdeci">int Write(byte value)</div><div class="ttdef"><b>Definition</b> <a href="#l00144">CachStream.cs:144</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_i_o_1_1_cache_stream-1-g_html_a0dd377da0c04fab8501b2a7638cc36ef"><div class="ttname"><a href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a0dd377da0c04fab8501b2a7638cc36ef">SystemEx.IO.CacheStream-1-g.ReadRange</a></div><div class="ttdeci">byte?[] ReadRange(uint count)</div><div class="ttdef"><b>Definition</b> <a href="#l00195">CachStream.cs:195</a></div></div>
@@ -468,14 +428,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="ttc" id="aclass_system_ex_1_1_i_o_1_1_cache_stream-1-g_html_aec8e957a240fd0e0cb05135f073c0ac2"><div class="ttname"><a href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#aec8e957a240fd0e0cb05135f073c0ac2">SystemEx.IO.CacheStream-1-g.Flush</a></div><div class="ttdeci">override void Flush()</div><div class="ttdoc">Flushes the stream. No‑op for cache streams.</div><div class="ttdef"><b>Definition</b> <a href="#l00115">CachStream.cs:115</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_i_o_1_1_cache_stream-1-g_html_aef8dc020b070216376cd134c2124075f"><div class="ttname"><a href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#aef8dc020b070216376cd134c2124075f">SystemEx.IO.CacheStream-1-g.Read</a></div><div class="ttdeci">override int Read(byte[] buffer, int offset, int count)</div><div class="ttdoc">Reads bytes from the cache into the specified buffer.</div><div class="ttdef"><b>Definition</b> <a href="#l00121">CachStream.cs:121</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_i_o_1_1_cache_stream-1-g_html_af1c905cfccea458d0f23a0a9dd1c8524"><div class="ttname"><a href="../../df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#af1c905cfccea458d0f23a0a9dd1c8524">SystemEx.IO.CacheStream-1-g.CopyTo</a></div><div class="ttdeci">override void CopyTo(Stream destination, int bufferSize)</div><div class="ttdoc">Copies the contents of this stream to another stream using the specified buffer size.</div><div class="ttdef"><b>Definition</b> <a href="#l00060">CachStream.cs:60</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache_html"><div class="ttname"><a href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html">SystemEx.Collections.Generic.Interfaces.ICache</a></div><div class="ttdoc">Defines a typed cache a low-level byte buffer with position tracking, typed read/write helpers,...</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d2b/_i_cache_8cs_source.html#l00024">ICache.cs:24</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache_html"><div class="ttname"><a href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html">SystemEx.Collections.Generic.Interfaces.ICache</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d2b/_i_cache_8cs_source.html#l00028">ICache.cs:28</a></div></div>
 <div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache_html_a0523c298e482c73babce084b34f67d4c"><div class="ttname"><a href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a0523c298e482c73babce084b34f67d4c">SystemEx.Collections.Generic.Interfaces.ICache.WriteRange</a></div><div class="ttdeci">ulong WriteRange(ulong position, byte[] data)</div><div class="ttdoc">Writes a byte range into the cache starting at the specified position.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache_html_a47c2641f98cc4c7ff21dc446194babb9"><div class="ttname"><a href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a47c2641f98cc4c7ff21dc446194babb9">SystemEx.Collections.Generic.Interfaces.ICache.CanRead</a></div><div class="ttdeci">bool CanRead</div><div class="ttdoc">Indicates whether the cache is readable.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d2b/_i_cache_8cs_source.html#l00048">ICache.cs:48</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache_html_a47c2641f98cc4c7ff21dc446194babb9"><div class="ttname"><a href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a47c2641f98cc4c7ff21dc446194babb9">SystemEx.Collections.Generic.Interfaces.ICache.CanRead</a></div><div class="ttdeci">bool CanRead</div><div class="ttdoc">Indicates whether the cache is readable.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d2b/_i_cache_8cs_source.html#l00052">ICache.cs:52</a></div></div>
 <div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache_html_a5369eb3bc016ffb7e6cdfa8d186ad82f"><div class="ttname"><a href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a5369eb3bc016ffb7e6cdfa8d186ad82f">SystemEx.Collections.Generic.Interfaces.ICache.ReadRange</a></div><div class="ttdeci">byte?[] ReadRange(ulong position, uint count)</div><div class="ttdoc">Reads a range of bytes starting at the specified position.</div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache_html_a619bee5e6e78fa6e29ac1464c17e2c05"><div class="ttname"><a href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a619bee5e6e78fa6e29ac1464c17e2c05">SystemEx.Collections.Generic.Interfaces.ICache.Length</a></div><div class="ttdeci">ulong Length</div><div class="ttdoc">Gets the total buffer length in bytes.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d2b/_i_cache_8cs_source.html#l00028">ICache.cs:28</a></div></div>
-<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache_html_abf3d52d5d149dfcf09d1928ce737808a"><div class="ttname"><a href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#abf3d52d5d149dfcf09d1928ce737808a">SystemEx.Collections.Generic.Interfaces.ICache.CanWrite</a></div><div class="ttdeci">bool CanWrite</div><div class="ttdoc">Indicates whether the cache is writable.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d2b/_i_cache_8cs_source.html#l00044">ICache.cs:44</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache_html_a619bee5e6e78fa6e29ac1464c17e2c05"><div class="ttname"><a href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a619bee5e6e78fa6e29ac1464c17e2c05">SystemEx.Collections.Generic.Interfaces.ICache.Length</a></div><div class="ttdeci">ulong Length</div><div class="ttdoc">Gets the total buffer length in bytes.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d2b/_i_cache_8cs_source.html#l00032">ICache.cs:32</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache_html_abf3d52d5d149dfcf09d1928ce737808a"><div class="ttname"><a href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#abf3d52d5d149dfcf09d1928ce737808a">SystemEx.Collections.Generic.Interfaces.ICache.CanWrite</a></div><div class="ttdeci">bool CanWrite</div><div class="ttdoc">Indicates whether the cache is writable.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d2b/_i_cache_8cs_source.html#l00048">ICache.cs:48</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d16/_i_array_8cs_source.html#l00018">IArray.cs:18</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00022">Array.cs:22</a></div></div>
+<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00023">Array.cs:23</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_i_o_html"><div class="ttname"><a href="../../d4/d5d/namespace_system_ex_1_1_i_o.html">SystemEx.IO</a></div><div class="ttdef"><b>Definition</b> <a href="#l00025">CachStream.cs:25</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_utils_html"><div class="ttname"><a href="../../d2/d14/namespace_system_ex_1_1_utils.html">SystemEx.Utils</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d35/_algorithm_8cs_source.html#l00021">Algorithm.cs:21</a></div></div>
 <div class="ttc" id="anamespace_system_ex_html_ab37b6205838476a6d1b48cfa0440cacd"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">SystemEx.Endian</a></div><div class="ttdeci">Endian</div><div class="ttdoc">Specifies the byte order used when converting values to and from raw byte sequences.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d81/_conversion_8cs_source.html#l00028">Conversion.cs:28</a></div></div>

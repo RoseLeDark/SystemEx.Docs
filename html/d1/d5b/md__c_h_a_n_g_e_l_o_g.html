@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -160,26 +120,110 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">Changelog </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+<div class="textblock"><p><a class="anchor" id="changelog"></a></p>
+<h1 class="doxsection"><a class="anchor" id="planned-to-version-10"></a>
 Planned to Version 1.0</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+<h2 class="doxsection"><a class="anchor" id="add"></a>
 Add</h2>
 <ul>
 <li>Cache and collection primitives ( <span class="tt">CacheRaid</span>, <span class="tt">CacheRaid4</span>, etc.) to <b><span class="tt"><a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></span></b>.</li>
 <li>Add Locking System</li>
 <li>OpenCL Kerneal Call with my <a class="el" href="../../d7/d59/namespace_system_ex_1_1_device.html">SystemEx.Device</a> System</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md01070-2906206"></a>
+[0.10.70] 29.06.206</h1>
+<h2 class="doxsection"><a class="anchor" id="very-important"></a>
+Very Important</h2>
+<ul>
+<li><b>Renamed <span class="tt">RamKernel</span> → <span class="tt">NativeRAMKernel&lt;TDelegate&gt;</span></b> <br  />
+ New unified kernel base class replacing the old RAM‑only implementation. <br  />
+ See example: <span class="tt"><a class="el" href="../../da/d57/_example_ram_kernel_add_8cs.html">Examples/ExampleRamKernelAdd.cs</a></span>.</li>
+<li><b>Removed all legacy platform kernel loaders</b> <br  />
+ (<span class="tt">WindowsKernelLoader</span>, <span class="tt">LinuxKernelLoader</span>, <span class="tt">MacKernelLoader</span>, <span class="tt">NoSupportKernelLoader</span>) <br  />
+ Replaced by new module‑centric loader architecture.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="added"></a>
+Added</h2>
+<ul>
+<li>Introduced full native module system under <span class="tt"><a class="el" href="../../d4/d8e/namespace_system_ex_1_1_runtime.html">SystemEx.Runtime</a></span>:<ul>
+<li><span class="tt"><a class="el" href="../../dc/d21/_native_r_a_m_kernel_8cs.html#ac108a8ab3a325c58d6d2dfab43fecb66">Module</a></span> (DLL/SO/DYLIB abstraction with handle + function lookup)</li>
+<li><span class="tt">NativeHost</span> (module cache, unload, delegate binding)</li>
+</ul>
+</li>
+<li>Added platform loader backends under <span class="tt"><a class="el" href="../../d0/daf/namespace_system_ex_1_1_runtime_1_1_interop_services_1_1_platform.html">SystemEx.Runtime.InteropServices.Platform</a></span>:<ul>
+<li><span class="tt">WindowsProcLoader</span></li>
+<li><span class="tt">LinuxProcLoader</span></li>
+<li><span class="tt">MacProcLoader</span></li>
+<li><span class="tt">NoSupportProcLoader</span> (simulated backend)</li>
+</ul>
+</li>
+<li>Added new kernel base class <span class="tt">NativeRAMKernel&lt;TDelegate&gt;</span>:<ul>
+<li>Backend‑neutral kernel lifecycle (<span class="tt">Create</span>, <span class="tt">BeginRun</span>, <span class="tt">Run</span>, <span class="tt">EndRun</span>)</li>
+<li>Automatic buffer lock/unlock</li>
+<li>Delegate‑based native function invocation</li>
+<li>Backend hooks (<span class="tt">OnCreate</span>, <span class="tt">OnBegin</span>, <span class="tt">OnRun</span>, <span class="tt">OnEnd</span>, <span class="tt">OnAddBuffer</span>)</li>
+</ul>
+</li>
+<li>Added example kernel: <br  />
+<ul>
+<li><span class="tt">ExampleRamKernelAdd</span> demonstrating the new API.</li>
+</ul>
+</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="changed"></a>
+Changed</h2>
+<ul>
+<li>Replaced unmanaged call pipeline:<ul>
+<li>Old: <span class="tt">KernelLoader.call(...)</span></li>
+<li>New: delegate binding via <span class="tt">Marshal.GetDelegateForFunctionPointer&lt;T&gt;()</span></li>
+</ul>
+</li>
+<li>Updated RAM backend to use unified module + loader system.</li>
+<li>Updated namespaces:<ul>
+<li><span class="tt"><a class="el" href="../../d7/d29/namespace_system_ex_1_1_device_1_1_intertropt.html">SystemEx.Device.Intertropt</a></span> → <span class="tt">SystemEx.Device.Interop</span></li>
+<li>New runtime loaders under <span class="tt"><a class="el" href="../../d0/daf/namespace_system_ex_1_1_runtime_1_1_interop_services_1_1_platform.html">SystemEx.Runtime.InteropServices.Platform</a></span></li>
+</ul>
+</li>
+<li>Updated buffer lifecycle to match new kernel execution model.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="improved"></a>
+Improved</h2>
+<ul>
+<li>Unified module loading across Windows/Linux/macOS.</li>
+<li>Clear separation between:<ul>
+<li>module loading</li>
+<li>function resolution</li>
+<li>kernel lifecycle</li>
+<li>buffer lifecycle</li>
+</ul>
+</li>
+<li>More consistent behavior with future GPU backends.</li>
+<li>Cleaner example code and documentation.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="removed"></a>
+Removed</h2>
+<ul>
+<li><span class="tt">RamKernel</span></li>
+<li>All <span class="tt">KernelLoader</span> platform variants</li>
+<li>Old Begin/Run/End RAM kernel implementation</li>
+<li>Old unmanaged call logic</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="notes"></a>
+Notes</h2>
+<ul>
+<li>This update contains <b>breaking changes</b>. All code using <span class="tt">RamKernel</span> or <span class="tt">KernelLoader</span> must migrate to <span class="tt">NativeRAMKernel&lt;TDelegate&gt;</span>.</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md0964-23062026"></a>
 [0.9.64] 23.06.2026</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-1"></a>
 Changed</h2>
 <ul>
 <li><span class="tt">public int Length { get; }</span> → <span class="tt">public ulong Length { get; }</span></li>
 <li><span class="tt">Cache&lt;T&gt;</span> is now fully ulong‑addressed instead of int‑based</li>
 <li>Renamed <span class="tt">ITerator</span> → <span class="tt">IIterator</span> (updated across all dependent iterator‑based classes)</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+<h2 class="doxsection"><a class="anchor" id="added-1"></a>
 Added</h2>
 <ul>
 <li>Added <span class="tt">Free</span> and <span class="tt">Used</span> properties to <span class="tt">Cache&lt;T&gt;</span> with new internal member <span class="tt">m_maxUsedAddress</span> <br  />
@@ -192,10 +236,11 @@ Added</h2>
 </li>
 <li>Added <span class="tt">TypeBuffer&lt;T&gt;</span> and <span class="tt">ITypeBuffer&lt;T&gt;</span> to <span class="tt"><a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></span> A typed view over a raw <code>Cache</code> that exposes elements of an unmanaged type <em>T</em> </li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md096-21062026"></a>
 [0.9.6] 21.06.2026</h1>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
-Added</h1>
+<h2 class="doxsection"><a class="anchor" id="added-2"></a>
+Added</h2>
 <ul>
 <li>Introduced new HWB and NCol color models under <span class="tt"><a class="el" href="../../de/d5b/namespace_system_ex_1_1_drawing.html">SystemEx.Drawing</a></span>:<ul>
 <li>Added <span class="tt">ColorHWB</span> with hue/whiteness/blackness representation</li>
@@ -230,8 +275,8 @@ Added</h1>
 </ul>
 </li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
-Changed</h1>
+<h2 class="doxsection"><a class="anchor" id="changed-2"></a>
+Changed</h2>
 <ul>
 <li>Updated <span class="tt">Map</span> and <span class="tt">IMap</span>:<ul>
 <li>Added <span class="tt">Add(key, value)</span> overload</li>
@@ -256,16 +301,16 @@ Changed</h1>
 </li>
 <li>Renamed <span class="tt">Utils/Utils.cs</span> → <span class="tt"><a class="el" href="../../d3/d81/_conversion_8cs.html">Utils/Conversion.cs</a></span></li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
-Improved**</h1>
+<h2 class="doxsection"><a class="anchor" id="improved-1"></a>
+Improved**</h2>
 <ul>
 <li>More consistent color conversion pipeline across all color models</li>
 <li>Unified clamping and normalization behavior in HSV/HSL/CMY models</li>
 <li>Improved documentation and XML comments across multiple files</li>
 <li>Cleaner separation between read‑only and mutable map interfaces</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
-Fixed</h1>
+<h2 class="doxsection"><a class="anchor" id="fixed"></a>
+Fixed</h2>
 <ul>
 <li>Fixed incorrect index usage in <span class="tt">ColorCMY(float[] x)</span></li>
 <li>Fixed namespace mismatch in <span class="tt">ColorHSL</span></li>
@@ -273,45 +318,48 @@ Fixed</h1>
 <li>Fixed minor documentation errors and typos across drawing and collection modules</li>
 <li>Removed unused <span class="tt">m_currentCache</span> field from <span class="tt">StrippedCache</span></li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md095-18062026"></a>
 [0.9.5] 18.06.2026</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+<h2 class="doxsection"><a class="anchor" id="very-important-1"></a>
 Very Important</h2>
 <ul>
 <li>Namespace: <span class="tt">SystemEx.Collection.Generic</span> To <span class="tt"><a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></span> </li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
-Add</h1>
+<h2 class="doxsection"><a class="anchor" id="add-1"></a>
+Add</h2>
 <ul>
 <li>Add class <span class="tt">Cluster&lt;T&gt;</span> at <span class="tt"><a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></span> Represents a cluster node in a weighted graph structure.</li>
 <li>Add class <span class="tt">CacheStream&lt;TCache&gt;</span> at <span class="tt"><a class="el" href="../../d4/d5d/namespace_system_ex_1_1_i_o.html">SystemEx.IO</a></span>A Stream wrapper around a <span class="tt">Cache&lt;T&gt;</span> instance. <br  />
 </li>
 <li>Add Color Classes to <span class="tt"><a class="el" href="../../de/d5b/namespace_system_ex_1_1_drawing.html">SystemEx.Drawing</a></span> - ColorHSL, ColorHSV, ColorRGB, ColorGray, ... Start with build in next Version are ready </li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
-Docu</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
-- The Doku in <span class="tt">SystemEx.Collections.Generic</span>, <span class="tt">SystemEx.IO</span>, <span class="tt">SysrtemEx</span> and <span class="tt">SysrtemEx.Utils</span> is ready</h2>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
-[0.8.5] 04.06.2026</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
-Very Important</h3>
+<h2 class="doxsection"><a class="anchor" id="docu"></a>
+Docu</h2>
+<ul>
+<li>The Doku in <span class="tt"><a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></span>, <span class="tt"><a class="el" href="../../d4/d5d/namespace_system_ex_1_1_i_o.html">SystemEx.IO</a></span>, <span class="tt">SysrtemEx</span> and <span class="tt">SysrtemEx.Utils</span> is ready</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md085-04062026"></a>
+[0.8.5] 04.06.2026</h1>
+<h2 class="doxsection"><a class="anchor" id="very-important-2"></a>
+Very Important</h2>
 <ul>
 <li><b>Major namespace restructuring</b> to reflect the engine architecture and clarify responsibilities across collections, device memory, and interop layers.</li>
 <li>This release contains <b>breaking changes</b>: update all <span class="tt">using</span>/imports to the new namespaces.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
-Changed</h3>
+<h2 class="doxsection"><a class="anchor" id="changed-3"></a>
+Changed</h2>
 <ul>
 <li>Moved device memory types (<span class="tt">DeviceBuffer</span>, <span class="tt">DeviceSharedBuffer&lt;TDeviceSharedBackend&gt;</span>) to <b><span class="tt"><a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html">SystemEx.Device.Memory</a></span></b>.</li>
-<li>Moved native interop and backend implementations (<span class="tt">UnmanagedObject</span>, <span class="tt">RamSharedBackend</span>, <span class="tt">IDeviceSharedBackend</span>, platform kernel loaders) to <b><span class="tt"><a class="el" href="../../db/d89/namespace_system_ex_1_1_device_1_1_interop.html">SystemEx.Device.Interop</a></span></b>.</li>
+<li>Moved native interop and backend implementations (<span class="tt">UnmanagedObject</span>, <span class="tt">RamSharedBackend</span>, <span class="tt">IDeviceSharedBackend</span>, platform kernel loaders) to <b><span class="tt">SystemEx.Device.Interop</span></b>.</li>
 <li>Kept kernel and execution interfaces (<span class="tt">IKernel&lt;TBackend&gt;</span>, <span class="tt">RamKernel</span>, kernel lifecycle orchestration) under <b><span class="tt"><a class="el" href="../../d7/d59/namespace_system_ex_1_1_device.html">SystemEx.Device</a></span></b>.</li>
 </ul>
 <p>Removed legacy <span class="tt">SystemEx.Device.Memory.Missings</span> layout and deprecated <span class="tt">System.Memory.Missings</span> placements; types have been relocated to the new namespaces above.</p><ul>
 <li>Updated internal references and XML docs to reflect new namespace locations.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
-Added</h3>
+<h2 class="doxsection"><a class="anchor" id="added-3"></a>
+Added</h2>
 <ul>
 <li>Migration guidance notes and quick reference mapping for common types:<ul>
 <li><span class="tt">SystemEx.Device.Memory.Missings.RamSharedBackend</span> → <span class="tt">SystemEx.Device.Interop.RamSharedBackend</span></li>
@@ -319,8 +367,8 @@ Added</h3>
 <li><span class="tt">SystemEx.Collections.Generic.SharedCache</span> → <span class="tt"><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">SystemEx.Collections.Generic.Cache</a></span> (and related cache types)</li>
 </ul>
 </li>
-<li>Add a Map for ITuples <span class="tt"><a class="el" href="../../d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html" title="A dynamic, list‑backed map structure that stores ITuple objects. Provides tuple‑based lookup,...">SystemEx.Collections.Generic.TupleMap</a></span>, <span class="tt"><a class="el" href="../../d5/de6/class_system_ex_1_1_collections_1_1_generic_1_1_multi_tuple_map.html" title="A tuple map that allows multiple entries with identical tuple keys.   Unlike TupleMap,...">SystemEx.Collections.Generic.MultiTupleMap</a></span> and <span class="tt"><a class="el" href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html" title="A tuple map that maintains its elements in sorted order.   Sorting is performed using either a custom...">SystemEx.Collections.Generic.SortedTupleMap</a></span></li>
-<li>Add <span class="tt"><a class="el" href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html" title="A segmented cache implementation that splits a large logical address space into multiple fixed-size c...">SystemEx.Collections.Generic.StrippedCache</a></span> (segmented virtual cache over N sub‑caches; global addressing, byte‑wise distribution).</li>
+<li>Add a Map for ITuples <span class="tt"><a class="el" href="../../d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html">SystemEx.Collections.Generic.TupleMap</a></span>, <span class="tt"><a class="el" href="../../d5/de6/class_system_ex_1_1_collections_1_1_generic_1_1_multi_tuple_map.html">SystemEx.Collections.Generic.MultiTupleMap</a></span> and <span class="tt"><a class="el" href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html">SystemEx.Collections.Generic.SortedTupleMap</a></span></li>
+<li>Add <span class="tt"><a class="el" href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html">SystemEx.Collections.Generic.StrippedCache</a></span> (segmented virtual cache over N sub‑caches; global addressing, byte‑wise distribution).</li>
 <li>Added full support for:<ul>
 <li>WriteRange(ulong position, byte[] data)</li>
 <li>WriteRange(ulong start, ulong end, byte[] data)</li>
@@ -331,8 +379,8 @@ Added</h3>
 </li>
 <li>Add <span class="tt">SystemEx.Collection.Generic.MirroredCache</span> (dual‑cache pair; writes to A and mirrored A‑reverse; consistent read/write symmetry).</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
-Improved</h3>
+<h2 class="doxsection"><a class="anchor" id="improved-2"></a>
+Improved</h2>
 <ul>
 <li>Clear separation of concerns between collection‑level caches and device‑level memory/backends.</li>
 <li>Improved discoverability and consistency for public APIs across Collections, Device, and Interop subsystems.</li>
@@ -342,31 +390,31 @@ Improved</h3>
 <li>Improved index validation for segmented cache exports (ToArray(index)).</li>
 <li></li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
-Fixed</h3>
+<h2 class="doxsection"><a class="anchor" id="fixed-1"></a>
+Fixed</h2>
 <ul>
 <li>Resolved ambiguous type collisions caused by previous overlapping namespaces.</li>
 <li>Fixed incorrect index comparison in ToArray(int index) (unsigned‑correct boundary check).</li>
 <li>Fixed potential overflow in SeekOrigin.Current and SeekOrigin.End when negative offsets were cast to ulong.</li>
 <li>Fixed incorrect cast from ulong to long in cache index validation. </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
-Notes / Migration</h3>
+<h2 class="doxsection"><a class="anchor" id="notes--migration"></a>
+Notes / Migration</h2>
 <ul>
 <li><b>Breaking change:</b> update all <span class="tt">using</span> directives and project references to the new namespaces. <br  />
  Example mappings:<ul>
 <li><span class="tt">using SystemEx.Device.Memory.Missings;</span> → <span class="tt">using <a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html">SystemEx.Device.Memory</a>;</span></li>
 <li><span class="tt">using SystemEx.Collection.Generic;</span> (old cache location) → <span class="tt">using <a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a>;</span></li>
-<li><span class="tt">using <a class="el" href="../../d7/d29/namespace_system_ex_1_1_device_1_1_intertropt.html">SystemEx.Device.Intertropt</a>;</span> → <span class="tt">using <a class="el" href="../../db/d89/namespace_system_ex_1_1_device_1_1_interop.html">SystemEx.Device.Interop</a>;</span> </li>
+<li><span class="tt">using <a class="el" href="../../d7/d29/namespace_system_ex_1_1_device_1_1_intertropt.html">SystemEx.Device.Intertropt</a>;</span> → <span class="tt">using SystemEx.Device.Interop;</span></li>
 </ul>
 </li>
+<li>Search your codebase for the old namespace tokens (<span class="tt">Missings</span>, <span class="tt">Intertropt</span>, <span class="tt">System.Memory.Missings</span>) and replace with the new targets.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
-- Search your codebase for the old namespace tokens (<span class="tt">Missings</span>, <span class="tt">Intertropt</span>, <span class="tt">System.Memory.Missings</span>) and replace with the new targets.</h2>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
-[0.8.1] 04.06.2026</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
-Added</h3>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md081-04062026"></a>
+[0.8.1] 04.06.2026</h1>
+<h2 class="doxsection"><a class="anchor" id="added-4"></a>
+Added</h2>
 <ul>
 <li>Introduced full RAM backend under <span class="tt">System.Memory.Missings</span>:<ul>
 <li>Added <span class="tt">RamSharedBackend</span> implementing <span class="tt">IDeviceSharedBackend</span></li>
@@ -394,8 +442,8 @@ Added</h3>
 </ul>
 </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
-Changed</h3>
+<h2 class="doxsection"><a class="anchor" id="changed-4"></a>
+Changed</h2>
 <ul>
 <li>Moved <span class="tt">SharedCache</span> / <span class="tt">DeviceSharedCache</span> aus <span class="tt">System.Collections.Generic.Missings</span> nach <span class="tt">System.Memory.Missings</span> und in <span class="tt">DeviceSharedBuffer</span> überführt</li>
 <li>Replaced previous MemoryHandle‑based RAM pinning with explicit GCHandle pinning</li>
@@ -409,8 +457,8 @@ Changed</h3>
 </ul>
 </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
-Improved</h3>
+<h2 class="doxsection"><a class="anchor" id="improved-3"></a>
+Improved</h2>
 <ul>
 <li>Clear separation between managed cache (<span class="tt">DeviceBuffer</span>) and unmanaged hardware buffer</li>
 <li>Consistent pointer and size access for all RAM kernel operations</li>
@@ -421,8 +469,8 @@ Improved</h3>
 </li>
 <li>More consistent behavior with GPU backends through unified kernel interface</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
-Fixed</h3>
+<h2 class="doxsection"><a class="anchor" id="fixed-2"></a>
+Fixed</h2>
 <ul>
 <li>Fixed missing unpin in <span class="tt">ReciveFromHardwareBuffer</span></li>
 <li>Fixed invalid hardware buffer state after End()</li>
@@ -430,10 +478,10 @@ Fixed</h3>
 <li>Fixed incorrect buffer size propagation to native kernel calls</li>
 </ul>
 <hr  />
- <h2 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
-[0.7.0] 03.06.2026</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md31"></a>
-Added</h3>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md070-03062026"></a>
+[0.7.0] 03.06.2026</h1>
+<h2 class="doxsection"><a class="anchor" id="added-5"></a>
+Added</h2>
 <ul>
 <li>Introduced <span class="tt">RandPasswordLevel</span> enum (<span class="tt">Simple = 16</span>, <span class="tt">Strong = 32</span>)</li>
 <li>Added <span class="tt">RandPassword(int length, FixedArray&lt;char&gt; allowed, Endian endian)</span>:<ul>
@@ -449,23 +497,23 @@ Added</h3>
 </li>
 <li>Added <span class="tt">StrongPasswordChars</span> set with safe, universal symbols</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md32"></a>
-Improved</h3>
+<h2 class="doxsection"><a class="anchor" id="improved-4"></a>
+Improved</h2>
 <ul>
 <li><span class="tt">RandChar</span> now used with <span class="tt">(char)0</span> to <span class="tt">(char)short.MaxValue</span> for stable UTF‑16 safe range</li>
 <li>Unified password generation logic across all levels</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md33"></a>
-Notes</h3>
+<h2 class="doxsection"><a class="anchor" id="notes-1"></a>
+Notes</h2>
 <ul>
 <li>Password generation is fully deterministic per Endian mode</li>
 <li>No allocations inside the generation loop</li>
 </ul>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md35"></a>
-[0.6.5]</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md36"></a>
-Added</h3>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md065"></a>
+[0.6.5]</h1>
+<h2 class="doxsection"><a class="anchor" id="added-6"></a>
+Added</h2>
 <ul>
 <li>Introduced <span class="tt">SharedCache</span> for hardware‑shared memory operations:<ul>
 <li>Supports <span class="tt">ReadOnly</span>, <span class="tt">WriteOnly</span>, and <span class="tt">ReadWrite</span> modes via <span class="tt">SharedCacheType</span></li>
@@ -508,24 +556,24 @@ Added</h3>
 </ul>
 </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md37"></a>
-Improved</h3>
+<h2 class="doxsection"><a class="anchor" id="improved-5"></a>
+Improved</h2>
 <ul>
 <li>Unified all random integer generation to use endian‑aware byte conversion</li>
 <li>Ensured consistent range mapping for signed and unsigned 64‑bit values</li>
 <li>Added argument validation for all min/max random operations</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md38"></a>
-Fixed</h3>
+<h2 class="doxsection"><a class="anchor" id="fixed-3"></a>
+Fixed</h2>
 <ul>
 <li>Corrected handling of reversed min/max arguments in <span class="tt">RandLong</span></li>
 <li>Ensured random byte arrays always fill the requested size</li>
 </ul>
 <hr  />
- <h2 class="doxsection"><a class="anchor" id="autotoc_md40"></a>
-[0.6.1]</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md41"></a>
-Added</h3>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md061"></a>
+[0.6.1]</h1>
+<h2 class="doxsection"><a class="anchor" id="added-7"></a>
+Added</h2>
 <ul>
 <li>Introduced a full low-level cache subsystem under <span class="tt">System.Collections.Generic.Missings</span></li>
 <li>Added <span class="tt">Cache</span> class providing:<ul>
@@ -553,26 +601,26 @@ Added</h3>
 </li>
 <li>Added <span class="tt">CacheIsSharedException</span> for invalid access during shared state</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md42"></a>
-Improved</h3>
+<h2 class="doxsection"><a class="anchor" id="improved-6"></a>
+Improved</h2>
 <ul>
 <li>Integrated endian conversion utilities from <span class="tt">System.Missings.Binary.Utils</span></li>
 <li>Unified all integer read/write operations to use the new endian helpers</li>
 <li>Ensured safe bounds checking for all read/write operations</li>
 <li>Improved internal locking using custom <span class="tt">Lock</span> object</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md43"></a>
-Fixed</h3>
+<h2 class="doxsection"><a class="anchor" id="fixed-4"></a>
+Fixed</h2>
 <ul>
 <li>Corrected boundary checks for read/write operations</li>
 <li>Ensured shared cache always unlocks on callback, even on error paths</li>
 <li>Fixed incorrect handling of negative seek offsets</li>
 </ul>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md45"></a>
-[0.5.8]</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md46"></a>
-Added</h3>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md058"></a>
+[0.5.8]</h1>
+<h2 class="doxsection"><a class="anchor" id="added-8"></a>
+Added</h2>
 <ul>
 <li>NodeIterator: intrusive Iterator für Next/Prev Traversal</li>
 <li>NodeRange: Iterator-basierter Bereich (begin/end)</li>
@@ -583,24 +631,24 @@ Added</h3>
 <li>TraversOrder: Preorder, Inorder, Postorder, ListOrder, ReverseListOrder</li>
 <li>GlobalSuppressions für Naming/Design-Regeln</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md47"></a>
-Changed</h3>
+<h2 class="doxsection"><a class="anchor" id="changed-5"></a>
+Changed</h2>
 <ul>
 <li>Iterator.Equals nutzt Value-Identity für ListIterator</li>
 <li>Iterator.Equals nutzt Reference-Identity für NodeIterator</li>
 <li>Verbesserte Advance/Offset/At-Methoden</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md48"></a>
-Fixed</h3>
+<h2 class="doxsection"><a class="anchor" id="fixed-5"></a>
+Fixed</h2>
 <ul>
 <li>Clone() für Iteratoren nutzt korrekte Semantik</li>
 <li>Node.HasNext/HasPrev für zirkuläre intrusive Listen korrigiert</li>
 </ul>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md50"></a>
-[0.5.0] – 2026-06-03</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md51"></a>
-Added</h3>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md050--2026-06-03"></a>
+[0.5.0] – 2026-06-03</h1>
+<h2 class="doxsection"><a class="anchor" id="added-9"></a>
+Added</h2>
 <ul>
 <li>Erste öffentliche Version</li>
 <li>Grundlegende Collections (Map, Queue, Stack, BinQueue, FixedMap)</li>

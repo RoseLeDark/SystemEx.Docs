@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,15 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Cluster&lt; T &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Cluster&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Basic implementation of ICluster&lt;T&gt; representing a node with weighted children.  
  <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.Cluster&lt; T &gt;:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.Cluster&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.png" usemap="#SystemEx_2ECollections_2EGeneric_2ECluster_3C_20T_20_3E_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2ECluster_3C_20T_20_3E_map" name="SystemEx_2ECollections_2EGeneric_2ECluster_3C_20T_20_3E_map">
@@ -185,7 +146,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:abd1367218ac7f43153a1a7dedc352e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the specified child node if present.  <br /></td></tr>
 <tr class="memitem:a23a36b7348c6615f2e05c85616f52095" id="r_a23a36b7348c6615f2e05c85616f52095"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a23a36b7348c6615f2e05c85616f52095">Cost</a> (T value, ref ulong cost, ulong budget)</td></tr>
 <tr class="memdesc:a23a36b7348c6615f2e05c85616f52095"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a cost-limited search (Dijkstra-like) to find a node with the given value. Returns true and sets <em>cost</em>  when a path within <em>budget</em>  is found.  <br /></td></tr>
-<tr class="memitem:a14304f8ca140ef6b0189169c56760040" id="r_a14304f8ca140ef6b0189169c56760040"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a14304f8ca140ef6b0189169c56760040">find</a> (T pradicat, <a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#ae3c3f4a1a9d90344fce2ca3232791bd7">SearchType</a> type, ulong budget, ref Map&lt; ICluster&lt; T &gt;, uint &gt; steps)</td></tr>
+<tr class="memitem:a14304f8ca140ef6b0189169c56760040" id="r_a14304f8ca140ef6b0189169c56760040"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a14304f8ca140ef6b0189169c56760040">find</a> (T pradicat, <a class="el" href="../../dd/dbc/group__collections.html#gae3c3f4a1a9d90344fce2ca3232791bd7">SearchType</a> type, ulong budget, ref Map&lt; ICluster&lt; T &gt;, uint &gt; steps)</td></tr>
 <tr class="memdesc:a14304f8ca140ef6b0189169c56760040"><td class="mdescLeft">&#160;</td><td class="mdescRight">General search that propagates remaining energy or accumulates cost depending on <em>type</em> . Records remaining energy per visited node in <em>steps</em> .  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -218,7 +179,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00103">103</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00104">104</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="af0394ceb4df55e2fff40463448d9a91d" name="af0394ceb4df55e2fff40463448d9a91d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af0394ceb4df55e2fff40463448d9a91d">&#9670;&#160;</a></span>Add()</h2>
@@ -241,7 +202,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#a82ba65a3f21642b02cd059bd9ce90c50">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00154">154</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00155">155</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -271,7 +232,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00145">145</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00146">146</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -292,7 +253,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#a9c46eb67feb7a850ddde5ab29990dcf5">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00160">160</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00161">161</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -322,7 +283,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#aaed03770868073d4fd11c467fac3c89d">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00178">178</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00179">179</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -340,7 +301,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#ae3c3f4a1a9d90344fce2ca3232791bd7">SearchType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+          <td class="paramtype"><a class="el" href="../../dd/dbc/group__collections.html#gae3c3f4a1a9d90344fce2ca3232791bd7">SearchType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -357,7 +318,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#a635e93bcb9c06aa40bb80dd9a589aaa8">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00240">240</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00241">241</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -378,7 +339,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#a56669530dde7b2aa9350f71e4768688e">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00167">167</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00168">168</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -403,7 +364,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00109">109</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00110">110</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -427,7 +388,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00106">106</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00107">107</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -454,7 +415,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#aecb30fd65e6e0abdbbdba5e5385734be">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00119">119</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00120">120</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -480,7 +441,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#a2935432b2638f0986d62fd8446e73104">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00122">122</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00123">123</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -506,7 +467,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#aae5fe60cdf6c63871f530594b219bd48">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00116">116</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00117">117</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -530,7 +491,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00135">135</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00136">136</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -554,7 +515,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00127">127</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00128">128</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
@@ -580,12 +541,12 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#a4da66ff0eb219e442384b550fd4283c1">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00113">113</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00114">114</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Collections/Generic/<a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a></li>
+<li><a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

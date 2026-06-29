@@ -1,11 +1,6 @@
 var searchData=
 [
-  ['targets_0',['- Search your codebase for the old namespace tokens (&lt;span class=&quot;tt&quot;&gt;Missings&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;Intertropt&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;System.Memory.Missings&lt;/span&gt;) and replace with the new targets.',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md23',1,'']]],
-  ['the_20doku_20in_20systemex_20collections_20generic_20systemex_20io_20sysrtemex_20and_20sysrtemex_20utils_20is_20ready_1',['- The Doku in &lt;span class=&quot;tt&quot;&gt;SystemEx.Collections.Generic&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;SystemEx.IO&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;SysrtemEx&lt;/span&gt; and &lt;span class=&quot;tt&quot;&gt;SysrtemEx.Utils&lt;/span&gt; is ready',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md15',1,'']]],
-  ['the_20new_20targets_2',['- Search your codebase for the old namespace tokens (&lt;span class=&quot;tt&quot;&gt;Missings&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;Intertropt&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;System.Memory.Missings&lt;/span&gt;) and replace with the new targets.',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md23',1,'']]],
-  ['the_20old_20namespace_20tokens_20missings_20intertropt_20system_20memory_20missings_20and_20replace_20with_20the_20new_20targets_3',['- Search your codebase for the old namespace tokens (&lt;span class=&quot;tt&quot;&gt;Missings&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;Intertropt&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;System.Memory.Missings&lt;/span&gt;) and replace with the new targets.',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md23',1,'']]],
-  ['to_20version_201_200_4',['Planned to Version 1.0',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md1',1,'']]],
-  ['tokens_20missings_20intertropt_20system_20memory_20missings_20and_20replace_20with_20the_20new_20targets_5',['- Search your codebase for the old namespace tokens (&lt;span class=&quot;tt&quot;&gt;Missings&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;Intertropt&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;System.Memory.Missings&lt;/span&gt;) and replace with the new targets.',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md23',1,'']]],
-  ['tuple_20pair_20types_6',['Tuple &amp;amp; Pair Types',['../index.html#autotoc_md63',1,'']]],
-  ['types_7',['Types',['../index.html#autotoc_md61',1,'Core Types'],['../index.html#autotoc_md63',1,'Tuple &amp;amp; Pair Types']]]
+  ['to_20version_201_200_0',['Planned to Version 1.0',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#planned-to-version-10',1,'']]],
+  ['tuple_20pair_20types_1',['Tuple &amp;amp; Pair Types',['../index.html#tuple--pair-types',1,'']]],
+  ['types_2',['Types',['../index.html#core-types',1,'Core Types'],['../index.html#tuple--pair-types',1,'Tuple &amp;amp; Pair Types']]]
 ];

@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,12 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Interfaces.ICompared&lt; in T &gt; Interface Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Interfaces.ICompared&lt; in T &gt; Interface Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a> &raquo; <a class="el" href="../../d5/d4f/group__interfaces.html">Interfaces</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Defines a comparison interface for types that support custom ordering. Implementations return a CompareResult describing the relationship between two values.  
- <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -170,13 +127,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa38ab1d11cd4b52d06597b7478eafd95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two values and returns a CompareResult indicating whether <em>x</em>  is smaller, larger, or equal to <em>y</em> .  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type being compared. The constraint allows <code>ref struct</code> types, enabling high‑performance stack‑only comparisons. </td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="typeconstraint">
+<div class="textblock"><div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>allows</em></td><td>&#160;</td></tr>
@@ -187,7 +138,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 </div>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3b/_i_compared_8cs_source.html#l00031">31</a> of file <a class="el" href="../../d8/d3b/_i_compared_8cs_source.html">ICompared.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3b/_i_compared_8cs_source.html#l00034">34</a> of file <a class="el" href="../../d8/d3b/_i_compared_8cs_source.html">ICompared.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aa38ab1d11cd4b52d06597b7478eafd95" name="aa38ab1d11cd4b52d06597b7478eafd95"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa38ab1d11cd4b52d06597b7478eafd95">&#9670;&#160;</a></span>Compare()</h2>
@@ -219,7 +170,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>Collections/Generic/Interfaces/<a class="el" href="../../d8/d3b/_i_compared_8cs_source.html">ICompared.cs</a></li>
+<li><a class="el" href="../../d8/d3b/_i_compared_8cs_source.html">ICompared.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

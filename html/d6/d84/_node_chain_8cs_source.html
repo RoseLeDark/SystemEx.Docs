@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: Collections/Generic/NodeChain.cs Source File</title>
+<title>SystemEX: NodeChain.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -183,46 +143,47 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">using </span><a class="code hl_namespace" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a>;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a> {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html">   42</a></span>    <span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class </span>NodeChain&lt;T&gt; : IEnumerable&lt;T&gt; {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">private</span> readonly List&lt;NodeRange&lt;T&gt;&gt; m_ranges = <span class="keyword">new</span>();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a93578962bd46a81035face13a85e2ea1">   54</a></span>        <span class="keyword">public</span> NodeChain&lt;T&gt; <a class="code hl_function" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a93578962bd46a81035face13a85e2ea1">Add</a>(NodeRange&lt;T&gt; range) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            m_ranges.<a class="code hl_function" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a93578962bd46a81035face13a85e2ea1">Add</a>(range);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html">   44</a></span>    <span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class </span>NodeChain&lt;T&gt; : IEnumerable&lt;T&gt; {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">private</span> readonly List&lt;NodeRange&lt;T&gt;&gt; m_ranges = <span class="keyword">new</span>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a93578962bd46a81035face13a85e2ea1">   56</a></span>        <span class="keyword">public</span> NodeChain&lt;T&gt; <a class="code hl_function" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a93578962bd46a81035face13a85e2ea1">Add</a>(NodeRange&lt;T&gt; range) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            m_ranges.<a class="code hl_function" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a93578962bd46a81035face13a85e2ea1">Add</a>(range);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
 </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
-<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#ab8bbde3d08d8764cf028053cd93881c2">   65</a></span>        <span class="keyword">public</span> NodeChain&lt;T&gt; <a class="code hl_function" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#ab8bbde3d08d8764cf028053cd93881c2">Add</a>(NodeIterrator&lt;T&gt; begin, NodeIterrator&lt;T&gt; end) {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            m_ranges.<a class="code hl_function" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a93578962bd46a81035face13a85e2ea1">Add</a>(<span class="keyword">new</span> NodeRange&lt;T&gt;(begin, end));</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#ab8bbde3d08d8764cf028053cd93881c2">   67</a></span>        <span class="keyword">public</span> NodeChain&lt;T&gt; <a class="code hl_function" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#ab8bbde3d08d8764cf028053cd93881c2">Add</a>(NodeIterrator&lt;T&gt; begin, NodeIterrator&lt;T&gt; end) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            m_ranges.<a class="code hl_function" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a93578962bd46a81035face13a85e2ea1">Add</a>(<span class="keyword">new</span> NodeRange&lt;T&gt;(begin, end));</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
-<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a90a7f935cb592b7b7f5338382f3ffd1b">   73</a></span>        <span class="keyword">public</span> IEnumerator&lt;T&gt; <a class="code hl_function" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a90a7f935cb592b7b7f5338382f3ffd1b">GetEnumerator</a>() {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keywordflow">foreach</span> ( var range <span class="keywordflow">in</span> m_ranges ) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <span class="keywordflow">foreach</span> ( var x <span class="keywordflow">in</span> range )</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                    yield <span class="keywordflow">return</span> x;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a90a7f935cb592b7b7f5338382f3ffd1b">   75</a></span>        <span class="keyword">public</span> IEnumerator&lt;T&gt; <a class="code hl_function" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a90a7f935cb592b7b7f5338382f3ffd1b">GetEnumerator</a>() {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">foreach</span> ( var range <span class="keywordflow">in</span> m_ranges ) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                <span class="keywordflow">foreach</span> ( var x <span class="keywordflow">in</span> range )</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    yield <span class="keywordflow">return</span> x;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
 </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        IEnumerator IEnumerable.GetEnumerator() =&gt; GetEnumerator();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        IEnumerator IEnumerable.GetEnumerator() =&gt; GetEnumerator();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
 </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g_html_a90a7f935cb592b7b7f5338382f3ffd1b"><div class="ttname"><a href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a90a7f935cb592b7b7f5338382f3ffd1b">SystemEx.Collections.Generic.NodeChain-1-g.GetEnumerator</a></div><div class="ttdeci">IEnumerator&lt; T &gt; GetEnumerator()</div><div class="ttdoc">Returns an enumerator that iterates through all ranges in sequence.</div><div class="ttdef"><b>Definition</b> <a href="#l00073">NodeChain.cs:73</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g_html_a93578962bd46a81035face13a85e2ea1"><div class="ttname"><a href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a93578962bd46a81035face13a85e2ea1">SystemEx.Collections.Generic.NodeChain-1-g.Add</a></div><div class="ttdeci">NodeChain&lt; T &gt; Add(NodeRange&lt; T &gt; range)</div><div class="ttdoc">Adds an existing NodeRange&lt;T&gt; to the chain.</div><div class="ttdef"><b>Definition</b> <a href="#l00054">NodeChain.cs:54</a></div></div>
-<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g_html_ab8bbde3d08d8764cf028053cd93881c2"><div class="ttname"><a href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#ab8bbde3d08d8764cf028053cd93881c2">SystemEx.Collections.Generic.NodeChain-1-g.Add</a></div><div class="ttdeci">NodeChain&lt; T &gt; Add(NodeIterrator&lt; T &gt; begin, NodeIterrator&lt; T &gt; end)</div><div class="ttdoc">Adds a new range defined by a begin and end iterator.</div><div class="ttdef"><b>Definition</b> <a href="#l00065">NodeChain.cs:65</a></div></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>#pragma warning restore CS1587 <span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g_html_a90a7f935cb592b7b7f5338382f3ffd1b"><div class="ttname"><a href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a90a7f935cb592b7b7f5338382f3ffd1b">SystemEx.Collections.Generic.NodeChain-1-g.GetEnumerator</a></div><div class="ttdeci">IEnumerator&lt; T &gt; GetEnumerator()</div><div class="ttdoc">Returns an enumerator that iterates through all ranges in sequence.</div><div class="ttdef"><b>Definition</b> <a href="#l00075">NodeChain.cs:75</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g_html_a93578962bd46a81035face13a85e2ea1"><div class="ttname"><a href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#a93578962bd46a81035face13a85e2ea1">SystemEx.Collections.Generic.NodeChain-1-g.Add</a></div><div class="ttdeci">NodeChain&lt; T &gt; Add(NodeRange&lt; T &gt; range)</div><div class="ttdoc">Adds an existing NodeRange&lt;T&gt; to the chain.</div><div class="ttdef"><b>Definition</b> <a href="#l00056">NodeChain.cs:56</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g_html_ab8bbde3d08d8764cf028053cd93881c2"><div class="ttname"><a href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#ab8bbde3d08d8764cf028053cd93881c2">SystemEx.Collections.Generic.NodeChain-1-g.Add</a></div><div class="ttdeci">NodeChain&lt; T &gt; Add(NodeIterrator&lt; T &gt; begin, NodeIterrator&lt; T &gt; end)</div><div class="ttdoc">Adds a new range defined by a begin and end iterator.</div><div class="ttdef"><b>Definition</b> <a href="#l00067">NodeChain.cs:67</a></div></div>
 <div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d16/_i_array_8cs_source.html#l00018">IArray.cs:18</a></div></div>
-<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00022">Array.cs:22</a></div></div>
+<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00023">Array.cs:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

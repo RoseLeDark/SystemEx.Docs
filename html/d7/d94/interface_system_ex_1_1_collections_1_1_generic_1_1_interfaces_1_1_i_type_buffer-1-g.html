@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,19 +117,17 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt; Interface Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt; Interface Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a> &raquo; <a class="el" href="../../d5/d4f/group__interfaces.html">Interfaces</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Defines a typed, fixed‑stride buffer abstraction for unmanaged element types.  
- <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.png" usemap="#SystemEx_2ECollections_2EGeneric_2EInterfaces_2EITypeBuffer_3C_20T_20_3E_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2EInterfaces_2EITypeBuffer_3C_20T_20_3E_map" name="SystemEx_2ECollections_2EGeneric_2EInterfaces_2EITypeBuffer_3C_20T_20_3E_map">
-<area href="../../dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html" title="A typed view over a raw Cache that exposes elements of an unmanaged type T ." alt="SystemEx.Collections.Generic.TypeBuffer&lt; T &gt;" shape="rect" coords="0,56,342,80"/>
+<area href="../../dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html" alt="SystemEx.Collections.Generic.TypeBuffer&lt; T &gt;" shape="rect" coords="0,56,342,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -192,15 +150,7 @@ Properties</h2></td></tr>
 <tr class="memdesc:ade17c3131564ff949fcf1fbbcccd7ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the element at the specified zero‑based index.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><code>ITypeBuffer&lt;T&gt;</code> represents a simple, element‑oriented view over a raw byte buffer (for example a <code><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a></code>). Implementations expose element access, cloning, clearing and fill semantics for unmanaged value types. All conversions between <em>T</em>  and the underlying bytes are the responsibility of the concrete implementation. </p>
-<p>The interface intentionally keeps the surface small and portable: implementations may perform endian conversion, bounds validation, and copy semantics as required by the runtime. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>An unmanaged value type stored in the buffer.</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="typeconstraint">
+<div class="textblock"><div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>unmanaged</em></td><td>&#160;</td></tr>
@@ -209,7 +159,7 @@ Properties</h2></td></tr>
 </dl>
 </div>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html#l00022">22</a> of file <a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html">ITypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html#l00026">26</a> of file <a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html">ITypeBuffer.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a0b6b7924c1ddadd3733efa503d5094f5" name="a0b6b7924c1ddadd3733efa503d5094f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0b6b7924c1ddadd3733efa503d5094f5">&#9670;&#160;</a></span>Clear()</h2>
@@ -323,7 +273,7 @@ Properties</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#a1e0dd7bf5d5d38d6b33bba9a34c6527b">SystemEx.Collections.Generic.TypeBuffer&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html#l00031">31</a> of file <a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html">ITypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html#l00035">35</a> of file <a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html">ITypeBuffer.cs</a>.</p>
 
 </div>
 </div>
@@ -362,12 +312,12 @@ Properties</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#ac99be8e42e7855236d79841f6f86d084">SystemEx.Collections.Generic.TypeBuffer&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html#l00039">39</a> of file <a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html">ITypeBuffer.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html#l00043">43</a> of file <a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html">ITypeBuffer.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>Collections/Generic/Interfaces/<a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html">ITypeBuffer.cs</a></li>
+<li><a class="el" href="../../d0/d36/_i_type_buffer_8cs_source.html">ITypeBuffer.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

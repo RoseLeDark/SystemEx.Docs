@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -168,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <tr class="even"><td class="entry"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#a19bc2b34b6fdc84f0054c3c23e349977">FromBytes&lt; T &gt;</a>(Cache obj)</td><td class="entry"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html">SystemEx.IO.Provider.ByteSeriablizeProvider</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#a2f9dd21f08da0ad94c52ba998bdc3d04">GetBytesForEntry</a>(object obj, string name, Endian endian)</td><td class="entry"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html">SystemEx.IO.Provider.ByteSeriablizeProvider</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#a9be49aa5d57457de9e4ad8a84cc04be5">GetEntrySize</a>(Cache obj, string name, Endian endian)</td><td class="entry"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html">SystemEx.IO.Provider.ByteSeriablizeProvider</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#a86c7e02231b83d86ea4d66b67174be2e">ToBytes&lt; T &gt;</a>(T obj)</td><td class="entry"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html">SystemEx.IO.Provider.ByteSeriablizeProvider</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html#aeb2ed556291d5970b0d7be01e2938241">ToBytes&lt; T &gt;</a>(T? obj)</td><td class="entry"><a class="el" href="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html">SystemEx.IO.Provider.ByteSeriablizeProvider</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

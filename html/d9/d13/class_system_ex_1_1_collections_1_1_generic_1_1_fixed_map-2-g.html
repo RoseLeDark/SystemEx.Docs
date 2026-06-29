@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,16 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>A fixed‑size map storing Pair&lt;T, TU&gt; elements in a contiguous array. <br  />
- Unlike dynamic maps, a FixedMap&lt;T, TU&gt; never grows: once the capacity is reached, no further insertions are possible.  
- <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.png" usemap="#SystemEx_2ECollections_2EGeneric_2EFixedMap_3C_20T_2C_20TU_20_3E_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2EFixedMap_3C_20T_2C_20TU_20_3E_map" name="SystemEx_2ECollections_2EGeneric_2EFixedMap_3C_20T_2C_20TU_20_3E_map">
@@ -196,7 +153,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad84f5a6b7114ed535b0c67183325df19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegate used for custom search logic in Findex.  <br /></td></tr>
 <tr class="memitem:aab08034f19e97118c34c9747fdbf9ddb" id="r_aab08034f19e97118c34c9747fdbf9ddb"><td class="memItemLeft">List&lt; Pair&lt; T, TU &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aab08034f19e97118c34c9747fdbf9ddb">Findex</a> (<a class="el" href="#ad84f5a6b7114ed535b0c67183325df19">Compare</a> func, T Key, TU Value)</td></tr>
 <tr class="memdesc:aab08034f19e97118c34c9747fdbf9ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a custom search using the provided comparison function.  <br /></td></tr>
-<tr class="memitem:a6c4f8af564df3f1c6eb16d36b7400419" id="r_a6c4f8af564df3f1c6eb16d36b7400419"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6c4f8af564df3f1c6eb16d36b7400419">Traverse</a> (<a class="el" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#a9ffe9236ff7d52fbeb93204341959319">TraversMode</a> mode, int startIndex, int endIndex, Action&lt; Pair&lt; T, TU &gt; &gt; func)</td></tr>
+<tr class="memitem:a6c4f8af564df3f1c6eb16d36b7400419" id="r_a6c4f8af564df3f1c6eb16d36b7400419"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6c4f8af564df3f1c6eb16d36b7400419">Traverse</a> (<a class="el" href="../../d5/d4f/group__interfaces.html#ga9ffe9236ff7d52fbeb93204341959319">TraversMode</a> mode, int startIndex, int endIndex, Action&lt; Pair&lt; T, TU &gt; &gt; func)</td></tr>
 <tr class="memdesc:a6c4f8af564df3f1c6eb16d36b7400419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses a range of elements in forward or backward order.  <br /></td></tr>
 <tr class="memitem:acd35c6c6099d27acb78b0ba7a7406f00" id="r_acd35c6c6099d27acb78b0ba7a7406f00"><td class="memItemLeft">UInt64&#160;</td><td class="memItemRight"><a class="el" href="#acd35c6c6099d27acb78b0ba7a7406f00">NumberOfElementsWithKey</a> (T Key)</td></tr>
 <tr class="memdesc:acd35c6c6099d27acb78b0ba7a7406f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts how many elements have the specified key.  <br /></td></tr>
@@ -261,14 +218,7 @@ Properties</h2></td></tr>
 <tr class="memdesc:a0d4c20543730fc2fa01438cec41ec245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the element at the specified index.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The key type </td></tr>
-    <tr><td class="paramname">TU</td><td>The value type </td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="typeconstraint">
+<div class="textblock"><div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>notnull</em></td><td>&#160;</td></tr>
@@ -278,7 +228,7 @@ Properties</h2></td></tr>
 </dl>
 </div>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00035">35</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00037">37</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a24fe9389bd3b248adc737985323e214a" name="a24fe9389bd3b248adc737985323e214a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24fe9389bd3b248adc737985323e214a">&#9670;&#160;</a></span>Add() <span class="overload">[1/2]</span></h2>
@@ -295,7 +245,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00165">165</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00167">167</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -320,7 +270,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a323affdff7674701889baf8fb7ae0c94">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00414">414</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00416">416</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -341,7 +291,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a1e303eb89bb86166bbc5edaba4e8239e">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00300">300</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00302">302</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -386,7 +336,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00308">308</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00310">310</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -407,7 +357,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html#a111b0b702dbf292177294d043bb243d9">SystemEx.Collections.Generic.Interfaces.IReadOnlyMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00315">315</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00317">317</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -430,7 +380,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00332">332</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00334">334</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -451,7 +401,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#acd764322e50a58595d3069f2ee7115df">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00231">231</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00233">233</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -479,7 +429,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00245">245</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00247">247</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -500,7 +450,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#aa34c88e68796c5509ea0d3c6167e3b8a">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00385">385</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00387">387</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -521,7 +471,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#ad83e042fc33545f5939f1524e0b5400a">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00396">396</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00398">398</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -546,7 +496,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00062">62</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00064">64</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -571,7 +521,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00323">323</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00325">325</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -590,7 +540,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00339">339</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00341">341</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -615,7 +565,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a48cb76e0f2d93e27816dedcb68aaa13c">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00204">204</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00206">206</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -640,7 +590,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a64b00b68091bce56830d51fe819c4fb4">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00215">215</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00217">217</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -659,7 +609,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00274">274</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00276">276</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -678,7 +628,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00287">287</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00289">289</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -697,7 +647,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00349">349</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00351">351</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -718,7 +668,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a07626debe1673ea745b8aa9db51665ff">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00421">421</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00423">423</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -739,7 +689,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#ac2df96f1ab1f5b30ef8da4ce5c8f0ecb">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00370">370</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00372">372</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -764,7 +714,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a8feb7d375ad836228ff6c2304f1d1a90">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00377">377</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00379">379</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -785,7 +735,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#aaaf712e74b9fc9cdbf083caef197f10b">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00408">408</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00410">410</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -798,7 +748,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">void SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;.Traverse </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#a9ffe9236ff7d52fbeb93204341959319">TraversMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
+          <td class="paramtype"><a class="el" href="../../d5/d4f/group__interfaces.html#ga9ffe9236ff7d52fbeb93204341959319">TraversMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -820,7 +770,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#aaaaa409ec65c2d74266cccc848e9fdfd">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00258">258</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00260">260</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -840,7 +790,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if added; otherwise <code>false</code>.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00177">177</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00179">179</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -863,7 +813,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00189">189</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00191">191</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -886,7 +836,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00356">356</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00358">358</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -911,7 +861,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#af848b2866e0e3a460742e20943c874f2">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00428">428</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00430">430</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -938,7 +888,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#abe187b405c1765e4039e5aff482e0f84">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00071">71</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00073">73</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -970,7 +920,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#af77a62fd86b9ffeee6bc3a322b669165">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00097">97</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00099">99</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -996,7 +946,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a6c55f12803e024ef50ec20bb859fe6c6">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00081">81</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00083">83</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -1022,7 +972,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a7104df0a663c57e0e096e6e81d14b511">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00086">86</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00088">88</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -1048,7 +998,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#aaac7edf1535fb73f8889ab3b84d3f226">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00091">91</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00093">93</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -1074,7 +1024,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a151034354090632137da18d66fa44bd6">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00120">120</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00122">122</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -1106,7 +1056,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#ae9ff5e7f06607f15500a29895d34742d">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00109">109</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00111">111</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -1132,7 +1082,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#afd011dfb1a7a035fe2428b3b9772e6fe">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00076">76</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00078">78</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -1156,7 +1106,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00196">196</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00198">198</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -1189,7 +1139,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a63c4444fc8cef243fa39586c389d0e00">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00151">151</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00153">153</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -1215,12 +1165,12 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a70dac17776b669dbd10aaf01a68f071d">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00130">130</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00132">132</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Collections/Generic/<a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a></li>
+<li><a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

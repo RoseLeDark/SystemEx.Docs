@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -161,19 +121,1765 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!--header-->
 <div class="contents">
 
-<p>Defines the basic contract for a map-like container that stores elements in positional order and supports indexed removal and clearing operations.  
+<p>A simple random-access iterator for array-based data structures. Provides forward, backward, and offset-based movement.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-groups" class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:interfaces" id="r_interfaces"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d4f/group__interfaces.html">Interfaces</a></td></tr>
+<tr class="memdesc:d5/d4f/group__interfaces"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the basic operations for a fixed-size or dynamic array structure, including indexed access, insertion, removal, traversal, and search utilities. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EInterfaces_2EIMap" id="r_SystemEx_2ECollections_2EGeneric_2EInterfaces_2EIMap"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html">SystemEx.Collections.Generic.Interfaces.IMap</a></td></tr>
-<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EInterfaces_2EIMap_3C_20T_2C_20TU_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EInterfaces_2EIMap_3C_20T_2C_20TU_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a typed map structure that stores key/value pairs as Pair&lt;T, TU&gt;. Provides insertion, removal, searching, traversal, and conversion utilities.  <a href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#details">More...</a><br /></td></tr>
-<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EInterfaces_2EIReadOnlyMap_3C_20T_2C_20TU_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EInterfaces_2EIReadOnlyMap_3C_20T_2C_20TU_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html">SystemEx.Collections.Generic.Interfaces.IReadOnlyMap&lt; T, TU &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a read‑only associative container mapping keys of type <em>T</em>  to values of type <em>TU</em> .  <a href="../../d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EArrayRandomAccessIterator_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EArrayRandomAccessIterator_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html">SystemEx.Collections.Generic.ArrayRandomAccessIterator&lt; T &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EArray_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EArray_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html">SystemEx.Collections.Generic.Array&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dynamic array implementation that supports optional auto-growth, indexed access, insertion, removal, traversal, and basic search operations.  <a href="../../d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EBinQueue_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EBinQueue_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../df/d60/class_system_ex_1_1_collections_1_1_generic_1_1_bin_queue-1-g.html">SystemEx.Collections.Generic.BinQueue&lt; T &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ECacheIsSharedException" id="r_SystemEx_2ECollections_2EGeneric_2ECacheIsSharedException"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d7/de5/class_system_ex_1_1_collections_1_1_generic_1_1_cache_is_shared_exception.html">SystemEx.Collections.Generic.CacheIsSharedException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when an operation is attempted on a shared or locked cache.  <a href="../../d7/de5/class_system_ex_1_1_collections_1_1_generic_1_1_cache_is_shared_exception.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ECache" id="r_SystemEx_2ECollections_2EGeneric_2ECache"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">SystemEx.Collections.Generic.Cache</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a low-level byte buffer with position tracking, typed read/write helpers, and optional locking behavior.  <a href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EICluster_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EICluster_3C_20T_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html">SystemEx.Collections.Generic.ICluster&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a cluster node in a weighted graph structure.  <a href="../../de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ECluster_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ECluster_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html">SystemEx.Collections.Generic.Cluster&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic implementation of ICluster&lt;T&gt; representing a node with weighted children.  <a href="../../d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EDeque_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EDeque_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html">SystemEx.Collections.Generic.Deque&lt; T &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EFixedArray_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EFixedArray_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html">SystemEx.Collections.Generic.FixedArray&lt; T &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EFixedMap_3C_20T_2C_20TU_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EFixedMap_3C_20T_2C_20TU_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html">SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EGroupNode_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EGroupNode_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g.html">SystemEx.Collections.Generic.GroupNode&lt; T &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EMap_3C_20T_2C_20TU_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EMap_3C_20T_2C_20TU_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html">SystemEx.Collections.Generic.Map&lt; T, TU &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EMirroredCache" id="r_SystemEx_2ECollections_2EGeneric_2EMirroredCache"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html">SystemEx.Collections.Generic.MirroredCache</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EMultiMap_3C_20TT_2C_20TU_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EMultiMap_3C_20TT_2C_20TU_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d3/d72/class_system_ex_1_1_collections_1_1_generic_1_1_multi_map-2-g.html">SystemEx.Collections.Generic.MultiMap&lt; TT, TU &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EMultiTupleMap" id="r_SystemEx_2ECollections_2EGeneric_2EMultiTupleMap"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d5/de6/class_system_ex_1_1_collections_1_1_generic_1_1_multi_tuple_map.html">SystemEx.Collections.Generic.MultiTupleMap</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ENodeIterrator_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ENodeIterrator_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html">SystemEx.Collections.Generic.NodeIterrator&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator for navigating through a doubly linked Node&lt;T&gt; chain. Supports random access, forward/backward movement, foreach enumeration, and cloning of iterator state.  <a href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ENode_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ENode_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html">SystemEx.Collections.Generic.Node&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a doubly linked node with optional child and sibling arrays. Supports list-style navigation (Prev/Next), tree-style traversal, splicing, swapping, reversing, and random access movement.  <a href="../../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ENodeChain_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ENodeChain_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html">SystemEx.Collections.Generic.NodeChain&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a chained view over multiple NodeRange&lt;T&gt; segments, similar to <code>std::views::concat</code> in C++. <br  />
+ A NodeChain&lt;T&gt; allows iteration across several disjoint ranges of a linked Node&lt;T&gt; structure as if they formed one continuous sequence.  <a href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ENodeRange_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ENodeRange_3C_20T_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d1/def/struct_system_ex_1_1_collections_1_1_generic_1_1_node_range-1-g.html">SystemEx.Collections.Generic.NodeRange&lt; T &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ENodeSlice_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ENodeSlice_3C_20T_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../df/d0f/struct_system_ex_1_1_collections_1_1_generic_1_1_node_slice-1-g.html">SystemEx.Collections.Generic.NodeSlice&lt; T &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EPair_3C_20T_2C_20TU_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EPair_3C_20T_2C_20TU_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html">SystemEx.Collections.Generic.Pair&lt; T, TU &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EPriorityQueueExIterator_3C_20T_2C_20TU_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EPriorityQueueExIterator_3C_20T_2C_20TU_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html">SystemEx.Collections.Generic.PriorityQueueExIterator&lt; T, TU &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EPriorityQueueEx_3C_20T_2C_20TU_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EPriorityQueueEx_3C_20T_2C_20TU_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html">SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A priority queue implemented on top of SortedMap&lt;T, TU&gt;. <br  />
+ Elements are stored as Pair&lt;T, TU&gt; where <code>T</code> is the value and <code>TU</code> is the priority. <br  />
+ Supports enqueue, dequeue, peek, priority updates, cloning, and median‑based selection.  <a href="../../d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EQuad_3C_20TT_2C_20TU_2C_20TW_2C_20TJ_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EQuad_3C_20TT_2C_20TU_2C_20TW_2C_20TJ_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html">SystemEx.Collections.Generic.Quad&lt; TT, TU, TW, TJ &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EQueue_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EQueue_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html">SystemEx.Collections.Generic.Queue&lt; T &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ESortedArray_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ESortedArray_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html">SystemEx.Collections.Generic.SortedArray&lt; T &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ESortedMap_3C_20T_2C_20TU_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ESortedMap_3C_20T_2C_20TU_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html">SystemEx.Collections.Generic.SortedMap&lt; T, TU &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ESortedMultiTupleMap" id="r_SystemEx_2ECollections_2EGeneric_2ESortedMultiTupleMap"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../dd/d67/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_tuple_map.html">SystemEx.Collections.Generic.SortedMultiTupleMap</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ESortedTupleList" id="r_SystemEx_2ECollections_2EGeneric_2ESortedTupleList"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html">SystemEx.Collections.Generic.SortedTupleList</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ESortedTupleMap" id="r_SystemEx_2ECollections_2EGeneric_2ESortedTupleMap"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html">SystemEx.Collections.Generic.SortedTupleMap</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ESportedFixedArray_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ESportedFixedArray_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html">SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EStackLayer" id="r_SystemEx_2ECollections_2EGeneric_2EStackLayer"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d3/d62/struct_system_ex_1_1_collections_1_1_generic_1_1_stack_layer.html">SystemEx.Collections.Generic.StackLayer</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EStack_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EStack_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html">SystemEx.Collections.Generic.Stack&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A fixed‑size, backward‑growing stack implementation that supports multiple independent virtual stack layers sharing the same underlying buffer.  <a href="../../d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EStarNode_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2EStarNode_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../db/d90/class_system_ex_1_1_collections_1_1_generic_1_1_star_node-1-g.html">SystemEx.Collections.Generic.StarNode&lt; T &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2EStrippedCache" id="r_SystemEx_2ECollections_2EGeneric_2EStrippedCache"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html">SystemEx.Collections.Generic.StrippedCache</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ETriple_3C_20TT_2C_20TU_2C_20TW_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ETriple_3C_20TT_2C_20TU_2C_20TW_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d3/def/struct_system_ex_1_1_collections_1_1_generic_1_1_triple-3-g.html">SystemEx.Collections.Generic.Triple&lt; TT, TU, TW &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ETuple" id="r_SystemEx_2ECollections_2EGeneric_2ETuple"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d3/d94/class_system_ex_1_1_collections_1_1_generic_1_1_tuple.html">SystemEx.Collections.Generic.Tuple</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ETupleList" id="r_SystemEx_2ECollections_2EGeneric_2ETupleList"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html">SystemEx.Collections.Generic.TupleList</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ETupleMap" id="r_SystemEx_2ECollections_2EGeneric_2ETupleMap"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html">SystemEx.Collections.Generic.TupleMap</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EGeneric_2ETypeBuffer_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ETypeBuffer_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html">SystemEx.Collections.Generic.TypeBuffer&lt; T &gt;</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gaf02ddb6084404bb267c0629f20ed8b53" id="r_gaf02ddb6084404bb267c0629f20ed8b53"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#gaf02ddb6084404bb267c0629f20ed8b53">SystemEx.Collections.Generic.CacheType</a> { <a class="el" href="#ggaf02ddb6084404bb267c0629f20ed8b53ae9366abd00c5a749c84c222bab5275d4">SystemEx.Collections.Generic.CacheType.ToDevice</a>
+, <a class="el" href="#ggaf02ddb6084404bb267c0629f20ed8b53a69887dd9a9eca98fa03f1b4b1592ba05">SystemEx.Collections.Generic.CacheType.FromDevice</a>
+, <a class="el" href="#ggaf02ddb6084404bb267c0629f20ed8b53a130c5b3473c57faa76e2a1c54e26f88e">SystemEx.Collections.Generic.CacheType.Both</a>
+, <a class="el" href="#ggaf02ddb6084404bb267c0629f20ed8b53a26d52f0d46807d1cb3e28d40177db92e">SystemEx.Collections.Generic.CacheType.OnlySystem</a>
+ }</td></tr>
+<tr class="memitem:gae3c3f4a1a9d90344fce2ca3232791bd7" id="r_gae3c3f4a1a9d90344fce2ca3232791bd7"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#gae3c3f4a1a9d90344fce2ca3232791bd7">SystemEx.Collections.Generic.SearchType</a> { <a class="el" href="#ggae3c3f4a1a9d90344fce2ca3232791bd7a249d801f12a641a77e8a1b27ece187ee">SystemEx.Collections.Generic.SearchType.SubtractWeight</a>
+, <a class="el" href="#ggae3c3f4a1a9d90344fce2ca3232791bd7a0fcacbd960872d9d821973ed3188b59d">SystemEx.Collections.Generic.SearchType.SetToWeight</a>
+, <a class="el" href="#ggae3c3f4a1a9d90344fce2ca3232791bd7a34f4669edc5c4c56ff9a2c0ffabdbccd">SystemEx.Collections.Generic.SearchType.AccumulateCost</a>
+ }</td></tr>
+<tr class="memitem:ga5d4c0e8a1b447d651da25c01c3acde4b" id="r_ga5d4c0e8a1b447d651da25c01c3acde4b"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#ga5d4c0e8a1b447d651da25c01c3acde4b">SystemEx.Collections.Generic.TraversOrder</a> { <br />
+&#160;&#160;<a class="el" href="#gga5d4c0e8a1b447d651da25c01c3acde4ba5be8b098f9b79cf3b18767ffc5ecd169">SystemEx.Collections.Generic.TraversOrder.Preorder</a>
+, <a class="el" href="#gga5d4c0e8a1b447d651da25c01c3acde4ba23d595ba1af8a7e9eb75b7dd281c4186">SystemEx.Collections.Generic.TraversOrder.Inorder</a>
+, <a class="el" href="#gga5d4c0e8a1b447d651da25c01c3acde4baa81781f8f4fa340f10177bcce27cb714">SystemEx.Collections.Generic.TraversOrder.Postorder</a>
+, <a class="el" href="#gga5d4c0e8a1b447d651da25c01c3acde4ba3ec389f8d12ead28a627f00bdeaca5a2">SystemEx.Collections.Generic.TraversOrder.ListOrder</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316">SystemEx.Collections.Generic.TraversOrder.ReservListOrder</a>
+<br />
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gacfb0c058fe455456f16a644f032d0b14" id="r_gacfb0c058fe455456f16a644f032d0b14"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#gacfb0c058fe455456f16a644f032d0b14">SystemEx.Collections.Generic.CacheIsSharedException.CacheIsSharedException</a> ()</td></tr>
+<tr class="memdesc:gacfb0c058fe455456f16a644f032d0b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when an operation is attempted on a shared or locked cache.  <br /></td></tr>
+<tr class="memitem:gab82675a111868495f95dec9f71cf2a75" id="r_gab82675a111868495f95dec9f71cf2a75"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#gab82675a111868495f95dec9f71cf2a75">SystemEx.Collections.Generic.Cache.Cache</a> (int capacity, <a class="el" href="#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a> type=<a class="el" href="#ggaf02ddb6084404bb267c0629f20ed8b53a26d52f0d46807d1cb3e28d40177db92e">CacheType.OnlySystem</a>)</td></tr>
+<tr class="memdesc:gab82675a111868495f95dec9f71cf2a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new cache with the specified capacity and type.  <br /></td></tr>
+<tr class="memitem:ga8992101c929020cc3312b701470a0f89" id="r_ga8992101c929020cc3312b701470a0f89"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga8992101c929020cc3312b701470a0f89">SystemEx.Collections.Generic.Cache.SetZero</a> ()</td></tr>
+<tr class="memdesc:ga8992101c929020cc3312b701470a0f89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a> to Zero.  <br /></td></tr>
+<tr class="memitem:gab1d9bfd97b4f7487f57a3c3bacc6d135" id="r_gab1d9bfd97b4f7487f57a3c3bacc6d135"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gab1d9bfd97b4f7487f57a3c3bacc6d135">SystemEx.Collections.Generic.Cache.Clear</a> ()</td></tr>
+<tr class="memdesc:gab1d9bfd97b4f7487f57a3c3bacc6d135"><td class="mdescLeft">&#160;</td><td class="mdescRight">See SetZero.  <br /></td></tr>
+<tr class="memitem:ga2010b609b3306feea5e20cdcc61ee268" id="r_ga2010b609b3306feea5e20cdcc61ee268"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ga2010b609b3306feea5e20cdcc61ee268">SystemEx.Collections.Generic.Cache.Cache</a> (byte[] arr, <a class="el" href="#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a> type)</td></tr>
+<tr class="memdesc:ga2010b609b3306feea5e20cdcc61ee268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new cache from given array.  <br /></td></tr>
+<tr class="memitem:ga6e02be92994e299a39d1d1884d4baab4" id="r_ga6e02be92994e299a39d1d1884d4baab4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ga6e02be92994e299a39d1d1884d4baab4">SystemEx.Collections.Generic.Cache.Cache</a> (Array&lt; byte &gt; arr, <a class="el" href="#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a> type)</td></tr>
+<tr class="memdesc:ga6e02be92994e299a39d1d1884d4baab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new cache from given array.  <br /></td></tr>
+<tr class="memitem:ga1c77ce66ee80f12e1c9b00ca515ae4ee" id="r_ga1c77ce66ee80f12e1c9b00ca515ae4ee"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ga1c77ce66ee80f12e1c9b00ca515ae4ee">SystemEx.Collections.Generic.Cache.Cache</a> (Cache cache)</td></tr>
+<tr class="memdesc:ga1c77ce66ee80f12e1c9b00ca515ae4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Copy from stream.  <br /></td></tr>
+<tr class="memitem:ga1e6cbff2a5de7fe6c185d7ca23f266e5" id="r_ga1e6cbff2a5de7fe6c185d7ca23f266e5"><td class="memItemLeft">ulong&#160;</td><td class="memItemRight"><a class="el" href="#ga1e6cbff2a5de7fe6c185d7ca23f266e5">SystemEx.Collections.Generic.Cache.Seek</a> (SeekOrigin org, int pos)</td></tr>
+<tr class="memdesc:ga1e6cbff2a5de7fe6c185d7ca23f266e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the internal position according to the specified origin and offset.  <br /></td></tr>
+<tr class="memitem:gaa4a0abe0cb00fa5734afb3dee647575b" id="r_gaa4a0abe0cb00fa5734afb3dee647575b"><td class="memItemLeft">virtual ulong&#160;</td><td class="memItemRight"><a class="el" href="#gaa4a0abe0cb00fa5734afb3dee647575b">SystemEx.Collections.Generic.Cache.WriteRange</a> (ulong position, byte[] data)</td></tr>
+<tr class="memdesc:gaa4a0abe0cb00fa5734afb3dee647575b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a byte range into the cache starting at the specified position.  <br /></td></tr>
+<tr class="memitem:gadc39086417a0f19c444987f4a4ae2aae" id="r_gadc39086417a0f19c444987f4a4ae2aae"><td class="memItemLeft">virtual ulong&#160;</td><td class="memItemRight"><a class="el" href="#gadc39086417a0f19c444987f4a4ae2aae">SystemEx.Collections.Generic.Cache.WriteRange</a> (ulong start, ulong iend, byte[] data)</td></tr>
+<tr class="memdesc:gadc39086417a0f19c444987f4a4ae2aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a byte range into the cache between <em>start</em>  and <em>iend</em> .  <br /></td></tr>
+<tr class="memitem:gaffad9d713e423cee13bc018e88f8ec79" id="r_gaffad9d713e423cee13bc018e88f8ec79"><td class="memItemLeft">static unsafe byte[]&#160;</td><td class="memItemRight"><a class="el" href="#gaffad9d713e423cee13bc018e88f8ec79">SystemEx.Collections.Generic.Cache.ToBytes&lt; T &gt;</a> (ref T value)</td></tr>
+<tr class="memdesc:gaffad9d713e423cee13bc018e88f8ec79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an unmanaged value to its raw byte representation.  <br /></td></tr>
+<tr class="memitem:ga7f48593fb926460c6d80cff8b8ae45f7" id="r_ga7f48593fb926460c6d80cff8b8ae45f7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga7f48593fb926460c6d80cff8b8ae45f7">SystemEx.Collections.Generic.Cache.Write</a> (ulong position, uint value, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga7f48593fb926460c6d80cff8b8ae45f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a 32-bit unsigned integer at the specified position.  <br /></td></tr>
+<tr class="memitem:ga490a26bb63f1f348a84e1cf8c844cef9" id="r_ga490a26bb63f1f348a84e1cf8c844cef9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga490a26bb63f1f348a84e1cf8c844cef9">SystemEx.Collections.Generic.Cache.Write</a> (ulong position, int value, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga490a26bb63f1f348a84e1cf8c844cef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a 32-bit signed integer at the specified position.  <br /></td></tr>
+<tr class="memitem:gac4eca113a51f98bd0768faff5a659ea8" id="r_gac4eca113a51f98bd0768faff5a659ea8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gac4eca113a51f98bd0768faff5a659ea8">SystemEx.Collections.Generic.Cache.Write</a> (ulong position, short value, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:gac4eca113a51f98bd0768faff5a659ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a 16-bit signed short at the specified position.  <br /></td></tr>
+<tr class="memitem:gaba4dc69bf2b777f72f28b06b54be874e" id="r_gaba4dc69bf2b777f72f28b06b54be874e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gaba4dc69bf2b777f72f28b06b54be874e">SystemEx.Collections.Generic.Cache.Write</a> (ulong position, char value)</td></tr>
+<tr class="memdesc:gaba4dc69bf2b777f72f28b06b54be874e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a character at the specified position.  <br /></td></tr>
+<tr class="memitem:ga8a746456b6ea06d1b04266107e90a119" id="r_ga8a746456b6ea06d1b04266107e90a119"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga8a746456b6ea06d1b04266107e90a119">SystemEx.Collections.Generic.Cache.Write</a> (ulong position, byte value)</td></tr>
+<tr class="memdesc:ga8a746456b6ea06d1b04266107e90a119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a byte at the specified position.  <br /></td></tr>
+<tr class="memitem:ga6d4774d2ecdb5b713cc9c26f2540d9bc" id="r_ga6d4774d2ecdb5b713cc9c26f2540d9bc"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga6d4774d2ecdb5b713cc9c26f2540d9bc">SystemEx.Collections.Generic.Cache.Write</a> (ulong position, ushort value, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga6d4774d2ecdb5b713cc9c26f2540d9bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a 16-bit unsigned short at the specified position.  <br /></td></tr>
+<tr class="memitem:ga5e242bc6f30609f38cbd923c311c9c6f" id="r_ga5e242bc6f30609f38cbd923c311c9c6f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga5e242bc6f30609f38cbd923c311c9c6f">SystemEx.Collections.Generic.Cache.Write</a> (ulong position, long value, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga5e242bc6f30609f38cbd923c311c9c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a 64-bit signed long at the specified position.  <br /></td></tr>
+<tr class="memitem:ga5a51acdf154d385a45e127caf48af5c2" id="r_ga5a51acdf154d385a45e127caf48af5c2"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga5a51acdf154d385a45e127caf48af5c2">SystemEx.Collections.Generic.Cache.Write</a> (ulong position, ulong value, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga5a51acdf154d385a45e127caf48af5c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a 64-bit unsigned long at the specified position.  <br /></td></tr>
+<tr class="memitem:ga3107b10a3fc86d7b94b10c1716e0e970" id="r_ga3107b10a3fc86d7b94b10c1716e0e970"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga3107b10a3fc86d7b94b10c1716e0e970">SystemEx.Collections.Generic.Cache.Write</a> (ulong position, float value, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga3107b10a3fc86d7b94b10c1716e0e970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a single-precision floating-point value at the specified position.  <br /></td></tr>
+<tr class="memitem:ga720b68ac0f7bfc03ecde929e472ab28b" id="r_ga720b68ac0f7bfc03ecde929e472ab28b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga720b68ac0f7bfc03ecde929e472ab28b">SystemEx.Collections.Generic.Cache.Write</a> (ulong position, double value, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga720b68ac0f7bfc03ecde929e472ab28b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a double-precision floating-point value at the specified position.  <br /></td></tr>
+<tr class="memitem:ga34399b32a4a3ebffc109460468483b51" id="r_ga34399b32a4a3ebffc109460468483b51"><td class="memItemLeft">uint&#160;</td><td class="memItemRight"><a class="el" href="#ga34399b32a4a3ebffc109460468483b51">SystemEx.Collections.Generic.Cache.ReadUInt</a> (ulong position, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga34399b32a4a3ebffc109460468483b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a 32-bit unsigned integer from the specified position.  <br /></td></tr>
+<tr class="memitem:ga48db154711ee150e00913f432f8d2250" id="r_ga48db154711ee150e00913f432f8d2250"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga48db154711ee150e00913f432f8d2250">SystemEx.Collections.Generic.Cache.ReadInt</a> (ulong position, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga48db154711ee150e00913f432f8d2250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a 32-bit signed integer from the specified position.  <br /></td></tr>
+<tr class="memitem:gaab86cf28fc31411d52974dfc80777cac" id="r_gaab86cf28fc31411d52974dfc80777cac"><td class="memItemLeft">short&#160;</td><td class="memItemRight"><a class="el" href="#gaab86cf28fc31411d52974dfc80777cac">SystemEx.Collections.Generic.Cache.ReadShort</a> (ulong position, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:gaab86cf28fc31411d52974dfc80777cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a 16-bit signed short from the specified position.  <br /></td></tr>
+<tr class="memitem:ga2b5b1d4f558305a04c28f2cf9578083a" id="r_ga2b5b1d4f558305a04c28f2cf9578083a"><td class="memItemLeft">ushort&#160;</td><td class="memItemRight"><a class="el" href="#ga2b5b1d4f558305a04c28f2cf9578083a">SystemEx.Collections.Generic.Cache.ReadUShort</a> (ulong position, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga2b5b1d4f558305a04c28f2cf9578083a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a 16-bit unsigned short from the specified position.  <br /></td></tr>
+<tr class="memitem:gac6c4ef8d2d3e218d15ed9000ab727cb6" id="r_gac6c4ef8d2d3e218d15ed9000ab727cb6"><td class="memItemLeft">long&#160;</td><td class="memItemRight"><a class="el" href="#gac6c4ef8d2d3e218d15ed9000ab727cb6">SystemEx.Collections.Generic.Cache.ReadLong</a> (ulong position, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:gac6c4ef8d2d3e218d15ed9000ab727cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a 64-bit signed long from the specified position.  <br /></td></tr>
+<tr class="memitem:ga54eea1168d4b60bd00a5b51bc23fde49" id="r_ga54eea1168d4b60bd00a5b51bc23fde49"><td class="memItemLeft">ulong&#160;</td><td class="memItemRight"><a class="el" href="#ga54eea1168d4b60bd00a5b51bc23fde49">SystemEx.Collections.Generic.Cache.ReadULong</a> (ulong position, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga54eea1168d4b60bd00a5b51bc23fde49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a 64-bit unsigned long from the specified position.  <br /></td></tr>
+<tr class="memitem:ga87d87c6ab3837d8f2d850a66f48e116e" id="r_ga87d87c6ab3837d8f2d850a66f48e116e"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga87d87c6ab3837d8f2d850a66f48e116e">SystemEx.Collections.Generic.Cache.ReadChar</a> (ulong position)</td></tr>
+<tr class="memdesc:ga87d87c6ab3837d8f2d850a66f48e116e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a single character from the specified position.  <br /></td></tr>
+<tr class="memitem:ga1a3544e5d34ff22a7c5b43a02a1b60cd" id="r_ga1a3544e5d34ff22a7c5b43a02a1b60cd"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ga1a3544e5d34ff22a7c5b43a02a1b60cd">SystemEx.Collections.Generic.Cache.ReadFloat</a> (ulong position, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga1a3544e5d34ff22a7c5b43a02a1b60cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a single-precision floating-point value from the specified position.  <br /></td></tr>
+<tr class="memitem:ga246da00e9a2ca262f1fb678c1feae6e4" id="r_ga246da00e9a2ca262f1fb678c1feae6e4"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ga246da00e9a2ca262f1fb678c1feae6e4">SystemEx.Collections.Generic.Cache.ReadDouble</a> (ulong position, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
+<tr class="memdesc:ga246da00e9a2ca262f1fb678c1feae6e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a double-precision floating-point value from the specified position.  <br /></td></tr>
+<tr class="memitem:ga4685e640e2d3480fd1715d5fcd3b316b" id="r_ga4685e640e2d3480fd1715d5fcd3b316b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga4685e640e2d3480fd1715d5fcd3b316b">SystemEx.Collections.Generic.Cache.Write</a> (byte data)</td></tr>
+<tr class="memdesc:ga4685e640e2d3480fd1715d5fcd3b316b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a single byte at the current position and advances the position.  <br /></td></tr>
+<tr class="memitem:gad58cc9f34179c85df7a762d5de777a94" id="r_gad58cc9f34179c85df7a762d5de777a94"><td class="memItemLeft">byte&#160;</td><td class="memItemRight"><a class="el" href="#gad58cc9f34179c85df7a762d5de777a94">SystemEx.Collections.Generic.Cache.Read</a> (ulong position)</td></tr>
+<tr class="memdesc:gad58cc9f34179c85df7a762d5de777a94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a single byte from the specified position.  <br /></td></tr>
+<tr class="memitem:gab6fbb0497f2a3560d9044988b11440f5" id="r_gab6fbb0497f2a3560d9044988b11440f5"><td class="memItemLeft">virtual ? byte[]&#160;</td><td class="memItemRight"><a class="el" href="#gab6fbb0497f2a3560d9044988b11440f5">SystemEx.Collections.Generic.Cache.ReadRange</a> (ulong position, uint count)</td></tr>
+<tr class="memdesc:gab6fbb0497f2a3560d9044988b11440f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a range of bytes starting at the specified position.  <br /></td></tr>
+<tr class="memitem:ga6c154e89bd89c078d07bb880486856fe" id="r_ga6c154e89bd89c078d07bb880486856fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga6c154e89bd89c078d07bb880486856fe">SystemEx.Collections.Generic.Cache.Read</a> (byte[] buffer, int offset, int count)</td></tr>
+<tr class="memdesc:ga6c154e89bd89c078d07bb880486856fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads bytes into the specified buffer and advances the internal position.  <br /></td></tr>
+<tr class="memitem:gaaadd93eedb3a05a013b76d12e38584d0" id="r_gaaadd93eedb3a05a013b76d12e38584d0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gaaadd93eedb3a05a013b76d12e38584d0">SystemEx.Collections.Generic.Cache.Write</a> (byte[] buffer, int offset, int count)</td></tr>
+<tr class="memdesc:gaaadd93eedb3a05a013b76d12e38584d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes bytes from the specified buffer and advances the internal position.  <br /></td></tr>
+<tr class="memitem:ga72c1f04765989773477c76d4517fa6d0" id="r_ga72c1f04765989773477c76d4517fa6d0"><td class="memItemLeft">byte[]&#160;</td><td class="memItemRight"><a class="el" href="#ga72c1f04765989773477c76d4517fa6d0">SystemEx.Collections.Generic.Cache.ToArray</a> ()</td></tr>
+<tr class="memdesc:ga72c1f04765989773477c76d4517fa6d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a copy of the internal buffer.  <br /></td></tr>
+<tr class="memitem:gac93d46e736533001dff7b4c3a85fcbdd" id="r_gac93d46e736533001dff7b4c3a85fcbdd"><td class="memItemLeft">Array&lt; byte &gt;&#160;</td><td class="memItemRight"><a class="el" href="#gac93d46e736533001dff7b4c3a85fcbdd">SystemEx.Collections.Generic.Cache.ToArrayEx</a> ()</td></tr>
+<tr class="memdesc:gac93d46e736533001dff7b4c3a85fcbdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a copy of the internal buffer, as Array&lt;T&gt;.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-prop-members" class="groupheader"><a id="prop-members" name="prop-members"></a>
+Properties</h2></td></tr>
+<tr class="memitem:ga9d8f97c19e763ed795d4ad2d97ab8ebd" id="r_ga9d8f97c19e763ed795d4ad2d97ab8ebd"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga9d8f97c19e763ed795d4ad2d97ab8ebd">SystemEx.Collections.Generic.Cache.IsLocked</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ga9d8f97c19e763ed795d4ad2d97ab8ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the internal lock state.  <br /></td></tr>
+<tr class="memitem:ga0c0fa9a326ed88844a78f8492013a5e6" id="r_ga0c0fa9a326ed88844a78f8492013a5e6"><td class="memItemLeft">byte&#160;</td><td class="memItemRight"><a class="el" href="#ga0c0fa9a326ed88844a78f8492013a5e6">SystemEx.Collections.Generic.Cache.this[int adress]</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ga0c0fa9a326ed88844a78f8492013a5e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides indexed access to the raw buffer.  <br /></td></tr>
+<tr class="memitem:gad96e10ea5020a4bedf2e3bdcb103f6be" id="r_gad96e10ea5020a4bedf2e3bdcb103f6be"><td class="memItemLeft">virtual ulong&#160;</td><td class="memItemRight"><a class="el" href="#gad96e10ea5020a4bedf2e3bdcb103f6be">SystemEx.Collections.Generic.Cache.Length</a><code> [get]</code></td></tr>
+<tr class="memdesc:gad96e10ea5020a4bedf2e3bdcb103f6be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total buffer length in bytes.  <br /></td></tr>
+<tr class="memitem:ga74a59252690c8fff0f671b7ddadfc318" id="r_ga74a59252690c8fff0f671b7ddadfc318"><td class="memItemLeft">virtual ulong&#160;</td><td class="memItemRight"><a class="el" href="#ga74a59252690c8fff0f671b7ddadfc318">SystemEx.Collections.Generic.Cache.Free</a><code> [get]</code></td></tr>
+<tr class="memdesc:ga74a59252690c8fff0f671b7ddadfc318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total free bytes.  <br /></td></tr>
+<tr class="memitem:ga80b8a8c831a28ecf5f34e8c97a616542" id="r_ga80b8a8c831a28ecf5f34e8c97a616542"><td class="memItemLeft">virtual ulong&#160;</td><td class="memItemRight"><a class="el" href="#ga80b8a8c831a28ecf5f34e8c97a616542">SystemEx.Collections.Generic.Cache.Used</a><code> [get]</code></td></tr>
+<tr class="memdesc:ga80b8a8c831a28ecf5f34e8c97a616542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total used bytes.  <br /></td></tr>
+<tr class="memitem:ga77cfbf7ad5f8b4693c570e8933a334f4" id="r_ga77cfbf7ad5f8b4693c570e8933a334f4"><td class="memItemLeft">virtual ulong&#160;</td><td class="memItemRight"><a class="el" href="#ga77cfbf7ad5f8b4693c570e8933a334f4">SystemEx.Collections.Generic.Cache.LongLength</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ga77cfbf7ad5f8b4693c570e8933a334f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the logical length of the cache as an unsigned 64-bit value.  <br /></td></tr>
+<tr class="memitem:gac13239ce5b4c05bcf94298b35766f628" id="r_gac13239ce5b4c05bcf94298b35766f628"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#gac13239ce5b4c05bcf94298b35766f628">SystemEx.Collections.Generic.Cache.IsEmpty</a><code> [get]</code></td></tr>
+<tr class="memdesc:gac13239ce5b4c05bcf94298b35766f628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the cache contains no data.  <br /></td></tr>
+<tr class="memitem:ga17b1956a264e34cccd1d98430261ef26" id="r_ga17b1956a264e34cccd1d98430261ef26"><td class="memItemLeft"><a class="el" href="#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga17b1956a264e34cccd1d98430261ef26">SystemEx.Collections.Generic.Cache.Type</a><code> [get]</code></td></tr>
+<tr class="memdesc:ga17b1956a264e34cccd1d98430261ef26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the configured cache type (read, write, or both).  <br /></td></tr>
+<tr class="memitem:ga5f20538a57d5d8541c8b2621639ee832" id="r_ga5f20538a57d5d8541c8b2621639ee832"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga5f20538a57d5d8541c8b2621639ee832">SystemEx.Collections.Generic.Cache.CanWrite</a><code> [get]</code></td></tr>
+<tr class="memdesc:ga5f20538a57d5d8541c8b2621639ee832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the cache is writable.  <br /></td></tr>
+<tr class="memitem:ga0d581d5cc35d448a491bee207076b03d" id="r_ga0d581d5cc35d448a491bee207076b03d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga0d581d5cc35d448a491bee207076b03d">SystemEx.Collections.Generic.Cache.CanRead</a><code> [get]</code></td></tr>
+<tr class="memdesc:ga0d581d5cc35d448a491bee207076b03d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the cache is readable.  <br /></td></tr>
+<tr class="memitem:ga3ba2f630d3a78dd0f2660313634a9816" id="r_ga3ba2f630d3a78dd0f2660313634a9816"><td class="memItemLeft">ulong&#160;</td><td class="memItemRight"><a class="el" href="#ga3ba2f630d3a78dd0f2660313634a9816">SystemEx.Collections.Generic.Cache.Position</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ga3ba2f630d3a78dd0f2660313634a9816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets and Set the current read/write position.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"></div></div><!-- contents -->
+<div class="textblock"><p>A typed view over a raw <code><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a></code> that exposes elements of an unmanaged type <em>T</em> .</p>
+<p>A dynamic, list‑backed map structure that stores ITuple objects. Provides tuple‑based lookup, traversal, range operations, and key/value convenience helpers. <br  />
+ This implementation allows arbitrary tuple arity, but assumes that index 0 represents the key and index 1 represents the value.</p>
+<p>Represents a dynamic list of ITuple objects. <br  />
+ Provides filtering utilities, indexed access, and basic list operations for working with heterogeneous tuple collections.</p>
+<p>A dynamically sized tuple storing elements as object values. Provides indexed access, mutation, and compatibility with the ITuple interface used throughout the <a class="el" href="../../d5/d9e/namespace_system_ex_1_1_system_ex.html">SystemEx</a> collection and iterator framework.</p>
+<p>A lightweight, serializable three‑element tuple consisting of strongly typed first, second, and third values. Implements ITuple and IEquatable&lt;T&gt; for structural comparison.</p>
+<p>A segmented cache implementation that splits a large logical address space into multiple fixed-size cache segments. <br  />
+ The first segment is the base Cache instance, while all additional segments are stored in an internal array of ICache.</p>
+<p>A specialized Node&lt;T&gt; that represents a star‑shaped structure, where the node may have an arbitrary number of child nodes.</p>
+<p>Represents a logical sub‑stack inside a shared stack buffer. A layer defines its own independent boundaries and a current pointer, allowing multiple virtual stacks to coexist within the same array.</p>
+<p>A fixed-size array that supports automatic sorting using either a comparer interface or a delegate-based sort function. Sorting can be triggered manually or automatically after insert and remove operations.</p>
+<p>A tuple map that maintains its elements in sorted order. <br  />
+ Sorting is performed using either a custom ICompared&lt;T&gt; implementation or a delegate of type SortTupleFunc. <br  />
+ The map automatically re-sorts itself after insertions when AutoSort is enabled.</p>
+<p>A tuple list that maintains its elements in sorted order. <br  />
+ Sorting is performed using either a custom ICompared&lt;T&gt; implementation or a delegate of type SortTupleFunc. <br  />
+ The map automatically re-sorts itself after insertions when AutoSort is enabled.</p>
+<p>A sorted tuple map that allows multiple entries with identical tuple keys. <br  />
+ Unlike SortedTupleMap, which prevents duplicate tuples, SortedMultiTupleMap accepts all items without duplicate checks while still maintaining full sorting behavior.</p>
+<p>A map that maintains its elements in sorted order using either a custom comparer (ICompared&lt;T&gt;) or a delegate-based sorting function (SortFunc&lt;T, TU&gt;). <br  />
+ Sorting is performed eagerly whenever elements are added or inserted, depending on the AutoSort setting.</p>
+<p>A dynamically sized array that supports automatic sorting using either a comparer interface or a delegate-based sort function. Sorting can be triggered manually or automatically after insert, add, or remove operations.</p>
+<p>A simple fixed‑size FIFO queue implemented as a thin wrapper around a Deque&lt;T&gt;. <br  />
+ Provides enqueue and dequeue operations using the deque’s front/back insertion and removal semantics.</p>
+<p>A lightweight, serializable four‑element tuple consisting of strongly typed first, second, third, and fourth values. <br  />
+ Implements ITuple for indexed access and structural comparison.</p>
+<p>Iterator for PriorityQueueEx&lt;T, TU&gt; that consumes elements in priority order. <br  />
+ Each call to Forward dequeues the next element from the underlying priority queue.</p>
+<p>A lightweight, serializable two‑element tuple consisting of a strongly typed key and value. Implements IPair&lt;T, TU&gt; and provides typed comparison helpers as well as ITuple compatibility.</p>
+<p>Represents a slice over intrusive Node&lt;T&gt; structures, defined by a starting iterator and a fixed length. <br  />
+ Conceptually similar to <code>Span&lt;T&gt;</code>, but operating on your intrusive node/iterator system instead of contiguous memory.</p>
+<p>Represents a simple range defined by a begin and end iterator over intrusive Node&lt;T&gt; structures. <br  />
+ Conceptually similar to <code>std::ranges::subrange</code>, but designed specifically for your intrusive node and iterator system.</p>
+<p>Defines the supported traversal orders for Node&lt;T&gt; structures.</p>
+<p>A tuple map that allows multiple entries with identical tuple keys. <br  />
+ Unlike TupleMap, which prevents duplicate tuples,.</p>
+<p>A map that allows multiple entries with the same key. <br  />
+ Unlike Map&lt;T, TU&gt;, which prevents duplicate pairs, a MultiMap&lt;TT, TU&gt; accepts all entries without checking for existing keys or values.</p>
+<p>A cache that maintains a mirrored copy of all written data. <br  />
+ Every write operation is performed on the primary cache and a reversed (byte‑mirrored) version of the data is written to the secondary cache. <br  />
+ During reads, both caches are compared to ensure data integrity.</p>
+<p>A dynamic map storing Pair&lt;T, TU&gt; elements in a list. <br  />
+ The map supports duplicate keys but prevents duplicate pairs unless explicitly overridden. <br  />
+ Provides key lookup, value lookup, traversal, range operations, and indexed access.</p>
+<p>Represents a grouping node that stores an arbitrary number of intrusive Node&lt;T&gt; instances inside a standard List&lt;T&gt;. <br  />
+ Unlike Node&lt;T&gt;’s own Prev/Next chain, a GroupNode&lt;T&gt; does not form a linked structure; it simply aggregates nodes into a collection.</p>
+<p>A fixed‑size map storing Pair&lt;T, TU&gt; elements in a contiguous array. <br  />
+ Unlike dynamic maps, a FixedMap&lt;T, TU&gt; never grows: once the capacity is reached, no further insertions are possible.</p>
+<p>A fixed-size array container that provides indexed access, insertion, traversal, and basic search operations. Unlike dynamic arrays, this structure never grows and always maintains a constant capacity.</p>
+<p>A simple fixed‑size double‑ended queue (deque) implemented using a linear array. Supports pushing and popping at both the front and the back. <br  />
+ This implementation does not use a ring buffer; shifting is performed when inserting or removing at the front.</p>
+<p>Defines how the search algorithm treats edge weights during traversal.</p>
+<p>Specifies the access mode of a Cache instance.</p>
+<p>A fixed-size queue that stores up to two elements. When full, the oldest element is automatically removed to make room for a new one.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The element type stored in the underlying array.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of elements stored in the queue.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of elements stored in the deque.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The key type </td></tr>
+    <tr><td class="paramname">TU</td><td>The value type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The value type stored in the underlying nodes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The key type (non‑null).</td></tr>
+    <tr><td class="paramname">TU</td><td>The value type (non‑null).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TT</td><td>The key type (non‑null).</td></tr>
+    <tr><td class="paramname">TU</td><td>The value type (non‑null).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The value type stored in the underlying nodes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>var range = new NodeRange&lt;int&gt;(node.First(), node.At(10));</p>
+<p>foreach (var x in range) Console.WriteLine(x); </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The value type stored in the underlying nodes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>var slice = new NodeSlice&lt;int&gt;(node.At(5), 10);</p>
+<p>foreach (var x in slice) Console.WriteLine(x); </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the first element (key).</td></tr>
+    <tr><td class="paramname">TU</td><td>The type of the second element (value).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The stored value type.</td></tr>
+    <tr><td class="paramname">TU</td><td>The priority type (must implement INumber&lt;TU&gt;).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TT</td><td>The type of the first element.</td></tr>
+    <tr><td class="paramname">TU</td><td>The type of the second element.</td></tr>
+    <tr><td class="paramname">TW</td><td>The type of the third element.</td></tr>
+    <tr><td class="paramname">TJ</td><td>The type of the fourth element.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of elements stored in the queue.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of elements stored in the array.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The key type.</td></tr>
+    <tr><td class="paramname">TU</td><td>The value type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of elements stored in the array.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The value type stored in the node.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This class supports large continuous write operations by automatically determining the correct segment and offset for each write. <br  />
+ Writes may span multiple segments, and data is written chunk-by-chunk using a temporary FixedArray&lt;T&gt; buffer. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TT</td><td>The type of the first element.</td></tr>
+    <tr><td class="paramname">TU</td><td>The type of the second element.</td></tr>
+    <tr><td class="paramname">TW</td><td>The type of the third element.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><code>TypeBuffer&lt;T&gt;</code> provides element access, cloning, clearing and simple fill semantics for fixed‑stride unmanaged types. The buffer owns an internal <code><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a></code> instance sized to <code>length * sizeof(T)</code>. All reads and writes perform endian conversion using the configured Endian value. </p>
+<p>This type assumes <em>T</em>  is an unmanaged value type and uses a fixed stride equal to <code>sizeof(T)</code>. Index and offset parameters are validated by the underlying cache and may throw on out‑of‑range access. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>An unmanaged value type stored in the buffer.</td></tr>
+  </table>
+  </dd>
+</dl>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a id="gaf02ddb6084404bb267c0629f20ed8b53" name="gaf02ddb6084404bb267c0629f20ed8b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf02ddb6084404bb267c0629f20ed8b53">&#9670;&#160;</a></span>CacheType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#gaf02ddb6084404bb267c0629f20ed8b53">SystemEx.Collections.Generic.CacheType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaf02ddb6084404bb267c0629f20ed8b53ae9366abd00c5a749c84c222bab5275d4" name="ggaf02ddb6084404bb267c0629f20ed8b53ae9366abd00c5a749c84c222bab5275d4"></a>ToDevice&#160;</td><td class="fielddoc"><p><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a> is intended for writing data to a device. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaf02ddb6084404bb267c0629f20ed8b53a69887dd9a9eca98fa03f1b4b1592ba05" name="ggaf02ddb6084404bb267c0629f20ed8b53a69887dd9a9eca98fa03f1b4b1592ba05"></a>FromDevice&#160;</td><td class="fielddoc"><p><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a> is intended for reading data from a device. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaf02ddb6084404bb267c0629f20ed8b53a130c5b3473c57faa76e2a1c54e26f88e" name="ggaf02ddb6084404bb267c0629f20ed8b53a130c5b3473c57faa76e2a1c54e26f88e"></a>Both&#160;</td><td class="fielddoc"><p><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a> supports both reading and writing operations. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaf02ddb6084404bb267c0629f20ed8b53a26d52f0d46807d1cb3e28d40177db92e" name="ggaf02ddb6084404bb267c0629f20ed8b53a26d52f0d46807d1cb3e28d40177db92e"></a>OnlySystem&#160;</td><td class="fielddoc"><p><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a> ist only on host, don't used with a device. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00028">28</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gae3c3f4a1a9d90344fce2ca3232791bd7" name="gae3c3f4a1a9d90344fce2ca3232791bd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae3c3f4a1a9d90344fce2ca3232791bd7">&#9670;&#160;</a></span>SearchType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#gae3c3f4a1a9d90344fce2ca3232791bd7">SystemEx.Collections.Generic.SearchType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggae3c3f4a1a9d90344fce2ca3232791bd7a249d801f12a641a77e8a1b27ece187ee" name="ggae3c3f4a1a9d90344fce2ca3232791bd7a249d801f12a641a77e8a1b27ece187ee"></a>SubtractWeight&#160;</td><td class="fielddoc"><p>Subtract the edge weight from the current energy: energy = energy - weight. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae3c3f4a1a9d90344fce2ca3232791bd7a0fcacbd960872d9d821973ed3188b59d" name="ggae3c3f4a1a9d90344fce2ca3232791bd7a0fcacbd960872d9d821973ed3188b59d"></a>SetToWeight&#160;</td><td class="fielddoc"><p>Replace the current energy with the edge weight: energy = weight. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae3c3f4a1a9d90344fce2ca3232791bd7a34f4669edc5c4c56ff9a2c0ffabdbccd" name="ggae3c3f4a1a9d90344fce2ca3232791bd7a34f4669edc5c4c56ff9a2c0ffabdbccd"></a>AccumulateCost&#160;</td><td class="fielddoc"><p>Do not consume energy; instead accumulate the edge weight into the cost: cost += weight. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="../../d4/dd7/_cluster_8cs_source.html#l00024">24</a> of file <a class="el" href="../../d4/dd7/_cluster_8cs_source.html">Cluster.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga5d4c0e8a1b447d651da25c01c3acde4b" name="ga5d4c0e8a1b447d651da25c01c3acde4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5d4c0e8a1b447d651da25c01c3acde4b">&#9670;&#160;</a></span>TraversOrder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ga5d4c0e8a1b447d651da25c01c3acde4b">SystemEx.Collections.Generic.TraversOrder</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga5d4c0e8a1b447d651da25c01c3acde4ba5be8b098f9b79cf3b18767ffc5ecd169" name="gga5d4c0e8a1b447d651da25c01c3acde4ba5be8b098f9b79cf3b18767ffc5ecd169"></a>Preorder&#160;</td><td class="fielddoc"><p>Visit the current node before its children and siblings. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5d4c0e8a1b447d651da25c01c3acde4ba23d595ba1af8a7e9eb75b7dd281c4186" name="gga5d4c0e8a1b447d651da25c01c3acde4ba23d595ba1af8a7e9eb75b7dd281c4186"></a>Inorder&#160;</td><td class="fielddoc"><p>Visit the left subtree, then the node, then the right subtree (not implemented). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5d4c0e8a1b447d651da25c01c3acde4baa81781f8f4fa340f10177bcce27cb714" name="gga5d4c0e8a1b447d651da25c01c3acde4baa81781f8f4fa340f10177bcce27cb714"></a>Postorder&#160;</td><td class="fielddoc"><p>Visit children and siblings before the current node. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5d4c0e8a1b447d651da25c01c3acde4ba3ec389f8d12ead28a627f00bdeaca5a2" name="gga5d4c0e8a1b447d651da25c01c3acde4ba3ec389f8d12ead28a627f00bdeaca5a2"></a>ListOrder&#160;</td><td class="fielddoc"><p>Traverse the linked list in forward direction. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316" name="gga5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316"></a>ReservListOrder&#160;</td><td class="fielddoc"><p>Traverse the linked list in reverse direction. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00029">29</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="ga6e02be92994e299a39d1d1884d4baab4" name="ga6e02be92994e299a39d1d1884d4baab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6e02be92994e299a39d1d1884d4baab4">&#9670;&#160;</a></span>Cache() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SystemEx.Collections.Generic.Cache.Cache </td>
+          <td>(</td>
+          <td class="paramtype">Array&lt; byte &gt;</td>          <td class="paramname"><span class="paramname"><em>arr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td></td></tr>
+    <tr><td class="paramname">type</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00167">167</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga2010b609b3306feea5e20cdcc61ee268" name="ga2010b609b3306feea5e20cdcc61ee268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2010b609b3306feea5e20cdcc61ee268">&#9670;&#160;</a></span>Cache() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SystemEx.Collections.Generic.Cache.Cache </td>
+          <td>(</td>
+          <td class="paramtype">byte[]</td>          <td class="paramname"><span class="paramname"><em>arr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td></td></tr>
+    <tr><td class="paramname">type</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00156">156</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga1c77ce66ee80f12e1c9b00ca515ae4ee" name="ga1c77ce66ee80f12e1c9b00ca515ae4ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1c77ce66ee80f12e1c9b00ca515ae4ee">&#9670;&#160;</a></span>Cache() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SystemEx.Collections.Generic.Cache.Cache </td>
+          <td>(</td>
+          <td class="paramtype">Cache</td>          <td class="paramname"><span class="paramname"><em>cache</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cache</td><td>The orignal cache</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidOperationException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00179">179</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gab82675a111868495f95dec9f71cf2a75" name="gab82675a111868495f95dec9f71cf2a75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab82675a111868495f95dec9f71cf2a75">&#9670;&#160;</a></span>Cache() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SystemEx.Collections.Generic.Cache.Cache </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>capacity</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#ggaf02ddb6084404bb267c0629f20ed8b53a26d52f0d46807d1cb3e28d40177db92e">CacheType::OnlySystem</a></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00133">133</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gacfb0c058fe455456f16a644f032d0b14" name="gacfb0c058fe455456f16a644f032d0b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacfb0c058fe455456f16a644f032d0b14">&#9670;&#160;</a></span>CacheIsSharedException()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SystemEx.Collections.Generic.CacheIsSharedException.CacheIsSharedException </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00056">56</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gab1d9bfd97b4f7487f57a3c3bacc6d135" name="gab1d9bfd97b4f7487f57a3c3bacc6d135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab1d9bfd97b4f7487f57a3c3bacc6d135">&#9670;&#160;</a></span>Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SystemEx.Collections.Generic.Cache.Clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00149">149</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga6c154e89bd89c078d07bb880486856fe" name="ga6c154e89bd89c078d07bb880486856fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c154e89bd89c078d07bb880486856fe">&#9670;&#160;</a></span>Read() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Read </td>
+          <td>(</td>
+          <td class="paramtype">byte[]</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#af25903f0c7667252e01afacf25c3ae1a">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00558">558</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gad58cc9f34179c85df7a762d5de777a94" name="gad58cc9f34179c85df7a762d5de777a94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad58cc9f34179c85df7a762d5de777a94">&#9670;&#160;</a></span>Read() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte SystemEx.Collections.Generic.Cache.Read </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#ac934162038f661790daa6a274c495e62">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00540">540</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga87d87c6ab3837d8f2d850a66f48e116e" name="ga87d87c6ab3837d8f2d850a66f48e116e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87d87c6ab3837d8f2d850a66f48e116e">&#9670;&#160;</a></span>ReadChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char SystemEx.Collections.Generic.Cache.ReadChar </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#ad9de4726fa8a977b66aaeace1817dc88">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00491">491</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga246da00e9a2ca262f1fb678c1feae6e4" name="ga246da00e9a2ca262f1fb678c1feae6e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga246da00e9a2ca262f1fb678c1feae6e4">&#9670;&#160;</a></span>ReadDouble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double SystemEx.Collections.Generic.Cache.ReadDouble </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a23e7df05840b9eefaae988698df4ea14">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00513">513</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga1a3544e5d34ff22a7c5b43a02a1b60cd" name="ga1a3544e5d34ff22a7c5b43a02a1b60cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1a3544e5d34ff22a7c5b43a02a1b60cd">&#9670;&#160;</a></span>ReadFloat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SystemEx.Collections.Generic.Cache.ReadFloat </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a4fffba881bc4a66212eadda133c64e5e">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00498">498</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga48db154711ee150e00913f432f8d2250" name="ga48db154711ee150e00913f432f8d2250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga48db154711ee150e00913f432f8d2250">&#9670;&#160;</a></span>ReadInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.ReadInt </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a66b5939ed4f145957233e12a6f145c5b">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00406">406</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gac6c4ef8d2d3e218d15ed9000ab727cb6" name="gac6c4ef8d2d3e218d15ed9000ab727cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac6c4ef8d2d3e218d15ed9000ab727cb6">&#9670;&#160;</a></span>ReadLong()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long SystemEx.Collections.Generic.Cache.ReadLong </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a0550d5aa94671ec9b6c17292a3764144">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00451">451</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gab6fbb0497f2a3560d9044988b11440f5" name="gab6fbb0497f2a3560d9044988b11440f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab6fbb0497f2a3560d9044988b11440f5">&#9670;&#160;</a></span>ReadRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ? byte[] SystemEx.Collections.Generic.Cache.ReadRange </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a5369eb3bc016ffb7e6cdfa8d186ad82f">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p>Reimplemented in <a class="el" href="../../de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html#a2a8398371a10ea3e862705228031d383">SystemEx.Collections.Generic.MirroredCache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00546">546</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gaab86cf28fc31411d52974dfc80777cac" name="gaab86cf28fc31411d52974dfc80777cac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaab86cf28fc31411d52974dfc80777cac">&#9670;&#160;</a></span>ReadShort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short SystemEx.Collections.Generic.Cache.ReadShort </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a98ae50dc022b6ae7939b5ff06b33950f">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00422">422</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga34399b32a4a3ebffc109460468483b51" name="ga34399b32a4a3ebffc109460468483b51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga34399b32a4a3ebffc109460468483b51">&#9670;&#160;</a></span>ReadUInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint SystemEx.Collections.Generic.Cache.ReadUInt </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a71e7e2d013aeb6c18d2e8e0afab04925">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00391">391</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga54eea1168d4b60bd00a5b51bc23fde49" name="ga54eea1168d4b60bd00a5b51bc23fde49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga54eea1168d4b60bd00a5b51bc23fde49">&#9670;&#160;</a></span>ReadULong()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ulong SystemEx.Collections.Generic.Cache.ReadULong </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a50fbd070dc383a71ea4b5c7e2e87c465">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00471">471</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga2b5b1d4f558305a04c28f2cf9578083a" name="ga2b5b1d4f558305a04c28f2cf9578083a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2b5b1d4f558305a04c28f2cf9578083a">&#9670;&#160;</a></span>ReadUShort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ushort SystemEx.Collections.Generic.Cache.ReadUShort </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#ad89a1aa8e98ff87d9a5894a45467ba66">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00437">437</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga1e6cbff2a5de7fe6c185d7ca23f266e5" name="ga1e6cbff2a5de7fe6c185d7ca23f266e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e6cbff2a5de7fe6c185d7ca23f266e5">&#9670;&#160;</a></span>Seek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ulong SystemEx.Collections.Generic.Cache.Seek </td>
+          <td>(</td>
+          <td class="paramtype">SeekOrigin</td>          <td class="paramname"><span class="paramname"><em>org</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">org</td><td>The seek origin.</td></tr>
+    <tr><td class="paramname">pos</td><td>The offset relative to the origin.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new position.</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00193">193</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga8992101c929020cc3312b701470a0f89" name="ga8992101c929020cc3312b701470a0f89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8992101c929020cc3312b701470a0f89">&#9670;&#160;</a></span>SetZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SystemEx.Collections.Generic.Cache.SetZero </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00141">141</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga72c1f04765989773477c76d4517fa6d0" name="ga72c1f04765989773477c76d4517fa6d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga72c1f04765989773477c76d4517fa6d0">&#9670;&#160;</a></span>ToArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte[] SystemEx.Collections.Generic.Cache.ToArray </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#afa5926bb51f1f866b1066e03299be158">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00637">637</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gac93d46e736533001dff7b4c3a85fcbdd" name="gac93d46e736533001dff7b4c3a85fcbdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac93d46e736533001dff7b4c3a85fcbdd">&#9670;&#160;</a></span>ToArrayEx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Array&lt; byte &gt; SystemEx.Collections.Generic.Cache.ToArrayEx </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d7/de5/class_system_ex_1_1_collections_1_1_generic_1_1_cache_is_shared_exception.html" title="Exception thrown when an operation is attempted on a shared or locked cache.">CacheIsSharedException</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00646">646</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gaffad9d713e423cee13bc018e88f8ec79" name="gaffad9d713e423cee13bc018e88f8ec79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaffad9d713e423cee13bc018e88f8ec79">&#9670;&#160;</a></span>ToBytes&lt; T &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsafe byte[] SystemEx.Collections.Generic.Cache.ToBytes&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">ref T</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="typeconstraint">
+<dl><dt><b>Type Constraints</b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>unmanaged</em></td><td>&#160;</td></tr>
+</table>
+</dd>
+</dl>
+</div>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00265">265</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga4685e640e2d3480fd1715d5fcd3b316b" name="ga4685e640e2d3480fd1715d5fcd3b316b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4685e640e2d3480fd1715d5fcd3b316b">&#9670;&#160;</a></span>Write() <span class="overload">[1/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Write </td>
+          <td>(</td>
+          <td class="paramtype">byte</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a2de734b6e191ecc377ecab0b5a75a988">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00532">532</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gaaadd93eedb3a05a013b76d12e38584d0" name="gaaadd93eedb3a05a013b76d12e38584d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaadd93eedb3a05a013b76d12e38584d0">&#9670;&#160;</a></span>Write() <span class="overload">[2/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Write </td>
+          <td>(</td>
+          <td class="paramtype">byte[]</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>The byte buffer to write</td></tr>
+    <tr><td class="paramname">offset</td><td></td></tr>
+    <tr><td class="paramname">count</td><td>Size of the buffer to write</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NUmber of bytes are written</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidOperationException</td><td></td></tr>
+    <tr><td class="paramname">ArgumentOutOfRangeException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#aeb91d002af6002d044b6beabd0f29130">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00600">600</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga8a746456b6ea06d1b04266107e90a119" name="ga8a746456b6ea06d1b04266107e90a119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8a746456b6ea06d1b04266107e90a119">&#9670;&#160;</a></span>Write() <span class="overload">[3/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Write </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a29b787a369ca9ed417a8d795b86b6fa4">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00327">327</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gaba4dc69bf2b777f72f28b06b54be874e" name="gaba4dc69bf2b777f72f28b06b54be874e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaba4dc69bf2b777f72f28b06b54be874e">&#9670;&#160;</a></span>Write() <span class="overload">[4/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Write </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#afc3c8ccb0e85ad8e93d50dcbf05a4eb2">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00317">317</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga720b68ac0f7bfc03ecde929e472ab28b" name="ga720b68ac0f7bfc03ecde929e472ab28b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga720b68ac0f7bfc03ecde929e472ab28b">&#9670;&#160;</a></span>Write() <span class="overload">[5/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Write </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a82e66157f346f46f6d1f944a862d40c8">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00377">377</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga3107b10a3fc86d7b94b10c1716e0e970" name="ga3107b10a3fc86d7b94b10c1716e0e970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3107b10a3fc86d7b94b10c1716e0e970">&#9670;&#160;</a></span>Write() <span class="overload">[6/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Write </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a30f201dfc558872b3c2ee24400dfa2bf">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00367">367</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga490a26bb63f1f348a84e1cf8c844cef9" name="ga490a26bb63f1f348a84e1cf8c844cef9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga490a26bb63f1f348a84e1cf8c844cef9">&#9670;&#160;</a></span>Write() <span class="overload">[7/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Write </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#acb6f13199618300398614e13887ec9e7">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00297">297</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga5e242bc6f30609f38cbd923c311c9c6f" name="ga5e242bc6f30609f38cbd923c311c9c6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5e242bc6f30609f38cbd923c311c9c6f">&#9670;&#160;</a></span>Write() <span class="overload">[8/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Write </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a57b7a70029d429d4a9d5bee04bb36ae7">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00347">347</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gac4eca113a51f98bd0768faff5a659ea8" name="gac4eca113a51f98bd0768faff5a659ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac4eca113a51f98bd0768faff5a659ea8">&#9670;&#160;</a></span>Write() <span class="overload">[9/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Write </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#addc3907c206675129237cbabc11bdb82">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00307">307</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga7f48593fb926460c6d80cff8b8ae45f7" name="ga7f48593fb926460c6d80cff8b8ae45f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f48593fb926460c6d80cff8b8ae45f7">&#9670;&#160;</a></span>Write() <span class="overload">[10/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Write </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#af69e44750aeb7360cf51f086be88a073">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00287">287</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga5a51acdf154d385a45e127caf48af5c2" name="ga5a51acdf154d385a45e127caf48af5c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a51acdf154d385a45e127caf48af5c2">&#9670;&#160;</a></span>Write() <span class="overload">[11/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Write </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#aea1be3aa0872972b7c1945f54f37c253">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00357">357</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga6d4774d2ecdb5b713cc9c26f2540d9bc" name="ga6d4774d2ecdb5b713cc9c26f2540d9bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d4774d2ecdb5b713cc9c26f2540d9bc">&#9670;&#160;</a></span>Write() <span class="overload">[12/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Cache.Write </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ushort</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a></td>          <td class="paramname"><span class="paramname"><em>endian</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a6e75f4e4dea76d38d24667df05b2dcfd">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00337">337</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gaa4a0abe0cb00fa5734afb3dee647575b" name="gaa4a0abe0cb00fa5734afb3dee647575b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4a0abe0cb00fa5734afb3dee647575b">&#9670;&#160;</a></span>WriteRange() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ulong SystemEx.Collections.Generic.Cache.WriteRange </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte[]</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a0523c298e482c73babce084b34f67d4c">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p>Reimplemented in <a class="el" href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#a9606104852f651b28396a7cdebe22484">SystemEx.Collections.Generic.StrippedCache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00230">230</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gadc39086417a0f19c444987f4a4ae2aae" name="gadc39086417a0f19c444987f4a4ae2aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc39086417a0f19c444987f4a4ae2aae">&#9670;&#160;</a></span>WriteRange() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ulong SystemEx.Collections.Generic.Cache.WriteRange </td>
+          <td>(</td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ulong</td>          <td class="paramname"><span class="paramname"><em>iend</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte[]</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a8a127f9fa34cb14546ea50c6190072ff">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p>Reimplemented in <a class="el" href="../../de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html#aa06192f5f7a43199dd83487b5895057b">SystemEx.Collections.Generic.MirroredCache</a>, and <a class="el" href="../../d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#aa221c7108e09f7a87c04cbda06ba096d">SystemEx.Collections.Generic.StrippedCache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00236">236</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a name="doc-prop-members" id="doc-prop-members"></a><h2 id="header-doc-prop-members" class="groupheader">Properties</h2>
+<a id="ga0d581d5cc35d448a491bee207076b03d" name="ga0d581d5cc35d448a491bee207076b03d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d581d5cc35d448a491bee207076b03d">&#9670;&#160;</a></span>CanRead</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SystemEx.Collections.Generic.Cache.CanRead</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a47c2641f98cc4c7ff21dc446194babb9">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00120">120</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga5f20538a57d5d8541c8b2621639ee832" name="ga5f20538a57d5d8541c8b2621639ee832"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f20538a57d5d8541c8b2621639ee832">&#9670;&#160;</a></span>CanWrite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SystemEx.Collections.Generic.Cache.CanWrite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#abf3d52d5d149dfcf09d1928ce737808a">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00116">116</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga74a59252690c8fff0f671b7ddadfc318" name="ga74a59252690c8fff0f671b7ddadfc318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga74a59252690c8fff0f671b7ddadfc318">&#9670;&#160;</a></span>Free</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ulong SystemEx.Collections.Generic.Cache.Free</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00095">95</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gac13239ce5b4c05bcf94298b35766f628" name="gac13239ce5b4c05bcf94298b35766f628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac13239ce5b4c05bcf94298b35766f628">&#9670;&#160;</a></span>IsEmpty</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SystemEx.Collections.Generic.Cache.IsEmpty</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#af80de584cc7f719589c1d5e008e50182">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00108">108</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga9d8f97c19e763ed795d4ad2d97ab8ebd" name="ga9d8f97c19e763ed795d4ad2d97ab8ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9d8f97c19e763ed795d4ad2d97ab8ebd">&#9670;&#160;</a></span>IsLocked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SystemEx.Collections.Generic.Cache.IsLocked</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00079">79</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="gad96e10ea5020a4bedf2e3bdcb103f6be" name="gad96e10ea5020a4bedf2e3bdcb103f6be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad96e10ea5020a4bedf2e3bdcb103f6be">&#9670;&#160;</a></span>Length</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ulong SystemEx.Collections.Generic.Cache.Length</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a619bee5e6e78fa6e29ac1464c17e2c05">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00091">91</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga77cfbf7ad5f8b4693c570e8933a334f4" name="ga77cfbf7ad5f8b4693c570e8933a334f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga77cfbf7ad5f8b4693c570e8933a334f4">&#9670;&#160;</a></span>LongLength</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ulong SystemEx.Collections.Generic.Cache.LongLength</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a1ccb97969cb68335a12dc7721a6db856">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00104">104</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga3ba2f630d3a78dd0f2660313634a9816" name="ga3ba2f630d3a78dd0f2660313634a9816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ba2f630d3a78dd0f2660313634a9816">&#9670;&#160;</a></span>Position</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ulong SystemEx.Collections.Generic.Cache.Position</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#aa1cd0709d936f3a38087f1cbcfbbced0">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00124">124</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga0c0fa9a326ed88844a78f8492013a5e6" name="ga0c0fa9a326ed88844a78f8492013a5e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0c0fa9a326ed88844a78f8492013a5e6">&#9670;&#160;</a></span>this[int adress]</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte SystemEx.Collections.Generic.Cache.this[int adress]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00083">83</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga17b1956a264e34cccd1d98430261ef26" name="ga17b1956a264e34cccd1d98430261ef26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17b1956a264e34cccd1d98430261ef26">&#9670;&#160;</a></span>Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a> SystemEx.Collections.Generic.Cache.Type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#ac441baddc1286d97c07335b980a2da5f">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00112">112</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+<a id="ga80b8a8c831a28ecf5f34e8c97a616542" name="ga80b8a8c831a28ecf5f34e8c97a616542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga80b8a8c831a28ecf5f34e8c97a616542">&#9670;&#160;</a></span>Used</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ulong SystemEx.Collections.Generic.Cache.Used</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d82/_cache_8cs_source.html#l00099">99</a> of file <a class="el" href="../../d7/d82/_cache_8cs_source.html">Cache.cs</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

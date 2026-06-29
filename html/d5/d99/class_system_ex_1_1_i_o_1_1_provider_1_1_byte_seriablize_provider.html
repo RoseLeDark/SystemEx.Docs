@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -160,9 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">SystemEx.IO.Provider.ByteSeriablizeProvider Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for SystemEx.IO.Provider.ByteSeriablizeProvider:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.IO.Provider.ByteSeriablizeProvider:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.png" usemap="#SystemEx_2EIO_2EProvider_2EByteSeriablizeProvider_map" alt=""/>
   <map id="SystemEx_2EIO_2EProvider_2EByteSeriablizeProvider_map" name="SystemEx_2EIO_2EProvider_2EByteSeriablizeProvider_map">
@@ -173,7 +134,7 @@ Inheritance diagram for SystemEx.IO.Provider.ByteSeriablizeProvider:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac66be7a6fa49e97366512f39a7af52aa" id="r_ac66be7a6fa49e97366512f39a7af52aa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac66be7a6fa49e97366512f39a7af52aa">ByteSeriablizeProvider</a> (<a class="el" href="../../d2/d66/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_format_schema.html">IByteFormatSchema</a> schema, <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian)</td></tr>
-<tr class="memitem:a86c7e02231b83d86ea4d66b67174be2e" id="r_a86c7e02231b83d86ea4d66b67174be2e"><td class="memItemLeft"><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">Cache</a>&#160;</td><td class="memItemRight"><a class="el" href="#a86c7e02231b83d86ea4d66b67174be2e">ToBytes&lt; T &gt;</a> (T obj)</td></tr>
+<tr class="memitem:aeb2ed556291d5970b0d7be01e2938241" id="r_aeb2ed556291d5970b0d7be01e2938241"><td class="memItemLeft"><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">Cache</a>?&#160;</td><td class="memItemRight"><a class="el" href="#aeb2ed556291d5970b0d7be01e2938241">ToBytes&lt; T &gt;</a> (T? obj)</td></tr>
 <tr class="memitem:a19bc2b34b6fdc84f0054c3c23e349977" id="r_a19bc2b34b6fdc84f0054c3c23e349977"><td class="memItemLeft">T?&#160;</td><td class="memItemRight"><a class="el" href="#a19bc2b34b6fdc84f0054c3c23e349977">FromBytes&lt; T &gt;</a> (<a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">Cache</a> obj)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -282,7 +243,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d34/_byte_seriablize_provider_8cs_source.html#l00068">68</a> of file <a class="el" href="../../d9/d34/_byte_seriablize_provider_8cs_source.html">ByteSeriablizeProvider.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d34/_byte_seriablize_provider_8cs_source.html#l00069">69</a> of file <a class="el" href="../../d9/d34/_byte_seriablize_provider_8cs_source.html">ByteSeriablizeProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -372,16 +333,16 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a86c7e02231b83d86ea4d66b67174be2e" name="a86c7e02231b83d86ea4d66b67174be2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86c7e02231b83d86ea4d66b67174be2e">&#9670;&#160;</a></span>ToBytes&lt; T &gt;()</h2>
+<a id="aeb2ed556291d5970b0d7be01e2938241" name="aeb2ed556291d5970b0d7be01e2938241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb2ed556291d5970b0d7be01e2938241">&#9670;&#160;</a></span>ToBytes&lt; T &gt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">Cache</a> SystemEx.IO.Provider.ByteSeriablizeProvider.ToBytes&lt; T &gt; </td>
+          <td class="memname"><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html">Cache</a>? SystemEx.IO.Provider.ByteSeriablizeProvider.ToBytes&lt; T &gt; </td>
           <td>(</td>
-          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td class="paramtype">T?</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -399,7 +360,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>IO/Provider/<a class="el" href="../../d9/d34/_byte_seriablize_provider_8cs_source.html">ByteSeriablizeProvider.cs</a></li>
+<li><a class="el" href="../../d9/d34/_byte_seriablize_provider_8cs_source.html">ByteSeriablizeProvider.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

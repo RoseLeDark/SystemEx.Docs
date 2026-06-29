@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -163,13 +123,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <p>This is the complete list of members for <a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a3f77fa65f84cbc08323009a6bad406e0">AddBuffer</a>(DeviceSharedBuffer&lt; TIDeviceSharedBackend &gt; buffer, string name, BufferType type, object? confgs)</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a5e21bd58f56cab651980ce79f3118202">Begin</a>(string strFunction)</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a61559c3bcc2dcb4d1b7e40e90bf0628d">End</a>()</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ac0021bf73172da0bc789fece42f3b246">IsRunning</a>()</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a2f1f48adf5593d1ffd52a355abc51a7a">RemoveBuffer</a>(string name, BufferType type)</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#aa53e76c8b8f253b12f986cdf5c927aa9">RemoveBuffer</a>(int index, BufferType type)</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a950dfa83692a5e63f062a846e859d6ae">Run</a>(object? options)</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a7bc4002350665b4fe10aeeaebfed8ee1">AddBuffer</a>(DeviceBuffer buffer, string name, int flags, object? configs)</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ab18d6f9f562f69f5ede1d56410ef306e">Backend</a></td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a003fc294274846fba616b3d4e7b3a55d">BeginRun</a>(string strFunction)</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#adc2f30a0d3b0b9f94fdcb83bad7dd2f9">Create</a>(string dllPath)</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a23aa92269514ccc3f2cab9edc47b3460">EndRun</a>()</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a5680e822b8842aa8d863e557ba40f9ec">GetBuffer</a>(string name)</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ac0021bf73172da0bc789fece42f3b246">IsRunning</a>()</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a7611094d330cd73aa03c3e406dd54739">RemoveBuffer</a>(string name)</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#ad6d9c0b9112797e6bd094e8e56abec3c">RemoveBuffer</a>(int index)</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a950dfa83692a5e63f062a846e859d6ae">Run</a>(object? options)</td><td class="entry"><a class="el" href="../../d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

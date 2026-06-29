@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,20 +117,21 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Node&lt; T &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Node&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Represents a doubly linked node with optional child and sibling arrays. Supports list-style navigation (Prev/Next), tree-style traversal, splicing, swapping, reversing, and random access movement.  
  <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.Node&lt; T &gt;:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.Node&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.png" usemap="#SystemEx_2ECollections_2EGeneric_2ENode_3C_20T_20_3E_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2ENode_3C_20T_20_3E_map" name="SystemEx_2ECollections_2EGeneric_2ENode_3C_20T_20_3E_map">
-<area href="../../dd/df2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_node-1-g.html" title="Defines the basic contract for a node in a multi‑linked structure, such as a tree,..." alt="SystemEx.Collections.Generic.Interfaces.INode&lt; T &gt;" shape="rect" coords="0,0,309,24"/>
-<area href="../../db/d90/class_system_ex_1_1_collections_1_1_generic_1_1_star_node-1-g.html" title="A specialized Node&lt;T&gt; that represents a star‑shaped structure, where the node may have an arbitrary n..." alt="SystemEx.Collections.Generic.StarNode&lt; T &gt;" shape="rect" coords="0,112,309,136"/>
+<area href="../../dd/df2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_node-1-g.html" alt="SystemEx.Collections.Generic.Interfaces.INode&lt; T &gt;" shape="rect" coords="0,0,309,24"/>
+<area href="../../db/d90/class_system_ex_1_1_collections_1_1_generic_1_1_star_node-1-g.html" alt="SystemEx.Collections.Generic.StarNode&lt; T &gt;" shape="rect" coords="0,112,309,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -208,7 +169,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6ff8a2533066de90d02a53bed2a3996e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps this node with another node, preserving neighbor links.  <br /></td></tr>
 <tr class="memitem:ac3638caf30bbf27f05ed262f1a593863" id="r_ac3638caf30bbf27f05ed262f1a593863"><td class="memItemLeft">ulong&#160;</td><td class="memItemRight"><a class="el" href="#ac3638caf30bbf27f05ed262f1a593863">Distance</a> ()</td></tr>
 <tr class="memdesc:ac3638caf30bbf27f05ed262f1a593863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of steps to the beginning of the chain.  <br /></td></tr>
-<tr class="memitem:a851ddf291704627c324e6c4188d5dff0" id="r_a851ddf291704627c324e6c4188d5dff0"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a851ddf291704627c324e6c4188d5dff0">Travers</a> (<a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4b">TraversOrder</a> order, Action&lt; <a class="el" href="#a738c44aa037b031a0d6c5470e8388034">Node</a>&lt; T &gt; &gt; action)</td></tr>
+<tr class="memitem:a851ddf291704627c324e6c4188d5dff0" id="r_a851ddf291704627c324e6c4188d5dff0"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a851ddf291704627c324e6c4188d5dff0">Travers</a> (<a class="el" href="../../dd/dbc/group__collections.html#ga5d4c0e8a1b447d651da25c01c3acde4b">TraversOrder</a> order, Action&lt; <a class="el" href="#a738c44aa037b031a0d6c5470e8388034">Node</a>&lt; T &gt; &gt; action)</td></tr>
 <tr class="memdesc:a851ddf291704627c324e6c4188d5dff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a traversal using the specified order.  <br /></td></tr>
 <tr class="memitem:a1737fa506bf472850e88d33fe21ceb34" id="r_a1737fa506bf472850e88d33fe21ceb34"><td class="memItemLeft"><a class="el" href="#a738c44aa037b031a0d6c5470e8388034">Node</a>&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1737fa506bf472850e88d33fe21ceb34">Clone</a> ()</td></tr>
 <tr class="memdesc:a1737fa506bf472850e88d33fe21ceb34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow clone of this node.  <br /></td></tr>
@@ -262,7 +223,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00178">178</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00180">180</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a51dddc39c48591f0df10c3d3c8271045" name="a51dddc39c48591f0df10c3d3c8271045"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51dddc39c48591f0df10c3d3c8271045">&#9670;&#160;</a></span>AsChain()</h2>
@@ -280,7 +241,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00514">514</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00516">516</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -300,7 +261,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00498">498</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00500">500</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -319,7 +280,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00240">240</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00242">242</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -338,7 +299,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00491">491</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00493">493</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -357,7 +318,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00455">455</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00457">457</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -380,7 +341,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00332">332</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00334">334</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -399,7 +360,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00354">354</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00356">356</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -422,7 +383,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00412">412</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00414">414</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -441,7 +402,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00319">319</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00321">321</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -468,7 +429,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00258">258</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00260">260</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -496,7 +457,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00280">280</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00282">282</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -515,7 +476,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00298">298</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00300">300</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -534,7 +495,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00269">269</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00271">271</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -562,7 +523,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00290">290</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00292">292</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -581,7 +542,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00245">245</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00247">247</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -600,7 +561,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00370">370</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00372">372</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -619,7 +580,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00397">397</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00399">399</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -638,7 +599,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00306">306</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00308">308</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -669,7 +630,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00507">507</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00509">509</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -692,7 +653,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00383">383</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00385">385</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -711,7 +672,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00419">419</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00421">421</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -727,7 +688,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">virtual void SystemEx.Collections.Generic.Node&lt; T &gt;.Travers </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4b">TraversOrder</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>, </td>
+          <td class="paramtype"><a class="el" href="../../dd/dbc/group__collections.html#ga5d4c0e8a1b447d651da25c01c3acde4b">TraversOrder</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -742,7 +703,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00466">466</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00468">468</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -767,7 +728,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00184">184</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00186">186</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -792,7 +753,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00235">235</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00237">237</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -816,7 +777,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00230">230</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00232">232</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -840,7 +801,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00215">215</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00217">217</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -864,7 +825,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00220">220</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00222">222</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -890,7 +851,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/df2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_node-1-g.html#ab69ade89a9e2510ac2c005c37bf02b45">SystemEx.Collections.Generic.Interfaces.INode&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00206">206</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00208">208</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -914,7 +875,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00192">192</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00194">194</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -938,7 +899,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00225">225</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00227">227</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -964,7 +925,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/df2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_node-1-g.html#ae45562bda271fcb32418b1fbec5a3c3a">SystemEx.Collections.Generic.Interfaces.INode&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00211">211</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00213">213</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -988,7 +949,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00197">197</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00199">199</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -1012,7 +973,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00253">253</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00255">255</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -1036,7 +997,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00249">249</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00251">251</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
@@ -1062,12 +1023,12 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/df2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_node-1-g.html#a150342fb902d762ce04bc23634d31c59">SystemEx.Collections.Generic.Interfaces.INode&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00201">201</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00203">203</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Collections/Generic/<a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a></li>
+<li><a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

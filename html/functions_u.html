@@ -9,6 +9,7 @@
 <link rel="icon" href="Logo_256.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -167,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <li>UnmanagedObject()&#160;:&#160;<a class="el" href="dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html#a14aed2b1cfea656d65436290df59874a">SystemEx.Device.Intertropt.UnmanagedObject</a></li>
 <li>Unpack()&#160;:&#160;<a class="el" href="dd/d4e/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_serialize-2-g.html#ad84c30900c22a63584e72d35539e8d48">SystemEx.IO.Provider.IByteSerialize&lt; T, TSchema &gt;</a></li>
 <li>UpdatePriority()&#160;:&#160;<a class="el" href="d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#aa10c7212c181db331f6f9a3712c0f6e2">SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt;</a></li>
-<li>Used&#160;:&#160;<a class="el" href="df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html#a80b8a8c831a28ecf5f34e8c97a616542">SystemEx.Collections.Generic.Cache</a></li>
+<li>Used&#160;:&#160;<a class="el" href="dd/dbc/group__collections.html#ga80b8a8c831a28ecf5f34e8c97a616542">SystemEx.Collections.Generic.Cache</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

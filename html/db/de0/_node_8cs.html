@@ -5,10 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SystemEX: Collections/Generic/Node.cs File Reference</title>
+<title>SystemEX: Node.cs File Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -178,16 +138,15 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a5d4c0e8a1b447d651da25c01c3acde4b" id="r_a5d4c0e8a1b447d651da25c01c3acde4b"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4b">SystemEx.Collections.Generic.TraversOrder</a> { <br />
-&#160;&#160;<a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4ba5be8b098f9b79cf3b18767ffc5ecd169">SystemEx.Collections.Generic.Preorder</a>
-, <a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4ba23d595ba1af8a7e9eb75b7dd281c4186">SystemEx.Collections.Generic.Inorder</a>
-, <a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4baa81781f8f4fa340f10177bcce27cb714">SystemEx.Collections.Generic.Postorder</a>
-, <a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4ba3ec389f8d12ead28a627f00bdeaca5a2">SystemEx.Collections.Generic.ListOrder</a>
+<tr class="memitem:ga5d4c0e8a1b447d651da25c01c3acde4b" id="r_ga5d4c0e8a1b447d651da25c01c3acde4b"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="../../dd/dbc/group__collections.html#ga5d4c0e8a1b447d651da25c01c3acde4b">SystemEx.Collections.Generic.TraversOrder</a> { <br />
+&#160;&#160;<a class="el" href="../../dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba5be8b098f9b79cf3b18767ffc5ecd169">SystemEx.Collections.Generic.TraversOrder.Preorder</a>
+, <a class="el" href="../../dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba23d595ba1af8a7e9eb75b7dd281c4186">SystemEx.Collections.Generic.TraversOrder.Inorder</a>
+, <a class="el" href="../../dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4baa81781f8f4fa340f10177bcce27cb714">SystemEx.Collections.Generic.TraversOrder.Postorder</a>
+, <a class="el" href="../../dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba3ec389f8d12ead28a627f00bdeaca5a2">SystemEx.Collections.Generic.TraversOrder.ListOrder</a>
 , <br />
-&#160;&#160;<a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316">SystemEx.Collections.Generic.ReservListOrder</a>
+&#160;&#160;<a class="el" href="../../dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316">SystemEx.Collections.Generic.TraversOrder.ReservListOrder</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a5d4c0e8a1b447d651da25c01c3acde4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the supported traversal orders for Node&lt;T&gt; structures.  <a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html#a5d4c0e8a1b447d651da25c01c3acde4b">More...</a><br /></td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

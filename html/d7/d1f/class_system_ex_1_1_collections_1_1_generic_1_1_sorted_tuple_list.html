@@ -9,6 +9,7 @@
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -21,51 +22,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', init_search);
 </script>
-<script type="text/javascript" src="../../darkmode_toggle.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = DarkModeToggle.darkModeEnabled ? 'dark' : 'default'
+const theme = 'dark';
 mermaid.initialize({ startOnLoad: true, theme: theme });
-(function() {
-  const elementCode = '.mermaid';
-  const loadMermaid = function(theme) {
-    mermaid.initialize({theme})
-    mermaid.init({theme}, document.querySelectorAll(elementCode))
-  }
-  const saveOriginalData = function() {
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          element.setAttribute('data-original-code', element.innerHTML)
-          count--
-          if (count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  const resetProcessed = function(){
-    return new Promise((resolve, reject) => {
-      try {
-        var els = document.querySelectorAll(elementCode), count = els.length;
-        els.forEach(element => {
-          if (element.getAttribute('data-original-code') != null) {
-              element.removeAttribute('data-processed')
-              element.innerHTML = element.getAttribute('data-original-code')
-          }
-          count--
-          if(count == 0) { resolve() }
-        });
-      } catch (error) { reject(error) }
-    })
-  }
-  saveOriginalData()
-  const original = DarkModeToggle.enableDarkMode.bind(DarkModeToggle);
-  DarkModeToggle.enableDarkMode = function(enable) {
-      original(enable);
-      resetProcessed().then(loadMermaid(enable ? 'dark' : 'default')).catch(console.error)
-  };
-})();
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -157,21 +117,17 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.SortedTupleList Class Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.SortedTupleList Class Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>A tuple list that maintains its elements in sorted order. <br  />
- Sorting is performed using either a custom ICompared&lt;T&gt; implementation or a delegate of type SortTupleFunc. <br  />
- The map automatically re-sorts itself after insertions when AutoSort is enabled.  
- <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Collections.Generic.SortedTupleList:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.SortedTupleList:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="../../d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.png" usemap="#SystemEx_2ECollections_2EGeneric_2ESortedTupleList_map" alt=""/>
   <map id="SystemEx_2ECollections_2EGeneric_2ESortedTupleList_map" name="SystemEx_2ECollections_2EGeneric_2ESortedTupleList_map">
-<area href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html" title="Represents a dynamic list of ITuple objects.   Provides filtering utilities, indexed access,..." alt="SystemEx.Collections.Generic.TupleList" shape="rect" coords="141,56,413,80"/>
+<area href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html" alt="SystemEx.Collections.Generic.TupleList" shape="rect" coords="141,56,413,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -198,33 +154,33 @@ Public Member Functions</h2></td></tr>
  Implements a simple O(n²) comparison-based sort.  <br /></td></tr>
 <tr class="memitem:a9e2b995f6ce7f2e58d6d0cf64d6e993e" id="r_a9e2b995f6ce7f2e58d6d0cf64d6e993e"><td class="memItemLeft"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a1ed2e48a4f0dd38f3fc3093651fb72f4">TupleList</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9e2b995f6ce7f2e58d6d0cf64d6e993e">ToUnorderedList</a> ()</td></tr>
 <tr class="memdesc:a9e2b995f6ce7f2e58d6d0cf64d6e993e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new TupleList containing the same elements but without any sorting behavior.  <br /></td></tr>
-<tr class="inherit_header pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td colspan="2">Public Member Functions inherited from <a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html">SystemEx.Collections.Generic.TupleList</a></td></tr>
-<tr class="memitem:a1ed2e48a4f0dd38f3fc3093651fb72f4 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a1ed2e48a4f0dd38f3fc3093651fb72f4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a1ed2e48a4f0dd38f3fc3093651fb72f4">TupleList</a> ()</td></tr>
-<tr class="memdesc:a1ed2e48a4f0dd38f3fc3093651fb72f4 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty tuple list.  <br /></td></tr>
-<tr class="memitem:af6303317d755537b13abde3a3204e514 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_af6303317d755537b13abde3a3204e514"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#af6303317d755537b13abde3a3204e514">TupleList</a> (int size)</td></tr>
-<tr class="memdesc:af6303317d755537b13abde3a3204e514 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a tuple list with the specified initial capacity.  <br /></td></tr>
-<tr class="memitem:a87f2038fe6e9e1c0ff765c22ff813121 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a87f2038fe6e9e1c0ff765c22ff813121"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a87f2038fe6e9e1c0ff765c22ff813121">TupleList</a> (IEnumerable&lt; <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> &gt; collection)</td></tr>
-<tr class="memdesc:a87f2038fe6e9e1c0ff765c22ff813121 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a tuple list initialized with the specified collection.  <br /></td></tr>
-<tr class="memitem:ad20f35e9386725eb36e8ac1f915eabaa pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_ad20f35e9386725eb36e8ac1f915eabaa"><td class="memItemLeft">List&lt; TU &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ad20f35e9386725eb36e8ac1f915eabaa">GetAll&lt; TU &gt;</a> ()</td></tr>
-<tr class="memdesc:ad20f35e9386725eb36e8ac1f915eabaa pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all tuples of the specified type <em>TU</em> .  <br /></td></tr>
-<tr class="memitem:ab761f0a89038c7169a6f41ecd27e11c0 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_ab761f0a89038c7169a6f41ecd27e11c0"><td class="memItemLeft">List&lt; <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ab761f0a89038c7169a6f41ecd27e11c0">GetByCount</a> (byte count)</td></tr>
-<tr class="memdesc:ab761f0a89038c7169a6f41ecd27e11c0 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all tuples whose ITuple.Count matches the given value.  <br /></td></tr>
-<tr class="memitem:a0de2e37e730895d140b0d5817933bad3 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a0de2e37e730895d140b0d5817933bad3"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a0de2e37e730895d140b0d5817933bad3">Add</a> (<a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> tuple)</td></tr>
-<tr class="memdesc:a0de2e37e730895d140b0d5817933bad3 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a tuple to the list.  <br /></td></tr>
-<tr class="memitem:a43905017a3dce264b435eb9da89af7c4 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a43905017a3dce264b435eb9da89af7c4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a43905017a3dce264b435eb9da89af7c4">Clear</a> ()</td></tr>
-<tr class="memdesc:a43905017a3dce264b435eb9da89af7c4 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all tuples from the list.  <br /></td></tr>
-<tr class="memitem:a39958f60cecf278a5d9d7b2612835730 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a39958f60cecf278a5d9d7b2612835730"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a39958f60cecf278a5d9d7b2612835730">Contains</a> (<a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> item)</td></tr>
-<tr class="memdesc:a39958f60cecf278a5d9d7b2612835730 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the list contains the specified tuple.  <br /></td></tr>
-<tr class="memitem:a071290fb86545e20511f75bebc310343 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a071290fb86545e20511f75bebc310343"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a071290fb86545e20511f75bebc310343">CopyTo</a> (<a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a>[] array, int arrayIndex)</td></tr>
-<tr class="memdesc:a071290fb86545e20511f75bebc310343 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the tuples into the specified array.  <br /></td></tr>
-<tr class="memitem:adf727a711f09907ed7c47fd1e5df44c4 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_adf727a711f09907ed7c47fd1e5df44c4"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#adf727a711f09907ed7c47fd1e5df44c4">Remove</a> (<a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> item)</td></tr>
-<tr class="memdesc:adf727a711f09907ed7c47fd1e5df44c4 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the specified tuple from the list.  <br /></td></tr>
-<tr class="memitem:ad69bd9bb094c1d5487b37b6887231ea4 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_ad69bd9bb094c1d5487b37b6887231ea4"><td class="memItemLeft">IEnumerator&lt; <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ad69bd9bb094c1d5487b37b6887231ea4">GetEnumerator</a> ()</td></tr>
-<tr class="memdesc:ad69bd9bb094c1d5487b37b6887231ea4 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the tuple list.  <br /></td></tr>
-<tr class="memitem:a29b50790308c81dab43b1ea246a3deac pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a29b50790308c81dab43b1ea246a3deac"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a29b50790308c81dab43b1ea246a3deac">IndexOf</a> (<a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> item)</td></tr>
-<tr class="memdesc:a29b50790308c81dab43b1ea246a3deac pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the specified tuple, or -1 if not found.  <br /></td></tr>
-<tr class="memitem:ab34071f8590dccaaaff6df6dd252a6a7 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_ab34071f8590dccaaaff6df6dd252a6a7"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ab34071f8590dccaaaff6df6dd252a6a7">Insert</a> (int index, <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> item)</td></tr>
-<tr class="memdesc:ab34071f8590dccaaaff6df6dd252a6a7 pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a tuple at the specified index.  <br /></td></tr>
+<tr class="inherit_header pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html">SystemEx.Collections.Generic.TupleList</a></td></tr>
+<tr class="memitem:a1ed2e48a4f0dd38f3fc3093651fb72f4 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a1ed2e48a4f0dd38f3fc3093651fb72f4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a1ed2e48a4f0dd38f3fc3093651fb72f4">TupleList</a> ()</td></tr>
+<tr class="memdesc:a1ed2e48a4f0dd38f3fc3093651fb72f4 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty tuple list.  <br /></td></tr>
+<tr class="memitem:af6303317d755537b13abde3a3204e514 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_af6303317d755537b13abde3a3204e514"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#af6303317d755537b13abde3a3204e514">TupleList</a> (int size)</td></tr>
+<tr class="memdesc:af6303317d755537b13abde3a3204e514 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a tuple list with the specified initial capacity.  <br /></td></tr>
+<tr class="memitem:a87f2038fe6e9e1c0ff765c22ff813121 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a87f2038fe6e9e1c0ff765c22ff813121"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a87f2038fe6e9e1c0ff765c22ff813121">TupleList</a> (IEnumerable&lt; <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> &gt; collection)</td></tr>
+<tr class="memdesc:a87f2038fe6e9e1c0ff765c22ff813121 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a tuple list initialized with the specified collection.  <br /></td></tr>
+<tr class="memitem:ad20f35e9386725eb36e8ac1f915eabaa inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_ad20f35e9386725eb36e8ac1f915eabaa"><td class="memItemLeft">List&lt; TU &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ad20f35e9386725eb36e8ac1f915eabaa">GetAll&lt; TU &gt;</a> ()</td></tr>
+<tr class="memdesc:ad20f35e9386725eb36e8ac1f915eabaa inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all tuples of the specified type <em>TU</em> .  <br /></td></tr>
+<tr class="memitem:ab761f0a89038c7169a6f41ecd27e11c0 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_ab761f0a89038c7169a6f41ecd27e11c0"><td class="memItemLeft">List&lt; <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ab761f0a89038c7169a6f41ecd27e11c0">GetByCount</a> (byte count)</td></tr>
+<tr class="memdesc:ab761f0a89038c7169a6f41ecd27e11c0 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all tuples whose ITuple.Count matches the given value.  <br /></td></tr>
+<tr class="memitem:a0de2e37e730895d140b0d5817933bad3 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a0de2e37e730895d140b0d5817933bad3"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a0de2e37e730895d140b0d5817933bad3">Add</a> (<a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> tuple)</td></tr>
+<tr class="memdesc:a0de2e37e730895d140b0d5817933bad3 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a tuple to the list.  <br /></td></tr>
+<tr class="memitem:a43905017a3dce264b435eb9da89af7c4 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a43905017a3dce264b435eb9da89af7c4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a43905017a3dce264b435eb9da89af7c4">Clear</a> ()</td></tr>
+<tr class="memdesc:a43905017a3dce264b435eb9da89af7c4 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all tuples from the list.  <br /></td></tr>
+<tr class="memitem:a39958f60cecf278a5d9d7b2612835730 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a39958f60cecf278a5d9d7b2612835730"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a39958f60cecf278a5d9d7b2612835730">Contains</a> (<a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> item)</td></tr>
+<tr class="memdesc:a39958f60cecf278a5d9d7b2612835730 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the list contains the specified tuple.  <br /></td></tr>
+<tr class="memitem:a071290fb86545e20511f75bebc310343 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a071290fb86545e20511f75bebc310343"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a071290fb86545e20511f75bebc310343">CopyTo</a> (<a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a>[] array, int arrayIndex)</td></tr>
+<tr class="memdesc:a071290fb86545e20511f75bebc310343 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the tuples into the specified array.  <br /></td></tr>
+<tr class="memitem:adf727a711f09907ed7c47fd1e5df44c4 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_adf727a711f09907ed7c47fd1e5df44c4"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#adf727a711f09907ed7c47fd1e5df44c4">Remove</a> (<a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> item)</td></tr>
+<tr class="memdesc:adf727a711f09907ed7c47fd1e5df44c4 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the specified tuple from the list.  <br /></td></tr>
+<tr class="memitem:ad69bd9bb094c1d5487b37b6887231ea4 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_ad69bd9bb094c1d5487b37b6887231ea4"><td class="memItemLeft">IEnumerator&lt; <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ad69bd9bb094c1d5487b37b6887231ea4">GetEnumerator</a> ()</td></tr>
+<tr class="memdesc:ad69bd9bb094c1d5487b37b6887231ea4 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the tuple list.  <br /></td></tr>
+<tr class="memitem:a29b50790308c81dab43b1ea246a3deac inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_a29b50790308c81dab43b1ea246a3deac"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a29b50790308c81dab43b1ea246a3deac">IndexOf</a> (<a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> item)</td></tr>
+<tr class="memdesc:a29b50790308c81dab43b1ea246a3deac inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the specified tuple, or -1 if not found.  <br /></td></tr>
+<tr class="memitem:ab34071f8590dccaaaff6df6dd252a6a7 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_ab34071f8590dccaaaff6df6dd252a6a7"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ab34071f8590dccaaaff6df6dd252a6a7">Insert</a> (int index, <a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a> item)</td></tr>
+<tr class="memdesc:ab34071f8590dccaaaff6df6dd252a6a7 inherit pub_methods_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a tuple at the specified index.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -236,15 +192,15 @@ Properties</h2></td></tr>
  Setting this property triggers a sort when AutoSort is enabled.  <br /></td></tr>
 <tr class="memitem:adecc4ef4af5c3e5f5a2ba0229a9534e2" id="r_adecc4ef4af5c3e5f5a2ba0229a9534e2"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#adecc4ef4af5c3e5f5a2ba0229a9534e2">AutoSort</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:adecc4ef4af5c3e5f5a2ba0229a9534e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the list should automatically sort itself after insertions or modifications.  <br /></td></tr>
-<tr class="inherit_header properties_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td colspan="2">Properties inherited from <a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html">SystemEx.Collections.Generic.TupleList</a></td></tr>
-<tr class="memitem:abebca3affee6c44370dd49bb763d5b2f properties_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_abebca3affee6c44370dd49bb763d5b2f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#abebca3affee6c44370dd49bb763d5b2f">Count</a><code> [get]</code></td></tr>
-<tr class="memdesc:abebca3affee6c44370dd49bb763d5b2f properties_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of tuples stored in the list.  <br /></td></tr>
-<tr class="memitem:afbefba1f9658988d1976e88f2ac66e56 properties_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_afbefba1f9658988d1976e88f2ac66e56"><td class="memItemLeft"><a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a>&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#afbefba1f9658988d1976e88f2ac66e56">this[int index]</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:afbefba1f9658988d1976e88f2ac66e56 properties_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the tuple at the specified index.  <br /></td></tr>
+<tr class="inherit_header properties_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Properties inherited from <a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html">SystemEx.Collections.Generic.TupleList</a></td></tr>
+<tr class="memitem:abebca3affee6c44370dd49bb763d5b2f inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_abebca3affee6c44370dd49bb763d5b2f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#abebca3affee6c44370dd49bb763d5b2f">Count</a><code> [get]</code></td></tr>
+<tr class="memdesc:abebca3affee6c44370dd49bb763d5b2f inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of tuples stored in the list.  <br /></td></tr>
+<tr class="memitem:afbefba1f9658988d1976e88f2ac66e56 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" id="r_afbefba1f9658988d1976e88f2ac66e56"><td class="memItemLeft"><a class="el" href="../../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html">ITuple</a>&#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#afbefba1f9658988d1976e88f2ac66e56">this[int index]</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:afbefba1f9658988d1976e88f2ac66e56 inherit properties_class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the tuple at the specified index.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00031">31</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00033">33</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a75cd2f886b3fad360d072ff37335209e" name="a75cd2f886b3fad360d072ff37335209e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75cd2f886b3fad360d072ff37335209e">&#9670;&#160;</a></span>SortedTupleList() <span class="overload">[1/3]</span></h2>
@@ -267,7 +223,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00077">77</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00079">79</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
@@ -297,7 +253,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00084">84</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00086">86</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
@@ -327,7 +283,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00090">90</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00092">92</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
@@ -347,7 +303,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00095">95</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00097">97</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
@@ -376,7 +332,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#ae805d393029c82ec473324615aa5dd0d">SystemEx.Collections.Generic.TupleList</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00102">102</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00104">104</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
@@ -399,7 +355,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00117">117</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00119">119</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
@@ -418,7 +374,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00109">109</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00111">111</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
@@ -447,7 +403,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html#a016e061f49eaae1a10d3b29790c6eeb5">SystemEx.Collections.Generic.TupleList</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00124">124</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00126">126</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
@@ -466,7 +422,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00132">132</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00134">134</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
@@ -485,7 +441,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00160">160</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00162">162</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
@@ -510,7 +466,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00071">71</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00073">73</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
@@ -534,7 +490,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00047">47</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00049">49</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
@@ -558,12 +514,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00059">59</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html#l00061">61</a> of file <a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Collections/Generic/<a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a></li>
+<li><a class="el" href="../../d3/d2d/_sorted_tuple_list_8cs_source.html">SortedTupleList.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

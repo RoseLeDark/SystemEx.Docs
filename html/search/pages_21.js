@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🚧_20status_0',['🚧 Status',['../index.html#autotoc_md72',1,'']]]
+  ['🧩_20iterator_20system_0',['🧩 Iterator System',['../index.html#autotoc_md-iterator-system',1,'']]]
 ];
