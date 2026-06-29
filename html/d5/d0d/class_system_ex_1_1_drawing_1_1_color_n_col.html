@@ -38,9 +38,8 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
    </div>
-   <div id="projectbrief">Additional generic collection types missing in .NET</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -123,13 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <p>Represents a compact N‑Color classification based on the HWB color model. The color is expressed using a hue segment index (0–5), a percentage within that segment (0–100), and the whiteness/blackness components.  
  <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Drawing.ColorNCol:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="../../d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.png" alt=""/>
- </div></div>
+
+<p>Inherits IEquatable.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -144,6 +138,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa92a0d020af23accb14206702c56d199" id="r_aa92a0d020af23accb14206702c56d199"><td class="memItemLeft">override string&#160;</td><td class="memItemRight"><a class="el" href="#aa92a0d020af23accb14206702c56d199">ToString</a> ()</td></tr>
 <tr class="memdesc:aa92a0d020af23accb14206702c56d199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representation of the NCOL color.  <br /></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pac-static-attribs" class="groupheader"><a id="pac-static-attribs" name="pac-static-attribs"></a>
+Static Package Attributes</h2></td></tr>
+<tr class="memitem:aafbc8a4178e50b1ca0d37995dc433f64" id="r_aafbc8a4178e50b1ca0d37995dc433f64"><td class="memItemLeft">static char[]&#160;</td><td class="memItemRight"><a class="el" href="#aafbc8a4178e50b1ca0d37995dc433f64">HUENAME</a> = { 'R', 'Y', 'G', '<a class="el" href="#a8d4632823dbae580b5e0c1d986b29098">C</a>', 'B', 'M' }</td></tr>
+<tr class="memdesc:aafbc8a4178e50b1ca0d37995dc433f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hue name mapping for the six primary hue segments: R = Red, Y = Yellow, G = Green, C = Cyan, B = Blue, M = Magenta.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a27d55e4cd3e78bb6c9bafdec582cdcef" id="r_a27d55e4cd3e78bb6c9bafdec582cdcef"><td class="memItemLeft">byte&#160;</td><td class="memItemRight"><a class="el" href="#a27d55e4cd3e78bb6c9bafdec582cdcef">I</a><code> [get, set]</code></td></tr>
@@ -156,6 +155,12 @@ Properties</h2></td></tr>
 <tr class="memdesc:a8d4632823dbae580b5e0c1d986b29098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the whiteness component (0–100).  <br /></td></tr>
 <tr class="memitem:a912615c4122a02d491047bd8de996f26" id="r_a912615c4122a02d491047bd8de996f26"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a912615c4122a02d491047bd8de996f26">L</a><code> [get]</code></td></tr>
 <tr class="memdesc:a912615c4122a02d491047bd8de996f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the lightness component (0–100).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0f88f3c5b600a05ca7df0111e592e262" id="r_a0f88f3c5b600a05ca7df0111e592e262"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a0f88f3c5b600a05ca7df0111e592e262">m_c</a></td></tr>
+<tr class="memitem:a18f2de834da318a2b40ff7fc0306112d" id="r_a18f2de834da318a2b40ff7fc0306112d"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a18f2de834da318a2b40ff7fc0306112d">m_l</a></td></tr>
+<tr class="memitem:abe828c1382f1bcf08dacac436d275f00" id="r_abe828c1382f1bcf08dacac436d275f00"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#abe828c1382f1bcf08dacac436d275f00">m_n</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -191,7 +196,14 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html#l00051">51</a> of file <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html">ColorNCol.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   51</span>                                                                     {</div>
+<div class="line"><span class="lineno">   52</span>            I = index;</div>
+<div class="line"><span class="lineno">   53</span>            P = percent;</div>
+<div class="line"><span class="lineno">   54</span>            m_n = $<span class="stringliteral">&quot;{HUENAME[index]}{percent}&quot;</span>;</div>
+<div class="line"><span class="lineno">   55</span>            m_c = c;    </div>
+<div class="line"><span class="lineno">   56</span>            m_l = l;</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -218,7 +230,15 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the components match; otherwise <code>false</code>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html#l00065">65</a> of file <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html">ColorNCol.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   65</span>                                             {</div>
+<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">if</span> ( other == <span class="keyword">null</span> )</div>
+<div class="line"><span class="lineno">   67</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">return</span> m_c.Equals(other.m_c) &amp;&amp;</div>
+<div class="line"><span class="lineno">   70</span>                   m_l.Equals(other.m_l) &amp;&amp;</div>
+<div class="line"><span class="lineno">   71</span>                   m_n == (other.m_n);</div>
+<div class="line"><span class="lineno">   72</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a17bc255e558afe47f920e500378039ce" name="a17bc255e558afe47f920e500378039ce"></a>
@@ -237,7 +257,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html#l00076">76</a> of file <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html">ColorNCol.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   76</span>                                                 {</div>
+<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">if</span> ( obj == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">if</span> ( obj is ColorNCol ) <span class="keywordflow">return</span> Equals(obj as ColorNCol);</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afda66e2785c75763d48b0bb20613d564" name="afda66e2785c75763d48b0bb20613d564"></a>
@@ -256,7 +281,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html#l00084">84</a> of file <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html">ColorNCol.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   84</span>                                          {</div>
+<div class="line"><span class="lineno">   85</span>            <span class="keywordflow">return</span> m_c.GetHashCode() ^ m_l.GetHashCode() ^ m_n.GetHashCode();</div>
+<div class="line"><span class="lineno">   86</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa92a0d020af23accb14206702c56d199" name="aa92a0d020af23accb14206702c56d199"></a>
@@ -275,6 +303,107 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html#l00091">91</a> of file <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html">ColorNCol.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>                                          {</div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[16], $<span class="stringliteral">&quot;[{m_n} {m_c}% {m_l}%&quot;</span>);</div>
+<div class="line"><span class="lineno">   93</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="aafbc8a4178e50b1ca0d37995dc433f64" name="aafbc8a4178e50b1ca0d37995dc433f64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafbc8a4178e50b1ca0d37995dc433f64">&#9670;&#160;</a></span>HUENAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char [] SystemEx.Drawing.ColorNCol.HUENAME = { 'R', 'Y', 'G', '<a class="el" href="#a8d4632823dbae580b5e0c1d986b29098">C</a>', 'B', 'M' }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel package">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html#l00017">17</a> of file <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html">ColorNCol.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>{ <span class="charliteral">&#39;R&#39;</span>, <span class="charliteral">&#39;Y&#39;</span>, <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;M&#39;</span> };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0f88f3c5b600a05ca7df0111e592e262" name="a0f88f3c5b600a05ca7df0111e592e262"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f88f3c5b600a05ca7df0111e592e262">&#9670;&#160;</a></span>m_c</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SystemEx.Drawing.ColorNCol.m_c</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html#l00019">19</a> of file <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html">ColorNCol.cs</a>.</p>
+
+</div>
+</div>
+<a id="a18f2de834da318a2b40ff7fc0306112d" name="a18f2de834da318a2b40ff7fc0306112d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f2de834da318a2b40ff7fc0306112d">&#9670;&#160;</a></span>m_l</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SystemEx.Drawing.ColorNCol.m_l</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html#l00020">20</a> of file <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html">ColorNCol.cs</a>.</p>
+
+</div>
+</div>
+<a id="abe828c1382f1bcf08dacac436d275f00" name="abe828c1382f1bcf08dacac436d275f00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe828c1382f1bcf08dacac436d275f00">&#9670;&#160;</a></span>m_n</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string SystemEx.Drawing.ColorNCol.m_n</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html#l00021">21</a> of file <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html">ColorNCol.cs</a>.</p>
 
 </div>
 </div>
@@ -324,7 +453,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html#l00026">26</a> of file <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html">ColorNCol.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   26</span>{ <span class="keyword">get</span>; <span class="keyword">internal</span> <span class="keyword">set</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a912615c4122a02d491047bd8de996f26" name="a912615c4122a02d491047bd8de996f26"></a>
@@ -396,7 +526,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html#l00031">31</a> of file <a class="el" href="../../d9/dea/_color_n_col_8cs_source.html">ColorNCol.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   31</span>{ <span class="keyword">get</span>; <span class="keyword">internal</span> <span class="keyword">set</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

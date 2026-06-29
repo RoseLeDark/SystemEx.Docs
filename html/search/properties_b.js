@@ -7,9 +7,17 @@ var searchData=
   ['max_4',['Max',['../d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#ac8bc6f1d03706479bcaf8a5698e4fe50',1,'SystemEx::Collections::Generic::PriorityQueueEx-2-g']]],
   ['maxvalue_5',['MaxValue',['../d8/de9/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_h_d_r.html#a8c8e327a893db38836172a8c60015462',1,'SystemEx::SystemEx::Drawing::ColorHDR']]],
   ['median_6',['Median',['../d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#abacf8892762b9a77b1dfe9e418a52d93',1,'SystemEx::Collections::Generic::PriorityQueueEx-2-g']]],
-  ['mediumorchid_7',['MediumOrchid',['../d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a9feca4ae667b6bdab44f4471afa8582e',1,'SystemEx::Drawing::PurpelColors']]],
-  ['mediumpurple_8',['MediumPurple',['../d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a76592505edd1c15a239e1d31d1e6631c',1,'SystemEx::Drawing::PurpelColors']]],
-  ['mediumslateblue_9',['MediumSlateBlue',['../d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a7deb4b0939566b6be969859fbeace09f',1,'SystemEx::Drawing::PurpelColors']]],
-  ['min_10',['Min',['../d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#a8efc56b41fd21e1b34af9528f0f9d373',1,'SystemEx::Collections::Generic::PriorityQueueEx-2-g']]],
-  ['module_11',['Module',['../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a54eac8be3de33baf1d1345938561e659',1,'SystemEx::Device::NativeRAMKernel-1-g']]]
+  ['mediumaquamarine_7',['MediumAquaMarine',['../d6/deb/class_system_ex_1_1_drawing_1_1_green_colors.html#af43f473140f11265d56d9f571d045dfd',1,'SystemEx::Drawing::GreenColors']]],
+  ['mediumorchid_8',['MediumOrchid',['../d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a9feca4ae667b6bdab44f4471afa8582e',1,'SystemEx::Drawing::PurpelColors']]],
+  ['mediumpurple_9',['MediumPurple',['../d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a76592505edd1c15a239e1d31d1e6631c',1,'SystemEx::Drawing::PurpelColors']]],
+  ['mediumseagreen_10',['MediumSeaGreen',['../d6/deb/class_system_ex_1_1_drawing_1_1_green_colors.html#a86e68f7faacf939ae3bec339fbdef9e6',1,'SystemEx::Drawing::GreenColors']]],
+  ['mediumslateblue_11',['MediumSlateBlue',['../d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html#a7deb4b0939566b6be969859fbeace09f',1,'SystemEx::Drawing::PurpelColors']]],
+  ['mediumspringgreen_12',['MediumSpringGreen',['../d6/deb/class_system_ex_1_1_drawing_1_1_green_colors.html#af943dea3d4bf2b168013ec203d150e13',1,'SystemEx::Drawing::GreenColors']]],
+  ['mediumturquoise_13',['MediumTurquoise',['../d8/d88/class_system_ex_1_1_drawing_1_1_cyan_colors.html#a16d4d4e7c3a414acfb0e616734f603bc',1,'SystemEx::Drawing::CyanColors']]],
+  ['mediumvioletred_14',['MediumVioletRed',['../db/df0/class_system_ex_1_1_drawing_1_1_pink_colors.html#a2bed1792e0de12c447754c6abcd5c7ad',1,'SystemEx::Drawing::PinkColors']]],
+  ['min_15',['Min',['../d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#a8efc56b41fd21e1b34af9528f0f9d373',1,'SystemEx::Collections::Generic::PriorityQueueEx-2-g']]],
+  ['mintcream_16',['MintCream',['../d4/d60/class_system_ex_1_1_drawing_1_1_white_colors.html#add6d81ce4e1a68796161489afe7d9810',1,'SystemEx::Drawing::WhiteColors']]],
+  ['mistyrose_17',['MistyRose',['../d4/d60/class_system_ex_1_1_drawing_1_1_white_colors.html#a96fcda79a1bdcfcbdf02f71dfa3631a9',1,'SystemEx::Drawing::WhiteColors']]],
+  ['moccasin_18',['Moccasin',['../de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors.html#a5ef77d4f2fdfb45be35bc4c46edd30a8',1,'SystemEx::Drawing::YellowColors']]],
+  ['module_19',['Module',['../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a54eac8be3de33baf1d1345938561e659',1,'SystemEx::Device::NativeRAMKernel-1-g']]]
 ];

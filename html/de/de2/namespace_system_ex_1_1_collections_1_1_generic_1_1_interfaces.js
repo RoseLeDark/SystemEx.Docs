@@ -19,11 +19,13 @@ var namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces =
     [ "ISortedArray&lt; T &gt;", "db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g.html", "db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g" ],
     [ "ISortedMap&lt; T, TU &gt;", "d6/d5e/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_map-2-g.html", "d6/d5e/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_map-2-g" ],
     [ "ISortedTupleMap", "dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html", "dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map" ],
+    [ "Iterator", "db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html", "db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator" ],
     [ "ITraverse&lt; T &gt;", "d4/d02/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_traverse-1-g.html", "d4/d02/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_traverse-1-g" ],
     [ "ITuple", "d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html", "d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple" ],
     [ "ITupleMap", "d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html", "d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map" ],
     [ "ITypeBuffer&lt; T &gt;", "d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html", "d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g" ],
     [ "ListIterator&lt; T &gt;", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g" ],
+    [ "ListIteratorExtensions", "db/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator_extensions.html", "db/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator_extensions" ],
     [ "TraversMode", "d5/d4f/group__interfaces.html#ga9ffe9236ff7d52fbeb93204341959319", [
       [ "Forwards", "d5/d4f/group__interfaces.html#gga9ffe9236ff7d52fbeb93204341959319a1e411b48c18c85a91ad46b53ebb24d6a", null ],
       [ "Backwards", "d5/d4f/group__interfaces.html#gga9ffe9236ff7d52fbeb93204341959319a9d1104e419414f4c268be7211fb8fc4a", null ]

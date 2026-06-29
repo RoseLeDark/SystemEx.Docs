@@ -1,5 +1,6 @@
 var _algorithm_8cs =
 [
+    [ "SystemEx.Utils.Algorithm", "db/d0a/class_system_ex_1_1_utils_1_1_algorithm.html", "db/d0a/class_system_ex_1_1_utils_1_1_algorithm" ],
     [ "SystemEx.Utils.CompareResult", "d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3a", [
       [ "SystemEx.Utils.CompareResult.AIsLargerB", "d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3aa959d11af31574454858b8682bec042ae", null ],
       [ "SystemEx.Utils.CompareResult.AIsSmallerB", "d2/d14/namespace_system_ex_1_1_utils.html#aef01215d2eb8aecad75ce70ce26c8c3aa9c7428300f595b7075d423abac70c618", null ],

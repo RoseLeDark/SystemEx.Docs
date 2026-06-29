@@ -38,9 +38,8 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
    </div>
-   <div id="projectbrief">Additional generic collection types missing in .NET</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -123,13 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <p>Represents a YUV color using floating‑point components. Provides basic construction, comparison, and string formatting.  
  <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Drawing.ColorYUV:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="../../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.png" alt=""/>
- </div></div>
+
+<p>Inherits IEquatable.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -154,6 +148,12 @@ Properties</h2></td></tr>
 <tr class="memdesc:ae469b6e35e25c51e8c394e7bd5ecbd17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the U (chrominance blue) component.  <br /></td></tr>
 <tr class="memitem:a154df444d5bdce3e66362a2aab06ec7b" id="r_a154df444d5bdce3e66362a2aab06ec7b"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a154df444d5bdce3e66362a2aab06ec7b">V</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a154df444d5bdce3e66362a2aab06ec7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the V (chrominance red) component.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3f6cb86cadcb728bf33a13e363ca8b90" id="r_a3f6cb86cadcb728bf33a13e363ca8b90"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a3f6cb86cadcb728bf33a13e363ca8b90">m_y</a></td></tr>
+<tr class="memitem:a8043ea1407bf999a1170a96218375716" id="r_a8043ea1407bf999a1170a96218375716"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a8043ea1407bf999a1170a96218375716">m_u</a></td></tr>
+<tr class="memitem:ad31860e596cb6eacacafe31609ff4bdc" id="r_ad31860e596cb6eacacafe31609ff4bdc"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ad31860e596cb6eacacafe31609ff4bdc">m_v</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -181,7 +181,12 @@ Properties</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html#l00035">35</a> of file <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html">ColorYUV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   35</span>                                   {</div>
+<div class="line"><span class="lineno">   36</span>            m_y = x[0];</div>
+<div class="line"><span class="lineno">   37</span>            m_u = x[1];</div>
+<div class="line"><span class="lineno">   38</span>            m_v = x[2]; </div>
+<div class="line"><span class="lineno">   39</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6b044317c98fadf6344c326610d5ce2b" name="a6b044317c98fadf6344c326610d5ce2b"></a>
@@ -209,7 +214,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html#l00043">43</a> of file <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html">ColorYUV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                   { </div>
+<div class="line"><span class="lineno">   44</span>            m_y = y;</div>
+<div class="line"><span class="lineno">   45</span>            m_u = u;</div>
+<div class="line"><span class="lineno">   46</span>            m_v = v;</div>
+<div class="line"><span class="lineno">   47</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -236,7 +246,13 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the components match; otherwise <code>false</code>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html#l00055">55</a> of file <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html">ColorYUV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   55</span>                                           {</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">return</span> m_y.Equals(other.m_y) &amp;&amp;</div>
+<div class="line"><span class="lineno">   58</span>                m_u.Equals(other.m_u) &amp;&amp;</div>
+<div class="line"><span class="lineno">   59</span>                m_v.Equals(other.m_y);</div>
+<div class="line"><span class="lineno">   60</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a026a19eea44954df92a2712f2b9f5b6d" name="a026a19eea44954df92a2712f2b9f5b6d"></a>
@@ -255,7 +271,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html#l00070">70</a> of file <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html">ColorYUV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   70</span>                                                 {</div>
+<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">if</span> ( obj == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">if</span> ( obj is ColorYUV ) <span class="keywordflow">return</span> Equals(obj as ColorYUV);</div>
+<div class="line"><span class="lineno">   73</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   74</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae550b80cdb800113eca30858b4000ea7" name="ae550b80cdb800113eca30858b4000ea7"></a>
@@ -274,7 +295,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html#l00064">64</a> of file <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html">ColorYUV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                                          {</div>
+<div class="line"><span class="lineno">   65</span>            <span class="keywordflow">return</span> HashCode.Combine(m_y, m_u, m_v);</div>
+<div class="line"><span class="lineno">   66</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a877fde1f33ac52b5c34676bcfbc88e91" name="a877fde1f33ac52b5c34676bcfbc88e91"></a>
@@ -293,6 +317,82 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html#l00078">78</a> of file <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html">ColorYUV.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>                                          {</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;[{m_y}, {m_u}, {m_v}]&quot;</span>);</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a8043ea1407bf999a1170a96218375716" name="a8043ea1407bf999a1170a96218375716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8043ea1407bf999a1170a96218375716">&#9670;&#160;</a></span>m_u</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SystemEx.Drawing.ColorYUV.m_u</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html#l00013">13</a> of file <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html">ColorYUV.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad31860e596cb6eacacafe31609ff4bdc" name="ad31860e596cb6eacacafe31609ff4bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31860e596cb6eacacafe31609ff4bdc">&#9670;&#160;</a></span>m_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SystemEx.Drawing.ColorYUV.m_v</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html#l00014">14</a> of file <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html">ColorYUV.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3f6cb86cadcb728bf33a13e363ca8b90" name="a3f6cb86cadcb728bf33a13e363ca8b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f6cb86cadcb728bf33a13e363ca8b90">&#9670;&#160;</a></span>m_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SystemEx.Drawing.ColorYUV.m_y</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html#l00012">12</a> of file <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html">ColorYUV.cs</a>.</p>
 
 </div>
 </div>
@@ -318,7 +418,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html#l00024">24</a> of file <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html">ColorYUV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   24</span>{ <span class="keyword">get</span> =&gt; m_u; <span class="keyword">set</span> =&gt; m_u = value; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a154df444d5bdce3e66362a2aab06ec7b" name="a154df444d5bdce3e66362a2aab06ec7b"></a>
@@ -342,7 +443,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html#l00029">29</a> of file <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html">ColorYUV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   29</span>{ <span class="keyword">get</span> =&gt; m_v; <span class="keyword">set</span> =&gt; m_v = value; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4e5a715c2184061561f7caacfd4314e8" name="a4e5a715c2184061561f7caacfd4314e8"></a>
@@ -366,7 +468,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html#l00019">19</a> of file <a class="el" href="../../d4/def/_color_y_u_v_8cs_source.html">ColorYUV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   19</span>{ <span class="keyword">get</span> =&gt; m_y; <span class="keyword">set</span> =&gt; m_y = value; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

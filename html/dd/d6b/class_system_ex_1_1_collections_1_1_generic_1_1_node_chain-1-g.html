@@ -38,9 +38,8 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
    </div>
-   <div id="projectbrief">Additional generic collection types missing in .NET</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -124,13 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Represents a chained view over multiple NodeRange&lt;T&gt; segments, similar to <code>std::views::concat</code> in C++. <br  />
  A NodeChain&lt;T&gt; allows iteration across several disjoint ranges of a linked Node&lt;T&gt; structure as if they formed one continuous sequence.  
  <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Collections.Generic.NodeChain&lt; T &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.png" alt=""/>
- </div></div>
+
+<p>Inherits IEnumerable.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -140,6 +134,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab8bbde3d08d8764cf028053cd93881c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new range defined by a begin and end iterator.  <br /></td></tr>
 <tr class="memitem:a90a7f935cb592b7b7f5338382f3ffd1b" id="r_a90a7f935cb592b7b7f5338382f3ffd1b"><td class="memItemLeft">IEnumerator&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a90a7f935cb592b7b7f5338382f3ffd1b">GetEnumerator</a> ()</td></tr>
 <tr class="memdesc:a90a7f935cb592b7b7f5338382f3ffd1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through all ranges in sequence.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a393a7009eb95d654d9ef39f41a5a221e" id="r_a393a7009eb95d654d9ef39f41a5a221e"><td class="memItemLeft">IEnumerator IEnumerable.&#160;</td><td class="memItemRight"><a class="el" href="#a393a7009eb95d654d9ef39f41a5a221e">GetEnumerator</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a56d0326aee5c2099b4b9b54d6fa082c5" id="r_a56d0326aee5c2099b4b9b54d6fa082c5"><td class="memItemLeft">readonly List&lt; NodeRange&lt; T &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a56d0326aee5c2099b4b9b54d6fa082c5">m_ranges</a> = new()</td></tr>
+<tr class="memdesc:a56d0326aee5c2099b4b9b54d6fa082c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal list of ranges that make up the chain.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -181,7 +184,11 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The chain itself for fluent chaining.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d84/_node_chain_8cs_source.html#l00067">67</a> of file <a class="el" href="../../d6/d84/_node_chain_8cs_source.html">NodeChain.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   67</span>                                                                              {</div>
+<div class="line"><span class="lineno">   68</span>            m_ranges.Add(<span class="keyword">new</span> NodeRange&lt;T&gt;(begin, end));</div>
+<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   70</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a93578962bd46a81035face13a85e2ea1" name="a93578962bd46a81035face13a85e2ea1"></a>
@@ -207,11 +214,43 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The chain itself for fluent chaining.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d84/_node_chain_8cs_source.html#l00056">56</a> of file <a class="el" href="../../d6/d84/_node_chain_8cs_source.html">NodeChain.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>                                                    {</div>
+<div class="line"><span class="lineno">   57</span>            m_ranges.Add(range);</div>
+<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   59</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a393a7009eb95d654d9ef39f41a5a221e" name="a393a7009eb95d654d9ef39f41a5a221e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a393a7009eb95d654d9ef39f41a5a221e">&#9670;&#160;</a></span>GetEnumerator() <span class="overload">[1/2]</span></h2>
 
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator IEnumerable. SystemEx.Collections.Generic.NodeChain&lt; T &gt;.GetEnumerator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d6/d84/_node_chain_8cs_source.html#l00082">82</a> of file <a class="el" href="../../d6/d84/_node_chain_8cs_source.html">NodeChain.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>=&gt; GetEnumerator();</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a90a7f935cb592b7b7f5338382f3ffd1b" name="a90a7f935cb592b7b7f5338382f3ffd1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90a7f935cb592b7b7f5338382f3ffd1b">&#9670;&#160;</a></span>GetEnumerator()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a7f935cb592b7b7f5338382f3ffd1b">&#9670;&#160;</a></span>GetEnumerator() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,6 +265,37 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d84/_node_chain_8cs_source.html#l00075">75</a> of file <a class="el" href="../../d6/d84/_node_chain_8cs_source.html">NodeChain.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>                                              {</div>
+<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">foreach</span> ( var range <span class="keywordflow">in</span> m_ranges ) {</div>
+<div class="line"><span class="lineno">   77</span>                <span class="keywordflow">foreach</span> ( var x <span class="keywordflow">in</span> range )</div>
+<div class="line"><span class="lineno">   78</span>                    yield <span class="keywordflow">return</span> x;</div>
+<div class="line"><span class="lineno">   79</span>            }</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a56d0326aee5c2099b4b9b54d6fa082c5" name="a56d0326aee5c2099b4b9b54d6fa082c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56d0326aee5c2099b4b9b54d6fa082c5">&#9670;&#160;</a></span>m_ranges</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly List&lt;NodeRange&lt;T&gt; &gt; SystemEx.Collections.Generic.NodeChain&lt; T &gt;.m_ranges = new()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d6/d84/_node_chain_8cs_source.html#l00049">49</a> of file <a class="el" href="../../d6/d84/_node_chain_8cs_source.html">NodeChain.cs</a>.</p>
 
 </div>
 </div>

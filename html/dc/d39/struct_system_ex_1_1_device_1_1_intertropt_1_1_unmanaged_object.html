@@ -38,9 +38,8 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
    </div>
-   <div id="projectbrief">Additional generic collection types missing in .NET</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -120,13 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">SystemEx.Device.Intertropt.UnmanagedObject Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Device.Intertropt.UnmanagedObject:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="../../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.png" alt=""/>
- </div></div>
+
+<p>Inherits IDisposable.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -164,7 +158,13 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html#l00011">11</a> of file <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html">RamSharedBackend.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   11</span>                                                             {</div>
+<div class="line"><span class="lineno">   12</span>            Handle = handle;</div>
+<div class="line"><span class="lineno">   13</span>            Point = Handle.AddrOfPinnedObject();</div>
+<div class="line"><span class="lineno">   14</span>            Data = data;</div>
+<div class="line"><span class="lineno">   15</span>            Size = data.Length;</div>
+<div class="line"><span class="lineno">   16</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -184,7 +184,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html#l00019">19</a> of file <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html">RamSharedBackend.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   19</span>                              {</div>
+<div class="line"><span class="lineno">   20</span>            <span class="keywordflow">if</span> ( Handle.IsAllocated ) {</div>
+<div class="line"><span class="lineno">   21</span>                Handle.Free();</div>
+<div class="line"><span class="lineno">   22</span>            }</div>
+<div class="line"><span class="lineno">   23</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
@@ -209,7 +214,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html#l00007">7</a> of file <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html">RamSharedBackend.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    7</span>{ <span class="keyword">get</span>; <span class="keyword">internal</span> <span class="keyword">set</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1d1977cb3ec2a3b9645dd44c451733d8" name="a1d1977cb3ec2a3b9645dd44c451733d8"></a>
@@ -233,7 +239,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html#l00006">6</a> of file <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html">RamSharedBackend.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    6</span>{ <span class="keyword">get</span>; <span class="keyword">internal</span> <span class="keyword">set</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6c32525df6e515c3530726169834949b" name="a6c32525df6e515c3530726169834949b"></a>
@@ -257,7 +264,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html#l00008">8</a> of file <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html">RamSharedBackend.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    8</span>{ <span class="keyword">get</span>; <span class="keyword">internal</span> <span class="keyword">set</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a55af49dd8668c7415aaa9b1faa544351" name="a55af49dd8668c7415aaa9b1faa544351"></a>
@@ -281,7 +289,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html#l00009">9</a> of file <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html">RamSharedBackend.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    9</span>{  <span class="keyword">get</span>; <span class="keyword">internal</span> <span class="keyword">set</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>

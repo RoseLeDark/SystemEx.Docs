@@ -38,9 +38,8 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
    </div>
-   <div id="projectbrief">Additional generic collection types missing in .NET</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -124,13 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Represents a color in the HSL (Hue–Saturation–Lightness) color space using floating‑point components. <br  />
  Provides hue‑aware interpolation, component manipulation, arithmetic operations, and normalization utilities.  
  <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Drawing.ColorHSL:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="../../d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l.png" alt=""/>
- </div></div>
+
+<p>Inherits IEquatable.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -153,6 +147,12 @@ Properties</h2></td></tr>
 <tr class="memdesc:a329fc3775d7831be45a7ff3b5f94952a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the saturation component.  <br /></td></tr>
 <tr class="memitem:ac1adf8c4f0c522cacb7b7b0aad3e3fef" id="r_ac1adf8c4f0c522cacb7b7b0aad3e3fef"><td class="memItemLeft">virtual float&#160;</td><td class="memItemRight"><a class="el" href="#ac1adf8c4f0c522cacb7b7b0aad3e3fef">L</a><code> [get]</code></td></tr>
 <tr class="memdesc:ac1adf8c4f0c522cacb7b7b0aad3e3fef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Lightness component.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6470ca48a1b08593cd351beb4eb9a1ba" id="r_a6470ca48a1b08593cd351beb4eb9a1ba"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a6470ca48a1b08593cd351beb4eb9a1ba">m_h</a></td></tr>
+<tr class="memitem:aa10cab486acf50ee7c8962d7466effb6" id="r_aa10cab486acf50ee7c8962d7466effb6"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#aa10cab486acf50ee7c8962d7466effb6">m_s</a></td></tr>
+<tr class="memitem:a9e6467c1484463de33f2d816dc7992b8" id="r_a9e6467c1484463de33f2d816dc7992b8"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a9e6467c1484463de33f2d816dc7992b8">m_l</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -180,7 +180,12 @@ Properties</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00034">34</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   34</span>                                   {</div>
+<div class="line"><span class="lineno">   35</span>            m_h = x[0];</div>
+<div class="line"><span class="lineno">   36</span>            m_s = x[1];</div>
+<div class="line"><span class="lineno">   37</span>            m_l = x[2];</div>
+<div class="line"><span class="lineno">   38</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad762a79a09135f22aea3913b74b3ca7f" name="ad762a79a09135f22aea3913b74b3ca7f"></a>
@@ -208,7 +213,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00042">42</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   42</span>                                                   {</div>
+<div class="line"><span class="lineno">   43</span>            m_h = h;</div>
+<div class="line"><span class="lineno">   44</span>            m_s = s;</div>
+<div class="line"><span class="lineno">   45</span>            m_l = l;</div>
+<div class="line"><span class="lineno">   46</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -235,7 +245,13 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the components match; otherwise <code>false</code>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00054">54</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   54</span>                                           {</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">return</span> m_h.Equals(other.m_h) &amp;&amp;</div>
+<div class="line"><span class="lineno">   57</span>                m_s.Equals(other.m_s) &amp;&amp;</div>
+<div class="line"><span class="lineno">   58</span>                m_l.Equals(other.m_h);</div>
+<div class="line"><span class="lineno">   59</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9b409891e8af8c35429bb30e4e657b5b" name="a9b409891e8af8c35429bb30e4e657b5b"></a>
@@ -254,7 +270,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00069">69</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   69</span>                                                 {</div>
+<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">if</span> ( obj == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">if</span> ( obj is ColorHSL ) <span class="keywordflow">return</span> Equals(obj as ColorHSL);</div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   73</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aff6e261a5fbe0009d34e57c6fc5ed5a2" name="aff6e261a5fbe0009d34e57c6fc5ed5a2"></a>
@@ -274,7 +295,10 @@ Properties</h2></td></tr>
 <p>&lt;summarH&gt; Returns a hash code based on the H, S, and L components. &lt;/summarH&gt; </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00063">63</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   63</span>                                          {</div>
+<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">return</span> HashCode.Combine(m_h, m_s, m_l);</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa6ee07468d91f55c01fdf3449c746ada" name="aa6ee07468d91f55c01fdf3449c746ada"></a>
@@ -293,6 +317,82 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00077">77</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>                                          {</div>
+<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;[{m_h}, {m_s}, {m_l}]&quot;</span>);</div>
+<div class="line"><span class="lineno">   79</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a6470ca48a1b08593cd351beb4eb9a1ba" name="a6470ca48a1b08593cd351beb4eb9a1ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6470ca48a1b08593cd351beb4eb9a1ba">&#9670;&#160;</a></span>m_h</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SystemEx.Drawing.ColorHSL.m_h</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00009">9</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
+
+</div>
+</div>
+<a id="a9e6467c1484463de33f2d816dc7992b8" name="a9e6467c1484463de33f2d816dc7992b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e6467c1484463de33f2d816dc7992b8">&#9670;&#160;</a></span>m_l</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SystemEx.Drawing.ColorHSL.m_l</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00011">11</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa10cab486acf50ee7c8962d7466effb6" name="aa10cab486acf50ee7c8962d7466effb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa10cab486acf50ee7c8962d7466effb6">&#9670;&#160;</a></span>m_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SystemEx.Drawing.ColorHSL.m_s</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00010">10</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
 
 </div>
 </div>
@@ -318,7 +418,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00017">17</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   17</span>{ <span class="keyword">get</span> =&gt; m_h; } </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac1adf8c4f0c522cacb7b7b0aad3e3fef" name="ac1adf8c4f0c522cacb7b7b0aad3e3fef"></a>
@@ -342,7 +443,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00027">27</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{ <span class="keyword">get</span> =&gt; m_l; } </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a329fc3775d7831be45a7ff3b5f94952a" name="a329fc3775d7831be45a7ff3b5f94952a"></a>
@@ -366,7 +468,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html#l00022">22</a> of file <a class="el" href="../../de/d14/_color_h_s_l_8cs_source.html">ColorHSL.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <span class="keyword">get</span> =&gt; m_s; } </div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

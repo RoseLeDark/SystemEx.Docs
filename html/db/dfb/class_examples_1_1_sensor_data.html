@@ -38,9 +38,8 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
    </div>
-   <div id="projectbrief">Additional generic collection types missing in .NET</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -127,12 +126,24 @@ document.addEventListener('DOMContentLoaded', () => {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="../../db/dfb/class_examples_1_1_sensor_data.png" usemap="#Examples_2ESensorData_map" alt=""/>
-  <map id="Examples_2ESensorData_map" name="Examples_2ESensorData_map">
-<area href="../../d2/d59/class_system_ex_1_1_hash_1_1_hashable_object.html" alt="SystemEx.Hash.HashableObject" shape="rect" coords="0,0,193,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="../../da/d85/class_examples_1_1_sensor_data__inherit__graph.png" border="0" usemap="#a_examples_8_sensor_data_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_examples_8_sensor_data_inherit__map" id="a_examples_8_sensor_data_inherit__map">
+<area shape="rect" title="Example data class using HashableObject." alt="" coords="36,80,189,107"/>
+<area shape="rect" href="../../d2/d59/class_system_ex_1_1_hash_1_1_hashable_object.html" title=" " alt="" coords="5,5,220,32"/>
+<area shape="poly" title=" " alt="" coords="114,46,115,81,110,78,111,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for Examples.SensorData:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/d58/class_examples_1_1_sensor_data__coll__graph.png" border="0" usemap="#a_examples_8_sensor_data_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_examples_8_sensor_data_coll__map" id="a_examples_8_sensor_data_coll__map">
+<area shape="rect" title="Example data class using HashableObject." alt="" coords="36,80,189,107"/>
+<area shape="rect" href="../../d2/d59/class_system_ex_1_1_hash_1_1_hashable_object.html" title=" " alt="" coords="5,5,220,32"/>
+<area shape="poly" title=" " alt="" coords="114,46,115,81,110,78,111,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -183,7 +194,19 @@ Public Attributes</h2></td></tr>
 </ul>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d1d/_example_hasher_8cs_source.html#l00101">101</a> of file <a class="el" href="../../d6/d1d/_example_hasher_8cs_source.html">ExampleHasher.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  101</span>                                               {</div>
+<div class="line"><span class="lineno">  102</span>            var b = <span class="keyword">new</span> Array&lt;byte&gt;(8);</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>            <span class="comment">// int → 4 bytes</span></div>
+<div class="line"><span class="lineno">  105</span>            b.InsertRange(0, Id.ToBytes(<a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.LittleEndian));</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>            <span class="comment">// float → 4 bytes</span></div>
+<div class="line"><span class="lineno">  108</span>            b.InsertRange(4, Value.ToBytes(<a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.LittleEndian));</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">return</span> b;</div>
+<div class="line"><span class="lineno">  111</span>        }</div>
+<div class="ttc" id="anamespace_system_ex_html_ab37b6205838476a6d1b48cfa0440cacd"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">SystemEx.Endian</a></div><div class="ttdeci">Endian</div><div class="ttdoc">Specifies the byte order used when converting values to and from raw byte sequences.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d81/_conversion_8cs_source.html#l00028">Conversion.cs:28</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>

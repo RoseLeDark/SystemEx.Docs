@@ -6,7 +6,10 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array_1_g =
     [ "Remove", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#aba76e6a5149f99f83338e57de38af192", null ],
     [ "Sort", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#a856050a49db335a285d8f2957ba92e24", null ],
     [ "SortedArray", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#a1ca72678cbc5d045c94497162edcde88", null ],
+    [ "Swap", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#aa29dcfa7cf9eaf34a13e1b9d5ff2f52c", null ],
     [ "ToUnorderedArray", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#aa747528fd2992b7bbd8b681f53cd09ec", null ],
+    [ "m_comparer", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#a8db3ef5f1a92cd91ec217f8b747a144f", null ],
+    [ "m_sort", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#acce51151939eb6be298ce8a3f551b729", null ],
     [ "AutoSort", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#a142fc7ed97292c9b9bf3f865f68a25de", null ],
     [ "Comparer", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#af24f3c1599ab2d6a98a09f58751863e6", null ],
     [ "SortFunctions", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#a62f969449406cecfa62d780e81b16c27", null ]

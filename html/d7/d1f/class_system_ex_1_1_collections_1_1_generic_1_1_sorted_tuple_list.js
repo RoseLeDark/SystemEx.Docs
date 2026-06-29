@@ -9,7 +9,10 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list =
     [ "Remove", "d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#a79b9cec9dfc97e8c17ecc70caff749e3", null ],
     [ "RemoveAt", "d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#a14a1f8c2250606fd014a7f1c42437517", null ],
     [ "Sort", "d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#a8752859eb616991df3d08f2f7e14ff48", null ],
+    [ "Swap", "d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#afc3970def7902ed5c2d1bcb63316df58", null ],
     [ "ToUnorderedList", "d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#a9e2b995f6ce7f2e58d6d0cf64d6e993e", null ],
+    [ "m_comparer", "d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#a3c84368fd61f2d7fdb554d6be03e1377", null ],
+    [ "m_sort", "d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#af093f107c43662ad5796553711d646b6", null ],
     [ "AutoSort", "d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#adecc4ef4af5c3e5f5a2ba0229a9534e2", null ],
     [ "Comparer", "d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#aa7cab8d9bfdb48f23573c751cf93f25a", null ],
     [ "SortFunctions", "d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#a39b543db7f44a5c035c80dcbdb0e437a", null ]

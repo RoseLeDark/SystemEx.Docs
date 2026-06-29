@@ -31,8 +31,9 @@ var searchData=
   ['isortedmap_2d2_2dg_28',['ISortedMap-2-g',['../d6/d5e/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_map-2-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
   ['isortedtuplemap_29',['ISortedTupleMap',['../dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html',1,'SystemEx::Collections::Generic::Interfaces']]],
   ['isubcanvas_2d1_2dg_30',['ISubCanvas-1-g',['../de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html',1,'SystemEx::Drawing']]],
-  ['itraverse_2d1_2dg_31',['ITraverse-1-g',['../d4/d02/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_traverse-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
-  ['ituple_32',['ITuple',['../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html',1,'SystemEx::Collections::Generic::Interfaces']]],
-  ['ituplemap_33',['ITupleMap',['../d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html',1,'SystemEx::Collections::Generic::Interfaces']]],
-  ['itypebuffer_2d1_2dg_34',['ITypeBuffer-1-g',['../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]]
+  ['iterator_31',['Iterator',['../db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html',1,'SystemEx::Collections::Generic::Interfaces']]],
+  ['itraverse_2d1_2dg_32',['ITraverse-1-g',['../d4/d02/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_traverse-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
+  ['ituple_33',['ITuple',['../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html',1,'SystemEx::Collections::Generic::Interfaces']]],
+  ['ituplemap_34',['ITupleMap',['../d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html',1,'SystemEx::Collections::Generic::Interfaces']]],
+  ['itypebuffer_2d1_2dg_35',['ITypeBuffer-1-g',['../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]]
 ];

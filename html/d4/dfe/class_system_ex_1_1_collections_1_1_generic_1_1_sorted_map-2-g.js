@@ -8,8 +8,11 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map_2_g =
     [ "SortedMap", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#aba42a9d7f8cb6ee2da0f17441b37a927", null ],
     [ "SortedMap", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#a0ffcba9d8d85c72943b5707bed492dda", null ],
     [ "SortedMap", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#a3390bc7c41061a63c6b4b79957e13371", null ],
+    [ "Swap", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#a92111b994b7839d1696d8ad3530c39d1", null ],
     [ "ToUnorderedMap", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#a17ac6f38c0b50b29a3fdca3086d00fda", null ],
     [ "TryAdd", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#af8405e3be706e4b53f166be7e2d1d9df", null ],
+    [ "m_comparer", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#aa05b8fbbd87dc124b39b74cdafd870f9", null ],
+    [ "m_sort", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#a0585ddd08a4409da09b24a642ca7dc0b", null ],
     [ "AutoSort", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#a547ace75a6d3f973aba22e8281089d6a", null ],
     [ "Comparer", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#addd61ef3b2002e9095690fb0b3add1f7", null ],
     [ "SortFunctions", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#a9868d171ac7f3c0b7542b2234fcb9958", null ]

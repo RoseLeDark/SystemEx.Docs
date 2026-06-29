@@ -6,7 +6,10 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map =
     [ "Insert", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#aa923d88dcc15a4ea61f76946edeeac20", null ],
     [ "InsertRange", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#ab7c4e418a0cab870f6cb97e625edfe38", null ],
     [ "Sort", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a03d62f26e8d1089bb6fd8c148fc94b78", null ],
+    [ "Swap", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a27a68e3e2c5d36ecdb1ecef25e4a230d", null ],
     [ "ToUnorderedMap", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#af10df21df1e1a9bb692f154dd27b1a80", null ],
+    [ "m_comparer", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#aa0f91fbb9e6856870e876fc733623dbe", null ],
+    [ "m_sort", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a1f5f72b8141fcdc4c49a8ab059cbf4b8", null ],
     [ "AutoSort", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a35bc43f1e596fc76339ec734ab781ef5", null ],
     [ "Comparer", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#af3f43e9a2b35f2762bc2ec4776c36268", null ],
     [ "SortFunctions", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#abd0f3eadf239fd39dea8305d035b0260", null ]

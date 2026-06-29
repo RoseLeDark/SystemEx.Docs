@@ -6,6 +6,8 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_deque_1_g =
     [ "PopFront", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a4420bfa8a156365af239555c3f24785b", null ],
     [ "PushBack", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a4718a03bb0f7815851790f54f3deea13", null ],
     [ "PushFront", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#abb4db27858b25246d2edb46428813fd7", null ],
+    [ "m_count", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a35c82a926032adfa53bfa8b33ae02ff0", null ],
+    [ "m_elements", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a512ce22fea2d307fa3af519f72ccb113", null ],
     [ "Count", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#aae86fc5c9d251d92f51298a4212c0020", null ],
     [ "End", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a3ff0936ef62b283c084255449bf44f6f", null ],
     [ "Front", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a9809f2016901457c80d086f04b1bb239", null ],

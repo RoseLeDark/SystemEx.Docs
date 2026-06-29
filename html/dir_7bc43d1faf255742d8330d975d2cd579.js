@@ -2,7 +2,7 @@ var dir_7bc43d1faf255742d8330d975d2cd579 =
 [
     [ "Canvas.cs", "d4/d53/_canvas_8cs.html", "d4/d53/_canvas_8cs" ],
     [ "ColorCMY.cs", "da/df1/_color_c_m_y_8cs.html", "da/df1/_color_c_m_y_8cs" ],
-    [ "ColorConverter.cs", "d1/d4f/_color_converter_8cs.html", null ],
+    [ "ColorConverter.cs", "d1/d4f/_color_converter_8cs.html", "d1/d4f/_color_converter_8cs" ],
     [ "ColorGray.cs", "dc/d6b/_color_gray_8cs.html", "dc/d6b/_color_gray_8cs" ],
     [ "ColorHDR.cs", "de/def/_color_h_d_r_8cs.html", "de/def/_color_h_d_r_8cs" ],
     [ "ColorHSL.cs", "de/d14/_color_h_s_l_8cs.html", "de/d14/_color_h_s_l_8cs" ],

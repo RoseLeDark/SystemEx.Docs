@@ -14,5 +14,8 @@ var searchData=
   ['headersize_11',['HeaderSize',['../d0/d3e/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#ab115cbb7ff0d4a7999f32fc5cdd133fc',1,'SystemEx.SystemEx.Drawing.ColorR10G10B10FormatSchema.HeaderSize'],['../d2/d66/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_format_schema.html#aae4f5f9c04b6acc20131ffdb9f17c417',1,'SystemEx.IO.Provider.IByteFormatSchema.HeaderSize']]],
   ['height_12',['Height',['../d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html#a4b0ab0e3e74115c37b005e19707947c7',1,'SystemEx::Drawing::ICanvas-1-g']]],
   ['high_13',['High',['../de/d5b/namespace_system_ex_1_1_drawing.html#a1738673316f8d96453eda571bae3f460a655d20c1ca69519ca647684edbb2db35',1,'SystemEx::Drawing']]],
-  ['hue_14',['Hue',['../df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b.html#a895839af89d98ca064643bb12402371e',1,'SystemEx::Drawing::ColorHWB']]]
+  ['honeydew_14',['HoneyDew',['../d4/d60/class_system_ex_1_1_drawing_1_1_white_colors.html#ab8f6314d370e564dd8110d98bd019001',1,'SystemEx::Drawing::WhiteColors']]],
+  ['hotpink_15',['HotPink',['../db/df0/class_system_ex_1_1_drawing_1_1_pink_colors.html#a67557651b024e03710ee68cd60c5f549',1,'SystemEx::Drawing::PinkColors']]],
+  ['hue_16',['Hue',['../df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b.html#a895839af89d98ca064643bb12402371e',1,'SystemEx::Drawing::ColorHWB']]],
+  ['huename_17',['HUENAME',['../d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#aafbc8a4178e50b1ca0d37995dc433f64',1,'SystemEx::Drawing::ColorNCol']]]
 ];

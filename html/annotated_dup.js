@@ -2,6 +2,7 @@ var annotated_dup =
 [
     [ "Examples", "d3/d06/namespace_examples.html", [
       [ "ExampleRamKernelAdd", "de/d89/class_examples_1_1_example_ram_kernel_add.html", "de/d89/class_examples_1_1_example_ram_kernel_add" ],
+      [ "Programm", "d4/dbc/class_examples_1_1_programm.html", "d4/dbc/class_examples_1_1_programm" ],
       [ "SensorData", "db/dfb/class_examples_1_1_sensor_data.html", "db/dfb/class_examples_1_1_sensor_data" ],
       [ "SimpleHasher", "d4/de6/class_examples_1_1_simple_hasher.html", "d4/de6/class_examples_1_1_simple_hasher" ]
     ] ],
@@ -31,11 +32,13 @@ var annotated_dup =
             [ "ISortedArray&lt; T &gt;", "db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g.html", "db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g" ],
             [ "ISortedMap&lt; T, TU &gt;", "d6/d5e/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_map-2-g.html", "d6/d5e/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_map-2-g" ],
             [ "ISortedTupleMap", "dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html", "dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map" ],
+            [ "Iterator", "db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html", "db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator" ],
             [ "ITraverse&lt; T &gt;", "d4/d02/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_traverse-1-g.html", "d4/d02/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_traverse-1-g" ],
             [ "ITuple", "d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html", "d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple" ],
             [ "ITupleMap", "d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html", "d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map" ],
             [ "ITypeBuffer&lt; T &gt;", "d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html", "d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g" ],
-            [ "ListIterator&lt; T &gt;", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g" ]
+            [ "ListIterator&lt; T &gt;", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g" ],
+            [ "ListIteratorExtensions", "db/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator_extensions.html", "db/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator_extensions" ]
           ] ],
           [ "Array&lt; T &gt;", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" ],
           [ "ArrayRandomAccessIterator&lt; T &gt;", "d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html", "d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g" ],
@@ -94,7 +97,10 @@ var annotated_dup =
         [ "NativeRAMKernel&lt; TD &gt;", "d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html", "d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g" ]
       ] ],
       [ "Drawing", "de/d5b/namespace_system_ex_1_1_drawing.html", [
+        [ "BlueColors", "da/dba/class_system_ex_1_1_drawing_1_1_blue_colors.html", null ],
+        [ "BrownColors", "d3/d1b/class_system_ex_1_1_drawing_1_1_brown_colors.html", null ],
         [ "ColorCMY", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y" ],
+        [ "ColorConverter", "de/d73/class_system_ex_1_1_drawing_1_1_color_converter.html", "de/d73/class_system_ex_1_1_drawing_1_1_color_converter" ],
         [ "ColorGray", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray.html", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray" ],
         [ "ColorHSL", "d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l.html", "d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l" ],
         [ "ColorHSV", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v" ],
@@ -103,18 +109,28 @@ var annotated_dup =
         [ "ColorR8G8B8", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8" ],
         [ "ColorXYZ", "d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z.html", "d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z" ],
         [ "ColorYUV", "d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html", "d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v" ],
+        [ "CyanColors", "d8/d88/class_system_ex_1_1_drawing_1_1_cyan_colors.html", "d8/d88/class_system_ex_1_1_drawing_1_1_cyan_colors" ],
+        [ "GreenColors", "d6/deb/class_system_ex_1_1_drawing_1_1_green_colors.html", "d6/deb/class_system_ex_1_1_drawing_1_1_green_colors" ],
+        [ "GreyColors", "d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors.html", "d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors" ],
         [ "ICanvas&lt; T &gt;", "d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html", "d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" ],
         [ "ICanvasList&lt; T &gt;", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.html", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g" ],
         [ "IColor&lt; T &gt;", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g" ],
         [ "ISubCanvas&lt; T &gt;", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g" ],
-        [ "PurpelColors", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html", null ]
+        [ "OrangeColors", "dc/d52/class_system_ex_1_1_drawing_1_1_orange_colors.html", "dc/d52/class_system_ex_1_1_drawing_1_1_orange_colors" ],
+        [ "PinkColors", "db/df0/class_system_ex_1_1_drawing_1_1_pink_colors.html", "db/df0/class_system_ex_1_1_drawing_1_1_pink_colors" ],
+        [ "PurpelColors", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors" ],
+        [ "RedColors", "d5/d0f/class_system_ex_1_1_drawing_1_1_red_colors.html", "d5/d0f/class_system_ex_1_1_drawing_1_1_red_colors" ],
+        [ "WhiteColors", "d4/d60/class_system_ex_1_1_drawing_1_1_white_colors.html", "d4/d60/class_system_ex_1_1_drawing_1_1_white_colors" ],
+        [ "YellowColors", "de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors.html", "de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors" ]
       ] ],
       [ "Hash", "d4/d32/namespace_system_ex_1_1_hash.html", [
         [ "Hash32", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32" ],
         [ "Hash64", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64" ],
         [ "HashableObject", "d2/d59/class_system_ex_1_1_hash_1_1_hashable_object.html", "d2/d59/class_system_ex_1_1_hash_1_1_hashable_object" ],
         [ "HashAlgorithmAttribute", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute" ],
-        [ "IHasher", "da/d26/interface_system_ex_1_1_hash_1_1_i_hasher.html", "da/d26/interface_system_ex_1_1_hash_1_1_i_hasher" ]
+        [ "IHasher", "da/d26/interface_system_ex_1_1_hash_1_1_i_hasher.html", "da/d26/interface_system_ex_1_1_hash_1_1_i_hasher" ],
+        [ "Murmur3Hasher", "d5/db0/class_system_ex_1_1_hash_1_1_murmur3_hasher.html", null ],
+        [ "XXHash3Hasher", "d6/dfc/class_system_ex_1_1_hash_1_1_x_x_hash3_hasher.html", null ]
       ] ],
       [ "IO", "d4/d5d/namespace_system_ex_1_1_i_o.html", [
         [ "Provider", "da/da3/namespace_system_ex_1_1_i_o_1_1_provider.html", [
@@ -128,8 +144,12 @@ var annotated_dup =
       [ "Runtime", "d4/d8e/namespace_system_ex_1_1_runtime.html", [
         [ "InteropServices", "d4/dfc/namespace_system_ex_1_1_runtime_1_1_interop_services.html", [
           [ "Platform", "d0/daf/namespace_system_ex_1_1_runtime_1_1_interop_services_1_1_platform.html", [
-            [ "WindowsProcLoader", "d4/d2f/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_windows_proc_loader.html", null ]
-          ] ]
+            [ "LinuxProcLoader", "d6/dff/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_linux_proc_loader.html", "d6/dff/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_linux_proc_loader" ],
+            [ "MacProcLoader", "d2/d54/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_mac_proc_loader.html", "d2/d54/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_mac_proc_loader" ],
+            [ "NoSupportProcLoader", "d4/d63/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_no_support_proc_loader.html", "d4/d63/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_no_support_proc_loader" ],
+            [ "WindowsProcLoader", "d4/d2f/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_windows_proc_loader.html", "d4/d2f/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_windows_proc_loader" ]
+          ] ],
+          [ "NativeHost", "d2/d6c/class_system_ex_1_1_runtime_1_1_interop_services_1_1_native_host.html", "d2/d6c/class_system_ex_1_1_runtime_1_1_interop_services_1_1_native_host" ]
         ] ],
         [ "Module", "d4/ddf/class_system_ex_1_1_runtime_1_1_module.html", "d4/ddf/class_system_ex_1_1_runtime_1_1_module" ]
       ] ],
@@ -143,12 +163,18 @@ var annotated_dup =
         ] ]
       ] ],
       [ "Utils", "d2/d14/namespace_system_ex_1_1_utils.html", [
+        [ "Algorithm", "db/d0a/class_system_ex_1_1_utils_1_1_algorithm.html", "db/d0a/class_system_ex_1_1_utils_1_1_algorithm" ],
+        [ "Layout", "d5/d63/class_system_ex_1_1_utils_1_1_layout.html", "d5/d63/class_system_ex_1_1_utils_1_1_layout" ],
         [ "MissingStructLayoutSequentialException", "da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception.html", "da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception" ],
         [ "SizeMismatchException", "d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception.html", "d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception" ]
       ] ],
+      [ "BitUtils", "df/d58/class_system_ex_1_1_bit_utils.html", "df/d58/class_system_ex_1_1_bit_utils" ],
+      [ "Conversion", "d6/dd9/class_system_ex_1_1_conversion.html", "d6/dd9/class_system_ex_1_1_conversion" ],
       [ "IRange&lt; T &gt;", "df/d28/interface_system_ex_1_1_i_range-1-g.html", "df/d28/interface_system_ex_1_1_i_range-1-g" ],
+      [ "Math", "d1/d63/class_system_ex_1_1_math.html", "d1/d63/class_system_ex_1_1_math" ],
       [ "NumberRange&lt; T &gt;", "dc/d8a/class_system_ex_1_1_number_range-1-g.html", "dc/d8a/class_system_ex_1_1_number_range-1-g" ],
       [ "NumberRangeIterator&lt; T &gt;", "dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html", "dc/d77/struct_system_ex_1_1_number_range_iterator-1-g" ],
+      [ "RandUtils", "d3/d70/class_system_ex_1_1_rand_utils.html", "d3/d70/class_system_ex_1_1_rand_utils" ],
       [ "Triple", "d7/d4e/struct_system_ex_1_1_triple.html", "d7/d4e/struct_system_ex_1_1_triple" ]
     ] ]
 ];

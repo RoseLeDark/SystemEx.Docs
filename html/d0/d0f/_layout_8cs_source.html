@@ -38,9 +38,8 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
    </div>
-   <div id="projectbrief">Additional generic collection types missing in .NET</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -166,8 +165,10 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span>Layout {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keyword">public</span> <span class="keyword">static</span> unsafe <span class="keywordtype">bool</span> Check&lt;T&gt;(uint expectedUnmanagedSize) where T : unmanaged {</div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="};">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../d5/d63/class_system_ex_1_1_utils_1_1_layout.html">   80</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code hl_class" href="../../d5/d63/class_system_ex_1_1_utils_1_1_layout.html">Layout</a> {</div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="../../d5/d63/class_system_ex_1_1_utils_1_1_layout.html#a11675a013a8624d2d6d58342de73ba63">  100</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> unsafe <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/d63/class_system_ex_1_1_utils_1_1_layout.html#a11675a013a8624d2d6d58342de73ba63">Check&lt;T&gt;</a>(uint expectedUnmanagedSize) where T : unmanaged {</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            Type t = typeof(T);</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordtype">long</span> _sizeof = <span class="keyword">sizeof</span>(T);</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="keywordtype">int</span> _marshalSize = Marshal.SizeOf&lt;T&gt;();</div>
@@ -175,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="comment">// StructLayout must be Sequential</span></div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            var attr = t.StructLayoutAttribute;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keywordflow">if</span> ( attr == <span class="keyword">null</span> || attr.Value != LayoutKind.Sequential )</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> MissingStructLayoutSequentialException(t);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code hl_class" href="../../da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception.html">MissingStructLayoutSequentialException</a>(t);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="comment">// sizeof(T) must match Marshal.SizeOf&lt;T&gt;()</span></div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <span class="keywordflow">if</span> ( _marshalSize != _sizeof )</div>
@@ -185,16 +186,22 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <span class="comment">// Optional unmanaged size check</span></div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">if</span> ( expectedUnmanagedSize != 0 ) {</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                <span class="keywordflow">if</span> ( _sizeof != expectedUnmanagedSize )</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> SizeMismatchException(t, _sizeof, expectedUnmanagedSize);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code hl_class" href="../../d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception.html">SizeMismatchException</a>(t, _sizeof, expectedUnmanagedSize);</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            }</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
+</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
+</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
+<div class="ttc" id="aclass_system_ex_1_1_utils_1_1_layout_html"><div class="ttname"><a href="../../d5/d63/class_system_ex_1_1_utils_1_1_layout.html">SystemEx.Utils.Layout</a></div><div class="ttdoc">Provides validation utilities for unmanaged structs used in native interop, binary serialization,...</div><div class="ttdef"><b>Definition</b> <a href="#l00080">Layout.cs:80</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_utils_1_1_layout_html_a11675a013a8624d2d6d58342de73ba63"><div class="ttname"><a href="../../d5/d63/class_system_ex_1_1_utils_1_1_layout.html#a11675a013a8624d2d6d58342de73ba63">SystemEx.Utils.Layout.Check&lt; T &gt;</a></div><div class="ttdeci">static unsafe bool Check&lt; T &gt;(uint expectedUnmanagedSize)</div><div class="ttdoc">Validates the layout and size of an unmanaged struct.   Throws exceptions when the struct is not bina...</div><div class="ttdef"><b>Definition</b> <a href="#l00100">Layout.cs:100</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception_html"><div class="ttname"><a href="../../da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception.html">SystemEx.Utils.MissingStructLayoutSequentialException</a></div><div class="ttdoc">Exception thrown when a struct used for unmanaged interop does not specify StructLayoutAttribute with...</div><div class="ttdef"><b>Definition</b> <a href="#l00014">Layout.cs:14</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception_html_ab7991107195bbd41572052cf792c650f"><div class="ttname"><a href="../../da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception.html#ab7991107195bbd41572052cf792c650f">SystemEx.Utils.MissingStructLayoutSequentialException.StructType</a></div><div class="ttdeci">Type StructType</div><div class="ttdoc">Gets the struct type that caused the exception.</div><div class="ttdef"><b>Definition</b> <a href="#l00018">Layout.cs:18</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception_html_ada7e95bf81b34f74f48abf32bb289541"><div class="ttname"><a href="../../da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception.html#ada7e95bf81b34f74f48abf32bb289541">SystemEx.Utils.MissingStructLayoutSequentialException.MissingStructLayoutSequentialException</a></div><div class="ttdeci">MissingStructLayoutSequentialException(Type type)</div><div class="ttdoc">Creates a new exception indicating that the specified struct type must be declared with System....</div><div class="ttdef"><b>Definition</b> <a href="#l00026">Layout.cs:26</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_utils_1_1_size_mismatch_exception_html"><div class="ttname"><a href="../../d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception.html">SystemEx.Utils.SizeMismatchException</a></div><div class="ttdoc">Exception thrown when the managed size of a struct does not match the expected unmanaged size....</div><div class="ttdef"><b>Definition</b> <a href="#l00041">Layout.cs:41</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_utils_1_1_size_mismatch_exception_html_a1505a8d766118b6e9afc772953326b08"><div class="ttname"><a href="../../d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception.html#a1505a8d766118b6e9afc772953326b08">SystemEx.Utils.SizeMismatchException.StructType</a></div><div class="ttdeci">Type StructType</div><div class="ttdoc">Gets the struct type that failed the size validation.</div><div class="ttdef"><b>Definition</b> <a href="#l00045">Layout.cs:45</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_utils_1_1_size_mismatch_exception_html_a1b2945de4e0b69826fc72f6a13b4d256"><div class="ttname"><a href="../../d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception.html#a1b2945de4e0b69826fc72f6a13b4d256">SystemEx.Utils.SizeMismatchException.ExpectedSize</a></div><div class="ttdeci">long ExpectedSize</div><div class="ttdoc">Gets the expected unmanaged size provided by the caller.</div><div class="ttdef"><b>Definition</b> <a href="#l00055">Layout.cs:55</a></div></div>
 <div class="ttc" id="aclass_system_ex_1_1_utils_1_1_size_mismatch_exception_html_aa2eea3db64cf6bcf60c0f3c227bd7c43"><div class="ttname"><a href="../../d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception.html#aa2eea3db64cf6bcf60c0f3c227bd7c43">SystemEx.Utils.SizeMismatchException.ManagedSize</a></div><div class="ttdeci">long ManagedSize</div><div class="ttdoc">Gets the size of the struct as computed by sizeof(T).</div><div class="ttdef"><b>Definition</b> <a href="#l00050">Layout.cs:50</a></div></div>

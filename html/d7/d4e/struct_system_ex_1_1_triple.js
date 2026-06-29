@@ -7,6 +7,19 @@ var struct_system_ex_1_1_triple =
     [ "Equals", "d7/d4e/struct_system_ex_1_1_triple.html#a0c0ae618fc3ebaaf330a624b0b02e22c", null ],
     [ "Equals", "d7/d4e/struct_system_ex_1_1_triple.html#abd25171012afae912b404ff4e1d3e14e", null ],
     [ "GetHashCode", "d7/d4e/struct_system_ex_1_1_triple.html#ad290f05f783621d2d5169e47e9c21b5b", null ],
+    [ "operator!=", "d7/d4e/struct_system_ex_1_1_triple.html#a5dd8bc3f417f065763c901faa1a47386", null ],
+    [ "operator!=", "d7/d4e/struct_system_ex_1_1_triple.html#a55f4af9912f292bd61525f564f8e7b19", null ],
+    [ "operator!=", "d7/d4e/struct_system_ex_1_1_triple.html#ac9f3a50b780f53d434d5fe8f6a63427a", null ],
+    [ "operator==", "d7/d4e/struct_system_ex_1_1_triple.html#af3dc6d198cdcb8f92b0073d7f34f8cc2", null ],
+    [ "operator==", "d7/d4e/struct_system_ex_1_1_triple.html#a622bc2ad26de081aa88f93040b8ed145", null ],
+    [ "operator==", "d7/d4e/struct_system_ex_1_1_triple.html#a72249453fff622dcd588d65b39e19553", null ],
     [ "ToBoolean", "d7/d4e/struct_system_ex_1_1_triple.html#a25a30e7a668840144932ed7b0327ed1a", null ],
-    [ "ToString", "d7/d4e/struct_system_ex_1_1_triple.html#a99b42a4fee09f7c21def3ceda8e2596b", null ]
+    [ "ToString", "d7/d4e/struct_system_ex_1_1_triple.html#a99b42a4fee09f7c21def3ceda8e2596b", null ],
+    [ "False", "d7/d4e/struct_system_ex_1_1_triple.html#a43a1f43330de98ce60b248c3cbf80470", null ],
+    [ "FalseString", "d7/d4e/struct_system_ex_1_1_triple.html#a5b129c22939eef3cefc0c881246a343e", null ],
+    [ "m_value", "d7/d4e/struct_system_ex_1_1_triple.html#a0da4ace407b5fed05d67e8bbe6f335fd", null ],
+    [ "Nin", "d7/d4e/struct_system_ex_1_1_triple.html#a210eefb7820294c256b5fa51460b9014", null ],
+    [ "NinString", "d7/d4e/struct_system_ex_1_1_triple.html#ad4922ba5895dd176c1148cc7680ea136", null ],
+    [ "True", "d7/d4e/struct_system_ex_1_1_triple.html#a6cbf7ed2f4d64ce2a502140abc5e8de1", null ],
+    [ "TrueString", "d7/d4e/struct_system_ex_1_1_triple.html#a26a0ff914b402c43d46cb341c679c00a", null ]
 ];

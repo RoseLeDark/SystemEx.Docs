@@ -38,9 +38,8 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
    </div>
-   <div id="projectbrief">Additional generic collection types missing in .NET</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -120,6 +119,17 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Queue&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Collections.Generic.Queue&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/de9/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g__coll__graph.png" border="0" usemap="#a_system_ex_8_collections_8_generic_8_queue_3_01_t_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_system_ex_8_collections_8_generic_8_queue_3_01_t_01_4_coll__map" id="a_system_ex_8_collections_8_generic_8_queue_3_01_t_01_4_coll__map">
+<area shape="rect" title=" " alt="" coords="5,120,210,163"/>
+<area shape="rect" href="../../d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html" title=" " alt="" coords="5,5,210,48"/>
+<area shape="poly" title=" " alt="" coords="109,62,110,120,105,119,106,65"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -144,6 +154,11 @@ Properties</h2></td></tr>
 <tr class="memdesc:a4bb5064b1403962da59d6aa5d937a61c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the queue has reached its maximum capacity.  <br /></td></tr>
 <tr class="memitem:ac52ca0c612f0f79a3358d121db73e6fa" id="r_ac52ca0c612f0f79a3358d121db73e6fa"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="#ac52ca0c612f0f79a3358d121db73e6fa">Front</a><code> [get]</code></td></tr>
 <tr class="memdesc:ac52ca0c612f0f79a3358d121db73e6fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the front of the queue without removing it.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab24ac7249d1c2966a6f6c06b825d16dd" id="r_ab24ac7249d1c2966a6f6c06b825d16dd"><td class="memItemLeft">Deque&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab24ac7249d1c2966a6f6c06b825d16dd">m_deque</a></td></tr>
+<tr class="memdesc:ab24ac7249d1c2966a6f6c06b825d16dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal deque used to implement queue behavior.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -165,7 +180,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00092">92</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   92</span>                            {</div>
+<div class="line"><span class="lineno">   93</span>            m_deque.Clear();</div>
+<div class="line"><span class="lineno">   94</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a284c2d6c8d3d13ded89b1f003d2ff1d6" name="a284c2d6c8d3d13ded89b1f003d2ff1d6"></a>
@@ -191,7 +209,8 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was removed; otherwise <code>false</code>.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00087">87</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   87</span>=&gt; m_deque.PopFront(ref value);</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3436658ddf770f88a4f650344b903395" name="a3436658ddf770f88a4f650344b903395"></a>
@@ -216,7 +235,8 @@ Properties</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00080">80</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   80</span>=&gt; m_deque.PushBack(value);</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a014cd70f3f8b07d91ff08954cee41404" name="a014cd70f3f8b07d91ff08954cee41404"></a>
@@ -241,7 +261,10 @@ Properties</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00072">72</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   72</span>                                 {</div>
+<div class="line"><span class="lineno">   73</span>            m_deque = d;</div>
+<div class="line"><span class="lineno">   74</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="abbe21d2ab89d45206b318f9ae549e5e2" name="abbe21d2ab89d45206b318f9ae549e5e2"></a>
@@ -266,6 +289,34 @@ Properties</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00064">64</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                               {</div>
+<div class="line"><span class="lineno">   65</span>            m_deque = <span class="keyword">new</span> Deque&lt;T&gt;(size);</div>
+<div class="line"><span class="lineno">   66</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="ab24ac7249d1c2966a6f6c06b825d16dd" name="ab24ac7249d1c2966a6f6c06b825d16dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab24ac7249d1c2966a6f6c06b825d16dd">&#9670;&#160;</a></span>m_deque</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Deque&lt;T&gt; SystemEx.Collections.Generic.Queue&lt; T &gt;.m_deque</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d3d/_queue_8cs_source.html#l00038">38</a> of file <a class="el" href="../../d1/d3d/_queue_8cs_source.html">Queue.cs</a>.</p>
 
 </div>
 </div>

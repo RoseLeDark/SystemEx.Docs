@@ -1,6 +1,7 @@
 var class_system_ex_1_1_collections_1_1_generic_1_1_array_1_g =
 [
     [ "Add", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ab22f10f19aacddb564e1fd42507beb59", null ],
+    [ "Add", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a3fb069f630273d548c0b6d674a0f1568", null ],
     [ "AddRange", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#afc1c32444b4ee3851dcdf10f08f305a4", null ],
     [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a8f23b48290bdbbc26278a7057a1168d5", null ],
     [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a293f0eea6a232101ea6021a193c6cf47", null ],
@@ -15,6 +16,7 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_array_1_g =
     [ "FindFirst", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#aa98ef7439853e26a9a1846fa84b727a0", null ],
     [ "FindLast", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ae6e74a0ba839454f349dc3479dcf92d3", null ],
     [ "Get", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a194979f139cd04ca32b6a191271d052a", null ],
+    [ "GetEnumerator", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a8a0c86c0fe4918ef72aaa1303a27917f", null ],
     [ "GetEnumerator", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#af34be5b6b26c93c0000024010563ca44", null ],
     [ "IndexOf", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a417401d6a3f00bf93fc658ec36ea063b", null ],
     [ "Insert", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a4daf278aee3b930b1e68ee5b4c415415", null ],

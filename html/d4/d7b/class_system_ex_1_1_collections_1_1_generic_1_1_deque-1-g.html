@@ -38,9 +38,8 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
    </div>
-   <div id="projectbrief">Additional generic collection types missing in .NET</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -152,6 +151,13 @@ Properties</h2></td></tr>
 <tr class="memdesc:a9809f2016901457c80d086f04b1bb239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the front of the deque.  <br /></td></tr>
 <tr class="memitem:a3ff0936ef62b283c084255449bf44f6f" id="r_a3ff0936ef62b283c084255449bf44f6f"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="#a3ff0936ef62b283c084255449bf44f6f">End</a><code> [get]</code></td></tr>
 <tr class="memdesc:a3ff0936ef62b283c084255449bf44f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the back of the deque.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a512ce22fea2d307fa3af519f72ccb113" id="r_a512ce22fea2d307fa3af519f72ccb113"><td class="memItemLeft">T[]&#160;</td><td class="memItemRight"><a class="el" href="#a512ce22fea2d307fa3af519f72ccb113">m_elements</a></td></tr>
+<tr class="memdesc:a512ce22fea2d307fa3af519f72ccb113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal storage buffer for the deque elements.  <br /></td></tr>
+<tr class="memitem:a35c82a926032adfa53bfa8b33ae02ff0" id="r_a35c82a926032adfa53bfa8b33ae02ff0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a35c82a926032adfa53bfa8b33ae02ff0">m_count</a></td></tr>
+<tr class="memdesc:a35c82a926032adfa53bfa8b33ae02ff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of elements currently stored in the deque.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -173,7 +179,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00141">141</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  141</span>                            {</div>
+<div class="line"><span class="lineno">  142</span>            m_count = 0;</div>
+<div class="line"><span class="lineno">  143</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0b402429b10c3a0094019e0f1a3948e7" name="a0b402429b10c3a0094019e0f1a3948e7"></a>
@@ -198,7 +207,11 @@ Properties</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00077">77</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   77</span>                               {</div>
+<div class="line"><span class="lineno">   78</span>            m_elements = <span class="keyword">new</span> T[size];</div>
+<div class="line"><span class="lineno">   79</span>            m_count = 0;</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa82138f3d8737c2b427dbc31b5b55759" name="aa82138f3d8737c2b427dbc31b5b55759"></a>
@@ -224,7 +237,13 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was removed; otherwise <code>false</code>.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00096">96</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   96</span>                                         {</div>
+<div class="line"><span class="lineno">   97</span>            <span class="keywordflow">if</span> ( IsEmpty ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   98</span>            value = m_elements[m_count - 1];</div>
+<div class="line"><span class="lineno">   99</span>            m_count--;</div>
+<div class="line"><span class="lineno">  100</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  101</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4420bfa8a156365af239555c3f24785b" name="a4420bfa8a156365af239555c3f24785b"></a>
@@ -250,7 +269,19 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was removed; otherwise <code>false</code>.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00125">125</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  125</span>                                          {</div>
+<div class="line"><span class="lineno">  126</span>            <span class="keywordflow">if</span> ( IsEmpty ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>            value = m_elements[0];</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>            <span class="comment">// Shift all elements to the left</span></div>
+<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; m_count - 1; i++ )</div>
+<div class="line"><span class="lineno">  132</span>                m_elements[i] = m_elements[i + 1];</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>            m_count--;</div>
+<div class="line"><span class="lineno">  135</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  136</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4718a03bb0f7815851790f54f3deea13" name="a4718a03bb0f7815851790f54f3deea13"></a>
@@ -275,7 +306,11 @@ Properties</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00086">86</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   86</span>                                      {</div>
+<div class="line"><span class="lineno">   87</span>            <span class="keywordflow">if</span> ( IsFull ) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   88</span>            m_elements[m_count++] = value;</div>
+<div class="line"><span class="lineno">   89</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="abb4db27858b25246d2edb46428813fd7" name="abb4db27858b25246d2edb46428813fd7"></a>
@@ -300,6 +335,65 @@ Properties</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00108">108</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>                                       {</div>
+<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">if</span> ( IsFull ) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>            <span class="comment">// Shift all elements to the right</span></div>
+<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = m_count; i &gt; 0; i-- )</div>
+<div class="line"><span class="lineno">  113</span>                m_elements[i] = m_elements[i - 1];</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>            m_elements[0] = value;</div>
+<div class="line"><span class="lineno">  116</span>            m_count++;</div>
+<div class="line"><span class="lineno">  117</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a35c82a926032adfa53bfa8b33ae02ff0" name="a35c82a926032adfa53bfa8b33ae02ff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c82a926032adfa53bfa8b33ae02ff0">&#9670;&#160;</a></span>m_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SystemEx.Collections.Generic.Deque&lt; T &gt;.m_count</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00040">40</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+
+</div>
+</div>
+<a id="a512ce22fea2d307fa3af519f72ccb113" name="a512ce22fea2d307fa3af519f72ccb113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a512ce22fea2d307fa3af519f72ccb113">&#9670;&#160;</a></span>m_elements</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T [] SystemEx.Collections.Generic.Deque&lt; T &gt;.m_elements</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00035">35</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>

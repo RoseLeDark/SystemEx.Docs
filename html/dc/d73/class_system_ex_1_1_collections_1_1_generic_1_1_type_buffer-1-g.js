@@ -8,6 +8,10 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer_1_g =
     [ "TypeBuffer", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#acb229ebb739564b905d89cc4e2f27d58", null ],
     [ "Write", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#aad99d294a4d63db84d988abf4a29fd9d", null ],
     [ "Zero", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#a83941031d4c7bee6b5a9fa4616a19f7c", null ],
+    [ "m_cache", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#a9e9a104dc11c1e18e19eadcdec019225", null ],
+    [ "m_endian", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#ac66f1fa3a6b5a4bdd6771bdb69e76aa9", null ],
+    [ "m_length", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#a5418060d0445b57e316737400f12999e", null ],
+    [ "m_stride", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#a74892cf5450a91f23605895931e89b38", null ],
     [ "Endian", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#ac0ff7e088af64537bd84c6cd27e612e6", null ],
     [ "Length", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#a1e0dd7bf5d5d38d6b33bba9a34c6527b", null ],
     [ "this[int i]", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#ac99be8e42e7855236d79841f6f86d084", null ]
