@@ -16,7 +16,7 @@ var searchData=
   ['idynamicarray_2d1_2dg_13',['IDynamicArray-1-g',['../d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
   ['iforeachiterator_2d1_2dg_14',['IForeachIterator-1-g',['../d2/db2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_foreach_iterator-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
   ['iforwarditerator_2d1_2dg_15',['IForwardIterator-1-g',['../d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
-  ['ihasher_16',['IHasher',['../da/d26/interface_system_ex_1_1_hash_1_1_i_hasher.html',1,'SystemEx::Hash']]],
+  ['ihash_16',['IHash',['../dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html',1,'SystemEx::Hash']]],
   ['iisbyteseriablize_17',['IIsByteSeriablize',['../d1/d94/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_is_byte_seriablize.html',1,'SystemEx::IO::Provider']]],
   ['iiterator_18',['IIterator',['../de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html',1,'SystemEx::Collections::Generic::Interfaces']]],
   ['iiterator_2d1_2dg_19',['IIterator-1-g',['../d0/d0c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],

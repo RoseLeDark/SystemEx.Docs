@@ -3,8 +3,7 @@ var annotated_dup =
     [ "Examples", "d3/d06/namespace_examples.html", [
       [ "ExampleRamKernelAdd", "de/d89/class_examples_1_1_example_ram_kernel_add.html", "de/d89/class_examples_1_1_example_ram_kernel_add" ],
       [ "Programm", "d4/dbc/class_examples_1_1_programm.html", null ],
-      [ "SensorData", "db/dfb/class_examples_1_1_sensor_data.html", "db/dfb/class_examples_1_1_sensor_data" ],
-      [ "SimpleHasher", "d4/de6/class_examples_1_1_simple_hasher.html", "d4/de6/class_examples_1_1_simple_hasher" ]
+      [ "SensorData", "db/dfb/class_examples_1_1_sensor_data.html", "db/dfb/class_examples_1_1_sensor_data" ]
     ] ],
     [ "SystemEx", "d0/d48/namespace_system_ex.html", [
       [ "Base", "da/d5b/namespace_system_ex_1_1_base.html", [
@@ -124,12 +123,13 @@ var annotated_dup =
         [ "YellowColors", "de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors.html", "de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors" ]
       ] ],
       [ "Hash", "d4/d32/namespace_system_ex_1_1_hash.html", [
-        [ "Hash32", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html", null ],
-        [ "Hash64", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html", null ],
-        [ "HashableObject", "d2/d59/class_system_ex_1_1_hash_1_1_hashable_object.html", null ],
-        [ "HashAlgorithmAttribute", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html", null ],
-        [ "IHasher", "da/d26/interface_system_ex_1_1_hash_1_1_i_hasher.html", null ],
-        [ "Murmur3Hasher", "d5/db0/class_system_ex_1_1_hash_1_1_murmur3_hasher.html", null ],
+        [ "BernsteinHash", "dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash.html", "dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash" ],
+        [ "Hash32", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32" ],
+        [ "Hash64", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64" ],
+        [ "Hashable", "db/ddb/class_system_ex_1_1_hash_1_1_hashable.html", "db/ddb/class_system_ex_1_1_hash_1_1_hashable" ],
+        [ "HashAlgorithmAttribute", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute" ],
+        [ "IHash", "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html", "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash" ],
+        [ "Murmur3Hasher", "d5/db0/class_system_ex_1_1_hash_1_1_murmur3_hasher.html", "d5/db0/class_system_ex_1_1_hash_1_1_murmur3_hasher" ],
         [ "XXHash3Hasher", "d6/dfc/class_system_ex_1_1_hash_1_1_x_x_hash3_hasher.html", null ]
       ] ],
       [ "IO", "d4/d5d/namespace_system_ex_1_1_i_o.html", [

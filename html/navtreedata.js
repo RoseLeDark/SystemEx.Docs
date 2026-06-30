@@ -121,16 +121,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ae46d08af2aeec81c004385b0eba87bb9",
-"d4/d60/class_system_ex_1_1_drawing_1_1_white_colors.html#a8e2f3e6c20bc098a2e83443758ca3a39",
-"d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html",
-"d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html#a1e808f92506f2b64f8220381f8d141a9",
-"d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#aca521e695853c667e9a20e5648dc2a42",
-"d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors.html#a1c3f586528ff2e081df7cfaba86b2ab8",
-"db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html#a4bd2116db11365b1e30823fcd1a14846",
-"dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#afe9097376e02d22abaa66e70bb692c87",
-"de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors.html#acc85c12f24e37af7641cf530eacdf06d",
-"functions_func_z.html"
+"d3/d06/namespace_examples.html",
+"d4/d60/class_system_ex_1_1_drawing_1_1_white_colors.html",
+"d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a950dfa83692a5e63f062a846e859d6ae",
+"d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a66c6d7c653c8db7bb1df1fe9e453dd6d",
+"d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a53fc59101527affd9432d3765c353d08",
+"d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a829e7ce5f03b89047f5c41115dcb2001",
+"db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#ac6a0e07c78cf070e5cd07e031670f624",
+"dc/d8a/class_system_ex_1_1_number_range-1-g.html#ac8b2c7e999c23b3fd2e402f270e35687",
+"de/d73/class_system_ex_1_1_drawing_1_1_color_converter.html#a42264ce24af8550cc475edb048ed813a",
+"df/d7e/_i_pair_8cs_source.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

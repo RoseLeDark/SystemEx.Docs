@@ -4,11 +4,11 @@ var indexSectionsWithContent =
   1: "abcdefghilmnopqrstuwxy",
   2: "es",
   3: "abcdefghilmnopqrstuwz",
-  4: "hilmnprs",
+  4: "hilmnprsv",
   5: "cerst",
   6: "abefhiloprstvw",
   7: "abcdefghiklmnoprstuvwxyz",
-  8: "ceipr",
+  8: "cehiprs",
   9: "01256789acdfgilmnoprstuv–✨📁📘📚📝📦🚧🛠🧩🧮🧱"
 };
 

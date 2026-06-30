@@ -27,7 +27,7 @@ var hierarchy =
     [ "SystemEx.Drawing.GreyColors", "d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors.html", null ],
     [ "SystemEx.Hash.Hash32", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html", null ],
     [ "SystemEx.Hash.Hash64", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html", null ],
-    [ "SystemEx.Hash.HashableObject", "d2/d59/class_system_ex_1_1_hash_1_1_hashable_object.html", [
+    [ "SystemEx.Hash.Hashable", "db/ddb/class_system_ex_1_1_hash_1_1_hashable.html", [
       [ "Examples.SensorData", "db/dfb/class_examples_1_1_sensor_data.html", null ]
     ] ],
     [ "SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;", "d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html", [
@@ -157,8 +157,9 @@ var hierarchy =
     [ "IForwardIterator", null, [
       [ "SystemEx.Collections.Generic.Interfaces.IPairForwardIterator< T, TU >", "d1/d9c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair_forward_iterator-2-g.html", null ]
     ] ],
-    [ "SystemEx.Hash.IHasher", "da/d26/interface_system_ex_1_1_hash_1_1_i_hasher.html", [
-      [ "Examples.SimpleHasher", "d4/de6/class_examples_1_1_simple_hasher.html", null ]
+    [ "SystemEx.Hash.IHash", "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html", [
+      [ "SystemEx.Hash.BernsteinHash", "dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash.html", null ],
+      [ "SystemEx.Hash.Murmur3Hasher", "d5/db0/class_system_ex_1_1_hash_1_1_murmur3_hasher.html", null ]
     ] ],
     [ "SystemEx.IO.Provider.IIsByteSeriablize", "d1/d94/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_is_byte_seriablize.html", [
       [ "SystemEx.SystemEx.Drawing.ColorR10G10B10A2", "d1/d6d/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2.html", null ]
@@ -227,7 +228,6 @@ var hierarchy =
     [ "SystemEx.Runtime.InteropServices.Platform.MacProcLoader", "d2/d54/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_mac_proc_loader.html", null ],
     [ "SystemEx.Math", "d1/d63/class_system_ex_1_1_math.html", null ],
     [ "SystemEx.Runtime.Module", "d4/ddf/class_system_ex_1_1_runtime_1_1_module.html", null ],
-    [ "SystemEx.Hash.Murmur3Hasher", "d5/db0/class_system_ex_1_1_hash_1_1_murmur3_hasher.html", null ],
     [ "SystemEx.Runtime.InteropServices.NativeHost", "d2/d6c/class_system_ex_1_1_runtime_1_1_interop_services_1_1_native_host.html", null ],
     [ "SystemEx.Runtime.InteropServices.Platform.NoSupportProcLoader", "d4/d63/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_no_support_proc_loader.html", null ],
     [ "SystemEx.Drawing.OrangeColors", "dc/d52/class_system_ex_1_1_drawing_1_1_orange_colors.html", null ],

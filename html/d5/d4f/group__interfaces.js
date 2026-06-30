@@ -115,6 +115,7 @@ var group__interfaces =
       [ "Equals", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#a5b31e07a895e00bc1fb2ca9c43dcbbe3", null ],
       [ "Equals", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#a0f53bc4a7027010203c117e2f015c3e3", null ],
       [ "Forward", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#aaeb38b80d65ebcc7f134116195bf7f0c", null ],
+      [ "Forward", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#ad9729fca9b13060efa47c45e25291671", null ],
       [ "GetEnumerator", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#aae7b1c01a6b13e4e0044e47287347bd6", null ],
       [ "GetHashCode", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#a67e0053c88cb6b133c6deffe4c1d683c", null ],
       [ "ListIterator", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#ad18b80e548fa522fa1d1bf03e0465415", null ],
@@ -134,43 +135,6 @@ var group__interfaces =
       [ "At< T >", "db/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator_extensions.html#a776598e2c5bc7d898933036acc24c5f4", null ],
       [ "End< T >", "db/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator_extensions.html#a0a124fbb6fcd908d1b5892a127d4e9e2", null ],
       [ "First< T >", "db/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator_extensions.html#a908f740afc09f3837884bda05d34142b", null ]
-    ] ],
-    [ "SystemEx.Collections.Generic.Interfaces.IIterator", "de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html", [
-      [ "Forward", "de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html#aa11d9a6f8db368fe269a4f5d3df1cc83", null ]
-    ] ],
-    [ "SystemEx.Collections.Generic.Interfaces.IIterator&lt; T &gt;", "d0/d0c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator-1-g.html", [
-      [ "Clone", "d0/d0c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator-1-g.html#ab550b2d8c93e7ac77aabbf54cc895ed3", null ]
-    ] ],
-    [ "SystemEx.Collections.Generic.Interfaces.IForwardIterator&lt; T &gt;", "d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g.html", [
-      [ "Current", "d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g.html#ab4d5111a7901614dbec88fbb0c1d4b67", null ],
-      [ "IsEnd", "d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g.html#ac190e668c4628c19050570e5ddd94fb6", null ]
-    ] ],
-    [ "SystemEx.Collections.Generic.Interfaces.IBidirectionalIterator&lt; T &gt;", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html", [
-      [ "Back", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html#a606a90cad5b02656d1e3db7fd773a5c2", null ],
-      [ "Current", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html#afddbc01a88d88eefe8d74d52543cb3f2", null ],
-      [ "IsBegin", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html#aa311e73c69976cf126308aa94923bb43", null ],
-      [ "IsEnd", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html#ade013be3d6d183fde1fc339d055e6e56", null ]
-    ] ],
-    [ "SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html", [
-      [ "Advance", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#a79d982a0f976bfdac57071009ee0fb94", null ],
-      [ "Back", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#ab0531f16d2069a4f8f1026c5aea1c23b", null ],
-      [ "Current", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#ab0fd5d8a4c0222abf2bc0e78e497a1d0", null ],
-      [ "IsBegin", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#a4d854749f8a872bfc5f63a761169bf36", null ],
-      [ "IsEnd", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#a25c900695e6063bc2824389eb35f9a09", null ]
-    ] ],
-    [ "SystemEx.Collections.Generic.Interfaces.IPairForwardIterator&lt; T, TU &gt;", "d1/d9c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair_forward_iterator-2-g.html", [
-      [ "First", "d1/d9c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair_forward_iterator-2-g.html#a28e81253918f7ed4abbfe0ff239997b4", null ],
-      [ "Second", "d1/d9c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair_forward_iterator-2-g.html#a654c14bf3e5c812a8dbe271b99cc4648", null ]
-    ] ],
-    [ "SystemEx.Collections.Generic.Interfaces.IForeachIterator&lt; T &gt;", "d2/db2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_foreach_iterator-1-g.html", null ],
-    [ "SystemEx.Collections.Generic.Interfaces.Iterator", "db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html", [
-      [ "Distance< T >", "db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html#aa626408c23c37ff0397ebe8d2695c6fe", null ],
-      [ "Find< T >", "db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html#a3e987215c2171c16307ada8afb43c013", null ],
-      [ "ForEach< T >", "db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html#a7399b0d79378bafa65cc4c5e604817a9", null ],
-      [ "LowerBound< T >", "db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html#ac07bca64121edbb5652aba0eb7f09388", null ],
-      [ "Reverse< T >", "db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html#ad52f3144dd76b2ee233f86bc72be356b", null ],
-      [ "Rotate< T >", "db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html#a72a63b566d29b04d3cad989a4de23b24", null ],
-      [ "UpperBound< T >", "db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html#aacbb6d05ced8cd3eb274410384184597", null ]
     ] ],
     [ "SystemEx.Collections.Generic.Interfaces.ITraverse&lt; T &gt;", "d4/d02/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_traverse-1-g.html", [
       [ "Traverse", "d4/d02/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_traverse-1-g.html#a1ad4e30dbd5b0d87a497fa7ac6a3ad2a", null ]

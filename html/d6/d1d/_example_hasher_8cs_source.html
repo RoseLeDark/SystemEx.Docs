@@ -142,88 +142,52 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d6/d1d/_exampl
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../d3/d06/namespace_examples.html">   21</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d3/d06/namespace_examples.html">Examples</a> {</div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d4/de6/class_examples_1_1_simple_hasher.html">   35</a></span>    <span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class </span><a class="code hl_class" href="../../d4/de6/class_examples_1_1_simple_hasher.html">SimpleHasher</a> : <a class="code hl_interface" href="../../da/d26/interface_system_ex_1_1_hash_1_1_i_hasher.html">IHasher</a> {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d4/de6/class_examples_1_1_simple_hasher.html#ae3b4960fa12dfe51fa1b89da69b94f01">   40</a></span>        <span class="keyword">public</span> <a class="code hl_struct" href="../../d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html">Hash32</a> <a class="code hl_function" href="../../d4/de6/class_examples_1_1_simple_hasher.html#ae3b4960fa12dfe51fa1b89da69b94f01" title="Computes a simple 32‑bit hash from the given bytes.">Compute</a> ( Array&lt;byte&gt; input, <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd" title="Specifies the byte order used when converting values to and from raw byte sequences.">Endian</a> endian ) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">if</span> ( input == <span class="keyword">null</span> || input.Count == 0 )</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_struct" href="../../d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html">Hash32</a>(0);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keywordtype">int</span> hash = 0;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="comment">// Simple deterministic byte loop</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; input.Count ; i++ ) {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                hash = (hash * 31) ^ input[i];</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_struct" href="../../d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html">Hash32</a>(hash);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
-</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../d4/de6/class_examples_1_1_simple_hasher.html#a14136507ad9fb9b0d5c3f83acac85db9">   57</a></span>        <span class="keyword">public</span> <a class="code hl_struct" href="../../da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html">Hash64</a> <a class="code hl_function" href="../../d4/de6/class_examples_1_1_simple_hasher.html#a14136507ad9fb9b0d5c3f83acac85db9" title="Computes a simple 64‑bit hash from the given bytes.">ComputeLong</a> ( Array&lt;byte&gt; input, <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd" title="Specifies the byte order used when converting values to and from raw byte sequences.">Endian</a> endian ) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">if</span> ( input == <span class="keyword">null</span> || input.Count == 0 )</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_struct" href="../../da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html">Hash64</a>(0);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    [HashAlgorithm(typeof(<a class="code hl_class" href="../../dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash.html">BernsteinHash</a>), <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd" title="Specifies the byte order used when converting values to and from raw byte sequences.">Endian</a>.LittleEndian)]</div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../db/dfb/class_examples_1_1_sensor_data.html">   36</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="../../db/dfb/class_examples_1_1_sensor_data.html" title="Example data class using HashableObject.">SensorData</a> : <a class="code hl_class" href="../../db/ddb/class_system_ex_1_1_hash_1_1_hashable.html">Hashable</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../db/dfb/class_examples_1_1_sensor_data.html#a00f4fafafb6a2ad73f06abda5a7d294b">   41</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../db/dfb/class_examples_1_1_sensor_data.html#a00f4fafafb6a2ad73f06abda5a7d294b" title="Example fields that participate in hashing.">Id</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">public</span> <span class="keywordtype">float</span> Value;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../db/dfb/class_examples_1_1_sensor_data.html#adc39c04ebc08c651543d7b56da5b2c4d">   52</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> Array&lt;byte&gt; <a class="code hl_function" href="../../db/dfb/class_examples_1_1_sensor_data.html#adc39c04ebc08c651543d7b56da5b2c4d" title="Returns the deterministic byte representation of this object.">ToBytes</a> () {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            var b = <span class="keyword">new</span> Array&lt;byte&gt;(8);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="comment">// int → 4 bytes</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            b.InsertRange(0, <a class="code hl_variable" href="../../db/dfb/class_examples_1_1_sensor_data.html#a00f4fafafb6a2ad73f06abda5a7d294b" title="Example fields that participate in hashing.">Id</a>.ToBytes(<a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd" title="Specifies the byte order used when converting values to and from raw byte sequences.">Endian</a>.LittleEndian));</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="comment">// float → 4 bytes</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            b.InsertRange(4, Value.ToBytes(<a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd" title="Specifies the byte order used when converting values to and from raw byte sequences.">Endian</a>.LittleEndian));</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordtype">long</span> hash = 0;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="comment">// Larger multiplier for 64‑bit</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; input.Count ; i++ ) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                hash = (hash * 1315423911L) ^ input[i];</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_struct" href="../../da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html">Hash64</a>(hash);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">return</span> b;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
 </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    [HashAlgorithm(typeof(SimpleHasher), <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd" title="Specifies the byte order used when converting values to and from raw byte sequences.">Endian</a>.LittleEndian)]</div>
-<div class="foldopen" id="foldopen00085" data-start="{" data-end="};">
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="../../db/dfb/class_examples_1_1_sensor_data.html">   85</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="../../db/dfb/class_examples_1_1_sensor_data.html" title="Example data class using HashableObject.">SensorData</a> : <a class="code hl_class" href="../../d2/d59/class_system_ex_1_1_hash_1_1_hashable_object.html">HashableObject</a> {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../db/dfb/class_examples_1_1_sensor_data.html#a00f4fafafb6a2ad73f06abda5a7d294b">   90</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../db/dfb/class_examples_1_1_sensor_data.html#a00f4fafafb6a2ad73f06abda5a7d294b" title="Example fields that participate in hashing.">Id</a>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keyword">public</span> <span class="keywordtype">float</span> Value;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
-<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="../../db/dfb/class_examples_1_1_sensor_data.html#adc39c04ebc08c651543d7b56da5b2c4d">  101</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> Array&lt;byte&gt; <a class="code hl_function" href="../../db/dfb/class_examples_1_1_sensor_data.html#adc39c04ebc08c651543d7b56da5b2c4d" title="Returns the deterministic byte representation of this object.">ToBytes</a> () {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            var b = <span class="keyword">new</span> Array&lt;byte&gt;(8);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="comment">// int → 4 bytes</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            b.InsertRange(0, <a class="code hl_variable" href="../../db/dfb/class_examples_1_1_sensor_data.html#a00f4fafafb6a2ad73f06abda5a7d294b" title="Example fields that participate in hashing.">Id</a>.ToBytes(<a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd" title="Specifies the byte order used when converting values to and from raw byte sequences.">Endian</a>.LittleEndian));</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="comment">// float → 4 bytes</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            b.InsertRange(4, Value.ToBytes(<a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd" title="Specifies the byte order used when converting values to and from raw byte sequences.">Endian</a>.LittleEndian));</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">return</span> b;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="};">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d4/dbc/class_examples_1_1_programm.html">   71</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code hl_class" href="../../d4/dbc/class_examples_1_1_programm.html" title="Example program showing:">Programm</a> {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> Main () {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="comment">// Create example instance</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <a class="code hl_class" href="../../db/dfb/class_examples_1_1_sensor_data.html" title="Example data class using HashableObject.">SensorData</a> Data = <span class="keyword">new</span> <a class="code hl_class" href="../../db/dfb/class_examples_1_1_sensor_data.html" title="Example data class using HashableObject.">SensorData</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            Data.Id = 0;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            Data.Value = 19;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="comment">// 32‑bit hash</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            Console.WriteLine(Data.<a class="code hl_function" href="../../db/ddb/class_system_ex_1_1_hash_1_1_hashable.html#a87439cd67bd28c149fe8012b90de8d26" title="Computes a 32‑bit hash using the algorithm specified by HashAlgorithmAttribute on the concrete type.">GetHashCode</a>());</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="comment">// 64‑bit hash</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            Console.WriteLine(Data.<a class="code hl_function" href="../../db/ddb/class_system_ex_1_1_hash_1_1_hashable.html#a9de909f40cc15349d7f23970a5bdc99d" title="Computes a 64‑bit hash using the algorithm specified by HashAlgorithmAttribute on the concrete type.">GetHashCodeLong</a>());</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
 </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
-</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
-<div class="foldopen" id="foldopen00120" data-start="{" data-end="};">
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="../../d4/dbc/class_examples_1_1_programm.html">  120</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code hl_class" href="../../d4/dbc/class_examples_1_1_programm.html" title="Example program showing:">Programm</a> {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> Main () {</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <span class="comment">// Create example instance</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <a class="code hl_class" href="../../db/dfb/class_examples_1_1_sensor_data.html" title="Example data class using HashableObject.">SensorData</a> Data = <span class="keyword">new</span> <a class="code hl_class" href="../../db/dfb/class_examples_1_1_sensor_data.html" title="Example data class using HashableObject.">SensorData</a>();</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            Data.Id = 0;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            Data.Value = 19;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <span class="comment">// 32‑bit hash</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            Console.WriteLine(Data.GetHashCode());</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="comment">// 64‑bit hash</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            Console.WriteLine(Data.GetHashCodeLong());</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        }</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
-</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>#pragma warning restore CS1587 <span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>#pragma warning restore CS1587 <span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
 </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -7,6 +7,7 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator
     [ "Equals", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#a5b31e07a895e00bc1fb2ca9c43dcbbe3", null ],
     [ "Equals", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#a0f53bc4a7027010203c117e2f015c3e3", null ],
     [ "Forward", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#aaeb38b80d65ebcc7f134116195bf7f0c", null ],
+    [ "Forward", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#ad9729fca9b13060efa47c45e25291671", null ],
     [ "GetEnumerator", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#aae7b1c01a6b13e4e0044e47287347bd6", null ],
     [ "GetHashCode", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#a67e0053c88cb6b133c6deffe4c1d683c", null ],
     [ "ListIterator", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#ad18b80e548fa522fa1d1bf03e0465415", null ],

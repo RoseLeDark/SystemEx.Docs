@@ -9,6 +9,7 @@ var group__collections =
       [ "Dispose", "d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html#a5780b39c6b4516b4d577ab4690ca9b12", null ],
       [ "Equals", "d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html#ad4c9b1b0514185d063d9741a76ea9b25", null ],
       [ "Forward", "d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html#a549d08278962a704dde94bb7d36d1cc9", null ],
+      [ "Forward", "d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html#aebc1904f68874ef45c6f5c9b4a9151fe", null ],
       [ "GetEnumerator", "d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html#ad9922d5005a186f557eefd1d9de696a3", null ],
       [ "GetHashCode", "d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html#a87343f2a87ee7128b7b36820a51a01d8", null ],
       [ "MoveNext", "d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html#a34c153b5b9db7c5d248fb59d36e33a5a", null ],
@@ -329,6 +330,7 @@ var group__collections =
       [ "Equals", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#ae13ae26c218788a0faa86e26f5436b33", null ],
       [ "Equals", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#a47e9d5faf076c1c9ec12e630b996996b", null ],
       [ "Forward", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#ad162fa5306621998247f72ccec0d6b27", null ],
+      [ "Forward", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#a1fb146623e15a096ca27852be0fece1b", null ],
       [ "GetEnumerator", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#a899ba48cac2882f869b4dde3186dc5a3", null ],
       [ "GetHashCode", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#affa466487abd85f9f46aa20bd1038c90", null ],
       [ "MoveNext", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#a1361e804a70cdd08d45a6b523999e185", null ],
@@ -414,6 +416,7 @@ var group__collections =
     [ "SystemEx.Collections.Generic.PriorityQueueExIterator&lt; T, TU &gt;", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html", [
       [ "Clone", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html#aa56dcce771819a6c6003b0189e1a8251", null ],
       [ "Forward", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html#aa0c5072b88c3bfbebd94d1c9e260035e", null ],
+      [ "Forward", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html#a04205f511f3e1f4a4b04da734f39b1bf", null ],
       [ "PriorityQueueExIterator", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html#aa1e0b885ae1f32102af06699bfec7767", null ],
       [ "m_current", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html#a02bb25835b1dc80c019244737735a4a1", null ],
       [ "m_queue", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html#a2bd75e57df0c70315644500dc6b03ea2", null ],
