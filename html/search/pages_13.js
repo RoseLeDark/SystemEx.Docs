@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['raid_20subsystem_20future_20release_0',['🧱 Cache &amp;amp; RAID Subsystem (Future Release)',['../index.html#autotoc_md-cache--raid-subsystem-future-release',1,'']]],
-  ['release_1',['🧱 Cache &amp;amp; RAID Subsystem (Future Release)',['../index.html#autotoc_md-cache--raid-subsystem-future-release',1,'']]],
-  ['removed_2',['Removed',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#removed',1,'']]]
+  ['opencl_20kerneal_20call_20with_20my_20systemex_20device_20system_0',['- OpenCL Kerneal Call with my SystemEx.Device System',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md--opencl-kerneal-call-with-my--systemexdevice-system',1,'']]],
+  ['overview_1',['✨ Overview',['../index.html#autotoc_md-overview',1,'']]]
 ];

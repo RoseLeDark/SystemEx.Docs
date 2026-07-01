@@ -1,7 +1,7 @@
 var searchData=
 [
   ['a_0',['A',['../d1/d6d/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2.html#a16afbca41288a6f9a45c3fbdab02ec84',1,'SystemEx::SystemEx::Drawing::ColorR10G10B10A2']]],
-  ['advancerest_1',['AdvanceRest',['../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#af516d2c657d75e0dc726e74e4c183301',1,'SystemEx::Collections::Generic::NodeIterrator-1-g']]],
+  ['advancerest_1',['AdvanceRest',['../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#a960673ddb842270a92046ca5c58d8a95',1,'SystemEx::Collections::Generic::NodeIterrator-1-g']]],
   ['aliceblue_2',['AliceBlue',['../d4/d60/class_system_ex_1_1_drawing_1_1_white_colors.html#a632bfb3954db02af1023d562e6a699ac',1,'SystemEx::Drawing::WhiteColors']]],
   ['antiquewhite_3',['AntiqueWhite',['../d4/d60/class_system_ex_1_1_drawing_1_1_white_colors.html#a38062fd84ffcb3b6a5c3902184d18e4c',1,'SystemEx::Drawing::WhiteColors']]],
   ['aqua_4',['Aqua',['../d8/d88/class_system_ex_1_1_drawing_1_1_cyan_colors.html#a5b149742293033f7a4b68561471d4f19',1,'SystemEx::Drawing::CyanColors']]],

@@ -163,7 +163,7 @@ Classes</h2></td></tr>
 <tr class="memitem:SystemEx_2ECollections_2EGeneric_2ENodeIterrator_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ENodeIterrator_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html">SystemEx.Collections.Generic.NodeIterrator&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html" title="Provides generic iterator algorithms such as distance calculation, searching, bounds detection,...">Iterator</a> for navigating through a doubly linked Node&lt;T&gt; chain. Supports random access, forward/backward movement, foreach enumeration, and cloning of iterator state.  <a href="../../dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#details">More...</a><br /></td></tr>
 <tr class="memitem:SystemEx_2ECollections_2EGeneric_2ENode_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ENode_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html">SystemEx.Collections.Generic.Node&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a doubly linked node with optional child and sibling arrays. Supports list-style navigation (Prev/Next), tree-style traversal, splicing, swapping, reversing, and random access movement.  <a href="../../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a doubly linked node with optional child and sibling. Supports list-style navigation (Prev/Next), tree-style traversal, splicing, swapping, reversing, and random access movement.  <a href="../../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#details">More...</a><br /></td></tr>
 <tr class="memitem:SystemEx_2ECollections_2EGeneric_2ENodeChain_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ENodeChain_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html">SystemEx.Collections.Generic.NodeChain&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a chained view over multiple NodeRange&lt;T&gt; segments, similar to <code>std::views::concat</code> in C++. <br  />
  A NodeChain&lt;T&gt; allows iteration across several disjoint ranges of a linked Node&lt;T&gt; structure as if they formed one continuous sequence.  <a href="../../dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html#details">More...</a><br /></td></tr>
@@ -193,6 +193,7 @@ Classes</h2></td></tr>
 <tr class="memitem:SystemEx_2ECollections_2EGeneric_2ETupleList" id="r_SystemEx_2ECollections_2EGeneric_2ETupleList"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html">SystemEx.Collections.Generic.TupleList</a></td></tr>
 <tr class="memitem:SystemEx_2ECollections_2EGeneric_2ETupleMap" id="r_SystemEx_2ECollections_2EGeneric_2ETupleMap"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html">SystemEx.Collections.Generic.TupleMap</a></td></tr>
 <tr class="memitem:SystemEx_2ECollections_2EGeneric_2ETypeBuffer_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EGeneric_2ETypeBuffer_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html">SystemEx.Collections.Generic.TypeBuffer&lt; T &gt;</a></td></tr>
+<tr class="memitem:SystemEx_2ECollections_2EModel_2ELinkedNodeRange_3C_20T_20_3E" id="r_SystemEx_2ECollections_2EModel_2ELinkedNodeRange_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html">SystemEx.Collections.Model.LinkedNodeRange&lt; T &gt;</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -330,7 +331,9 @@ Properties</h2></td></tr>
 <tr class="memdesc:ga3ba2f630d3a78dd0f2660313634a9816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets and Set the current read/write position.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A typed view over a raw <code><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a></code> that exposes elements of an unmanaged type <em>T</em> .</p>
+<div class="textblock"><p>Represents a simple range defined by a begin and end iterator over intrusive LinkedNode&lt;T&gt; structures. <br  />
+ Conceptually similar to <code>std::ranges::subrange</code>, but designed specifically for your intrusive node and iterator system.</p>
+<p>A typed view over a raw <code>Cache</code> that exposes elements of an unmanaged type <em>T</em> .</p>
 <p>A dynamic, list‑backed map structure that stores ITuple objects. Provides tuple‑based lookup, traversal, range operations, and key/value convenience helpers. <br  />
  This implementation allows arbitrary tuple arity, but assumes that index 0 represents the key and index 1 represents the value.</p>
 <p>Represents a dynamic list of ITuple objects. <br  />
@@ -357,7 +360,7 @@ Properties</h2></td></tr>
  Provides enqueue and dequeue operations using the deque’s front/back insertion and removal semantics.</p>
 <p>A lightweight, serializable four‑element tuple consisting of strongly typed first, second, third, and fourth values. <br  />
  Implements ITuple for indexed access and structural comparison.</p>
-<p><a class="el" href="../../db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html" title="Provides generic iterator algorithms such as distance calculation, searching, bounds detection,...">Iterator</a> for PriorityQueueEx&lt;T, TU&gt; that consumes elements in priority order. <br  />
+<p>Iterator for PriorityQueueEx&lt;T, TU&gt; that consumes elements in priority order. <br  />
  Each call to Forward dequeues the next element from the underlying priority queue.</p>
 <p>A lightweight, serializable two‑element tuple consisting of a strongly typed key and value. Implements IPair&lt;T, TU&gt; and provides typed comparison helpers as well as ITuple compatibility.</p>
 <p>Represents a slice over intrusive Node&lt;T&gt; structures, defined by a starting iterator and a fixed length. <br  />
@@ -510,7 +513,7 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p><code>TypeBuffer&lt;T&gt;</code> provides element access, cloning, clearing and simple fill semantics for fixed‑stride unmanaged types. The buffer owns an internal <code><a class="el" href="../../df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html" title="Represents a low-level byte buffer with position tracking, typed read/write helpers,...">Cache</a></code> instance sized to <code>length * sizeof(T)</code>. All reads and writes perform endian conversion using the configured Endian value. </p>
+<p><code>TypeBuffer&lt;T&gt;</code> provides element access, cloning, clearing and simple fill semantics for fixed‑stride unmanaged types. The buffer owns an internal <code>Cache</code> instance sized to <code>length * sizeof(T)</code>. All reads and writes perform endian conversion using the configured Endian value. </p>
 <p>This type assumes <em>T</em>  is an unmanaged value type and uses a fixed stride equal to <code>sizeof(T)</code>. Index and offset parameters are validated by the underlying cache and may throw on out‑of‑range access. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -518,6 +521,14 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The value type stored in the underlying nodes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>var range = new NodeRange&lt;int&gt;(node.First(), node.At(10));</p>
+<p>foreach (var x in range) Console.WriteLine(x); </p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
 <a id="gaf02ddb6084404bb267c0629f20ed8b53" name="gaf02ddb6084404bb267c0629f20ed8b53"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf02ddb6084404bb267c0629f20ed8b53">&#9670;&#160;</a></span>CacheType</h2>
@@ -593,7 +604,7 @@ Properties</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../db/de0/_node_8cs_source.html#l00029">29</a> of file <a class="el" href="../../db/de0/_node_8cs_source.html">Node.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dde/_generic_2_node_8cs_source.html#l00030">30</a> of file <a class="el" href="../../d8/dde/_generic_2_node_8cs_source.html">Generic/Node.cs</a>.</p>
 
 </div>
 </div>

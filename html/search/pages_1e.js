@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📦_20installation_0',['📦 Installation',['../index.html#autotoc_md-installation',1,'']]]
+  ['📘_20systemex_20collections_20generic_0',['📘 SystemEx.Collections.Generic',['../index.html',1,'']]]
 ];

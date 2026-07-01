@@ -41,6 +41,7 @@ var annotated_dup =
           ] ],
           [ "Array&lt; T &gt;", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g" ],
           [ "ArrayRandomAccessIterator&lt; T &gt;", "d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g.html", "d7/d8e/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g" ],
+          [ "BasicRope&lt; T, TN &gt;", "dc/d79/class_system_ex_1_1_collections_1_1_generic_1_1_basic_rope-2-g.html", "dc/d79/class_system_ex_1_1_collections_1_1_generic_1_1_basic_rope-2-g" ],
           [ "BinQueue&lt; T &gt;", "df/d60/class_system_ex_1_1_collections_1_1_generic_1_1_bin_queue-1-g.html", "df/d60/class_system_ex_1_1_collections_1_1_generic_1_1_bin_queue-1-g" ],
           [ "Cache", "df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html", "df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache" ],
           [ "CacheIsSharedException", "d7/de5/class_system_ex_1_1_collections_1_1_generic_1_1_cache_is_shared_exception.html", "d7/de5/class_system_ex_1_1_collections_1_1_generic_1_1_cache_is_shared_exception" ],
@@ -64,6 +65,7 @@ var annotated_dup =
           [ "PriorityQueueExIterator&lt; T, TU &gt;", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g.html", "de/db3/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex_iterator-2-g" ],
           [ "Quad&lt; TT, TU, TW, TJ &gt;", "d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html", "d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g" ],
           [ "Queue&lt; T &gt;", "da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html", "da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g" ],
+          [ "RopeChunkValue&lt; T &gt;", "dd/d64/class_system_ex_1_1_collections_1_1_generic_1_1_rope_chunk_value-1-g.html", null ],
           [ "SortedArray&lt; T &gt;", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g" ],
           [ "SortedMap&lt; T, TU &gt;", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g" ],
           [ "SortedMultiMap&lt; T, TU &gt;", "d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html", "d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g" ],
@@ -80,6 +82,19 @@ var annotated_dup =
           [ "TupleList", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" ],
           [ "TupleMap", "d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html", "d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map" ],
           [ "TypeBuffer&lt; T &gt;", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g" ]
+        ] ],
+        [ "Model", "d7/dd8/namespace_system_ex_1_1_collections_1_1_model.html", [
+          [ "GenericNode&lt; T &gt;", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html", null ],
+          [ "GenericNodeIterator&lt; T &gt;", "d2/d1c/class_system_ex_1_1_collections_1_1_model_1_1_generic_node_iterator-1-g.html", "d2/d1c/class_system_ex_1_1_collections_1_1_model_1_1_generic_node_iterator-1-g" ],
+          [ "GroupedNode&lt; T &gt;", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g" ],
+          [ "LinkedNode&lt; T &gt;", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g" ],
+          [ "LinkedNodeChain&lt; T &gt;", "d9/d90/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_chain-1-g.html", "d9/d90/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_chain-1-g" ],
+          [ "LinkedNodeIterrator&lt; T &gt;", "dc/d3f/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_iterrator-1-g.html", "dc/d3f/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_iterrator-1-g" ],
+          [ "LinkedNodeRange&lt; T &gt;", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g" ],
+          [ "LinkedNodeSlice&lt; T &gt;", "da/d53/struct_system_ex_1_1_collections_1_1_model_1_1_linked_node_slice-1-g.html", "da/d53/struct_system_ex_1_1_collections_1_1_model_1_1_linked_node_slice-1-g" ],
+          [ "LinkedNodeWithSibling&lt; T, TS &gt;", "df/d66/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_with_sibling-2-g.html", "df/d66/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_with_sibling-2-g" ],
+          [ "Node&lt; T &gt;", "de/df2/class_system_ex_1_1_collections_1_1_model_1_1_node-1-g.html", "de/df2/class_system_ex_1_1_collections_1_1_model_1_1_node-1-g" ],
+          [ "NodeIterator&lt; T &gt;", "d0/d6d/class_system_ex_1_1_collections_1_1_model_1_1_node_iterator-1-g.html", "d0/d6d/class_system_ex_1_1_collections_1_1_model_1_1_node_iterator-1-g" ]
         ] ]
       ] ],
       [ "Device", "d7/d59/namespace_system_ex_1_1_device.html", [

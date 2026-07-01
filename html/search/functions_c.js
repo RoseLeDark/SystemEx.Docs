@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['offset_0',['Offset',['../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#af5011f9ca179ece248e3965650d0bb58',1,'SystemEx::Collections::Generic::Node-1-g']]],
+  ['offset_0',['Offset',['../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#aa881352f5551944f5826f4fc0930c3cc',1,'SystemEx.Collections.Generic.Node-1-g.Offset()'],['../d9/d57/group__node.html#ga70705efc2b0e53d51eeb182c859f2244',1,'SystemEx.Collections.Model.LinkedNode-1-g.Offset()']]],
   ['onaddbuffer_1',['OnAddBuffer',['../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a6d0a99790afae1f1360615d3b382ce09',1,'SystemEx::Device::NativeRAMKernel-1-g']]],
   ['onbegin_2',['OnBegin',['../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a62b7b0576a23a010474785b102c8064c',1,'SystemEx::Device::NativeRAMKernel-1-g']]],
   ['oncreate_3',['OnCreate',['../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ac66cfcf35971a3387269e4e4bdc2cf8e',1,'SystemEx.Device.NativeRAMKernel-1-g.OnCreate()'],['../de/d89/class_examples_1_1_example_ram_kernel_add.html#a6256c48c3bb8a96497fed9b5d5528f1f',1,'Examples.ExampleRamKernelAdd.OnCreate()']]],

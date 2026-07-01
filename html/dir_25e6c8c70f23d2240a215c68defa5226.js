@@ -2,6 +2,7 @@ var dir_25e6c8c70f23d2240a215c68defa5226 =
 [
     [ "Interfaces", "dir_0247c331de6a32c0c72a11f5938a9cfd.html", "dir_0247c331de6a32c0c72a11f5938a9cfd" ],
     [ "Array.cs", "d6/d47/_array_8cs_source.html", null ],
+    [ "BasicRope.cs", "d7/d2b/_basic_rope_8cs_source.html", null ],
     [ "BinQueue.cs", "d4/df3/_bin_queue_8cs_source.html", null ],
     [ "Cache.cs", "d7/d82/_cache_8cs_source.html", null ],
     [ "Cluster.cs", "d4/dd7/_cluster_8cs_source.html", null ],
@@ -13,7 +14,7 @@ var dir_25e6c8c70f23d2240a215c68defa5226 =
     [ "MirroredCache .cs", "d3/d44/_mirrored_cache_01_8cs_source.html", null ],
     [ "MultiMap.cs", "db/d8b/_multi_map_8cs_source.html", null ],
     [ "MultiTupleMap.cs", "dc/d4f/_multi_tuple_map_8cs_source.html", null ],
-    [ "Node.cs", "db/de0/_node_8cs_source.html", null ],
+    [ "Generic/Node.cs", "d8/dde/_generic_2_node_8cs_source.html", null ],
     [ "NodeChain.cs", "d6/d84/_node_chain_8cs_source.html", null ],
     [ "NodeRange.cs", "d6/d15/_node_range_8cs_source.html", null ],
     [ "NodeSlice.cs", "d4/d0a/_node_slice_8cs_source.html", null ],
@@ -21,6 +22,8 @@ var dir_25e6c8c70f23d2240a215c68defa5226 =
     [ "PriorityQueue.cs", "d0/d98/_priority_queue_8cs_source.html", null ],
     [ "Quad.cs", "d9/df6/_quad_8cs_source.html", null ],
     [ "Queue.cs", "d1/d3d/_queue_8cs_source.html", null ],
+    [ "Rope.cs", "d0/d8f/_rope_8cs_source.html", null ],
+    [ "RopeNode.cs", "df/d76/_rope_node_8cs_source.html", null ],
     [ "SortedArray.cs", "d2/dfa/_sorted_array_8cs_source.html", null ],
     [ "SortedMap.cs", "d3/d60/_sorted_map_8cs_source.html", null ],
     [ "SortedMultiMap.cs", "d3/db7/_sorted_multi_map_8cs_source.html", null ],
@@ -35,5 +38,6 @@ var dir_25e6c8c70f23d2240a215c68defa5226 =
     [ "Tuple.cs", "d6/d73/_tuple_8cs_source.html", null ],
     [ "TupleList.cs", "d0/d69/_tuple_list_8cs_source.html", null ],
     [ "TupleMap.cs", "d1/d29/_tuple_map_8cs_source.html", null ],
-    [ "TypeBuffer.cs", "db/d1b/_type_buffer_8cs_source.html", null ]
+    [ "TypeBuffer.cs", "db/d1b/_type_buffer_8cs_source.html", null ],
+    [ "TypeRope.cs", "dd/ded/_type_rope_8cs_source.html", null ]
 ];

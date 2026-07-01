@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📚_20collections_0',['📚 Collections',['../index.html#autotoc_md-collections',1,'']]]
+  ['📘_20systemex_20collections_20generic_0',['📘 SystemEx.Collections.Generic',['../index.html',1,'']]]
 ];

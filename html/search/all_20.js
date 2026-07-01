@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['z_0',['Z',['../d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z.html#a02f8a1aafc8a9967457fcc1e71be559f',1,'SystemEx::Drawing::ColorXYZ']]],
-  ['zero_1',['Zero',['../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html#a7e0066e17223350d871ee36e4e181ed5',1,'SystemEx.Collections.Generic.Interfaces.ITypeBuffer-1-g.Zero()'],['../dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#a83941031d4c7bee6b5a9fa4616a19f7c',1,'SystemEx.Collections.Generic.TypeBuffer-1-g.Zero()']]]
+  ['y_0',['Y',['../d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z.html#a625fa6b600c3b34aeac4109e7d47f152',1,'SystemEx.Drawing.ColorXYZ.Y'],['../d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html#a4e5a715c2184061561f7caacfd4314e8',1,'SystemEx.Drawing.ColorYUV.Y']]],
+  ['yellow_1',['Yellow',['../de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors.html#a14b62c2952c6fea056d4519efc5acdbb',1,'SystemEx::Drawing::YellowColors']]],
+  ['yellowcolors_2',['YellowColors',['../de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors.html',1,'SystemEx::Drawing']]],
+  ['yellowgreen_3',['YellowGreen',['../d6/deb/class_system_ex_1_1_drawing_1_1_green_colors.html#a7325f11a0f1f0c74adb199954bad3a50',1,'SystemEx::Drawing::GreenColors']]]
 ];

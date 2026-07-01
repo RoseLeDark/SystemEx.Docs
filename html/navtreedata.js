@@ -30,23 +30,34 @@ var NAVTREE =
       [ "Planned to Version 1.0", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#planned-to-version-10", [
         [ "Add", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#add", null ]
       ] ],
-      [ "[0.10.70] 29.06.206", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md01070-2906206", [
-        [ "Very Important", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#very-important", null ],
+      [ "- OpenCL Kerneal Call with my SystemEx.Device System", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md--opencl-kerneal-call-with-my--systemexdevice-system", null ],
+      [ "[ 0.11.04] 01.07.2026", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md-01104-01072026", [
         [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added", null ],
+        [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed", null ]
+      ] ],
+      [ "[0.10.15] 30.06.2026", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md01015-30062026", [
+        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-1", null ],
         [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed", null ],
+        [ "Deprecated", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#deprecated", null ],
+        [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed-1", null ]
+      ] ],
+      [ "[0.10.12] 29.06.206", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md01012-2906206", [
+        [ "Very Important", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#very-important", null ],
+        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-2", null ],
+        [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed-1", null ],
         [ "Improved", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#improved", null ],
         [ "Removed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#removed", null ],
         [ "Notes", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#notes", null ]
       ] ],
       [ "[0.9.64] 23.06.2026", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md0964-23062026", [
-        [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed-1", null ],
-        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-1", null ]
+        [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed-2", null ],
+        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-3", null ]
       ] ],
       [ "[0.9.6] 21.06.2026", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md096-21062026", [
-        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-2", null ],
-        [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed-2", null ],
+        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-4", null ],
+        [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed-3", null ],
         [ "Improved**", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#improved-1", null ],
-        [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed", null ]
+        [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed-2", null ]
       ] ],
       [ "[0.9.5] 18.06.2026", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md095-18062026", [
         [ "Very Important", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#very-important-1", null ],
@@ -55,40 +66,40 @@ var NAVTREE =
       ] ],
       [ "[0.8.5] 04.06.2026", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md085-04062026", [
         [ "Very Important", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#very-important-2", null ],
-        [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed-3", null ],
-        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-3", null ],
+        [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed-4", null ],
+        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-5", null ],
         [ "Improved", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#improved-2", null ],
-        [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed-1", null ],
+        [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed-3", null ],
         [ "Notes / Migration", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#notes--migration", null ]
       ] ],
       [ "[0.8.1] 04.06.2026", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md081-04062026", [
-        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-4", null ],
-        [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed-4", null ],
+        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-6", null ],
+        [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed-5", null ],
         [ "Improved", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#improved-3", null ],
-        [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed-2", null ]
+        [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed-4", null ]
       ] ],
       [ "[0.7.0] 03.06.2026", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md070-03062026", [
-        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-5", null ],
+        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-7", null ],
         [ "Improved", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#improved-4", null ],
         [ "Notes", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#notes-1", null ]
       ] ],
       [ "[0.6.5]", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md065", [
-        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-6", null ],
-        [ "Improved", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#improved-5", null ],
-        [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed-3", null ]
-      ] ],
-      [ "[0.6.1]", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md061", [
-        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-7", null ],
-        [ "Improved", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#improved-6", null ],
-        [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed-4", null ]
-      ] ],
-      [ "[0.5.8]", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md058", [
         [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-8", null ],
-        [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed-5", null ],
+        [ "Improved", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#improved-5", null ],
         [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed-5", null ]
       ] ],
+      [ "[0.6.1]", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md061", [
+        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-9", null ],
+        [ "Improved", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#improved-6", null ],
+        [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed-6", null ]
+      ] ],
+      [ "[0.5.8]", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md058", [
+        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-10", null ],
+        [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed-6", null ],
+        [ "Fixed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#fixed-7", null ]
+      ] ],
       [ "[0.5.0] – 2026-06-03", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md050--2026-06-03", [
-        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-9", null ]
+        [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added-11", null ]
       ] ]
     ] ],
     [ "LICENSE", "d2/d35/md__l_i_c_e_n_s_e.html", null ],
@@ -121,16 +132,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d3/d06/namespace_examples.html",
-"d4/d60/class_system_ex_1_1_drawing_1_1_white_colors.html",
-"d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html#a950dfa83692a5e63f062a846e859d6ae",
-"d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html#a66c6d7c653c8db7bb1df1fe9e453dd6d",
-"d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a53fc59101527affd9432d3765c353d08",
-"d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a829e7ce5f03b89047f5c41115dcb2001",
-"db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#ac6a0e07c78cf070e5cd07e031670f624",
-"dc/d8a/class_system_ex_1_1_number_range-1-g.html#ac8b2c7e999c23b3fd2e402f270e35687",
-"de/d73/class_system_ex_1_1_drawing_1_1_color_converter.html#a42264ce24af8550cc475edb048ed813a",
-"df/d7e/_i_pair_8cs_source.html"
+"d2/d54/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_mac_proc_loader.html#a20b767c4377ad4cce96433302626e4ed",
+"d3/def/struct_system_ex_1_1_collections_1_1_generic_1_1_triple-3-g.html#a88182667705c681bdfb46009e39ab120",
+"d5/d0f/class_system_ex_1_1_drawing_1_1_red_colors.html#a0920eee92bfe0a49085545e5b598cfe1",
+"d7/d1f/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_list.html#a14a1f8c2250606fd014a7f1c42437517",
+"d8/da6/_linked_node_slice_8cs_source.html",
+"d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#a1cdbfd520d0f094926598b4e83be42fe",
+"da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a03d62f26e8d1089bb6fd8c148fc94b78",
+"db/dfb/class_examples_1_1_sensor_data.html",
+"dd/dbc/group__collections.html#ga8992101c929020cc3312b701470a0f89",
+"de/df2/class_system_ex_1_1_collections_1_1_model_1_1_node-1-g.html#a36262380ffa758c5c2bcd2818bb3c2d9",
+"functions_func_d.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

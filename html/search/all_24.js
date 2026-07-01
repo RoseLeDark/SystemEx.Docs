@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📘_20systemex_20collections_20generic_0',['📘 SystemEx.Collections.Generic',['../index.html',1,'']]]
+  ['📁_20project_20structure_0',['📁 Project Structure',['../index.html#autotoc_md-project-structure',1,'']]]
 ];

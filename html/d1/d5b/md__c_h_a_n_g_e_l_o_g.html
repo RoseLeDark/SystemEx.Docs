@@ -127,11 +127,117 @@ Planned to Version 1.0</h1>
 Add</h2>
 <ul>
 <li>Cache and collection primitives ( <span class="tt">CacheRaid</span>, <span class="tt">CacheRaid4</span>, etc.) to <b><span class="tt"><a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></span></b>.</li>
-<li>Add Locking System</li>
-<li>OpenCL Kerneal Call with my <a class="el" href="../../d7/d59/namespace_system_ex_1_1_device.html">SystemEx.Device</a> System</li>
+<li>Add Locking System </li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md01070-2906206"></a>
-[0.10.70] 29.06.206</h1>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md--opencl-kerneal-call-with-my--systemexdevice-system"></a>
+- OpenCL Kerneal Call with my SystemEx.Device System</h1>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md-01104-01072026"></a>
+[ 0.11.04] 01.07.2026</h1>
+<h2 class="doxsection"><a class="anchor" id="added"></a>
+Added</h2>
+<ul>
+<li>Add new Node System under <span class="tt">SytemEx.Model</span> - future replace old Node under <span class="tt"><a class="el" href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></span>.<ul>
+<li><span class="tt">GenericNode</span>: Basi Node only Value holder</li>
+<li><span class="tt">GroupedNode</span>: Non‑intrusive grouped node storing a value and an expandable collection of associated GenericNode&lt;T&gt; instances.</li>
+<li><span class="tt">LinkedNode</span>: Intrusive doubly‑linked node storing a value and two directional links.</li>
+<li><span class="tt">LinkedNodeSlice</span>: Represents a slice over intrusive structures,</li>
+<li><span class="tt">LinkedNodeWithSibling</span>: LinkedNode With Siblings</li>
+<li><span class="tt">LinkedNodeRange</span>: Represents a simple range defined by a begin and end iterator over intrusive Node&lt;T&gt; structures. <br  />
+</li>
+<li><span class="tt"><a class="el" href="../../dd/d10/group___node.html" title="Represents a slice over intrusive LinkedNode&lt;T&gt; structures, defined by a starting iterator and a fixe...">Node</a></span>: Intrusive singly-linked node storing a value and a single forward link. </li>
+</ul>
+</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="fixed"></a>
+Fixed</h2>
+<ul>
+<li>Fixed bug in Array ctor</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md01015-30062026"></a>
+[0.10.15] 30.06.2026</h1>
+<h2 class="doxsection"><a class="anchor" id="added-1"></a>
+Added</h2>
+<ul>
+<li>Added <b>long‑based iterator navigation</b>:<ul>
+<li><span class="tt">NodeIterrator&lt;T&gt;.Advance(long offset)</span></li>
+<li><span class="tt">NodeIterrator&lt;T&gt;.AdvanceRest</span> (long)</li>
+<li><span class="tt">NodeIterrator&lt;T&gt;(<a class="el" href="../../dd/d10/group___node.html" title="Represents a slice over intrusive LinkedNode&lt;T&gt; structures, defined by a starting iterator and a fixe...">Node</a>&lt;T&gt; current, long index)</span></li>
+</ul>
+</li>
+<li>Added <b>long‑based node navigation</b>:<ul>
+<li><span class="tt"><a class="el" href="../../dd/d10/group___node.html" title="Represents a slice over intrusive LinkedNode&lt;T&gt; structures, defined by a starting iterator and a fixe...">Node</a>&lt;T&gt;.GetAt(long index, out long r)</span></li>
+<li><span class="tt"><a class="el" href="../../dd/d10/group___node.html" title="Represents a slice over intrusive LinkedNode&lt;T&gt; structures, defined by a starting iterator and a fixe...">Node</a>&lt;T&gt;.At(long index)</span></li>
+<li><span class="tt"><a class="el" href="../../dd/d10/group___node.html" title="Represents a slice over intrusive LinkedNode&lt;T&gt; structures, defined by a starting iterator and a fixe...">Node</a>&lt;T&gt;.Offset(long offset)</span></li>
+<li><span class="tt"><a class="el" href="../../dd/d10/group___node.html" title="Represents a slice over intrusive LinkedNode&lt;T&gt; structures, defined by a starting iterator and a fixe...">Node</a>&lt;T&gt;.SetAt(long index, T value)</span></li>
+</ul>
+</li>
+<li>Added <b>Distance(bool ToEnd)</b> overload for directional chain length measurement</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="changed"></a>
+Changed</h2>
+<ul>
+<li>Replaced old <span class="tt">m_pChilds</span> Prev/Next sentinel‑model with <b>nullable Prev/Next</b> via:<ul>
+<li><span class="tt">FixedArray&lt;<a class="el" href="../../dd/d10/group___node.html" title="Represents a slice over intrusive LinkedNode&lt;T&gt; structures, defined by a starting iterator and a fixe...">Node</a>&lt;T&gt;?&gt; m_pNodex</span></li>
+<li><span class="tt">Prev</span> / <span class="tt">Next</span> now nullable</li>
+<li><span class="tt">HasPrev</span> / <span class="tt">HasNext</span> now check for <span class="tt">null</span></li>
+</ul>
+</li>
+<li>Updated chain navigation:<ul>
+<li><span class="tt">Root()</span> and <span class="tt">Last()</span> rewritten to use nullable Prev/Next</li>
+</ul>
+</li>
+<li>Updated removal logic:<ul>
+<li>New <span class="tt">Remove()</span> implementation with explicit handling of:<ul>
+<li>isolated node <br  />
+</li>
+<li>head node <br  />
+</li>
+<li>tail node <br  />
+</li>
+<li>middle node <br  />
+</li>
+</ul>
+</li>
+<li>Optional isolation under <span class="tt">#if TRACE</span></li>
+</ul>
+</li>
+<li>Updated splice logic:<ul>
+<li><span class="tt">Splice(ref first, ref last)</span> now detaches current node and reinserts <span class="tt">[first..last]</span></li>
+<li><span class="tt">this.Prev = null</span> and <span class="tt">this.Next = null</span> after splice</li>
+</ul>
+</li>
+<li>Updated insertion logic:<ul>
+<li><span class="tt">InsertLast(<a class="el" href="../../dd/d10/group___node.html" title="Represents a slice over intrusive LinkedNode&lt;T&gt; structures, defined by a starting iterator and a fixe...">Node</a>&lt;T&gt;)</span> rewritten to use nullable Prev/Next</li>
+</ul>
+</li>
+<li>Updated traversal routines:<ul>
+<li><span class="tt">TraversPreorder</span> / <span class="tt">TraversPostorder</span> now traverse:<ul>
+<li><span class="tt">m_pNodex[PREV]</span></li>
+<li><span class="tt">m_pNodex[NEXT]</span></li>
+<li>all siblings via <span class="tt">foreach</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="deprecated"></a>
+Deprecated</h2>
+<ul>
+<li>Marked <span class="tt">InsertRagen(ref <a class="el" href="../../dd/d10/group___node.html" title="Represents a slice over intrusive LinkedNode&lt;T&gt; structures, defined by a starting iterator and a fixe...">Node</a>&lt;T&gt;, ref <a class="el" href="../../dd/d10/group___node.html" title="Represents a slice over intrusive LinkedNode&lt;T&gt; structures, defined by a starting iterator and a fixe...">Node</a>&lt;T&gt;)</span> as obsolete <br  />
+ → replaced by <span class="tt">InsertRange(ref <a class="el" href="../../dd/d10/group___node.html" title="Represents a slice over intrusive LinkedNode&lt;T&gt; structures, defined by a starting iterator and a fixe...">Node</a>&lt;T&gt;, ref <a class="el" href="../../dd/d10/group___node.html" title="Represents a slice over intrusive LinkedNode&lt;T&gt; structures, defined by a starting iterator and a fixe...">Node</a>&lt;T&gt;)</span></li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="fixed-1"></a>
+Fixed</h2>
+<ul>
+<li>Correct remainder handling in <span class="tt">GetAt(long index, out long r)</span></li>
+<li>Correct Prev/Next rewiring in <span class="tt">Remove()</span> for all four structural cases</li>
+<li>Correct traversal behavior in <span class="tt">TraversListForward</span> / <span class="tt">TraversListBackward</span></li>
+<li>Correct iterator equality and hash code behavior</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md01012-2906206"></a>
+[0.10.12] 29.06.206</h1>
 <h2 class="doxsection"><a class="anchor" id="very-important"></a>
 Very Important</h2>
 <ul>
@@ -142,7 +248,7 @@ Very Important</h2>
  (<span class="tt">WindowsKernelLoader</span>, <span class="tt">LinuxKernelLoader</span>, <span class="tt">MacKernelLoader</span>, <span class="tt">NoSupportKernelLoader</span>) <br  />
  Replaced by new module‑centric loader architecture.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="added"></a>
+<h2 class="doxsection"><a class="anchor" id="added-2"></a>
 Added</h2>
 <ul>
 <li>Introduced full native module system under <span class="tt"><a class="el" href="../../d4/d8e/namespace_system_ex_1_1_runtime.html">SystemEx.Runtime</a></span>:<ul>
@@ -181,7 +287,7 @@ Added</h2>
 </ul>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="changed"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-1"></a>
 Changed</h2>
 <ul>
 <li>Replaced unmanaged call pipeline:<ul>
@@ -227,14 +333,14 @@ Notes</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md0964-23062026"></a>
 [0.9.64] 23.06.2026</h1>
-<h2 class="doxsection"><a class="anchor" id="changed-1"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-2"></a>
 Changed</h2>
 <ul>
 <li><span class="tt">public int Length { get; }</span> → <span class="tt">public ulong Length { get; }</span></li>
 <li><span class="tt">Cache&lt;T&gt;</span> is now fully ulong‑addressed instead of int‑based</li>
 <li>Renamed <span class="tt">ITerator</span> → <span class="tt">IIterator</span> (updated across all dependent iterator‑based classes)</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="added-1"></a>
+<h2 class="doxsection"><a class="anchor" id="added-3"></a>
 Added</h2>
 <ul>
 <li>Added <span class="tt">Free</span> and <span class="tt">Used</span> properties to <span class="tt">Cache&lt;T&gt;</span> with new internal member <span class="tt">m_maxUsedAddress</span> <br  />
@@ -250,7 +356,7 @@ Added</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md096-21062026"></a>
 [0.9.6] 21.06.2026</h1>
-<h2 class="doxsection"><a class="anchor" id="added-2"></a>
+<h2 class="doxsection"><a class="anchor" id="added-4"></a>
 Added</h2>
 <ul>
 <li>Introduced new HWB and NCol color models under <span class="tt"><a class="el" href="../../de/d5b/namespace_system_ex_1_1_drawing.html">SystemEx.Drawing</a></span>:<ul>
@@ -286,7 +392,7 @@ Added</h2>
 </ul>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="changed-2"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-3"></a>
 Changed</h2>
 <ul>
 <li>Updated <span class="tt">Map</span> and <span class="tt">IMap</span>:<ul>
@@ -320,7 +426,7 @@ Improved**</h2>
 <li>Improved documentation and XML comments across multiple files</li>
 <li>Cleaner separation between read‑only and mutable map interfaces</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="fixed"></a>
+<h2 class="doxsection"><a class="anchor" id="fixed-2"></a>
 Fixed</h2>
 <ul>
 <li>Fixed incorrect index usage in <span class="tt">ColorCMY(float[] x)</span></li>
@@ -359,7 +465,7 @@ Very Important</h2>
 <li><b>Major namespace restructuring</b> to reflect the engine architecture and clarify responsibilities across collections, device memory, and interop layers.</li>
 <li>This release contains <b>breaking changes</b>: update all <span class="tt">using</span>/imports to the new namespaces.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="changed-3"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-4"></a>
 Changed</h2>
 <ul>
 <li>Moved device memory types (<span class="tt">DeviceBuffer</span>, <span class="tt">DeviceSharedBuffer&lt;TDeviceSharedBackend&gt;</span>) to <b><span class="tt"><a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html">SystemEx.Device.Memory</a></span></b>.</li>
@@ -369,7 +475,7 @@ Changed</h2>
 <p>Removed legacy <span class="tt">SystemEx.Device.Memory.Missings</span> layout and deprecated <span class="tt">System.Memory.Missings</span> placements; types have been relocated to the new namespaces above.</p><ul>
 <li>Updated internal references and XML docs to reflect new namespace locations.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="added-3"></a>
+<h2 class="doxsection"><a class="anchor" id="added-5"></a>
 Added</h2>
 <ul>
 <li>Migration guidance notes and quick reference mapping for common types:<ul>
@@ -401,7 +507,7 @@ Improved</h2>
 <li>Improved index validation for segmented cache exports (ToArray(index)).</li>
 <li></li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="fixed-1"></a>
+<h2 class="doxsection"><a class="anchor" id="fixed-3"></a>
 Fixed</h2>
 <ul>
 <li>Resolved ambiguous type collisions caused by previous overlapping namespaces.</li>
@@ -424,7 +530,7 @@ Notes / Migration</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md081-04062026"></a>
 [0.8.1] 04.06.2026</h1>
-<h2 class="doxsection"><a class="anchor" id="added-4"></a>
+<h2 class="doxsection"><a class="anchor" id="added-6"></a>
 Added</h2>
 <ul>
 <li>Introduced full RAM backend under <span class="tt">System.Memory.Missings</span>:<ul>
@@ -453,7 +559,7 @@ Added</h2>
 </ul>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="changed-4"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-5"></a>
 Changed</h2>
 <ul>
 <li>Moved <span class="tt">SharedCache</span> / <span class="tt">DeviceSharedCache</span> aus <span class="tt">System.Collections.Generic.Missings</span> nach <span class="tt">System.Memory.Missings</span> und in <span class="tt">DeviceSharedBuffer</span> überführt</li>
@@ -480,7 +586,7 @@ Improved</h2>
 </li>
 <li>More consistent behavior with GPU backends through unified kernel interface</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="fixed-2"></a>
+<h2 class="doxsection"><a class="anchor" id="fixed-4"></a>
 Fixed</h2>
 <ul>
 <li>Fixed missing unpin in <span class="tt">ReciveFromHardwareBuffer</span></li>
@@ -491,7 +597,7 @@ Fixed</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md070-03062026"></a>
 [0.7.0] 03.06.2026</h1>
-<h2 class="doxsection"><a class="anchor" id="added-5"></a>
+<h2 class="doxsection"><a class="anchor" id="added-7"></a>
 Added</h2>
 <ul>
 <li>Introduced <span class="tt">RandPasswordLevel</span> enum (<span class="tt">Simple = 16</span>, <span class="tt">Strong = 32</span>)</li>
@@ -523,7 +629,7 @@ Notes</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md065"></a>
 [0.6.5]</h1>
-<h2 class="doxsection"><a class="anchor" id="added-6"></a>
+<h2 class="doxsection"><a class="anchor" id="added-8"></a>
 Added</h2>
 <ul>
 <li>Introduced <span class="tt">SharedCache</span> for hardware‑shared memory operations:<ul>
@@ -574,7 +680,7 @@ Improved</h2>
 <li>Ensured consistent range mapping for signed and unsigned 64‑bit values</li>
 <li>Added argument validation for all min/max random operations</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="fixed-3"></a>
+<h2 class="doxsection"><a class="anchor" id="fixed-5"></a>
 Fixed</h2>
 <ul>
 <li>Corrected handling of reversed min/max arguments in <span class="tt">RandLong</span></li>
@@ -583,7 +689,7 @@ Fixed</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md061"></a>
 [0.6.1]</h1>
-<h2 class="doxsection"><a class="anchor" id="added-7"></a>
+<h2 class="doxsection"><a class="anchor" id="added-9"></a>
 Added</h2>
 <ul>
 <li>Introduced a full low-level cache subsystem under <span class="tt">System.Collections.Generic.Missings</span></li>
@@ -620,7 +726,7 @@ Improved</h2>
 <li>Ensured safe bounds checking for all read/write operations</li>
 <li>Improved internal locking using custom <span class="tt">Lock</span> object</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="fixed-4"></a>
+<h2 class="doxsection"><a class="anchor" id="fixed-6"></a>
 Fixed</h2>
 <ul>
 <li>Corrected boundary checks for read/write operations</li>
@@ -630,7 +736,7 @@ Fixed</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md058"></a>
 [0.5.8]</h1>
-<h2 class="doxsection"><a class="anchor" id="added-8"></a>
+<h2 class="doxsection"><a class="anchor" id="added-10"></a>
 Added</h2>
 <ul>
 <li>NodeIterator: intrusive Iterator für Next/Prev Traversal</li>
@@ -642,14 +748,14 @@ Added</h2>
 <li>TraversOrder: Preorder, Inorder, Postorder, ListOrder, ReverseListOrder</li>
 <li>GlobalSuppressions für Naming/Design-Regeln</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="changed-5"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-6"></a>
 Changed</h2>
 <ul>
 <li>Iterator.Equals nutzt Value-Identity für ListIterator</li>
 <li>Iterator.Equals nutzt Reference-Identity für NodeIterator</li>
 <li>Verbesserte Advance/Offset/At-Methoden</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="fixed-5"></a>
+<h2 class="doxsection"><a class="anchor" id="fixed-7"></a>
 Fixed</h2>
 <ul>
 <li>Clone() für Iteratoren nutzt korrekte Semantik</li>
@@ -658,7 +764,7 @@ Fixed</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md050--2026-06-03"></a>
 [0.5.0] – 2026-06-03</h1>
-<h2 class="doxsection"><a class="anchor" id="added-9"></a>
+<h2 class="doxsection"><a class="anchor" id="added-11"></a>
 Added</h2>
 <ul>
 <li>Erste öffentliche Version</li>

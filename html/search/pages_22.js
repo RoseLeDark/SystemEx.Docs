@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🧮_20generic_20algorithms_0',['🧮 Generic Algorithms',['../index.html#autotoc_md-generic-algorithms',1,'']]]
+  ['🚧_20status_0',['🚧 Status',['../index.html#autotoc_md-status',1,'']]]
 ];
