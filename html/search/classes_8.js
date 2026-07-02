@@ -27,13 +27,14 @@ var searchData=
   ['irandomaccessiterator_2d1_2dg_24',['IRandomAccessIterator-1-g',['../d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
   ['irange_2d1_2dg_25',['IRange-1-g',['../df/d28/interface_system_ex_1_1_i_range-1-g.html',1,'SystemEx']]],
   ['ireadonlymap_2d2_2dg_26',['IReadOnlyMap-2-g',['../d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
-  ['isortedarray_2d1_2dg_27',['ISortedArray-1-g',['../db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
-  ['isortedmap_2d2_2dg_28',['ISortedMap-2-g',['../d6/d5e/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_map-2-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
-  ['isortedtuplemap_29',['ISortedTupleMap',['../dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html',1,'SystemEx::Collections::Generic::Interfaces']]],
-  ['isubcanvas_2d1_2dg_30',['ISubCanvas-1-g',['../de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html',1,'SystemEx::Drawing']]],
-  ['iterator_31',['Iterator',['../db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html',1,'SystemEx::Collections::Generic::Interfaces']]],
-  ['itraverse_2d1_2dg_32',['ITraverse-1-g',['../d4/d02/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_traverse-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
-  ['ituple_33',['ITuple',['../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html',1,'SystemEx::Collections::Generic::Interfaces']]],
-  ['ituplemap_34',['ITupleMap',['../d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html',1,'SystemEx::Collections::Generic::Interfaces']]],
-  ['itypebuffer_2d1_2dg_35',['ITypeBuffer-1-g',['../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]]
+  ['isaac32engine_27',['Isaac32Engine',['../df/d91/class_system_ex_1_1_random_1_1_isaac32_engine.html',1,'SystemEx::Random']]],
+  ['isortedarray_2d1_2dg_28',['ISortedArray-1-g',['../db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
+  ['isortedmap_2d2_2dg_29',['ISortedMap-2-g',['../d6/d5e/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_map-2-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
+  ['isortedtuplemap_30',['ISortedTupleMap',['../dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html',1,'SystemEx::Collections::Generic::Interfaces']]],
+  ['isubcanvas_2d1_2dg_31',['ISubCanvas-1-g',['../de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html',1,'SystemEx::Drawing']]],
+  ['iterator_32',['Iterator',['../db/d91/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_iterator.html',1,'SystemEx::Collections::Generic::Interfaces']]],
+  ['itraverse_2d1_2dg_33',['ITraverse-1-g',['../d4/d02/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_traverse-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]],
+  ['ituple_34',['ITuple',['../d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html',1,'SystemEx::Collections::Generic::Interfaces']]],
+  ['ituplemap_35',['ITupleMap',['../d7/dea/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple_map.html',1,'SystemEx::Collections::Generic::Interfaces']]],
+  ['itypebuffer_2d1_2dg_36',['ITypeBuffer-1-g',['../d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html',1,'SystemEx::Collections::Generic::Interfaces']]]
 ];

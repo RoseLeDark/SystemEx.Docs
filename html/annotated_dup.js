@@ -84,7 +84,8 @@ var annotated_dup =
           [ "TypeBuffer&lt; T &gt;", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g" ]
         ] ],
         [ "Model", "d7/dd8/namespace_system_ex_1_1_collections_1_1_model.html", [
-          [ "GenericNode&lt; T &gt;", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html", null ],
+          [ "BinaryTree&lt; T &gt;", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g" ],
+          [ "GenericNode&lt; T &gt;", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g" ],
           [ "GenericNodeIterator&lt; T &gt;", "d2/d1c/class_system_ex_1_1_collections_1_1_model_1_1_generic_node_iterator-1-g.html", "d2/d1c/class_system_ex_1_1_collections_1_1_model_1_1_generic_node_iterator-1-g" ],
           [ "GroupedNode&lt; T &gt;", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g" ],
           [ "LinkedNode&lt; T &gt;", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g" ],
@@ -94,7 +95,9 @@ var annotated_dup =
           [ "LinkedNodeSlice&lt; T &gt;", "da/d53/struct_system_ex_1_1_collections_1_1_model_1_1_linked_node_slice-1-g.html", "da/d53/struct_system_ex_1_1_collections_1_1_model_1_1_linked_node_slice-1-g" ],
           [ "LinkedNodeWithSibling&lt; T, TS &gt;", "df/d66/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_with_sibling-2-g.html", "df/d66/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_with_sibling-2-g" ],
           [ "Node&lt; T &gt;", "de/df2/class_system_ex_1_1_collections_1_1_model_1_1_node-1-g.html", "de/df2/class_system_ex_1_1_collections_1_1_model_1_1_node-1-g" ],
-          [ "NodeIterator&lt; T &gt;", "d0/d6d/class_system_ex_1_1_collections_1_1_model_1_1_node_iterator-1-g.html", "d0/d6d/class_system_ex_1_1_collections_1_1_model_1_1_node_iterator-1-g" ]
+          [ "NodeIterator&lt; T &gt;", "d0/d6d/class_system_ex_1_1_collections_1_1_model_1_1_node_iterator-1-g.html", "d0/d6d/class_system_ex_1_1_collections_1_1_model_1_1_node_iterator-1-g" ],
+          [ "RBTreeNode&lt; T &gt;", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g" ],
+          [ "Tree&lt; T, TRE &gt;", "d6/dc6/class_system_ex_1_1_collections_1_1_model_1_1_tree-2-g.html", "d6/dc6/class_system_ex_1_1_collections_1_1_model_1_1_tree-2-g" ]
         ] ]
       ] ],
       [ "Device", "d7/d59/namespace_system_ex_1_1_device.html", [
@@ -113,23 +116,28 @@ var annotated_dup =
       [ "Drawing", "de/d5b/namespace_system_ex_1_1_drawing.html", [
         [ "BlueColors", "da/dba/class_system_ex_1_1_drawing_1_1_blue_colors.html", null ],
         [ "BrownColors", "d3/d1b/class_system_ex_1_1_drawing_1_1_brown_colors.html", null ],
-        [ "ColorCMY", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html", null ],
+        [ "ColorCMY", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y" ],
         [ "ColorConverter", "de/d73/class_system_ex_1_1_drawing_1_1_color_converter.html", "de/d73/class_system_ex_1_1_drawing_1_1_color_converter" ],
-        [ "ColorGray", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray.html", null ],
+        [ "ColorGray", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray.html", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray" ],
+        [ "ColorHDR", "da/d5b/class_system_ex_1_1_drawing_1_1_color_h_d_r.html", "da/d5b/class_system_ex_1_1_drawing_1_1_color_h_d_r" ],
         [ "ColorHSL", "d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l.html", "d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l" ],
         [ "ColorHSV", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v" ],
         [ "ColorHWB", "df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b.html", "df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b" ],
         [ "ColorNCol", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col" ],
+        [ "ColorR10G10B10A2", "d4/dc0/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2.html", "d4/dc0/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2" ],
+        [ "ColorR10G10B10FormatSchema", "d7/d6d/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html", "d7/d6d/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema" ],
+        [ "ColorR10G10B10Serializer", "d9/d81/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer.html", "d9/d81/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer" ],
+        [ "ColorR16G16B16", "d6/df3/class_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html", "d6/df3/class_system_ex_1_1_drawing_1_1_color_r16_g16_b16" ],
         [ "ColorR8G8B8", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8" ],
         [ "ColorXYZ", "d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z.html", "d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z" ],
         [ "ColorYUV", "d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html", "d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v" ],
         [ "CyanColors", "d8/d88/class_system_ex_1_1_drawing_1_1_cyan_colors.html", "d8/d88/class_system_ex_1_1_drawing_1_1_cyan_colors" ],
         [ "GreenColors", "d6/deb/class_system_ex_1_1_drawing_1_1_green_colors.html", "d6/deb/class_system_ex_1_1_drawing_1_1_green_colors" ],
         [ "GreyColors", "d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors.html", "d9/dbb/class_system_ex_1_1_drawing_1_1_grey_colors" ],
-        [ "ICanvas&lt; T &gt;", "d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html", null ],
-        [ "ICanvasList&lt; T &gt;", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.html", null ],
-        [ "IColor&lt; T &gt;", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html", null ],
-        [ "ISubCanvas&lt; T &gt;", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html", null ],
+        [ "ICanvas&lt; T &gt;", "d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html", "d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" ],
+        [ "ICanvasList&lt; T &gt;", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.html", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g" ],
+        [ "IColor&lt; T &gt;", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g" ],
+        [ "ISubCanvas&lt; T &gt;", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g" ],
         [ "OrangeColors", "dc/d52/class_system_ex_1_1_drawing_1_1_orange_colors.html", "dc/d52/class_system_ex_1_1_drawing_1_1_orange_colors" ],
         [ "PinkColors", "db/df0/class_system_ex_1_1_drawing_1_1_pink_colors.html", "db/df0/class_system_ex_1_1_drawing_1_1_pink_colors" ],
         [ "PurpelColors", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors" ],
@@ -138,13 +146,19 @@ var annotated_dup =
         [ "YellowColors", "de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors.html", "de/d90/class_system_ex_1_1_drawing_1_1_yellow_colors" ]
       ] ],
       [ "Hash", "d4/d32/namespace_system_ex_1_1_hash.html", [
+        [ "AdlerHash", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash.html", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash" ],
         [ "BernsteinHash", "dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash.html", "dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash" ],
+        [ "FletcherHash", "d4/dee/class_system_ex_1_1_hash_1_1_fletcher_hash.html", "d4/dee/class_system_ex_1_1_hash_1_1_fletcher_hash" ],
+        [ "Fnv1aHash", "db/d29/class_system_ex_1_1_hash_1_1_fnv1a_hash.html", "db/d29/class_system_ex_1_1_hash_1_1_fnv1a_hash" ],
+        [ "GrøstlHash", "dd/d3f/class_system_ex_1_1_hash_1_1_gr_xC3_xB8stl_hash.html", "dd/d3f/class_system_ex_1_1_hash_1_1_gr_xC3_xB8stl_hash" ],
         [ "Hash32", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32" ],
         [ "Hash64", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64" ],
         [ "Hashable", "db/ddb/class_system_ex_1_1_hash_1_1_hashable.html", "db/ddb/class_system_ex_1_1_hash_1_1_hashable" ],
         [ "HashAlgorithmAttribute", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute" ],
         [ "IHash", "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html", "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash" ],
         [ "Murmur3Hasher", "d5/db0/class_system_ex_1_1_hash_1_1_murmur3_hasher.html", "d5/db0/class_system_ex_1_1_hash_1_1_murmur3_hasher" ],
+        [ "RamakrishnaHash", "d4/d6f/class_system_ex_1_1_hash_1_1_ramakrishna_hash.html", "d4/d6f/class_system_ex_1_1_hash_1_1_ramakrishna_hash" ],
+        [ "WeinbergHash", "d7/d67/class_system_ex_1_1_hash_1_1_weinberg_hash.html", "d7/d67/class_system_ex_1_1_hash_1_1_weinberg_hash" ],
         [ "XXHash3Hasher", "d6/dfc/class_system_ex_1_1_hash_1_1_x_x_hash3_hasher.html", null ]
       ] ],
       [ "IO", "d4/d5d/namespace_system_ex_1_1_i_o.html", [
@@ -155,6 +169,10 @@ var annotated_dup =
           [ "IIsByteSeriablize", "d1/d94/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_is_byte_seriablize.html", null ]
         ] ],
         [ "CacheStream&lt; TCache &gt;", "df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html", "df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g" ]
+      ] ],
+      [ "Random", "de/d2f/namespace_system_ex_1_1_random.html", [
+        [ "Isaac32Engine", "df/d91/class_system_ex_1_1_random_1_1_isaac32_engine.html", "df/d91/class_system_ex_1_1_random_1_1_isaac32_engine" ],
+        [ "Randx", "de/d3e/class_system_ex_1_1_random_1_1_randx.html", "de/d3e/class_system_ex_1_1_random_1_1_randx" ]
       ] ],
       [ "Runtime", "d4/d8e/namespace_system_ex_1_1_runtime.html", [
         [ "InteropServices", "d4/dfc/namespace_system_ex_1_1_runtime_1_1_interop_services.html", [
@@ -168,15 +186,6 @@ var annotated_dup =
         ] ],
         [ "Module", "d4/ddf/class_system_ex_1_1_runtime_1_1_module.html", "d4/ddf/class_system_ex_1_1_runtime_1_1_module" ]
       ] ],
-      [ "SystemEx", "d5/d9e/namespace_system_ex_1_1_system_ex.html", [
-        [ "Drawing", "df/d13/namespace_system_ex_1_1_system_ex_1_1_drawing.html", [
-          [ "ColorHDR", "d8/de9/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_h_d_r.html", "d8/de9/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_h_d_r" ],
-          [ "ColorR10G10B10A2", "d1/d6d/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2.html", "d1/d6d/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2" ],
-          [ "ColorR10G10B10FormatSchema", "d0/d3e/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html", "d0/d3e/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema" ],
-          [ "ColorR10G10B10Serializer", "d5/d07/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer.html", "d5/d07/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer" ],
-          [ "ColorR16G16B16", "d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html", "d9/d8b/class_system_ex_1_1_system_ex_1_1_drawing_1_1_color_r16_g16_b16" ]
-        ] ]
-      ] ],
       [ "Utils", "d2/d14/namespace_system_ex_1_1_utils.html", [
         [ "Algorithm", "db/d0a/class_system_ex_1_1_utils_1_1_algorithm.html", "db/d0a/class_system_ex_1_1_utils_1_1_algorithm" ],
         [ "Layout", "d5/d63/class_system_ex_1_1_utils_1_1_layout.html", "d5/d63/class_system_ex_1_1_utils_1_1_layout" ],
@@ -185,6 +194,7 @@ var annotated_dup =
       ] ],
       [ "BitUtils", "df/d58/class_system_ex_1_1_bit_utils.html", "df/d58/class_system_ex_1_1_bit_utils" ],
       [ "Conversion", "d6/dd9/class_system_ex_1_1_conversion.html", "d6/dd9/class_system_ex_1_1_conversion" ],
+      [ "FlexSpan&lt; T &gt;", "db/d28/struct_system_ex_1_1_flex_span-1-g.html", "db/d28/struct_system_ex_1_1_flex_span-1-g" ],
       [ "IRange&lt; T &gt;", "df/d28/interface_system_ex_1_1_i_range-1-g.html", "df/d28/interface_system_ex_1_1_i_range-1-g" ],
       [ "Math", "d1/d63/class_system_ex_1_1_math.html", "d1/d63/class_system_ex_1_1_math" ],
       [ "NumberRange&lt; T &gt;", "dc/d8a/class_system_ex_1_1_number_range-1-g.html", "dc/d8a/class_system_ex_1_1_number_range-1-g" ],

@@ -137,6 +137,8 @@ Public Member Functions</h2></td></tr>
  Remaining elements are shifted one position to the left.  <br /></td></tr>
 <tr class="memitem:ad955c6ca43ad5944a411f961f4ca382e" id="r_ad955c6ca43ad5944a411f961f4ca382e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad955c6ca43ad5944a411f961f4ca382e">Clear</a> ()</td></tr>
 <tr class="memdesc:ad955c6ca43ad5944a411f961f4ca382e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements from the deque without modifying the underlying buffer.  <br /></td></tr>
+<tr class="memitem:aeb0adcfad25247c10d639a650126195c" id="r_aeb0adcfad25247c10d639a650126195c"><td class="memItemLeft">FlexSpan&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aeb0adcfad25247c10d639a650126195c">AsFlexSpan</a> (<a class="el" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a> mode=<a class="el" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">FlexSpanMode.System</a>)</td></tr>
+<tr class="memdesc:aeb0adcfad25247c10d639a650126195c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a FlexSpan view over the current contents of the deque. The span directly references the internal array and does not allocate.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -162,8 +164,34 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00031">31</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00032">32</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aeb0adcfad25247c10d639a650126195c" name="aeb0adcfad25247c10d639a650126195c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb0adcfad25247c10d639a650126195c">&#9670;&#160;</a></span>AsFlexSpan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FlexSpan&lt; T &gt; SystemEx.Collections.Generic.Deque&lt; T &gt;.AsFlexSpan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">FlexSpanMode::System</a></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>The indexing mode of the span. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A FlexSpan that views the range [0 .. m_count) of the internal buffer. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00157">157</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+
+</div>
+</div>
 <a id="ad955c6ca43ad5944a411f961f4ca382e" name="ad955c6ca43ad5944a411f961f4ca382e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad955c6ca43ad5944a411f961f4ca382e">&#9670;&#160;</a></span>Clear()</h2>
 
@@ -179,7 +207,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00141">141</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00142">142</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -204,7 +232,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00077">77</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00078">78</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -230,7 +258,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was removed; otherwise <code>false</code>.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00096">96</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00097">97</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -256,7 +284,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was removed; otherwise <code>false</code>.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00125">125</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00126">126</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -281,7 +309,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00086">86</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00087">87</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -306,7 +334,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00108">108</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00109">109</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -331,7 +359,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00040">40</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00041">41</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -355,7 +383,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00035">35</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00036">36</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -380,7 +408,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00045">45</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00046">46</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -404,7 +432,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00071">71</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00072">72</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -428,7 +456,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00066">66</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00067">67</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -452,7 +480,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00056">56</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00057">57</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -476,7 +504,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00061">61</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00062">62</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -500,7 +528,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00051">51</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00052">52</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>

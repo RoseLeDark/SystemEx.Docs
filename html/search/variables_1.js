@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['id_0',['Id',['../db/dfb/class_examples_1_1_sensor_data.html#a00f4fafafb6a2ad73f06abda5a7d294b',1,'Examples::SensorData']]]
+  ['false_0',['False',['../d7/d4e/struct_system_ex_1_1_triple.html#a43a1f43330de98ce60b248c3cbf80470',1,'SystemEx::Triple']]],
+  ['falsestring_1',['FalseString',['../d7/d4e/struct_system_ex_1_1_triple.html#a5b129c22939eef3cefc0c881246a343e',1,'SystemEx::Triple']]]
 ];

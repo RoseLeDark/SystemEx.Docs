@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['high_0',['High',['../de/d5b/namespace_system_ex_1_1_drawing.html#a1738673316f8d96453eda571bae3f460a655d20c1ca69519ca647684edbb2db35',1,'SystemEx::Drawing']]]
+  ['forwards_0',['Forwards',['../d5/d4f/group__interfaces.html#gga9ffe9236ff7d52fbeb93204341959319a1e411b48c18c85a91ad46b53ebb24d6a',1,'SystemEx::Collections::Generic::Interfaces']]],
+  ['fromdevice_1',['FromDevice',['../dd/dbc/group__collections.html#ggaf02ddb6084404bb267c0629f20ed8b53a69887dd9a9eca98fa03f1b4b1592ba05',1,'SystemEx::Collections::Generic']]]
 ];

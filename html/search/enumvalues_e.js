@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['todevice_0',['ToDevice',['../dd/dbc/group__collections.html#ggaf02ddb6084404bb267c0629f20ed8b53ae9366abd00c5a749c84c222bab5275d4',1,'SystemEx::Collections::Generic']]],
-  ['true_1',['True',['../d0/d48/namespace_system_ex.html#aa60c11b2d2d4ff5084ed2276d3e06697af827cf462f62848df37c5e1e94a4da74',1,'SystemEx']]]
+  ['verylow_0',['VeryLow',['../d1/d60/group__color.html#gga1738673316f8d96453eda571bae3f460a89655e31f5f56a0f7860c4a85b7e9752',1,'SystemEx::Drawing']]]
 ];

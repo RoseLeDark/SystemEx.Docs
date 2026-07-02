@@ -29,6 +29,10 @@ var group__collections =
       [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a8f23b48290bdbbc26278a7057a1168d5", null ],
       [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a6ed37241635f40abf62a35887ef16560", null ],
       [ "Array", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#ad0ae0e40ca9ca5d2597a24d7347e5f14", null ],
+      [ "AsFlexSpan", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a926b284b11e1acfe701fcee6f0204c4c", null ],
+      [ "AsFlexSpan", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a325d896f2fe4c5e0623f877186f5ff4b", null ],
+      [ "AsFlexSpan", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a819a820ad6429225de62d30867207bc7", null ],
+      [ "AsSegment", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a9906edd59f073367a136733e28893407", null ],
       [ "At", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a2698d72008f39661653cad336ac59e0b", null ],
       [ "Contains", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a99e18da48136d38be92d8b4476f11180", null ],
       [ "CopyFrom", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html#a828fb2088592add5264920888c2ef336", null ],
@@ -84,6 +88,9 @@ var group__collections =
       [ "Cache", "dd/dbc/group__collections.html#ga2010b609b3306feea5e20cdcc61ee268", null ],
       [ "Cache", "dd/dbc/group__collections.html#ga6e02be92994e299a39d1d1884d4baab4", null ],
       [ "Cache", "dd/dbc/group__collections.html#ga1c77ce66ee80f12e1c9b00ca515ae4ee", null ],
+      [ "AsFlexSpan", "dd/dbc/group__collections.html#ga48e87ba409fa0b807ee313d43f10272e", null ],
+      [ "AsFlexSpan", "dd/dbc/group__collections.html#ga8b9ec63f713f3d659f75eb644e7bfd40", null ],
+      [ "AsFlexSpan", "dd/dbc/group__collections.html#gac24c22d1aa95f282bba64cf9bf04e864", null ],
       [ "Clear", "dd/dbc/group__collections.html#gab1d9bfd97b4f7487f57a3c3bacc6d135", null ],
       [ "Read", "dd/dbc/group__collections.html#ga6c154e89bd89c078d07bb880486856fe", null ],
       [ "Read", "dd/dbc/group__collections.html#gad58cc9f34179c85df7a762d5de777a94", null ],
@@ -160,6 +167,7 @@ var group__collections =
       [ "Value", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#a70deaaa51558811d39b040c525e2a24a", null ]
     ] ],
     [ "SystemEx.Collections.Generic.Deque&lt; T &gt;", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html", [
+      [ "AsFlexSpan", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#aeb0adcfad25247c10d639a650126195c", null ],
       [ "Clear", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#ad955c6ca43ad5944a411f961f4ca382e", null ],
       [ "Deque", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a0b402429b10c3a0094019e0f1a3948e7", null ],
       [ "PopBack", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#aa82138f3d8737c2b427dbc31b5b55759", null ],
@@ -186,6 +194,7 @@ var group__collections =
     [ "SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html", [
       [ "Add", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a24fe9389bd3b248adc737985323e214a", null ],
       [ "Add", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#adcec3a0e814e27c4703e1e68dbbd7838", null ],
+      [ "AsFlexSpan", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a3801d3abed4708db147bdff82e701f2b", null ],
       [ "Clear", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a50db88eca63d63788f842c06bf0d2a73", null ],
       [ "Compare", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#ad84f5a6b7114ed535b0c67183325df19", null ],
       [ "Contains", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a0e7933d0fa54a85b03b630e06022d063", null ],
@@ -560,6 +569,8 @@ var group__collections =
       [ "StartMarker", "d3/d62/struct_system_ex_1_1_collections_1_1_generic_1_1_stack_layer.html#ace372d7653484e35f4610bba4d90a913", null ]
     ] ],
     [ "SystemEx.Collections.Generic.Stack&lt; T &gt;", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html", [
+      [ "AsFlexSpan", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#acc9248032dec74728eabdb8330872bc4", null ],
+      [ "AsFlexSpan", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ad8a0487b516a3509ee453868c5426687", null ],
       [ "Peek", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#aa04fb1bd4ead74be0e68d39eb66d4998", null ],
       [ "Peek", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a716b270a05b22e6ebfb02eda033f8945", null ],
       [ "Pop", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ac843f7e4a3c4d7c2e77c0c71571951e4", null ],
@@ -593,10 +604,11 @@ var group__collections =
     ] ],
     [ "SystemEx.Collections.Generic.StrippedCache", "d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html", [
       [ "StrippedCache", "d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#aedd6d2db8ba958464aadc7a7f0294aea", null ],
+      [ "AsFlexSpan", "d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#a1094dd2b09e275e8096a4398347ad1f4", null ],
       [ "ToArray", "d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#aaf3345a692bc99e21ecdb1b25b6bdc74", null ],
       [ "WriteRange", "d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#a9606104852f651b28396a7cdebe22484", null ],
       [ "WriteRange", "d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#aa221c7108e09f7a87c04cbda06ba096d", null ],
-      [ "m_caches", "d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#ab7c78d6af8add6c0579a5bdb7d4ff5e9", null ],
+      [ "m_caches", "d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#a8c3ae0fe7d2b425521d5cc9ebe8fb5c3", null ],
       [ "m_segmentTemp", "d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#a1ff493ac305952890ade68d35c0fe29f", null ],
       [ "Length", "d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html#ae204b6a18b09c458e073dbef28295bbc", null ]
     ] ],
@@ -698,12 +710,6 @@ var group__collections =
       [ "Length", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#a1e0dd7bf5d5d38d6b33bba9a34c6527b", null ],
       [ "this[int i]", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html#ac99be8e42e7855236d79841f6f86d084", null ]
     ] ],
-    [ "SystemEx.Collections.Model.LinkedNodeRange&lt; T &gt;", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html", [
-      [ "GetEnumerator", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html#a9dda0f4e302ea97df1cc02da01ed7d8a", null ],
-      [ "LinkedNodeRange", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html#a0c581a9bc6bc8ea29c8813ec8754ef1d", null ],
-      [ "m_begin", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html#aed593ed4a48e791f6fd4cf4f6cebca6c", null ],
-      [ "m_end", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html#a0993e2b04cb8f5e21a4111e41794db46", null ]
-    ] ],
     [ "SystemEx.Collections.Generic.CacheType", "dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53", [
       [ "SystemEx.Collections.Generic.CacheType.ToDevice", "dd/dbc/group__collections.html#ggaf02ddb6084404bb267c0629f20ed8b53ae9366abd00c5a749c84c222bab5275d4", null ],
       [ "SystemEx.Collections.Generic.CacheType.FromDevice", "dd/dbc/group__collections.html#ggaf02ddb6084404bb267c0629f20ed8b53a69887dd9a9eca98fa03f1b4b1592ba05", null ],
@@ -722,6 +728,9 @@ var group__collections =
       [ "SystemEx.Collections.Generic.TraversOrder.ListOrder", "dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba3ec389f8d12ead28a627f00bdeaca5a2", null ],
       [ "SystemEx.Collections.Generic.TraversOrder.ReservListOrder", "dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316", null ]
     ] ],
+    [ "SystemEx.Collections.Generic.Cache.AsFlexSpan", "dd/dbc/group__collections.html#ga48e87ba409fa0b807ee313d43f10272e", null ],
+    [ "SystemEx.Collections.Generic.Cache.AsFlexSpan", "dd/dbc/group__collections.html#ga8b9ec63f713f3d659f75eb644e7bfd40", null ],
+    [ "SystemEx.Collections.Generic.Cache.AsFlexSpan", "dd/dbc/group__collections.html#gac24c22d1aa95f282bba64cf9bf04e864", null ],
     [ "SystemEx.Collections.Generic.Cache.Cache", "dd/dbc/group__collections.html#ga6e02be92994e299a39d1d1884d4baab4", null ],
     [ "SystemEx.Collections.Generic.Cache.Cache", "dd/dbc/group__collections.html#ga2010b609b3306feea5e20cdcc61ee268", null ],
     [ "SystemEx.Collections.Generic.Cache.Cache", "dd/dbc/group__collections.html#ga1c77ce66ee80f12e1c9b00ca515ae4ee", null ],

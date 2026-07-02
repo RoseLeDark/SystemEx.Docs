@@ -8,6 +8,7 @@ var files_dup =
     [ "Hash", "dir_77e19217dbb2e821b441e208fc1fa229.html", "dir_77e19217dbb2e821b441e208fc1fa229" ],
     [ "IO", "dir_f0b8d3380d5649deec2d780f35ec3ac5.html", "dir_f0b8d3380d5649deec2d780f35ec3ac5" ],
     [ "Properties", "dir_d051c76eebdc544d9c3d734575641c72.html", "dir_d051c76eebdc544d9c3d734575641c72" ],
+    [ "Random", "dir_0d7bf9062a4bceb24cfc4df86c9b1390.html", "dir_0d7bf9062a4bceb24cfc4df86c9b1390" ],
     [ "Runtime", "dir_4f6666a8f2ab10bc970eb7559668f031.html", "dir_4f6666a8f2ab10bc970eb7559668f031" ],
     [ "Utils", "dir_0a824aa1f70ce3b829ef378253b085da.html", "dir_0a824aa1f70ce3b829ef378253b085da" ],
     [ "GlobalSuppressions.cs", "d5/d0f/_global_suppressions_8cs_source.html", null ]

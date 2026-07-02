@@ -1,5 +1,6 @@
 var dir_3c5744facd7a2fc01dcce47b02ffbfba =
 [
+    [ "BinaryTree.cs", "d9/dc8/_binary_tree_8cs_source.html", null ],
     [ "GenericNode.cs", "d9/dc9/_generic_node_8cs_source.html", null ],
     [ "GroupedNode.cs", "d8/d22/_grouped_node_8cs_source.html", null ],
     [ "LinkedNode.cs", "d7/d3a/_linked_node_8cs_source.html", null ],
@@ -7,5 +8,7 @@ var dir_3c5744facd7a2fc01dcce47b02ffbfba =
     [ "LinkedNodeRange.cs", "dc/db4/_linked_node_range_8cs_source.html", null ],
     [ "LinkedNodeSlice.cs", "d8/da6/_linked_node_slice_8cs_source.html", null ],
     [ "LinkedNodeWithSibling.cs", "d2/df1/_linked_node_with_sibling_8cs_source.html", null ],
-    [ "Model/Node.cs", "d3/db3/_model_2_node_8cs_source.html", null ]
+    [ "Model/Node.cs", "d3/db3/_model_2_node_8cs_source.html", null ],
+    [ "RBTree.cs", "d2/d13/_r_b_tree_8cs_source.html", null ],
+    [ "Tree.cs", "dd/d4a/_tree_8cs_source.html", null ]
 ];

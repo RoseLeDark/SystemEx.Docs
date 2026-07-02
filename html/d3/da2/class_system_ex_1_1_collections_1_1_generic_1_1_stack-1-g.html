@@ -140,6 +140,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a48b25f1a9959b399cf220c0b7a63f025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the main stack boundaries to the full buffer range.  <br /></td></tr>
 <tr class="memitem:a9f182bd5c425a9fa71675acc121a85f4" id="r_a9f182bd5c425a9fa71675acc121a85f4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9f182bd5c425a9fa71675acc121a85f4">Stack</a> (int size)</td></tr>
 <tr class="memdesc:a9f182bd5c425a9fa71675acc121a85f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new stack with the specified capacity.  <br /></td></tr>
+<tr class="memitem:acc9248032dec74728eabdb8330872bc4" id="r_acc9248032dec74728eabdb8330872bc4"><td class="memItemLeft">FlexSpan&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#acc9248032dec74728eabdb8330872bc4">AsFlexSpan</a> (<a class="el" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a> mode=<a class="el" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">FlexSpanMode.System</a>)</td></tr>
+<tr class="memdesc:acc9248032dec74728eabdb8330872bc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a FlexSpan view over the valid portion of this array. The span does not copy data; it directly references the internal buffer.  <br /></td></tr>
+<tr class="memitem:ad8a0487b516a3509ee453868c5426687" id="r_ad8a0487b516a3509ee453868c5426687"><td class="memItemLeft">FlexSpan&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad8a0487b516a3509ee453868c5426687">AsFlexSpan</a> (long start, <a class="el" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a> mode=<a class="el" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">FlexSpanMode.System</a>)</td></tr>
+<tr class="memdesc:ad8a0487b516a3509ee453868c5426687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a FlexSpan view starting at the specified offset. The span references the internal buffer directly and does not allocate.  <br /></td></tr>
 <tr class="memitem:aaacaa8d4f932befbe254f0b93990903f" id="r_aaacaa8d4f932befbe254f0b93990903f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aaacaa8d4f932befbe254f0b93990903f">Push</a> (T element)</td></tr>
 <tr class="memdesc:aaacaa8d4f932befbe254f0b93990903f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes an element onto the main stack.  <br /></td></tr>
 <tr class="memitem:a865c014a433a43cac3da172a4bd3fe04" id="r_a865c014a433a43cac3da172a4bd3fe04"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a865c014a433a43cac3da172a4bd3fe04">Push</a> (T item, uint LayerID)</td></tr>
@@ -209,8 +213,65 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00073">73</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00074">74</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="acc9248032dec74728eabdb8330872bc4" name="acc9248032dec74728eabdb8330872bc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc9248032dec74728eabdb8330872bc4">&#9670;&#160;</a></span>AsFlexSpan() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FlexSpan&lt; T &gt; SystemEx.Collections.Generic.Stack&lt; T &gt;.AsFlexSpan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">FlexSpanMode::System</a></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>The indexing mode of the span (System, Reverse, Ring). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A FlexSpan that views the range [0 .. m_index). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00180">180</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad8a0487b516a3509ee453868c5426687" name="ad8a0487b516a3509ee453868c5426687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a0487b516a3509ee453868c5426687">&#9670;&#160;</a></span>AsFlexSpan() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FlexSpan&lt; T &gt; SystemEx.Collections.Generic.Stack&lt; T &gt;.AsFlexSpan </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">FlexSpanMode::System</a></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>The starting index inside the internal array. </td></tr>
+    <tr><td class="paramname">mode</td><td>The indexing mode of the span (System, Reverse, Ring). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A FlexSpan that views the range [start .. m_index). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00197">197</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+
+</div>
+</div>
 <a id="aa04fb1bd4ead74be0e68d39eb66d4998" name="aa04fb1bd4ead74be0e68d39eb66d4998"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa04fb1bd4ead74be0e68d39eb66d4998">&#9670;&#160;</a></span>Peek() <span class="overload">[1/2]</span></h2>
 
@@ -226,7 +287,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00209">209</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00241">241</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -249,7 +310,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00284">284</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00316">316</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -275,7 +336,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was popped; otherwise <code>false</code>.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00199">199</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00231">231</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -298,7 +359,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00268">268</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00300">300</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -329,7 +390,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An array of popped elements, or <code>null</code> if invalid.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00245">245</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00277">277</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -349,7 +410,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the element was pushed; otherwise <code>false</code>.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00172">172</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00204">204</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -372,7 +433,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00182">182</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00214">214</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -403,7 +464,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of successfully pushed elements.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00221">221</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00253">253</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -422,7 +483,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00143">143</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00144">144</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -449,7 +510,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00314">314</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00346">346</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -482,7 +543,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00303">303</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00335">335</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -505,7 +566,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00296">296</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00328">328</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -530,7 +591,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00153">153</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00154">154</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -555,7 +616,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00093">93</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00094">94</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -579,7 +640,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00078">78</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00079">79</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -603,7 +664,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00083">83</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00084">84</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -627,7 +688,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00098">98</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00099">99</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -651,7 +712,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00088">88</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00089">89</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -676,7 +737,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00118">118</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00119">119</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -700,7 +761,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00103">103</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00104">104</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -724,7 +785,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00108">108</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00109">109</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -748,7 +809,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00134">134</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00135">135</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -772,7 +833,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00128">128</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00129">129</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -796,7 +857,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00123">123</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00124">124</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -820,7 +881,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00113">113</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00114">114</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>
@@ -844,7 +905,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00139">139</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d28/_stack_8cs_source.html#l00140">140</a> of file <a class="el" href="../../db/d28/_stack_8cs_source.html">Stack.cs</a>.</p>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['with_20my_20systemex_20device_20system_0',['- OpenCL Kerneal Call with my SystemEx.Device System',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md--opencl-kerneal-call-with-my--systemexdevice-system',1,'']]]
+  ['→_20lacking_0',['Codename Update: Ignoring → Lacking',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#codename-update-ignoring--lacking',1,'']]]
 ];

@@ -2,6 +2,7 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map_2_g =
 [
     [ "Add", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a24fe9389bd3b248adc737985323e214a", null ],
     [ "Add", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#adcec3a0e814e27c4703e1e68dbbd7838", null ],
+    [ "AsFlexSpan", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a3801d3abed4708db147bdff82e701f2b", null ],
     [ "Clear", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a50db88eca63d63788f842c06bf0d2a73", null ],
     [ "Compare", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#ad84f5a6b7114ed535b0c67183325df19", null ],
     [ "Contains", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a0e7933d0fa54a85b03b630e06022d063", null ],

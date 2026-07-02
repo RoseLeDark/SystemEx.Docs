@@ -18,6 +18,8 @@ var class_system_ex_1_1_drawing_1_1_color_h_s_v =
     [ "Subtraction", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a3b94792df86f9b01e2347bf108285ef8", null ],
     [ "ToString", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#adf64424f236fd4f9504b594cb0f83d64", null ],
     [ "H", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a7634c5ebcb188f0f7d8aa48052b589ad", null ],
+    [ "One", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ab528e2d3d2a9b95590d7f13921057a92", null ],
     [ "S", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ab332963dc629e8f62e11315520bcb5ee", null ],
-    [ "V", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a89ca29edf3a853d667e55bff0923c3b0", null ]
+    [ "V", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a89ca29edf3a853d667e55bff0923c3b0", null ],
+    [ "Zero", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a009097819b259e985c51bbd28d6753bd", null ]
 ];

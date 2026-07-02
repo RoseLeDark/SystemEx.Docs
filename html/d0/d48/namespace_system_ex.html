@@ -127,6 +127,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides low‑level bit manipulation utilities for all primitive integer types. <br  />
  Includes bit extraction, bit setting, bit flipping, bit masks, and bit rotation for signed and unsigned 8‑, 16‑, 32‑ and 64‑bit values.  <a href="../../df/d58/class_system_ex_1_1_bit_utils.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Conversion" id="r_Conversion"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d6/dd9/class_system_ex_1_1_conversion.html">Conversion</a></td></tr>
+<tr class="memitem:FlexSpan_3C_20T_20_3E" id="r_FlexSpan_3C_20T_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../db/d28/struct_system_ex_1_1_flex_span-1-g.html">FlexSpan&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A lightweight view over an array supporting System, Reverse, and Ring (circular) indexing. FlexSpan does not allocate and provides ref-return access to elements.  <a href="../../db/d28/struct_system_ex_1_1_flex_span-1-g.html#details">More...</a><br /></td></tr>
 <tr class="memitem:IRange_3C_20T_20_3E" id="r_IRange_3C_20T_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html">IRange&lt; T &gt;</a></td></tr>
 <tr class="memitem:Math" id="r_Math"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/d63/class_system_ex_1_1_math.html">Math</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides mathematical helper functions that are not included in System.Math. <br  />
@@ -139,13 +141,20 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides random number and random character generation utilities for all primitive numeric types, including endian‑aware range mapping. <br  />
  Also includes password generation using configurable character sets.  <a href="../../d3/d70/class_system_ex_1_1_rand_utils.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Triple" id="r_Triple"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d7/d4e/struct_system_ex_1_1_triple.html">Triple</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a three-valued logic value.  <a href="../../d7/d4e/struct_system_ex_1_1_triple.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aa60c11b2d2d4ff5084ed2276d3e06697" id="r_aa60c11b2d2d4ff5084ed2276d3e06697"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><b>triple</b> : sbyte { <b>True</b> = 1
+<tr class="memitem:a3ef7d5832058e44f73e558fde87598f9" id="r_a3ef7d5832058e44f73e558fde87598f9"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a> { <a class="el" href="#a3ef7d5832058e44f73e558fde87598f9ad4db177c94738b72bf9ce61e988ab1f1">Ring</a>
+, <a class="el" href="#a3ef7d5832058e44f73e558fde87598f9a67f115c1fddc4ce1aeb1c754001585bc">Reverse</a>
+, <a class="el" href="#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>
+ }</td></tr>
+<tr class="memdesc:a3ef7d5832058e44f73e558fde87598f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines how FlexSpan indexes its underlying array.  <a href="#a3ef7d5832058e44f73e558fde87598f9">More...</a><br /></td></tr>
+<tr class="memitem:aa60c11b2d2d4ff5084ed2276d3e06697" id="r_aa60c11b2d2d4ff5084ed2276d3e06697"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#aa60c11b2d2d4ff5084ed2276d3e06697">triple</a> : sbyte { <b>True</b> = 1
 , <b>False</b> = 0
 , <b>Nin</b> = -1
  }</td></tr>
+<tr class="memdesc:aa60c11b2d2d4ff5084ed2276d3e06697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a three-valued logic type with True, False, and Nin (neither true nor false) states.  <a href="#aa60c11b2d2d4ff5084ed2276d3e06697">More...</a><br /></td></tr>
 <tr class="memitem:ab37b6205838476a6d1b48cfa0440cacd" id="r_ab37b6205838476a6d1b48cfa0440cacd"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> { <a class="el" href="#ab37b6205838476a6d1b48cfa0440cacda3c0ba6b22b526d7fd50c3026435a8c02">LittleEndian</a>
 , <a class="el" href="#ab37b6205838476a6d1b48cfa0440cacda2ce7a92ae43763828ac4acb4560c2a5b">BigEndian</a>
  }</td></tr>
@@ -174,7 +183,31 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00028">28</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00027">27</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3ef7d5832058e44f73e558fde87598f9" name="a3ef7d5832058e44f73e558fde87598f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ef7d5832058e44f73e558fde87598f9">&#9670;&#160;</a></span>FlexSpanMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a3ef7d5832058e44f73e558fde87598f9">SystemEx.FlexSpanMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3ef7d5832058e44f73e558fde87598f9ad4db177c94738b72bf9ce61e988ab1f1" name="a3ef7d5832058e44f73e558fde87598f9ad4db177c94738b72bf9ce61e988ab1f1"></a>Ring&#160;</td><td class="fielddoc"><p>circular indexing (wrap-around) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ef7d5832058e44f73e558fde87598f9a67f115c1fddc4ce1aeb1c754001585bc" name="a3ef7d5832058e44f73e558fde87598f9a67f115c1fddc4ce1aeb1c754001585bc"></a>Reverse&#160;</td><td class="fielddoc"><p>reverse indexing </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a" name="a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a"></a>System&#160;</td><td class="fielddoc"><p>forward indexing </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00026">26</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
 
 </div>
 </div>
@@ -196,7 +229,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../df/dbe/_random_8cs_source.html#l00025">25</a> of file <a class="el" href="../../df/dbe/_random_8cs_source.html">Random.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/dbe/_random_8cs_source.html#l00026">26</a> of file <a class="el" href="../../df/dbe/_random_8cs_source.html">Random.cs</a>.</p>
 
 </div>
 </div>
@@ -207,12 +240,12 @@ Enumerations</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum SystemEx.triple : sbyte</td>
+          <td class="memname">enum <a class="el" href="#aa60c11b2d2d4ff5084ed2276d3e06697">SystemEx.triple</a> : sbyte</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dd1/_base_2_triple_8cs_source.html#l00007">7</a> of file <a class="el" href="../../d6/dd1/_base_2_triple_8cs_source.html">Base/Triple.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/dd1/_base_2_triple_8cs_source.html#l00023">23</a> of file <a class="el" href="../../d6/dd1/_base_2_triple_8cs_source.html">Base/Triple.cs</a>.</p>
 
 </div>
 </div>

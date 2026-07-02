@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['readonly_0',['ReadOnly',['../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#afe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197',1,'SystemEx::Device::Memory']]],
-  ['readwrite_1',['ReadWrite',['../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#afe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723',1,'SystemEx::Device::Memory']]],
-  ['reservlistorder_2',['ReservListOrder',['../dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316',1,'SystemEx.Collections.Generic.ReservListOrder'],['../d9/d57/group__node.html#gga053e2099258d581fd575e6dc34a8aa1ea774152d3487a933c5a985059b0a36316',1,'SystemEx.Collections.Model.ReservListOrder']]]
+  ['onlysystem_0',['OnlySystem',['../dd/dbc/group__collections.html#ggaf02ddb6084404bb267c0629f20ed8b53a26d52f0d46807d1cb3e28d40177db92e',1,'SystemEx::Collections::Generic']]],
+  ['overlay_1',['Overlay',['../d1/d60/group__color.html#ggaf2ec8d122c6ae6f77f9d5b8d55e37cb2a6b551379c3c0b59326abdaf3b4395bd3',1,'SystemEx::Drawing']]]
 ];

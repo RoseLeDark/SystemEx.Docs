@@ -131,16 +131,16 @@ Classes</h2></td></tr>
 <tr class="memitem:SystemEx_2EHash_2EHashAlgorithmAttribute" id="r_SystemEx_2EHash_2EHashAlgorithmAttribute"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html">SystemEx.Hash.HashAlgorithmAttribute</a></td></tr>
 <tr class="memitem:SystemEx_2EHash_2EHash32" id="r_SystemEx_2EHash_2EHash32"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html">SystemEx.Hash.Hash32</a></td></tr>
 <tr class="memitem:SystemEx_2EHash_2EHash64" id="r_SystemEx_2EHash_2EHash64"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html">SystemEx.Hash.Hash64</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 64‑bit hash value produced by a <a class="el" href="../../d5/d9e/namespace_system_ex_1_1_system_ex.html">SystemEx</a> hashing algorithm.  <a href="../../da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 64‑bit hash value produced by a <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing algorithm.  <a href="../../da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html#details">More...</a><br /></td></tr>
 <tr class="memitem:SystemEx_2EHash_2EIHash" id="r_SystemEx_2EHash_2EIHash"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html">SystemEx.Hash.IHash</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for <a class="el" href="../../d5/d9e/namespace_system_ex_1_1_system_ex.html">SystemEx</a> hashing algorithms.  <a href="../../dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing algorithms.  <a href="../../dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html#details">More...</a><br /></td></tr>
 <tr class="memitem:SystemEx_2EHash_2EMurmur3Hasher" id="r_SystemEx_2EHash_2EMurmur3Hasher"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d5/db0/class_system_ex_1_1_hash_1_1_murmur3_hasher.html">SystemEx.Hash.Murmur3Hasher</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements the Murmur3 hashing algorithm (32‑bit and 64‑bit).</p>
-<p>Represents a 32‑bit hash value produced by a <a class="el" href="../../d5/d9e/namespace_system_ex_1_1_system_ex.html">SystemEx</a> hashing algorithm.</p>
+<p>Represents a 32‑bit hash value produced by a <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing algorithm.</p>
 <p>Declares which hashing algorithm a <code><a class="el" href="../../db/ddb/class_system_ex_1_1_hash_1_1_hashable.html">Hashable</a></code> type should use.</p>
-<p><a class="el" href="../../da/d5b/namespace_system_ex_1_1_base.html">Base</a> class for objects that can be hashed using the <a class="el" href="../../d5/d9e/namespace_system_ex_1_1_system_ex.html">SystemEx</a> hashing subsystem.</p>
+<p><a class="el" href="../../da/d5b/namespace_system_ex_1_1_base.html">Base</a> class for objects that can be hashed using the <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing subsystem.</p>
 <p>This implementation provides both 32‑bit and 64‑bit variants and supports seeding, allowing deterministic or randomized hash streams depending on the caller.</p>
 <p>Characteristics:</p><ul>
 <li>Very fast</li>
@@ -153,7 +153,7 @@ Classes</h2></td></tr>
 <p>The class supports both 32‑bit and 64‑bit hashing. <br  />
  A per‑instance random seed is generated once and stored, ensuring stable hashing for the lifetime of the object while preventing predictable hash streams.</p>
 <p>The attribute binds a concrete hasher implementation (IHash) to a class or struct and specifies the byte‑order (Endian) used when interpreting the binary representation returned by Hashable.ToBytes.</p>
-<p>The <a class="el" href="../../d5/d9e/namespace_system_ex_1_1_system_ex.html">SystemEx</a> hashing subsystem reads this attribute at runtime to instantiate the correct hasher and compute 32‑bit or 64‑bit hashes.</p>
+<p>The <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing subsystem reads this attribute at runtime to instantiate the correct hasher and compute 32‑bit or 64‑bit hashes.</p>
 <p>The struct is immutable and stores the raw 32‑bit result exactly as returned by the underlying hasher. No normalization or reinterpretation is performed.</p>
 <p>Both <code>Compute</code> (32‑bit) and <code>ComputeLong</code> (64‑bit) operate on Array&lt;byte&gt; and support endian‑aware block construction. </p>
 </div></div><!-- contents -->

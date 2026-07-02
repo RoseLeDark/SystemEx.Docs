@@ -1,5 +1,7 @@
 var class_system_ex_1_1_collections_1_1_generic_1_1_stack_1_g =
 [
+    [ "AsFlexSpan", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#acc9248032dec74728eabdb8330872bc4", null ],
+    [ "AsFlexSpan", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ad8a0487b516a3509ee453868c5426687", null ],
     [ "Peek", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#aa04fb1bd4ead74be0e68d39eb66d4998", null ],
     [ "Peek", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#a716b270a05b22e6ebfb02eda033f8945", null ],
     [ "Pop", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ac843f7e4a3c4d7c2e77c0c71571951e4", null ],

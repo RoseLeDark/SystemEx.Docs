@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writeonly_0',['WriteOnly',['../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#afe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5',1,'SystemEx::Device::Memory']]]
+  ['todevice_0',['ToDevice',['../dd/dbc/group__collections.html#ggaf02ddb6084404bb267c0629f20ed8b53ae9366abd00c5a749c84c222bab5275d4',1,'SystemEx::Collections::Generic']]]
 ];

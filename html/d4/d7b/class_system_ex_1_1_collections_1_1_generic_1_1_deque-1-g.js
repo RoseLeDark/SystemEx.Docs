@@ -1,5 +1,6 @@
 var class_system_ex_1_1_collections_1_1_generic_1_1_deque_1_g =
 [
+    [ "AsFlexSpan", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#aeb0adcfad25247c10d639a650126195c", null ],
     [ "Clear", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#ad955c6ca43ad5944a411f961f4ca382e", null ],
     [ "Deque", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#a0b402429b10c3a0094019e0f1a3948e7", null ],
     [ "PopBack", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html#aa82138f3d8737c2b427dbc31b5b55759", null ],

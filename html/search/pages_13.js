@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['opencl_20kerneal_20call_20with_20my_20systemex_20device_20system_0',['- OpenCL Kerneal Call with my SystemEx.Device System',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md--opencl-kerneal-call-with-my--systemexdevice-system',1,'']]],
-  ['overview_1',['✨ Overview',['../index.html#autotoc_md-overview',1,'']]]
+  ['pair_20types_0',['Tuple &amp;amp; Pair Types',['../index.html#tuple--pair-types',1,'']]],
+  ['planned_1',['Planned',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#planned',1,'']]],
+  ['planned_20to_20version_201_200_2',['Planned to Version 1.0',['../d1/d5b/md__c_h_a_n_g_e_l_o_g.html#planned-to-version-10',1,'']]],
+  ['project_20structure_3',['📁 Project Structure',['../index.html#autotoc_md-project-structure',1,'']]]
 ];
