@@ -14,10 +14,8 @@ var searchData=
   ['hasprev_11',['HasPrev',['../d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html#abf5e6890bce249be4dca7235074b9f6a',1,'SystemEx.Collections.Generic.Node-1-g.HasPrev'],['../de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#a28fae227cd253a4273c2ebeb50009a2a',1,'SystemEx.Collections.Model.LinkedNode-1-g.HasPrev'],['../d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#a4ce870aae85dc093ff780e531409c493',1,'SystemEx.Base.NumberRangeStepper-1-g.HasPrev()'],['../d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#a9d05cc0b06c712291bf0276a55e75f22',1,'SystemEx.Base.NumberRangeStepper-1-g.HasPrev(T step)']]],
   ['hasvalue_12',['HasValue',['../d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html#aac2b139a0192c9672990b680c207268e',1,'SystemEx::Collections::Model::GenericNode-1-g']]],
   ['headersize_13',['HeaderSize',['../d7/d6d/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#a55d999274b4eae00858780871696f74e',1,'SystemEx.Drawing.ColorR10G10B10FormatSchema.HeaderSize'],['../d2/d66/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_format_schema.html#aae4f5f9c04b6acc20131ffdb9f17c417',1,'SystemEx.IO.Provider.IByteFormatSchema.HeaderSize']]],
-  ['heapsort_3c_20t_20_3e_14',['HeapSort&lt; T &gt;',['../db/d0a/class_system_ex_1_1_utils_1_1_algorithm.html#a9df8d9f973cc229486a8606223d60763',1,'SystemEx::Utils::Algorithm']]],
-  ['height_15',['Height',['../d1/d60/group__color.html#ga4b0ab0e3e74115c37b005e19707947c7',1,'SystemEx::Drawing::ICanvas-1-g']]],
-  ['high_16',['High',['../d1/d60/group__color.html#gga1738673316f8d96453eda571bae3f460a655d20c1ca69519ca647684edbb2db35',1,'SystemEx::Drawing']]],
-  ['honeydew_17',['HoneyDew',['../d1/d60/group__color.html#gab8f6314d370e564dd8110d98bd019001',1,'SystemEx::Drawing::WhiteColors']]],
-  ['hotpink_18',['HotPink',['../d1/d60/group__color.html#ga67557651b024e03710ee68cd60c5f549',1,'SystemEx::Drawing::PinkColors']]],
-  ['huename_19',['HUENAME',['../d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#aafbc8a4178e50b1ca0d37995dc433f64',1,'SystemEx::Drawing::ColorNCol']]]
+  ['height_14',['Height',['../d1/d60/group__color.html#ga4b0ab0e3e74115c37b005e19707947c7',1,'SystemEx::Drawing::ICanvas-1-g']]],
+  ['high_15',['High',['../d1/d60/group__color.html#gga1738673316f8d96453eda571bae3f460a655d20c1ca69519ca647684edbb2db35',1,'SystemEx::Drawing']]],
+  ['honeydew_16',['HoneyDew',['../d1/d60/group__color.html#gab8f6314d370e564dd8110d98bd019001',1,'SystemEx::Drawing::WhiteColors']]],
+  ['hotpink_17',['HotPink',['../d1/d60/group__color.html#ga67557651b024e03710ee68cd60c5f549',1,'SystemEx::Drawing::PinkColors']]]
 ];

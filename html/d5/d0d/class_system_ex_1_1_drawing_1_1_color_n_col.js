@@ -5,7 +5,6 @@ var class_system_ex_1_1_drawing_1_1_color_n_col =
     [ "Equals", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#a17bc255e558afe47f920e500378039ce", null ],
     [ "GetHashCode", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#afda66e2785c75763d48b0bb20613d564", null ],
     [ "ToString", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#aa92a0d020af23accb14206702c56d199", null ],
-    [ "HUENAME", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#aafbc8a4178e50b1ca0d37995dc433f64", null ],
     [ "C", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#a8d4632823dbae580b5e0c1d986b29098", null ],
     [ "I", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#a27d55e4cd3e78bb6c9bafdec582cdcef", null ],
     [ "L", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#a912615c4122a02d491047bd8de996f26", null ],

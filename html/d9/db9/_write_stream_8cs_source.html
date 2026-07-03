@@ -8,6 +8,7 @@
 <title>SystemEX: WriteStream.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,8 +33,9 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Lacking</span>
    </div>
+   <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
  </tr>
  </tbody>
@@ -161,7 +163,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/db9/_write_
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">public</span> <span class="keyword">class </span>WriteCaheStream&lt;TStreamCache&gt; : Stream </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        where TStreamCache : IStreamCachePolicy {</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">private</span> Stream m_stream;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keyword">private</span> <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd" title="Specifies the byte order used when converting values to and from raw byte sequences.">Endian</a> m_endian;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keyword">private</span> <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> m_endian;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keyword">private</span> Cache m_cache;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">private</span> TStreamCache m_scPolicy;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">private</span> <span class="keywordtype">object</span> m_lock;</div>
@@ -221,8 +223,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/db9/_write_
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                <span class="keywordflow">if</span> ( is_in == <span class="keyword">true</span> ) {</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                    <span class="comment">// Alles im Cache</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                    m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#ga1e6cbff2a5de7fe6c185d7ca23f266e5" title="Moves the internal position according to the specified origin and offset.">Seek</a>(SeekOrigin.Begin, s.CachePosition);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                    totalRead = m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#gad58cc9f34179c85df7a762d5de777a94" title="Reads a single byte from the specified position.">Read</a>(buffer, offset, count);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                    m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#ga1e6cbff2a5de7fe6c185d7ca23f266e5">Seek</a>(SeekOrigin.Begin, s.CachePosition);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                    totalRead = m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#gad58cc9f34179c85df7a762d5de777a94">Read</a>(buffer, offset, count);</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( is_in == <span class="keyword">false</span> ) {</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                    <span class="comment">// Alles im Stream</span></div>
@@ -232,8 +234,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/db9/_write_
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                    <span class="comment">// Teilweise im Cache, teilweise im Stream</span></div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                    <span class="comment">// 1. Cache-Teil</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                    m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#ga1e6cbff2a5de7fe6c185d7ca23f266e5" title="Moves the internal position according to the specified origin and offset.">Seek</a>(SeekOrigin.Begin, s.CachePosition);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                    <span class="keywordtype">int</span> cacheRead = m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#gad58cc9f34179c85df7a762d5de777a94" title="Reads a single byte from the specified position.">Read</a>(buffer, offset, s.CacheCount);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                    m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#ga1e6cbff2a5de7fe6c185d7ca23f266e5">Seek</a>(SeekOrigin.Begin, s.CachePosition);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                    <span class="keywordtype">int</span> cacheRead = m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#gad58cc9f34179c85df7a762d5de777a94">Read</a>(buffer, offset, s.CacheCount);</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                    <span class="comment">// 2. Stream-Teil</span></div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                    m_stream.Seek(s.StreamPosition + s.CacheCount, SeekOrigin.Begin);</div>
@@ -264,17 +266,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/db9/_write_
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        }</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> Write(<span class="keywordtype">byte</span>[] buffer, <span class="keywordtype">int</span> offset, <span class="keywordtype">int</span> count) {</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keywordflow">if</span> ( (ulong)count &gt; m_cache.<a class="code hl_property" href="../../dd/dbc/group__collections.html#gad96e10ea5020a4bedf2e3bdcb103f6be" title="Gets the total buffer length in bytes.">Length</a> ) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keywordflow">if</span> ( (ulong)count &gt; m_cache.<a class="code hl_property" href="../../dd/dbc/group__collections.html#gad96e10ea5020a4bedf2e3bdcb103f6be">Length</a> ) {</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                Flush();</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                m_stream.Write(buffer, offset, count);</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            }</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">if</span> ( m_cache.<a class="code hl_property" href="../../dd/dbc/group__collections.html#ga74a59252690c8fff0f671b7ddadfc318" title="Gets the total free bytes.">Free</a> &lt; (ulong)count )</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">if</span> ( m_cache.<a class="code hl_property" href="../../dd/dbc/group__collections.html#ga74a59252690c8fff0f671b7ddadfc318">Free</a> &lt; (ulong)count )</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                Flush();</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            lock ( m_lock ) {</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                m_scPolicy.OnWrite(m_stream.Position, offset, count);</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#ga7f48593fb926460c6d80cff8b8ae45f7" title="Writes a 32-bit unsigned integer at the specified position.">Write</a>(buffer, offset, count);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#ga7f48593fb926460c6d80cff8b8ae45f7">Write</a>(buffer, offset, count);</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            }</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        }</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> Commit () {</div>
@@ -287,8 +289,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/db9/_write_
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                <span class="keywordflow">foreach</span> ( var item <span class="keywordflow">in</span> entries ) {</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                    <span class="keywordtype">byte</span>[] buffer = <span class="keyword">new</span> <span class="keywordtype">byte</span>[item.Count];</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                    m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#ga1e6cbff2a5de7fe6c185d7ca23f266e5" title="Moves the internal position according to the specified origin and offset.">Seek</a>(SeekOrigin.Begin, item.CachePosition);</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                    m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#gad58cc9f34179c85df7a762d5de777a94" title="Reads a single byte from the specified position.">Read</a>(buffer, 0, item.Count);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                    m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#ga1e6cbff2a5de7fe6c185d7ca23f266e5">Seek</a>(SeekOrigin.Begin, item.CachePosition);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                    m_cache.<a class="code hl_function" href="../../dd/dbc/group__collections.html#gad58cc9f34179c85df7a762d5de777a94">Read</a>(buffer, 0, item.Count);</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                    m_stream.Seek(item.StreamPosition, SeekOrigin.Begin);</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                    m_stream.Write(buffer, 0, item.Count);</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                    m_stream.Flush();</div>
@@ -300,6 +302,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/db9/_write_
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    }</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>}</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="agroup__collections_html_ga1e6cbff2a5de7fe6c185d7ca23f266e5"><div class="ttname"><a href="../../dd/dbc/group__collections.html#ga1e6cbff2a5de7fe6c185d7ca23f266e5">SystemEx.Collections.Generic.Cache.Seek</a></div><div class="ttdeci">ulong Seek(SeekOrigin org, int pos)</div><div class="ttdoc">Moves the internal position according to the specified origin and offset.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d82/_cache_8cs_source.html#l00194">Cache.cs:194</a></div></div>
+<div class="ttc" id="agroup__collections_html_ga74a59252690c8fff0f671b7ddadfc318"><div class="ttname"><a href="../../dd/dbc/group__collections.html#ga74a59252690c8fff0f671b7ddadfc318">SystemEx.Collections.Generic.Cache.Free</a></div><div class="ttdeci">virtual ulong Free</div><div class="ttdoc">Gets the total free bytes.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d82/_cache_8cs_source.html#l00096">Cache.cs:96</a></div></div>
+<div class="ttc" id="agroup__collections_html_ga7f48593fb926460c6d80cff8b8ae45f7"><div class="ttname"><a href="../../dd/dbc/group__collections.html#ga7f48593fb926460c6d80cff8b8ae45f7">SystemEx.Collections.Generic.Cache.Write</a></div><div class="ttdeci">int Write(ulong position, uint value, Endian endian)</div><div class="ttdoc">Writes a 32-bit unsigned integer at the specified position.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d82/_cache_8cs_source.html#l00288">Cache.cs:288</a></div></div>
+<div class="ttc" id="agroup__collections_html_gad58cc9f34179c85df7a762d5de777a94"><div class="ttname"><a href="../../dd/dbc/group__collections.html#gad58cc9f34179c85df7a762d5de777a94">SystemEx.Collections.Generic.Cache.Read</a></div><div class="ttdeci">byte Read(ulong position)</div><div class="ttdoc">Reads a single byte from the specified position.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d82/_cache_8cs_source.html#l00541">Cache.cs:541</a></div></div>
+<div class="ttc" id="agroup__collections_html_gad96e10ea5020a4bedf2e3bdcb103f6be"><div class="ttname"><a href="../../dd/dbc/group__collections.html#gad96e10ea5020a4bedf2e3bdcb103f6be">SystemEx.Collections.Generic.Cache.Length</a></div><div class="ttdeci">virtual ulong Length</div><div class="ttdoc">Gets the total buffer length in bytes.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d82/_cache_8cs_source.html#l00092">Cache.cs:92</a></div></div>
+<div class="ttc" id="agroup__collections_html_gaf02ddb6084404bb267c0629f20ed8b53"><div class="ttname"><a href="../../dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53">SystemEx.Collections.Generic.CacheType</a></div><div class="ttdeci">CacheType</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d82/_cache_8cs_source.html#l00029">Cache.cs:29</a></div></div>
+<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces_html"><div class="ttname"><a href="../../de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html">SystemEx.Collections.Generic.Interfaces</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d16/_i_array_8cs_source.html#l00018">IArray.cs:18</a></div></div>
+<div class="ttc" id="anamespace_system_ex_1_1_collections_1_1_generic_html"><div class="ttname"><a href="../../de/d64/namespace_system_ex_1_1_collections_1_1_generic.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d47/_array_8cs_source.html#l00024">Array.cs:24</a></div></div>
+<div class="ttc" id="anamespace_system_ex_1_1_i_o_html"><div class="ttname"><a href="../../d4/d5d/namespace_system_ex_1_1_i_o.html">SystemEx.IO</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d84/_cach_stream_8cs_source.html#l00025">CachStream.cs:25</a></div></div>
+<div class="ttc" id="anamespace_system_ex_html_ab37b6205838476a6d1b48cfa0440cacd"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">SystemEx.Endian</a></div><div class="ttdeci">Endian</div><div class="ttdoc">Specifies the byte order used when converting values to and from raw byte sequences.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d81/_conversion_8cs_source.html#l00027">Conversion.cs:27</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

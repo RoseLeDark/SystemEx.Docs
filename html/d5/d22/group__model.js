@@ -2,7 +2,6 @@ var group__model =
 [
     [ "SystemEx.Collections.Model.BinaryTree&lt; T &gt;", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html", [
       [ "Beginn", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a4bf90b5c6313a93de055ef06e84996aa", null ],
-      [ "BinaryTree", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a4b7a52be76706d4fd21ca160f95a7ca3", null ],
       [ "BinaryTree", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a1a06b20dd743359bdbdd24be3c0e013d", null ],
       [ "BinaryTree", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a8c4bad6537c900fe2ef2433d8607c219", null ],
       [ "Clear", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#ade791e25641a761d91099ef89c244b24", null ],
@@ -11,7 +10,6 @@ var group__model =
       [ "Find", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#ab24a3b20f1f6e0a6a710b71b2505f368", null ],
       [ "FindNext", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a8b688b6ef849e60e66254f4c25867529", null ],
       [ "FreeNode", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a3a7a38eb6faeb7c5c2173a996c76ce61", null ],
-      [ "get_count", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a08ad833c653338fd6b23be5e97dce4b5", null ],
       [ "Insert", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a7bf807f825faf8872f184194a8bdf562", null ],
       [ "RotateLeft", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#aa6f85e7f115d9c7c77d306d9ea680c1c", null ],
       [ "RotateRight", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#acdf12123533a7b7e9bd38a05a47fb2ac", null ],
@@ -24,7 +22,6 @@ var group__model =
       [ "IsEmpty", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a8cb7201df4268edd3d37f703ebd290e4", null ],
       [ "IsLeaf", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#abaaf038850bf458ae7ef268a5e9752d8", null ],
       [ "Left", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a3da884e97843936c91036538903795bf", null ],
-      [ "Parent", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a1b58d1fc720ee43c899f22d90dd4717b", null ],
       [ "Right", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#aa44f5052f7268a99afc2c835872752a0", null ]
     ] ],
     [ "SystemEx.Collections.Model.GenericNodeIterator&lt; T &gt;", "d2/d1c/class_system_ex_1_1_collections_1_1_model_1_1_generic_node_iterator-1-g.html", [
@@ -90,7 +87,6 @@ var group__model =
       [ "Erase", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#aefba18c3945ab0a3ca41c87290e212fb", null ],
       [ "EraseNext", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#ad47eafda55dea412cb680bf08ee6c071", null ],
       [ "ErasePrev", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#a0d3ebc6d5372302cb8adc30b4fe9c921", null ],
-      [ "GetEnumerator", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#ae059fd569c9cbc74a28d5bfe7e046e0f", null ],
       [ "GetEnumerator", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#a036ac9d3c8c021e12d5703bc0c074e9a", null ],
       [ "InsertAfter", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#a241beddbdb3eed7cc98a9d46c8ca071b", null ],
       [ "InsertAfter", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#a46fddaaa251cc741f8c495d76b0dc9db", null ],
@@ -116,8 +112,6 @@ var group__model =
       [ "SwapPrev", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#a3c5bfa81c3aa2fa443e1a475dbb57d37", null ],
       [ "SwapWith", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#a90f3e5fc84a3da1a1d0744b1ede9d546", null ],
       [ "Travers", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#a0d0a226c46b66aaa00aea303b6d6345d", null ],
-      [ "TraversListBackward", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#a0494a987182ee05f74c3bdb5973019ee", null ],
-      [ "TraversListForward", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#a521b94c5ec1d77f6b40c8ac9266b6392", null ],
       [ "Count", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#afb6d682394000c9b53d4ef6339081c7a", null ],
       [ "HasNext", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#a2452524026186e1354d010e06ebd4789", null ],
       [ "HasPrev", "de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#a28fae227cd253a4273c2ebeb50009a2a", null ],
@@ -128,20 +122,15 @@ var group__model =
     [ "SystemEx.Collections.Model.LinkedNodeChain&lt; T &gt;", "d9/d90/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_chain-1-g.html", [
       [ "Add", "d9/d90/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_chain-1-g.html#a325b05736aa978fd9a867fba8242da5c", null ],
       [ "Add", "d9/d90/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_chain-1-g.html#a6de4ff8765947372e240a8db36b551dd", null ],
-      [ "GetEnumerator", "d9/d90/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_chain-1-g.html#a5a5733b6b8293ab32a0405eaec6205f1", null ],
-      [ "m_ranges", "d9/d90/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_chain-1-g.html#ae505de16d145a3a0d75cbd037b093a30", null ]
+      [ "GetEnumerator", "d9/d90/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_chain-1-g.html#a5a5733b6b8293ab32a0405eaec6205f1", null ]
     ] ],
     [ "SystemEx.Collections.Model.LinkedNodeRange&lt; T &gt;", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html", [
       [ "GetEnumerator", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html#a9dda0f4e302ea97df1cc02da01ed7d8a", null ],
-      [ "LinkedNodeRange", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html#a0c581a9bc6bc8ea29c8813ec8754ef1d", null ],
-      [ "m_begin", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html#aed593ed4a48e791f6fd4cf4f6cebca6c", null ],
-      [ "m_end", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html#a0993e2b04cb8f5e21a4111e41794db46", null ]
+      [ "LinkedNodeRange", "d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html#a0c581a9bc6bc8ea29c8813ec8754ef1d", null ]
     ] ],
     [ "SystemEx.Collections.Model.LinkedNodeSlice&lt; T &gt;", "da/d53/struct_system_ex_1_1_collections_1_1_model_1_1_linked_node_slice-1-g.html", [
       [ "GetEnumerator", "da/d53/struct_system_ex_1_1_collections_1_1_model_1_1_linked_node_slice-1-g.html#ad9fd0e5458fa694fe62dcf70179d02ea", null ],
       [ "LinkedNodeSlice", "da/d53/struct_system_ex_1_1_collections_1_1_model_1_1_linked_node_slice-1-g.html#a52a23fec419c58fd0ab04c84b390d91a", null ],
-      [ "m_Begin", "da/d53/struct_system_ex_1_1_collections_1_1_model_1_1_linked_node_slice-1-g.html#a7afc2c6ba03c1012f3a754532c74950a", null ],
-      [ "m_Length", "da/d53/struct_system_ex_1_1_collections_1_1_model_1_1_linked_node_slice-1-g.html#ae5d39e025f7a8a3ce567abc5e463cffb", null ],
       [ "End", "da/d53/struct_system_ex_1_1_collections_1_1_model_1_1_linked_node_slice-1-g.html#a908432436216ade0edad28a69a8db756", null ]
     ] ],
     [ "SystemEx.Collections.Model.LinkedNodeWithSibling&lt; T, TS &gt;", "df/d66/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_with_sibling-2-g.html", [
@@ -159,13 +148,9 @@ var group__model =
       [ "Find", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a6f8b20f0e495f69a505dc51cd66378de", null ],
       [ "FindNext", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a337307e0253b494b8581ddb38ae3738b", null ],
       [ "FreeNode", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a5788610141b9b8ff07f7ad4edb0bb150", null ],
-      [ "get_count", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a45986bdc0834a71bea76c898cbf79fa2", null ],
       [ "Insert", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a26b93bf5e38efa86c7a868adb811f21e", null ],
-      [ "RBTreeNode", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a0a6e6ecf5652f1f222bfeb8510d6008d", null ],
       [ "RBTreeNode", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a1be46ecc58ca8e7f615f942fbec71e7a", null ],
       [ "RBTreeNode", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a841569bb216fe5ff876e3b53dc1fa861", null ],
-      [ "Rebalance", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#ab3980372db87f37c9aff617fe5eeef9f", null ],
-      [ "RebalanceErase", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a9afc0a0f2a51ee6be833b8681333f38c", null ],
       [ "RotateLeft", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a33eb8d78055fce45e0ffd01268783054", null ],
       [ "RotateRight", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a47b89b936b8d36b68438ccd89aa1681b", null ],
       [ "Swap", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a2fb009757b087c70b0eabc59b2e166f9", null ],
@@ -173,7 +158,6 @@ var group__model =
       [ "Traverse", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#ad22bf038a2019a496b37ffcd7896f214", null ],
       [ "TraverseFunc", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a148cc56b497df2ce49eb3cb0b64afe01", null ],
       [ "Validate", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#aca01544bb8aa4f16c36022e0b42f6667", null ],
-      [ "validate", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#abddb2e21582263c7920c89779137d0be", null ],
       [ "AutoRebalance", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#ad6d8c80a7f8137e4250facb5f1979294", null ],
       [ "Color", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#aa36763e11d82d9edc1151eaee9334f9b", null ],
       [ "CompareFunc", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#aad0c98d30960499db076ee75969e16c2", null ],
@@ -181,7 +165,6 @@ var group__model =
       [ "IsEmpty", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a2369544d1bc64f5770ab2be75ac6f14d", null ],
       [ "IsLeaf", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#ac0a10d9d326e466c5b59b1035d13ad11", null ],
       [ "Left", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a03e80e2d0aa7ca37ac26289d208d7457", null ],
-      [ "Parent", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#acea66d50e8a7056db1fe09a3368a3b9f", null ],
       [ "Right", "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#ad58f7688b658fb550c4058f5bae7ea75", null ]
     ] ],
     [ "SystemEx.Collections.Model.TraversOrder", "d5/d22/group__model.html#ga053e2099258d581fd575e6dc34a8aa1e", [

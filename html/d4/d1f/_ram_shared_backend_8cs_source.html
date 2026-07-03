@@ -8,6 +8,7 @@
 <title>SystemEX: RamSharedBackend.cs Source File</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,8 +33,9 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Lacking</span>
    </div>
+   <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
  </tr>
  </tbody>
@@ -149,7 +151,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d1f/_ram_sh
 </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
 <div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html">   33</a></span>    <span class="keyword">public</span> <span class="keyword">class </span>RamSharedBackend : <a class="code hl_interface" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html" title="Defines the low‑level backend interface used by DeviceSharedBuffer and related shared‑memory abstract...">IDeviceSharedBackend</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html">   33</a></span>    <span class="keyword">public</span> <span class="keyword">class </span>RamSharedBackend : <a class="code hl_interface" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html">IDeviceSharedBackend</a> {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">private</span> <span class="keywordtype">byte</span>[]? m_Buffer;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">internal</span> RamSharedBackend() {</div>
@@ -161,7 +163,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d1f/_ram_sh
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordtype">long</span> _size = m_Buffer.Length;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            data = m_Buffer;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            ((<a class="code hl_struct" href="../../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html" title="Represents an unmanaged object that can be pinned in memory.">UnmanagedObject</a>)hardwareBuffer).Dispose();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            ((<a class="code hl_struct" href="../../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html">UnmanagedObject</a>)hardwareBuffer).Dispose();</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            m_Buffer = <span class="keyword">null</span>;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
@@ -169,29 +171,29 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d1f/_ram_sh
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
 </div>
 <div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a836f662fbb93b2bfe6cdf75c7d181181">   57</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a836f662fbb93b2bfe6cdf75c7d181181" title="Releases and invalidates the backend‑specific hardware buffer handle.   After this call,...">CloseHardwareBuffer</a>(ref <span class="keywordtype">object</span> hardwareBuffer) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            ((<a class="code hl_struct" href="../../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html" title="Represents an unmanaged object that can be pinned in memory.">UnmanagedObject</a>)hardwareBuffer).Dispose();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a836f662fbb93b2bfe6cdf75c7d181181">   57</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a836f662fbb93b2bfe6cdf75c7d181181">CloseHardwareBuffer</a>(ref <span class="keywordtype">object</span> hardwareBuffer) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            ((<a class="code hl_struct" href="../../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html">UnmanagedObject</a>)hardwareBuffer).Dispose();</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            m_Buffer = <span class="keyword">null</span>;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
 </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a38bb2947d40b091d13169a0f253f49ea">   63</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_function" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a38bb2947d40b091d13169a0f253f49ea" title="Creates a hardware buffer intended for writing operations and initializes it with the provided cache ...">CreateWriteHardwareBuffer</a>(<span class="keywordtype">byte</span>[] cache, out <span class="keywordtype">object</span> hardwareBuffer) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a38bb2947d40b091d13169a0f253f49ea">   63</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_function" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a38bb2947d40b091d13169a0f253f49ea">CreateWriteHardwareBuffer</a>(<span class="keywordtype">byte</span>[] cache, out <span class="keywordtype">object</span> hardwareBuffer) {</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            m_Buffer = cache;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            GCHandle handle = GCHandle.Alloc(m_Buffer, GCHandleType.Pinned);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            hardwareBuffer = <span class="keyword">new</span> <a class="code hl_struct" href="../../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html" title="Represents an unmanaged object that can be pinned in memory.">UnmanagedObject</a>(handle, m_Buffer);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            hardwareBuffer = <span class="keyword">new</span> <a class="code hl_struct" href="../../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html">UnmanagedObject</a>(handle, m_Buffer);</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">return</span> m_Buffer.Length;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
 </div>
 <div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a4420b7952d57f3d5abaa9de7e29ce5ba">   71</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_function" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a4420b7952d57f3d5abaa9de7e29ce5ba" title="Creates a hardware buffer intended for reading operations.   The backend allocates a device‑specific ...">CreateReadHardwareBuffer</a>(<span class="keywordtype">int</span> size, out <span class="keywordtype">object</span> hardwareBuffer) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a4420b7952d57f3d5abaa9de7e29ce5ba">   71</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_function" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a4420b7952d57f3d5abaa9de7e29ce5ba">CreateReadHardwareBuffer</a>(<span class="keywordtype">int</span> size, out <span class="keywordtype">object</span> hardwareBuffer) {</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            m_Buffer = <span class="keyword">new</span> <span class="keywordtype">byte</span>[size];</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            GCHandle handle = GCHandle.Alloc(m_Buffer, GCHandleType.Pinned);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            hardwareBuffer = <span class="keyword">new</span> <a class="code hl_struct" href="../../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html" title="Represents an unmanaged object that can be pinned in memory.">UnmanagedObject</a>(handle, m_Buffer);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            hardwareBuffer = <span class="keyword">new</span> <a class="code hl_struct" href="../../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html">UnmanagedObject</a>(handle, m_Buffer);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">return</span> m_Buffer.Length;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
@@ -199,6 +201,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d1f/_ram_sh
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
 </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="ttc" id="aclass_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend_html_a1e1bbd70cac562cca27943802e8ec1d3"><div class="ttname"><a href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a1e1bbd70cac562cca27943802e8ec1d3">SystemEx.Device.Intertropt.RamSharedBackend.ReciveFromHardwareBuffer</a></div><div class="ttdeci">long ReciveFromHardwareBuffer(out byte[] data, ref object hardwareBuffer)</div><div class="ttdef"><b>Definition</b> <a href="#l00046">RamSharedBackend.cs:46</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend_html_a38bb2947d40b091d13169a0f253f49ea"><div class="ttname"><a href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a38bb2947d40b091d13169a0f253f49ea">SystemEx.Device.Intertropt.RamSharedBackend.CreateWriteHardwareBuffer</a></div><div class="ttdeci">long CreateWriteHardwareBuffer(byte[] cache, out object hardwareBuffer)</div><div class="ttdoc">Creates a hardware buffer intended for writing operations and initializes it with the provided cache ...</div><div class="ttdef"><b>Definition</b> <a href="#l00063">RamSharedBackend.cs:63</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend_html_a4420b7952d57f3d5abaa9de7e29ce5ba"><div class="ttname"><a href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a4420b7952d57f3d5abaa9de7e29ce5ba">SystemEx.Device.Intertropt.RamSharedBackend.CreateReadHardwareBuffer</a></div><div class="ttdeci">long CreateReadHardwareBuffer(int size, out object hardwareBuffer)</div><div class="ttdoc">Creates a hardware buffer intended for reading operations.   The backend allocates a device‑specific ...</div><div class="ttdef"><b>Definition</b> <a href="#l00071">RamSharedBackend.cs:71</a></div></div>
+<div class="ttc" id="aclass_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend_html_a836f662fbb93b2bfe6cdf75c7d181181"><div class="ttname"><a href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html#a836f662fbb93b2bfe6cdf75c7d181181">SystemEx.Device.Intertropt.RamSharedBackend.CloseHardwareBuffer</a></div><div class="ttdeci">void CloseHardwareBuffer(ref object hardwareBuffer)</div><div class="ttdoc">Releases and invalidates the backend‑specific hardware buffer handle.   After this call,...</div><div class="ttdef"><b>Definition</b> <a href="#l00057">RamSharedBackend.cs:57</a></div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend_html"><div class="ttname"><a href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html">SystemEx.Device.Intertropt.IDeviceSharedBackend</a></div><div class="ttdoc">Defines the low‑level backend interface used by DeviceSharedBuffer and related shared‑memory abstract...</div><div class="ttdef"><b>Definition</b> <a href="../../dc/df2/_i_device_shared_backend_8cs_source.html#l00027">IDeviceSharedBackend.cs:27</a></div></div>
+<div class="ttc" id="anamespace_system_ex_1_1_device_1_1_intertropt_html"><div class="ttname"><a href="../../d7/d29/namespace_system_ex_1_1_device_1_1_intertropt.html">SystemEx.Device.Intertropt</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/df2/_i_device_shared_backend_8cs_source.html#l00018">IDeviceSharedBackend.cs:18</a></div></div>
+<div class="ttc" id="astruct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object_html"><div class="ttname"><a href="../../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html">SystemEx.Device.Intertropt.UnmanagedObject</a></div><div class="ttdoc">Represents an unmanaged object that can be pinned in memory.</div><div class="ttdef"><b>Definition</b> <a href="#l00009">RamSharedBackend.cs:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

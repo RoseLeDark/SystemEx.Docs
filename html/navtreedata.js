@@ -110,6 +110,7 @@ var NAVTREE =
       ] ]
     ] ],
     [ "LICENSE", "d2/d35/md__l_i_c_e_n_s_e.html", null ],
+    [ "Deprecated List", "da/d58/deprecated.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ],
@@ -139,17 +140,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d1/d60/group__color.html#gaa64db66a3c0c6aafa37d58737a5c526a",
-"d3/d70/class_system_ex_1_1_rand_utils.html#a04804fb3c12dbde218e6c28382440ce5",
-"d4/dee/class_system_ex_1_1_hash_1_1_fletcher_hash.html",
-"d6/df3/class_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html#a4bdb76d4e58308b55282f64f5193c8c0",
-"d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html#a517c367c7ba0acefc2cc43a7b91eb9fe",
-"d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html#a39a5016239b2a114bca2598fa7c8fb29",
-"db/d28/struct_system_ex_1_1_flex_span-1-g.html#a1aa932fc5b668f84dd9d6bc7b4e0b090",
-"dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html",
-"dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#aaac7edf1535fb73f8889ab3b84d3f226",
-"de/dfb/class_system_ex_1_1_collections_1_1_model_1_1_linked_node-1-g.html#ab8c98c2c6548426b41e0c550d0548a68",
-"df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a63c4444fc8cef243fa39586c389d0e00"
+"d1/d60/group__color.html#gab1c9faf58087c0f319453703331d2c17",
+"d3/dd4/_deque_8cs_source.html",
+"d6/dc6/class_system_ex_1_1_collections_1_1_model_1_1_tree-2-g.html#a5fd31a2af301850ea67fb3f590ac6a0d",
+"d8/d3b/_i_compared_8cs_source.html",
+"d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#af2a601f815bfcd42e9f3ffc713564ae8",
+"db/dfb/class_examples_1_1_sensor_data.html",
+"dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316",
+"df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a841569bb216fe5ff876e3b53dc1fa861",
+"index.html#autotoc_md-installation"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

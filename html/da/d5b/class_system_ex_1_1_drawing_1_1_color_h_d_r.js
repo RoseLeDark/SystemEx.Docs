@@ -4,7 +4,6 @@ var class_system_ex_1_1_drawing_1_1_color_h_d_r =
     [ "Addition", "da/d5b/class_system_ex_1_1_drawing_1_1_color_h_d_r.html#a3bb9b388a552b4796ec05bb7beb9f304", null ],
     [ "Addition", "da/d5b/class_system_ex_1_1_drawing_1_1_color_h_d_r.html#a4b8219c28c134125565c17ac6d9d3be7", null ],
     [ "Brightness", "da/d5b/class_system_ex_1_1_drawing_1_1_color_h_d_r.html#ac311a73b9fc73f6867d0178b7753f53a", null ],
-    [ "ClampHue", "da/d5b/class_system_ex_1_1_drawing_1_1_color_h_d_r.html#a63dc405fe8e25cacbf5132aca795f8ec", null ],
     [ "Division", "da/d5b/class_system_ex_1_1_drawing_1_1_color_h_d_r.html#a5014c9cb912d391ad80ae3849e4321b7", null ],
     [ "Division", "da/d5b/class_system_ex_1_1_drawing_1_1_color_h_d_r.html#a393e196f7b6e04ad19b48f19bd59bc89", null ],
     [ "Equals", "da/d5b/class_system_ex_1_1_drawing_1_1_color_h_d_r.html#a90e92f8b6ae91b262624ed5842eafe6f", null ],

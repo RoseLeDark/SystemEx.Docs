@@ -8,6 +8,7 @@
 <title>SystemEX: SystemEx.Utils Namespace Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,8 +33,9 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Lacking</span>
    </div>
+   <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
  </tr>
  </tbody>
@@ -123,9 +125,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d2/d14/namespa
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:Algorithm" id="r_Algorithm"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../db/d0a/class_system_ex_1_1_utils_1_1_algorithm.html">Algorithm</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides generic algorithm utilities similar to the C++ STL, including fill, copy, move, min/max, clamp, rotation, and lexicographical comparison for arrays.  <a href="../../db/d0a/class_system_ex_1_1_utils_1_1_algorithm.html#details">More...</a><br /></td></tr>
-<tr class="memitem:Layout" id="r_Layout"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d5/d63/class_system_ex_1_1_utils_1_1_layout.html">Layout</a></td></tr>
+<tr class="memitem:Algorithm" id="r_Algorithm"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>Algorithm</b></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides generic algorithm utilities similar to the C++ STL, including fill, copy, move, min/max, clamp, rotation, and lexicographical comparison for arrays. <br /></td></tr>
+<tr class="memitem:Layout" id="r_Layout"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>Layout</b></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides validation utilities for unmanaged structs used in native interop, binary serialization, GPU buffers, and memory‑mapped structures. <br  />
  Ensures that a struct: </p><ul>
 <li>
@@ -135,7 +137,7 @@ has identical <code>sizeof(T)</code> and System.Runtime.InteropServices.Marshal.
 <li>
 matches an optional expected unmanaged size </li>
 </ul>
-<p>.  <a href="../../d5/d63/class_system_ex_1_1_utils_1_1_layout.html#details">More...</a><br /></td></tr>
+<p>. <br /></td></tr>
 <tr class="memitem:MissingStructLayoutSequentialException" id="r_MissingStructLayoutSequentialException"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception.html">MissingStructLayoutSequentialException</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when a struct used for unmanaged interop does not specify StructLayoutAttribute with LayoutKind.Sequential. <br  />
  Required for deterministic field ordering in native interop, binary serialization, and memory‑mapped structures.  <a href="../../da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception.html#details">More...</a><br /></td></tr>
@@ -168,6 +170,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Specifies the result of a comparison between two values. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aef01215d2eb8aecad75ce70ce26c8c3aa959d11af31574454858b8682bec042ae" name="aef01215d2eb8aecad75ce70ce26c8c3aa959d11af31574454858b8682bec042ae"></a>AIsLargerB&#160;</td><td class="fielddoc"><p>A is larger as B. </p>
 </td></tr>
@@ -200,6 +204,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Represents a comparison function for two values of type <em>T</em> . </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>The value type to compare.</td></tr>

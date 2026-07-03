@@ -1,7 +1,6 @@
 var class_system_ex_1_1_collections_1_1_model_1_1_binary_tree_1_g =
 [
     [ "Beginn", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a4bf90b5c6313a93de055ef06e84996aa", null ],
-    [ "BinaryTree", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a4b7a52be76706d4fd21ca160f95a7ca3", null ],
     [ "BinaryTree", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a1a06b20dd743359bdbdd24be3c0e013d", null ],
     [ "BinaryTree", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a8c4bad6537c900fe2ef2433d8607c219", null ],
     [ "Clear", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#ade791e25641a761d91099ef89c244b24", null ],
@@ -10,7 +9,6 @@ var class_system_ex_1_1_collections_1_1_model_1_1_binary_tree_1_g =
     [ "Find", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#ab24a3b20f1f6e0a6a710b71b2505f368", null ],
     [ "FindNext", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a8b688b6ef849e60e66254f4c25867529", null ],
     [ "FreeNode", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a3a7a38eb6faeb7c5c2173a996c76ce61", null ],
-    [ "get_count", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a08ad833c653338fd6b23be5e97dce4b5", null ],
     [ "Insert", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a7bf807f825faf8872f184194a8bdf562", null ],
     [ "RotateLeft", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#aa6f85e7f115d9c7c77d306d9ea680c1c", null ],
     [ "RotateRight", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#acdf12123533a7b7e9bd38a05a47fb2ac", null ],
@@ -23,6 +21,5 @@ var class_system_ex_1_1_collections_1_1_model_1_1_binary_tree_1_g =
     [ "IsEmpty", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a8cb7201df4268edd3d37f703ebd290e4", null ],
     [ "IsLeaf", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#abaaf038850bf458ae7ef268a5e9752d8", null ],
     [ "Left", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a3da884e97843936c91036538903795bf", null ],
-    [ "Parent", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a1b58d1fc720ee43c899f22d90dd4717b", null ],
     [ "Right", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#aa44f5052f7268a99afc2c835872752a0", null ]
 ];

@@ -8,6 +8,7 @@
 <title>SystemEX: SystemEx.Hash.Hashable Class Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,8 +33,9 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Lacking</span>
    </div>
+   <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
  </tr>
  </tbody>
@@ -120,15 +122,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('db/ddb/class_s
   <div class="headertitle"><div class="title">SystemEx.Hash.Hashable Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span><div class="ingroups"><a class="el" href="../../d7/d3b/group__hash.html">Hash</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for SystemEx.Hash.Hashable:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../df/d6b/class_system_ex_1_1_hash_1_1_hashable__inherit__graph.png" border="0" usemap="#a_system_ex_8_hash_8_hashable_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
-<map name="a_system_ex_8_hash_8_hashable_inherit__map" id="a_system_ex_8_hash_8_hashable_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,5,182,32"/>
-<area shape="rect" href="../../db/dfb/class_examples_1_1_sensor_data.html" title="Example data class using HashableObject." alt="" coords="17,80,170,107"/>
-<area shape="poly" title=" " alt="" coords="95,46,96,81,91,79,92,50"/>
-</map>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Hash.Hashable:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../df/d6b/class_system_ex_1_1_hash_1_1_hashable__inherit__graph.svg" width="187" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -145,12 +143,6 @@ Array&lt; byte &gt;&#160;</td><td class="memItemRight"><b>ToBytes</b> ()</td></t
 Properties</h2></td></tr>
 <tr class="memitem:a5418bc23c141bbc131215fb4348cf6cc" id="r_a5418bc23c141bbc131215fb4348cf6cc"><td class="memItemLeft">ulong&#160;</td><td class="memItemRight"><a class="el" href="#a5418bc23c141bbc131215fb4348cf6cc">Seed</a><code> [get]</code></td></tr>
 <tr class="memdesc:a5418bc23c141bbc131215fb4348cf6cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the random seed assigned to this instance.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:ab7b2f5a620010a73735d8f35f0fe8d4a" id="r_ab7b2f5a620010a73735d8f35f0fe8d4a"><td class="memItemLeft">ulong&#160;</td><td class="memItemRight"><a class="el" href="#ab7b2f5a620010a73735d8f35f0fe8d4a">m_seed</a> = <a class="el" href="../../d3/d70/class_system_ex_1_1_rand_utils.html#a873b442cf1238596d923ba84611800ad">RandUtils.RandULong</a>(1455644, ulong.MaxValue , <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacda3c0ba6b22b526d7fd50c3026435a8c02">Endian.LittleEndian</a>)</td></tr>
-<tr class="memdesc:ab7b2f5a620010a73735d8f35f0fe8d4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per‑instance random seed used for hashing. <br  />
- Generated once at construction time using RandUtils.RandULong.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -170,6 +162,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Computes a 32‑bit hash using the algorithm specified by HashAlgorithmAttribute on the concrete type. </p>
 <p>If no attribute is present, <code>base.GetHashCode()</code> is used. The hasher instance is created transiently via reflection. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/dfe/_hashable_8cs_source.html#l00059">59</a> of file <a class="el" href="../../d6/dfe/_hashable_8cs_source.html">Hashable.cs</a>.</p>
@@ -198,34 +192,11 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Computes a 64‑bit hash using the algorithm specified by HashAlgorithmAttribute on the concrete type. </p>
 <p>If no attribute is present, <code>base.GetHashCode()</code> is used. The hasher instance is created transiently via reflection. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/dfe/_hashable_8cs_source.html#l00099">99</a> of file <a class="el" href="../../d6/dfe/_hashable_8cs_source.html">Hashable.cs</a>.</p>
-
-</div>
-</div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="ab7b2f5a620010a73735d8f35f0fe8d4a" name="ab7b2f5a620010a73735d8f35f0fe8d4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7b2f5a620010a73735d8f35f0fe8d4a">&#9670;&#160;</a></span>m_seed</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ulong SystemEx.Hash.Hashable.m_seed = <a class="el" href="../../d3/d70/class_system_ex_1_1_rand_utils.html#a873b442cf1238596d923ba84611800ad">RandUtils.RandULong</a>(1455644, ulong.MaxValue , <a class="el" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacda3c0ba6b22b526d7fd50c3026435a8c02">Endian.LittleEndian</a>)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d6/dfe/_hashable_8cs_source.html#l00040">40</a> of file <a class="el" href="../../d6/dfe/_hashable_8cs_source.html">Hashable.cs</a>.</p>
 
 </div>
 </div>
@@ -249,6 +220,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets the random seed assigned to this instance. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/dfe/_hashable_8cs_source.html#l00050">50</a> of file <a class="el" href="../../d6/dfe/_hashable_8cs_source.html">Hashable.cs</a>.</p>
 

@@ -8,6 +8,7 @@
 <title>SystemEX: SystemEx.Runtime.Module Class Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,8 +33,9 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Lacking</span>
    </div>
+   <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
  </tr>
  </tbody>
@@ -127,32 +129,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7d53c4cbf047d28ffd8d648a8ada36a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new Module instance using the specified native handle and file path. <br  />
  The constructor extracts the module's file name and directory path for informational purposes.  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pac-methods" class="groupheader"><a id="pac-methods" name="pac-methods"></a>
-Package Functions</h2></td></tr>
-<tr class="memitem:ae6b19b8f612e90f1a96b36c8a1e5e3ca" id="r_ae6b19b8f612e90f1a96b36c8a1e5e3ca"><td class="memItemLeft">IntPtr&#160;</td><td class="memItemRight"><a class="el" href="#ae6b19b8f612e90f1a96b36c8a1e5e3ca">LoadFunc</a> (string func)</td></tr>
-<tr class="memdesc:ae6b19b8f612e90f1a96b36c8a1e5e3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves a function exported by the native module using the active platform backend loader. <br  />
- The returned pointer is obtained through the OS‑specific implementation of ProcLoader, which internally calls: </p><ul>
-<li>
-<code>GetProcAddress</code> on Windows </li>
-<li>
-<code>dlsym</code> on Linux </li>
-<li>
-<code>dlsym</code> on macOS </li>
-</ul>
-<p>The caller is responsible for converting the returned pointer into a managed delegate if required.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pac-static-methods" class="groupheader"><a id="pac-static-methods" name="pac-static-methods"></a>
-Static Package Functions</h2></td></tr>
-<tr class="memitem:a24cb6ae0474ba046f35988c8d974578b" id="r_a24cb6ae0474ba046f35988c8d974578b"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a24cb6ae0474ba046f35988c8d974578b">Unload</a> (<a class="el" href="#a7d53c4cbf047d28ffd8d648a8ada36a9">Module</a> module)</td></tr>
-<tr class="memdesc:a24cb6ae0474ba046f35988c8d974578b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unloads the specified module using the platform‑specific backend. <br  />
- This method is internal because unloading is managed by the runtime and should not be performed directly by user code.  <br /></td></tr>
-<tr class="memitem:a6111d4e0b2e28c727233bda6eb3426c5" id="r_a6111d4e0b2e28c727233bda6eb3426c5"><td class="memItemLeft">static ? <a class="el" href="#a7d53c4cbf047d28ffd8d648a8ada36a9">Module</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6111d4e0b2e28c727233bda6eb3426c5">LoadModule</a> (string name, string path)</td></tr>
-<tr class="memdesc:a6111d4e0b2e28c727233bda6eb3426c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a module from an explicit directory and file name. <br  />
- This method constructs the full path and attempts to load the module using the platform‑specific loader.  <br /></td></tr>
-<tr class="memitem:a6cc2878fbe57907285de49a853fe51fe" id="r_a6cc2878fbe57907285de49a853fe51fe"><td class="memItemLeft">static ? <a class="el" href="#a7d53c4cbf047d28ffd8d648a8ada36a9">Module</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6cc2878fbe57907285de49a853fe51fe">LoadModule</a> (string name)</td></tr>
-<tr class="memdesc:a6cc2878fbe57907285de49a853fe51fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a module by searching platform‑specific library paths. <br  />
- The backend resolves the correct file location using mechanisms such as <code>LD_LIBRARY_PATH</code>, <code>DYLD_LIBRARY_PATH</code>, or Windows search rules.  <br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a8da297ca89891146193940f0a402d1b5" id="r_a8da297ca89891146193940f0a402d1b5"><td class="memItemLeft">nint&#160;</td><td class="memItemRight"><a class="el" href="#a8da297ca89891146193940f0a402d1b5">Handle</a><code> [get, set]</code></td></tr>
@@ -185,6 +161,9 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initializes a new Module instance using the specified native handle and file path. <br  />
+ The constructor extracts the module's file name and directory path for informational purposes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>The native module handle.</td></tr>
@@ -194,149 +173,6 @@ Properties</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00044">44</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ae6b19b8f612e90f1a96b36c8a1e5e3ca" name="ae6b19b8f612e90f1a96b36c8a1e5e3ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6b19b8f612e90f1a96b36c8a1e5e3ca">&#9670;&#160;</a></span>LoadFunc()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">IntPtr SystemEx.Runtime.Module.LoadFunc </td>
-          <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel package">package</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">func</td><td>The name of the exported native function.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A raw function pointer (IntPtr). <br  />
- Returns IntPtr.Zero if the function cannot be resolved. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00133">133</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-
-</div>
-</div>
-<a id="a6cc2878fbe57907285de49a853fe51fe" name="a6cc2878fbe57907285de49a853fe51fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cc2878fbe57907285de49a853fe51fe">&#9670;&#160;</a></span>LoadModule() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">? <a class="el" href="#a7d53c4cbf047d28ffd8d648a8ada36a9">Module</a> SystemEx.Runtime.Module.LoadModule </td>
-          <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel package">package</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>The module file name.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A new Module instance if loading succeeds; otherwise <code>null</code>. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00103">103</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-
-</div>
-</div>
-<a id="a6111d4e0b2e28c727233bda6eb3426c5" name="a6111d4e0b2e28c727233bda6eb3426c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6111d4e0b2e28c727233bda6eb3426c5">&#9670;&#160;</a></span>LoadModule() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">? <a class="el" href="#a7d53c4cbf047d28ffd8d648a8ada36a9">Module</a> SystemEx.Runtime.Module.LoadModule </td>
-          <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel package">package</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>The module file name.</td></tr>
-    <tr><td class="paramname">path</td><td>The directory containing the module.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A new Module instance if loading succeeds; otherwise <code>null</code>. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00084">84</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-
-</div>
-</div>
-<a id="a24cb6ae0474ba046f35988c8d974578b" name="a24cb6ae0474ba046f35988c8d974578b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24cb6ae0474ba046f35988c8d974578b">&#9670;&#160;</a></span>Unload()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int SystemEx.Runtime.Module.Unload </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a7d53c4cbf047d28ffd8d648a8ada36a9">Module</a></td>          <td class="paramname"><span class="paramname"><em>module</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel package">package</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">module</td><td>The module to unload.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Zero on success, or a non‑zero error code depending on the backend. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00070">70</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
 
 </div>
 </div>
@@ -360,6 +196,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets the native handle of the loaded module. <br  />
+ This value corresponds to the OS‑specific library handle returned by <code>LoadLibrary</code> (Windows), <code>dlopen</code> (Linux), or <code>dlopen</code> (macOS). </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00034">34</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
 
@@ -385,6 +224,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Gets the file name of the loaded module (e.g., <code>kernel.dll</code>, <code>libfoo.so</code>, <code>libbar.dylib</code>). </p>
+
 <p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00054">54</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
 
 </div>
@@ -408,6 +249,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets the directory path where the module file resides. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00059">59</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
 

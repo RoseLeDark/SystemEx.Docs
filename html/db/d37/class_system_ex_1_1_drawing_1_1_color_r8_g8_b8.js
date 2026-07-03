@@ -19,8 +19,6 @@ var class_system_ex_1_1_drawing_1_1_color_r8_g8_b8 =
     [ "GetNextContrastColor", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a32ced93b14ba915539685cb3df497658", null ],
     [ "Lerp", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a6167fe0fcbee60cb8de8b5cd3857e2d4", null ],
     [ "LinearBrightness", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a96ef16879dcab6607b70fea3186688ee", null ],
-    [ "Max", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a1d1316b913512c2e716ce0cd525ce7d4", null ],
-    [ "Min", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a4837a8ca556761ed31eb2ebb376b1d3b", null ],
     [ "Multiplication", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a9644078863682a07378f5d00b94d364d", null ],
     [ "Multiplication", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a52302a2b28b8276905c3e29dbf23c408", null ],
     [ "Saturation", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a879cf0d462fb66142a28fd4124ac0f69", null ],

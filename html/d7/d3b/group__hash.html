@@ -8,6 +8,7 @@
 <title>SystemEX: Hash</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,8 +33,9 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Lacking</span>
    </div>
+   <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
  </tr>
  </tbody>
@@ -121,12 +123,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d7/d3b/group__
 </div><!--header-->
 <div class="contents">
 
-<p>Simple non‑cryptographic hash function based on the Bernstein family of hash algorithms.  
+<p>Implements the Adler hash algorithm.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:SystemEx_2EHash_2EAdlerHash" id="r_SystemEx_2EHash_2EAdlerHash"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d2/d92/class_system_ex_1_1_hash_1_1_adler_hash.html">SystemEx.Hash.AdlerHash</a></td></tr>
 <tr class="memitem:SystemEx_2EHash_2EBernsteinHash" id="r_SystemEx_2EHash_2EBernsteinHash"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash.html">SystemEx.Hash.BernsteinHash</a></td></tr>
+<tr class="memitem:SystemEx_2EHash_2EFletcherHash" id="r_SystemEx_2EHash_2EFletcherHash"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d4/dee/class_system_ex_1_1_hash_1_1_fletcher_hash.html">SystemEx.Hash.FletcherHash</a></td></tr>
+<tr class="memitem:SystemEx_2EHash_2EFnv1aHash" id="r_SystemEx_2EHash_2EFnv1aHash"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../db/d29/class_system_ex_1_1_hash_1_1_fnv1a_hash.html">SystemEx.Hash.Fnv1aHash</a></td></tr>
+<tr class="memitem:SystemEx_2EHash_2EGr_C3_B8stlHash" id="r_SystemEx_2EHash_2EGr_C3_B8stlHash"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../da/d7b/class_system_ex_1_1_hash_1_1_grøtl_hash.html">SystemEx.Hash.GrøstlHash</a></td></tr>
 <tr class="memitem:SystemEx_2EHash_2EHashable" id="r_SystemEx_2EHash_2EHashable"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../db/ddb/class_system_ex_1_1_hash_1_1_hashable.html">SystemEx.Hash.Hashable</a></td></tr>
 <tr class="memitem:SystemEx_2EHash_2EHashAlgorithmAttribute" id="r_SystemEx_2EHash_2EHashAlgorithmAttribute"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html">SystemEx.Hash.HashAlgorithmAttribute</a></td></tr>
 <tr class="memitem:SystemEx_2EHash_2EHash32" id="r_SystemEx_2EHash_2EHash32"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html">SystemEx.Hash.Hash32</a></td></tr>
@@ -134,13 +140,25 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 64‑bit hash value produced by a <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing algorithm.  <a href="../../da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html#details">More...</a><br /></td></tr>
 <tr class="memitem:SystemEx_2EHash_2EIHash" id="r_SystemEx_2EHash_2EIHash"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html">SystemEx.Hash.IHash</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing algorithms.  <a href="../../dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html#details">More...</a><br /></td></tr>
-<tr class="memitem:SystemEx_2EHash_2EMurmur3Hasher" id="r_SystemEx_2EHash_2EMurmur3Hasher"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d5/db0/class_system_ex_1_1_hash_1_1_murmur3_hasher.html">SystemEx.Hash.Murmur3Hasher</a></td></tr>
+<tr class="memitem:SystemEx_2EHash_2EMurmur3Hasher" id="r_SystemEx_2EHash_2EMurmur3Hasher"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Hash.Murmur3Hasher</b></td></tr>
+<tr class="memitem:SystemEx_2EHash_2ERamakrishnaHash" id="r_SystemEx_2EHash_2ERamakrishnaHash"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d4/d6f/class_system_ex_1_1_hash_1_1_ramakrishna_hash.html">SystemEx.Hash.RamakrishnaHash</a></td></tr>
+<tr class="memitem:SystemEx_2EHash_2EWeinbergHash" id="r_SystemEx_2EHash_2EWeinbergHash"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d7/d67/class_system_ex_1_1_hash_1_1_weinberg_hash.html">SystemEx.Hash.WeinbergHash</a></td></tr>
+<tr class="memitem:SystemEx_2EHash_2EXXHash3Hasher" id="r_SystemEx_2EHash_2EXXHash3Hasher"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Hash.XXHash3Hasher</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implements the Murmur3 hashing algorithm (32‑bit and 64‑bit).</p>
+<div class="textblock"><p>Implements the Adler hash algorithm. </p>
+<p>Implements the XXHash3 hash algorithm.</p>
+<p>Implements the Weinberg hash algorithm.</p>
+<p>Implements the Ramakrishna hash algorithm.</p>
+<p>Implements the Murmur3 hashing algorithm (32‑bit and 64‑bit).</p>
 <p>Represents a 32‑bit hash value produced by a <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing algorithm.</p>
 <p>Declares which hashing algorithm a <code><a class="el" href="../../db/ddb/class_system_ex_1_1_hash_1_1_hashable.html">Hashable</a></code> type should use.</p>
 <p><a class="el" href="../../da/d5b/namespace_system_ex_1_1_base.html">Base</a> class for objects that can be hashed using the <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing subsystem.</p>
+<p>Implements the Grøstl-256 and Grøstl-512 hashing functions as part of the <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> low-level cryptographic subsystem. This class provides a fully self-contained, allocation-free, deterministic hash engine based on the original Grøstl specification (SHA-3 finalist).</p>
+<p>Implements the FNV-1a hash algorithm.</p>
+<p>Implements the Fletcher hash algorithm.</p>
+<p>Simple non‑cryptographic hash function based on the Bernstein family of hash algorithms.</p>
+<p>The Adler hash algorithm is a checksum algorithm which was invented by Mark Adler in 1995. It is a modification of the Fletcher checksum, which was invented by John G. Fletcher in 1982. </p>
 <p>This implementation provides both 32‑bit and 64‑bit variants and supports seeding, allowing deterministic or randomized hash streams depending on the caller.</p>
 <p>Characteristics:</p><ul>
 <li>Very fast</li>
@@ -149,13 +167,31 @@ Classes</h2></td></tr>
 <li>Not intended for cryptographic use</li>
 </ul>
 <p>The algorithm uses a classic multiply‑and‑xor mixing step: hash = (hash * M) ^ byte where M is a constant chosen for diffusion.</p>
+<p>The implementation is designed for systems programming scenarios where predictable behavior, portability, and runtime independence are required. All operations are performed using fixed-size buffers, explicit state transformations, and constant-time primitives where applicable.</p>
+<p>GroestlHash exposes two public hashing interfaces: </p><ul>
+<li>
+Compute — Produces a 32-bit hash derived from the full Grøstl-256 digest. </li>
+<li>
+ComputeLong — Produces a 64-bit hash derived from the full Grøstl-512 digest. </li>
+</ul>
+<p>Both variants support endian-aware extraction and optional seed mixing, enabling integration into heterogeneous environments, custom keying schemes, and internal hashing pipelines.</p>
+<p>This class is intended for: </p><ul>
+<li>
+Deterministic hashing inside low-level frameworks </li>
+<li>
+Internal key generation and seeding mechanisms </li>
+<li>
+Data integrity checks and non-cryptographic fingerprinting </li>
+<li>
+Embedded or isolated verification modules </li>
+</ul>
 <p>A <code><a class="el" href="../../db/ddb/class_system_ex_1_1_hash_1_1_hashable.html">Hashable</a></code> instance provides its binary representation through ToBytes and selects a hashing algorithm via HashAlgorithmAttribute applied on the concrete type.</p>
 <p>The class supports both 32‑bit and 64‑bit hashing. <br  />
  A per‑instance random seed is generated once and stored, ensuring stable hashing for the lifetime of the object while preventing predictable hash streams.</p>
 <p>The attribute binds a concrete hasher implementation (IHash) to a class or struct and specifies the byte‑order (Endian) used when interpreting the binary representation returned by Hashable.ToBytes.</p>
 <p>The <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing subsystem reads this attribute at runtime to instantiate the correct hasher and compute 32‑bit or 64‑bit hashes.</p>
 <p>The struct is immutable and stores the raw 32‑bit result exactly as returned by the underlying hasher. No normalization or reinterpretation is performed.</p>
-<p>Both <code>Compute</code> (32‑bit) and <code>ComputeLong</code> (64‑bit) operate on Array&lt;byte&gt; and support endian‑aware block construction. </p>
+<p>Both <code>Compute</code> (32‑bit) and <code>ComputeLong</code> (64‑bit) operate on Array&lt;byte&gt; and support endian‑aware block construction.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

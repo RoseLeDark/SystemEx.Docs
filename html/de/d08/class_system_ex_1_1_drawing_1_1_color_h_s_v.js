@@ -4,7 +4,6 @@ var class_system_ex_1_1_drawing_1_1_color_h_s_v =
     [ "Addition", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a9296381d473721b060064d7210429a27", null ],
     [ "Addition", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a061e12219ee32d83cd4a00e51f7a5a2f", null ],
     [ "Brightness", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ae364e562a0e9dd6bda104fa85d6bdfcb", null ],
-    [ "ClampHue", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ad8b876803886e038db8dcadf0f819db3", null ],
     [ "Division", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ab33339670ce49d574902be59b72d4a1b", null ],
     [ "Division", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a7da093e9fa7bf32bdd882e2d610c1eb6", null ],
     [ "Equals", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a6f5a1d72055c9f949dae2df15aea4f3b", null ],
@@ -18,8 +17,6 @@ var class_system_ex_1_1_drawing_1_1_color_h_s_v =
     [ "Subtraction", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a3b94792df86f9b01e2347bf108285ef8", null ],
     [ "ToString", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#adf64424f236fd4f9504b594cb0f83d64", null ],
     [ "H", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a7634c5ebcb188f0f7d8aa48052b589ad", null ],
-    [ "One", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ab528e2d3d2a9b95590d7f13921057a92", null ],
     [ "S", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#ab332963dc629e8f62e11315520bcb5ee", null ],
-    [ "V", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a89ca29edf3a853d667e55bff0923c3b0", null ],
-    [ "Zero", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a009097819b259e985c51bbd28d6753bd", null ]
+    [ "V", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html#a89ca29edf3a853d667e55bff0923c3b0", null ]
 ];

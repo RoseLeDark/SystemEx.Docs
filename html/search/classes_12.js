@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['unmanagedobject_0',['UnmanagedObject',['../dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html',1,'SystemEx::Device::Intertropt']]]
+  ['weinberghash_0',['WeinbergHash',['../d7/d67/class_system_ex_1_1_hash_1_1_weinberg_hash.html',1,'SystemEx::Hash']]],
+  ['windowsprocloader_1',['WindowsProcLoader',['../d4/d2f/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_windows_proc_loader.html',1,'SystemEx::Runtime::InteropServices::Platform']]]
 ];

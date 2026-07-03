@@ -8,6 +8,7 @@
 <title>SystemEX: SystemEx.Device.Intertropt.IDeviceSharedBackend Interface Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,8 +33,9 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Lacking</span>
    </div>
+   <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
  </tr>
  </tbody>
@@ -125,15 +127,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d3/d08/interfa
  A backend represents a hardware‑specific buffer implementation such as RAM, OpenCL, Vulkan, CUDA, or any custom device memory. <br  />
  Each backend is responsible for creating, writing, reading, and closing its own hardware buffer handle.  
  <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Device.Intertropt.IDeviceSharedBackend:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d7/dec/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend__inherit__graph.png" border="0" usemap="#a_system_ex_8_device_8_intertropt_8_i_device_shared_backend_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
-<map name="a_system_ex_8_device_8_intertropt_8_i_device_shared_backend_inherit__map" id="a_system_ex_8_device_8_intertropt_8_i_device_shared_backend_inherit__map">
-<area shape="rect" title="Defines the low‑level backend interface used by DeviceSharedBuffer and related shared‑memory abstract..." alt="" coords="5,5,193,48"/>
-<area shape="rect" href="../../d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html" title=" " alt="" coords="5,96,193,139"/>
-<area shape="poly" title=" " alt="" coords="101,62,101,97,97,95,97,66"/>
-</map>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Device.Intertropt.IDeviceSharedBackend:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/dec/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend__inherit__graph.svg" width="199" height="144"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -152,7 +150,10 @@ Public Member Functions</h2></td></tr>
  After this call, the buffer must no longer be used.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
+<div class="textblock"><p>Defines the low‑level backend interface used by <code>DeviceSharedBuffer</code> and related shared‑memory abstractions. <br  />
+ A backend represents a hardware‑specific buffer implementation such as RAM, OpenCL, Vulkan, CUDA, or any custom device memory. <br  />
+ Each backend is responsible for creating, writing, reading, and closing its own hardware buffer handle. </p>
+
 <p class="definition">Definition at line <a class="el" href="../../dc/df2/_i_device_shared_backend_8cs_source.html#l00027">27</a> of file <a class="el" href="../../dc/df2/_i_device_shared_backend_8cs_source.html">IDeviceSharedBackend.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a9f914e66eb1f111f799049c827bef125" name="a9f914e66eb1f111f799049c827bef125"></a>
@@ -169,6 +170,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Releases and invalidates the backend‑specific hardware buffer handle. <br  />
+ After this call, the buffer must no longer be used. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hardwareBuffer</td><td>The backend‑specific buffer handle.</td></tr>
@@ -198,6 +202,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates a hardware buffer intended for reading operations. <br  />
+ The backend allocates a device‑specific buffer of the given size and returns an opaque handle via <em>hardwareBuffer</em> . </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">size</td><td>The size of the buffer to allocate.</td></tr>
@@ -230,6 +237,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates a hardware buffer intended for writing operations and initializes it with the provided cache data. <br  />
+ The backend allocates a device‑specific buffer and uploads the data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cache</td><td>The data to write into the hardware buffer.</td></tr>
@@ -262,6 +272,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reads data from the hardware buffer into a managed byte array. <br  />
+ The backend determines how the buffer is accessed and how much data is returned. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>The byte array containing the received data.</td></tr>

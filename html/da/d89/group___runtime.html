@@ -8,6 +8,7 @@
 <title>SystemEX: Runtime</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,8 +33,9 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Lacking</span>
    </div>
+   <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
  </tr>
  </tbody>
@@ -125,14 +127,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('da/d89/group__
  NativeHost maintains an internal cache of loaded modules to avoid redundant loading operations and to ensure that multiple components referencing the same library share a single module instance. <br  />
  It also provides helper methods for resolving native function pointers and converting them into managed delegates.  
 <a href="#details">More...</a></p>
-<div class="dynheader">
-Collaboration diagram for Runtime:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../da/d89/group___runtime.png" border="0" usemap="#ada_2d89_2group______runtime" loading="lazy" alt=""/></div>
-<map name="ada_2d89_2group______runtime" id="ada_2d89_2group______runtime">
-<area shape="rect" href="../../df/d72/group___platform.html" title="Provides Linux&#45;specific native module loading and symbol resolution using the libdl API...." alt="" coords="124,5,194,32"/>
-<area shape="rect" title="Provides a high‑level management layer for native modules and their exported functions...." alt="" coords="5,5,76,32"/>
-</map>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for Runtime:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../da/d89/group___runtime.svg" width="200" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-groups" class="groupheader"><a id="groups" name="groups"></a>
@@ -143,11 +142,14 @@ Topics</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:SystemEx_2ERuntime_2EInteropServices_2ENativeHost" id="r_SystemEx_2ERuntime_2EInteropServices_2ENativeHost"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d2/d6c/class_system_ex_1_1_runtime_1_1_interop_services_1_1_native_host.html">SystemEx.Runtime.InteropServices.NativeHost</a></td></tr>
+<tr class="memitem:SystemEx_2ERuntime_2EInteropServices_2ENativeHost" id="r_SystemEx_2ERuntime_2EInteropServices_2ENativeHost"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Runtime.InteropServices.NativeHost</b></td></tr>
 <tr class="memitem:SystemEx_2ERuntime_2EModule" id="r_SystemEx_2ERuntime_2EModule"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d4/ddf/class_system_ex_1_1_runtime_1_1_module.html">SystemEx.Runtime.Module</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a loaded native module (DLL, SO, or DYLIB). <br  />
+<div class="textblock"><p>Provides a high‑level management layer for native modules and their exported functions. <br  />
+ NativeHost maintains an internal cache of loaded modules to avoid redundant loading operations and to ensure that multiple components referencing the same library share a single module instance. <br  />
+ It also provides helper methods for resolving native function pointers and converting them into managed delegates. </p>
+<p>Represents a loaded native module (DLL, SO, or DYLIB). <br  />
  A Module encapsulates the operating system handle of the loaded library and provides helper methods for resolving exported functions and unloading the module.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

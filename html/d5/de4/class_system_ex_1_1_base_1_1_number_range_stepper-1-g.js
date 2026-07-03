@@ -13,8 +13,5 @@ var class_system_ex_1_1_base_1_1_number_range_stepper_1_g =
     [ "NumberRangeStepper", "d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#a4965afe0f0e3c3511098cc073b2cf925", null ],
     [ "Prev", "d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#ae4f40f995df3bf7dda0a78349ff5a739", null ],
     [ "Prev", "d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#a1e47ab32e2127a80152d23a20557ebdb", null ],
-    [ "Reset", "d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#af4294160b11dfedc42ef6d4b8a1eba33", null ],
-    [ "m_current", "d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#ab598825134214c7a39ed19a38093fb7d", null ],
-    [ "m_startOld", "d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#a3bf5690e00d4ebf764525ab6d3fca7b9", null ],
-    [ "m_step", "d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#a9884420453818d838510e6006dc9cf38", null ]
+    [ "Reset", "d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html#af4294160b11dfedc42ef6d4b8a1eba33", null ]
 ];

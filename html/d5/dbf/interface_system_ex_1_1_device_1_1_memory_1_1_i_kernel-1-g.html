@@ -8,6 +8,7 @@
 <title>SystemEX: SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt; Interface Template Reference</title>
 <link rel="icon" href="../../Logo_256.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,8 +33,9 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign">
-   <div id="projectname">SystemEX<span id="projectnumber">&#160;Ignoring</span>
+   <div id="projectname">SystemEX<span id="projectnumber">&#160;Lacking</span>
    </div>
+   <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
  </tr>
  </tbody>
@@ -124,17 +126,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d5/dbf/interfa
 <p>Defines the interface for a compute kernel that operates on one or more DeviceSharedBuffer&lt;TDeviceSharedBackend&gt; instances. <br  />
  A kernel represents a unit of computation that may run on different backends such as RAM, OpenCL, Vulkan, CUDA, or custom hardware.  
  <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d1/df1/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g__inherit__graph.png" border="0" usemap="#a_system_ex_8_device_8_memory_8_i_kernel_3_01_t_i_device_shared_backend_01_4_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
-<map name="a_system_ex_8_device_8_memory_8_i_kernel_3_01_t_i_device_shared_backend_01_4_inherit__map" id="a_system_ex_8_device_8_memory_8_i_kernel_3_01_t_i_device_shared_backend_01_4_inherit__map">
-<area shape="rect" title="Defines the interface for a compute kernel that operates on one or more DeviceSharedBuffer&lt;TDeviceSha..." alt="" coords="12,5,235,48"/>
-<area shape="rect" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html" title="Provides a base implementation for RAM‑based compute kernels that operate on DeviceSharedBuffer&lt;RamSh..." alt="" coords="5,96,242,139"/>
-<area shape="poly" title=" " alt="" coords="125,61,126,96,121,95,122,66"/>
-<area shape="rect" href="../../de/d89/class_examples_1_1_example_ram_kernel_add.html" title="Example implementation of a RAM‑based compute kernel that adds two integer values stored in device bu..." alt="" coords="12,187,235,213"/>
-<area shape="poly" title=" " alt="" coords="125,153,126,187,121,185,122,156"/>
-</map>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d1/df1/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g__inherit__graph.svg" width="247" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -171,7 +167,9 @@ Properties</h2></td></tr>
  The backend defines how shared buffers are allocated, synchronized, locked, and accessed during kernel execution.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
+<div class="textblock"><p>Defines the interface for a compute kernel that operates on one or more DeviceSharedBuffer&lt;TDeviceSharedBackend&gt; instances. <br  />
+ A kernel represents a unit of computation that may run on different backends such as RAM, OpenCL, Vulkan, CUDA, or custom hardware. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">TIDeviceSharedBackend</td><td>The backend type used for shared buffer operations. <br  />
  Must implement IDeviceSharedBackend. </td></tr>
@@ -217,6 +215,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Adds a shared buffer to the kernel with the specified name and usage type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">buffer</td><td>The shared buffer to attach.</td></tr>
@@ -246,6 +246,9 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Begins a kernel execution session and prepares the backend function identified by <em>strFunction</em> . <br  />
+ Typically uploads buffers, locks shared memory regions, and performs backend‑specific initialization required before Run can be called. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">strFunction</td><td>The name of the kernel function to execute.</td></tr>
@@ -272,6 +275,9 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initializes the kernel by loading the native module located at <em>dllPath</em> . <br  />
+ This typically resolves the underlying library, prepares backend‑specific resources, and performs any required setup before buffers can be added. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dllPath</td><td>The absolute or symbolic path to the native module containing the kernel function(s). </td></tr>
@@ -299,6 +305,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Ends the kernel execution session, synchronizes buffers, unlocks shared memory regions, and performs backend cleanup operations. <br  />
+ Must be called after Run completes. </p>
+
 <p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#a032c141a88a3147133906351ef6d4604">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
 
 </div>
@@ -317,6 +326,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Retrieves a shared buffer by its symbolic name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The symbolic buffer name.</td></tr>
@@ -344,6 +355,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Indicates whether the kernel is currently executing. <br  />
+ Useful for asynchronous backends or long‑running compute operations. </p>
+
 <p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ade2a98971bc67a80d6a5a0ceead25644">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
 
 </div>
@@ -362,6 +376,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Removes a buffer from the kernel by its index in the internal buffer list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>The buffer index.</td></tr>
@@ -388,6 +404,9 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Removes a buffer from the kernel by its symbolic name. <br  />
+ This typically releases backend‑specific resources and detaches the buffer from the kernel execution pipeline. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The symbolic buffer name.</td></tr>
@@ -414,6 +433,9 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Executes the kernel with optional backend‑specific parameters. <br  />
+ Implementations may run synchronously or asynchronously depending on the backend and kernel type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">options</td><td>Optional execution parameters.</td></tr>
@@ -446,6 +468,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets the backend instance associated with this kernel. <br  />
+ The backend defines how shared buffers are allocated, synchronized, locked, and accessed during kernel execution. </p>
 
 <p>Implemented in <a class="el" href="../../d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ad8bcb7852de07c2a6490b634d1f8ece4">SystemEx.Device.NativeRAMKernel&lt; TD &gt;</a>.</p>
 
