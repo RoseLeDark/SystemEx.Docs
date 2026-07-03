@@ -37,7 +37,7 @@ var hierarchy =
       [ "SystemEx.Collections.Generic.Interfaces.IDynamicArray< T >", "d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html", [
         [ "SystemEx.Collections.Generic.Array< T >", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html", [
           [ "SystemEx.Collections.Generic.FixedArray< T >", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html", [
-            [ "SystemEx.Collections.Generic.SportedFixedArray< T >", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html", null ]
+            [ "SystemEx.Collections.Generic.SortedFixedArray< T >", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html", null ]
           ] ],
           [ "SystemEx.Collections.Generic.SortedArray< T >", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html", null ]
         ] ]

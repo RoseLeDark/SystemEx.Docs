@@ -490,6 +490,21 @@ var group__collections =
       [ "Comparer", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#af24f3c1599ab2d6a98a09f58751863e6", null ],
       [ "SortFunctions", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html#a62f969449406cecfa62d780e81b16c27", null ]
     ] ],
+    [ "SystemEx.Collections.Generic.SortedFixedArray&lt; T &gt;", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html", [
+      [ "Insert", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#a05a83b3e003afbb8367b1992077a032c", null ],
+      [ "InsertRange", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#a29b1fe2c47f5a9a3bff3fc5b39fdd678", null ],
+      [ "Remove", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#a88d07432f88665a793fd80e5d197dbf0", null ],
+      [ "Sort", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#a3e91c924158e61c2a217008d8cef6490", null ],
+      [ "SortedFixedArray", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#a23849b37473b85af4e80f9d92999caaa", null ],
+      [ "SortedFixedArray", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#add520bc6dacc1b24f333e670d3785c6d", null ],
+      [ "Swap", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#ace8fecae12c567ffb403735079caf8e2", null ],
+      [ "ToUnorderedArray", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#a5340fff72cb63ee83e98a305bad6867e", null ],
+      [ "m_comparer", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#a8c29a06415b77ef75ad00343c3921026", null ],
+      [ "m_sort", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#a2ccb6be2755264dbed3c7dc6fc31f28f", null ],
+      [ "AutoSort", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#a0283e550be4a5b326b7542847ae3e295", null ],
+      [ "Comparer", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#a390dcabda87e122d80252c5e17ea2e29", null ],
+      [ "SortFunctions", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html#a17dc39fb2edff9bfbdc92647e86c788c", null ]
+    ] ],
     [ "SystemEx.Collections.Generic.SortedMap&lt; T, TU &gt;", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html", [
       [ "Add", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#a76d5e51234e68ddb54e9d06ebd083525", null ],
       [ "Insert", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html#af797f6317d83f0d6a3ca8dd53199165f", null ],
@@ -545,21 +560,6 @@ var group__collections =
       [ "AutoSort", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#a35bc43f1e596fc76339ec734ab781ef5", null ],
       [ "Comparer", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#af3f43e9a2b35f2762bc2ec4776c36268", null ],
       [ "SortFunctions", "da/de0/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_tuple_map.html#abd0f3eadf239fd39dea8305d035b0260", null ]
-    ] ],
-    [ "SystemEx.Collections.Generic.SportedFixedArray&lt; T &gt;", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html", [
-      [ "Insert", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#a9c3a1efab03dc0becdab3754297a0b16", null ],
-      [ "InsertRange", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#ab04c08957a42f363868a339a5a3b9eeb", null ],
-      [ "Remove", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#af5e401eaf4abe029d70089eb12f6a930", null ],
-      [ "Sort", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#a1f2c078036ede6276cc7b04c51e0437f", null ],
-      [ "SportedFixedArray", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#aad2ae03f80eee65c70c981a06b23e740", null ],
-      [ "SportedFixedArray", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#af1fb858b615df9ba72cc272d4ca3bb5e", null ],
-      [ "Swap", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#a3d8015e1147d6325aecf60da35997201", null ],
-      [ "ToUnorderedArray", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#a7c4f7c09e91eea19d72ffe665c6b8f02", null ],
-      [ "m_comparer", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#a513566350ee438fd941fbc27ca90963a", null ],
-      [ "m_sort", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#aae77020b980d0c69aab0adf3badabf1e", null ],
-      [ "AutoSort", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#a3fcc61b418ff5fd5f1415db228e1b3b7", null ],
-      [ "Comparer", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#ad0cc56e87b97fc1fe4ac91be1b97171e", null ],
-      [ "SortFunctions", "d1/db7/class_system_ex_1_1_collections_1_1_generic_1_1_sported_fixed_array-1-g.html#a3823ac5cfdcc351c949a7fdf0db8940b", null ]
     ] ],
     [ "SystemEx.Collections.Generic.StackLayer", "d3/d62/struct_system_ex_1_1_collections_1_1_generic_1_1_stack_layer.html", [
       [ "StackLayer", "d3/d62/struct_system_ex_1_1_collections_1_1_generic_1_1_stack_layer.html#abfed11b5d62c7f60b813d66366c19f69", null ],
