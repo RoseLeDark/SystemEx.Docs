@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ade2a98971bc67a80d6a5a0ceead25644":[6,0,1,2,2,5],
+"d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#af2a601f815bfcd42e9f3ffc713564ae8":[5,0,1,2,2,16],
 "d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#af2a601f815bfcd42e9f3ffc713564ae8":[6,0,1,2,2,16],
 "d9/da4/_colors_8cs_source.html":[7,0,3,12],
 "d9/db9/_write_stream_8cs_source.html":[7,0,6,2],
@@ -104,7 +106,7 @@ var NAVTREEINDEX5 =
 "db/d12/_color_r16_g16_b16_8cs_source.html":[7,0,3,10],
 "db/d19/_i_map_8cs_source.html":[7,0,1,0,0,3],
 "db/d1b/_type_buffer_8cs_source.html":[7,0,1,0,38],
-"db/d1d/_i_hash_8cs_source.html":[7,0,5,7],
+"db/d1d/_i_hash_8cs_source.html":[7,0,5,8],
 "db/d28/_stack_8cs_source.html":[7,0,1,0,31],
 "db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g.html":[5,0,1,1,0,0,16],
 "db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g.html":[6,0,1,1,0,0,16],
@@ -244,10 +246,8 @@ var NAVTREEINDEX5 =
 "db/d90/class_system_ex_1_1_collections_1_1_generic_1_1_star_node-1-g.html":[4,1,34],
 "db/d90/class_system_ex_1_1_collections_1_1_generic_1_1_star_node-1-g.html#a46d352ccb1662db7195e0f41cef1e37c":[4,1,34,1],
 "db/d90/class_system_ex_1_1_collections_1_1_generic_1_1_star_node-1-g.html#a85bfb30e3f9dafe06d5cfa1f69c342bc":[4,1,34,0],
-"db/db8/_hash_algorithm_attribute_8cs_source.html":[7,0,5,6],
+"db/db8/_hash_algorithm_attribute_8cs_source.html":[7,0,5,7],
 "db/ddb/class_system_ex_1_1_hash_1_1_hashable.html":[4,5,5],
 "db/ddb/class_system_ex_1_1_hash_1_1_hashable.html#a5418bc23c141bbc131215fb4348cf6cc":[4,5,5,3],
-"db/ddb/class_system_ex_1_1_hash_1_1_hashable.html#a87439cd67bd28c149fe8012b90de8d26":[4,5,5,0],
-"db/ddb/class_system_ex_1_1_hash_1_1_hashable.html#a9de909f40cc15349d7f23970a5bdc99d":[4,5,5,1],
-"db/ddb/class_system_ex_1_1_hash_1_1_hashable.html#accac65bad00fbeb71c19a5033ad5f3e9":[4,5,5,2]
+"db/ddb/class_system_ex_1_1_hash_1_1_hashable.html#a87439cd67bd28c149fe8012b90de8d26":[4,5,5,0]
 };

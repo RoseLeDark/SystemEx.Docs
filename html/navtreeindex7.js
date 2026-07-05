@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba3ec389f8d12ead28a627f00bdeaca5a2":[4,1,43,3],
+"dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba5be8b098f9b79cf3b18767ffc5ecd169":[4,1,43,0],
 "dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316":[4,1,43,4],
 "dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4baa81781f8f4fa340f10177bcce27cb714":[4,1,43,2],
 "dd/dbc/group__collections.html#ggae3c3f4a1a9d90344fce2ca3232791bd7a0fcacbd960872d9d821973ed3188b59d":[4,1,42,1],
@@ -93,13 +95,13 @@ var NAVTREEINDEX7 =
 "de/d3e/class_system_ex_1_1_random_1_1_randx.html#ac9d3d26547161329fc75ffd89ab8a605":[6,0,1,6,1,4],
 "de/d3e/class_system_ex_1_1_random_1_1_randx.html#aea482f31fa68260532c6a98aa01b18c2":[5,0,1,6,1,5],
 "de/d3e/class_system_ex_1_1_random_1_1_randx.html#aea482f31fa68260532c6a98aa01b18c2":[6,0,1,6,1,5],
-"de/d42/_fletcher_hash_8cs_source.html":[7,0,5,2],
+"de/d42/_fletcher_hash_8cs_source.html":[7,0,5,3],
 "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html":[4,3,16],
 "de/d4d/struct_system_ex_1_1_flex_span-1-g_1_1_enumerator.html":[5,0,1,9,0],
 "de/d4d/struct_system_ex_1_1_flex_span-1-g_1_1_enumerator.html":[6,0,1,9,0],
 "de/d5b/namespace_system_ex_1_1_drawing.html":[5,0,1,3],
 "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html":[5,0,1,1,0],
-"de/d6e/_adler_hash_8cs_source.html":[7,0,5,0],
+"de/d6e/_adler_hash_8cs_source.html":[7,0,5,1],
 "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html":[4,2,0],
 "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a1a06b20dd743359bdbdd24be3c0e013d":[4,2,0,1],
 "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a1dfd8f98c90a6139a2a8890974e3cdfe":[4,2,0,16],
@@ -247,7 +249,5 @@ var NAVTREEINDEX7 =
 "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a33eb8d78055fce45e0ffd01268783054":[4,2,10,10],
 "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a47b89b936b8d36b68438ccd89aa1681b":[4,2,10,11],
 "df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a5788610141b9b8ff07f7ad4edb0bb150":[4,2,10,6],
-"df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a6cab30e0a5267f8341bfaf44fcfe9dce":[4,2,10,2],
-"df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a6f8b20f0e495f69a505dc51cd66378de":[4,2,10,4],
-"df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a78343a62691cdebf5976b4f892c2e4b2":[4,2,10,20]
+"df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a6cab30e0a5267f8341bfaf44fcfe9dce":[4,2,10,2]
 };

@@ -140,15 +140,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d1/d60/group__color.html#gab1c9faf58087c0f319453703331d2c17",
-"d3/dd4/_deque_8cs_source.html",
+"d1/d60/group__color.html#gaafdfc03dca54def3c58447f82af648ef",
+"d3/db7/_sorted_multi_map_8cs_source.html",
 "d6/dc6/class_system_ex_1_1_collections_1_1_model_1_1_tree-2-g.html#a5fd31a2af301850ea67fb3f590ac6a0d",
-"d8/d3b/_i_compared_8cs_source.html",
-"d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#af2a601f815bfcd42e9f3ffc713564ae8",
-"db/dfb/class_examples_1_1_sensor_data.html",
-"dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba774152d3487a933c5a985059b0a36316",
-"df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a841569bb216fe5ff876e3b53dc1fa861",
-"index.html#autotoc_md-installation"
+"d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html#af49f172ce8f0943bcc83ee8b8f66434b",
+"d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html#ade2a98971bc67a80d6a5a0ceead25644",
+"db/ddb/class_system_ex_1_1_hash_1_1_hashable.html#a9de909f40cc15349d7f23970a5bdc99d",
+"dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba3ec389f8d12ead28a627f00bdeaca5a2",
+"df/d08/class_system_ex_1_1_collections_1_1_model_1_1_r_b_tree_node-1-g.html#a6f8b20f0e495f69a505dc51cd66378de",
+"index.html#autotoc_md-cache--raid-subsystem-future-release"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"d1/d60/group__color.html#gaafdfc03dca54def3c58447f82af648ef":[4,3,146],
 "d1/d60/group__color.html#gab1c9faf58087c0f319453703331d2c17":[4,3,44],
 "d1/d60/group__color.html#gab8f6314d370e564dd8110d98bd019001":[4,3,93],
 "d1/d60/group__color.html#gabb70aaf3e4114590d99084687b480661":[4,3,55],
@@ -100,7 +101,7 @@ var NAVTREEINDEX1 =
 "d2/d1c/class_system_ex_1_1_collections_1_1_model_1_1_generic_node_iterator-1-g.html#ad9b5f3674f3c2e244a757ca578277125":[4,2,1,7],
 "d2/d1c/class_system_ex_1_1_collections_1_1_model_1_1_generic_node_iterator-1-g.html#adff0f64724c2416aa14e07ccaed5a308":[4,2,1,1],
 "d2/d1c/class_system_ex_1_1_collections_1_1_model_1_1_generic_node_iterator-1-g.html#aee884244a1ac009c478542d2cc5da6c7":[4,2,1,4],
-"d2/d2d/_x_x_hash3_hasher_8cs_source.html":[7,0,5,11],
+"d2/d2d/_x_x_hash3_hasher_8cs_source.html":[7,0,5,12],
 "d2/d35/md__l_i_c_e_n_s_e.html":[2],
 "d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html":[5,0,1,1,0,31],
 "d2/d3e/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_multi_map-2-g.html":[6,0,1,1,0,31],
@@ -120,7 +121,7 @@ var NAVTREEINDEX1 =
 "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray.html#ae6cf9467564d5bef5181841f64784b56":[4,3,2,2],
 "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray.html#afe05da756ddfaa2d5cdece1454269b5a":[4,3,2,3],
 "d2/d4b/_i_tuple_8cs_source.html":[7,0,1,0,0,10],
-"d2/d53/_fnv1a_hash_8cs_source.html":[7,0,5,3],
+"d2/d53/_fnv1a_hash_8cs_source.html":[7,0,5,4],
 "d2/d64/_i_traverse_8cs_source.html":[7,0,1,0,0,9],
 "d2/d66/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_format_schema.html":[5,0,1,5,0,1],
 "d2/d66/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_format_schema.html":[6,0,1,5,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ad8a0487b516a3509ee453868c5426687":[4,1,33,1],
 "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ad8f09f693bfb6f4bc561229340007a3a":[4,1,33,6],
 "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html#ae1a91ecfea18f52f0261d4e60dde1fec":[4,1,33,14],
-"d3/db3/_model_2_node_8cs_source.html":[7,0,1,1,8],
-"d3/db7/_sorted_multi_map_8cs_source.html":[7,0,1,0,27]
+"d3/db3/_model_2_node_8cs_source.html":[7,0,1,1,8]
 };

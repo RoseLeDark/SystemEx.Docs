@@ -1,5 +1,6 @@
 var namespace_system_ex_1_1_hash =
 [
+    [ "impl", "d0/d7b/namespace_system_ex_1_1_hash_1_1impl.html", null ],
     [ "AdlerHash", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash.html", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash" ],
     [ "BernsteinHash", "dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash.html", "dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash" ],
     [ "FletcherHash", "d4/dee/class_system_ex_1_1_hash_1_1_fletcher_hash.html", "d4/dee/class_system_ex_1_1_hash_1_1_fletcher_hash" ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"db/ddb/class_system_ex_1_1_hash_1_1_hashable.html#a9de909f40cc15349d7f23970a5bdc99d":[4,5,5,1],
+"db/ddb/class_system_ex_1_1_hash_1_1_hashable.html#accac65bad00fbeb71c19a5033ad5f3e9":[4,5,5,2],
 "db/dfb/class_examples_1_1_sensor_data.html":[5,0,0,1],
 "db/dfb/class_examples_1_1_sensor_data.html":[6,0,0,1],
 "db/dfb/class_examples_1_1_sensor_data.html#a00f4fafafb6a2ad73f06abda5a7d294b":[5,0,0,1,1],
@@ -20,7 +22,7 @@ var NAVTREEINDEX6 =
 "dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html#aae410b8f490b5d04463ea4214dbff0c3":[5,0,1,1,0,0,18,4],
 "dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html#aae410b8f490b5d04463ea4214dbff0c3":[6,0,1,1,0,0,18,4],
 "dc/d21/_native_r_a_m_kernel_8cs_source.html":[7,0,2,3],
-"dc/d23/_ramakrishna_hash_01_8cs_source.html":[7,0,5,9],
+"dc/d23/_ramakrishna_hash_01_8cs_source.html":[7,0,5,10],
 "dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html":[5,0,1,2,0,2],
 "dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html":[6,0,1,2,0,2],
 "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html":[4,1,9],
@@ -188,7 +190,7 @@ var NAVTREEINDEX6 =
 "dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#afe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5":[5,0,1,2,1,3,1],
 "dd/d82/namespace_system_ex_1_1_device_1_1_memory.html#afe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723":[5,0,1,2,1,3,2],
 "dd/d8c/_group_node_8cs_source.html":[7,0,1,0,9],
-"dd/db7/_weinberg_hash_8cs_source.html":[7,0,5,10],
+"dd/db7/_weinberg_hash_8cs_source.html":[7,0,5,11],
 "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html":[4,5,9],
 "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html#a4d0ab1c7a46ba7da4c158251dff59c45":[4,5,9,1],
 "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html#a8322d7228fbf0b122c849a303fe292ac":[4,5,9,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "dd/dbc/group__collections.html#gae3c3f4a1a9d90344fce2ca3232791bd7":[4,1,42],
 "dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53":[4,1,41],
 "dd/dbc/group__collections.html#gaffad9d713e423cee13bc018e88f8ec79":[4,1,69],
-"dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba23d595ba1af8a7e9eb75b7dd281c4186":[4,1,43,1],
-"dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba3ec389f8d12ead28a627f00bdeaca5a2":[4,1,43,3],
-"dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba5be8b098f9b79cf3b18767ffc5ecd169":[4,1,43,0]
+"dd/dbc/group__collections.html#gga5d4c0e8a1b447d651da25c01c3acde4ba23d595ba1af8a7e9eb75b7dd281c4186":[4,1,43,1]
 };

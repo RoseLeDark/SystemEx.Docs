@@ -11,11 +11,12 @@ var searchData=
   ['systemex_3a_3adevice_3a_3amemory_8',['Memory',['../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html',1,'SystemEx::Device']]],
   ['systemex_3a_3adrawing_9',['Drawing',['../de/d5b/namespace_system_ex_1_1_drawing.html',1,'SystemEx']]],
   ['systemex_3a_3ahash_10',['Hash',['../d4/d32/namespace_system_ex_1_1_hash.html',1,'SystemEx']]],
-  ['systemex_3a_3aio_11',['IO',['../d4/d5d/namespace_system_ex_1_1_i_o.html',1,'SystemEx']]],
-  ['systemex_3a_3aio_3a_3aprovider_12',['Provider',['../da/da3/namespace_system_ex_1_1_i_o_1_1_provider.html',1,'SystemEx::IO']]],
-  ['systemex_3a_3arandom_13',['Random',['../de/d2f/namespace_system_ex_1_1_random.html',1,'SystemEx']]],
-  ['systemex_3a_3aruntime_14',['Runtime',['../d4/d8e/namespace_system_ex_1_1_runtime.html',1,'SystemEx']]],
-  ['systemex_3a_3aruntime_3a_3ainteropservices_15',['InteropServices',['../d4/dfc/namespace_system_ex_1_1_runtime_1_1_interop_services.html',1,'SystemEx::Runtime']]],
-  ['systemex_3a_3aruntime_3a_3ainteropservices_3a_3aplatform_16',['Platform',['../d0/daf/namespace_system_ex_1_1_runtime_1_1_interop_services_1_1_platform.html',1,'SystemEx::Runtime::InteropServices']]],
-  ['systemex_3a_3autils_17',['Utils',['../d2/d14/namespace_system_ex_1_1_utils.html',1,'SystemEx']]]
+  ['systemex_3a_3ahash_3a_3aimpl_11',['impl',['../d0/d7b/namespace_system_ex_1_1_hash_1_1impl.html',1,'SystemEx::Hash']]],
+  ['systemex_3a_3aio_12',['IO',['../d4/d5d/namespace_system_ex_1_1_i_o.html',1,'SystemEx']]],
+  ['systemex_3a_3aio_3a_3aprovider_13',['Provider',['../da/da3/namespace_system_ex_1_1_i_o_1_1_provider.html',1,'SystemEx::IO']]],
+  ['systemex_3a_3arandom_14',['Random',['../de/d2f/namespace_system_ex_1_1_random.html',1,'SystemEx']]],
+  ['systemex_3a_3aruntime_15',['Runtime',['../d4/d8e/namespace_system_ex_1_1_runtime.html',1,'SystemEx']]],
+  ['systemex_3a_3aruntime_3a_3ainteropservices_16',['InteropServices',['../d4/dfc/namespace_system_ex_1_1_runtime_1_1_interop_services.html',1,'SystemEx::Runtime']]],
+  ['systemex_3a_3aruntime_3a_3ainteropservices_3a_3aplatform_17',['Platform',['../d0/daf/namespace_system_ex_1_1_runtime_1_1_interop_services_1_1_platform.html',1,'SystemEx::Runtime::InteropServices']]],
+  ['systemex_3a_3autils_18',['Utils',['../d2/d14/namespace_system_ex_1_1_utils.html',1,'SystemEx']]]
 ];

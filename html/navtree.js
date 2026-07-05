@@ -29,7 +29,7 @@ function initNavTree(toroot,relpath,allMembersFile) {
   let navTreeSubIndices = [];
   const ARROW_DOWN = '<span class="arrowhead opened"></span>';
   const ARROW_RIGHT = '<span class="arrowhead closed"></span>';
-  const NAVPATH_COOKIE_NAME = ''+'navpath';
+  const NAVPATH_COOKIE_NAME = '55b88701c701bbae3c8fcbb8cc61401c_'+'navpath';
   const fullSidebar = typeof page_layout!=='undefined' && page_layout==1;
 
   // Helper functions to replace jQuery
@@ -630,7 +630,7 @@ function initNavTree(toroot,relpath,allMembersFile) {
 
     function constrainPanelWidths(leftPanelWidth,rightPanelWidth,dragLeft) {
       const contentWidth = container.clientWidth - leftPanelWidth - rightPanelWidth;
-      const minContentWidth = 250;
+      const minContentWidth = 335;
       const minPanelWidth = barWidth;
       if (contentWidth<minContentWidth) // need to shrink panels
       {
@@ -815,8 +815,8 @@ function initNavTree(toroot,relpath,allMembersFile) {
     } else {
       container.style.gridTemplateColumns = 'auto';
     }
-    const width = parseInt(Cookie.readSetting(RESIZE_COOKIE_NAME,250));
-    const pagenavWidth = parseInt(Cookie.readSetting(PAGENAV_COOKIE_NAME,250));
+    const width = parseInt(Cookie.readSetting(RESIZE_COOKIE_NAME,335));
+    const pagenavWidth = parseInt(Cookie.readSetting(PAGENAV_COOKIE_NAME,335));
     if (width) { restoreWidth(width+barWidth,pagenavWidth); } else { resizeWidth(); }
     const url = location.href;
     const i=url.indexOf("#");
