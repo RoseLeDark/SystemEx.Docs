@@ -104,6 +104,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d2f/class_s
   <div class="headertitle"><div class="title">SystemEx.Runtime.InteropServices.Platform.WindowsProcLoader Class Reference<div class="ingroups"><a class="el" href="../../da/d89/group___runtime.html">Runtime</a> &raquo; <a class="el" href="../../df/d72/group___platform.html">Platform</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Runtime.InteropServices.Platform.WindowsProcLoader:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d9/de7/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_windows_proc_loader__coll__graph.svg" width="211" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -124,10 +130,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a063d5da1307c18c66d92fa4ab3a6d4c4" id="r_a063d5da1307c18c66d92fa4ab3a6d4c4"><td class="memItemLeft">const string&#160;</td><td class="memItemRight"><a class="el" href="#a063d5da1307c18c66d92fa4ab3a6d4c4">NO_PATH</a> = &quot;NO_PATH&quot;</td></tr>
 <tr class="memdesc:a063d5da1307c18c66d92fa4ab3a6d4c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special marker value returned when no valid library path can be resolved for a requested module.  <br /></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html#l00036">36</a> of file <a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html">WindowsProcLoader.cs</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="adef12f8d87017ebb984736c5270ce1a9" name="adef12f8d87017ebb984736c5270ce1a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adef12f8d87017ebb984736c5270ce1a9">&#9670;&#160;</a></span>FreeLibrary()</h2>
 
@@ -159,9 +162,10 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Zero on success, or a non‑zero error code on failure. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html#l00119">119</a> of file <a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html">WindowsProcLoader.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  119</span>                                                     {</div>
+<div class="line"><span class="lineno">  120</span>            <span class="keywordflow">return</span> FreeLibraryW(lib.Handle);</div>
+<div class="line"><span class="lineno">  121</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a704c018bc3e4c77d955af44aeea690d5" name="a704c018bc3e4c77d955af44aeea690d5"></a>
@@ -197,9 +201,10 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resolved library path, or NO_PATH if no path can be determined. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html#l00134">134</a> of file <a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html">WindowsProcLoader.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  134</span>                                                           {</div>
+<div class="line"><span class="lineno">  135</span>            <span class="keywordflow">return</span> dllname;</div>
+<div class="line"><span class="lineno">  136</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8736cc0eede9acff520bbba1b8042b16" name="a8736cc0eede9acff520bbba1b8042b16"></a>
@@ -239,9 +244,10 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A raw function pointer, or IntPtr.Zero if the function cannot be resolved. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html#l00109">109</a> of file <a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html">WindowsProcLoader.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  109</span>                                                                      {</div>
+<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">return</span> GetProcAddressW(lib.Handle, name);</div>
+<div class="line"><span class="lineno">  111</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aed24a6f4c00e720821087d41b3e6c692" name="aed24a6f4c00e720821087d41b3e6c692"></a>
@@ -275,9 +281,10 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new Module instance representing the loaded DLL. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html#l00094">94</a> of file <a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html">WindowsProcLoader.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   94</span>                                                         {</div>
+<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Module(LoadLibraryW(path), path);</div>
+<div class="line"><span class="lineno">   96</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -303,12 +310,10 @@ Static Public Attributes</h2></td></tr>
 
 <p>Special marker value returned when no valid library path can be resolved for a requested module. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html#l00047">47</a> of file <a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html">WindowsProcLoader.cs</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d0/d6d/_windows_proc_loader_8cs_source.html">WindowsProcLoader.cs</a></li>
+<li><b>WindowsProcLoader.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

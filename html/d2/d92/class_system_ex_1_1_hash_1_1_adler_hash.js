@@ -1,5 +1,6 @@
 var class_system_ex_1_1_hash_1_1_adler_hash =
 [
-    [ "Compute", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash.html#adaf76d454efd440f068267872a82473b", null ],
-    [ "ComputeLong", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash.html#adf01906b8aab51e3575aafc45d9cea83", null ]
+    [ "AdlerHash", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash.html#a8235075b6d394ed5c2db8070875e3c38", null ],
+    [ "Compute", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash.html#ac57ea08ff5e3a8f68afa57f16373115a", null ],
+    [ "ComputeLong", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash.html#a76a2909a216b2f7b5f5b0794b3077e09", null ]
 ];

@@ -104,35 +104,46 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d8/d1d/class_s
   <div class="headertitle"><div class="title">SystemEx.Device.Intertropt.RamSharedBackend Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>RAM‑based backend for shared device buffers.  
+ <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Device.Intertropt.RamSharedBackend:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d0f/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend__inherit__graph.svg" width="199" height="144"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d0f/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend__inherit__graph.svg" width="204" height="379"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Device.Intertropt.RamSharedBackend:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../df/da2/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend__coll__graph.svg" width="199" height="144"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../df/da2/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend__coll__graph.svg" width="204" height="379"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1e1bbd70cac562cca27943802e8ec1d3" id="r_a1e1bbd70cac562cca27943802e8ec1d3"><td class="memItemLeft">long&#160;</td><td class="memItemRight"><a class="el" href="#a1e1bbd70cac562cca27943802e8ec1d3">ReciveFromHardwareBuffer</a> (out byte[] data, ref object hardwareBuffer)</td></tr>
+<tr class="memdesc:a1e1bbd70cac562cca27943802e8ec1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the contents of the backend buffer into a new managed array.  <br /></td></tr>
 <tr class="memitem:a836f662fbb93b2bfe6cdf75c7d181181" id="r_a836f662fbb93b2bfe6cdf75c7d181181"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a836f662fbb93b2bfe6cdf75c7d181181">CloseHardwareBuffer</a> (ref object hardwareBuffer)</td></tr>
-<tr class="memdesc:a836f662fbb93b2bfe6cdf75c7d181181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases and invalidates the backend‑specific hardware buffer handle. <br  />
- After this call, the buffer must no longer be used.  <br /></td></tr>
+<tr class="memdesc:a836f662fbb93b2bfe6cdf75c7d181181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes a hardware buffer and releases its unmanaged memory.  <br /></td></tr>
 <tr class="memitem:a38bb2947d40b091d13169a0f253f49ea" id="r_a38bb2947d40b091d13169a0f253f49ea"><td class="memItemLeft">long&#160;</td><td class="memItemRight"><a class="el" href="#a38bb2947d40b091d13169a0f253f49ea">CreateWriteHardwareBuffer</a> (byte[] cache, out object hardwareBuffer)</td></tr>
-<tr class="memdesc:a38bb2947d40b091d13169a0f253f49ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a hardware buffer intended for writing operations and initializes it with the provided cache data. <br  />
- The backend allocates a device‑specific buffer and uploads the data.  <br /></td></tr>
+<tr class="memdesc:a38bb2947d40b091d13169a0f253f49ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a pinned hardware buffer for writing data to the native kernel.  <br /></td></tr>
 <tr class="memitem:a4420b7952d57f3d5abaa9de7e29ce5ba" id="r_a4420b7952d57f3d5abaa9de7e29ce5ba"><td class="memItemLeft">long&#160;</td><td class="memItemRight"><a class="el" href="#a4420b7952d57f3d5abaa9de7e29ce5ba">CreateReadHardwareBuffer</a> (int size, out object hardwareBuffer)</td></tr>
-<tr class="memdesc:a4420b7952d57f3d5abaa9de7e29ce5ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a hardware buffer intended for reading operations. <br  />
- The backend allocates a device‑specific buffer of the given size and returns an opaque handle via <em>hardwareBuffer</em> .  <br /></td></tr>
+<tr class="memdesc:a4420b7952d57f3d5abaa9de7e29ce5ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a pinned hardware buffer for reading data produced by the native kernel.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html#l00033">33</a> of file <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html">RamSharedBackend.cs</a>.</p>
+<div class="textblock"><p>RAM‑based backend for shared device buffers. </p>
+<p>RamSharedBackend is the simplest backend in <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a>. It stores buffer data directly in managed RAM and exposes it to native kernels by pinning the underlying <code>byte[]</code> and providing an unmanaged pointer via UnmanagedObject. </p>
+<p>This backend is primarily used for: </p><ul>
+<li>
+Testing native kernels without GPU or hardware devices </li>
+<li>
+Debugging compute logic in a safe environment </li>
+<li>
+Providing a fallback backend for platforms without specialized hardware </li>
+</ul>
+<p>The backend implements the IDeviceSharedBackend interface, allowing <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> to treat RAM buffers exactly like hardware buffers. This makes native kernel execution backend‑agnostic: <br  />
+ kernels do not care whether the memory comes from RAM, GPU, or another device. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a836f662fbb93b2bfe6cdf75c7d181181" name="a836f662fbb93b2bfe6cdf75c7d181181"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a836f662fbb93b2bfe6cdf75c7d181181">&#9670;&#160;</a></span>CloseHardwareBuffer()</h2>
@@ -149,19 +160,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Releases and invalidates the backend‑specific hardware buffer handle. <br  />
- After this call, the buffer must no longer be used. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hardwareBuffer</td><td>The backend‑specific buffer handle.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Closes a hardware buffer and releases its unmanaged memory. </p>
 
 <p>Implements <a class="el" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#a9f914e66eb1f111f799049c827bef125">SystemEx.Device.Intertropt.IDeviceSharedBackend</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html#l00057">57</a> of file <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html">RamSharedBackend.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  146</span>                                                                   {</div>
+<div class="line"><span class="lineno">  147</span>            ((UnmanagedObject)hardwareBuffer).Dispose();</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>            m_Buffer = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  150</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4420b7952d57f3d5abaa9de7e29ce5ba" name="a4420b7952d57f3d5abaa9de7e29ce5ba"></a>
@@ -183,22 +190,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates a hardware buffer intended for reading operations. <br  />
- The backend allocates a device‑specific buffer of the given size and returns an opaque handle via <em>hardwareBuffer</em> . </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">size</td><td>The size of the buffer to allocate.</td></tr>
-    <tr><td class="paramname">hardwareBuffer</td><td>The backend‑specific buffer handle.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A backend‑specific status code. <br  />
- Typically <code>0</code> for success, non‑zero for errors. </dd></dl>
+<p>Creates a pinned hardware buffer for reading data produced by the native kernel. </p>
+<p>A new buffer of the requested size is allocated and pinned. <br  />
+ The native kernel writes its output directly into this memory block. </p>
 
 <p>Implements <a class="el" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#a833aff35554009c28025b975f13d4dfe">SystemEx.Device.Intertropt.IDeviceSharedBackend</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html#l00071">71</a> of file <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html">RamSharedBackend.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  175</span>                                                                                  {</div>
+<div class="line"><span class="lineno">  176</span>            m_Buffer = <span class="keyword">new</span> <span class="keywordtype">byte</span>[size];</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>            GCHandle handle = GCHandle.Alloc(m_Buffer, GCHandleType.Pinned);</div>
+<div class="line"><span class="lineno">  179</span>            hardwareBuffer = <span class="keyword">new</span> UnmanagedObject(handle, m_Buffer);</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">return</span> m_Buffer.Length;</div>
+<div class="line"><span class="lineno">  182</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a38bb2947d40b091d13169a0f253f49ea" name="a38bb2947d40b091d13169a0f253f49ea"></a>
@@ -220,22 +225,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates a hardware buffer intended for writing operations and initializes it with the provided cache data. <br  />
- The backend allocates a device‑specific buffer and uploads the data. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cache</td><td>The data to write into the hardware buffer.</td></tr>
-    <tr><td class="paramname">hardwareBuffer</td><td>The backend‑specific buffer handle.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A backend‑specific status code. <br  />
- Typically <code>0</code> for success, non‑zero for errors. </dd></dl>
+<p>Creates a pinned hardware buffer for writing data to the native kernel. </p>
+<p>The provided cache is pinned and exposed to native code as a stable unmanaged pointer. Kernels can safely read or modify the buffer. </p>
 
 <p>Implements <a class="el" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ae46d08af2aeec81c004385b0eba87bb9">SystemEx.Device.Intertropt.IDeviceSharedBackend</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html#l00063">63</a> of file <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html">RamSharedBackend.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  159</span>                                                                                       {</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>            m_Buffer = cache;</div>
+<div class="line"><span class="lineno">  162</span>            GCHandle handle = GCHandle.Alloc(m_Buffer, GCHandleType.Pinned);</div>
+<div class="line"><span class="lineno">  163</span>            hardwareBuffer = <span class="keyword">new</span> UnmanagedObject(handle, m_Buffer);</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>            <span class="keywordflow">return</span> m_Buffer.Length;</div>
+<div class="line"><span class="lineno">  166</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1e1bbd70cac562cca27943802e8ec1d3" name="a1e1bbd70cac562cca27943802e8ec1d3"></a>
@@ -256,29 +258,33 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td></td></tr>
-    <tr><td class="paramname">hardwareBuffer</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">IOException</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+
+<p>Copies the contents of the backend buffer into a new managed array. </p>
+<p>A defensive copy is used instead of returning <code>m_Buffer</code> directly. This prevents callers from accidentally modifying the backend's internal memory and ensures that the shared buffer lifetime remains isolated from user code. </p>
+<p>The unmanaged buffer is released after copying, because native kernels no longer require access to the pinned memory once execution has finished. </p>
 
 <p>Implements <a class="el" href="../../d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html#ad1a998c4c1c2bcf87d3cc71848521729">SystemEx.Device.Intertropt.IDeviceSharedBackend</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html#l00046">46</a> of file <a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html">RamSharedBackend.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  127</span>                                                                                         {</div>
+<div class="line"><span class="lineno">  128</span>            <span class="keywordflow">if</span> ( m_Buffer == <span class="keyword">null</span>  ) <span class="keywordflow">throw</span> <span class="keyword">new</span> IOException(nameof(m_Buffer));</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>            <span class="keywordtype">long</span> _size = m_Buffer.Length;</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>            data = <span class="keyword">new</span> <span class="keywordtype">byte</span>[_size];</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>           <span class="comment">// data = m_Buffer;</span></div>
+<div class="line"><span class="lineno">  135</span>            Array.Copy(m_Buffer, data, m_Buffer.Length);</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>            ((UnmanagedObject)hardwareBuffer).Dispose();</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>            m_Buffer = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>            <span class="keywordflow">return</span> _size;</div>
+<div class="line"><span class="lineno">  142</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d4/d1f/_ram_shared_backend_8cs_source.html">RamSharedBackend.cs</a></li>
+<li><b>RamSharedBackend.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

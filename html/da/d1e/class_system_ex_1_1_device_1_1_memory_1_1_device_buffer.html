@@ -112,14 +112,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('da/d1e/class_s
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d3/d2a/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer__inherit__graph.svg" width="234" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d3/d2a/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Device.Memory.DeviceBuffer:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/dae/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer__coll__graph.svg" width="234" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/dae/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -251,8 +251,6 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a cache that can be shared with a hardware backend through DeviceSharedBuffer&lt;TDeviceSharedBackend&gt;. <br  />
  A DeviceBuffer behaves like a normal Cache, but supports locking and shared‑memory synchronization for device kernels. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/dea/_device_buffer_8cs_source.html#l00049">49</a> of file <a class="el" href="../../df/dea/_device_buffer_8cs_source.html">DeviceBuffer.cs</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af8268870fb6e0c4bb5dfb8ceaebeed02" name="af8268870fb6e0c4bb5dfb8ceaebeed02"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af8268870fb6e0c4bb5dfb8ceaebeed02">&#9670;&#160;</a></span>DeviceBuffer()</h2>
@@ -274,9 +272,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a new device buffer with the specified capacity and cache type. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/dea/_device_buffer_8cs_source.html#l00064">64</a> of file <a class="el" href="../../df/dea/_device_buffer_8cs_source.html">DeviceBuffer.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   65</span>            : base(capacity, type) { }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -336,9 +333,11 @@ otherwise → SharedCacheType.ReadWrite </li>
 </dd>
 </dl>
 </div>
-
-<p class="definition">Definition at line <a class="el" href="../../df/dea/_device_buffer_8cs_source.html#l00081">81</a> of file <a class="el" href="../../df/dea/_device_buffer_8cs_source.html">DeviceBuffer.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   82</span>                                       : IDeviceSharedBackend {</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> DeviceSharedBuffer&lt;TDeviceSharedBackend&gt;(<span class="keyword">this</span>, shared, flags, config);</div>
+<div class="line"><span class="lineno">   85</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
@@ -364,12 +363,10 @@ otherwise → SharedCacheType.ReadWrite </li>
 
 <p>Indicates whether the buffer is currently locked for shared access. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/dea/_device_buffer_8cs_source.html#l00059">59</a> of file <a class="el" href="../../df/dea/_device_buffer_8cs_source.html">DeviceBuffer.cs</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../df/dea/_device_buffer_8cs_source.html">DeviceBuffer.cs</a></li>
+<li><b>DeviceBuffer.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

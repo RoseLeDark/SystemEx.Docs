@@ -108,14 +108,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d7/d8e/class_s
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../dc/d78/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g__inherit__graph.svg" width="1034" height="159"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../dc/d78/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Collections.Generic.ArrayRandomAccessIterator&lt; T &gt;:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d8/d46/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g__coll__graph.svg" width="1034" height="159"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d8/d46/class_system_ex_1_1_collections_1_1_generic_1_1_array_random_access_iterator-1-g__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -158,10 +158,7 @@ Properties</h2></td></tr>
 <tr class="memitem:a1e808f92506f2b64f8220381f8d141a9" id="r_a1e808f92506f2b64f8220381f8d141a9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1e808f92506f2b64f8220381f8d141a9">IsBegin</a><code> [get]</code></td></tr>
 <tr class="memdesc:a1e808f92506f2b64f8220381f8d141a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the iterator is positioned at the beginning of the array.  <br /></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00032">32</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a6c73f931f422f1561f62c2db75a5b036" name="a6c73f931f422f1561f62c2db75a5b036"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c73f931f422f1561f62c2db75a5b036">&#9670;&#160;</a></span>Advance()</h2>
 
@@ -187,9 +184,14 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A new iterator positioned at the computed index.</dd></dl>
 
 <p>Implements <a class="el" href="../../d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#a2c2247892226f0710c4b975fec2e47b5">SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00075">75</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>                                                               {</div>
+<div class="line"><span class="lineno">   76</span>            var newpos = offset + m_ipos;</div>
+<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">if</span> ( newpos &gt; m_values.Length )</div>
+<div class="line"><span class="lineno">   78</span>                newpos = m_values.Length;</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ArrayRandomAccessIterator&lt;T&gt;(m_values, (<span class="keywordtype">int</span>)newpos);</div>
+<div class="line"><span class="lineno">   81</span>        }</div>
+</div><!-- fragment --><div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
@@ -225,9 +227,11 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00064">64</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                                                              {</div>
+<div class="line"><span class="lineno">   65</span>            m_values = values;</div>
+<div class="line"><span class="lineno">   66</span>            m_ipos = pos;</div>
+<div class="line"><span class="lineno">   67</span>        }</div>
+</div><!-- fragment --><div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
@@ -254,9 +258,11 @@ Properties</h2></td></tr>
 <p>Moves the iterator one step backward, unless it is already at the beginning. </p>
 
 <p>Implements <a class="el" href="../../d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#ab0531f16d2069a4f8f1026c5aea1c23b">SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00086">86</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   86</span>                           {</div>
+<div class="line"><span class="lineno">   87</span>            <span class="keywordflow">if</span> ( m_ipos &gt; 0 )</div>
+<div class="line"><span class="lineno">   88</span>                m_ipos--;</div>
+<div class="line"><span class="lineno">   89</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7a1138472a541b2999d04621c5051a3e" name="a7a1138472a541b2999d04621c5051a3e"></a>
@@ -278,9 +284,10 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A new iterator instance with its own array copy.</dd></dl>
 
 <p>Implements <a class="el" href="../../d0/d0c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator-1-g.html#ab550b2d8c93e7ac77aabbf54cc895ed3">SystemEx.Collections.Generic.Interfaces.IIterator&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00095">95</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>                                    {</div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ArrayRandomAccessIterator&lt;T&gt;(m_values.ToArray(), m_ipos);</div>
+<div class="line"><span class="lineno">   97</span>        }</div>
+</div><!-- fragment --><div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
@@ -305,9 +312,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Disposes the iterator. No resources are held. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00141">141</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  141</span>                              {</div>
+<div class="line"><span class="lineno">  142</span>            GC.SuppressFinalize(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  143</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad4c9b1b0514185d063d9741a76ea9b25" name="ad4c9b1b0514185d063d9741a76ea9b25"></a>
@@ -326,9 +334,13 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00161">161</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>                                                 {</div>
+<div class="line"><span class="lineno">  162</span>            <span class="keywordflow">if</span> ( obj is ListIterator&lt;T&gt; ) {</div>
+<div class="line"><span class="lineno">  163</span>                <span class="keywordflow">return</span> Equals((ListIterator&lt;T&gt;)obj);</div>
+<div class="line"><span class="lineno">  164</span>            }</div>
+<div class="line"><span class="lineno">  165</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  166</span>        }</div>
+</div><!-- fragment --><div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
@@ -361,9 +373,10 @@ Properties</h2></td></tr>
 <p>Moves the iterator one step forward, unless it is already at the end. </p>
 
 <p>Implements <a class="el" href="../../de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html#aa11d9a6f8db368fe269a4f5d3df1cc83">SystemEx.Collections.Generic.Interfaces.IIterator</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00104">104</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>                              {</div>
+<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">if</span> ( !IsEnd ) m_ipos++;</div>
+<div class="line"><span class="lineno">  106</span>        }</div>
+</div><!-- fragment --><div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
@@ -390,9 +403,14 @@ Properties</h2></td></tr>
 <p>Moves the iterator N step forward. </p>
 
 <p>Implements <a class="el" href="../../de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html#a23a43b8112a222148d053a75032aa6af">SystemEx.Collections.Generic.Interfaces.IIterator</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00110">110</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>                                       {</div>
+<div class="line"><span class="lineno">  111</span>            var n = i;</div>
+<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">while</span> ( n &gt; 0 ) {</div>
+<div class="line"><span class="lineno">  113</span>                --n;</div>
+<div class="line"><span class="lineno">  114</span>                Forward();</div>
+<div class="line"><span class="lineno">  115</span>            }</div>
+<div class="line"><span class="lineno">  116</span>        }</div>
+</div><!-- fragment --><div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
@@ -417,9 +435,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns this iterator as an enumerator. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00123">123</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  123</span>=&gt; <span class="keyword">this</span>;</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a87343f2a87ee7128b7b36820a51a01d8" name="a87343f2a87ee7128b7b36820a51a01d8"></a>
@@ -438,9 +455,14 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00168">168</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  168</span>                                          {</div>
+<div class="line"><span class="lineno">  169</span>            unchecked {</div>
+<div class="line"><span class="lineno">  170</span>                <span class="keywordtype">int</span> h = m_values.GetHashCode();</div>
+<div class="line"><span class="lineno">  171</span>                h = (h * 397) ^ m_ipos;</div>
+<div class="line"><span class="lineno">  172</span>                <span class="keywordflow">return</span> h;</div>
+<div class="line"><span class="lineno">  173</span>            }</div>
+<div class="line"><span class="lineno">  174</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a34c153b5b9db7c5d248fb59d36e33a5a" name="a34c153b5b9db7c5d248fb59d36e33a5a"></a>
@@ -460,9 +482,11 @@ Properties</h2></td></tr>
 
 <p>Moves to the next element for foreach enumeration. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the iterator advanced; otherwise <code>false</code>.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00130">130</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  130</span>                               {</div>
+<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">if</span> ( !IsEnd ) { m_ipos++; <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  133</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0e4501cd3671de0d9ddbc7f9a3fa6103" name="a0e4501cd3671de0d9ddbc7f9a3fa6103"></a>
@@ -493,9 +517,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Inequality operator for comparing two iterators. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00157">157</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>                                                                                                       {</div>
+<div class="line"><span class="lineno">  158</span>            <span class="keywordflow">return</span> !(a == b);</div>
+<div class="line"><span class="lineno">  159</span>        }</div>
+</div><!-- fragment --><div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
@@ -532,9 +557,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equality operator for comparing two iterators. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00148">148</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>                                                                                                       {</div>
+<div class="line"><span class="lineno">  149</span>            <span class="keywordflow">if</span> ( ReferenceEquals(a, b) ) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  150</span>            <span class="keywordflow">if</span> ( a is <span class="keyword">null</span> || b is <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  151</span>            <span class="keywordflow">return</span> a.Equals(b);</div>
+<div class="line"><span class="lineno">  152</span>        }</div>
+</div><!-- fragment --><div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
@@ -559,9 +587,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reset is not supported for this iterator. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00137">137</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  137</span>{ }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
@@ -589,8 +616,6 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#aa06ada7e7cd00a5f8a5e12a92e2bf349">SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00047">47</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-
 </div>
 </div>
 <a id="a1e808f92506f2b64f8220381f8d141a9" name="a1e808f92506f2b64f8220381f8d141a9"></a>
@@ -616,8 +641,6 @@ Properties</h2></td></tr>
 <p>Indicates whether the iterator is positioned at the beginning of the array. </p>
 
 <p>Implements <a class="el" href="../../d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#a4d854749f8a872bfc5f63a761169bf36">SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00057">57</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
 
 </div>
 </div>
@@ -645,12 +668,10 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#a25c900695e6063bc2824389eb35f9a09">SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d47/_array_8cs_source.html#l00052">52</a> of file <a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d6/d47/_array_8cs_source.html">Array.cs</a></li>
+<li><b>Array.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

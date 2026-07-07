@@ -111,14 +111,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/d8a/class_s
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d2/def/class_system_ex_1_1_number_range-1-g__inherit__graph.svg" width="396" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d2/def/class_system_ex_1_1_number_range-1-g__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.NumberRange&lt; T &gt;:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../df/d91/class_system_ex_1_1_number_range-1-g__coll__graph.svg" width="396" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../df/d91/class_system_ex_1_1_number_range-1-g__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -170,7 +170,7 @@ Properties</h2></td></tr>
 <div class="textblock"><p>Represents a numeric range defined by a start and end value. Provides range validation, containment checks, normalization, intersection, adjacency, union, and enumeration. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>Numeric type implementing INumber&lt;T&gt;.</td></tr>
+    <tr><td class="paramname">T</td><td><a class="el" href="../../dd/dfd/namespace_system_ex_1_1_numeric.html">Numeric</a> type implementing INumber&lt;T&gt;.</td></tr>
   </table>
   </dd>
 </dl>
@@ -182,8 +182,6 @@ Properties</h2></td></tr>
 </dd>
 </dl>
 </div>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00030">30</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="afdb8b0f872b0be7eb0ca3461db46bbda" name="afdb8b0f872b0be7eb0ca3461db46bbda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afdb8b0f872b0be7eb0ca3461db46bbda">&#9670;&#160;</a></span>Contains()</h2>
@@ -210,9 +208,8 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if the value is inside the range.</dd></dl>
 
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a07d2023132aa7ce6fc3bd3e1bf46ec24">SystemEx.IRange&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00098">98</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   98</span>=&gt; (x - this.To) * (x - this.From) &lt;= T.Zero;</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a82e928b4a27284eaa085530a8d1af312" name="a82e928b4a27284eaa085530a8d1af312"></a>
@@ -238,9 +235,11 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if both ranges are equal.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00087">87</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   87</span>                                                  =&gt;</div>
+<div class="line"><span class="lineno">   88</span>            other is not <span class="keyword">null</span> &amp;&amp;</div>
+<div class="line"><span class="lineno">   89</span>            From.Equals(other.From) &amp;&amp;</div>
+<div class="line"><span class="lineno">   90</span>            this.To.Equals(other.To);</div>
+</div><!-- fragment --><div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
@@ -265,9 +264,9 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00079">79</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>                                                 =&gt;</div>
+<div class="line"><span class="lineno">   80</span>            Equals(obj as NumberRange&lt;T&gt;);</div>
+</div><!-- fragment --><div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
@@ -299,9 +298,11 @@ Properties</h2></td></tr>
 
 <p>Enumerates all values from From to To in increments of 1. </p>
 <dl class="section return"><dt>Returns</dt><dd>Sequence of values in the range.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00126">126</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  126</span>                                              {</div>
+<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">for</span> ( T i = From; i &lt;= this.To; i += T.One )</div>
+<div class="line"><span class="lineno">  128</span>                yield <span class="keywordflow">return</span> i;</div>
+<div class="line"><span class="lineno">  129</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1b86c763867b5e381d4ee7af67152561" name="a1b86c763867b5e381d4ee7af67152561"></a>
@@ -320,9 +321,9 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00075">75</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   75</span>                                          =&gt; </div>
+<div class="line"><span class="lineno">   76</span>            HashCode.Combine(this.From, this.To);</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0c6afcea4abb49a3e982c2e62c67cfdb" name="a0c6afcea4abb49a3e982c2e62c67cfdb"></a>
@@ -355,9 +356,11 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A new range with substituted boundaries.</dd></dl>
 
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a39f8cc23849b2473bbe5b161258362c8">SystemEx.IRange&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00117">117</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>                                                      {</div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> NumberRange&lt;T&gt;((tstart != <span class="keyword">null</span>) ? tstart : this.From,</div>
+<div class="line"><span class="lineno">  119</span>                                      (tend != <span class="keyword">null</span>) ? tend : this.To);</div>
+<div class="line"><span class="lineno">  120</span>        }</div>
+</div><!-- fragment --><div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
@@ -391,9 +394,17 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A new range representing the intersection, or null if no overlap exists. </dd></dl>
 
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a20f9baa7b7e30520bbc507a047aad0b1">SystemEx.IRange&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00152">152</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>                                                     {</div>
+<div class="line"><span class="lineno">  153</span>            NumberRange&lt;T&gt;? _ret = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>            <span class="keywordflow">if</span> ( Overlaps(other) ) {</div>
+<div class="line"><span class="lineno">  156</span>                _ret = <span class="keyword">new</span> NumberRange&lt;T&gt;(T.Max(<span class="keyword">this</span>.From, other.From),</div>
+<div class="line"><span class="lineno">  157</span>                                          T.Min(<span class="keyword">this</span>.To, other.To));</div>
+<div class="line"><span class="lineno">  158</span>            }</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>            <span class="keywordflow">return</span> _ret;</div>
+<div class="line"><span class="lineno">  161</span>        }</div>
+</div><!-- fragment --><div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
@@ -427,9 +438,17 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if the ranges are adjacent.</dd></dl>
 
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a6d75f4b599538af14e0ff651c10ef745">SystemEx.IRange&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00168">168</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>                                                {</div>
+<div class="line"><span class="lineno">  169</span>            <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>            <span class="keywordflow">if</span> ( IsValid &amp;&amp; other.IsValid )</div>
+<div class="line"><span class="lineno">  172</span>                result =</div>
+<div class="line"><span class="lineno">  173</span>                    this.To == other.From ||</div>
+<div class="line"><span class="lineno">  174</span>                    other.To == this.From;</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  177</span>        }</div>
+</div><!-- fragment --><div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
@@ -455,9 +474,9 @@ Properties</h2></td></tr>
 
 <p>Returns a normalized version of the range where From ≤ To. </p>
 <dl class="section return"><dt>Returns</dt><dd>A normalized range.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00104">104</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>                                          =&gt;</div>
+<div class="line"><span class="lineno">  105</span>            (this.From &lt;= this.To) ? <span class="keyword">this</span> : new NumberRange&lt;T&gt;(this.To, this.From);</div>
+</div><!-- fragment --><div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
@@ -467,7 +486,7 @@ Properties</h2></td></tr>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../dc/d8a/class_system_ex_1_1_number_range-1-g_a8cd1313f10d7c3195bd4ff368fcb1fa3_icgraph.svg" width="955" height="83"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../dc/d8a/class_system_ex_1_1_number_range-1-g_a8cd1313f10d7c3195bd4ff368fcb1fa3_icgraph.svg" width="100%" height="362"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -488,13 +507,15 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a new numeric range trom T.Zero to T.One. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00040">40</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                              {</div>
+<div class="line"><span class="lineno">   41</span>            this.From = T.Zero;</div>
+<div class="line"><span class="lineno">   42</span>            this.To = T.One;</div>
+<div class="line"><span class="lineno">   43</span>        }</div>
+</div><!-- fragment --><div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../dc/d8a/class_system_ex_1_1_number_range-1-g_aadbe726773c514b462d7d1cd14e6736c_icgraph.svg" width="1174" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../dc/d8a/class_system_ex_1_1_number_range-1-g_aadbe726773c514b462d7d1cd14e6736c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -526,9 +547,11 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00049">49</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   49</span>                                            {</div>
+<div class="line"><span class="lineno">   50</span>            this.From = start;</div>
+<div class="line"><span class="lineno">   51</span>            this.To = end;</div>
+<div class="line"><span class="lineno">   52</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab187e932d6da5042613b57c957da0a7f" name="ab187e932d6da5042613b57c957da0a7f"></a>
@@ -556,9 +579,15 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if the ranges overlap.</dd></dl>
 
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a361b62aca6eb8fc68770d86f5dbc708b">SystemEx.IRange&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00136">136</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>                                              {</div>
+<div class="line"><span class="lineno">  137</span>            <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>            <span class="keywordflow">if</span> ( IsValid &amp;&amp; other.IsValid )</div>
+<div class="line"><span class="lineno">  140</span>                result = !(other.To &lt; From || other.From &gt; this.To);</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  143</span>        }</div>
+</div><!-- fragment --><div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
@@ -583,9 +612,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns a string representation of the range. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00200">200</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  200</span>                                          {</div>
+<div class="line"><span class="lineno">  201</span>            <span class="keywordflow">return</span> (IsValid) ?</div>
+<div class="line"><span class="lineno">  202</span>                <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;Range: [{this.From} ... $[{this.To}]&quot;</span>) :</div>
+<div class="line"><span class="lineno">  203</span>                <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;Not Valid Range: [{this.From} ... $[{this.To}]&quot;</span>);</div>
+<div class="line"><span class="lineno">  204</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa9bee31b5a40640b076ec33553ba0c8d" name="aa9bee31b5a40640b076ec33553ba0c8d"></a>
@@ -613,9 +645,18 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The merged range, or null if no merge is possible.</dd></dl>
 
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ac206e7fa0e7e60ffab22e4af76d56c92">SystemEx.IRange&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00185">185</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>                                                  {</div>
+<div class="line"><span class="lineno">  186</span>            IRange&lt;T&gt;? result = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>            <span class="keywordflow">if</span> ( Overlaps(other) || IsAdjacent(other) ) {</div>
+<div class="line"><span class="lineno">  189</span>                T start = T.Min(this.From, other.From);</div>
+<div class="line"><span class="lineno">  190</span>                T end   = T.Max(this.To, other.To);</div>
+<div class="line"><span class="lineno">  191</span>                result = <span class="keyword">new</span> NumberRange&lt;T&gt;(start, end);</div>
+<div class="line"><span class="lineno">  192</span>            }</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  195</span>        }</div>
+</div><!-- fragment --><div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
@@ -649,8 +690,6 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a63fa52cff2a598131d8b192112a4975b">SystemEx.IRange&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00068">68</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-
 </div>
 </div>
 <a id="a21f4862f9d9737dc4f26b01e551cbf09" name="a21f4862f9d9737dc4f26b01e551cbf09"></a>
@@ -677,8 +716,6 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a1e8481f103a9a76a4361f51407842be1">SystemEx.IRange&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00072">72</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-
 </div>
 </div>
 <a id="aa90ae91ed1e9d25d1998be586179e5eb" name="aa90ae91ed1e9d25d1998be586179e5eb"></a>
@@ -704,9 +741,8 @@ Properties</h2></td></tr>
 <p>From value of the range. </p>
 
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae275f6eb758dd085b845265ef1480d19">SystemEx.IRange&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00033">33</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad9a03a2d3893229a5d2cb1c5d12fa62d" name="ad9a03a2d3893229a5d2cb1c5d12fa62d"></a>
@@ -732,8 +768,6 @@ Properties</h2></td></tr>
 <p>Indicates whether the range represents a single value (From == To). </p>
 
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a9e584fb545a58d310f3b9c43bfae65ab">SystemEx.IRange&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00064">64</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
 
 </div>
 </div>
@@ -761,8 +795,6 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#a693d922264544cd26108d2e129166d50">SystemEx.IRange&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00060">60</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-
 </div>
 </div>
 <a id="aaae9b046077eb488f41c5e6e892082e5" name="aaae9b046077eb488f41c5e6e892082e5"></a>
@@ -786,8 +818,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the length of the range (To - From). </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00056">56</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
 
 </div>
 </div>
@@ -814,13 +844,12 @@ Properties</h2></td></tr>
 <p>End value of the range. </p>
 
 <p>Implements <a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html#ae292c65780ca87bf2f6a8d4d1af728af">SystemEx.IRange&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de2/_number_range_8cs_source.html#l00035">35</a> of file <a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   35</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d0/de2/_number_range_8cs_source.html">NumberRange.cs</a></li>
+<li><b>NumberRange.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

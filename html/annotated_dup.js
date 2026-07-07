@@ -2,7 +2,7 @@ var annotated_dup =
 [
     [ "Examples", "d3/d06/namespace_examples.html", [
       [ "ExampleRamKernelAdd", "de/d89/class_examples_1_1_example_ram_kernel_add.html", "de/d89/class_examples_1_1_example_ram_kernel_add" ],
-      [ "SensorData", "db/dfb/class_examples_1_1_sensor_data.html", "db/dfb/class_examples_1_1_sensor_data" ]
+      [ "SensorData", "df/df3/struct_examples_1_1_sensor_data.html", "df/df3/struct_examples_1_1_sensor_data" ]
     ] ],
     [ "SystemEx", "d0/d48/namespace_system_ex.html", [
       [ "Base", "da/d5b/namespace_system_ex_1_1_base.html", [
@@ -101,7 +101,7 @@ var annotated_dup =
         [ "Intertropt", "d7/d29/namespace_system_ex_1_1_device_1_1_intertropt.html", [
           [ "IDeviceSharedBackend", "d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html", "d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend" ],
           [ "RamSharedBackend", "d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html", "d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend" ],
-          [ "UnmanagedObject", "dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html", null ]
+          [ "UnmanagedObject", "dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html", "dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object" ]
         ] ],
         [ "Memory", "dd/d82/namespace_system_ex_1_1_device_1_1_memory.html", [
           [ "DeviceBuffer", "da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html", "da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer" ],
@@ -134,6 +134,7 @@ var annotated_dup =
       [ "Hash", "d4/d32/namespace_system_ex_1_1_hash.html", [
         [ "AdlerHash", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash.html", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash" ],
         [ "BernsteinHash", "dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash.html", "dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash" ],
+        [ "Black3Hasher", "dc/de7/class_system_ex_1_1_hash_1_1_black3_hasher.html", "dc/de7/class_system_ex_1_1_hash_1_1_black3_hasher" ],
         [ "FletcherHash", "d4/dee/class_system_ex_1_1_hash_1_1_fletcher_hash.html", "d4/dee/class_system_ex_1_1_hash_1_1_fletcher_hash" ],
         [ "Fnv1aHash", "db/d29/class_system_ex_1_1_hash_1_1_fnv1a_hash.html", "db/d29/class_system_ex_1_1_hash_1_1_fnv1a_hash" ],
         [ "GrøstlHash", "da/d7b/class_system_ex_1_1_hash_1_1_grøtl_hash.html", "da/d7b/class_system_ex_1_1_hash_1_1_grøtl_hash" ],
@@ -142,6 +143,7 @@ var annotated_dup =
         [ "Hashable", "db/ddb/class_system_ex_1_1_hash_1_1_hashable.html", "db/ddb/class_system_ex_1_1_hash_1_1_hashable" ],
         [ "HashAlgorithmAttribute", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute" ],
         [ "IHash", "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html", "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash" ],
+        [ "IHashable&lt; T &gt;", "db/db8/interface_system_ex_1_1_hash_1_1_i_hashable-1-g.html", "db/db8/interface_system_ex_1_1_hash_1_1_i_hashable-1-g" ],
         [ "RamakrishnaHash", "d4/d6f/class_system_ex_1_1_hash_1_1_ramakrishna_hash.html", "d4/d6f/class_system_ex_1_1_hash_1_1_ramakrishna_hash" ],
         [ "WeinbergHash", "d7/d67/class_system_ex_1_1_hash_1_1_weinberg_hash.html", "d7/d67/class_system_ex_1_1_hash_1_1_weinberg_hash" ]
       ] ],
@@ -153,6 +155,22 @@ var annotated_dup =
           [ "IIsByteSeriablize", "d1/d94/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_is_byte_seriablize.html", null ]
         ] ],
         [ "CacheStream&lt; TCache &gt;", "df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html", "df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g" ]
+      ] ],
+      [ "Numeric", "dd/dfd/namespace_system_ex_1_1_numeric.html", [
+        [ "AxisAngle&lt; TV, T &gt;", "d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g.html", "d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g" ],
+        [ "Half16", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16" ],
+        [ "IHalf&lt; T &gt;", "dd/d4c/interface_system_ex_1_1_numeric_1_1_i_half-1-g.html", null ],
+        [ "Quatd", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd.html", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd" ],
+        [ "Quatf", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf.html", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf" ],
+        [ "Vec2d", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d.html", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d" ],
+        [ "Vec2f", "db/d53/struct_system_ex_1_1_numeric_1_1_vec2f.html", "db/d53/struct_system_ex_1_1_numeric_1_1_vec2f" ],
+        [ "Vec2i", "d6/d44/struct_system_ex_1_1_numeric_1_1_vec2i.html", "d6/d44/struct_system_ex_1_1_numeric_1_1_vec2i" ],
+        [ "Vec3d", "d6/d8f/struct_system_ex_1_1_numeric_1_1_vec3d.html", "d6/d8f/struct_system_ex_1_1_numeric_1_1_vec3d" ],
+        [ "Vec3f", "d9/d57/struct_system_ex_1_1_numeric_1_1_vec3f.html", "d9/d57/struct_system_ex_1_1_numeric_1_1_vec3f" ],
+        [ "Vec3i", "de/d57/struct_system_ex_1_1_numeric_1_1_vec3i.html", "de/d57/struct_system_ex_1_1_numeric_1_1_vec3i" ],
+        [ "Vec4d", "db/d4b/struct_system_ex_1_1_numeric_1_1_vec4d.html", "db/d4b/struct_system_ex_1_1_numeric_1_1_vec4d" ],
+        [ "Vec4f", "da/dc8/struct_system_ex_1_1_numeric_1_1_vec4f.html", "da/dc8/struct_system_ex_1_1_numeric_1_1_vec4f" ],
+        [ "Vec4i", "d7/d35/struct_system_ex_1_1_numeric_1_1_vec4i.html", "d7/d35/struct_system_ex_1_1_numeric_1_1_vec4i" ]
       ] ],
       [ "Random", "de/d2f/namespace_system_ex_1_1_random.html", [
         [ "Isaac32Engine", "df/d91/class_system_ex_1_1_random_1_1_isaac32_engine.html", "df/d91/class_system_ex_1_1_random_1_1_isaac32_engine" ],
@@ -171,6 +189,7 @@ var annotated_dup =
         [ "SizeMismatchException", "d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception.html", "d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception" ]
       ] ],
       [ "FlexSpan&lt; T &gt;", "db/d28/struct_system_ex_1_1_flex_span-1-g.html", "db/d28/struct_system_ex_1_1_flex_span-1-g" ],
+      [ "IComparableEx&lt; T &gt;", "dc/d20/interface_system_ex_1_1_i_comparable_ex-1-g.html", "dc/d20/interface_system_ex_1_1_i_comparable_ex-1-g" ],
       [ "IRange&lt; T &gt;", "df/d28/interface_system_ex_1_1_i_range-1-g.html", "df/d28/interface_system_ex_1_1_i_range-1-g" ],
       [ "NumberRange&lt; T &gt;", "dc/d8a/class_system_ex_1_1_number_range-1-g.html", "dc/d8a/class_system_ex_1_1_number_range-1-g" ],
       [ "NumberRangeIterator&lt; T &gt;", "dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html", "dc/d77/struct_system_ex_1_1_number_range_iterator-1-g" ],

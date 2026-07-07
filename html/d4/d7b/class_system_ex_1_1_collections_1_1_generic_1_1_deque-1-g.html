@@ -104,6 +104,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d7b/class_s
   <div class="headertitle"><div class="title">SystemEx.Collections.Generic.Deque&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../dd/dbc/group__collections.html">Collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Collections.Generic.Deque&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d6/d47/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g__coll__graph.svg" width="204" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -139,10 +145,7 @@ Properties</h2></td></tr>
 <tr class="memitem:a3ff0936ef62b283c084255449bf44f6f" id="r_a3ff0936ef62b283c084255449bf44f6f"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="#a3ff0936ef62b283c084255449bf44f6f">End</a><code> [get]</code></td></tr>
 <tr class="memdesc:a3ff0936ef62b283c084255449bf44f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the back of the deque.  <br /></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00032">32</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aeb0adcfad25247c10d639a650126195c" name="aeb0adcfad25247c10d639a650126195c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb0adcfad25247c10d639a650126195c">&#9670;&#160;</a></span>AsFlexSpan()</h2>
 
@@ -166,9 +169,10 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A FlexSpan that views the range [0 .. m_count) of the internal buffer. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00157">157</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  157</span>                                                                                {</div>
+<div class="line"><span class="lineno">  158</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> FlexSpan&lt;T&gt;(ref m_elements!, 0, m_count, mode);</div>
+<div class="line"><span class="lineno">  159</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad955c6ca43ad5944a411f961f4ca382e" name="ad955c6ca43ad5944a411f961f4ca382e"></a>
@@ -187,9 +191,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Removes all elements from the deque without modifying the underlying buffer. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00142">142</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  142</span>                            {</div>
+<div class="line"><span class="lineno">  143</span>            m_count = 0;</div>
+<div class="line"><span class="lineno">  144</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0b402429b10c3a0094019e0f1a3948e7" name="a0b402429b10c3a0094019e0f1a3948e7"></a>
@@ -214,9 +219,11 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00078">78</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   78</span>                               {</div>
+<div class="line"><span class="lineno">   79</span>            m_elements = <span class="keyword">new</span> T[size];</div>
+<div class="line"><span class="lineno">   80</span>            m_count = 0;</div>
+<div class="line"><span class="lineno">   81</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa82138f3d8737c2b427dbc31b5b55759" name="aa82138f3d8737c2b427dbc31b5b55759"></a>
@@ -242,9 +249,13 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was removed; otherwise <code>false</code>.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00097">97</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   97</span>                                         {</div>
+<div class="line"><span class="lineno">   98</span>            <span class="keywordflow">if</span> ( IsEmpty ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   99</span>            value = m_elements[m_count - 1];</div>
+<div class="line"><span class="lineno">  100</span>            m_count--;</div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  102</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4420bfa8a156365af239555c3f24785b" name="a4420bfa8a156365af239555c3f24785b"></a>
@@ -271,9 +282,19 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was removed; otherwise <code>false</code>.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00126">126</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  126</span>                                          {</div>
+<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">if</span> ( IsEmpty ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>            value = m_elements[0];</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>            <span class="comment">// Shift all elements to the left</span></div>
+<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; m_count - 1; i++ )</div>
+<div class="line"><span class="lineno">  133</span>                m_elements[i] = m_elements[i + 1];</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>            m_count--;</div>
+<div class="line"><span class="lineno">  136</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  137</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4718a03bb0f7815851790f54f3deea13" name="a4718a03bb0f7815851790f54f3deea13"></a>
@@ -298,9 +319,11 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00087">87</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   87</span>                                      {</div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">if</span> ( IsFull ) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   89</span>            m_elements[m_count++] = value;</div>
+<div class="line"><span class="lineno">   90</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="abb4db27858b25246d2edb46428813fd7" name="abb4db27858b25246d2edb46428813fd7"></a>
@@ -326,9 +349,17 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00109">109</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  109</span>                                       {</div>
+<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">if</span> ( IsFull ) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>            <span class="comment">// Shift all elements to the right</span></div>
+<div class="line"><span class="lineno">  113</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = m_count; i &gt; 0; i-- )</div>
+<div class="line"><span class="lineno">  114</span>                m_elements[i] = m_elements[i - 1];</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>            m_elements[0] = value;</div>
+<div class="line"><span class="lineno">  117</span>            m_count++;</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
@@ -354,8 +385,6 @@ Properties</h2></td></tr>
 
 <p>Gets the number of elements currently stored in the deque. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00046">46</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
 </div>
 </div>
 <a id="a3ff0936ef62b283c084255449bf44f6f" name="a3ff0936ef62b283c084255449bf44f6f"></a>
@@ -379,8 +408,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the element at the back of the deque. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00072">72</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -406,8 +433,6 @@ Properties</h2></td></tr>
 
 <p>Gets the element at the front of the deque. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00067">67</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
 </div>
 </div>
 <a id="a3bd7b3ac82d2ec41b4969de06cd6eb79" name="a3bd7b3ac82d2ec41b4969de06cd6eb79"></a>
@@ -431,8 +456,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Indicates whether the deque contains no elements. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00057">57</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
 
 </div>
 </div>
@@ -458,8 +481,6 @@ Properties</h2></td></tr>
 
 <p>Indicates whether the deque has reached its maximum capacity. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00062">62</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
 </div>
 </div>
 <a id="a8c97dccb372b26a032e47d81fbabf2de" name="a8c97dccb372b26a032e47d81fbabf2de"></a>
@@ -484,12 +505,10 @@ Properties</h2></td></tr>
 
 <p>Gets the total capacity of the deque. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd4/_deque_8cs_source.html#l00052">52</a> of file <a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d3/dd4/_deque_8cs_source.html">Deque.cs</a></li>
+<li><b>Deque.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

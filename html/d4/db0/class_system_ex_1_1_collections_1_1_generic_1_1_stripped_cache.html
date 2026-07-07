@@ -108,14 +108,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/db0/class_s
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d0/d90/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache__inherit__graph.svg" width="215" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d0/d90/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Collections.Generic.StrippedCache:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d9/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache__coll__graph.svg" width="215" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d9/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -236,10 +236,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:gaffad9d713e423cee13bc018e88f8ec79 inherit pub_static_methods_class_system_ex_1_1_collections_1_1_generic_1_1_cache" id="r_gaffad9d713e423cee13bc018e88f8ec79"><td class="memItemLeft">static unsafe byte[]&#160;</td><td class="memItemRight"><a class="el" href="../../dd/dbc/group__collections.html#gaffad9d713e423cee13bc018e88f8ec79">ToBytes&lt; T &gt;</a> (ref T value)</td></tr>
 <tr class="memdesc:gaffad9d713e423cee13bc018e88f8ec79 inherit pub_static_methods_class_system_ex_1_1_collections_1_1_generic_1_1_cache"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an unmanaged value to its raw byte representation.  <br /></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html#l00035">35</a> of file <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html">StrippedCache.cs</a>.</p>
-</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aedd6d2db8ba958464aadc7a7f0294aea" name="aedd6d2db8ba958464aadc7a7f0294aea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedd6d2db8ba958464aadc7a7f0294aea">&#9670;&#160;</a></span>StrippedCache()</h2>
 
@@ -267,9 +264,20 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html#l00099">99</a> of file <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html">StrippedCache.cs</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>                                                             : base(cacheSize, <a class="code hl_enumeration" href="../../dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a>.Both) {</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>            m_caches = <span class="keyword">new</span> Cache[cacheCount-1];</div>
+<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; cacheCount-1; i++ )</div>
+<div class="line"><span class="lineno">  103</span>                m_caches[i] = <span class="keyword">new</span> Cache(cacheSize, <a class="code hl_enumeration" href="../../dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53">CacheType</a>.Both);</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>            LongLength = (ulong)(cacheCount * cacheSize);</div>
+<div class="line"><span class="lineno">  106</span>           <span class="comment">// m_currentCache = 0;</span></div>
+<div class="line"><span class="lineno">  107</span>            SetSavePosition(0);</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>            m_segmentTemp = <span class="keyword">new</span> FixedArray&lt;byte&gt;(cacheSize);</div>
+<div class="line"><span class="lineno">  110</span>        }</div>
+<div class="ttc" id="agroup__collections_html_gaf02ddb6084404bb267c0629f20ed8b53"><div class="ttname"><a href="../../dd/dbc/group__collections.html#gaf02ddb6084404bb267c0629f20ed8b53">SystemEx.Collections.Generic.CacheType</a></div><div class="ttdeci">CacheType</div><div class="ttdef"><b>Definition</b> Cache.cs:29</div></div>
+</div><!-- fragment --><div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
@@ -325,9 +333,22 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Reimplemented from <a class="el" href="../../dd/dbc/group__collections.html#ga8b9ec63f713f3d659f75eb644e7bfd40">SystemEx.Collections.Generic.Cache</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html#l00077">77</a> of file <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html">StrippedCache.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   77</span>                                                                                                        {</div>
+<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">if</span> ( start &lt; 0 || start &gt;= (<span class="keywordtype">long</span>)LongLength )</div>
+<div class="line"><span class="lineno">   79</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException(nameof(start));</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>            <span class="keywordtype">long</span> segmentIndex = start / (long)base.LongLength;</div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordtype">long</span> localOffset  = start % (long)base.LongLength;</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">if</span> ( segmentIndex == 0 ) {</div>
+<div class="line"><span class="lineno">   85</span>                <span class="comment">// Base cache</span></div>
+<div class="line"><span class="lineno">   86</span>                <span class="keywordflow">return</span> base.AsFlexSpan(localOffset, mode);</div>
+<div class="line"><span class="lineno">   87</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   88</span>                <span class="comment">// Other segments</span></div>
+<div class="line"><span class="lineno">   89</span>                <span class="keywordflow">return</span> m_caches[segmentIndex - 1].AsFlexSpan(localOffset, mode);</div>
+<div class="line"><span class="lineno">   90</span>            }</div>
+<div class="line"><span class="lineno">   91</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aaf3345a692bc99e21ecdb1b25b6bdc74" name="aaf3345a692bc99e21ecdb1b25b6bdc74"></a>
@@ -353,9 +374,15 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The segment data, or <code>null</code> if the index is invalid.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html#l00198">198</a> of file <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html">StrippedCache.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  198</span>                                          {</div>
+<div class="line"><span class="lineno">  199</span>            <span class="keywordtype">byte</span>[]? _ret = <span class="keyword">null</span>; </div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span>            <span class="keywordflow">if</span> ( index == 0 ) _ret = base.ToArray();</div>
+<div class="line"><span class="lineno">  202</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>( m_caches.Length &gt; index ) _ret = m_caches[index].ToArray();</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>            <span class="keywordflow">return</span> _ret;</div>
+<div class="line"><span class="lineno">  205</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9606104852f651b28396a7cdebe22484" name="a9606104852f651b28396a7cdebe22484"></a>
@@ -396,9 +423,12 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The number of bytes written.</dd></dl>
 
 <p>Reimplemented from <a class="el" href="../../dd/dbc/group__collections.html#gaa4a0abe0cb00fa5734afb3dee647575b">SystemEx.Collections.Generic.Cache</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html#l00119">119</a> of file <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html">StrippedCache.cs</a>.</p>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>                                                                      {</div>
+<div class="line"><span class="lineno">  120</span>            ulong written = WriteRange(Position + position, (ulong)data.LongLength, data);</div>
+<div class="line"><span class="lineno">  121</span>            SetSavePosition(Position + written);</div>
+<div class="line"><span class="lineno">  122</span>            <span class="keywordflow">return</span> written;</div>
+<div class="line"><span class="lineno">  123</span>        }</div>
+</div><!-- fragment --><div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
@@ -458,9 +488,62 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The number of bytes successfully written.</dd></dl>
 
 <p>Reimplemented from <a class="el" href="../../dd/dbc/group__collections.html#gadc39086417a0f19c444987f4a4ae2aae">SystemEx.Collections.Generic.Cache</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html#l00133">133</a> of file <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html">StrippedCache.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  133</span>                                                                               {</div>
+<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">if</span> ( iend &lt;= start ) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  135</span>            <span class="keywordflow">if</span> ( iend &gt; LongLength ) iend = LongLength;</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>            ulong rangeLen = iend - start;</div>
+<div class="line"><span class="lineno">  138</span>            ulong writableLen = (ulong)data.Length &lt; rangeLen ? (ulong)data.Length : rangeLen;</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>            ulong totalWritten = 0;</div>
+<div class="line"><span class="lineno">  141</span>            ulong pos = start;</div>
+<div class="line"><span class="lineno">  142</span>            <span class="keywordtype">int</span> dataOffset = 0;</div>
+<div class="line"><span class="lineno">  143</span>            ulong segmentSize = base.LongLength;</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>            <span class="keywordflow">while</span> ( totalWritten &lt; writableLen ) {</div>
+<div class="line"><span class="lineno">  146</span>                ulong cacheIdx = pos / segmentSize;</div>
+<div class="line"><span class="lineno">  147</span>                ulong cacheOff = pos % segmentSize;</div>
+<div class="line"><span class="lineno">  148</span>                <span class="keywordflow">if</span> ( cacheIdx &gt;= (ulong)(m_caches.Length + 1) ) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>                ulong spaceInCache = segmentSize - cacheOff;</div>
+<div class="line"><span class="lineno">  151</span>                ulong remaining = writableLen - totalWritten;</div>
+<div class="line"><span class="lineno">  152</span>                uint chunkLen = (uint)((remaining &lt; spaceInCache) ? remaining : spaceInCache);</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>                <span class="comment">// Fast path: ganzes data-Array passt und kein Offset nötig</span></div>
+<div class="line"><span class="lineno">  155</span>                <span class="keywordflow">if</span> ( chunkLen == data.Length &amp;&amp; dataOffset == 0 &amp;&amp; cacheOff == 0 ) {</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>                    ulong written = (cacheIdx == 0)</div>
+<div class="line"><span class="lineno">  158</span>                        ? base.WriteRange(cacheOff, cacheOff + (ulong)chunkLen, data)</div>
+<div class="line"><span class="lineno">  159</span>                        : m_caches[cacheIdx - 1].WriteRange(cacheOff, cacheOff + (ulong)chunkLen, data);</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>                    <span class="keywordflow">if</span> ( written == 0 ) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>                    totalWritten += written;</div>
+<div class="line"><span class="lineno">  164</span>                    pos += written;</div>
+<div class="line"><span class="lineno">  165</span>                    dataOffset += (int)written;</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>                    m_segmentTemp.CopyFrom(data, (uint)dataOffset, 0, chunkLen);</div>
+<div class="line"><span class="lineno">  170</span>                    <span class="comment">// Hole internen Buffer (ToArray liefert m_elements)</span></div>
+<div class="line"><span class="lineno">  171</span>                    <span class="keywordtype">byte</span>[] internalBuf = m_segmentTemp.ToArray();</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>                    <span class="comment">// Schreibe den Chunk in den jeweiligen Cache</span></div>
+<div class="line"><span class="lineno">  174</span>                    ulong writtenChunk = (cacheIdx == 0)</div>
+<div class="line"><span class="lineno">  175</span>                        ? base.WriteRange(cacheOff, cacheOff + (ulong)chunkLen, internalBuf)</div>
+<div class="line"><span class="lineno">  176</span>                        : m_caches[cacheIdx - 1].WriteRange(cacheOff, cacheOff + (ulong)chunkLen, internalBuf);</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>                    <span class="keywordflow">if</span> ( writtenChunk == 0 ) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>                    totalWritten += writtenChunk;</div>
+<div class="line"><span class="lineno">  181</span>                    pos += writtenChunk;</div>
+<div class="line"><span class="lineno">  182</span>                    dataOffset += (int)writtenChunk;</div>
+<div class="line"><span class="lineno">  183</span>                }</div>
+<div class="line"><span class="lineno">  184</span>            }</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>            <span class="keywordflow">return</span> totalWritten;</div>
+<div class="line"><span class="lineno">  187</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
@@ -488,12 +571,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html#a619bee5e6e78fa6e29ac1464c17e2c05">SystemEx.Collections.Generic.Interfaces.ICache</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html#l00049">49</a> of file <a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html">StrippedCache.cs</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d2/d04/_stripped_cache_8cs_source.html">StrippedCache.cs</a></li>
+<li><b>StrippedCache.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

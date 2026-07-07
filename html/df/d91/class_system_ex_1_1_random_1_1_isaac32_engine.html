@@ -107,6 +107,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('df/d91/class_s
 
 <p>Represents the ISAAC 32-bit random number generator.  
  <a href="#details">More...</a></p>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Random.Isaac32Engine:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d5/dd5/class_system_ex_1_1_random_1_1_isaac32_engine__coll__graph.svg" width="226" height="123"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -119,8 +125,6 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents the ISAAC 32-bit random number generator. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d4e/_isaac32_engine_8cs_source.html#l00025">25</a> of file <a class="el" href="../../d6/d4e/_isaac32_engine_8cs_source.html">Isaac32Engine.cs</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aadb3a2653755ee5f07100ebcef592905" name="aadb3a2653755ee5f07100ebcef592905"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aadb3a2653755ee5f07100ebcef592905">&#9670;&#160;</a></span>Isaac32Engine()</h2>
@@ -155,12 +159,13 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d4e/_isaac32_engine_8cs_source.html#l00039">39</a> of file <a class="el" href="../../d6/d4e/_isaac32_engine_8cs_source.html">Isaac32Engine.cs</a>.</p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">   39</span>                                                              {</div>
+<div class="line"><span class="lineno">   40</span>            Seed(a, b, c, <span class="keyword">null</span>);</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+</div><!-- fragment --><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../df/d91/class_system_ex_1_1_random_1_1_isaac32_engine_aadb3a2653755ee5f07100ebcef592905_cgraph.svg" width="548" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -184,9 +189,16 @@ Public Member Functions</h2></td></tr>
 
 <p>Generates the next random number in the sequence. </p>
 <dl class="section return"><dt>Returns</dt><dd>The next random number.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d4e/_isaac32_engine_8cs_source.html#l00094">94</a> of file <a class="el" href="../../d6/d4e/_isaac32_engine_8cs_source.html">Isaac32Engine.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   94</span>                            {</div>
+<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">if</span> ( _cnt == 0 ) {</div>
+<div class="line"><span class="lineno">   96</span>                Isaac();</div>
+<div class="line"><span class="lineno">   97</span>                _cnt = Size - 1;</div>
+<div class="line"><span class="lineno">   98</span>                <span class="keywordflow">return</span> _rsl[_cnt];</div>
+<div class="line"><span class="lineno">   99</span>            }</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">return</span> _rsl[_cnt--];</div>
+<div class="line"><span class="lineno">  102</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2528cb1614ca381c1ed4ecf3811945b2" name="a2528cb1614ca381c1ed4ecf3811945b2"></a>
@@ -228,19 +240,57 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d4e/_isaac32_engine_8cs_source.html#l00049">49</a> of file <a class="el" href="../../d6/d4e/_isaac32_engine_8cs_source.html">Isaac32Engine.cs</a>.</p>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">   49</span>                                                                    {</div>
+<div class="line"><span class="lineno">   50</span>            uint aa, bb, cc, dd, ee, ff, gg, hh;</div>
+<div class="line"><span class="lineno">   51</span>            aa = bb = cc = dd = ee = ff = gg = hh = GoldenRatio;</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>            <span class="comment">// Seed‑Array oder Null → wie bei dir m_rsl</span></div>
+<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; Size ; i++ )</div>
+<div class="line"><span class="lineno">   55</span>                _rsl[i] = s != <span class="keyword">null</span> ? s[i] : 0;</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>            _a = a;</div>
+<div class="line"><span class="lineno">   58</span>            _b = b;</div>
+<div class="line"><span class="lineno">   59</span>            _c = c;</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>            Shuffle(ref aa, ref bb, ref cc, ref dd, ref ee, ref ff, ref gg, ref hh);</div>
+<div class="line"><span class="lineno">   62</span>            Shuffle(ref aa, ref bb, ref cc, ref dd, ref ee, ref ff, ref gg, ref hh);</div>
+<div class="line"><span class="lineno">   63</span>            Shuffle(ref aa, ref bb, ref cc, ref dd, ref ee, ref ff, ref gg, ref hh);</div>
+<div class="line"><span class="lineno">   64</span>            Shuffle(ref aa, ref bb, ref cc, ref dd, ref ee, ref ff, ref gg, ref hh);</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; Size ; i += 8 ) {</div>
+<div class="line"><span class="lineno">   67</span>                aa += _rsl[i + 0]; bb += _rsl[i + 1]; cc += _rsl[i + 2]; dd += _rsl[i + 3];</div>
+<div class="line"><span class="lineno">   68</span>                ee += _rsl[i + 4]; ff += _rsl[i + 5]; gg += _rsl[i + 6]; hh += _rsl[i + 7];</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>                Shuffle(ref aa, ref bb, ref cc, ref dd, ref ee, ref ff, ref gg, ref hh);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>                _mem[i + 0] = aa; _mem[i + 1] = bb; _mem[i + 2] = cc; _mem[i + 3] = dd;</div>
+<div class="line"><span class="lineno">   73</span>                _mem[i + 4] = ee; _mem[i + 5] = ff; _mem[i + 6] = gg; _mem[i + 7] = hh;</div>
+<div class="line"><span class="lineno">   74</span>            }</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; Size ; i += 8 ) {</div>
+<div class="line"><span class="lineno">   77</span>                aa += _mem[i + 0]; bb += _mem[i + 1]; cc += _mem[i + 2]; dd += _mem[i + 3];</div>
+<div class="line"><span class="lineno">   78</span>                ee += _mem[i + 4]; ff += _mem[i + 5]; gg += _mem[i + 6]; hh += _mem[i + 7];</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>                Shuffle(ref aa, ref bb, ref cc, ref dd, ref ee, ref ff, ref gg, ref hh);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>                _mem[i + 0] = aa; _mem[i + 1] = bb; _mem[i + 2] = cc; _mem[i + 3] = dd;</div>
+<div class="line"><span class="lineno">   83</span>                _mem[i + 4] = ee; _mem[i + 5] = ff; _mem[i + 6] = gg; _mem[i + 7] = hh;</div>
+<div class="line"><span class="lineno">   84</span>            }</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>            Isaac();</div>
+<div class="line"><span class="lineno">   87</span>            _cnt = Size - 1;</div>
+<div class="line"><span class="lineno">   88</span>        }</div>
+</div><!-- fragment --><div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../df/d91/class_system_ex_1_1_random_1_1_isaac32_engine_a2528cb1614ca381c1ed4ecf3811945b2_icgraph.svg" width="548" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d6/d4e/_isaac32_engine_8cs_source.html">Isaac32Engine.cs</a></li>
+<li><b>Isaac32Engine.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

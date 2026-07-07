@@ -112,14 +112,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d8/df1/class_s
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/da6/class_system_ex_1_1_utils_1_1_size_mismatch_exception__inherit__graph.svg" width="211" height="128"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/da6/class_system_ex_1_1_utils_1_1_size_mismatch_exception__inherit__graph.svg" width="200" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Utils.SizeMismatchException:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d8/d8b/class_system_ex_1_1_utils_1_1_size_mismatch_exception__coll__graph.svg" width="211" height="128"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d8/d8b/class_system_ex_1_1_utils_1_1_size_mismatch_exception__coll__graph.svg" width="200" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -138,8 +138,6 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Exception thrown when the managed size of a struct does not match the expected unmanaged size. <br  />
  Used to validate binary compatibility between C# structs and native memory layouts. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d0f/_layout_8cs_source.html#l00041">41</a> of file <a class="el" href="../../d0/d0f/_layout_8cs_source.html">Layout.cs</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab3ffc2d5d7dc8b6c8613fe8dad8c16e5" name="ab3ffc2d5d7dc8b6c8613fe8dad8c16e5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab3ffc2d5d7dc8b6c8613fe8dad8c16e5">&#9670;&#160;</a></span>SizeMismatchException()</h2>
@@ -166,9 +164,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a new exception describing the size mismatch. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d0f/_layout_8cs_source.html#l00060">60</a> of file <a class="el" href="../../d0/d0f/_layout_8cs_source.html">Layout.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   61</span>            : base($<span class="stringliteral">&quot;{type.Name} size mismatch: managed={managed}, expected={expected}&quot;</span>) {</div>
+<div class="line"><span class="lineno">   62</span>            StructType = type;</div>
+<div class="line"><span class="lineno">   63</span>            ManagedSize = managed;</div>
+<div class="line"><span class="lineno">   64</span>            ExpectedSize = expected;</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
@@ -193,9 +194,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the expected unmanaged size provided by the caller. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d0f/_layout_8cs_source.html#l00055">55</a> of file <a class="el" href="../../d0/d0f/_layout_8cs_source.html">Layout.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   55</span>{ <span class="keyword">get</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa2eea3db64cf6bcf60c0f3c227bd7c43" name="aa2eea3db64cf6bcf60c0f3c227bd7c43"></a>
@@ -219,9 +219,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the size of the struct as computed by <code>sizeof(T)</code>. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d0f/_layout_8cs_source.html#l00050">50</a> of file <a class="el" href="../../d0/d0f/_layout_8cs_source.html">Layout.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   50</span>{ <span class="keyword">get</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1505a8d766118b6e9afc772953326b08" name="a1505a8d766118b6e9afc772953326b08"></a>
@@ -245,13 +244,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the struct type that failed the size validation. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d0f/_layout_8cs_source.html#l00045">45</a> of file <a class="el" href="../../d0/d0f/_layout_8cs_source.html">Layout.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   45</span>{ <span class="keyword">get</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d0/d0f/_layout_8cs_source.html">Layout.cs</a></li>
+<li><b>Layout.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

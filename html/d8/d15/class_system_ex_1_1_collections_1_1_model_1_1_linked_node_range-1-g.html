@@ -108,14 +108,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d8/d15/class_s
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../dd/d12/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g__inherit__graph.svg" width="206" height="128"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../dd/d12/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g__inherit__graph.svg" width="195" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Collections.Model.LinkedNodeRange&lt; T &gt;:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/da6/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g__coll__graph.svg" width="206" height="128"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/da6/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g__coll__graph.svg" width="195" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -124,10 +124,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9dda0f4e302ea97df1cc02da01ed7d8a" id="r_a9dda0f4e302ea97df1cc02da01ed7d8a"><td class="memItemLeft">IEnumerator&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a9dda0f4e302ea97df1cc02da01ed7d8a">GetEnumerator</a> ()</td></tr>
 <tr class="memdesc:a9dda0f4e302ea97df1cc02da01ed7d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates from <code>begin</code> up to, but not including, <code>end</code>.  <br /></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dc/db4/_linked_node_range_8cs_source.html#l00020">20</a> of file <a class="el" href="../../dc/db4/_linked_node_range_8cs_source.html">LinkedNodeRange.cs</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a9dda0f4e302ea97df1cc02da01ed7d8a" name="a9dda0f4e302ea97df1cc02da01ed7d8a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9dda0f4e302ea97df1cc02da01ed7d8a">&#9670;&#160;</a></span>GetEnumerator()</h2>
 
@@ -144,9 +141,19 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns an enumerator that iterates from <code>begin</code> up to, but not including, <code>end</code>. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../dc/db4/_linked_node_range_8cs_source.html#l00046">46</a> of file <a class="el" href="../../dc/db4/_linked_node_range_8cs_source.html">LinkedNodeRange.cs</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>                                               {</div>
+<div class="line"><span class="lineno">   47</span>            LinkedNodeIterrator&lt;T&gt; it = (LinkedNodeIterrator&lt;T&gt;)m_begin.Clone();</div>
+<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">if</span> ( it == <span class="keyword">null</span> )</div>
+<div class="line"><span class="lineno">   49</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> NotSupportedException();</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">while</span> ( !it.Equals(m_end) ) {</div>
+<div class="line"><span class="lineno">   52</span>                <span class="keywordflow">if</span>(it.Current != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   53</span>                    yield <span class="keywordflow">return</span> it.Current;</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>                it.Forward();</div>
+<div class="line"><span class="lineno">   56</span>            }</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
+</div><!-- fragment --><div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
@@ -182,13 +189,15 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../dc/db4/_linked_node_range_8cs_source.html#l00037">37</a> of file <a class="el" href="../../dc/db4/_linked_node_range_8cs_source.html">LinkedNodeRange.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   37</span>                                                                                            {</div>
+<div class="line"><span class="lineno">   38</span>            m_begin = begin;</div>
+<div class="line"><span class="lineno">   39</span>            m_end = end;</div>
+<div class="line"><span class="lineno">   40</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../dc/db4/_linked_node_range_8cs_source.html">LinkedNodeRange.cs</a></li>
+<li><b>LinkedNodeRange.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

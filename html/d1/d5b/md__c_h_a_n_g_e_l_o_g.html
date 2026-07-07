@@ -112,15 +112,56 @@ Add</h2>
 <ul>
 <li>OpenCL Kerneal Call with my <a class="el" href="../../d7/d59/namespace_system_ex_1_1_device.html">SystemEx.Device</a> System <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> 2.0</li>
 </ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md051xx---07072026----lacking"></a>
+[0.51.xx] - 07.07.2026 -&gt; Lacking</h1>
+<h2 class="doxsection"><a class="anchor" id="added"></a>
+Added</h2>
+<ul>
+<li>Added <span class="tt">Half16</span>, a fully deterministic IEEE‑754 binary16 implementation with complete bit‑level arithmetic.</li>
+<li>Added <span class="tt">Blake3Hasher</span> (testing).</li>
+<li>Added new conversion helpers for all basic primitive types (<span class="tt">ToUInt</span>, <span class="tt">ToInt</span>, <span class="tt">ToUShort</span>, …), including offset‑based variants that allow reading values from a <span class="tt">byte[]</span> starting at a specific index.</li>
+<li>Added <span class="tt">IComparableEx&lt;T&gt;</span>, providing a strongly typed comparison contract compatible with <span class="tt">IComparable&lt;T&gt;</span> via integer‑backed <span class="tt">CompareResult</span>.</li>
+<li>Added <span class="tt">IHashable&lt;T&gt;</span>, a minimal interface for deterministic byte‑level serialization used by <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing algorithms.</li>
+<li>Added fully documented <span class="tt">HashFactory</span> with support for attribute‑driven hash algorithm selection (<span class="tt">HashAlgorithmAttribute</span>) and automatic hasher instantiation via <span class="tt">Activator</span>.</li>
+<li>Added namespace <span class="tt"><a class="el" href="../../dd/dfd/namespace_system_ex_1_1_numeric.html">SystemEx.Numeric</a></span> containing the following numeric types:<ul>
+<li><span class="tt">vec2f</span>, <span class="tt">vec2d</span>, <span class="tt">vec2i</span></li>
+<li><span class="tt">vec3f</span>, <span class="tt">vec3d</span>, <span class="tt">vec3i</span></li>
+<li><span class="tt">vec4f</span>, <span class="tt">vec4d</span>, <span class="tt">vec4i</span></li>
+<li><span class="tt">quadf</span>, <span class="tt">quadd</span></li>
+<li><span class="tt">mat44f</span>, <span class="tt">mat44d</span></li>
+<li><span class="tt">rect</span></li>
+<li><span class="tt">plane</span></li>
+</ul>
+</li>
+<li>Added <span class="tt">GetEndian()</span> to the <span class="tt">Conversion</span> utilities to detect the system’s native endianness, allowing conversions to swap endianness only when necessary (e.g., inside <span class="tt">ToBytes(Endian endian)</span>).</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="changed"></a>
+Changed</h2>
+<ul>
+<li>Removed the <span class="tt">Endian</span> parameter from <span class="tt">IHash.Compute</span> and <span class="tt">IHash.ComputeLong</span>. Endianness is now defined solely by the hash object’s constructor.</li>
+<li><span class="tt">RamSharedBackend.ReciveFromHardwareBuffer</span> now returns a copied buffer instead of the internal backend buffer to improve memory safety and prevent unintended external modifications.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="deprecated--hashable-scheduled-for-removal-in-version-060"></a>
+Deprecated – Hashable (scheduled for removal in version 0.60)</h2>
+<ul>
+<li>The abstract base class Hashable has been marked as obsolete and is scheduled for complete removal in <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> 0.60.</li>
+<li>The class‑based hashing system is no longer recommended and has been superseded by the new attribute‑driven hashing architecture based on:<ul>
+<li>IHashable&lt;T&gt; for deterministic byte serialization</li>
+<li>HashFactory for algorithm selection and hash computation</li>
+</ul>
+</li>
+<li>The new hashing pipeline supports both classes and structs, avoids inheritance constraints, and provides a cleaner, more modular design.</li>
+<li>Existing code using Hashable will continue to function until version 1.00, but developers are strongly encouraged to migrate to IHashable&lt;T&gt; to ensure forward compatibility.</li>
+</ul>
 <hr  />
- <h1 class="doxsection"><a class="anchor" id="autotoc_md05000---03072026-lacking"></a>
-[0.50.00] - 03.07.2026 @Lacking</h1>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md05000---03072026----lacking"></a>
+[0.50.00] - 03.07.2026 -&gt; Lacking</h1>
 <h2 class="doxsection"><a class="anchor" id="major-documentation-milestone"></a>
 Major Documentation Milestone</h2>
 <p>A significant version jump was made intentionally. <br  />
  With this release, the entire public API of <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> — including the mathematical canvas system, layer model, blend modes, hash engines, and all related interfaces — has been fully documented and formalized.</p>
 <p>This marks the completion of approximately half of the planned major‑release scope. The version number reflects this structural maturity rather than incremental feature changes.</p>
-<h2 class="doxsection"><a class="anchor" id="added"></a>
+<h2 class="doxsection"><a class="anchor" id="added-1"></a>
 Added</h2>
 <ul>
 <li>Full XML documentation for all canvas interfaces (<span class="tt">ICanvas</span>, <span class="tt">ISubCanvas</span>, <span class="tt">ICanvasList</span>)</li>
@@ -128,7 +169,7 @@ Added</h2>
 <li>Formalized mathematical layer model and blend mode semantics</li>
 <li>Unified terminology across the entire <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> framework</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="changed"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-1"></a>
 Changed</h2>
 <ul>
 <li>API surface stabilized and prepared for 1.0</li>
@@ -147,9 +188,9 @@ Codename Update: Ignoring → Lacking</h2>
 </ul>
 <p>With version <b>0.50.00</b>, the documentation milestone has been reached, marking the end of the “Lacking” phase. All subsequent 0.50.x versions will continue under this codename until the remaining missing structural components are completed.</p>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md01204--20260701-ignoring"></a>
-[0.12.04] – 2026‑07‑01 @Ignoring</h1>
-<h2 class="doxsection"><a class="anchor" id="added-1"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md01204--20260701---ignoring"></a>
+[0.12.04] – 2026‑07‑01 -&gt; Ignoring</h1>
+<h2 class="doxsection"><a class="anchor" id="added-2"></a>
 Added</h2>
 <p><span class="tt">System.FlexSpan&lt;T&gt;</span> — a unified view type for array‑based memory.** <br  />
  FlexSpan implements three indexing modes: <br  />
@@ -232,9 +273,9 @@ Fixed</h2>
 <li>Corrected an issue in the array constructor.</li>
 </ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md01015-30062026"></a>
-[0.10.15] 30.06.2026</h1>
-<h2 class="doxsection"><a class="anchor" id="added-2"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md01015-30062026---ignoring"></a>
+[0.10.15] 30.06.2026 -&gt; Ignoring</h1>
+<h2 class="doxsection"><a class="anchor" id="added-3"></a>
 Added</h2>
 <ul>
 <li>Added <span class="tt">long‑based iterator navigation</span>:<ul>
@@ -252,7 +293,7 @@ Added</h2>
 </li>
 <li>Added <span class="tt">Distance(bool ToEnd)</span> overload for directional chain length measurement</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="changed-1"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-2"></a>
 Changed</h2>
 <ul>
 <li>Replaced old <span class="tt">m_pChilds</span> Prev/Next sentinel‑model with <span class="tt">nullable Prev/Next</span> via:<ul>
@@ -314,19 +355,19 @@ Fixed</h2>
 <li>Correct iterator equality and hash code behavior</li>
 </ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md01012-2906206"></a>
-[0.10.12] 29.06.206</h1>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md01012-2906206---ignoring"></a>
+[0.10.12] 29.06.206 -&gt; Ignoring</h1>
 <h2 class="doxsection"><a class="anchor" id="very-important"></a>
 Very Important</h2>
 <ul>
 <li><span class="tt">Renamed </span>RamKernel<span class="tt"> → </span>NativeRAMKernel&lt;TDelegate&gt;`<span class="tt">  \ilinebr&lt;br&gt;
   New unified kernel base class replacing the old RAM‑only implementation.  \ilinebr&lt;br&gt;
-  See example: </span><a class="el" href="../../da/d57/_example_ram_kernel_add_8cs_source.html">Examples/ExampleRamKernelAdd.cs</a>`.</li>
+  See example: </span><a class="el" href="../../da/d57/_example_ram_kernel_add_8cs.html" title="Beginner-friendly example demonstrating how to use a native RAM-based compute kernel in SystemEx.">Examples/ExampleRamKernelAdd.cs</a>`.</li>
 <li><span class="tt">Removed all legacy platform kernel loaders</span> <br  />
  (<span class="tt">WindowsKernelLoader</span>, <span class="tt">LinuxKernelLoader</span>, <span class="tt">MacKernelLoader</span>, <span class="tt">NoSupportKernelLoader</span>) <br  />
  Replaced by new module‑centric loader architecture.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="added-3"></a>
+<h2 class="doxsection"><a class="anchor" id="added-4"></a>
 Added</h2>
 <ul>
 <li>Introduced full native module system under <span class="tt"><a class="el" href="../../d4/d8e/namespace_system_ex_1_1_runtime.html">SystemEx.Runtime</a></span>:<ul>
@@ -354,7 +395,7 @@ Added</h2>
 </ul>
 </li>
 <li>Add <span class="tt">Bernsteinhash</span> and <span class="tt">MurmurHash</span>, murmur with Little and Big Endian Support</li>
-<li>Update <span class="tt"><a class="el" href="../../d3/d06/namespace_examples.html">Examples</a>\<a class="el" href="../../d6/d1d/_example_hasher_8cs_source.html">ExampleHasher.cs</a></span></li>
+<li>Update <span class="tt"><a class="el" href="../../d3/d06/namespace_examples.html">Examples</a>\ExampleHasher.cs</span></li>
 <li>Add to Iterator:<ul>
 <li>IRandomAccessIterator&lt;T&gt; Advance&lt;T&gt; ( IRandomAccessIterator&lt;T&gt; first, int n )</li>
 <li>IRandomAccessIterator&lt;T&gt; Next&lt;T&gt; ( IRandomAccessIterator&lt;T&gt; it, int n )</li>
@@ -365,7 +406,7 @@ Added</h2>
 </ul>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="changed-2"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-3"></a>
 Changed</h2>
 <ul>
 <li>Replaced unmanaged call pipeline:<ul>
@@ -409,16 +450,16 @@ Notes</h2>
 <li>This update contains <span class="tt">breaking changes</span>. All code using <span class="tt">RamKernel</span> or <span class="tt">KernelLoader</span> must migrate to <span class="tt">NativeRAMKernel&lt;TDelegate&gt;</span>.</li>
 </ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md0964-23062026"></a>
-[0.9.64] 23.06.2026</h1>
-<h2 class="doxsection"><a class="anchor" id="changed-3"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md0964-23062026---ignoring"></a>
+[0.9.64] 23.06.2026 -&gt; Ignoring</h1>
+<h2 class="doxsection"><a class="anchor" id="changed-4"></a>
 Changed</h2>
 <ul>
 <li><span class="tt">public int Length { get; }</span> → <span class="tt">public ulong Length { get; }</span></li>
 <li><span class="tt">Cache&lt;T&gt;</span> is now fully ulong‑addressed instead of int‑based</li>
 <li>Renamed <span class="tt">ITerator</span> → <span class="tt">IIterator</span> (updated across all dependent iterator‑based classes)</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="added-4"></a>
+<h2 class="doxsection"><a class="anchor" id="added-5"></a>
 Added</h2>
 <ul>
 <li>Added <span class="tt">Free</span> and <span class="tt">Used</span> properties to <span class="tt">Cache&lt;T&gt;</span> with new internal member <span class="tt">m_maxUsedAddress</span> <br  />
@@ -434,7 +475,7 @@ Added</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md096-21062026"></a>
 [0.9.6] 21.06.2026</h1>
-<h2 class="doxsection"><a class="anchor" id="added-5"></a>
+<h2 class="doxsection"><a class="anchor" id="added-6"></a>
 Added</h2>
 <ul>
 <li>Introduced new HWB and NCol color models under <span class="tt"><a class="el" href="../../de/d5b/namespace_system_ex_1_1_drawing.html">SystemEx.Drawing</a></span>:<ul>
@@ -470,7 +511,7 @@ Added</h2>
 </ul>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="changed-4"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-5"></a>
 Changed</h2>
 <ul>
 <li>Updated <span class="tt">Map</span> and <span class="tt">IMap</span>:<ul>
@@ -494,7 +535,7 @@ Changed</h2>
 <li>Added additional RGB16/RGB10 conversion helpers</li>
 </ul>
 </li>
-<li>Renamed <span class="tt">Utils/Utils.cs</span> → <span class="tt"><a class="el" href="../../d3/d81/_conversion_8cs_source.html">Utils/Conversion.cs</a></span></li>
+<li>Renamed <span class="tt">Utils/Utils.cs</span> → <span class="tt">Utils/Conversion.cs</span></li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="improved-1"></a>
 Improved`</h2>
@@ -543,7 +584,7 @@ Very Important</h2>
 <li><span class="tt">Major namespace restructuring</span> to reflect the engine architecture and clarify responsibilities across collections, device memory, and interop layers.</li>
 <li>This release contains <span class="tt">breaking changes</span>: update all <span class="tt">using</span>/imports to the new namespaces.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="changed-5"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-6"></a>
 Changed</h2>
 <ul>
 <li>Moved device memory types (<span class="tt">DeviceBuffer</span>, <span class="tt">DeviceSharedBuffer&lt;TDeviceSharedBackend&gt;</span>) to <span class="tt"><a class="el" href="../../dd/d82/namespace_system_ex_1_1_device_1_1_memory.html">SystemEx.Device.Memory</a></span>.</li>
@@ -553,7 +594,7 @@ Changed</h2>
 <p>Removed legacy <span class="tt">SystemEx.Device.Memory.Missings</span> layout and deprecated <span class="tt">System.Memory.Missings</span> placements; types have been relocated to the new namespaces above.</p><ul>
 <li>Updated internal references and XML docs to reflect new namespace locations.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="added-6"></a>
+<h2 class="doxsection"><a class="anchor" id="added-7"></a>
 Added</h2>
 <ul>
 <li>Migration guidance notes and quick reference mapping for common types:<ul>
@@ -608,7 +649,7 @@ Notes / Migration</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md081-04062026"></a>
 [0.8.1] 04.06.2026</h1>
-<h2 class="doxsection"><a class="anchor" id="added-7"></a>
+<h2 class="doxsection"><a class="anchor" id="added-8"></a>
 Added</h2>
 <ul>
 <li>Introduced full RAM backend under <span class="tt">System.Memory.Missings</span>:<ul>
@@ -637,7 +678,7 @@ Added</h2>
 </ul>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="changed-6"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-7"></a>
 Changed</h2>
 <ul>
 <li>Moved <span class="tt">SharedCache</span> / <span class="tt">DeviceSharedCache</span> aus <span class="tt">System.Collections.Generic.Missings</span> nach <span class="tt">System.Memory.Missings</span> und in <span class="tt">DeviceSharedBuffer</span> überführt</li>
@@ -675,7 +716,7 @@ Fixed</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md070-03062026"></a>
 [0.7.0] 03.06.2026</h1>
-<h2 class="doxsection"><a class="anchor" id="added-8"></a>
+<h2 class="doxsection"><a class="anchor" id="added-9"></a>
 Added</h2>
 <ul>
 <li>Introduced <span class="tt">RandPasswordLevel</span> enum (<span class="tt">Simple = 16</span>, <span class="tt">Strong = 32</span>)</li>
@@ -707,7 +748,7 @@ Notes</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md065"></a>
 [0.6.5]</h1>
-<h2 class="doxsection"><a class="anchor" id="added-9"></a>
+<h2 class="doxsection"><a class="anchor" id="added-10"></a>
 Added</h2>
 <ul>
 <li>Introduced <span class="tt">SharedCache</span> for hardware‑shared memory operations:<ul>
@@ -767,7 +808,7 @@ Fixed</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md061"></a>
 [0.6.1]</h1>
-<h2 class="doxsection"><a class="anchor" id="added-10"></a>
+<h2 class="doxsection"><a class="anchor" id="added-11"></a>
 Added</h2>
 <ul>
 <li>Introduced a full low-level cache subsystem under <span class="tt">System.Collections.Generic.Missings</span></li>
@@ -814,7 +855,7 @@ Fixed</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md058"></a>
 [0.5.8]</h1>
-<h2 class="doxsection"><a class="anchor" id="added-11"></a>
+<h2 class="doxsection"><a class="anchor" id="added-12"></a>
 Added</h2>
 <ul>
 <li>NodeIterator: intrusive Iterator für Next/Prev Traversal</li>
@@ -826,7 +867,7 @@ Added</h2>
 <li>TraversOrder: Preorder, Inorder, Postorder, ListOrder, ReverseListOrder</li>
 <li>GlobalSuppressions für Naming/Design-Regeln</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="changed-7"></a>
+<h2 class="doxsection"><a class="anchor" id="changed-8"></a>
 Changed</h2>
 <ul>
 <li>Iterator.Equals nutzt Value-Identity für ListIterator</li>
@@ -842,7 +883,7 @@ Fixed</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md050--2026-06-03"></a>
 [0.5.0] – 2026-06-03</h1>
-<h2 class="doxsection"><a class="anchor" id="added-12"></a>
+<h2 class="doxsection"><a class="anchor" id="added-13"></a>
 Added</h2>
 <ul>
 <li>Erste öffentliche Version</li>

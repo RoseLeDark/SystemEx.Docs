@@ -108,14 +108,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('de/d08/class_s
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d5/d53/class_system_ex_1_1_drawing_1_1_color_h_s_v__inherit__graph.svg" width="526" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d5/d53/class_system_ex_1_1_drawing_1_1_color_h_s_v__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Drawing.ColorHSV:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d05/class_system_ex_1_1_drawing_1_1_color_h_s_v__coll__graph.svg" width="526" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d05/class_system_ex_1_1_drawing_1_1_color_h_s_v__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -193,10 +193,7 @@ Properties</h2></td></tr>
 <tr class="memitem:ab332963dc629e8f62e11315520bcb5ee" id="r_ab332963dc629e8f62e11315520bcb5ee"><td class="memItemLeft">virtual float&#160;</td><td class="memItemRight"><a class="el" href="#ab332963dc629e8f62e11315520bcb5ee">S</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:ab332963dc629e8f62e11315520bcb5ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the saturation component in the range 0–1.  <br /></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00028">28</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a962c8121119034a6c86d529e063555ba" name="a962c8121119034a6c86d529e063555ba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a962c8121119034a6c86d529e063555ba">&#9670;&#160;</a></span>ColorHSV()</h2>
 
@@ -222,9 +219,13 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a new HSV color with the specified component values. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00064">64</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                                                   {</div>
+<div class="line"><span class="lineno">   65</span>            m_hue = ClampHue(h);</div>
+<div class="line"><span class="lineno">   66</span>            m_saturation = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(s, 0f, 1f);</div>
+<div class="line"><span class="lineno">   67</span>            m_value = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(v, 0f, 1f);</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="ttc" id="anamespace_system_ex_html_a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">SystemEx.FlexSpanMode.System</a></div><div class="ttdeci">@ System</div><div class="ttdoc">forward indexing</div><div class="ttdef"><b>Definition</b> FlexSpan.cs:32</div></div>
+</div><!-- fragment --><div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
@@ -234,7 +235,7 @@ Properties</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a962c8121119034a6c86d529e063555ba_icgraph.svg" width="734" height="758"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a962c8121119034a6c86d529e063555ba_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -264,13 +265,17 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds another HSV color to this one, component by component. Hue is wrapped, saturation and value are clamped. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00090">90</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>                                                     {</div>
+<div class="line"><span class="lineno">   91</span>            m_saturation = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(m_saturation + a.m_saturation, 0f, 1f);</div>
+<div class="line"><span class="lineno">   92</span>            m_value = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(m_value + a.m_value, 0f, 1f);</div>
+<div class="line"><span class="lineno">   93</span>            m_hue = ClampHue(m_hue + a.m_hue);</div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   95</span>        }</div>
+</div><!-- fragment --><div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a9296381d473721b060064d7210429a27_cgraph.svg" width="708" height="83"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a9296381d473721b060064d7210429a27_cgraph.svg" width="100%" height="362"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -308,13 +313,14 @@ Properties</h2></td></tr>
 <p>Addition another color in r, g, b channels with this one. </p>
 
 <p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a227a021d198fd59ee8520e61c850ae92">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00200">200</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  200</span>                                                            {</div>
+<div class="line"><span class="lineno">  201</span>            <span class="keywordflow">return</span> Addition(<span class="keyword">new</span> ColorHSV(a, b, c));</div>
+<div class="line"><span class="lineno">  202</span>        }</div>
+</div><!-- fragment --><div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a061e12219ee32d83cd4a00e51f7a5a2f_cgraph.svg" width="956" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a061e12219ee32d83cd4a00e51f7a5a2f_cgraph.svg" width="100%" height="384"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -345,13 +351,15 @@ Properties</h2></td></tr>
 <p>Adjusts the value (brightness) by the specified delta. </p>
 
 <p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#ac73ac46a7d4b58a851130d6fa8baf71b">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00081">81</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                                                        {</div>
+<div class="line"><span class="lineno">   82</span>            m_value = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(m_value + delta, 0f, 1f);</div>
+<div class="line"><span class="lineno">   83</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   84</span>        }</div>
+</div><!-- fragment --><div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_ae364e562a0e9dd6bda104fa85d6bdfcb_cgraph.svg" width="708" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_ae364e562a0e9dd6bda104fa85d6bdfcb_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -380,13 +388,15 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Wraps a hue value into the range 0–360 degrees. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00186">186</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  186</span>                                                 {</div>
+<div class="line"><span class="lineno">  187</span>            h %= 360f;</div>
+<div class="line"><span class="lineno">  188</span>            <span class="keywordflow">return</span> h &lt; 0f ? h + 360f : h;</div>
+<div class="line"><span class="lineno">  189</span>        }</div>
+</div><!-- fragment --><div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_ad8b876803886e038db8dcadf0f819db3_icgraph.svg" width="982" height="758"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_ad8b876803886e038db8dcadf0f819db3_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -405,9 +415,12 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00222">222</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  222</span>                                             {</div>
+<div class="line"><span class="lineno">  223</span>            <span class="keywordflow">if</span>(other == <span class="keyword">null</span>) <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  224</span>            <span class="keywordflow">if</span>(<span class="keyword">this</span> &gt; other ) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  225</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  226</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab33339670ce49d574902be59b72d4a1b" name="ab33339670ce49d574902be59b72d4a1b"></a>
@@ -434,13 +447,20 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Divides this color by another, component by component. Hue is not affected. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00122">122</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>                                                     {</div>
+<div class="line"><span class="lineno">  123</span>            <span class="keywordflow">if</span> ( a.m_saturation != 0f )</div>
+<div class="line"><span class="lineno">  124</span>                m_saturation = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(m_saturation / a.m_saturation, 0f, 1f);</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>            <span class="keywordflow">if</span> ( a.m_value != 0f )</div>
+<div class="line"><span class="lineno">  127</span>                m_value = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(m_value / a.m_value, 0f, 1f);</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  130</span>        }</div>
+</div><!-- fragment --><div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_ab33339670ce49d574902be59b72d4a1b_cgraph.svg" width="708" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_ab33339670ce49d574902be59b72d4a1b_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -478,13 +498,14 @@ Properties</h2></td></tr>
 <p>Divisionication another color in r, g, b channels with this one. </p>
 
 <p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#aaa3846ae23cd7968f33327eb617a4572">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00218">218</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  218</span>                                                            {</div>
+<div class="line"><span class="lineno">  219</span>            <span class="keywordflow">return</span> Division(<span class="keyword">new</span> ColorHSV(a, b, c));</div>
+<div class="line"><span class="lineno">  220</span>        }</div>
+</div><!-- fragment --><div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a7da093e9fa7bf32bdd882e2d610c1eb6_cgraph.svg" width="956" height="83"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a7da093e9fa7bf32bdd882e2d610c1eb6_cgraph.svg" width="100%" height="362"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -505,13 +526,19 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Determines whether this instance is equal to another HSV color. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00155">155</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  155</span>                                            {</div>
+<div class="line"><span class="lineno">  156</span>            <span class="keywordflow">if</span> ( other == <span class="keyword">null</span> )</div>
+<div class="line"><span class="lineno">  157</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>            <span class="keywordflow">return</span> other.m_hue == m_hue &amp;&amp;</div>
+<div class="line"><span class="lineno">  160</span>                   other.m_saturation == m_saturation &amp;&amp;</div>
+<div class="line"><span class="lineno">  161</span>                   other.m_value == m_value;</div>
+<div class="line"><span class="lineno">  162</span>        }</div>
+</div><!-- fragment --><div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a6f5a1d72055c9f949dae2df15aea4f3b_cgraph.svg" width="708" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a6f5a1d72055c9f949dae2df15aea4f3b_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-13" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
@@ -538,13 +565,17 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Determines whether this instance is equal to another object. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00167">167</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-14" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>                                                 {</div>
+<div class="line"><span class="lineno">  168</span>            <span class="keywordflow">if</span> ( obj is ColorHSV hsv )</div>
+<div class="line"><span class="lineno">  169</span>                <span class="keywordflow">return</span> Equals(hsv);</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  172</span>        }</div>
+</div><!-- fragment --><div id="dynsection-14" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a17f08200f8b4716951ea515730f9dbfe_cgraph.svg" width="956" height="83"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a17f08200f8b4716951ea515730f9dbfe_cgraph.svg" width="100%" height="362"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -565,9 +596,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns a hash code based on the hue, saturation, and value components. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00177">177</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  177</span>                                          {</div>
+<div class="line"><span class="lineno">  178</span>            <span class="keywordflow">return</span> m_hue.GetHashCode() ^</div>
+<div class="line"><span class="lineno">  179</span>                   m_saturation.GetHashCode() ^</div>
+<div class="line"><span class="lineno">  180</span>                   m_value.GetHashCode();</div>
+<div class="line"><span class="lineno">  181</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a25fae7109e0e77c3e22f6dc8e71192ba" name="a25fae7109e0e77c3e22f6dc8e71192ba"></a>
@@ -598,13 +632,24 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00138">138</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-15" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>                                                           {</div>
+<div class="line"><span class="lineno">  139</span>            <span class="keywordtype">float</span> q = amount * amount;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>            <span class="comment">// Shortest-path hue interpolation</span></div>
+<div class="line"><span class="lineno">  142</span>            <span class="keywordtype">float</span> dh = value.m_hue - m_hue;</div>
+<div class="line"><span class="lineno">  143</span>            dh = (dh + 540f) % 360f - 180f;</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ColorHSV(</div>
+<div class="line"><span class="lineno">  146</span>                ClampHue(m_hue + dh * q),</div>
+<div class="line"><span class="lineno">  147</span>                m_saturation + (value.m_saturation - m_saturation) * q,</div>
+<div class="line"><span class="lineno">  148</span>                m_value + (value.m_value - m_value) * q</div>
+<div class="line"><span class="lineno">  149</span>            );</div>
+<div class="line"><span class="lineno">  150</span>        }</div>
+</div><!-- fragment --><div id="dynsection-15" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a25fae7109e0e77c3e22f6dc8e71192ba_cgraph.svg" width="734" height="83"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a25fae7109e0e77c3e22f6dc8e71192ba_cgraph.svg" width="100%" height="362"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -633,13 +678,16 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Multiplies this color with another, component by component. Hue is not affected. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00112">112</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-16" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>                                                           {</div>
+<div class="line"><span class="lineno">  113</span>            m_saturation = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(m_saturation * a.m_saturation, 0f, 1f);</div>
+<div class="line"><span class="lineno">  114</span>            m_value = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(m_value * a.m_value, 0f, 1f);</div>
+<div class="line"><span class="lineno">  115</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  116</span>        }</div>
+</div><!-- fragment --><div id="dynsection-16" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a0b6ba4ae89bd5ef90d507f6b2b82a3b8_cgraph.svg" width="708" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a0b6ba4ae89bd5ef90d507f6b2b82a3b8_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-17" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary" style="display:block;">
@@ -677,13 +725,14 @@ Properties</h2></td></tr>
 <p>Multiplication another color in r, g, b channels with this one. </p>
 
 <p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a1c340e53b5a28100c4a7f7bae7b9146a">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00212">212</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-18" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  212</span>                                                                  {</div>
+<div class="line"><span class="lineno">  213</span>            <span class="keywordflow">return</span> Multiplication(<span class="keyword">new</span> ColorHSV(a, b, c));</div>
+<div class="line"><span class="lineno">  214</span>        }</div>
+</div><!-- fragment --><div id="dynsection-18" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a4c73cb713a8f79257f05ec1c023a5efe_cgraph.svg" width="956" height="83"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a4c73cb713a8f79257f05ec1c023a5efe_cgraph.svg" width="100%" height="362"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -714,9 +763,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00232">232</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  232</span>                                                                    {</div>
+<div class="line"><span class="lineno">  233</span>            <span class="keywordflow">return</span> !(left == right);</div>
+<div class="line"><span class="lineno">  234</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afc86913745e70fd1ec0ff618efaa120f" name="afc86913745e70fd1ec0ff618efaa120f"></a>
@@ -745,9 +795,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00236">236</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  236</span>                                                                     {</div>
+<div class="line"><span class="lineno">  237</span>            <span class="keywordflow">return</span> left.GetHashCode() &lt; right.GetHashCode();</div>
+<div class="line"><span class="lineno">  238</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a97d41fcb4020620e5071d25499299a94" name="a97d41fcb4020620e5071d25499299a94"></a>
@@ -776,9 +827,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00240">240</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  240</span>                                                                    {</div>
+<div class="line"><span class="lineno">  241</span>            <span class="keywordflow">return</span> left.GetHashCode() &lt;= right.GetHashCode();</div>
+<div class="line"><span class="lineno">  242</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6adcf42fa4ab92e78c8c460e52acea1d" name="a6adcf42fa4ab92e78c8c460e52acea1d"></a>
@@ -807,9 +859,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00228">228</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  228</span>                                                                    {</div>
+<div class="line"><span class="lineno">  229</span>            <span class="keywordflow">return</span> left.Equals(right);</div>
+<div class="line"><span class="lineno">  230</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a24d14f94676304fa6dbc16ecce07abad" name="a24d14f94676304fa6dbc16ecce07abad"></a>
@@ -838,9 +891,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00244">244</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  244</span>                                                                     {</div>
+<div class="line"><span class="lineno">  245</span>            <span class="keywordflow">return</span> left.GetHashCode() &gt; right.GetHashCode();</div>
+<div class="line"><span class="lineno">  246</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1764ee4fc4137f9832ef38eb649b834d" name="a1764ee4fc4137f9832ef38eb649b834d"></a>
@@ -869,9 +923,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00248">248</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  248</span>                                                                    {</div>
+<div class="line"><span class="lineno">  249</span>            <span class="keywordflow">return</span> left.GetHashCode() &gt;= right.GetHashCode();</div>
+<div class="line"><span class="lineno">  250</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8a124579c7820d0aa4c635c07277c791" name="a8a124579c7820d0aa4c635c07277c791"></a>
@@ -900,13 +955,15 @@ Properties</h2></td></tr>
 <p>Adjusts the saturation by the specified delta. </p>
 
 <p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#a3b5eafed3c47bea555a5889dd433b775">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00073">73</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-19" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>                                                        {</div>
+<div class="line"><span class="lineno">   74</span>            m_saturation = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(m_saturation + delta, 0f, 1f);</div>
+<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   76</span>        }</div>
+</div><!-- fragment --><div id="dynsection-19" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a8a124579c7820d0aa4c635c07277c791_cgraph.svg" width="708" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a8a124579c7820d0aa4c635c07277c791_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -935,13 +992,17 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Subtracts another HSV color from this one, component by component. Hue is wrapped, saturation and value are clamped. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00101">101</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-20" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>                                                        {</div>
+<div class="line"><span class="lineno">  102</span>            m_saturation = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(m_saturation - a.m_saturation, 0f, 1f);</div>
+<div class="line"><span class="lineno">  103</span>            m_value = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(m_value - a.m_value, 0f, 1f);</div>
+<div class="line"><span class="lineno">  104</span>            m_hue = ClampHue(m_hue - a.m_hue);</div>
+<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  106</span>        }</div>
+</div><!-- fragment --><div id="dynsection-20" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a821d86749b08f3bf7a0c1c692b978101_cgraph.svg" width="708" height="83"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a821d86749b08f3bf7a0c1c692b978101_cgraph.svg" width="100%" height="362"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-21" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary" style="display:block;">
@@ -979,13 +1040,14 @@ Properties</h2></td></tr>
 <p>Subtraction another color in r, g, b channels with this one. </p>
 
 <p>Implements <a class="el" href="../../df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#aa73020d4e5585c206f49b1b06906785c">SystemEx.Drawing.IColor&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00206">206</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-<div id="dynsection-22" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  206</span>                                                               {</div>
+<div class="line"><span class="lineno">  207</span>            <span class="keywordflow">return</span> Subtraction(<span class="keyword">new</span> ColorHSV(a, b, c));</div>
+<div class="line"><span class="lineno">  208</span>        }</div>
+</div><!-- fragment --><div id="dynsection-22" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a3b94792df86f9b01e2347bf108285ef8_cgraph.svg" width="956" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v_a3b94792df86f9b01e2347bf108285ef8_cgraph.svg" width="100%" height="384"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1006,9 +1068,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns a string representation of the HSV color. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00194">194</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  194</span>                                          {</div>
+<div class="line"><span class="lineno">  195</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;[{m_hue}, {m_saturation}, {m_value}]&quot;</span>);</div>
+<div class="line"><span class="lineno">  196</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
@@ -1034,9 +1097,8 @@ Properties</h2></td></tr>
 
 <p>Gets or sets the hue component in degrees (0–360). <br  />
  Values outside the range are wrapped automatically. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00049">49</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   49</span>{ <span class="keyword">get</span> =&gt; m_hue; <span class="keyword">set</span> =&gt; m_hue = ClampHue(value); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab528e2d3d2a9b95590d7f13921057a92" name="ab528e2d3d2a9b95590d7f13921057a92"></a>
@@ -1062,8 +1124,6 @@ Properties</h2></td></tr>
 <p>A static property that returns a <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">ColorHSV</a> instance representing white (H=0, S=0, V=1). </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00043">43</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
 </div>
 </div>
 <a id="ab332963dc629e8f62e11315520bcb5ee" name="ab332963dc629e8f62e11315520bcb5ee"></a>
@@ -1087,9 +1147,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets or sets the saturation component in the range 0–1. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00059">59</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{ <span class="keyword">get</span> =&gt; m_saturation; <span class="keyword">set</span> =&gt; m_saturation = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(value, 0f, 1f); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a89ca29edf3a853d667e55bff0923c3b0" name="a89ca29edf3a853d667e55bff0923c3b0"></a>
@@ -1113,9 +1172,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets or sets the value (brightness) component in the range 0–1. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00054">54</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   54</span>{ <span class="keyword">get</span> =&gt; m_value; <span class="keyword">set</span> =&gt; m_value = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Clamp(value, 0f, 1f); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a009097819b259e985c51bbd28d6753bd" name="a009097819b259e985c51bbd28d6753bd"></a>
@@ -1141,12 +1199,10 @@ Properties</h2></td></tr>
 <p>A static property that returns a <a class="el" href="../../de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html">ColorHSV</a> instance representing black (H=0, S=0, V=0). </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html#l00037">37</a> of file <a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d6/d2e/_color_h_s_v_8cs_source.html">ColorHSV.cs</a></li>
+<li><b>ColorHSV.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

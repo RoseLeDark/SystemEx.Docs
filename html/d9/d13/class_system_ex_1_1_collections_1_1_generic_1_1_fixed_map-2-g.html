@@ -108,14 +108,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d13/class_s
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d1c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g__inherit__graph.svg" width="720" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d1c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Collections.Generic.FixedMap&lt; T, TU &gt;:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d40/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g__coll__graph.svg" width="720" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d40/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -203,19 +203,7 @@ Properties</h2></td></tr>
 <tr class="memitem:a0d4c20543730fc2fa01438cec41ec245" id="r_a0d4c20543730fc2fa01438cec41ec245"><td class="memItemLeft">Pair&lt; T, TU &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0d4c20543730fc2fa01438cec41ec245">this[int Key]</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a0d4c20543730fc2fa01438cec41ec245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the element at the specified index.  <br /></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="typeconstraint">
-<dl><dt><b>Type Constraints</b></dt><dd>
-<table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>notnull</em></td><td>&#160;</td></tr>
-<tr><td valign="top"><em>TU</em></td><td>&#160;:</td><td valign="top"><em>notnull</em></td><td>&#160;</td></tr>
-</table>
-</dd>
-</dl>
-</div>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00038">38</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a24fe9389bd3b248adc737985323e214a" name="a24fe9389bd3b248adc737985323e214a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24fe9389bd3b248adc737985323e214a">&#9670;&#160;</a></span>Add() <span class="overload">[1/2]</span></h2>
 
@@ -232,9 +220,14 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds a pair to the map if space is available and the pair does not already exist. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00177">177</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>                                          {</div>
+<div class="line"><span class="lineno">  178</span>            <span class="keywordflow">if</span> ( m_count == m_size ) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  179</span>            <span class="keywordflow">if</span> ( Contains(item) ) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>            m_elements[m_count] = item;</div>
+<div class="line"><span class="lineno">  182</span>            m_count++;</div>
+<div class="line"><span class="lineno">  183</span>        }</div>
+</div><!-- fragment --><div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
@@ -271,13 +264,15 @@ Properties</h2></td></tr>
 <p>Adds a key/value pair to the map. </p>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a323affdff7674701889baf8fb7ae0c94">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00426">426</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  426</span>                                         {</div>
+<div class="line"><span class="lineno">  427</span>            <a class="code hl_enumvalue" href="../../d1/d60/group__color.html#ggaf2ec8d122c6ae6f77f9d5b8d55e37cb2aec211f7c20af43e742bf2570c3cb84f9">Add</a>(<span class="keyword">new</span> Pair&lt;T, TU&gt;(key, value));</div>
+<div class="line"><span class="lineno">  428</span>        }</div>
+<div class="ttc" id="agroup__color_html_ggaf2ec8d122c6ae6f77f9d5b8d55e37cb2aec211f7c20af43e742bf2570c3cb84f9"><div class="ttname"><a href="../../d1/d60/group__color.html#ggaf2ec8d122c6ae6f77f9d5b8d55e37cb2aec211f7c20af43e742bf2570c3cb84f9">SystemEx.Drawing.BlendMode.Add</a></div><div class="ttdeci">@ Add</div><div class="ttdoc">Adds the layer’s color value to the underlying color. Useful for additive accumulation or brightness‑...</div><div class="ttdef"><b>Definition</b> ICanvasList.cs:37</div></div>
+</div><!-- fragment --><div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g_adcec3a0e814e27c4703e1e68dbbd7838_cgraph.svg" width="720" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g_adcec3a0e814e27c4703e1e68dbbd7838_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -298,9 +293,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a FlexSpan view over the valid portion of this FixedMap. The span directly references the internal Pair{T, TU}[] buffer and does not allocate. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00100">100</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  101</span>            =&gt; <span class="keyword">new</span> FlexSpan&lt;Pair&lt;T, TU&gt;&gt;(ref m_elements!, 0, m_count, mode);</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a50db88eca63d63788f842c06bf0d2a73" name="a50db88eca63d63788f842c06bf0d2a73"></a>
@@ -321,9 +315,11 @@ Properties</h2></td></tr>
 <p>Clears the map and resets the element count. </p>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a1e303eb89bb86166bbc5edaba4e8239e">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00312">312</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  312</span>                            {</div>
+<div class="line"><span class="lineno">  313</span>            Array.Clear(m_elements);</div>
+<div class="line"><span class="lineno">  314</span>            m_count = 0;</div>
+<div class="line"><span class="lineno">  315</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad84f5a6b7114ed535b0c67183325df19" name="ad84f5a6b7114ed535b0c67183325df19"></a>
@@ -376,13 +372,14 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Determines whether the map contains the specified pair. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00320">320</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  320</span>                                               {</div>
+<div class="line"><span class="lineno">  321</span>            <span class="keywordflow">return</span> m_elements.Contains(item);</div>
+<div class="line"><span class="lineno">  322</span>        }</div>
+</div><!-- fragment --><div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g_a0e7933d0fa54a85b03b630e06022d063_icgraph.svg" width="720" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g_a0e7933d0fa54a85b03b630e06022d063_icgraph.svg" width="100%" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -405,9 +402,10 @@ Properties</h2></td></tr>
 <p>Determines whether any element has the specified key. </p>
 
 <p>Implements <a class="el" href="../../d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html#a111b0b702dbf292177294d043bb243d9">SystemEx.Collections.Generic.Interfaces.IReadOnlyMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00327">327</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  327</span>                                       {</div>
+<div class="line"><span class="lineno">  328</span>            <span class="keywordflow">return</span> NumberOfElementsWithKey(Key) &gt; 0;</div>
+<div class="line"><span class="lineno">  329</span>        }</div>
+</div><!-- fragment --><div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
@@ -436,9 +434,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copies the elements into the specified array. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00344">344</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  344</span>                                                                {</div>
+<div class="line"><span class="lineno">  345</span>            m_elements.CopyTo(array, arrayIndex);</div>
+<div class="line"><span class="lineno">  346</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a80d2f81c0439dd212f367b613ebd504a" name="a80d2f81c0439dd212f367b613ebd504a"></a>
@@ -459,9 +458,12 @@ Properties</h2></td></tr>
 <p>Finds all elements whose key matches the specified value. </p>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#acd764322e50a58595d3069f2ee7115df">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00243">243</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  243</span>                                                    {</div>
+<div class="line"><span class="lineno">  244</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; m_count; i++ )</div>
+<div class="line"><span class="lineno">  245</span>                <span class="keywordflow">if</span> ( m_elements[i].EqualFirst(Key) )</div>
+<div class="line"><span class="lineno">  246</span>                    yield <span class="keywordflow">return</span> m_elements[i];</div>
+<div class="line"><span class="lineno">  247</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aab08034f19e97118c34c9747fdbf9ddb" name="aab08034f19e97118c34c9747fdbf9ddb"></a>
@@ -489,9 +491,16 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Performs a custom search using the provided comparison function. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00257">257</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  257</span>                                                                       {</div>
+<div class="line"><span class="lineno">  258</span>            List&lt;Pair&lt;T, TU&gt;&gt; _find = <span class="keyword">new</span> List&lt;Pair&lt;T, TU&gt;&gt;();</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; m_count; i++ ) {</div>
+<div class="line"><span class="lineno">  261</span>                <span class="keywordflow">if</span> ( func(m_elements[i], Key, Value) )</div>
+<div class="line"><span class="lineno">  262</span>                    _find.Add(m_elements[i]);</div>
+<div class="line"><span class="lineno">  263</span>            }</div>
+<div class="line"><span class="lineno">  264</span>            <span class="keywordflow">return</span> _find;</div>
+<div class="line"><span class="lineno">  265</span>        }</div>
+</div><!-- fragment --><div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
@@ -518,9 +527,14 @@ Properties</h2></td></tr>
 <p>Finds the first element with the specified key. </p>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#aa34c88e68796c5509ea0d3c6167e3b8a">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00397">397</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  397</span>                                             {</div>
+<div class="line"><span class="lineno">  398</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; m_count; i++ )</div>
+<div class="line"><span class="lineno">  399</span>                <span class="keywordflow">if</span> ( m_elements[i].EqualFirst(key) )</div>
+<div class="line"><span class="lineno">  400</span>                    <span class="keywordflow">return</span> m_elements[i];</div>
+<div class="line"><span class="lineno">  401</span> </div>
+<div class="line"><span class="lineno">  402</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  403</span>        }</div>
+</div><!-- fragment --><div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
@@ -547,9 +561,14 @@ Properties</h2></td></tr>
 <p>Finds the last element with the specified key. </p>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#ad83e042fc33545f5939f1524e0b5400a">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00408">408</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  408</span>                                            {</div>
+<div class="line"><span class="lineno">  409</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = m_count - 1; i &gt;= 0; i-- )</div>
+<div class="line"><span class="lineno">  410</span>                <span class="keywordflow">if</span> ( m_elements[i].EqualFirst(key) )</div>
+<div class="line"><span class="lineno">  411</span>                    <span class="keywordflow">return</span> m_elements[i];</div>
+<div class="line"><span class="lineno">  412</span> </div>
+<div class="line"><span class="lineno">  413</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  414</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7dc739a09345f376532e076c66d955a5" name="a7dc739a09345f376532e076c66d955a5"></a>
@@ -574,9 +593,12 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00065">65</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   65</span>                               {</div>
+<div class="line"><span class="lineno">   66</span>            m_size = N;</div>
+<div class="line"><span class="lineno">   67</span>            m_count = 0;</div>
+<div class="line"><span class="lineno">   68</span>            m_elements = <span class="keyword">new</span> Pair&lt;T, TU&gt;[N];</div>
+<div class="line"><span class="lineno">   69</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a94d9f6b396acf7f82e04ba7938c8992a" name="a94d9f6b396acf7f82e04ba7938c8992a"></a>
@@ -601,9 +623,12 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00335">335</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  335</span>                              {</div>
+<div class="line"><span class="lineno">  336</span>            var p = FindFirst(Key);</div>
+<div class="line"><span class="lineno">  337</span>            <span class="keywordflow">if</span> ( p.HasValue ) <span class="keywordflow">return</span> p.Value.Second;</div>
+<div class="line"><span class="lineno">  338</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> KeyNotFoundException();</div>
+<div class="line"><span class="lineno">  339</span>        }</div>
+</div><!-- fragment --><div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
@@ -628,9 +653,11 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns an enumerator over the stored elements. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00351">351</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  351</span>                                                        {</div>
+<div class="line"><span class="lineno">  352</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; m_count; i++ )</div>
+<div class="line"><span class="lineno">  353</span>                yield <span class="keywordflow">return</span> m_elements[i];</div>
+<div class="line"><span class="lineno">  354</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1693b4499fe0fb64ded0cd0aa4d73ade" name="a1693b4499fe0fb64ded0cd0aa4d73ade"></a>
@@ -655,9 +682,14 @@ Properties</h2></td></tr>
 <p>Inserts or replaces an element at the specified position. </p>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a48cb76e0f2d93e27816dedcb68aaa13c">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00216">216</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  216</span>                                                      {</div>
+<div class="line"><span class="lineno">  217</span>            <span class="keywordflow">if</span> ( IsFull ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  218</span>            <span class="keywordflow">if</span> ( pos &lt; 0 || pos &gt; m_count ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>            m_elements[pos] = item;</div>
+<div class="line"><span class="lineno">  221</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  222</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a49adcd43d1568ff595fdc6ffaeb7fbba" name="a49adcd43d1568ff595fdc6ffaeb7fbba"></a>
@@ -682,9 +714,19 @@ Properties</h2></td></tr>
 <p>Inserts or replaces a sequence of elements starting at the specified position. </p>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a64b00b68091bce56830d51fe819c4fb4">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00227">227</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  227</span>                                                                         {</div>
+<div class="line"><span class="lineno">  228</span>            <span class="keywordflow">if</span> ( IsFull ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  229</span>            <span class="keywordflow">if</span> ( items == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>            <span class="keywordtype">int</span> _i = pos;</div>
+<div class="line"><span class="lineno">  232</span>            <span class="keywordflow">foreach</span> ( var item <span class="keywordflow">in</span> items ) {</div>
+<div class="line"><span class="lineno">  233</span>                <span class="keywordflow">if</span> ( _i &lt; 0 || _i &gt; m_count ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  234</span>                m_elements[_i] = item;</div>
+<div class="line"><span class="lineno">  235</span>                _i++;</div>
+<div class="line"><span class="lineno">  236</span>            }</div>
+<div class="line"><span class="lineno">  237</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  238</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="acd35c6c6099d27acb78b0ba7a7406f00" name="acd35c6c6099d27acb78b0ba7a7406f00"></a>
@@ -703,9 +745,16 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Counts how many elements have the specified key. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00286">286</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  286</span>                                                     {</div>
+<div class="line"><span class="lineno">  287</span>            UInt64 _find = 0;</div>
+<div class="line"><span class="lineno">  288</span> </div>
+<div class="line"><span class="lineno">  289</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; m_count; i++ )</div>
+<div class="line"><span class="lineno">  290</span>                <span class="keywordflow">if</span> ( m_elements[i].EqualFirst(Key) )</div>
+<div class="line"><span class="lineno">  291</span>                    _find++;</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>            <span class="keywordflow">return</span> _find;</div>
+<div class="line"><span class="lineno">  294</span>        }</div>
+</div><!-- fragment --><div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
@@ -730,9 +779,16 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Counts how many elements have the specified value. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00299">299</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  299</span>                                                          {</div>
+<div class="line"><span class="lineno">  300</span>            UInt64 _find = 0;</div>
+<div class="line"><span class="lineno">  301</span> </div>
+<div class="line"><span class="lineno">  302</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; m_count; i++ )</div>
+<div class="line"><span class="lineno">  303</span>                <span class="keywordflow">if</span> ( m_elements[i].EqualSecond(Value) )</div>
+<div class="line"><span class="lineno">  304</span>                    _find++;</div>
+<div class="line"><span class="lineno">  305</span> </div>
+<div class="line"><span class="lineno">  306</span>            <span class="keywordflow">return</span> _find;</div>
+<div class="line"><span class="lineno">  307</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a53fc59101527affd9432d3765c353d08" name="a53fc59101527affd9432d3765c353d08"></a>
@@ -751,9 +807,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Removal is not supported in FixedMap&lt;T, TU&gt;. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00361">361</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  361</span>                                             {</div>
+<div class="line"><span class="lineno">  362</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  363</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae57255e352e2f5b6f0ab10c08fe6e218" name="ae57255e352e2f5b6f0ab10c08fe6e218"></a>
@@ -774,9 +831,10 @@ Properties</h2></td></tr>
 <p>Range removal is not supported in FixedMap&lt;T, TU&gt;. </p>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a07626debe1673ea745b8aa9db51665ff">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00433">433</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  433</span>                                  {</div>
+<div class="line"><span class="lineno">  434</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  435</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aee2779d52190c3de5b995f493fb2853f" name="aee2779d52190c3de5b995f493fb2853f"></a>
@@ -797,9 +855,10 @@ Properties</h2></td></tr>
 <p>Removal by index is not supported in FixedMap&lt;T, TU&gt;. </p>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#ac2df96f1ab1f5b30ef8da4ce5c8f0ecb">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00382">382</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  382</span>                                      {</div>
+<div class="line"><span class="lineno">  383</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  384</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8315723164b6ef0e8ef395ed1c99a8bb" name="a8315723164b6ef0e8ef395ed1c99a8bb"></a>
@@ -824,9 +883,11 @@ Properties</h2></td></tr>
 <p>Range removal is not supported in FixedMap&lt;T, TU&gt;. </p>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a8feb7d375ad836228ff6c2304f1d1a90">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00389">389</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  389</span>                                                  {</div>
+<div class="line"><span class="lineno">  390</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  391</span>         </div>
+<div class="line"><span class="lineno">  392</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab75e8dbb30ab7a758efc0c43050844be" name="ab75e8dbb30ab7a758efc0c43050844be"></a>
@@ -848,9 +909,10 @@ Properties</h2></td></tr>
  Note: The returned array may contain unused slots. </p>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#aaaf712e74b9fc9cdbf083caef197f10b">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00420">420</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  420</span>                                       {</div>
+<div class="line"><span class="lineno">  421</span>            <span class="keywordflow">return</span> m_elements;</div>
+<div class="line"><span class="lineno">  422</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6c4f8af564df3f1c6eb16d36b7400419" name="a6c4f8af564df3f1c6eb16d36b7400419"></a>
@@ -885,9 +947,21 @@ Properties</h2></td></tr>
 <p>Traverses a range of elements in forward or backward order. </p>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#aaaaa409ec65c2d74266cccc848e9fdfd">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00270">270</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  270</span>                                                                                                       {</div>
+<div class="line"><span class="lineno">  271</span>            <span class="keywordtype">int</span> start = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Max(startIndex, 0);</div>
+<div class="line"><span class="lineno">  272</span>            <span class="keywordtype">int</span> end = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.Math.Min(endIndex, m_count);</div>
+<div class="line"><span class="lineno">  273</span> </div>
+<div class="line"><span class="lineno">  274</span>            <span class="keywordflow">if</span> ( mode == <a class="code hl_enumeration" href="../../d5/d4f/group__interfaces.html#ga9ffe9236ff7d52fbeb93204341959319">TraversMode</a>.Forwards ) {</div>
+<div class="line"><span class="lineno">  275</span>                <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = start; i &lt; end; i++ )</div>
+<div class="line"><span class="lineno">  276</span>                    func(m_elements[i]);</div>
+<div class="line"><span class="lineno">  277</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( mode == <a class="code hl_enumeration" href="../../d5/d4f/group__interfaces.html#ga9ffe9236ff7d52fbeb93204341959319">TraversMode</a>.Backwards ) {</div>
+<div class="line"><span class="lineno">  278</span>                <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = end; i &gt;= start; i-- )</div>
+<div class="line"><span class="lineno">  279</span>                    func(m_elements[i]);</div>
+<div class="line"><span class="lineno">  280</span>            }</div>
+<div class="line"><span class="lineno">  281</span>        }</div>
+<div class="ttc" id="agroup__interfaces_html_ga9ffe9236ff7d52fbeb93204341959319"><div class="ttname"><a href="../../d5/d4f/group__interfaces.html#ga9ffe9236ff7d52fbeb93204341959319">SystemEx.Collections.Generic.Interfaces.TraversMode</a></div><div class="ttdeci">TraversMode</div><div class="ttdef"><b>Definition</b> ITraverse.cs:27</div></div>
+<div class="ttc" id="anamespace_system_ex_html_a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">SystemEx.FlexSpanMode.System</a></div><div class="ttdeci">@ System</div><div class="ttdoc">forward indexing</div><div class="ttdef"><b>Definition</b> FlexSpan.cs:32</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a06bfc3cb8a1774e74f8cc0362d96b58e" name="a06bfc3cb8a1774e74f8cc0362d96b58e"></a>
@@ -907,9 +981,15 @@ Properties</h2></td></tr>
 
 <p>Attempts to add a pair to the map. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if added; otherwise <code>false</code>.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00189">189</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>                                             {</div>
+<div class="line"><span class="lineno">  190</span>            <span class="keywordflow">if</span> ( m_count == m_size ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">if</span> ( Contains(item) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>            m_elements[m_count] = item;</div>
+<div class="line"><span class="lineno">  194</span>            m_count++;</div>
+<div class="line"><span class="lineno">  195</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  196</span>        }</div>
+</div><!-- fragment --><div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
@@ -944,13 +1024,14 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Attempts to add a key/value pair to the map. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00201">201</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-<div id="dynsection-14" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>                                        {</div>
+<div class="line"><span class="lineno">  202</span>            <span class="keywordflow">return</span> TryAdd(<span class="keyword">new</span> Pair&lt;T, TU&gt;(f, sec));</div>
+<div class="line"><span class="lineno">  203</span>        }</div>
+</div><!-- fragment --><div id="dynsection-14" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g_a70a5bd7937f29bf6b407db5cdf82a3ab_cgraph.svg" width="720" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g_a70a5bd7937f29bf6b407db5cdf82a3ab_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -975,9 +1056,17 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Attempts to retrieve the value associated with the specified key. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00368">368</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  368</span>                                                {</div>
+<div class="line"><span class="lineno">  369</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; m_count; i++ ) {</div>
+<div class="line"><span class="lineno">  370</span>                <span class="keywordflow">if</span> ( m_elements[i].EqualFirst(Key) ) {</div>
+<div class="line"><span class="lineno">  371</span>                    Value = m_elements[i].Second!;</div>
+<div class="line"><span class="lineno">  372</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  373</span>                }</div>
+<div class="line"><span class="lineno">  374</span>            }</div>
+<div class="line"><span class="lineno">  375</span>            Value = <span class="keywordflow">default</span>!;</div>
+<div class="line"><span class="lineno">  376</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  377</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9f4089925426283a2b063f04ba8f7ba8" name="a9f4089925426283a2b063f04ba8f7ba8"></a>
@@ -1002,9 +1091,17 @@ Properties</h2></td></tr>
 <p>Attempts to retrieve the value associated with the specified key. </p>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#af848b2866e0e3a460742e20943c874f2">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00440">440</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  440</span>                                                                           {</div>
+<div class="line"><span class="lineno">  441</span>            <span class="keywordflow">foreach</span> ( var p <span class="keywordflow">in</span> m_elements ) {</div>
+<div class="line"><span class="lineno">  442</span>                <span class="keywordflow">if</span> ( p.EqualFirst(key) ) {</div>
+<div class="line"><span class="lineno">  443</span>                    value = p.Second!;</div>
+<div class="line"><span class="lineno">  444</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  445</span>                }</div>
+<div class="line"><span class="lineno">  446</span>            }</div>
+<div class="line"><span class="lineno">  447</span>            value = <span class="keywordflow">default</span>!;</div>
+<div class="line"><span class="lineno">  448</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  449</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
@@ -1031,8 +1128,6 @@ Properties</h2></td></tr>
 <p>Gets the number of stored elements. </p>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#abe187b405c1765e4039e5aff482e0f84">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00074">74</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -1065,9 +1160,14 @@ Properties</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#af77a62fd86b9ffeee6bc3a322b669165">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00109">109</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  109</span>                                  {</div>
+<div class="line"><span class="lineno">  110</span>            <span class="keyword">get</span> {</div>
+<div class="line"><span class="lineno">  111</span>                <span class="keywordflow">if</span> ( IsEmpty )</div>
+<div class="line"><span class="lineno">  112</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> InvalidOperationException(<span class="stringliteral">&quot;Map is empty&quot;</span>);</div>
+<div class="line"><span class="lineno">  113</span>                <span class="keywordflow">return</span> m_elements[0];</div>
+<div class="line"><span class="lineno">  114</span>            }</div>
+<div class="line"><span class="lineno">  115</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aca521e695853c667e9a20e5648dc2a42" name="aca521e695853c667e9a20e5648dc2a42"></a>
@@ -1093,8 +1193,6 @@ Properties</h2></td></tr>
 <p>Indicates whether the map contains no elements. </p>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a6c55f12803e024ef50ec20bb859fe6c6">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00084">84</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
 
 </div>
 </div>
@@ -1122,8 +1220,6 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a7104df0a663c57e0e096e6e81d14b511">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00089">89</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
 </div>
 </div>
 <a id="a586cad0d81f7406660a52ddfa6a8be02" name="a586cad0d81f7406660a52ddfa6a8be02"></a>
@@ -1150,8 +1246,6 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#aaac7edf1535fb73f8889ab3b84d3f226">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00094">94</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
 </div>
 </div>
 <a id="a7b9d41e7826409b5359ed8a22c42055d" name="a7b9d41e7826409b5359ed8a22c42055d"></a>
@@ -1177,9 +1271,14 @@ Properties</h2></td></tr>
 <p>Gets an enumerable collection of all keys contained in the map. </p>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a151034354090632137da18d66fa44bd6">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00132">132</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  132</span>                                   {</div>
+<div class="line"><span class="lineno">  133</span>            <span class="keyword">get</span> {</div>
+<div class="line"><span class="lineno">  134</span>                List&lt;T&gt; tmp = <span class="keyword">new</span> List&lt;T&gt;();</div>
+<div class="line"><span class="lineno">  135</span>                <span class="keywordflow">foreach</span> ( var t <span class="keywordflow">in</span> m_elements ) { tmp.Add(t.First); }</div>
+<div class="line"><span class="lineno">  136</span>                <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><span class="lineno">  137</span>            }</div>
+<div class="line"><span class="lineno">  138</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac0ef14ad026c3822713699742d8f79a9" name="ac0ef14ad026c3822713699742d8f79a9"></a>
@@ -1211,9 +1310,14 @@ Properties</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#ae9ff5e7f06607f15500a29895d34742d">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00121">121</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  121</span>                                 {</div>
+<div class="line"><span class="lineno">  122</span>            <span class="keyword">get</span> {</div>
+<div class="line"><span class="lineno">  123</span>                <span class="keywordflow">if</span> ( IsEmpty )</div>
+<div class="line"><span class="lineno">  124</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> InvalidOperationException(<span class="stringliteral">&quot;Map is empty&quot;</span>);</div>
+<div class="line"><span class="lineno">  125</span>                <span class="keywordflow">return</span> m_elements[m_count - 1];</div>
+<div class="line"><span class="lineno">  126</span>            }</div>
+<div class="line"><span class="lineno">  127</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1b6974b80a5380a3a4352005ed115ed8" name="a1b6974b80a5380a3a4352005ed115ed8"></a>
@@ -1240,8 +1344,6 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="../../dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#afd011dfb1a7a035fe2428b3b9772e6fe">SystemEx.Collections.Generic.Interfaces.IMap</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00079">79</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
 </div>
 </div>
 <a id="a0d4c20543730fc2fa01438cec41ec245" name="a0d4c20543730fc2fa01438cec41ec245"></a>
@@ -1265,9 +1367,11 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets or sets the element at the specified index. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00208">208</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  208</span>                                         {</div>
+<div class="line"><span class="lineno">  209</span>            <span class="keyword">get</span> =&gt; m_elements[Key];</div>
+<div class="line"><span class="lineno">  210</span>            <span class="keyword">set</span> =&gt; m_elements[Key] = value;</div>
+<div class="line"><span class="lineno">  211</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a822b180fbf2d9217595a94b1b2890c07" name="a822b180fbf2d9217595a94b1b2890c07"></a>
@@ -1298,9 +1402,17 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a63c4444fc8cef243fa39586c389d0e00">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00163">163</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  163</span>                              {</div>
+<div class="line"><span class="lineno">  164</span>            <span class="keyword">get</span> =&gt; Get(key);</div>
+<div class="line"><span class="lineno">  165</span>            <span class="keyword">set</span> {</div>
+<div class="line"><span class="lineno">  166</span>                    <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; m_count; i++ ) {</div>
+<div class="line"><span class="lineno">  167</span>                        <span class="keywordflow">if</span> ( m_elements[i].EqualFirst(key) ) {</div>
+<div class="line"><span class="lineno">  168</span>                            m_elements[i].Second = value;</div>
+<div class="line"><span class="lineno">  169</span>                        }</div>
+<div class="line"><span class="lineno">  170</span>                    }</div>
+<div class="line"><span class="lineno">  171</span>                }</div>
+<div class="line"><span class="lineno">  172</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aff321a47fbba28bd3b4068f381723993" name="aff321a47fbba28bd3b4068f381723993"></a>
@@ -1326,13 +1438,18 @@ Properties</h2></td></tr>
 <p>Gets an enumerable collection of all values contained in the map. </p>
 
 <p>Implements <a class="el" href="../../df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html#a70dac17776b669dbd10aaf01a68f071d">SystemEx.Collections.Generic.Interfaces.IMap&lt; T, TU &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html#l00142">142</a> of file <a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  142</span>                                      {</div>
+<div class="line"><span class="lineno">  143</span>            <span class="keyword">get</span> {</div>
+<div class="line"><span class="lineno">  144</span>                List&lt;TU&gt; tmp = <span class="keyword">new</span> List&lt;TU&gt;();</div>
+<div class="line"><span class="lineno">  145</span>                <span class="keywordflow">foreach</span> ( var t <span class="keywordflow">in</span> m_elements ) { tmp.Add(t.Second); }</div>
+<div class="line"><span class="lineno">  146</span>                <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><span class="lineno">  147</span>            }</div>
+<div class="line"><span class="lineno">  148</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../df/d1b/_fixed_map_8cs_source.html">FixedMap.cs</a></li>
+<li><b>FixedMap.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

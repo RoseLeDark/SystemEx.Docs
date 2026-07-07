@@ -109,6 +109,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d8c/class_s
  Elements are stored as Pair&lt;T, TU&gt; where <code>T</code> is the value and <code>TU</code> is the priority. <br  />
  Supports enqueue, dequeue, peek, priority updates, cloning, and median‑based selection.  
  <a href="#details">More...</a></p>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/dd9/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g__coll__graph.svg" width="204" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -170,8 +176,6 @@ Properties</h2></td></tr>
 </dd>
 </dl>
 </div>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00106">106</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a591111b176886a8acd0b98053fe7a595" name="a591111b176886a8acd0b98053fe7a595"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a591111b176886a8acd0b98053fe7a595">&#9670;&#160;</a></span>Clone()</h2>
@@ -189,12 +193,17 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a deep clone of this priority queue, including sorting settings. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00192">192</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  192</span>                                              {</div>
+<div class="line"><span class="lineno">  193</span>            var c = <span class="keyword">new</span> PriorityQueueEx&lt;T, TU&gt;(m_map);</div>
+<div class="line"><span class="lineno">  194</span>            c.SortFunctions = SortFunctions;</div>
+<div class="line"><span class="lineno">  195</span>            c.Comparer = Comparer;</div>
+<div class="line"><span class="lineno">  196</span>            c.m_map.AutoSort = m_map.AutoSort;</div>
+<div class="line"><span class="lineno">  197</span>            <span class="keywordflow">return</span> c;</div>
+<div class="line"><span class="lineno">  198</span>        }</div>
+</div><!-- fragment --><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g_a591111b176886a8acd0b98053fe7a595_cgraph.svg" width="500" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -216,9 +225,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Removes and returns the value with the smallest priority. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00218">218</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  218</span>                           {</div>
+<div class="line"><span class="lineno">  219</span>            var p = m_map[0];</div>
+<div class="line"><span class="lineno">  220</span>            m_map.RemoveAt(0);</div>
+<div class="line"><span class="lineno">  221</span>            <span class="keywordflow">return</span> p.First;</div>
+<div class="line"><span class="lineno">  222</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a637bed6572d38bbc8e860d96f015724d" name="a637bed6572d38bbc8e860d96f015724d"></a>
@@ -241,9 +253,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Inserts a new value with the specified priority. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00204">204</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  204</span>                                                 {</div>
+<div class="line"><span class="lineno">  205</span>            <span class="keywordflow">return</span> m_map.TryAdd(item, priority);</div>
+<div class="line"><span class="lineno">  206</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a39ce4d09ba7b98aaffdda82447f9184a" name="a39ce4d09ba7b98aaffdda82447f9184a"></a>
@@ -262,9 +275,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the value with the smallest priority without removing it. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00211">211</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  211</span>                        {</div>
+<div class="line"><span class="lineno">  212</span>            <span class="keywordflow">return</span> m_map[0].First;</div>
+<div class="line"><span class="lineno">  213</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a74b7440bfe7574c5edd08df98a8c1a1e" name="a74b7440bfe7574c5edd08df98a8c1a1e"></a>
@@ -283,12 +297,13 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a priority queue using the default priority comparison. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00164">164</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  164</span>                                 {</div>
+<div class="line"><span class="lineno">  165</span>            m_map = <span class="keyword">new</span> SortedMap&lt;T, TU&gt;(SortByPriority);</div>
+<div class="line"><span class="lineno">  166</span>        }</div>
+</div><!-- fragment --><div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g_a74b7440bfe7574c5edd08df98a8c1a1e_icgraph.svg" width="500" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -310,9 +325,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a priority queue using a custom comparer. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00171">171</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  171</span>                                                                 {</div>
+<div class="line"><span class="lineno">  172</span>            m_map = <span class="keyword">new</span> SortedMap&lt;T, TU&gt;(comparer);</div>
+<div class="line"><span class="lineno">  173</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a22c9779cc0e6ee1cc3eacac698bf2db7" name="a22c9779cc0e6ee1cc3eacac698bf2db7"></a>
@@ -331,9 +347,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a priority queue initialized with the specified elements. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00185">185</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  185</span>                                                             {</div>
+<div class="line"><span class="lineno">  186</span>            m_map = <span class="keyword">new</span> SortedMap&lt;T, TU&gt;(map, SortByPriority);</div>
+<div class="line"><span class="lineno">  187</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1030b26399cdaf6eb48f58f819becadb" name="a1030b26399cdaf6eb48f58f819becadb"></a>
@@ -352,9 +369,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a priority queue using a custom sorting function. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00178">178</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  178</span>                                                     {</div>
+<div class="line"><span class="lineno">  179</span>            m_map = <span class="keyword">new</span> SortedMap&lt;T, TU&gt;(sort);</div>
+<div class="line"><span class="lineno">  180</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa10c7212c181db331f6f9a3712c0f6e2" name="aa10c7212c181db331f6f9a3712c0f6e2"></a>
@@ -377,9 +395,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Updates the priority of an existing value. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00227">227</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  227</span>                                                           {</div>
+<div class="line"><span class="lineno">  228</span>            m_map[item] = newPriority;</div>
+<div class="line"><span class="lineno">  229</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
@@ -404,9 +423,11 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets or sets the comparer used for sorting the internal map. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00132">132</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  132</span>                                                 {</div>
+<div class="line"><span class="lineno">  133</span>            <span class="keyword">get</span> =&gt; m_map.Comparer;</div>
+<div class="line"><span class="lineno">  134</span>            <span class="keyword">set</span> =&gt; m_map.Comparer = value;</div>
+<div class="line"><span class="lineno">  135</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad0a74f46afb4d4698930865e2824b713" name="ad0a74f46afb4d4698930865e2824b713"></a>
@@ -430,8 +451,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the number of elements in the queue. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00116">116</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
 
 </div>
 </div>
@@ -457,8 +476,6 @@ Properties</h2></td></tr>
 
 <p>Gets the element with the smallest priority. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00121">121</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-
 </div>
 </div>
 <a id="a5f699b420de1a8fbb357993442f7bfa5" name="a5f699b420de1a8fbb357993442f7bfa5"></a>
@@ -482,8 +499,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a new iterator that consumes elements in priority order. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00126">126</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
 
 </div>
 </div>
@@ -509,8 +524,6 @@ Properties</h2></td></tr>
 
 <p>Gets the element with the maximum priority. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00154">154</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-
 </div>
 </div>
 <a id="abacf8892762b9a77b1dfe9e418a52d93" name="abacf8892762b9a77b1dfe9e418a52d93"></a>
@@ -534,8 +547,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the element whose priority is closest to the statistical median. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00159">159</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
 
 </div>
 </div>
@@ -561,8 +572,6 @@ Properties</h2></td></tr>
 
 <p>Gets the element with the minimum priority. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00149">149</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-
 </div>
 </div>
 <a id="a5761be4a1b1e79edfc2ecfe33b79151b" name="a5761be4a1b1e79edfc2ecfe33b79151b"></a>
@@ -586,13 +595,15 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets or sets the delegate‑based sorting function. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html#l00140">140</a> of file <a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  140</span>                                              {</div>
+<div class="line"><span class="lineno">  141</span>            <span class="keyword">get</span> =&gt; m_map.SortFunctions;</div>
+<div class="line"><span class="lineno">  142</span>            <span class="keyword">set</span> =&gt; m_map.SortFunctions = value;</div>
+<div class="line"><span class="lineno">  143</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d0/d98/_priority_queue_8cs_source.html">PriorityQueue.cs</a></li>
+<li><b>PriorityQueue.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

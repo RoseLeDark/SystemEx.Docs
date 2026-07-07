@@ -104,6 +104,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/ddf/class_s
   <div class="headertitle"><div class="title">SystemEx.Runtime.Module Class Reference<div class="ingroups"><a class="el" href="../../da/d89/group___runtime.html">Runtime</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Runtime.Module:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d1/d34/class_system_ex_1_1_runtime_1_1_module__coll__graph.svg" width="182" height="208"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -121,10 +127,7 @@ Properties</h2></td></tr>
 <tr class="memitem:ac1fb270588a618e7524ad6b2b22c768b" id="r_ac1fb270588a618e7524ad6b2b22c768b"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#ac1fb270588a618e7524ad6b2b22c768b">Path</a><code> [get]</code></td></tr>
 <tr class="memdesc:ac1fb270588a618e7524ad6b2b22c768b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the directory path where the module file resides.  <br /></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00028">28</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7d53c4cbf047d28ffd8d648a8ada36a9" name="a7d53c4cbf047d28ffd8d648a8ada36a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d53c4cbf047d28ffd8d648a8ada36a9">&#9670;&#160;</a></span>Module()</h2>
 
@@ -153,9 +156,13 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00044">44</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   44</span>                                                 {</div>
+<div class="line"><span class="lineno">   45</span>            this.Handle = v;</div>
+<div class="line"><span class="lineno">   46</span>            this.Name = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.IO.Path.GetFileName(strPath);</div>
+<div class="line"><span class="lineno">   47</span>            this.Path = <a class="code hl_enumvalue" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a>.IO.Path.GetDirectoryName(strPath)!;</div>
+<div class="line"><span class="lineno">   48</span>        }</div>
+<div class="ttc" id="anamespace_system_ex_html_a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">SystemEx.FlexSpanMode.System</a></div><div class="ttdeci">@ System</div><div class="ttdoc">forward indexing</div><div class="ttdef"><b>Definition</b> FlexSpan.cs:32</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
@@ -181,9 +188,8 @@ Properties</h2></td></tr>
 
 <p>Gets the native handle of the loaded module. <br  />
  This value corresponds to the OS‑specific library handle returned by <code>LoadLibrary</code> (Windows), <code>dlopen</code> (Linux), or <code>dlopen</code> (macOS). </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00034">34</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <span class="keyword">get</span>; <span class="keyword">internal</span> <span class="keyword">set</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a385ab09cf7efbef052c06bd1f542ca6f" name="a385ab09cf7efbef052c06bd1f542ca6f"></a>
@@ -207,9 +213,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the file name of the loaded module (e.g., <code>kernel.dll</code>, <code>libfoo.so</code>, <code>libbar.dylib</code>). </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00054">54</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   54</span>{ <span class="keyword">get</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac1fb270588a618e7524ad6b2b22c768b" name="ac1fb270588a618e7524ad6b2b22c768b"></a>
@@ -233,13 +238,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the directory path where the module file resides. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d2/dee/_module_8cs_source.html#l00059">59</a> of file <a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{ <span class="keyword">get</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d2/dee/_module_8cs_source.html">Module.cs</a></li>
+<li><b>Module.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

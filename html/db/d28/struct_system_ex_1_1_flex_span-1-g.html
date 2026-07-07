@@ -107,6 +107,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('db/d28/struct_
 
 <p>A lightweight view over an array supporting System, Reverse, and Ring (circular) indexing. FlexSpan does not allocate and provides ref-return access to elements.  
  <a href="#details">More...</a></p>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.FlexSpan&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d8/d18/struct_system_ex_1_1_flex_span-1-g__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -176,8 +182,6 @@ Properties</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A lightweight view over an array supporting System, Reverse, and Ring (circular) indexing. FlexSpan does not allocate and provides ref-return access to elements. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00039">39</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ac6a324f392d096b86b2296e20dfc548c" name="ac6a324f392d096b86b2296e20dfc548c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6a324f392d096b86b2296e20dfc548c">&#9670;&#160;</a></span>CopyTo()</h2>
@@ -195,18 +199,24 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copies this FlexSpan's view into another FlexSpan. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00286">286</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d28/struct_system_ex_1_1_flex_span-1-g_ac6a324f392d096b86b2296e20dfc548c_cgraph.svg" width="364" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">  286</span>                                                       {</div>
+<div class="line"><span class="lineno">  287</span>            <span class="keywordflow">if</span> ( destination.ViewLength &lt; <span class="keyword">this</span>.ViewLength )</div>
+<div class="line"><span class="lineno">  288</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;Destination FlexSpan is too small.&quot;</span>);</div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  290</span> </div>
+<div class="line"><span class="lineno">  291</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = 0 ; i &lt; ViewLength ; i++ )</div>
+<div class="line"><span class="lineno">  292</span>                destination.ElementAt(i) = this.ElementAt(i);</div>
+<div class="line"><span class="lineno">  293</span>        }</div>
+</div><!-- fragment --><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d28/struct_system_ex_1_1_flex_span-1-g_ac6a324f392d096b86b2296e20dfc548c_cgraph.svg" width="364" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d28/struct_system_ex_1_1_flex_span-1-g_ac6a324f392d096b86b2296e20dfc548c_icgraph.svg" width="364" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -228,9 +238,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>No resources to dispose. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00119">119</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  119</span>{ }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae90b59eed3ce6a90f5438e3507d3d9d6" name="ae90b59eed3ce6a90f5438e3507d3d9d6"></a>
@@ -249,12 +258,33 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns a reference to the element at the given index according to the current mode. System = forward indexing Reverse = reverse indexing Ring = circular indexing (wrap-around). </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00326">326</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  326</span>                                              {</div>
+<div class="line"><span class="lineno">  327</span> </div>
+<div class="line"><span class="lineno">  328</span>            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(index, ViewLength);</div>
+<div class="line"><span class="lineno">  329</span> </div>
+<div class="line"><span class="lineno">  330</span> </div>
+<div class="line"><span class="lineno">  331</span>            <span class="keywordflow">switch</span> ( m_eMode ) {</div>
+<div class="line"><span class="lineno">  332</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a>.System:</div>
+<div class="line"><span class="lineno">  333</span>                    <span class="keywordflow">return</span> ref m_pReference[m_lStart + index];</div>
+<div class="line"><span class="lineno">  334</span> </div>
+<div class="line"><span class="lineno">  335</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a>.Reverse:</div>
+<div class="line"><span class="lineno">  336</span>                    <span class="keywordflow">return</span> ref m_pReference[m_lEnd - (1 + index)];</div>
+<div class="line"><span class="lineno">  337</span> </div>
+<div class="line"><span class="lineno">  338</span> </div>
+<div class="line"><span class="lineno">  339</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a>.Ring: {</div>
+<div class="line"><span class="lineno">  340</span>                    <span class="keywordtype">long</span> pos = m_lStart + (index % ViewLength);</div>
+<div class="line"><span class="lineno">  341</span> </div>
+<div class="line"><span class="lineno">  342</span>                    <span class="keywordflow">return</span> ref m_pReference[pos];</div>
+<div class="line"><span class="lineno">  343</span>                }</div>
+<div class="line"><span class="lineno">  344</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  345</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> InvalidOperationException();</div>
+<div class="line"><span class="lineno">  346</span>            }</div>
+<div class="line"><span class="lineno">  347</span>        }</div>
+<div class="ttc" id="anamespace_system_ex_html_a3ef7d5832058e44f73e558fde87598f9"><div class="ttname"><a href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9">SystemEx.FlexSpanMode</a></div><div class="ttdeci">FlexSpanMode</div><div class="ttdoc">Defines how FlexSpan indexes its underlying array.</div><div class="ttdef"><b>Definition</b> FlexSpan.cs:26</div></div>
+</div><!-- fragment --><div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d28/struct_system_ex_1_1_flex_span-1-g_ae90b59eed3ce6a90f5438e3507d3d9d6_icgraph.svg" width="564" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -274,9 +304,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00252">252</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  252</span>=&gt; <span class="keywordflow">throw</span> <span class="keyword">new</span> NotSupportedException();</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a65dfa8ade8bc03f37006abc12823c4ac" name="a65dfa8ade8bc03f37006abc12823c4ac"></a>
@@ -295,12 +324,16 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fills the view with a given value. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00312">312</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  312</span>                                     {</div>
+<div class="line"><span class="lineno">  313</span> </div>
+<div class="line"><span class="lineno">  314</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = 0 ; i &lt; ViewLength ; i++ )</div>
+<div class="line"><span class="lineno">  315</span>                ElementAt(i) = value;</div>
+<div class="line"><span class="lineno">  316</span> </div>
+<div class="line"><span class="lineno">  317</span>        }</div>
+</div><!-- fragment --><div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d28/struct_system_ex_1_1_flex_span-1-g_a65dfa8ade8bc03f37006abc12823c4ac_cgraph.svg" width="364" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -336,9 +369,22 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a FlexSpan over an array with a defined view length. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00200">200</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  200</span>                                                                                       {</div>
+<div class="line"><span class="lineno">  201</span>            <span class="keywordflow">if</span> ( array == <span class="keyword">null</span> ) <span class="keywordflow">throw</span> <span class="keyword">new</span> NullReferenceException();</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual((ulong)length, (ulong)(array.Length - start));</div>
+<div class="line"><span class="lineno">  204</span>            ArgumentOutOfRangeException.ThrowIfGreaterThan((ulong)start, (ulong)array.Length);</div>
+<div class="line"><span class="lineno">  205</span> </div>
+<div class="line"><span class="lineno">  206</span>            m_pReference = ref array!;</div>
+<div class="line"><span class="lineno">  207</span>            m_llength = array.Length;</div>
+<div class="line"><span class="lineno">  208</span>            m_eMode = mode;</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>            <span class="comment">// View </span></div>
+<div class="line"><span class="lineno">  211</span>            m_lStart = start;</div>
+<div class="line"><span class="lineno">  212</span>            m_lEnd = start + length;</div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a50fbd231a3ad76bd2817160c541d8137" name="a50fbd231a3ad76bd2817160c541d8137"></a>
@@ -366,12 +412,22 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a FlexSpan over an array starting at a given index. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00183">183</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  183</span>                                                                              {</div>
+<div class="line"><span class="lineno">  184</span>            <span class="keywordflow">if</span> ( reference == <span class="keyword">null</span> ) <span class="keywordflow">throw</span> <span class="keyword">new</span> NullReferenceException();</div>
+<div class="line"><span class="lineno">  185</span>            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(start, reference.Length);</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>            m_pReference = ref reference!;</div>
+<div class="line"><span class="lineno">  188</span>            m_llength = reference.Length;</div>
+<div class="line"><span class="lineno">  189</span>            m_eMode = mode;</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>            <span class="comment">// View </span></div>
+<div class="line"><span class="lineno">  192</span>            m_lStart = start;</div>
+<div class="line"><span class="lineno">  193</span>            m_lEnd = m_llength;</div>
+<div class="line"><span class="lineno">  194</span>        }</div>
+</div><!-- fragment --><div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d28/struct_system_ex_1_1_flex_span-1-g_a50fbd231a3ad76bd2817160c541d8137_icgraph.svg" width="564" height="371"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -393,9 +449,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns an enumerator for the span. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00260">260</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  260</span>=&gt; <span class="keyword">new</span> Enumerator(<span class="keyword">this</span>);</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a52d418ac90a7bff182d6b556ce48ee93" name="a52d418ac90a7bff182d6b556ce48ee93"></a>
@@ -412,9 +467,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00255">255</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  255</span>=&gt; <span class="keywordflow">throw</span> <span class="keyword">new</span> NotSupportedException();</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a90ba73d4158a62c0bdb80cbc8a1a9e37" name="a90ba73d4158a62c0bdb80cbc8a1a9e37"></a>
@@ -433,9 +487,17 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Moves to the next element in the span. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00085">85</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   85</span>                                    {</div>
+<div class="line"><span class="lineno">   86</span>                <span class="keywordtype">bool</span> _ret = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>                <span class="keywordflow">if</span>( HasNext ) {</div>
+<div class="line"><span class="lineno">   89</span>                    m_index++;</div>
+<div class="line"><span class="lineno">   90</span>                    <span class="keywordflow">if</span> ( m_index &lt; 0 ) m_index = 0;</div>
+<div class="line"><span class="lineno">   91</span>                    _ret = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   92</span>                }</div>
+<div class="line"><span class="lineno">   93</span>                <span class="keywordflow">return</span> _ret;</div>
+<div class="line"><span class="lineno">   94</span>            }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8c886a45feff69332fe247e8959a0d0e" name="a8c886a45feff69332fe247e8959a0d0e"></a>
@@ -466,12 +528,11 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Structural not equality comparison. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00249">249</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  249</span>=&gt; !(left == right);</div>
+</div><!-- fragment --><div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d28/struct_system_ex_1_1_flex_span-1-g_a8c886a45feff69332fe247e8959a0d0e_cgraph.svg" width="364" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -505,12 +566,16 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Structural equality comparison. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00239">239</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  239</span>                                                                             =&gt;</div>
+<div class="line"><span class="lineno">  240</span>            left.m_llength == right.m_llength &amp;&amp;</div>
+<div class="line"><span class="lineno">  241</span>            left.m_pReference.Equals(right.m_pReference) &amp;&amp;</div>
+<div class="line"><span class="lineno">  242</span>            left.m_eMode == right.m_eMode &amp;&amp;</div>
+<div class="line"><span class="lineno">  243</span>            left.m_lStart == right.m_lStart &amp;&amp;</div>
+<div class="line"><span class="lineno">  244</span>            left.m_lEnd == right.m_lEnd;</div>
+</div><!-- fragment --><div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d28/struct_system_ex_1_1_flex_span-1-g_a07f65e13444c0b57797c7ad775aea4c0_cgraph.svg" width="364" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -532,9 +597,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Resets the enumerator to the initial position. Ring mode resets to index 0; other modes reset to -1. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00114">114</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  114</span>=&gt; m_index = m_span.m_eMode == FlexSpanMode.Ring ? 0 : m_index = -1;</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7fcfe09831ee15b0c30d82649e263574" name="a7fcfe09831ee15b0c30d82649e263574"></a>
@@ -557,12 +621,11 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a new FlexSpan starting at the given offset. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00226">226</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  227</span>            =&gt; <span class="keyword">new</span> FlexSpan&lt;T&gt;(ref m_pReference!, m_lStart + start, m_llength - start, mode ?? m_eMode);</div>
+</div><!-- fragment --><div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d28/struct_system_ex_1_1_flex_span-1-g_a7fcfe09831ee15b0c30d82649e263574_cgraph.svg" width="364" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -593,12 +656,11 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a new FlexSpan with a given offset and length. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00233">233</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  234</span>            =&gt; <span class="keyword">new</span> FlexSpan&lt;T&gt;(ref m_pReference!, m_lStart + start, length, mode ?? m_eMode);</div>
+</div><!-- fragment --><div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d28/struct_system_ex_1_1_flex_span-1-g_a953f3b74e88b8367e291ac2d1716101b_cgraph.svg" width="364" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -620,12 +682,26 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copies the view into a new Array&lt;T&gt;. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00267">267</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  267</span>                                                       {</div>
+<div class="line"><span class="lineno">  268</span>            <span class="keywordflow">if</span> ( m_llength == 0 )</div>
+<div class="line"><span class="lineno">  269</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Collections.Generic.Array&lt;T&gt;();</div>
+<div class="line"><span class="lineno">  270</span> </div>
+<div class="line"><span class="lineno">  271</span>            var destination = <span class="keyword">new</span> Collections.Generic.Array&lt;T&gt;( (int)(m_lEnd - m_lStart) );</div>
+<div class="line"><span class="lineno">  272</span> </div>
+<div class="line"><span class="lineno">  273</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = m_lStart, j = 0 ; i &lt; m_lEnd ; i++, j++ ) {</div>
+<div class="line"><span class="lineno">  274</span>                T _e = ElementAt(j);</div>
+<div class="line"><span class="lineno">  275</span>                destination[(int)j] = _e;</div>
+<div class="line"><span class="lineno">  276</span><span class="preprocessor">#if DEBUG</span></div>
+<div class="line"><span class="lineno">  277</span>                Console.WriteLine(<span class="stringliteral">&quot;ToArray, i = {0} j = {1} {2} [{3} ... {4}]&quot;</span>, i, j, _e , m_lStart, m_lEnd);</div>
+<div class="line"><span class="lineno">  278</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  279</span>            }</div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>            <span class="keywordflow">return</span> destination;</div>
+<div class="line"><span class="lineno">  282</span>        }</div>
+</div><!-- fragment --><div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d28/struct_system_ex_1_1_flex_span-1-g_a0d4aaa1a93c3663c831781b02b7016fb_cgraph.svg" width="364" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -647,12 +723,21 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Attempts to copy the view into another FlexSpan. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00297">297</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  297</span>                                                          {</div>
+<div class="line"><span class="lineno">  298</span>            <span class="keywordtype">bool</span> _ret = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  299</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  300</span>                CopyTo(destination);</div>
+<div class="line"><span class="lineno">  301</span> </div>
+<div class="line"><span class="lineno">  302</span>                _ret = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  303</span>            } <span class="keywordflow">catch</span>(Exception ) {</div>
+<div class="line"><span class="lineno">  304</span>                _ret = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  305</span>            }</div>
+<div class="line"><span class="lineno">  306</span>            <span class="keywordflow">return</span> _ret;</div>
+<div class="line"><span class="lineno">  307</span>        }</div>
+</div><!-- fragment --><div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d28/struct_system_ex_1_1_flex_span-1-g_a1aa932fc5b668f84dd9d6bc7b4e0b090_cgraph.svg" width="564" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -681,8 +766,6 @@ Properties</h2></td></tr>
 
 <p></p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00108">108</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
 </div>
 </div>
 <a id="a60e277c3cf368d1743567a74675168b5" name="a60e277c3cf368d1743567a74675168b5"></a>
@@ -707,8 +790,6 @@ Properties</h2></td></tr>
 
 <p></p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00105">105</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
 </div>
 </div>
 <a id="aae170af35a7d24a0d3f5acb2ef3519c5" name="aae170af35a7d24a0d3f5acb2ef3519c5"></a>
@@ -732,9 +813,11 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the element at the current enumerator position. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00099">99</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   99</span>                                 {</div>
+<div class="line"><span class="lineno">  100</span>                [MethodImpl(MethodImplOptions.AggressiveInlining)]</div>
+<div class="line"><span class="lineno">  101</span>                <span class="keyword">get</span> =&gt; ref m_span[m_index];</div>
+<div class="line"><span class="lineno">  102</span>            }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6a2c71db7be5c90d1933aa7075195fdd" name="a6a2c71db7be5c90d1933aa7075195fdd"></a>
@@ -758,8 +841,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns an empty FlexSpan. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00218">218</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
 
 </div>
 </div>
@@ -785,8 +866,6 @@ Properties</h2></td></tr>
 
 <p>End index of the view (exclusive). </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00170">170</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
 </div>
 </div>
 <a id="a4d664ed0c97f7c61901c08667b68fc6c" name="a4d664ed0c97f7c61901c08667b68fc6c"></a>
@@ -810,9 +889,18 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Indicates whether another element can be produced. Ring mode always returns true (infinite iteration). </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00059">59</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   59</span>                                {</div>
+<div class="line"><span class="lineno">   60</span>                [MethodImpl(MethodImplOptions.AggressiveInlining)]</div>
+<div class="line"><span class="lineno">   61</span>                <span class="keyword">get</span> {</div>
+<div class="line"><span class="lineno">   62</span>                    <span class="keywordtype">bool</span> _ret = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   63</span>                    <span class="keywordflow">if</span> ( m_span.m_eMode == <a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#a3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a>.Ring )</div>
+<div class="line"><span class="lineno">   64</span>                        _ret = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   65</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   66</span>                        _ret = (m_index + 1) &lt; (m_span.m_lEnd - m_span.m_lStart);</div>
+<div class="line"><span class="lineno">   67</span>                    <span class="keywordflow">return</span> _ret;</div>
+<div class="line"><span class="lineno">   68</span>                }</div>
+<div class="line"><span class="lineno">   69</span>            }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1fe469adccf7644ae16b405c9bf8206d" name="a1fe469adccf7644ae16b405c9bf8206d"></a>
@@ -836,8 +924,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>True if the span has zero length. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00150">150</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
 
 </div>
 </div>
@@ -863,8 +949,6 @@ Properties</h2></td></tr>
 
 <p>Total length of the underlying array. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00155">155</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
 </div>
 </div>
 <a id="a6ecb1d0152a141674870e7d13360c933" name="a6ecb1d0152a141674870e7d13360c933"></a>
@@ -889,8 +973,6 @@ Properties</h2></td></tr>
 
 <p>Start index of the view. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00165">165</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
 </div>
 </div>
 <a id="a999ad7f9e303562c3a5d74f7311b81b7" name="a999ad7f9e303562c3a5d74f7311b81b7"></a>
@@ -914,9 +996,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Provides ref-access to the element at the given index within the view. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00175">175</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  175</span>                                     {</div>
+<div class="line"><span class="lineno">  176</span>            <span class="keyword">get</span> =&gt; ref ElementAt(index);</div>
+<div class="line"><span class="lineno">  177</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2dc2e1ea74271d33bf93d563518d4039" name="a2dc2e1ea74271d33bf93d563518d4039"></a>
@@ -941,12 +1024,10 @@ Properties</h2></td></tr>
 
 <p>Length of the view (End - Start). </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00160">160</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a></li>
+<li><b>FlexSpan.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -113,6 +113,8 @@ Classes</h2></td></tr>
 <tr class="memitem:Conversion" id="r_Conversion"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>Conversion</b></td></tr>
 <tr class="memitem:FlexSpan_3C_20T_20_3E" id="r_FlexSpan_3C_20T_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../db/d28/struct_system_ex_1_1_flex_span-1-g.html">FlexSpan&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A lightweight view over an array supporting System, Reverse, and Ring (circular) indexing. FlexSpan does not allocate and provides ref-return access to elements.  <a href="../../db/d28/struct_system_ex_1_1_flex_span-1-g.html#details">More...</a><br /></td></tr>
+<tr class="memitem:IComparableEx_3C_20T_20_3E" id="r_IComparableEx_3C_20T_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../dc/d20/interface_system_ex_1_1_i_comparable_ex-1-g.html">IComparableEx&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an extended and strongly typed comparison contract for <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a>.  <a href="../../dc/d20/interface_system_ex_1_1_i_comparable_ex-1-g.html#details">More...</a><br /></td></tr>
 <tr class="memitem:IRange_3C_20T_20_3E" id="r_IRange_3C_20T_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../df/d28/interface_system_ex_1_1_i_range-1-g.html">IRange&lt; T &gt;</a></td></tr>
 <tr class="memitem:Math" id="r_Math"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>Math</b></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides mathematical helper functions that are not included in System.Math. <br  />
@@ -141,6 +143,7 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:aa60c11b2d2d4ff5084ed2276d3e06697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a three-valued logic type with True, False, and Nin (neither true nor false) states.  <a href="#aa60c11b2d2d4ff5084ed2276d3e06697">More...</a><br /></td></tr>
 <tr class="memitem:ab37b6205838476a6d1b48cfa0440cacd" id="r_ab37b6205838476a6d1b48cfa0440cacd"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#ab37b6205838476a6d1b48cfa0440cacd">Endian</a> { <a class="el" href="#ab37b6205838476a6d1b48cfa0440cacda3c0ba6b22b526d7fd50c3026435a8c02">LittleEndian</a>
 , <a class="el" href="#ab37b6205838476a6d1b48cfa0440cacda2ce7a92ae43763828ac4acb4560c2a5b">BigEndian</a>
+, <b>System</b>
  }</td></tr>
 <tr class="memdesc:ab37b6205838476a6d1b48cfa0440cacd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the byte order used when converting values to and from raw byte sequences.  <a href="#ab37b6205838476a6d1b48cfa0440cacd">More...</a><br /></td></tr>
 <tr class="memitem:a79eb295adf6d58748538b4c064fedeb9" id="r_a79eb295adf6d58748538b4c064fedeb9"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a79eb295adf6d58748538b4c064fedeb9">RandPasswordLevel</a> { <a class="el" href="#a79eb295adf6d58748538b4c064fedeb9a1fbb1e3943c2c6c560247ac8f9289780">Simple</a> = 16
@@ -168,9 +171,19 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="ab37b6205838476a6d1b48cfa0440cacda2ce7a92ae43763828ac4acb4560c2a5b" name="ab37b6205838476a6d1b48cfa0440cacda2ce7a92ae43763828ac4acb4560c2a5b"></a>BigEndian&#160;</td><td class="fielddoc"><p>Most significant byte first. </p>
 </td></tr>
 </table>
-
-<p class="definition">Definition at line <a class="el" href="../../d3/d81/_conversion_8cs_source.html#l00027">27</a> of file <a class="el" href="../../d3/d81/_conversion_8cs_source.html">Conversion.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   29</span>                       {</div>
+<div class="line"><span class="lineno">   33</span>        <a class="code hl_enumvalue" href="#ab37b6205838476a6d1b48cfa0440cacda3c0ba6b22b526d7fd50c3026435a8c02">LittleEndian</a>,</div>
+<div class="line"><span class="lineno">   34</span></div>
+<div class="line"><span class="lineno">   38</span>        <a class="code hl_enumvalue" href="#ab37b6205838476a6d1b48cfa0440cacda2ce7a92ae43763828ac4acb4560c2a5b">BigEndian</a>,</div>
+<div class="line"><span class="lineno">   39</span></div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_enumvalue" href="#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a></div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+<div class="ttc" id="anamespace_system_ex_html_a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a"><div class="ttname"><a href="#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">SystemEx.FlexSpanMode.System</a></div><div class="ttdeci">@ System</div><div class="ttdoc">forward indexing</div><div class="ttdef"><b>Definition</b> FlexSpan.cs:32</div></div>
+<div class="ttc" id="anamespace_system_ex_html_ab37b6205838476a6d1b48cfa0440cacda2ce7a92ae43763828ac4acb4560c2a5b"><div class="ttname"><a href="#ab37b6205838476a6d1b48cfa0440cacda2ce7a92ae43763828ac4acb4560c2a5b">SystemEx.Endian.BigEndian</a></div><div class="ttdeci">@ BigEndian</div><div class="ttdoc">Most significant byte first.</div><div class="ttdef"><b>Definition</b> Conversion.cs:38</div></div>
+<div class="ttc" id="anamespace_system_ex_html_ab37b6205838476a6d1b48cfa0440cacda3c0ba6b22b526d7fd50c3026435a8c02"><div class="ttname"><a href="#ab37b6205838476a6d1b48cfa0440cacda3c0ba6b22b526d7fd50c3026435a8c02">SystemEx.Endian.LittleEndian</a></div><div class="ttdeci">@ LittleEndian</div><div class="ttdoc">Least significant byte first.</div><div class="ttdef"><b>Definition</b> Conversion.cs:33</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3ef7d5832058e44f73e558fde87598f9" name="a3ef7d5832058e44f73e558fde87598f9"></a>
@@ -194,9 +207,14 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a" name="a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a"></a>System&#160;</td><td class="fielddoc"><p>forward indexing </p>
 </td></tr>
 </table>
-
-<p class="definition">Definition at line <a class="el" href="../../d4/df6/_flex_span_8cs_source.html#l00026">26</a> of file <a class="el" href="../../d4/df6/_flex_span_8cs_source.html">FlexSpan.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   26</span>                             {</div>
+<div class="line"><span class="lineno">   28</span>        <a class="code hl_enumvalue" href="#a3ef7d5832058e44f73e558fde87598f9ad4db177c94738b72bf9ce61e988ab1f1">Ring</a>,</div>
+<div class="line"><span class="lineno">   30</span>        <a class="code hl_enumvalue" href="#a3ef7d5832058e44f73e558fde87598f9a67f115c1fddc4ce1aeb1c754001585bc">Reverse</a>,</div>
+<div class="line"><span class="lineno">   32</span>        <a class="code hl_enumvalue" href="#a3ef7d5832058e44f73e558fde87598f9aa45da96d0bf6575970f2d27af22be28a">System</a></div>
+<div class="line"><span class="lineno">   33</span>    }</div>
+<div class="ttc" id="anamespace_system_ex_html_a3ef7d5832058e44f73e558fde87598f9a67f115c1fddc4ce1aeb1c754001585bc"><div class="ttname"><a href="#a3ef7d5832058e44f73e558fde87598f9a67f115c1fddc4ce1aeb1c754001585bc">SystemEx.FlexSpanMode.Reverse</a></div><div class="ttdeci">@ Reverse</div><div class="ttdoc">reverse indexing</div><div class="ttdef"><b>Definition</b> FlexSpan.cs:30</div></div>
+<div class="ttc" id="anamespace_system_ex_html_a3ef7d5832058e44f73e558fde87598f9ad4db177c94738b72bf9ce61e988ab1f1"><div class="ttname"><a href="#a3ef7d5832058e44f73e558fde87598f9ad4db177c94738b72bf9ce61e988ab1f1">SystemEx.FlexSpanMode.Ring</a></div><div class="ttdeci">@ Ring</div><div class="ttdoc">circular indexing (wrap-around)</div><div class="ttdef"><b>Definition</b> FlexSpan.cs:28</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a79eb295adf6d58748538b4c064fedeb9" name="a79eb295adf6d58748538b4c064fedeb9"></a>
@@ -218,9 +236,14 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a79eb295adf6d58748538b4c064fedeb9ac43e0fd449c758dab8f891d8e19eb1a9" name="a79eb295adf6d58748538b4c064fedeb9ac43e0fd449c758dab8f891d8e19eb1a9"></a>Strong&#160;</td><td class="fielddoc"><p>Generates a 32‑character password using the extended strong character set. </p>
 </td></tr>
 </table>
-
-<p class="definition">Definition at line <a class="el" href="../../df/dbe/_random_8cs_source.html#l00026">26</a> of file <a class="el" href="../../df/dbe/_random_8cs_source.html">Random.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   26</span>                                  {</div>
+<div class="line"><span class="lineno">   30</span>        <a class="code hl_enumvalue" href="#a79eb295adf6d58748538b4c064fedeb9a1fbb1e3943c2c6c560247ac8f9289780">Simple</a> = 16,</div>
+<div class="line"><span class="lineno">   31</span></div>
+<div class="line"><span class="lineno">   35</span>        <a class="code hl_enumvalue" href="#a79eb295adf6d58748538b4c064fedeb9ac43e0fd449c758dab8f891d8e19eb1a9">Strong</a> = 32,</div>
+<div class="line"><span class="lineno">   36</span>    }</div>
+<div class="ttc" id="anamespace_system_ex_html_a79eb295adf6d58748538b4c064fedeb9a1fbb1e3943c2c6c560247ac8f9289780"><div class="ttname"><a href="#a79eb295adf6d58748538b4c064fedeb9a1fbb1e3943c2c6c560247ac8f9289780">SystemEx.RandPasswordLevel.Simple</a></div><div class="ttdeci">@ Simple</div><div class="ttdoc">Generates a 16‑character password using the basic character set.</div><div class="ttdef"><b>Definition</b> Random.cs:30</div></div>
+<div class="ttc" id="anamespace_system_ex_html_a79eb295adf6d58748538b4c064fedeb9ac43e0fd449c758dab8f891d8e19eb1a9"><div class="ttname"><a href="#a79eb295adf6d58748538b4c064fedeb9ac43e0fd449c758dab8f891d8e19eb1a9">SystemEx.RandPasswordLevel.Strong</a></div><div class="ttdeci">@ Strong</div><div class="ttdoc">Generates a 32‑character password using the extended strong character set.</div><div class="ttdef"><b>Definition</b> Random.cs:35</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa60c11b2d2d4ff5084ed2276d3e06697" name="aa60c11b2d2d4ff5084ed2276d3e06697"></a>
@@ -236,9 +259,12 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Represents a three-valued logic type with True, False, and Nin (neither true nor false) states. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d6/dd1/_base_2_triple_8cs_source.html#l00023">23</a> of file <a class="el" href="../../d6/dd1/_base_2_triple_8cs_source.html">Base/Triple.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   23</span>                       : sbyte {</div>
+<div class="line"><span class="lineno">   24</span>        True = 1,</div>
+<div class="line"><span class="lineno">   25</span>        False = 0,</div>
+<div class="line"><span class="lineno">   26</span>        Nin = -1</div>
+<div class="line"><span class="lineno">   27</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

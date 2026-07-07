@@ -107,6 +107,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('de/d3e/class_s
 
 <p>Provides a simple interface for generating random numbers using the ISAAC algorithm.  
  <a href="#details">More...</a></p>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Random.Randx:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../da/d5b/class_system_ex_1_1_random_1_1_randx__coll__graph.svg" width="178" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -135,8 +141,6 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides a simple interface for generating random numbers using the ISAAC algorithm. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d57/_randx_8cs_source.html#l00025">25</a> of file <a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a85a9f54c47abf35d50af4a75ec83ed01" name="a85a9f54c47abf35d50af4a75ec83ed01"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a85a9f54c47abf35d50af4a75ec83ed01">&#9670;&#160;</a></span>Randx()</h2>
@@ -171,9 +175,10 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d57/_randx_8cs_source.html#l00033">33</a> of file <a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   33</span>                                                                  {</div>
+<div class="line"><span class="lineno">   34</span>            _core = <span class="keyword">new</span> Isaac32Engine(seedA, seedB, seedC);</div>
+<div class="line"><span class="lineno">   35</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -205,12 +210,14 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The next random number.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d57/_randx_8cs_source.html#l00074">74</a> of file <a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a>.</p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">   74</span>                                                {</div>
+<div class="line"><span class="lineno">   75</span>            uint r = Next32();</div>
+<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">return</span> min + (r % (max - min));</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
+</div><!-- fragment --><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_a8c01b974a01a5cabb005c3445887ed6e_cgraph.svg" width="492" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -244,12 +251,14 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The next random number.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d57/_randx_8cs_source.html#l00084">84</a> of file <a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a>.</p>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">   84</span>                                                   {</div>
+<div class="line"><span class="lineno">   85</span>            ulong r = Next64();</div>
+<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">return</span> min + (r % (max - min));</div>
+<div class="line"><span class="lineno">   87</span>        }</div>
+</div><!-- fragment --><div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_a1c335033aaf8d821b6be01e25da6f112_cgraph.svg" width="492" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -272,13 +281,14 @@ Public Member Functions</h2></td></tr>
 
 <p>Generates the next random 32-bit number in the sequence. </p>
 <dl class="section return"><dt>Returns</dt><dd>The next random 32-bit number.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d57/_randx_8cs_source.html#l00040">40</a> of file <a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                              {</div>
+<div class="line"><span class="lineno">   41</span>            <span class="keywordflow">return</span> _core.Next();</div>
+<div class="line"><span class="lineno">   42</span>        }</div>
+</div><!-- fragment --><div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_a1b06d757245a3ff8faeb862f4ef2173c_icgraph.svg" width="778" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_a1b06d757245a3ff8faeb862f4ef2173c_icgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -300,12 +310,16 @@ Public Member Functions</h2></td></tr>
 
 <p>Generates the next random 64-bit number in the sequence. </p>
 <dl class="section return"><dt>Returns</dt><dd>The next random 64-bit number.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d57/_randx_8cs_source.html#l00047">47</a> of file <a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a>.</p>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">   47</span>                               {</div>
+<div class="line"><span class="lineno">   48</span>            <span class="comment">// Zwei ISAAC‑Werte kombinieren → stabil, deterministisch</span></div>
+<div class="line"><span class="lineno">   49</span>            ulong hi = _core.Next();</div>
+<div class="line"><span class="lineno">   50</span>            ulong lo = _core.Next();</div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">return</span> (hi &lt;&lt; 32) | lo;</div>
+<div class="line"><span class="lineno">   52</span>        }</div>
+</div><!-- fragment --><div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_ac9d3d26547161329fc75ffd89ab8a605_icgraph.svg" width="492" height="104"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -328,12 +342,13 @@ Public Member Functions</h2></td></tr>
 
 <p>Generates the next random byte in the sequence. </p>
 <dl class="section return"><dt>Returns</dt><dd>The next random byte.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d57/_randx_8cs_source.html#l00057">57</a> of file <a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">   57</span>                                {</div>
+<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">return</span> (<span class="keywordtype">byte</span>)(_core.Next() &amp; 0xFF);</div>
+<div class="line"><span class="lineno">   59</span>        }</div>
+</div><!-- fragment --><div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_aea482f31fa68260532c6a98aa01b18c2_icgraph.svg" width="504" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -361,12 +376,14 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d57/_randx_8cs_source.html#l00064">64</a> of file <a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a>.</p>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                                                {</div>
+<div class="line"><span class="lineno">   65</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; buffer.Length ; i++ )</div>
+<div class="line"><span class="lineno">   66</span>                buffer[i] = NextByte();</div>
+<div class="line"><span class="lineno">   67</span>        }</div>
+</div><!-- fragment --><div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_a3dc390487348000c9fb6311e6c11d8dd_cgraph.svg" width="504" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -389,18 +406,19 @@ Public Member Functions</h2></td></tr>
 
 <p>Generates the next random character in the sequence. </p>
 <dl class="section return"><dt>Returns</dt><dd>The next random character.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d57/_randx_8cs_source.html#l00092">92</a> of file <a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a>.</p>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_a00923e9e8cd74b79ff0bbfda16960d88_cgraph.svg" width="520" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>                                {</div>
+<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">return</span> (<span class="keywordtype">char</span>)(Next32() &amp; 0xFF);</div>
+<div class="line"><span class="lineno">   94</span>        }</div>
+</div><!-- fragment --><div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_a00923e9e8cd74b79ff0bbfda16960d88_cgraph.svg" width="520" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_a00923e9e8cd74b79ff0bbfda16960d88_icgraph.svg" width="506" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -423,12 +441,13 @@ Public Member Functions</h2></td></tr>
 
 <p>Generates the next random hash seed in the sequence. </p>
 <dl class="section return"><dt>Returns</dt><dd>The next random hash seed.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d57/_randx_8cs_source.html#l00110">110</a> of file <a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a>.</p>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  110</span>                                      {</div>
+<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">return</span> Next32();</div>
+<div class="line"><span class="lineno">  112</span>        }</div>
+</div><!-- fragment --><div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_a91821f9d461a13ff67ac134f0cfbcbff_cgraph.svg" width="492" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -451,12 +470,13 @@ Public Member Functions</h2></td></tr>
 
 <p>Generates the next random hash seed in the sequence. </p>
 <dl class="section return"><dt>Returns</dt><dd>The next random hash seed.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d57/_randx_8cs_source.html#l00117">117</a> of file <a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a>.</p>
-<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  117</span>                                       {</div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">return</span> Next64();</div>
+<div class="line"><span class="lineno">  119</span>        }</div>
+</div><!-- fragment --><div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_a832420c1b96a7b002966ff8c58495b49_cgraph.svg" width="492" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -485,19 +505,23 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The next random string.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d57/_randx_8cs_source.html#l00100">100</a> of file <a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a>.</p>
-<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<div class="fragment"><div class="line"><span class="lineno">  100</span>                                                {</div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordtype">char</span>[] c = <span class="keyword">new</span> <span class="keywordtype">char</span>[length];</div>
+<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; length ; i++ )</div>
+<div class="line"><span class="lineno">  103</span>                c[i] = NextChar();</div>
+<div class="line"><span class="lineno">  104</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> string(c);</div>
+<div class="line"><span class="lineno">  105</span>        }</div>
+</div><!-- fragment --><div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_ab2dc39096af767da2daa7d40b1674bb2_cgraph.svg" width="778" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3e/class_system_ex_1_1_random_1_1_randx_ab2dc39096af767da2daa7d40b1674bb2_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d9/d57/_randx_8cs_source.html">Randx.cs</a></li>
+<li><b>Randx.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

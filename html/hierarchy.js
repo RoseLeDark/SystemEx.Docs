@@ -3,6 +3,7 @@ var hierarchy =
     [ "Attribute", null, [
       [ "SystemEx.Hash.HashAlgorithmAttribute", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html", null ]
     ] ],
+    [ "SystemEx.Numeric.AxisAngle&lt; TV, T &gt;", "d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g.html", null ],
     [ "SystemEx.Collections.Generic.BasicRope&lt; T, TN &gt;", "dc/d79/class_system_ex_1_1_collections_1_1_generic_1_1_basic_rope-2-g.html", null ],
     [ "SystemEx.Collections.Generic.BinQueue&lt; T &gt;", "df/d60/class_system_ex_1_1_collections_1_1_generic_1_1_bin_queue-1-g.html", null ],
     [ "SystemEx.IO.Provider.ByteSeriablizeProvider", "d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html", [
@@ -21,9 +22,7 @@ var hierarchy =
     [ "SystemEx.FlexSpan&lt; T &gt;", "db/d28/struct_system_ex_1_1_flex_span-1-g.html", null ],
     [ "SystemEx.Hash.Hash32", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html", null ],
     [ "SystemEx.Hash.Hash64", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html", null ],
-    [ "SystemEx.Hash.Hashable", "db/ddb/class_system_ex_1_1_hash_1_1_hashable.html", [
-      [ "Examples.SensorData", "db/dfb/class_examples_1_1_sensor_data.html", null ]
-    ] ],
+    [ "SystemEx.Hash.Hashable", "db/ddb/class_system_ex_1_1_hash_1_1_hashable.html", null ],
     [ "SystemEx.Collections.Generic.Interfaces.IArray&lt; T &gt;", "d8/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_array-1-g.html", [
       [ "SystemEx.Collections.Generic.Interfaces.IDynamicArray< T >", "d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html", [
         [ "SystemEx.Collections.Generic.Array< T >", "d3/d43/class_system_ex_1_1_collections_1_1_generic_1_1_array-1-g.html", [
@@ -87,7 +86,47 @@ var hierarchy =
       [ "SystemEx.Drawing.ColorR8G8B8", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html", null ]
     ] ],
     [ "IComparable", null, [
-      [ "SystemEx.Drawing.ColorHSV", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html", null ]
+      [ "SystemEx.Numeric.Half16", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html", null ],
+      [ "SystemEx.Numeric.Quatd", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd.html", null ],
+      [ "SystemEx.Numeric.Quatf", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf.html", null ],
+      [ "SystemEx.Numeric.Vec2d", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d.html", null ],
+      [ "SystemEx.Numeric.Vec2f", "db/d53/struct_system_ex_1_1_numeric_1_1_vec2f.html", null ],
+      [ "SystemEx.Numeric.Vec2i", "d6/d44/struct_system_ex_1_1_numeric_1_1_vec2i.html", null ],
+      [ "SystemEx.Numeric.Vec3d", "d6/d8f/struct_system_ex_1_1_numeric_1_1_vec3d.html", null ],
+      [ "SystemEx.Numeric.Vec3f", "d9/d57/struct_system_ex_1_1_numeric_1_1_vec3f.html", null ],
+      [ "SystemEx.Numeric.Vec3i", "de/d57/struct_system_ex_1_1_numeric_1_1_vec3i.html", null ],
+      [ "SystemEx.Numeric.Vec4d", "db/d4b/struct_system_ex_1_1_numeric_1_1_vec4d.html", null ],
+      [ "SystemEx.Numeric.Vec4f", "da/dc8/struct_system_ex_1_1_numeric_1_1_vec4f.html", null ],
+      [ "SystemEx.Numeric.Vec4i", "d7/d35/struct_system_ex_1_1_numeric_1_1_vec4i.html", null ]
+    ] ],
+    [ "IComparable", null, [
+      [ "SystemEx.Drawing.ColorHSV", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html", null ],
+      [ "SystemEx.Numeric.Half16", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html", null ],
+      [ "SystemEx.Numeric.Quatd", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd.html", null ],
+      [ "SystemEx.Numeric.Quatf", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf.html", null ],
+      [ "SystemEx.Numeric.Vec2d", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d.html", null ],
+      [ "SystemEx.Numeric.Vec2f", "db/d53/struct_system_ex_1_1_numeric_1_1_vec2f.html", null ],
+      [ "SystemEx.Numeric.Vec2i", "d6/d44/struct_system_ex_1_1_numeric_1_1_vec2i.html", null ],
+      [ "SystemEx.Numeric.Vec3d", "d6/d8f/struct_system_ex_1_1_numeric_1_1_vec3d.html", null ],
+      [ "SystemEx.Numeric.Vec3f", "d9/d57/struct_system_ex_1_1_numeric_1_1_vec3f.html", null ],
+      [ "SystemEx.Numeric.Vec3i", "de/d57/struct_system_ex_1_1_numeric_1_1_vec3i.html", null ],
+      [ "SystemEx.Numeric.Vec4d", "db/d4b/struct_system_ex_1_1_numeric_1_1_vec4d.html", null ],
+      [ "SystemEx.Numeric.Vec4f", "da/dc8/struct_system_ex_1_1_numeric_1_1_vec4f.html", null ],
+      [ "SystemEx.Numeric.Vec4i", "d7/d35/struct_system_ex_1_1_numeric_1_1_vec4i.html", null ]
+    ] ],
+    [ "SystemEx.IComparableEx&lt; T &gt;", "dc/d20/interface_system_ex_1_1_i_comparable_ex-1-g.html", [
+      [ "SystemEx.Numeric.Half16", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html", null ],
+      [ "SystemEx.Numeric.Quatd", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd.html", null ],
+      [ "SystemEx.Numeric.Quatf", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf.html", null ],
+      [ "SystemEx.Numeric.Vec2d", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d.html", null ],
+      [ "SystemEx.Numeric.Vec2f", "db/d53/struct_system_ex_1_1_numeric_1_1_vec2f.html", null ],
+      [ "SystemEx.Numeric.Vec2i", "d6/d44/struct_system_ex_1_1_numeric_1_1_vec2i.html", null ],
+      [ "SystemEx.Numeric.Vec3d", "d6/d8f/struct_system_ex_1_1_numeric_1_1_vec3d.html", null ],
+      [ "SystemEx.Numeric.Vec3f", "d9/d57/struct_system_ex_1_1_numeric_1_1_vec3f.html", null ],
+      [ "SystemEx.Numeric.Vec3i", "de/d57/struct_system_ex_1_1_numeric_1_1_vec3i.html", null ],
+      [ "SystemEx.Numeric.Vec4d", "db/d4b/struct_system_ex_1_1_numeric_1_1_vec4d.html", null ],
+      [ "SystemEx.Numeric.Vec4f", "da/dc8/struct_system_ex_1_1_numeric_1_1_vec4f.html", null ],
+      [ "SystemEx.Numeric.Vec4i", "d7/d35/struct_system_ex_1_1_numeric_1_1_vec4i.html", null ]
     ] ],
     [ "SystemEx.Collections.Generic.Interfaces.ICompared&lt; in T &gt;", "d7/dcd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_compared-1-g.html", null ],
     [ "SystemEx.Device.Intertropt.IDeviceSharedBackend", "d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html", [
@@ -164,6 +203,18 @@ var hierarchy =
       [ "SystemEx.Drawing.ColorXYZ", "d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z.html", null ],
       [ "SystemEx.Drawing.ColorYUV", "d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html", null ],
       [ "SystemEx.NumberRange< T >", "dc/d8a/class_system_ex_1_1_number_range-1-g.html", null ],
+      [ "SystemEx.Numeric.Half16", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html", null ],
+      [ "SystemEx.Numeric.Quatd", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd.html", null ],
+      [ "SystemEx.Numeric.Quatf", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf.html", null ],
+      [ "SystemEx.Numeric.Vec2d", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d.html", null ],
+      [ "SystemEx.Numeric.Vec2f", "db/d53/struct_system_ex_1_1_numeric_1_1_vec2f.html", null ],
+      [ "SystemEx.Numeric.Vec2i", "d6/d44/struct_system_ex_1_1_numeric_1_1_vec2i.html", null ],
+      [ "SystemEx.Numeric.Vec3d", "d6/d8f/struct_system_ex_1_1_numeric_1_1_vec3d.html", null ],
+      [ "SystemEx.Numeric.Vec3f", "d9/d57/struct_system_ex_1_1_numeric_1_1_vec3f.html", null ],
+      [ "SystemEx.Numeric.Vec3i", "de/d57/struct_system_ex_1_1_numeric_1_1_vec3i.html", null ],
+      [ "SystemEx.Numeric.Vec4d", "db/d4b/struct_system_ex_1_1_numeric_1_1_vec4d.html", null ],
+      [ "SystemEx.Numeric.Vec4f", "da/dc8/struct_system_ex_1_1_numeric_1_1_vec4f.html", null ],
+      [ "SystemEx.Numeric.Vec4i", "d7/d35/struct_system_ex_1_1_numeric_1_1_vec4i.html", null ],
       [ "SystemEx.Triple", "d7/d4e/struct_system_ex_1_1_triple.html", null ]
     ] ],
     [ "IEquatable", null, [
@@ -172,14 +223,33 @@ var hierarchy =
     [ "IForwardIterator", null, [
       [ "SystemEx.Collections.Generic.Interfaces.IPairForwardIterator< T, TU >", "d1/d9c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair_forward_iterator-2-g.html", null ]
     ] ],
+    [ "SystemEx.Numeric.IHalf&lt; T &gt;", "dd/d4c/interface_system_ex_1_1_numeric_1_1_i_half-1-g.html", [
+      [ "SystemEx.Numeric.Half16", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html", null ]
+    ] ],
     [ "SystemEx.Hash.IHash", "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html", [
       [ "SystemEx.Hash.AdlerHash", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash.html", null ],
       [ "SystemEx.Hash.BernsteinHash", "dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash.html", null ],
+      [ "SystemEx.Hash.Black3Hasher", "dc/de7/class_system_ex_1_1_hash_1_1_black3_hasher.html", null ],
       [ "SystemEx.Hash.FletcherHash", "d4/dee/class_system_ex_1_1_hash_1_1_fletcher_hash.html", null ],
       [ "SystemEx.Hash.Fnv1aHash", "db/d29/class_system_ex_1_1_hash_1_1_fnv1a_hash.html", null ],
       [ "SystemEx.Hash.GrøstlHash", "da/d7b/class_system_ex_1_1_hash_1_1_grøtl_hash.html", null ],
       [ "SystemEx.Hash.RamakrishnaHash", "d4/d6f/class_system_ex_1_1_hash_1_1_ramakrishna_hash.html", null ],
       [ "SystemEx.Hash.WeinbergHash", "d7/d67/class_system_ex_1_1_hash_1_1_weinberg_hash.html", null ]
+    ] ],
+    [ "SystemEx.Hash.IHashable&lt; T &gt;", "db/db8/interface_system_ex_1_1_hash_1_1_i_hashable-1-g.html", [
+      [ "Examples.SensorData", "df/df3/struct_examples_1_1_sensor_data.html", null ],
+      [ "SystemEx.Numeric.Half16", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html", null ],
+      [ "SystemEx.Numeric.Quatd", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd.html", null ],
+      [ "SystemEx.Numeric.Quatf", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf.html", null ],
+      [ "SystemEx.Numeric.Vec2d", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d.html", null ],
+      [ "SystemEx.Numeric.Vec2f", "db/d53/struct_system_ex_1_1_numeric_1_1_vec2f.html", null ],
+      [ "SystemEx.Numeric.Vec2i", "d6/d44/struct_system_ex_1_1_numeric_1_1_vec2i.html", null ],
+      [ "SystemEx.Numeric.Vec3d", "d6/d8f/struct_system_ex_1_1_numeric_1_1_vec3d.html", null ],
+      [ "SystemEx.Numeric.Vec3f", "d9/d57/struct_system_ex_1_1_numeric_1_1_vec3f.html", null ],
+      [ "SystemEx.Numeric.Vec3i", "de/d57/struct_system_ex_1_1_numeric_1_1_vec3i.html", null ],
+      [ "SystemEx.Numeric.Vec4d", "db/d4b/struct_system_ex_1_1_numeric_1_1_vec4d.html", null ],
+      [ "SystemEx.Numeric.Vec4f", "da/dc8/struct_system_ex_1_1_numeric_1_1_vec4f.html", null ],
+      [ "SystemEx.Numeric.Vec4i", "d7/d35/struct_system_ex_1_1_numeric_1_1_vec4i.html", null ]
     ] ],
     [ "SystemEx.IO.Provider.IIsByteSeriablize", "d1/d94/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_is_byte_seriablize.html", [
       [ "SystemEx.Drawing.ColorR10G10B10A2", "d4/dc0/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2.html", null ]

@@ -6,5 +6,6 @@ var topics =
     [ "Color", "d1/d60/group__color.html", "d1/d60/group__color" ],
     [ "Examples", "d7/dfd/group___examples.html", "d7/dfd/group___examples" ],
     [ "Hash", "d7/d3b/group__hash.html", "d7/d3b/group__hash" ],
+    [ "Numeric", "df/dd0/group___numeric.html", "df/dd0/group___numeric" ],
     [ "Runtime", "da/d89/group___runtime.html", "da/d89/group___runtime" ]
 ];
