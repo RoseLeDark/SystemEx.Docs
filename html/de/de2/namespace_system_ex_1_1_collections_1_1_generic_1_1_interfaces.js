@@ -4,6 +4,7 @@ var namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces =
     [ "IBidirectionalIterator&lt; T &gt;", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g" ],
     [ "ICache", "d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html", "d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache" ],
     [ "ICompared&lt; in T &gt;", "d7/dcd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_compared-1-g.html", "d7/dcd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_compared-1-g" ],
+    [ "IContainerEx&lt; T &gt;", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g" ],
     [ "IDynamicArray&lt; T &gt;", "d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html", "d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g" ],
     [ "IForeachIterator&lt; T &gt;", "d2/db2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_foreach_iterator-1-g.html", null ],
     [ "IForwardIterator&lt; T &gt;", "d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g.html", "d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g" ],
@@ -28,7 +29,6 @@ var namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces =
       [ "Forwards", "d5/d4f/group__interfaces.html#gga9ffe9236ff7d52fbeb93204341959319a1e411b48c18c85a91ad46b53ebb24d6a", null ],
       [ "Backwards", "d5/d4f/group__interfaces.html#gga9ffe9236ff7d52fbeb93204341959319a9d1104e419414f4c268be7211fb8fc4a", null ]
     ] ],
-    [ "SortFunc< T, TU >", "de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#ae2adeaf7f2e733dfce357a80b27d5bac", null ],
-    [ "SortObjectFunc< T >", "de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#a0be94400295baf8873f7101503135e61", null ],
-    [ "SortTupleFunc", "de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html#adb5f200840bf1bdef594d6aaab2acb41", null ]
+    [ "SortObjectFunc< T >", "d5/d4f/group__interfaces.html#ga0be94400295baf8873f7101503135e61", null ],
+    [ "SortTupleFunc", "d5/d4f/group__interfaces.html#gadb5f200840bf1bdef594d6aaab2acb41", null ]
 ];

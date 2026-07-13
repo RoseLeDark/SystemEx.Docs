@@ -3,22 +3,27 @@ var hierarchy =
     [ "Attribute", null, [
       [ "SystemEx.Hash.HashAlgorithmAttribute", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html", null ]
     ] ],
-    [ "SystemEx.Numeric.AxisAngle&lt; TV, T &gt;", "d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g.html", null ],
+    [ "SystemEx.Numeric.AxisAngle&lt; TV, T &gt;", "df/dd0/group___numeric.html#d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g", null ],
     [ "SystemEx.Collections.Generic.BasicRope&lt; T, TN &gt;", "dc/d79/class_system_ex_1_1_collections_1_1_generic_1_1_basic_rope-2-g.html", null ],
     [ "SystemEx.Collections.Generic.BinQueue&lt; T &gt;", "df/d60/class_system_ex_1_1_collections_1_1_generic_1_1_bin_queue-1-g.html", null ],
+    [ "SystemEx.Buffer", "de/d71/class_system_ex_1_1_buffer.html", null ],
     [ "SystemEx.IO.Provider.ByteSeriablizeProvider", "d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html", [
       [ "SystemEx.Drawing.ColorR10G10B10Serializer", "d9/d81/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer.html", null ]
     ] ],
     [ "SystemEx.Drawing.ColorCMY", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html", null ],
     [ "SystemEx.Drawing.ColorGray", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray.html", null ],
+    [ "SystemEx.Collections.Generic.ContainerFlexSpan&lt; T, TContainer &gt;", "dc/d84/struct_system_ex_1_1_collections_1_1_generic_1_1_container_flex_span-2-g.html", null ],
     [ "SystemEx.Collections.Generic.Deque&lt; T &gt;", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html", null ],
     [ "SystemEx.Device.Memory.DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;", "dd/d13/class_system_ex_1_1_device_1_1_memory_1_1_device_shared_buffer-1-g.html", null ],
-    [ "SystemEx.FlexSpan&lt; T &gt;.Enumerator", "de/d4d/struct_system_ex_1_1_flex_span-1-g_1_1_enumerator.html", null ],
+    [ "SystemEx.Numeric.DQuatf", "d3/d71/struct_system_ex_1_1_numeric_1_1_d_quatf.html", null ],
+    [ "SystemEx.Collections.Generic.ContainerFlexSpan&lt; T, TContainer &gt;.Enumerator", "dc/d84/struct_system_ex_1_1_collections_1_1_generic_1_1_container_flex_span-2-g.html#d9/df8/struct_system_ex_1_1_collections_1_1_generic_1_1_container_flex_span-2-g_1_1_enumerator", null ],
+    [ "SystemEx.FlexSpan&lt; T &gt;.Enumerator", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#de/d4d/struct_system_ex_1_1_flex_span-1-g_1_1_enumerator", null ],
     [ "Exception", null, [
       [ "SystemEx.Collections.Generic.CacheIsSharedException", "d7/de5/class_system_ex_1_1_collections_1_1_generic_1_1_cache_is_shared_exception.html", null ],
       [ "SystemEx.Utils.MissingStructLayoutSequentialException", "da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception.html", null ],
       [ "SystemEx.Utils.SizeMismatchException", "d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception.html", null ]
     ] ],
+    [ "SystemEx.Collections.Generic.Find&lt; T, TContainer &gt;", "d0/d9f/struct_system_ex_1_1_collections_1_1_generic_1_1_find-2-g.html", null ],
     [ "SystemEx.FlexSpan&lt; T &gt;", "db/d28/struct_system_ex_1_1_flex_span-1-g.html", null ],
     [ "SystemEx.Hash.Hash32", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html", null ],
     [ "SystemEx.Hash.Hash64", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html", null ],
@@ -129,6 +134,10 @@ var hierarchy =
       [ "SystemEx.Numeric.Vec4i", "d7/d35/struct_system_ex_1_1_numeric_1_1_vec4i.html", null ]
     ] ],
     [ "SystemEx.Collections.Generic.Interfaces.ICompared&lt; in T &gt;", "d7/dcd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_compared-1-g.html", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.IContainerEx&lt; T &gt;", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html", [
+      [ "SystemEx.Collections.Generic.FixedVector< T >", "da/d79/struct_system_ex_1_1_collections_1_1_generic_1_1_fixed_vector-1-g.html", null ],
+      [ "SystemEx.Collections.Generic.Vector< T >", "d4/de6/struct_system_ex_1_1_collections_1_1_generic_1_1_vector-1-g.html", null ]
+    ] ],
     [ "SystemEx.Device.Intertropt.IDeviceSharedBackend", "d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html", [
       [ "SystemEx.Device.Intertropt.RamSharedBackend", "d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html", null ]
     ] ],
@@ -218,6 +227,12 @@ var hierarchy =
       [ "SystemEx.Triple", "d7/d4e/struct_system_ex_1_1_triple.html", null ]
     ] ],
     [ "IEquatable", null, [
+      [ "SystemEx.Collections.Generic.MultiSet< T, TContainer >", "d3/dc9/struct_system_ex_1_1_collections_1_1_generic_1_1_multi_set-2-g.html", null ],
+      [ "SystemEx.Collections.Generic.Set< T, TContainer >", "de/d05/struct_system_ex_1_1_collections_1_1_generic_1_1_set-2-g.html", null ],
+      [ "SystemEx.Collections.Generic.UnorderedMultiSet< T, TContainer >", "d7/d40/struct_system_ex_1_1_collections_1_1_generic_1_1_unordered_multi_set-2-g.html", null ],
+      [ "SystemEx.Collections.Generic.UnorderedSet< T, TContainer >", "d9/d04/struct_system_ex_1_1_collections_1_1_generic_1_1_unordered_set-2-g.html", null ]
+    ] ],
+    [ "IEquatable", null, [
       [ "SystemEx.Collections.Generic.Triple< TT, TU, TW >", "d3/def/struct_system_ex_1_1_collections_1_1_generic_1_1_triple-3-g.html", null ]
     ] ],
     [ "IForwardIterator", null, [
@@ -273,7 +288,7 @@ var hierarchy =
     ] ],
     [ "SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;", "d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html", [
       [ "SystemEx.Device.NativeRAMKernel< TD >", "d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html", [
-        [ "Examples.ExampleRamKernelAdd", "de/d89/class_examples_1_1_example_ram_kernel_add.html", null ]
+        [ "KernelRamExamples.ExampleRamKernelAdd", "de/d1a/class_kernel_ram_examples_1_1_example_ram_kernel_add.html", null ]
       ] ]
     ] ],
     [ "SystemEx.Collections.Generic.Interfaces.IMap", "dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html", [
@@ -295,6 +310,14 @@ var hierarchy =
       [ "SystemEx.Collections.Generic.Interfaces.IReadOnlyMap< T, TU >", "d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html", null ]
     ] ],
     [ "SystemEx.Random.Isaac32Engine", "df/d91/class_system_ex_1_1_random_1_1_isaac32_engine.html", null ],
+    [ "SystemEx.Algorythmen.ISimpleCompare&lt; T &gt;", "d3/dec/interface_system_ex_1_1_algorythmen_1_1_i_simple_compare-1-g.html", [
+      [ "SystemEx.Algorythmen.EqualTo< T >", "dc/dd8/class_system_ex_1_1_algorythmen_1_1_equal_to-1-g.html", null ],
+      [ "SystemEx.Algorythmen.Greater< T >", "d3/d3e/class_system_ex_1_1_algorythmen_1_1_greater-1-g.html", null ],
+      [ "SystemEx.Algorythmen.GreaterEqual< T >", "d3/dba/class_system_ex_1_1_algorythmen_1_1_greater_equal-1-g.html", null ],
+      [ "SystemEx.Algorythmen.Less< T >", "dd/dd8/class_system_ex_1_1_algorythmen_1_1_less-1-g.html", null ],
+      [ "SystemEx.Algorythmen.LessEqual< T >", "d2/da3/class_system_ex_1_1_algorythmen_1_1_less_equal-1-g.html", null ],
+      [ "SystemEx.Algorythmen.NotEqualTo< T >", "da/d49/class_system_ex_1_1_algorythmen_1_1_not_equal_to-1-g.html", null ]
+    ] ],
     [ "ITraverse", null, [
       [ "SystemEx.Collections.Generic.Map< T, TU >", "db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html", null ]
     ] ],
@@ -312,8 +335,13 @@ var hierarchy =
     [ "SystemEx.Collections.Generic.Interfaces.ITypeBuffer&lt; T &gt;", "d7/d94/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_type_buffer-1-g.html", [
       [ "SystemEx.Collections.Generic.TypeBuffer< T >", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html", null ]
     ] ],
+    [ "SystemEx.Drawing.Light", "d9/dbb/class_system_ex_1_1_drawing_1_1_light.html", [
+      [ "SystemEx.Drawing.PointLight", "d2/d82/class_system_ex_1_1_drawing_1_1_point_light.html", null ],
+      [ "SystemEx.Drawing.SpotLight", "d9/da7/class_system_ex_1_1_drawing_1_1_spot_light.html", null ]
+    ] ],
     [ "SystemEx.Runtime.Module", "d4/ddf/class_system_ex_1_1_runtime_1_1_module.html", null ],
     [ "SystemEx.Collections.Generic.PriorityQueueEx&lt; T, TU &gt;", "d9/d8c/class_system_ex_1_1_collections_1_1_generic_1_1_priority_queue_ex-2-g.html", null ],
+    [ "SystemEx.Numeric.Projection", "d4/d82/struct_system_ex_1_1_numeric_1_1_projection.html", null ],
     [ "SystemEx.Drawing.PurpelColors", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html", null ],
     [ "SystemEx.Collections.Generic.Queue&lt; T &gt;", "da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html", null ],
     [ "SystemEx.Random.Randx", "de/d3e/class_system_ex_1_1_random_1_1_randx.html", null ],

@@ -1,5 +1,6 @@
 var namespace_system_ex =
 [
+    [ "Algorythmen", "d5/d81/namespace_system_ex_1_1_algorythmen.html", "d5/d81/namespace_system_ex_1_1_algorythmen" ],
     [ "Base", "da/d5b/namespace_system_ex_1_1_base.html", "da/d5b/namespace_system_ex_1_1_base" ],
     [ "Collections", "d8/d51/namespace_system_ex_1_1_collections.html", "d8/d51/namespace_system_ex_1_1_collections" ],
     [ "Device", "d7/d59/namespace_system_ex_1_1_device.html", "d7/d59/namespace_system_ex_1_1_device" ],
@@ -10,6 +11,7 @@ var namespace_system_ex =
     [ "Random", "de/d2f/namespace_system_ex_1_1_random.html", "de/d2f/namespace_system_ex_1_1_random" ],
     [ "Runtime", "d4/d8e/namespace_system_ex_1_1_runtime.html", "d4/d8e/namespace_system_ex_1_1_runtime" ],
     [ "Utils", "d2/d14/namespace_system_ex_1_1_utils.html", "d2/d14/namespace_system_ex_1_1_utils" ],
+    [ "Buffer", "de/d71/class_system_ex_1_1_buffer.html", null ],
     [ "FlexSpan&lt; T &gt;", "db/d28/struct_system_ex_1_1_flex_span-1-g.html", "db/d28/struct_system_ex_1_1_flex_span-1-g" ],
     [ "IComparableEx&lt; T &gt;", "dc/d20/interface_system_ex_1_1_i_comparable_ex-1-g.html", "dc/d20/interface_system_ex_1_1_i_comparable_ex-1-g" ],
     [ "IRange&lt; T &gt;", "df/d28/interface_system_ex_1_1_i_range-1-g.html", "df/d28/interface_system_ex_1_1_i_range-1-g" ],

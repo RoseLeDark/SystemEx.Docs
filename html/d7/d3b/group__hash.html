@@ -122,17 +122,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 64‑bit hash value produced by a <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing algorithm.  <a href="../../da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html#details">More...</a><br /></td></tr>
 <tr class="memitem:SystemEx_2EHash_2EIHash" id="r_SystemEx_2EHash_2EIHash"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html">SystemEx.Hash.IHash</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing algorithms.  <a href="../../dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html#details">More...</a><br /></td></tr>
-<tr class="memitem:SystemEx_2EHash_2EMurmur3Hash" id="r_SystemEx_2EHash_2EMurmur3Hash"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Hash.Murmur3Hash</b></td></tr>
 <tr class="memitem:SystemEx_2EHash_2ERamakrishnaHash" id="r_SystemEx_2EHash_2ERamakrishnaHash"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d4/d6f/class_system_ex_1_1_hash_1_1_ramakrishna_hash.html">SystemEx.Hash.RamakrishnaHash</a></td></tr>
 <tr class="memitem:SystemEx_2EHash_2EWeinbergHash" id="r_SystemEx_2EHash_2EWeinbergHash"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d7/d67/class_system_ex_1_1_hash_1_1_weinberg_hash.html">SystemEx.Hash.WeinbergHash</a></td></tr>
-<tr class="memitem:SystemEx_2EHash_2EXXHash3Hasher" id="r_SystemEx_2EHash_2EXXHash3Hasher"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Hash.XXHash3Hasher</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements the Adler hash algorithm. </p>
-<p>Implements the XXHash3 hash algorithm.</p>
 <p>Implements the Weinberg hash algorithm.</p>
 <p>Implements the Ramakrishna hash algorithm.</p>
-<p>Implements the Murmur3 hashing algorithm (32‑bit and 64‑bit).</p>
 <p>Represents a 32‑bit hash value produced by a <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing algorithm.</p>
 <p>Declares which hashing algorithm a <code><a class="el" href="../../db/ddb/class_system_ex_1_1_hash_1_1_hashable.html">Hashable</a></code> type should use.</p>
 <p><a class="el" href="../../da/d5b/namespace_system_ex_1_1_base.html">Base</a> class for objects that can be hashed using the <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing subsystem.</p>
@@ -173,7 +169,6 @@ Embedded or isolated verification modules </li>
 <p>The attribute binds a concrete hasher implementation (IHash) to a class or struct and specifies the byte‑order (Endian) used when interpreting the binary representation returned by Hashable.ToBytes.</p>
 <p>The <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing subsystem reads this attribute at runtime to instantiate the correct hasher and compute 32‑bit or 64‑bit hashes.</p>
 <p>The struct is immutable and stores the raw 32‑bit result exactly as returned by the underlying hasher. No normalization or reinterpretation is performed.</p>
-<p>Both <code>Compute</code> (32‑bit) and <code>ComputeLong</code> (64‑bit) operate on Array&lt;byte&gt; and support endian‑aware block construction.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

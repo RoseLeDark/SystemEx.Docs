@@ -190,9 +190,9 @@ Manual</h2>
 <h2 class="doxsection"><a class="anchor" id="core-types"></a>
 Core Types</h2>
 <ul>
-<li><span class="tt">Array&lt;T&gt;</span> <br  />
+<li><span class="tt">Vector&lt;T&gt;</span> <br  />
 </li>
-<li><span class="tt">FixedArray&lt;T&gt;</span> <br  />
+<li><span class="tt">FixedVector&lt;T&gt;</span> <br  />
 </li>
 <li><span class="tt">Deque&lt;T&gt;</span> <br  />
 </li>
@@ -202,6 +202,10 @@ Core Types</h2>
 </li>
 <li><span class="tt">BinQueue&lt;T&gt;</span> <br  />
 </li>
+<li><span class="tt">Set&lt;T&gt;</span></li>
+<li><span class="tt">MultiSet&lt;T&gt;</span></li>
+<li><span class="tt">UnorderedMultiSet&lt;T&gt;</span></li>
+<li><span class="tt">UnorderedSet&lt;T&gt;</span> </li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="map-system"></a>
 Map System</h2>
@@ -224,7 +228,7 @@ Tuple &amp; Pair Types</h2>
 <li><span class="tt">Pair&lt;T1, T2&gt;</span> : <span class="tt">ITuple</span></li>
 <li><span class="tt">Triple&lt;T1, T2, T3&gt;</span> : <span class="tt">ITuple</span></li>
 <li><span class="tt">Quad&lt;T1, T2, T3, T4&gt;</span> : <span class="tt">ITuple</span></li>
-<li><span class="tt">Tuple&lt;T1, T2&gt;</span> : <span class="tt">ITuple</span></li>
+<li><span class="tt">Tuple</span> : <span class="tt">ITuple</span></li>
 <li><span class="tt">TupleList&lt;T&gt;</span> where T : <span class="tt">ITuple</span></li>
 </ul>
 <hr  />
@@ -233,13 +237,9 @@ Tuple &amp; Pair Types</h2>
 <ul>
 <li><span class="tt">Cache</span> <br  />
 </li>
-<li><span class="tt">CacheRaid</span> <br  />
+<li><span class="tt">CacheMirrored</span> <br  />
 </li>
-<li><span class="tt">CacheRaidMirror</span> <br  />
-</li>
-<li><span class="tt">CacheRaidStripe</span> <br  />
-</li>
-<li><span class="tt">CacheRaid4</span> <br  />
+<li><span class="tt">CacheStripped</span> <br  />
 </li>
 </ul>
 <p>These provide deterministic, fixed‑size memory layouts suitable for:</p>
@@ -273,55 +273,98 @@ Tuple &amp; Pair Types</h2>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md-project-structure"></a>
 📁 Project Structure</h1>
 <div class="fragment"><div class="line">SystemEx/</div>
-<div class="line"> ├─ Device/</div>
+<div class="line"> ├─ Device/ [ namespace SystemEx.Device ]</div>
 <div class="line"> │    ├─ IKernel.cs</div>
 <div class="line"> │    ├─ RamKernel.cs</div>
-<div class="line"> │    ├─ Interop/</div>
+<div class="line"> │    ├─ Interop/ [ namespace SystemEx.Device.Interop ]</div>
 <div class="line"> │    │   ├─ IDeviceSharedBackend.cs</div>
 <div class="line"> │    │   ├─ RamKernelLoader.cs</div>
 <div class="line"> │    │   └─ RamSharedBackend.cs</div>
 <div class="line"> │    └─ Memory/</div>
 <div class="line"> │         ├─ DeviceBuffer.cs</div>
 <div class="line"> │         └─ DeviceSharedBuffer.cs</div>
+<div class="line"> ├─ Base [ namespace SystemEx ]</div>
+<div class="line"> │    ├─ Buffer.cs</div>
+<div class="line"> │    ├─ FlexSpan.cs</div>
+<div class="line"> │    ├─ IComparableEx.cs</div>
+<div class="line"> │    ├─ IRange.cs</div>
+<div class="line"> │    ├─ Math.cs</div>
+<div class="line"> │    ├─ NumberRange.cs</div>
+<div class="line"> │    ├─ NumberRangeIterrator.cs</div>
+<div class="line"> │    ├─ NumberRangeStepper.cs</div>
+<div class="line"> │    └─Triple.cs</div>
 <div class="line"> ├─ Collections/</div>
-<div class="line"> │    └─ Generic/</div>
-<div class="line"> │         ├─ Array.cs</div>
+<div class="line"> │    └─ Generic/ [ namespace SystemEx.Collections.Generic ]</div>
+<div class="line"> │         ├─ Vector.cs</div>
 <div class="line"> │         ├─ BinQueue.cs</div>
 <div class="line"> │         ├─ Cache.cs</div>
+<div class="line"> │         ├─ Cluster.cs</div>
+<div class="line"> |         ├─ ContainerFlexSpan.cs</div>
 <div class="line"> │         ├─ Deque.cs</div>
-<div class="line"> │         ├─ FixedArray.cs</div>
+<div class="line"> │         ├─ Find.cs</div>
+<div class="line"> │         ├─ FixedVector.cs</div>
 <div class="line"> │         ├─ FixedMap.cs</div>
 <div class="line"> │         ├─ GroupNode.cs</div>
-<div class="line"> │         ├─ IArray.cs</div>
-<div class="line"> │         ├─ IMap.cs</div>
-<div class="line"> │         ├─ INode.cs</div>
-<div class="line"> │         ├─ IPair.cs</div>
-<div class="line"> │         ├─ ISortedMap.cs</div>
-<div class="line"> │         ├─ IteratorList.cs</div>
-<div class="line"> │         ├─ Iterator.cs</div>
-<div class="line"> │         ├─ ITraverse.cs</div>
-<div class="line"> │         ├─ ITuple.cs</div>
 <div class="line"> │         ├─ Map.cs</div>
+<div class="line"> │         ├─ MirroredCache.cs</div>
 <div class="line"> │         ├─ MultiMap.cs</div>
+<div class="line"> │         ├─ MultiSet.cs</div>
+<div class="line"> │         ├─ MultiTupleMap.cs</div>
 <div class="line"> │         ├─ Node.cs</div>
 <div class="line"> │         ├─ NodeChain.cs</div>
 <div class="line"> │         ├─ NodeRange.cs</div>
 <div class="line"> │         ├─ NodeSlice.cs</div>
 <div class="line"> │         ├─ Pair.cs</div>
+<div class="line"> │         ├─ PriorityQueue.cs</div>
 <div class="line"> │         ├─ Quad.cs</div>
 <div class="line"> │         ├─ Queue.cs</div>
+<div class="line"> │         ├─ Set.cs</div>
 <div class="line"> │         ├─ SortedMap.cs</div>
+<div class="line"> │         ├─ SortedMultiMap.cs</div>
+<div class="line"> │         ├─ SortedMultiTupleMap.cs</div>
+<div class="line"> │         ├─ SortedTupleList.cs</div>
+<div class="line"> │         ├─ SortedTupleMap.cs</div>
 <div class="line"> │         ├─ Stack.cs</div>
 <div class="line"> │         ├─ StarNode.cs</div>
+<div class="line"> │         ├─ StrippedCache.cs</div>
 <div class="line"> │         ├─ Triple.cs</div>
 <div class="line"> │         ├─ Tuple.cs</div>
+<div class="line"> │         ├─ TupleMap.cs</div>
+<div class="line"> │         ├─ TypeBuffer.cs</div>
 <div class="line"> │         └─ TupleList.cs</div>
-<div class="line"> ├─ Utils/</div>
-<div class="line"> │    ├─ BitUtils.cs</div>
-<div class="line"> │    ├─ Layout.cs</div>
-<div class="line"> │    ├─ Utils.cs</div>
-<div class="line"> │    ├─ Random.cs</div>
-<div class="line"> │    └─ standart.cs</div>
+<div class="line"> ├─ Drawing/ [ namespace SystemEx.Drawing ]</div>
+<div class="line"> |        ├─ Canvas.cs</div>
+<div class="line"> |        ├─ ColorHDR.cs</div>
+<div class="line"> |        ├─ ColorHSV.cs</div>
+<div class="line"> |        ├─ ColorR8G8B8.cs</div>
+<div class="line"> |        ├─ ColorR10G10B10.cs</div>
+<div class="line"> |        ├─ ColorR16G16B16.cs</div>
+<div class="line"> |        ├─ ... CMY, NCol, XYZ, YUV</div>
+<div class="line"> |        ├─ Light.cs</div>
+<div class="line"> |        └─ Colors.cs</div>
+<div class="line"> ├─ IO/ [ namespace SystemEx.IO ]</div>
+<div class="line"> |        ├─ CachStream.cs</div>
+<div class="line"> |        └─ WriteStream.cs</div>
+<div class="line"> ├─ Random/ [ namespace SystemEx.Random ]</div>
+<div class="line"> |        ├─ Isaac32Engine.cs</div>
+<div class="line"> |        └─ Randx.cs</div>
+<div class="line"> ├─ Numeric/ [ namespace SystemEx.Numeric ]</div>
+<div class="line"> |        ├─ vec{2,3,4]f.cs</div>
+<div class="line"> |        ├─ vec{2,3,4]d.cs</div>
+<div class="line"> |        ├─ vec{2,3,4]i.cs</div>
+<div class="line"> |        ├─ quadf.cs</div>
+<div class="line"> |        ├─ quadd.cs</div>
+<div class="line"> |        ├─ m44f.cs</div>
+<div class="line"> |        ├─ m44d.cs</div>
+<div class="line"> |        ├─ DQuadv.cs</div>
+<div class="line"> |        ├─ AxisAngle.cs</div>
+<div class="line"> |        └─ Projection.cs</div>
+<div class="line"> ├─ Utils/ [ namespace SystemEx.Utils ]</div>
+<div class="line"> │        ├─ Algorithm.cs</div>
+<div class="line"> │        ├─ BitUtils.cs</div>
+<div class="line"> │      ├─ Conversion.cs</div>
+<div class="line"> │      ├─ Layout.cs</div>
+<div class="line"> │      └─ Random.cs</div>
 <div class="line"> ├─ LICENSE.md</div>
 <div class="line"> ├─ CHANGELOG.md</div>
 <div class="line"> ├─ RoseLeDark.Collections.Missings.png</div>

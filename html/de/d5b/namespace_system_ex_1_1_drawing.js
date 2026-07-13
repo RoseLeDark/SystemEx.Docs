@@ -18,7 +18,10 @@ var namespace_system_ex_1_1_drawing =
     [ "ICanvasList&lt; T &gt;", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.html", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g" ],
     [ "IColor&lt; T &gt;", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g" ],
     [ "ISubCanvas&lt; T &gt;", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g" ],
+    [ "Light", "d9/dbb/class_system_ex_1_1_drawing_1_1_light.html", "d9/dbb/class_system_ex_1_1_drawing_1_1_light" ],
+    [ "PointLight", "d2/d82/class_system_ex_1_1_drawing_1_1_point_light.html", "d2/d82/class_system_ex_1_1_drawing_1_1_point_light" ],
     [ "PurpelColors", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html", null ],
+    [ "SpotLight", "d9/da7/class_system_ex_1_1_drawing_1_1_spot_light.html", "d9/da7/class_system_ex_1_1_drawing_1_1_spot_light" ],
     [ "BlendMode", "d1/d60/group__color.html#gaf2ec8d122c6ae6f77f9d5b8d55e37cb2", [
       [ "Add", "d1/d60/group__color.html#ggaf2ec8d122c6ae6f77f9d5b8d55e37cb2aec211f7c20af43e742bf2570c3cb84f9", null ],
       [ "Subtract", "d1/d60/group__color.html#ggaf2ec8d122c6ae6f77f9d5b8d55e37cb2a1d9baf077ee87921f57a8fe42d510b65", null ],

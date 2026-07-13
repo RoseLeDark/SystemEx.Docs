@@ -112,18 +112,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('db/db8/interfa
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d4/d2c/interface_system_ex_1_1_hash_1_1_i_hashable-1-g__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Hash.IHashable&lt; T &gt;:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d4/d43/interface_system_ex_1_1_hash_1_1_i_hashable-1-g__coll__graph.svg" width="212" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a11e4b64062d7c37be330b9f39295a777" id="r_a11e4b64062d7c37be330b9f39295a777"><td class="memItemLeft">Array&lt; byte &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a11e4b64062d7c37be330b9f39295a777">ToBytes</a> ()</td></tr>
-<tr class="memdesc:a11e4b64062d7c37be330b9f39295a777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance into a deterministic byte array. The returned data is used as input for hashing algorithms.  <br /></td></tr>
+<tr class="memitem:a8fb21dffeeea89fddd6e1e70e62402b7" id="r_a8fb21dffeeea89fddd6e1e70e62402b7"><td class="memItemLeft">FixedVector&lt; byte &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8fb21dffeeea89fddd6e1e70e62402b7">ToBytes</a> ()</td></tr>
+<tr class="memdesc:a8fb21dffeeea89fddd6e1e70e62402b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance into a deterministic byte array. The returned data is used as input for hashing algorithms.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines a contract for objects that can be converted into a raw byte representation suitable for hashing, serialization, or low‑level processing. </p>
@@ -131,15 +125,15 @@ Public Member Functions</h2></td></tr>
 <p><b>Example:</b><br  />
  A type implementing both <code>IHashable&lt;T&gt;</code> and a hash attribute: </p>
 <div class="fragment"><div class="line">[HashAlgorithm(typeof(Bernstein))]</div>
-<div class="line"><span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class </span>Foo : IHashable&amp;lt;Foo&amp;gt;</div>
+<div class="line"><span class="keyword">public</span> <span class="keyword">class </span>Foo : IHashable&amp;lt;Foo&amp;gt;</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">public</span> Array&amp;lt;<span class="keywordtype">byte</span>&amp;gt; <a class="code hl_function" href="#a11e4b64062d7c37be330b9f39295a777">ToBytes</a>()</div>
+<div class="line">    <span class="keyword">public</span> FixedVector&amp;lt;<span class="keywordtype">byte</span>&amp;gt; <a class="code hl_function" href="#a8fb21dffeeea89fddd6e1e70e62402b7">ToBytes</a>()</div>
 <div class="line">    {</div>
 <div class="line">        <span class="comment">// Convert internal fields into a deterministic byte array.</span></div>
-<div class="line">        <span class="keywordflow">return</span> <span class="keyword">new</span> Array&amp;lt;<span class="keywordtype">byte</span>&amp;gt;( ... );</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">new</span> FixedVector&amp;lt;<span class="keywordtype">byte</span>&amp;gt;( ... );</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="ainterface_system_ex_1_1_hash_1_1_i_hashable-1-g_html_a11e4b64062d7c37be330b9f39295a777"><div class="ttname"><a href="#a11e4b64062d7c37be330b9f39295a777">SystemEx.Hash.IHashable-1-g.ToBytes</a></div><div class="ttdeci">Array&lt; byte &gt; ToBytes()</div><div class="ttdoc">Converts this instance into a deterministic byte array. The returned data is used as input for hashin...</div></div>
+<div class="ttc" id="ainterface_system_ex_1_1_hash_1_1_i_hashable-1-g_html_a8fb21dffeeea89fddd6e1e70e62402b7"><div class="ttname"><a href="#a8fb21dffeeea89fddd6e1e70e62402b7">SystemEx.Hash.IHashable-1-g.ToBytes</a></div><div class="ttdeci">FixedVector&lt; byte &gt; ToBytes()</div><div class="ttdoc">Converts this instance into a deterministic byte array. The returned data is used as input for hashin...</div></div>
 </div><!-- fragment --><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>The type that provides its own byte representation. </td></tr>
@@ -147,14 +141,14 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a11e4b64062d7c37be330b9f39295a777" name="a11e4b64062d7c37be330b9f39295a777"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11e4b64062d7c37be330b9f39295a777">&#9670;&#160;</a></span>ToBytes()</h2>
+<a id="a8fb21dffeeea89fddd6e1e70e62402b7" name="a8fb21dffeeea89fddd6e1e70e62402b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fb21dffeeea89fddd6e1e70e62402b7">&#9670;&#160;</a></span>ToBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Array&lt; byte &gt; SystemEx.Hash.IHashable&lt; T &gt;.ToBytes </td>
+          <td class="memname">FixedVector&lt; byte &gt; SystemEx.Hash.IHashable&lt; T &gt;.ToBytes </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -164,7 +158,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Converts this instance into a deterministic byte array. The returned data is used as input for hashing algorithms. </p>
 
-<p>Implemented in <a class="el" href="../../df/df3/struct_examples_1_1_sensor_data.html#a42c654168e2f5144fd6bf38df28c6e0b">Examples.SensorData</a>, <a class="el" href="../../d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html#abc85f5d4e3bbae52e5fcae6dd6f18525">SystemEx.Numeric.Half16</a>, <a class="el" href="../../d0/d88/struct_system_ex_1_1_numeric_1_1_quatd.html#a24c6270bb4c3cf7f15ebc1de96408a27">SystemEx.Numeric.Quatd</a>, <a class="el" href="../../d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf.html#af4c7b6969f2b54e4ae72f8659dc38caa">SystemEx.Numeric.Quatf</a>, <a class="el" href="../../dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d.html#a6305f8ae823955ad05f0a9a40839abf1">SystemEx.Numeric.Vec2d</a>, <a class="el" href="../../db/d53/struct_system_ex_1_1_numeric_1_1_vec2f.html#a64a4ac6c41c1068cf156aa8aa4a0d715">SystemEx.Numeric.Vec2f</a>, <a class="el" href="../../d6/d44/struct_system_ex_1_1_numeric_1_1_vec2i.html#a342ea2901e47d71fab4a2b5ec3524f18">SystemEx.Numeric.Vec2i</a>, <a class="el" href="../../d6/d8f/struct_system_ex_1_1_numeric_1_1_vec3d.html#a4d708c19ca6f916002902180aef83717">SystemEx.Numeric.Vec3d</a>, <a class="el" href="../../d9/d57/struct_system_ex_1_1_numeric_1_1_vec3f.html#a86a3681f1e4aa5bd8983dbbbd4af3bd8">SystemEx.Numeric.Vec3f</a>, <a class="el" href="../../de/d57/struct_system_ex_1_1_numeric_1_1_vec3i.html#a2dcc9d011b458286de44b7e8f2103d9d">SystemEx.Numeric.Vec3i</a>, <a class="el" href="../../db/d4b/struct_system_ex_1_1_numeric_1_1_vec4d.html#a98dc0b85295cfe01126fbcf4ddc8c729">SystemEx.Numeric.Vec4d</a>, <a class="el" href="../../da/dc8/struct_system_ex_1_1_numeric_1_1_vec4f.html#a0e9cb3df2db8b50514482985ceab04e9">SystemEx.Numeric.Vec4f</a>, and <a class="el" href="../../d7/d35/struct_system_ex_1_1_numeric_1_1_vec4i.html#a0654b5209231b9b6b7bea9ddf37cea03">SystemEx.Numeric.Vec4i</a>.</p>
+<p>Implemented in <a class="el" href="../../df/df3/struct_examples_1_1_sensor_data.html#aeac9cbc6c811cae203cdac59ca189e33">Examples.SensorData</a>, <a class="el" href="../../d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html#a55f71e64fe8bed4d882c49361663d0d3">SystemEx.Numeric.Half16</a>, <a class="el" href="../../d0/d88/struct_system_ex_1_1_numeric_1_1_quatd.html#a2679859c2bf61726d549a9af68642e02">SystemEx.Numeric.Quatd</a>, <a class="el" href="../../d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf.html#a07f5a548e2c93af6274b3443b31d0507">SystemEx.Numeric.Quatf</a>, <a class="el" href="../../dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d.html#a7a5aacf3351d5fcb8e0a81b41c81643f">SystemEx.Numeric.Vec2d</a>, <a class="el" href="../../db/d53/struct_system_ex_1_1_numeric_1_1_vec2f.html#ac1e6e37ea440d0fb42c688c088ab79d9">SystemEx.Numeric.Vec2f</a>, <a class="el" href="../../d6/d44/struct_system_ex_1_1_numeric_1_1_vec2i.html#a2966811cbc6510d534d48ed53e29e5da">SystemEx.Numeric.Vec2i</a>, <a class="el" href="../../d6/d8f/struct_system_ex_1_1_numeric_1_1_vec3d.html#aa3f16e69cb96078b8c4e7455af1cd70a">SystemEx.Numeric.Vec3d</a>, <a class="el" href="../../d9/d57/struct_system_ex_1_1_numeric_1_1_vec3f.html#a2c8cd41aeff4554108aec50e9c013f17">SystemEx.Numeric.Vec3f</a>, <a class="el" href="../../de/d57/struct_system_ex_1_1_numeric_1_1_vec3i.html#a10f6184e781c71f836ebd0c7e9845075">SystemEx.Numeric.Vec3i</a>, <a class="el" href="../../db/d4b/struct_system_ex_1_1_numeric_1_1_vec4d.html#a5cc4ff6a25c9fa5fd36ac48651e9b82e">SystemEx.Numeric.Vec4d</a>, <a class="el" href="../../da/dc8/struct_system_ex_1_1_numeric_1_1_vec4f.html#a7ed7afb73f9edbd85f55dc7d4b47e5c3">SystemEx.Numeric.Vec4f</a>, and <a class="el" href="../../d7/d35/struct_system_ex_1_1_numeric_1_1_vec4i.html#ae2436a0d2e9ad9bd02c1a4190a1c1755">SystemEx.Numeric.Vec4i</a>.</p>
 
 </div>
 </div>

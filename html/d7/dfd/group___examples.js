@@ -1,9 +1,9 @@
 var group___examples =
 [
     [ "ExampleRamKernelAdd.cs", "da/d57/_example_ram_kernel_add_8cs.html", null ],
-    [ "Examples.ExampleRamKernelAdd", "de/d89/class_examples_1_1_example_ram_kernel_add.html", [
-      [ "ExampleRamKernelAdd", "de/d89/class_examples_1_1_example_ram_kernel_add.html#a2c8db1797df22fdac732544d262dd33d", null ],
-      [ "OnCreate", "de/d89/class_examples_1_1_example_ram_kernel_add.html#a6256c48c3bb8a96497fed9b5d5528f1f", null ],
-      [ "OnRun", "de/d89/class_examples_1_1_example_ram_kernel_add.html#a0a6b78b7784078d5dc33f978aed2ce88", null ]
+    [ "KernelRamExamples.ExampleRamKernelAdd", "de/d1a/class_kernel_ram_examples_1_1_example_ram_kernel_add.html", [
+      [ "ExampleRamKernelAdd", "de/d1a/class_kernel_ram_examples_1_1_example_ram_kernel_add.html#aaeef946e287c7785c9db9d5159d916c5", null ],
+      [ "OnCreate", "de/d1a/class_kernel_ram_examples_1_1_example_ram_kernel_add.html#a4b1b9936665067a0e50ca2aa33ead675", null ],
+      [ "OnRun", "de/d1a/class_kernel_ram_examples_1_1_example_ram_kernel_add.html#a486fd773455f79bd4f6f71d76a21c039", null ]
     ] ]
 ];

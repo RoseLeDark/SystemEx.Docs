@@ -39,7 +39,7 @@ var group__model =
       [ "Clone", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html#ab2286eaa40f08f1396de66882ab95e97", null ],
       [ "End", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html#aa5928c4fc93084b95e790abef14aa0d8", null ],
       [ "Equals", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html#a9b16cc3dc2618934254eb933d74ffa0f", null ],
-      [ "Equals", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html#a044e7b1b51c43d799871a4917c2f5300", null ],
+      [ "Equals", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html#aa4500aff8876c19b4b3f4434eeb9b332", null ],
       [ "GenericNode", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html#ab45bec53e50cac149f7044b6741d39c9", null ],
       [ "GenericNode", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html#a1a90c4af1b5cec5b04336f4fe008377e", null ],
       [ "GenericNode", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html#a2e410ddb7f29b4963f95760502430845", null ],
@@ -48,16 +48,13 @@ var group__model =
       [ "Value", "d7/dab/class_system_ex_1_1_collections_1_1_model_1_1_generic_node-1-g.html#a6339a3a105d76553bf1f922f9dec2f08", null ]
     ] ],
     [ "SystemEx.Collections.Model.GroupedNode&lt; T &gt;", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html", [
-      [ "GroupAt", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html#a2085fc08056f852e0b546db86a2ca0ad", null ],
-      [ "GroupBegin", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html#a06f43b6fe6c5257b6a6281111921860c", null ],
       [ "GroupedNode", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html#a3a66d8b720f3a6e69cdb754349c00396", null ],
       [ "GroupedNode", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html#ad1b02d697720cbf0972ac56325777bc7", null ],
       [ "GroupedNode", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html#a34cd892564d4daa3c877e11e0f97a7cf", null ],
-      [ "GroupEnd", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html#a689c94a65ea0242394c854c891bb993d", null ],
       [ "PushBack", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html#af4c38cb55bd85d4bbdea9a6950f6e243", null ],
       [ "Back", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html#a54756f26be23e2e5d1ad118727c2d4c4", null ],
       [ "Front", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html#a571d5d36e7477b4616ec0f34542f9e45", null ],
-      [ "Size", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html#af8289fbbc70009b997e724981c9f9426", null ]
+      [ "Size", "d5/d0d/class_system_ex_1_1_collections_1_1_model_1_1_grouped_node-1-g.html#a50c7563e5456fef9878a9fa4075ddfd5", null ]
     ] ],
     [ "SystemEx.Collections.Model.LinkedNodeIterrator&lt; T &gt;", "dc/d3f/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_iterrator-1-g.html", [
       [ "Advance", "dc/d3f/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_iterrator-1-g.html#af29c505dc8fe129da804ad5ba32fff24", null ],

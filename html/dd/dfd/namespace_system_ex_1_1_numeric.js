@@ -1,9 +1,11 @@
 var namespace_system_ex_1_1_numeric =
 [
     [ "Utils", "d9/dfd/namespace_system_ex_1_1_numeric_1_1_utils.html", null ],
-    [ "AxisAngle&lt; TV, T &gt;", "d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g.html", "d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g" ],
+    [ "AxisAngle&lt; TV, T &gt;", "df/dd0/group___numeric.html#d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g", "df/dd0/group___numeric_d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g" ],
+    [ "DQuatf", "d3/d71/struct_system_ex_1_1_numeric_1_1_d_quatf.html", "d3/d71/struct_system_ex_1_1_numeric_1_1_d_quatf" ],
     [ "Half16", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16" ],
     [ "IHalf&lt; T &gt;", "dd/d4c/interface_system_ex_1_1_numeric_1_1_i_half-1-g.html", null ],
+    [ "Projection", "d4/d82/struct_system_ex_1_1_numeric_1_1_projection.html", null ],
     [ "Quatd", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd.html", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd" ],
     [ "Quatf", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf.html", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf" ],
     [ "Vec2d", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d.html", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d" ],

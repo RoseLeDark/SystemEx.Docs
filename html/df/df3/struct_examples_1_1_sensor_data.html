@@ -111,21 +111,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('df/df3/struct_
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d2/d6e/struct_examples_1_1_sensor_data__inherit__graph.svg" width="212" height="283"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d2/d6e/struct_examples_1_1_sensor_data__inherit__graph.svg" width="223" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for Examples.SensorData:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../da/d9b/struct_examples_1_1_sensor_data__coll__graph.svg" width="212" height="283"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../da/d9b/struct_examples_1_1_sensor_data__coll__graph.svg" width="223" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a209dc38f03fc588c4a793becb7a67619" id="r_a209dc38f03fc588c4a793becb7a67619"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a209dc38f03fc588c4a793becb7a67619">SensorData</a> ()</td></tr>
 <tr class="memdesc:a209dc38f03fc588c4a793becb7a67619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the struct with example values.  <br /></td></tr>
-<tr class="memitem:a42c654168e2f5144fd6bf38df28c6e0b" id="r_a42c654168e2f5144fd6bf38df28c6e0b"><td class="memItemLeft">Array&lt; byte &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a42c654168e2f5144fd6bf38df28c6e0b">ToBytes</a> ()</td></tr>
-<tr class="memdesc:a42c654168e2f5144fd6bf38df28c6e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this struct into a deterministic byte sequence.  <br /></td></tr>
+<tr class="memitem:aeac9cbc6c811cae203cdac59ca189e33" id="r_aeac9cbc6c811cae203cdac59ca189e33"><td class="memItemLeft">FixedVector&lt; byte &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aeac9cbc6c811cae203cdac59ca189e33">ToBytes</a> ()</td></tr>
+<tr class="memdesc:aeac9cbc6c811cae203cdac59ca189e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this struct into a deterministic byte sequence.  <br /></td></tr>
 <tr class="memitem:a19d32e8760199063c7093f667536daeb" id="r_a19d32e8760199063c7093f667536daeb"><td class="memItemLeft">override int&#160;</td><td class="memItemRight"><a class="el" href="#a19d32e8760199063c7093f667536daeb">GetHashCode</a> ()</td></tr>
 <tr class="memdesc:a19d32e8760199063c7093f667536daeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a 32‑bit hash for this struct.  <br /></td></tr>
 <tr class="memitem:aed19bf5037997094b3c9314a1dc7b54c" id="r_aed19bf5037997094b3c9314a1dc7b54c"><td class="memItemLeft">ulong&#160;</td><td class="memItemRight"><a class="el" href="#aed19bf5037997094b3c9314a1dc7b54c">GetHashCodeLong</a> ()</td></tr>
@@ -142,7 +142,7 @@ float&#160;</td><td class="memItemRight"><b>Value</b></td></tr>
 <div class="textblock"><p>Simple example showing how a struct can participate in the <a class="el" href="../../d0/d48/namespace_system_ex.html">SystemEx</a> hashing system using IHashable&lt;SensorData&gt;. </p>
 <p>This demonstrates:</p><ul>
 <li>How to attach a hash algorithm using the HashAlgorithm attribute</li>
-<li>How to provide a deterministic byte representation via <a class="el" href="#a42c654168e2f5144fd6bf38df28c6e0b" title="Converts this struct into a deterministic byte sequence.">ToBytes()</a></li>
+<li>How to provide a deterministic byte representation via <a class="el" href="#aeac9cbc6c811cae203cdac59ca189e33" title="Converts this struct into a deterministic byte sequence.">ToBytes()</a></li>
 <li>How HashFactory computes 32‑bit and 64‑bit hashes for structs </li>
 </ul>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -189,7 +189,7 @@ float&#160;</td><td class="memItemRight"><b>Value</b></td></tr>
 <p>How it works:</p><ol type="1">
 <li>HashFactory reads the HashAlgorithm attribute on this struct.</li>
 <li>It creates the specified hasher (<a class="el" href="../../dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash.html">BernsteinHash</a>).</li>
-<li>It calls <a class="el" href="#a42c654168e2f5144fd6bf38df28c6e0b" title="Converts this struct into a deterministic byte sequence.">ToBytes()</a> to get the raw data.</li>
+<li>It calls <a class="el" href="#aeac9cbc6c811cae203cdac59ca189e33" title="Converts this struct into a deterministic byte sequence.">ToBytes()</a> to get the raw data.</li>
 <li>It computes a 32‑bit hash using the given seed.</li>
 </ol>
 <p>If the hash result is non‑zero, it is returned. Otherwise, the fallback is the default .NET hash code. </p>
@@ -229,14 +229,14 @@ float&#160;</td><td class="memItemRight"><b>Value</b></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a42c654168e2f5144fd6bf38df28c6e0b" name="a42c654168e2f5144fd6bf38df28c6e0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42c654168e2f5144fd6bf38df28c6e0b">&#9670;&#160;</a></span>ToBytes()</h2>
+<a id="aeac9cbc6c811cae203cdac59ca189e33" name="aeac9cbc6c811cae203cdac59ca189e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac9cbc6c811cae203cdac59ca189e33">&#9670;&#160;</a></span>ToBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Array&lt; byte &gt; Examples.SensorData.ToBytes </td>
+          <td class="memname">FixedVector&lt; byte &gt; Examples.SensorData.ToBytes </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -252,19 +252,19 @@ float&#160;</td><td class="memItemRight"><b>Value</b></td></tr>
 </ul>
 <p>HashFactory will use these bytes as input for the selected hash algorithm. </p>
 
-<p>Implements <a class="el" href="../../db/db8/interface_system_ex_1_1_hash_1_1_i_hashable-1-g.html#a11e4b64062d7c37be330b9f39295a777">SystemEx.Hash.IHashable&lt; T &gt;</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>                                      {</div>
-<div class="line"><span class="lineno">  106</span>            var b = <span class="keyword">new</span> Array&lt;byte&gt;(8);</div>
+<p>Implements <a class="el" href="../../db/db8/interface_system_ex_1_1_hash_1_1_i_hashable-1-g.html#a8fb21dffeeea89fddd6e1e70e62402b7">SystemEx.Hash.IHashable&lt; T &gt;</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>                                            {</div>
+<div class="line"><span class="lineno">  106</span>            var b = <span class="keyword">new</span> FixedVector&lt;byte&gt;(8);</div>
 <div class="line"><span class="lineno">  107</span> </div>
 <div class="line"><span class="lineno">  108</span> </div>
 <div class="line"><span class="lineno">  109</span>            <span class="comment">// Convert the integer field into 4 bytes.</span></div>
 <div class="line"><span class="lineno">  110</span>            <span class="comment">// Endian.System means: use the machine&#39;s native endianness.</span></div>
-<div class="line"><span class="lineno">  111</span>            b.InsertRange(0, Id.ToBytes(<a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.System));</div>
+<div class="line"><span class="lineno">  111</span>            b.ReplaceRange(0, Id.ToBytes(<a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.System));</div>
 <div class="line"><span class="lineno">  112</span> </div>
 <div class="line"><span class="lineno">  113</span>            <span class="comment">// Convert the float field into 4 bytes.</span></div>
 <div class="line"><span class="lineno">  114</span>            <span class="comment">// Here we intentionally use BigEndian to show that each field</span></div>
 <div class="line"><span class="lineno">  115</span>            <span class="comment">// can choose its own byte order if needed.</span></div>
-<div class="line"><span class="lineno">  116</span>            b.InsertRange(4, Value.ToBytes(<a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian));</div>
+<div class="line"><span class="lineno">  116</span>            b.ReplaceRange(4, Value.ToBytes(<a class="code hl_enumeration" href="../../d0/d48/namespace_system_ex.html#ab37b6205838476a6d1b48cfa0440cacd">Endian</a>.BigEndian));</div>
 <div class="line"><span class="lineno">  117</span> </div>
 <div class="line"><span class="lineno">  118</span>            <span class="keywordflow">return</span> b;</div>
 <div class="line"><span class="lineno">  119</span>        }</div>

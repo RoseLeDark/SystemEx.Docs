@@ -27,10 +27,8 @@ var NAVTREE =
   [ "SystemEX", "index.html", [
     [ "📘 SystemEx.Collections.Generic", "index.html", "index" ],
     [ "Changelog", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html", [
-      [ "Planned to Version 1.0", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#planned-to-version-10", [
-        [ "Add", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#add", null ]
-      ] ],
-      [ "[0.51.xx] - 07.07.2026 -&gt; Lacking", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md051xx---07072026----lacking", [
+      [ "[0.55.05] - 13.07.2026 -&gt; Lacking", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md05505---13072026----lacking", [
+        [ "CAUTION Very Important", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#caution-very-important", null ],
         [ "Added", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#added", null ],
         [ "Changed", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#changed", null ],
         [ "Deprecated – Hashable (scheduled for removal in version 0.60)", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#deprecated--hashable-scheduled-for-removal-in-version-060", null ]
@@ -73,7 +71,7 @@ var NAVTREE =
       ] ],
       [ "[0.9.5] 18.06.2026", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md095-18062026", [
         [ "Very Important", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#very-important-1", null ],
-        [ "Add", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#add-1", null ],
+        [ "Add", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#add", null ],
         [ "Docu", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#docu", null ]
       ] ],
       [ "[0.8.5] 04.06.2026", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html#autotoc_md085-04062026", [
@@ -145,15 +143,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d1/d60/group__color.html#ga99d38ff996b52fb68a35298bd4e223a3",
-"d3/def/struct_system_ex_1_1_collections_1_1_generic_1_1_triple-3-g.html#a766f4fedc5a66f215c374a4c98e5d2d5",
-"d6/d44/struct_system_ex_1_1_numeric_1_1_vec2i.html#a48ccf5b8c21da7b95ace2f4c77f3b0d0",
-"d8/d15/class_system_ex_1_1_collections_1_1_model_1_1_linked_node_range-1-g.html#a0c581a9bc6bc8ea29c8813ec8754ef1d",
-"d9/d81/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer.html#a1c79d7217794bfd70e8da6b23a8dc268",
-"db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html#a52302a2b28b8276905c3e29dbf23c408",
-"dc/d8a/class_system_ex_1_1_number_range-1-g.html#ab187e932d6da5042613b57c957da0a7f",
-"de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html#a872c1fa49829af01288543cdaedfa92b",
-"df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html#aa73020d4e5585c206f49b1b06906785c"
+"d1/d60/group__color.html#ga9a65750a9f1a6f80f4d1d549d5acd165",
+"d3/d72/class_system_ex_1_1_collections_1_1_generic_1_1_multi_map-2-g.html#abd26dcd85f8aa9dda51471865859b758",
+"d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html",
+"d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html",
+"d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html#a0e7933d0fa54a85b03b630e06022d063",
+"d9/dbb/class_system_ex_1_1_drawing_1_1_light.html#a95ef223f59c8dadc1345d36fb8cc007f",
+"db/d4b/struct_system_ex_1_1_numeric_1_1_vec4d.html#a5cc4ff6a25c9fa5fd36ac48651e9b82e",
+"dc/d8a/class_system_ex_1_1_number_range-1-g.html#ab4d622f96d77102d1e3af79bbb10adbd",
+"de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html#aae29a0c84a487e1354a658943b22f63e",
+"df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html#a4c4a1de59895a1a05fcbe28e5234a46c"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

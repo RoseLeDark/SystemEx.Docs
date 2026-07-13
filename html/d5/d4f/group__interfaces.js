@@ -62,6 +62,30 @@ var group__interfaces =
     [ "SystemEx.Collections.Generic.Interfaces.ICompared&lt; in T &gt;", "d7/dcd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_compared-1-g.html", [
       [ "Compare", "d7/dcd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_compared-1-g.html#aa38ab1d11cd4b52d06597b7478eafd95", null ]
     ] ],
+    [ "SystemEx.Collections.Generic.Interfaces.IContainerEx&lt; T &gt;", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html", [
+      [ "Clear", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#ac06c9ce81df190d3f95486ec2b3c4fc2", null ],
+      [ "Duplicate", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a63aadb04753cae2b68b942a7f577841f", null ],
+      [ "ElementAt", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a4d2d45b533ca0daf5abc8cc7cb07d0b1", null ],
+      [ "Erase", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a99cdad0d47ba02daee2a62f6a0003e27", null ],
+      [ "Erase", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#af998b9ae60e6d29884cecf6ed0e2baf9", null ],
+      [ "Erase", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#aa79cf1db9f9f1613f5ecf08bcf3ab1fb", null ],
+      [ "GetElementType", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a077ad983ebabe401c44ec82fdd5862d9", null ],
+      [ "Grow", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a6c105abc4c49f8982c519e19545d2fb8", null ],
+      [ "Insert", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a038b894ba376fdbc31be7f9adbe3b389", null ],
+      [ "Insert", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a21ee6e6f4621d4e4c8bd82c5a483432d", null ],
+      [ "InsertRange", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#abd0cc20faf597965dc2cdcfcd2a70f6d", null ],
+      [ "PushBack", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a0d8ff75ff0bbff4b1d29c9d3652222d6", null ],
+      [ "Replace", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a55f72bbaad01688e96bde0f207aac429", null ],
+      [ "Replace", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a1e5fd85ff5780cb27bb1d53d06460f1a", null ],
+      [ "ReplaceRange", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a60e3dd74fb105686f3aa8861f48a12c1", null ],
+      [ "Swap", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#ab52c3afcc828f518b3f853fe4d88837b", null ],
+      [ "ToNative", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#af4fac2554362f1afdc6bd168441b5617", null ],
+      [ "Count", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a6f73e74d57cfe99b47e71aca1b2f8350", null ],
+      [ "Current", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a12170707334d2030131cf7d27bbd0c2a", null ],
+      [ "IsEmpty", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a2df6da961b7732dfa385fd5e2026d68a", null ],
+      [ "IsFull", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#af6ccf1ed1a92f9d0e79e0b2e9c3bf9f3", null ],
+      [ "Length", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html#a2c02659bb499cb61a0846fb622e1e74f", null ]
+    ] ],
     [ "SystemEx.Collections.Generic.Interfaces.IMap", "dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html", [
       [ "Clear", "dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#a1e303eb89bb86166bbc5edaba4e8239e", null ],
       [ "RemoveAt", "dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html#ac2df96f1ab1f5b30ef8da4ce5c8f0ecb", null ],
@@ -106,6 +130,27 @@ var group__interfaces =
       [ "First", "da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g.html#ab42dbc500ee02ed845ef3d2d70c86e25", null ],
       [ "Second", "da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g.html#a67ba820d2fb0a8b5ca32c3a81ee9f45a", null ]
     ] ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedArray&lt; T &gt;", "db/d28/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_array-1-g.html", [
+      [ "Sort", "d5/d4f/group__interfaces.html#gafe063e2f40d28d7e61c7f25045f858c2", null ],
+      [ "ToUnorderedArray", "d5/d4f/group__interfaces.html#ga9a8a6f7673743cf434081b595891659b", null ],
+      [ "AutoSort", "d5/d4f/group__interfaces.html#gad72465ef45754ca4d9d329eef3fbb3fc", null ],
+      [ "Comparer", "d5/d4f/group__interfaces.html#ga1f9c2280752d2c34bf0f3fefe93134d9", null ],
+      [ "SortFunctions", "d5/d4f/group__interfaces.html#gaa6567ccc1bef790e98f8befb2a7ed923", null ]
+    ] ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedMap&lt; T, TU &gt;", "d6/d5e/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_map-2-g.html", [
+      [ "Sort", "d5/d4f/group__interfaces.html#ga2a0377fb7f8b927806ef484f3b1f4182", null ],
+      [ "ToUnorderedMap", "d5/d4f/group__interfaces.html#ga7acebf12cc2c58d6d4d760acbd01e4f2", null ],
+      [ "AutoSort", "d5/d4f/group__interfaces.html#gaadcb2683781b3695fc24ca656a3f2fe7", null ],
+      [ "Comparer", "d5/d4f/group__interfaces.html#ga030a897e9a7a80fbe2c73a32d8869e4c", null ],
+      [ "SortFunctions", "d5/d4f/group__interfaces.html#ga0bf3e09b2725b0fd21277f6f1b3cb0d8", null ]
+    ] ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedTupleMap", "dc/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_sorted_tuple_map.html", [
+      [ "Sort", "d5/d4f/group__interfaces.html#ga3c185fd4516ec8bfd8ef6e4e8558e81f", null ],
+      [ "ToUnorderedMap", "d5/d4f/group__interfaces.html#ga0f7e3660808df6a40757ad04cee7427e", null ],
+      [ "AutoSort", "d5/d4f/group__interfaces.html#ga6ef1e6d24ecab243c1eca17e16533476", null ],
+      [ "Comparer", "d5/d4f/group__interfaces.html#ga9a0c6c2bc6e0f4e45abf02244d969daf", null ],
+      [ "SortFunctions", "d5/d4f/group__interfaces.html#gaae410b8f490b5d04463ea4214dbff0c3", null ]
+    ] ],
     [ "SystemEx.Collections.Generic.Interfaces.ListIterator&lt; T &gt;", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html", [
       [ "Advance", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#a6d1a9f1696f8cca04df25bf5211e9ed0", null ],
       [ "Back", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#af445dbdef037ce40a03869ed0db01170", null ],
@@ -125,6 +170,35 @@ var group__interfaces =
       [ "IsBegin", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#a731f43c37c325baddf571748a2c50aa0", null ],
       [ "IsEnd", "d0/dd3/class_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_list_iterator-1-g.html#a4dbe95056a6ccdfcff5d9dc717f68443", null ]
     ] ],
+    [ "SystemEx.Collections.Generic.Interfaces.IIterator", "de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html", [
+      [ "Forward", "de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html#aa11d9a6f8db368fe269a4f5d3df1cc83", null ],
+      [ "Forward", "de/dab/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator.html#a23a43b8112a222148d053a75032aa6af", null ]
+    ] ],
+    [ "SystemEx.Collections.Generic.Interfaces.IIterator&lt; T &gt;", "d0/d0c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator-1-g.html", [
+      [ "Clone", "d0/d0c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_iterator-1-g.html#a35202595f863c60825ba8035f8aadc08", null ]
+    ] ],
+    [ "SystemEx.Collections.Generic.Interfaces.IForwardIterator&lt; T &gt;", "d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g.html", [
+      [ "Current", "d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g.html#ab4d5111a7901614dbec88fbb0c1d4b67", null ],
+      [ "IsEnd", "d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g.html#ac190e668c4628c19050570e5ddd94fb6", null ]
+    ] ],
+    [ "SystemEx.Collections.Generic.Interfaces.IBidirectionalIterator&lt; T &gt;", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html", [
+      [ "Back", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html#a606a90cad5b02656d1e3db7fd773a5c2", null ],
+      [ "Current", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html#afddbc01a88d88eefe8d74d52543cb3f2", null ],
+      [ "IsBegin", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html#aa311e73c69976cf126308aa94923bb43", null ],
+      [ "IsEnd", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html#ade013be3d6d183fde1fc339d055e6e56", null ]
+    ] ],
+    [ "SystemEx.Collections.Generic.Interfaces.IRandomAccessIterator&lt; T &gt;", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html", [
+      [ "Advance", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#a2c2247892226f0710c4b975fec2e47b5", null ],
+      [ "Back", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#ab0531f16d2069a4f8f1026c5aea1c23b", null ],
+      [ "Current", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#aa06ada7e7cd00a5f8a5e12a92e2bf349", null ],
+      [ "IsBegin", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#a4d854749f8a872bfc5f63a761169bf36", null ],
+      [ "IsEnd", "d8/d85/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_random_access_iterator-1-g.html#a25c900695e6063bc2824389eb35f9a09", null ]
+    ] ],
+    [ "SystemEx.Collections.Generic.Interfaces.IPairForwardIterator&lt; T, TU &gt;", "d1/d9c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair_forward_iterator-2-g.html", [
+      [ "First", "d1/d9c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair_forward_iterator-2-g.html#a28e81253918f7ed4abbfe0ff239997b4", null ],
+      [ "Second", "d1/d9c/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair_forward_iterator-2-g.html#a654c14bf3e5c812a8dbe271b99cc4648", null ]
+    ] ],
+    [ "SystemEx.Collections.Generic.Interfaces.IForeachIterator&lt; T &gt;", "d2/db2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_foreach_iterator-1-g.html", null ],
     [ "SystemEx.Collections.Generic.Interfaces.ITraverse&lt; T &gt;", "d4/d02/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_traverse-1-g.html", [
       [ "Traverse", "d4/d02/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_traverse-1-g.html#a1ad4e30dbd5b0d87a497fa7ac6a3ad2a", null ]
     ] ],
@@ -154,5 +228,22 @@ var group__interfaces =
     [ "SystemEx.Collections.Generic.Interfaces.TraversMode", "d5/d4f/group__interfaces.html#ga9ffe9236ff7d52fbeb93204341959319", [
       [ "SystemEx.Collections.Generic.Interfaces.TraversMode.Forwards", "d5/d4f/group__interfaces.html#gga9ffe9236ff7d52fbeb93204341959319a1e411b48c18c85a91ad46b53ebb24d6a", null ],
       [ "SystemEx.Collections.Generic.Interfaces.TraversMode.Backwards", "d5/d4f/group__interfaces.html#gga9ffe9236ff7d52fbeb93204341959319a9d1104e419414f4c268be7211fb8fc4a", null ]
-    ] ]
+    ] ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedArray-1-g.Sort", "d5/d4f/group__interfaces.html#gafe063e2f40d28d7e61c7f25045f858c2", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedMap-2-g.Sort", "d5/d4f/group__interfaces.html#ga2a0377fb7f8b927806ef484f3b1f4182", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedTupleMap.Sort", "d5/d4f/group__interfaces.html#ga3c185fd4516ec8bfd8ef6e4e8558e81f", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.SortObjectFunc< T >", "d5/d4f/group__interfaces.html#ga0be94400295baf8873f7101503135e61", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.SortTupleFunc", "d5/d4f/group__interfaces.html#gadb5f200840bf1bdef594d6aaab2acb41", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedArray-1-g.ToUnorderedArray", "d5/d4f/group__interfaces.html#ga9a8a6f7673743cf434081b595891659b", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedMap-2-g.ToUnorderedMap", "d5/d4f/group__interfaces.html#ga7acebf12cc2c58d6d4d760acbd01e4f2", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedTupleMap.ToUnorderedMap", "d5/d4f/group__interfaces.html#ga0f7e3660808df6a40757ad04cee7427e", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedArray-1-g.AutoSort", "d5/d4f/group__interfaces.html#gad72465ef45754ca4d9d329eef3fbb3fc", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedMap-2-g.AutoSort", "d5/d4f/group__interfaces.html#gaadcb2683781b3695fc24ca656a3f2fe7", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedTupleMap.AutoSort", "d5/d4f/group__interfaces.html#ga6ef1e6d24ecab243c1eca17e16533476", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedArray-1-g.Comparer", "d5/d4f/group__interfaces.html#ga1f9c2280752d2c34bf0f3fefe93134d9", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedMap-2-g.Comparer", "d5/d4f/group__interfaces.html#ga030a897e9a7a80fbe2c73a32d8869e4c", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedTupleMap.Comparer", "d5/d4f/group__interfaces.html#ga9a0c6c2bc6e0f4e45abf02244d969daf", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedArray-1-g.SortFunctions", "d5/d4f/group__interfaces.html#gaa6567ccc1bef790e98f8befb2a7ed923", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedMap-2-g.SortFunctions", "d5/d4f/group__interfaces.html#ga0bf3e09b2725b0fd21277f6f1b3cb0d8", null ],
+    [ "SystemEx.Collections.Generic.Interfaces.ISortedTupleMap.SortFunctions", "d5/d4f/group__interfaces.html#gaae410b8f490b5d04463ea4214dbff0c3", null ]
 ];

@@ -104,17 +104,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('db/ddb/class_s
   <div class="headertitle"><div class="title">SystemEx.Hash.Hashable Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span><div class="ingroups"><a class="el" href="../../d7/d3b/group__hash.html">Hash</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Hash.Hashable:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../dc/d6f/class_system_ex_1_1_hash_1_1_hashable__coll__graph.svg" width="176" height="123"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:accac65bad00fbeb71c19a5033ad5f3e9" id="r_accac65bad00fbeb71c19a5033ad5f3e9"><td class="memItemLeft">Array&lt; byte &gt;&#160;</td><td class="memItemRight"><a class="el" href="#accac65bad00fbeb71c19a5033ad5f3e9">ToBytes</a> ()</td></tr>
-<tr class="memdesc:accac65bad00fbeb71c19a5033ad5f3e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the object into a byte array representation used by hashers. Implementations must return a deterministic and stable encoding.  <br /></td></tr>
+<tr class="memitem:a4d5b64b42d8e86d69dc677a7e14e4482" id="r_a4d5b64b42d8e86d69dc677a7e14e4482"><td class="memItemLeft">FixedVector&lt; byte &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a4d5b64b42d8e86d69dc677a7e14e4482">ToBytes</a> ()</td></tr>
+<tr class="memdesc:a4d5b64b42d8e86d69dc677a7e14e4482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the object into a byte array representation used by hashers. Implementations must return a deterministic and stable encoding.  <br /></td></tr>
 <tr class="memitem:a87439cd67bd28c149fe8012b90de8d26" id="r_a87439cd67bd28c149fe8012b90de8d26"><td class="memItemLeft">override int&#160;</td><td class="memItemRight"><a class="el" href="#a87439cd67bd28c149fe8012b90de8d26">GetHashCode</a> ()</td></tr>
 <tr class="memdesc:a87439cd67bd28c149fe8012b90de8d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a 32‑bit hash using the algorithm specified by HashAlgorithmAttribute on the concrete type.  <br /></td></tr>
 <tr class="memitem:a9de909f40cc15349d7f23970a5bdc99d" id="r_a9de909f40cc15349d7f23970a5bdc99d"><td class="memItemLeft">virtual long&#160;</td><td class="memItemRight"><a class="el" href="#a9de909f40cc15349d7f23970a5bdc99d">GetHashCodeLong</a> ()</td></tr>
@@ -152,7 +146,7 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">   66</span>                _hash = base.GetHashCode();</div>
 <div class="line"><span class="lineno">   67</span>            } <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">   68</span>                <span class="comment">// Bytes erzeugen</span></div>
-<div class="line"><span class="lineno">   69</span>                Array&lt;byte&gt; input = ToBytes();</div>
+<div class="line"><span class="lineno">   69</span>                FixedVector&lt;byte&gt; input = ToBytes();</div>
 <div class="line"><span class="lineno">   70</span> </div>
 <div class="line"><span class="lineno">   71</span>                <span class="comment">// Hasher transient erzeugen: zuerst versuchen, Konstruktor mit Endian, sonst parameterlos</span></div>
 <div class="line"><span class="lineno">   72</span>                <span class="keywordtype">object</span>? inst = <span class="keyword">null</span>;</div>
@@ -176,10 +170,10 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">   90</span> </div>
 <div class="line"><span class="lineno">   91</span>            <span class="keywordflow">return</span> _hash;</div>
 <div class="line"><span class="lineno">   92</span>        }</div>
-</div><!-- fragment --><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div><!-- fragment --><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/ddb/class_system_ex_1_1_hash_1_1_hashable_a87439cd67bd28c149fe8012b90de8d26_cgraph.svg" width="455" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -219,7 +213,7 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  106</span>                _hash = base.GetHashCode();</div>
 <div class="line"><span class="lineno">  107</span>            } <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">  108</span>                <span class="comment">// Bytes erzeugen</span></div>
-<div class="line"><span class="lineno">  109</span>                Array&lt;byte&gt; input = ToBytes();</div>
+<div class="line"><span class="lineno">  109</span>                FixedVector&lt;byte&gt; input = ToBytes();</div>
 <div class="line"><span class="lineno">  110</span> </div>
 <div class="line"><span class="lineno">  111</span>                <span class="comment">// Hasher transient erzeugen: zuerst versuchen, Konstruktor mit Endian, sonst parameterlos</span></div>
 <div class="line"><span class="lineno">  112</span>                <span class="keywordtype">object</span>? inst = <span class="keyword">null</span>;</div>
@@ -243,17 +237,17 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  130</span> </div>
 <div class="line"><span class="lineno">  131</span>            <span class="keywordflow">return</span> _hash;</div>
 <div class="line"><span class="lineno">  132</span>        }</div>
-</div><!-- fragment --><div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div><!-- fragment --><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/ddb/class_system_ex_1_1_hash_1_1_hashable_a9de909f40cc15349d7f23970a5bdc99d_cgraph.svg" width="455" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="accac65bad00fbeb71c19a5033ad5f3e9" name="accac65bad00fbeb71c19a5033ad5f3e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accac65bad00fbeb71c19a5033ad5f3e9">&#9670;&#160;</a></span>ToBytes()</h2>
+<a id="a4d5b64b42d8e86d69dc677a7e14e4482" name="a4d5b64b42d8e86d69dc677a7e14e4482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d5b64b42d8e86d69dc677a7e14e4482">&#9670;&#160;</a></span>ToBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,7 +256,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Array&lt; byte &gt; SystemEx.Hash.Hashable.ToBytes </td>
+          <td class="memname">FixedVector&lt; byte &gt; SystemEx.Hash.Hashable.ToBytes </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -276,11 +270,11 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Converts the object into a byte array representation used by hashers. Implementations must return a deterministic and stable encoding. </p>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/ddb/class_system_ex_1_1_hash_1_1_hashable_accac65bad00fbeb71c19a5033ad5f3e9_icgraph.svg" width="455" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/ddb/class_system_ex_1_1_hash_1_1_hashable_a4d5b64b42d8e86d69dc677a7e14e4482_icgraph.svg" width="455" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

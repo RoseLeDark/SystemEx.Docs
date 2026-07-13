@@ -1,10 +1,21 @@
 var annotated_dup =
 [
     [ "Examples", "d3/d06/namespace_examples.html", [
-      [ "ExampleRamKernelAdd", "de/d89/class_examples_1_1_example_ram_kernel_add.html", "de/d89/class_examples_1_1_example_ram_kernel_add" ],
       [ "SensorData", "df/df3/struct_examples_1_1_sensor_data.html", "df/df3/struct_examples_1_1_sensor_data" ]
     ] ],
+    [ "KernelRamExamples", "d8/d7b/namespace_kernel_ram_examples.html", [
+      [ "ExampleRamKernelAdd", "de/d1a/class_kernel_ram_examples_1_1_example_ram_kernel_add.html", "de/d1a/class_kernel_ram_examples_1_1_example_ram_kernel_add" ]
+    ] ],
     [ "SystemEx", "d0/d48/namespace_system_ex.html", [
+      [ "Algorythmen", "d5/d81/namespace_system_ex_1_1_algorythmen.html", [
+        [ "EqualTo&lt; T &gt;", "dc/dd8/class_system_ex_1_1_algorythmen_1_1_equal_to-1-g.html", "dc/dd8/class_system_ex_1_1_algorythmen_1_1_equal_to-1-g" ],
+        [ "Greater&lt; T &gt;", "d3/d3e/class_system_ex_1_1_algorythmen_1_1_greater-1-g.html", "d3/d3e/class_system_ex_1_1_algorythmen_1_1_greater-1-g" ],
+        [ "GreaterEqual&lt; T &gt;", "d3/dba/class_system_ex_1_1_algorythmen_1_1_greater_equal-1-g.html", "d3/dba/class_system_ex_1_1_algorythmen_1_1_greater_equal-1-g" ],
+        [ "ISimpleCompare&lt; T &gt;", "d3/dec/interface_system_ex_1_1_algorythmen_1_1_i_simple_compare-1-g.html", null ],
+        [ "Less&lt; T &gt;", "dd/dd8/class_system_ex_1_1_algorythmen_1_1_less-1-g.html", "dd/dd8/class_system_ex_1_1_algorythmen_1_1_less-1-g" ],
+        [ "LessEqual&lt; T &gt;", "d2/da3/class_system_ex_1_1_algorythmen_1_1_less_equal-1-g.html", "d2/da3/class_system_ex_1_1_algorythmen_1_1_less_equal-1-g" ],
+        [ "NotEqualTo&lt; T &gt;", "da/d49/class_system_ex_1_1_algorythmen_1_1_not_equal_to-1-g.html", "da/d49/class_system_ex_1_1_algorythmen_1_1_not_equal_to-1-g" ]
+      ] ],
       [ "Base", "da/d5b/namespace_system_ex_1_1_base.html", [
         [ "NumberRangeStepper&lt; T &gt;", "d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g.html", "d5/de4/class_system_ex_1_1_base_1_1_number_range_stepper-1-g" ]
       ] ],
@@ -15,6 +26,7 @@ var annotated_dup =
             [ "IBidirectionalIterator&lt; T &gt;", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g.html", "d4/d39/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_bidirectional_iterator-1-g" ],
             [ "ICache", "d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html", "d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache" ],
             [ "ICompared&lt; in T &gt;", "d7/dcd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_compared-1-g.html", "d7/dcd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_compared-1-g" ],
+            [ "IContainerEx&lt; T &gt;", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g.html", "d4/dbe/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_container_ex-1-g" ],
             [ "IDynamicArray&lt; T &gt;", "d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g.html", "d8/d34/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_dynamic_array-1-g" ],
             [ "IForeachIterator&lt; T &gt;", "d2/db2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_foreach_iterator-1-g.html", null ],
             [ "IForwardIterator&lt; T &gt;", "d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g.html", "d1/dd3/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_forward_iterator-1-g" ],
@@ -43,14 +55,18 @@ var annotated_dup =
           [ "Cache", "df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html", "df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache" ],
           [ "CacheIsSharedException", "d7/de5/class_system_ex_1_1_collections_1_1_generic_1_1_cache_is_shared_exception.html", "d7/de5/class_system_ex_1_1_collections_1_1_generic_1_1_cache_is_shared_exception" ],
           [ "Cluster&lt; T &gt;", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g" ],
+          [ "ContainerFlexSpan&lt; T, TContainer &gt;", "dc/d84/struct_system_ex_1_1_collections_1_1_generic_1_1_container_flex_span-2-g.html", "dc/d84/struct_system_ex_1_1_collections_1_1_generic_1_1_container_flex_span-2-g" ],
           [ "Deque&lt; T &gt;", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html", "d4/d7b/class_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g" ],
+          [ "Find&lt; T, TContainer &gt;", "d0/d9f/struct_system_ex_1_1_collections_1_1_generic_1_1_find-2-g.html", "d0/d9f/struct_system_ex_1_1_collections_1_1_generic_1_1_find-2-g" ],
           [ "FixedArray&lt; T &gt;", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g.html", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_array-1-g" ],
           [ "FixedMap&lt; T, TU &gt;", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g.html", "d9/d13/class_system_ex_1_1_collections_1_1_generic_1_1_fixed_map-2-g" ],
+          [ "FixedVector&lt; T &gt;", "da/d79/struct_system_ex_1_1_collections_1_1_generic_1_1_fixed_vector-1-g.html", "da/d79/struct_system_ex_1_1_collections_1_1_generic_1_1_fixed_vector-1-g" ],
           [ "GroupNode&lt; T &gt;", "db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g.html", "db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g" ],
           [ "ICluster&lt; T &gt;", "de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html", "de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g" ],
           [ "Map&lt; T, TU &gt;", "db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html", "db/d78/class_system_ex_1_1_collections_1_1_generic_1_1_map-2-g" ],
           [ "MirroredCache", "de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html", "de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache" ],
           [ "MultiMap&lt; TT, TU &gt;", "d3/d72/class_system_ex_1_1_collections_1_1_generic_1_1_multi_map-2-g.html", "d3/d72/class_system_ex_1_1_collections_1_1_generic_1_1_multi_map-2-g" ],
+          [ "MultiSet&lt; T, TContainer &gt;", "d3/dc9/struct_system_ex_1_1_collections_1_1_generic_1_1_multi_set-2-g.html", "d3/dc9/struct_system_ex_1_1_collections_1_1_generic_1_1_multi_set-2-g" ],
           [ "MultiTupleMap", "d5/de6/class_system_ex_1_1_collections_1_1_generic_1_1_multi_tuple_map.html", "d5/de6/class_system_ex_1_1_collections_1_1_generic_1_1_multi_tuple_map" ],
           [ "Node&lt; T &gt;", "d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html", "d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g" ],
           [ "NodeChain&lt; T &gt;", "dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html", "dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g" ],
@@ -63,6 +79,7 @@ var annotated_dup =
           [ "Quad&lt; TT, TU, TW, TJ &gt;", "d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html", "d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g" ],
           [ "Queue&lt; T &gt;", "da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html", "da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g" ],
           [ "RopeChunkValue&lt; T &gt;", "dd/d64/class_system_ex_1_1_collections_1_1_generic_1_1_rope_chunk_value-1-g.html", null ],
+          [ "Set&lt; T, TContainer &gt;", "de/d05/struct_system_ex_1_1_collections_1_1_generic_1_1_set-2-g.html", "de/d05/struct_system_ex_1_1_collections_1_1_generic_1_1_set-2-g" ],
           [ "SortedArray&lt; T &gt;", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g.html", "d4/db5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_array-1-g" ],
           [ "SortedFixedArray&lt; T &gt;", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g.html", "d7/dc5/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_fixed_array-1-g" ],
           [ "SortedMap&lt; T, TU &gt;", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g.html", "d4/dfe/class_system_ex_1_1_collections_1_1_generic_1_1_sorted_map-2-g" ],
@@ -78,7 +95,10 @@ var annotated_dup =
           [ "Tuple", "d3/d94/class_system_ex_1_1_collections_1_1_generic_1_1_tuple.html", "d3/d94/class_system_ex_1_1_collections_1_1_generic_1_1_tuple" ],
           [ "TupleList", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" ],
           [ "TupleMap", "d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map.html", "d9/d4d/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_map" ],
-          [ "TypeBuffer&lt; T &gt;", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g" ]
+          [ "TypeBuffer&lt; T &gt;", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g" ],
+          [ "UnorderedMultiSet&lt; T, TContainer &gt;", "d7/d40/struct_system_ex_1_1_collections_1_1_generic_1_1_unordered_multi_set-2-g.html", "d7/d40/struct_system_ex_1_1_collections_1_1_generic_1_1_unordered_multi_set-2-g" ],
+          [ "UnorderedSet&lt; T, TContainer &gt;", "d9/d04/struct_system_ex_1_1_collections_1_1_generic_1_1_unordered_set-2-g.html", "d9/d04/struct_system_ex_1_1_collections_1_1_generic_1_1_unordered_set-2-g" ],
+          [ "Vector&lt; T &gt;", "d4/de6/struct_system_ex_1_1_collections_1_1_generic_1_1_vector-1-g.html", "d4/de6/struct_system_ex_1_1_collections_1_1_generic_1_1_vector-1-g" ]
         ] ],
         [ "Model", "d7/dd8/namespace_system_ex_1_1_collections_1_1_model.html", [
           [ "BinaryTree&lt; T &gt;", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g.html", "de/d71/class_system_ex_1_1_collections_1_1_model_1_1_binary_tree-1-g" ],
@@ -129,7 +149,10 @@ var annotated_dup =
         [ "ICanvasList&lt; T &gt;", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.html", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g" ],
         [ "IColor&lt; T &gt;", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g" ],
         [ "ISubCanvas&lt; T &gt;", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g" ],
-        [ "PurpelColors", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html", null ]
+        [ "Light", "d9/dbb/class_system_ex_1_1_drawing_1_1_light.html", "d9/dbb/class_system_ex_1_1_drawing_1_1_light" ],
+        [ "PointLight", "d2/d82/class_system_ex_1_1_drawing_1_1_point_light.html", "d2/d82/class_system_ex_1_1_drawing_1_1_point_light" ],
+        [ "PurpelColors", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html", null ],
+        [ "SpotLight", "d9/da7/class_system_ex_1_1_drawing_1_1_spot_light.html", "d9/da7/class_system_ex_1_1_drawing_1_1_spot_light" ]
       ] ],
       [ "Hash", "d4/d32/namespace_system_ex_1_1_hash.html", [
         [ "AdlerHash", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash.html", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash" ],
@@ -157,9 +180,11 @@ var annotated_dup =
         [ "CacheStream&lt; TCache &gt;", "df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html", "df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g" ]
       ] ],
       [ "Numeric", "dd/dfd/namespace_system_ex_1_1_numeric.html", [
-        [ "AxisAngle&lt; TV, T &gt;", "d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g.html", "d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g" ],
+        [ "AxisAngle&lt; TV, T &gt;", "df/dd0/group___numeric.html#d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g", "df/dd0/group___numeric_d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g" ],
+        [ "DQuatf", "d3/d71/struct_system_ex_1_1_numeric_1_1_d_quatf.html", "d3/d71/struct_system_ex_1_1_numeric_1_1_d_quatf" ],
         [ "Half16", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16" ],
         [ "IHalf&lt; T &gt;", "dd/d4c/interface_system_ex_1_1_numeric_1_1_i_half-1-g.html", null ],
+        [ "Projection", "d4/d82/struct_system_ex_1_1_numeric_1_1_projection.html", null ],
         [ "Quatd", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd.html", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd" ],
         [ "Quatf", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf.html", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf" ],
         [ "Vec2d", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d.html", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d" ],
@@ -188,6 +213,7 @@ var annotated_dup =
         [ "MissingStructLayoutSequentialException", "da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception.html", "da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception" ],
         [ "SizeMismatchException", "d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception.html", "d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception" ]
       ] ],
+      [ "Buffer", "de/d71/class_system_ex_1_1_buffer.html", null ],
       [ "FlexSpan&lt; T &gt;", "db/d28/struct_system_ex_1_1_flex_span-1-g.html", "db/d28/struct_system_ex_1_1_flex_span-1-g" ],
       [ "IComparableEx&lt; T &gt;", "dc/d20/interface_system_ex_1_1_i_comparable_ex-1-g.html", "dc/d20/interface_system_ex_1_1_i_comparable_ex-1-g" ],
       [ "IRange&lt; T &gt;", "df/d28/interface_system_ex_1_1_i_range-1-g.html", "df/d28/interface_system_ex_1_1_i_range-1-g" ],

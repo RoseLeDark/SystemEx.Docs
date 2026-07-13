@@ -1,6 +1,6 @@
 var struct_system_ex_1_1_flex_span_1_g =
 [
-    [ "Enumerator", "de/d4d/struct_system_ex_1_1_flex_span-1-g_1_1_enumerator.html", null ],
+    [ "Enumerator", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#de/d4d/struct_system_ex_1_1_flex_span-1-g_1_1_enumerator", null ],
     [ "CopyTo", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#ac6a324f392d096b86b2296e20dfc548c", null ],
     [ "Dispose", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#ab8c67dc092d45c1cd6c9752d0afa8c5d", null ],
     [ "ElementAt", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#ae90b59eed3ce6a90f5438e3507d3d9d6", null ],
@@ -12,7 +12,7 @@ var struct_system_ex_1_1_flex_span_1_g =
     [ "Reset", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#af089098378ca8b83db782749b0d4ea42", null ],
     [ "Slice", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#a7fcfe09831ee15b0c30d82649e263574", null ],
     [ "Slice", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#a953f3b74e88b8367e291ac2d1716101b", null ],
-    [ "ToArray", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#a0d4aaa1a93c3663c831781b02b7016fb", null ],
+    [ "ToArray", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#a677a1b8034594209f211836bf4314efa", null ],
     [ "TryCopyTo", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#a1aa932fc5b668f84dd9d6bc7b4e0b090", null ],
     [ "Current", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#a9e6d51f173bd027d3645736f3d020214", null ],
     [ "Current", "db/d28/struct_system_ex_1_1_flex_span-1-g.html#a60e277c3cf368d1743567a74675168b5", null ],
