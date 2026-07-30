@@ -10,8 +10,8 @@ var class_system_ex_1_1_collections_1_1_generic_1_1_cluster_1_g =
     [ "m_value", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#ac1e04d696cafa4d05f294ccf3158ef5e", null ],
     [ "Child", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#ae48ea60e56906d9381410e4b044660ee", null ],
     [ "Parent", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#a9785f6a7a7e03baf78c00b70cd69835e", null ],
-    [ "Size", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#a06a1884cbcef9a18078b439d32739baa", null ],
-    [ "this[ICluster< T > key]", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#aba0efad16631288d9ebbd8f4fc117648", null ],
+    [ "Size", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#ad3bd0123505bee9b37cefa469f86f609", null ],
+    [ "this[ICluster< T > key]", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#ae5bc1c83b79bfb1e77ee78d43b1904ab", null ],
     [ "this[int i]", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#af356dedb723c3ffb9eb139ec232438ce", null ],
     [ "Value", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html#a70deaaa51558811d39b040c525e2a24a", null ]
 ];

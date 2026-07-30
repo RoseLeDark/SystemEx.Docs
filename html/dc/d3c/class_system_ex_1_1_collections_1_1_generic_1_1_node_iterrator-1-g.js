@@ -1,8 +1,6 @@
 var class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator_1_g =
 [
-    [ "Advance", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#a665c7f1ee334713fb5e84b957cb910d2", null ],
     [ "Back", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#ae49d1c90f27f496be09596221bca4410", null ],
-    [ "Clone", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#a4e49e079b55b54ca9442475a502b69a9", null ],
     [ "Equals", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#ae13ae26c218788a0faa86e26f5436b33", null ],
     [ "Equals", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#a47e9d5faf076c1c9ec12e630b996996b", null ],
     [ "Forward", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html#ad162fa5306621998247f72ccec0d6b27", null ],

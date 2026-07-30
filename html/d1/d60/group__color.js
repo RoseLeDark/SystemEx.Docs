@@ -105,12 +105,12 @@ var group__color =
       [ "N", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#ad6ee4712864b315c2bca106bed42070c", null ],
       [ "P", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html#ae2efe66d0db81de207b0b01bb653a9d2", null ]
     ] ],
-    [ "SystemEx.Drawing.ColorR10G10B10FormatSchema", "d7/d6d/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html", [
-      [ "ColorR10G10B10FormatSchema", "d7/d6d/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#a4ffa3faa8e5a5d94bca41b6e6488219e", null ],
-      [ "Endian", "d7/d6d/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#aed066a3aff2b4922dd780cc3a014e0ae", null ],
-      [ "HeaderSize", "d7/d6d/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#a55d999274b4eae00858780871696f74e", null ],
-      [ "Offsets", "d7/d6d/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#aed838cabbe57cf4765d1605a5fd11d78", null ],
-      [ "TotalSize", "d7/d6d/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#a3d1e79397d933e28ecc5705ba5805723", null ]
+    [ "SystemEx.Drawing.ColorR10G10B10FormatSchema", "d8/d88/struct_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html", [
+      [ "ColorR10G10B10FormatSchema", "d8/d88/struct_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#a4ffa3faa8e5a5d94bca41b6e6488219e", null ],
+      [ "Endian", "d8/d88/struct_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#aed066a3aff2b4922dd780cc3a014e0ae", null ],
+      [ "HeaderSize", "d8/d88/struct_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#a55d999274b4eae00858780871696f74e", null ],
+      [ "Offsets", "d8/d88/struct_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#a57e8e53829f6d2f25eaae091a8c3c469", null ],
+      [ "TotalSize", "d8/d88/struct_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html#a3d1e79397d933e28ecc5705ba5805723", null ]
     ] ],
     [ "SystemEx.Drawing.ColorR10G10B10Serializer", "d9/d81/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer.html", [
       [ "ColorR10G10B10Serializer", "d9/d81/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer.html#a489ebc2bd177b33644decf54e25b346a", null ],
@@ -231,7 +231,7 @@ var group__color =
       [ "AddLayer", "d1/d60/group__color.html#ga08cc7a47951c255745286b2ca4a51ea2", null ],
       [ "GetLayer", "d1/d60/group__color.html#gafc678c739562bdd01b5b4d028f375e0c", null ],
       [ "GetPixel", "d1/d60/group__color.html#ga5a373d1e6e296fab5d3df6976455aad7", null ],
-      [ "GetPixels", "d1/d60/group__color.html#ga55481daeeb9f34025a839428c108f865", null ],
+      [ "GetPixels", "d1/d60/group__color.html#ga620d49fd3d87ada59b2524aa5973e4c1", null ],
       [ "IsShowing", "d1/d60/group__color.html#gaf1551cf4822f103185ca9e4156acfaba", null ],
       [ "RemoveLayer", "d1/d60/group__color.html#gadb856cd89c398fd74968bb10e1a4e746", null ],
       [ "SetShowing", "d1/d60/group__color.html#ga21635b24cfbff2ce2c81af442490545d", null ],
@@ -290,7 +290,7 @@ var group__color =
     [ "SystemEx.Drawing.ICanvasList-1-g.GetLayer", "d1/d60/group__color.html#gafc678c739562bdd01b5b4d028f375e0c", null ],
     [ "SystemEx.Drawing.ICanvas-1-g.GetPixel", "d1/d60/group__color.html#ga72725b0eec47c5c97f7a4e8e0bec73c5", null ],
     [ "SystemEx.Drawing.ICanvasList-1-g.GetPixel", "d1/d60/group__color.html#ga5a373d1e6e296fab5d3df6976455aad7", null ],
-    [ "SystemEx.Drawing.ICanvasList-1-g.GetPixels", "d1/d60/group__color.html#ga55481daeeb9f34025a839428c108f865", null ],
+    [ "SystemEx.Drawing.ICanvasList-1-g.GetPixels", "d1/d60/group__color.html#ga620d49fd3d87ada59b2524aa5973e4c1", null ],
     [ "SystemEx.Drawing.ICanvasList-1-g.IsShowing", "d1/d60/group__color.html#gaf1551cf4822f103185ca9e4156acfaba", null ],
     [ "SystemEx.Drawing.ICanvasList-1-g.RemoveLayer", "d1/d60/group__color.html#gadb856cd89c398fd74968bb10e1a4e746", null ],
     [ "SystemEx.Drawing.ICanvas-1-g.Resize", "d1/d60/group__color.html#gab1c9faf58087c0f319453703331d2c17", null ],

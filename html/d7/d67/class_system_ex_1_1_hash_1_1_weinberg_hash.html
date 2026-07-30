@@ -108,14 +108,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d7/d67/class_s
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d5/de9/class_system_ex_1_1_hash_1_1_weinberg_hash__inherit__graph.svg" width="218" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d5/de9/class_system_ex_1_1_hash_1_1_weinberg_hash__inherit__graph.svg" width="207" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Hash.WeinbergHash:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d6/df4/class_system_ex_1_1_hash_1_1_weinberg_hash__coll__graph.svg" width="218" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d6/df4/class_system_ex_1_1_hash_1_1_weinberg_hash__coll__graph.svg" width="207" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -149,9 +149,9 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>                                              {</div>
-<div class="line"><span class="lineno">   34</span>            m_endian = endian;</div>
-<div class="line"><span class="lineno">   35</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>                                              {</div>
+<div class="line"><span class="lineno">   36</span>            m_endian = endian;</div>
+<div class="line"><span class="lineno">   37</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -186,21 +186,21 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The computed Weinberg hash as a 32-bit value.</dd></dl>
 
 <p>Implements <a class="el" href="../../dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html#ab492223af01ff84e14f736ddeca52199">SystemEx.Hash.IHash</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                                     {</div>
-<div class="line"><span class="lineno">   44</span>            uint hash = seed;</div>
-<div class="line"><span class="lineno">   45</span>            uint g;</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; input.Count ; i++ ) {</div>
-<div class="line"><span class="lineno">   48</span>                hash = (hash &lt;&lt; 4) + input[i];</div>
-<div class="line"><span class="lineno">   49</span>                g = hash &amp; 0xF0000000u;</div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>                <span class="keywordflow">if</span> ( g != 0 )</div>
-<div class="line"><span class="lineno">   52</span>                    hash ^= (g &gt;&gt; 24) ^ g;</div>
-<div class="line"><span class="lineno">   53</span>            }</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>            hash ^= (hash &gt;&gt; 16);</div>
-<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Hash32(hash);</div>
-<div class="line"><span class="lineno">   57</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>                                                                     {</div>
+<div class="line"><span class="lineno">   46</span>            uint hash = seed;</div>
+<div class="line"><span class="lineno">   47</span>            uint g;</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; input.Count ; i++ ) {</div>
+<div class="line"><span class="lineno">   50</span>                hash = (hash &lt;&lt; 4) + input[i];</div>
+<div class="line"><span class="lineno">   51</span>                g = hash &amp; 0xF0000000u;</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>                <span class="keywordflow">if</span> ( g != 0 )</div>
+<div class="line"><span class="lineno">   54</span>                    hash ^= (g &gt;&gt; 24) ^ g;</div>
+<div class="line"><span class="lineno">   55</span>            }</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>            hash ^= (hash &gt;&gt; 16);</div>
+<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Hash32(hash);</div>
+<div class="line"><span class="lineno">   59</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -234,21 +234,21 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The computed Weinberg hash as a 64-bit value.</dd></dl>
 
 <p>Implements <a class="el" href="../../dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html#ad462ad96611008488a7a3fab4411e592">SystemEx.Hash.IHash</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>                                                                         {</div>
-<div class="line"><span class="lineno">   65</span>            ulong hash = seed;</div>
-<div class="line"><span class="lineno">   66</span>            ulong g;</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; input.Count ; i++ ) {</div>
-<div class="line"><span class="lineno">   69</span>                hash = (hash &lt;&lt; 4) + input[i];</div>
-<div class="line"><span class="lineno">   70</span>                g = hash &amp; 0xF000000000000000ul;</div>
-<div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>                <span class="keywordflow">if</span> ( g != 0 )</div>
-<div class="line"><span class="lineno">   73</span>                    hash ^= (g &gt;&gt; 56) ^ g;</div>
-<div class="line"><span class="lineno">   74</span>            }</div>
-<div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span>            hash ^= (hash &gt;&gt; 32);</div>
-<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Hash64(hash);</div>
-<div class="line"><span class="lineno">   78</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                                         {</div>
+<div class="line"><span class="lineno">   67</span>            ulong hash = seed;</div>
+<div class="line"><span class="lineno">   68</span>            ulong g;</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; input.Count ; i++ ) {</div>
+<div class="line"><span class="lineno">   71</span>                hash = (hash &lt;&lt; 4) + input[i];</div>
+<div class="line"><span class="lineno">   72</span>                g = hash &amp; 0xF000000000000000ul;</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">if</span> ( g != 0 )</div>
+<div class="line"><span class="lineno">   75</span>                    hash ^= (g &gt;&gt; 56) ^ g;</div>
+<div class="line"><span class="lineno">   76</span>            }</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>            hash ^= (hash &gt;&gt; 32);</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Hash64(hash);</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -15,6 +15,6 @@ var index =
     [ "🧱 Cache &amp; RAID Subsystem (Future Release)", "index.html#autotoc_md-cache--raid-subsystem-future-release", null ],
     [ "🛠 Utilities", "index.html#autotoc_md-utilities", null ],
     [ "📁 Project Structure", "index.html#autotoc_md-project-structure", null ],
-    [ "📝 License", "index.html#autotoc_md-license", null ],
+    [ "📝 License", "index.html#autotoc_md-license-1", null ],
     [ "🚧 Status", "index.html#autotoc_md-status", null ]
 ];

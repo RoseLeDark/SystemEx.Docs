@@ -108,14 +108,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d5/d4e/struct_
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/df6/struct_system_ex_1_1_numeric_1_1_half16__inherit__graph.svg" width="448" height="291"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/df6/struct_system_ex_1_1_numeric_1_1_half16__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Numeric.Half16:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/ddc/struct_system_ex_1_1_numeric_1_1_half16__coll__graph.svg" width="448" height="291"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/ddc/struct_system_ex_1_1_numeric_1_1_half16__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -280,9 +280,9 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a <a class="el" href="../../d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html">Half16</a> from a raw 16‑bit value. </p>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>                                       {</div>
-<div class="line"><span class="lineno">  167</span>            m_value = value;</div>
-<div class="line"><span class="lineno">  168</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  163</span>                                       {</div>
+<div class="line"><span class="lineno">  164</span>            m_value = value;</div>
+<div class="line"><span class="lineno">  165</span>        }</div>
 </div><!-- fragment --><div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
@@ -317,9 +317,9 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a <a class="el" href="../../d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html">Half16</a> from explicit sign, exponent, and mantissa fields. </p>
-<div class="fragment"><div class="line"><span class="lineno">  173</span>                                                                        {</div>
-<div class="line"><span class="lineno">  174</span>            m_value = (ushort)((sign &lt;&lt; 15) | (exponent &lt;&lt; 10) | mantissa);</div>
-<div class="line"><span class="lineno">  175</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>                                                                        {</div>
+<div class="line"><span class="lineno">  171</span>            m_value = (ushort)((sign &lt;&lt; 15) | (exponent &lt;&lt; 10) | mantissa);</div>
+<div class="line"><span class="lineno">  172</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -348,8 +348,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the absolute value of the given <a class="el" href="../../d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html">Half16</a>. </p>
-<div class="fragment"><div class="line"><span class="lineno">  159</span>                                              =&gt;</div>
-<div class="line"><span class="lineno">  160</span>            <span class="keyword">new</span> Half16(0, x.Exponent, x.Mantissa);</div>
+<div class="fragment"><div class="line"><span class="lineno">  156</span>                                              =&gt;</div>
+<div class="line"><span class="lineno">  157</span>            <span class="keyword">new</span> Half16(0, x.Exponent, x.Mantissa);</div>
 </div><!-- fragment --><div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
@@ -396,59 +396,59 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The sum <code>a + b</code> as a Half16 value. If the operation is undefined (e.g. +∞ + −∞), NaN is returned. </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  517</span>                                                        {</div>
-<div class="line"><span class="lineno">  518</span>            <span class="keywordflow">if</span> ( IsNaN(a) || IsNaN(b) ) <span class="keywordflow">return</span> Half16.NaN;</div>
-<div class="line"><span class="lineno">  519</span>            <span class="keywordflow">if</span> ( IsInfinity(a) &amp;&amp; IsInfinity(b) &amp;&amp; a.Sign != b.Sign ) <span class="keywordflow">return</span> Half16.NaN;</div>
-<div class="line"><span class="lineno">  520</span> </div>
-<div class="line"><span class="lineno">  521</span>            <span class="comment">// Sonderfälle</span></div>
-<div class="line"><span class="lineno">  522</span>            <span class="keywordflow">if</span> ( IsInfinity(a) ) <span class="keywordflow">return</span> a;</div>
-<div class="line"><span class="lineno">  523</span>            <span class="keywordflow">if</span> ( IsInfinity(b) ) <span class="keywordflow">return</span> b;</div>
+<div class="fragment"><div class="line"><span class="lineno">  514</span>                                                        {</div>
+<div class="line"><span class="lineno">  515</span>            <span class="keywordflow">if</span> ( IsNaN(a) || IsNaN(b) ) <span class="keywordflow">return</span> Half16.NaN;</div>
+<div class="line"><span class="lineno">  516</span>            <span class="keywordflow">if</span> ( IsInfinity(a) &amp;&amp; IsInfinity(b) &amp;&amp; a.Sign != b.Sign ) <span class="keywordflow">return</span> Half16.NaN;</div>
+<div class="line"><span class="lineno">  517</span> </div>
+<div class="line"><span class="lineno">  518</span>            <span class="comment">// Sonderfälle</span></div>
+<div class="line"><span class="lineno">  519</span>            <span class="keywordflow">if</span> ( IsInfinity(a) ) <span class="keywordflow">return</span> a;</div>
+<div class="line"><span class="lineno">  520</span>            <span class="keywordflow">if</span> ( IsInfinity(b) ) <span class="keywordflow">return</span> b;</div>
+<div class="line"><span class="lineno">  521</span> </div>
+<div class="line"><span class="lineno">  522</span>            <span class="keywordflow">if</span> ( IsZero(a) ) <span class="keywordflow">return</span> b;</div>
+<div class="line"><span class="lineno">  523</span>            <span class="keywordflow">if</span> ( IsZero(b) ) <span class="keywordflow">return</span> a;</div>
 <div class="line"><span class="lineno">  524</span> </div>
-<div class="line"><span class="lineno">  525</span>            <span class="keywordflow">if</span> ( IsZero(a) ) <span class="keywordflow">return</span> b;</div>
-<div class="line"><span class="lineno">  526</span>            <span class="keywordflow">if</span> ( IsZero(b) ) <span class="keywordflow">return</span> a;</div>
+<div class="line"><span class="lineno">  525</span>            ushort expA = a.Exponent;</div>
+<div class="line"><span class="lineno">  526</span>            ushort expB = b.Exponent;</div>
 <div class="line"><span class="lineno">  527</span> </div>
-<div class="line"><span class="lineno">  528</span>            ushort expA = a.Exponent;</div>
-<div class="line"><span class="lineno">  529</span>            ushort expB = b.Exponent;</div>
+<div class="line"><span class="lineno">  528</span>            uint mantA = (expA == 0) ? a.Mantissa : (uint)(a.Mantissa | 0x400);</div>
+<div class="line"><span class="lineno">  529</span>            uint mantB = (expB == 0) ? b.Mantissa: (uint)(b.Mantissa | 0x400);</div>
 <div class="line"><span class="lineno">  530</span> </div>
-<div class="line"><span class="lineno">  531</span>            uint mantA = (expA == 0) ? a.Mantissa : (uint)(a.Mantissa | 0x400);</div>
-<div class="line"><span class="lineno">  532</span>            uint mantB = (expB == 0) ? b.Mantissa: (uint)(b.Mantissa | 0x400);</div>
-<div class="line"><span class="lineno">  533</span> </div>
-<div class="line"><span class="lineno">  534</span>            <span class="keywordtype">int</span> exp = expA;</div>
-<div class="line"><span class="lineno">  535</span> </div>
-<div class="line"><span class="lineno">  536</span>            <span class="keywordtype">int</span> diff = expA - expB;</div>
-<div class="line"><span class="lineno">  537</span> </div>
-<div class="line"><span class="lineno">  538</span>            <span class="keywordflow">if</span> ( diff &gt; 0 ) {</div>
-<div class="line"><span class="lineno">  539</span>                mantB &gt;&gt;= diff;</div>
-<div class="line"><span class="lineno">  540</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( diff &lt; 0 ) {</div>
-<div class="line"><span class="lineno">  541</span>                mantA &gt;&gt;= -diff;</div>
-<div class="line"><span class="lineno">  542</span>                exp = expB;</div>
-<div class="line"><span class="lineno">  543</span>            }</div>
+<div class="line"><span class="lineno">  531</span>            <span class="keywordtype">int</span> exp = expA;</div>
+<div class="line"><span class="lineno">  532</span> </div>
+<div class="line"><span class="lineno">  533</span>            <span class="keywordtype">int</span> diff = expA - expB;</div>
+<div class="line"><span class="lineno">  534</span> </div>
+<div class="line"><span class="lineno">  535</span>            <span class="keywordflow">if</span> ( diff &gt; 0 ) {</div>
+<div class="line"><span class="lineno">  536</span>                mantB &gt;&gt;= diff;</div>
+<div class="line"><span class="lineno">  537</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( diff &lt; 0 ) {</div>
+<div class="line"><span class="lineno">  538</span>                mantA &gt;&gt;= -diff;</div>
+<div class="line"><span class="lineno">  539</span>                exp = expB;</div>
+<div class="line"><span class="lineno">  540</span>            }</div>
+<div class="line"><span class="lineno">  541</span> </div>
+<div class="line"><span class="lineno">  542</span>            uint mant;</div>
+<div class="line"><span class="lineno">  543</span>            ushort sign;</div>
 <div class="line"><span class="lineno">  544</span> </div>
-<div class="line"><span class="lineno">  545</span>            uint mant;</div>
-<div class="line"><span class="lineno">  546</span>            ushort sign;</div>
-<div class="line"><span class="lineno">  547</span> </div>
-<div class="line"><span class="lineno">  548</span>            <span class="keywordflow">if</span> ( a.Sign == b.Sign ) {</div>
-<div class="line"><span class="lineno">  549</span>                mant = mantA + mantB;</div>
-<div class="line"><span class="lineno">  550</span>                sign = (ushort)(a.Sign ? 1 : 0);</div>
-<div class="line"><span class="lineno">  551</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  552</span>                if ( mantA &gt;= mantB ) {</div>
-<div class="line"><span class="lineno">  553</span>                    mant = mantA - mantB;</div>
-<div class="line"><span class="lineno">  554</span>                    sign = (ushort)(a.Sign ? 1 : 0);</div>
-<div class="line"><span class="lineno">  555</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  556</span>                    mant = mantB - mantA;</div>
-<div class="line"><span class="lineno">  557</span>                    sign = (ushort)(b.Sign ? 1 : 0);</div>
-<div class="line"><span class="lineno">  558</span>                }</div>
-<div class="line"><span class="lineno">  559</span>            }</div>
-<div class="line"><span class="lineno">  560</span> </div>
-<div class="line"><span class="lineno">  561</span>            <span class="keywordflow">if</span> ( mant == 0 ) <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(0, 0, 0);</div>
-<div class="line"><span class="lineno">  562</span> </div>
-<div class="line"><span class="lineno">  563</span>            <span class="keywordflow">while</span> ( (mant &amp; 0x400) == 0 ) {</div>
-<div class="line"><span class="lineno">  564</span>                mant &lt;&lt;= 1;</div>
-<div class="line"><span class="lineno">  565</span>                exp--;</div>
-<div class="line"><span class="lineno">  566</span>            }</div>
-<div class="line"><span class="lineno">  567</span> </div>
-<div class="line"><span class="lineno">  568</span>            <span class="keywordflow">return</span> Normalize(sign, exp, mant);</div>
-<div class="line"><span class="lineno">  569</span>        }</div>
+<div class="line"><span class="lineno">  545</span>            <span class="keywordflow">if</span> ( a.Sign == b.Sign ) {</div>
+<div class="line"><span class="lineno">  546</span>                mant = mantA + mantB;</div>
+<div class="line"><span class="lineno">  547</span>                sign = (ushort)(a.Sign ? 1 : 0);</div>
+<div class="line"><span class="lineno">  548</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  549</span>                if ( mantA &gt;= mantB ) {</div>
+<div class="line"><span class="lineno">  550</span>                    mant = mantA - mantB;</div>
+<div class="line"><span class="lineno">  551</span>                    sign = (ushort)(a.Sign ? 1 : 0);</div>
+<div class="line"><span class="lineno">  552</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  553</span>                    mant = mantB - mantA;</div>
+<div class="line"><span class="lineno">  554</span>                    sign = (ushort)(b.Sign ? 1 : 0);</div>
+<div class="line"><span class="lineno">  555</span>                }</div>
+<div class="line"><span class="lineno">  556</span>            }</div>
+<div class="line"><span class="lineno">  557</span> </div>
+<div class="line"><span class="lineno">  558</span>            <span class="keywordflow">if</span> ( mant == 0 ) <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(0, 0, 0);</div>
+<div class="line"><span class="lineno">  559</span> </div>
+<div class="line"><span class="lineno">  560</span>            <span class="keywordflow">while</span> ( (mant &amp; 0x400) == 0 ) {</div>
+<div class="line"><span class="lineno">  561</span>                mant &lt;&lt;= 1;</div>
+<div class="line"><span class="lineno">  562</span>                exp--;</div>
+<div class="line"><span class="lineno">  563</span>            }</div>
+<div class="line"><span class="lineno">  564</span> </div>
+<div class="line"><span class="lineno">  565</span>            <span class="keywordflow">return</span> Normalize(sign, exp, mant);</div>
+<div class="line"><span class="lineno">  566</span>        }</div>
 </div><!-- fragment --><div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
@@ -476,7 +476,7 @@ Properties</h2></td></tr>
 <p>Returns the raw 16‑bit representation. </p>
 
 <p>Implements <a class="el" href="../../dd/d4c/interface_system_ex_1_1_numeric_1_1_i_half-1-g.html">SystemEx.Numeric.IHalf&lt; T &gt;</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  180</span>=&gt; m_value;</div>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>=&gt; m_value;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -504,23 +504,23 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the ceiling of the value. </p>
-<div class="fragment"><div class="line"><span class="lineno">  279</span>                                               {</div>
-<div class="line"><span class="lineno">  280</span>            <span class="keywordflow">if</span> ( IsNaN(x) || IsInfinity(x) ) <span class="keywordflow">return</span> x;</div>
-<div class="line"><span class="lineno">  281</span> </div>
-<div class="line"><span class="lineno">  282</span>            ushort e = x.Exponent;</div>
-<div class="line"><span class="lineno">  283</span> </div>
-<div class="line"><span class="lineno">  284</span>            <span class="keywordflow">if</span> ( e &gt;= 15 ) {</div>
-<div class="line"><span class="lineno">  285</span>                <span class="keywordtype">int</span> shift = e - 15;</div>
-<div class="line"><span class="lineno">  286</span>                uint mant = (uint)(x.Mantissa | 0x400);</div>
-<div class="line"><span class="lineno">  287</span>                mant &gt;&gt;= shift;</div>
-<div class="line"><span class="lineno">  288</span>                mant &lt;&lt;= shift;</div>
-<div class="line"><span class="lineno">  289</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16((ushort)(x.Sign ? 1 : 0), e, (ushort)(mant &amp; 0x3FF));</div>
-<div class="line"><span class="lineno">  290</span>            }</div>
-<div class="line"><span class="lineno">  291</span> </div>
-<div class="line"><span class="lineno">  292</span>            <span class="keywordflow">if</span> ( IsZero(x) ) <span class="keywordflow">return</span> x;</div>
-<div class="line"><span class="lineno">  293</span> </div>
-<div class="line"><span class="lineno">  294</span>            <span class="keywordflow">return</span> x.Sign ? Zero : One;</div>
-<div class="line"><span class="lineno">  295</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  276</span>                                               {</div>
+<div class="line"><span class="lineno">  277</span>            <span class="keywordflow">if</span> ( IsNaN(x) || IsInfinity(x) ) <span class="keywordflow">return</span> x;</div>
+<div class="line"><span class="lineno">  278</span> </div>
+<div class="line"><span class="lineno">  279</span>            ushort e = x.Exponent;</div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>            <span class="keywordflow">if</span> ( e &gt;= 15 ) {</div>
+<div class="line"><span class="lineno">  282</span>                <span class="keywordtype">int</span> shift = e - 15;</div>
+<div class="line"><span class="lineno">  283</span>                uint mant = (uint)(x.Mantissa | 0x400);</div>
+<div class="line"><span class="lineno">  284</span>                mant &gt;&gt;= shift;</div>
+<div class="line"><span class="lineno">  285</span>                mant &lt;&lt;= shift;</div>
+<div class="line"><span class="lineno">  286</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16((ushort)(x.Sign ? 1 : 0), e, (ushort)(mant &amp; 0x3FF));</div>
+<div class="line"><span class="lineno">  287</span>            }</div>
+<div class="line"><span class="lineno">  288</span> </div>
+<div class="line"><span class="lineno">  289</span>            <span class="keywordflow">if</span> ( IsZero(x) ) <span class="keywordflow">return</span> x;</div>
+<div class="line"><span class="lineno">  290</span> </div>
+<div class="line"><span class="lineno">  291</span>            <span class="keywordflow">return</span> x.Sign ? Zero : One;</div>
+<div class="line"><span class="lineno">  292</span>        }</div>
 </div><!-- fragment --><div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
@@ -563,11 +563,11 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clamps the value between the specified minimum and maximum. </p>
-<div class="fragment"><div class="line"><span class="lineno">  231</span>                                                                        {</div>
-<div class="line"><span class="lineno">  232</span>            <span class="keywordflow">if</span> ( x &lt; min ) <span class="keywordflow">return</span> min;</div>
-<div class="line"><span class="lineno">  233</span>            <span class="keywordflow">if</span> ( x &gt; max ) <span class="keywordflow">return</span> max;</div>
-<div class="line"><span class="lineno">  234</span>            <span class="keywordflow">return</span> x;</div>
-<div class="line"><span class="lineno">  235</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  228</span>                                                                        {</div>
+<div class="line"><span class="lineno">  229</span>            <span class="keywordflow">if</span> ( x &lt; min ) <span class="keywordflow">return</span> min;</div>
+<div class="line"><span class="lineno">  230</span>            <span class="keywordflow">if</span> ( x &gt; max ) <span class="keywordflow">return</span> max;</div>
+<div class="line"><span class="lineno">  231</span>            <span class="keywordflow">return</span> x;</div>
+<div class="line"><span class="lineno">  232</span>        }</div>
 </div><!-- fragment --><div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
@@ -601,18 +601,18 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A CompareResult indicating whether this instance is smaller than, equal to, or larger than <em>b</em> . </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  633</span>                                                    {</div>
-<div class="line"><span class="lineno">  634</span>            <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a> _ret = <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Equal;</div>
-<div class="line"><span class="lineno">  635</span> </div>
-<div class="line"><span class="lineno">  636</span>            <span class="keywordflow">if</span> ( IsNaN(<span class="keyword">this</span>) &amp;&amp; !IsNaN(b) ) _ret = <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.AIsSmallerB;</div>
-<div class="line"><span class="lineno">  637</span> </div>
-<div class="line"><span class="lineno">  638</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  639</span>                <span class="keywordflow">if</span> ( <span class="keyword">this</span> &lt; b ) _ret = <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.AIsSmallerB;</div>
-<div class="line"><span class="lineno">  640</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <span class="keyword">this</span> &gt; b ) _ret = <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.AIsLargerB;</div>
-<div class="line"><span class="lineno">  641</span>            }</div>
-<div class="line"><span class="lineno">  642</span> </div>
-<div class="line"><span class="lineno">  643</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><span class="lineno">  644</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  630</span>                                                    {</div>
+<div class="line"><span class="lineno">  631</span>            <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a> _ret = <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Equal;</div>
+<div class="line"><span class="lineno">  632</span> </div>
+<div class="line"><span class="lineno">  633</span>            <span class="keywordflow">if</span> ( IsNaN(<span class="keyword">this</span>) &amp;&amp; !IsNaN(b) ) _ret = <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.AIsSmallerB;</div>
+<div class="line"><span class="lineno">  634</span> </div>
+<div class="line"><span class="lineno">  635</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  636</span>                <span class="keywordflow">if</span> ( <span class="keyword">this</span> &lt; b ) _ret = <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.AIsSmallerB;</div>
+<div class="line"><span class="lineno">  637</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <span class="keyword">this</span> &gt; b ) _ret = <a class="code hl_enumeration" href="../../d2/d14/namespace_system_ex_1_1_utils.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.AIsLargerB;</div>
+<div class="line"><span class="lineno">  638</span>            }</div>
+<div class="line"><span class="lineno">  639</span> </div>
+<div class="line"><span class="lineno">  640</span>            <span class="keywordflow">return</span> _ret;</div>
+<div class="line"><span class="lineno">  641</span>        }</div>
 <div class="ttc" id="anamespace_system_ex_1_1_utils_html_ade9e4a259d9b99fd9515aaf6229b3275"><div class="ttname"><a href="../../d2/d14/namespace_system_ex_1_1_utils.html#ade9e4a259d9b99fd9515aaf6229b3275">SystemEx.Utils.CompareResult</a></div><div class="ttdeci">CompareResult</div><div class="ttdoc">Specifies the result of a comparison between two values.</div><div class="ttdef"><b>Definition</b> Algorithm.cs:26</div></div>
 </div><!-- fragment --><div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -653,9 +653,9 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A signed integer indicating the relative order. </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  729</span>                                                           {</div>
-<div class="line"><span class="lineno">  730</span>            <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)CompareTo(other);</div>
-<div class="line"><span class="lineno">  731</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  726</span>                                                           {</div>
+<div class="line"><span class="lineno">  727</span>            <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)CompareTo(other);</div>
+<div class="line"><span class="lineno">  728</span>        }</div>
 </div><!-- fragment --><div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
@@ -695,12 +695,12 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  710</span>                                             {</div>
-<div class="line"><span class="lineno">  711</span>            <span class="keywordflow">if</span> ( (obj is Half16) ) {</div>
-<div class="line"><span class="lineno">  712</span>                <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)CompareTo((Half16)(obj));</div>
-<div class="line"><span class="lineno">  713</span>            }</div>
-<div class="line"><span class="lineno">  714</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;Object is not a Float16 object&quot;</span>);</div>
-<div class="line"><span class="lineno">  715</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  707</span>                                             {</div>
+<div class="line"><span class="lineno">  708</span>            <span class="keywordflow">if</span> ( (obj is Half16) ) {</div>
+<div class="line"><span class="lineno">  709</span>                <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)CompareTo((Half16)(obj));</div>
+<div class="line"><span class="lineno">  710</span>            }</div>
+<div class="line"><span class="lineno">  711</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;Object is not a Float16 object&quot;</span>);</div>
+<div class="line"><span class="lineno">  712</span>        }</div>
 </div><!-- fragment --><div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
@@ -747,37 +747,37 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The quotient <code>a / b</code> as a Half16 value. If the operation is undefined (e.g. division by zero, ∞ / ∞), NaN is returned. </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  586</span>                                                     {</div>
-<div class="line"><span class="lineno">  587</span>            <span class="keywordflow">if</span> ( IsNaN(a) || IsNaN(b) ) <span class="keywordflow">return</span> Half16.NaN;</div>
-<div class="line"><span class="lineno">  588</span>            <span class="keywordflow">if</span> ( IsZero(b) ) <span class="keywordflow">return</span> Half16.NaN;</div>
-<div class="line"><span class="lineno">  589</span>            <span class="keywordflow">if</span> ( IsZero(a) ) <span class="keywordflow">return</span> Half16.Zero;</div>
-<div class="line"><span class="lineno">  590</span> </div>
-<div class="line"><span class="lineno">  591</span>            <span class="keywordflow">if</span> ( IsInfinity(a) &amp;&amp; IsInfinity(b) ) <span class="keywordflow">return</span> Half16.NaN;</div>
-<div class="line"><span class="lineno">  592</span> </div>
-<div class="line"><span class="lineno">  593</span>            ushort sign = (ushort)((a.Sign ? 1 : 0) ^ (b.Sign ? 1 : 0) );</div>
-<div class="line"><span class="lineno">  594</span> </div>
-<div class="line"><span class="lineno">  595</span>            <span class="keywordflow">if</span> ( IsInfinity(a) ) {</div>
-<div class="line"><span class="lineno">  596</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(sign, 0x1F, 0);</div>
-<div class="line"><span class="lineno">  597</span>            }</div>
-<div class="line"><span class="lineno">  598</span>            <span class="keywordflow">if</span> ( IsInfinity(b) ) <span class="keywordflow">return</span> Half16.Zero;</div>
+<div class="fragment"><div class="line"><span class="lineno">  583</span>                                                     {</div>
+<div class="line"><span class="lineno">  584</span>            <span class="keywordflow">if</span> ( IsNaN(a) || IsNaN(b) ) <span class="keywordflow">return</span> Half16.NaN;</div>
+<div class="line"><span class="lineno">  585</span>            <span class="keywordflow">if</span> ( IsZero(b) ) <span class="keywordflow">return</span> Half16.NaN;</div>
+<div class="line"><span class="lineno">  586</span>            <span class="keywordflow">if</span> ( IsZero(a) ) <span class="keywordflow">return</span> Half16.Zero;</div>
+<div class="line"><span class="lineno">  587</span> </div>
+<div class="line"><span class="lineno">  588</span>            <span class="keywordflow">if</span> ( IsInfinity(a) &amp;&amp; IsInfinity(b) ) <span class="keywordflow">return</span> Half16.NaN;</div>
+<div class="line"><span class="lineno">  589</span> </div>
+<div class="line"><span class="lineno">  590</span>            ushort sign = (ushort)((a.Sign ? 1 : 0) ^ (b.Sign ? 1 : 0) );</div>
+<div class="line"><span class="lineno">  591</span> </div>
+<div class="line"><span class="lineno">  592</span>            <span class="keywordflow">if</span> ( IsInfinity(a) ) {</div>
+<div class="line"><span class="lineno">  593</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(sign, 0x1F, 0);</div>
+<div class="line"><span class="lineno">  594</span>            }</div>
+<div class="line"><span class="lineno">  595</span>            <span class="keywordflow">if</span> ( IsInfinity(b) ) <span class="keywordflow">return</span> Half16.Zero;</div>
+<div class="line"><span class="lineno">  596</span> </div>
+<div class="line"><span class="lineno">  597</span>            ushort expA = a.Exponent;</div>
+<div class="line"><span class="lineno">  598</span>            ushort expB = b.Exponent;</div>
 <div class="line"><span class="lineno">  599</span> </div>
-<div class="line"><span class="lineno">  600</span>            ushort expA = a.Exponent;</div>
-<div class="line"><span class="lineno">  601</span>            ushort expB = b.Exponent;</div>
+<div class="line"><span class="lineno">  600</span>            uint mantA = (expA == 0) ? a.Mantissa : (uint)(a.Mantissa | 0x400);</div>
+<div class="line"><span class="lineno">  601</span>            uint mantB = (expB == 0) ? b.Mantissa: (uint)(b.Mantissa | 0x400);</div>
 <div class="line"><span class="lineno">  602</span> </div>
-<div class="line"><span class="lineno">  603</span>            uint mantA = (expA == 0) ? a.Mantissa : (uint)(a.Mantissa | 0x400);</div>
-<div class="line"><span class="lineno">  604</span>            uint mantB = (expB == 0) ? b.Mantissa: (uint)(b.Mantissa | 0x400);</div>
-<div class="line"><span class="lineno">  605</span> </div>
-<div class="line"><span class="lineno">  606</span>            <span class="keywordtype">int</span> exp = expA - expB + 15;</div>
-<div class="line"><span class="lineno">  607</span> </div>
-<div class="line"><span class="lineno">  608</span>            uint mant = (mantA &lt;&lt; 13) / mantB;</div>
-<div class="line"><span class="lineno">  609</span> </div>
-<div class="line"><span class="lineno">  610</span>            <span class="keywordflow">while</span> ( (mant &amp; 0x400) == 0 ) {</div>
-<div class="line"><span class="lineno">  611</span>                mant &lt;&lt;= 1;</div>
-<div class="line"><span class="lineno">  612</span>                exp--;</div>
-<div class="line"><span class="lineno">  613</span>            }</div>
-<div class="line"><span class="lineno">  614</span> </div>
-<div class="line"><span class="lineno">  615</span>            <span class="keywordflow">return</span> Normalize(sign, exp, mant);</div>
-<div class="line"><span class="lineno">  616</span>        }</div>
+<div class="line"><span class="lineno">  603</span>            <span class="keywordtype">int</span> exp = expA - expB + 15;</div>
+<div class="line"><span class="lineno">  604</span> </div>
+<div class="line"><span class="lineno">  605</span>            uint mant = (mantA &lt;&lt; 13) / mantB;</div>
+<div class="line"><span class="lineno">  606</span> </div>
+<div class="line"><span class="lineno">  607</span>            <span class="keywordflow">while</span> ( (mant &amp; 0x400) == 0 ) {</div>
+<div class="line"><span class="lineno">  608</span>                mant &lt;&lt;= 1;</div>
+<div class="line"><span class="lineno">  609</span>                exp--;</div>
+<div class="line"><span class="lineno">  610</span>            }</div>
+<div class="line"><span class="lineno">  611</span> </div>
+<div class="line"><span class="lineno">  612</span>            <span class="keywordflow">return</span> Normalize(sign, exp, mant);</div>
+<div class="line"><span class="lineno">  613</span>        }</div>
 </div><!-- fragment --><div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
@@ -810,9 +810,9 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the values are equal; otherwise <code>false</code>. </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  671</span>                                            {</div>
-<div class="line"><span class="lineno">  672</span>            <span class="keywordflow">return</span> <span class="keyword">this</span> == other;</div>
-<div class="line"><span class="lineno">  673</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  668</span>                                            {</div>
+<div class="line"><span class="lineno">  669</span>            <span class="keywordflow">return</span> <span class="keyword">this</span> == other;</div>
+<div class="line"><span class="lineno">  670</span>        }</div>
 </div><!-- fragment --><div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
@@ -852,10 +852,10 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if <em>obj</em>  is a Half16 and equal to this instance; otherwise <code>false</code>. </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  686</span>                                                    {</div>
-<div class="line"><span class="lineno">  687</span>            <span class="keywordflow">if</span> ( obj == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  688</span>            <span class="keywordflow">return</span> (obj is Half16) &amp;&amp; Equals((Half16)obj);</div>
-<div class="line"><span class="lineno">  689</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  683</span>                                                    {</div>
+<div class="line"><span class="lineno">  684</span>            <span class="keywordflow">if</span> ( obj == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  685</span>            <span class="keywordflow">return</span> (obj is Half16) &amp;&amp; Equals((Half16)obj);</div>
+<div class="line"><span class="lineno">  686</span>        }</div>
 </div><!-- fragment --><div id="dynsection-14" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
@@ -889,23 +889,23 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the floor of the value. </p>
-<div class="fragment"><div class="line"><span class="lineno">  258</span>                                                {</div>
-<div class="line"><span class="lineno">  259</span>            <span class="keywordflow">if</span> ( IsNaN(x) || IsInfinity(x) ) <span class="keywordflow">return</span> x;</div>
-<div class="line"><span class="lineno">  260</span> </div>
-<div class="line"><span class="lineno">  261</span>            ushort e = x.Exponent;</div>
-<div class="line"><span class="lineno">  262</span> </div>
-<div class="line"><span class="lineno">  263</span>            <span class="keywordflow">if</span> ( e &gt;= 15 ) {</div>
-<div class="line"><span class="lineno">  264</span>                <span class="keywordtype">int</span> shift = e - 15;</div>
-<div class="line"><span class="lineno">  265</span>                uint mant = (uint)(x.Mantissa | 0x400);</div>
-<div class="line"><span class="lineno">  266</span>                mant &gt;&gt;= shift;</div>
-<div class="line"><span class="lineno">  267</span>                mant &lt;&lt;= shift;</div>
-<div class="line"><span class="lineno">  268</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16((ushort)(x.Sign ? 1 : 0), e, (ushort)(mant &amp; 0x3FF));</div>
-<div class="line"><span class="lineno">  269</span>            }</div>
-<div class="line"><span class="lineno">  270</span> </div>
-<div class="line"><span class="lineno">  271</span>            <span class="keywordflow">if</span> ( IsZero(x) ) <span class="keywordflow">return</span> x;</div>
-<div class="line"><span class="lineno">  272</span> </div>
-<div class="line"><span class="lineno">  273</span>            <span class="keywordflow">return</span> x.Sign ? NegativeOne : Zero;</div>
-<div class="line"><span class="lineno">  274</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  255</span>                                                {</div>
+<div class="line"><span class="lineno">  256</span>            <span class="keywordflow">if</span> ( IsNaN(x) || IsInfinity(x) ) <span class="keywordflow">return</span> x;</div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>            ushort e = x.Exponent;</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>            <span class="keywordflow">if</span> ( e &gt;= 15 ) {</div>
+<div class="line"><span class="lineno">  261</span>                <span class="keywordtype">int</span> shift = e - 15;</div>
+<div class="line"><span class="lineno">  262</span>                uint mant = (uint)(x.Mantissa | 0x400);</div>
+<div class="line"><span class="lineno">  263</span>                mant &gt;&gt;= shift;</div>
+<div class="line"><span class="lineno">  264</span>                mant &lt;&lt;= shift;</div>
+<div class="line"><span class="lineno">  265</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16((ushort)(x.Sign ? 1 : 0), e, (ushort)(mant &amp; 0x3FF));</div>
+<div class="line"><span class="lineno">  266</span>            }</div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>            <span class="keywordflow">if</span> ( IsZero(x) ) <span class="keywordflow">return</span> x;</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>            <span class="keywordflow">return</span> x.Sign ? NegativeOne : Zero;</div>
+<div class="line"><span class="lineno">  271</span>        }</div>
 </div><!-- fragment --><div id="dynsection-15" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
@@ -948,10 +948,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a <a class="el" href="../../d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html">Half16</a> from a byte array. </p>
-<div class="fragment"><div class="line"><span class="lineno">  191</span>                                                                                    {</div>
-<div class="line"><span class="lineno">  192</span>            ushort value = input.ToUShort(offsets, endian);</div>
-<div class="line"><span class="lineno">  193</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(value);</div>
-<div class="line"><span class="lineno">  194</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  188</span>                                                                                    {</div>
+<div class="line"><span class="lineno">  189</span>            ushort value = input.ToUShort(offsets, endian);</div>
+<div class="line"><span class="lineno">  190</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(value);</div>
+<div class="line"><span class="lineno">  191</span>        }</div>
 </div><!-- fragment --><div id="dynsection-16" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
@@ -979,12 +979,12 @@ Properties</h2></td></tr>
 <p>Returns a hash code for this instance. </p>
 <p>The hash is computed using HashFactory.Hash32&lt;T&gt;(T,uint) with a fixed seed. If the computed hash is non‑zero, it is used; otherwise the raw ushort value is hashed.</p>
 <p>This ensures a deterministic, stable hash suitable for use in dictionaries, sets, and other hash‑based containers. </p>
-<div class="fragment"><div class="line"><span class="lineno">  656</span>                                           {</div>
-<div class="line"><span class="lineno">  657</span>            var x =  HashFactory.Hash32(<span class="keyword">this</span>, 674545);</div>
-<div class="line"><span class="lineno">  658</span>            <span class="keywordflow">if</span>(x.Value != 0) <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)x.Value;</div>
-<div class="line"><span class="lineno">  659</span>            </div>
-<div class="line"><span class="lineno">  660</span>            <span class="keywordflow">return</span> m_value.GetHashCode();</div>
-<div class="line"><span class="lineno">  661</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  653</span>                                           {</div>
+<div class="line"><span class="lineno">  654</span>            var x =  HashFactory.Hash32(<span class="keyword">this</span>, 674545);</div>
+<div class="line"><span class="lineno">  655</span>            <span class="keywordflow">if</span>(x.Value != 0) <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)x.Value;</div>
+<div class="line"><span class="lineno">  656</span>            </div>
+<div class="line"><span class="lineno">  657</span>            <span class="keywordflow">return</span> m_value.GetHashCode();</div>
+<div class="line"><span class="lineno">  658</span>        }</div>
 </div><!-- fragment --><div id="dynsection-17" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1024,8 +1024,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns true if the value is finite (not NaN or infinity). </p>
-<div class="fragment"><div class="line"><span class="lineno">  239</span>                                                 =&gt;</div>
-<div class="line"><span class="lineno">  240</span>            x.Exponent != 0x1F;</div>
+<div class="fragment"><div class="line"><span class="lineno">  236</span>                                                 =&gt;</div>
+<div class="line"><span class="lineno">  237</span>            x.Exponent != 0x1F;</div>
 </div><!-- fragment --><div id="dynsection-19" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1059,8 +1059,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns true if the value is ±infinity. </p>
-<div class="fragment"><div class="line"><span class="lineno">  216</span>                                                     =&gt;</div>
-<div class="line"><span class="lineno">  217</span>            (val.Exponent == 0x1F) &amp;&amp; (val.Mantissa == 0);</div>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>                                                     =&gt;</div>
+<div class="line"><span class="lineno">  214</span>            (val.Exponent == 0x1F) &amp;&amp; (val.Mantissa == 0);</div>
 </div><!-- fragment --><div id="dynsection-20" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1100,18 +1100,18 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns true if the value is an integer. </p>
-<div class="fragment"><div class="line"><span class="lineno">  319</span>                                                  {</div>
-<div class="line"><span class="lineno">  320</span>            <span class="keywordflow">if</span> ( IsNaN(x) || IsInfinity(x) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  321</span> </div>
-<div class="line"><span class="lineno">  322</span>            ushort e = x.Exponent;</div>
-<div class="line"><span class="lineno">  323</span> </div>
-<div class="line"><span class="lineno">  324</span>            <span class="keywordflow">if</span> ( e &lt; 15 ) <span class="keywordflow">return</span> IsZero(x);</div>
+<div class="fragment"><div class="line"><span class="lineno">  316</span>                                                  {</div>
+<div class="line"><span class="lineno">  317</span>            <span class="keywordflow">if</span> ( IsNaN(x) || IsInfinity(x) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  318</span> </div>
+<div class="line"><span class="lineno">  319</span>            ushort e = x.Exponent;</div>
+<div class="line"><span class="lineno">  320</span> </div>
+<div class="line"><span class="lineno">  321</span>            <span class="keywordflow">if</span> ( e &lt; 15 ) <span class="keywordflow">return</span> IsZero(x);</div>
+<div class="line"><span class="lineno">  322</span> </div>
+<div class="line"><span class="lineno">  323</span>            <span class="keywordtype">int</span> shift = e - 15;</div>
+<div class="line"><span class="lineno">  324</span>            uint mant = (uint)(x.Mantissa | 0x400);</div>
 <div class="line"><span class="lineno">  325</span> </div>
-<div class="line"><span class="lineno">  326</span>            <span class="keywordtype">int</span> shift = e - 15;</div>
-<div class="line"><span class="lineno">  327</span>            uint mant = (uint)(x.Mantissa | 0x400);</div>
-<div class="line"><span class="lineno">  328</span> </div>
-<div class="line"><span class="lineno">  329</span>            <span class="keywordflow">return</span> (mant &amp; ((1u &lt;&lt; shift) - 1)) == 0;</div>
-<div class="line"><span class="lineno">  330</span>        }</div>
+<div class="line"><span class="lineno">  326</span>            <span class="keywordflow">return</span> (mant &amp; ((1u &lt;&lt; shift) - 1)) == 0;</div>
+<div class="line"><span class="lineno">  327</span>        }</div>
 </div><!-- fragment --><div id="dynsection-22" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1145,8 +1145,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns true if the value is a NaN. </p>
-<div class="fragment"><div class="line"><span class="lineno">  210</span>                                                =&gt;</div>
-<div class="line"><span class="lineno">  211</span>            (val.Exponent == 0x1F) &amp;&amp; (val.Mantissa != 0);</div>
+<div class="fragment"><div class="line"><span class="lineno">  207</span>                                                =&gt;</div>
+<div class="line"><span class="lineno">  208</span>            (val.Exponent == 0x1F) &amp;&amp; (val.Mantissa != 0);</div>
 </div><!-- fragment --><div id="dynsection-23" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1186,8 +1186,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns true if the value is negative. </p>
-<div class="fragment"><div class="line"><span class="lineno">  204</span>                                                     =&gt;</div>
-<div class="line"><span class="lineno">  205</span>            (val.m_value &amp; 0x8000) != 0;</div>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>                                                     =&gt;</div>
+<div class="line"><span class="lineno">  202</span>            (val.m_value &amp; 0x8000) != 0;</div>
 </div><!-- fragment --><div id="dynsection-25" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1227,10 +1227,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns true if the value is a normal (non‑subnormal, non‑special) number. </p>
-<div class="fragment"><div class="line"><span class="lineno">  251</span>                                                 {</div>
-<div class="line"><span class="lineno">  252</span>            ushort e = x.Exponent;</div>
-<div class="line"><span class="lineno">  253</span>            <span class="keywordflow">return</span> e != 0 &amp;&amp; e != 0x1F;</div>
-<div class="line"><span class="lineno">  254</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  248</span>                                                 {</div>
+<div class="line"><span class="lineno">  249</span>            ushort e = x.Exponent;</div>
+<div class="line"><span class="lineno">  250</span>            <span class="keywordflow">return</span> e != 0 &amp;&amp; e != 0x1F;</div>
+<div class="line"><span class="lineno">  251</span>        }</div>
 </div><!-- fragment --><div id="dynsection-27" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1264,8 +1264,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns true if the value is a subnormal number. </p>
-<div class="fragment"><div class="line"><span class="lineno">  245</span>                                                    =&gt;</div>
-<div class="line"><span class="lineno">  246</span>            x.Exponent == 0 &amp;&amp; x.Mantissa != 0;</div>
+<div class="fragment"><div class="line"><span class="lineno">  242</span>                                                    =&gt;</div>
+<div class="line"><span class="lineno">  243</span>            x.Exponent == 0 &amp;&amp; x.Mantissa != 0;</div>
 </div><!-- fragment --><div id="dynsection-28" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1299,8 +1299,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns true if the value is +0 or −0. </p>
-<div class="fragment"><div class="line"><span class="lineno">  198</span>                                                   =&gt;</div>
-<div class="line"><span class="lineno">  199</span>            (value.m_value &amp; ~0x8000) == 0;</div>
+<div class="fragment"><div class="line"><span class="lineno">  195</span>                                                   =&gt;</div>
+<div class="line"><span class="lineno">  196</span>            (value.m_value &amp; ~0x8000) == 0;</div>
 </div><!-- fragment --><div id="dynsection-29" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-29-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1344,7 +1344,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the larger of two <a class="el" href="../../d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html">Half16</a> values. </p>
-<div class="fragment"><div class="line"><span class="lineno">  149</span>=&gt; (x &gt; y) ? x : y;</div>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>=&gt; (x &gt; y) ? x : y;</div>
 </div><!-- fragment --><div id="dynsection-31" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1382,7 +1382,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the smaller of two <a class="el" href="../../d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html">Half16</a> values. </p>
-<div class="fragment"><div class="line"><span class="lineno">  154</span>=&gt; (x &lt; y) ? x : y;</div>
+<div class="fragment"><div class="line"><span class="lineno">  151</span>=&gt; (x &lt; y) ? x : y;</div>
 </div><!-- fragment --><div id="dynsection-32" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1420,36 +1420,36 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Multiplies two <a class="el" href="../../d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html">Half16</a> values using full bit‑level arithmetic. </p>
-<div class="fragment"><div class="line"><span class="lineno">  472</span>                                                        {</div>
-<div class="line"><span class="lineno">  473</span>            <span class="keywordflow">if</span> ( IsNaN(a) || IsNaN(b) ) <span class="keywordflow">return</span> Half16.NaN;</div>
-<div class="line"><span class="lineno">  474</span>            <span class="keywordflow">if</span> ( IsZero(a) || IsZero(b) ) <span class="keywordflow">return</span> Half16.Zero;</div>
-<div class="line"><span class="lineno">  475</span> </div>
-<div class="line"><span class="lineno">  476</span>            ushort sign = (ushort)((a.Sign ? 1 : 0) ^ (b.Sign ? 1 : 0) );</div>
-<div class="line"><span class="lineno">  477</span> </div>
-<div class="line"><span class="lineno">  478</span>            <span class="keywordflow">if</span> ( IsInfinity(a) || IsInfinity(b) ) {</div>
-<div class="line"><span class="lineno">  479</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(sign, 0x1F, 0);</div>
-<div class="line"><span class="lineno">  480</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  469</span>                                                        {</div>
+<div class="line"><span class="lineno">  470</span>            <span class="keywordflow">if</span> ( IsNaN(a) || IsNaN(b) ) <span class="keywordflow">return</span> Half16.NaN;</div>
+<div class="line"><span class="lineno">  471</span>            <span class="keywordflow">if</span> ( IsZero(a) || IsZero(b) ) <span class="keywordflow">return</span> Half16.Zero;</div>
+<div class="line"><span class="lineno">  472</span> </div>
+<div class="line"><span class="lineno">  473</span>            ushort sign = (ushort)((a.Sign ? 1 : 0) ^ (b.Sign ? 1 : 0) );</div>
+<div class="line"><span class="lineno">  474</span> </div>
+<div class="line"><span class="lineno">  475</span>            <span class="keywordflow">if</span> ( IsInfinity(a) || IsInfinity(b) ) {</div>
+<div class="line"><span class="lineno">  476</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(sign, 0x1F, 0);</div>
+<div class="line"><span class="lineno">  477</span>            }</div>
+<div class="line"><span class="lineno">  478</span> </div>
+<div class="line"><span class="lineno">  479</span>            ushort expA = a.Exponent;</div>
+<div class="line"><span class="lineno">  480</span>            ushort expB = b.Exponent;</div>
 <div class="line"><span class="lineno">  481</span> </div>
-<div class="line"><span class="lineno">  482</span>            ushort expA = a.Exponent;</div>
-<div class="line"><span class="lineno">  483</span>            ushort expB = b.Exponent;</div>
+<div class="line"><span class="lineno">  482</span>            uint mantA = (expA == 0) ? a.Mantissa : (uint)(a.Mantissa | 0x400);</div>
+<div class="line"><span class="lineno">  483</span>            uint mantB = (expB == 0) ? b.Mantissa: (uint)(b.Mantissa | 0x400);</div>
 <div class="line"><span class="lineno">  484</span> </div>
-<div class="line"><span class="lineno">  485</span>            uint mantA = (expA == 0) ? a.Mantissa : (uint)(a.Mantissa | 0x400);</div>
-<div class="line"><span class="lineno">  486</span>            uint mantB = (expB == 0) ? b.Mantissa: (uint)(b.Mantissa | 0x400);</div>
-<div class="line"><span class="lineno">  487</span> </div>
-<div class="line"><span class="lineno">  488</span>            <span class="keywordtype">int</span> exp = expA + expB - 15;</div>
-<div class="line"><span class="lineno">  489</span> </div>
-<div class="line"><span class="lineno">  490</span>            uint mant = mantA * mantB; <span class="comment">// bis zu 20 Bits</span></div>
-<div class="line"><span class="lineno">  491</span> </div>
-<div class="line"><span class="lineno">  492</span>            <span class="comment">// Normalisieren</span></div>
-<div class="line"><span class="lineno">  493</span>            <span class="keywordflow">while</span> ( (mant &amp; 0x80000) != 0 ) {</div>
-<div class="line"><span class="lineno">  494</span>                mant &gt;&gt;= 1;</div>
-<div class="line"><span class="lineno">  495</span>                exp++;</div>
-<div class="line"><span class="lineno">  496</span>            }</div>
-<div class="line"><span class="lineno">  497</span> </div>
-<div class="line"><span class="lineno">  498</span>            mant &gt;&gt;= 10; <span class="comment">// zurück auf 11 Bits (leading + 10 mantissa)</span></div>
-<div class="line"><span class="lineno">  499</span> </div>
-<div class="line"><span class="lineno">  500</span>            <span class="keywordflow">return</span> Normalize(sign, exp, mant);</div>
-<div class="line"><span class="lineno">  501</span>        }</div>
+<div class="line"><span class="lineno">  485</span>            <span class="keywordtype">int</span> exp = expA + expB - 15;</div>
+<div class="line"><span class="lineno">  486</span> </div>
+<div class="line"><span class="lineno">  487</span>            uint mant = mantA * mantB; <span class="comment">// bis zu 20 Bits</span></div>
+<div class="line"><span class="lineno">  488</span> </div>
+<div class="line"><span class="lineno">  489</span>            <span class="comment">// Normalisieren</span></div>
+<div class="line"><span class="lineno">  490</span>            <span class="keywordflow">while</span> ( (mant &amp; 0x80000) != 0 ) {</div>
+<div class="line"><span class="lineno">  491</span>                mant &gt;&gt;= 1;</div>
+<div class="line"><span class="lineno">  492</span>                exp++;</div>
+<div class="line"><span class="lineno">  493</span>            }</div>
+<div class="line"><span class="lineno">  494</span> </div>
+<div class="line"><span class="lineno">  495</span>            mant &gt;&gt;= 10; <span class="comment">// zurück auf 11 Bits (leading + 10 mantissa)</span></div>
+<div class="line"><span class="lineno">  496</span> </div>
+<div class="line"><span class="lineno">  497</span>            <span class="keywordflow">return</span> Normalize(sign, exp, mant);</div>
+<div class="line"><span class="lineno">  498</span>        }</div>
 </div><!-- fragment --><div id="dynsection-33" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1483,10 +1483,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the negated value. </p>
-<div class="fragment"><div class="line"><span class="lineno">  455</span>                                          {</div>
-<div class="line"><span class="lineno">  456</span>            ushort sign = (ushort)(h.Sign ? 1 : 0);</div>
-<div class="line"><span class="lineno">  457</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Half16((ushort)(sign ^ 1), h.Exponent, h.Mantissa);</div>
-<div class="line"><span class="lineno">  458</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  452</span>                                          {</div>
+<div class="line"><span class="lineno">  453</span>            ushort sign = (ushort)(h.Sign ? 1 : 0);</div>
+<div class="line"><span class="lineno">  454</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Half16((ushort)(sign ^ 1), h.Exponent, h.Mantissa);</div>
+<div class="line"><span class="lineno">  455</span>        }</div>
 </div><!-- fragment --><div id="dynsection-34" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-34-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1529,24 +1529,24 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Normalizes a mantissa/exponent pair into a valid <a class="el" href="../../d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html">Half16</a> value. </p>
-<div class="fragment"><div class="line"><span class="lineno">  416</span>                                                                    {</div>
-<div class="line"><span class="lineno">  417</span>            <span class="keywordflow">if</span> ( mant == 0 ) <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(sign, 0, 0);</div>
-<div class="line"><span class="lineno">  418</span> </div>
-<div class="line"><span class="lineno">  419</span>            <span class="keywordflow">while</span> ( (mant &amp; 0x400) == 0 ) {</div>
-<div class="line"><span class="lineno">  420</span>                mant &lt;&lt;= 1;</div>
-<div class="line"><span class="lineno">  421</span>                exp--;</div>
-<div class="line"><span class="lineno">  422</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  413</span>                                                                    {</div>
+<div class="line"><span class="lineno">  414</span>            <span class="keywordflow">if</span> ( mant == 0 ) <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(sign, 0, 0);</div>
+<div class="line"><span class="lineno">  415</span> </div>
+<div class="line"><span class="lineno">  416</span>            <span class="keywordflow">while</span> ( (mant &amp; 0x400) == 0 ) {</div>
+<div class="line"><span class="lineno">  417</span>                mant &lt;&lt;= 1;</div>
+<div class="line"><span class="lineno">  418</span>                exp--;</div>
+<div class="line"><span class="lineno">  419</span>            }</div>
+<div class="line"><span class="lineno">  420</span> </div>
+<div class="line"><span class="lineno">  421</span>            <span class="keywordflow">if</span> ( exp &lt;= 0 )</div>
+<div class="line"><span class="lineno">  422</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(sign, 0, (ushort)(mant &gt;&gt; (1 - exp)));</div>
 <div class="line"><span class="lineno">  423</span> </div>
-<div class="line"><span class="lineno">  424</span>            <span class="keywordflow">if</span> ( exp &lt;= 0 )</div>
-<div class="line"><span class="lineno">  425</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(sign, 0, (ushort)(mant &gt;&gt; (1 - exp)));</div>
+<div class="line"><span class="lineno">  424</span>            <span class="keywordflow">if</span> ( exp &gt;= 31 )</div>
+<div class="line"><span class="lineno">  425</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(sign, 0x1F, 0);</div>
 <div class="line"><span class="lineno">  426</span> </div>
-<div class="line"><span class="lineno">  427</span>            <span class="keywordflow">if</span> ( exp &gt;= 31 )</div>
-<div class="line"><span class="lineno">  428</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(sign, 0x1F, 0);</div>
-<div class="line"><span class="lineno">  429</span> </div>
-<div class="line"><span class="lineno">  430</span>            ushort finalMant = (ushort)(mant &amp; 0x3FF);</div>
-<div class="line"><span class="lineno">  431</span> </div>
-<div class="line"><span class="lineno">  432</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(sign, (ushort)exp, finalMant);</div>
-<div class="line"><span class="lineno">  433</span>        }</div>
+<div class="line"><span class="lineno">  427</span>            ushort finalMant = (ushort)(mant &amp; 0x3FF);</div>
+<div class="line"><span class="lineno">  428</span> </div>
+<div class="line"><span class="lineno">  429</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Half16(sign, (ushort)exp, finalMant);</div>
+<div class="line"><span class="lineno">  430</span>        }</div>
 </div><!-- fragment --><div id="dynsection-35" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-35-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1590,7 +1590,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Inequality operator. </p>
-<div class="fragment"><div class="line"><span class="lineno">  381</span>=&gt; !(a == b);</div>
+<div class="fragment"><div class="line"><span class="lineno">  378</span>=&gt; !(a == b);</div>
 </div><!-- fragment --><div id="dynsection-37" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-37-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1628,7 +1628,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Multiplication operator. </p>
-<div class="fragment"><div class="line"><span class="lineno">  396</span>=&gt; Mul(a, b);</div>
+<div class="fragment"><div class="line"><span class="lineno">  393</span>=&gt; Mul(a, b);</div>
 </div><!-- fragment --><div id="dynsection-38" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-38-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1666,8 +1666,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Addition operator. </p>
-<div class="fragment"><div class="line"><span class="lineno">  386</span>=&gt; <a class="code hl_enumvalue" href="../../d1/d60/group__color.html#ggaf2ec8d122c6ae6f77f9d5b8d55e37cb2aec211f7c20af43e742bf2570c3cb84f9">Add</a>(a, b);</div>
-<div class="ttc" id="agroup__color_html_ggaf2ec8d122c6ae6f77f9d5b8d55e37cb2aec211f7c20af43e742bf2570c3cb84f9"><div class="ttname"><a href="../../d1/d60/group__color.html#ggaf2ec8d122c6ae6f77f9d5b8d55e37cb2aec211f7c20af43e742bf2570c3cb84f9">SystemEx.Drawing.BlendMode.Add</a></div><div class="ttdeci">@ Add</div><div class="ttdoc">Adds the layer’s color value to the underlying color. Useful for additive accumulation or brightness‑...</div><div class="ttdef"><b>Definition</b> ICanvasList.cs:37</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  383</span>=&gt; <a class="code hl_enumvalue" href="../../d1/d60/group__color.html#ggaf2ec8d122c6ae6f77f9d5b8d55e37cb2aec211f7c20af43e742bf2570c3cb84f9">Add</a>(a, b);</div>
+<div class="ttc" id="agroup__color_html_ggaf2ec8d122c6ae6f77f9d5b8d55e37cb2aec211f7c20af43e742bf2570c3cb84f9"><div class="ttname"><a href="../../d1/d60/group__color.html#ggaf2ec8d122c6ae6f77f9d5b8d55e37cb2aec211f7c20af43e742bf2570c3cb84f9">SystemEx.Drawing.BlendMode.Add</a></div><div class="ttdeci">@ Add</div><div class="ttdoc">Adds the layer’s color value to the underlying color. Useful for additive accumulation or brightness‑...</div><div class="ttdef"><b>Definition</b> ICanvasList.cs:38</div></div>
 </div><!-- fragment --><div id="dynsection-39" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-39-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1701,7 +1701,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Increment operator. </p>
-<div class="fragment"><div class="line"><span class="lineno">  406</span>=&gt; a + One;</div>
+<div class="fragment"><div class="line"><span class="lineno">  403</span>=&gt; a + One;</div>
 </div><!-- fragment --><div id="dynsection-40" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-40-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1739,7 +1739,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Subtraction operator. </p>
-<div class="fragment"><div class="line"><span class="lineno">  391</span>=&gt; a + Negate(b);</div>
+<div class="fragment"><div class="line"><span class="lineno">  388</span>=&gt; a + Negate(b);</div>
 </div><!-- fragment --><div id="dynsection-41" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-41-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1773,7 +1773,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Decrement operator. </p>
-<div class="fragment"><div class="line"><span class="lineno">  411</span>=&gt; a - One;</div>
+<div class="fragment"><div class="line"><span class="lineno">  408</span>=&gt; a - One;</div>
 </div><!-- fragment --><div id="dynsection-42" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-42-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1811,7 +1811,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Division operator. </p>
-<div class="fragment"><div class="line"><span class="lineno">  401</span>=&gt; Div(a, b);</div>
+<div class="fragment"><div class="line"><span class="lineno">  398</span>=&gt; Div(a, b);</div>
 </div><!-- fragment --><div id="dynsection-43" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-43-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1849,19 +1849,19 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Less‑than comparison operator with full IEEE‑754 semantics. </p>
-<div class="fragment"><div class="line"><span class="lineno">  336</span>                                                             {</div>
-<div class="line"><span class="lineno">  337</span>            <span class="keywordflow">if</span> ( IsNaN(a) || IsNaN(b) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  338</span> </div>
-<div class="line"><span class="lineno">  339</span>            <span class="keywordtype">bool</span> _neg = IsNegative(a);</div>
-<div class="line"><span class="lineno">  340</span> </div>
-<div class="line"><span class="lineno">  341</span>            <span class="keywordflow">if</span> ( _neg != IsNegative(b) ) {</div>
-<div class="line"><span class="lineno">  342</span>                <span class="keywordflow">if</span> ( IsZero(a) &amp;&amp; IsZero(b) )</div>
-<div class="line"><span class="lineno">  343</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  344</span>                <span class="keywordflow">return</span> _neg;</div>
-<div class="line"><span class="lineno">  345</span>            }</div>
-<div class="line"><span class="lineno">  346</span> </div>
-<div class="line"><span class="lineno">  347</span>            <span class="keywordflow">return</span> (a.m_value != b.m_value) &amp;&amp; ((a.m_value &lt; b.m_value) ^ _neg);</div>
-<div class="line"><span class="lineno">  348</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  333</span>                                                             {</div>
+<div class="line"><span class="lineno">  334</span>            <span class="keywordflow">if</span> ( IsNaN(a) || IsNaN(b) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  335</span> </div>
+<div class="line"><span class="lineno">  336</span>            <span class="keywordtype">bool</span> _neg = IsNegative(a);</div>
+<div class="line"><span class="lineno">  337</span> </div>
+<div class="line"><span class="lineno">  338</span>            <span class="keywordflow">if</span> ( _neg != IsNegative(b) ) {</div>
+<div class="line"><span class="lineno">  339</span>                <span class="keywordflow">if</span> ( IsZero(a) &amp;&amp; IsZero(b) )</div>
+<div class="line"><span class="lineno">  340</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  341</span>                <span class="keywordflow">return</span> _neg;</div>
+<div class="line"><span class="lineno">  342</span>            }</div>
+<div class="line"><span class="lineno">  343</span> </div>
+<div class="line"><span class="lineno">  344</span>            <span class="keywordflow">return</span> (a.m_value != b.m_value) &amp;&amp; ((a.m_value &lt; b.m_value) ^ _neg);</div>
+<div class="line"><span class="lineno">  345</span>        }</div>
 </div><!-- fragment --><div id="dynsection-44" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-44-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1899,19 +1899,19 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Less‑than‑or‑equal comparison operator. </p>
-<div class="fragment"><div class="line"><span class="lineno">  353</span>                                                            {</div>
-<div class="line"><span class="lineno">  354</span>            <span class="keywordflow">if</span> ( IsNaN(a) || IsNaN(b) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  355</span> </div>
-<div class="line"><span class="lineno">  356</span>            <span class="keywordtype">bool</span> _neg = IsNegative(a);</div>
-<div class="line"><span class="lineno">  357</span> </div>
-<div class="line"><span class="lineno">  358</span>            <span class="keywordflow">if</span> ( _neg != IsNegative(b) ) {</div>
-<div class="line"><span class="lineno">  359</span>                <span class="keywordflow">if</span> ( IsZero(a) &amp;&amp; IsZero(b) )</div>
-<div class="line"><span class="lineno">  360</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  361</span>                <span class="keywordflow">return</span> _neg;</div>
-<div class="line"><span class="lineno">  362</span>            }</div>
-<div class="line"><span class="lineno">  363</span> </div>
-<div class="line"><span class="lineno">  364</span>            <span class="keywordflow">return</span> (a.m_value == b.m_value) || ((a.m_value &lt; b.m_value) ^ _neg);</div>
-<div class="line"><span class="lineno">  365</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  350</span>                                                            {</div>
+<div class="line"><span class="lineno">  351</span>            <span class="keywordflow">if</span> ( IsNaN(a) || IsNaN(b) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  352</span> </div>
+<div class="line"><span class="lineno">  353</span>            <span class="keywordtype">bool</span> _neg = IsNegative(a);</div>
+<div class="line"><span class="lineno">  354</span> </div>
+<div class="line"><span class="lineno">  355</span>            <span class="keywordflow">if</span> ( _neg != IsNegative(b) ) {</div>
+<div class="line"><span class="lineno">  356</span>                <span class="keywordflow">if</span> ( IsZero(a) &amp;&amp; IsZero(b) )</div>
+<div class="line"><span class="lineno">  357</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  358</span>                <span class="keywordflow">return</span> _neg;</div>
+<div class="line"><span class="lineno">  359</span>            }</div>
+<div class="line"><span class="lineno">  360</span> </div>
+<div class="line"><span class="lineno">  361</span>            <span class="keywordflow">return</span> (a.m_value == b.m_value) || ((a.m_value &lt; b.m_value) ^ _neg);</div>
+<div class="line"><span class="lineno">  362</span>        }</div>
 </div><!-- fragment --><div id="dynsection-45" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-45-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1949,10 +1949,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equality operator with IEEE‑754 zero handling. </p>
-<div class="fragment"><div class="line"><span class="lineno">  464</span>                                                            {</div>
-<div class="line"><span class="lineno">  465</span>            <span class="keywordflow">if</span> ( IsNaN(a) || IsNaN(b) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  466</span>            <span class="keywordflow">return</span> (a.m_value == b.m_value) || (IsZero(a) &amp;&amp; IsZero(b));</div>
-<div class="line"><span class="lineno">  467</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  461</span>                                                            {</div>
+<div class="line"><span class="lineno">  462</span>            <span class="keywordflow">if</span> ( IsNaN(a) || IsNaN(b) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  463</span>            <span class="keywordflow">return</span> (a.m_value == b.m_value) || (IsZero(a) &amp;&amp; IsZero(b));</div>
+<div class="line"><span class="lineno">  464</span>        }</div>
 </div><!-- fragment --><div id="dynsection-46" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-46-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1990,7 +1990,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Greater‑than operator. </p>
-<div class="fragment"><div class="line"><span class="lineno">  371</span>=&gt; b &lt; a;</div>
+<div class="fragment"><div class="line"><span class="lineno">  368</span>=&gt; b &lt; a;</div>
 </div><!-- fragment --><div id="dynsection-47" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-47-summary" class="dynsummary" style="display:block;">
 </div>
@@ -2028,7 +2028,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Greater‑than‑or‑equal operator. </p>
-<div class="fragment"><div class="line"><span class="lineno">  376</span>=&gt; b &lt;= a;</div>
+<div class="fragment"><div class="line"><span class="lineno">  373</span>=&gt; b &lt;= a;</div>
 </div><!-- fragment --><div id="dynsection-48" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-48-summary" class="dynsummary" style="display:block;">
 </div>
@@ -2062,20 +2062,20 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Rounds a mantissa using round‑to‑nearest‑even. </p>
-<div class="fragment"><div class="line"><span class="lineno">  438</span>                                                     {</div>
-<div class="line"><span class="lineno">  439</span>            uint guard = (mant &gt;&gt; 2) &amp; 1;</div>
-<div class="line"><span class="lineno">  440</span>            uint round = (mant &gt;&gt; 1) &amp; 1;</div>
-<div class="line"><span class="lineno">  441</span>            uint sticky = mant &amp; 1;</div>
-<div class="line"><span class="lineno">  442</span> </div>
-<div class="line"><span class="lineno">  443</span>            uint add = 0;</div>
-<div class="line"><span class="lineno">  444</span> </div>
-<div class="line"><span class="lineno">  445</span>            <span class="keywordflow">if</span> ( round != 0 ) {</div>
-<div class="line"><span class="lineno">  446</span>                <span class="keywordflow">if</span> ( guard != 0 || sticky != 0 )</div>
-<div class="line"><span class="lineno">  447</span>                    add = 1;</div>
-<div class="line"><span class="lineno">  448</span>            }</div>
-<div class="line"><span class="lineno">  449</span> </div>
-<div class="line"><span class="lineno">  450</span>            <span class="keywordflow">return</span> (mant &gt;&gt; 3) + add;</div>
-<div class="line"><span class="lineno">  451</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  435</span>                                                     {</div>
+<div class="line"><span class="lineno">  436</span>            uint guard = (mant &gt;&gt; 2) &amp; 1;</div>
+<div class="line"><span class="lineno">  437</span>            uint round = (mant &gt;&gt; 1) &amp; 1;</div>
+<div class="line"><span class="lineno">  438</span>            uint sticky = mant &amp; 1;</div>
+<div class="line"><span class="lineno">  439</span> </div>
+<div class="line"><span class="lineno">  440</span>            uint add = 0;</div>
+<div class="line"><span class="lineno">  441</span> </div>
+<div class="line"><span class="lineno">  442</span>            <span class="keywordflow">if</span> ( round != 0 ) {</div>
+<div class="line"><span class="lineno">  443</span>                <span class="keywordflow">if</span> ( guard != 0 || sticky != 0 )</div>
+<div class="line"><span class="lineno">  444</span>                    add = 1;</div>
+<div class="line"><span class="lineno">  445</span>            }</div>
+<div class="line"><span class="lineno">  446</span> </div>
+<div class="line"><span class="lineno">  447</span>            <span class="keywordflow">return</span> (mant &gt;&gt; 3) + add;</div>
+<div class="line"><span class="lineno">  448</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2103,11 +2103,11 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns −1, 0, or +1 depending on the sign of the value. </p>
-<div class="fragment"><div class="line"><span class="lineno">  222</span>                                                 {</div>
-<div class="line"><span class="lineno">  223</span>            <span class="keywordflow">if</span> ( IsNaN(x) ) <span class="keywordflow">return</span> Half16.NaN;</div>
-<div class="line"><span class="lineno">  224</span>            <span class="keywordflow">if</span> ( IsZero(x) ) <span class="keywordflow">return</span> Half16.Zero;</div>
-<div class="line"><span class="lineno">  225</span>            <span class="keywordflow">return</span> x.Sign ? Half16.NegativeOne : Half16.One;</div>
-<div class="line"><span class="lineno">  226</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  219</span>                                                 {</div>
+<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">if</span> ( IsNaN(x) ) <span class="keywordflow">return</span> Half16.NaN;</div>
+<div class="line"><span class="lineno">  221</span>            <span class="keywordflow">if</span> ( IsZero(x) ) <span class="keywordflow">return</span> Half16.Zero;</div>
+<div class="line"><span class="lineno">  222</span>            <span class="keywordflow">return</span> x.Sign ? Half16.NegativeOne : Half16.One;</div>
+<div class="line"><span class="lineno">  223</span>        }</div>
 </div><!-- fragment --><div id="dynsection-49" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-49-summary" class="dynsummary" style="display:block;">
 </div>
@@ -2137,9 +2137,9 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A new FixedVector&lt;T&gt; containing the raw bytes of this Half16 value. </dd></dl>
 
 <p>Implements <a class="el" href="../../db/db8/interface_system_ex_1_1_hash_1_1_i_hashable-1-g.html#a8fb21dffeeea89fddd6e1e70e62402b7">SystemEx.Hash.IHashable&lt; T &gt;</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  744</span>                                            {</div>
-<div class="line"><span class="lineno">  745</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> FixedVector&lt;byte&gt;(m_value.ToBytes());</div>
-<div class="line"><span class="lineno">  746</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  741</span>                                            {</div>
+<div class="line"><span class="lineno">  742</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> FixedVector&lt;byte&gt;(m_value.ToBytes());</div>
+<div class="line"><span class="lineno">  743</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2161,8 +2161,8 @@ Properties</h2></td></tr>
 <p>Converts the value into a byte array using the specified endianness. </p>
 
 <p>Implements <a class="el" href="../../dd/d4c/interface_system_ex_1_1_numeric_1_1_i_half-1-g.html">SystemEx.Numeric.IHalf&lt; T &gt;</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  185</span>                                                =&gt;</div>
-<div class="line"><span class="lineno">  186</span>            m_value.ToBytes(endian);</div>
+<div class="fragment"><div class="line"><span class="lineno">  182</span>                                                =&gt;</div>
+<div class="line"><span class="lineno">  183</span>            m_value.ToBytes(endian);</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2190,21 +2190,21 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Truncates the fractional part of the value. </p>
-<div class="fragment"><div class="line"><span class="lineno">  300</span>                                                {</div>
-<div class="line"><span class="lineno">  301</span>            <span class="keywordflow">if</span> ( IsNaN(x) || IsInfinity(x) ) <span class="keywordflow">return</span> x;</div>
-<div class="line"><span class="lineno">  302</span> </div>
-<div class="line"><span class="lineno">  303</span>            ushort e = x.Exponent;</div>
-<div class="line"><span class="lineno">  304</span> </div>
-<div class="line"><span class="lineno">  305</span>            <span class="keywordflow">if</span> ( e &gt;= 15 ) {</div>
-<div class="line"><span class="lineno">  306</span>                <span class="keywordtype">int</span> shift = e - 15;</div>
-<div class="line"><span class="lineno">  307</span>                uint mant = (uint)(x.Mantissa | 0x400);</div>
-<div class="line"><span class="lineno">  308</span>                mant &gt;&gt;= shift;</div>
-<div class="line"><span class="lineno">  309</span>                mant &lt;&lt;= shift;</div>
-<div class="line"><span class="lineno">  310</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16((ushort)(x.Sign ? 1 : 0), e, (ushort)(mant &amp; 0x3FF));</div>
-<div class="line"><span class="lineno">  311</span>            }</div>
-<div class="line"><span class="lineno">  312</span> </div>
-<div class="line"><span class="lineno">  313</span>            <span class="keywordflow">return</span> Zero;</div>
-<div class="line"><span class="lineno">  314</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">  297</span>                                                {</div>
+<div class="line"><span class="lineno">  298</span>            <span class="keywordflow">if</span> ( IsNaN(x) || IsInfinity(x) ) <span class="keywordflow">return</span> x;</div>
+<div class="line"><span class="lineno">  299</span> </div>
+<div class="line"><span class="lineno">  300</span>            ushort e = x.Exponent;</div>
+<div class="line"><span class="lineno">  301</span> </div>
+<div class="line"><span class="lineno">  302</span>            <span class="keywordflow">if</span> ( e &gt;= 15 ) {</div>
+<div class="line"><span class="lineno">  303</span>                <span class="keywordtype">int</span> shift = e - 15;</div>
+<div class="line"><span class="lineno">  304</span>                uint mant = (uint)(x.Mantissa | 0x400);</div>
+<div class="line"><span class="lineno">  305</span>                mant &gt;&gt;= shift;</div>
+<div class="line"><span class="lineno">  306</span>                mant &lt;&lt;= shift;</div>
+<div class="line"><span class="lineno">  307</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Half16((ushort)(x.Sign ? 1 : 0), e, (ushort)(mant &amp; 0x3FF));</div>
+<div class="line"><span class="lineno">  308</span>            }</div>
+<div class="line"><span class="lineno">  309</span> </div>
+<div class="line"><span class="lineno">  310</span>            <span class="keywordflow">return</span> Zero;</div>
+<div class="line"><span class="lineno">  311</span>        }</div>
 </div><!-- fragment --><div id="dynsection-50" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-50-summary" class="dynsummary" style="display:block;">
 </div>

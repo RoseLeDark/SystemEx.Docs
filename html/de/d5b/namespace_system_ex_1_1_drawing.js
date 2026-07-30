@@ -8,7 +8,7 @@ var namespace_system_ex_1_1_drawing =
     [ "ColorHWB", "df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b.html", "df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b" ],
     [ "ColorNCol", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col" ],
     [ "ColorR10G10B10A2", "d4/dc0/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2.html", "d4/dc0/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2" ],
-    [ "ColorR10G10B10FormatSchema", "d7/d6d/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html", "d7/d6d/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema" ],
+    [ "ColorR10G10B10FormatSchema", "d8/d88/struct_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html", "d8/d88/struct_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema" ],
     [ "ColorR10G10B10Serializer", "d9/d81/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer.html", "d9/d81/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer" ],
     [ "ColorR16G16B16", "d6/df3/class_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html", "d6/df3/class_system_ex_1_1_drawing_1_1_color_r16_g16_b16" ],
     [ "ColorR8G8B8", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8" ],
