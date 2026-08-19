@@ -1,286 +1,308 @@
 var annotated_dup =
 [
-    [ "ExampleAIWindowsBackend", "df/dfa/namespace_example_a_i_windows_backend.html", [
-      [ "WinCopilotBackend&lt; T &gt;", "d7/d81/class_example_a_i_windows_backend_1_1_win_copilot_backend-1-g.html", "d7/d81/class_example_a_i_windows_backend_1_1_win_copilot_backend-1-g" ],
-      [ "WinCopilotBackendFunctionFactory&lt; T &gt;", "d6/d36/class_example_a_i_windows_backend_1_1_win_copilot_backend_function_factory-1-g.html", null ],
-      [ "WinCopilotModel", "d9/dc4/class_example_a_i_windows_backend_1_1_win_copilot_model.html", null ]
-    ] ],
-    [ "Examples", "d3/d06/namespace_examples.html", [
-      [ "SensorData", "df/df3/struct_examples_1_1_sensor_data.html", "df/df3/struct_examples_1_1_sensor_data" ]
-    ] ],
-    [ "KernelRamExamples", "d8/d7b/namespace_kernel_ram_examples.html", [
-      [ "ExampleRamKernelAdd", "de/d1a/class_kernel_ram_examples_1_1_example_ram_kernel_add.html", "de/d1a/class_kernel_ram_examples_1_1_example_ram_kernel_add" ]
-    ] ],
-    [ "SystemEx", "d0/d48/namespace_system_ex.html", [
-      [ "AI", "d5/dc7/namespace_system_ex_1_1_a_i.html", [
-        [ "Backend", "d4/da7/namespace_system_ex_1_1_a_i_1_1_backend.html", [
-          [ "WebAIBackend&lt; T &gt;", "db/d36/class_system_ex_1_1_a_i_1_1_backend_1_1_web_a_i_backend-1-g.html", "db/d36/class_system_ex_1_1_a_i_1_1_backend_1_1_web_a_i_backend-1-g" ],
-          [ "WebAIBackendPayload&lt; T &gt;", "d4/d92/struct_system_ex_1_1_a_i_1_1_backend_1_1_web_a_i_backend_payload-1-g.html", "d4/d92/struct_system_ex_1_1_a_i_1_1_backend_1_1_web_a_i_backend_payload-1-g" ]
+    [ "SystemEx", "d8/d20/a00768.html", [
+      [ "AI", "dd/d51/a00769.html", [
+        [ "Backend", "d0/d7e/a00770.html", [
+          [ "WebAIBackend&lt; T &gt;", "d7/d5f/a00831.html", "d7/d5f/a00831" ],
+          [ "WebAIBackendPayload&lt; T &gt;", "dd/d70/a00835.html", "dd/d70/a00835" ]
         ] ],
-        [ "Tools", "d5/d9c/namespace_system_ex_1_1_a_i_1_1_tools.html", [
-          [ "CalculatorTool", "dc/d31/class_system_ex_1_1_a_i_1_1_tools_1_1_calculator_tool.html", "dc/d31/class_system_ex_1_1_a_i_1_1_tools_1_1_calculator_tool" ],
-          [ "DateDifferenceTool", "d3/d2d/class_system_ex_1_1_a_i_1_1_tools_1_1_date_difference_tool.html", "d3/d2d/class_system_ex_1_1_a_i_1_1_tools_1_1_date_difference_tool" ],
-          [ "DateTimeTool", "d3/d37/class_system_ex_1_1_a_i_1_1_tools_1_1_date_time_tool.html", "d3/d37/class_system_ex_1_1_a_i_1_1_tools_1_1_date_time_tool" ]
+        [ "Tools", "dd/de5/a00771.html", [
+          [ "CalculatorTool", "d2/da1/a00879.html", "d2/da1/a00879" ],
+          [ "DateDifferenceTool", "d7/d34/a00883.html", "d7/d34/a00883" ],
+          [ "DateTimeTool", "d7/d92/a00887.html", "d7/d92/a00887" ]
         ] ],
-        [ "IAIFunctionFactory&lt; T, TAITOOL &gt;", "df/d75/interface_system_ex_1_1_a_i_1_1_i_a_i_function_factory-2-g.html", null ],
-        [ "IModel&lt; T, TTOOL &gt;", "dc/de3/interface_system_ex_1_1_a_i_1_1_i_model-2-g.html", "dc/de3/interface_system_ex_1_1_a_i_1_1_i_model-2-g" ],
-        [ "IModelBackend&lt; T, TAI &gt;", "d0/d75/interface_system_ex_1_1_a_i_1_1_i_model_backend-2-g.html", "d0/d75/interface_system_ex_1_1_a_i_1_1_i_model_backend-2-g" ],
-        [ "IModelPromp&lt; T &gt;", "de/d00/interface_system_ex_1_1_a_i_1_1_i_model_promp-1-g.html", null ],
-        [ "IModelResult&lt; T &gt;", "d2/d32/interface_system_ex_1_1_a_i_1_1_i_model_result-1-g.html", null ],
-        [ "IModelTool&lt; T &gt;", "d3/dae/interface_system_ex_1_1_a_i_1_1_i_model_tool-1-g.html", null ],
-        [ "Model&lt; T, TTOOL &gt;", "de/da4/class_system_ex_1_1_a_i_1_1_model-2-g.html", "de/da4/class_system_ex_1_1_a_i_1_1_model-2-g" ],
-        [ "ModelPromp&lt; T &gt;", "d0/dbd/struct_system_ex_1_1_a_i_1_1_model_promp-1-g.html", null ],
-        [ "ModelResult&lt; T &gt;", "d4/ddf/struct_system_ex_1_1_a_i_1_1_model_result-1-g.html", "d4/ddf/struct_system_ex_1_1_a_i_1_1_model_result-1-g" ],
-        [ "ModelToolParameter", "d7/d88/struct_system_ex_1_1_a_i_1_1_model_tool_parameter.html", null ],
-        [ "WebAIModel", "d9/d9d/class_system_ex_1_1_a_i_1_1_web_a_i_model.html", null ]
+        [ "IAIFunctionFactory&lt; T, TAITOOL &gt;", "df/de8/a00839.html", null ],
+        [ "IModel&lt; T, TTOOL &gt;", "dc/d22/a00843.html", "dc/d22/a00843" ],
+        [ "IModelBackend&lt; T, TAI &gt;", "d4/d60/a00847.html", "d4/d60/a00847" ],
+        [ "IModelPromp&lt; T &gt;", "df/d4c/a00851.html", null ],
+        [ "IModelResult&lt; T &gt;", "da/de6/a00855.html", null ],
+        [ "IModelTool&lt; T &gt;", "dc/d8c/a00859.html", null ],
+        [ "Model&lt; T, TTOOL &gt;", "d7/d49/a00863.html", "d7/d49/a00863" ],
+        [ "ModelPromp&lt; T &gt;", "d2/db8/a00867.html", null ],
+        [ "ModelResult&lt; T &gt;", "dd/de1/a00871.html", "dd/de1/a00871" ],
+        [ "ModelToolParameter", "d1/d93/a00875.html", null ],
+        [ "WebAIModel", "de/dfc/a00891.html", null ]
       ] ],
-      [ "Algorithms", "d5/d7b/namespace_system_ex_1_1_algorithms.html", [
-        [ "Compute", "db/dc7/namespace_system_ex_1_1_algorithms_1_1_compute.html", [
-          [ "Interfaces", "d3/dd1/namespace_system_ex_1_1_algorithms_1_1_compute_1_1_interfaces.html", [
-            [ "ICVector", "db/d42/interface_system_ex_1_1_algorithms_1_1_compute_1_1_interfaces_1_1_i_c_vector.html", null ],
-            [ "ISimilarity&lt; T &gt;", "de/d4b/interface_system_ex_1_1_algorithms_1_1_compute_1_1_interfaces_1_1_i_similarity-1-g.html", null ],
-            [ "IThreshold", "d5/d99/interface_system_ex_1_1_algorithms_1_1_compute_1_1_interfaces_1_1_i_threshold.html", null ]
+      [ "Algorithms", "d9/d9c/a00772.html", [
+        [ "Compute", "d8/dba/a00773.html", [
+          [ "Interfaces", "d3/dee/a00774.html", [
+            [ "ICVector", "de/dad/a00963.html", null ],
+            [ "ISimilarity&lt; T &gt;", "dc/db6/a00955.html", null ],
+            [ "IThreshold", "db/d40/a00959.html", null ]
           ] ],
-          [ "CosineDistanceF", "db/d89/class_system_ex_1_1_algorithms_1_1_compute_1_1_cosine_distance_f.html", null ],
-          [ "ThresholdClassifier", "de/dd5/class_system_ex_1_1_algorithms_1_1_compute_1_1_threshold_classifier.html", null ]
+          [ "CosineDistanceF", "d1/ddd/a00943.html", null ],
+          [ "ThresholdClassifier", "db/dbf/a00975.html", null ]
         ] ],
-        [ "Interfaces", "dc/d2b/namespace_system_ex_1_1_algorithms_1_1_interfaces.html", [
-          [ "ICompared&lt; T &gt;", "dc/d5d/interface_system_ex_1_1_algorithms_1_1_interfaces_1_1_i_compared-1-g.html", "dc/d5d/interface_system_ex_1_1_algorithms_1_1_interfaces_1_1_i_compared-1-g" ],
-          [ "ISearchProvider&lt; T, TContainer &gt;", "d2/d3c/interface_system_ex_1_1_algorithms_1_1_interfaces_1_1_i_search_provider-2-g.html", "d2/d3c/interface_system_ex_1_1_algorithms_1_1_interfaces_1_1_i_search_provider-2-g" ],
-          [ "ISimpleCompare&lt; T &gt;", "dc/d10/interface_system_ex_1_1_algorithms_1_1_interfaces_1_1_i_simple_compare-1-g.html", "dc/d10/interface_system_ex_1_1_algorithms_1_1_interfaces_1_1_i_simple_compare-1-g" ]
+        [ "Interfaces", "dc/d5d/a00775.html", [
+          [ "ICompared&lt; T &gt;", "d7/d98/a00983.html", "d7/d98/a00983" ],
+          [ "ISearchProvider&lt; T, TContainer &gt;", "d4/d21/a00987.html", "d4/d21/a00987" ],
+          [ "ISimpleCompare&lt; T &gt;", "df/d2f/a00991.html", "df/d2f/a00991" ]
         ] ],
-        [ "BinarySearcherProvider&lt; T, TContainer &gt;", "d4/dc8/struct_system_ex_1_1_algorithms_1_1_binary_searcher_provider-2-g.html", "d4/dc8/struct_system_ex_1_1_algorithms_1_1_binary_searcher_provider-2-g" ],
-        [ "EqualTo&lt; T &gt;", "d4/dd0/class_system_ex_1_1_algorithms_1_1_equal_to-1-g.html", "d4/dd0/class_system_ex_1_1_algorithms_1_1_equal_to-1-g" ],
-        [ "FibonacciSearcherProvider&lt; T, TContainer &gt;", "da/d0e/struct_system_ex_1_1_algorithms_1_1_fibonacci_searcher_provider-2-g.html", "da/d0e/struct_system_ex_1_1_algorithms_1_1_fibonacci_searcher_provider-2-g" ],
-        [ "Greater&lt; T &gt;", "d8/d19/class_system_ex_1_1_algorithms_1_1_greater-1-g.html", "d8/d19/class_system_ex_1_1_algorithms_1_1_greater-1-g" ],
-        [ "GreaterEqual&lt; T &gt;", "db/df2/class_system_ex_1_1_algorithms_1_1_greater_equal-1-g.html", "db/df2/class_system_ex_1_1_algorithms_1_1_greater_equal-1-g" ],
-        [ "KleeneEqual&lt; T &gt;", "d1/d5d/class_system_ex_1_1_algorithms_1_1_kleene_equal-1-g.html", "d1/d5d/class_system_ex_1_1_algorithms_1_1_kleene_equal-1-g" ],
-        [ "KleenEqualTo&lt; T &gt;", "d2/d28/class_system_ex_1_1_algorithms_1_1_kleen_equal_to-1-g.html", "d2/d28/class_system_ex_1_1_algorithms_1_1_kleen_equal_to-1-g" ],
-        [ "KleenGreater&lt; T &gt;", "d0/d7b/class_system_ex_1_1_algorithms_1_1_kleen_greater-1-g.html", "d0/d7b/class_system_ex_1_1_algorithms_1_1_kleen_greater-1-g" ],
-        [ "KleenLess&lt; T &gt;", "d4/d84/class_system_ex_1_1_algorithms_1_1_kleen_less-1-g.html", "d4/d84/class_system_ex_1_1_algorithms_1_1_kleen_less-1-g" ],
-        [ "Less&lt; T &gt;", "d0/d30/class_system_ex_1_1_algorithms_1_1_less-1-g.html", "d0/d30/class_system_ex_1_1_algorithms_1_1_less-1-g" ],
-        [ "LessEqual&lt; T &gt;", "d1/da5/class_system_ex_1_1_algorithms_1_1_less_equal-1-g.html", "d1/da5/class_system_ex_1_1_algorithms_1_1_less_equal-1-g" ],
-        [ "LinearSearchProvider&lt; T, TContainer &gt;", "df/d7c/struct_system_ex_1_1_algorithms_1_1_linear_search_provider-2-g.html", "df/d7c/struct_system_ex_1_1_algorithms_1_1_linear_search_provider-2-g" ],
-        [ "NetStdCompare&lt; T &gt;", "d1/dcd/class_system_ex_1_1_algorithms_1_1_net_std_compare-1-g.html", "d1/dcd/class_system_ex_1_1_algorithms_1_1_net_std_compare-1-g" ],
-        [ "NotEqualTo&lt; T &gt;", "de/d37/class_system_ex_1_1_algorithms_1_1_not_equal_to-1-g.html", "de/d37/class_system_ex_1_1_algorithms_1_1_not_equal_to-1-g" ],
-        [ "SimpleComparer&lt; T &gt;", "dc/dd0/class_system_ex_1_1_algorithms_1_1_simple_comparer-1-g.html", "dc/dd0/class_system_ex_1_1_algorithms_1_1_simple_comparer-1-g" ],
-        [ "ValueComparer&lt; T &gt;", "dd/d86/class_system_ex_1_1_algorithms_1_1_value_comparer-1-g.html", "dd/d86/class_system_ex_1_1_algorithms_1_1_value_comparer-1-g" ]
+        [ "BinarySearcherProvider&lt; T, TContainer &gt;", "d2/d21/a00895.html", "d2/d21/a00895" ],
+        [ "EqualTo&lt; T &gt;", "dd/d98/a00927.html", "dd/d98/a00927" ],
+        [ "FibonacciSearcherProvider&lt; T, TContainer &gt;", "d8/d49/a00979.html", "d8/d49/a00979" ],
+        [ "Greater&lt; T &gt;", "df/de9/a00923.html", "df/de9/a00923" ],
+        [ "GreaterEqual&lt; T &gt;", "dd/d20/a00939.html", "dd/d20/a00939" ],
+        [ "KleeneEqual&lt; T &gt;", "d4/d1c/a00903.html", "d4/d1c/a00903" ],
+        [ "KleenEqualTo&lt; T &gt;", "d2/d5e/a00915.html", "d2/d5e/a00915" ],
+        [ "KleenGreater&lt; T &gt;", "d7/d12/a00911.html", "d7/d12/a00911" ],
+        [ "KleenLess&lt; T &gt;", "d5/d89/a00907.html", "d5/d89/a00907" ],
+        [ "Less&lt; T &gt;", "d1/d0b/a00919.html", "d1/d0b/a00919" ],
+        [ "LessEqual&lt; T &gt;", "d8/d19/a00935.html", "d8/d19/a00935" ],
+        [ "LinearSearchProvider&lt; T, TContainer &gt;", "dd/d48/a00995.html", "dd/d48/a00995" ],
+        [ "NetStdCompare&lt; T &gt;", "d3/d8a/a00899.html", "d3/d8a/a00899" ],
+        [ "NotEqualTo&lt; T &gt;", "df/dbc/a00931.html", "df/dbc/a00931" ],
+        [ "SimpleComparer&lt; T &gt;", "de/de2/a00999.html", "de/de2/a00999" ],
+        [ "ValueComparer&lt; T &gt;", "dc/d10/a01003.html", "dc/d10/a01003" ]
       ] ],
-      [ "Base", "da/d5b/namespace_system_ex_1_1_base.html", [
-        [ "NumberRangeStepper", "d8/d08/struct_system_ex_1_1_base_1_1_number_range_stepper.html", "d8/d08/struct_system_ex_1_1_base_1_1_number_range_stepper" ]
+      [ "Base", "d9/dd4/a00776.html", [
+        [ "NumberRangeStepper", "de/de6/a01063.html", "de/de6/a01063" ]
       ] ],
-      [ "Collections", "d8/d51/namespace_system_ex_1_1_collections.html", [
-        [ "Generic", "de/d64/namespace_system_ex_1_1_collections_1_1_generic.html", [
-          [ "Interfaces", "de/de2/namespace_system_ex_1_1_collections_1_1_generic_1_1_interfaces.html", [
-            [ "ICache", "d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache.html", "d9/d18/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_cache" ],
-            [ "IMap", "dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map.html", "dd/dc1/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map" ],
-            [ "IMap&lt; T, TU &gt;", "df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g.html", "df/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_map-2-g" ],
-            [ "INode&lt; T &gt;", "dd/df2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_node-1-g.html", "dd/df2/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_node-1-g" ],
-            [ "IPair&lt; T, TU &gt;", "da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g.html", "da/dd6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_pair-2-g" ],
-            [ "IReadOnlyMap&lt; T, TU &gt;", "d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g.html", "d1/da6/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_read_only_map-2-g" ],
-            [ "ITuple", "d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple.html", "d1/d36/interface_system_ex_1_1_collections_1_1_generic_1_1_interfaces_1_1_i_tuple" ]
+      [ "Collections", "d2/d02/a00777.html", [
+        [ "Generic", "d6/d17/a00778.html", [
+          [ "Queue", "d3/d95/a00779.html", [
+            [ "UniqueDeque&lt; T &gt;", "d8/d38/a01299.html", "d8/d38/a01299" ]
           ] ],
-          [ "Queue", "d2/dac/namespace_system_ex_1_1_collections_1_1_generic_1_1_queue.html", [
-            [ "UniqueDeque&lt; T &gt;", "dd/d4a/struct_system_ex_1_1_collections_1_1_generic_1_1_queue_1_1_unique_deque-1-g.html", "dd/d4a/struct_system_ex_1_1_collections_1_1_generic_1_1_queue_1_1_unique_deque-1-g" ]
-          ] ],
-          [ "BasicRope&lt; T, TN &gt;", "dc/d79/class_system_ex_1_1_collections_1_1_generic_1_1_basic_rope-2-g.html", "dc/d79/class_system_ex_1_1_collections_1_1_generic_1_1_basic_rope-2-g" ],
-          [ "BidirectionalIterator&lt; T, TCollection &gt;", "d9/dd9/struct_system_ex_1_1_collections_1_1_generic_1_1_bidirectional_iterator-2-g.html", "d9/dd9/struct_system_ex_1_1_collections_1_1_generic_1_1_bidirectional_iterator-2-g" ],
-          [ "BinQueue&lt; T &gt;", "d2/d8b/struct_system_ex_1_1_collections_1_1_generic_1_1_bin_queue-1-g.html", "d2/d8b/struct_system_ex_1_1_collections_1_1_generic_1_1_bin_queue-1-g" ],
-          [ "Cache", "df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache.html", "df/dfd/class_system_ex_1_1_collections_1_1_generic_1_1_cache" ],
-          [ "CacheIsSharedException", "d7/de5/class_system_ex_1_1_collections_1_1_generic_1_1_cache_is_shared_exception.html", "d7/de5/class_system_ex_1_1_collections_1_1_generic_1_1_cache_is_shared_exception" ],
-          [ "Cluster&lt; T &gt;", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g.html", "d7/da8/class_system_ex_1_1_collections_1_1_generic_1_1_cluster-1-g" ],
-          [ "Deque&lt; T &gt;", "d7/d2f/struct_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g.html", "d7/d2f/struct_system_ex_1_1_collections_1_1_generic_1_1_deque-1-g" ],
-          [ "DequeFlexSpan&lt; T &gt;", "d6/d81/struct_system_ex_1_1_collections_1_1_generic_1_1_deque_flex_span-1-g.html", "d6/d81/struct_system_ex_1_1_collections_1_1_generic_1_1_deque_flex_span-1-g" ],
-          [ "Find&lt; T, TContainer &gt;", "d0/d9f/struct_system_ex_1_1_collections_1_1_generic_1_1_find-2-g.html", "d0/d9f/struct_system_ex_1_1_collections_1_1_generic_1_1_find-2-g" ],
-          [ "FixedVector&lt; T &gt;", "da/d79/struct_system_ex_1_1_collections_1_1_generic_1_1_fixed_vector-1-g.html", "da/d79/struct_system_ex_1_1_collections_1_1_generic_1_1_fixed_vector-1-g" ],
-          [ "ForwardIterrator&lt; T, TCollection &gt;", "d0/d95/struct_system_ex_1_1_collections_1_1_generic_1_1_forward_iterrator-2-g.html", "d0/d95/struct_system_ex_1_1_collections_1_1_generic_1_1_forward_iterrator-2-g" ],
-          [ "GroupNode&lt; T &gt;", "db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g.html", "db/d07/class_system_ex_1_1_collections_1_1_generic_1_1_group_node-1-g" ],
-          [ "IAutoGrowe", "d7/d61/interface_system_ex_1_1_collections_1_1_generic_1_1_i_auto_growe.html", "d7/d61/interface_system_ex_1_1_collections_1_1_generic_1_1_i_auto_growe" ],
-          [ "IBinQueue&lt; T &gt;", "d6/d53/interface_system_ex_1_1_collections_1_1_generic_1_1_i_bin_queue-1-g.html", "d6/d53/interface_system_ex_1_1_collections_1_1_generic_1_1_i_bin_queue-1-g" ],
-          [ "ICluster&lt; T &gt;", "de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g.html", "de/d1c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_cluster-1-g" ],
-          [ "IContainer&lt; T &gt;", "d8/df4/interface_system_ex_1_1_collections_1_1_generic_1_1_i_container-1-g.html", "d8/df4/interface_system_ex_1_1_collections_1_1_generic_1_1_i_container-1-g" ],
-          [ "IDeque", "d7/d4a/interface_system_ex_1_1_collections_1_1_generic_1_1_i_deque.html", null ],
-          [ "IDeque&lt; T &gt;", "d4/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_i_deque-1-g.html", "d4/d17/interface_system_ex_1_1_collections_1_1_generic_1_1_i_deque-1-g" ],
-          [ "IQueue", "d9/dca/interface_system_ex_1_1_collections_1_1_generic_1_1_i_queue.html", "d9/dca/interface_system_ex_1_1_collections_1_1_generic_1_1_i_queue" ],
-          [ "IQueue&lt; T &gt;", "d9/da7/interface_system_ex_1_1_collections_1_1_generic_1_1_i_queue-1-g.html", "d9/da7/interface_system_ex_1_1_collections_1_1_generic_1_1_i_queue-1-g" ],
-          [ "IReadOnlyContainer&lt; T &gt;", "d5/d68/interface_system_ex_1_1_collections_1_1_generic_1_1_i_read_only_container-1-g.html", "d5/d68/interface_system_ex_1_1_collections_1_1_generic_1_1_i_read_only_container-1-g" ],
-          [ "ISwappable&lt; T &gt;", "d2/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_i_swappable-1-g.html", "d2/dfd/interface_system_ex_1_1_collections_1_1_generic_1_1_i_swappable-1-g" ],
-          [ "Iterrator&lt; T &gt;", "d5/d12/interface_system_ex_1_1_collections_1_1_generic_1_1_iterrator-1-g.html", "d5/d12/interface_system_ex_1_1_collections_1_1_generic_1_1_iterrator-1-g" ],
-          [ "ITraverse&lt; T &gt;", "d1/d00/interface_system_ex_1_1_collections_1_1_generic_1_1_i_traverse-1-g.html", "d1/d00/interface_system_ex_1_1_collections_1_1_generic_1_1_i_traverse-1-g" ],
-          [ "ITypeBuffer&lt; T &gt;", "d6/d87/interface_system_ex_1_1_collections_1_1_generic_1_1_i_type_buffer-1-g.html", "d6/d87/interface_system_ex_1_1_collections_1_1_generic_1_1_i_type_buffer-1-g" ],
-          [ "IVector&lt; T &gt;", "da/d0c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_vector-1-g.html", "da/d0c/interface_system_ex_1_1_collections_1_1_generic_1_1_i_vector-1-g" ],
-          [ "ListIterator&lt; T &gt;", "da/d33/struct_system_ex_1_1_collections_1_1_generic_1_1_list_iterator-1-g.html", "da/d33/struct_system_ex_1_1_collections_1_1_generic_1_1_list_iterator-1-g" ],
-          [ "Map&lt; T, TU &gt;", "dd/d5e/struct_system_ex_1_1_collections_1_1_generic_1_1_map-2-g.html", "dd/d5e/struct_system_ex_1_1_collections_1_1_generic_1_1_map-2-g" ],
-          [ "MirroredCache", "de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache.html", "de/d81/class_system_ex_1_1_collections_1_1_generic_1_1_mirrored_cache" ],
-          [ "Node&lt; T &gt;", "d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g.html", "d9/d7a/class_system_ex_1_1_collections_1_1_generic_1_1_node-1-g" ],
-          [ "NodeChain&lt; T &gt;", "dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g.html", "dd/d6b/class_system_ex_1_1_collections_1_1_generic_1_1_node_chain-1-g" ],
-          [ "NodeIterrator&lt; T &gt;", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g.html", "dc/d3c/class_system_ex_1_1_collections_1_1_generic_1_1_node_iterrator-1-g" ],
-          [ "NodeRange&lt; T &gt;", "d1/def/struct_system_ex_1_1_collections_1_1_generic_1_1_node_range-1-g.html", "d1/def/struct_system_ex_1_1_collections_1_1_generic_1_1_node_range-1-g" ],
-          [ "NodeSlice&lt; T &gt;", "df/d0f/struct_system_ex_1_1_collections_1_1_generic_1_1_node_slice-1-g.html", "df/d0f/struct_system_ex_1_1_collections_1_1_generic_1_1_node_slice-1-g" ],
-          [ "Pair&lt; T, TU &gt;", "de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g.html", "de/d3b/struct_system_ex_1_1_collections_1_1_generic_1_1_pair-2-g" ],
-          [ "PriorityQueue&lt; TElement, TPriority &gt;", "df/d64/struct_system_ex_1_1_collections_1_1_generic_1_1_priority_queue-2-g.html", "df/d64/struct_system_ex_1_1_collections_1_1_generic_1_1_priority_queue-2-g" ],
-          [ "Quad&lt; TT, TU, TW, TJ &gt;", "d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g.html", "d7/d5c/struct_system_ex_1_1_collections_1_1_generic_1_1_quad-4-g" ],
-          [ "Queue&lt; T &gt;", "da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g.html", "da/db5/class_system_ex_1_1_collections_1_1_generic_1_1_queue-1-g" ],
-          [ "QueueFlexSpan&lt; T &gt;", "d0/d54/struct_system_ex_1_1_collections_1_1_generic_1_1_queue_flex_span-1-g.html", "d0/d54/struct_system_ex_1_1_collections_1_1_generic_1_1_queue_flex_span-1-g" ],
-          [ "RandomAccessIterator&lt; T, TCollection &gt;", "d8/d66/struct_system_ex_1_1_collections_1_1_generic_1_1_random_access_iterator-2-g.html", "d8/d66/struct_system_ex_1_1_collections_1_1_generic_1_1_random_access_iterator-2-g" ],
-          [ "Slices&lt; T, TContainer &gt;", "d0/d2b/struct_system_ex_1_1_collections_1_1_generic_1_1_slices-2-g.html", "d0/d2b/struct_system_ex_1_1_collections_1_1_generic_1_1_slices-2-g" ],
-          [ "Stack&lt; T &gt;", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g.html", "d3/da2/class_system_ex_1_1_collections_1_1_generic_1_1_stack-1-g" ],
-          [ "StackLayer", "d3/d62/struct_system_ex_1_1_collections_1_1_generic_1_1_stack_layer.html", "d3/d62/struct_system_ex_1_1_collections_1_1_generic_1_1_stack_layer" ],
-          [ "StarNode&lt; T &gt;", "db/d90/class_system_ex_1_1_collections_1_1_generic_1_1_star_node-1-g.html", "db/d90/class_system_ex_1_1_collections_1_1_generic_1_1_star_node-1-g" ],
-          [ "StrippedCache", "d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache.html", "d4/db0/class_system_ex_1_1_collections_1_1_generic_1_1_stripped_cache" ],
-          [ "SubSlice&lt; T, TContainer &gt;", "da/d57/struct_system_ex_1_1_collections_1_1_generic_1_1_sub_slice-2-g.html", null ],
-          [ "Triple&lt; TT, TU, TW &gt;", "d3/def/struct_system_ex_1_1_collections_1_1_generic_1_1_triple-3-g.html", "d3/def/struct_system_ex_1_1_collections_1_1_generic_1_1_triple-3-g" ],
-          [ "Tuple", "d3/d94/class_system_ex_1_1_collections_1_1_generic_1_1_tuple.html", "d3/d94/class_system_ex_1_1_collections_1_1_generic_1_1_tuple" ],
-          [ "TupleList", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list.html", "d8/d33/class_system_ex_1_1_collections_1_1_generic_1_1_tuple_list" ],
-          [ "TypeBuffer&lt; T &gt;", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g.html", "dc/d73/class_system_ex_1_1_collections_1_1_generic_1_1_type_buffer-1-g" ],
-          [ "UniqueQueue&lt; T &gt;", "d4/dac/struct_system_ex_1_1_collections_1_1_generic_1_1_unique_queue-1-g.html", "d4/dac/struct_system_ex_1_1_collections_1_1_generic_1_1_unique_queue-1-g" ],
-          [ "Vector&lt; T &gt;", "d4/de6/struct_system_ex_1_1_collections_1_1_generic_1_1_vector-1-g.html", "d4/de6/struct_system_ex_1_1_collections_1_1_generic_1_1_vector-1-g" ],
-          [ "VectorFlexSpan&lt; T, TContainer &gt;", "dc/df1/struct_system_ex_1_1_collections_1_1_generic_1_1_vector_flex_span-2-g.html", "dc/df1/struct_system_ex_1_1_collections_1_1_generic_1_1_vector_flex_span-2-g" ],
-          [ "VectorMultiSet&lt; T, TContainer &gt;", "d8/dd9/struct_system_ex_1_1_collections_1_1_generic_1_1_vector_multi_set-2-g.html", "d8/dd9/struct_system_ex_1_1_collections_1_1_generic_1_1_vector_multi_set-2-g" ],
-          [ "VectorSearch&lt; T, TContainer &gt;", "dc/d70/struct_system_ex_1_1_collections_1_1_generic_1_1_vector_search-2-g.html", "dc/d70/struct_system_ex_1_1_collections_1_1_generic_1_1_vector_search-2-g" ],
-          [ "VectorSet&lt; T, TContainer &gt;", "d1/d13/struct_system_ex_1_1_collections_1_1_generic_1_1_vector_set-2-g.html", "d1/d13/struct_system_ex_1_1_collections_1_1_generic_1_1_vector_set-2-g" ],
-          [ "VectorUnorderedMultiSet&lt; T, TContainer &gt;", "d6/ddb/struct_system_ex_1_1_collections_1_1_generic_1_1_vector_unordered_multi_set-2-g.html", "d6/ddb/struct_system_ex_1_1_collections_1_1_generic_1_1_vector_unordered_multi_set-2-g" ],
-          [ "VectorUnorderedSet&lt; T, TContainer &gt;", "d5/d11/struct_system_ex_1_1_collections_1_1_generic_1_1_vector_unordered_set-2-g.html", "d5/d11/struct_system_ex_1_1_collections_1_1_generic_1_1_vector_unordered_set-2-g" ]
+          [ "BasicRope&lt; T, TN &gt;", "d0/d1f/a01087.html", "d0/d1f/a01087" ],
+          [ "BidirectionalIterator&lt; T, TCollection &gt;", "d7/dd6/a01167.html", "d7/dd6/a01167" ],
+          [ "BinQueue&lt; T &gt;", "d8/db0/a01243.html", "d8/db0/a01243" ],
+          [ "Cache", "de/d6d/a01095.html", "de/d6d/a01095" ],
+          [ "CacheIsSharedException", "d6/d0d/a01091.html", "d6/d0d/a01091" ],
+          [ "CluserIterrator&lt; TElemet &gt;", "d6/dbc/a01099.html", "d6/dbc/a01099" ],
+          [ "Cluster&lt; T &gt;", "d9/d10/a01103.html", "d9/d10/a01103" ],
+          [ "Deque&lt; T &gt;", "dd/d95/a01247.html", "dd/d95/a01247" ],
+          [ "DequeFlexSpan&lt; T &gt;", "dc/dc2/a01251.html", "dc/dc2/a01251" ],
+          [ "Find&lt; T, TContainer &gt;", "de/d4a/a01107.html", "de/d4a/a01107" ],
+          [ "FixedSparsed&lt; T &gt;", "d3/de1/a01111.html", "d3/de1/a01111" ],
+          [ "FixedVector&lt; T &gt;", "d3/da4/a01343.html", "d3/da4/a01343" ],
+          [ "ForwardIterrator&lt; T, TCollection &gt;", "d6/d27/a01163.html", "d6/d27/a01163" ],
+          [ "GroupNode&lt; T &gt;", "df/dd5/a01115.html", "df/dd5/a01115" ],
+          [ "IAutoGrowe", "d0/d02/a01119.html", "d0/d02/a01119" ],
+          [ "IBinQueue&lt; T &gt;", "dd/d42/a01259.html", "dd/d42/a01259" ],
+          [ "ICache", "de/de5/a01123.html", "de/de5/a01123" ],
+          [ "ICluster", "d9/d5b/a01127.html", "d9/d5b/a01127" ],
+          [ "ICluster&lt; T &gt;", "d8/d84/a01131.html", "d8/d84/a01131" ],
+          [ "IContainer&lt; T &gt;", "de/de4/a01135.html", "de/de4/a01135" ],
+          [ "IDeque", "de/dcb/a01263.html", null ],
+          [ "IDeque&lt; T &gt;", "d4/d41/a01267.html", "d4/d41/a01267" ],
+          [ "ILinearContainer&lt; T &gt;", "d5/d3e/a01139.html", "d5/d3e/a01139" ],
+          [ "INode&lt; T &gt;", "db/db2/a01143.html", "db/db2/a01143" ],
+          [ "IPair&lt; T, TU &gt;", "d8/ddb/a01147.html", "d8/ddb/a01147" ],
+          [ "IQueue", "dd/d39/a01271.html", "dd/d39/a01271" ],
+          [ "IQueue&lt; T &gt;", "d3/d42/a01275.html", "d3/d42/a01275" ],
+          [ "IReadOnlyContainer&lt; T &gt;", "de/df1/a01151.html", "de/df1/a01151" ],
+          [ "ISwappable&lt; T &gt;", "db/d07/a01155.html", "db/d07/a01155" ],
+          [ "Iterrator&lt; T &gt;", "d7/de8/a01159.html", "d7/de8/a01159" ],
+          [ "ITraverse&lt; T &gt;", "de/d1a/a01179.html", "de/d1a/a01179" ],
+          [ "ITuple&lt; TKey &gt;", "dc/d2d/a01183.html", "dc/d2d/a01183" ],
+          [ "ITypeBuffer&lt; T &gt;", "dc/d70/a01187.html", "dc/d70/a01187" ],
+          [ "IVector&lt; T &gt;", "d8/df3/a01195.html", "d8/df3/a01195" ],
+          [ "ListIterator&lt; T &gt;", "da/d1f/a01203.html", "da/d1f/a01203" ],
+          [ "Map&lt; T, TU &gt;", "d0/d5a/a01199.html", "d0/d5a/a01199" ],
+          [ "MirroredCache", "d1/d34/a01211.html", "d1/d34/a01211" ],
+          [ "Node&lt; T &gt;", "d5/d39/a01219.html", "d5/d39/a01219" ],
+          [ "NodeChain&lt; T &gt;", "d7/ddd/a01223.html", "d7/ddd/a01223" ],
+          [ "NodeIterrator&lt; T &gt;", "da/d3f/a01215.html", "da/d3f/a01215" ],
+          [ "NodeRange&lt; T &gt;", "d9/da8/a01227.html", "d9/da8/a01227" ],
+          [ "NodeSlice&lt; T &gt;", "d0/d88/a01231.html", "d0/d88/a01231" ],
+          [ "Pair&lt; T, TU &gt;", "dd/dad/a01235.html", "dd/dad/a01235" ],
+          [ "PriorityQueue&lt; TElement, TPriority &gt;", "d9/de7/a01279.html", "d9/de7/a01279" ],
+          [ "Quad&lt; TT, TU, TW, TJ &gt;", "d7/dbf/a01239.html", "d7/dbf/a01239" ],
+          [ "Queue&lt; T &gt;", "d7/da4/a01287.html", "d7/da4/a01287" ],
+          [ "QueueFlexSpan&lt; T &gt;", "d4/da0/a01291.html", "d4/da0/a01291" ],
+          [ "RandomAccessIterator&lt; T, TCollection &gt;", "d2/d22/a01171.html", "d2/d22/a01171" ],
+          [ "Slices&lt; T, TContainer &gt;", "d5/df5/a01375.html", "d5/df5/a01375" ],
+          [ "Sparsed&lt; T &gt;", "d2/d4c/a01307.html", "d2/d4c/a01307" ],
+          [ "Stack&lt; T &gt;", "d2/d8e/a01315.html", "d2/d8e/a01315" ],
+          [ "StackLayer", "de/d69/a01311.html", "de/d69/a01311" ],
+          [ "StarNode&lt; T &gt;", "d1/d72/a01319.html", "d1/d72/a01319" ],
+          [ "StrippedCache", "db/da8/a01323.html", "db/da8/a01323" ],
+          [ "SubSlice&lt; T, TContainer &gt;", "d6/d4d/a01371.html", null ],
+          [ "Triple&lt; TT, TU, TW &gt;", "d4/d2c/a01327.html", "d4/d2c/a01327" ],
+          [ "Tuple&lt; TKey &gt;", "dc/d8e/a01331.html", "dc/d8e/a01331" ],
+          [ "TupleMap&lt; T &gt;", "d4/d04/a01335.html", "d4/d04/a01335" ],
+          [ "TypeBuffer&lt; T &gt;", "dd/d6e/a01339.html", "dd/d6e/a01339" ],
+          [ "UniqueQueue&lt; T &gt;", "d6/d07/a01303.html", "d6/d07/a01303" ],
+          [ "Vector&lt; T &gt;", "df/d96/a01347.html", "df/d96/a01347" ],
+          [ "VectorFlexSpan&lt; T, TContainer &gt;", "d1/dcd/a01351.html", "d1/dcd/a01351" ],
+          [ "VectorMultiSet&lt; T, TContainer &gt;", "dc/d4b/a01359.html", "dc/d4b/a01359" ],
+          [ "VectorSearch&lt; T, TContainer &gt;", "dd/d8b/a01363.html", "dd/d8b/a01363" ],
+          [ "VectorSet&lt; T, TContainer &gt;", "dd/d86/a01367.html", "dd/d86/a01367" ],
+          [ "VectorUnorderedMultiSet&lt; T, TContainer &gt;", "d0/d9b/a01379.html", "d0/d9b/a01379" ],
+          [ "VectorUnorderedSet&lt; T, TContainer &gt;", "de/dfe/a01383.html", "de/dfe/a01383" ]
+        ] ],
+        [ "Model", "de/d42/a00780.html", [
+          [ "INode", "d9/d40/a01387.html", null ],
+          [ "INode&lt; T &gt;", "dc/dbc/a01391.html", null ],
+          [ "INode&lt; T, TSelf &gt;", "d2/df5/a01395.html", null ],
+          [ "IParentebleNode&lt; T, TSelf &gt;", "d6/d64/a01399.html", null ],
+          [ "TreeNode&lt; T &gt;", "da/d06/a01403.html", null ]
         ] ]
       ] ],
-      [ "Device", "d7/d59/namespace_system_ex_1_1_device.html", [
-        [ "Intertropt", "d7/d29/namespace_system_ex_1_1_device_1_1_intertropt.html", [
-          [ "IDeviceSharedBackend", "d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend.html", "d3/d08/interface_system_ex_1_1_device_1_1_intertropt_1_1_i_device_shared_backend" ],
-          [ "RamSharedBackend", "d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend.html", "d8/d1d/class_system_ex_1_1_device_1_1_intertropt_1_1_ram_shared_backend" ],
-          [ "UnmanagedObject", "dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object.html", "dc/d39/struct_system_ex_1_1_device_1_1_intertropt_1_1_unmanaged_object" ]
+      [ "Device", "d6/d86/a00781.html", [
+        [ "Intertropt", "dc/d0c/a00783.html", [
+          [ "IDeviceSharedBackend", "db/d99/a01411.html", "db/d99/a01411" ],
+          [ "RamSharedBackend", "d0/d7d/a01419.html", "d0/d7d/a01419" ],
+          [ "UnmanagedObject", "de/d70/a01415.html", "de/d70/a01415" ]
         ] ],
-        [ "Memory", "dd/d82/namespace_system_ex_1_1_device_1_1_memory.html", [
-          [ "DeviceBuffer", "da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer.html", "da/d1e/class_system_ex_1_1_device_1_1_memory_1_1_device_buffer" ],
-          [ "DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;", "dd/d13/class_system_ex_1_1_device_1_1_memory_1_1_device_shared_buffer-1-g.html", "dd/d13/class_system_ex_1_1_device_1_1_memory_1_1_device_shared_buffer-1-g" ],
-          [ "IKernel&lt; TIDeviceSharedBackend &gt;", "d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g.html", "d5/dbf/interface_system_ex_1_1_device_1_1_memory_1_1_i_kernel-1-g" ]
+        [ "Memory", "da/d96/a00782.html", [
+          [ "DeviceBuffer", "d9/ddc/a01423.html", "d9/ddc/a01423" ],
+          [ "DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;", "db/d78/a01427.html", "db/d78/a01427" ],
+          [ "IKernel&lt; TIDeviceSharedBackend &gt;", "d8/d31/a01407.html", "d8/d31/a01407" ]
         ] ],
-        [ "NativeRAMKernel&lt; TD &gt;", "d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g.html", "d9/d97/class_system_ex_1_1_device_1_1_native_r_a_m_kernel-1-g" ]
+        [ "NativeRAMKernel&lt; TD &gt;", "d7/d8b/a01431.html", "d7/d8b/a01431" ]
       ] ],
-      [ "Drawing", "de/d5b/namespace_system_ex_1_1_drawing.html", [
-        [ "ColorCMY", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y.html", "d5/dd6/class_system_ex_1_1_drawing_1_1_color_c_m_y" ],
-        [ "ColorGray", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray.html", "d2/d44/class_system_ex_1_1_drawing_1_1_color_gray" ],
-        [ "ColorHDR", "da/d5b/class_system_ex_1_1_drawing_1_1_color_h_d_r.html", "da/d5b/class_system_ex_1_1_drawing_1_1_color_h_d_r" ],
-        [ "ColorHSL", "d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l.html", "d7/d44/class_system_ex_1_1_drawing_1_1_color_h_s_l" ],
-        [ "ColorHSV", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v.html", "de/d08/class_system_ex_1_1_drawing_1_1_color_h_s_v" ],
-        [ "ColorHWB", "df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b.html", "df/d2f/class_system_ex_1_1_drawing_1_1_color_h_w_b" ],
-        [ "ColorNCol", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col.html", "d5/d0d/class_system_ex_1_1_drawing_1_1_color_n_col" ],
-        [ "ColorR10G10B10A2", "d4/dc0/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2.html", "d4/dc0/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_a2" ],
-        [ "ColorR10G10B10FormatSchema", "d8/d88/struct_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema.html", "d8/d88/struct_system_ex_1_1_drawing_1_1_color_r10_g10_b10_format_schema" ],
-        [ "ColorR10G10B10Serializer", "d9/d81/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer.html", "d9/d81/class_system_ex_1_1_drawing_1_1_color_r10_g10_b10_serializer" ],
-        [ "ColorR16G16B16", "d6/df3/class_system_ex_1_1_drawing_1_1_color_r16_g16_b16.html", "d6/df3/class_system_ex_1_1_drawing_1_1_color_r16_g16_b16" ],
-        [ "ColorR8G8B8", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8.html", "db/d37/class_system_ex_1_1_drawing_1_1_color_r8_g8_b8" ],
-        [ "ColorXYZ", "d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z.html", "d3/d18/class_system_ex_1_1_drawing_1_1_color_x_y_z" ],
-        [ "ColorYUV", "d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v.html", "d8/d99/class_system_ex_1_1_drawing_1_1_color_y_u_v" ],
-        [ "ICanvas&lt; T &gt;", "d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g.html", "d7/d2b/interface_system_ex_1_1_drawing_1_1_i_canvas-1-g" ],
-        [ "ICanvasList&lt; T &gt;", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g.html", "d5/d81/interface_system_ex_1_1_drawing_1_1_i_canvas_list-1-g" ],
-        [ "IColor&lt; T &gt;", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g.html", "df/d81/interface_system_ex_1_1_drawing_1_1_i_color-1-g" ],
-        [ "ISubCanvas&lt; T &gt;", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g.html", "de/d48/interface_system_ex_1_1_drawing_1_1_i_sub_canvas-1-g" ],
-        [ "Light", "d9/dbb/class_system_ex_1_1_drawing_1_1_light.html", "d9/dbb/class_system_ex_1_1_drawing_1_1_light" ],
-        [ "PointLight", "d2/d82/class_system_ex_1_1_drawing_1_1_point_light.html", "d2/d82/class_system_ex_1_1_drawing_1_1_point_light" ],
-        [ "PurpelColors", "d4/d88/class_system_ex_1_1_drawing_1_1_purpel_colors.html", null ],
-        [ "SpotLight", "d9/da7/class_system_ex_1_1_drawing_1_1_spot_light.html", "d9/da7/class_system_ex_1_1_drawing_1_1_spot_light" ]
+      [ "Drawing", "d9/d00/a00784.html", [
+        [ "ColorCMY", "d7/dfd/a01439.html", "d7/dfd/a01439" ],
+        [ "ColorGray", "df/d75/a01447.html", "df/d75/a01447" ],
+        [ "ColorHDR", "d3/dbc/a01451.html", "d3/dbc/a01451" ],
+        [ "ColorHSL", "df/dc5/a01455.html", "df/dc5/a01455" ],
+        [ "ColorHSV", "d6/d3b/a01459.html", "d6/d3b/a01459" ],
+        [ "ColorHWB", "d7/d42/a01463.html", "d7/d42/a01463" ],
+        [ "ColorNCol", "df/d5e/a01467.html", "df/d5e/a01467" ],
+        [ "ColorR10G10B10A2", "da/d1e/a01479.html", "da/d1e/a01479" ],
+        [ "ColorR10G10B10FormatSchema", "dd/d15/a01471.html", "dd/d15/a01471" ],
+        [ "ColorR10G10B10Serializer", "d7/d1d/a01475.html", "d7/d1d/a01475" ],
+        [ "ColorR16G16B16", "d2/dc4/a01483.html", "d2/dc4/a01483" ],
+        [ "ColorR8G8B8", "dc/d47/a01487.html", "dc/d47/a01487" ],
+        [ "ColorXYZ", "dc/d93/a01535.html", "dc/d93/a01535" ],
+        [ "ColorYUV", "d9/d80/a01539.html", "d9/d80/a01539" ],
+        [ "ICanvas&lt; T &gt;", "d3/d95/a01435.html", "d3/d95/a01435" ],
+        [ "ICanvasList&lt; T &gt;", "da/ded/a01547.html", "da/ded/a01547" ],
+        [ "IColor&lt; T &gt;", "d5/df4/a01551.html", "d5/df4/a01551" ],
+        [ "ISubCanvas&lt; T &gt;", "db/d08/a01543.html", "db/d08/a01543" ],
+        [ "Light", "d6/dd7/a01555.html", "d6/dd7/a01555" ],
+        [ "PointLight", "d8/d6c/a01563.html", "d8/d6c/a01563" ],
+        [ "PurpelColors", "d6/df5/a01503.html", null ],
+        [ "SpotLight", "de/d1a/a01559.html", "de/d1a/a01559" ]
       ] ],
-      [ "Hash", "d4/d32/namespace_system_ex_1_1_hash.html", [
-        [ "AdlerHash", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash.html", "d2/d92/class_system_ex_1_1_hash_1_1_adler_hash" ],
-        [ "BernsteinHash", "dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash.html", "dd/df6/class_system_ex_1_1_hash_1_1_bernstein_hash" ],
-        [ "Black3Hasher", "dc/de7/class_system_ex_1_1_hash_1_1_black3_hasher.html", "dc/de7/class_system_ex_1_1_hash_1_1_black3_hasher" ],
-        [ "FletcherHash", "d4/dee/class_system_ex_1_1_hash_1_1_fletcher_hash.html", "d4/dee/class_system_ex_1_1_hash_1_1_fletcher_hash" ],
-        [ "Fnv1aHash", "db/d29/class_system_ex_1_1_hash_1_1_fnv1a_hash.html", "db/d29/class_system_ex_1_1_hash_1_1_fnv1a_hash" ],
-        [ "GrøstlHash", "da/d7b/class_system_ex_1_1_hash_1_1_grøtl_hash.html", "da/d7b/class_system_ex_1_1_hash_1_1_grøtl_hash" ],
-        [ "Hash32", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32.html", "d8/d2e/struct_system_ex_1_1_hash_1_1_hash32" ],
-        [ "Hash64", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64.html", "da/d8a/struct_system_ex_1_1_hash_1_1_hash64" ],
-        [ "Hashable", "db/ddb/class_system_ex_1_1_hash_1_1_hashable.html", "db/ddb/class_system_ex_1_1_hash_1_1_hashable" ],
-        [ "HashAlgorithmAttribute", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute.html", "d2/df8/class_system_ex_1_1_hash_1_1_hash_algorithm_attribute" ],
-        [ "IHash", "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash.html", "dd/db7/interface_system_ex_1_1_hash_1_1_i_hash" ],
-        [ "IHashable&lt; T &gt;", "db/db8/interface_system_ex_1_1_hash_1_1_i_hashable-1-g.html", "db/db8/interface_system_ex_1_1_hash_1_1_i_hashable-1-g" ],
-        [ "RamakrishnaHash", "d4/d6f/class_system_ex_1_1_hash_1_1_ramakrishna_hash.html", "d4/d6f/class_system_ex_1_1_hash_1_1_ramakrishna_hash" ],
-        [ "WeinbergHash", "d7/d67/class_system_ex_1_1_hash_1_1_weinberg_hash.html", "d7/d67/class_system_ex_1_1_hash_1_1_weinberg_hash" ]
+      [ "Hash", "d3/d00/a00785.html", [
+        [ "AdlerHash", "d7/d57/a01567.html", "d7/d57/a01567" ],
+        [ "BernsteinHash", "d5/d10/a01571.html", "d5/d10/a01571" ],
+        [ "Black3Hasher", "d4/d2c/a01575.html", "d4/d2c/a01575" ],
+        [ "FletcherHash", "d5/d81/a01579.html", "d5/d81/a01579" ],
+        [ "Fnv1aHash", "d9/d1b/a01583.html", "d9/d1b/a01583" ],
+        [ "GrøstlHash", "d6/d91/a01587.html", "d6/d91/a01587" ],
+        [ "Hash32", "d3/d79/a01611.html", "d3/d79/a01611" ],
+        [ "Hash64", "d7/dae/a01615.html", "d7/dae/a01615" ],
+        [ "Hashable", "dc/dbf/a01595.html", "dc/dbf/a01595" ],
+        [ "HashAlgorithmAttribute", "d9/d13/a01599.html", "d9/d13/a01599" ],
+        [ "IHash", "d3/deb/a01619.html", "d3/deb/a01619" ],
+        [ "IHashable&lt; T &gt;", "db/d51/a01603.html", "db/d51/a01603" ],
+        [ "RamakrishnaHash", "d6/df0/a01647.html", "d6/df0/a01647" ],
+        [ "WeinbergHash", "d5/de9/a01651.html", "d5/de9/a01651" ]
       ] ],
-      [ "IO", "d4/d5d/namespace_system_ex_1_1_i_o.html", [
-        [ "Provider", "da/da3/namespace_system_ex_1_1_i_o_1_1_provider.html", [
-          [ "ByteSeriablizeProvider", "d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider.html", "d5/d99/class_system_ex_1_1_i_o_1_1_provider_1_1_byte_seriablize_provider" ],
-          [ "IByteFormatSchema", "d2/d66/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_format_schema.html", "d2/d66/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_format_schema" ],
-          [ "IByteSerialize&lt; T, TSchema &gt;", "dd/d4e/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_serialize-2-g.html", "dd/d4e/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_byte_serialize-2-g" ],
-          [ "IIsByteSeriablize", "d1/d94/interface_system_ex_1_1_i_o_1_1_provider_1_1_i_is_byte_seriablize.html", null ]
+      [ "IO", "d8/d7f/a00787.html", [
+        [ "Provider", "df/d0c/a00788.html", [
+          [ "ByteSeriablizeProvider", "d4/dd4/a01659.html", "d4/dd4/a01659" ],
+          [ "IByteFormatSchema", "dd/d38/a01663.html", "dd/d38/a01663" ],
+          [ "IByteSerialize&lt; T, TSchema &gt;", "dd/d8d/a01667.html", "dd/d8d/a01667" ],
+          [ "IIsByteSeriablize", "d4/d3c/a01671.html", null ]
         ] ],
-        [ "CacheStream&lt; TCache &gt;", "df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g.html", "df/d4e/class_system_ex_1_1_i_o_1_1_cache_stream-1-g" ]
+        [ "CacheStream&lt; TCache &gt;", "df/ddd/a01655.html", "df/ddd/a01655" ]
       ] ],
-      [ "Numeric", "dd/dfd/namespace_system_ex_1_1_numeric.html", [
-        [ "AxisAngle&lt; TV, T &gt;", "df/dd0/group___numeric.html#d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g", "df/dd0/group___numeric_d9/d35/struct_system_ex_1_1_numeric_1_1_axis_angle-2-g" ],
-        [ "DQuatf", "d3/d71/struct_system_ex_1_1_numeric_1_1_d_quatf.html", "d3/d71/struct_system_ex_1_1_numeric_1_1_d_quatf" ],
-        [ "Fast_Byte", "dc/dc5/struct_system_ex_1_1_numeric_1_1_fast___byte.html", "dc/dc5/struct_system_ex_1_1_numeric_1_1_fast___byte" ],
-        [ "Fast_Float", "d5/d11/struct_system_ex_1_1_numeric_1_1_fast___float.html", "d5/d11/struct_system_ex_1_1_numeric_1_1_fast___float" ],
-        [ "Fast_Int", "d5/da0/struct_system_ex_1_1_numeric_1_1_fast___int.html", "d5/da0/struct_system_ex_1_1_numeric_1_1_fast___int" ],
-        [ "Fast_Long", "d3/dcb/struct_system_ex_1_1_numeric_1_1_fast___long.html", "d3/dcb/struct_system_ex_1_1_numeric_1_1_fast___long" ],
-        [ "Fast_Short", "de/d65/struct_system_ex_1_1_numeric_1_1_fast___short.html", "de/d65/struct_system_ex_1_1_numeric_1_1_fast___short" ],
-        [ "Half16", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16.html", "d5/d4e/struct_system_ex_1_1_numeric_1_1_half16" ],
-        [ "IFastType", "d2/db3/interface_system_ex_1_1_numeric_1_1_i_fast_type.html", null ],
-        [ "IFastType&lt; T &gt;", "db/df0/interface_system_ex_1_1_numeric_1_1_i_fast_type-1-g.html", null ],
-        [ "IHalf&lt; T &gt;", "dd/d4c/interface_system_ex_1_1_numeric_1_1_i_half-1-g.html", null ],
-        [ "Projection", "d4/d82/struct_system_ex_1_1_numeric_1_1_projection.html", null ],
-        [ "Quatd", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd.html", "d0/d88/struct_system_ex_1_1_numeric_1_1_quatd" ],
-        [ "Quatf", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf.html", "d4/dd3/struct_system_ex_1_1_numeric_1_1_quatf" ],
-        [ "Vec2d", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d.html", "dc/d5f/struct_system_ex_1_1_numeric_1_1_vec2d" ],
-        [ "Vec2f", "db/d53/struct_system_ex_1_1_numeric_1_1_vec2f.html", "db/d53/struct_system_ex_1_1_numeric_1_1_vec2f" ],
-        [ "Vec2i", "d6/d44/struct_system_ex_1_1_numeric_1_1_vec2i.html", "d6/d44/struct_system_ex_1_1_numeric_1_1_vec2i" ],
-        [ "Vec3d", "d6/d8f/struct_system_ex_1_1_numeric_1_1_vec3d.html", "d6/d8f/struct_system_ex_1_1_numeric_1_1_vec3d" ],
-        [ "Vec3f", "d9/d57/struct_system_ex_1_1_numeric_1_1_vec3f.html", "d9/d57/struct_system_ex_1_1_numeric_1_1_vec3f" ],
-        [ "Vec3i", "de/d57/struct_system_ex_1_1_numeric_1_1_vec3i.html", "de/d57/struct_system_ex_1_1_numeric_1_1_vec3i" ],
-        [ "Vec4d", "db/d4b/struct_system_ex_1_1_numeric_1_1_vec4d.html", "db/d4b/struct_system_ex_1_1_numeric_1_1_vec4d" ],
-        [ "Vec4f", "da/dc8/struct_system_ex_1_1_numeric_1_1_vec4f.html", "da/dc8/struct_system_ex_1_1_numeric_1_1_vec4f" ],
-        [ "Vec4i", "d7/d35/struct_system_ex_1_1_numeric_1_1_vec4i.html", "d7/d35/struct_system_ex_1_1_numeric_1_1_vec4i" ]
+      [ "Numeric", "d8/d7d/a00789.html", [
+        [ "AxisAngle&lt; TV, T &gt;", "d3/d2c/a00764.html#db/d98/a01675", "d3/d2c/a00764_db/d98/a01675" ],
+        [ "DQuatf", "d7/db8/a01687.html", "d7/db8/a01687" ],
+        [ "Fast_Byte", "d0/d54/a01691.html", "d0/d54/a01691" ],
+        [ "Fast_Float", "dc/dc8/a01695.html", "dc/dc8/a01695" ],
+        [ "Fast_Int", "d9/df7/a01699.html", "d9/df7/a01699" ],
+        [ "Fast_Long", "df/d12/a01703.html", "df/d12/a01703" ],
+        [ "Fast_Short", "d0/d42/a01707.html", "d0/d42/a01707" ],
+        [ "Half16", "d6/d56/a01719.html", "d6/d56/a01719" ],
+        [ "Half16b", "dc/de8/a01723.html", "dc/de8/a01723" ],
+        [ "IBigFloat&lt; TSelf &gt;", "d2/d7d/a01755.html", null ],
+        [ "ICDouble&lt; TSelf &gt;", "d7/db4/a01747.html", null ],
+        [ "ICFloat&lt; TSelf &gt;", "d5/d34/a01743.html", null ],
+        [ "ICQuad&lt; TSelf &gt;", "d5/db3/a01751.html", null ],
+        [ "IFastType", "d8/df7/a01711.html", null ],
+        [ "IFastType&lt; T &gt;", "df/d9a/a01715.html", null ],
+        [ "IFloat&lt; TSelf, TBias &gt;", "de/d0f/a01727.html", "de/d0f/a01727" ],
+        [ "IHalf&lt; TSelf &gt;", "d6/d2e/a01735.html", null ],
+        [ "IMini&lt; TSelf &gt;", "d1/d46/a01739.html", null ],
+        [ "Projection", "d9/d27/a01763.html", null ],
+        [ "Quatd", "d1/dab/a01767.html", "d1/dab/a01767" ],
+        [ "Quatf", "d7/d02/a01771.html", "d7/d02/a01771" ],
+        [ "Ratio", "d1/d6b/a01775.html", "d1/d6b/a01775" ],
+        [ "Uint256", "d8/d7d/a00789.html#df/dd2/a01731", null ],
+        [ "Vec2d", "d5/df4/a01779.html", "d5/df4/a01779" ],
+        [ "Vec2f", "da/da5/a01783.html", "da/da5/a01783" ],
+        [ "Vec2h", "de/dc3/a01787.html", "de/dc3/a01787" ],
+        [ "Vec2hb", "d1/dea/a01791.html", "d1/dea/a01791" ],
+        [ "Vec2i", "d1/df0/a01795.html", "d1/df0/a01795" ],
+        [ "Vec2r", "d5/d12/a01799.html", "d5/d12/a01799" ],
+        [ "Vec3d", "d3/dfd/a01803.html", "d3/dfd/a01803" ],
+        [ "Vec3f", "df/d5b/a01807.html", "df/d5b/a01807" ],
+        [ "Vec3h", "d2/d31/a01811.html", "d2/d31/a01811" ],
+        [ "Vec3hb", "d8/dce/a01815.html", "d8/dce/a01815" ],
+        [ "Vec3i", "d7/d10/a01819.html", "d7/d10/a01819" ],
+        [ "Vec3r", "d9/d88/a01823.html", "d9/d88/a01823" ],
+        [ "Vec4d", "d7/d1a/a01827.html", "d7/d1a/a01827" ],
+        [ "Vec4f", "d0/db3/a01831.html", "d0/db3/a01831" ],
+        [ "Vec4h", "da/dcd/a01835.html", "da/dcd/a01835" ],
+        [ "Vec4hb", "d2/d2c/a01839.html", "d2/d2c/a01839" ],
+        [ "Vec4i", "d9/d75/a01843.html", "d9/d75/a01843" ],
+        [ "Vec4r", "d3/d19/a01847.html", "d3/d19/a01847" ]
       ] ],
-      [ "Random", "de/d2f/namespace_system_ex_1_1_random.html", [
-        [ "HashedSeed", "dc/deb/struct_system_ex_1_1_random_1_1_hashed_seed.html", "dc/deb/struct_system_ex_1_1_random_1_1_hashed_seed" ],
-        [ "Isaac32Engine", "df/d91/class_system_ex_1_1_random_1_1_isaac32_engine.html", "df/d91/class_system_ex_1_1_random_1_1_isaac32_engine" ],
-        [ "ISeed", "d0/d78/interface_system_ex_1_1_random_1_1_i_seed.html", "d0/d78/interface_system_ex_1_1_random_1_1_i_seed" ],
-        [ "ISeed&lt; T &gt;", "dd/ddb/interface_system_ex_1_1_random_1_1_i_seed-1-g.html", "dd/ddb/interface_system_ex_1_1_random_1_1_i_seed-1-g" ],
-        [ "Randx", "de/d3e/class_system_ex_1_1_random_1_1_randx.html", "de/d3e/class_system_ex_1_1_random_1_1_randx" ],
-        [ "SeedMixed", "de/d10/struct_system_ex_1_1_random_1_1_seed_mixed.html", "de/d10/struct_system_ex_1_1_random_1_1_seed_mixed" ],
-        [ "TimeBasedSeed", "dc/d97/struct_system_ex_1_1_random_1_1_time_based_seed.html", "dc/d97/struct_system_ex_1_1_random_1_1_time_based_seed" ],
-        [ "ValueBasedSeed", "d7/d01/struct_system_ex_1_1_random_1_1_value_based_seed.html", "d7/d01/struct_system_ex_1_1_random_1_1_value_based_seed" ]
+      [ "Random", "d4/d45/a00791.html", [
+        [ "HashedSeed", "d2/d3e/a01851.html", "d2/d3e/a01851" ],
+        [ "Isaac32Engine", "d1/de9/a01855.html", "d1/de9/a01855" ],
+        [ "ISeed", "d3/dce/a01859.html", "d3/dce/a01859" ],
+        [ "ISeed&lt; T &gt;", "d4/d12/a01863.html", "d4/d12/a01863" ],
+        [ "Randx", "d1/de6/a01867.html", "d1/de6/a01867" ],
+        [ "SeedMixed", "da/d8b/a01871.html", "da/d8b/a01871" ],
+        [ "TimeBasedSeed", "dc/d1e/a01875.html", "dc/d1e/a01875" ],
+        [ "ValueBasedSeed", "d9/dca/a01879.html", "d9/dca/a01879" ]
       ] ],
-      [ "Runtime", "d4/d8e/namespace_system_ex_1_1_runtime.html", [
-        [ "InteropServices", "d4/dfc/namespace_system_ex_1_1_runtime_1_1_interop_services.html", [
-          [ "Platform", "d0/daf/namespace_system_ex_1_1_runtime_1_1_interop_services_1_1_platform.html", [
-            [ "WindowsProcLoader", "d4/d2f/class_system_ex_1_1_runtime_1_1_interop_services_1_1_platform_1_1_windows_proc_loader.html", null ]
+      [ "Runtime", "d2/d5a/a00792.html", [
+        [ "InteropServices", "d4/dd7/a00793.html", [
+          [ "Platform", "d5/d12/a00794.html", [
+            [ "WindowsProcLoader", "d9/d32/a01899.html", null ]
           ] ]
         ] ],
-        [ "Module", "d4/ddf/class_system_ex_1_1_runtime_1_1_module.html", "d4/ddf/class_system_ex_1_1_runtime_1_1_module" ]
+        [ "Module", "d6/d4c/a01903.html", "d6/d4c/a01903" ]
       ] ],
-      [ "Threading", "df/dd1/namespace_system_ex_1_1_threading.html", [
-        [ "EventGroup&lt; TFastType &gt;", "de/db0/class_system_ex_1_1_threading_1_1_event_group-1-g.html", "de/db0/class_system_ex_1_1_threading_1_1_event_group-1-g" ],
-        [ "ILock", "d8/d3f/interface_system_ex_1_1_threading_1_1_i_lock.html", "d8/d3f/interface_system_ex_1_1_threading_1_1_i_lock" ],
-        [ "ILock&lt; T &gt;", "dd/d0e/interface_system_ex_1_1_threading_1_1_i_lock-1-g.html", "dd/d0e/interface_system_ex_1_1_threading_1_1_i_lock-1-g" ],
-        [ "ISpinlock&lt; T &gt;", "de/dcc/interface_system_ex_1_1_threading_1_1_i_spinlock-1-g.html", "de/dcc/interface_system_ex_1_1_threading_1_1_i_spinlock-1-g" ],
-        [ "LightConditionVariable", "d8/d93/struct_system_ex_1_1_threading_1_1_light_condition_variable.html", "d8/d93/struct_system_ex_1_1_threading_1_1_light_condition_variable" ],
-        [ "LightCountingSpinlock&lt; T &gt;", "dc/dec/class_system_ex_1_1_threading_1_1_light_counting_spinlock-1-g.html", "dc/dec/class_system_ex_1_1_threading_1_1_light_counting_spinlock-1-g" ],
-        [ "LightLock", "d6/d44/struct_system_ex_1_1_threading_1_1_light_lock.html", "d6/d44/struct_system_ex_1_1_threading_1_1_light_lock" ],
-        [ "LightMutex&lt; T &gt;", "d9/d91/class_system_ex_1_1_threading_1_1_light_mutex-1-g.html", "d9/d91/class_system_ex_1_1_threading_1_1_light_mutex-1-g" ],
-        [ "LightSpinlock&lt; T &gt;", "d4/df4/struct_system_ex_1_1_threading_1_1_light_spinlock-1-g.html", "d4/df4/struct_system_ex_1_1_threading_1_1_light_spinlock-1-g" ],
-        [ "LightThread", "d4/dfb/class_system_ex_1_1_threading_1_1_light_thread.html", "d4/dfb/class_system_ex_1_1_threading_1_1_light_thread" ],
-        [ "LockedObject&lt; T, TL &gt;", "df/ddb/class_system_ex_1_1_threading_1_1_locked_object-2-g.html", null ],
-        [ "MutexLock", "da/d24/class_system_ex_1_1_threading_1_1_mutex_lock.html", "da/d24/class_system_ex_1_1_threading_1_1_mutex_lock" ],
-        [ "SafeCounter", "d1/d56/class_system_ex_1_1_threading_1_1_safe_counter.html", "d1/d56/class_system_ex_1_1_threading_1_1_safe_counter" ],
-        [ "ScopedLock&lt; TLOCK &gt;", "d3/d6d/struct_system_ex_1_1_threading_1_1_scoped_lock-1-g.html", "d3/d6d/struct_system_ex_1_1_threading_1_1_scoped_lock-1-g" ],
-        [ "ScopedUnlock&lt; TLOCK &gt;", "d8/d53/struct_system_ex_1_1_threading_1_1_scoped_unlock-1-g.html", "d8/d53/struct_system_ex_1_1_threading_1_1_scoped_unlock-1-g" ],
-        [ "Spinlock", "df/d5c/struct_system_ex_1_1_threading_1_1_spinlock.html", "df/d5c/struct_system_ex_1_1_threading_1_1_spinlock" ],
-        [ "ThreadEx", "df/db4/class_system_ex_1_1_threading_1_1_thread_ex.html", "df/db4/class_system_ex_1_1_threading_1_1_thread_ex" ],
-        [ "UniqueLock&lt; T, TL &gt;", "d2/d08/struct_system_ex_1_1_threading_1_1_unique_lock-2-g.html", null ]
+      [ "Threading", "dd/d7a/a00795.html", [
+        [ "EventGroup&lt; TFastType &gt;", "de/dca/a01907.html", "de/dca/a01907" ],
+        [ "ILock", "d3/d3b/a01911.html", "d3/d3b/a01911" ],
+        [ "ILock&lt; T &gt;", "df/d11/a01915.html", "df/d11/a01915" ],
+        [ "ISpinlock&lt; T &gt;", "da/d52/a01927.html", "da/d52/a01927" ],
+        [ "LightConditionVariable", "d5/d31/a01931.html", "d5/d31/a01931" ],
+        [ "LightCountingSpinlock&lt; T &gt;", "d0/d43/a01935.html", "d0/d43/a01935" ],
+        [ "LightLock", "d4/d25/a01939.html", "d4/d25/a01939" ],
+        [ "LightMutex&lt; T &gt;", "df/dd8/a01943.html", "df/dd8/a01943" ],
+        [ "LightSpinlock&lt; T &gt;", "d6/d19/a01947.html", "d6/d19/a01947" ],
+        [ "LightThread", "d8/ddf/a01951.html", "d8/ddf/a01951" ],
+        [ "LockedObject&lt; T, TL &gt;", "d4/d93/a01955.html", null ],
+        [ "MutexLock", "d3/dce/a01963.html", "d3/dce/a01963" ],
+        [ "SafeCounter", "de/d46/a01967.html", "de/d46/a01967" ],
+        [ "ScopedLock&lt; TLOCK &gt;", "d9/de1/a01923.html", "d9/de1/a01923" ],
+        [ "ScopedUnlock&lt; TLOCK &gt;", "de/d90/a01919.html", "de/d90/a01919" ],
+        [ "Spinlock", "d5/d1b/a01971.html", "d5/d1b/a01971" ],
+        [ "ThreadEx", "dd/d4e/a01975.html", "dd/d4e/a01975" ],
+        [ "UniqueLock&lt; T, TL &gt;", "dc/da8/a01959.html", null ]
       ] ],
-      [ "Utils", "d2/d14/namespace_system_ex_1_1_utils.html", [
-        [ "MissingStructLayoutSequentialException", "da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception.html", "da/d7a/class_system_ex_1_1_utils_1_1_missing_struct_layout_sequential_exception" ],
-        [ "SizeMismatchException", "d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception.html", "d8/df1/class_system_ex_1_1_utils_1_1_size_mismatch_exception" ]
+      [ "Utils", "d0/da2/a00796.html", [
+        [ "BitIntSpan", "d6/dd6/a01983.html", "d6/dd6/a01983" ],
+        [ "BitLongSpan", "d3/d4e/a01991.html", "d3/d4e/a01991" ],
+        [ "BitUIntSpan", "de/d25/a01999.html", "de/d25/a01999" ],
+        [ "BitULongSpan", "d6/d19/a02007.html", "d6/d19/a02007" ],
+        [ "MissingStructLayoutSequentialException", "df/d52/a02027.html", "df/d52/a02027" ],
+        [ "SizeMismatchException", "da/df2/a02031.html", "da/df2/a02031" ]
       ] ],
-      [ "Delegate&lt; T &gt;", "dc/d59/struct_system_ex_1_1_delegate-1-g.html", null ],
-      [ "FlexSpan&lt; T &gt;", "db/d28/struct_system_ex_1_1_flex_span-1-g.html", "db/d28/struct_system_ex_1_1_flex_span-1-g" ],
-      [ "IComparableEx&lt; T &gt;", "dc/d20/interface_system_ex_1_1_i_comparable_ex-1-g.html", "dc/d20/interface_system_ex_1_1_i_comparable_ex-1-g" ],
-      [ "IDelegate&lt; T &gt;", "d5/dfd/interface_system_ex_1_1_i_delegate-1-g.html", null ],
-      [ "IFDelegate&lt; T &gt;", "d8/da3/struct_system_ex_1_1_i_f_delegate-1-g.html", null ],
-      [ "IRange&lt; T &gt;", "df/d28/interface_system_ex_1_1_i_range-1-g.html", "df/d28/interface_system_ex_1_1_i_range-1-g" ],
-      [ "NumberRange", "d3/dd7/struct_system_ex_1_1_number_range.html", "d3/dd7/struct_system_ex_1_1_number_range" ],
-      [ "NumberRangeIterator&lt; T &gt;", "dc/d77/struct_system_ex_1_1_number_range_iterator-1-g.html", "dc/d77/struct_system_ex_1_1_number_range_iterator-1-g" ],
-      [ "Optional&lt; T &gt;", "d8/ded/struct_system_ex_1_1_optional-1-g.html", "d8/ded/struct_system_ex_1_1_optional-1-g" ],
-      [ "Triple", "d7/d4e/struct_system_ex_1_1_triple.html", "d7/d4e/struct_system_ex_1_1_triple" ]
+      [ "Delegate&lt; T &gt;", "db/daf/a01019.html", "db/daf/a01019" ],
+      [ "FlexSpan&lt; T &gt;", "d6/dcd/a01023.html", "d6/dcd/a01023" ],
+      [ "IByteSerializable&lt; TSelf &gt;", "d6/dcf/a01031.html", "d6/dcf/a01031" ],
+      [ "IComparableEx&lt; T &gt;", "de/d26/a01035.html", "de/d26/a01035" ],
+      [ "IDelegate&lt; T &gt;", "d1/dac/a01015.html", "d1/dac/a01015" ],
+      [ "IFDelegate&lt; T &gt;", "df/d21/a01039.html", "df/d21/a01039" ],
+      [ "IRange&lt; T &gt;", "d8/d27/a01043.html", "d8/d27/a01043" ],
+      [ "NumberRange", "d2/d71/a01055.html", "d2/d71/a01055" ],
+      [ "NumberRangeIterator&lt; T &gt;", "d0/d90/a01059.html", "d0/d90/a01059" ],
+      [ "Optional&lt; T &gt;", "d2/d49/a01067.html", "d2/d49/a01067" ],
+      [ "Result", "df/d18/a01071.html", "df/d18/a01071" ],
+      [ "ResultBuilder", "dd/d80/a01075.html", "dd/d80/a01075" ],
+      [ "SwitchDelegate&lt; TS, T &gt;", "d2/d4d/a01079.html", "d2/d4d/a01079" ],
+      [ "Triple", "d6/d9a/a01083.html", "d6/d9a/a01083" ]
     ] ]
 ];
