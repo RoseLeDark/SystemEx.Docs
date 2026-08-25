@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: SystemEx.Random Namespace Reference" />
+<meta property="og:title" content="SystemEX: Device" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: SystemEx.Random Namespace Reference" />
+<meta name="twitter:title" content="SystemEX: Device" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: SystemEx.Random Namespace Reference</title>
+<title>SystemEX: Device</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,151 +101,76 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d45/a00791.
 <div id="container">
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Random Namespace Reference</div></div>
+  <div class="headertitle"><div class="title">Device </div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:HashedSeed" id="r_HashedSeed"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d2/d3e/a01851.html">HashedSeed</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a seed implementation based on a 32‑bit hash value. The hash may originate from any hashing algorithm available in <a class="el" href="../../d8/d20/a00768.html">SystemEx</a>, including Bernstein, FNV‑1a, Murmur, Blake3, XXH3, and other supported hash functions.  <a href="../../d2/d3e/a01851.html#details">More...</a><br /></td></tr>
-<tr class="memitem:Isaac32Engine" id="r_Isaac32Engine"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/de9/a01855.html">Isaac32Engine</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the ISAAC 32-bit random number generator.  <a href="../../d1/de9/a01855.html#details">More...</a><br /></td></tr>
-<tr class="memitem:ISeed" id="r_ISeed"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d3/dce/a01859.html">ISeed</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a generic seed source for random number generators. Implementations provide an array of 32‑bit seed values, support indexed access, and may update their internal state when required.  <a href="../../d3/dce/a01859.html#details">More...</a><br /></td></tr>
-<tr class="memitem:ISeed_3C_20T_20_3E" id="r_ISeed_3C_20T_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d4/d12/a01863.html">ISeed&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends ISeed with a typed update mechanism. This generic interface allows seed implementations to accept external values that influence or mutate the internal seed state. The type parameter defines the kind of input used for updating the seed.  <a href="../../d4/d12/a01863.html#details">More...</a><br /></td></tr>
-<tr class="memitem:Randx" id="r_Randx"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/de6/a01867.html">Randx</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a simple interface for generating random numbers using the ISAAC algorithm.  <a href="../../d1/de6/a01867.html#details">More...</a><br /></td></tr>
-<tr class="memitem:SeedMixed" id="r_SeedMixed"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../da/d8b/a01871.html">SeedMixed</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a composite seed that can be dynamically mixed with other seeds using a variety of mathematical operations. SeedMixed acts as a wrapper around an existing ISeed instance and provides thread‑safe mixing functionality suitable for all random engines in <a class="el" href="../../d8/d20/a00768.html">SystemEx</a>.  <a href="../../da/d8b/a01871.html#details">More...</a><br /></td></tr>
-<tr class="memitem:TimeBasedSeed" id="r_TimeBasedSeed"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../dc/d1e/a01875.html">TimeBasedSeed</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a time‑based seed implementation using DateTime as the update source. The seed consists of multiple 32‑bit values derived from the current timestamp, system tick count, and optionally a GUID hash.  <a href="../../dc/d1e/a01875.html#details">More...</a><br /></td></tr>
-<tr class="memitem:ValueBasedSeed" id="r_ValueBasedSeed"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d9/dca/a01879.html">ValueBasedSeed</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a seed implementation based on a simple integer value. The input integer is expanded into multiple 32‑bit components using bitwise and arithmetic transformations. This seed type is suitable for all random engines in <a class="el" href="../../d8/d20/a00768.html">SystemEx</a>.  <a href="../../d9/dca/a01879.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2EDevice_2EIntertropt_2EIDeviceSharedBackend" id="r_SystemEx_2EDevice_2EIntertropt_2EIDeviceSharedBackend"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../de/d36/a01462.html">SystemEx.Device.Intertropt.IDeviceSharedBackend</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the low‑level backend interface used by <code>DeviceSharedBuffer</code> and related shared‑memory abstractions. <br  />
+ A backend represents a hardware‑specific buffer implementation such as RAM, OpenCL, Vulkan, CUDA, or any custom device memory. <br  />
+ Each backend is responsible for creating, writing, reading, and closing its own hardware buffer handle.  <a href="../../de/d36/a01462.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2EDevice_2EIntertropt_2EUnmanagedObject" id="r_SystemEx_2EDevice_2EIntertropt_2EUnmanagedObject"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d5/d67/a01466.html">SystemEx.Device.Intertropt.UnmanagedObject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a pinned unmanaged memory block used by <a class="el" href="../../d7/d0a/a00801.html">SystemEx</a> backends.  <a href="../../d5/d67/a01466.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2EDevice_2EIntertropt_2ERamSharedBackend" id="r_SystemEx_2EDevice_2EIntertropt_2ERamSharedBackend"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d0/da4/a01470.html">SystemEx.Device.Intertropt.RamSharedBackend</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAM‑based backend for shared device buffers.  <a href="../../d0/da4/a01470.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2EDevice_2EMemory_2EDeviceBuffer" id="r_SystemEx_2EDevice_2EMemory_2EDeviceBuffer"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../df/d2f/a01474.html">SystemEx.Device.Memory.DeviceBuffer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a cache that can be shared with a hardware backend through DeviceSharedBuffer&lt;TDeviceSharedBackend&gt;. <br  />
+ A DeviceBuffer behaves like a normal Cache, but supports locking and shared‑memory synchronization for device kernels.  <a href="../../df/d2f/a01474.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2EDevice_2EMemory_2EDeviceSharedBuffer_3C_20TDeviceSharedBackend_20_3E" id="r_SystemEx_2EDevice_2EMemory_2EDeviceSharedBuffer_3C_20TDeviceSharedBackend_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d8/d7b/a01478.html">SystemEx.Device.Memory.DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a shared memory bridge between a DeviceBuffer and a hardware‑specific backend implementing IDeviceSharedBackend. <br  />
+ Manages the lifecycle of a hardware buffer, including creation, upload, download, and cleanup, depending on the configured SharedCacheType.  <a href="../../d8/d7b/a01478.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2EDevice_2EMemory_2EIKernel_3C_20TIDeviceSharedBackend_20_3E" id="r_SystemEx_2EDevice_2EMemory_2EIKernel_3C_20TIDeviceSharedBackend_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../da/d36/a01482.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the interface for a compute kernel that operates on one or more DeviceSharedBuffer&lt;TDeviceSharedBackend&gt; instances. <br  />
+ A kernel represents a unit of computation that may run on different backends such as RAM, OpenCL, Vulkan, CUDA, or custom hardware.  <a href="../../da/d36/a01482.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a66820d8a6ab2d32455ed901e9d229ff7" id="r_a66820d8a6ab2d32455ed901e9d229ff7"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7">SeedMix</a> : byte { <br />
-&#160;&#160;<a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7a97675eb3f268048604dc5155511a2a4d">XOR</a>
-, <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7a7c5531bbefed0945814f874baf9e0e0f">Addition</a>
-, <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7a6eb8b8b560161603402c0238b3a7d8b0">Subtraction</a>
-, <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7a27d1a1f7b7c2180e5b20ce9e3d00e2dd">Multiplication</a>
-, <br />
-&#160;&#160;<a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7ac33315685a0cba3ce53be378b3c7874b">And</a>
-, <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7a3a2d5fe857d8f9541136a124c2edec6c">Or</a>
-, <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7ad9382145a142cc7df5f733332c9cb812">ShiftLeft</a>
-, <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7af17de5e0ea7a357b755aa9deeaf38f86">ShiftRight</a>
-, <br />
-&#160;&#160;<a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7a87fd674d30ebe08d41293f51d4f62066">RotateLeft</a>
-, <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7ac54517388223d2f20c61580c6f8d224f">RotateRight</a>
-, <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7aa74c05d080620f087c4e523977230666">Not</a>
-, <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7a30fc6bbba82125243ecf4ddb27fee645">Minimal</a>
-, <br />
-&#160;&#160;<a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7ac2f493254b06a46832e043f236296ad3">Maximal</a>
-, <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7ab1897515d548a960afe49ecf66a29021">Average</a>
-, <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7a03c2e7e41ffc181a4e84080b4710e81e">New</a>
-, <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7a8f9bfe9d1345237cb3b2b205864da075">User</a>
-<br />
+<tr class="memitem:gafe9097376e02d22abaa66e70bb692c87" id="r_gafe9097376e02d22abaa66e70bb692c87"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#gafe9097376e02d22abaa66e70bb692c87">SystemEx.Device.Memory.SharedCacheType</a> : byte { <a class="el" href="#ggafe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197">SystemEx.Device.Memory.SharedCacheType.ReadOnly</a>
+, <a class="el" href="#ggafe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5">SystemEx.Device.Memory.SharedCacheType.WriteOnly</a>
+, <a class="el" href="#ggafe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723">SystemEx.Device.Memory.SharedCacheType.ReadWrite</a>
  }</td></tr>
-<tr class="memdesc:a66820d8a6ab2d32455ed901e9d229ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the available mixing strategies used to combine two random seeds. These operations are purely mathematical and intended for non‑cryptographic random number generation. Each mode describes how the corresponding seed values are combined to produce a new mixed seed.  <a href="#a66820d8a6ab2d32455ed901e9d229ff7">More...</a><br /></td></tr>
+<tr class="memdesc:gafe9097376e02d22abaa66e70bb692c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies how a shared cache interacts with the hardware backend. <br  />
+ Determines the direction of data flow between the managed cache and the device‑specific hardware buffer.  <a href="#gafe9097376e02d22abaa66e70bb692c87">More...</a><br /></td></tr>
 </table>
-<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
-<a id="a66820d8a6ab2d32455ed901e9d229ff7" name="a66820d8a6ab2d32455ed901e9d229ff7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66820d8a6ab2d32455ed901e9d229ff7">&#9670;&#160;</a></span>SeedMix</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"></div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a id="gafe9097376e02d22abaa66e70bb692c87" name="gafe9097376e02d22abaa66e70bb692c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe9097376e02d22abaa66e70bb692c87">&#9670;&#160;</a></span>SharedCacheType</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="#a66820d8a6ab2d32455ed901e9d229ff7">SystemEx.Random.SeedMix</a> : byte</td>
+          <td class="memname">enum <a class="el" href="#gafe9097376e02d22abaa66e70bb692c87">SystemEx.Device.Memory.SharedCacheType</a> : byte</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Defines the available mixing strategies used to combine two random seeds. These operations are purely mathematical and intended for non‑cryptographic random number generation. Each mode describes how the corresponding seed values are combined to produce a new mixed seed. </p>
+<p>Specifies how a shared cache interacts with the hardware backend. <br  />
+ Determines the direction of data flow between the managed cache and the device‑specific hardware buffer. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7a97675eb3f268048604dc5155511a2a4d" name="a66820d8a6ab2d32455ed901e9d229ff7a97675eb3f268048604dc5155511a2a4d"></a>XOR&#160;</td><td class="fielddoc"><p>Bitwise exclusive OR (XOR) between corresponding seed values. Produces strong bit diffusion and is commonly used in PRNG mixing. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggafe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197" name="ggafe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197"></a>ReadOnly&#160;</td><td class="fielddoc"><p>Data flows from the cache to the hardware buffer only. <br  />
+ Hardware cannot write back into the cache. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7a7c5531bbefed0945814f874baf9e0e0f" name="a66820d8a6ab2d32455ed901e9d229ff7a7c5531bbefed0945814f874baf9e0e0f"></a>Addition&#160;</td><td class="fielddoc"><p>Adds corresponding seed values. Useful for linear seed combination. </p>
+<tr><td class="fieldname"><a id="ggafe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5" name="ggafe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5"></a>WriteOnly&#160;</td><td class="fielddoc"><p>Data flows from the hardware buffer into the cache only. <br  />
+ The cache does not upload its contents to the hardware. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7a6eb8b8b560161603402c0238b3a7d8b0" name="a66820d8a6ab2d32455ed901e9d229ff7a6eb8b8b560161603402c0238b3a7d8b0"></a>Subtraction&#160;</td><td class="fielddoc"><p>Subtracts the other seed value from the current one. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7a27d1a1f7b7c2180e5b20ce9e3d00e2dd" name="a66820d8a6ab2d32455ed901e9d229ff7a27d1a1f7b7c2180e5b20ce9e3d00e2dd"></a>Multiplication&#160;</td><td class="fielddoc"><p>Multiplies corresponding seed values. Produces strong variation and is used in several classical random generators. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7ac33315685a0cba3ce53be378b3c7874b" name="a66820d8a6ab2d32455ed901e9d229ff7ac33315685a0cba3ce53be378b3c7874b"></a>And&#160;</td><td class="fielddoc"><p>Bitwise AND between corresponding seed values. Can be used to mask or restrict certain bits. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7a3a2d5fe857d8f9541136a124c2edec6c" name="a66820d8a6ab2d32455ed901e9d229ff7a3a2d5fe857d8f9541136a124c2edec6c"></a>Or&#160;</td><td class="fielddoc"><p>Bitwise OR between corresponding seed values. Aggregates bits from both seeds. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7ad9382145a142cc7df5f733332c9cb812" name="a66820d8a6ab2d32455ed901e9d229ff7ad9382145a142cc7df5f733332c9cb812"></a>ShiftLeft&#160;</td><td class="fielddoc"><p>Shifts the current seed value left by a shift amount derived from the other seed and the provided mix parameter. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7af17de5e0ea7a357b755aa9deeaf38f86" name="a66820d8a6ab2d32455ed901e9d229ff7af17de5e0ea7a357b755aa9deeaf38f86"></a>ShiftRight&#160;</td><td class="fielddoc"><p>Shifts the current seed value right by a shift amount derived from the other seed and the provided mix parameter. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7a87fd674d30ebe08d41293f51d4f62066" name="a66820d8a6ab2d32455ed901e9d229ff7a87fd674d30ebe08d41293f51d4f62066"></a>RotateLeft&#160;</td><td class="fielddoc"><p>Rotates the current seed value left by a rotation amount derived from the other seed and the provided mix parameter. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7ac54517388223d2f20c61580c6f8d224f" name="a66820d8a6ab2d32455ed901e9d229ff7ac54517388223d2f20c61580c6f8d224f"></a>RotateRight&#160;</td><td class="fielddoc"><p>Rotates the current seed value right by a rotation amount derived from the other seed and the provided mix parameter. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7aa74c05d080620f087c4e523977230666" name="a66820d8a6ab2d32455ed901e9d229ff7aa74c05d080620f087c4e523977230666"></a>Not&#160;</td><td class="fielddoc"><p>Bitwise negation (NOT) of the current seed value. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7a30fc6bbba82125243ecf4ddb27fee645" name="a66820d8a6ab2d32455ed901e9d229ff7a30fc6bbba82125243ecf4ddb27fee645"></a>Minimal&#160;</td><td class="fielddoc"><p>Takes the minimum of the two corresponding seed values. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7ac2f493254b06a46832e043f236296ad3" name="a66820d8a6ab2d32455ed901e9d229ff7ac2f493254b06a46832e043f236296ad3"></a>Maximal&#160;</td><td class="fielddoc"><p>Takes the maximum of the two corresponding seed values. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7ab1897515d548a960afe49ecf66a29021" name="a66820d8a6ab2d32455ed901e9d229ff7ab1897515d548a960afe49ecf66a29021"></a>Average&#160;</td><td class="fielddoc"><p>Computes the average of the two corresponding seed values. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7a03c2e7e41ffc181a4e84080b4710e81e" name="a66820d8a6ab2d32455ed901e9d229ff7a03c2e7e41ffc181a4e84080b4710e81e"></a>New&#160;</td><td class="fielddoc"><p>Replaces the current seed entirely with the other seed. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66820d8a6ab2d32455ed901e9d229ff7a8f9bfe9d1345237cb3b2b205864da075" name="a66820d8a6ab2d32455ed901e9d229ff7a8f9bfe9d1345237cb3b2b205864da075"></a>User&#160;</td><td class="fielddoc"><p>Uses a user‑defined mixing function provided via <code>Func&lt;<a class="el" href="../../d3/dce/a01859.html" title="Represents a generic seed source for random number generators. Implementations provide an array of 32...">ISeed</a>, <a class="el" href="../../d3/dce/a01859.html" title="Represents a generic seed source for random number generators. Implementations provide an array of 32...">ISeed</a>, <a class="el" href="../../d3/dce/a01859.html" title="Represents a generic seed source for random number generators. Implementations provide an array of 32...">ISeed</a>&gt; OnUserMix</code>. This allows custom mixing logic beyond the predefined strategies. </p>
+<tr><td class="fieldname"><a id="ggafe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723" name="ggafe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723"></a>ReadWrite&#160;</td><td class="fielddoc"><p>Bidirectional synchronization between cache and hardware buffer. <br  />
+ The cache uploads its data to the hardware, and the hardware may write modified data back into the cache. </p>
 </td></tr>
 </table>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>                        : <span class="keywordtype">byte</span> {</div>
-<div class="line"><span class="lineno">   33</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7a97675eb3f268048604dc5155511a2a4d">XOR</a>,</div>
-<div class="line"><span class="lineno">   34</span></div>
-<div class="line"><span class="lineno">   38</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7a7c5531bbefed0945814f874baf9e0e0f">Addition</a>,</div>
-<div class="line"><span class="lineno">   39</span></div>
-<div class="line"><span class="lineno">   43</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7a6eb8b8b560161603402c0238b3a7d8b0">Subtraction</a>,</div>
-<div class="line"><span class="lineno">   44</span></div>
-<div class="line"><span class="lineno">   49</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7a27d1a1f7b7c2180e5b20ce9e3d00e2dd">Multiplication</a>,</div>
-<div class="line"><span class="lineno">   50</span></div>
-<div class="line"><span class="lineno">   55</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7ac33315685a0cba3ce53be378b3c7874b">And</a>,</div>
-<div class="line"><span class="lineno">   56</span></div>
-<div class="line"><span class="lineno">   61</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7a3a2d5fe857d8f9541136a124c2edec6c">Or</a>,</div>
-<div class="line"><span class="lineno">   62</span></div>
-<div class="line"><span class="lineno">   67</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7ad9382145a142cc7df5f733332c9cb812">ShiftLeft</a>,</div>
-<div class="line"><span class="lineno">   68</span></div>
-<div class="line"><span class="lineno">   73</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7af17de5e0ea7a357b755aa9deeaf38f86">ShiftRight</a>,</div>
-<div class="line"><span class="lineno">   74</span></div>
-<div class="line"><span class="lineno">   79</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7a87fd674d30ebe08d41293f51d4f62066">RotateLeft</a>,</div>
-<div class="line"><span class="lineno">   80</span></div>
-<div class="line"><span class="lineno">   85</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7ac54517388223d2f20c61580c6f8d224f">RotateRight</a>,</div>
-<div class="line"><span class="lineno">   86</span></div>
-<div class="line"><span class="lineno">   90</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7aa74c05d080620f087c4e523977230666">Not</a>,</div>
-<div class="line"><span class="lineno">   91</span></div>
-<div class="line"><span class="lineno">   95</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7a30fc6bbba82125243ecf4ddb27fee645">Minimal</a>,</div>
-<div class="line"><span class="lineno">   96</span></div>
-<div class="line"><span class="lineno">  100</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7ac2f493254b06a46832e043f236296ad3">Maximal</a>,</div>
-<div class="line"><span class="lineno">  101</span></div>
-<div class="line"><span class="lineno">  105</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7ab1897515d548a960afe49ecf66a29021">Average</a>,</div>
-<div class="line"><span class="lineno">  106</span></div>
-<div class="line"><span class="lineno">  110</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7a03c2e7e41ffc181a4e84080b4710e81e">New</a>,</div>
-<div class="line"><span class="lineno">  116</span>        <a class="code hl_enumvalue" href="#a66820d8a6ab2d32455ed901e9d229ff7a8f9bfe9d1345237cb3b2b205864da075">User</a></div>
-<div class="line"><span class="lineno">  117</span>    }</div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7a03c2e7e41ffc181a4e84080b4710e81e"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7a03c2e7e41ffc181a4e84080b4710e81e">SystemEx.Random.SeedMix.New</a></div><div class="ttdeci">@ New</div><div class="ttdoc">Replaces the current seed entirely with the other seed.</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:110</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7a27d1a1f7b7c2180e5b20ce9e3d00e2dd"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7a27d1a1f7b7c2180e5b20ce9e3d00e2dd">SystemEx.Random.SeedMix.Multiplication</a></div><div class="ttdeci">@ Multiplication</div><div class="ttdoc">Multiplies corresponding seed values. Produces strong variation and is used in several classical rand...</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:49</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7a30fc6bbba82125243ecf4ddb27fee645"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7a30fc6bbba82125243ecf4ddb27fee645">SystemEx.Random.SeedMix.Minimal</a></div><div class="ttdeci">@ Minimal</div><div class="ttdoc">Takes the minimum of the two corresponding seed values.</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:95</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7a3a2d5fe857d8f9541136a124c2edec6c"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7a3a2d5fe857d8f9541136a124c2edec6c">SystemEx.Random.SeedMix.Or</a></div><div class="ttdeci">@ Or</div><div class="ttdoc">Bitwise OR between corresponding seed values. Aggregates bits from both seeds.</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:61</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7a6eb8b8b560161603402c0238b3a7d8b0"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7a6eb8b8b560161603402c0238b3a7d8b0">SystemEx.Random.SeedMix.Subtraction</a></div><div class="ttdeci">@ Subtraction</div><div class="ttdoc">Subtracts the other seed value from the current one.</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:43</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7a7c5531bbefed0945814f874baf9e0e0f"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7a7c5531bbefed0945814f874baf9e0e0f">SystemEx.Random.SeedMix.Addition</a></div><div class="ttdeci">@ Addition</div><div class="ttdoc">Adds corresponding seed values. Useful for linear seed combination.</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:38</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7a87fd674d30ebe08d41293f51d4f62066"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7a87fd674d30ebe08d41293f51d4f62066">SystemEx.Random.SeedMix.RotateLeft</a></div><div class="ttdeci">@ RotateLeft</div><div class="ttdoc">Rotates the current seed value left by a rotation amount derived from the other seed and the provided...</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:79</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7a8f9bfe9d1345237cb3b2b205864da075"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7a8f9bfe9d1345237cb3b2b205864da075">SystemEx.Random.SeedMix.User</a></div><div class="ttdeci">@ User</div><div class="ttdoc">Uses a user‑defined mixing function provided via Func&lt;ISeed, ISeed, ISeed&gt; OnUserMix....</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:116</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7a97675eb3f268048604dc5155511a2a4d"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7a97675eb3f268048604dc5155511a2a4d">SystemEx.Random.SeedMix.XOR</a></div><div class="ttdeci">@ XOR</div><div class="ttdoc">Bitwise exclusive OR (XOR) between corresponding seed values. Produces strong bit diffusion and is co...</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:33</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7aa74c05d080620f087c4e523977230666"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7aa74c05d080620f087c4e523977230666">SystemEx.Random.SeedMix.Not</a></div><div class="ttdeci">@ Not</div><div class="ttdoc">Bitwise negation (NOT) of the current seed value.</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:90</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7ab1897515d548a960afe49ecf66a29021"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7ab1897515d548a960afe49ecf66a29021">SystemEx.Random.SeedMix.Average</a></div><div class="ttdeci">@ Average</div><div class="ttdoc">Computes the average of the two corresponding seed values.</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:105</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7ac2f493254b06a46832e043f236296ad3"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7ac2f493254b06a46832e043f236296ad3">SystemEx.Random.SeedMix.Maximal</a></div><div class="ttdeci">@ Maximal</div><div class="ttdoc">Takes the maximum of the two corresponding seed values.</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:100</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7ac33315685a0cba3ce53be378b3c7874b"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7ac33315685a0cba3ce53be378b3c7874b">SystemEx.Random.SeedMix.And</a></div><div class="ttdeci">@ And</div><div class="ttdoc">Bitwise AND between corresponding seed values. Can be used to mask or restrict certain bits.</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:55</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7ac54517388223d2f20c61580c6f8d224f"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7ac54517388223d2f20c61580c6f8d224f">SystemEx.Random.SeedMix.RotateRight</a></div><div class="ttdeci">@ RotateRight</div><div class="ttdoc">Rotates the current seed value right by a rotation amount derived from the other seed and the provide...</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:85</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7ad9382145a142cc7df5f733332c9cb812"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7ad9382145a142cc7df5f733332c9cb812">SystemEx.Random.SeedMix.ShiftLeft</a></div><div class="ttdeci">@ ShiftLeft</div><div class="ttdoc">Shifts the current seed value left by a shift amount derived from the other seed and the provided mix...</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:67</div></div>
-<div class="ttc" id="aa00791_html_a66820d8a6ab2d32455ed901e9d229ff7af17de5e0ea7a357b755aa9deeaf38f86"><div class="ttname"><a href="#a66820d8a6ab2d32455ed901e9d229ff7af17de5e0ea7a357b755aa9deeaf38f86">SystemEx.Random.SeedMix.ShiftRight</a></div><div class="ttdeci">@ ShiftRight</div><div class="ttdoc">Shifts the current seed value right by a shift amount derived from the other seed and the provided mi...</div><div class="ttdef"><b>Definition</b> SeedMixer.cs:73</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>                                 : <span class="keywordtype">byte</span> {</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_enumvalue" href="#ggafe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197">ReadOnly</a>,</div>
+<div class="line"><span class="lineno">   42</span></div>
+<div class="line"><span class="lineno">   47</span>        <a class="code hl_enumvalue" href="#ggafe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5">WriteOnly</a>,</div>
+<div class="line"><span class="lineno">   48</span></div>
+<div class="line"><span class="lineno">   54</span>        <a class="code hl_enumvalue" href="#ggafe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723">ReadWrite</a></div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="ttc" id="aa00791_html_ggafe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197"><div class="ttname"><a href="#ggafe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197">SystemEx.Device.Memory.SharedCacheType.ReadOnly</a></div><div class="ttdeci">@ ReadOnly</div><div class="ttdoc">Data flows from the cache to the hardware buffer only.   Hardware cannot write back into the cache.</div><div class="ttdef"><b>Definition</b> DeviceSharedBuffer.cs:41</div></div>
+<div class="ttc" id="aa00791_html_ggafe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5"><div class="ttname"><a href="#ggafe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5">SystemEx.Device.Memory.SharedCacheType.WriteOnly</a></div><div class="ttdeci">@ WriteOnly</div><div class="ttdoc">Data flows from the hardware buffer into the cache only.   The cache does not upload its contents to ...</div><div class="ttdef"><b>Definition</b> DeviceSharedBuffer.cs:47</div></div>
+<div class="ttc" id="aa00791_html_ggafe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723"><div class="ttname"><a href="#ggafe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723">SystemEx.Device.Memory.SharedCacheType.ReadWrite</a></div><div class="ttdeci">@ ReadWrite</div><div class="ttdoc">Bidirectional synchronization between cache and hardware buffer.   The cache uploads its data to the ...</div><div class="ttdef"><b>Definition</b> DeviceSharedBuffer.cs:54</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -262,7 +187,6 @@ Enumerations</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d8/d20/a00768.html">SystemEx</a></li><li class="navelem"><a href="../../d4/d45/a00791.html">Random</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: SystemEx.Device.Intertropt.IDeviceSharedBackend Interface Reference" />
+<meta property="og:title" content="SystemEX: Member List" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: SystemEx.Device.Intertropt.IDeviceSharedBackend Interface Reference" />
+<meta name="twitter:title" content="SystemEX: Member List" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: SystemEx.Device.Intertropt.IDeviceSharedBackend Interface Reference</title>
+<title>SystemEX: Member List</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -96,201 +96,43 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('db/d99/a01411.html','../../','df/d84/a01408'); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d8/df1/a01414.html','../../',''); });
 </script>
 <div id="container">
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Device.Intertropt.IDeviceSharedBackend Interface Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt; Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Defines the low‑level backend interface used by <code>DeviceSharedBuffer</code> and related shared‑memory abstractions. <br  />
- A backend represents a hardware‑specific buffer implementation such as RAM, OpenCL, Vulkan, CUDA, or any custom device memory. <br  />
- Each backend is responsible for creating, writing, reading, and closing its own hardware buffer handle.  
- <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Device.Intertropt.IDeviceSharedBackend:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d8/d01/a01410.svg" width="204" height="379"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Device.Intertropt.IDeviceSharedBackend:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d9/d6e/a01409.svg" width="204" height="160"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a833aff35554009c28025b975f13d4dfe" id="r_a833aff35554009c28025b975f13d4dfe"><td class="memItemLeft">long&#160;</td><td class="memItemRight"><a class="el" href="#a833aff35554009c28025b975f13d4dfe">CreateReadHardwareBuffer</a> (int size, out object hardwareBuffer)</td></tr>
-<tr class="memdesc:a833aff35554009c28025b975f13d4dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a hardware buffer intended for reading operations. <br  />
- The backend allocates a device‑specific buffer of the given size and returns an opaque handle via <em>hardwareBuffer</em> .  <br /></td></tr>
-<tr class="memitem:ae46d08af2aeec81c004385b0eba87bb9" id="r_ae46d08af2aeec81c004385b0eba87bb9"><td class="memItemLeft">long&#160;</td><td class="memItemRight"><a class="el" href="#ae46d08af2aeec81c004385b0eba87bb9">CreateWriteHardwareBuffer</a> (byte[] cache, out object hardwareBuffer)</td></tr>
-<tr class="memdesc:ae46d08af2aeec81c004385b0eba87bb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a hardware buffer intended for writing operations and initializes it with the provided cache data. <br  />
- The backend allocates a device‑specific buffer and uploads the data.  <br /></td></tr>
-<tr class="memitem:ad1a998c4c1c2bcf87d3cc71848521729" id="r_ad1a998c4c1c2bcf87d3cc71848521729"><td class="memItemLeft">long&#160;</td><td class="memItemRight"><a class="el" href="#ad1a998c4c1c2bcf87d3cc71848521729">ReciveFromHardwareBuffer</a> (out byte[] data, ref object hardwareBuffer)</td></tr>
-<tr class="memdesc:ad1a998c4c1c2bcf87d3cc71848521729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the hardware buffer into a managed byte array. <br  />
- The backend determines how the buffer is accessed and how much data is returned.  <br /></td></tr>
-<tr class="memitem:a9f914e66eb1f111f799049c827bef125" id="r_a9f914e66eb1f111f799049c827bef125"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9f914e66eb1f111f799049c827bef125">CloseHardwareBuffer</a> (ref object hardwareBuffer)</td></tr>
-<tr class="memdesc:a9f914e66eb1f111f799049c827bef125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases and invalidates the backend‑specific hardware buffer handle. <br  />
- After this call, the buffer must no longer be used.  <br /></td></tr>
-</table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Defines the low‑level backend interface used by <code>DeviceSharedBuffer</code> and related shared‑memory abstractions. <br  />
- A backend represents a hardware‑specific buffer implementation such as RAM, OpenCL, Vulkan, CUDA, or any custom device memory. <br  />
- Each backend is responsible for creating, writing, reading, and closing its own hardware buffer handle. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a9f914e66eb1f111f799049c827bef125" name="a9f914e66eb1f111f799049c827bef125"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f914e66eb1f111f799049c827bef125">&#9670;&#160;</a></span>CloseHardwareBuffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SystemEx.Device.Intertropt.IDeviceSharedBackend.CloseHardwareBuffer </td>
-          <td>(</td>
-          <td class="paramtype">ref object</td>          <td class="paramname"><span class="paramname"><em>hardwareBuffer</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Releases and invalidates the backend‑specific hardware buffer handle. <br  />
- After this call, the buffer must no longer be used. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hardwareBuffer</td><td>The backend‑specific buffer handle.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="../../d0/d7d/a01419.html#a836f662fbb93b2bfe6cdf75c7d181181">SystemEx.Device.Intertropt.RamSharedBackend</a>.</p>
-
-</div>
-</div>
-<a id="a833aff35554009c28025b975f13d4dfe" name="a833aff35554009c28025b975f13d4dfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a833aff35554009c28025b975f13d4dfe">&#9670;&#160;</a></span>CreateReadHardwareBuffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">long SystemEx.Device.Intertropt.IDeviceSharedBackend.CreateReadHardwareBuffer </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">out object</td>          <td class="paramname"><span class="paramname"><em>hardwareBuffer</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Creates a hardware buffer intended for reading operations. <br  />
- The backend allocates a device‑specific buffer of the given size and returns an opaque handle via <em>hardwareBuffer</em> . </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">size</td><td>The size of the buffer to allocate.</td></tr>
-    <tr><td class="paramname">hardwareBuffer</td><td>The backend‑specific buffer handle.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A backend‑specific status code. <br  />
- Typically <code>0</code> for success, non‑zero for errors. </dd></dl>
-
-<p>Implemented in <a class="el" href="../../d0/d7d/a01419.html#a4420b7952d57f3d5abaa9de7e29ce5ba">SystemEx.Device.Intertropt.RamSharedBackend</a>.</p>
-
-</div>
-</div>
-<a id="ae46d08af2aeec81c004385b0eba87bb9" name="ae46d08af2aeec81c004385b0eba87bb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae46d08af2aeec81c004385b0eba87bb9">&#9670;&#160;</a></span>CreateWriteHardwareBuffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">long SystemEx.Device.Intertropt.IDeviceSharedBackend.CreateWriteHardwareBuffer </td>
-          <td>(</td>
-          <td class="paramtype">byte[]</td>          <td class="paramname"><span class="paramname"><em>cache</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">out object</td>          <td class="paramname"><span class="paramname"><em>hardwareBuffer</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Creates a hardware buffer intended for writing operations and initializes it with the provided cache data. <br  />
- The backend allocates a device‑specific buffer and uploads the data. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cache</td><td>The data to write into the hardware buffer.</td></tr>
-    <tr><td class="paramname">hardwareBuffer</td><td>The backend‑specific buffer handle.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A backend‑specific status code. <br  />
- Typically <code>0</code> for success, non‑zero for errors. </dd></dl>
-
-<p>Implemented in <a class="el" href="../../d0/d7d/a01419.html#a38bb2947d40b091d13169a0f253f49ea">SystemEx.Device.Intertropt.RamSharedBackend</a>.</p>
-
-</div>
-</div>
-<a id="ad1a998c4c1c2bcf87d3cc71848521729" name="ad1a998c4c1c2bcf87d3cc71848521729"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1a998c4c1c2bcf87d3cc71848521729">&#9670;&#160;</a></span>ReciveFromHardwareBuffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">long SystemEx.Device.Intertropt.IDeviceSharedBackend.ReciveFromHardwareBuffer </td>
-          <td>(</td>
-          <td class="paramtype">out byte[]</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ref object</td>          <td class="paramname"><span class="paramname"><em>hardwareBuffer</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reads data from the hardware buffer into a managed byte array. <br  />
- The backend determines how the buffer is accessed and how much data is returned. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>The byte array containing the received data.</td></tr>
-    <tr><td class="paramname">hardwareBuffer</td><td>The backend‑specific buffer handle.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of bytes received, or a negative value on error. </dd></dl>
-
-<p>Implemented in <a class="el" href="../../d0/d7d/a01419.html#a1e1bbd70cac562cca27943802e8ec1d3">SystemEx.Device.Intertropt.RamSharedBackend</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this interface was generated from the following file:<ul>
-<li><b>IDeviceSharedBackend.cs</b></li>
-</ul>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#adc8ad36c4c7dffc88a0bf497401b04dd">Count</a></td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#af3aef086b0ab63b274211998b0c220c5">Current</a></td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#aacb375d8fb5347f46275c579e5e2778f">Equals</a>(VectorMultiSet&lt; T, TContainer &gt; other)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#a8ccc3cb968984436b56f259804f457af">Erase</a>(long index)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#aa98aff064092f393e479bddaaad29136">Erase</a>(long first, long last)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#aec6e810664925606fb87bb777b14b9dd">Erase</a>(T value)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#a283afbe021a0829badbd3b9c070b5bf6">Extract</a>(long index)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#a3d7de7d13485407a283ec8b4406535b8">Insert</a>(T value)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#a246109324d35d8bc96b9b485589fee84">Insert</a>(long index, T value)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#a7d2dd0be4b10ac3311215350cb06f63f">Insert</a>(long start, long end, T value)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#a02c16012b20bde9bd33297ee61bde634">InsertRange</a>(long start, T[] values)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#aaab99b2c5aefa294547f033890237d4d">IsEmpty</a></td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#a6e401bbc8a141cf23788c864232cfcfe">IsFull</a></td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#ae96fd73f1f440da15a681e9c08126ac1">Length</a></td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#a39ceedb6fc1b22dbbf8332079ca187ec">LowerBound</a>(T key)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#ac9369ae9ad6a0acafc1e814e88588338">SwapIn</a>(VectorMultiSet&lt; T, TContainer &gt; other)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#af4a51a5f0c21514677a5905c4a1ecd7c">UpperBound</a>(T key)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#a0d654abe355caab7a021d6784ae6e57e">Validate</a>()</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#a30e2cac0accfa4dfe0431fc0cc986b57">VectorMultiSet</a>(ref TContainer keys, SortAction&lt; ISimpleCompare&lt; T &gt;, TContainer &gt;? sorter=null)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d8/df1/a01414.html#aef7ffe7951d5918cb441109c85b20e3b">VectorMultiSet</a>(ref TContainer keys, ISimpleCompare&lt; T &gt; comparer, SortAction&lt; ISimpleCompare&lt; T &gt;, TContainer &gt;? sorter=null)</td><td class="entry"><a class="el" href="../../d8/df1/a01414.html">SystemEx.Collections.Generic.VectorMultiSet&lt; T, TContainer &gt;</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
-<div id="page-nav" class="page-nav-panel">
-<div id="page-nav-resize-handle"></div>
-<div id="page-nav-tree">
-<div id="page-nav-contents">
-</div><!-- page-nav-contents -->
-</div><!-- page-nav-tree -->
-</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d8/d20/a00768.html">SystemEx</a></li><li class="navelem"><a href="../../d6/d86/a00781.html">Device</a></li><li class="navelem"><a href="../../dc/d0c/a00783.html">Intertropt</a></li><li class="navelem"><a href="../../db/d99/a01411.html">IDeviceSharedBackend</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
