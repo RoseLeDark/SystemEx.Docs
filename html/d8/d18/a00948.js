@@ -1,6 +1,7 @@
 var a00948 =
 [
-    [ "Find", "d8/d18/a00948.html#a06714dd24e906275331affa2b7f2d5c5", null ],
-    [ "Find", "d8/d18/a00948.html#a6c01d3a9bfc5c690a9b6c2fb34942811", null ],
-    [ "Where", "d8/d18/a00948.html#ae6aa7c0dc97310480c873db10f50e5bd", null ]
+    [ "ExecuteAsync", "d8/d18/a00948_a6a740106412051b5775cf5ae21980bce.html#a6a740106412051b5775cf5ae21980bce", null ],
+    [ "GetParameters", "d8/d18/a00948_a2bc38038b8365a6ec05e66b3b75c5d34.html#a2bc38038b8365a6ec05e66b3b75c5d34", null ],
+    [ "Description", "d8/d18/a00948_af28f34f11770b61d6187ef2cc8f30289.html#af28f34f11770b61d6187ef2cc8f30289", null ],
+    [ "Name", "d8/d18/a00948_aae042dfea7c7c77d8d7291be228c2092.html#aae042dfea7c7c77d8d7291be228c2092", null ]
 ];

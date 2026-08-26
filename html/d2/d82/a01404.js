@@ -1,9 +1,25 @@
 var a01404 =
 [
-    [ "StrippedCache", "d2/d82/a01404.html#aedd6d2db8ba958464aadc7a7f0294aea", null ],
-    [ "AsFlexSpan", "d2/d82/a01404.html#a8934fd6b80c0e3a7aa08f651168a920f", null ],
-    [ "ToArray", "d2/d82/a01404.html#aaf3345a692bc99e21ecdb1b25b6bdc74", null ],
-    [ "WriteRange", "d2/d82/a01404.html#a9606104852f651b28396a7cdebe22484", null ],
-    [ "WriteRange", "d2/d82/a01404.html#aa221c7108e09f7a87c04cbda06ba096d", null ],
-    [ "Length", "d2/d82/a01404.html#ae204b6a18b09c458e073dbef28295bbc", null ]
+    [ "AsFlexSpan", "d2/d82/a01404_acc9248032dec74728eabdb8330872bc4.html#acc9248032dec74728eabdb8330872bc4", null ],
+    [ "AsFlexSpan", "d2/d82/a01404_ad8a0487b516a3509ee453868c5426687.html#ad8a0487b516a3509ee453868c5426687", null ],
+    [ "Peek", "d2/d82/a01404_aa04fb1bd4ead74be0e68d39eb66d4998.html#aa04fb1bd4ead74be0e68d39eb66d4998", null ],
+    [ "Peek", "d2/d82/a01404_a716b270a05b22e6ebfb02eda033f8945.html#a716b270a05b22e6ebfb02eda033f8945", null ],
+    [ "Pop", "d2/d82/a01404_ac843f7e4a3c4d7c2e77c0c71571951e4.html#ac843f7e4a3c4d7c2e77c0c71571951e4", null ],
+    [ "Pop", "d2/d82/a01404_a40626db6e36e54394fbd09935ddd9be9.html#a40626db6e36e54394fbd09935ddd9be9", null ],
+    [ "PopRange", "d2/d82/a01404_ad8f09f693bfb6f4bc561229340007a3a.html#ad8f09f693bfb6f4bc561229340007a3a", null ],
+    [ "Push", "d2/d82/a01404_aaacaa8d4f932befbe254f0b93990903f.html#aaacaa8d4f932befbe254f0b93990903f", null ],
+    [ "Push", "d2/d82/a01404_a865c014a433a43cac3da172a4bd3fe04.html#a865c014a433a43cac3da172a4bd3fe04", null ],
+    [ "PushRange", "d2/d82/a01404_a8e62fa7bda8b25453cc90ed0e0c1f70b.html#a8e62fa7bda8b25453cc90ed0e0c1f70b", null ],
+    [ "ResetFilter", "d2/d82/a01404_a48b25f1a9959b399cf220c0b7a63f025.html#a48b25f1a9959b399cf220c0b7a63f025", null ],
+    [ "SetLayer", "d2/d82/a01404_a35df22b4f027201cfac7e05cbd735cb1.html#a35df22b4f027201cfac7e05cbd735cb1", null ],
+    [ "SetLayerOn", "d2/d82/a01404_a2d3f2d3e1f7655eeb40e979cf8e7182a.html#a2d3f2d3e1f7655eeb40e979cf8e7182a", null ],
+    [ "Stack", "d2/d82/a01404_a9f182bd5c425a9fa71675acc121a85f4.html#a9f182bd5c425a9fa71675acc121a85f4", null ],
+    [ "Current", "d2/d82/a01404_ae1a91ecfea18f52f0261d4e60dde1fec.html#ae1a91ecfea18f52f0261d4e60dde1fec", null ],
+    [ "Elements", "d2/d82/a01404_acc3cd699795bbc1bfc9fad3df697b7aa.html#acc3cd699795bbc1bfc9fad3df697b7aa", null ],
+    [ "Ende", "d2/d82/a01404_aab8eb42eadc10d346bedbcd0fd58fc9a.html#aab8eb42eadc10d346bedbcd0fd58fc9a", null ],
+    [ "EndFilter", "d2/d82/a01404_a828b2454879793f93f5cf2fb6e9385db.html#a828b2454879793f93f5cf2fb6e9385db", null ],
+    [ "IsEmpty", "d2/d82/a01404_ab21d836db11c4e812935c31866dbcbd9.html#ab21d836db11c4e812935c31866dbcbd9", null ],
+    [ "IsFull", "d2/d82/a01404_a5905601230255479410b907469491d0e.html#a5905601230255479410b907469491d0e", null ],
+    [ "Start", "d2/d82/a01404_a2ae717e434c504837aba12642317bc47.html#a2ae717e434c504837aba12642317bc47", null ],
+    [ "StartFilter", "d2/d82/a01404_a61dc491ce8fee1f2ab3be8002e5b99fe.html#a61dc491ce8fee1f2ab3be8002e5b99fe", null ]
 ];

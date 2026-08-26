@@ -1,18 +1,18 @@
 var a01864 =
 [
-    [ "Vec2h", "dd/d87/a01864.html#aa4b7948f612e289ac2d188fe371070d8", null ],
-    [ "Vec2h", "dd/d87/a01864.html#a3fc2b0949dffd7ad8c0e9569498f0e29", null ],
-    [ "Vec2h", "dd/d87/a01864.html#a89804d935b96e0bd3e8dbb083ebfc0ed", null ],
-    [ "Vec2h", "dd/d87/a01864.html#a1dc0345950d86a6b1c7af2b186062b2b", null ],
-    [ "Vec2h", "dd/d87/a01864.html#a678fac428574f7831af681db2ec7914b", null ],
-    [ "CompareTo", "dd/d87/a01864.html#aa4da420218e094f67fe7a23ab8c3a18e", null ],
-    [ "CompareTo", "dd/d87/a01864.html#ac56158eab85c2f058f7cd4854def0148", null ],
-    [ "Equals", "dd/d87/a01864.html#a7348f200b23514aff7b6004d3c3dab4c", null ],
-    [ "Equals", "dd/d87/a01864.html#ae1cc38a1d85eadb6a02ea77368adf41c", null ],
-    [ "Get", "dd/d87/a01864.html#a77f64501b7e7c883ca6c149e5908a4b8", null ],
-    [ "GetHashCode", "dd/d87/a01864.html#abd34ae0e4586296069f460448f4030da", null ],
-    [ "ToBytes", "dd/d87/a01864.html#a6a81e2ac25b339a9c3ae9e497e3544c0", null ],
-    [ "Count", "dd/d87/a01864.html#a4f86090797e55f6749af52d6c3e419cb", null ],
-    [ "X", "dd/d87/a01864.html#ab5591fe8adfd2ce0f47574aa775115ca", null ],
-    [ "Y", "dd/d87/a01864.html#a9cb2289582e0d458d64a29be408f8bdd", null ]
+    [ "Vec2d", "dd/d87/a01864_ad4a6640ea1f9f7e46b0d5cf8abc6b254.html#ad4a6640ea1f9f7e46b0d5cf8abc6b254", null ],
+    [ "Vec2d", "dd/d87/a01864_afd52dcab7c3d07272e7a519ee4635e9f.html#afd52dcab7c3d07272e7a519ee4635e9f", null ],
+    [ "Vec2d", "dd/d87/a01864_a95c89b4460c97b8d5e85a6a3367517bc.html#a95c89b4460c97b8d5e85a6a3367517bc", null ],
+    [ "Vec2d", "dd/d87/a01864_a89ddfacbc2c58fbf1ae97ed20259004b.html#a89ddfacbc2c58fbf1ae97ed20259004b", null ],
+    [ "Vec2d", "dd/d87/a01864_ad63b7c781ceb4729eb74701f4b4d6357.html#ad63b7c781ceb4729eb74701f4b4d6357", null ],
+    [ "CompareTo", "dd/d87/a01864_ac27a3be5978d0f5f9f9c3cd7fc48f318.html#ac27a3be5978d0f5f9f9c3cd7fc48f318", null ],
+    [ "CompareTo", "dd/d87/a01864_a4784f9cfc27dcd3d0fcff2c9a2de9be5.html#a4784f9cfc27dcd3d0fcff2c9a2de9be5", null ],
+    [ "Equals", "dd/d87/a01864_add89721dea6794ba0d99f58edad182ad.html#add89721dea6794ba0d99f58edad182ad", null ],
+    [ "Equals", "dd/d87/a01864_ade519895371531e54d5a20ebaa76fec1.html#ade519895371531e54d5a20ebaa76fec1", null ],
+    [ "Get", "dd/d87/a01864_a94046a165313fedaf0ead759f73920fc.html#a94046a165313fedaf0ead759f73920fc", null ],
+    [ "GetHashCode", "dd/d87/a01864_ac0b015a6748cf2fc2aea194782559850.html#ac0b015a6748cf2fc2aea194782559850", null ],
+    [ "ToBytes", "dd/d87/a01864_a7a5aacf3351d5fcb8e0a81b41c81643f.html#a7a5aacf3351d5fcb8e0a81b41c81643f", null ],
+    [ "Count", "dd/d87/a01864_a316f0f9f0fa1341aa5312645e82716f8.html#a316f0f9f0fa1341aa5312645e82716f8", null ],
+    [ "X", "dd/d87/a01864_a73f118199e0872f33a2ed1d09ad90caa.html#a73f118199e0872f33a2ed1d09ad90caa", null ],
+    [ "Y", "dd/d87/a01864_adffe55e1a7902e9aeac265c8a2ac84b4.html#adffe55e1a7902e9aeac265c8a2ac84b4", null ]
 ];

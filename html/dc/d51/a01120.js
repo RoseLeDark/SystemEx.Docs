@@ -1,14 +1,11 @@
 var a01120 =
 [
-    [ "CompareTo", "dc/d51/a01120.html#a71bc58a3db7e02ab12e82b2040f8cdf3", null ],
-    [ "CompareTo", "dc/d51/a01120.html#a68d6f65ecf518e35a4dc284c07e093b8", null ],
-    [ "Equals", "dc/d51/a01120.html#a8887102e3937aabf0ff8b43583129dc1", null ],
-    [ "GetHashCode", "dc/d51/a01120.html#a7bd372c79ee17e1e42a1fdf1c3238dcd", null ],
-    [ "Nullable", "dc/d51/a01120.html#adfd5bc2c15238e6eccabb1908769e2f9", null ],
-    [ "Optional", "dc/d51/a01120.html#ae29e07318aa44935421cda45cbde4871", null ],
-    [ "Optional", "dc/d51/a01120.html#a091b68ac9c1a46fbea2655940f3f2083", null ],
-    [ "HasValue", "dc/d51/a01120.html#a595e22df09165c217a508435511ac0ce", null ],
-    [ "IsNull", "dc/d51/a01120.html#a2e814fb2976fe97446c4fd40ad54a0d6", null ],
-    [ "IsSome", "dc/d51/a01120.html#ad50ac3985a6e78ce3a9736713b4a15c0", null ],
-    [ "Value", "dc/d51/a01120.html#a51e0011c11e5ac42a4cc163376e18c0f", null ]
+    [ "Write", "de/d9d/a00813_gabc8c2928bfbc6021a0fef12b3d34f2f8.html#gabc8c2928bfbc6021a0fef12b3d34f2f8", null ],
+    [ "Write", "de/d9d/a00813_gaa43f93e2fd2ab34f4d3f1791d97c9df1.html#gaa43f93e2fd2ab34f4d3f1791d97c9df1", null ],
+    [ "Write", "de/d9d/a00813_gaf6d38cbd4f4397472995ba33fb93131b.html#gaf6d38cbd4f4397472995ba33fb93131b", null ],
+    [ "Write", "de/d9d/a00813_gabdafba73dd36bc6d68c4337a398897e3.html#gabdafba73dd36bc6d68c4337a398897e3", null ],
+    [ "Write", "de/d9d/a00813_ga0cdd61069e191a5a86889a55d7d50579.html#ga0cdd61069e191a5a86889a55d7d50579", null ],
+    [ "Write", "de/d9d/a00813_gab20a2e68372024eda6713f98d718ae50.html#gab20a2e68372024eda6713f98d718ae50", null ],
+    [ "Write", "de/d9d/a00813_ga92636af95a445407f8bd63974703987b.html#ga92636af95a445407f8bd63974703987b", null ],
+    [ "Write", "de/d9d/a00813_gaeefae8672b49307e2f0092415133fd78.html#gaeefae8672b49307e2f0092415133fd78", null ]
 ];

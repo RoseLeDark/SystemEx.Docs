@@ -1,14 +1,12 @@
 var a01628 =
 [
-    [ "AddLayer", "dd/deb/a01628.html#a08cc7a47951c255745286b2ca4a51ea2", null ],
-    [ "GetLayer", "dd/deb/a01628.html#afc678c739562bdd01b5b4d028f375e0c", null ],
-    [ "GetPixel", "dd/deb/a01628.html#a5a373d1e6e296fab5d3df6976455aad7", null ],
-    [ "GetPixels", "dd/deb/a01628.html#a620d49fd3d87ada59b2524aa5973e4c1", null ],
-    [ "IsShowing", "dd/deb/a01628.html#af1551cf4822f103185ca9e4156acfaba", null ],
-    [ "RemoveLayer", "dd/deb/a01628.html#adb856cd89c398fd74968bb10e1a4e746", null ],
-    [ "SetShowing", "dd/deb/a01628.html#a21635b24cfbff2ce2c81af442490545d", null ],
-    [ "SwapIn", "dd/deb/a01628.html#ac5f05cbc80da0ea2ff15cbacd1d22a32", null ],
-    [ "SwapIn", "dd/deb/a01628.html#a2bc51ac3d1d9f58c244cc15a3efd32d6", null ],
-    [ "Layers", "dd/deb/a01628.html#af82bef687896c9ed3b61b87f9105bdac", null ],
-    [ "this[int index]", "dd/deb/a01628.html#a330abe601267840f93fca0e868049a00", null ]
+    [ "ColorYUV", "dd/deb/a01628_aa0d359dcbfce7a9db542f057ceb9c5a3.html#aa0d359dcbfce7a9db542f057ceb9c5a3", null ],
+    [ "ColorYUV", "dd/deb/a01628_a6b044317c98fadf6344c326610d5ce2b.html#a6b044317c98fadf6344c326610d5ce2b", null ],
+    [ "Equals", "dd/deb/a01628_a56db38f3081a9d808277b1eacfd51a25.html#a56db38f3081a9d808277b1eacfd51a25", null ],
+    [ "Equals", "dd/deb/a01628_a026a19eea44954df92a2712f2b9f5b6d.html#a026a19eea44954df92a2712f2b9f5b6d", null ],
+    [ "GetHashCode", "dd/deb/a01628_ae550b80cdb800113eca30858b4000ea7.html#ae550b80cdb800113eca30858b4000ea7", null ],
+    [ "ToString", "dd/deb/a01628_a877fde1f33ac52b5c34676bcfbc88e91.html#a877fde1f33ac52b5c34676bcfbc88e91", null ],
+    [ "U", "dd/deb/a01628_ae469b6e35e25c51e8c394e7bd5ecbd17.html#ae469b6e35e25c51e8c394e7bd5ecbd17", null ],
+    [ "V", "dd/deb/a01628_a154df444d5bdce3e66362a2aab06ec7b.html#a154df444d5bdce3e66362a2aab06ec7b", null ],
+    [ "Y", "dd/deb/a01628_a4e5a715c2184061561f7caacfd4314e8.html#a4e5a715c2184061561f7caacfd4314e8", null ]
 ];

@@ -1,23 +1,9 @@
 var a00916 =
 [
-    [ "AddConfig", "d6/d66/a00916.html#a3be1cf682147eebcf179b5bba14d06bf", null ],
-    [ "AddTool", "d6/d66/a00916.html#ae6b51b01b4fef490d5c1a60988f1af63", null ],
-    [ "GetConfigValue", "d6/d66/a00916.html#abfd8c58b6e3a856d5eb55196beea531f", null ],
-    [ "HasTool", "d6/d66/a00916.html#af6a3b653aeb13dccce9cbe19c182661b", null ],
-    [ "HaveCap", "d6/d66/a00916.html#a45015b64aba9f49e23aa2ed5a6cb4e18", null ],
-    [ "Initialization", "d6/d66/a00916.html#a04a53f3be85c40adf93508dac50bb73b", null ],
-    [ "Initialization", "d6/d66/a00916.html#a43be5867ffcb738be3e81c3e4850fba5", null ],
-    [ "Model", "d6/d66/a00916.html#a497d3e146d59b50707b2bf0b5c3cfa78", null ],
-    [ "Release", "d6/d66/a00916.html#aa5bc7c007ae5410c00a7ee5ba2217bdf", null ],
-    [ "RemoveTool", "d6/d66/a00916.html#a62aa8c1e375849e764e5e556aa0c8c88", null ],
-    [ "RunAsync", "d6/d66/a00916.html#a64bacbf3384021f46fad4b679bca74b9", null ],
-    [ "Backend", "d6/d66/a00916.html#aa6d585ad65f48daf452bb24bbeb2b513", null ],
-    [ "Cancel", "d6/d66/a00916.html#a17c607d8c10a66b93922f99f68a372e7", null ],
-    [ "Configuration", "d6/d66/a00916.html#a073d31b02a9a1f3b9506e6ca8f03fe52", null ],
-    [ "Environment", "d6/d66/a00916.html#a37e93a5799f9bba8d4eace55a36cb374", null ],
-    [ "ModelName", "d6/d66/a00916.html#a6bf748f56a5dafd663be398d6d7f9b02", null ],
-    [ "Name", "d6/d66/a00916.html#a359fdbf85c878d313cb31b7874c45b1b", null ],
-    [ "State", "d6/d66/a00916.html#aa23a93626a51a1e42b26696de7f53f7c", null ],
-    [ "SystemPrompt", "d6/d66/a00916.html#a48251a47c9c796adce80c7738202c928", null ],
-    [ "this[BackendCapabilities capability]", "d6/d66/a00916.html#afa2bd87384e8ee1640435d9cb14ab146", null ]
+    [ "Error", "d6/d66/a00916_a1d5e57ee688ba685af96ddb5642883b6.html#a1d5e57ee688ba685af96ddb5642883b6", null ],
+    [ "Metadata", "d6/d66/a00916_a35812bce83254927128a5dc4316a8295.html#a35812bce83254927128a5dc4316a8295", null ],
+    [ "Raw", "d6/d66/a00916_aa26a0871e6da9cfe10f6561915d31fa2.html#aa26a0871e6da9cfe10f6561915d31fa2", null ],
+    [ "Result", "d6/d66/a00916_ab8df99bde139215e00a017d1bc85faef.html#ab8df99bde139215e00a017d1bc85faef", null ],
+    [ "Success", "d6/d66/a00916_ade34b72dda896f19c7101729f28ca7e4.html#ade34b72dda896f19c7101729f28ca7e4", null ],
+    [ "Timestamp", "d6/d66/a00916_af1eafc5608f6b4e0b2c413cb170ac4fc.html#af1eafc5608f6b4e0b2c413cb170ac4fc", null ]
 ];

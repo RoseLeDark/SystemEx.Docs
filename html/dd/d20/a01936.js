@@ -1,6 +1,8 @@
 var a01936 =
 [
-    [ "GetSeed", "dd/d20/a01936.html#a3d5d857a56f1652c91ee28f028c29d47", null ],
-    [ "Length", "dd/d20/a01936.html#af7a38bc4b17f5ca6c038364394e85eb4", null ],
-    [ "this[int i]", "dd/d20/a01936.html#a4e5e12436b7b29ac083d824501844317", null ]
+    [ "HashedSeed", "dd/d20/a01936_aa2095c100d298dae2aed8fe33654d871.html#aa2095c100d298dae2aed8fe33654d871", null ],
+    [ "GetSeed", "dd/d20/a01936_a94600917b73ea8d61eacf1ba246f804a.html#a94600917b73ea8d61eacf1ba246f804a", null ],
+    [ "Update", "dd/d20/a01936_a5630f44b9169402cd96a7a7369ac7942.html#a5630f44b9169402cd96a7a7369ac7942", null ],
+    [ "Length", "dd/d20/a01936_a301516b64bd35650612ecc4e201d490c.html#a301516b64bd35650612ecc4e201d490c", null ],
+    [ "this[int index]", "dd/d20/a01936_a6b12a4534de764960366cbd0959394d4.html#a6b12a4534de764960366cbd0959394d4", null ]
 ];

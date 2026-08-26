@@ -1,6 +1,6 @@
 var a01308 =
 [
-    [ "GetEnumerator", "d1/d56/a01308.html#aed872ec71779d39475b8a4018e4070e5", null ],
-    [ "NodeSlice", "d1/d56/a01308.html#a6637e9ddcc668a80c34809e5ff8c5726", null ],
-    [ "End", "d1/d56/a01308.html#aa40d5519e94bec123b3c7a604a68f111", null ]
+    [ "Add", "d1/d56/a01308_ab8bbde3d08d8764cf028053cd93881c2.html#ab8bbde3d08d8764cf028053cd93881c2", null ],
+    [ "Add", "d1/d56/a01308_a93578962bd46a81035face13a85e2ea1.html#a93578962bd46a81035face13a85e2ea1", null ],
+    [ "GetEnumerator", "d1/d56/a01308_a90a7f935cb592b7b7f5338382f3ffd1b.html#a90a7f935cb592b7b7f5338382f3ffd1b", null ]
 ];

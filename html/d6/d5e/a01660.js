@@ -1,6 +1,6 @@
 var a01660 =
 [
-    [ "FletcherHash", "d6/d5e/a01660.html#aa0ea321773de765b007e7c3333f4c632", null ],
-    [ "Compute", "d6/d5e/a01660.html#a1a23079932bd6c4f45bc05756ce8c41b", null ],
-    [ "ComputeLong", "d6/d5e/a01660.html#ac22e658290acb05ba0ef38c63411c90f", null ]
+    [ "BernsteinHash", "d6/d5e/a01660_a3f641cff605642dfc6610c4a6925cf60.html#a3f641cff605642dfc6610c4a6925cf60", null ],
+    [ "Compute", "d6/d5e/a01660_a51756942ae492877aa923695e8b1be4a.html#a51756942ae492877aa923695e8b1be4a", null ],
+    [ "ComputeLong", "d6/d5e/a01660_aebc6e966cf752b7e49339dbd720470a4.html#aebc6e966cf752b7e49339dbd720470a4", null ]
 ];

@@ -1,6 +1,6 @@
 var a01692 =
 [
-    [ "GrøstlHash", "da/dc4/a01692.html#a283300feb809d70e4816c3b773be6006", null ],
-    [ "Compute", "da/dc4/a01692.html#a0eb87928746f2291ded7bcde1ddf7dd8", null ],
-    [ "ComputeLong", "da/dc4/a01692.html#a95421be4baadfd1fe9a6448417eea57d", null ]
+    [ "FletcherHash", "da/dc4/a01692_aa0ea321773de765b007e7c3333f4c632.html#aa0ea321773de765b007e7c3333f4c632", null ],
+    [ "Compute", "da/dc4/a01692_a1a23079932bd6c4f45bc05756ce8c41b.html#a1a23079932bd6c4f45bc05756ce8c41b", null ],
+    [ "ComputeLong", "da/dc4/a01692_ac22e658290acb05ba0ef38c63411c90f.html#ac22e658290acb05ba0ef38c63411c90f", null ]
 ];

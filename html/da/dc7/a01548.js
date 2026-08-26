@@ -1,13 +1,22 @@
 var a01548 =
 [
-    [ "ColorNCol", "da/dc7/a01548.html#a4edab6b6590c74060680729267a61fe3", null ],
-    [ "Equals", "da/dc7/a01548.html#ad2e22e397e22105cdb8c9379358f5cb4", null ],
-    [ "Equals", "da/dc7/a01548.html#a17bc255e558afe47f920e500378039ce", null ],
-    [ "GetHashCode", "da/dc7/a01548.html#afda66e2785c75763d48b0bb20613d564", null ],
-    [ "ToString", "da/dc7/a01548.html#aa92a0d020af23accb14206702c56d199", null ],
-    [ "C", "da/dc7/a01548.html#a8d4632823dbae580b5e0c1d986b29098", null ],
-    [ "I", "da/dc7/a01548.html#a27d55e4cd3e78bb6c9bafdec582cdcef", null ],
-    [ "L", "da/dc7/a01548.html#a912615c4122a02d491047bd8de996f26", null ],
-    [ "N", "da/dc7/a01548.html#ad6ee4712864b315c2bca106bed42070c", null ],
-    [ "P", "da/dc7/a01548.html#ae2efe66d0db81de207b0b01bb653a9d2", null ]
+    [ "ColorHSV", "da/dc7/a01548_a962c8121119034a6c86d529e063555ba.html#a962c8121119034a6c86d529e063555ba", null ],
+    [ "Addition", "da/dc7/a01548_a819a62d3b91ceb2d657bc5d21d283ebc.html#a819a62d3b91ceb2d657bc5d21d283ebc", null ],
+    [ "Addition", "da/dc7/a01548_a061e12219ee32d83cd4a00e51f7a5a2f.html#a061e12219ee32d83cd4a00e51f7a5a2f", null ],
+    [ "Brightness", "da/dc7/a01548_a6aaffe57f10048975b1d3de240ff18b8.html#a6aaffe57f10048975b1d3de240ff18b8", null ],
+    [ "Division", "da/dc7/a01548_a50310c033c084755105de41c755078aa.html#a50310c033c084755105de41c755078aa", null ],
+    [ "Division", "da/dc7/a01548_a7da093e9fa7bf32bdd882e2d610c1eb6.html#a7da093e9fa7bf32bdd882e2d610c1eb6", null ],
+    [ "Equals", "da/dc7/a01548_aafeac60144d01a1b314f5e6ebe645cdc.html#aafeac60144d01a1b314f5e6ebe645cdc", null ],
+    [ "Equals", "da/dc7/a01548_a17f08200f8b4716951ea515730f9dbfe.html#a17f08200f8b4716951ea515730f9dbfe", null ],
+    [ "GetHashCode", "da/dc7/a01548_a38dd5a10cc0b6b4472f5f9a329e32005.html#a38dd5a10cc0b6b4472f5f9a329e32005", null ],
+    [ "Lerp", "da/dc7/a01548_a25fae7109e0e77c3e22f6dc8e71192ba.html#a25fae7109e0e77c3e22f6dc8e71192ba", null ],
+    [ "Multiplication", "da/dc7/a01548_af14d30ff87d3b121bc016af1ec5e8554.html#af14d30ff87d3b121bc016af1ec5e8554", null ],
+    [ "Multiplication", "da/dc7/a01548_a4c73cb713a8f79257f05ec1c023a5efe.html#a4c73cb713a8f79257f05ec1c023a5efe", null ],
+    [ "Saturation", "da/dc7/a01548_a79e93239c06c48846621e535e0017e0f.html#a79e93239c06c48846621e535e0017e0f", null ],
+    [ "Subtraction", "da/dc7/a01548_abe36ed0b92d7b7f019e9b615fff4b442.html#abe36ed0b92d7b7f019e9b615fff4b442", null ],
+    [ "Subtraction", "da/dc7/a01548_a3b94792df86f9b01e2347bf108285ef8.html#a3b94792df86f9b01e2347bf108285ef8", null ],
+    [ "ToString", "da/dc7/a01548_adf64424f236fd4f9504b594cb0f83d64.html#adf64424f236fd4f9504b594cb0f83d64", null ],
+    [ "H", "da/dc7/a01548_af11fc62bcf3e837fe83e64695c822f13.html#af11fc62bcf3e837fe83e64695c822f13", null ],
+    [ "S", "da/dc7/a01548_af55bc78ab7d1f22047bc63a6884fe5ff.html#af55bc78ab7d1f22047bc63a6884fe5ff", null ],
+    [ "V", "da/dc7/a01548_ae80897f1270add318e30717f61243dcb.html#ae80897f1270add318e30717f61243dcb", null ]
 ];

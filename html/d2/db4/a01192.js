@@ -1,10 +1,14 @@
 var a01192 =
 [
-    [ "Add", "d2/db4/a01192.html#aec7dfae2a861270ec280420c8cafdfad", null ],
-    [ "AddRange", "d2/db4/a01192.html#a9b5b75a59b142536a4705578bd3af735", null ],
-    [ "GroupNode", "d2/db4/a01192.html#ac29458562045c2a9566aeb40a3e00542", null ],
-    [ "Remove", "d2/db4/a01192.html#a20f5128ace110291c06a66cc84771563", null ],
-    [ "Travers", "d2/db4/a01192.html#ab32817ff2c239afcb970677306f63c67", null ],
-    [ "IsEmpty", "d2/db4/a01192.html#a995640c52fdfebca080d122bdd43c5a4", null ],
-    [ "Nodes", "d2/db4/a01192.html#a50fb768ea2865f4c4612d57b9cd8cbc2", null ]
+    [ "Exists", "da/d71/a00814_ga9a281bb1e01008e08739a07fc622af9f.html#ga9a281bb1e01008e08739a07fc622af9f", null ],
+    [ "Find", "da/d71/a00814_ga6be674975bd5b3ad321da1cc7d4964d3.html#ga6be674975bd5b3ad321da1cc7d4964d3", null ],
+    [ "First", "da/d71/a00814_ga4af602db3b1a29b3edb075c079644230.html#ga4af602db3b1a29b3edb075c079644230", null ],
+    [ "First", "da/d71/a00814_ga7c4f131feb373e7d840574234280dd91.html#ga7c4f131feb373e7d840574234280dd91", null ],
+    [ "Last", "da/d71/a00814_ga2af00d59a155a5ed884140ecccf9e8e9.html#ga2af00d59a155a5ed884140ecccf9e8e9", null ],
+    [ "Last", "da/d71/a00814_ga6c2a514456538f696972faca5a8b8fb7.html#ga6c2a514456538f696972faca5a8b8fb7", null ],
+    [ "LowerBound", "da/d71/a00814_ga98fa8ee40615b8fde2b53bd9121797a1.html#ga98fa8ee40615b8fde2b53bd9121797a1", null ],
+    [ "Of", "da/d71/a00814_gaaafe6cbf5216b5447e9a9184cadc3d91.html#gaaafe6cbf5216b5447e9a9184cadc3d91", null ],
+    [ "TryGet", "da/d71/a00814_gadfb3f74a3f26aafe30374ac7a62f56b5.html#gadfb3f74a3f26aafe30374ac7a62f56b5", null ],
+    [ "UpperBound", "da/d71/a00814_ga1679a481e7f6b62d11ac82842c4156a0.html#ga1679a481e7f6b62d11ac82842c4156a0", null ],
+    [ "Where", "da/d71/a00814_ga3bd4a4a72cb0a7e2c59991d4b93ee898.html#ga3bd4a4a72cb0a7e2c59991d4b93ee898", null ]
 ];

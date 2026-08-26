@@ -1,16 +1,11 @@
 var a02040 =
 [
-    [ "LightCountingSpinlock", "d4/ddd/a02040.html#ace25b7149aa32b65259025e77100de47", null ],
-    [ "Lock", "d4/ddd/a02040.html#a5c8bae41a4f3c435e6e23573dc51a521", null ],
-    [ "Lock", "d4/ddd/a02040.html#abdf3b38bd2432c0cbc65c92e8db09aac", null ],
-    [ "TryLock", "d4/ddd/a02040.html#a4fd94d141700fb8f7ce9006c9ac03440", null ],
-    [ "Unlock", "d4/ddd/a02040.html#af4137b51338949939577c3e7f67fd37e", null ],
-    [ "Wait", "d4/ddd/a02040.html#aaec8c31a6a6cdcf71c0eb66bd8333cda", null ],
-    [ "Handle", "d4/ddd/a02040.html#aa7ace3af528d3cdaa30c7f95fc0368d3", null ],
-    [ "IsHeld", "d4/ddd/a02040.html#ab90dc46ff0cecd7d9f92af75b78fd55f", null ],
-    [ "IsHeldbyCurrent", "d4/ddd/a02040.html#a1112e4fc88ea08140ae10b5db8aa5665", null ],
-    [ "IsLocked", "d4/ddd/a02040.html#a11b8aabec674d34420b755a20941efa8", null ],
-    [ "IsThreadOwnerTrackingEnabled", "d4/ddd/a02040.html#ab433e469b544fc704377dd5afde10589", null ],
-    [ "Name", "d4/ddd/a02040.html#a192403bb4d8e9d562f040d7f6726cfe5", null ],
-    [ "Value", "d4/ddd/a02040.html#ad609e4df948b663f0a8c4738e6a826fc", null ]
+    [ "LightConditionVariable", "d4/ddd/a02040_a218cbb49c1ce69fa6e2b54b027124716.html#a218cbb49c1ce69fa6e2b54b027124716", null ],
+    [ "Broadcast", "d4/ddd/a02040_ad70e62cadb7a03d268166cf66133153a.html#ad70e62cadb7a03d268166cf66133153a", null ],
+    [ "Clear", "d4/ddd/a02040_a66976b2e4b202e98ac46bfc66dd1a471.html#a66976b2e4b202e98ac46bfc66dd1a471", null ],
+    [ "Notify", "d4/ddd/a02040_a7db3a4fa80c2b7ff160a8fdb00cbd59d.html#a7db3a4fa80c2b7ff160a8fdb00cbd59d", null ],
+    [ "Signal", "d4/ddd/a02040_a88804fb8e25569e85b09ced03f6608e0.html#a88804fb8e25569e85b09ced03f6608e0", null ],
+    [ "Count", "d4/ddd/a02040_a1dc73e7c7427165564f32f766e76079b.html#a1dc73e7c7427165564f32f766e76079b", null ],
+    [ "HasWaiters", "d4/ddd/a02040_a953a96c489acf7a4fc7e14e8c4ede86c.html#a953a96c489acf7a4fc7e14e8c4ede86c", null ],
+    [ "Name", "d4/ddd/a02040_a538dc21f8dcbf5c7708eddaebbf76234.html#a538dc21f8dcbf5c7708eddaebbf76234", null ]
 ];

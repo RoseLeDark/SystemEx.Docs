@@ -1,9 +1,5 @@
 var a01096 =
 [
-    [ "Clear", "d4/dfd/a00810.html#ga16bd812d70c13bf1c3f9f00a50581e26", null ],
-    [ "IFDelegate", "d4/dfd/a00810.html#gaf0894b3f5d68ab9f620a8b93966bade8", null ],
-    [ "Invoke", "d4/dfd/a00810.html#gabc90a7eb5d4ba71c1ddc6e32697cb700", null ],
-    [ "Subscribe", "d4/dfd/a00810.html#gadf458a899e6bd490804ba06d7bb25bd8", null ],
-    [ "UnSubscribe", "d4/dfd/a00810.html#ga1c7e0682bb607f03ff1ecde6d9edb064", null ],
-    [ "AddToThen", "d4/dfd/a00810.html#gae9edf88aeb77a9f82abd581a751099a0", null ]
+    [ "ToBytes", "de/d9d/a00813_gac602f31607f6f44b46678396fee48e57.html#gac602f31607f6f44b46678396fee48e57", null ],
+    [ "ToBytes", "de/d9d/a00813_gaf2d2e48915fab8e02015832792028320.html#gaf2d2e48915fab8e02015832792028320", null ]
 ];

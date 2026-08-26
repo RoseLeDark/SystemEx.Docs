@@ -1,6 +1,5 @@
 var a01024 =
 [
-    [ "Find", "d4/dc5/a01024.html#ab329be9c59f2eca897110a1c5f633d82", null ],
-    [ "Find", "d4/dc5/a01024.html#aeb61655f2368e66978f48077e02d1a87", null ],
-    [ "Where", "d4/dc5/a01024.html#a31fb42c2aeb5bab26079c7314aa84848", null ]
+    [ "Dimension", "d4/dc5/a01024_aa46927f31d6697a2d9ddb2370d7e8328.html#aa46927f31d6697a2d9ddb2370d7e8328", null ],
+    [ "this[int index]", "d4/dc5/a01024_a283e91501d56d9b86af18150b68dfa44.html#a283e91501d56d9b86af18150b68dfa44", null ]
 ];

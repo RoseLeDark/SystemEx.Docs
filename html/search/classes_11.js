@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['safecounter_0',['SafeCounter',['../d6/d0c/a02080.html',1,'SystemEx::Threading']]],
+  ['scopedlock_2d1_2dg_1',['ScopedLock-1-g',['../d4/de0/a02092.html',1,'SystemEx::Threading']]],
+  ['scopedlock_2d2_2dg_2',['ScopedLock-2-g',['../de/dd1/a02100.html',1,'SystemEx::Threading']]],
+  ['scopedunlock_2d1_2dg_3',['ScopedUnlock-1-g',['../dd/d77/a02096.html',1,'SystemEx::Threading']]],
+  ['seedmixed_4',['SeedMixed',['../d0/d59/a01956.html',1,'SystemEx::Random']]],
+  ['simplecomparer_2d1_2dg_5',['SimpleComparer-1-g',['../d5/d16/a01060.html',1,'SystemEx::Algorithms']]],
+  ['sizemismatchexception_6',['SizeMismatchException',['../dd/d3f/a02156.html',1,'SystemEx::Utils']]],
+  ['slices_2d2_2dg_7',['Slices-2-g',['../db/d8b/a01464.html',1,'SystemEx::Collections::Generic']]],
+  ['sparsed_2d1_2dg_8',['Sparsed-1-g',['../d9/d45/a01396.html',1,'SystemEx::Collections::Generic']]],
+  ['spinlock_9',['Spinlock',['../da/dbe/a02084.html',1,'SystemEx::Threading']]],
+  ['spotlight_10',['SpotLight',['../da/ddf/a01648.html',1,'SystemEx::Drawing']]],
+  ['stack_2d1_2dg_11',['Stack-1-g',['../d2/d82/a01404.html',1,'SystemEx::Collections::Generic']]],
+  ['stacklayer_12',['StackLayer',['../dc/d35/a01400.html',1,'SystemEx::Collections::Generic']]],
+  ['starnode_2d1_2dg_13',['StarNode-1-g',['../df/d84/a01408.html',1,'SystemEx::Collections::Generic']]],
+  ['strippedcache_14',['StrippedCache',['../dc/d10/a01412.html',1,'SystemEx::Collections::Generic']]],
+  ['subslice_2d2_2dg_15',['SubSlice-2-g',['../d2/d2f/a01460.html',1,'SystemEx::Collections::Generic']]],
+  ['switchdelegate_2d2_2dg_16',['SwitchDelegate-2-g',['../d2/dd2/a01164.html',1,'SystemEx']]]
+];

@@ -1,12 +1,16 @@
 var a02044 =
 [
-    [ "LightLock", "d8/d22/a02044.html#aad5dd10e0ab61e714ac6fb64dbaea3b7", null ],
-    [ "Lock", "d8/d22/a02044.html#afd5d537f6db8f848414b80025bd41a44", null ],
-    [ "Lock", "d8/d22/a02044.html#a4497ba1821c9f1e7e70e6d27150af2fd", null ],
-    [ "TryLock", "d8/d22/a02044.html#abd27fea5852df735f8b9f86bb15ba5df", null ],
-    [ "Unlock", "d8/d22/a02044.html#ad9456f25b97eda8ead9082560b132cba", null ],
-    [ "Wait", "d8/d22/a02044.html#a6cd084b84084e4d82a0f11eef18f08db", null ],
-    [ "Handle", "d8/d22/a02044.html#a30dae2d3e09ede11e199078cfe526069", null ],
-    [ "IsHeld", "d8/d22/a02044.html#a4750b57fb451edbddb7f8ef25c3d7f3c", null ],
-    [ "IsLocked", "d8/d22/a02044.html#a342937643c091e24c4f73be39e6be9d7", null ]
+    [ "LightCountingSpinlock", "d8/d22/a02044_ace25b7149aa32b65259025e77100de47.html#ace25b7149aa32b65259025e77100de47", null ],
+    [ "Lock", "d8/d22/a02044_a5c8bae41a4f3c435e6e23573dc51a521.html#a5c8bae41a4f3c435e6e23573dc51a521", null ],
+    [ "Lock", "d8/d22/a02044_abdf3b38bd2432c0cbc65c92e8db09aac.html#abdf3b38bd2432c0cbc65c92e8db09aac", null ],
+    [ "TryLock", "d8/d22/a02044_a4fd94d141700fb8f7ce9006c9ac03440.html#a4fd94d141700fb8f7ce9006c9ac03440", null ],
+    [ "Unlock", "d8/d22/a02044_af4137b51338949939577c3e7f67fd37e.html#af4137b51338949939577c3e7f67fd37e", null ],
+    [ "Wait", "d8/d22/a02044_aaec8c31a6a6cdcf71c0eb66bd8333cda.html#aaec8c31a6a6cdcf71c0eb66bd8333cda", null ],
+    [ "Handle", "d8/d22/a02044_aa7ace3af528d3cdaa30c7f95fc0368d3.html#aa7ace3af528d3cdaa30c7f95fc0368d3", null ],
+    [ "IsHeld", "d8/d22/a02044_ab90dc46ff0cecd7d9f92af75b78fd55f.html#ab90dc46ff0cecd7d9f92af75b78fd55f", null ],
+    [ "IsHeldbyCurrent", "d8/d22/a02044_a1112e4fc88ea08140ae10b5db8aa5665.html#a1112e4fc88ea08140ae10b5db8aa5665", null ],
+    [ "IsLocked", "d8/d22/a02044_a11b8aabec674d34420b755a20941efa8.html#a11b8aabec674d34420b755a20941efa8", null ],
+    [ "IsThreadOwnerTrackingEnabled", "d8/d22/a02044_ab433e469b544fc704377dd5afde10589.html#ab433e469b544fc704377dd5afde10589", null ],
+    [ "Name", "d8/d22/a02044_a192403bb4d8e9d562f040d7f6726cfe5.html#a192403bb4d8e9d562f040d7f6726cfe5", null ],
+    [ "Value", "d8/d22/a02044_ad609e4df948b663f0a8c4738e6a826fc.html#ad609e4df948b663f0a8c4738e6a826fc", null ]
 ];

@@ -1,6 +1,8 @@
 var a01164 =
 [
-    [ "Erase", "d2/dd2/a01164.html#ac307c1ff3de24e81a0deb023b0bd2326", null ],
-    [ "Erase", "d2/dd2/a01164.html#a78d7c7f73610eeec1f0896f3648e7cfb", null ],
-    [ "Erase", "d2/dd2/a01164.html#aa904001a53bdb7014f7b51e2d90fd292", null ]
+    [ "Invoke", "d2/dd2/a01164_a2e1f61869883d141caf0d691b8ace283.html#a2e1f61869883d141caf0d691b8ace283", null ],
+    [ "Subscribe", "d2/dd2/a01164_a93b5e5585371374930e9f8847b459dc6.html#a93b5e5585371374930e9f8847b459dc6", null ],
+    [ "SwitchDelegate", "d2/dd2/a01164_a5f787db239fcf682d03d13f1d02580c3.html#a5f787db239fcf682d03d13f1d02580c3", null ],
+    [ "SwitchDelegate", "d2/dd2/a01164_a10c7a4c3d6d9725894abfe14f200b44b.html#a10c7a4c3d6d9725894abfe14f200b44b", null ],
+    [ "UnSubscribe", "d2/dd2/a01164_a8604e8f2e8feb866e7909030f521f05d.html#a8604e8f2e8feb866e7909030f521f05d", null ]
 ];

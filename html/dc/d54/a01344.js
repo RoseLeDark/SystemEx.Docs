@@ -1,7 +1,5 @@
 var a01344 =
 [
-    [ "PopBack", "dc/d54/a01344.html#a657abe7f6104e29f686a30efacf35a2f", null ],
-    [ "PushFront", "dc/d54/a01344.html#a39eb76962c0e816ca74d248baa95fc04", null ],
-    [ "End", "dc/d54/a01344.html#ab17ec86c3e78647f3e8836c6870f4dc8", null ],
-    [ "Front", "dc/d54/a01344.html#af11f56bb068a685a661b67c5f877ef54", null ]
+    [ "Dequeue", "dc/d54/a01344_ab69bbb13dacc4d3cac6491f04804e2ec.html#ab69bbb13dacc4d3cac6491f04804e2ec", null ],
+    [ "Enqueue", "dc/d54/a01344_a1c2dd9c140534c5879b3ab8b25c9c203.html#a1c2dd9c140534c5879b3ab8b25c9c203", null ]
 ];

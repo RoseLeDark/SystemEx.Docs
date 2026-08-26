@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['cache_0',['Cache',['../dd/d75/a01180.html',1,'SystemEx::Collections::Generic']]],
+  ['cacheissharedexception_1',['CacheIsSharedException',['../d3/d32/a01176.html',1,'SystemEx::Collections::Generic']]],
+  ['cachestream_2d1_2dg_2',['CacheStream-1-g',['../df/d8f/a01740.html',1,'SystemEx::IO']]],
+  ['calculatortool_3',['CalculatorTool',['../d7/db6/a00940.html',1,'SystemEx::AI::Tools']]],
+  ['cluseriterrator_2d1_2dg_4',['CluserIterrator-1-g',['../d1/d35/a01184.html',1,'SystemEx::Collections::Generic']]],
+  ['cluster_2d1_2dg_5',['Cluster-1-g',['../d6/d97/a01188.html',1,'SystemEx::Collections::Generic']]],
+  ['colorcmy_6',['ColorCMY',['../da/d97/a01528.html',1,'SystemEx::Drawing']]],
+  ['colorgray_7',['ColorGray',['../d0/da6/a01536.html',1,'SystemEx::Drawing']]],
+  ['colorhdr_8',['ColorHDR',['../d3/d4c/a01540.html',1,'SystemEx::Drawing']]],
+  ['colorhsl_9',['ColorHSL',['../d6/d83/a01544.html',1,'SystemEx::Drawing']]],
+  ['colorhsv_10',['ColorHSV',['../da/dc7/a01548.html',1,'SystemEx::Drawing']]],
+  ['colorhwb_11',['ColorHWB',['../d0/db9/a01552.html',1,'SystemEx::Drawing']]],
+  ['colorncol_12',['ColorNCol',['../d7/db6/a01556.html',1,'SystemEx::Drawing']]],
+  ['colorr10g10b10a2_13',['ColorR10G10B10A2',['../da/daf/a01568.html',1,'SystemEx::Drawing']]],
+  ['colorr10g10b10formatschema_14',['ColorR10G10B10FormatSchema',['../de/d89/a01560.html',1,'SystemEx::Drawing']]],
+  ['colorr10g10b10serializer_15',['ColorR10G10B10Serializer',['../de/dd5/a01564.html',1,'SystemEx::Drawing']]],
+  ['colorr16g16b16_16',['ColorR16G16B16',['../d3/d22/a01572.html',1,'SystemEx::Drawing']]],
+  ['colorr8g8b8_17',['ColorR8G8B8',['../db/dfd/a01576.html',1,'SystemEx::Drawing']]],
+  ['colorxyz_18',['ColorXYZ',['../de/df9/a01624.html',1,'SystemEx::Drawing']]],
+  ['coloryuv_19',['ColorYUV',['../dd/deb/a01628.html',1,'SystemEx::Drawing']]],
+  ['cosinedistancef_20',['CosineDistanceF',['../df/dbc/a01004.html',1,'SystemEx::Algorithms::Compute']]]
+];

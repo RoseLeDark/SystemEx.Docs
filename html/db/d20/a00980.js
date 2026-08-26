@@ -1,4 +1,4 @@
 var a00980 =
 [
-    [ "Compare", "db/d20/a00980.html#a77c1a64fe19c51be4c09e2206fb3117e", null ]
+    [ "Compare", "db/d20/a00980_aa545e3bf3a016d47e0671d51a469a9a5.html#aa545e3bf3a016d47e0671d51a469a9a5", null ]
 ];

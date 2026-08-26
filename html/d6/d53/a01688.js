@@ -1,6 +1,6 @@
 var a01688 =
 [
-    [ "Fnv1aHash", "d6/d53/a01688.html#a1022e19301bed40e47ea0eb38a458fc2", null ],
-    [ "Compute", "d6/d53/a01688.html#a6d797d26be75ccc966f2b15dc8f2c872", null ],
-    [ "ComputeLong", "d6/d53/a01688.html#a199c012c5bd572fe95f92c9dcb4f655e", null ]
+    [ "Black3Hasher", "dc/d5e/a00817_ga17af8e1ee759024e0d57b730c739a969.html#ga17af8e1ee759024e0d57b730c739a969", null ],
+    [ "Compute", "dc/d5e/a00817_ga322178abf78db90bfc6e29636f597403.html#ga322178abf78db90bfc6e29636f597403", null ],
+    [ "ComputeLong", "dc/d5e/a00817_ga20013d9f5608babd5c031167e72ad679.html#ga20013d9f5608babd5c031167e72ad679", null ]
 ];

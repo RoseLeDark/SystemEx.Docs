@@ -1,12 +1,16 @@
 var a01208 =
 [
-    [ "Add", "d9/d31/a01208.html#a82ba65a3f21642b02cd059bd9ce90c50", null ],
-    [ "Contains", "d9/d31/a01208.html#a9c46eb67feb7a850ddde5ab29990dcf5", null ],
-    [ "Cost", "d9/d31/a01208.html#aaed03770868073d4fd11c467fac3c89d", null ],
-    [ "ElementAt", "d9/d31/a01208.html#acde6c9e9768096ef67f602648ab954d8", null ],
-    [ "find", "d9/d31/a01208.html#a635e93bcb9c06aa40bb80dd9a589aaa8", null ],
-    [ "Remove", "d9/d31/a01208.html#a56669530dde7b2aa9350f71e4768688e", null ],
-    [ "Child", "d9/d31/a01208.html#aecb30fd65e6e0abdbbdba5e5385734be", null ],
-    [ "Parent", "d9/d31/a01208.html#a2935432b2638f0986d62fd8446e73104", null ],
-    [ "Value", "d9/d31/a01208.html#a4da66ff0eb219e442384b550fd4283c1", null ]
+    [ "Read", "d9/d31/a01208_ae95af313b583bd072550d6350bc87b75.html#ae95af313b583bd072550d6350bc87b75", null ],
+    [ "ReadByte", "d9/d31/a01208_acdd346e512c54ecdf5f5fb6658d5a2b3.html#acdd346e512c54ecdf5f5fb6658d5a2b3", null ],
+    [ "ReadRange", "d9/d31/a01208_aed9c865ec9334b20a7d402cdac8010b1.html#aed9c865ec9334b20a7d402cdac8010b1", null ],
+    [ "ToArray", "d9/d31/a01208_ac56b32c871371fcc526942f46b0373cc.html#ac56b32c871371fcc526942f46b0373cc", null ],
+    [ "Write", "d9/d31/a01208_a67d0c6f26c38bbd4d20bf33f7cfb195e.html#a67d0c6f26c38bbd4d20bf33f7cfb195e", null ],
+    [ "WriteRange", "d9/d31/a01208_ae163824f501429fd4844bd0f5d32b0f7.html#ae163824f501429fd4844bd0f5d32b0f7", null ],
+    [ "WriteRange", "d9/d31/a01208_a5e28cbd1d727a6945fa43cd4cd9e7b56.html#a5e28cbd1d727a6945fa43cd4cd9e7b56", null ],
+    [ "CanRead", "d9/d31/a01208_a411316154312563c8e912a80344e4f60.html#a411316154312563c8e912a80344e4f60", null ],
+    [ "CanWrite", "d9/d31/a01208_ada793e0e6e7c76933c2f92449189083f.html#ada793e0e6e7c76933c2f92449189083f", null ],
+    [ "IsEmpty", "d9/d31/a01208_a22886fbcecaadbeb5387e824d09411e1.html#a22886fbcecaadbeb5387e824d09411e1", null ],
+    [ "Length", "d9/d31/a01208_a9f54e5b3edb59d4f4d3366da90e89553.html#a9f54e5b3edb59d4f4d3366da90e89553", null ],
+    [ "Position", "d9/d31/a01208_a6ea72d9baad6249e62500a12e7532138.html#a6ea72d9baad6249e62500a12e7532138", null ],
+    [ "Type", "d9/d31/a01208_aa5760511cea0e8233154ed2179f289f9.html#aa5760511cea0e8233154ed2179f289f9", null ]
 ];

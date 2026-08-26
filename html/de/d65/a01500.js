@@ -1,6 +1,9 @@
 var a01500 =
 [
-    [ "DeviceBuffer", "de/d65/a01500.html#af8268870fb6e0c4bb5dfb8ceaebeed02", null ],
-    [ "ToShared< TDeviceSharedBackend >", "de/d65/a01500.html#ab0b55e4acb01ce97c2a7f42354ce81db", null ],
-    [ "IsShared", "de/d65/a01500.html#ae999c0185de7bae4e6c34dd3198c2050", null ]
+    [ "UnmanagedObject", "de/d65/a01500_a14aed2b1cfea656d65436290df59874a.html#a14aed2b1cfea656d65436290df59874a", null ],
+    [ "Dispose", "de/d65/a01500_a956659ae97324e807929f60c7d83486f.html#a956659ae97324e807929f60c7d83486f", null ],
+    [ "Data", "de/d65/a01500_a301a6542499c4ac865e5157b412d9551.html#a301a6542499c4ac865e5157b412d9551", null ],
+    [ "Handle", "de/d65/a01500_a1d1977cb3ec2a3b9645dd44c451733d8.html#a1d1977cb3ec2a3b9645dd44c451733d8", null ],
+    [ "Point", "de/d65/a01500_a6c32525df6e515c3530726169834949b.html#a6c32525df6e515c3530726169834949b", null ],
+    [ "Size", "de/d65/a01500_a55af49dd8668c7415aaa9b1faa544351.html#a55af49dd8668c7415aaa9b1faa544351", null ]
 ];

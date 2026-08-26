@@ -1,6 +1,9 @@
 var a01744 =
 [
-    [ "GetSchema", "d1/d04/a01744.html#affd8fa86db36e9afd381bee227237b1c", null ],
-    [ "Pack", "d1/d04/a01744.html#a98f7a931080c05739983fefb38430587", null ],
-    [ "Unpack", "d1/d04/a01744.html#ad84c30900c22a63584e72d35539e8d48", null ]
+    [ "ByteSeriablizeProvider", "d1/d04/a01744_ac66be7a6fa49e97366512f39a7af52aa.html#ac66be7a6fa49e97366512f39a7af52aa", null ],
+    [ "CreateObjectFromEntrys", "d1/d04/a01744_af88745b1ec42b5f1851762a870b912f3.html#af88745b1ec42b5f1851762a870b912f3", null ],
+    [ "FromBytes", "d1/d04/a01744_afecf4eff79ff8c28e50e9225580be978.html#afecf4eff79ff8c28e50e9225580be978", null ],
+    [ "GetBytesForEntry", "d1/d04/a01744_a300c416a3dc3b7c64bd1992e1a270a15.html#a300c416a3dc3b7c64bd1992e1a270a15", null ],
+    [ "GetEntrySize", "d1/d04/a01744_a9be49aa5d57457de9e4ad8a84cc04be5.html#a9be49aa5d57457de9e4ad8a84cc04be5", null ],
+    [ "ToBytes< U >", "d1/d04/a01744_a661d985ee971dca2f9b9278cc38f400e.html#a661d985ee971dca2f9b9278cc38f400e", null ]
 ];

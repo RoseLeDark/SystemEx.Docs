@@ -1,13 +1,13 @@
 var a01320 =
 [
-    [ "BinQueue", "df/dec/a01320.html#aff347aaa61dec60bbbc4d019cacf64a0", null ],
-    [ "Clear", "df/dec/a01320.html#a6c8d88a89895a7a87f8dff7fbe76215d", null ],
-    [ "Dequeue", "df/dec/a01320.html#a173af5dab2808395f12000d225e4695d", null ],
-    [ "Enqueue", "df/dec/a01320.html#a4d4f4b19b733d51472c44fbe2018ce76", null ],
-    [ "Count", "df/dec/a01320.html#a08e721ea105b6a44ad4464493c2a0d1e", null ],
-    [ "End", "df/dec/a01320.html#ab3164f38648e1a4de4624c7bab8b237d", null ],
-    [ "Front", "df/dec/a01320.html#a543fff85e79b24021c7671052afaac29", null ],
-    [ "IsEmpty", "df/dec/a01320.html#a0f5c1fef8463cbf8f63d661342c2733a", null ],
-    [ "IsFull", "df/dec/a01320.html#a89a43610fa05e085124b62ef0dd2011b", null ],
-    [ "Size", "df/dec/a01320.html#abff2dadc6c66f73b08adbdba18120711", null ]
+    [ "CompareTo", "df/dec/a01320_a633453c20031b016f78bde01629df964.html#a633453c20031b016f78bde01629df964", null ],
+    [ "EqualFirst", "df/dec/a01320_a7650aeecf936f93a768c5f83e34c63ab.html#a7650aeecf936f93a768c5f83e34c63ab", null ],
+    [ "Equals", "df/dec/a01320_a136f298cf7334af979113e9f90416307.html#a136f298cf7334af979113e9f90416307", null ],
+    [ "EqualSecond", "df/dec/a01320_afcf3b4a1e51c723ccf65200682fa3c2d.html#afcf3b4a1e51c723ccf65200682fa3c2d", null ],
+    [ "Get", "df/dec/a01320_a2862d0244ec550de40f5858e40191988.html#a2862d0244ec550de40f5858e40191988", null ],
+    [ "Pair", "df/dec/a01320_af422c9184813660c7c705535c0ce5883.html#af422c9184813660c7c705535c0ce5883", null ],
+    [ "ToString", "df/dec/a01320_a4ca2689187fbb362b0327fc82c51cb97.html#a4ca2689187fbb362b0327fc82c51cb97", null ],
+    [ "Count", "df/dec/a01320_a57206c8647665e16b335ac7f0f0a6503.html#a57206c8647665e16b335ac7f0f0a6503", null ],
+    [ "First", "df/dec/a01320_af3b99b10dafc9c73dff1560fad6c5828.html#af3b99b10dafc9c73dff1560fad6c5828", null ],
+    [ "Second", "df/dec/a01320_a42340ac21a55a863fd1e64c7439fbe08.html#a42340ac21a55a863fd1e64c7439fbe08", null ]
 ];

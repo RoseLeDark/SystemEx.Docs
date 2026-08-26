@@ -1,18 +1,14 @@
 var a02072 =
 [
-    [ "SafeCounter", "de/d9d/a02072.html#aa5a43f0c054ad0b56fc00c19b2ba7405", null ],
-    [ "SafeCounter", "de/d9d/a02072.html#a40d15df7f3c09f4e67cc2ec48735c878", null ],
-    [ "SafeCounter", "de/d9d/a02072.html#a52d867dd9b3579894e3d9008d075af08", null ],
-    [ "Assign", "de/d9d/a02072.html#a3802f3437b53839b2c75e0fcbab87827", null ],
-    [ "Assign", "de/d9d/a02072.html#a3e145bdd993d3910480d1db7626c8bc5", null ],
-    [ "Decrement", "de/d9d/a02072.html#a2a249838ce7af77ccb8eef108d13db3e", null ],
-    [ "DecrementPost", "de/d9d/a02072.html#a135b62992af218d7f327c08b873a950e", null ],
-    [ "Equals", "de/d9d/a02072.html#a86b39d74850fb049f4ae184316b91dfe", null ],
-    [ "Equals", "de/d9d/a02072.html#ab4dba9c463af721274ab88961faac57e", null ],
-    [ "GetHashCode", "de/d9d/a02072.html#aa7c0214f40694faa6c7738011a450ce1", null ],
-    [ "Increment", "de/d9d/a02072.html#a0a1081236607abaff098b1e751f1315b", null ],
-    [ "IncrementPost", "de/d9d/a02072.html#a702aab49f4ecac8b2aa3422b596d02d4", null ],
-    [ "Reset", "de/d9d/a02072.html#a205b77c2f8de39751caa0c81baf32ac5", null ],
-    [ "IsZero", "de/d9d/a02072.html#a274b4baf608618d8c183055066395371", null ],
-    [ "Value", "de/d9d/a02072.html#aa10649fd8673e0ee4f9c0e4281572d15", null ]
+    [ "MutexLock", "de/d9d/a02072_ac4c14023cf86bf2b02cf25a3216499d8.html#ac4c14023cf86bf2b02cf25a3216499d8", null ],
+    [ "Lock", "de/d9d/a02072_a51c757fae46fc312246ab9f07f0e4dda.html#a51c757fae46fc312246ab9f07f0e4dda", null ],
+    [ "Lock", "de/d9d/a02072_a044e83642e972c844fea32e6848884a0.html#a044e83642e972c844fea32e6848884a0", null ],
+    [ "TryLock", "de/d9d/a02072_a1d604438e1a11749ab509315aa65abad.html#a1d604438e1a11749ab509315aa65abad", null ],
+    [ "TryLock", "de/d9d/a02072_a7416b6e96a8d75eb09e0dd99688907b1.html#a7416b6e96a8d75eb09e0dd99688907b1", null ],
+    [ "Unlock", "de/d9d/a02072_a3dbb914bbfa86d7ac9523eb4d7dfc29d.html#a3dbb914bbfa86d7ac9523eb4d7dfc29d", null ],
+    [ "Wait", "de/d9d/a02072_ac7cf016191186b4e170086fb7cf63a72.html#ac7cf016191186b4e170086fb7cf63a72", null ],
+    [ "Handle", "de/d9d/a02072_aeb83a5d5e1049a4d391604e11b6e1ad6.html#aeb83a5d5e1049a4d391604e11b6e1ad6", null ],
+    [ "IsHeld", "de/d9d/a02072_a9599947120244261578958dea476b0b3.html#a9599947120244261578958dea476b0b3", null ],
+    [ "IsLocked", "de/d9d/a02072_a12c741771d692e68b55e40af5acc8d70.html#a12c741771d692e68b55e40af5acc8d70", null ],
+    [ "Name", "de/d9d/a02072_ac2ed5db7552b570df6ad95b211eef766.html#ac2ed5db7552b570df6ad95b211eef766", null ]
 ];

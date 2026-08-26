@@ -1,4 +1,26 @@
 var a01084 =
 [
-    [ "ReadValue", "d0/d7d/a00786.html#ga067db48c9c31c1007a89cd0904cf571c", null ]
+    [ "CopyTo", "de/d9d/a00813_gac6a324f392d096b86b2296e20dfc548c.html#gac6a324f392d096b86b2296e20dfc548c", null ],
+    [ "Dispose", "de/d9d/a00813_gab8c67dc092d45c1cd6c9752d0afa8c5d.html#gab8c67dc092d45c1cd6c9752d0afa8c5d", null ],
+    [ "ElementAt", "de/d9d/a00813_gae90b59eed3ce6a90f5438e3507d3d9d6.html#gae90b59eed3ce6a90f5438e3507d3d9d6", null ],
+    [ "Fill", "de/d9d/a00813_ga65dfa8ade8bc03f37006abc12823c4ac.html#ga65dfa8ade8bc03f37006abc12823c4ac", null ],
+    [ "FlexSpan", "de/d9d/a00813_ga98772490d32bb89901aae442493694d3.html#ga98772490d32bb89901aae442493694d3", null ],
+    [ "FlexSpan", "de/d9d/a00813_ga2ec39d4d948aab777049a93b39e5feb5.html#ga2ec39d4d948aab777049a93b39e5feb5", null ],
+    [ "GetEnumerator", "de/d9d/a00813_ga37a4a5704409bc873942c193ece026f1.html#ga37a4a5704409bc873942c193ece026f1", null ],
+    [ "MoveNext", "de/d9d/a00813_ga90ba73d4158a62c0bdb80cbc8a1a9e37.html#ga90ba73d4158a62c0bdb80cbc8a1a9e37", null ],
+    [ "Reset", "de/d9d/a00813_gaf089098378ca8b83db782749b0d4ea42.html#gaf089098378ca8b83db782749b0d4ea42", null ],
+    [ "Slice", "de/d9d/a00813_ga7fcfe09831ee15b0c30d82649e263574.html#ga7fcfe09831ee15b0c30d82649e263574", null ],
+    [ "Slice", "de/d9d/a00813_ga953f3b74e88b8367e291ac2d1716101b.html#ga953f3b74e88b8367e291ac2d1716101b", null ],
+    [ "ToArray", "de/d9d/a00813_ga29f722aad7367ccc1a82da3793431bb5.html#ga29f722aad7367ccc1a82da3793431bb5", null ],
+    [ "TryCopyTo", "de/d9d/a00813_ga1aa932fc5b668f84dd9d6bc7b4e0b090.html#ga1aa932fc5b668f84dd9d6bc7b4e0b090", null ],
+    [ "Current", "de/d9d/a00813_ga9e6d51f173bd027d3645736f3d020214.html#ga9e6d51f173bd027d3645736f3d020214", null ],
+    [ "Current", "de/d9d/a00813_ga60e277c3cf368d1743567a74675168b5.html#ga60e277c3cf368d1743567a74675168b5", null ],
+    [ "Current", "de/d9d/a00813_gaae170af35a7d24a0d3f5acb2ef3519c5.html#gaae170af35a7d24a0d3f5acb2ef3519c5", null ],
+    [ "End", "de/d9d/a00813_ga297a9b5295723a4b4ded54181b2555b2.html#ga297a9b5295723a4b4ded54181b2555b2", null ],
+    [ "HasNext", "de/d9d/a00813_ga4d664ed0c97f7c61901c08667b68fc6c.html#ga4d664ed0c97f7c61901c08667b68fc6c", null ],
+    [ "IsEmpty", "de/d9d/a00813_ga1fe469adccf7644ae16b405c9bf8206d.html#ga1fe469adccf7644ae16b405c9bf8206d", null ],
+    [ "Length", "de/d9d/a00813_ga4da0aee2313be3b1a9667eee6d78b8a2.html#ga4da0aee2313be3b1a9667eee6d78b8a2", null ],
+    [ "Start", "de/d9d/a00813_ga6ecb1d0152a141674870e7d13360c933.html#ga6ecb1d0152a141674870e7d13360c933", null ],
+    [ "this[int index]", "de/d9d/a00813_ga999ad7f9e303562c3a5d74f7311b81b7.html#ga999ad7f9e303562c3a5d74f7311b81b7", null ],
+    [ "ViewLength", "de/d9d/a00813_ga2dc2e1ea74271d33bf93d563518d4039.html#ga2dc2e1ea74271d33bf93d563518d4039", null ]
 ];

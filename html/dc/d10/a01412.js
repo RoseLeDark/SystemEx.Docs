@@ -1,11 +1,9 @@
 var a01412 =
 [
-    [ "EqualFirst", "dc/d10/a01412.html#a26d53a0cedb6ea41fd3719570486bfa6", null ],
-    [ "Get", "dc/d10/a01412.html#a8333056b256bd9dd4b10e8b022b32ef4", null ],
-    [ "Set", "dc/d10/a01412.html#aaad27d83ed52e6f8562ccacf23a3501c", null ],
-    [ "Tuple", "dc/d10/a01412.html#a3fba042f1ba92525b663bf49a5a630a8", null ],
-    [ "Tuple", "dc/d10/a01412.html#a91a460d22023a00a326d276379c5eede", null ],
-    [ "Count", "dc/d10/a01412.html#a6c99837e506d2e3186de1025c91f1ae9", null ],
-    [ "First", "dc/d10/a01412.html#a8f202c9a6acac4a609224dd8b52a791b", null ],
-    [ "this[int index]", "dc/d10/a01412.html#afc9a09491979a1be4bad24df21275893", null ]
+    [ "StrippedCache", "dc/d10/a01412_aedd6d2db8ba958464aadc7a7f0294aea.html#aedd6d2db8ba958464aadc7a7f0294aea", null ],
+    [ "AsFlexSpan", "dc/d10/a01412_a8934fd6b80c0e3a7aa08f651168a920f.html#a8934fd6b80c0e3a7aa08f651168a920f", null ],
+    [ "ToArray", "dc/d10/a01412_aaf3345a692bc99e21ecdb1b25b6bdc74.html#aaf3345a692bc99e21ecdb1b25b6bdc74", null ],
+    [ "WriteRange", "dc/d10/a01412_a9606104852f651b28396a7cdebe22484.html#a9606104852f651b28396a7cdebe22484", null ],
+    [ "WriteRange", "dc/d10/a01412_aa221c7108e09f7a87c04cbda06ba096d.html#aa221c7108e09f7a87c04cbda06ba096d", null ],
+    [ "Length", "dc/d10/a01412_ae204b6a18b09c458e073dbef28295bbc.html#ae204b6a18b09c458e073dbef28295bbc", null ]
 ];

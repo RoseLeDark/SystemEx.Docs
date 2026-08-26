@@ -1,29 +1,7 @@
 var a00920 =
 [
-    [ "AddContext", "d6/d82/a00920.html#a5ee62ce3abd2cea738c33064f5a32d20", null ],
-    [ "AddParameter", "d6/d82/a00920.html#a8808b878fc297aad0eb7eca7d4ee7872", null ],
-    [ "AddTag", "d6/d82/a00920.html#ad8c2f113854ad36a99a6985d904e6817", null ],
-    [ "HasContext", "d6/d82/a00920.html#a28e7ef7b1a825232523f92dcc0dc8958", null ],
-    [ "HasParameter", "d6/d82/a00920.html#a38556db3263654efea7ff408ef319572", null ],
-    [ "HasTag", "d6/d82/a00920.html#abf252a1eaba772339a6d0b323a9dd9c4", null ],
-    [ "ModelPromp", "d6/d82/a00920.html#acc5e7441fb79c1050cda57723679ebaf", null ],
-    [ "ModelPromp", "d6/d82/a00920.html#ac4413b5d179cd64c2009a5b5f8667a19", null ],
-    [ "ModelPromp", "d6/d82/a00920.html#a14aa861d0220b1de99d406e1088319e7", null ],
-    [ "RemoveContext", "d6/d82/a00920.html#a043276afe6ffd8ed8be35516e2d0a925", null ],
-    [ "RemoveParameter", "d6/d82/a00920.html#a5d01324b90d919aa1caf0171ecadef09", null ],
-    [ "RemoveTag", "d6/d82/a00920.html#abd7e10c068ee6f06ffdbba9ff1c1a1a6", null ],
-    [ "ToString", "d6/d82/a00920.html#aed3e209d1fb6b36605ec2545f2215362", null ],
-    [ "TryGetContext", "d6/d82/a00920.html#aff650242111e6115bd194c7ed582c040", null ],
-    [ "TryGetParameter", "d6/d82/a00920.html#a5fb756150b068112962d121f143e5fa8", null ],
-    [ "TryGetTag", "d6/d82/a00920.html#ad588471e88c89cfd96d404181b184c2b", null ],
-    [ "WithContext", "d6/d82/a00920.html#a4dcc2818e05ef3ccd485eeab41b9bb3e", null ],
-    [ "WithParameter", "d6/d82/a00920.html#a66216f9d524702d8b8420fa5d6b23acc", null ],
-    [ "WithTag", "d6/d82/a00920.html#a5dae460f419001087e86580775a6732d", null ],
-    [ "Cancel", "d6/d82/a00920.html#a2f267ffc3fdb5e2cc9a7964b2a966f16", null ],
-    [ "Context", "d6/d82/a00920.html#a00e691410c05f6d9ff71e1609098b2df", null ],
-    [ "Parameters", "d6/d82/a00920.html#abb865c88cb029f812e165cffe26e5f58", null ],
-    [ "Prompt", "d6/d82/a00920.html#a002ba488f49e0973b2b8192f7baac738", null ],
-    [ "SessionId", "d6/d82/a00920.html#a9a4df778f2c6c3273a33e035836cff91", null ],
-    [ "Tags", "d6/d82/a00920.html#a3cd0553b45507b0aa3fe2411e3b5fdd0", null ],
-    [ "this[string parameter]", "d6/d82/a00920.html#a23e36b7fc850ed4fc646d46608f422e3", null ]
+    [ "ExecuteAsync", "d6/d82/a00920_a98c350f2ceab9376ec7e59525953598f.html#a98c350f2ceab9376ec7e59525953598f", null ],
+    [ "GetParameters", "d6/d82/a00920_a2d1de47e003129d922eb9437e23c5f59.html#a2d1de47e003129d922eb9437e23c5f59", null ],
+    [ "Description", "d6/d82/a00920_a5e413057204dda4896b8c20713ded893.html#a5e413057204dda4896b8c20713ded893", null ],
+    [ "Name", "d6/d82/a00920_a9d874f5d545796784d832696a44484e2.html#a9d874f5d545796784d832696a44484e2", null ]
 ];

@@ -1,18 +1,15 @@
 var a01776 =
 [
-    [ "Fast_Float", "dd/d00/a01776.html#ac2e57e271f1f8f5c201dff2957ac7ba4", null ],
-    [ "FlipExponentBit", "dd/d00/a01776.html#ad1dd4cbcb13440d404e3a105609aa795", null ],
-    [ "FlipMantissaBit", "dd/d00/a01776.html#a59f4721c0aee602b60e538f9c6d5fd99", null ],
-    [ "FromBits", "dd/d00/a01776.html#a23f84121814999056897f66327bfa715", null ],
-    [ "GetExponent", "dd/d00/a01776.html#a296da38f2a7d817a1c41f80f64b11af8", null ],
-    [ "GetMantissa", "dd/d00/a01776.html#a0b7240990bbb3df1e47addc038ee4a22", null ],
-    [ "GetSign", "dd/d00/a01776.html#a9e013f2ad2b4366ac2715d6f62ce5670", null ],
-    [ "IsInfinity", "dd/d00/a01776.html#a9335f87e39163c2f20099c4dece75ab0", null ],
-    [ "IsNaN", "dd/d00/a01776.html#a220540deaf19cd4f6fc9ba7799cdbaf3", null ],
-    [ "IsSubnormal", "dd/d00/a01776.html#a6faf74b8f1fb127e5f8ee89780930377", null ],
-    [ "SetExponent", "dd/d00/a01776.html#ab36efa426d3a72f81e29ebd1a9bd2181", null ],
-    [ "SetMantissa", "dd/d00/a01776.html#a039e73c5d087997192640bb9c9aec2c6", null ],
-    [ "SetSign", "dd/d00/a01776.html#a0469ee4a2455b663b39e33a4f4f057c1", null ],
-    [ "ToBits", "dd/d00/a01776.html#a45350515c4c232cfeb8a3b9e178dba39", null ],
-    [ "Value", "dd/d00/a01776.html#a5f256e2f5e51c96ae408b24612525aae", null ]
+    [ "DQuatf", "dd/d00/a01776_a90f4335221eec297fed8a437572e3e10.html#a90f4335221eec297fed8a437572e3e10", null ],
+    [ "DQuatf", "dd/d00/a01776_a81b45f8bd0a8ba4f2f018f6b9e29a8a2.html#a81b45f8bd0a8ba4f2f018f6b9e29a8a2", null ],
+    [ "Invert", "dd/d00/a01776_ad98b030c576c79753c3e12064ac37c8e.html#ad98b030c576c79753c3e12064ac37c8e", null ],
+    [ "Normalize", "dd/d00/a01776_a3d098a474afe2d4d9ae84628192117af.html#a3d098a474afe2d4d9ae84628192117af", null ],
+    [ "Rotation", "dd/d00/a01776_a598ebdd8e0246df2ecaa7bb18ece03db.html#a598ebdd8e0246df2ecaa7bb18ece03db", null ],
+    [ "RotationTranslation", "dd/d00/a01776_a80a9a0e0f8ca7a300145824cfdce1157.html#a80a9a0e0f8ca7a300145824cfdce1157", null ],
+    [ "Transform", "dd/d00/a01776_a87993c1bf677c4aef0b25bf0ebc8f3c1.html#a87993c1bf677c4aef0b25bf0ebc8f3c1", null ],
+    [ "Translation", "dd/d00/a01776_a0caa7025367c72fb07f93a0a255d2891.html#a0caa7025367c72fb07f93a0a255d2891", null ],
+    [ "m_rot", "dd/d00/a01776_ad15af1d961fd3d548ddf9c87085417a6.html#ad15af1d961fd3d548ddf9c87085417a6", null ],
+    [ "m_translation", "dd/d00/a01776_ac6cda2deb9fe1b196b616dc1d6d84d70.html#ac6cda2deb9fe1b196b616dc1d6d84d70", null ],
+    [ "Dual", "dd/d00/a01776_ad65280325ecdc2754083dd9c2ee08daa.html#ad65280325ecdc2754083dd9c2ee08daa", null ],
+    [ "Real", "dd/d00/a01776_a7ceacb7cc40a942f171b3f82cabe0095.html#a7ceacb7cc40a942f171b3f82cabe0095", null ]
 ];

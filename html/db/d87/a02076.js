@@ -1,15 +1,13 @@
 var a02076 =
 [
-    [ "Spinlock", "db/d87/a02076.html#ab5db032c1e5def2541627689dd46e421", null ],
-    [ "Lock", "db/d87/a02076.html#a7061a783c74b724fef51067e3050aaaa", null ],
-    [ "Lock", "db/d87/a02076.html#ad67ac5c22b2c21daa3f2008606ad66d1", null ],
-    [ "TryLock", "db/d87/a02076.html#acbf57003ac823162bf707c142df0c5e1", null ],
-    [ "Unlock", "db/d87/a02076.html#a269e65bcd451b15e366b8cf2d6f5ef8f", null ],
-    [ "Wait", "db/d87/a02076.html#a9a94d3df6dc1e77cd7b85ae087b9ac8d", null ],
-    [ "Handle", "db/d87/a02076.html#a97d4fa717109a28cb4d70620ea41a9cb", null ],
-    [ "IsHeld", "db/d87/a02076.html#af015b725cb1183cc71c71334aef77f9a", null ],
-    [ "IsHeldbyCurrent", "db/d87/a02076.html#a9fcd2720ab530570bbee10d14768c79b", null ],
-    [ "IsLocked", "db/d87/a02076.html#a0b145ccad68e9ecb6b1afc1ed5463809", null ],
-    [ "IsThreadOwnerTrackingEnabled", "db/d87/a02076.html#a13d5597d9e96c41c5118bed18a12c256", null ],
-    [ "Name", "db/d87/a02076.html#a5b9f6468771d46e83ecca45a155cfc9f", null ]
+    [ "Equals", "db/d87/a02076_a5dbbbc7cf3f4e3aaadb8870e1a4c1e43.html#a5dbbbc7cf3f4e3aaadb8870e1a4c1e43", null ],
+    [ "Equals", "db/d87/a02076_ac1ec098524cd0080f737986d546d78c4.html#ac1ec098524cd0080f737986d546d78c4", null ],
+    [ "GetHashCode", "db/d87/a02076_a2abfd6d239b90e24e1f202c766f4b32d.html#a2abfd6d239b90e24e1f202c766f4b32d", null ],
+    [ "RCUObject", "db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631", null ],
+    [ "RCUObject", "db/d87/a02076_a1fc7e4b87dda8b691cd797dc9a8eb488.html#a1fc7e4b87dda8b691cd797dc9a8eb488", null ],
+    [ "ReadValue", "db/d87/a02076_a6d9cfb3e6e39cffc44b1d264ea959dc3.html#a6d9cfb3e6e39cffc44b1d264ea959dc3", null ],
+    [ "ToString", "db/d87/a02076_a571ff3383fc085d25e003ad2c845fdd0.html#a571ff3383fc085d25e003ad2c845fdd0", null ],
+    [ "WriteValue", "db/d87/a02076_a5fb272f0aab9baeafd36448dbb880161.html#a5fb272f0aab9baeafd36448dbb880161", null ],
+    [ "Value", "db/d87/a02076_a3cc77400a410d2afe83dba853720523d.html#a3cc77400a410d2afe83dba853720523d", null ],
+    [ "ValueWithState", "db/d87/a02076_a0c2a938a02e53e03843ebbb04d790b7c.html#a0c2a938a02e53e03843ebbb04d790b7c", null ]
 ];

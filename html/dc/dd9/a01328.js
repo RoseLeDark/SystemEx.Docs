@@ -1,21 +1,13 @@
 var a01328 =
 [
-    [ "Enumerator", "dc/dd9/a01328.html#d9/d45/a01332", null ],
-    [ "CopyTo", "dc/dd9/a01328.html#a85c0d300bdb0725b7c09a3cb24a19d9d", null ],
-    [ "DequeFlexSpan", "dc/dd9/a01328.html#aa9f24f885f4fd1b8b0ca1c3bc5b593c8", null ],
-    [ "DequeFlexSpan", "dc/dd9/a01328.html#ac33a43c97f9a0d9d56c47838bb23b072", null ],
-    [ "Dispose", "dc/dd9/a01328.html#ad27d6dc553fd903b513639c6d6e94b88", null ],
-    [ "ElementAt", "dc/dd9/a01328.html#a49194cddbe639ee934c81fcc5b7d517d", null ],
-    [ "MoveNext", "dc/dd9/a01328.html#a4af371b7dec991450a05c59621e76914", null ],
-    [ "Reset", "dc/dd9/a01328.html#a969f0cba5a53bddaeb3d152956dac0d9", null ],
-    [ "SetAt", "dc/dd9/a01328.html#a875b85e6042127281d33bd4eb5ffc74b", null ],
-    [ "Current", "dc/dd9/a01328.html#a98a77ff82378394e6d64c7c3f2239ac8", null ],
-    [ "Current", "dc/dd9/a01328.html#a85c30b966570f71325a3026b1f20ba7b", null ],
-    [ "Current", "dc/dd9/a01328.html#a79ab1a8025fab2a858a960519343d969", null ],
-    [ "End", "dc/dd9/a01328.html#a95cb1dc79a09a0f600b40b8c432d4279", null ],
-    [ "HasNext", "dc/dd9/a01328.html#ac5d5d23a85807b15972d4b7e93396da9", null ],
-    [ "IsEmpty", "dc/dd9/a01328.html#a18d449cef171a1f64912428ffa305fae", null ],
-    [ "Length", "dc/dd9/a01328.html#a258ced7be163de6909f5a2c427a75616", null ],
-    [ "Start", "dc/dd9/a01328.html#ae3395d51ee202e904801cd5fa63fe99d", null ],
-    [ "ViewLength", "dc/dd9/a01328.html#ad418f6843c55b19def79849065458ea6", null ]
+    [ "BinQueue", "dc/dd9/a01328_aff347aaa61dec60bbbc4d019cacf64a0.html#aff347aaa61dec60bbbc4d019cacf64a0", null ],
+    [ "Clear", "dc/dd9/a01328_a6c8d88a89895a7a87f8dff7fbe76215d.html#a6c8d88a89895a7a87f8dff7fbe76215d", null ],
+    [ "Dequeue", "dc/dd9/a01328_a173af5dab2808395f12000d225e4695d.html#a173af5dab2808395f12000d225e4695d", null ],
+    [ "Enqueue", "dc/dd9/a01328_a4d4f4b19b733d51472c44fbe2018ce76.html#a4d4f4b19b733d51472c44fbe2018ce76", null ],
+    [ "Count", "dc/dd9/a01328_a08e721ea105b6a44ad4464493c2a0d1e.html#a08e721ea105b6a44ad4464493c2a0d1e", null ],
+    [ "End", "dc/dd9/a01328_ab3164f38648e1a4de4624c7bab8b237d.html#ab3164f38648e1a4de4624c7bab8b237d", null ],
+    [ "Front", "dc/dd9/a01328_a543fff85e79b24021c7671052afaac29.html#a543fff85e79b24021c7671052afaac29", null ],
+    [ "IsEmpty", "dc/dd9/a01328_a0f5c1fef8463cbf8f63d661342c2733a.html#a0f5c1fef8463cbf8f63d661342c2733a", null ],
+    [ "IsFull", "dc/dd9/a01328_a89a43610fa05e085124b62ef0dd2011b.html#a89a43610fa05e085124b62ef0dd2011b", null ],
+    [ "Size", "dc/dd9/a01328_abff2dadc6c66f73b08adbdba18120711.html#abff2dadc6c66f73b08adbdba18120711", null ]
 ];
