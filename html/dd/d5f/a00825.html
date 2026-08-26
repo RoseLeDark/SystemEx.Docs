@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: SystemEx.Threading Namespace Reference" />
+<meta property="og:title" content="SystemEX: SystemEx.AI.Tools Namespace Reference" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: SystemEx.Threading Namespace Reference" />
+<meta name="twitter:title" content="SystemEX: SystemEx.AI.Tools Namespace Reference" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: SystemEx.Threading Namespace Reference</title>
+<title>SystemEX: SystemEx.AI.Tools Namespace Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,86 +101,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd/d5f/a00825.
 <div id="container">
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Threading Namespace Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.AI.Tools Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:Barrier_3C_20T_20_3E" id="r_Barrier_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d7/dfb/a01966.html">Barrier&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a reusable multi‑phase synchronization barrier. Threads call Arrive or ArriveAndWait to signal arrival at the current phase. When the number of arrivals reaches <code>m_max</code>, the barrier opens, executes the completion callback, resets its counters, and begins the next phase.  <a href="../../d7/dfb/a01966.html#details">More...</a><br /></td></tr>
-<tr class="memitem:BarrierNewPhaseLockException" id="r_BarrierNewPhaseLockException"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/d0f/a01962.html">BarrierNewPhaseLockException</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when a barrier phase transition fails due to an invalid lock state or an inconsistent phase update.  <a href="../../d1/d0f/a01962.html#details">More...</a><br /></td></tr>
-<tr class="memitem:Epoch" id="r_Epoch"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d5/dd7/a01970.html">Epoch</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a lightweight Read-Copy-Update (RCU) epoch counter used to track active reader sections. Each call to Assign enters a reader epoch, and each call to Leave exits it. Writers may only proceed when the epoch value indicates that no readers are active.  <a href="../../d5/dd7/a01970.html#details">More...</a><br /></td></tr>
-<tr class="memitem:EventGroup_3C_20TFastType_20_3E" id="r_EventGroup_3C_20TFastType_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d3/d4e/a01978.html">EventGroup&lt; TFastType &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a lightweight event group based on a fast bit‑storage type. EventGroup&lt;TFastType&gt; allows individual bit positions to be set, cleared, flipped, queried, or waited on. The underlying bit container is provided by <em>TFastType</em> , which must implement IFastType.  <a href="../../d3/d4e/a01978.html#details">More...</a><br /></td></tr>
-<tr class="memitem:ILock" id="r_ILock"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d2/d3d/a01982.html">ILock</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the minimal contract for a synchronization primitive capable of providing mutual exclusion. Implementations of ILock may wrap lightweight in‑process mechanisms (such as Monitor) or heavier inter‑process constructs (such as Mutex).  <a href="../../d2/d3d/a01982.html#details">More...</a><br /></td></tr>
-<tr class="memitem:ILock_3C_20T_20_3E" id="r_ILock_3C_20T_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d4/d10/a01986.html">ILock&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends ILock by exposing the underlying synchronization handle. This is useful for advanced scenarios where the caller may need direct access to the wrapped primitive (e.g., Mutex, Monitor object).  <a href="../../d4/d10/a01986.html#details">More...</a><br /></td></tr>
-<tr class="memitem:ILockedObject_3C_20T_20_3E" id="r_ILockedObject_3C_20T_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d5/d2e/a01998.html">ILockedObject&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a minimal lock‑protected value container interface. Implementations provide controlled read and write access to a value of type <em>T</em>  using a caller‑supplied synchronization mechanism.  <a href="../../d5/d2e/a01998.html#details">More...</a><br /></td></tr>
-<tr class="memitem:ISpinlock_3C_20T_20_3E" id="r_ISpinlock_3C_20T_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../df/d37/a02002.html">ISpinlock&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends ILock&lt;T&gt; with spin‑lock‑specific diagnostics and metadata. Implementations of ISpinlock&lt;T&gt; represent busy‑wait mutual exclusion primitives where threads repeatedly attempt to acquire the lock without yielding.  <a href="../../df/d37/a02002.html#details">More...</a><br /></td></tr>
-<tr class="memitem:Latch_3C_20T_20_3E" id="r_Latch_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d9/de8/a02006.html">Latch&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A one-shot countdown synchronization primitive. The latch starts in the locked state and releases all waiting threads once its internal counter reaches zero. After releasing, the latch remains permanently open.  <a href="../../d9/de8/a02006.html#details">More...</a><br /></td></tr>
-<tr class="memitem:LightConditionVariable" id="r_LightConditionVariable"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d3/d59/a02010.html">LightConditionVariable</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A lightweight and minimal condition variable designed for simple thread synchronization scenarios. Unlike the heavy and business‑oriented primitives in .NET, LightConditionVariable provides a straightforward FIFO wait‑list and wake‑up mechanism suitable for most everyday use cases.  <a href="../../d3/d59/a02010.html#details">More...</a><br /></td></tr>
-<tr class="memitem:LightCountingSpinlock_3C_20T_20_3E" id="r_LightCountingSpinlock_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d0/d48/a02014.html">LightCountingSpinlock&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a counting spinlock, a non‑blocking synchronization primitive that allows a bounded number of threads to enter a critical section concurrently. Unlike traditional binary spinlocks, which permit only a single thread at a time, a counting spinlock maintains an atomic counter representing the current available capacity.  <a href="../../d0/d48/a02014.html#details">More...</a><br /></td></tr>
-<tr class="memitem:LightLock" id="r_LightLock"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../da/d2d/a02018.html">LightLock</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a minimal wrapper around Monitor to offer lightweight mutual exclusion. LightLock is intended for short, low‑overhead critical sections where a full synchronization primitive would be unnecessary.  <a href="../../da/d2d/a02018.html#details">More...</a><br /></td></tr>
-<tr class="memitem:LightMutex_3C_20T_20_3E" id="r_LightMutex_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../db/dc2/a02022.html">LightMutex&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A lightweight non‑blocking mutex built on top of LightCountingSpinlock&lt;T&gt;. This mutex provides binary spinlock semantics (capacity 1) combined with strict owner‑tracking to ensure that only the thread which successfully acquired the lock may access the protected value or release the lock.  <a href="../../db/dc2/a02022.html#details">More...</a><br /></td></tr>
-<tr class="memitem:LightSpinlock_3C_20T_20_3E" id="r_LightSpinlock_3C_20T_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d9/dd6/a02026.html">LightSpinlock&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a lightweight atomic spinlock that protects a single value. LightSpinlock&lt;T&gt; uses pure atomic operations and busy‑wait acquisition, making it suitable for extremely short critical sections.  <a href="../../d9/dd6/a02026.html#details">More...</a><br /></td></tr>
-<tr class="memitem:LightThread" id="r_LightThread"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d8/de7/a02030.html">LightThread</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A lightweight and minimal thread implementation designed for simple and common synchronization scenarios. Unlike the complex and business-oriented threading abstractions in .NET, LightThread provides a straightforward wait-and-wake mechanism suitable for 90% of everyday use cases.  <a href="../../d8/de7/a02030.html#details">More...</a><br /></td></tr>
-<tr class="memitem:LockedObject_3C_20T_20_3E" id="r_LockedObject_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../dc/ddb/a02034.html">LockedObject&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a minimal lock‑protected wrapper around a value of type <em>T</em>  using a caller‑supplied lock implementation.  <a href="../../dc/ddb/a02034.html#details">More...</a><br /></td></tr>
-<tr class="memitem:MutexLock" id="r_MutexLock"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../df/dcf/a02038.html">MutexLock</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A thin wrapper around operating‑system synchronization primitives (Mutex and EventWaitHandle).  <a href="../../df/dcf/a02038.html#details">More...</a><br /></td></tr>
-<tr class="memitem:RCUObject_3C_20T_20_3E" id="r_RCUObject_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/dc4/a02042.html">RCUObject&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a minimal Read-Copy-Update (RCU) container that provides lock-free read access and exclusive write access to a protected value. Reader activity is tracked through an Epoch instance, while writers are synchronized using an ILock.  <a href="../../d1/dc4/a02042.html#details">More...</a><br /></td></tr>
-<tr class="memitem:SafeCounter" id="r_SafeCounter"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d2/dd9/a02046.html">SafeCounter</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a lightweight atomic counter with increment, decrement and assignment.  <a href="../../d2/dd9/a02046.html#details">More...</a><br /></td></tr>
-<tr class="memitem:ScopedLock_3C_20TLOCK_20_3E" id="r_ScopedLock_3C_20TLOCK_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d4/dae/a01994.html">ScopedLock&lt; TLOCK &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a scoped lock mechanism for an existing ILock instance. Upon construction, the lock is acquired using the specified timeout. When the scope ends, Dispose releases the lock.  <a href="../../d4/dae/a01994.html#details">More...</a><br /></td></tr>
-<tr class="memitem:ScopedUnlock_3C_20TLOCK_20_3E" id="r_ScopedUnlock_3C_20TLOCK_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d3/dc4/a01990.html">ScopedUnlock&lt; TLOCK &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a scoped unlock mechanism for an existing ILock instance. Upon construction, the lock is immediately released. When the scope ends, Dispose reacquires the lock using the specified timeout.  <a href="../../d3/dc4/a01990.html#details">More...</a><br /></td></tr>
-<tr class="memitem:Spinlock" id="r_Spinlock"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d0/d3d/a02050.html">Spinlock</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a thin wrapper around System.Threading.SpinLock to expose a busy‑wait mutual exclusion primitive through the ISpinlock&lt;T&gt; interface.  <a href="../../d0/d3d/a02050.html#details">More...</a><br /></td></tr>
-<tr class="memitem:ThreadEx" id="r_ThreadEx"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d7/d38/a02054.html">ThreadEx</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a managed thread wrapper with event‑based control mechanisms. ThreadEx supports starting, stopping, pausing, resuming, joining, and sending custom events to the running thread.  <a href="../../d7/d38/a02054.html#details">More...</a><br /></td></tr>
-<tr class="memitem:UniqueEpoch" id="r_UniqueEpoch"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d0/db6/a01974.html">UniqueEpoch</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an RAII-style scoped reader epoch for RCU-based objects. The epoch is incremented when the instance is created and decremented when the instance is disposed. This guarantees deterministic reader tracking even in the presence of exceptions.  <a href="../../d0/db6/a01974.html#details">More...</a><br /></td></tr>
-<tr class="memitem:UniqueLock_3C_20T_2C_20TL_20_3E" id="r_UniqueLock_3C_20T_2C_20TL_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../dc/d28/a02062.html">UniqueLock&lt; T, TL &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an RAII-style scoped lock for any ILock implementation and exposes a snapshot of a protected value. The lock is acquired in the constructor and automatically released when the instance is disposed.  <a href="../../dc/d28/a02062.html#details">More...</a><br /></td></tr>
-<tr class="memitem:UniqueLock_3C_20TL_20_3E" id="r_UniqueLock_3C_20TL_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../df/d03/a02058.html">UniqueLock&lt; TL &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an RAII-style scoped lock for any ILock implementation. The lock is acquired in the constructor and automatically released when the instance is disposed. This ensures deterministic lock release even in the presence of exceptions.  <a href="../../df/d03/a02058.html#details">More...</a><br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:gac92f2376444ddb17901deba5901f418b" id="r_gac92f2376444ddb17901deba5901f418b"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="../../d0/d7d/a00799.html#gac92f2376444ddb17901deba5901f418b">RCUState</a> { <a class="el" href="../../d0/d7d/a00799.html#ggac92f2376444ddb17901deba5901f418ba222a267cc5778206b253be35ee3ddab5">RCUState.Current</a>
-, <a class="el" href="../../d0/d7d/a00799.html#ggac92f2376444ddb17901deba5901f418ba06933067aafd48425d67bcb01bba5cb6">RCUState.Update</a>
- }</td></tr>
-<tr class="memdesc:gac92f2376444ddb17901deba5901f418b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the current operational state of an RCUObject&lt;T&gt;. Readers observe Current when no writer is active, and Update when a writer holds the exclusive lock.  <a href="../../d0/d7d/a00799.html#gac92f2376444ddb17901deba5901f418b">More...</a><br /></td></tr>
-<tr class="memitem:gaa307e89b9ad10c4c491b2da4979105f0" id="r_gaa307e89b9ad10c4c491b2da4979105f0"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="../../d0/d7d/a00799.html#gaa307e89b9ad10c4c491b2da4979105f0">ThreadExState</a> { <br />
-&#160;&#160;<a class="el" href="../../d0/d7d/a00799.html#ggaa307e89b9ad10c4c491b2da4979105f0aa6fff580feaafda7ffe5c5d61e0ab6a7">ThreadExState.Creating</a>
-, <a class="el" href="../../d0/d7d/a00799.html#ggaa307e89b9ad10c4c491b2da4979105f0a5706de961fb376d701be6e7762d8b09c">ThreadExState.Waiting</a>
-, <a class="el" href="../../d0/d7d/a00799.html#ggaa307e89b9ad10c4c491b2da4979105f0a8428552d86c0d262a542a528af490afa">ThreadExState.Started</a>
-, <a class="el" href="../../d0/d7d/a00799.html#ggaa307e89b9ad10c4c491b2da4979105f0a9e5f92fa51c935e1bc232722e89f17f8">ThreadExState.RequestAbort</a>
-, <br />
-&#160;&#160;<a class="el" href="../../d0/d7d/a00799.html#ggaa307e89b9ad10c4c491b2da4979105f0a093045db722c22150de2c6d4684a8d69">ThreadExState.RequestKill</a>
-, <a class="el" href="../../d0/d7d/a00799.html#ggaa307e89b9ad10c4c491b2da4979105f0a105b296a83f9c105355403f3332af50f">ThreadExState.Pause</a>
-, <a class="el" href="../../d0/d7d/a00799.html#ggaa307e89b9ad10c4c491b2da4979105f0ab3834d6f7a63e5e750e0ca5ecf31e3b9">ThreadExState.Suspend</a>
-, <a class="el" href="../../d0/d7d/a00799.html#ggaa307e89b9ad10c4c491b2da4979105f0ac23e2b09ebe6bf4cb5e2a9abe85c0be2">ThreadExState.Stopped</a>
-, <br />
-&#160;&#160;<a class="el" href="../../d0/d7d/a00799.html#ggaa307e89b9ad10c4c491b2da4979105f0a5bda814c4aedb126839228f1a3d92f09">ThreadExState.Running</a>
-<br />
- }</td></tr>
-<tr class="memdesc:gaa307e89b9ad10c4c491b2da4979105f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the lifecycle states used by ThreadEx and lightweight thread implementations. These states describe creation, startup, execution, pausing, and termination requests in a minimal and predictable manner.  <a href="../../d0/d7d/a00799.html#gaa307e89b9ad10c4c491b2da4979105f0">More...</a><br /></td></tr>
+<tr class="memitem:CalculatorTool" id="r_CalculatorTool"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d8/dbb/a00932.html">CalculatorTool</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A basic arithmetic calculator tool.  <a href="../../d8/dbb/a00932.html#details">More...</a><br /></td></tr>
+<tr class="memitem:DateDifferenceTool" id="r_DateDifferenceTool"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../dc/d2b/a00936.html">DateDifferenceTool</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tool that calculates the difference between two dates.  <a href="../../dc/d2b/a00936.html#details">More...</a><br /></td></tr>
+<tr class="memitem:DateTimeTool" id="r_DateTimeTool"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d7/db6/a00940.html">DateTimeTool</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple tool that returns the current date and time.  <a href="../../d7/db6/a00940.html#details">More...</a><br /></td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -195,7 +127,7 @@ Enumerations</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d7/d0a/a00801.html">SystemEx</a></li><li class="navelem"><a href="../../dd/d5f/a00825.html">Threading</a></li>
+    <li class="navelem"><a href="../../d6/da7/a00822.html">SystemEx</a></li><li class="navelem"><a href="../../d3/db4/a00823.html">AI</a></li><li class="navelem"><a href="../../dd/d5f/a00825.html">Tools</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

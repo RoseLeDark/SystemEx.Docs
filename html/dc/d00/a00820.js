@@ -1,57 +1,257 @@
 var a00820 =
 [
-    [ "AxisAngle&lt; TV, T &gt;", "dd/d7a/a00795.html#d0/d1f/a01734", "dd/d7a/a00795_d0/d1f/a01734" ],
-    [ "DQuatf", "d5/dfa/a01746.html", "d5/dfa/a01746" ],
-    [ "Fast_Byte", "dc/d3a/a01750.html", "dc/d3a/a01750" ],
-    [ "Fast_Float", "d9/d37/a01754.html", "d9/d37/a01754" ],
-    [ "Fast_Int", "d9/de3/a01758.html", "d9/de3/a01758" ],
-    [ "Fast_Long", "dd/d40/a01762.html", "dd/d40/a01762" ],
-    [ "Fast_Short", "d0/d79/a01766.html", "d0/d79/a01766" ],
-    [ "Half16", "df/d21/a01778.html", "df/d21/a01778" ],
-    [ "Half16b", "dd/dec/a01782.html", "dd/dec/a01782" ],
-    [ "IBigFloat&lt; TSelf &gt;", "d6/dfc/a01814.html", null ],
-    [ "ICDouble&lt; TSelf &gt;", "db/db2/a01806.html", null ],
-    [ "ICFloat&lt; TSelf &gt;", "dd/ddc/a01802.html", null ],
-    [ "ICQuad&lt; TSelf &gt;", "df/d3a/a01810.html", null ],
-    [ "IFastType", "d4/dfe/a01770.html", "d4/dfe/a01770" ],
-    [ "IFastType&lt; T &gt;", "d9/d02/a01774.html", "d9/d02/a01774" ],
-    [ "IFloat&lt; TSelf, TBias &gt;", "db/d4b/a01786.html", "db/d4b/a01786" ],
-    [ "IHalf&lt; TSelf &gt;", "d5/dec/a01794.html", null ],
-    [ "IMini&lt; TSelf &gt;", "d2/d86/a01798.html", null ],
-    [ "Projection", "d4/d56/a01818.html", "d4/d56/a01818" ],
-    [ "Quatd", "d1/dba/a01822.html", "d1/dba/a01822" ],
-    [ "Quatf", "d2/d45/a01826.html", "d2/d45/a01826" ],
-    [ "Ratio", "d0/d4f/a01830.html", "d0/d4f/a01830" ],
-    [ "Uint256", "dd/d7a/a00795.html#d2/d20/a01790", "dd/d7a/a00795_d2/d20/a01790" ],
-    [ "Vec2d", "d6/dbe/a01834.html", "d6/dbe/a01834" ],
-    [ "Vec2f", "db/d09/a01838.html", "db/d09/a01838" ],
-    [ "Vec2h", "db/d5a/a01842.html", "db/d5a/a01842" ],
-    [ "Vec2hb", "d4/df4/a01846.html", "d4/df4/a01846" ],
-    [ "Vec2i", "da/d18/a01850.html", "da/d18/a01850" ],
-    [ "Vec2r", "d7/d97/a01854.html", "d7/d97/a01854" ],
-    [ "Vec3d", "d4/d7f/a01858.html", "d4/d7f/a01858" ],
-    [ "Vec3f", "d0/d4a/a01862.html", "d0/d4a/a01862" ],
-    [ "Vec3h", "d3/d7e/a01866.html", "d3/d7e/a01866" ],
-    [ "Vec3hb", "d3/d77/a01870.html", "d3/d77/a01870" ],
-    [ "Vec3i", "de/dfb/a01874.html", "de/dfb/a01874" ],
-    [ "Vec3r", "dc/d33/a01878.html", "dc/d33/a01878" ],
-    [ "Vec4d", "d6/d18/a01882.html", "d6/d18/a01882" ],
-    [ "Vec4f", "d9/dd5/a01886.html", "d9/dd5/a01886" ],
-    [ "Vec4h", "d0/d45/a01890.html", "d0/d45/a01890" ],
-    [ "Vec4hb", "d8/dd1/a01894.html", "d8/dd1/a01894" ],
-    [ "Vec4i", "dd/d8e/a01898.html", "dd/d8e/a01898" ],
-    [ "Vec4r", "d2/dd7/a01902.html", "d2/dd7/a01902" ],
-    [ "CompareType", "dd/d7a/a00795.html#ga2c78dd70e594ff1f3a9125d8b689f3b1", [
-      [ "Skalar", "dd/d7a/a00795.html#gga2c78dd70e594ff1f3a9125d8b689f3b1af4b3418b3e72ce1026db235f552c1c03", null ],
-      [ "Norm", "dd/d7a/a00795.html#gga2c78dd70e594ff1f3a9125d8b689f3b1a5eb965312987d05f9a0a676b947261e3", null ],
-      [ "Rotation", "dd/d7a/a00795.html#gga2c78dd70e594ff1f3a9125d8b689f3b1af1a42bd417390fc63b030a519624607a", null ]
+    [ "SystemEx.Threading.BarrierNewPhaseLockException", "d5/da1/a01988.html", [
+      [ "BarrierNewPhaseLockException", "d5/da1/a01988.html#a0d970460a93db1749590cae18fb66768", null ],
+      [ "BarrierNewPhaseLockException", "d5/da1/a01988.html#a2f8016d3dced05e91d41b8791161e7c3", null ],
+      [ "BarrierNewPhaseLockException", "d5/da1/a01988.html#abcf26e6207e93613dd2c0860a0dbc3fd", null ],
+      [ "BarrierNewPhaseLockException", "d5/da1/a01988.html#a353da32f7a77898d3dbab51928dce99e", null ]
     ] ],
-    [ "MantisseRoundMode", "dd/d7a/a00795.html#ga22e4a0bec33e562380dc8b17d315d91c", [
-      [ "Moderate", "dd/d7a/a00795.html#gga22e4a0bec33e562380dc8b17d315d91ca1eb79d43dbb97d5ceb3c157fdb27fa60", null ],
-      [ "Precise", "dd/d7a/a00795.html#gga22e4a0bec33e562380dc8b17d315d91caa15adae4bec50f3317d666972d3b9aeb", null ],
-      [ "VeryPrecise", "dd/d7a/a00795.html#gga22e4a0bec33e562380dc8b17d315d91cab2116f9647f4bedad5cff0bc8545934d", null ],
-      [ "UltraPrecise", "dd/d7a/a00795.html#gga22e4a0bec33e562380dc8b17d315d91caab114ad1fa8cb343ca0aa359026f6d7d", null ],
-      [ "ExtremePrecise", "dd/d7a/a00795.html#gga22e4a0bec33e562380dc8b17d315d91ca2a0e9dfb0ff2debf5bb948b55f7b1e60", null ],
-      [ "MaxPrecision", "dd/d7a/a00795.html#gga22e4a0bec33e562380dc8b17d315d91ca3681becb84fcf27431c4d5b30da2d01b", null ]
-    ] ]
+    [ "SystemEx.Threading.Barrier", "d6/d33/a01992.html", [
+      [ "Barrier", "d6/d33/a01992.html#a5fb2dd0947dd62f46caab2fafd137bf3", null ],
+      [ "Barrier", "d6/d33/a01992.html#adad4eebc21bf26b335ec3ea0d92dcd0d", null ],
+      [ "Barrier", "d6/d33/a01992.html#ac3067570875c599b1e18cbea9b6080a8", null ],
+      [ "ArriveAndDrop", "d6/d33/a01992.html#a6a75139a2b12cdb68d84084745b817a0", null ],
+      [ "ArriveAndWait", "d6/d33/a01992.html#a65bb21f8b3998b1711dc31b1885e28c4", null ],
+      [ "Wait", "d6/d33/a01992.html#ac33640595b9d5b2e71a8fa65c447e428", null ],
+      [ "OnComplition", "d6/d33/a01992.html#a988f5b5c4384a54b6d1fb75e1d47174b", null ]
+    ] ],
+    [ "SystemEx.Threading.Epoch", "d3/dcc/a01996.html", [
+      [ "Epoch", "d3/dcc/a01996.html#aad39e9ee4c2ef04eec2a8ced636bf76b", null ],
+      [ "Assign", "d3/dcc/a01996.html#ab05ff23f6dbfcfbd27bf9de2e19f7e4c", null ],
+      [ "Leave", "d3/dcc/a01996.html#a96699059d6fd4e2cfdae33be9b1f82c1", null ],
+      [ "CanWrite", "d3/dcc/a01996.html#aab012f4399fe28faaa9a5402f8ed0ff3", null ],
+      [ "Value", "d3/dcc/a01996.html#a6f31ba716f09983722d3cdfd20f0ad11", null ]
+    ] ],
+    [ "SystemEx.Threading.UniqueEpoch", "da/d51/a02000.html", [
+      [ "UniqueEpoch", "da/d51/a02000.html#a198b7d82cfa6ffd8bac8bd488028f11c", null ],
+      [ "Dispose", "da/d51/a02000.html#abe2e27ffb36bdcfc88e6c38fe49fdfab", null ]
+    ] ],
+    [ "SystemEx.Threading.EventGroup&lt; TFastType &gt;", "d3/dbb/a02004.html", [
+      [ "Clear", "d3/dbb/a02004.html#a742307389a548192c062e7f21eb41418", null ],
+      [ "EventGroup", "d3/dbb/a02004.html#a05571cb91cb9ce84c4cb9a463e48158d", null ],
+      [ "Flip", "d3/dbb/a02004.html#a39477de8902422ac1b35d31ca935b0b6", null ],
+      [ "IsSet", "d3/dbb/a02004.html#a9cb6f126a1921ff0bdfb7ed8c598f416", null ],
+      [ "Set", "d3/dbb/a02004.html#adae5aeec1cea7e5f0134857c54c4de1e", null ],
+      [ "Wait", "d3/dbb/a02004.html#ab097043c6c80156f68bae8f9f7cb356a", null ]
+    ] ],
+    [ "SystemEx.Threading.ILock", "d5/d6e/a02008.html", [
+      [ "Lock", "dc/d00/a00820.html#ga80a7413c32227f052dca942f0a730485", null ],
+      [ "Lock", "dc/d00/a00820.html#ga6c47f24b499eaeaa7f71565fe9e9412a", null ],
+      [ "TryLock", "dc/d00/a00820.html#gac706089c9d2d44576db5df713868bfc7", null ],
+      [ "Unlock", "dc/d00/a00820.html#gaf553ce4ced74c4279bb9b8d4db7fcb2d", null ],
+      [ "Wait", "dc/d00/a00820.html#gaf41d2b10c70d1dc568f5ad6610f702ba", null ],
+      [ "IsHeld", "dc/d00/a00820.html#ga05c0fd862c826275215b0001ed0e38a8", null ],
+      [ "IsLocked", "dc/d00/a00820.html#gaa5846fc4299633526773c19b251abcc7", null ]
+    ] ],
+    [ "SystemEx.Threading.ILock&lt; T &gt;", "d5/d2c/a02012.html", [
+      [ "Handle", "dc/d00/a00820.html#ga9e55eb1fa68d88522d3eccc80d331c4a", null ]
+    ] ],
+    [ "SystemEx.Threading.ILockedObject&lt; T &gt;", "df/df0/a02016.html", [
+      [ "ReadValue", "df/df0/a02016.html#aa1509e6ed3e4ec6ff8f1d888f730c723", null ],
+      [ "WriteValue", "df/df0/a02016.html#af249644687cc252c3265c0d696b53093", null ],
+      [ "Value", "df/df0/a02016.html#a85e02207977ac501b488d82dbcf6ab22", null ]
+    ] ],
+    [ "SystemEx.Threading.ISpinlock&lt; T &gt;", "db/d68/a02028.html", [
+      [ "IsHeldbyCurrent", "db/d68/a02028.html#abfcff75a2cc5fa089c80903db57b463a", null ],
+      [ "IsThreadOwnerTrackingEnabled", "db/d68/a02028.html#a36af22fe7b3b0f27309b896921bd7dc6", null ]
+    ] ],
+    [ "SystemEx.Threading.Latch&lt; T &gt;", "d1/d99/a02032.html", [
+      [ "CountDown", "d1/d99/a02032.html#a3e3f5f75b26aeeffef7183d0ffe16f4a", null ],
+      [ "Latch", "d1/d99/a02032.html#a921232a1c93b425c67965994a5a55af3", null ],
+      [ "TryWait", "d1/d99/a02032.html#a7b1cda047082dff0e54fb733a57e0418", null ],
+      [ "Wait", "d1/d99/a02032.html#a9386d796f40ce4ea06cd2083d5b0fd61", null ]
+    ] ],
+    [ "SystemEx.Threading.LightConditionVariable", "d7/db2/a02036.html", [
+      [ "LightConditionVariable", "d7/db2/a02036.html#a218cbb49c1ce69fa6e2b54b027124716", null ],
+      [ "Broadcast", "d7/db2/a02036.html#ad70e62cadb7a03d268166cf66133153a", null ],
+      [ "Clear", "d7/db2/a02036.html#a66976b2e4b202e98ac46bfc66dd1a471", null ],
+      [ "Notify", "d7/db2/a02036.html#a7db3a4fa80c2b7ff160a8fdb00cbd59d", null ],
+      [ "Signal", "d7/db2/a02036.html#a88804fb8e25569e85b09ced03f6608e0", null ],
+      [ "Count", "d7/db2/a02036.html#a1dc73e7c7427165564f32f766e76079b", null ],
+      [ "HasWaiters", "d7/db2/a02036.html#a953a96c489acf7a4fc7e14e8c4ede86c", null ],
+      [ "Name", "d7/db2/a02036.html#a538dc21f8dcbf5c7708eddaebbf76234", null ]
+    ] ],
+    [ "SystemEx.Threading.LightCountingSpinlock&lt; T &gt;", "d4/ddd/a02040.html", [
+      [ "LightCountingSpinlock", "d4/ddd/a02040.html#ace25b7149aa32b65259025e77100de47", null ],
+      [ "Lock", "d4/ddd/a02040.html#a5c8bae41a4f3c435e6e23573dc51a521", null ],
+      [ "Lock", "d4/ddd/a02040.html#abdf3b38bd2432c0cbc65c92e8db09aac", null ],
+      [ "TryLock", "d4/ddd/a02040.html#a4fd94d141700fb8f7ce9006c9ac03440", null ],
+      [ "Unlock", "d4/ddd/a02040.html#af4137b51338949939577c3e7f67fd37e", null ],
+      [ "Wait", "d4/ddd/a02040.html#aaec8c31a6a6cdcf71c0eb66bd8333cda", null ],
+      [ "Handle", "d4/ddd/a02040.html#aa7ace3af528d3cdaa30c7f95fc0368d3", null ],
+      [ "IsHeld", "d4/ddd/a02040.html#ab90dc46ff0cecd7d9f92af75b78fd55f", null ],
+      [ "IsHeldbyCurrent", "d4/ddd/a02040.html#a1112e4fc88ea08140ae10b5db8aa5665", null ],
+      [ "IsLocked", "d4/ddd/a02040.html#a11b8aabec674d34420b755a20941efa8", null ],
+      [ "IsThreadOwnerTrackingEnabled", "d4/ddd/a02040.html#ab433e469b544fc704377dd5afde10589", null ],
+      [ "Name", "d4/ddd/a02040.html#a192403bb4d8e9d562f040d7f6726cfe5", null ],
+      [ "Value", "d4/ddd/a02040.html#ad609e4df948b663f0a8c4738e6a826fc", null ]
+    ] ],
+    [ "SystemEx.Threading.LightLock", "d8/d22/a02044.html", [
+      [ "LightLock", "d8/d22/a02044.html#aad5dd10e0ab61e714ac6fb64dbaea3b7", null ],
+      [ "Lock", "d8/d22/a02044.html#afd5d537f6db8f848414b80025bd41a44", null ],
+      [ "Lock", "d8/d22/a02044.html#a4497ba1821c9f1e7e70e6d27150af2fd", null ],
+      [ "TryLock", "d8/d22/a02044.html#abd27fea5852df735f8b9f86bb15ba5df", null ],
+      [ "Unlock", "d8/d22/a02044.html#ad9456f25b97eda8ead9082560b132cba", null ],
+      [ "Wait", "d8/d22/a02044.html#a6cd084b84084e4d82a0f11eef18f08db", null ],
+      [ "Handle", "d8/d22/a02044.html#a30dae2d3e09ede11e199078cfe526069", null ],
+      [ "IsHeld", "d8/d22/a02044.html#a4750b57fb451edbddb7f8ef25c3d7f3c", null ],
+      [ "IsLocked", "d8/d22/a02044.html#a342937643c091e24c4f73be39e6be9d7", null ]
+    ] ],
+    [ "SystemEx.Threading.LightMutex&lt; T &gt;", "d1/d39/a02048.html", [
+      [ "LightMutex", "d1/d39/a02048.html#a5215188efd20e7890ade6ed217e74a76", null ],
+      [ "Lock", "d1/d39/a02048.html#a5f361b000ea7dcb9ce68bca17a9faf95", null ],
+      [ "Unlock", "d1/d39/a02048.html#a58564c36db402502363ffb13251cd25f", null ],
+      [ "IsHeldbyCurrent", "d1/d39/a02048.html#a90f20874ade7c53a33a790aa1042ba3b", null ],
+      [ "Value", "d1/d39/a02048.html#a48254617d62c13d4e7ea0338ec5bd09c", null ]
+    ] ],
+    [ "SystemEx.Threading.LightSpinlock&lt; T &gt;", "d3/df9/a02052.html", [
+      [ "LightSpinlock", "d3/df9/a02052.html#aaf0faab5f9fe52d676bd940cbb407f07", null ],
+      [ "LightSpinlock", "d3/df9/a02052.html#a2f6dd137c58d3eb0fa46332225b44fb5", null ],
+      [ "Lock", "d3/df9/a02052.html#a11985e2106757f38bb69ace58b30ac5d", null ],
+      [ "Lock", "d3/df9/a02052.html#ab4739c9767fe77b9c0e68853fe6f74c5", null ],
+      [ "TryLock", "d3/df9/a02052.html#a8dbd82da76ac036817277f380a3eafb8", null ],
+      [ "Unlock", "d3/df9/a02052.html#ac9e2145fa44130053ce5ae8dfa7ed286", null ],
+      [ "Wait", "d3/df9/a02052.html#abb7b2fda293aa596639df3fb0b3ce07b", null ],
+      [ "Handle", "d3/df9/a02052.html#a39059c4069732dfc4c214f3518b30397", null ],
+      [ "IsHeld", "d3/df9/a02052.html#a15f10818099634965617da011b218935", null ],
+      [ "IsHeldbyCurrent", "d3/df9/a02052.html#a7191b64db90c69150e2e8d52de344345", null ],
+      [ "IsLocked", "d3/df9/a02052.html#a400791e6f969cb2423d1612f4d0df7c7", null ],
+      [ "IsThreadOwnerTrackingEnabled", "d3/df9/a02052.html#aa427b9313942108efa50edb629e05b15", null ],
+      [ "Name", "d3/df9/a02052.html#a9bd883d6b3b78ff32a0c4bba99839a48", null ],
+      [ "Value", "d3/df9/a02052.html#a3e47ed908c8acdab47faf0215cf29662", null ]
+    ] ],
+    [ "SystemEx.Threading.LightThread", "d9/db6/a02056.html", [
+      [ "LightThread", "d9/db6/a02056.html#a23796517c43d9bd0ab2a87c2f84bd814", null ],
+      [ "Signal", "d9/db6/a02056.html#ae0572df212eb918f181f213d94b1aa31", null ],
+      [ "Wait", "d9/db6/a02056.html#afc224ddf4e5c91b1bb02935aa7ba1a86", null ],
+      [ "OnSignal", "d9/db6/a02056.html#a5ac4e845ad324a17f98761fc74e50049", null ]
+    ] ],
+    [ "SystemEx.Threading.LockedObject&lt; T &gt;", "d5/d8b/a02060.html", [
+      [ "Equals", "d5/d8b/a02060.html#a82896b0a8246024106fac70e226a13cb", null ],
+      [ "LockedObject", "d5/d8b/a02060.html#a62a0d273fba4010a1fd99c5db47087e5", null ],
+      [ "LockedObject", "d5/d8b/a02060.html#a7ab87ca38e57862fe4ed7248838c80dc", null ],
+      [ "ReadValue", "d5/d8b/a02060.html#ae7c893c428f608e7846d0b368699bbd2", null ],
+      [ "WriteValue", "d5/d8b/a02060.html#ab5e1c182e191c1568a63cdbab2e11efc", null ],
+      [ "Value", "d5/d8b/a02060.html#aa4cad8632cc282e0a92b5a7bb9ff1ca6", null ]
+    ] ],
+    [ "SystemEx.Threading.MutexLock", "de/def/a02064.html", [
+      [ "MutexLock", "de/def/a02064.html#ac4c14023cf86bf2b02cf25a3216499d8", null ],
+      [ "Lock", "de/def/a02064.html#a51c757fae46fc312246ab9f07f0e4dda", null ],
+      [ "Lock", "de/def/a02064.html#a044e83642e972c844fea32e6848884a0", null ],
+      [ "TryLock", "de/def/a02064.html#a1d604438e1a11749ab509315aa65abad", null ],
+      [ "TryLock", "de/def/a02064.html#a7416b6e96a8d75eb09e0dd99688907b1", null ],
+      [ "Unlock", "de/def/a02064.html#a3dbb914bbfa86d7ac9523eb4d7dfc29d", null ],
+      [ "Wait", "de/def/a02064.html#ac7cf016191186b4e170086fb7cf63a72", null ],
+      [ "Handle", "de/def/a02064.html#aeb83a5d5e1049a4d391604e11b6e1ad6", null ],
+      [ "IsHeld", "de/def/a02064.html#a9599947120244261578958dea476b0b3", null ],
+      [ "IsLocked", "de/def/a02064.html#a12c741771d692e68b55e40af5acc8d70", null ],
+      [ "Name", "de/def/a02064.html#ac2ed5db7552b570df6ad95b211eef766", null ]
+    ] ],
+    [ "SystemEx.Threading.RCUObject&lt; T &gt;", "df/dfb/a02068.html", [
+      [ "Equals", "df/dfb/a02068.html#a5dbbbc7cf3f4e3aaadb8870e1a4c1e43", null ],
+      [ "Equals", "df/dfb/a02068.html#ac1ec098524cd0080f737986d546d78c4", null ],
+      [ "GetHashCode", "df/dfb/a02068.html#a2abfd6d239b90e24e1f202c766f4b32d", null ],
+      [ "RCUObject", "df/dfb/a02068.html#ae9ff267fcad0dfc75480512adf437631", null ],
+      [ "RCUObject", "df/dfb/a02068.html#a1fc7e4b87dda8b691cd797dc9a8eb488", null ],
+      [ "ReadValue", "df/dfb/a02068.html#a6d9cfb3e6e39cffc44b1d264ea959dc3", null ],
+      [ "ToString", "df/dfb/a02068.html#a571ff3383fc085d25e003ad2c845fdd0", null ],
+      [ "WriteValue", "df/dfb/a02068.html#a5fb272f0aab9baeafd36448dbb880161", null ],
+      [ "Value", "df/dfb/a02068.html#a3cc77400a410d2afe83dba853720523d", null ],
+      [ "ValueWithState", "df/dfb/a02068.html#a0c2a938a02e53e03843ebbb04d790b7c", null ]
+    ] ],
+    [ "SystemEx.Threading.SafeCounter", "de/d9d/a02072.html", [
+      [ "SafeCounter", "de/d9d/a02072.html#aa5a43f0c054ad0b56fc00c19b2ba7405", null ],
+      [ "SafeCounter", "de/d9d/a02072.html#a40d15df7f3c09f4e67cc2ec48735c878", null ],
+      [ "SafeCounter", "de/d9d/a02072.html#a52d867dd9b3579894e3d9008d075af08", null ],
+      [ "Assign", "de/d9d/a02072.html#a3802f3437b53839b2c75e0fcbab87827", null ],
+      [ "Assign", "de/d9d/a02072.html#a3e145bdd993d3910480d1db7626c8bc5", null ],
+      [ "Decrement", "de/d9d/a02072.html#a2a249838ce7af77ccb8eef108d13db3e", null ],
+      [ "DecrementPost", "de/d9d/a02072.html#a135b62992af218d7f327c08b873a950e", null ],
+      [ "Equals", "de/d9d/a02072.html#a86b39d74850fb049f4ae184316b91dfe", null ],
+      [ "Equals", "de/d9d/a02072.html#ab4dba9c463af721274ab88961faac57e", null ],
+      [ "GetHashCode", "de/d9d/a02072.html#aa7c0214f40694faa6c7738011a450ce1", null ],
+      [ "Increment", "de/d9d/a02072.html#a0a1081236607abaff098b1e751f1315b", null ],
+      [ "IncrementPost", "de/d9d/a02072.html#a702aab49f4ecac8b2aa3422b596d02d4", null ],
+      [ "Reset", "de/d9d/a02072.html#a205b77c2f8de39751caa0c81baf32ac5", null ],
+      [ "IsZero", "de/d9d/a02072.html#a274b4baf608618d8c183055066395371", null ],
+      [ "Value", "de/d9d/a02072.html#aa10649fd8673e0ee4f9c0e4281572d15", null ]
+    ] ],
+    [ "SystemEx.Threading.Spinlock", "db/d87/a02076.html", [
+      [ "Spinlock", "db/d87/a02076.html#ab5db032c1e5def2541627689dd46e421", null ],
+      [ "Lock", "db/d87/a02076.html#a7061a783c74b724fef51067e3050aaaa", null ],
+      [ "Lock", "db/d87/a02076.html#ad67ac5c22b2c21daa3f2008606ad66d1", null ],
+      [ "TryLock", "db/d87/a02076.html#acbf57003ac823162bf707c142df0c5e1", null ],
+      [ "Unlock", "db/d87/a02076.html#a269e65bcd451b15e366b8cf2d6f5ef8f", null ],
+      [ "Wait", "db/d87/a02076.html#a9a94d3df6dc1e77cd7b85ae087b9ac8d", null ],
+      [ "Handle", "db/d87/a02076.html#a97d4fa717109a28cb4d70620ea41a9cb", null ],
+      [ "IsHeld", "db/d87/a02076.html#af015b725cb1183cc71c71334aef77f9a", null ],
+      [ "IsHeldbyCurrent", "db/d87/a02076.html#a9fcd2720ab530570bbee10d14768c79b", null ],
+      [ "IsLocked", "db/d87/a02076.html#a0b145ccad68e9ecb6b1afc1ed5463809", null ],
+      [ "IsThreadOwnerTrackingEnabled", "db/d87/a02076.html#a13d5597d9e96c41c5118bed18a12c256", null ],
+      [ "Name", "db/d87/a02076.html#a5b9f6468771d46e83ecca45a155cfc9f", null ]
+    ] ],
+    [ "SystemEx.Threading.ThreadEx", "d6/d0c/a02080.html", [
+      [ "ThreadEx", "d6/d0c/a02080.html#a4c63a0f9a0343c43b8969f68fbf102c5", null ],
+      [ "Abort", "d6/d0c/a02080.html#a23e2a4ef113d02c73c30f40bf4d8297b", null ],
+      [ "AbortAndWait", "d6/d0c/a02080.html#ac4c04983046be26d0dd154522655690a", null ],
+      [ "IsEvent", "d6/d0c/a02080.html#a0d8c932f749f813e7d4077beca58d528", null ],
+      [ "IsResume", "d6/d0c/a02080.html#a3b43ef3a484d2f66803a41ae9af52cfc", null ],
+      [ "IsSuspend", "d6/d0c/a02080.html#a9183468387f97d671f2b0130288cf7ca", null ],
+      [ "Join", "d6/d0c/a02080.html#af3081eec592b3ae77e07deed99d46401", null ],
+      [ "Kill", "d6/d0c/a02080.html#a49f9bb57170434a47dd3a4db882e5c96", null ],
+      [ "LockRunning", "d6/d0c/a02080.html#a7326538252a21e82283d51e26d32e155", null ],
+      [ "OnExit", "d6/d0c/a02080.html#aa123f706379544e359fbda2356008273", null ],
+      [ "OnRunning", "d6/d0c/a02080.html#a8ee414235e8637d2859d7d31ffeb548b", null ],
+      [ "OnSetup", "d6/d0c/a02080.html#ac27c789ad8246242a8b95ec5e79e7fb0", null ],
+      [ "OnStop", "d6/d0c/a02080.html#a372d593ed24c3bd536864f8c4a269050", null ],
+      [ "Resume", "d6/d0c/a02080.html#a5a92f7c2f826639f9cd37159fcb2ae9a", null ],
+      [ "SendEvent", "d6/d0c/a02080.html#a000e80879c13e8f790b5e17a5b7739a0", null ],
+      [ "Start", "d6/d0c/a02080.html#a13c69445ce4f12d9a02682191ea7626e", null ],
+      [ "Stop", "d6/d0c/a02080.html#a6eb005bd5ea4be6a294537a27a9e255b", null ],
+      [ "Suspend", "d6/d0c/a02080.html#af8d666c29d995583be457afe707cdeca", null ],
+      [ "UnlockRunning", "d6/d0c/a02080.html#ae386a036ea03b430a44ea5de3e23dd4e", null ],
+      [ "WaitOfEvent", "d6/d0c/a02080.html#a0caaea464bc8f8dc176dffe0a2746974", null ],
+      [ "Name", "d6/d0c/a02080.html#a8e82f8efdb4606224090a8653cd2fe62", null ],
+      [ "OnBegin", "d6/d0c/a02080.html#a01bb814cb423814a080f246bf20f176d", null ],
+      [ "OnCleanUp", "d6/d0c/a02080.html#a2f2b9925a18879f571f96001e932d2ac", null ],
+      [ "OnKill", "d6/d0c/a02080.html#a61bf71ffe501cd13f96800f5343397fb", null ],
+      [ "OnResume", "d6/d0c/a02080.html#a1f7692f370750698111cee25eddda1e0", null ],
+      [ "OnTask", "d6/d0c/a02080.html#a359e97d55150577fe187859eb6b73640", null ]
+    ] ],
+    [ "SystemEx.Threading.ScopedLock&lt; TLOCK &gt;", "da/dbe/a02084.html", [
+      [ "Dispose", "da/dbe/a02084.html#a8e79b8d337c097398596ce376d6e5923", null ],
+      [ "ScopedLock", "da/dbe/a02084.html#ac52a5b0575583be2372d276c88be7935", null ]
+    ] ],
+    [ "SystemEx.Threading.ScopedUnlock&lt; TLOCK &gt;", "d7/db5/a02088.html", [
+      [ "Dispose", "d7/db5/a02088.html#a201f9e80e08eb46c4468445f3f57aa1e", null ],
+      [ "ScopedUnlock", "d7/db5/a02088.html#a8903a5df49c48632799cc1cbfd5f992c", null ]
+    ] ],
+    [ "SystemEx.Threading.ScopedLock&lt; T, TLOCK &gt;", "d4/de0/a02092.html", [
+      [ "Dispose", "d4/de0/a02092.html#ac69657ec6ff21a7637638d3252765fdb", null ],
+      [ "ScopedLock", "d4/de0/a02092.html#a57dd2f53c5960183222e452bbf2994d1", null ],
+      [ "Value", "d4/de0/a02092.html#a4e3c3f803ab42b54554972a7d2b918f2", null ]
+    ] ],
+    [ "SystemEx.Threading.RCUState", "dc/d00/a00820.html#gac92f2376444ddb17901deba5901f418b", [
+      [ "SystemEx.Threading.RCUState.Current", "dc/d00/a00820.html#ggac92f2376444ddb17901deba5901f418ba222a267cc5778206b253be35ee3ddab5", null ],
+      [ "SystemEx.Threading.RCUState.Update", "dc/d00/a00820.html#ggac92f2376444ddb17901deba5901f418ba06933067aafd48425d67bcb01bba5cb6", null ]
+    ] ],
+    [ "SystemEx.Threading.ThreadExState", "dc/d00/a00820.html#gaa307e89b9ad10c4c491b2da4979105f0", [
+      [ "SystemEx.Threading.ThreadExState.Creating", "dc/d00/a00820.html#ggaa307e89b9ad10c4c491b2da4979105f0aa6fff580feaafda7ffe5c5d61e0ab6a7", null ],
+      [ "SystemEx.Threading.ThreadExState.Waiting", "dc/d00/a00820.html#ggaa307e89b9ad10c4c491b2da4979105f0a5706de961fb376d701be6e7762d8b09c", null ],
+      [ "SystemEx.Threading.ThreadExState.Started", "dc/d00/a00820.html#ggaa307e89b9ad10c4c491b2da4979105f0a8428552d86c0d262a542a528af490afa", null ],
+      [ "SystemEx.Threading.ThreadExState.RequestAbort", "dc/d00/a00820.html#ggaa307e89b9ad10c4c491b2da4979105f0a9e5f92fa51c935e1bc232722e89f17f8", null ],
+      [ "SystemEx.Threading.ThreadExState.RequestKill", "dc/d00/a00820.html#ggaa307e89b9ad10c4c491b2da4979105f0a093045db722c22150de2c6d4684a8d69", null ],
+      [ "SystemEx.Threading.ThreadExState.Pause", "dc/d00/a00820.html#ggaa307e89b9ad10c4c491b2da4979105f0a105b296a83f9c105355403f3332af50f", null ],
+      [ "SystemEx.Threading.ThreadExState.Suspend", "dc/d00/a00820.html#ggaa307e89b9ad10c4c491b2da4979105f0ab3834d6f7a63e5e750e0ca5ecf31e3b9", null ],
+      [ "SystemEx.Threading.ThreadExState.Stopped", "dc/d00/a00820.html#ggaa307e89b9ad10c4c491b2da4979105f0ac23e2b09ebe6bf4cb5e2a9abe85c0be2", null ],
+      [ "SystemEx.Threading.ThreadExState.Running", "dc/d00/a00820.html#ggaa307e89b9ad10c4c491b2da4979105f0a5bda814c4aedb126839228f1a3d92f09", null ]
+    ] ],
+    [ "SystemEx.Threading.ILock.Lock", "dc/d00/a00820.html#ga80a7413c32227f052dca942f0a730485", null ],
+    [ "SystemEx.Threading.ILock.Lock", "dc/d00/a00820.html#ga6c47f24b499eaeaa7f71565fe9e9412a", null ],
+    [ "SystemEx.Threading.ILock.TryLock", "dc/d00/a00820.html#gac706089c9d2d44576db5df713868bfc7", null ],
+    [ "SystemEx.Threading.ILock.Unlock", "dc/d00/a00820.html#gaf553ce4ced74c4279bb9b8d4db7fcb2d", null ],
+    [ "SystemEx.Threading.ILock.Wait", "dc/d00/a00820.html#gaf41d2b10c70d1dc568f5ad6610f702ba", null ],
+    [ "SystemEx.Threading.ILock-1-g.Handle", "dc/d00/a00820.html#ga9e55eb1fa68d88522d3eccc80d331c4a", null ],
+    [ "SystemEx.Threading.ILock.IsHeld", "dc/d00/a00820.html#ga05c0fd862c826275215b0001ed0e38a8", null ],
+    [ "SystemEx.Threading.ILock.IsLocked", "dc/d00/a00820.html#gaa5846fc4299633526773c19b251abcc7", null ]
 ];

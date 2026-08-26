@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: HashBlack" />
+<meta property="og:title" content="SystemEX: Runtime" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: HashBlack" />
+<meta name="twitter:title" content="SystemEX: Runtime" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: HashBlack</title>
+<title>SystemEX: Runtime</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,41 +101,27 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d5/d12/a00794.
 <div id="container">
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">HashBlack </div></div>
+  <div class="headertitle"><div class="title">Runtime </div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Internal BLAKE3 hasher implementation. This class manages the chaining values, chunk state, and compression stack required for incremental hashing.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:SystemEx_2EHash_2EBlack_2EBlack3" id="r_SystemEx_2EHash_2EBlack_2EBlack3"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Hash.Black.Black3</b></td></tr>
-<tr class="memitem:SystemEx_2EHash_2EBlack_2EBlacke3_5FOutput" id="r_SystemEx_2EHash_2EBlack_2EBlacke3_5FOutput"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><b>SystemEx.Hash.Black.Blacke3_Output</b></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal BLAKE3 output node used during tree hashing. Stores chaining values, block data, and compression parameters. <br /></td></tr>
-<tr class="memitem:SystemEx_2EHash_2EBlack_2EBlack3ChunkState" id="r_SystemEx_2EHash_2EBlack_2EBlack3ChunkState"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Hash.Black.Black3ChunkState</b></td></tr>
-<tr class="memitem:SystemEx_2EHash_2EBlack_2EBlack3CompressScalar" id="r_SystemEx_2EHash_2EBlack_2EBlack3CompressScalar"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Hash.Black.Black3CompressScalar</b></td></tr>
-<tr class="memitem:SystemEx_2EHash_2EBlack_2EBlack3Infos" id="r_SystemEx_2EHash_2EBlack_2EBlack3Infos"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Hash.Black.Black3Infos</b></td></tr>
-<tr class="memitem:SystemEx_2EHash_2EBlack_2EBlack3Utils" id="r_SystemEx_2EHash_2EBlack_2EBlack3Utils"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Hash.Black.Black3Utils</b></td></tr>
+<tr class="memitem:SystemEx_2ERuntime_2EInteropServices_2ENativeHost" id="r_SystemEx_2ERuntime_2EInteropServices_2ENativeHost"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Runtime.InteropServices.NativeHost</b></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a high‑level management layer for native modules and their exported functions. <br  />
+ NativeHost maintains an internal cache of loaded modules to avoid redundant loading operations and to ensure that multiple components referencing the same library share a single module instance. <br  />
+ It also provides helper methods for resolving native function pointers and converting them into managed delegates. <br /></td></tr>
+<tr class="memitem:SystemEx_2ERuntime_2EModule" id="r_SystemEx_2ERuntime_2EModule"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d0/d59/a01956.html">SystemEx.Runtime.Module</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a loaded native module (DLL, SO, or DYLIB). <br  />
+ A Module encapsulates the operating system handle of the loaded library and provides helper methods for resolving exported functions and unloading the module.  <a href="../../d0/d59/a01956.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gaf80507c03eb6d1a1e524fc4699935091" id="r_gaf80507c03eb6d1a1e524fc4699935091"><td class="memItemLeft"><a id="gaf80507c03eb6d1a1e524fc4699935091" name="gaf80507c03eb6d1a1e524fc4699935091"></a>
+using&#160;</td><td class="memItemRight"><b>ProcLoader</b> = SystemEx.Runtime.InteropServices.Platform.NoSupportProcLoader</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Internal BLAKE3 hasher implementation. This class manages the chaining values, chunk state, and compression stack required for incremental hashing. </p>
-<p>Internal BLAKE3 flag definitions used during chunk and tree hashing.</p>
-<p>Internal utility helpers for the BLAKE3 hashing subsystem.</p>
-<p>Internal BLAKE3 constant definitions used by the hashing subsystem.</p>
-<p>Internal scalar BLAKE3 compression implementation.</p>
-<p>Internal state manager for a single BLAKE3 chunk.</p>
-<p>This type is not intended for public use. It provides the internal logic behind the <a class="el" href="../../d7/d0a/a00801.html">SystemEx</a> BLAKE3 wrapper and exposes only the minimal API needed by higher‑level hashing components. </p>
-<p>This class tracks the chaining value, chunk counter, block buffer, buffer length, and compression flags required during incremental hashing. It handles chunk filling, finalization, and resetting according to the BLAKE3 specification. </p>
-<p>All members are internal and used only by the SystemEx.Hash.Black3 hashing subsystem. </p>
-<p>This class provides the portable fallback version of the BLAKE3 compression function. It operates entirely on 32‑bit words and does not use SIMD instructions. All methods are internal and intended only for the <a class="el" href="../../d7/d0a/a00801.html">SystemEx</a> hashing subsystem. </p>
-<p>This class provides fixed sizes and limits required by the portable compression implementation, including block length, key length, chunk size, output size, and maximum tree depth. </p>
-<p>These values are part of the BLAKE3 specification and should not be modified. The type is internal and used only by the <a class="el" href="../../d7/d0a/a00801.html">SystemEx</a> hashing components. </p>
-<p>This class provides constants, message schedules, bit operations, key loading, block loading, and chaining‑value storage helpers used by the portable scalar compression implementation. </p>
-<p>All members are internal and intended only for use inside the SystemEx.Hash.Black3 module. </p>
-<p>These flags control how each block or chunk is interpreted by the compression function, including start/end markers, parent node processing, keyed hashing, and key derivation modes. </p>
-<p>This enum is internal and used only by the SystemEx.Hash.Black3 hashing subsystem. </p>
-</div></div><!-- contents -->
+<div class="textblock"></div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

@@ -1,0 +1,26 @@
+var a01076 =
+[
+    [ "CopyTo", "d4/dfd/a00810.html#gac6a324f392d096b86b2296e20dfc548c", null ],
+    [ "Dispose", "d4/dfd/a00810.html#gab8c67dc092d45c1cd6c9752d0afa8c5d", null ],
+    [ "ElementAt", "d4/dfd/a00810.html#gae90b59eed3ce6a90f5438e3507d3d9d6", null ],
+    [ "Fill", "d4/dfd/a00810.html#ga65dfa8ade8bc03f37006abc12823c4ac", null ],
+    [ "FlexSpan", "d4/dfd/a00810.html#ga98772490d32bb89901aae442493694d3", null ],
+    [ "FlexSpan", "d4/dfd/a00810.html#ga2ec39d4d948aab777049a93b39e5feb5", null ],
+    [ "GetEnumerator", "d4/dfd/a00810.html#ga37a4a5704409bc873942c193ece026f1", null ],
+    [ "MoveNext", "d4/dfd/a00810.html#ga90ba73d4158a62c0bdb80cbc8a1a9e37", null ],
+    [ "Reset", "d4/dfd/a00810.html#gaf089098378ca8b83db782749b0d4ea42", null ],
+    [ "Slice", "d4/dfd/a00810.html#ga7fcfe09831ee15b0c30d82649e263574", null ],
+    [ "Slice", "d4/dfd/a00810.html#ga953f3b74e88b8367e291ac2d1716101b", null ],
+    [ "ToArray", "d4/dfd/a00810.html#ga29f722aad7367ccc1a82da3793431bb5", null ],
+    [ "TryCopyTo", "d4/dfd/a00810.html#ga1aa932fc5b668f84dd9d6bc7b4e0b090", null ],
+    [ "Current", "d4/dfd/a00810.html#ga9e6d51f173bd027d3645736f3d020214", null ],
+    [ "Current", "d4/dfd/a00810.html#ga60e277c3cf368d1743567a74675168b5", null ],
+    [ "Current", "d4/dfd/a00810.html#gaae170af35a7d24a0d3f5acb2ef3519c5", null ],
+    [ "End", "d4/dfd/a00810.html#ga297a9b5295723a4b4ded54181b2555b2", null ],
+    [ "HasNext", "d4/dfd/a00810.html#ga4d664ed0c97f7c61901c08667b68fc6c", null ],
+    [ "IsEmpty", "d4/dfd/a00810.html#ga1fe469adccf7644ae16b405c9bf8206d", null ],
+    [ "Length", "d4/dfd/a00810.html#ga4da0aee2313be3b1a9667eee6d78b8a2", null ],
+    [ "Start", "d4/dfd/a00810.html#ga6ecb1d0152a141674870e7d13360c933", null ],
+    [ "this[int index]", "d4/dfd/a00810.html#ga999ad7f9e303562c3a5d74f7311b81b7", null ],
+    [ "ViewLength", "d4/dfd/a00810.html#ga2dc2e1ea74271d33bf93d563518d4039", null ]
+];

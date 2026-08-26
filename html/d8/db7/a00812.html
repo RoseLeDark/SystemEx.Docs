@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: SystemEx.Device Namespace Reference" />
+<meta property="og:title" content="SystemEX: Device" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: SystemEx.Device Namespace Reference" />
+<meta name="twitter:title" content="SystemEX: Device" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: SystemEx.Device Namespace Reference</title>
+<title>SystemEX: Device</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,17 +101,69 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d8/db7/a00812.
 <div id="container">
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Device Namespace Reference</div></div>
+  <div class="headertitle"><div class="title">Device </div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:NativeRAMKernel_3C_20TD_20_3E" id="r_NativeRAMKernel_3C_20TD_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d0/d34/a01486.html">NativeRAMKernel&lt; TD &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a base implementation for RAM‑based compute kernels that operate on DeviceSharedBuffer&lt;RamSharedBackend&gt; instances. <br  />
- This class handles module loading, buffer management, backend initialization, locking/unlocking of shared buffers, and asynchronous kernel execution. <br  />
- Derived classes only need to implement backend‑specific behavior such as buffer creation (OnCreate) and kernel invocation (OnRun).  <a href="../../d0/d34/a01486.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2EDevice_2EIntertropt_2EIDeviceSharedBackend" id="r_SystemEx_2EDevice_2EIntertropt_2EIDeviceSharedBackend"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d2/daa/a01488.html">SystemEx.Device.Intertropt.IDeviceSharedBackend</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the low‑level backend interface used by <code>DeviceSharedBuffer</code> and related shared‑memory abstractions. <br  />
+ A backend represents a hardware‑specific buffer implementation such as RAM, OpenCL, Vulkan, CUDA, or any custom device memory. <br  />
+ Each backend is responsible for creating, writing, reading, and closing its own hardware buffer handle.  <a href="../../d2/daa/a01488.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2EDevice_2EIntertropt_2EUnmanagedObject" id="r_SystemEx_2EDevice_2EIntertropt_2EUnmanagedObject"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../da/ddc/a01492.html">SystemEx.Device.Intertropt.UnmanagedObject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a pinned unmanaged memory block used by <a class="el" href="../../d6/da7/a00822.html">SystemEx</a> backends.  <a href="../../da/ddc/a01492.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2EDevice_2EIntertropt_2ERamSharedBackend" id="r_SystemEx_2EDevice_2EIntertropt_2ERamSharedBackend"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/dde/a01496.html">SystemEx.Device.Intertropt.RamSharedBackend</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAM‑based backend for shared device buffers.  <a href="../../d1/dde/a01496.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2EDevice_2EMemory_2EDeviceBuffer" id="r_SystemEx_2EDevice_2EMemory_2EDeviceBuffer"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../de/d65/a01500.html">SystemEx.Device.Memory.DeviceBuffer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a cache that can be shared with a hardware backend through DeviceSharedBuffer&lt;TDeviceSharedBackend&gt;. <br  />
+ A DeviceBuffer behaves like a normal Cache, but supports locking and shared‑memory synchronization for device kernels.  <a href="../../de/d65/a01500.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2EDevice_2EMemory_2EDeviceSharedBuffer_3C_20TDeviceSharedBackend_20_3E" id="r_SystemEx_2EDevice_2EMemory_2EDeviceSharedBuffer_3C_20TDeviceSharedBackend_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../dd/d05/a01504.html">SystemEx.Device.Memory.DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a shared memory bridge between a DeviceBuffer and a hardware‑specific backend implementing IDeviceSharedBackend. <br  />
+ Manages the lifecycle of a hardware buffer, including creation, upload, download, and cleanup, depending on the configured SharedCacheType.  <a href="../../dd/d05/a01504.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2EDevice_2EMemory_2EIKernel_3C_20TIDeviceSharedBackend_20_3E" id="r_SystemEx_2EDevice_2EMemory_2EIKernel_3C_20TIDeviceSharedBackend_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d0/deb/a01508.html">SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the interface for a compute kernel that operates on one or more DeviceSharedBuffer&lt;TDeviceSharedBackend&gt; instances. <br  />
+ A kernel represents a unit of computation that may run on different backends such as RAM, OpenCL, Vulkan, CUDA, or custom hardware.  <a href="../../d0/deb/a01508.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gafe9097376e02d22abaa66e70bb692c87" id="r_gafe9097376e02d22abaa66e70bb692c87"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#gafe9097376e02d22abaa66e70bb692c87">SystemEx.Device.Memory.SharedCacheType</a> : byte { <a class="el" href="#ggafe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197">SystemEx.Device.Memory.SharedCacheType.ReadOnly</a>
+, <a class="el" href="#ggafe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5">SystemEx.Device.Memory.SharedCacheType.WriteOnly</a>
+, <a class="el" href="#ggafe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723">SystemEx.Device.Memory.SharedCacheType.ReadWrite</a>
+ }</td></tr>
+<tr class="memdesc:gafe9097376e02d22abaa66e70bb692c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies how a shared cache interacts with the hardware backend. <br  />
+ Determines the direction of data flow between the managed cache and the device‑specific hardware buffer.  <a href="#gafe9097376e02d22abaa66e70bb692c87">More...</a><br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"></div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a id="gafe9097376e02d22abaa66e70bb692c87" name="gafe9097376e02d22abaa66e70bb692c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe9097376e02d22abaa66e70bb692c87">&#9670;&#160;</a></span>SharedCacheType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#gafe9097376e02d22abaa66e70bb692c87">SystemEx.Device.Memory.SharedCacheType</a> : byte</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Specifies how a shared cache interacts with the hardware backend. <br  />
+ Determines the direction of data flow between the managed cache and the device‑specific hardware buffer. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggafe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197" name="ggafe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197"></a>ReadOnly&#160;</td><td class="fielddoc"><p>Data flows from the cache to the hardware buffer only. <br  />
+ Hardware cannot write back into the cache. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggafe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5" name="ggafe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5"></a>WriteOnly&#160;</td><td class="fielddoc"><p>Data flows from the hardware buffer into the cache only. <br  />
+ The cache does not upload its contents to the hardware. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggafe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723" name="ggafe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723"></a>ReadWrite&#160;</td><td class="fielddoc"><p>Bidirectional synchronization between cache and hardware buffer. <br  />
+ The cache uploads its data to the hardware, and the hardware may write modified data back into the cache. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -125,7 +177,6 @@ Classes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d7/d0a/a00801.html">SystemEx</a></li><li class="navelem"><a href="../../d8/db7/a00812.html">Device</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

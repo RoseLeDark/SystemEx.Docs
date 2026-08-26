@@ -1,74 +1,79 @@
 var a00793 =
 [
-    [ "SystemEx.Hash.AdlerHash", "d1/d3a/a01622.html", [
-      [ "AdlerHash", "d1/d3a/a01622.html#a8235075b6d394ed5c2db8070875e3c38", null ],
-      [ "Compute", "d1/d3a/a01622.html#aa80a96796abfe116d7d7dac947f2d055", null ],
-      [ "ComputeLong", "d1/d3a/a01622.html#a06d35da8313f902a101c5d44ec12ca75", null ]
+    [ "SystemEx.Random.HashedSeed", "d4/d0d/a01904.html", [
+      [ "HashedSeed", "d4/d0d/a01904.html#aa2095c100d298dae2aed8fe33654d871", null ],
+      [ "GetSeed", "d4/d0d/a01904.html#a94600917b73ea8d61eacf1ba246f804a", null ],
+      [ "Update", "d4/d0d/a01904.html#a5630f44b9169402cd96a7a7369ac7942", null ],
+      [ "Length", "d4/d0d/a01904.html#a301516b64bd35650612ecc4e201d490c", null ],
+      [ "this[int index]", "d4/d0d/a01904.html#a6b12a4534de764960366cbd0959394d4", null ]
     ] ],
-    [ "SystemEx.Hash.BernsteinHash", "dd/d90/a01626.html", [
-      [ "BernsteinHash", "dd/d90/a01626.html#a3f641cff605642dfc6610c4a6925cf60", null ],
-      [ "Compute", "dd/d90/a01626.html#a51756942ae492877aa923695e8b1be4a", null ],
-      [ "ComputeLong", "dd/d90/a01626.html#aebc6e966cf752b7e49339dbd720470a4", null ]
+    [ "SystemEx.Random.Isaac32Engine", "d8/d45/a01908.html", [
+      [ "Isaac32Engine", "d8/d45/a01908.html#a2f5a68fb4cfff8941e2894b4a73e1abc", null ],
+      [ "Isaac32Engine", "d8/d45/a01908.html#aadb3a2653755ee5f07100ebcef592905", null ],
+      [ "Next", "d8/d45/a01908.html#ad75f62fae1ccab955c194bd3127e864f", null ],
+      [ "Seed", "d8/d45/a01908.html#a2528cb1614ca381c1ed4ecf3811945b2", null ]
     ] ],
-    [ "SystemEx.Hash.Black3Hasher", "d1/d73/a01654.html", [
-      [ "Black3Hasher", "d4/dd7/a00793.html#ga17af8e1ee759024e0d57b730c739a969", null ],
-      [ "Compute", "d4/dd7/a00793.html#ga322178abf78db90bfc6e29636f597403", null ],
-      [ "ComputeLong", "d4/dd7/a00793.html#ga20013d9f5608babd5c031167e72ad679", null ]
+    [ "SystemEx.Random.ISeed", "df/dd0/a01912.html", [
+      [ "GetSeed", "df/dd0/a01912.html#a3d5d857a56f1652c91ee28f028c29d47", null ],
+      [ "Length", "df/dd0/a01912.html#af7a38bc4b17f5ca6c038364394e85eb4", null ],
+      [ "this[int i]", "df/dd0/a01912.html#a4e5e12436b7b29ac083d824501844317", null ]
     ] ],
-    [ "SystemEx.Hash.FletcherHash", "d9/d79/a01658.html", [
-      [ "FletcherHash", "d9/d79/a01658.html#aa0ea321773de765b007e7c3333f4c632", null ],
-      [ "Compute", "d9/d79/a01658.html#a1a23079932bd6c4f45bc05756ce8c41b", null ],
-      [ "ComputeLong", "d9/d79/a01658.html#ac22e658290acb05ba0ef38c63411c90f", null ]
+    [ "SystemEx.Random.ISeed&lt; T &gt;", "d0/d36/a01916.html", [
+      [ "Update", "d0/d36/a01916.html#a1f665d4f070daf54b84b8e5f8eb41c87", null ]
     ] ],
-    [ "SystemEx.Hash.Fnv1aHash", "d9/dbc/a01662.html", [
-      [ "Fnv1aHash", "d9/dbc/a01662.html#a1022e19301bed40e47ea0eb38a458fc2", null ],
-      [ "Compute", "d9/dbc/a01662.html#a6d797d26be75ccc966f2b15dc8f2c872", null ],
-      [ "ComputeLong", "d9/dbc/a01662.html#a199c012c5bd572fe95f92c9dcb4f655e", null ]
+    [ "SystemEx.Random.Randx", "d6/da2/a01920.html", [
+      [ "Randx", "d6/da2/a01920.html#a85a9f54c47abf35d50af4a75ec83ed01", null ],
+      [ "Next", "d6/da2/a01920.html#a8c01b974a01a5cabb005c3445887ed6e", null ],
+      [ "Next", "d6/da2/a01920.html#a1c335033aaf8d821b6be01e25da6f112", null ],
+      [ "Next32", "d6/da2/a01920.html#a1b06d757245a3ff8faeb862f4ef2173c", null ],
+      [ "Next64", "d6/da2/a01920.html#ac9d3d26547161329fc75ffd89ab8a605", null ],
+      [ "NextByte", "d6/da2/a01920.html#aea482f31fa68260532c6a98aa01b18c2", null ],
+      [ "NextBytes", "d6/da2/a01920.html#a3dc390487348000c9fb6311e6c11d8dd", null ],
+      [ "NextChar", "d6/da2/a01920.html#a00923e9e8cd74b79ff0bbfda16960d88", null ],
+      [ "NextHashSeed32", "d6/da2/a01920.html#a91821f9d461a13ff67ac134f0cfbcbff", null ],
+      [ "NextHashSeed64", "d6/da2/a01920.html#a832420c1b96a7b002966ff8c58495b49", null ],
+      [ "NextString", "d6/da2/a01920.html#ab2dc39096af767da2daa7d40b1674bb2", null ]
     ] ],
-    [ "SystemEx.Hash.GrøstlHash", "d8/d75/a01666.html", [
-      [ "GrøstlHash", "d8/d75/a01666.html#a283300feb809d70e4816c3b773be6006", null ],
-      [ "Compute", "d8/d75/a01666.html#a0eb87928746f2291ded7bcde1ddf7dd8", null ],
-      [ "ComputeLong", "d8/d75/a01666.html#a95421be4baadfd1fe9a6448417eea57d", null ]
+    [ "SystemEx.Random.SeedMixed", "d0/dde/a01924.html", [
+      [ "SeedMixed", "d0/dde/a01924.html#a118f1e16f7161c5a85afca622a99e879", null ],
+      [ "GetSeed", "d0/dde/a01924.html#ae487fce8628306f2b753efa4f2f53a62", null ],
+      [ "Mix< T >", "d0/dde/a01924.html#adac49cc0337d9d3699fe0412961e82dc", null ],
+      [ "Update", "d0/dde/a01924.html#a348824000222054b5eb35467da2f0936", null ],
+      [ "Current", "d0/dde/a01924.html#aea2db1d837e90ebc6ac3e42869f0bef5", null ],
+      [ "Length", "d0/dde/a01924.html#a9fcceac5418f1ad22139df9a71465fd1", null ],
+      [ "OnUserMix", "d0/dde/a01924.html#acf60cb95ee8954ebbc9302a81ae662cd", null ],
+      [ "this[int index]", "d0/dde/a01924.html#af194201cae5860f474a891d20c109ac7", null ]
     ] ],
-    [ "SystemEx.Hash.Hashable", "dc/d42/a01674.html", [
-      [ "GetHashCode", "dc/d42/a01674.html#a87439cd67bd28c149fe8012b90de8d26", null ],
-      [ "GetHashCodeLong", "dc/d42/a01674.html#a9de909f40cc15349d7f23970a5bdc99d", null ],
-      [ "ToBytes", "dc/d42/a01674.html#a4d5b64b42d8e86d69dc677a7e14e4482", null ],
-      [ "Seed", "dc/d42/a01674.html#a5418bc23c141bbc131215fb4348cf6cc", null ]
+    [ "SystemEx.Random.TimeBasedSeed", "d1/db0/a01928.html", [
+      [ "TimeBasedSeed", "d1/db0/a01928.html#a5b457ab48be8cf7ff445e24d8e599a41", null ],
+      [ "GetSeed", "d1/db0/a01928.html#aa238a09fba106a03c176c51d7c757e75", null ],
+      [ "Update", "d1/db0/a01928.html#ad5f7a0f8640de7d9f024768c237bb2f0", null ],
+      [ "Length", "d1/db0/a01928.html#a69af8b3dc31a41515eb625b37ee9c008", null ],
+      [ "this[int index]", "d1/db0/a01928.html#a5a80e9e4c1e8747b17528855898eb7a4", null ]
     ] ],
-    [ "SystemEx.Hash.HashAlgorithmAttribute", "d6/d26/a01678.html", [
-      [ "HashAlgorithmAttribute", "d6/d26/a01678.html#a4a26a6ec3b1a5e9023c08ee010fa9670", null ],
-      [ "Endian", "d6/d26/a01678.html#a8bb5a53ef927077daa8c1df02af73b41", null ],
-      [ "HasherType", "d6/d26/a01678.html#a631aae3c5509226dd1a7c03799707da2", null ]
+    [ "SystemEx.Random.ValueBasedSeed", "d8/d22/a01932.html", [
+      [ "ValueBasedSeed", "d8/d22/a01932.html#ad5e27a86f7a50e1d3bcd5afc475e48fc", null ],
+      [ "GetSeed", "d8/d22/a01932.html#a607b91e590be1f396a85a79af11417ac", null ],
+      [ "Update", "d8/d22/a01932.html#a9fd4ef75c56ebf5c6c89db893e5c040b", null ],
+      [ "Length", "d8/d22/a01932.html#ae00e9998371198e491648ffc768f7530", null ],
+      [ "this[int index]", "d8/d22/a01932.html#a19749c76e7343324ef1ea13452c1ffa6", null ]
     ] ],
-    [ "SystemEx.Hash.IHashable&lt; T &gt;", "dd/d08/a01682.html", [
-      [ "ToBytes", "dd/d08/a01682.html#a8fb21dffeeea89fddd6e1e70e62402b7", null ]
-    ] ],
-    [ "SystemEx.Hash.Hash32", "d6/d01/a01690.html", [
-      [ "Hash32", "d6/d01/a01690.html#a4f6183e5a9af1b6afd3b802163db42c5", null ],
-      [ "ToString", "d6/d01/a01690.html#a086f590d51b2ed317be65f5d59317da0", null ],
-      [ "Value", "d6/d01/a01690.html#a9613405987f5a0b89e7262cc6a5b0123", null ]
-    ] ],
-    [ "SystemEx.Hash.Hash64", "d4/d8e/a01694.html", [
-      [ "Hash64", "d4/d8e/a01694.html#ad70d6749552e6e733112b3af96bd9b90", null ],
-      [ "ToString", "d4/d8e/a01694.html#affa553c85c47438230afa3a2df8ed529", null ],
-      [ "Value", "d4/d8e/a01694.html#a59803fc074a5a1d214de6bb7417fbd11", null ]
-    ] ],
-    [ "SystemEx.Hash.IHash", "d5/da6/a01698.html", [
-      [ "Compute", "d5/da6/a01698.html#ab492223af01ff84e14f736ddeca52199", null ],
-      [ "ComputeLong", "d5/da6/a01698.html#ad462ad96611008488a7a3fab4411e592", null ]
-    ] ],
-    [ "SystemEx.Hash.RamakrishnaHash", "de/d05/a01702.html", [
-      [ "RamakrishnaHash", "de/d05/a01702.html#ade7b11ccfcdc48f1639d6150a9e6e3b9", null ],
-      [ "Compute", "de/d05/a01702.html#a7ef6060d652f6c8e5cc6f5b01393dfa4", null ],
-      [ "ComputeLong", "de/d05/a01702.html#a99121ac9f6abbc6245230a13c9aad6a0", null ]
-    ] ],
-    [ "SystemEx.Hash.WeinbergHash", "db/dbe/a01706.html", [
-      [ "WeinbergHash", "db/dbe/a01706.html#aa63e93e408d408a06f9a17ed6f98d909", null ],
-      [ "Compute", "db/dbe/a01706.html#abf01ae4e91fa707fd45863780e51bfc4", null ],
-      [ "ComputeLong", "db/dbe/a01706.html#aeb764878ef7920026336af8fd9db97ed", null ]
-    ] ],
-    [ "SystemEx.Hash.Black3Hasher.Black3Hasher", "d4/dd7/a00793.html#ga17af8e1ee759024e0d57b730c739a969", null ],
-    [ "SystemEx.Hash.Black3Hasher.Compute", "d4/dd7/a00793.html#ga322178abf78db90bfc6e29636f597403", null ],
-    [ "SystemEx.Hash.Black3Hasher.ComputeLong", "d4/dd7/a00793.html#ga20013d9f5608babd5c031167e72ad679", null ]
+    [ "SystemEx.Random.SeedMix", "d4/dd7/a00793.html#ga66820d8a6ab2d32455ed901e9d229ff7", [
+      [ "SystemEx.Random.SeedMix.XOR", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7a97675eb3f268048604dc5155511a2a4d", null ],
+      [ "SystemEx.Random.SeedMix.Addition", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7a7c5531bbefed0945814f874baf9e0e0f", null ],
+      [ "SystemEx.Random.SeedMix.Subtraction", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7a6eb8b8b560161603402c0238b3a7d8b0", null ],
+      [ "SystemEx.Random.SeedMix.Multiplication", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7a27d1a1f7b7c2180e5b20ce9e3d00e2dd", null ],
+      [ "SystemEx.Random.SeedMix.And", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7ac33315685a0cba3ce53be378b3c7874b", null ],
+      [ "SystemEx.Random.SeedMix.Or", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7a3a2d5fe857d8f9541136a124c2edec6c", null ],
+      [ "SystemEx.Random.SeedMix.ShiftLeft", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7ad9382145a142cc7df5f733332c9cb812", null ],
+      [ "SystemEx.Random.SeedMix.ShiftRight", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7af17de5e0ea7a357b755aa9deeaf38f86", null ],
+      [ "SystemEx.Random.SeedMix.RotateLeft", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7a87fd674d30ebe08d41293f51d4f62066", null ],
+      [ "SystemEx.Random.SeedMix.RotateRight", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7ac54517388223d2f20c61580c6f8d224f", null ],
+      [ "SystemEx.Random.SeedMix.Not", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7aa74c05d080620f087c4e523977230666", null ],
+      [ "SystemEx.Random.SeedMix.Minimal", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7a30fc6bbba82125243ecf4ddb27fee645", null ],
+      [ "SystemEx.Random.SeedMix.Maximal", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7ac2f493254b06a46832e043f236296ad3", null ],
+      [ "SystemEx.Random.SeedMix.Average", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7ab1897515d548a960afe49ecf66a29021", null ],
+      [ "SystemEx.Random.SeedMix.New", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7a03c2e7e41ffc181a4e84080b4710e81e", null ],
+      [ "SystemEx.Random.SeedMix.User", "d4/dd7/a00793.html#gga66820d8a6ab2d32455ed901e9d229ff7a8f9bfe9d1345237cb3b2b205864da075", null ]
+    ] ]
 ];

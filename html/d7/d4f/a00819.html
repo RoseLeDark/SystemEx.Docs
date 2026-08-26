@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: SystemEx.IO.Provider Namespace Reference" />
+<meta property="og:title" content="SystemEX: InteropServices" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: SystemEx.IO.Provider Namespace Reference" />
+<meta name="twitter:title" content="SystemEX: InteropServices" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: SystemEx.IO.Provider Namespace Reference</title>
+<title>SystemEX: InteropServices</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,22 +101,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d7/d4f/a00819.
 <div id="container">
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.IO.Provider Namespace Reference</div></div>
+  <div class="headertitle"><div class="title">InteropServices </div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:ByteSeriablizeProvider" id="r_ByteSeriablizeProvider"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d8/dce/a01714.html">ByteSeriablizeProvider</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a base implementation for serializing objects to and from byte arrays.  <a href="../../d8/dce/a01714.html#details">More...</a><br /></td></tr>
-<tr class="memitem:IByteFormatSchema" id="r_IByteFormatSchema"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../db/d7f/a01718.html">IByteFormatSchema</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A schema defines total size, header size, endianness and fixed field offsets. Implementations must be deterministic and contain no dynamic or computed layout.  <a href="../../db/d7f/a01718.html#details">More...</a><br /></td></tr>
-<tr class="memitem:IByteSerialize_3C_20T_2C_20TSchema_20_3E" id="r_IByteSerialize_3C_20T_2C_20TSchema_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d5/d29/a01722.html">IByteSerialize&lt; T, TSchema &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides deterministic binary serialization and deserialization for a type <em>T</em>  using a schema <em>TSchema</em> .  <a href="../../d5/d29/a01722.html#details">More...</a><br /></td></tr>
-<tr class="memitem:IIsByteSeriablize" id="r_IIsByteSeriablize"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../df/dba/a01726.html">IIsByteSeriablize</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a type that can be serialized to and from byte arrays.  <a href="../../df/dba/a01726.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ERuntime_2EInteropServices_2EPlatform_2ELinuxProcLoader" id="r_SystemEx_2ERuntime_2EInteropServices_2EPlatform_2ELinuxProcLoader"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Runtime.InteropServices.Platform.LinuxProcLoader</b></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides Linux-specific native module loading and symbol resolution using the <code>libdl</code> API. <br  />
+ This backend is responsible for locating shared objects (.so), loading them via <code>dlopen</code>, resolving exported functions via <code>dlsym</code>, and unloading modules via <code>dlclose</code>. <br /></td></tr>
+<tr class="memitem:SystemEx_2ERuntime_2EInteropServices_2EPlatform_2EMacProcLoader" id="r_SystemEx_2ERuntime_2EInteropServices_2EPlatform_2EMacProcLoader"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Runtime.InteropServices.Platform.MacProcLoader</b></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides macOS-specific native module loading and symbol resolution using the <code>libdl</code> API. <br  />
+ This backend supports loading dynamic libraries (.dylib), resolving exported symbols, and searching system library paths including <code>/usr/lib</code>, <code>/usr/local/lib</code>, and <code>DYLD_LIBRARY_PATH</code>. <br /></td></tr>
+<tr class="memitem:SystemEx_2ERuntime_2EInteropServices_2EPlatform_2ENoSupportProcLoader" id="r_SystemEx_2ERuntime_2EInteropServices_2EPlatform_2ENoSupportProcLoader"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>SystemEx.Runtime.InteropServices.Platform.NoSupportProcLoader</b></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a fallback implementation for platforms that do not support native module loading or symbol resolution. <br  />
+ Instead of performing real dynamic loading, this loader simulates all operations by printing diagnostic messages to the console. <br  />
+ It allows the rest of the runtime to function without throwing exceptions, making it useful for testing, unsupported environments, or platforms without dynamic linking capabilities. <br /></td></tr>
+<tr class="memitem:SystemEx_2ERuntime_2EInteropServices_2EPlatform_2EWindowsProcLoader" id="r_SystemEx_2ERuntime_2EInteropServices_2EPlatform_2EWindowsProcLoader"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d9/da1/a01976.html">SystemEx.Runtime.InteropServices.Platform.WindowsProcLoader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides Windows-specific native module loading and symbol resolution using the <code>dll</code> API. <br  />
+ This backend supports loading dynamic libraries (.dll).  <a href="../../d9/da1/a01976.html#details">More...</a><br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"></div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
@@ -129,7 +135,6 @@ Classes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d7/d0a/a00801.html">SystemEx</a></li><li class="navelem"><a href="../../d3/d60/a00818.html">IO</a></li><li class="navelem"><a href="../../d7/d4f/a00819.html">Provider</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
