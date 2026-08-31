@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['🧱_20core_20principles_0',['🧱 Core Principles',['../da/d14/a02245.html#autotoc_md-core-principles',1,'']]],
-  ['🧱_20design_20choice_3a_20controlled_20duplication_1',['🧱 Design Choice: Controlled Duplication',['../da/d14/a02245.html#autotoc_md-design-choice-controlled-duplication',1,'']]],
-  ['🧱_20systemex_20base_20layer_2',['🧱 SystemEx (Base Layer)',['../index.html#autotoc_md-systemex-base-layer',1,'']]]
+  ['🧮_20systemex_20algorithms_0',['🧮 SystemEx.Algorithms',['../index.html#autotoc_md-systemexalgorithms',1,'']]]
 ];

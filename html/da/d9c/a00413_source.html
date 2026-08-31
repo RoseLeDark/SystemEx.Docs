@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: ColorYUV.cs Source File" />
+<meta property="og:title" content="SystemEX: ColorXYZ.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: ColorYUV.cs Source File" />
+<meta name="twitter:title" content="SystemEX: ColorXYZ.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: ColorYUV.cs Source File</title>
+<title>SystemEX: ColorXYZ.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('da/d9c/a00413_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ColorYUV.cs</div></div>
+  <div class="headertitle"><div class="title">ColorXYZ.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -158,86 +158,75 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('da/d9c/a00413_
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../df/de8/a00839.html">SystemEx.Drawing</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dc/d36/a00925.html">SystemEx.Drawing</a> {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
 <div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../dd/deb/a01628.html">   26</a></span>     <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../dd/deb/a01628_aa0d359dcbfce7a9db542f057ceb9c5a3.html#aa0d359dcbfce7a9db542f057ceb9c5a3">ColorYUV</a> : IEquatable&lt;ColorYUV&gt; {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_y;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_u;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_v;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d1/da7/a01709.html">   26</a></span>     <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../d4/d1c/a00903_ga39a3ae0dd212c74b312a22675f4412ec.html#ga39a3ae0dd212c74b312a22675f4412ec">ColorXYZ</a> : IEquatable&lt;ColorXYZ&gt; {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_x;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_y;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_z;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../dd/deb/a01628_a4e5a715c2184061561f7caacfd4314e8.html#a4e5a715c2184061561f7caacfd4314e8">   34</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../dd/deb/a01628_a4e5a715c2184061561f7caacfd4314e8.html#a4e5a715c2184061561f7caacfd4314e8">Y</a> { <span class="keyword">get</span> =&gt; m_y; <span class="keyword">set</span> =&gt; m_y = value; }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d4/d1c/a00903_gaf429e13fcc02fa5f8da728c742b02061.html#gaf429e13fcc02fa5f8da728c742b02061">   34</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d4/d1c/a00903_gaf429e13fcc02fa5f8da728c742b02061.html#gaf429e13fcc02fa5f8da728c742b02061">X</a> { <span class="keyword">get</span> =&gt; m_x; <span class="keyword">set</span> =&gt; m_x = value; }</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../dd/deb/a01628_ae469b6e35e25c51e8c394e7bd5ecbd17.html#ae469b6e35e25c51e8c394e7bd5ecbd17">   39</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../dd/deb/a01628_ae469b6e35e25c51e8c394e7bd5ecbd17.html#ae469b6e35e25c51e8c394e7bd5ecbd17">U</a> { <span class="keyword">get</span> =&gt; m_u; <span class="keyword">set</span> =&gt; m_u = value; }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d4/d1c/a00903_ga625fa6b600c3b34aeac4109e7d47f152.html#ga625fa6b600c3b34aeac4109e7d47f152">   39</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d4/d1c/a00903_ga625fa6b600c3b34aeac4109e7d47f152.html#ga625fa6b600c3b34aeac4109e7d47f152">Y</a> { <span class="keyword">get</span> =&gt; m_y; <span class="keyword">set</span> =&gt; m_y = value; }</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../dd/deb/a01628_a154df444d5bdce3e66362a2aab06ec7b.html#a154df444d5bdce3e66362a2aab06ec7b">   44</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../dd/deb/a01628_a154df444d5bdce3e66362a2aab06ec7b.html#a154df444d5bdce3e66362a2aab06ec7b">V</a> { <span class="keyword">get</span> =&gt; m_v; <span class="keyword">set</span> =&gt; m_v = value; }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../d4/d1c/a00903_ga02f8a1aafc8a9967457fcc1e71be559f.html#ga02f8a1aafc8a9967457fcc1e71be559f">   44</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d4/d1c/a00903_ga02f8a1aafc8a9967457fcc1e71be559f.html#ga02f8a1aafc8a9967457fcc1e71be559f">Z</a> { <span class="keyword">get</span> =&gt; m_z; <span class="keyword">set</span> =&gt; m_z = value; }</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../dd/deb/a01628_aa0d359dcbfce7a9db542f057ceb9c5a3.html#aa0d359dcbfce7a9db542f057ceb9c5a3">   50</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dd/deb/a01628_aa0d359dcbfce7a9db542f057ceb9c5a3.html#aa0d359dcbfce7a9db542f057ceb9c5a3">ColorYUV</a>(<span class="keywordtype">float</span>[] x) {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            m_y = x[0];</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            m_u = x[1];</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            m_v = x[2]; </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        }</div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d4/d1c/a00903_ga39a3ae0dd212c74b312a22675f4412ec.html#ga39a3ae0dd212c74b312a22675f4412ec">   52</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d4/d1c/a00903_ga39a3ae0dd212c74b312a22675f4412ec.html#ga39a3ae0dd212c74b312a22675f4412ec">ColorXYZ</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            this.m_x = x;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            this.m_y = y;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            this.m_z = z;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../dd/deb/a01628_a6b044317c98fadf6344c326610d5ce2b.html#a6b044317c98fadf6344c326610d5ce2b">   58</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dd/deb/a01628_a6b044317c98fadf6344c326610d5ce2b.html#a6b044317c98fadf6344c326610d5ce2b">ColorYUV</a>(<span class="keywordtype">float</span> y, <span class="keywordtype">float</span> u, <span class="keywordtype">float</span> v) { </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            m_y = y;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            m_u = u;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            m_v = v;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../d4/d1c/a00903_ga13e1615994895b6c4e1f729993da9c11.html#ga13e1615994895b6c4e1f729993da9c11">   65</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d4/d1c/a00903_ga13e1615994895b6c4e1f729993da9c11.html#ga13e1615994895b6c4e1f729993da9c11">Equals</a>(<a class="code hl_function" href="../../d4/d1c/a00903_ga39a3ae0dd212c74b312a22675f4412ec.html#ga39a3ae0dd212c74b312a22675f4412ec">ColorXYZ</a> other) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">return</span> m_x.Equals(other.m_x) &amp;&amp;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                   m_y.Equals(other.m_y) &amp;&amp;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                   m_z.Equals(other.m_z); </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
 </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
-<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../dd/deb/a01628_a56db38f3081a9d808277b1eacfd51a25.html#a56db38f3081a9d808277b1eacfd51a25">   70</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dd/deb/a01628_a56db38f3081a9d808277b1eacfd51a25.html#a56db38f3081a9d808277b1eacfd51a25">Equals</a>(<a class="code hl_function" href="../../dd/deb/a01628_aa0d359dcbfce7a9db542f057ceb9c5a3.html#aa0d359dcbfce7a9db542f057ceb9c5a3">ColorYUV</a> other) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>           </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">return</span> m_y.Equals(other.m_y) &amp;&amp;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                m_u.Equals(other.m_u) &amp;&amp;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                m_v.Equals(other.m_y);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="../../d4/d1c/a00903_gafa46c9dbdcb0a373e1bab091f2ca928c.html#gafa46c9dbdcb0a373e1bab091f2ca928c">   74</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d4/d1c/a00903_gafa46c9dbdcb0a373e1bab091f2ca928c.html#gafa46c9dbdcb0a373e1bab091f2ca928c">Equals</a>(<span class="keywordtype">object</span>? obj) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">if</span>(obj is <a class="code hl_function" href="../../d4/d1c/a00903_ga39a3ae0dd212c74b312a22675f4412ec.html#ga39a3ae0dd212c74b312a22675f4412ec">ColorXYZ</a> c)  <span class="keywordflow">return</span> <a class="code hl_function" href="../../d4/d1c/a00903_ga13e1615994895b6c4e1f729993da9c11.html#ga13e1615994895b6c4e1f729993da9c11">Equals</a>(c);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        }</div>
 </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../dd/deb/a01628_ae550b80cdb800113eca30858b4000ea7.html#ae550b80cdb800113eca30858b4000ea7">   79</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> <a class="code hl_function" href="../../dd/deb/a01628_ae550b80cdb800113eca30858b4000ea7.html#ae550b80cdb800113eca30858b4000ea7">GetHashCode</a>() {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordflow">return</span> HashCode.Combine(m_y, m_u, m_v);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="../../d4/d1c/a00903_ga0f64c5bfbff2c423b111cea14c3b0980.html#ga0f64c5bfbff2c423b111cea14c3b0980">   81</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> <a class="code hl_function" href="../../d4/d1c/a00903_ga0f64c5bfbff2c423b111cea14c3b0980.html#ga0f64c5bfbff2c423b111cea14c3b0980">GetHashCode</a>() {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordflow">return</span> m_x.GetHashCode() ^ m_y.GetHashCode() ^ m_z.GetHashCode();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
 </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
-<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="../../dd/deb/a01628_a026a19eea44954df92a2712f2b9f5b6d.html#a026a19eea44954df92a2712f2b9f5b6d">   85</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dd/deb/a01628_a026a19eea44954df92a2712f2b9f5b6d.html#a026a19eea44954df92a2712f2b9f5b6d">Equals</a>(<span class="keywordtype">object</span>? obj) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keywordflow">if</span> ( obj == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordflow">if</span> ( obj is <a class="code hl_function" href="../../dd/deb/a01628_aa0d359dcbfce7a9db542f057ceb9c5a3.html#aa0d359dcbfce7a9db542f057ceb9c5a3">ColorYUV</a> s) <span class="keywordflow">return</span> <a class="code hl_function" href="../../dd/deb/a01628_a56db38f3081a9d808277b1eacfd51a25.html#a56db38f3081a9d808277b1eacfd51a25">Equals</a>(s);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../d4/d1c/a00903_gad16f6ebd767aa2a97e824ba26d585e6a.html#gad16f6ebd767aa2a97e824ba26d585e6a">   88</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d4/d1c/a00903_gad16f6ebd767aa2a97e824ba26d585e6a.html#gad16f6ebd767aa2a97e824ba26d585e6a">ToString</a>() {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;[{m_x}, {m_y}, {m_z}]&quot;</span>);</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
 </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
-<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="../../dd/deb/a01628_a877fde1f33ac52b5c34676bcfbc88e91.html#a877fde1f33ac52b5c34676bcfbc88e91">   94</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../dd/deb/a01628_a877fde1f33ac52b5c34676bcfbc88e91.html#a877fde1f33ac52b5c34676bcfbc88e91">ToString</a>() {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;[{m_y}, {m_u}, {m_v}]&quot;</span>);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
 </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
-</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
-<div class="ttc" id="aa00839_html"><div class="ttname"><a href="../../df/de8/a00839.html">SystemEx.Drawing</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/dd3/a00428_source.html#l00020">Canvas.cs:20</a></div></div>
-<div class="ttc" id="aa01628_a026a19eea44954df92a2712f2b9f5b6d_html_a026a19eea44954df92a2712f2b9f5b6d"><div class="ttname"><a href="../../dd/deb/a01628_a026a19eea44954df92a2712f2b9f5b6d.html#a026a19eea44954df92a2712f2b9f5b6d">SystemEx.Drawing.ColorYUV.Equals</a></div><div class="ttdeci">override bool Equals(object? obj)</div><div class="ttdoc">Determines whether this instance is equal to another object.</div><div class="ttdef"><b>Definition</b> <a href="#l00085">ColorYUV.cs:85</a></div></div>
-<div class="ttc" id="aa01628_a154df444d5bdce3e66362a2aab06ec7b_html_a154df444d5bdce3e66362a2aab06ec7b"><div class="ttname"><a href="../../dd/deb/a01628_a154df444d5bdce3e66362a2aab06ec7b.html#a154df444d5bdce3e66362a2aab06ec7b">SystemEx.Drawing.ColorYUV.V</a></div><div class="ttdeci">float V</div><div class="ttdoc">Gets or sets the V (chrominance red) component.</div><div class="ttdef"><b>Definition</b> <a href="#l00044">ColorYUV.cs:44</a></div></div>
-<div class="ttc" id="aa01628_a4e5a715c2184061561f7caacfd4314e8_html_a4e5a715c2184061561f7caacfd4314e8"><div class="ttname"><a href="../../dd/deb/a01628_a4e5a715c2184061561f7caacfd4314e8.html#a4e5a715c2184061561f7caacfd4314e8">SystemEx.Drawing.ColorYUV.Y</a></div><div class="ttdeci">float Y</div><div class="ttdoc">Gets or sets the Y (luma) component.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">ColorYUV.cs:34</a></div></div>
-<div class="ttc" id="aa01628_a56db38f3081a9d808277b1eacfd51a25_html_a56db38f3081a9d808277b1eacfd51a25"><div class="ttname"><a href="../../dd/deb/a01628_a56db38f3081a9d808277b1eacfd51a25.html#a56db38f3081a9d808277b1eacfd51a25">SystemEx.Drawing.ColorYUV.Equals</a></div><div class="ttdeci">bool Equals(ColorYUV other)</div><div class="ttdoc">Determines whether this instance is equal to another YUV color.</div><div class="ttdef"><b>Definition</b> <a href="#l00070">ColorYUV.cs:70</a></div></div>
-<div class="ttc" id="aa01628_a6b044317c98fadf6344c326610d5ce2b_html_a6b044317c98fadf6344c326610d5ce2b"><div class="ttname"><a href="../../dd/deb/a01628_a6b044317c98fadf6344c326610d5ce2b.html#a6b044317c98fadf6344c326610d5ce2b">SystemEx.Drawing.ColorYUV.ColorYUV</a></div><div class="ttdeci">ColorYUV(float y, float u, float v)</div><div class="ttdoc">Initializes a new YUV color with the specified component values.</div><div class="ttdef"><b>Definition</b> <a href="#l00058">ColorYUV.cs:58</a></div></div>
-<div class="ttc" id="aa01628_a877fde1f33ac52b5c34676bcfbc88e91_html_a877fde1f33ac52b5c34676bcfbc88e91"><div class="ttname"><a href="../../dd/deb/a01628_a877fde1f33ac52b5c34676bcfbc88e91.html#a877fde1f33ac52b5c34676bcfbc88e91">SystemEx.Drawing.ColorYUV.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">Returns a string representation of the YUV color.</div><div class="ttdef"><b>Definition</b> <a href="#l00094">ColorYUV.cs:94</a></div></div>
-<div class="ttc" id="aa01628_aa0d359dcbfce7a9db542f057ceb9c5a3_html_aa0d359dcbfce7a9db542f057ceb9c5a3"><div class="ttname"><a href="../../dd/deb/a01628_aa0d359dcbfce7a9db542f057ceb9c5a3.html#aa0d359dcbfce7a9db542f057ceb9c5a3">SystemEx.Drawing.ColorYUV.ColorYUV</a></div><div class="ttdeci">ColorYUV(float[] x)</div><div class="ttdoc">Initializes a new YUV color from an array of three floating‑point values.</div><div class="ttdef"><b>Definition</b> <a href="#l00050">ColorYUV.cs:50</a></div></div>
-<div class="ttc" id="aa01628_ae469b6e35e25c51e8c394e7bd5ecbd17_html_ae469b6e35e25c51e8c394e7bd5ecbd17"><div class="ttname"><a href="../../dd/deb/a01628_ae469b6e35e25c51e8c394e7bd5ecbd17.html#ae469b6e35e25c51e8c394e7bd5ecbd17">SystemEx.Drawing.ColorYUV.U</a></div><div class="ttdeci">float U</div><div class="ttdoc">Gets or sets the U (chrominance blue) component.</div><div class="ttdef"><b>Definition</b> <a href="#l00039">ColorYUV.cs:39</a></div></div>
-<div class="ttc" id="aa01628_ae550b80cdb800113eca30858b4000ea7_html_ae550b80cdb800113eca30858b4000ea7"><div class="ttname"><a href="../../dd/deb/a01628_ae550b80cdb800113eca30858b4000ea7.html#ae550b80cdb800113eca30858b4000ea7">SystemEx.Drawing.ColorYUV.GetHashCode</a></div><div class="ttdeci">override int GetHashCode()</div><div class="ttdoc">Returns a hash code based on the Y, U, and V components.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">ColorYUV.cs:79</a></div></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>     </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
+<div class="ttc" id="aa00903_ga02f8a1aafc8a9967457fcc1e71be559f_html_ga02f8a1aafc8a9967457fcc1e71be559f"><div class="ttname"><a href="../../d4/d1c/a00903_ga02f8a1aafc8a9967457fcc1e71be559f.html#ga02f8a1aafc8a9967457fcc1e71be559f">SystemEx.Drawing.ColorXYZ.Z</a></div><div class="ttdeci">float Z</div><div class="ttdoc">Gets or sets the Z component of the XYZ color.</div><div class="ttdef"><b>Definition</b> <a href="#l00044">ColorXYZ.cs:44</a></div></div>
+<div class="ttc" id="aa00903_ga0f64c5bfbff2c423b111cea14c3b0980_html_ga0f64c5bfbff2c423b111cea14c3b0980"><div class="ttname"><a href="../../d4/d1c/a00903_ga0f64c5bfbff2c423b111cea14c3b0980.html#ga0f64c5bfbff2c423b111cea14c3b0980">SystemEx.Drawing.ColorXYZ.GetHashCode</a></div><div class="ttdeci">override int GetHashCode()</div><div class="ttdoc">Returns a hash code based on the X, Y, and Z components.</div><div class="ttdef"><b>Definition</b> <a href="#l00081">ColorXYZ.cs:81</a></div></div>
+<div class="ttc" id="aa00903_ga13e1615994895b6c4e1f729993da9c11_html_ga13e1615994895b6c4e1f729993da9c11"><div class="ttname"><a href="../../d4/d1c/a00903_ga13e1615994895b6c4e1f729993da9c11.html#ga13e1615994895b6c4e1f729993da9c11">SystemEx.Drawing.ColorXYZ.Equals</a></div><div class="ttdeci">bool Equals(ColorXYZ other)</div><div class="ttdoc">Determines whether this instance is equal to another XYZ color.</div><div class="ttdef"><b>Definition</b> <a href="#l00065">ColorXYZ.cs:65</a></div></div>
+<div class="ttc" id="aa00903_ga39a3ae0dd212c74b312a22675f4412ec_html_ga39a3ae0dd212c74b312a22675f4412ec"><div class="ttname"><a href="../../d4/d1c/a00903_ga39a3ae0dd212c74b312a22675f4412ec.html#ga39a3ae0dd212c74b312a22675f4412ec">SystemEx.Drawing.ColorXYZ.ColorXYZ</a></div><div class="ttdeci">ColorXYZ(float x, float y, float z)</div><div class="ttdoc">Initializes a new XYZ color with the specified component values.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">ColorXYZ.cs:52</a></div></div>
+<div class="ttc" id="aa00903_ga625fa6b600c3b34aeac4109e7d47f152_html_ga625fa6b600c3b34aeac4109e7d47f152"><div class="ttname"><a href="../../d4/d1c/a00903_ga625fa6b600c3b34aeac4109e7d47f152.html#ga625fa6b600c3b34aeac4109e7d47f152">SystemEx.Drawing.ColorXYZ.Y</a></div><div class="ttdeci">float Y</div><div class="ttdoc">Gets or sets the Y component of the XYZ color.</div><div class="ttdef"><b>Definition</b> <a href="#l00039">ColorXYZ.cs:39</a></div></div>
+<div class="ttc" id="aa00903_gad16f6ebd767aa2a97e824ba26d585e6a_html_gad16f6ebd767aa2a97e824ba26d585e6a"><div class="ttname"><a href="../../d4/d1c/a00903_gad16f6ebd767aa2a97e824ba26d585e6a.html#gad16f6ebd767aa2a97e824ba26d585e6a">SystemEx.Drawing.ColorXYZ.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">Returns a string representation of the XYZ color.</div><div class="ttdef"><b>Definition</b> <a href="#l00088">ColorXYZ.cs:88</a></div></div>
+<div class="ttc" id="aa00903_gaf429e13fcc02fa5f8da728c742b02061_html_gaf429e13fcc02fa5f8da728c742b02061"><div class="ttname"><a href="../../d4/d1c/a00903_gaf429e13fcc02fa5f8da728c742b02061.html#gaf429e13fcc02fa5f8da728c742b02061">SystemEx.Drawing.ColorXYZ.X</a></div><div class="ttdeci">float X</div><div class="ttdoc">Gets or sets the X component of the XYZ color.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">ColorXYZ.cs:34</a></div></div>
+<div class="ttc" id="aa00903_gafa46c9dbdcb0a373e1bab091f2ca928c_html_gafa46c9dbdcb0a373e1bab091f2ca928c"><div class="ttname"><a href="../../d4/d1c/a00903_gafa46c9dbdcb0a373e1bab091f2ca928c.html#gafa46c9dbdcb0a373e1bab091f2ca928c">SystemEx.Drawing.ColorXYZ.Equals</a></div><div class="ttdeci">override bool Equals(object? obj)</div><div class="ttdoc">Determines whether this instance is equal to another object.</div><div class="ttdef"><b>Definition</b> <a href="#l00074">ColorXYZ.cs:74</a></div></div>
+<div class="ttc" id="aa00925_html"><div class="ttname"><a href="../../dc/d36/a00925.html">SystemEx.Drawing</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/df8/a00440_source.html#l00020">Canvas.cs:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Drawing</b></li><li class="navelem"><b>ColorYUV.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Drawing</b></li><li class="navelem"><b>ColorXYZ.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

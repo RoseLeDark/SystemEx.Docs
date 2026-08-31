@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: ColorHWB.cs Source File" />
+<meta property="og:title" content="SystemEX: ColorGray.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: ColorHWB.cs Source File" />
+<meta name="twitter:title" content="SystemEX: ColorGray.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: ColorHWB.cs Source File</title>
+<title>SystemEX: ColorGray.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('db/d43/a00422_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ColorHWB.cs</div></div>
+  <div class="headertitle"><div class="title">ColorGray.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -158,88 +158,33 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('db/d43/a00422_
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../df/de8/a00839.html">SystemEx.Drawing</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dc/d36/a00925.html">SystemEx.Drawing</a> {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d0/db9/a01552.html">   25</a></span>     <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../d0/db9/a01552_a56b67263288e9581f4f8574cd7a00463.html#a56b67263288e9581f4f8574cd7a00463">ColorHWB</a> : IEquatable&lt;ColorHWB&gt; {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_hue;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_whiteness;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_blackness;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d0/db9/a01552_ad6f1f96b43b5e7c9209b72fc4f5be2d5.html#ad6f1f96b43b5e7c9209b72fc4f5be2d5">   33</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d0/db9/a01552_ad6f1f96b43b5e7c9209b72fc4f5be2d5.html#ad6f1f96b43b5e7c9209b72fc4f5be2d5">H</a> { <span class="keyword">get</span> =&gt; m_hue; <span class="keyword">set</span> =&gt; m_hue = ClampHue(value); }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d0/db9/a01552_a5415666ad605558f1c623b2087466fff.html#a5415666ad605558f1c623b2087466fff">   37</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d0/db9/a01552_a5415666ad605558f1c623b2087466fff.html#a5415666ad605558f1c623b2087466fff">Whiteness</a> { <span class="keyword">get</span> =&gt; m_whiteness; <span class="keyword">set</span> =&gt; m_whiteness = System.Math.Clamp(value, 0f, 1f); }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d0/db9/a01552_a80b798bd0ca8651816c82b38c0b63359.html#a80b798bd0ca8651816c82b38c0b63359">   42</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d0/db9/a01552_a80b798bd0ca8651816c82b38c0b63359.html#a80b798bd0ca8651816c82b38c0b63359">Blackness</a> { <span class="keyword">get</span> =&gt; m_blackness; <span class="keyword">set</span> =&gt; m_blackness = System.Math.Clamp(value, 0f, 1f); }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../d0/db9/a01552_a56b67263288e9581f4f8574cd7a00463.html#a56b67263288e9581f4f8574cd7a00463">   50</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d0/db9/a01552_a56b67263288e9581f4f8574cd7a00463.html#a56b67263288e9581f4f8574cd7a00463">ColorHWB</a>(<span class="keywordtype">float</span> h, <span class="keywordtype">float</span> whiteness, <span class="keywordtype">float</span> blackness) { </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            m_hue = ClampHue(h);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            m_whiteness = System.Math.Clamp(whiteness, 0f, 1f);   </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            m_blackness = System.Math.Clamp(blackness, 0f, 1f);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        }</div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../dd/dda/a01621.html">   26</a></span>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../d4/d1c/a00903_gad6fdae943d0748bb20f985def1fff56c.html#gad6fdae943d0748bb20f985def1fff56c">ColorGray</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">private</span> <span class="keywordtype">float</span> m_v;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d4/d1c/a00903_gafe05da756ddfaa2d5cdece1454269b5a.html#gafe05da756ddfaa2d5cdece1454269b5a">   31</a></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_property" href="../../d4/d1c/a00903_gafe05da756ddfaa2d5cdece1454269b5a.html#gafe05da756ddfaa2d5cdece1454269b5a">Gray</a> { <span class="keyword">get</span> { <span class="keywordflow">return</span> m_v; } }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d4/d1c/a00903_gad6fdae943d0748bb20f985def1fff56c.html#gad6fdae943d0748bb20f985def1fff56c">   36</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d4/d1c/a00903_gad6fdae943d0748bb20f985def1fff56c.html#gad6fdae943d0748bb20f985def1fff56c">ColorGray</a>(<span class="keywordtype">float</span> v) { m_v = System.Math.Clamp(v, 0f, 1f); }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../d4/d1c/a00903_ga583a85a1765b63a313e626553466f8d6.html#ga583a85a1765b63a313e626553466f8d6">   41</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d4/d1c/a00903_ga583a85a1765b63a313e626553466f8d6.html#ga583a85a1765b63a313e626553466f8d6">ColorGray</a>(<span class="keywordtype">float</span>[] x) { m_v = System.Math.Clamp(x[0], 0f, 1f); }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../d4/d1c/a00903_gae6cf9467564d5bef5181841f64784b56.html#gae6cf9467564d5bef5181841f64784b56">   46</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d4/d1c/a00903_gae6cf9467564d5bef5181841f64784b56.html#gae6cf9467564d5bef5181841f64784b56">ColorGray</a>(<a class="code hl_struct" href="../../d6/dd6/a01633.html">ColorHSV</a> hsv) { m_v = System.Math.Clamp(hsv.<a class="code hl_property" href="../../d4/d1c/a00903_gae80897f1270add318e30717f61243dcb.html#gae80897f1270add318e30717f61243dcb">V</a>, 0f, 1f); }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../d0/db9/a01552_a6089dd15a17ba1e8f92dc65af0f158cc.html#a6089dd15a17ba1e8f92dc65af0f158cc">   60</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d0/db9/a01552_a6089dd15a17ba1e8f92dc65af0f158cc.html#a6089dd15a17ba1e8f92dc65af0f158cc">ColorHWB</a>(<span class="keywordtype">float</span>[] x) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            m_hue = ClampHue(x[0]);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            m_whiteness = System.Math.Clamp(x[1], 0f, 1f);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            m_blackness = System.Math.Clamp(x[2], 0f, 1f);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
-</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
-<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../d0/db9/a01552_abb8a918c2cfc16211d8c308eaf31cda2.html#abb8a918c2cfc16211d8c308eaf31cda2">   73</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d0/db9/a01552_abb8a918c2cfc16211d8c308eaf31cda2.html#abb8a918c2cfc16211d8c308eaf31cda2">Equals</a>(<a class="code hl_function" href="../../d0/db9/a01552_a56b67263288e9581f4f8574cd7a00463.html#a56b67263288e9581f4f8574cd7a00463">ColorHWB</a> other) {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">return</span> m_hue == other.m_hue &amp;&amp; m_blackness == other.m_blackness &amp;&amp; m_whiteness == other.m_whiteness;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        }</div>
-</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
-<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../d0/db9/a01552_a5c80628949683d3a9b02cb6c88bd5cef.html#a5c80628949683d3a9b02cb6c88bd5cef">   80</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> <a class="code hl_function" href="../../d0/db9/a01552_a5c80628949683d3a9b02cb6c88bd5cef.html#a5c80628949683d3a9b02cb6c88bd5cef">GetHashCode</a>() {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordflow">return</span> HashCode.Combine(m_hue, m_blackness, m_whiteness);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
-</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
-<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../d0/db9/a01552_a0d1904b0ffb747188fe0fa0dec192ebb.html#a0d1904b0ffb747188fe0fa0dec192ebb">   86</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d0/db9/a01552_a0d1904b0ffb747188fe0fa0dec192ebb.html#a0d1904b0ffb747188fe0fa0dec192ebb">Equals</a>(<span class="keywordtype">object</span>? obj) {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordflow">if</span> ( obj is <a class="code hl_function" href="../../d0/db9/a01552_a56b67263288e9581f4f8574cd7a00463.html#a56b67263288e9581f4f8574cd7a00463">ColorHWB</a> d) <span class="keywordflow">return</span> <a class="code hl_function" href="../../d0/db9/a01552_abb8a918c2cfc16211d8c308eaf31cda2.html#abb8a918c2cfc16211d8c308eaf31cda2">Equals</a>(d);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
-</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
-<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="../../d0/db9/a01552_a6be473922fb1fd20b3cae940c2fa73cf.html#a6be473922fb1fd20b3cae940c2fa73cf">   94</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d0/db9/a01552_a6be473922fb1fd20b3cae940c2fa73cf.html#a6be473922fb1fd20b3cae940c2fa73cf">ToString</a>() {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;[{m_hue}, {m_whiteness}, {m_blackness}]&quot;</span>);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
-</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">float</span> ClampHue(<span class="keywordtype">float</span> h) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            h %= 360f;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">return</span> h &lt; 0f ? h + 360f : h;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
-</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
-<div class="ttc" id="aa00839_html"><div class="ttname"><a href="../../df/de8/a00839.html">SystemEx.Drawing</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/dd3/a00428_source.html#l00020">Canvas.cs:20</a></div></div>
-<div class="ttc" id="aa01552_a0d1904b0ffb747188fe0fa0dec192ebb_html_a0d1904b0ffb747188fe0fa0dec192ebb"><div class="ttname"><a href="../../d0/db9/a01552_a0d1904b0ffb747188fe0fa0dec192ebb.html#a0d1904b0ffb747188fe0fa0dec192ebb">SystemEx.Drawing.ColorHWB.Equals</a></div><div class="ttdeci">override bool Equals(object? obj)</div><div class="ttdoc">Determines whether this instance is equal to another object.</div><div class="ttdef"><b>Definition</b> <a href="#l00086">ColorHWB.cs:86</a></div></div>
-<div class="ttc" id="aa01552_a5415666ad605558f1c623b2087466fff_html_a5415666ad605558f1c623b2087466fff"><div class="ttname"><a href="../../d0/db9/a01552_a5415666ad605558f1c623b2087466fff.html#a5415666ad605558f1c623b2087466fff">SystemEx.Drawing.ColorHWB.Whiteness</a></div><div class="ttdeci">float Whiteness</div><div class="ttdoc">The whiteness component of the color, in the range [0, 1].</div><div class="ttdef"><b>Definition</b> <a href="#l00037">ColorHWB.cs:37</a></div></div>
-<div class="ttc" id="aa01552_a56b67263288e9581f4f8574cd7a00463_html_a56b67263288e9581f4f8574cd7a00463"><div class="ttname"><a href="../../d0/db9/a01552_a56b67263288e9581f4f8574cd7a00463.html#a56b67263288e9581f4f8574cd7a00463">SystemEx.Drawing.ColorHWB.ColorHWB</a></div><div class="ttdeci">ColorHWB(float h, float whiteness, float blackness)</div><div class="ttdoc">Initializes a new HWB color with the specified component values.</div><div class="ttdef"><b>Definition</b> <a href="#l00050">ColorHWB.cs:50</a></div></div>
-<div class="ttc" id="aa01552_a5c80628949683d3a9b02cb6c88bd5cef_html_a5c80628949683d3a9b02cb6c88bd5cef"><div class="ttname"><a href="../../d0/db9/a01552_a5c80628949683d3a9b02cb6c88bd5cef.html#a5c80628949683d3a9b02cb6c88bd5cef">SystemEx.Drawing.ColorHWB.GetHashCode</a></div><div class="ttdeci">override int GetHashCode()</div><div class="ttdoc">Returns a hash code based on the H, W, and B components.</div><div class="ttdef"><b>Definition</b> <a href="#l00080">ColorHWB.cs:80</a></div></div>
-<div class="ttc" id="aa01552_a6089dd15a17ba1e8f92dc65af0f158cc_html_a6089dd15a17ba1e8f92dc65af0f158cc"><div class="ttname"><a href="../../d0/db9/a01552_a6089dd15a17ba1e8f92dc65af0f158cc.html#a6089dd15a17ba1e8f92dc65af0f158cc">SystemEx.Drawing.ColorHWB.ColorHWB</a></div><div class="ttdeci">ColorHWB(float[] x)</div><div class="ttdoc">Initializes a new HWB color from an array of component values.</div><div class="ttdef"><b>Definition</b> <a href="#l00060">ColorHWB.cs:60</a></div></div>
-<div class="ttc" id="aa01552_a6be473922fb1fd20b3cae940c2fa73cf_html_a6be473922fb1fd20b3cae940c2fa73cf"><div class="ttname"><a href="../../d0/db9/a01552_a6be473922fb1fd20b3cae940c2fa73cf.html#a6be473922fb1fd20b3cae940c2fa73cf">SystemEx.Drawing.ColorHWB.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">Returns a string representation of the HWB color.</div><div class="ttdef"><b>Definition</b> <a href="#l00094">ColorHWB.cs:94</a></div></div>
-<div class="ttc" id="aa01552_a80b798bd0ca8651816c82b38c0b63359_html_a80b798bd0ca8651816c82b38c0b63359"><div class="ttname"><a href="../../d0/db9/a01552_a80b798bd0ca8651816c82b38c0b63359.html#a80b798bd0ca8651816c82b38c0b63359">SystemEx.Drawing.ColorHWB.Blackness</a></div><div class="ttdeci">float Blackness</div><div class="ttdoc">The blackness component of the color, in the range [0, 1].</div><div class="ttdef"><b>Definition</b> <a href="#l00042">ColorHWB.cs:42</a></div></div>
-<div class="ttc" id="aa01552_abb8a918c2cfc16211d8c308eaf31cda2_html_abb8a918c2cfc16211d8c308eaf31cda2"><div class="ttname"><a href="../../d0/db9/a01552_abb8a918c2cfc16211d8c308eaf31cda2.html#abb8a918c2cfc16211d8c308eaf31cda2">SystemEx.Drawing.ColorHWB.Equals</a></div><div class="ttdeci">bool Equals(ColorHWB other)</div><div class="ttdoc">Determines whether this instance is equal to another HWB color.</div><div class="ttdef"><b>Definition</b> <a href="#l00073">ColorHWB.cs:73</a></div></div>
-<div class="ttc" id="aa01552_ad6f1f96b43b5e7c9209b72fc4f5be2d5_html_ad6f1f96b43b5e7c9209b72fc4f5be2d5"><div class="ttname"><a href="../../d0/db9/a01552_ad6f1f96b43b5e7c9209b72fc4f5be2d5.html#ad6f1f96b43b5e7c9209b72fc4f5be2d5">SystemEx.Drawing.ColorHWB.H</a></div><div class="ttdeci">float H</div><div class="ttdoc">The hue component of the color, in degrees (0–360).</div><div class="ttdef"><b>Definition</b> <a href="#l00033">ColorHWB.cs:33</a></div></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+<div class="ttc" id="aa00903_ga583a85a1765b63a313e626553466f8d6_html_ga583a85a1765b63a313e626553466f8d6"><div class="ttname"><a href="../../d4/d1c/a00903_ga583a85a1765b63a313e626553466f8d6.html#ga583a85a1765b63a313e626553466f8d6">SystemEx.Drawing.ColorGray.ColorGray</a></div><div class="ttdeci">ColorGray(float[] x)</div><div class="ttdoc">Initializes a new instance of the ColorGray class with the specified grayscale value array.</div><div class="ttdef"><b>Definition</b> <a href="#l00041">ColorGray.cs:41</a></div></div>
+<div class="ttc" id="aa00903_gad6fdae943d0748bb20f985def1fff56c_html_gad6fdae943d0748bb20f985def1fff56c"><div class="ttname"><a href="../../d4/d1c/a00903_gad6fdae943d0748bb20f985def1fff56c.html#gad6fdae943d0748bb20f985def1fff56c">SystemEx.Drawing.ColorGray.ColorGray</a></div><div class="ttdeci">ColorGray(float v)</div><div class="ttdoc">Initializes a new instance of the ColorGray class with the specified grayscale value.</div><div class="ttdef"><b>Definition</b> <a href="#l00036">ColorGray.cs:36</a></div></div>
+<div class="ttc" id="aa00903_gae6cf9467564d5bef5181841f64784b56_html_gae6cf9467564d5bef5181841f64784b56"><div class="ttname"><a href="../../d4/d1c/a00903_gae6cf9467564d5bef5181841f64784b56.html#gae6cf9467564d5bef5181841f64784b56">SystemEx.Drawing.ColorGray.ColorGray</a></div><div class="ttdeci">ColorGray(ColorHSV hsv)</div><div class="ttdoc">Creates a new ColorGray instance from a ColorHSV instance, using the value (V) component of the HSV c...</div><div class="ttdef"><b>Definition</b> <a href="#l00046">ColorGray.cs:46</a></div></div>
+<div class="ttc" id="aa00903_gae80897f1270add318e30717f61243dcb_html_gae80897f1270add318e30717f61243dcb"><div class="ttname"><a href="../../d4/d1c/a00903_gae80897f1270add318e30717f61243dcb.html#gae80897f1270add318e30717f61243dcb">SystemEx.Drawing.ColorHSV.V</a></div><div class="ttdeci">float V</div><div class="ttdoc">Gets or sets the value (brightness) component in the range 0–1.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d0b/a00452_source.html#l00055">ColorHSV.cs:55</a></div></div>
+<div class="ttc" id="aa00903_gafe05da756ddfaa2d5cdece1454269b5a_html_gafe05da756ddfaa2d5cdece1454269b5a"><div class="ttname"><a href="../../d4/d1c/a00903_gafe05da756ddfaa2d5cdece1454269b5a.html#gafe05da756ddfaa2d5cdece1454269b5a">SystemEx.Drawing.ColorGray.Gray</a></div><div class="ttdeci">float Gray</div><div class="ttdoc">Gets the grayscale value.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">ColorGray.cs:31</a></div></div>
+<div class="ttc" id="aa00925_html"><div class="ttname"><a href="../../dc/d36/a00925.html">SystemEx.Drawing</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/df8/a00440_source.html#l00020">Canvas.cs:20</a></div></div>
+<div class="ttc" id="aa01633_html"><div class="ttname"><a href="../../d6/dd6/a01633.html">SystemEx.Drawing.ColorHSV</a></div><div class="ttdoc">Represents a color in the HSV (Hue–Saturation–Value) color space using floating‑point components....</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d0b/a00452_source.html#l00029">ColorHSV.cs:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Drawing</b></li><li class="navelem"><b>ColorHWB.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Drawing</b></li><li class="navelem"><b>ColorGray.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

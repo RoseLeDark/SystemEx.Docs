@@ -1,7 +1,4 @@
 var a00920 =
 [
-    [ "ExecuteAsync", "d6/d82/a00920_a98c350f2ceab9376ec7e59525953598f.html#a98c350f2ceab9376ec7e59525953598f", null ],
-    [ "GetParameters", "d6/d82/a00920_a2d1de47e003129d922eb9437e23c5f59.html#a2d1de47e003129d922eb9437e23c5f59", null ],
-    [ "Description", "d6/d82/a00920_a5e413057204dda4896b8c20713ded893.html#a5e413057204dda4896b8c20713ded893", null ],
-    [ "Name", "d6/d82/a00920_a9d874f5d545796784d832696a44484e2.html#a9d874f5d545796784d832696a44484e2", null ]
+    [ "UniqueDeque&lt; T &gt;", "d9/d8b/a01469.html", "d9/d8b/a01469" ]
 ];

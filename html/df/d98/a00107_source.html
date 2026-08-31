@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: LinearSearchProvider.cs Source File" />
+<meta property="og:title" content="SystemEX: ICDistance.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: LinearSearchProvider.cs Source File" />
+<meta name="twitter:title" content="SystemEX: ICDistance.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: LinearSearchProvider.cs Source File</title>
+<title>SystemEX: ICDistance.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('df/d98/a00107_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">LinearSearchProvider.cs</div></div>
+  <div class="headertitle"><div class="title">ICDistance.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -157,80 +157,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('df/d98/a00107_
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * If you modify this file, retain this notice and add a short description of your</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">using </span><a class="code hl_namespace" href="../../df/d4c/a00851.html">SystemEx.Utils</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span><a class="code hl_namespace" href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d1/dea/a00829.html">SystemEx.Algorithms</a> {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../dc/d19/a01056.html">   45</a></span>     <span class="keyword">public</span> <span class="keyword">struct </span>LinearSearchProvider&lt;T, TContainer&gt; : ISearchProvider&lt;T, TContainer&gt;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        where TContainer : IVector&lt;T&gt; {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
-<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../dc/d19/a01056_aeb61655f2368e66978f48077e02d1a87.html#aeb61655f2368e66978f48077e02d1a87">   49</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_function" href="../../dc/d19/a01056_aeb61655f2368e66978f48077e02d1a87.html#aeb61655f2368e66978f48077e02d1a87">Find</a> ( ref TContainer container, ICompared&lt;T&gt; comp, T? value ) {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordtype">long</span> _ret = 0;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordflow">for</span> ( var i = 0 ; i &lt; container.Count ; i++ ) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                var item = container.ElementAt(i);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keywordflow">if</span> ( comp.<a class="code hl_function" href="../../d0/ddd/a01044_aa320a5824c4caa7a60039a61107ea307.html#aa320a5824c4caa7a60039a61107ea307">Compare</a>(item, value) == <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Equal ) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    _ret++;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            }</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
-</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../dc/d19/a01056_ab329be9c59f2eca897110a1c5f633d82.html#ab329be9c59f2eca897110a1c5f633d82">   62</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_function" href="../../dc/d19/a01056_ab329be9c59f2eca897110a1c5f633d82.html#ab329be9c59f2eca897110a1c5f633d82">Find</a> ( ref TContainer container, Func&lt;Optional&lt;T&gt;, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>&gt; func ) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordtype">long</span> _ret = 0;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">for</span> ( var i = 0 ; i &lt; container.Count ; i++ ) {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                Optional&lt;T&gt; item = container.ElementAt(i);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keywordflow">if</span> ( func(item) == <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Equal) {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                    _ret++;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
-</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
-<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../dc/d19/a01056_a31fb42c2aeb5bab26079c7314aa84848.html#a31fb42c2aeb5bab26079c7314aa84848">   76</a></span>        <span class="keyword">public</span> Vector&lt;Pair&lt;long, Optional&lt;T&gt;&gt;&gt; <a class="code hl_function" href="../../dc/d19/a01056_a31fb42c2aeb5bab26079c7314aa84848.html#a31fb42c2aeb5bab26079c7314aa84848">Where</a> ( ref TContainer container, Func&lt;Optional&lt;T&gt;, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>&gt; func ) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            Vector&lt;Pair&lt;long, Optional&lt;T&gt;&gt;&gt; _elements = <span class="keyword">new</span> Vector&lt;Pair&lt;long, Optional&lt;T&gt;&gt;&gt;();</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">for</span> ( var i = 0 ; i &lt; container.Count ; i++ ) {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                Optional&lt;T&gt; item = container.ElementAt(i);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                <span class="keywordflow">if</span> ( func(item) == <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Equal  ) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                    _elements.PushBack(<span class="keyword">new</span> Pair&lt;<span class="keywordtype">long</span>, Optional&lt;T&gt;&gt;(i, item));</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keywordflow">return</span> _elements;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
-</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
-</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
-<div class="ttc" id="aa00824_gade9e4a259d9b99fd9515aaf6229b3275_html_gade9e4a259d9b99fd9515aaf6229b3275"><div class="ttname"><a href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">SystemEx.Utils.CompareResult</a></div><div class="ttdeci">CompareResult</div><div class="ttdoc">Specifies the result of a comparison between two values.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/de8/a00749_source.html#l00036">Algorithm.cs:36</a></div></div>
-<div class="ttc" id="aa00829_html"><div class="ttname"><a href="../../d1/dea/a00829.html">SystemEx.Algorithms</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00021">BinarySearcherProvider.cs:21</a></div></div>
-<div class="ttc" id="aa00833_html"><div class="ttname"><a href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/db5/a00374_source.html#l00023">BasicRope.cs:23</a></div></div>
-<div class="ttc" id="aa00851_html"><div class="ttname"><a href="../../df/d4c/a00851.html">SystemEx.Utils</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/de8/a00749_source.html#l00021">Algorithm.cs:21</a></div></div>
-<div class="ttc" id="aa01044_aa320a5824c4caa7a60039a61107ea307_html_aa320a5824c4caa7a60039a61107ea307"><div class="ttname"><a href="../../d0/ddd/a01044_aa320a5824c4caa7a60039a61107ea307.html#aa320a5824c4caa7a60039a61107ea307">SystemEx.Algorithms.ICompared-1-g.Compare</a></div><div class="ttdeci">CompareResult Compare(Optional&lt; T &gt; x, Optional&lt; T &gt; y)</div><div class="ttdoc">Compares two values and returns a CompareResult indicating whether x  is smaller, larger,...</div></div>
-<div class="ttc" id="aa01056_a31fb42c2aeb5bab26079c7314aa84848_html_a31fb42c2aeb5bab26079c7314aa84848"><div class="ttname"><a href="../../dc/d19/a01056_a31fb42c2aeb5bab26079c7314aa84848.html#a31fb42c2aeb5bab26079c7314aa84848">SystemEx.Algorithms.LinearSearchProvider-2-g.Where</a></div><div class="ttdeci">Vector&lt; Pair&lt; long, Optional&lt; T &gt; &gt; &gt; Where(ref TContainer container, Func&lt; Optional&lt; T &gt;, CompareResult &gt; func)</div><div class="ttdoc">Performs a full linear scan over the container and returns all elements that satisfy the given predic...</div><div class="ttdef"><b>Definition</b> <a href="#l00076">LinearSearchProvider.cs:76</a></div></div>
-<div class="ttc" id="aa01056_ab329be9c59f2eca897110a1c5f633d82_html_ab329be9c59f2eca897110a1c5f633d82"><div class="ttname"><a href="../../dc/d19/a01056_ab329be9c59f2eca897110a1c5f633d82.html#ab329be9c59f2eca897110a1c5f633d82">SystemEx.Algorithms.LinearSearchProvider-2-g.Find</a></div><div class="ttdeci">long Find(ref TContainer container, Func&lt; Optional&lt; T &gt;, CompareResult &gt; func)</div><div class="ttdoc">Searches the container using a custom predicate callback. The callback receives each element and a bo...</div><div class="ttdef"><b>Definition</b> <a href="#l00062">LinearSearchProvider.cs:62</a></div></div>
-<div class="ttc" id="aa01056_aeb61655f2368e66978f48077e02d1a87_html_aeb61655f2368e66978f48077e02d1a87"><div class="ttname"><a href="../../dc/d19/a01056_aeb61655f2368e66978f48077e02d1a87.html#aeb61655f2368e66978f48077e02d1a87">SystemEx.Algorithms.LinearSearchProvider-2-g.Find</a></div><div class="ttdeci">long Find(ref TContainer container, ICompared&lt; T &gt; comp, T? value)</div><div class="ttdef"><b>Definition</b> <a href="#l00049">LinearSearchProvider.cs:49</a></div></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d6/d66/a00916.html">SystemEx.Algorithms.Compute</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>     <span class="keyword">internal</span> <span class="keyword">interface </span>ICDistance {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d9/db0/a00900_ga8af56fa8cdaa01a1851d97bea527f1a4.html#ga8af56fa8cdaa01a1851d97bea527f1a4">   32</a></span>          <span class="keywordtype">float</span> <a class="code hl_function" href="../../d9/db0/a00900_ga8af56fa8cdaa01a1851d97bea527f1a4.html#ga8af56fa8cdaa01a1851d97bea527f1a4">Compute</a> ( <a class="code hl_interface" href="../../d8/dbf/a01109.html">ICVector</a> a, <a class="code hl_interface" href="../../d8/dbf/a01109.html">ICVector</a> b );</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>     }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>     </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="ttc" id="aa00900_ga8af56fa8cdaa01a1851d97bea527f1a4_html_ga8af56fa8cdaa01a1851d97bea527f1a4"><div class="ttname"><a href="../../d9/db0/a00900_ga8af56fa8cdaa01a1851d97bea527f1a4.html#ga8af56fa8cdaa01a1851d97bea527f1a4">SystemEx.Algorithms.Compute.ICDistance.Compute</a></div><div class="ttdeci">float Compute(ICVector a, ICVector b)</div><div class="ttdoc">Computes the distance (or similarity score) between two vectors.</div></div>
+<div class="ttc" id="aa00916_html"><div class="ttname"><a href="../../d6/d66/a00916.html">SystemEx.Algorithms.Compute</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/dc8/a00122_source.html#l00020">CosineDistance.cs:20</a></div></div>
+<div class="ttc" id="aa01109_html"><div class="ttname"><a href="../../d8/dbf/a01109.html">SystemEx.Algorithms.Compute.ICVector</a></div><div class="ttdoc">Represents a read‑only computational vector with a fixed dimension.   Provides indexed access to floa...</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d81/a00110_source.html#l00030">ICVector .cs:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Algorithms</b></li><li class="navelem"><b>LinearSearchProvider.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Algorithms</b></li><li class="navelem"><b>Compute</b></li><li class="navelem"><b>Interfaces</b></li><li class="navelem"><b>ICDistance.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

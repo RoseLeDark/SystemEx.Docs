@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['verylow_0',['VeryLow',['../d7/d60/a00816_ga1738673316f8d96453eda571bae3f460.html#gga1738673316f8d96453eda571bae3f460a89655e31f5f56a0f7860c4a85b7e9752',1,'SystemEx::Drawing']]],
-  ['veryprecise_1',['VeryPrecise',['../d7/d4f/a00819_ga22e4a0bec33e562380dc8b17d315d91c.html#gga22e4a0bec33e562380dc8b17d315d91cab2116f9647f4bedad5cff0bc8545934d',1,'SystemEx::Numeric']]]
+  ['todevice_0',['ToDevice',['../d5/dd3/a00902_gaf02ddb6084404bb267c0629f20ed8b53.html#ggaf02ddb6084404bb267c0629f20ed8b53ae9366abd00c5a749c84c222bab5275d4',1,'SystemEx::Collections::Generic']]],
+  ['toeven_1',['ToEven',['../d9/d65/a01905_a711fc4f1ee0667dba056eeaf664c4afd.html#a711fc4f1ee0667dba056eeaf664c4afda0c424e67e4f66bfe87bf561e57f476f4',1,'SystemEx::Numeric::BigDecimal']]],
+  ['towardzero_2',['TowardZero',['../d9/d65/a01905_a711fc4f1ee0667dba056eeaf664c4afd.html#a711fc4f1ee0667dba056eeaf664c4afda2113e9520b32addb451df3b9fec51a96',1,'SystemEx::Numeric::BigDecimal']]],
+  ['true_3',['True',['../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697af827cf462f62848df37c5e1e94a4da74',1,'SystemEx']]]
 ];

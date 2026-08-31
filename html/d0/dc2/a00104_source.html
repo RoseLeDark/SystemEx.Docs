@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: FibonacciSearcherProvider.cs Source File" />
+<meta property="og:title" content="SystemEX: SimpleComparer.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: FibonacciSearcherProvider.cs Source File" />
+<meta name="twitter:title" content="SystemEX: SimpleComparer.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: FibonacciSearcherProvider.cs Source File</title>
+<title>SystemEX: SimpleComparer.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/dc2/a00104_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">FibonacciSearcherProvider.cs</div></div>
+  <div class="headertitle"><div class="title">SimpleComparer.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -159,211 +159,65 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/dc2/a00104_
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span><a class="code hl_namespace" href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">using </span><a class="code hl_namespace" href="../../df/d4c/a00851.html">SystemEx.Utils</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span>System.Numerics;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">using </span><a class="code hl_namespace" href="../../d5/d54/a00938.html">SystemEx.Utils</a>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d1/dea/a00829.html">SystemEx.Algorithms</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../db/d14/a01040.html">   41</a></span>     <span class="keyword">public</span> <span class="keyword">struct </span>FibonacciSearcherProvider&lt;T, TContainer&gt; : ISearchProvider&lt;T, TContainer&gt;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        where TContainer : IVector&lt;T&gt; {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../db/d14/a01040_a498008dfd7292cf64e93642a7b3b2b1a.html#a498008dfd7292cf64e93642a7b3b2b1a">   66</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_function" href="../../db/d14/a01040_a498008dfd7292cf64e93642a7b3b2b1a.html#a498008dfd7292cf64e93642a7b3b2b1a">Find</a> ( ref TContainer container, ICompared&lt;T&gt; comp, T value ) {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordtype">long</span> _arCount= container.Count;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordtype">long</span> _ret = 0;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">if</span> ( _arCount&gt; 0 ) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <span class="comment">// find the smallest Fibonacci number that equals or is greater than the array length</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keywordtype">long</span> _fbPrevB = 0;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keywordtype">long</span> _fbNPrev= 1;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordtype">long</span> _fbNum = _fbNPrev;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">while</span> ( _fbNum &lt;= _arCount) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    _fbPrevB = _fbNPrev;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    _fbNPrev= _fbNum;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                    _fbNum = _fbPrevB + _fbNPrev;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                <span class="comment">// offset to drop the left part of the array</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                <span class="keywordtype">long</span> offset = -1;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                <span class="keywordflow">while</span> ( _fbNum &gt; 1 ) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                    var index = System.Math.Min(offset + _fbPrevB, _arCount- 1);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                    <span class="keywordflow">switch</span> ( comp.<a class="code hl_function" href="../../d0/ddd/a01044_aa320a5824c4caa7a60039a61107ea307.html#aa320a5824c4caa7a60039a61107ea307">Compare</a>(container.ElementAt(index), value) ) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.AIsLargerB:</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    _fbNum = _fbNPrev;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                    _fbNPrev= _fbPrevB;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                    _fbPrevB = _fbNum - _fbNPrev;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                    offset = index;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                    <span class="comment">// reject approximately 2/3 of the existing array behind</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                    <span class="comment">// by moving Fibonacci numbers</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.AIsSmallerB:</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                    _fbNum = _fbPrevB;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    _fbNPrev= _fbNPrev- _fbPrevB;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                    _fbPrevB = _fbNum - _fbNPrev;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                    <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                    _ret = index; <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                    }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                }</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                <span class="comment">// check the last element</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                Optional&lt;T&gt; _it = container.ElementAt(_arCount - 1);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <span class="keywordflow">if</span> ( _it.<a class="code hl_property" href="../../d9/d97/a01152_ad50ac3985a6e78ce3a9736713b4a15c0.html#ad50ac3985a6e78ce3a9736713b4a15c0">IsSome</a> ) {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    <span class="keywordflow">if</span> ( _fbNPrev == 1 &amp;&amp; comp.<a class="code hl_function" href="../../d0/ddd/a01044_aa320a5824c4caa7a60039a61107ea307.html#aa320a5824c4caa7a60039a61107ea307">Compare</a>(value, _it) == <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Equal ) {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                        _ret++;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                    }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                }</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            }</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d2/d5e/a00915.html">SystemEx.Algorithms</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d9/d65/a01145.html">   35</a></span>    <span class="keyword">public</span> <span class="keyword">class </span>SimpleComparer&lt;T&gt; : ICompared&lt;T&gt; where T : IComparable&lt;T&gt; {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d9/d65/a01145_a5d14358104e31d83851cfcd95b64373b.html#a5d14358104e31d83851cfcd95b64373b">   52</a></span>        <span class="keyword">public</span> <a class="code hl_enumeration" href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a> <a class="code hl_function" href="../../d9/d65/a01145_a5d14358104e31d83851cfcd95b64373b.html#a5d14358104e31d83851cfcd95b64373b">Compare</a>( Optional&lt;T&gt; x, Optional&lt;T&gt; y ){</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            var cmp = x.<a class="code hl_function" href="../../dc/dab/a01237_a68d6f65ecf518e35a4dc284c07e093b8.html#a68d6f65ecf518e35a4dc284c07e093b8">CompareTo</a>(y);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">return</span> cmp;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
 </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
-<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="../../db/d14/a01040_a739c05e09a9505179702f203fb10bccf.html#a739c05e09a9505179702f203fb10bccf">  144</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_function" href="../../db/d14/a01040_a739c05e09a9505179702f203fb10bccf.html#a739c05e09a9505179702f203fb10bccf">Find</a> ( ref TContainer container, Func&lt;Optional&lt;T&gt;, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>&gt; func ) {</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordtype">long</span> _arCount= container.Count;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keywordtype">long</span> _ret = 0;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <span class="keywordflow">if</span> ( _arCount &gt; 0 ) {</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                <span class="comment">// find the smallest Fibonacci number that equals or is greater than the array length</span></div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                <span class="keywordtype">long</span> _fbPrevB = 0;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                <span class="keywordtype">long</span> _fbNPrev= 1;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                <span class="keywordtype">long</span> _fbNum = _fbNPrev;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                <span class="keywordflow">while</span> ( _fbNum &lt;= _arCount ) {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                    _fbPrevB = _fbNPrev;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                    _fbNPrev = _fbNum;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                    _fbNum = _fbPrevB + _fbNPrev;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                }</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                <span class="comment">// offset to drop the left part of the array</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                <span class="keywordtype">long</span> offset = -1;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                <span class="keywordflow">while</span> ( _fbNum &gt; 1 ) {</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                    var index = System.Math.Min(offset + _fbPrevB, _arCount- 1);</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                    <span class="keywordflow">switch</span> ( func(container.ElementAt(index)) ) {</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.AIsLargerB:</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                    _fbNum = _fbNPrev;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                    _fbNPrev = _fbPrevB;</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                    _fbPrevB = _fbNum - _fbNPrev;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                    offset = index;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                    <span class="comment">// reject approximately 2/3 of the existing array behind</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                    <span class="comment">// by moving Fibonacci numbers</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.AIsSmallerB:</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                    _fbNum = _fbPrevB;</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                    _fbNPrev = _fbNPrev - _fbPrevB;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                    _fbPrevB = _fbNum - _fbNPrev;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                    <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                    _ret++; <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                    }</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                }</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                <span class="comment">// check the last element</span></div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                Optional&lt;T&gt; _it = container.ElementAt(_arCount - 1);</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                <span class="keywordflow">if</span> ( _it.<a class="code hl_property" href="../../d9/d97/a01152_ad50ac3985a6e78ce3a9736713b4a15c0.html#ad50ac3985a6e78ce3a9736713b4a15c0">IsSome</a> ) {</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                    <span class="keywordflow">if</span> ( _fbNPrev == 1 &amp;&amp; func(_it) == <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Equal ) {</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                        _ret++;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                    }</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                }</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>               </div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            }</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
 </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span></div>
-<div class="foldopen" id="foldopen00227" data-start="{" data-end="}">
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="../../db/d14/a01040_ad9d1b554e7983d74bc4a1dd49d930043.html#ad9d1b554e7983d74bc4a1dd49d930043">  227</a></span>        <span class="keyword">public</span> Vector&lt;Pair&lt;long, Optional&lt;T&gt; &gt;&gt; <a class="code hl_function" href="../../db/d14/a01040_ad9d1b554e7983d74bc4a1dd49d930043.html#ad9d1b554e7983d74bc4a1dd49d930043">Where</a> ( ref TContainer container, Func&lt;Optional&lt;T&gt;, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>&gt; func ) {</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            <span class="keywordtype">long</span> _arCount= container.Count;</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            Vector&lt;Pair&lt;long, Optional&lt;T&gt; &gt;&gt; _elements = <span class="keyword">new</span> Vector&lt;Pair&lt;long, Optional&lt;T&gt; &gt;&gt;();</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            <span class="keywordflow">if</span> ( _arCount &gt; 0 ) {</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                <span class="comment">// find the smallest Fibonacci number that equals or is greater than the array length</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                <span class="keywordtype">long</span> _fbPrevB = 0;</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                <span class="keywordtype">long</span> _fbNPrev= 1;</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                <span class="keywordtype">long</span> _fbNum = _fbNPrev;</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                <span class="keywordflow">while</span> ( _fbNum &lt;= _arCount ) {</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                    _fbPrevB = _fbNPrev;</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                    _fbNPrev = _fbNum;</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                    _fbNum = _fbPrevB + _fbNPrev;</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                }</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                <span class="comment">// offset to drop the left part of the array</span></div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                <span class="keywordtype">long</span> offset = -1;</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                <span class="keywordflow">while</span> ( _fbNum &gt; 1 ) {</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                    var _index = System.Math.Min(offset + _fbPrevB, _arCount- 1);</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                    var _item = container.ElementAt(_index);</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                    <span class="keywordflow">switch</span> ( func(_item) ) {</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.AIsLargerB:</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                    _fbNum = _fbNPrev;</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                    _fbNPrev = _fbPrevB;</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                    _fbPrevB = _fbNum - _fbNPrev;</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                    offset = _index;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                    <span class="comment">// reject approximately 2/3 of the existing array behind</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                    <span class="comment">// by moving Fibonacci numbers</span></div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.AIsSmallerB:</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                    _fbNum = _fbPrevB;</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                    _fbNPrev = _fbNPrev - _fbPrevB;</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                    _fbPrevB = _fbNum - _fbNPrev;</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                    <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                    _elements.PushBack(<span class="keyword">new</span> Pair&lt;<span class="keywordtype">long</span>, Optional&lt;T&gt; &gt;(_index, _item));  </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                    }</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                }</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                <span class="comment">// check the last element</span></div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                Optional&lt;T&gt; _it = container.ElementAt(_arCount - 1);</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                <span class="keywordflow">if</span> ( _it.<a class="code hl_property" href="../../d9/d97/a01152_ad50ac3985a6e78ce3a9736713b4a15c0.html#ad50ac3985a6e78ce3a9736713b4a15c0">IsSome</a> ) {</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                    <span class="keywordflow">if</span> ( _fbNPrev == 1 &amp;&amp; func(_it) == <a class="code hl_enumeration" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Equal ) {</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                        _elements.PushBack(<span class="keyword">new</span> Pair&lt;<span class="keywordtype">long</span>, Optional&lt;T&gt;&gt;(_arCount - 1, _it.<a class="code hl_property" href="../../d9/d97/a01152_a51e0011c11e5ac42a4cc163376e18c0f.html#a51e0011c11e5ac42a4cc163376e18c0f">Value</a>));</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                    }</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                }</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>            }</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            <span class="keywordflow">return</span> _elements;</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="};">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d8/d02/a01149.html">   71</a></span>    <span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class </span>ValueComparer&lt;T&gt; : ICompared&lt;T&gt; where T : INumber&lt;T&gt; {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../d8/d02/a01149_a397c273fd20cded3dc8c00672030d223.html#a397c273fd20cded3dc8c00672030d223">   90</a></span>        <span class="keyword">public</span> <a class="code hl_enumeration" href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a> <a class="code hl_function" href="../../d8/d02/a01149_a397c273fd20cded3dc8c00672030d223.html#a397c273fd20cded3dc8c00672030d223">Compare</a>( Optional&lt;T&gt; x, Optional&lt;T&gt; y ){</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordflow">if</span> ( x.<a class="code hl_property" href="../../dc/dab/a01237_a2e814fb2976fe97446c4fd40ad54a0d6.html#a2e814fb2976fe97446c4fd40ad54a0d6">IsNull</a> &amp;&amp; y.<a class="code hl_property" href="../../dc/dab/a01237_ad50ac3985a6e78ce3a9736713b4a15c0.html#ad50ac3985a6e78ce3a9736713b4a15c0">IsSome</a> ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Less;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">if</span> ( x.<a class="code hl_property" href="../../dc/dab/a01237_ad50ac3985a6e78ce3a9736713b4a15c0.html#ad50ac3985a6e78ce3a9736713b4a15c0">IsSome</a> &amp;&amp; y.<a class="code hl_property" href="../../dc/dab/a01237_a2e814fb2976fe97446c4fd40ad54a0d6.html#a2e814fb2976fe97446c4fd40ad54a0d6">IsNull</a> ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Greater;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">if</span> ( x.<a class="code hl_property" href="../../dc/dab/a01237_a2e814fb2976fe97446c4fd40ad54a0d6.html#a2e814fb2976fe97446c4fd40ad54a0d6">IsNull</a> &amp;&amp; y.<a class="code hl_property" href="../../dc/dab/a01237_a2e814fb2976fe97446c4fd40ad54a0d6.html#a2e814fb2976fe97446c4fd40ad54a0d6">IsNull</a> ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Null;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            T A = (T)x;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            T B = (T)y;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordflow">if</span> ( A &lt;= B ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.EqualLess;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">if</span> ( A &gt;= B ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.EqualGreater;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordflow">if</span> ( A &lt; B ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Less;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordflow">if</span> ( A &gt; B ) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Greater;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a>.Equal;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        }</div>
 </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
 </div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span></div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>}</div>
-<div class="ttc" id="aa00824_gade9e4a259d9b99fd9515aaf6229b3275_html_gade9e4a259d9b99fd9515aaf6229b3275"><div class="ttname"><a href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#gade9e4a259d9b99fd9515aaf6229b3275">SystemEx.Utils.CompareResult</a></div><div class="ttdeci">CompareResult</div><div class="ttdoc">Specifies the result of a comparison between two values.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/de8/a00749_source.html#l00036">Algorithm.cs:36</a></div></div>
-<div class="ttc" id="aa00829_html"><div class="ttname"><a href="../../d1/dea/a00829.html">SystemEx.Algorithms</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00021">BinarySearcherProvider.cs:21</a></div></div>
-<div class="ttc" id="aa00833_html"><div class="ttname"><a href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/db5/a00374_source.html#l00023">BasicRope.cs:23</a></div></div>
-<div class="ttc" id="aa00851_html"><div class="ttname"><a href="../../df/d4c/a00851.html">SystemEx.Utils</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/de8/a00749_source.html#l00021">Algorithm.cs:21</a></div></div>
-<div class="ttc" id="aa01040_a498008dfd7292cf64e93642a7b3b2b1a_html_a498008dfd7292cf64e93642a7b3b2b1a"><div class="ttname"><a href="../../db/d14/a01040_a498008dfd7292cf64e93642a7b3b2b1a.html#a498008dfd7292cf64e93642a7b3b2b1a">SystemEx.Algorithms.FibonacciSearcherProvider-2-g.Find</a></div><div class="ttdeci">long Find(ref TContainer container, ICompared&lt; T &gt; comp, T value)</div><div class="ttdoc">Searches the container for elements matching value  using a Fibonacci search strategy and a compariso...</div><div class="ttdef"><b>Definition</b> <a href="#l00066">FibonacciSearcherProvider.cs:66</a></div></div>
-<div class="ttc" id="aa01040_a739c05e09a9505179702f203fb10bccf_html_a739c05e09a9505179702f203fb10bccf"><div class="ttname"><a href="../../db/d14/a01040_a739c05e09a9505179702f203fb10bccf.html#a739c05e09a9505179702f203fb10bccf">SystemEx.Algorithms.FibonacciSearcherProvider-2-g.Find</a></div><div class="ttdeci">long Find(ref TContainer container, Func&lt; Optional&lt; T &gt;, CompareResult &gt; func)</div><div class="ttdoc">Performs a best‑effort Fibonacci‑based search and counts the number of elements for which the provide...</div><div class="ttdef"><b>Definition</b> <a href="#l00144">FibonacciSearcherProvider.cs:144</a></div></div>
-<div class="ttc" id="aa01040_ad9d1b554e7983d74bc4a1dd49d930043_html_ad9d1b554e7983d74bc4a1dd49d930043"><div class="ttname"><a href="../../db/d14/a01040_ad9d1b554e7983d74bc4a1dd49d930043.html#ad9d1b554e7983d74bc4a1dd49d930043">SystemEx.Algorithms.FibonacciSearcherProvider-2-g.Where</a></div><div class="ttdeci">Vector&lt; Pair&lt; long, Optional&lt; T &gt; &gt; &gt; Where(ref TContainer container, Func&lt; Optional&lt; T &gt;, CompareResult &gt; func)</div><div class="ttdoc">Performs a best‑effort multi‑match search using Fibonacci probing.</div><div class="ttdef"><b>Definition</b> <a href="#l00227">FibonacciSearcherProvider.cs:227</a></div></div>
-<div class="ttc" id="aa01044_aa320a5824c4caa7a60039a61107ea307_html_aa320a5824c4caa7a60039a61107ea307"><div class="ttname"><a href="../../d0/ddd/a01044_aa320a5824c4caa7a60039a61107ea307.html#aa320a5824c4caa7a60039a61107ea307">SystemEx.Algorithms.ICompared-1-g.Compare</a></div><div class="ttdeci">CompareResult Compare(Optional&lt; T &gt; x, Optional&lt; T &gt; y)</div><div class="ttdoc">Compares two values and returns a CompareResult indicating whether x  is smaller, larger,...</div></div>
-<div class="ttc" id="aa01152_a51e0011c11e5ac42a4cc163376e18c0f_html_a51e0011c11e5ac42a4cc163376e18c0f"><div class="ttname"><a href="../../d9/d97/a01152_a51e0011c11e5ac42a4cc163376e18c0f.html#a51e0011c11e5ac42a4cc163376e18c0f">SystemEx.Optional-1-g.Value</a></div><div class="ttdeci">T? Value</div><div class="ttdoc">Gets or sets the underlying value. When retrieving, default(T) is returned if no value is present....</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dce/a00143_source.html#l00048">Optional.cs:48</a></div></div>
-<div class="ttc" id="aa01152_ad50ac3985a6e78ce3a9736713b4a15c0_html_ad50ac3985a6e78ce3a9736713b4a15c0"><div class="ttname"><a href="../../d9/d97/a01152_ad50ac3985a6e78ce3a9736713b4a15c0.html#ad50ac3985a6e78ce3a9736713b4a15c0">SystemEx.Optional-1-g.IsSome</a></div><div class="ttdeci">bool IsSome</div><div class="ttdoc">Indicates whether this optional instance currently contains a value.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dce/a00143_source.html#l00078">Optional.cs:78</a></div></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+<div class="ttc" id="aa00915_html"><div class="ttname"><a href="../../d2/d5e/a00915.html">SystemEx.Algorithms</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d88/a00128_source.html#l00021">BinarySearcherProvider.cs:21</a></div></div>
+<div class="ttc" id="aa00938_ade9e4a259d9b99fd9515aaf6229b3275_html_ade9e4a259d9b99fd9515aaf6229b3275"><div class="ttname"><a href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">SystemEx.Utils.CompareResult</a></div><div class="ttdeci">CompareResult</div><div class="ttdoc">Specifies the result of a comparison between two values.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/a00842_source.html#l00034">Algorithm.cs:34</a></div></div>
+<div class="ttc" id="aa00938_html"><div class="ttname"><a href="../../d5/d54/a00938.html">SystemEx.Utils</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/a00842_source.html#l00021">Algorithm.cs:21</a></div></div>
+<div class="ttc" id="aa01145_a5d14358104e31d83851cfcd95b64373b_html_a5d14358104e31d83851cfcd95b64373b"><div class="ttname"><a href="../../d9/d65/a01145_a5d14358104e31d83851cfcd95b64373b.html#a5d14358104e31d83851cfcd95b64373b">SystemEx.Algorithms.SimpleComparer-1-g.Compare</a></div><div class="ttdeci">CompareResult Compare(Optional&lt; T &gt; x, Optional&lt; T &gt; y)</div><div class="ttdoc">Compares two values using IComparable&lt;T&gt;.CompareTo(T).</div><div class="ttdef"><b>Definition</b> <a href="#l00052">SimpleComparer.cs:52</a></div></div>
+<div class="ttc" id="aa01149_a397c273fd20cded3dc8c00672030d223_html_a397c273fd20cded3dc8c00672030d223"><div class="ttname"><a href="../../d8/d02/a01149_a397c273fd20cded3dc8c00672030d223.html#a397c273fd20cded3dc8c00672030d223">SystemEx.Algorithms.ValueComparer-1-g.Compare</a></div><div class="ttdeci">CompareResult Compare(Optional&lt; T &gt; x, Optional&lt; T &gt; y)</div><div class="ttdoc">Compares two numeric values using relational operators provided by INumber&lt;T&gt;. Supports both strict a...</div><div class="ttdef"><b>Definition</b> <a href="#l00090">SimpleComparer.cs:90</a></div></div>
+<div class="ttc" id="aa01237_a2e814fb2976fe97446c4fd40ad54a0d6_html_a2e814fb2976fe97446c4fd40ad54a0d6"><div class="ttname"><a href="../../dc/dab/a01237_a2e814fb2976fe97446c4fd40ad54a0d6.html#a2e814fb2976fe97446c4fd40ad54a0d6">SystemEx.Optional-1-g.IsNull</a></div><div class="ttdeci">bool IsNull</div><div class="ttdoc">Indicates whether this optional instance currently represents an empty state. This is functionally eq...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d9a/a00152_source.html#l00071">Optional.cs:71</a></div></div>
+<div class="ttc" id="aa01237_a68d6f65ecf518e35a4dc284c07e093b8_html_a68d6f65ecf518e35a4dc284c07e093b8"><div class="ttname"><a href="../../dc/dab/a01237_a68d6f65ecf518e35a4dc284c07e093b8.html#a68d6f65ecf518e35a4dc284c07e093b8">SystemEx.Optional-1-g.CompareTo</a></div><div class="ttdeci">CompareResult CompareTo(Optional&lt; T &gt; other)</div><div class="ttdoc">Compares this optional instance with another optional instance and returns a CompareResult describing...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d9a/a00152_source.html#l00138">Optional.cs:138</a></div></div>
+<div class="ttc" id="aa01237_ad50ac3985a6e78ce3a9736713b4a15c0_html_ad50ac3985a6e78ce3a9736713b4a15c0"><div class="ttname"><a href="../../dc/dab/a01237_ad50ac3985a6e78ce3a9736713b4a15c0.html#ad50ac3985a6e78ce3a9736713b4a15c0">SystemEx.Optional-1-g.IsSome</a></div><div class="ttdeci">bool IsSome</div><div class="ttdoc">Indicates whether this optional instance currently contains a value.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d9a/a00152_source.html#l00076">Optional.cs:76</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Algorithms</b></li><li class="navelem"><b>FibonacciSearcherProvider.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Algorithms</b></li><li class="navelem"><b>SimpleComparer.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

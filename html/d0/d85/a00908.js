@@ -1,18 +1,20 @@
 var a00908 =
 [
-    [ "GetValue", "d0/d85/a00908_a966d76879c5b070dfcd667dca9e9d6c0.html#a966d76879c5b070dfcd667dca9e9d6c0", null ],
-    [ "HasTool", "d0/d85/a00908_a3e74782f0777866d0db420da9f0c8133.html#a3e74782f0777866d0db420da9f0c8133", null ],
-    [ "Initialization", "d0/d85/a00908_a0d443dc61ff7dc2047d34338bc8190af.html#a0d443dc61ff7dc2047d34338bc8190af", null ],
-    [ "InvokeAsync", "d0/d85/a00908_a8072a0dbdf473036b3fd02232ecce929.html#a8072a0dbdf473036b3fd02232ecce929", null ],
-    [ "ListTools", "d0/d85/a00908_a1955034d9e4f2add6e3f8a7581e1245b.html#a1955034d9e4f2add6e3f8a7581e1245b", null ],
-    [ "RegistTool", "d0/d85/a00908_a4407f75a55dec2d0e333af3cfd56911c.html#a4407f75a55dec2d0e333af3cfd56911c", null ],
-    [ "Release", "d0/d85/a00908_a932578883b9a059cb96c62b78f8df100.html#a932578883b9a059cb96c62b78f8df100", null ],
-    [ "SetConfig", "d0/d85/a00908_a9031316fafbf4c148c1c928a75afb521.html#a9031316fafbf4c148c1c928a75afb521", null ],
-    [ "UnregistTool", "d0/d85/a00908_a00e138864afd432862892e6848a27b3a.html#a00e138864afd432862892e6848a27b3a", null ],
-    [ "BackendName", "d0/d85/a00908_af58a4677ec12237c0359bcd61b1c8201.html#af58a4677ec12237c0359bcd61b1c8201", null ],
-    [ "Capabilities", "d0/d85/a00908_a55982204116113339a259c0981188406.html#a55982204116113339a259c0981188406", null ],
-    [ "Configuration", "d0/d85/a00908_a6cad2240bf25c65963347a1e8cfed704.html#a6cad2240bf25c65963347a1e8cfed704", null ],
-    [ "Enviro", "d0/d85/a00908_a2153a19c30f1ce5270d10222f82c0b3d.html#a2153a19c30f1ce5270d10222f82c0b3d", null ],
-    [ "IsAvailable", "d0/d85/a00908_a841edbe912bdfefea9f1d5a2bd9f6196.html#a841edbe912bdfefea9f1d5a2bd9f6196", null ],
-    [ "ModelName", "d0/d85/a00908_a52bb590aeb282e07ffd3dc7c4f796438.html#a52bb590aeb282e07ffd3dc7c4f796438", null ]
+    [ "SystemEx", "d7/d12/a00911.html", null ],
+    [ "SystemEx.Runtime", "d0/d5b/a00933.html", null ],
+    [ "SystemEx.Runtime.Module", "dd/d02/a02185.html", [
+      [ "Module", "d0/d85/a00908_ga7d53c4cbf047d28ffd8d648a8ada36a9.html#ga7d53c4cbf047d28ffd8d648a8ada36a9", null ],
+      [ "Handle", "d0/d85/a00908_ga8da297ca89891146193940f0a402d1b5.html#ga8da297ca89891146193940f0a402d1b5", null ],
+      [ "Name", "d0/d85/a00908_ga385ab09cf7efbef052c06bd1f542ca6f.html#ga385ab09cf7efbef052c06bd1f542ca6f", null ],
+      [ "Path", "d0/d85/a00908_gac1fb270588a618e7524ad6b2b22c768b.html#gac1fb270588a618e7524ad6b2b22c768b", null ]
+    ] ],
+    [ "ProcLoader", "d0/d85/a00908_gacf70883f92c10724e2a108c41cd258bb.html#gacf70883f92c10724e2a108c41cd258bb", null ],
+    [ "SystemEx.Runtime.InteropServices.NativeHost.FreeModule", "d0/d85/a00908_ga31d0c58a569d5e341860c360f58cd2d5.html#ga31d0c58a569d5e341860c360f58cd2d5", null ],
+    [ "SystemEx.Runtime.InteropServices.NativeHost.GetFunction< T >", "d0/d85/a00908_ga6091e3bc4b98142b027eee9a89c94150.html#ga6091e3bc4b98142b027eee9a89c94150", null ],
+    [ "SystemEx.Runtime.InteropServices.NativeHost.GetFunction< T >", "d0/d85/a00908_ga673a8c6ff46533e2b0ac458a7454b998.html#ga673a8c6ff46533e2b0ac458a7454b998", null ],
+    [ "SystemEx.Runtime.InteropServices.NativeHost.LoadModule", "d0/d85/a00908_ga6e52e3a3bb5aca7f0317978c29a9a200.html#ga6e52e3a3bb5aca7f0317978c29a9a200", null ],
+    [ "SystemEx.Runtime.Module.Module", "d0/d85/a00908_ga7d53c4cbf047d28ffd8d648a8ada36a9.html#ga7d53c4cbf047d28ffd8d648a8ada36a9", null ],
+    [ "SystemEx.Runtime.Module.Handle", "d0/d85/a00908_ga8da297ca89891146193940f0a402d1b5.html#ga8da297ca89891146193940f0a402d1b5", null ],
+    [ "SystemEx.Runtime.Module.Name", "d0/d85/a00908_ga385ab09cf7efbef052c06bd1f542ca6f.html#ga385ab09cf7efbef052c06bd1f542ca6f", null ],
+    [ "SystemEx.Runtime.Module.Path", "d0/d85/a00908_gac1fb270588a618e7524ad6b2b22c768b.html#gac1fb270588a618e7524ad6b2b22c768b", null ]
 ];

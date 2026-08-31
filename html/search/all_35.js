@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['🔐_20systemex_20hash_0',['🔐 SystemEx.Hash',['../index.html#autotoc_md-systemexhash',1,'']]]
+  ['📝_20license_0',['📝 License',['../index.html#autotoc_md-license',1,'']]],
+  ['📝_20systemex_20changelog_1',['📝 SystemEx Changelog',['../d0/dbb/a02448.html',1,'']]]
 ];

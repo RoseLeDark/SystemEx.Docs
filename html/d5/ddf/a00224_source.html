@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: Vector.cs Source File" />
+<meta property="og:title" content="SystemEX: VectorSlice.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: Vector.cs Source File" />
+<meta name="twitter:title" content="SystemEX: VectorSlice.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: Vector.cs Source File</title>
+<title>SystemEX: VectorSlice.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d5/ddf/a00224_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Vector.cs</div></div>
+  <div class="headertitle"><div class="title">VectorSlice.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -158,599 +158,195 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d5/ddf/a00224_
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span><a class="code hl_namespace" href="../../d1/dea/a00829.html">SystemEx.Algorithms</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span><a class="code hl_namespace" href="../../df/d4c/a00851.html">SystemEx.Utils</a>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a> {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span><a class="code hl_namespace" href="../../dc/d2b/a00936.html">SystemEx.Threading</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d1/d0b/a00919.html">SystemEx.Collections.Generic</a> {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="foldopen" id="foldopen00087" data-start="{" data-end="};">
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436.html">   87</a></span>     <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector</a>&lt;T&gt; : IVector&lt;T&gt;, IUsedIterrator&lt;T, RandomAccessIterator&lt;T, Vector&lt;T&gt;&gt; &gt;, ISwappable&lt;long&gt; {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keyword">private</span> <span class="keywordtype">long</span> m_growSize;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> m_autoGrow;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keyword">private</span> T[] m_elements;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keyword">private</span> <span class="keywordtype">long</span> m_index;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">  103</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> =&gt; m_elements.LongLength;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_af71d70de567ea8f7d25a686553ebe1f2.html#af71d70de567ea8f7d25a686553ebe1f2">  108</a></span>        <span class="keyword">public</span> Optional&lt;T&gt; <a class="code hl_property" href="../../dc/d85/a01436_af71d70de567ea8f7d25a686553ebe1f2.html#af71d70de567ea8f7d25a686553ebe1f2">Front</a> =&gt; m_elements[0];</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a47ec845d3b2697eec03ee3a1c4e5357b.html#a47ec845d3b2697eec03ee3a1c4e5357b">  112</a></span>        <span class="keyword">public</span> Optional&lt;T&gt; <a class="code hl_property" href="../../dc/d85/a01436_a47ec845d3b2697eec03ee3a1c4e5357b.html#a47ec845d3b2697eec03ee3a1c4e5357b">Back</a> =&gt; m_elements[<a class="code hl_property" href="../../dc/d85/a01436_abc4489e571db194e24a1ab9f3737fa9e.html#abc4489e571db194e24a1ab9f3737fa9e">Count</a>];</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a745a899efe182dadc8c3b42defea5c81.html#a745a899efe182dadc8c3b42defea5c81">  117</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../dc/d85/a01436_a745a899efe182dadc8c3b42defea5c81.html#a745a899efe182dadc8c3b42defea5c81">IsFull</a> =&gt; (<a class="code hl_property" href="../../dc/d85/a01436_a00db710bf4c75aca5c1b1d97fe7758c6.html#a00db710bf4c75aca5c1b1d97fe7758c6">AutoGrow</a> ? false : m_index &gt;= <a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a>); </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a82a97dd6f4c9c0557b49be71c16b539d.html#a82a97dd6f4c9c0557b49be71c16b539d">  122</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../dc/d85/a01436_a82a97dd6f4c9c0557b49be71c16b539d.html#a82a97dd6f4c9c0557b49be71c16b539d">IsEmpty</a> =&gt; m_index == 0;</div>
-<div class="foldopen" id="foldopen00126" data-start="{" data-end="};">
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">  126</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_property" href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">GrowSize</a> { <span class="keyword">get</span> =&gt; (m_autoGrow ? m_growSize : 0);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keyword">set</span> {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                m_growSize = value;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                m_autoGrow = (m_growSize &gt; 0);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../dd/dba/a01545.html">   31</a></span>     <span class="keyword">public</span> <span class="keyword">struct </span>SubSlice&lt;T, TContainer&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        where TContainer : IVector&lt;T&gt; {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">private</span> <span class="keywordtype">long</span> m_start;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">private</span> <span class="keywordtype">long</span> m_len;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">private</span> <span class="keywordtype">long</span> m_end;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">private</span> <a class="code hl_struct" href="../../db/d7a/a02253.html">LightLock</a> m_lock;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">private</span> <span class="keywordtype">int</span> m_managedID;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> HasOwner =&gt; m_managedID &gt; -1;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keyword">public</span> SubSlice ( <span class="keywordtype">long</span> sliceStart, <span class="keywordtype">long</span> sliceLen ) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            m_start = sliceStart;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            m_len = sliceLen;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            m_lock = <span class="keyword">new</span> <a class="code hl_struct" href="../../db/d7a/a02253.html">LightLock</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            m_managedID = -1;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            m_end = m_start + m_len;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../d5/dd3/a00902_ga3b39f464f5642ae4ef1b19e5488cbd20.html#ga3b39f464f5642ae4ef1b19e5488cbd20">   54</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_function" href="../../d5/dd3/a00902_ga3b39f464f5642ae4ef1b19e5488cbd20.html#ga3b39f464f5642ae4ef1b19e5488cbd20">GetIndex</a> ( <span class="keywordtype">int</span> sub_index ) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordtype">long</span> _ret = -1;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            var _index = sub_index + m_start;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>           </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">if</span>( (_index &gt;= m_start &amp;&amp; _index &lt;= m_end) ) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                _ret = sub_index + m_start;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">return</span> _ret;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
 </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a00db710bf4c75aca5c1b1d97fe7758c6.html#a00db710bf4c75aca5c1b1d97fe7758c6">  135</a></span>        <span class="keyword">public</span>  <span class="keywordtype">bool</span> <a class="code hl_property" href="../../dc/d85/a01436_a00db710bf4c75aca5c1b1d97fe7758c6.html#a00db710bf4c75aca5c1b1d97fe7758c6">AutoGrow</a> { <span class="keyword">get</span> =&gt; (m_growSize == 0 ? false : m_autoGrow); <span class="keyword">set</span> =&gt; m_autoGrow = value; }</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_abc4489e571db194e24a1ab9f3737fa9e.html#abc4489e571db194e24a1ab9f3737fa9e">  144</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_property" href="../../dc/d85/a01436_abc4489e571db194e24a1ab9f3737fa9e.html#abc4489e571db194e24a1ab9f3737fa9e">Count</a> =&gt; m_index;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a8267d9293641f263648fdd0672f86911.html#a8267d9293641f263648fdd0672f86911">  153</a></span>        <span class="keyword">public</span> Optional&lt;T&gt; <a class="code hl_property" href="../../dc/d85/a01436_a8267d9293641f263648fdd0672f86911.html#a8267d9293641f263648fdd0672f86911">Current</a> =&gt; m_elements[m_index - 1];</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span></div>
-<div class="foldopen" id="foldopen00175" data-start="{" data-end="}">
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a40150680219d4b48bc14d69ec9050779.html#a40150680219d4b48bc14d69ec9050779">  175</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> VectorFlexSpan&lt;T, Vector&lt;T&gt; &gt; <a class="code hl_function" href="../../dc/d85/a01436_a40150680219d4b48bc14d69ec9050779.html#a40150680219d4b48bc14d69ec9050779">AsFlexSpan</a> (ref <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> vector, <a class="code hl_enumeration" href="../../de/d9d/a00813_ga3ef7d5832058e44f73e558fde87598f9.html#ga3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a> mode = <a class="code hl_enumeration" href="../../de/d9d/a00813_ga3ef7d5832058e44f73e558fde87598f9.html#ga3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a>.System )</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            =&gt; <span class="keyword">new</span> VectorFlexSpan&lt;T, Vector&lt;T&gt;&gt;(ref vector, 0, mode);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keyword">internal</span> <span class="keywordtype">bool</span> IsOwner(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>               <span class="keyword">using</span> ( var _l = <span class="keyword">new</span> ScopedLock&lt;LightLock&gt;(ref m_lock) ) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keywordflow">return</span>  m_managedID == id;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>          <span class="keyword">internal</span> <a class="code hl_struct" href="../../d3/d07/a01241.html">Result</a> SetOwner (<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>               <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                    <span class="keyword">using</span> ( var _l = <span class="keyword">new</span> ScopedLock&lt;LightLock&gt;(ref m_lock) ) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    <span class="keywordflow">if</span> ( !HasOwner ) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                        m_managedID = id;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_struct" href="../../d3/d07/a01241.html">Result</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                              <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_struct" href="../../d3/d07/a01241.html">Result</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                         }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>               } <span class="keywordflow">catch</span> ( Exception ex ) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                    <span class="keywordflow">return</span> <span class="keyword">new</span> Result(ex);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>               }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>          }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>          <span class="keyword">internal</span> Result UnsetOwner(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                <span class="keyword">using</span> ( var _l = <span class="keyword">new</span> ScopedLock&lt;LightLock&gt;(ref m_lock) ) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                    <span class="keywordflow">if</span> ( m_managedID == Thread.CurrentThread.ManagedThreadId ) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                        m_managedID = -1;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                              <span class="keywordflow">return</span> <span class="keyword">new</span> Result(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                         } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                              <span class="keywordflow">return</span> <span class="keyword">new</span> Result(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                         }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            } <span class="keywordflow">catch</span>(Exception ex) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    <span class="keywordflow">return</span> <span class="keyword">new</span> Result(ex);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>               }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>               </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>          }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="};">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="../../d3/d1b/a01549.html">  129</a></span>    <span class="keyword">public ref struct</span> <a class="code hl_function" href="../../d5/dd3/a00902_ga4f4449158f0b4009d79f8c56e378169a.html#ga4f4449158f0b4009d79f8c56e378169a">Slices</a>&lt;T, TContainer&gt; : IEquatable&lt;Slices&lt;T, TContainer&gt;&gt;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        where TContainer : IVector&lt;T&gt; {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keyword">private</span> ref TContainer m_container;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keyword">private</span> Vector&lt;SubSlice&lt;T, TContainer&gt;&gt; m_subSlices;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keyword">private</span> <span class="keywordtype">int</span> m_sliceLen;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="../../d5/dd3/a00902_ga4f4449158f0b4009d79f8c56e378169a.html#ga4f4449158f0b4009d79f8c56e378169a">  155</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d5/dd3/a00902_ga4f4449158f0b4009d79f8c56e378169a.html#ga4f4449158f0b4009d79f8c56e378169a">Slices</a> (ref TContainer con, <span class="keywordtype">int</span> sliceLen) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            m_container = ref con;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            m_sliceLen = sliceLen;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            var _size = con.Count / sliceLen;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            var _rem = con.Count % sliceLen;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            m_subSlices = <span class="keyword">new</span> Vector&lt;SubSlice&lt;T, TContainer&gt;&gt;(_size, 1);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0 ; i&lt; _size ; i++ ) {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                m_subSlices.PushBack(<span class="keyword">new</span> SubSlice&lt;T, TContainer&gt;(i * m_sliceLen, m_sliceLen ));</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            }</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <span class="keywordflow">if</span> ( _rem != 0 ) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                <span class="keywordtype">long</span> start = _size * m_sliceLen;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                m_subSlices.PushBack(<span class="keyword">new</span> SubSlice&lt;T, TContainer&gt;(start, _rem));</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            m_subSlices.AutoGrow = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        }</div>
 </div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keyword">public</span> <span class="keyword">static</span> Slices&lt;T, Vector&lt;T&gt; &gt; AsMultiSlices ( ref <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> vector , <span class="keywordtype">int</span> devider) {</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Slices&lt;T, Vector&lt;T&gt;&gt;(ref vector, (int)(vector.Count / devider));</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        }</div>
-<div class="foldopen" id="foldopen00208" data-start="{" data-end="}">
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a4680cb39c6d31bd1b29fb71e6aa057fb.html#a4680cb39c6d31bd1b29fb71e6aa057fb">  208</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> VectorFlexSpan&lt;T, Vector&lt;T&gt;&gt; <a class="code hl_function" href="../../dc/d85/a01436_a4680cb39c6d31bd1b29fb71e6aa057fb.html#a4680cb39c6d31bd1b29fb71e6aa057fb">AsFlexSpan</a> ( ref <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> vector, <span class="keywordtype">long</span> start, <span class="keywordtype">long</span> end, <a class="code hl_enumeration" href="../../de/d9d/a00813_ga3ef7d5832058e44f73e558fde87598f9.html#ga3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a> mode = <a class="code hl_enumeration" href="../../de/d9d/a00813_ga3ef7d5832058e44f73e558fde87598f9.html#ga3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a>.System )</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            =&gt; <span class="keyword">new</span> VectorFlexSpan&lt;T, Vector&lt;T&gt;&gt;(ref vector, start, end, mode);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span></div>
+<div class="foldopen" id="foldopen00188" data-start="{" data-end="}">
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="../../d5/dd3/a00902_gad987075955e0fcf6a5646c50daf884b5.html#gad987075955e0fcf6a5646c50daf884b5">  188</a></span>        <span class="keyword">public</span> <a class="code hl_struct" href="../../d3/d07/a01241.html">Result</a> <a class="code hl_function" href="../../d5/dd3/a00902_gad987075955e0fcf6a5646c50daf884b5.html#gad987075955e0fcf6a5646c50daf884b5">SetOwner</a>( SubSlice&lt;T, TContainer&gt; slice, <span class="keywordtype">int</span> thread_id ) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            <span class="keywordflow">if</span> (!slice.HasOwner ) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                <span class="keywordflow">return</span> slice.SetOwner(thread_id);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_struct" href="../../d3/d07/a01241.html">Result</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        }</div>
 </div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>     </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span></div>
-<div class="foldopen" id="foldopen00226" data-start="{" data-end="}">
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a5dd7c9d9215a608b1be69190cc097372.html#a5dd7c9d9215a608b1be69190cc097372">  226</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> <a class="code hl_function" href="../../dc/d85/a01436_a5dd7c9d9215a608b1be69190cc097372.html#a5dd7c9d9215a608b1be69190cc097372">AsSegment</a> ( <span class="keywordtype">long</span> start, <span class="keywordtype">long</span> length ) {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <span class="keywordflow">if</span> ( start &lt; 0 || length &lt; 0 )</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException();</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            <span class="comment">// Ensure the segment lies fully inside the internal buffer</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            ArgumentOutOfRangeException.ThrowIfLessThan((start + length), m_elements.Length);</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            <span class="comment">// Create a new Vector&lt;T&gt; that shares the same buffer</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            <span class="comment">// A segment must not grow, otherwise it would corrupt the shared buffer</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            var seg = <span class="keyword">new</span> <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a>(m_elements, 0);</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            <span class="comment">// Logical end of the segment</span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            seg.m_index = (int)(start + length);</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>            <span class="keywordflow">return</span> seg;</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span></div>
+<div class="foldopen" id="foldopen00205" data-start="{" data-end="}">
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="../../d5/dd3/a00902_gac33207d64995ca7df73a176fdadac061.html#gac33207d64995ca7df73a176fdadac061">  205</a></span>        <span class="keyword">public</span> SubSlice&lt;T, TContainer&gt;? <a class="code hl_function" href="../../d5/dd3/a00902_gac33207d64995ca7df73a176fdadac061.html#gac33207d64995ca7df73a176fdadac061">GetJobSlice</a> (<span class="keywordtype">int</span> sliceID, <span class="keywordtype">int</span> thread_id ) {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            <span class="keywordtype">bool</span> _ret = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            <span class="keywordflow">if</span> ( !(sliceID &lt; 0 || sliceID &gt;= m_subSlices.Length) ) {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                <span class="keywordflow">if</span>(!m_subSlices[sliceID].HasOwner) {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                    var __ret = m_subSlices[sliceID].SetOwner(thread_id);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                    _ret = (bool)(__ret.Get()!);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                }</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            <span class="keywordflow">return</span> _ret ? m_subSlices[sliceID] : <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        }</div>
 </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span></div>
-<div class="foldopen" id="foldopen00245" data-start="{" data-end="}">
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_acca85e9b78e7e5b6456815a4e48a448e.html#acca85e9b78e7e5b6456815a4e48a448e">  245</a></span>        <span class="keyword">public</span> Type <a class="code hl_function" href="../../dc/d85/a01436_acca85e9b78e7e5b6456815a4e48a448e.html#acca85e9b78e7e5b6456815a4e48a448e">GetElementType</a> () {</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <span class="keywordflow">return</span> typeof(T);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span></div>
+<div class="foldopen" id="foldopen00231" data-start="{" data-end="}">
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="../../d5/dd3/a00902_ga215d2b35ddea86a743aac8c4e4a3c221.html#ga215d2b35ddea86a743aac8c4e4a3c221">  231</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dd3/a00902_ga215d2b35ddea86a743aac8c4e4a3c221.html#ga215d2b35ddea86a743aac8c4e4a3c221">GetValue</a>( SubSlice&lt;T, TContainer&gt; slice, <span class="keywordtype">int</span> index, out T? value ) {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            <span class="keywordtype">bool</span> _ret = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            <span class="keywordtype">int</span> <span class="keywordtype">id</span> = Thread.CurrentThread.ManagedThreadId;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            value = <span class="keywordflow">default</span>(T);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            <span class="comment">// Lesen wenn owner bin</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            <span class="keywordflow">if</span> ( slice.IsOwner(<span class="keywordtype">id</span>) ) {</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                var _realindex = slice.<a class="code hl_function" href="../../d5/dd3/a00902_ga3b39f464f5642ae4ef1b19e5488cbd20.html#ga3b39f464f5642ae4ef1b19e5488cbd20">GetIndex</a>(index);</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                <span class="keywordflow">if</span> ( _realindex != -1) {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                    value = m_container.ElementAt(_realindex).Value;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                    _ret = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                }</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            }</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <span class="keywordflow">return</span> _ret;</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        }</div>
 </div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span></div>
-<div class="foldopen" id="foldopen00251" data-start="{" data-end="};">
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_aa2d1e4736cd7cad700891fbf11666113.html#aa2d1e4736cd7cad700891fbf11666113">  251</a></span>        <span class="keyword">public</span> T <span class="keyword">this</span>[<span class="keywordtype">long</span> index] {</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keyword">get</span> =&gt; m_elements[index];</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            <span class="keyword">set</span> =&gt; <a class="code hl_function" href="../../dc/d85/a01436_a60e1f2073f87a67ac918464846072a02.html#a60e1f2073f87a67ac918464846072a02">Insert</a>(index, value);</div>
+<div class="foldopen" id="foldopen00250" data-start="{" data-end="}">
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="../../d5/dd3/a00902_gac4b3a71c3df481759f069a54aae7576c.html#gac4b3a71c3df481759f069a54aae7576c">  250</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dd3/a00902_gac4b3a71c3df481759f069a54aae7576c.html#gac4b3a71c3df481759f069a54aae7576c">Equals</a> ( <a class="code hl_function" href="../../d5/dd3/a00902_ga4f4449158f0b4009d79f8c56e378169a.html#ga4f4449158f0b4009d79f8c56e378169a">Slices&lt;T, TContainer&gt;</a> other ) {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            <span class="keywordflow">return</span> m_sliceLen == other.m_sliceLen &amp;&amp; </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                m_container.Equals(other.m_container) &amp;&amp; </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                m_subSlices.Equals(other.m_subSlices);</div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        }</div>
 </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span></div>
-<div class="foldopen" id="foldopen00265" data-start="{" data-end="}">
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a499a3f573856cce8812cbe04b55be091.html#a499a3f573856cce8812cbe04b55be091">  265</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> Find&lt;T, Vector&lt;T&gt;&gt; <a class="code hl_function" href="../../dc/d85/a01436_a499a3f573856cce8812cbe04b55be091.html#a499a3f573856cce8812cbe04b55be091">AsFinder</a>(ref <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> vec) </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            =&gt; <span class="keyword">new</span> Find&lt;T, Vector&lt;T&gt;&gt;(ref vec);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    }</div>
 </div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span></div>
-<div class="foldopen" id="foldopen00327" data-start="{" data-end="}">
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_ab4ff431c28d45754964bd8b485be26b4.html#ab4ff431c28d45754964bd8b485be26b4">  327</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> VectorSet&lt;T, Vector&lt;T&gt;&gt; <a class="code hl_function" href="../../dc/d85/a01436_ab4ff431c28d45754964bd8b485be26b4.html#ab4ff431c28d45754964bd8b485be26b4">AsSet</a> (</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            ref <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> vec,</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>            ISimpleCompare&lt;T&gt;? comparer = <span class="keyword">null</span>,</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>            SortAction&lt;ISimpleCompare&lt;T&gt;, <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a>&gt;? sorter = <span class="keyword">null</span> )</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>            =&gt; <span class="keyword">new</span> VectorSet&lt;T, Vector&lt;T&gt;&gt;(</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>                ref vec,</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                comparer == <span class="keyword">null</span> ? <span class="keyword">new</span> <a class="code hl_enumvalue" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#ggade9e4a259d9b99fd9515aaf6229b3275a1cfdf0e8d0c87a228c1f40d9bee7888b">Less&lt;T&gt;</a>() : comparer,</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>                sorter == null ? SortActions.ShellSorter : sorter</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>            );</div>
-</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <span class="keyword">public</span> RandomAccessIterator&lt;T, Vector&lt;T&gt;&gt; Begin =&gt; <span class="keyword">new</span> RandomAccessIterator&lt;T, Vector&lt;T&gt;&gt;(<span class="keyword">this</span>, 0);</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        <span class="keyword">public</span> RandomAccessIterator&lt;T, Vector&lt;T&gt;&gt; End =&gt; <span class="keyword">new</span> RandomAccessIterator&lt;T, Vector&lt;T&gt;&gt;(<span class="keyword">this</span>, <a class="code hl_property" href="../../dc/d85/a01436_abc4489e571db194e24a1ab9f3737fa9e.html#abc4489e571db194e24a1ab9f3737fa9e">Count</a>);</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span> </div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        <span class="keyword">public</span> RandomAccessIterator&lt;T, Vector&lt;T&gt;&gt;  ReverseBegin =&gt; End;</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        <span class="keyword">public</span> RandomAccessIterator&lt;T, Vector&lt;T&gt;&gt; ReverseEnd =&gt; Begin;</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span></div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span> </div>
-<div class="foldopen" id="foldopen00399" data-start="{" data-end="}">
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a5ce50545b8cf6598623ab722c8c967cd.html#a5ce50545b8cf6598623ab722c8c967cd">  399</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> VectorMultiSet&lt;T, Vector&lt;T&gt;&gt; <a class="code hl_function" href="../../dc/d85/a01436_a5ce50545b8cf6598623ab722c8c967cd.html#a5ce50545b8cf6598623ab722c8c967cd">AsMultiSet</a> (</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>            ref <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> vec,</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>            ISimpleCompare&lt;T&gt;? comparer = <span class="keyword">null</span>,</div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>            SortAction&lt;ISimpleCompare&lt;T&gt;, <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a>&gt;? sorter = <span class="keyword">null</span> )</div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>            =&gt; <span class="keyword">new</span> VectorMultiSet&lt;T, Vector&lt;T&gt;&gt;(</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>                ref vec,</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>                comparer == <span class="keyword">null</span> ? <span class="keyword">new</span> <a class="code hl_enumvalue" href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#ggade9e4a259d9b99fd9515aaf6229b3275a1cfdf0e8d0c87a228c1f40d9bee7888b">Less&lt;T&gt;</a>() : comparer,</div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>                sorter == null ? SortActions.ShellSorter : sorter</div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>            );</div>
-</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span> </div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span> </div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span></div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span> </div>
-<div class="foldopen" id="foldopen00440" data-start="{" data-end="}">
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_aa66c207156a4cba6f7cb8ae97d21252a.html#aa66c207156a4cba6f7cb8ae97d21252a">  440</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> VectorUnorderedSet&lt;T, Vector&lt;T&gt;&gt; <a class="code hl_function" href="../../dc/d85/a01436_aa66c207156a4cba6f7cb8ae97d21252a.html#aa66c207156a4cba6f7cb8ae97d21252a">AsUnorderedSet</a> ( ref <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> vec)</div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>            =&gt; <span class="keyword">new</span> VectorUnorderedSet&lt;T, Vector&lt;T&gt;&gt;(ref vec);</div>
-</div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span> </div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span></div>
-<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span> </div>
-<div class="foldopen" id="foldopen00474" data-start="{" data-end="}">
-<div class="line"><a id="l00474" name="l00474"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a7315e5ff6190013a30eb6a4165c2713c.html#a7315e5ff6190013a30eb6a4165c2713c">  474</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> VectorUnorderedMultiSet&lt;T, Vector&lt;T&gt;&gt; <a class="code hl_function" href="../../dc/d85/a01436_a7315e5ff6190013a30eb6a4165c2713c.html#a7315e5ff6190013a30eb6a4165c2713c">AsUnorderedMultiSet</a> ( ref <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> vec )</div>
-<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>            =&gt; <span class="keyword">new</span> VectorUnorderedMultiSet&lt;T, Vector&lt;T&gt;&gt;(ref vec);</div>
-</div>
-<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span></div>
-<div class="foldopen" id="foldopen00495" data-start="{" data-end="}">
-<div class="line"><a id="l00495" name="l00495"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a0fedb74cfdf63e07847a0cd40c7acd2b.html#a0fedb74cfdf63e07847a0cd40c7acd2b">  495</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> VectorSearch&lt;U, Vector&lt;U&gt;&gt; AsSearch&lt;U&gt; ( ref <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;U&gt;</a> vec, ISearchProvider&lt;U, <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;U&gt;</a>&gt;? provider = <span class="keyword">null</span> )</div>
-<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>            where U : IComparable&lt;U&gt;</div>
-<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>            =&gt; new VectorSearch&lt;U, <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector</a>&lt;U&gt;&gt;(ref vec, provider == null ? new LinearSearchProvider&lt;U, <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector</a>&lt;U&gt;&gt;() : provider);</div>
-</div>
-<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span> </div>
-<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span></div>
-<div class="foldopen" id="foldopen00506" data-start="{" data-end="}">
-<div class="line"><a id="l00506" name="l00506"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">  506</a></span>        public <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector</a> ( <span class="keywordtype">long</span> size, <span class="keywordtype">int</span> growSize  = 16 ) {</div>
-<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>            m_elements = <span class="keyword">new</span> T[size];</div>
-<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>            m_index = 0;</div>
-<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span> </div>
-<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span> </div>
-<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>            <a class="code hl_property" href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">GrowSize</a> = growSize;</div>
-<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>        }</div>
-</div>
-<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span></div>
-<div class="foldopen" id="foldopen00525" data-start="{" data-end="}">
-<div class="line"><a id="l00525" name="l00525"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_aa6b8af60b8d5cb7af07b5a1508801c85.html#aa6b8af60b8d5cb7af07b5a1508801c85">  525</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dc/d85/a01436_aa6b8af60b8d5cb7af07b5a1508801c85.html#aa6b8af60b8d5cb7af07b5a1508801c85">Vector</a> ( T[] e, <span class="keywordtype">int</span> growSize = 16 ) {</div>
-<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>            m_elements = e;</div>
-<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>            m_index = e.LongLength;</div>
-<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span> </div>
-<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>            <a class="code hl_property" href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">GrowSize</a> = growSize;</div>
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>        }</div>
-</div>
-<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span></div>
-<div class="foldopen" id="foldopen00543" data-start="{" data-end="}">
-<div class="line"><a id="l00543" name="l00543"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_aa11a1eb1054a229ba7531995b37a7a54.html#aa11a1eb1054a229ba7531995b37a7a54">  543</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dc/d85/a01436_aa11a1eb1054a229ba7531995b37a7a54.html#aa11a1eb1054a229ba7531995b37a7a54">Vector</a> ( IEnumerable&lt;T&gt; e, <span class="keywordtype">int</span> growSize = 16 ) {</div>
-<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>            m_elements = e.ToArray();</div>
-<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>            m_index = m_elements.Length - 1;</div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span> </div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>            <a class="code hl_property" href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">GrowSize</a> = growSize;</div>
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>        }</div>
-</div>
-<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span> </div>
-<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span></div>
-<div class="foldopen" id="foldopen00554" data-start="{" data-end="}">
-<div class="line"><a id="l00554" name="l00554"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a3a7890ec7b86db335c1b549065f5d4d3.html#a3a7890ec7b86db335c1b549065f5d4d3">  554</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dc/d85/a01436_a3a7890ec7b86db335c1b549065f5d4d3.html#a3a7890ec7b86db335c1b549065f5d4d3">Vector</a> ( <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> other )  {</div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>            m_elements = <span class="keyword">new</span> T[other.<a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a>];</div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>            Buffer.LongCopy&lt;T&gt;(other.m_elements, 0, m_elements, 0, other.<a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a>);</div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span> </div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>            m_index = other.m_index;</div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>            <a class="code hl_property" href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">GrowSize</a> = other.<a class="code hl_property" href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">GrowSize</a>;</div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        }</div>
-</div>
-<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span></div>
-<div class="foldopen" id="foldopen00569" data-start="{" data-end="}">
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a2a827f2c94d7ddb0ecd71252faf6c448.html#a2a827f2c94d7ddb0ecd71252faf6c448">  569</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_a2a827f2c94d7ddb0ecd71252faf6c448.html#a2a827f2c94d7ddb0ecd71252faf6c448">PushBack</a> ( T entry ) {</div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>               <span class="keywordflow">if</span> ( m_index &gt;= <a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> ) {</div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>                    <span class="keywordflow">if</span> ( !<a class="code hl_property" href="../../dc/d85/a01436_a00db710bf4c75aca5c1b1d97fe7758c6.html#a00db710bf4c75aca5c1b1d97fe7758c6">AutoGrow</a> )</div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>                         <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span> </div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>                    <a class="code hl_function" href="../../dc/d85/a01436_ad05a564dce18d96e5295f440b37a92a4.html#ad05a564dce18d96e5295f440b37a92a4">Grow</a>();</div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>               }</div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span> </div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>               m_elements[m_index] = entry;</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>            m_index++;</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>        }</div>
-</div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span></div>
-<div class="foldopen" id="foldopen00591" data-start="{" data-end="}">
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a60e1f2073f87a67ac918464846072a02.html#a60e1f2073f87a67ac918464846072a02">  591</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_a60e1f2073f87a67ac918464846072a02.html#a60e1f2073f87a67ac918464846072a02">Insert</a> ( <span class="keywordtype">long</span> index, T entry ) {</div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>            <span class="keywordflow">if</span> ( index &lt; 0 ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>            <span class="comment">// Grow wie im Indexer</span></div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>            <span class="keywordflow">if</span> ( index &gt;= m_elements.Length || m_index &gt;= m_elements.Length ) {</div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>                <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../dc/d85/a01436_a00db710bf4c75aca5c1b1d97fe7758c6.html#a00db710bf4c75aca5c1b1d97fe7758c6">AutoGrow</a> ) {</div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>                    <span class="keywordflow">if</span> ( !Resize(m_elements.Length + <a class="code hl_property" href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">GrowSize</a>) )</div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>                }</div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>            }</div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span> </div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>            <span class="comment">// Speicher nach rechts verschieben</span></div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = m_index ; i &gt; index ; i-- )</div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>                m_elements[i] = m_elements[i - 1];</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span> </div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>            m_elements[index] = entry;</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>            m_index++;</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span> </div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>        }</div>
-</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span></div>
-<div class="foldopen" id="foldopen00623" data-start="{" data-end="}">
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a9770605c8d65e7046d4c6a4f4932bf0a.html#a9770605c8d65e7046d4c6a4f4932bf0a">  623</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_a9770605c8d65e7046d4c6a4f4932bf0a.html#a9770605c8d65e7046d4c6a4f4932bf0a">Insert</a> ( <span class="keywordtype">long</span> start, <span class="keywordtype">long</span> end, T entry ) {</div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>            <span class="keywordflow">if</span> ( start &lt; 0 || end &lt; start ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span> </div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>            <span class="comment">// Prüfen ob wir bis end schreiben können</span></div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>            <span class="keywordflow">if</span> ( end &gt;= m_elements.Length ) {</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>                <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../dc/d85/a01436_a00db710bf4c75aca5c1b1d97fe7758c6.html#a00db710bf4c75aca5c1b1d97fe7758c6">AutoGrow</a> ) {</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>                    <span class="keywordflow">if</span> ( !Resize(end + <a class="code hl_property" href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">GrowSize</a>) )</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>                }</div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>            }</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span> </div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>            <span class="comment">// Bereich füllen</span></div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = start ; i &lt;= end ; i++ )</div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>                m_elements[i] = entry;</div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span> </div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>            <span class="comment">// m_index anpassen</span></div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>            <span class="keywordflow">if</span> ( end + 1 &gt; m_index )</div>
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>                m_index = end + 1;</div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span> </div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>        }</div>
-</div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span></div>
-<div class="foldopen" id="foldopen00655" data-start="{" data-end="}">
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_aaf4e9e38d140399473577367b5d83384.html#aaf4e9e38d140399473577367b5d83384">  655</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_aaf4e9e38d140399473577367b5d83384.html#aaf4e9e38d140399473577367b5d83384">InsertRange</a> ( <span class="keywordtype">long</span> start, T[] entrys ) {</div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = 0 ; i &lt; entrys.Length ; i++ ) {</div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>                <span class="keywordflow">if</span> ( !<a class="code hl_function" href="../../dc/d85/a01436_a60e1f2073f87a67ac918464846072a02.html#a60e1f2073f87a67ac918464846072a02">Insert</a>(start + i, entrys[i]) )</div>
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>            }</div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>        }</div>
-</div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span></div>
-<div class="foldopen" id="foldopen00672" data-start="{" data-end="}">
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_acbc8e60dbcfbd486ca7d4cbec37b2498.html#acbc8e60dbcfbd486ca7d4cbec37b2498">  672</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_acbc8e60dbcfbd486ca7d4cbec37b2498.html#acbc8e60dbcfbd486ca7d4cbec37b2498">Replace</a> ( <span class="keywordtype">long</span> index, T entry ) {</div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>            <span class="keywordflow">if</span> ( index &lt; 0 ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span> </div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>            <span class="keywordflow">if</span>( m_index &gt;= m_elements.Length ) <a class="code hl_function" href="../../dc/d85/a01436_ad05a564dce18d96e5295f440b37a92a4.html#ad05a564dce18d96e5295f440b37a92a4">Grow</a>();</div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>            </div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>            <span class="keywordflow">if</span> ( index &gt;= m_elements.Length ) {</div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>                <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../dc/d85/a01436_a00db710bf4c75aca5c1b1d97fe7758c6.html#a00db710bf4c75aca5c1b1d97fe7758c6">AutoGrow</a> ) {</div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>                    <span class="keywordflow">if</span> ( !Resize(m_elements.Length + <a class="code hl_property" href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">GrowSize</a>) )</div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>                }</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>            }</div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span> </div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>            m_elements[index] = entry;</div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>        }</div>
-</div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span></div>
-<div class="foldopen" id="foldopen00699" data-start="{" data-end="}">
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a7ce3c9f676720ba1aab67962ec9d9435.html#a7ce3c9f676720ba1aab67962ec9d9435">  699</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_a7ce3c9f676720ba1aab67962ec9d9435.html#a7ce3c9f676720ba1aab67962ec9d9435">Replace</a> ( <span class="keywordtype">long</span> start, <span class="keywordtype">long</span> end, T entry ) {</div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>            <span class="keywordflow">if</span> ( start &lt; 0 || end &lt; start ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>            <span class="keywordflow">if</span> ( m_index &gt;= m_elements.Length ) <a class="code hl_function" href="../../dc/d85/a01436_ad05a564dce18d96e5295f440b37a92a4.html#ad05a564dce18d96e5295f440b37a92a4">Grow</a>();</div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span> </div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = start ; i &lt;= end ; i++ )</div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>                m_elements[i] = entry;</div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span> </div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>        }</div>
-</div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span></div>
-<div class="foldopen" id="foldopen00717" data-start="{" data-end="}">
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a52ddeccdd7056cb0360a65fcff7feb67.html#a52ddeccdd7056cb0360a65fcff7feb67">  717</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_a52ddeccdd7056cb0360a65fcff7feb67.html#a52ddeccdd7056cb0360a65fcff7feb67">ReplaceRange</a> ( <span class="keywordtype">long</span> start, T[] entrys ) {</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = 0 ; i &lt; entrys.Length ; i++ ) {</div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>                <span class="keywordflow">if</span> ( !<a class="code hl_function" href="../../dc/d85/a01436_acbc8e60dbcfbd486ca7d4cbec37b2498.html#acbc8e60dbcfbd486ca7d4cbec37b2498">Replace</a>(start + i, entrys[i]) )</div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>            }</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>        }</div>
-</div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span></div>
-<div class="foldopen" id="foldopen00731" data-start="{" data-end="}">
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a60a56ae27b9b3bdc6ed8bc6903077bb8.html#a60a56ae27b9b3bdc6ed8bc6903077bb8">  731</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_a60a56ae27b9b3bdc6ed8bc6903077bb8.html#a60a56ae27b9b3bdc6ed8bc6903077bb8">Erase</a>() {</div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>            <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../dc/d85/a01436_a82a97dd6f4c9c0557b49be71c16b539d.html#a82a97dd6f4c9c0557b49be71c16b539d">IsEmpty</a> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>            m_index--;</div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>        }</div>
-</div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span></div>
-<div class="foldopen" id="foldopen00740" data-start="{" data-end="}">
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_aa2b4dac45863d8874bb5981178444add.html#aa2b4dac45863d8874bb5981178444add">  740</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_aa2b4dac45863d8874bb5981178444add.html#aa2b4dac45863d8874bb5981178444add">Erase</a> ( <span class="keywordtype">long</span> index ) {</div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>        }</div>
-</div>
-<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span></div>
-<div class="foldopen" id="foldopen00747" data-start="{" data-end="}">
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a7225b3546656a70e217ee4ffb526b01a.html#a7225b3546656a70e217ee4ffb526b01a">  747</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_a7225b3546656a70e217ee4ffb526b01a.html#a7225b3546656a70e217ee4ffb526b01a">Erase</a> ( <span class="keywordtype">long</span> start, <span class="keywordtype">long</span> end ) {</div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>        }</div>
-</div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span></div>
-<div class="foldopen" id="foldopen00754" data-start="{" data-end="}">
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a21f31eac481f79621ba8c7677ba7408b.html#a21f31eac481f79621ba8c7677ba7408b">  754</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_a21f31eac481f79621ba8c7677ba7408b.html#a21f31eac481f79621ba8c7677ba7408b">Erase</a> ( T value ) {</div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>        }</div>
-</div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span></div>
-<div class="foldopen" id="foldopen00762" data-start="{" data-end="}">
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a8a756902ed664f8514d1fa3bf740edc1.html#a8a756902ed664f8514d1fa3bf740edc1">  762</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/d85/a01436_a8a756902ed664f8514d1fa3bf740edc1.html#a8a756902ed664f8514d1fa3bf740edc1">Swap</a> ( <span class="keywordtype">long</span> i, <span class="keywordtype">long</span> j ) {</div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>            <span class="keywordflow">if</span> ( i &lt; 0 || j &lt; 0 ) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>            <span class="keywordflow">if</span> ( i &gt;= m_index || j &gt;= m_index ) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span> </div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>            T tmp = m_elements[i];</div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>            m_elements[i] = m_elements[j];</div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>            m_elements[j] = tmp;</div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>        }</div>
-</div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span></div>
-<div class="foldopen" id="foldopen00779" data-start="{" data-end="}">
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a3aa8d373e30d36001a24e86428a94ec1.html#a3aa8d373e30d36001a24e86428a94ec1">  779</a></span>        <span class="keyword">public</span> Optional&lt;T&gt; <a class="code hl_function" href="../../dc/d85/a01436_a3aa8d373e30d36001a24e86428a94ec1.html#a3aa8d373e30d36001a24e86428a94ec1">ElementAt</a> ( <span class="keywordtype">long</span> index ) {</div>
-<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>            <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../dc/d85/a01436_a82a97dd6f4c9c0557b49be71c16b539d.html#a82a97dd6f4c9c0557b49be71c16b539d">IsEmpty</a> || index &gt;= <a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> ) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException();</div>
-<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span> </div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>            <span class="keywordflow">return</span> m_elements[index];</div>
-<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>        }</div>
-</div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span></div>
-<div class="foldopen" id="foldopen00790" data-start="{" data-end="}">
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_ad05a564dce18d96e5295f440b37a92a4.html#ad05a564dce18d96e5295f440b37a92a4">  790</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_ad05a564dce18d96e5295f440b37a92a4.html#ad05a564dce18d96e5295f440b37a92a4">Grow</a> () {</div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>            <span class="keywordflow">if</span> ( !<a class="code hl_property" href="../../dc/d85/a01436_a00db710bf4c75aca5c1b1d97fe7758c6.html#a00db710bf4c75aca5c1b1d97fe7758c6">AutoGrow</a> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>            <span class="keywordflow">return</span> Resize(<a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> + <a class="code hl_property" href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">GrowSize</a>);</div>
-<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>        }</div>
-</div>
-<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span> </div>
-<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span></div>
-<div class="foldopen" id="foldopen00799" data-start="{" data-end="}">
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a5e2add097793cbc77272e50b87c19d2c.html#a5e2add097793cbc77272e50b87c19d2c">  799</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/d85/a01436_a5e2add097793cbc77272e50b87c19d2c.html#a5e2add097793cbc77272e50b87c19d2c">Clear</a> () {</div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>            m_index = 0;</div>
-<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>        }</div>
-</div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span> </div>
-<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span></div>
-<div class="foldopen" id="foldopen00808" data-start="{" data-end="}">
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_af2592cc8bcceca84714ab91d24d15ba8.html#af2592cc8bcceca84714ab91d24d15ba8">  808</a></span>        <span class="keyword">public</span> IEnumerator&lt;T&gt; <a class="code hl_function" href="../../dc/d85/a01436_af2592cc8bcceca84714ab91d24d15ba8.html#af2592cc8bcceca84714ab91d24d15ba8">GetEnumerator</a> () {</div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; m_index ; i++ )</div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>                yield <span class="keywordflow">return</span> m_elements[i];</div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>        }</div>
-</div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span></div>
-<div class="foldopen" id="foldopen00820" data-start="{" data-end="}">
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_abefd179a7e6ec8eae47263434ba6507a.html#abefd179a7e6ec8eae47263434ba6507a">  820</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/d85/a01436_abefd179a7e6ec8eae47263434ba6507a.html#abefd179a7e6ec8eae47263434ba6507a">Traverse</a> ( <a class="code hl_enumeration" href="../../da/d71/a00814_gab1e0076f6123a3505fc6bb00a33a6825.html#gab1e0076f6123a3505fc6bb00a33a6825">TraversMode</a> mode, <span class="keywordtype">long</span> startIndex, <span class="keywordtype">long</span> endIndex, Action&lt;T&gt; func ) {</div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>            var start = System.Math.Max(startIndex, 0);</div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>            var end = System.Math.Min(endIndex,  m_index);</div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span> </div>
-<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>            <span class="keywordflow">if</span> ( mode == <a class="code hl_enumeration" href="../../da/d71/a00814_gab1e0076f6123a3505fc6bb00a33a6825.html#gab1e0076f6123a3505fc6bb00a33a6825">TraversMode</a>.Forwards ) {</div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>                <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = start ; i &lt; end ; i++ )</div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>                    func(m_elements[i]);</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( mode == <a class="code hl_enumeration" href="../../da/d71/a00814_gab1e0076f6123a3505fc6bb00a33a6825.html#gab1e0076f6123a3505fc6bb00a33a6825">TraversMode</a>.Backwards ) {</div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = end ; i &gt;= start ; i-- )</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>                    func(m_elements[i]);</div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>            }</div>
-<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>        }</div>
-</div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span> </div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span></div>
-<div class="foldopen" id="foldopen00847" data-start="{" data-end="}">
-<div class="line"><a id="l00847" name="l00847"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a4572fc23f33eb6e64327a6dacc0d789d.html#a4572fc23f33eb6e64327a6dacc0d789d">  847</a></span>        <span class="keyword">public</span> Pair&lt;bool, long&gt; <a class="code hl_function" href="../../dc/d85/a01436_a4572fc23f33eb6e64327a6dacc0d789d.html#a4572fc23f33eb6e64327a6dacc0d789d">CopyTo</a> ( <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> vector, ulong VectorIndex ) {</div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="../../dc/d85/a01436_a4572fc23f33eb6e64327a6dacc0d789d.html#a4572fc23f33eb6e64327a6dacc0d789d">CopyTo</a>(0, vector, 0, VectorIndex);</div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>        }</div>
-</div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span> </div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span></div>
-<div class="foldopen" id="foldopen00876" data-start="{" data-end="}">
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a03785c2e02ff3b5168c9e40fdf94dc64.html#a03785c2e02ff3b5168c9e40fdf94dc64">  876</a></span>        <span class="keyword">public</span> Pair&lt;bool, long&gt; <a class="code hl_function" href="../../dc/d85/a01436_a03785c2e02ff3b5168c9e40fdf94dc64.html#a03785c2e02ff3b5168c9e40fdf94dc64">CopyTo</a> ( uint sourceOffset, <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> destination, ulong destinationOffset, ulong count ) {</div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span> </div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>            <span class="keywordtype">long</span> src = (long)sourceOffset;</div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>            <span class="keywordtype">long</span> dst = (long)destinationOffset;</div>
-<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span> </div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>            <span class="keywordflow">if</span>( src &gt; <a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> ) src = (long)<a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a>;</div>
-<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span> </div>
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>            <span class="keywordtype">long</span> toCopy = System.Math.Min((<span class="keywordtype">long</span>)count,</div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>            System.Math.Min(System.Math.Max(0, (<span class="keywordtype">long</span>)<a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> - src),</div>
-<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>                     System.Math.Max(0, destination.<a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> - dst)));</div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span> </div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>            <span class="keywordflow">if</span> ( toCopy &lt;= 0 ) <span class="keywordflow">return</span> <span class="keyword">new</span> Pair&lt;bool, long&gt;(<span class="keyword">false</span>, 0);</div>
-<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span> </div>
-<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>            Buffer.LongCopy&lt;T&gt;(m_elements, src, destination.m_elements, dst, toCopy);</div>
-<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Pair&lt;bool, long&gt;(<span class="keyword">true</span>, toCopy);</div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>        }</div>
-</div>
-<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span> </div>
-<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span> </div>
-<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span></div>
-<div class="foldopen" id="foldopen00918" data-start="{" data-end="}">
-<div class="line"><a id="l00918" name="l00918"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_ac3d2d20742534935a487fe8aaf7b3747.html#ac3d2d20742534935a487fe8aaf7b3747">  918</a></span>        <span class="keyword">public</span> Pair&lt;bool, long&gt; <a class="code hl_function" href="../../dc/d85/a01436_ac3d2d20742534935a487fe8aaf7b3747.html#ac3d2d20742534935a487fe8aaf7b3747">CopyFrom</a> ( <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> source, ulong sourceOffset, ulong destinationOffset, ulong count ) {</div>
-<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>            <span class="keywordtype">long</span> src = (long)sourceOffset;</div>
-<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>            <span class="keywordtype">long</span> dst = (long)destinationOffset;</div>
-<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span> </div>
-<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>            <span class="keywordflow">if</span> ( dst &gt; <a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> )</div>
-<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>                dst = <a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a>;</div>
-<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span> </div>
-<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>            <span class="keywordtype">long</span> toCopy = System.Math.Min((<span class="keywordtype">long</span>)count,  </div>
-<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>                System.Math.Min(System.Math.Max(0, source.<a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> - src),</div>
-<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>                System.Math.Max(0, <a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> - dst)));</div>
-<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span> </div>
-<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>            <span class="comment">// Wenn nichts passt → prüfen ob wir wachsen müssen</span></div>
-<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>            <span class="keywordflow">if</span> ( toCopy &lt;= 0 ) {</div>
-<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>                <span class="keywordflow">if</span> ( !<a class="code hl_property" href="../../dc/d85/a01436_a00db710bf4c75aca5c1b1d97fe7758c6.html#a00db710bf4c75aca5c1b1d97fe7758c6">AutoGrow</a> )</div>
-<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>                    <span class="keywordflow">return</span> <span class="keyword">new</span> Pair&lt;bool, long&gt;(<span class="keyword">false</span>, 0);</div>
-<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span> </div>
-<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span>                <span class="keywordtype">long</span> required = dst + (long)count;</div>
-<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span> </div>
-<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>                <span class="keywordtype">long</span> newSize = <a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a>;</div>
-<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>                <span class="keywordflow">while</span> ( required &gt; newSize )</div>
-<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>                    newSize += <a class="code hl_property" href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">GrowSize</a>;</div>
-<div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span> </div>
-<div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span>                <span class="keywordflow">if</span> ( !Resize(newSize) )</div>
-<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span>                    <span class="keywordflow">return</span> <span class="keyword">new</span> Pair&lt;bool, long&gt;(<span class="keyword">false</span>, 0);</div>
-<div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span> </div>
-<div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span>                <span class="comment">// Nach Resize neu berechnen</span></div>
-<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>                toCopy = System.Math.Min((<span class="keywordtype">long</span>)count,</div>
-<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span>                    System.Math.Min(System.Math.Max(0, source.<a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> - src),</div>
-<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span>                        System.Math.Max(0, (<span class="keywordtype">long</span>)<a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> - dst)));</div>
-<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span> </div>
-<div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span>                <span class="keywordflow">if</span> ( toCopy &lt;= 0 )</div>
-<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span>                    <span class="keywordflow">return</span> <span class="keyword">new</span> Pair&lt;bool, long&gt;(<span class="keyword">false</span>, 0);</div>
-<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>            }</div>
-<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span> </div>
-<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>            Buffer.LongCopy&lt;T&gt;(source.m_elements, src, m_elements, dst, toCopy);</div>
-<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span> </div>
-<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>            <span class="comment">// m_index anpassen, falls wir weiter hinten geschrieben haben</span></div>
-<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>            <span class="keywordtype">long</span> end = dst + toCopy;</div>
-<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>            <span class="keywordflow">if</span> ( end &gt; m_index )</div>
-<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>                m_index = end;</div>
-<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span> </div>
-<div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> Pair&lt;bool, long&gt;(<span class="keyword">true</span>, toCopy); </div>
-<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>        }</div>
-</div>
-<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span> </div>
-<div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span></div>
-<div class="line"><a id="l00966" name="l00966"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a06ca18d278332fc7e27d651cc7af50fa.html#a06ca18d278332fc7e27d651cc7af50fa">  966</a></span>        <span class="keyword">public</span> T[] <a class="code hl_function" href="../../dc/d85/a01436_a06ca18d278332fc7e27d651cc7af50fa.html#a06ca18d278332fc7e27d651cc7af50fa">ToNative</a> () =&gt; m_elements.ToArray();</div>
-<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span></div>
-<div class="foldopen" id="foldopen00972" data-start="{" data-end="}">
-<div class="line"><a id="l00972" name="l00972"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_aced0c18b82c6d11cdc1623446c99623b.html#aced0c18b82c6d11cdc1623446c99623b">  972</a></span>        <span class="keyword">public</span> IVector&lt;T&gt; <a class="code hl_function" href="../../dc/d85/a01436_aced0c18b82c6d11cdc1623446c99623b.html#aced0c18b82c6d11cdc1623446c99623b">Duplicate</a> () {</div>
-<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a>(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>        }</div>
-</div>
-<div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span></div>
-<div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> Resize ( <span class="keywordtype">long</span> size ) {</div>
-<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span>            <span class="keywordflow">if</span> ( size == Length ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span> </div>
-<div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span>            <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span>                <span class="keywordtype">long</span> _olfl = Length;</div>
-<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>                Array.Resize(ref m_elements, (<span class="keywordtype">int</span>)size);</div>
-<div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span>                m_index = _olfl;</div>
-<div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>            } <span class="keywordflow">catch</span> {</div>
-<div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span>            }</div>
-<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span>        }</div>
-<div class="foldopen" id="foldopen00997" data-start="{" data-end="}">
-<div class="line"><a id="l00997" name="l00997"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a5eb0a7b91275e25df4e13367d4904f28.html#a5eb0a7b91275e25df4e13367d4904f28">  997</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> operator ==  (<a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> a, <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> b) {</div>
-<div class="line"><a id="l00998" name="l00998"></a><span class="lineno">  998</span>            <span class="keywordtype">bool</span> _ret = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span> </div>
-<div class="line"><a id="l01000" name="l01000"></a><span class="lineno"> 1000</span>            <span class="keywordflow">if</span> ( a.<a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> != b.<a class="code hl_property" href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">Length</a> ) {</div>
-<div class="line"><a id="l01001" name="l01001"></a><span class="lineno"> 1001</span>                _ret = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01002" name="l01002"></a><span class="lineno"> 1002</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01003" name="l01003"></a><span class="lineno"> 1003</span>                <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = 0 ; i &lt; a.Length ; i++ ) {</div>
-<div class="line"><a id="l01004" name="l01004"></a><span class="lineno"> 1004</span>                    var iten = a.<a class="code hl_function" href="../../dc/d85/a01436_a3aa8d373e30d36001a24e86428a94ec1.html#a3aa8d373e30d36001a24e86428a94ec1">ElementAt</a>(i);</div>
-<div class="line"><a id="l01005" name="l01005"></a><span class="lineno"> 1005</span>                    var oi =   b.<a class="code hl_function" href="../../dc/d85/a01436_a3aa8d373e30d36001a24e86428a94ec1.html#a3aa8d373e30d36001a24e86428a94ec1">ElementAt</a>(i);</div>
-<div class="line"><a id="l01006" name="l01006"></a><span class="lineno"> 1006</span> </div>
-<div class="line"><a id="l01007" name="l01007"></a><span class="lineno"> 1007</span>                    <span class="keywordtype">int</span> cmp = Comparer&lt; T&gt;.Default.Compare(iten.Value, oi.Value);</div>
-<div class="line"><a id="l01008" name="l01008"></a><span class="lineno"> 1008</span> </div>
-<div class="line"><a id="l01009" name="l01009"></a><span class="lineno"> 1009</span>                    <span class="keywordflow">if</span> ( cmp != 0 ) {</div>
-<div class="line"><a id="l01010" name="l01010"></a><span class="lineno"> 1010</span>                        _ret = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01011" name="l01011"></a><span class="lineno"> 1011</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l01012" name="l01012"></a><span class="lineno"> 1012</span>                    }</div>
-<div class="line"><a id="l01013" name="l01013"></a><span class="lineno"> 1013</span>                }</div>
-<div class="line"><a id="l01014" name="l01014"></a><span class="lineno"> 1014</span>            }</div>
-<div class="line"><a id="l01015" name="l01015"></a><span class="lineno"> 1015</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><a id="l01016" name="l01016"></a><span class="lineno"> 1016</span>        }</div>
-</div>
-<div class="line"><a id="l01017" name="l01017"></a><span class="lineno"> 1017</span></div>
-<div class="foldopen" id="foldopen01018" data-start="{" data-end="}">
-<div class="line"><a id="l01018" name="l01018"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a51635194e82352f914d21f51a594a44f.html#a51635194e82352f914d21f51a594a44f"> 1018</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> operator != ( <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> a, <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> b ) {</div>
-<div class="line"><a id="l01019" name="l01019"></a><span class="lineno"> 1019</span>            <span class="keywordflow">return</span> !(a == b);</div>
-<div class="line"><a id="l01020" name="l01020"></a><span class="lineno"> 1020</span>        }</div>
-</div>
-<div class="line"><a id="l01021" name="l01021"></a><span class="lineno"> 1021</span></div>
-<div class="foldopen" id="foldopen01023" data-start="{" data-end="}">
-<div class="line"><a id="l01023" name="l01023"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_a761052fed0f15cf48897aec054350c28.html#a761052fed0f15cf48897aec054350c28"> 1023</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/d85/a01436_a761052fed0f15cf48897aec054350c28.html#a761052fed0f15cf48897aec054350c28">Equals</a> ( <span class="keywordtype">object</span>? obj ) {</div>
-<div class="line"><a id="l01024" name="l01024"></a><span class="lineno"> 1024</span>            <span class="keywordflow">if</span> ( obj is <a class="code hl_function" href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">Vector&lt;T&gt;</a> k ) <span class="keywordflow">return</span> this.<a class="code hl_function" href="../../dc/d85/a01436_a761052fed0f15cf48897aec054350c28.html#a761052fed0f15cf48897aec054350c28">Equals</a>(k);</div>
-<div class="line"><a id="l01025" name="l01025"></a><span class="lineno"> 1025</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01026" name="l01026"></a><span class="lineno"> 1026</span>        }</div>
-</div>
-<div class="line"><a id="l01027" name="l01027"></a><span class="lineno"> 1027</span></div>
-<div class="foldopen" id="foldopen01029" data-start="{" data-end="}">
-<div class="line"><a id="l01029" name="l01029"></a><span class="lineno"><a class="line" href="../../dc/d85/a01436_aca4d01c6a067741ebba3dc35ab153fd5.html#aca4d01c6a067741ebba3dc35ab153fd5"> 1029</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> <a class="code hl_function" href="../../dc/d85/a01436_aca4d01c6a067741ebba3dc35ab153fd5.html#aca4d01c6a067741ebba3dc35ab153fd5">GetHashCode</a> () {</div>
-<div class="line"><a id="l01030" name="l01030"></a><span class="lineno"> 1030</span>            <span class="keywordflow">return</span> m_elements.GetHashCode() ^ m_index.GetHashCode();</div>
-<div class="line"><a id="l01031" name="l01031"></a><span class="lineno"> 1031</span>        }</div>
-</div>
-<div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span>    }</div>
-</div>
-<div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span> </div>
-<div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
-<div class="line"><a id="l01036" name="l01036"></a><span class="lineno"> 1036</span>#pragma warning restore CS1587 <span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
-<div class="line"><a id="l01037" name="l01037"></a><span class="lineno"> 1037</span>}</div>
-<div class="ttc" id="aa00813_ga3ef7d5832058e44f73e558fde87598f9_html_ga3ef7d5832058e44f73e558fde87598f9"><div class="ttname"><a href="../../de/d9d/a00813_ga3ef7d5832058e44f73e558fde87598f9.html#ga3ef7d5832058e44f73e558fde87598f9">SystemEx.FlexSpanMode</a></div><div class="ttdeci">FlexSpanMode</div><div class="ttdoc">Defines how FlexSpan indexes its underlying array.</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddf/a00164_source.html#l00029">FlexSpan.cs:29</a></div></div>
-<div class="ttc" id="aa00814_gab1e0076f6123a3505fc6bb00a33a6825_html_gab1e0076f6123a3505fc6bb00a33a6825"><div class="ttname"><a href="../../da/d71/a00814_gab1e0076f6123a3505fc6bb00a33a6825.html#gab1e0076f6123a3505fc6bb00a33a6825">SystemEx.Collections.Generic.TraversMode</a></div><div class="ttdeci">TraversMode</div><div class="ttdoc">Specifies the traversal direction for iterating over a sequence.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d52/a00221_source.html#l00026">ITraverse.cs:26</a></div></div>
-<div class="ttc" id="aa00824_gade9e4a259d9b99fd9515aaf6229b3275_html_ggade9e4a259d9b99fd9515aaf6229b3275a1cfdf0e8d0c87a228c1f40d9bee7888b"><div class="ttname"><a href="../../d8/d1c/a00824_gade9e4a259d9b99fd9515aaf6229b3275.html#ggade9e4a259d9b99fd9515aaf6229b3275a1cfdf0e8d0c87a228c1f40d9bee7888b">SystemEx.Utils.CompareResult.Less</a></div><div class="ttdeci">@ Less</div><div class="ttdoc">Alias for CompareResult.AIsSmallerB. Indicates that the first operand is strictly smaller than the se...</div><div class="ttdef"><b>Definition</b> <a href="../../d5/de8/a00749_source.html#l00041">Algorithm.cs:41</a></div></div>
-<div class="ttc" id="aa00829_html"><div class="ttname"><a href="../../d1/dea/a00829.html">SystemEx.Algorithms</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00021">BinarySearcherProvider.cs:21</a></div></div>
-<div class="ttc" id="aa00833_html"><div class="ttname"><a href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/db5/a00374_source.html#l00023">BasicRope.cs:23</a></div></div>
-<div class="ttc" id="aa00851_html"><div class="ttname"><a href="../../df/d4c/a00851.html">SystemEx.Utils</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/de8/a00749_source.html#l00021">Algorithm.cs:21</a></div></div>
-<div class="ttc" id="aa01436_a00db710bf4c75aca5c1b1d97fe7758c6_html_a00db710bf4c75aca5c1b1d97fe7758c6"><div class="ttname"><a href="../../dc/d85/a01436_a00db710bf4c75aca5c1b1d97fe7758c6.html#a00db710bf4c75aca5c1b1d97fe7758c6">SystemEx.Collections.Generic.Vector-1-g.AutoGrow</a></div><div class="ttdeci">bool AutoGrow</div><div class="ttdoc">Enables or disables automatic resizing when the Vector becomes full.</div><div class="ttdef"><b>Definition</b> <a href="#l00135">Vector.cs:135</a></div></div>
-<div class="ttc" id="aa01436_a03785c2e02ff3b5168c9e40fdf94dc64_html_a03785c2e02ff3b5168c9e40fdf94dc64"><div class="ttname"><a href="../../dc/d85/a01436_a03785c2e02ff3b5168c9e40fdf94dc64.html#a03785c2e02ff3b5168c9e40fdf94dc64">SystemEx.Collections.Generic.Vector-1-g.CopyTo</a></div><div class="ttdeci">Pair&lt; bool, long &gt; CopyTo(uint sourceOffset, Vector&lt; T &gt; destination, ulong destinationOffset, ulong count)</div><div class="ttdoc">Copies a range of elements from this vector into another vector.</div><div class="ttdef"><b>Definition</b> <a href="#l00876">Vector.cs:876</a></div></div>
-<div class="ttc" id="aa01436_a037aca6525e1defb17258258845bb892_html_a037aca6525e1defb17258258845bb892"><div class="ttname"><a href="../../dc/d85/a01436_a037aca6525e1defb17258258845bb892.html#a037aca6525e1defb17258258845bb892">SystemEx.Collections.Generic.Vector-1-g.GrowSize</a></div><div class="ttdeci">long GrowSize</div><div class="ttdoc">Gets or sets the number of elements the Vector grows by when AutoGrow is enabled.</div><div class="ttdef"><b>Definition</b> <a href="#l00126">Vector.cs:126</a></div></div>
-<div class="ttc" id="aa01436_a06ca18d278332fc7e27d651cc7af50fa_html_a06ca18d278332fc7e27d651cc7af50fa"><div class="ttname"><a href="../../dc/d85/a01436_a06ca18d278332fc7e27d651cc7af50fa.html#a06ca18d278332fc7e27d651cc7af50fa">SystemEx.Collections.Generic.Vector-1-g.ToNative</a></div><div class="ttdeci">T[] ToNative()</div><div class="ttdoc">Returns a copy of the internal buffer.</div><div class="ttdef"><b>Definition</b> <a href="#l00966">Vector.cs:966</a></div></div>
-<div class="ttc" id="aa01436_a21f31eac481f79621ba8c7677ba7408b_html_a21f31eac481f79621ba8c7677ba7408b"><div class="ttname"><a href="../../dc/d85/a01436_a21f31eac481f79621ba8c7677ba7408b.html#a21f31eac481f79621ba8c7677ba7408b">SystemEx.Collections.Generic.Vector-1-g.Erase</a></div><div class="ttdeci">bool Erase(T value)</div><div class="ttdoc">Erase overloads are API stubs and always return true. Actual removal logic is handled by Remove() met...</div><div class="ttdef"><b>Definition</b> <a href="#l00754">Vector.cs:754</a></div></div>
-<div class="ttc" id="aa01436_a2a827f2c94d7ddb0ecd71252faf6c448_html_a2a827f2c94d7ddb0ecd71252faf6c448"><div class="ttname"><a href="../../dc/d85/a01436_a2a827f2c94d7ddb0ecd71252faf6c448.html#a2a827f2c94d7ddb0ecd71252faf6c448">SystemEx.Collections.Generic.Vector-1-g.PushBack</a></div><div class="ttdeci">bool PushBack(T entry)</div><div class="ttdoc">Appends an element to the end of the vector. Automatically grows the buffer if AutoGrow is enabled.</div><div class="ttdef"><b>Definition</b> <a href="#l00569">Vector.cs:569</a></div></div>
-<div class="ttc" id="aa01436_a3a7890ec7b86db335c1b549065f5d4d3_html_a3a7890ec7b86db335c1b549065f5d4d3"><div class="ttname"><a href="../../dc/d85/a01436_a3a7890ec7b86db335c1b549065f5d4d3.html#a3a7890ec7b86db335c1b549065f5d4d3">SystemEx.Collections.Generic.Vector-1-g.Vector</a></div><div class="ttdeci">Vector(Vector&lt; T &gt; other)</div><div class="ttdoc">Copy ctor.</div><div class="ttdef"><b>Definition</b> <a href="#l00554">Vector.cs:554</a></div></div>
-<div class="ttc" id="aa01436_a3aa8d373e30d36001a24e86428a94ec1_html_a3aa8d373e30d36001a24e86428a94ec1"><div class="ttname"><a href="../../dc/d85/a01436_a3aa8d373e30d36001a24e86428a94ec1.html#a3aa8d373e30d36001a24e86428a94ec1">SystemEx.Collections.Generic.Vector-1-g.ElementAt</a></div><div class="ttdeci">Optional&lt; T &gt; ElementAt(long index)</div><div class="ttdoc">Returns the element at the specified index.</div><div class="ttdef"><b>Definition</b> <a href="#l00779">Vector.cs:779</a></div></div>
-<div class="ttc" id="aa01436_a40150680219d4b48bc14d69ec9050779_html_a40150680219d4b48bc14d69ec9050779"><div class="ttname"><a href="../../dc/d85/a01436_a40150680219d4b48bc14d69ec9050779.html#a40150680219d4b48bc14d69ec9050779">SystemEx.Collections.Generic.Vector-1-g.AsFlexSpan</a></div><div class="ttdeci">static VectorFlexSpan&lt; T, Vector&lt; T &gt; &gt; AsFlexSpan(ref Vector&lt; T &gt; vector, FlexSpanMode mode=FlexSpanMode.System)</div><div class="ttdoc">Creates a FlexSpan view over the entire vector starting at index 0.</div><div class="ttdef"><b>Definition</b> <a href="#l00175">Vector.cs:175</a></div></div>
-<div class="ttc" id="aa01436_a4572fc23f33eb6e64327a6dacc0d789d_html_a4572fc23f33eb6e64327a6dacc0d789d"><div class="ttname"><a href="../../dc/d85/a01436_a4572fc23f33eb6e64327a6dacc0d789d.html#a4572fc23f33eb6e64327a6dacc0d789d">SystemEx.Collections.Generic.Vector-1-g.CopyTo</a></div><div class="ttdeci">Pair&lt; bool, long &gt; CopyTo(Vector&lt; T &gt; vector, ulong VectorIndex)</div><div class="ttdoc">Copies all valid elements of this vector into another vector, starting at the specified destination i...</div><div class="ttdef"><b>Definition</b> <a href="#l00847">Vector.cs:847</a></div></div>
-<div class="ttc" id="aa01436_a4680cb39c6d31bd1b29fb71e6aa057fb_html_a4680cb39c6d31bd1b29fb71e6aa057fb"><div class="ttname"><a href="../../dc/d85/a01436_a4680cb39c6d31bd1b29fb71e6aa057fb.html#a4680cb39c6d31bd1b29fb71e6aa057fb">SystemEx.Collections.Generic.Vector-1-g.AsFlexSpan</a></div><div class="ttdeci">static VectorFlexSpan&lt; T, Vector&lt; T &gt; &gt; AsFlexSpan(ref Vector&lt; T &gt; vector, long start, long end, FlexSpanMode mode=FlexSpanMode.System)</div><div class="ttdoc">Creates a FlexSpan view over a specific range of the vector.</div><div class="ttdef"><b>Definition</b> <a href="#l00208">Vector.cs:208</a></div></div>
-<div class="ttc" id="aa01436_a47ec845d3b2697eec03ee3a1c4e5357b_html_a47ec845d3b2697eec03ee3a1c4e5357b"><div class="ttname"><a href="../../dc/d85/a01436_a47ec845d3b2697eec03ee3a1c4e5357b.html#a47ec845d3b2697eec03ee3a1c4e5357b">SystemEx.Collections.Generic.Vector-1-g.Back</a></div><div class="ttdeci">Optional&lt; T &gt; Back</div><div class="ttdoc">Gets the last element of the Vector.</div><div class="ttdef"><b>Definition</b> <a href="#l00112">Vector.cs:112</a></div></div>
-<div class="ttc" id="aa01436_a499a3f573856cce8812cbe04b55be091_html_a499a3f573856cce8812cbe04b55be091"><div class="ttname"><a href="../../dc/d85/a01436_a499a3f573856cce8812cbe04b55be091.html#a499a3f573856cce8812cbe04b55be091">SystemEx.Collections.Generic.Vector-1-g.AsFinder</a></div><div class="ttdeci">static Find&lt; T, Vector&lt; T &gt; &gt; AsFinder(ref Vector&lt; T &gt; vec)</div><div class="ttdoc">Creates a Find&lt;T, TContainer&gt; wrapper for this vector, providing direct access to element lookup util...</div><div class="ttdef"><b>Definition</b> <a href="#l00265">Vector.cs:265</a></div></div>
-<div class="ttc" id="aa01436_a52ddeccdd7056cb0360a65fcff7feb67_html_a52ddeccdd7056cb0360a65fcff7feb67"><div class="ttname"><a href="../../dc/d85/a01436_a52ddeccdd7056cb0360a65fcff7feb67.html#a52ddeccdd7056cb0360a65fcff7feb67">SystemEx.Collections.Generic.Vector-1-g.ReplaceRange</a></div><div class="ttdeci">bool ReplaceRange(long start, T[] entrys)</div><div class="ttdoc">Replaces a sequence of elements starting at the specified index.</div><div class="ttdef"><b>Definition</b> <a href="#l00717">Vector.cs:717</a></div></div>
-<div class="ttc" id="aa01436_a5ce50545b8cf6598623ab722c8c967cd_html_a5ce50545b8cf6598623ab722c8c967cd"><div class="ttname"><a href="../../dc/d85/a01436_a5ce50545b8cf6598623ab722c8c967cd.html#a5ce50545b8cf6598623ab722c8c967cd">SystemEx.Collections.Generic.Vector-1-g.AsMultiSet</a></div><div class="ttdeci">static VectorMultiSet&lt; T, Vector&lt; T &gt; &gt; AsMultiSet(ref Vector&lt; T &gt; vec, ISimpleCompare&lt; T &gt;? comparer=null, SortAction&lt; ISimpleCompare&lt; T &gt;, Vector&lt; T &gt; &gt;? sorter=null)</div><div class="ttdoc">Creates a VectorMultiSet&lt;T, Vector&lt;T&gt;&gt; view over the given vector, allowing duplicate elements while ...</div><div class="ttdef"><b>Definition</b> <a href="#l00399">Vector.cs:399</a></div></div>
-<div class="ttc" id="aa01436_a5dd7c9d9215a608b1be69190cc097372_html_a5dd7c9d9215a608b1be69190cc097372"><div class="ttname"><a href="../../dc/d85/a01436_a5dd7c9d9215a608b1be69190cc097372.html#a5dd7c9d9215a608b1be69190cc097372">SystemEx.Collections.Generic.Vector-1-g.AsSegment</a></div><div class="ttdeci">Vector&lt; T &gt; AsSegment(long start, long length)</div><div class="ttdoc">Creates a logical segment (sub-Vector) over the internal buffer. The segment shares the same underlyi...</div><div class="ttdef"><b>Definition</b> <a href="#l00226">Vector.cs:226</a></div></div>
-<div class="ttc" id="aa01436_a5e2add097793cbc77272e50b87c19d2c_html_a5e2add097793cbc77272e50b87c19d2c"><div class="ttname"><a href="../../dc/d85/a01436_a5e2add097793cbc77272e50b87c19d2c.html#a5e2add097793cbc77272e50b87c19d2c">SystemEx.Collections.Generic.Vector-1-g.Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Clears the vector by resetting the logical index.</div><div class="ttdef"><b>Definition</b> <a href="#l00799">Vector.cs:799</a></div></div>
-<div class="ttc" id="aa01436_a60a56ae27b9b3bdc6ed8bc6903077bb8_html_a60a56ae27b9b3bdc6ed8bc6903077bb8"><div class="ttname"><a href="../../dc/d85/a01436_a60a56ae27b9b3bdc6ed8bc6903077bb8.html#a60a56ae27b9b3bdc6ed8bc6903077bb8">SystemEx.Collections.Generic.Vector-1-g.Erase</a></div><div class="ttdeci">bool Erase()</div><div class="ttdoc">Removes the last element from the vector.</div><div class="ttdef"><b>Definition</b> <a href="#l00731">Vector.cs:731</a></div></div>
-<div class="ttc" id="aa01436_a60e1f2073f87a67ac918464846072a02_html_a60e1f2073f87a67ac918464846072a02"><div class="ttname"><a href="../../dc/d85/a01436_a60e1f2073f87a67ac918464846072a02.html#a60e1f2073f87a67ac918464846072a02">SystemEx.Collections.Generic.Vector-1-g.Insert</a></div><div class="ttdeci">bool Insert(long index, T entry)</div><div class="ttdoc">Inserts an element at the specified index, shifting elements to the right. Automatically grows the bu...</div><div class="ttdef"><b>Definition</b> <a href="#l00591">Vector.cs:591</a></div></div>
-<div class="ttc" id="aa01436_a7025e8a731e8c455b477752fd3e67801_html_a7025e8a731e8c455b477752fd3e67801"><div class="ttname"><a href="../../dc/d85/a01436_a7025e8a731e8c455b477752fd3e67801.html#a7025e8a731e8c455b477752fd3e67801">SystemEx.Collections.Generic.Vector-1-g.Vector</a></div><div class="ttdeci">Vector(long size, int growSize=16)</div><div class="ttdoc">Creates a new Vector with a specified initial capacity. The vector starts empty (Count = 0) and grows...</div><div class="ttdef"><b>Definition</b> <a href="#l00506">Vector.cs:506</a></div></div>
-<div class="ttc" id="aa01436_a7225b3546656a70e217ee4ffb526b01a_html_a7225b3546656a70e217ee4ffb526b01a"><div class="ttname"><a href="../../dc/d85/a01436_a7225b3546656a70e217ee4ffb526b01a.html#a7225b3546656a70e217ee4ffb526b01a">SystemEx.Collections.Generic.Vector-1-g.Erase</a></div><div class="ttdeci">bool Erase(long start, long end)</div><div class="ttdoc">Erase overloads are API stubs and always return true. Actual removal logic is handled by Remove() met...</div><div class="ttdef"><b>Definition</b> <a href="#l00747">Vector.cs:747</a></div></div>
-<div class="ttc" id="aa01436_a7315e5ff6190013a30eb6a4165c2713c_html_a7315e5ff6190013a30eb6a4165c2713c"><div class="ttname"><a href="../../dc/d85/a01436_a7315e5ff6190013a30eb6a4165c2713c.html#a7315e5ff6190013a30eb6a4165c2713c">SystemEx.Collections.Generic.Vector-1-g.AsUnorderedMultiSet</a></div><div class="ttdeci">static VectorUnorderedMultiSet&lt; T, Vector&lt; T &gt; &gt; AsUnorderedMultiSet(ref Vector&lt; T &gt; vec)</div><div class="ttdoc">Creates an VectorUnorderedMultiSet&lt;T, Vector&lt;T&gt;&gt; view over the vector, representing a collection that...</div><div class="ttdef"><b>Definition</b> <a href="#l00474">Vector.cs:474</a></div></div>
-<div class="ttc" id="aa01436_a745a899efe182dadc8c3b42defea5c81_html_a745a899efe182dadc8c3b42defea5c81"><div class="ttname"><a href="../../dc/d85/a01436_a745a899efe182dadc8c3b42defea5c81.html#a745a899efe182dadc8c3b42defea5c81">SystemEx.Collections.Generic.Vector-1-g.IsFull</a></div><div class="ttdeci">bool IsFull</div><div class="ttdoc">Indicates whether the Vector is full.</div><div class="ttdef"><b>Definition</b> <a href="#l00117">Vector.cs:117</a></div></div>
-<div class="ttc" id="aa01436_a761052fed0f15cf48897aec054350c28_html_a761052fed0f15cf48897aec054350c28"><div class="ttname"><a href="../../dc/d85/a01436_a761052fed0f15cf48897aec054350c28.html#a761052fed0f15cf48897aec054350c28">SystemEx.Collections.Generic.Vector-1-g.Equals</a></div><div class="ttdeci">override bool Equals(object? obj)</div><div class="ttdef"><b>Definition</b> <a href="#l01023">Vector.cs:1023</a></div></div>
-<div class="ttc" id="aa01436_a7ce3c9f676720ba1aab67962ec9d9435_html_a7ce3c9f676720ba1aab67962ec9d9435"><div class="ttname"><a href="../../dc/d85/a01436_a7ce3c9f676720ba1aab67962ec9d9435.html#a7ce3c9f676720ba1aab67962ec9d9435">SystemEx.Collections.Generic.Vector-1-g.Replace</a></div><div class="ttdeci">bool Replace(long start, long end, T entry)</div><div class="ttdoc">Replaces a range of elements with a single value.</div><div class="ttdef"><b>Definition</b> <a href="#l00699">Vector.cs:699</a></div></div>
-<div class="ttc" id="aa01436_a8267d9293641f263648fdd0672f86911_html_a8267d9293641f263648fdd0672f86911"><div class="ttname"><a href="../../dc/d85/a01436_a8267d9293641f263648fdd0672f86911.html#a8267d9293641f263648fdd0672f86911">SystemEx.Collections.Generic.Vector-1-g.Current</a></div><div class="ttdeci">Optional&lt; T &gt; Current</div><div class="ttdoc">Gets the element at the current logical position (m_index).</div><div class="ttdef"><b>Definition</b> <a href="#l00153">Vector.cs:153</a></div></div>
-<div class="ttc" id="aa01436_a82a97dd6f4c9c0557b49be71c16b539d_html_a82a97dd6f4c9c0557b49be71c16b539d"><div class="ttname"><a href="../../dc/d85/a01436_a82a97dd6f4c9c0557b49be71c16b539d.html#a82a97dd6f4c9c0557b49be71c16b539d">SystemEx.Collections.Generic.Vector-1-g.IsEmpty</a></div><div class="ttdeci">bool IsEmpty</div><div class="ttdoc">Indicates whether the Vector contains no elements.</div><div class="ttdef"><b>Definition</b> <a href="#l00122">Vector.cs:122</a></div></div>
-<div class="ttc" id="aa01436_a8a756902ed664f8514d1fa3bf740edc1_html_a8a756902ed664f8514d1fa3bf740edc1"><div class="ttname"><a href="../../dc/d85/a01436_a8a756902ed664f8514d1fa3bf740edc1.html#a8a756902ed664f8514d1fa3bf740edc1">SystemEx.Collections.Generic.Vector-1-g.Swap</a></div><div class="ttdeci">void Swap(long i, long j)</div><div class="ttdoc">Swaps two elements inside the valid range.</div><div class="ttdef"><b>Definition</b> <a href="#l00762">Vector.cs:762</a></div></div>
-<div class="ttc" id="aa01436_a9770605c8d65e7046d4c6a4f4932bf0a_html_a9770605c8d65e7046d4c6a4f4932bf0a"><div class="ttname"><a href="../../dc/d85/a01436_a9770605c8d65e7046d4c6a4f4932bf0a.html#a9770605c8d65e7046d4c6a4f4932bf0a">SystemEx.Collections.Generic.Vector-1-g.Insert</a></div><div class="ttdeci">bool Insert(long start, long end, T entry)</div><div class="ttdoc">Fills a range of indices with a single value. Automatically grows the buffer if needed and AutoGrow i...</div><div class="ttdef"><b>Definition</b> <a href="#l00623">Vector.cs:623</a></div></div>
-<div class="ttc" id="aa01436_aa11a1eb1054a229ba7531995b37a7a54_html_aa11a1eb1054a229ba7531995b37a7a54"><div class="ttname"><a href="../../dc/d85/a01436_aa11a1eb1054a229ba7531995b37a7a54.html#aa11a1eb1054a229ba7531995b37a7a54">SystemEx.Collections.Generic.Vector-1-g.Vector</a></div><div class="ttdeci">Vector(IEnumerable&lt; T &gt; e, int growSize=16)</div><div class="ttdoc">Creates a new Vector from an enumerable collection. The internal buffer is created from the collectio...</div><div class="ttdef"><b>Definition</b> <a href="#l00543">Vector.cs:543</a></div></div>
-<div class="ttc" id="aa01436_aa2b4dac45863d8874bb5981178444add_html_aa2b4dac45863d8874bb5981178444add"><div class="ttname"><a href="../../dc/d85/a01436_aa2b4dac45863d8874bb5981178444add.html#aa2b4dac45863d8874bb5981178444add">SystemEx.Collections.Generic.Vector-1-g.Erase</a></div><div class="ttdeci">bool Erase(long index)</div><div class="ttdoc">Erase overloads are API stubs and always return true. Actual removal logic is handled by Remove() met...</div><div class="ttdef"><b>Definition</b> <a href="#l00740">Vector.cs:740</a></div></div>
-<div class="ttc" id="aa01436_aa66c207156a4cba6f7cb8ae97d21252a_html_aa66c207156a4cba6f7cb8ae97d21252a"><div class="ttname"><a href="../../dc/d85/a01436_aa66c207156a4cba6f7cb8ae97d21252a.html#aa66c207156a4cba6f7cb8ae97d21252a">SystemEx.Collections.Generic.Vector-1-g.AsUnorderedSet</a></div><div class="ttdeci">static VectorUnorderedSet&lt; T, Vector&lt; T &gt; &gt; AsUnorderedSet(ref Vector&lt; T &gt; vec)</div><div class="ttdoc">Creates an VectorUnorderedSet&lt;T, Vector&lt;T&gt;&gt; view over the vector, representing a unique collection wi...</div><div class="ttdef"><b>Definition</b> <a href="#l00440">Vector.cs:440</a></div></div>
-<div class="ttc" id="aa01436_aa6b8af60b8d5cb7af07b5a1508801c85_html_aa6b8af60b8d5cb7af07b5a1508801c85"><div class="ttname"><a href="../../dc/d85/a01436_aa6b8af60b8d5cb7af07b5a1508801c85.html#aa6b8af60b8d5cb7af07b5a1508801c85">SystemEx.Collections.Generic.Vector-1-g.Vector</a></div><div class="ttdeci">Vector(T[] e, int growSize=16)</div><div class="ttdoc">Creates a new Vector using an existing buffer. The buffer is adopted as-is, and Count is set to the l...</div><div class="ttdef"><b>Definition</b> <a href="#l00525">Vector.cs:525</a></div></div>
-<div class="ttc" id="aa01436_aaf4e9e38d140399473577367b5d83384_html_aaf4e9e38d140399473577367b5d83384"><div class="ttname"><a href="../../dc/d85/a01436_aaf4e9e38d140399473577367b5d83384.html#aaf4e9e38d140399473577367b5d83384">SystemEx.Collections.Generic.Vector-1-g.InsertRange</a></div><div class="ttdeci">bool InsertRange(long start, T[] entrys)</div><div class="ttdoc">Inserts a sequence of elements starting at the specified index.</div><div class="ttdef"><b>Definition</b> <a href="#l00655">Vector.cs:655</a></div></div>
-<div class="ttc" id="aa01436_ab4ff431c28d45754964bd8b485be26b4_html_ab4ff431c28d45754964bd8b485be26b4"><div class="ttname"><a href="../../dc/d85/a01436_ab4ff431c28d45754964bd8b485be26b4.html#ab4ff431c28d45754964bd8b485be26b4">SystemEx.Collections.Generic.Vector-1-g.AsSet</a></div><div class="ttdeci">static VectorSet&lt; T, Vector&lt; T &gt; &gt; AsSet(ref Vector&lt; T &gt; vec, ISimpleCompare&lt; T &gt;? comparer=null, SortAction&lt; ISimpleCompare&lt; T &gt;, Vector&lt; T &gt; &gt;? sorter=null)</div><div class="ttdoc">Creates a VectorSet&lt;T, Vector&lt;T&gt;&gt; view over the given vector.</div><div class="ttdef"><b>Definition</b> <a href="#l00327">Vector.cs:327</a></div></div>
-<div class="ttc" id="aa01436_abc4489e571db194e24a1ab9f3737fa9e_html_abc4489e571db194e24a1ab9f3737fa9e"><div class="ttname"><a href="../../dc/d85/a01436_abc4489e571db194e24a1ab9f3737fa9e.html#abc4489e571db194e24a1ab9f3737fa9e">SystemEx.Collections.Generic.Vector-1-g.Count</a></div><div class="ttdeci">long Count</div><div class="ttdoc">Gets the number of valid elements currently stored in the vector.</div><div class="ttdef"><b>Definition</b> <a href="#l00144">Vector.cs:144</a></div></div>
-<div class="ttc" id="aa01436_abefd179a7e6ec8eae47263434ba6507a_html_abefd179a7e6ec8eae47263434ba6507a"><div class="ttname"><a href="../../dc/d85/a01436_abefd179a7e6ec8eae47263434ba6507a.html#abefd179a7e6ec8eae47263434ba6507a">SystemEx.Collections.Generic.Vector-1-g.Traverse</a></div><div class="ttdeci">void Traverse(TraversMode mode, long startIndex, long endIndex, Action&lt; T &gt; func)</div><div class="ttdoc">Traverses a range of elements in forward or backward order.</div><div class="ttdef"><b>Definition</b> <a href="#l00820">Vector.cs:820</a></div></div>
-<div class="ttc" id="aa01436_ac3d2d20742534935a487fe8aaf7b3747_html_ac3d2d20742534935a487fe8aaf7b3747"><div class="ttname"><a href="../../dc/d85/a01436_ac3d2d20742534935a487fe8aaf7b3747.html#ac3d2d20742534935a487fe8aaf7b3747">SystemEx.Collections.Generic.Vector-1-g.CopyFrom</a></div><div class="ttdeci">Pair&lt; bool, long &gt; CopyFrom(Vector&lt; T &gt; source, ulong sourceOffset, ulong destinationOffset, ulong count)</div><div class="ttdoc">Copies data from another vector into this vector.</div><div class="ttdef"><b>Definition</b> <a href="#l00918">Vector.cs:918</a></div></div>
-<div class="ttc" id="aa01436_aca4d01c6a067741ebba3dc35ab153fd5_html_aca4d01c6a067741ebba3dc35ab153fd5"><div class="ttname"><a href="../../dc/d85/a01436_aca4d01c6a067741ebba3dc35ab153fd5.html#aca4d01c6a067741ebba3dc35ab153fd5">SystemEx.Collections.Generic.Vector-1-g.GetHashCode</a></div><div class="ttdeci">override int GetHashCode()</div><div class="ttdef"><b>Definition</b> <a href="#l01029">Vector.cs:1029</a></div></div>
-<div class="ttc" id="aa01436_acbc8e60dbcfbd486ca7d4cbec37b2498_html_acbc8e60dbcfbd486ca7d4cbec37b2498"><div class="ttname"><a href="../../dc/d85/a01436_acbc8e60dbcfbd486ca7d4cbec37b2498.html#acbc8e60dbcfbd486ca7d4cbec37b2498">SystemEx.Collections.Generic.Vector-1-g.Replace</a></div><div class="ttdeci">bool Replace(long index, T entry)</div><div class="ttdoc">Replaces the element at the specified index. Automatically grows the buffer if needed and AutoGrow is...</div><div class="ttdef"><b>Definition</b> <a href="#l00672">Vector.cs:672</a></div></div>
-<div class="ttc" id="aa01436_acca85e9b78e7e5b6456815a4e48a448e_html_acca85e9b78e7e5b6456815a4e48a448e"><div class="ttname"><a href="../../dc/d85/a01436_acca85e9b78e7e5b6456815a4e48a448e.html#acca85e9b78e7e5b6456815a4e48a448e">SystemEx.Collections.Generic.Vector-1-g.GetElementType</a></div><div class="ttdeci">Type GetElementType()</div><div class="ttdoc">Get The Type of T.</div><div class="ttdef"><b>Definition</b> <a href="#l00245">Vector.cs:245</a></div></div>
-<div class="ttc" id="aa01436_aced0c18b82c6d11cdc1623446c99623b_html_aced0c18b82c6d11cdc1623446c99623b"><div class="ttname"><a href="../../dc/d85/a01436_aced0c18b82c6d11cdc1623446c99623b.html#aced0c18b82c6d11cdc1623446c99623b">SystemEx.Collections.Generic.Vector-1-g.Duplicate</a></div><div class="ttdeci">IVector&lt; T &gt; Duplicate()</div><div class="ttdoc">Create a duplicate from this.</div><div class="ttdef"><b>Definition</b> <a href="#l00972">Vector.cs:972</a></div></div>
-<div class="ttc" id="aa01436_ad05a564dce18d96e5295f440b37a92a4_html_ad05a564dce18d96e5295f440b37a92a4"><div class="ttname"><a href="../../dc/d85/a01436_ad05a564dce18d96e5295f440b37a92a4.html#ad05a564dce18d96e5295f440b37a92a4">SystemEx.Collections.Generic.Vector-1-g.Grow</a></div><div class="ttdeci">bool Grow()</div><div class="ttdoc">Grows the internal buffer by GrowSize if AutoGrow is enabled.</div><div class="ttdef"><b>Definition</b> <a href="#l00790">Vector.cs:790</a></div></div>
-<div class="ttc" id="aa01436_ad14f2d040d22863249dee6a417bae648_html_ad14f2d040d22863249dee6a417bae648"><div class="ttname"><a href="../../dc/d85/a01436_ad14f2d040d22863249dee6a417bae648.html#ad14f2d040d22863249dee6a417bae648">SystemEx.Collections.Generic.Vector-1-g.Length</a></div><div class="ttdeci">long Length</div><div class="ttdoc">The real size.</div><div class="ttdef"><b>Definition</b> <a href="#l00103">Vector.cs:103</a></div></div>
-<div class="ttc" id="aa01436_af2592cc8bcceca84714ab91d24d15ba8_html_af2592cc8bcceca84714ab91d24d15ba8"><div class="ttname"><a href="../../dc/d85/a01436_af2592cc8bcceca84714ab91d24d15ba8.html#af2592cc8bcceca84714ab91d24d15ba8">SystemEx.Collections.Generic.Vector-1-g.GetEnumerator</a></div><div class="ttdeci">IEnumerator&lt; T &gt; GetEnumerator()</div><div class="ttdoc">Enumerates all valid elements in forward order.</div><div class="ttdef"><b>Definition</b> <a href="#l00808">Vector.cs:808</a></div></div>
-<div class="ttc" id="aa01436_af71d70de567ea8f7d25a686553ebe1f2_html_af71d70de567ea8f7d25a686553ebe1f2"><div class="ttname"><a href="../../dc/d85/a01436_af71d70de567ea8f7d25a686553ebe1f2.html#af71d70de567ea8f7d25a686553ebe1f2">SystemEx.Collections.Generic.Vector-1-g.Front</a></div><div class="ttdeci">Optional&lt; T &gt; Front</div><div class="ttdoc">Gets the first element of the Vector.</div><div class="ttdef"><b>Definition</b> <a href="#l00108">Vector.cs:108</a></div></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>}</div>
+<div class="ttc" id="aa00902_ga215d2b35ddea86a743aac8c4e4a3c221_html_ga215d2b35ddea86a743aac8c4e4a3c221"><div class="ttname"><a href="../../d5/dd3/a00902_ga215d2b35ddea86a743aac8c4e4a3c221.html#ga215d2b35ddea86a743aac8c4e4a3c221">SystemEx.Collections.Generic.Slices-2-g.GetValue</a></div><div class="ttdeci">bool GetValue(SubSlice&lt; T, TContainer &gt; slice, int index, out T? value)</div><div class="ttdoc">Reads a value from the container through a SubSlice. Reading is only permitted if the calling thread ...</div><div class="ttdef"><b>Definition</b> <a href="#l00231">VectorSlice.cs:231</a></div></div>
+<div class="ttc" id="aa00902_ga3b39f464f5642ae4ef1b19e5488cbd20_html_ga3b39f464f5642ae4ef1b19e5488cbd20"><div class="ttname"><a href="../../d5/dd3/a00902_ga3b39f464f5642ae4ef1b19e5488cbd20.html#ga3b39f464f5642ae4ef1b19e5488cbd20">SystemEx.Collections.Generic.SubSlice-2-g.GetIndex</a></div><div class="ttdeci">long GetIndex(int sub_index)</div><div class="ttdoc">Get the real index.</div><div class="ttdef"><b>Definition</b> <a href="#l00054">VectorSlice.cs:54</a></div></div>
+<div class="ttc" id="aa00902_ga4f4449158f0b4009d79f8c56e378169a_html_ga4f4449158f0b4009d79f8c56e378169a"><div class="ttname"><a href="../../d5/dd3/a00902_ga4f4449158f0b4009d79f8c56e378169a.html#ga4f4449158f0b4009d79f8c56e378169a">SystemEx.Collections.Generic.Slices-2-g.Slices</a></div><div class="ttdeci">Slices(ref TContainer con, int sliceLen)</div><div class="ttdoc">Constructs a new Slices instance by dividing the container into fixed-size SubSlices....</div><div class="ttdef"><b>Definition</b> <a href="#l00155">VectorSlice.cs:155</a></div></div>
+<div class="ttc" id="aa00902_gac33207d64995ca7df73a176fdadac061_html_gac33207d64995ca7df73a176fdadac061"><div class="ttname"><a href="../../d5/dd3/a00902_gac33207d64995ca7df73a176fdadac061.html#gac33207d64995ca7df73a176fdadac061">SystemEx.Collections.Generic.Slices-2-g.GetJobSlice</a></div><div class="ttdeci">SubSlice&lt; T, TContainer &gt;? GetJobSlice(int sliceID, int thread_id)</div><div class="ttdoc">Retrieves a SubSlice by index and attempts to assign ownership to the requesting thread....</div><div class="ttdef"><b>Definition</b> <a href="#l00205">VectorSlice.cs:205</a></div></div>
+<div class="ttc" id="aa00902_gac4b3a71c3df481759f069a54aae7576c_html_gac4b3a71c3df481759f069a54aae7576c"><div class="ttname"><a href="../../d5/dd3/a00902_gac4b3a71c3df481759f069a54aae7576c.html#gac4b3a71c3df481759f069a54aae7576c">SystemEx.Collections.Generic.Slices-2-g.Equals</a></div><div class="ttdeci">bool Equals(Slices&lt; T, TContainer &gt; other)</div><div class="ttdef"><b>Definition</b> <a href="#l00250">VectorSlice.cs:250</a></div></div>
+<div class="ttc" id="aa00902_gad987075955e0fcf6a5646c50daf884b5_html_gad987075955e0fcf6a5646c50daf884b5"><div class="ttname"><a href="../../d5/dd3/a00902_gad987075955e0fcf6a5646c50daf884b5.html#gad987075955e0fcf6a5646c50daf884b5">SystemEx.Collections.Generic.Slices-2-g.SetOwner</a></div><div class="ttdeci">Result SetOwner(SubSlice&lt; T, TContainer &gt; slice, int thread_id)</div><div class="ttdoc">Assigns ownership of a SubSlice to a thread if the slice is currently unowned. Ownership is exclusive...</div><div class="ttdef"><b>Definition</b> <a href="#l00188">VectorSlice.cs:188</a></div></div>
+<div class="ttc" id="aa00919_html"><div class="ttname"><a href="../../d1/d0b/a00919.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d5d/a00311_source.html#l00021">Cache.cs:21</a></div></div>
+<div class="ttc" id="aa00936_html"><div class="ttname"><a href="../../dc/d2b/a00936.html">SystemEx.Threading</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d5c/a00752_source.html#l00018">AtomicLock.cs:18</a></div></div>
+<div class="ttc" id="aa01241_html"><div class="ttname"><a href="../../d3/d07/a01241.html">SystemEx.Result</a></div><div class="ttdoc">Represents a flexible multi-value result container that can hold successful values,...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d25/a00182_source.html#l00038">Result.cs:38</a></div></div>
+<div class="ttc" id="aa02253_html"><div class="ttname"><a href="../../db/d7a/a02253.html">SystemEx.Threading.LightLock</a></div><div class="ttdoc">Provides a minimal wrapper around Monitor to offer lightweight mutual exclusion. LightLock is intende...</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0c/a00788_source.html#l00025">LightLock.cs:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Collections</b></li><li class="navelem"><b>Generic</b></li><li class="navelem"><b>Vector</b></li><li class="navelem"><b>Vector.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Collections</b></li><li class="navelem"><b>Generic</b></li><li class="navelem"><b>Vector</b></li><li class="navelem"><b>VectorSlice.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

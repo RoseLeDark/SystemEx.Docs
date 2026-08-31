@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: RCUDomain.cs Source File" />
+<meta property="og:title" content="SystemEX: IFP8.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: RCUDomain.cs Source File" />
+<meta name="twitter:title" content="SystemEX: IFP8.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: RCUDomain.cs Source File</title>
+<title>SystemEX: IFP8.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,49 +138,51 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d9b/a00680_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">RCUDomain.cs</div></div>
+  <div class="headertitle"><div class="title">IFP8.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections.Generic;</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>System.Text;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="../../dc/d0a/a00850.html">    5</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dc/d0a/a00850.html">SystemEx.Threading.intern</a> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>     <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class </span>RCUGlobalDomain&lt;T&gt; {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          <span class="keyword">private</span> <a class="code hl_struct" href="../../d3/dbb/a02004.html">Epoch</a> m_globalEpoch;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>          <span class="keyword">private</span> RCUHistory&lt;T&gt; m_history;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>          <span class="keyword">public</span> RCUGlobalDomain () {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>               m_globalEpoch = <span class="keyword">new</span> <a class="code hl_struct" href="../../d3/dbb/a02004.html">Epoch</a>();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>               m_history = <span class="keyword">new</span> RCUHistory&lt;T&gt;();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>          }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>          <span class="keyword">public</span> <span class="keywordtype">void</span> Push ( T? entry ) {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>               <span class="keyword">using</span> ( var _lock = <span class="keyword">new</span> <a class="code hl_struct" href="../../d5/d6e/a02008.html">UniqueEpoch</a>(ref m_globalEpoch) ) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    m_history.Push(entry);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>               }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>          }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>          <span class="keyword">public</span> T? Pop ( T? deft ) {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>               T? _newValue = <span class="keywordflow">default</span>(T);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>               <span class="keywordflow">return</span> m_history.Pop(out _newValue, deft, m_globalEpoch.Value != 0) ? _newValue : deft;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>          }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>     }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * SPDX-License-Identifier: EUPL-1.2</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Copyright (c) 2026 Amber-Sophia Schröck &lt;ambersophia.schroeck@mail.de&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * This file is licensed under the European Union Public Licence (EUPL) version 1.2.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * You can obtain a copy of the licence at:</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *   https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * Unless required by applicable law or agreed to in writing, software distributed</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * If you modify this file, retain this notice and add a short description of your</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../df/dbc/a00931.html">SystemEx.Numeric</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d8/d98/a02009.html">   20</a></span>     <span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="../../d8/d98/a02009.html">IFP8</a> : <a class="code hl_interface" href="../../d0/d2b/a01997.html">IFloat</a>&lt;Fast_Byte&gt; { }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d1/dc5/a02013.html">   32</a></span>     <span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="../../d8/d98/a02009.html">IFP8</a>&lt;TSelf&gt; : <a class="code hl_interface" href="../../d8/d98/a02009.html">IFP8</a>, <a class="code hl_interface" href="../../d0/d2b/a01997.html">IFloat</a>&lt;TSelf, Fast_Byte&gt;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>          where TSelf : struct, <a class="code hl_interface" href="../../d8/d98/a02009.html">IFP8</a>&lt;TSelf&gt; {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>          <span class="keyword">static</span> <span class="keyword">abstract</span>     <span class="keywordtype">bool</span>  IsMXSupport { <span class="keyword">get</span>; }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>          <span class="keyword">static</span> <span class="keyword">abstract</span> TSelf FromComponent (<a class="code hl_struct" href="../../da/d6c/a01921.html">Fast_Byte</a> sign, <a class="code hl_struct" href="../../da/d6c/a01921.html">Fast_Byte</a> mantissa, <a class="code hl_struct" href="../../da/d6c/a01921.html">Fast_Byte</a> expotent);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>     }</div>
 </div>
-<div class="ttc" id="aa00850_html"><div class="ttname"><a href="../../dc/d0a/a00850.html">SystemEx.Threading.intern</a></div><div class="ttdef"><b>Definition</b> <a href="#l00005">RCUDomain.cs:5</a></div></div>
-<div class="ttc" id="aa02004_html"><div class="ttname"><a href="../../d3/dbb/a02004.html">SystemEx.Threading.Epoch</a></div><div class="ttdoc">Represents a lightweight Read-Copy-Update (RCU) epoch counter used to track active reader sections....</div><div class="ttdef"><b>Definition</b> <a href="../../d6/dc0/a00734_source.html#l00028">Epoch.cs:28</a></div></div>
-<div class="ttc" id="aa02008_html"><div class="ttname"><a href="../../d5/d6e/a02008.html">SystemEx.Threading.UniqueEpoch</a></div><div class="ttdoc">Provides an RAII-style scoped reader epoch for RCU-based objects. The epoch is incremented when the i...</div><div class="ttdef"><b>Definition</b> <a href="../../d6/dc0/a00734_source.html#l00102">Epoch.cs:102</a></div></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+<div class="ttc" id="aa00931_html"><div class="ttname"><a href="../../df/dbc/a00931.html">SystemEx.Numeric</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d5c/a00578_source.html#l00020">AxisAngle.cs:20</a></div></div>
+<div class="ttc" id="aa01921_html"><div class="ttname"><a href="../../da/d6c/a01921.html">SystemEx.Numeric.Fast_Byte</a></div><div class="ttdoc">Represents an 8‑bit fast bit‑manipulation type. This struct provides low‑level operations for inspect...</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d4d/a00620_source.html#l00039">Fast_Byte.cs:39</a></div></div>
+<div class="ttc" id="aa01997_html"><div class="ttname"><a href="../../d0/d2b/a01997.html">SystemEx.Numeric.IFloat</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d6a/a00704_source.html#l00021">IFloat.cs:21</a></div></div>
+<div class="ttc" id="aa02009_html"><div class="ttname"><a href="../../d8/d98/a02009.html">SystemEx.Numeric.IFP8</a></div><div class="ttdef"><b>Definition</b> <a href="#l00020">IFP8.cs:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Threading</b></li><li class="navelem"><b>intern</b></li><li class="navelem"><b>RCUDomain.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Numeric</b></li><li class="navelem"><b>IFP8.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

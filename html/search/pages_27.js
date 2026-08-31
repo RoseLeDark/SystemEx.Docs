@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['👤_20systemex_20authors_0',['👤 SystemEx Authors',['../de/db2/a02246.html',1,'']]]
+  ['🎨_20systemex_20drawing_0',['🎨 SystemEx.Drawing',['../index.html#autotoc_md-systemexdrawing',1,'']]]
 ];

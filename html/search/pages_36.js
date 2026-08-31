@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['🧰_20systemex_20utils_0',['🧰 SystemEx.Utils',['../index.html#autotoc_md-systemexutils',1,'']]],
-  ['🧰_20systemex_20utils_20bits_1',['🧰 SystemEx.Utils.Bits',['../index.html#autotoc_md-systemexutilsbits',1,'']]]
+  ['🧩_20maintainer_20note_0',['🧩 Maintainer Note',['../d3/d6c/a02446.html#autotoc_md-maintainer-note',1,'']]],
+  ['🧩_20module_20overview_1',['🧩 Module Overview',['../d3/d6c/a02446.html#autotoc_md-module-overview',1,'']]],
+  ['🧩_20namespaces_20overview_2',['🧩 Namespaces Overview',['../index.html#autotoc_md-namespaces-overview',1,'']]]
 ];

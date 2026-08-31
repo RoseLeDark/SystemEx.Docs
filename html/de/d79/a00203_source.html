@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: ResultBuilder.cs Source File" />
+<meta property="og:title" content="SystemEX: IComparableEx.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: ResultBuilder.cs Source File" />
+<meta name="twitter:title" content="SystemEX: IComparableEx.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: ResultBuilder.cs Source File</title>
+<title>SystemEX: IComparableEx.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('de/d79/a00203_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ResultBuilder.cs</div></div>
+  <div class="headertitle"><div class="title">IComparableEx.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -158,95 +158,30 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('de/d79/a00203_
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dd/d5f/a00825.html">SystemEx</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span><a class="code hl_namespace" href="../../df/dbc/a00931.html">SystemEx.Numeric</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span><a class="code hl_namespace" href="../../d5/d54/a00938.html">SystemEx.Utils</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d12/a00911.html">SystemEx</a> {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../da/d20/a01160.html">   41</a></span>     <span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class </span><a class="code hl_function" href="../../da/d20/a01160_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>          <span class="keyword">private</span> <a class="code hl_struct" href="../../d9/d42/a01156.html">Result</a> m_result;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../da/d20/a01160_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">   50</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../da/d20/a01160_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> () {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>               m_result = <span class="keyword">new</span> <a class="code hl_struct" href="../../d9/d42/a01156.html">Result</a>();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          }</div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="};">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../d3/dd3/a01185.html">   64</a></span>     <span class="keyword">public</span> <span class="keyword">interface </span>IComparableEx&lt;T&gt; {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="../../d3/dd3/a01185_a31f1419e9cf0b785e10516da24de2d0b.html#a31f1419e9cf0b785e10516da24de2d0b">   85</a></span>        <a class="code hl_enumeration" href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">CompareResult</a> <a class="code hl_function" href="../../d3/dd3/a01185_a31f1419e9cf0b785e10516da24de2d0b.html#a31f1419e9cf0b785e10516da24de2d0b">CompareTo</a> ( T a );</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
 </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../da/d20/a01160_aea1f39ac9cf438dd19c4140b6cca8f8d.html#aea1f39ac9cf438dd19c4140b6cca8f8d">   59</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../da/d20/a01160_aea1f39ac9cf438dd19c4140b6cca8f8d.html#aea1f39ac9cf438dd19c4140b6cca8f8d">ResultBuilder</a> ( <a class="code hl_struct" href="../../d9/d42/a01156.html">Result</a> existing ) {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>               m_result = existing;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>          }</div>
-</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
-<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../da/d20/a01160_ae269f08ad7ca01326d942d3461420e36.html#ae269f08ad7ca01326d942d3461420e36">   68</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../da/d20/a01160_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> <a class="code hl_function" href="../../da/d20/a01160_ae269f08ad7ca01326d942d3461420e36.html#ae269f08ad7ca01326d942d3461420e36">Add</a> ( <span class="keywordtype">object</span> value ) {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>               m_result[m_result.Count] = value;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>               <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>          }</div>
-</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
-<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../da/d20/a01160_af6cc535c081955832b515f964a62c3fc.html#af6cc535c081955832b515f964a62c3fc">   78</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../da/d20/a01160_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> <a class="code hl_function" href="../../da/d20/a01160_af6cc535c081955832b515f964a62c3fc.html#af6cc535c081955832b515f964a62c3fc">Try</a> ( Action action ) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>               <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                    action();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>               } <span class="keywordflow">catch</span> ( Exception ex ) {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                    m_result.Catch(ex);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>               }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>               <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>          }</div>
-</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
-<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../da/d20/a01160_ae6324d2a5ff2aa93eaa566deab66e011.html#ae6324d2a5ff2aa93eaa566deab66e011">   93</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../da/d20/a01160_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> <a class="code hl_function" href="../../da/d20/a01160_ae6324d2a5ff2aa93eaa566deab66e011.html#ae6324d2a5ff2aa93eaa566deab66e011">Try</a> ( Func&lt;object&gt; func ) {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>               <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                    var value = func();</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                    m_result[m_result.Count] = value;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>               } <span class="keywordflow">catch</span> ( Exception ex ) {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                    m_result.Catch(ex);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>               }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>               <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>          }</div>
-</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
-<div class="foldopen" id="foldopen00110" data-start="{" data-end="}">
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="../../da/d20/a01160_aded4b6c8522dc99fc8fafd2d57c126ff.html#aded4b6c8522dc99fc8fafd2d57c126ff">  110</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../da/d20/a01160_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> <a class="code hl_function" href="../../da/d20/a01160_aded4b6c8522dc99fc8fafd2d57c126ff.html#aded4b6c8522dc99fc8fafd2d57c126ff">Assert</a> ( <span class="keywordtype">bool</span> condition, <span class="keywordtype">string</span> message ) {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>               m_result.<a class="code hl_function" href="../../da/d20/a01160_aded4b6c8522dc99fc8fafd2d57c126ff.html#aded4b6c8522dc99fc8fafd2d57c126ff">Assert</a>(condition, message);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>               <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>          }</div>
-</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
-<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="../../da/d20/a01160_a25c25c6744475d2791ffae8ddec3b525.html#a25c25c6744475d2791ffae8ddec3b525">  120</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../da/d20/a01160_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> <a class="code hl_function" href="../../da/d20/a01160_a25c25c6744475d2791ffae8ddec3b525.html#a25c25c6744475d2791ffae8ddec3b525">Catch</a> ( Exception ex ) {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>               m_result.<a class="code hl_function" href="../../da/d20/a01160_a25c25c6744475d2791ffae8ddec3b525.html#a25c25c6744475d2791ffae8ddec3b525">Catch</a>(ex);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>               <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>          }</div>
-</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
-<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="../../da/d20/a01160_adc1ec2888cdcd032c458c35568b00fe7.html#adc1ec2888cdcd032c458c35568b00fe7">  128</a></span>          <span class="keyword">public</span> <a class="code hl_struct" href="../../d9/d42/a01156.html">Result</a> <a class="code hl_function" href="../../da/d20/a01160_adc1ec2888cdcd032c458c35568b00fe7.html#adc1ec2888cdcd032c458c35568b00fe7">ToResult</a> () {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>               <span class="keywordflow">return</span> m_result;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>          }</div>
-</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>     }</div>
-</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
-<div class="ttc" id="aa00825_html"><div class="ttname"><a href="../../dd/d5f/a00825.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d03/a00062_source.html#l00018">AIEnvironment .cs:18</a></div></div>
-<div class="ttc" id="aa01156_html"><div class="ttname"><a href="../../d9/d42/a01156.html">SystemEx.Result</a></div><div class="ttdoc">Represents a flexible multi-value result container that can hold successful values,...</div><div class="ttdef"><b>Definition</b> <a href="../../d3/df8/a00155_source.html#l00040">Result.cs:40</a></div></div>
-<div class="ttc" id="aa01160_a25c25c6744475d2791ffae8ddec3b525_html_a25c25c6744475d2791ffae8ddec3b525"><div class="ttname"><a href="../../da/d20/a01160_a25c25c6744475d2791ffae8ddec3b525.html#a25c25c6744475d2791ffae8ddec3b525">SystemEx.ResultBuilder.Catch</a></div><div class="ttdeci">ResultBuilder Catch(Exception ex)</div><div class="ttdoc">Appends an exception to the result without throwing it.</div><div class="ttdef"><b>Definition</b> <a href="#l00120">ResultBuilder.cs:120</a></div></div>
-<div class="ttc" id="aa01160_a9ec126b775fc938b4e27561d718378ef_html_a9ec126b775fc938b4e27561d718378ef"><div class="ttname"><a href="../../da/d20/a01160_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">SystemEx.ResultBuilder.ResultBuilder</a></div><div class="ttdeci">ResultBuilder()</div><div class="ttdoc">Initializes a new ResultBuilder with an empty result.</div><div class="ttdef"><b>Definition</b> <a href="#l00050">ResultBuilder.cs:50</a></div></div>
-<div class="ttc" id="aa01160_adc1ec2888cdcd032c458c35568b00fe7_html_adc1ec2888cdcd032c458c35568b00fe7"><div class="ttname"><a href="../../da/d20/a01160_adc1ec2888cdcd032c458c35568b00fe7.html#adc1ec2888cdcd032c458c35568b00fe7">SystemEx.ResultBuilder.ToResult</a></div><div class="ttdeci">Result ToResult()</div><div class="ttdoc">Returns the constructed Result instance.</div><div class="ttdef"><b>Definition</b> <a href="#l00128">ResultBuilder.cs:128</a></div></div>
-<div class="ttc" id="aa01160_aded4b6c8522dc99fc8fafd2d57c126ff_html_aded4b6c8522dc99fc8fafd2d57c126ff"><div class="ttname"><a href="../../da/d20/a01160_aded4b6c8522dc99fc8fafd2d57c126ff.html#aded4b6c8522dc99fc8fafd2d57c126ff">SystemEx.ResultBuilder.Assert</a></div><div class="ttdeci">ResultBuilder Assert(bool condition, string message)</div><div class="ttdoc">Evaluates an assertion and records a failure message if the condition is false.</div><div class="ttdef"><b>Definition</b> <a href="#l00110">ResultBuilder.cs:110</a></div></div>
-<div class="ttc" id="aa01160_ae269f08ad7ca01326d942d3461420e36_html_ae269f08ad7ca01326d942d3461420e36"><div class="ttname"><a href="../../da/d20/a01160_ae269f08ad7ca01326d942d3461420e36.html#ae269f08ad7ca01326d942d3461420e36">SystemEx.ResultBuilder.Add</a></div><div class="ttdeci">ResultBuilder Add(object value)</div><div class="ttdoc">Appends a value to the result.</div><div class="ttdef"><b>Definition</b> <a href="#l00068">ResultBuilder.cs:68</a></div></div>
-<div class="ttc" id="aa01160_ae6324d2a5ff2aa93eaa566deab66e011_html_ae6324d2a5ff2aa93eaa566deab66e011"><div class="ttname"><a href="../../da/d20/a01160_ae6324d2a5ff2aa93eaa566deab66e011.html#ae6324d2a5ff2aa93eaa566deab66e011">SystemEx.ResultBuilder.Try</a></div><div class="ttdeci">ResultBuilder Try(Func&lt; object &gt; func)</div><div class="ttdoc">Executes a function and appends its return value to the result. Any thrown exception is captured.</div><div class="ttdef"><b>Definition</b> <a href="#l00093">ResultBuilder.cs:93</a></div></div>
-<div class="ttc" id="aa01160_aea1f39ac9cf438dd19c4140b6cca8f8d_html_aea1f39ac9cf438dd19c4140b6cca8f8d"><div class="ttname"><a href="../../da/d20/a01160_aea1f39ac9cf438dd19c4140b6cca8f8d.html#aea1f39ac9cf438dd19c4140b6cca8f8d">SystemEx.ResultBuilder.ResultBuilder</a></div><div class="ttdeci">ResultBuilder(Result existing)</div><div class="ttdoc">Initializes a new ResultBuilder using an existing Result instance.</div><div class="ttdef"><b>Definition</b> <a href="#l00059">ResultBuilder.cs:59</a></div></div>
-<div class="ttc" id="aa01160_af6cc535c081955832b515f964a62c3fc_html_af6cc535c081955832b515f964a62c3fc"><div class="ttname"><a href="../../da/d20/a01160_af6cc535c081955832b515f964a62c3fc.html#af6cc535c081955832b515f964a62c3fc">SystemEx.ResultBuilder.Try</a></div><div class="ttdeci">ResultBuilder Try(Action action)</div><div class="ttdoc">Executes an action and captures any thrown exception inside the result.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">ResultBuilder.cs:78</a></div></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="ttc" id="aa00911_html"><div class="ttname"><a href="../../d7/d12/a00911.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d8b/a00059_source.html#l00018">AIEnvironment .cs:18</a></div></div>
+<div class="ttc" id="aa00931_html"><div class="ttname"><a href="../../df/dbc/a00931.html">SystemEx.Numeric</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d5c/a00578_source.html#l00020">AxisAngle.cs:20</a></div></div>
+<div class="ttc" id="aa00938_ade9e4a259d9b99fd9515aaf6229b3275_html_ade9e4a259d9b99fd9515aaf6229b3275"><div class="ttname"><a href="../../d5/d54/a00938_ade9e4a259d9b99fd9515aaf6229b3275.html#ade9e4a259d9b99fd9515aaf6229b3275">SystemEx.Utils.CompareResult</a></div><div class="ttdeci">CompareResult</div><div class="ttdoc">Specifies the result of a comparison between two values.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/a00842_source.html#l00034">Algorithm.cs:34</a></div></div>
+<div class="ttc" id="aa00938_html"><div class="ttname"><a href="../../d5/d54/a00938.html">SystemEx.Utils</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/a00842_source.html#l00021">Algorithm.cs:21</a></div></div>
+<div class="ttc" id="aa01185_a31f1419e9cf0b785e10516da24de2d0b_html_a31f1419e9cf0b785e10516da24de2d0b"><div class="ttname"><a href="../../d3/dd3/a01185_a31f1419e9cf0b785e10516da24de2d0b.html#a31f1419e9cf0b785e10516da24de2d0b">SystemEx.IComparableEx-1-g.CompareTo</a></div><div class="ttdeci">CompareResult CompareTo(T a)</div><div class="ttdoc">Compares this instance with the specified value and returns a CompareResult describing the relationsh...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>ResultBuilder.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>IComparableEx.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

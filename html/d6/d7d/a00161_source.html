@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: IValueWriter.cs Source File" />
+<meta property="og:title" content="SystemEX: IFDelegate.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: IValueWriter.cs Source File" />
+<meta name="twitter:title" content="SystemEX: IFDelegate.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: IValueWriter.cs Source File</title>
+<title>SystemEX: IFDelegate.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d6/d7d/a00161_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">IValueWriter.cs</div></div>
+  <div class="headertitle"><div class="title">IFDelegate.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -157,57 +157,84 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d6/d7d/a00161_
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * If you modify this file, retain this notice and add a short description of your</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dd/d5f/a00825.html">SystemEx</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span>System.Text;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d12/a00911.html">SystemEx</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
 <div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../dc/d51/a01120.html">   28</a></span>     <span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="../../dc/d51/a01120.html">IValueWriter</a> : <a class="code hl_interface" href="../../d0/d39/a01112.html">IValueReader</a> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_gab20a2e68372024eda6713f98d718ae50.html#gab20a2e68372024eda6713f98d718ae50">   32</a></span>          <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_gab20a2e68372024eda6713f98d718ae50.html#gab20a2e68372024eda6713f98d718ae50">Write</a> ( uint value, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gab37b6205838476a6d1b48cfa0440cacd.html#gab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian );</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d3/d10/a01189.html">   28</a></span>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../d3/d10/a01189_af0894b3f5d68ab9f620a8b93966bade8.html#af0894b3f5d68ab9f620a8b93966bade8">IFDelegate</a>&lt;T&gt; {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keyword">private</span> readonly Func&lt;T, bool&gt; m_condition;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_gaf6d38cbd4f4397472995ba33fb93131b.html#gaf6d38cbd4f4397472995ba33fb93131b">   37</a></span>          <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_gaf6d38cbd4f4397472995ba33fb93131b.html#gaf6d38cbd4f4397472995ba33fb93131b">Write</a> ( <span class="keywordtype">int</span> value, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gab37b6205838476a6d1b48cfa0440cacd.html#gab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian );</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keyword">private</span> readonly IDelegate&lt;T&gt; m_then;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_ga0cdd61069e191a5a86889a55d7d50579.html#ga0cdd61069e191a5a86889a55d7d50579">   42</a></span>          <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_ga0cdd61069e191a5a86889a55d7d50579.html#ga0cdd61069e191a5a86889a55d7d50579">Write</a> ( <span class="keywordtype">short</span> value, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gab37b6205838476a6d1b48cfa0440cacd.html#gab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian );</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">private</span> readonly IDelegate&lt;T&gt; m_else;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_gaeefae8672b49307e2f0092415133fd78.html#gaeefae8672b49307e2f0092415133fd78">   47</a></span>          <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_gaeefae8672b49307e2f0092415133fd78.html#gaeefae8672b49307e2f0092415133fd78">Write</a> ( ushort value, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gab37b6205838476a6d1b48cfa0440cacd.html#gab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian );</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_gabdafba73dd36bc6d68c4337a398897e3.html#gabdafba73dd36bc6d68c4337a398897e3">   52</a></span>          <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_gabdafba73dd36bc6d68c4337a398897e3.html#gabdafba73dd36bc6d68c4337a398897e3">Write</a> ( <span class="keywordtype">long</span> value, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gab37b6205838476a6d1b48cfa0440cacd.html#gab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian );</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_ga92636af95a445407f8bd63974703987b.html#ga92636af95a445407f8bd63974703987b">   57</a></span>          <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_ga92636af95a445407f8bd63974703987b.html#ga92636af95a445407f8bd63974703987b">Write</a> ( ulong value, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gab37b6205838476a6d1b48cfa0440cacd.html#gab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian );</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_gaa43f93e2fd2ab34f4d3f1791d97c9df1.html#gaa43f93e2fd2ab34f4d3f1791d97c9df1">   62</a></span>          <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_gaa43f93e2fd2ab34f4d3f1791d97c9df1.html#gaa43f93e2fd2ab34f4d3f1791d97c9df1">Write</a> ( <span class="keywordtype">float</span> value, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gab37b6205838476a6d1b48cfa0440cacd.html#gab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian );</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_gabc8c2928bfbc6021a0fef12b3d34f2f8.html#gabc8c2928bfbc6021a0fef12b3d34f2f8">   67</a></span>          <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_gabc8c2928bfbc6021a0fef12b3d34f2f8.html#gabc8c2928bfbc6021a0fef12b3d34f2f8">Write</a> ( <span class="keywordtype">double</span> value, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gab37b6205838476a6d1b48cfa0440cacd.html#gab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian );</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>     }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../d3/d10/a01189_ae9edf88aeb77a9f82abd581a751099a0.html#ae9edf88aeb77a9f82abd581a751099a0">   48</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../d3/d10/a01189_ae9edf88aeb77a9f82abd581a751099a0.html#ae9edf88aeb77a9f82abd581a751099a0">AddToThen</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d3/d10/a01189_af0894b3f5d68ab9f620a8b93966bade8.html#af0894b3f5d68ab9f620a8b93966bade8">   62</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d3/d10/a01189_af0894b3f5d68ab9f620a8b93966bade8.html#af0894b3f5d68ab9f620a8b93966bade8">IFDelegate</a> (</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            Func&lt;T, bool&gt; condition,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            IDelegate&lt;T&gt; thenDelegate,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            IDelegate&lt;T&gt; elseDelegate ) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            m_condition = condition;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            m_then = thenDelegate;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            m_else = elseDelegate;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
-<div class="foldopen" id="foldopen00080" data-start="{" data-end="};">
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../d0/dc8/a01124.html">   80</a></span>     <span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="../../dc/d51/a01120.html">IValueWriter</a>&lt;T&gt; : <a class="code hl_interface" href="../../d0/d39/a01112.html">IValueReader</a>&lt;T&gt; {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_gab563658b9ffa728c1ecf45c77ceb1df3.html#gab563658b9ffa728c1ecf45c77ceb1df3">   88</a></span>          <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_gab563658b9ffa728c1ecf45c77ceb1df3.html#gab563658b9ffa728c1ecf45c77ceb1df3">Write</a> ( T value, <a class="code hl_enumeration" href="../../d8/d1c/a00824_gab37b6205838476a6d1b48cfa0440cacd.html#gab37b6205838476a6d1b48cfa0440cacd">Endian</a> endian );</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>     }</div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../d3/d10/a01189_adf458a899e6bd490804ba06d7bb25bd8.html#adf458a899e6bd490804ba06d7bb25bd8">   79</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d10/a01189_adf458a899e6bd490804ba06d7bb25bd8.html#adf458a899e6bd490804ba06d7bb25bd8">Subscribe</a> ( Action&lt;IDelegate&lt;T&gt;, T&gt; func, <span class="keywordtype">bool</span> then ) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordflow">if</span> ( then )</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                m_then.Subscribe(func);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                m_else.Subscribe(func);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
 </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
-<div class="ttc" id="aa00813_ga0cdd61069e191a5a86889a55d7d50579_html_ga0cdd61069e191a5a86889a55d7d50579"><div class="ttname"><a href="../../de/d9d/a00813_ga0cdd61069e191a5a86889a55d7d50579.html#ga0cdd61069e191a5a86889a55d7d50579">SystemEx.IValueWriter.Write</a></div><div class="ttdeci">void Write(short value, Endian endian)</div><div class="ttdoc">Writes a signed 16-bit integer using the specified endian format.</div></div>
-<div class="ttc" id="aa00813_ga92636af95a445407f8bd63974703987b_html_ga92636af95a445407f8bd63974703987b"><div class="ttname"><a href="../../de/d9d/a00813_ga92636af95a445407f8bd63974703987b.html#ga92636af95a445407f8bd63974703987b">SystemEx.IValueWriter.Write</a></div><div class="ttdeci">void Write(ulong value, Endian endian)</div><div class="ttdoc">Writes an unsigned 64-bit integer using the specified endian format.</div></div>
-<div class="ttc" id="aa00813_gaa43f93e2fd2ab34f4d3f1791d97c9df1_html_gaa43f93e2fd2ab34f4d3f1791d97c9df1"><div class="ttname"><a href="../../de/d9d/a00813_gaa43f93e2fd2ab34f4d3f1791d97c9df1.html#gaa43f93e2fd2ab34f4d3f1791d97c9df1">SystemEx.IValueWriter.Write</a></div><div class="ttdeci">void Write(float value, Endian endian)</div><div class="ttdoc">Writes a single-precision floating-point value using the specified endian format.</div></div>
-<div class="ttc" id="aa00813_gab20a2e68372024eda6713f98d718ae50_html_gab20a2e68372024eda6713f98d718ae50"><div class="ttname"><a href="../../de/d9d/a00813_gab20a2e68372024eda6713f98d718ae50.html#gab20a2e68372024eda6713f98d718ae50">SystemEx.IValueWriter.Write</a></div><div class="ttdeci">void Write(uint value, Endian endian)</div><div class="ttdoc">Writes an unsigned 32-bit integer using the specified endian format.</div></div>
-<div class="ttc" id="aa00813_gab563658b9ffa728c1ecf45c77ceb1df3_html_gab563658b9ffa728c1ecf45c77ceb1df3"><div class="ttname"><a href="../../de/d9d/a00813_gab563658b9ffa728c1ecf45c77ceb1df3.html#gab563658b9ffa728c1ecf45c77ceb1df3">SystemEx.IValueWriter-1-g.Write</a></div><div class="ttdeci">void Write(T value, Endian endian)</div><div class="ttdoc">Writes a value of type T  using the specified endian format. The conversion rules depend on the concr...</div></div>
-<div class="ttc" id="aa00813_gabc8c2928bfbc6021a0fef12b3d34f2f8_html_gabc8c2928bfbc6021a0fef12b3d34f2f8"><div class="ttname"><a href="../../de/d9d/a00813_gabc8c2928bfbc6021a0fef12b3d34f2f8.html#gabc8c2928bfbc6021a0fef12b3d34f2f8">SystemEx.IValueWriter.Write</a></div><div class="ttdeci">void Write(double value, Endian endian)</div><div class="ttdoc">Writes a double-precision floating-point value using the specified endian format.</div></div>
-<div class="ttc" id="aa00813_gabdafba73dd36bc6d68c4337a398897e3_html_gabdafba73dd36bc6d68c4337a398897e3"><div class="ttname"><a href="../../de/d9d/a00813_gabdafba73dd36bc6d68c4337a398897e3.html#gabdafba73dd36bc6d68c4337a398897e3">SystemEx.IValueWriter.Write</a></div><div class="ttdeci">void Write(long value, Endian endian)</div><div class="ttdoc">Writes a signed 64-bit integer using the specified endian format.</div></div>
-<div class="ttc" id="aa00813_gaeefae8672b49307e2f0092415133fd78_html_gaeefae8672b49307e2f0092415133fd78"><div class="ttname"><a href="../../de/d9d/a00813_gaeefae8672b49307e2f0092415133fd78.html#gaeefae8672b49307e2f0092415133fd78">SystemEx.IValueWriter.Write</a></div><div class="ttdeci">void Write(ushort value, Endian endian)</div><div class="ttdoc">Writes an unsigned 16-bit integer using the specified endian format.</div></div>
-<div class="ttc" id="aa00813_gaf6d38cbd4f4397472995ba33fb93131b_html_gaf6d38cbd4f4397472995ba33fb93131b"><div class="ttname"><a href="../../de/d9d/a00813_gaf6d38cbd4f4397472995ba33fb93131b.html#gaf6d38cbd4f4397472995ba33fb93131b">SystemEx.IValueWriter.Write</a></div><div class="ttdeci">void Write(int value, Endian endian)</div><div class="ttdoc">Writes a signed 32-bit integer using the specified endian format.</div></div>
-<div class="ttc" id="aa00824_gab37b6205838476a6d1b48cfa0440cacd_html_gab37b6205838476a6d1b48cfa0440cacd"><div class="ttname"><a href="../../d8/d1c/a00824_gab37b6205838476a6d1b48cfa0440cacd.html#gab37b6205838476a6d1b48cfa0440cacd">SystemEx.Endian</a></div><div class="ttdeci">Endian</div><div class="ttdoc">Specifies the byte order used when converting values to and from raw byte sequences.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d7e/a00770_source.html#l00066">Conversion.cs:66</a></div></div>
-<div class="ttc" id="aa00825_html"><div class="ttname"><a href="../../dd/d5f/a00825.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d03/a00062_source.html#l00018">AIEnvironment .cs:18</a></div></div>
-<div class="ttc" id="aa01112_html"><div class="ttname"><a href="../../d0/d39/a01112.html">SystemEx.IValueReader</a></div><div class="ttdoc">Provides endian-aware read operations for primitive numeric types. Implementations convert the underl...</div><div class="ttdef"><b>Definition</b> <a href="../../d6/db8/a00158_source.html#l00028">IValueReader.cs:28</a></div></div>
-<div class="ttc" id="aa01120_html"><div class="ttname"><a href="../../dc/d51/a01120.html">SystemEx.IValueWriter</a></div><div class="ttdoc">Provides endian-aware write operations for primitive numeric types. Implementations convert the speci...</div><div class="ttdef"><b>Definition</b> <a href="#l00028">IValueWriter.cs:28</a></div></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../d3/d10/a01189_abc90a7eb5d4ba71c1ddc6e32697cb700.html#abc90a7eb5d4ba71c1ddc6e32697cb700">   90</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d10/a01189_abc90a7eb5d4ba71c1ddc6e32697cb700.html#abc90a7eb5d4ba71c1ddc6e32697cb700">Invoke</a> ( T arg ) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordflow">if</span> ( m_condition(arg) )</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                m_then.Invoke(arg);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                m_else.Invoke(arg);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        }</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="../../d3/d10/a01189_a1c7e0682bb607f03ff1ecde6d9edb064.html#a1c7e0682bb607f03ff1ecde6d9edb064">  105</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d10/a01189_a1c7e0682bb607f03ff1ecde6d9edb064.html#a1c7e0682bb607f03ff1ecde6d9edb064">UnSubscribe</a> ( Action&lt;IDelegate&lt;T&gt;, T&gt; func, <span class="keywordtype">bool</span> then ) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">if</span> ( then )</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                m_then.UnSubscribe(func);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                m_else.UnSubscribe(func);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="../../d3/d10/a01189_a16bd812d70c13bf1c3f9f00a50581e26.html#a16bd812d70c13bf1c3f9f00a50581e26">  115</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d10/a01189_a16bd812d70c13bf1c3f9f00a50581e26.html#a16bd812d70c13bf1c3f9f00a50581e26">Clear</a> () {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            m_then.Clear();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            m_else.Clear();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        }</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+<div class="ttc" id="aa00911_html"><div class="ttname"><a href="../../d7/d12/a00911.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d8b/a00059_source.html#l00018">AIEnvironment .cs:18</a></div></div>
+<div class="ttc" id="aa01189_a16bd812d70c13bf1c3f9f00a50581e26_html_a16bd812d70c13bf1c3f9f00a50581e26"><div class="ttname"><a href="../../d3/d10/a01189_a16bd812d70c13bf1c3f9f00a50581e26.html#a16bd812d70c13bf1c3f9f00a50581e26">SystemEx.IFDelegate-1-g.Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Clears both the then and else delegate branches.</div><div class="ttdef"><b>Definition</b> <a href="#l00115">IFDelegate.cs:115</a></div></div>
+<div class="ttc" id="aa01189_a1c7e0682bb607f03ff1ecde6d9edb064_html_a1c7e0682bb607f03ff1ecde6d9edb064"><div class="ttname"><a href="../../d3/d10/a01189_a1c7e0682bb607f03ff1ecde6d9edb064.html#a1c7e0682bb607f03ff1ecde6d9edb064">SystemEx.IFDelegate-1-g.UnSubscribe</a></div><div class="ttdeci">void UnSubscribe(Action&lt; IDelegate&lt; T &gt;, T &gt; func, bool then)</div><div class="ttdoc">Removes a callback function from either the then or else branch.</div><div class="ttdef"><b>Definition</b> <a href="#l00105">IFDelegate.cs:105</a></div></div>
+<div class="ttc" id="aa01189_abc90a7eb5d4ba71c1ddc6e32697cb700_html_abc90a7eb5d4ba71c1ddc6e32697cb700"><div class="ttname"><a href="../../d3/d10/a01189_abc90a7eb5d4ba71c1ddc6e32697cb700.html#abc90a7eb5d4ba71c1ddc6e32697cb700">SystemEx.IFDelegate-1-g.Invoke</a></div><div class="ttdeci">void Invoke(T arg)</div><div class="ttdoc">Invokes the appropriate delegate branch based on the condition.</div><div class="ttdef"><b>Definition</b> <a href="#l00090">IFDelegate.cs:90</a></div></div>
+<div class="ttc" id="aa01189_adf458a899e6bd490804ba06d7bb25bd8_html_adf458a899e6bd490804ba06d7bb25bd8"><div class="ttname"><a href="../../d3/d10/a01189_adf458a899e6bd490804ba06d7bb25bd8.html#adf458a899e6bd490804ba06d7bb25bd8">SystemEx.IFDelegate-1-g.Subscribe</a></div><div class="ttdeci">void Subscribe(Action&lt; IDelegate&lt; T &gt;, T &gt; func, bool then)</div><div class="ttdoc">Subscribes a callback function to either the then or else branch.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">IFDelegate.cs:79</a></div></div>
+<div class="ttc" id="aa01189_ae9edf88aeb77a9f82abd581a751099a0_html_ae9edf88aeb77a9f82abd581a751099a0"><div class="ttname"><a href="../../d3/d10/a01189_ae9edf88aeb77a9f82abd581a751099a0.html#ae9edf88aeb77a9f82abd581a751099a0">SystemEx.IFDelegate-1-g.AddToThen</a></div><div class="ttdeci">bool AddToThen</div><div class="ttdoc">Gets or sets a value indicating whether new subscriptions should be added to the then branch by defau...</div><div class="ttdef"><b>Definition</b> <a href="#l00048">IFDelegate.cs:48</a></div></div>
+<div class="ttc" id="aa01189_af0894b3f5d68ab9f620a8b93966bade8_html_af0894b3f5d68ab9f620a8b93966bade8"><div class="ttname"><a href="../../d3/d10/a01189_af0894b3f5d68ab9f620a8b93966bade8.html#af0894b3f5d68ab9f620a8b93966bade8">SystemEx.IFDelegate-1-g.IFDelegate</a></div><div class="ttdeci">IFDelegate(Func&lt; T, bool &gt; condition, IDelegate&lt; T &gt; thenDelegate, IDelegate&lt; T &gt; elseDelegate)</div><div class="ttdoc">Initializes a new conditional delegate dispatcher.</div><div class="ttdef"><b>Definition</b> <a href="#l00062">IFDelegate.cs:62</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>IValueWriter.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>IFDelegate.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

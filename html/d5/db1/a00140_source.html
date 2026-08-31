@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: NoCopyable.cs Source File" />
+<meta property="og:title" content="SystemEX: NumberRange.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: NoCopyable.cs Source File" />
+<meta name="twitter:title" content="SystemEX: NumberRange.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: NoCopyable.cs Source File</title>
+<title>SystemEX: NumberRange.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d5/db1/a00140_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">NoCopyable.cs</div></div>
+  <div class="headertitle"><div class="title">NumberRange.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -157,47 +157,181 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d5/db1/a00140_
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * If you modify this file, retain this notice and add a short description of your</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">using </span>System;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span>System.Collections.Generic;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span>System.Text;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span>System.Collections;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span><a class="code hl_namespace" href="../../d1/d0b/a00919.html">SystemEx.Collections.Generic</a>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dd/d5f/a00825.html">SystemEx</a> {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../d1/dae/a01136.html">   29</a></span>     <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span>NoCopyable {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>          <span class="keyword">private</span> <a class="code hl_function" href="../../d1/dae/a01136_a412153d0b7045bf74f8df35b666799ce.html#a412153d0b7045bf74f8df35b666799ce">NoCopyable</a> ( NoCopyable other ) {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>               <span class="keywordflow">throw</span> <span class="keyword">new</span> NotSupportedException(<span class="stringliteral">&quot;Copy constructor is disabled.&quot;</span>);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>          }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../d1/dae/a01136_a412153d0b7045bf74f8df35b666799ce.html#a412153d0b7045bf74f8df35b666799ce">   41</a></span>          <span class="keyword">protected</span> <a class="code hl_function" href="../../d1/dae/a01136_a412153d0b7045bf74f8df35b666799ce.html#a412153d0b7045bf74f8df35b666799ce">NoCopyable</a> () {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>          }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d12/a00911.html">SystemEx</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225.html">   30</a></span>     <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../d8/d53/a01225_abddd15bdd5d34c705973107064e97711.html#abddd15bdd5d34c705973107064e97711">NumberRange</a> : IRange&lt;long&gt;, IEquatable&lt;NumberRange&gt;, IEnumerable&lt;long&gt; {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a07dcb0ffacba05726ade5b38faa0538d.html#a07dcb0ffacba05726ade5b38faa0538d">   32</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_property" href="../../d8/d53/a01225_a07dcb0ffacba05726ade5b38faa0538d.html#a07dcb0ffacba05726ade5b38faa0538d">From</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a45f63b0f7a99449fd979ca70311f5354.html#a45f63b0f7a99449fd979ca70311f5354">   34</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_property" href="../../d8/d53/a01225_a45f63b0f7a99449fd979ca70311f5354.html#a45f63b0f7a99449fd979ca70311f5354">To</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">public</span> <span class="keywordtype">long</span> Step { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">private</span> Vector&lt;long&gt; m_range;</div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_abddd15bdd5d34c705973107064e97711.html#abddd15bdd5d34c705973107064e97711">   42</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d8/d53/a01225_abddd15bdd5d34c705973107064e97711.html#abddd15bdd5d34c705973107064e97711">NumberRange</a> () {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            this.From = 0;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            this.To = 1;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../d1/dae/a01136_a245969e25577a4f4eb7c8ad804b2dc4c.html#a245969e25577a4f4eb7c8ad804b2dc4c">   47</a></span>          <span class="keyword">public</span> <span class="keywordtype">object</span> <a class="code hl_function" href="../../d1/dae/a01136_a245969e25577a4f4eb7c8ad804b2dc4c.html#a245969e25577a4f4eb7c8ad804b2dc4c">Clone</a> ()</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>               =&gt; <span class="keywordflow">throw</span> <span class="keyword">new</span> NotSupportedException(<span class="stringliteral">&quot;Clone is disabled.&quot;</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a81ee37e28e59359b32cbfac9ded868bc.html#a81ee37e28e59359b32cbfac9ded868bc">   52</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d8/d53/a01225_a81ee37e28e59359b32cbfac9ded868bc.html#a81ee37e28e59359b32cbfac9ded868bc">NumberRange</a> (<span class="keywordtype">long</span> start, <span class="keywordtype">long</span> end, <span class="keywordtype">long</span> step = 1) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            this.From = start;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            this.To = end;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            m_range = <span class="keyword">new</span> Vector&lt;long&gt;(2);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">for</span>(<span class="keywordtype">long</span> i = 0 ; i &lt;= end; i ++  ) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                m_range.PushBack(i);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d1/dae/a01136_a9d43a2caf1825eb9c4f0828aa3b795c4.html#a9d43a2caf1825eb9c4f0828aa3b795c4">   53</a></span>          <span class="keyword">protected</span> <span class="keyword">new</span> <span class="keywordtype">object</span> <a class="code hl_function" href="../../d1/dae/a01136_a9d43a2caf1825eb9c4f0828aa3b795c4.html#a9d43a2caf1825eb9c4f0828aa3b795c4">MemberwiseClone</a> ()</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>               =&gt; <span class="keywordflow">throw</span> <span class="keyword">new</span> NotSupportedException(<span class="stringliteral">&quot;MemberwiseClone is disabled.&quot;</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a466c84ca265a80ef7af31c3f5bf619df.html#a466c84ca265a80ef7af31c3f5bf619df">   65</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_property" href="../../d8/d53/a01225_a466c84ca265a80ef7af31c3f5bf619df.html#a466c84ca265a80ef7af31c3f5bf619df">Length</a> =&gt; this.To - <a class="code hl_property" href="../../d8/d53/a01225_a07dcb0ffacba05726ade5b38faa0538d.html#a07dcb0ffacba05726ade5b38faa0538d">From</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a4120a12caf3783228ec3c4c97cb5348b.html#a4120a12caf3783228ec3c4c97cb5348b">   69</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../d8/d53/a01225_a4120a12caf3783228ec3c4c97cb5348b.html#a4120a12caf3783228ec3c4c97cb5348b">IsValid</a> =&gt; this.From &lt;= this.To;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a635c13660c36adb1469f5773c7400b92.html#a635c13660c36adb1469f5773c7400b92">   73</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../d8/d53/a01225_a635c13660c36adb1469f5773c7400b92.html#a635c13660c36adb1469f5773c7400b92">IsSame</a> =&gt; this.From == this.To;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a7e91b8202061c3ad1ce607243f66d714.html#a7e91b8202061c3ad1ce607243f66d714">   77</a></span>        <span class="keyword">public</span> NumberRangeIterator&lt;long&gt; <a class="code hl_property" href="../../d8/d53/a01225_a7e91b8202061c3ad1ce607243f66d714.html#a7e91b8202061c3ad1ce607243f66d714">Begin</a> =&gt; <span class="keyword">new</span> NumberRangeIterator&lt;long&gt;(m_range, 0);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a41bddcc44c5a64df2fbed9a60401f02c.html#a41bddcc44c5a64df2fbed9a60401f02c">   81</a></span>        <span class="keyword">public</span> NumberRangeIterator&lt;long&gt; <a class="code hl_property" href="../../d8/d53/a01225_a41bddcc44c5a64df2fbed9a60401f02c.html#a41bddcc44c5a64df2fbed9a60401f02c">End</a> =&gt; <span class="keyword">new</span> NumberRangeIterator&lt;long&gt;(m_range, m_range.Length - 1);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_aa4dec563e0b7fe149b0ba2fa8c0e95ad.html#aa4dec563e0b7fe149b0ba2fa8c0e95ad">   84</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> <a class="code hl_function" href="../../d8/d53/a01225_aa4dec563e0b7fe149b0ba2fa8c0e95ad.html#aa4dec563e0b7fe149b0ba2fa8c0e95ad">GetHashCode</a>() =&gt; </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            HashCode.Combine(this.From, this.To);</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>     }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a580e6b62efff1b4f9c54a6a58fa98418.html#a580e6b62efff1b4f9c54a6a58fa98418">   93</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d8/d53/a01225_a580e6b62efff1b4f9c54a6a58fa98418.html#a580e6b62efff1b4f9c54a6a58fa98418">Contains</a>(<span class="keywordtype">long</span> x) =&gt; (x - this.To) * (x - this.From) &lt;= 0;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_ace355350c3f8869efaba7b1554ccc50d.html#ace355350c3f8869efaba7b1554ccc50d">   99</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d8/d53/a01225_abddd15bdd5d34c705973107064e97711.html#abddd15bdd5d34c705973107064e97711">NumberRange</a> <a class="code hl_function" href="../../d8/d53/a01225_ace355350c3f8869efaba7b1554ccc50d.html#ace355350c3f8869efaba7b1554ccc50d">Normalize</a>() =&gt;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            (this.From &lt;= this.To) ? <span class="keyword">this</span> : new <a class="code hl_function" href="../../d8/d53/a01225_abddd15bdd5d34c705973107064e97711.html#abddd15bdd5d34c705973107064e97711">NumberRange</a>(this.<a class="code hl_property" href="../../d8/d53/a01225_a45f63b0f7a99449fd979ca70311f5354.html#a45f63b0f7a99449fd979ca70311f5354">To</a>, this.<a class="code hl_property" href="../../d8/d53/a01225_a07dcb0ffacba05726ade5b38faa0538d.html#a07dcb0ffacba05726ade5b38faa0538d">From</a>, this.Step);</div>
 </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
-<div class="ttc" id="aa00825_html"><div class="ttname"><a href="../../dd/d5f/a00825.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d03/a00062_source.html#l00018">AIEnvironment .cs:18</a></div></div>
-<div class="ttc" id="aa01136_a245969e25577a4f4eb7c8ad804b2dc4c_html_a245969e25577a4f4eb7c8ad804b2dc4c"><div class="ttname"><a href="../../d1/dae/a01136_a245969e25577a4f4eb7c8ad804b2dc4c.html#a245969e25577a4f4eb7c8ad804b2dc4c">SystemEx.NoCopyable.Clone</a></div><div class="ttdeci">object Clone()</div><div class="ttdoc">Pedantisch safe: cloning is forbidden.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">NoCopyable.cs:47</a></div></div>
-<div class="ttc" id="aa01136_a412153d0b7045bf74f8df35b666799ce_html_a412153d0b7045bf74f8df35b666799ce"><div class="ttname"><a href="../../d1/dae/a01136_a412153d0b7045bf74f8df35b666799ce.html#a412153d0b7045bf74f8df35b666799ce">SystemEx.NoCopyable.NoCopyable</a></div><div class="ttdeci">NoCopyable()</div><div class="ttdoc">Protected default constructor.</div><div class="ttdef"><b>Definition</b> <a href="#l00041">NoCopyable.cs:41</a></div></div>
-<div class="ttc" id="aa01136_a9d43a2caf1825eb9c4f0828aa3b795c4_html_a9d43a2caf1825eb9c4f0828aa3b795c4"><div class="ttname"><a href="../../d1/dae/a01136_a9d43a2caf1825eb9c4f0828aa3b795c4.html#a9d43a2caf1825eb9c4f0828aa3b795c4">SystemEx.NoCopyable.MemberwiseClone</a></div><div class="ttdeci">new object MemberwiseClone()</div><div class="ttdoc">Pedantisch safe: MemberwiseClone is blocked.</div><div class="ttdef"><b>Definition</b> <a href="#l00053">NoCopyable.cs:53</a></div></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a33279f660436f1fd107186ef1a3b67dc.html#a33279f660436f1fd107186ef1a3b67dc">  103</a></span>        IEnumerator IEnumerable.GetEnumerator() =&gt; </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <a class="code hl_function" href="../../d8/d53/a01225_a33279f660436f1fd107186ef1a3b67dc.html#a33279f660436f1fd107186ef1a3b67dc">GetEnumerator</a>();</div>
+</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_af13f6b4196d1a294a3dc43e688904044.html#af13f6b4196d1a294a3dc43e688904044">  112</a></span>        <span class="keyword">public</span> IRange&lt;long&gt; <a class="code hl_function" href="../../d8/d53/a01225_af13f6b4196d1a294a3dc43e688904044.html#af13f6b4196d1a294a3dc43e688904044">GetRange</a>( <span class="keywordtype">long</span> tstart, <span class="keywordtype">long</span> tend) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="../../d8/d53/a01225_abddd15bdd5d34c705973107064e97711.html#abddd15bdd5d34c705973107064e97711">NumberRange</a>(tstart, tend);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_afd36683f5baac70d0056b8a7f515faed.html#afd36683f5baac70d0056b8a7f515faed">  120</a></span>        <span class="keyword">public</span> IEnumerator <a class="code hl_function" href="../../d8/d53/a01225_afd36683f5baac70d0056b8a7f515faed.html#afd36683f5baac70d0056b8a7f515faed">GetEnumerator</a>() {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = <a class="code hl_property" href="../../d8/d53/a01225_a07dcb0ffacba05726ade5b38faa0538d.html#a07dcb0ffacba05726ade5b38faa0538d">From</a>; i &lt;= this.To; i += 1 )</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                yield <span class="keywordflow">return</span> i;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        }</div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="}">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a8533379ce471a4d2d6e97dfaa17bdeb1.html#a8533379ce471a4d2d6e97dfaa17bdeb1">  130</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d8/d53/a01225_a8533379ce471a4d2d6e97dfaa17bdeb1.html#a8533379ce471a4d2d6e97dfaa17bdeb1">Overlaps</a>(IRange&lt;long&gt; other) {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../d8/d53/a01225_a4120a12caf3783228ec3c4c97cb5348b.html#a4120a12caf3783228ec3c4c97cb5348b">IsValid</a> &amp;&amp; other.<a class="code hl_property" href="../../dd/d43/a01193_a693d922264544cd26108d2e129166d50.html#a693d922264544cd26108d2e129166d50">IsValid</a> )</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                result = !(other.To &lt; <a class="code hl_property" href="../../d8/d53/a01225_a07dcb0ffacba05726ade5b38faa0538d.html#a07dcb0ffacba05726ade5b38faa0538d">From</a> || other.From &gt; this.To);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        }</div>
+</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span></div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_ad6170ada97b0252cbfa816e85a8d06ce.html#ad6170ada97b0252cbfa816e85a8d06ce">  146</a></span>        <span class="keyword">public</span> IRange&lt;long&gt;? <a class="code hl_function" href="../../d8/d53/a01225_ad6170ada97b0252cbfa816e85a8d06ce.html#ad6170ada97b0252cbfa816e85a8d06ce">Intersect</a>(IRange&lt;long&gt; other) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <a class="code hl_function" href="../../d8/d53/a01225_abddd15bdd5d34c705973107064e97711.html#abddd15bdd5d34c705973107064e97711">NumberRange</a>? _ret = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="../../d8/d53/a01225_a8533379ce471a4d2d6e97dfaa17bdeb1.html#a8533379ce471a4d2d6e97dfaa17bdeb1">Overlaps</a>(other) ) {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                _ret = <span class="keyword">new</span> <a class="code hl_function" href="../../d8/d53/a01225_abddd15bdd5d34c705973107064e97711.html#abddd15bdd5d34c705973107064e97711">NumberRange</a>(<span class="keywordtype">long</span>.Max(this.From, other.<a class="code hl_property" href="../../dd/d43/a01193_ae275f6eb758dd085b845265ef1480d19.html#ae275f6eb758dd085b845265ef1480d19">From</a>),</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                                          <span class="keywordtype">long</span>.Min(<span class="keyword">this</span>.To, other.<a class="code hl_property" href="../../dd/d43/a01193_ae292c65780ca87bf2f6a8d4d1af728af.html#ae292c65780ca87bf2f6a8d4d1af728af">To</a>));</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keywordflow">return</span> _ret;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        }</div>
+</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span></div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a3c33cee7ae2209e89c0e7bd85db68ec4.html#a3c33cee7ae2209e89c0e7bd85db68ec4">  162</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d8/d53/a01225_a3c33cee7ae2209e89c0e7bd85db68ec4.html#a3c33cee7ae2209e89c0e7bd85db68ec4">IsAdjacent</a>(IRange&lt;long&gt; other) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../d8/d53/a01225_a4120a12caf3783228ec3c4c97cb5348b.html#a4120a12caf3783228ec3c4c97cb5348b">IsValid</a> &amp;&amp; other.<a class="code hl_property" href="../../dd/d43/a01193_a693d922264544cd26108d2e129166d50.html#a693d922264544cd26108d2e129166d50">IsValid</a> )</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                result =</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                    this.To == other.From ||</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                    other.To == this.From;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        }</div>
+</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span></div>
+<div class="foldopen" id="foldopen00179" data-start="{" data-end="}">
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_ac9d3965c7724dcde9be5f4a54409d522.html#ac9d3965c7724dcde9be5f4a54409d522">  179</a></span>        <span class="keyword">public</span> IRange&lt;long&gt;? <a class="code hl_function" href="../../d8/d53/a01225_ac9d3965c7724dcde9be5f4a54409d522.html#ac9d3965c7724dcde9be5f4a54409d522">Union</a>( IRange&lt;long&gt; other) {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            IRange&lt;long&gt;? result = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="../../d8/d53/a01225_a8533379ce471a4d2d6e97dfaa17bdeb1.html#a8533379ce471a4d2d6e97dfaa17bdeb1">Overlaps</a>(other) || <a class="code hl_function" href="../../d8/d53/a01225_a3c33cee7ae2209e89c0e7bd85db68ec4.html#a3c33cee7ae2209e89c0e7bd85db68ec4">IsAdjacent</a>(other) ) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                <span class="keywordtype">long</span> start = <span class="keywordtype">long</span>.Min(this.From, other.<a class="code hl_property" href="../../dd/d43/a01193_ae275f6eb758dd085b845265ef1480d19.html#ae275f6eb758dd085b845265ef1480d19">From</a>);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                <span class="keywordtype">long</span> end   = <span class="keywordtype">long</span>.Max(this.To, other.<a class="code hl_property" href="../../dd/d43/a01193_ae292c65780ca87bf2f6a8d4d1af728af.html#ae292c65780ca87bf2f6a8d4d1af728af">To</a>);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                result = <span class="keyword">new</span> <a class="code hl_function" href="../../d8/d53/a01225_abddd15bdd5d34c705973107064e97711.html#abddd15bdd5d34c705973107064e97711">NumberRange</a>(start, end);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        }</div>
+</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span></div>
+<div class="foldopen" id="foldopen00194" data-start="{" data-end="}">
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="../../d8/d53/a01225_a923011a03b84ffad17f68f2eef47bff1.html#a923011a03b84ffad17f68f2eef47bff1">  194</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d8/d53/a01225_a923011a03b84ffad17f68f2eef47bff1.html#a923011a03b84ffad17f68f2eef47bff1">ToString</a>() {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <span class="keywordflow">return</span> (<a class="code hl_property" href="../../d8/d53/a01225_a4120a12caf3783228ec3c4c97cb5348b.html#a4120a12caf3783228ec3c4c97cb5348b">IsValid</a>) ?</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;Range: [{this.From} ... $[{this.To}]&quot;</span>) :</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;Not Valid Range: [{this.From} ... $[{this.To}]&quot;</span>);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        }</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> Equals ( <a class="code hl_struct" href="../../d8/d53/a01225.html">NumberRange</a> other ) {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <span class="keywordflow">return</span> (m_range.Equals(other));</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        IEnumerator&lt;long&gt; IEnumerable&lt;long&gt;.GetEnumerator () {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            <span class="keywordflow">return</span> m_range.GetEnumerator();</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    }</div>
+</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>     </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>}</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="ttc" id="aa00911_html"><div class="ttname"><a href="../../d7/d12/a00911.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d8b/a00059_source.html#l00018">AIEnvironment .cs:18</a></div></div>
+<div class="ttc" id="aa00919_html"><div class="ttname"><a href="../../d1/d0b/a00919.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d5d/a00311_source.html#l00021">Cache.cs:21</a></div></div>
+<div class="ttc" id="aa01193_a693d922264544cd26108d2e129166d50_html_a693d922264544cd26108d2e129166d50"><div class="ttname"><a href="../../dd/d43/a01193_a693d922264544cd26108d2e129166d50.html#a693d922264544cd26108d2e129166d50">SystemEx.IRange-1-g.IsValid</a></div><div class="ttdeci">bool IsValid</div><div class="ttdoc">Indicates whether the range is valid (Start ≤ End).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/df8/a00155_source.html#l00053">IRange.cs:53</a></div></div>
+<div class="ttc" id="aa01193_ae275f6eb758dd085b845265ef1480d19_html_ae275f6eb758dd085b845265ef1480d19"><div class="ttname"><a href="../../dd/d43/a01193_ae275f6eb758dd085b845265ef1480d19.html#ae275f6eb758dd085b845265ef1480d19">SystemEx.IRange-1-g.From</a></div><div class="ttdeci">T From</div><div class="ttdoc">Gets or sets the start value of the range.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/df8/a00155_source.html#l00043">IRange.cs:43</a></div></div>
+<div class="ttc" id="aa01193_ae292c65780ca87bf2f6a8d4d1af728af_html_ae292c65780ca87bf2f6a8d4d1af728af"><div class="ttname"><a href="../../dd/d43/a01193_ae292c65780ca87bf2f6a8d4d1af728af.html#ae292c65780ca87bf2f6a8d4d1af728af">SystemEx.IRange-1-g.To</a></div><div class="ttdeci">T To</div><div class="ttdoc">Gets or sets the end value of the range.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/df8/a00155_source.html#l00048">IRange.cs:48</a></div></div>
+<div class="ttc" id="aa01225_a07dcb0ffacba05726ade5b38faa0538d_html_a07dcb0ffacba05726ade5b38faa0538d"><div class="ttname"><a href="../../d8/d53/a01225_a07dcb0ffacba05726ade5b38faa0538d.html#a07dcb0ffacba05726ade5b38faa0538d">SystemEx.NumberRange.From</a></div><div class="ttdeci">long From</div><div class="ttdoc">From value of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">NumberRange.cs:32</a></div></div>
+<div class="ttc" id="aa01225_a33279f660436f1fd107186ef1a3b67dc_html_a33279f660436f1fd107186ef1a3b67dc"><div class="ttname"><a href="../../d8/d53/a01225_a33279f660436f1fd107186ef1a3b67dc.html#a33279f660436f1fd107186ef1a3b67dc">SystemEx.NumberRange.GetEnumerator</a></div><div class="ttdeci">IEnumerator IEnumerable. GetEnumerator()</div><div class="ttdef"><b>Definition</b> <a href="#l00103">NumberRange.cs:103</a></div></div>
+<div class="ttc" id="aa01225_a3c33cee7ae2209e89c0e7bd85db68ec4_html_a3c33cee7ae2209e89c0e7bd85db68ec4"><div class="ttname"><a href="../../d8/d53/a01225_a3c33cee7ae2209e89c0e7bd85db68ec4.html#a3c33cee7ae2209e89c0e7bd85db68ec4">SystemEx.NumberRange.IsAdjacent</a></div><div class="ttdeci">bool IsAdjacent(IRange&lt; long &gt; other)</div><div class="ttdoc">Determines whether this range touches another range at exactly one boundary.</div><div class="ttdef"><b>Definition</b> <a href="#l00162">NumberRange.cs:162</a></div></div>
+<div class="ttc" id="aa01225_a4120a12caf3783228ec3c4c97cb5348b_html_a4120a12caf3783228ec3c4c97cb5348b"><div class="ttname"><a href="../../d8/d53/a01225_a4120a12caf3783228ec3c4c97cb5348b.html#a4120a12caf3783228ec3c4c97cb5348b">SystemEx.NumberRange.IsValid</a></div><div class="ttdeci">bool IsValid</div><div class="ttdoc">Indicates whether the range is valid (From ≤ To).</div><div class="ttdef"><b>Definition</b> <a href="#l00069">NumberRange.cs:69</a></div></div>
+<div class="ttc" id="aa01225_a41bddcc44c5a64df2fbed9a60401f02c_html_a41bddcc44c5a64df2fbed9a60401f02c"><div class="ttname"><a href="../../d8/d53/a01225_a41bddcc44c5a64df2fbed9a60401f02c.html#a41bddcc44c5a64df2fbed9a60401f02c">SystemEx.NumberRange.End</a></div><div class="ttdeci">NumberRangeIterator&lt; long &gt; End</div><div class="ttdoc">Returns an iterator positioned past the end of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00081">NumberRange.cs:81</a></div></div>
+<div class="ttc" id="aa01225_a45f63b0f7a99449fd979ca70311f5354_html_a45f63b0f7a99449fd979ca70311f5354"><div class="ttname"><a href="../../d8/d53/a01225_a45f63b0f7a99449fd979ca70311f5354.html#a45f63b0f7a99449fd979ca70311f5354">SystemEx.NumberRange.To</a></div><div class="ttdeci">long To</div><div class="ttdoc">End value of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">NumberRange.cs:34</a></div></div>
+<div class="ttc" id="aa01225_a466c84ca265a80ef7af31c3f5bf619df_html_a466c84ca265a80ef7af31c3f5bf619df"><div class="ttname"><a href="../../d8/d53/a01225_a466c84ca265a80ef7af31c3f5bf619df.html#a466c84ca265a80ef7af31c3f5bf619df">SystemEx.NumberRange.Length</a></div><div class="ttdeci">long Length</div><div class="ttdoc">Gets the length of the range (To - From).</div><div class="ttdef"><b>Definition</b> <a href="#l00065">NumberRange.cs:65</a></div></div>
+<div class="ttc" id="aa01225_a580e6b62efff1b4f9c54a6a58fa98418_html_a580e6b62efff1b4f9c54a6a58fa98418"><div class="ttname"><a href="../../d8/d53/a01225_a580e6b62efff1b4f9c54a6a58fa98418.html#a580e6b62efff1b4f9c54a6a58fa98418">SystemEx.NumberRange.Contains</a></div><div class="ttdeci">bool Contains(long x)</div><div class="ttdoc">Determines whether the specified value lies within the range. Works for both ascending and descending...</div><div class="ttdef"><b>Definition</b> <a href="#l00093">NumberRange.cs:93</a></div></div>
+<div class="ttc" id="aa01225_a635c13660c36adb1469f5773c7400b92_html_a635c13660c36adb1469f5773c7400b92"><div class="ttname"><a href="../../d8/d53/a01225_a635c13660c36adb1469f5773c7400b92.html#a635c13660c36adb1469f5773c7400b92">SystemEx.NumberRange.IsSame</a></div><div class="ttdeci">bool IsSame</div><div class="ttdoc">Indicates whether the range represents a single value (From == To).</div><div class="ttdef"><b>Definition</b> <a href="#l00073">NumberRange.cs:73</a></div></div>
+<div class="ttc" id="aa01225_a7e91b8202061c3ad1ce607243f66d714_html_a7e91b8202061c3ad1ce607243f66d714"><div class="ttname"><a href="../../d8/d53/a01225_a7e91b8202061c3ad1ce607243f66d714.html#a7e91b8202061c3ad1ce607243f66d714">SystemEx.NumberRange.Begin</a></div><div class="ttdeci">NumberRangeIterator&lt; long &gt; Begin</div><div class="ttdoc">Returns an iterator positioned at the start of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00077">NumberRange.cs:77</a></div></div>
+<div class="ttc" id="aa01225_a81ee37e28e59359b32cbfac9ded868bc_html_a81ee37e28e59359b32cbfac9ded868bc"><div class="ttname"><a href="../../d8/d53/a01225_a81ee37e28e59359b32cbfac9ded868bc.html#a81ee37e28e59359b32cbfac9ded868bc">SystemEx.NumberRange.NumberRange</a></div><div class="ttdeci">NumberRange(long start, long end, long step=1)</div><div class="ttdoc">Creates a new numeric range with the specified start and end values.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">NumberRange.cs:52</a></div></div>
+<div class="ttc" id="aa01225_a8533379ce471a4d2d6e97dfaa17bdeb1_html_a8533379ce471a4d2d6e97dfaa17bdeb1"><div class="ttname"><a href="../../d8/d53/a01225_a8533379ce471a4d2d6e97dfaa17bdeb1.html#a8533379ce471a4d2d6e97dfaa17bdeb1">SystemEx.NumberRange.Overlaps</a></div><div class="ttdeci">bool Overlaps(IRange&lt; long &gt; other)</div><div class="ttdoc">Determines whether this range overlaps with another range.</div><div class="ttdef"><b>Definition</b> <a href="#l00130">NumberRange.cs:130</a></div></div>
+<div class="ttc" id="aa01225_a923011a03b84ffad17f68f2eef47bff1_html_a923011a03b84ffad17f68f2eef47bff1"><div class="ttname"><a href="../../d8/d53/a01225_a923011a03b84ffad17f68f2eef47bff1.html#a923011a03b84ffad17f68f2eef47bff1">SystemEx.NumberRange.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">Returns a string representation of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00194">NumberRange.cs:194</a></div></div>
+<div class="ttc" id="aa01225_aa4dec563e0b7fe149b0ba2fa8c0e95ad_html_aa4dec563e0b7fe149b0ba2fa8c0e95ad"><div class="ttname"><a href="../../d8/d53/a01225_aa4dec563e0b7fe149b0ba2fa8c0e95ad.html#aa4dec563e0b7fe149b0ba2fa8c0e95ad">SystemEx.NumberRange.GetHashCode</a></div><div class="ttdeci">override int GetHashCode()</div><div class="ttdef"><b>Definition</b> <a href="#l00084">NumberRange.cs:84</a></div></div>
+<div class="ttc" id="aa01225_abddd15bdd5d34c705973107064e97711_html_abddd15bdd5d34c705973107064e97711"><div class="ttname"><a href="../../d8/d53/a01225_abddd15bdd5d34c705973107064e97711.html#abddd15bdd5d34c705973107064e97711">SystemEx.NumberRange.NumberRange</a></div><div class="ttdeci">NumberRange()</div><div class="ttdoc">Creates a new numeric range trom T.Zero to T.One.</div><div class="ttdef"><b>Definition</b> <a href="#l00042">NumberRange.cs:42</a></div></div>
+<div class="ttc" id="aa01225_ac9d3965c7724dcde9be5f4a54409d522_html_ac9d3965c7724dcde9be5f4a54409d522"><div class="ttname"><a href="../../d8/d53/a01225_ac9d3965c7724dcde9be5f4a54409d522.html#ac9d3965c7724dcde9be5f4a54409d522">SystemEx.NumberRange.Union</a></div><div class="ttdeci">IRange&lt; long &gt;? Union(IRange&lt; long &gt; other)</div><div class="ttdoc">Computes the union of this range with another range if they overlap or are adjacent....</div><div class="ttdef"><b>Definition</b> <a href="#l00179">NumberRange.cs:179</a></div></div>
+<div class="ttc" id="aa01225_ace355350c3f8869efaba7b1554ccc50d_html_ace355350c3f8869efaba7b1554ccc50d"><div class="ttname"><a href="../../d8/d53/a01225_ace355350c3f8869efaba7b1554ccc50d.html#ace355350c3f8869efaba7b1554ccc50d">SystemEx.NumberRange.Normalize</a></div><div class="ttdeci">NumberRange Normalize()</div><div class="ttdoc">Returns a normalized version of the range where From ≤ To.</div><div class="ttdef"><b>Definition</b> <a href="#l00099">NumberRange.cs:99</a></div></div>
+<div class="ttc" id="aa01225_ad6170ada97b0252cbfa816e85a8d06ce_html_ad6170ada97b0252cbfa816e85a8d06ce"><div class="ttname"><a href="../../d8/d53/a01225_ad6170ada97b0252cbfa816e85a8d06ce.html#ad6170ada97b0252cbfa816e85a8d06ce">SystemEx.NumberRange.Intersect</a></div><div class="ttdeci">IRange&lt; long &gt;? Intersect(IRange&lt; long &gt; other)</div><div class="ttdoc">Computes the intersection of this range with another range.</div><div class="ttdef"><b>Definition</b> <a href="#l00146">NumberRange.cs:146</a></div></div>
+<div class="ttc" id="aa01225_af13f6b4196d1a294a3dc43e688904044_html_af13f6b4196d1a294a3dc43e688904044"><div class="ttname"><a href="../../d8/d53/a01225_af13f6b4196d1a294a3dc43e688904044.html#af13f6b4196d1a294a3dc43e688904044">SystemEx.NumberRange.GetRange</a></div><div class="ttdeci">IRange&lt; long &gt; GetRange(long tstart, long tend)</div><div class="ttdoc">Creates a new range using optional override values for start and end.</div><div class="ttdef"><b>Definition</b> <a href="#l00112">NumberRange.cs:112</a></div></div>
+<div class="ttc" id="aa01225_afd36683f5baac70d0056b8a7f515faed_html_afd36683f5baac70d0056b8a7f515faed"><div class="ttname"><a href="../../d8/d53/a01225_afd36683f5baac70d0056b8a7f515faed.html#afd36683f5baac70d0056b8a7f515faed">SystemEx.NumberRange.GetEnumerator</a></div><div class="ttdeci">IEnumerator GetEnumerator()</div><div class="ttdoc">Enumerates all values from From to To in increments of 1.</div><div class="ttdef"><b>Definition</b> <a href="#l00120">NumberRange.cs:120</a></div></div>
+<div class="ttc" id="aa01225_html"><div class="ttname"><a href="../../d8/d53/a01225.html">SystemEx.NumberRange</a></div><div class="ttdoc">Represents a numeric range defined by a start and end value. Provides range validation,...</div><div class="ttdef"><b>Definition</b> <a href="#l00030">NumberRange.cs:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>NoCopyable.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>NumberRange.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

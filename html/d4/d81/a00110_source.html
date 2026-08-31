@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: ICDistance.cs Source File" />
+<meta property="og:title" content="SystemEX: ICVector .cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: ICDistance.cs Source File" />
+<meta name="twitter:title" content="SystemEX: ICVector .cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: ICDistance.cs Source File</title>
+<title>SystemEX: ICVector .cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d81/a00110_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ICDistance.cs</div></div>
+  <div class="headertitle"><div class="title">ICVector .cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -158,24 +158,33 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d81/a00110_
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d9/daf/a00830.html">SystemEx.Algorithms.Compute</a> {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>     <span class="keyword">internal</span> <span class="keyword">interface </span>ICDistance {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>          <span class="keywordtype">float</span> Compute ( ICVector a, ICVector b );</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>     }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="ttc" id="aa00830_html"><div class="ttname"><a href="../../d9/daf/a00830.html">SystemEx.Algorithms.Compute</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/dc8/a00122_source.html#l00020">CosineDistance.cs:20</a></div></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">using </span>System.Text;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d6/d66/a00916.html">SystemEx.Algorithms.Compute</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d8/dbf/a01109.html">   30</a></span>     <span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="../../d8/dbf/a01109.html">ICVector</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d9/db0/a00900_gaa46927f31d6697a2d9ddb2370d7e8328.html#gaa46927f31d6697a2d9ddb2370d7e8328">   35</a></span>          <span class="keywordtype">int</span> <a class="code hl_property" href="../../d9/db0/a00900_gaa46927f31d6697a2d9ddb2370d7e8328.html#gaa46927f31d6697a2d9ddb2370d7e8328">Dimension</a> { <span class="keyword">get</span>; }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d9/db0/a00900_ga283e91501d56d9b86af18150b68dfa44.html#ga283e91501d56d9b86af18150b68dfa44">   40</a></span>          <span class="keywordtype">float</span> <span class="keyword">this</span>[<span class="keywordtype">int</span> index] { <span class="keyword">get</span>; }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>     }</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>     </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="ttc" id="aa00900_gaa46927f31d6697a2d9ddb2370d7e8328_html_gaa46927f31d6697a2d9ddb2370d7e8328"><div class="ttname"><a href="../../d9/db0/a00900_gaa46927f31d6697a2d9ddb2370d7e8328.html#gaa46927f31d6697a2d9ddb2370d7e8328">SystemEx.Algorithms.Compute.ICVector.Dimension</a></div><div class="ttdeci">int Dimension</div><div class="ttdoc">Gets the number of dimensions of the vector.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">ICVector .cs:35</a></div></div>
+<div class="ttc" id="aa00916_html"><div class="ttname"><a href="../../d6/d66/a00916.html">SystemEx.Algorithms.Compute</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/dc8/a00122_source.html#l00020">CosineDistance.cs:20</a></div></div>
+<div class="ttc" id="aa01109_html"><div class="ttname"><a href="../../d8/dbf/a01109.html">SystemEx.Algorithms.Compute.ICVector</a></div><div class="ttdoc">Represents a read‑only computational vector with a fixed dimension.   Provides indexed access to floa...</div><div class="ttdef"><b>Definition</b> <a href="#l00030">ICVector .cs:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Algorithms</b></li><li class="navelem"><b>Compute</b></li><li class="navelem"><b>Interfaces</b></li><li class="navelem"><b>ICDistance.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Algorithms</b></li><li class="navelem"><b>Compute</b></li><li class="navelem"><b>Interfaces</b></li><li class="navelem"><b>ICVector .cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

@@ -8,11 +8,12 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "Drawing", "dir_0d587f21791c72672ace41061f6f62c7.html", "dir_0d587f21791c72672ace41061f6f62c7" ],
     [ "Hash", "dir_269c2c9b46f0dee3d35bb2d569b15df8.html", "dir_269c2c9b46f0dee3d35bb2d569b15df8" ],
     [ "IO", "dir_fae119eb913a40fe8ed97cde8b98911e.html", "dir_fae119eb913a40fe8ed97cde8b98911e" ],
+    [ "Logging", "dir_ac55354187c8c6c264902bc62bdefbb0.html", "dir_ac55354187c8c6c264902bc62bdefbb0" ],
     [ "Numeric", "dir_9dc015ad45d84aaa4f662cfaebce3286.html", "dir_9dc015ad45d84aaa4f662cfaebce3286" ],
     [ "obj", "dir_3bc03cc55d4aa6566f37b02a8017003e.html", "dir_3bc03cc55d4aa6566f37b02a8017003e" ],
     [ "Random", "dir_409a8aab452d80e48310980cb832c7a5.html", "dir_409a8aab452d80e48310980cb832c7a5" ],
     [ "Runtime", "dir_336443d5468dfc2bb33128b4e5b96f42.html", "dir_336443d5468dfc2bb33128b4e5b96f42" ],
     [ "Threading", "dir_35131c554cae814275e961d39d711f87.html", "dir_35131c554cae814275e961d39d711f87" ],
     [ "Utils", "dir_a7363e98f9e0bdd87618633653859815.html", "dir_a7363e98f9e0bdd87618633653859815" ],
-    [ "GlobalSuppressions.cs", "d9/dd4/a00776_source.html", null ]
+    [ "GlobalSuppressions.cs", "d3/db2/a00869_source.html", null ]
 ];

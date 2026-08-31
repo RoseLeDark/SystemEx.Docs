@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: IFDelegate.cs Source File" />
+<meta property="og:title" content="SystemEX: NumberRangeStepper.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: IFDelegate.cs Source File" />
+<meta name="twitter:title" content="SystemEX: NumberRangeStepper.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: IFDelegate.cs Source File</title>
+<title>SystemEX: NumberRangeStepper.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/db6/a00146_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">IFDelegate.cs</div></div>
+  <div class="headertitle"><div class="title">NumberRangeStepper.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -157,84 +157,187 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/db6/a00146_
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * If you modify this file, retain this notice and add a short description of your</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">using </span>System;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span>System.Collections.Generic;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span>System.Text;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">using </span>System.Collections;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span><a class="code hl_namespace" href="../../d0/ddf/a00918.html">SystemEx.Collections</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span><a class="code hl_namespace" href="../../d1/d0b/a00919.html">SystemEx.Collections.Generic</a>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dd/d5f/a00825.html">SystemEx</a> {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../dd/dcb/a01104.html">   30</a></span>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../de/d9d/a00813_gaf0894b3f5d68ab9f620a8b93966bade8.html#gaf0894b3f5d68ab9f620a8b93966bade8">IFDelegate</a>&lt;T&gt; {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">private</span> readonly Func&lt;T, bool&gt; m_condition;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">private</span> readonly IDelegate&lt;T&gt; m_then;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">private</span> readonly IDelegate&lt;T&gt; m_else;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_gae9edf88aeb77a9f82abd581a751099a0.html#gae9edf88aeb77a9f82abd581a751099a0">   50</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../de/d9d/a00813_gae9edf88aeb77a9f82abd581a751099a0.html#gae9edf88aeb77a9f82abd581a751099a0">AddToThen</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
-<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_gaf0894b3f5d68ab9f620a8b93966bade8.html#gaf0894b3f5d68ab9f620a8b93966bade8">   64</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../de/d9d/a00813_gaf0894b3f5d68ab9f620a8b93966bade8.html#gaf0894b3f5d68ab9f620a8b93966bade8">IFDelegate</a> (</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            Func&lt;T, bool&gt; condition,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            IDelegate&lt;T&gt; thenDelegate,</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            IDelegate&lt;T&gt; elseDelegate ) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            m_condition = condition;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            m_then = thenDelegate;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            m_else = elseDelegate;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d4/ddc/a00917.html">   22</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d4/ddc/a00917.html">SystemEx.Base</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233.html">   29</a></span>     <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../d6/da1/a01233_a8ecaa02c0f56e5d280dfe2e9bc1ac912.html#a8ecaa02c0f56e5d280dfe2e9bc1ac912">NumberRangeStepper</a> : IRange&lt;long&gt;, IEquatable&lt;NumberRangeStepper&gt;, IEnumerable&lt;long&gt; {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_a438d321b89dbd1e8fd9016b031bd25fa.html#a438d321b89dbd1e8fd9016b031bd25fa">   32</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_property" href="../../d6/da1/a01233_a438d321b89dbd1e8fd9016b031bd25fa.html#a438d321b89dbd1e8fd9016b031bd25fa">From</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_ad6dd1b9892cf48639f362e2c982c5002.html#ad6dd1b9892cf48639f362e2c982c5002">   34</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_property" href="../../d6/da1/a01233_ad6dd1b9892cf48639f362e2c982c5002.html#ad6dd1b9892cf48639f362e2c982c5002">To</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">public</span> <span class="keywordtype">long</span> Step { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">private</span> Vector&lt;long&gt; m_range;</div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_a8ecaa02c0f56e5d280dfe2e9bc1ac912.html#a8ecaa02c0f56e5d280dfe2e9bc1ac912">   42</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d6/da1/a01233_a8ecaa02c0f56e5d280dfe2e9bc1ac912.html#a8ecaa02c0f56e5d280dfe2e9bc1ac912">NumberRangeStepper</a> () {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            this.From = 0;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            this.To = 1;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            this.Step = 1;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        }</div>
 </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
-<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_gadf458a899e6bd490804ba06d7bb25bd8.html#gadf458a899e6bd490804ba06d7bb25bd8">   81</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_gadf458a899e6bd490804ba06d7bb25bd8.html#gadf458a899e6bd490804ba06d7bb25bd8">Subscribe</a> ( Action&lt;IDelegate&lt;T&gt;, T&gt; func, <span class="keywordtype">bool</span> then ) {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordflow">if</span> ( then )</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                m_then.Subscribe(func);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                m_else.Subscribe(func);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_a33909fad77b05e90a6bc6ba521807a7f.html#a33909fad77b05e90a6bc6ba521807a7f">   53</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d6/da1/a01233_a33909fad77b05e90a6bc6ba521807a7f.html#a33909fad77b05e90a6bc6ba521807a7f">NumberRangeStepper</a> ( <span class="keywordtype">long</span> start, <span class="keywordtype">long</span> end, <span class="keywordtype">long</span> step = 1 ) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            this.From = start;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            this.To = end;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            Step = step;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            m_range = <span class="keyword">new</span> Vector&lt;long&gt;(2);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">long</span> i = 0 ; i &lt;= end ; i += step ) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                m_range.PushBack(i);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
 </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
-<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_gabc90a7eb5d4ba71c1ddc6e32697cb700.html#gabc90a7eb5d4ba71c1ddc6e32697cb700">   92</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_gabc90a7eb5d4ba71c1ddc6e32697cb700.html#gabc90a7eb5d4ba71c1ddc6e32697cb700">Invoke</a> ( T arg ) {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">if</span> ( m_condition(arg) )</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                m_then.Invoke(arg);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                m_else.Invoke(arg);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_ad744c9941777bab18995c24c339c9481.html#ad744c9941777bab18995c24c339c9481">   67</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_property" href="../../d6/da1/a01233_ad744c9941777bab18995c24c339c9481.html#ad744c9941777bab18995c24c339c9481">Length</a> =&gt; this.To - <a class="code hl_property" href="../../d6/da1/a01233_a438d321b89dbd1e8fd9016b031bd25fa.html#a438d321b89dbd1e8fd9016b031bd25fa">From</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_ab4ad6f38df2469c0def94082de8a312a.html#ab4ad6f38df2469c0def94082de8a312a">   71</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../d6/da1/a01233_ab4ad6f38df2469c0def94082de8a312a.html#ab4ad6f38df2469c0def94082de8a312a">IsValid</a> =&gt; this.From &lt;= this.To;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_a692d320de6908fd34bfa5e60193cd4dd.html#a692d320de6908fd34bfa5e60193cd4dd">   75</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../d6/da1/a01233_a692d320de6908fd34bfa5e60193cd4dd.html#a692d320de6908fd34bfa5e60193cd4dd">IsSame</a> =&gt; this.From == this.To;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_a31302a9f27c77cff49b0554d1e59c0dd.html#a31302a9f27c77cff49b0554d1e59c0dd">   79</a></span>        <span class="keyword">public</span> NumberRangeIterator&lt;long&gt; <a class="code hl_property" href="../../d6/da1/a01233_a31302a9f27c77cff49b0554d1e59c0dd.html#a31302a9f27c77cff49b0554d1e59c0dd">Begin</a> =&gt; <span class="keyword">new</span> NumberRangeIterator&lt;long&gt;(m_range, 0);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_a5df537aadd1eca0fec7db3f90dc1251b.html#a5df537aadd1eca0fec7db3f90dc1251b">   83</a></span>        <span class="keyword">public</span> NumberRangeIterator&lt;long&gt; <a class="code hl_property" href="../../d6/da1/a01233_a5df537aadd1eca0fec7db3f90dc1251b.html#a5df537aadd1eca0fec7db3f90dc1251b">End</a> =&gt; <span class="keyword">new</span> NumberRangeIterator&lt;long&gt;(m_range, m_range.Length - 1);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_a8cb30d70e5a3701e0098910a9982699f.html#a8cb30d70e5a3701e0098910a9982699f">   86</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> <a class="code hl_function" href="../../d6/da1/a01233_a8cb30d70e5a3701e0098910a9982699f.html#a8cb30d70e5a3701e0098910a9982699f">GetHashCode</a> () =&gt;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            HashCode.Combine(this.From, this.To);</div>
 </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
-<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_ga1c7e0682bb607f03ff1ecde6d9edb064.html#ga1c7e0682bb607f03ff1ecde6d9edb064">  107</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_ga1c7e0682bb607f03ff1ecde6d9edb064.html#ga1c7e0682bb607f03ff1ecde6d9edb064">UnSubscribe</a> ( Action&lt;IDelegate&lt;T&gt;, T&gt; func, <span class="keywordtype">bool</span> then ) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordflow">if</span> ( then )</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                m_then.UnSubscribe(func);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                m_else.UnSubscribe(func);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_afaff5d749f6bd34422c1089bcdebacd1.html#afaff5d749f6bd34422c1089bcdebacd1">   95</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/da1/a01233_afaff5d749f6bd34422c1089bcdebacd1.html#afaff5d749f6bd34422c1089bcdebacd1">Contains</a> ( <span class="keywordtype">long</span> x ) =&gt; (x - this.To) * (x - this.From) &lt;= 0;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_acd985ece3b8e7455f76702d56daa5904.html#acd985ece3b8e7455f76702d56daa5904">  101</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d6/da1/a01233_a8ecaa02c0f56e5d280dfe2e9bc1ac912.html#a8ecaa02c0f56e5d280dfe2e9bc1ac912">NumberRangeStepper</a> <a class="code hl_function" href="../../d6/da1/a01233_acd985ece3b8e7455f76702d56daa5904.html#acd985ece3b8e7455f76702d56daa5904">Normalize</a> () =&gt;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            (this.From &lt;= this.To) ? <span class="keyword">this</span> : new <a class="code hl_function" href="../../d6/da1/a01233_a8ecaa02c0f56e5d280dfe2e9bc1ac912.html#a8ecaa02c0f56e5d280dfe2e9bc1ac912">NumberRangeStepper</a>(this.<a class="code hl_property" href="../../d6/da1/a01233_ad6dd1b9892cf48639f362e2c982c5002.html#ad6dd1b9892cf48639f362e2c982c5002">To</a>, this.<a class="code hl_property" href="../../d6/da1/a01233_a438d321b89dbd1e8fd9016b031bd25fa.html#a438d321b89dbd1e8fd9016b031bd25fa">From</a>, this.Step);</div>
 </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
-<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="../../de/d9d/a00813_ga16bd812d70c13bf1c3f9f00a50581e26.html#ga16bd812d70c13bf1c3f9f00a50581e26">  117</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d9d/a00813_ga16bd812d70c13bf1c3f9f00a50581e26.html#ga16bd812d70c13bf1c3f9f00a50581e26">Clear</a> () {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            m_then.Clear();</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            m_else.Clear();</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_abfe52263fc4a7250455257f1d30736e6.html#abfe52263fc4a7250455257f1d30736e6">  112</a></span>        <span class="keyword">public</span> IRange&lt;long&gt; <a class="code hl_function" href="../../d6/da1/a01233_abfe52263fc4a7250455257f1d30736e6.html#abfe52263fc4a7250455257f1d30736e6">GetRange</a> ( <span class="keywordtype">long</span> tstart, <span class="keywordtype">long</span> tend ) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="../../d6/da1/a01233_a8ecaa02c0f56e5d280dfe2e9bc1ac912.html#a8ecaa02c0f56e5d280dfe2e9bc1ac912">NumberRangeStepper</a>(tstart, tend, this.Step);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
 </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_a3895c8da99f200194a73a4d1abf55f43.html#a3895c8da99f200194a73a4d1abf55f43">  120</a></span>        <span class="keyword">public</span> IEnumerator&lt;long&gt; <a class="code hl_function" href="../../d6/da1/a01233_a3895c8da99f200194a73a4d1abf55f43.html#a3895c8da99f200194a73a4d1abf55f43">GetEnumerator</a> () {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">return</span> m_range.GetEnumerator();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
 </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
-<div class="ttc" id="aa00813_ga16bd812d70c13bf1c3f9f00a50581e26_html_ga16bd812d70c13bf1c3f9f00a50581e26"><div class="ttname"><a href="../../de/d9d/a00813_ga16bd812d70c13bf1c3f9f00a50581e26.html#ga16bd812d70c13bf1c3f9f00a50581e26">SystemEx.IFDelegate-1-g.Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Clears both the then and else delegate branches.</div><div class="ttdef"><b>Definition</b> <a href="#l00117">IFDelegate.cs:117</a></div></div>
-<div class="ttc" id="aa00813_ga1c7e0682bb607f03ff1ecde6d9edb064_html_ga1c7e0682bb607f03ff1ecde6d9edb064"><div class="ttname"><a href="../../de/d9d/a00813_ga1c7e0682bb607f03ff1ecde6d9edb064.html#ga1c7e0682bb607f03ff1ecde6d9edb064">SystemEx.IFDelegate-1-g.UnSubscribe</a></div><div class="ttdeci">void UnSubscribe(Action&lt; IDelegate&lt; T &gt;, T &gt; func, bool then)</div><div class="ttdoc">Removes a callback function from either the then or else branch.</div><div class="ttdef"><b>Definition</b> <a href="#l00107">IFDelegate.cs:107</a></div></div>
-<div class="ttc" id="aa00813_gabc90a7eb5d4ba71c1ddc6e32697cb700_html_gabc90a7eb5d4ba71c1ddc6e32697cb700"><div class="ttname"><a href="../../de/d9d/a00813_gabc90a7eb5d4ba71c1ddc6e32697cb700.html#gabc90a7eb5d4ba71c1ddc6e32697cb700">SystemEx.IFDelegate-1-g.Invoke</a></div><div class="ttdeci">void Invoke(T arg)</div><div class="ttdoc">Invokes the appropriate delegate branch based on the condition.</div><div class="ttdef"><b>Definition</b> <a href="#l00092">IFDelegate.cs:92</a></div></div>
-<div class="ttc" id="aa00813_gadf458a899e6bd490804ba06d7bb25bd8_html_gadf458a899e6bd490804ba06d7bb25bd8"><div class="ttname"><a href="../../de/d9d/a00813_gadf458a899e6bd490804ba06d7bb25bd8.html#gadf458a899e6bd490804ba06d7bb25bd8">SystemEx.IFDelegate-1-g.Subscribe</a></div><div class="ttdeci">void Subscribe(Action&lt; IDelegate&lt; T &gt;, T &gt; func, bool then)</div><div class="ttdoc">Subscribes a callback function to either the then or else branch.</div><div class="ttdef"><b>Definition</b> <a href="#l00081">IFDelegate.cs:81</a></div></div>
-<div class="ttc" id="aa00813_gae9edf88aeb77a9f82abd581a751099a0_html_gae9edf88aeb77a9f82abd581a751099a0"><div class="ttname"><a href="../../de/d9d/a00813_gae9edf88aeb77a9f82abd581a751099a0.html#gae9edf88aeb77a9f82abd581a751099a0">SystemEx.IFDelegate-1-g.AddToThen</a></div><div class="ttdeci">bool AddToThen</div><div class="ttdoc">Gets or sets a value indicating whether new subscriptions should be added to the then branch by defau...</div><div class="ttdef"><b>Definition</b> <a href="#l00050">IFDelegate.cs:50</a></div></div>
-<div class="ttc" id="aa00813_gaf0894b3f5d68ab9f620a8b93966bade8_html_gaf0894b3f5d68ab9f620a8b93966bade8"><div class="ttname"><a href="../../de/d9d/a00813_gaf0894b3f5d68ab9f620a8b93966bade8.html#gaf0894b3f5d68ab9f620a8b93966bade8">SystemEx.IFDelegate-1-g.IFDelegate</a></div><div class="ttdeci">IFDelegate(Func&lt; T, bool &gt; condition, IDelegate&lt; T &gt; thenDelegate, IDelegate&lt; T &gt; elseDelegate)</div><div class="ttdoc">Initializes a new conditional delegate dispatcher.</div><div class="ttdef"><b>Definition</b> <a href="#l00064">IFDelegate.cs:64</a></div></div>
-<div class="ttc" id="aa00825_html"><div class="ttname"><a href="../../dd/d5f/a00825.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d03/a00062_source.html#l00018">AIEnvironment .cs:18</a></div></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_a75d85a423fac69464d47b12f70d977a4.html#a75d85a423fac69464d47b12f70d977a4">  129</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/da1/a01233_a75d85a423fac69464d47b12f70d977a4.html#a75d85a423fac69464d47b12f70d977a4">Overlaps</a> ( IRange&lt;long&gt; other ) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../d6/da1/a01233_ab4ad6f38df2469c0def94082de8a312a.html#ab4ad6f38df2469c0def94082de8a312a">IsValid</a> &amp;&amp; other.<a class="code hl_property" href="../../dd/d43/a01193_a693d922264544cd26108d2e129166d50.html#a693d922264544cd26108d2e129166d50">IsValid</a> )</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                result = !(other.To &lt; <a class="code hl_property" href="../../d6/da1/a01233_a438d321b89dbd1e8fd9016b031bd25fa.html#a438d321b89dbd1e8fd9016b031bd25fa">From</a> || other.From &gt; this.To);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        }</div>
+</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_a86f38b97493df8e96de79b6e1615323a.html#a86f38b97493df8e96de79b6e1615323a">  145</a></span>        <span class="keyword">public</span> IRange&lt;long&gt;? <a class="code hl_function" href="../../d6/da1/a01233_a86f38b97493df8e96de79b6e1615323a.html#a86f38b97493df8e96de79b6e1615323a">Intersect</a> ( IRange&lt;long&gt; other ) {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <a class="code hl_function" href="../../d6/da1/a01233_a8ecaa02c0f56e5d280dfe2e9bc1ac912.html#a8ecaa02c0f56e5d280dfe2e9bc1ac912">NumberRangeStepper</a>? _ret = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="../../d6/da1/a01233_a75d85a423fac69464d47b12f70d977a4.html#a75d85a423fac69464d47b12f70d977a4">Overlaps</a>(other) ) {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                _ret = <span class="keyword">new</span> <a class="code hl_function" href="../../d6/da1/a01233_a8ecaa02c0f56e5d280dfe2e9bc1ac912.html#a8ecaa02c0f56e5d280dfe2e9bc1ac912">NumberRangeStepper</a>(<span class="keywordtype">long</span>.Max(this.From, other.<a class="code hl_property" href="../../dd/d43/a01193_ae275f6eb758dd085b845265ef1480d19.html#ae275f6eb758dd085b845265ef1480d19">From</a>),</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                                              <span class="keywordtype">long</span>.Min(<span class="keyword">this</span>.To, other.<a class="code hl_property" href="../../dd/d43/a01193_ae292c65780ca87bf2f6a8d4d1af728af.html#ae292c65780ca87bf2f6a8d4d1af728af">To</a>), <span class="keyword">this</span>.Step );</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <span class="keywordflow">return</span> _ret;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        }</div>
+</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span></div>
+<div class="foldopen" id="foldopen00161" data-start="{" data-end="}">
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_a216eee918c6e4ded189c37e14e257fd9.html#a216eee918c6e4ded189c37e14e257fd9">  161</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/da1/a01233_a216eee918c6e4ded189c37e14e257fd9.html#a216eee918c6e4ded189c37e14e257fd9">IsAdjacent</a> ( IRange&lt;long&gt; other ) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../d6/da1/a01233_ab4ad6f38df2469c0def94082de8a312a.html#ab4ad6f38df2469c0def94082de8a312a">IsValid</a> &amp;&amp; other.<a class="code hl_property" href="../../dd/d43/a01193_a693d922264544cd26108d2e129166d50.html#a693d922264544cd26108d2e129166d50">IsValid</a> )</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                result =</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                    this.To == other.From ||</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                    other.To == this.From;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
+</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
+<div class="foldopen" id="foldopen00178" data-start="{" data-end="}">
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_af9b113c23ab0704fb5fcd33660f6c7c3.html#af9b113c23ab0704fb5fcd33660f6c7c3">  178</a></span>        <span class="keyword">public</span> IRange&lt;long&gt;? <a class="code hl_function" href="../../d6/da1/a01233_af9b113c23ab0704fb5fcd33660f6c7c3.html#af9b113c23ab0704fb5fcd33660f6c7c3">Union</a> ( IRange&lt;long&gt; other ) {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            IRange&lt;long&gt;? result = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="../../d6/da1/a01233_a75d85a423fac69464d47b12f70d977a4.html#a75d85a423fac69464d47b12f70d977a4">Overlaps</a>(other) || <a class="code hl_function" href="../../d6/da1/a01233_a216eee918c6e4ded189c37e14e257fd9.html#a216eee918c6e4ded189c37e14e257fd9">IsAdjacent</a>(other) ) {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                <span class="keywordtype">long</span> start = <span class="keywordtype">long</span>.Min(this.From, other.<a class="code hl_property" href="../../dd/d43/a01193_ae275f6eb758dd085b845265ef1480d19.html#ae275f6eb758dd085b845265ef1480d19">From</a>);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                <span class="keywordtype">long</span> end   = <span class="keywordtype">long</span>.Max(this.To, other.<a class="code hl_property" href="../../dd/d43/a01193_ae292c65780ca87bf2f6a8d4d1af728af.html#ae292c65780ca87bf2f6a8d4d1af728af">To</a>);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                result = <span class="keyword">new</span> <a class="code hl_function" href="../../d6/da1/a01233_a8ecaa02c0f56e5d280dfe2e9bc1ac912.html#a8ecaa02c0f56e5d280dfe2e9bc1ac912">NumberRangeStepper</a>(start, end, this.Step);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        }</div>
+</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span></div>
+<div class="foldopen" id="foldopen00193" data-start="{" data-end="}">
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="../../d6/da1/a01233_a78c7e5a22aea367561fd53e020be551a.html#a78c7e5a22aea367561fd53e020be551a">  193</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d6/da1/a01233_a78c7e5a22aea367561fd53e020be551a.html#a78c7e5a22aea367561fd53e020be551a">ToString</a> () {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            <span class="keywordflow">return</span> (<a class="code hl_property" href="../../d6/da1/a01233_ab4ad6f38df2469c0def94082de8a312a.html#ab4ad6f38df2469c0def94082de8a312a">IsValid</a>) ?</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;Range: [{this.From} ... $[{this.To}]&quot;</span>) :</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                <span class="keywordtype">string</span>.Create(<span class="keyword">null</span>, stackalloc <span class="keywordtype">char</span>[256], $<span class="stringliteral">&quot;Not Valid Range: [{this.From} ... $[{this.To}]&quot;</span>);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        }</div>
+</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> Equals ( <a class="code hl_struct" href="../../d6/da1/a01233.html">NumberRangeStepper</a> other ) {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            <span class="keywordflow">return</span> (m_range.<a class="code hl_function" href="../../d5/dd3/a00902_ga761052fed0f15cf48897aec054350c28.html#ga761052fed0f15cf48897aec054350c28">Equals</a>(other));</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        IEnumerator&lt;long&gt; IEnumerable&lt;long&gt;.GetEnumerator () {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            <span class="keywordflow">return</span> m_range.<a class="code hl_function" href="../../d5/dd3/a00902_gaf2592cc8bcceca84714ab91d24d15ba8.html#gaf2592cc8bcceca84714ab91d24d15ba8">GetEnumerator</a>();</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        IEnumerator IEnumerable.GetEnumerator () {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="../../d6/da1/a01233_a3895c8da99f200194a73a4d1abf55f43.html#a3895c8da99f200194a73a4d1abf55f43">GetEnumerator</a>();</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
+</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>     </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>}</div>
+</div>
+<div class="ttc" id="aa00902_ga761052fed0f15cf48897aec054350c28_html_ga761052fed0f15cf48897aec054350c28"><div class="ttname"><a href="../../d5/dd3/a00902_ga761052fed0f15cf48897aec054350c28.html#ga761052fed0f15cf48897aec054350c28">SystemEx.Collections.Generic.Vector-1-g.Equals</a></div><div class="ttdeci">override bool Equals(object? obj)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d40/a00236_source.html#l00990">Vector.cs:990</a></div></div>
+<div class="ttc" id="aa00902_gaf2592cc8bcceca84714ab91d24d15ba8_html_gaf2592cc8bcceca84714ab91d24d15ba8"><div class="ttname"><a href="../../d5/dd3/a00902_gaf2592cc8bcceca84714ab91d24d15ba8.html#gaf2592cc8bcceca84714ab91d24d15ba8">SystemEx.Collections.Generic.Vector-1-g.GetEnumerator</a></div><div class="ttdeci">IEnumerator&lt; T &gt; GetEnumerator()</div><div class="ttdoc">Enumerates all valid elements in forward order.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d40/a00236_source.html#l00775">Vector.cs:775</a></div></div>
+<div class="ttc" id="aa00917_html"><div class="ttname"><a href="../../d4/ddc/a00917.html">SystemEx.Base</a></div><div class="ttdef"><b>Definition</b> <a href="#l00022">NumberRangeStepper.cs:22</a></div></div>
+<div class="ttc" id="aa00918_html"><div class="ttname"><a href="../../d0/ddf/a00918.html">SystemEx.Collections</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d5d/a00311_source.html#l00021">Cache.cs:21</a></div></div>
+<div class="ttc" id="aa00919_html"><div class="ttname"><a href="../../d1/d0b/a00919.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d5d/a00311_source.html#l00021">Cache.cs:21</a></div></div>
+<div class="ttc" id="aa01193_a693d922264544cd26108d2e129166d50_html_a693d922264544cd26108d2e129166d50"><div class="ttname"><a href="../../dd/d43/a01193_a693d922264544cd26108d2e129166d50.html#a693d922264544cd26108d2e129166d50">SystemEx.IRange-1-g.IsValid</a></div><div class="ttdeci">bool IsValid</div><div class="ttdoc">Indicates whether the range is valid (Start ≤ End).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/df8/a00155_source.html#l00053">IRange.cs:53</a></div></div>
+<div class="ttc" id="aa01193_ae275f6eb758dd085b845265ef1480d19_html_ae275f6eb758dd085b845265ef1480d19"><div class="ttname"><a href="../../dd/d43/a01193_ae275f6eb758dd085b845265ef1480d19.html#ae275f6eb758dd085b845265ef1480d19">SystemEx.IRange-1-g.From</a></div><div class="ttdeci">T From</div><div class="ttdoc">Gets or sets the start value of the range.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/df8/a00155_source.html#l00043">IRange.cs:43</a></div></div>
+<div class="ttc" id="aa01193_ae292c65780ca87bf2f6a8d4d1af728af_html_ae292c65780ca87bf2f6a8d4d1af728af"><div class="ttname"><a href="../../dd/d43/a01193_ae292c65780ca87bf2f6a8d4d1af728af.html#ae292c65780ca87bf2f6a8d4d1af728af">SystemEx.IRange-1-g.To</a></div><div class="ttdeci">T To</div><div class="ttdoc">Gets or sets the end value of the range.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/df8/a00155_source.html#l00048">IRange.cs:48</a></div></div>
+<div class="ttc" id="aa01233_a216eee918c6e4ded189c37e14e257fd9_html_a216eee918c6e4ded189c37e14e257fd9"><div class="ttname"><a href="../../d6/da1/a01233_a216eee918c6e4ded189c37e14e257fd9.html#a216eee918c6e4ded189c37e14e257fd9">SystemEx.Base.NumberRangeStepper.IsAdjacent</a></div><div class="ttdeci">bool IsAdjacent(IRange&lt; long &gt; other)</div><div class="ttdoc">Determines whether this range touches another range at exactly one boundary.</div><div class="ttdef"><b>Definition</b> <a href="#l00161">NumberRangeStepper.cs:161</a></div></div>
+<div class="ttc" id="aa01233_a31302a9f27c77cff49b0554d1e59c0dd_html_a31302a9f27c77cff49b0554d1e59c0dd"><div class="ttname"><a href="../../d6/da1/a01233_a31302a9f27c77cff49b0554d1e59c0dd.html#a31302a9f27c77cff49b0554d1e59c0dd">SystemEx.Base.NumberRangeStepper.Begin</a></div><div class="ttdeci">NumberRangeIterator&lt; long &gt; Begin</div><div class="ttdoc">Returns an iterator positioned at the start of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">NumberRangeStepper.cs:79</a></div></div>
+<div class="ttc" id="aa01233_a33909fad77b05e90a6bc6ba521807a7f_html_a33909fad77b05e90a6bc6ba521807a7f"><div class="ttname"><a href="../../d6/da1/a01233_a33909fad77b05e90a6bc6ba521807a7f.html#a33909fad77b05e90a6bc6ba521807a7f">SystemEx.Base.NumberRangeStepper.NumberRangeStepper</a></div><div class="ttdeci">NumberRangeStepper(long start, long end, long step=1)</div><div class="ttdoc">Creates a new numeric range with the specified start and end values.</div><div class="ttdef"><b>Definition</b> <a href="#l00053">NumberRangeStepper.cs:53</a></div></div>
+<div class="ttc" id="aa01233_a3895c8da99f200194a73a4d1abf55f43_html_a3895c8da99f200194a73a4d1abf55f43"><div class="ttname"><a href="../../d6/da1/a01233_a3895c8da99f200194a73a4d1abf55f43.html#a3895c8da99f200194a73a4d1abf55f43">SystemEx.Base.NumberRangeStepper.GetEnumerator</a></div><div class="ttdeci">IEnumerator&lt; long &gt; GetEnumerator()</div><div class="ttdoc">Enumerates all values from From to To in increments of 1.</div><div class="ttdef"><b>Definition</b> <a href="#l00120">NumberRangeStepper.cs:120</a></div></div>
+<div class="ttc" id="aa01233_a438d321b89dbd1e8fd9016b031bd25fa_html_a438d321b89dbd1e8fd9016b031bd25fa"><div class="ttname"><a href="../../d6/da1/a01233_a438d321b89dbd1e8fd9016b031bd25fa.html#a438d321b89dbd1e8fd9016b031bd25fa">SystemEx.Base.NumberRangeStepper.From</a></div><div class="ttdeci">long From</div><div class="ttdoc">From value of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">NumberRangeStepper.cs:32</a></div></div>
+<div class="ttc" id="aa01233_a5df537aadd1eca0fec7db3f90dc1251b_html_a5df537aadd1eca0fec7db3f90dc1251b"><div class="ttname"><a href="../../d6/da1/a01233_a5df537aadd1eca0fec7db3f90dc1251b.html#a5df537aadd1eca0fec7db3f90dc1251b">SystemEx.Base.NumberRangeStepper.End</a></div><div class="ttdeci">NumberRangeIterator&lt; long &gt; End</div><div class="ttdoc">Returns an iterator positioned past the end of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00083">NumberRangeStepper.cs:83</a></div></div>
+<div class="ttc" id="aa01233_a692d320de6908fd34bfa5e60193cd4dd_html_a692d320de6908fd34bfa5e60193cd4dd"><div class="ttname"><a href="../../d6/da1/a01233_a692d320de6908fd34bfa5e60193cd4dd.html#a692d320de6908fd34bfa5e60193cd4dd">SystemEx.Base.NumberRangeStepper.IsSame</a></div><div class="ttdeci">bool IsSame</div><div class="ttdoc">Indicates whether the range represents a single value (From == To).</div><div class="ttdef"><b>Definition</b> <a href="#l00075">NumberRangeStepper.cs:75</a></div></div>
+<div class="ttc" id="aa01233_a75d85a423fac69464d47b12f70d977a4_html_a75d85a423fac69464d47b12f70d977a4"><div class="ttname"><a href="../../d6/da1/a01233_a75d85a423fac69464d47b12f70d977a4.html#a75d85a423fac69464d47b12f70d977a4">SystemEx.Base.NumberRangeStepper.Overlaps</a></div><div class="ttdeci">bool Overlaps(IRange&lt; long &gt; other)</div><div class="ttdoc">Determines whether this range overlaps with another range.</div><div class="ttdef"><b>Definition</b> <a href="#l00129">NumberRangeStepper.cs:129</a></div></div>
+<div class="ttc" id="aa01233_a78c7e5a22aea367561fd53e020be551a_html_a78c7e5a22aea367561fd53e020be551a"><div class="ttname"><a href="../../d6/da1/a01233_a78c7e5a22aea367561fd53e020be551a.html#a78c7e5a22aea367561fd53e020be551a">SystemEx.Base.NumberRangeStepper.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">Returns a string representation of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00193">NumberRangeStepper.cs:193</a></div></div>
+<div class="ttc" id="aa01233_a86f38b97493df8e96de79b6e1615323a_html_a86f38b97493df8e96de79b6e1615323a"><div class="ttname"><a href="../../d6/da1/a01233_a86f38b97493df8e96de79b6e1615323a.html#a86f38b97493df8e96de79b6e1615323a">SystemEx.Base.NumberRangeStepper.Intersect</a></div><div class="ttdeci">IRange&lt; long &gt;? Intersect(IRange&lt; long &gt; other)</div><div class="ttdoc">Computes the intersection of this range with another range.</div><div class="ttdef"><b>Definition</b> <a href="#l00145">NumberRangeStepper.cs:145</a></div></div>
+<div class="ttc" id="aa01233_a8cb30d70e5a3701e0098910a9982699f_html_a8cb30d70e5a3701e0098910a9982699f"><div class="ttname"><a href="../../d6/da1/a01233_a8cb30d70e5a3701e0098910a9982699f.html#a8cb30d70e5a3701e0098910a9982699f">SystemEx.Base.NumberRangeStepper.GetHashCode</a></div><div class="ttdeci">override int GetHashCode()</div><div class="ttdef"><b>Definition</b> <a href="#l00086">NumberRangeStepper.cs:86</a></div></div>
+<div class="ttc" id="aa01233_a8ecaa02c0f56e5d280dfe2e9bc1ac912_html_a8ecaa02c0f56e5d280dfe2e9bc1ac912"><div class="ttname"><a href="../../d6/da1/a01233_a8ecaa02c0f56e5d280dfe2e9bc1ac912.html#a8ecaa02c0f56e5d280dfe2e9bc1ac912">SystemEx.Base.NumberRangeStepper.NumberRangeStepper</a></div><div class="ttdeci">NumberRangeStepper()</div><div class="ttdoc">Creates a new numeric range trom T.Zero to T.One.</div><div class="ttdef"><b>Definition</b> <a href="#l00042">NumberRangeStepper.cs:42</a></div></div>
+<div class="ttc" id="aa01233_ab4ad6f38df2469c0def94082de8a312a_html_ab4ad6f38df2469c0def94082de8a312a"><div class="ttname"><a href="../../d6/da1/a01233_ab4ad6f38df2469c0def94082de8a312a.html#ab4ad6f38df2469c0def94082de8a312a">SystemEx.Base.NumberRangeStepper.IsValid</a></div><div class="ttdeci">bool IsValid</div><div class="ttdoc">Indicates whether the range is valid (From ≤ To).</div><div class="ttdef"><b>Definition</b> <a href="#l00071">NumberRangeStepper.cs:71</a></div></div>
+<div class="ttc" id="aa01233_abfe52263fc4a7250455257f1d30736e6_html_abfe52263fc4a7250455257f1d30736e6"><div class="ttname"><a href="../../d6/da1/a01233_abfe52263fc4a7250455257f1d30736e6.html#abfe52263fc4a7250455257f1d30736e6">SystemEx.Base.NumberRangeStepper.GetRange</a></div><div class="ttdeci">IRange&lt; long &gt; GetRange(long tstart, long tend)</div><div class="ttdoc">Creates a new range using optional override values for start and end.</div><div class="ttdef"><b>Definition</b> <a href="#l00112">NumberRangeStepper.cs:112</a></div></div>
+<div class="ttc" id="aa01233_acd985ece3b8e7455f76702d56daa5904_html_acd985ece3b8e7455f76702d56daa5904"><div class="ttname"><a href="../../d6/da1/a01233_acd985ece3b8e7455f76702d56daa5904.html#acd985ece3b8e7455f76702d56daa5904">SystemEx.Base.NumberRangeStepper.Normalize</a></div><div class="ttdeci">NumberRangeStepper Normalize()</div><div class="ttdoc">Returns a normalized version of the range where From ≤ To.</div><div class="ttdef"><b>Definition</b> <a href="#l00101">NumberRangeStepper.cs:101</a></div></div>
+<div class="ttc" id="aa01233_ad6dd1b9892cf48639f362e2c982c5002_html_ad6dd1b9892cf48639f362e2c982c5002"><div class="ttname"><a href="../../d6/da1/a01233_ad6dd1b9892cf48639f362e2c982c5002.html#ad6dd1b9892cf48639f362e2c982c5002">SystemEx.Base.NumberRangeStepper.To</a></div><div class="ttdeci">long To</div><div class="ttdoc">End value of the range.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">NumberRangeStepper.cs:34</a></div></div>
+<div class="ttc" id="aa01233_ad744c9941777bab18995c24c339c9481_html_ad744c9941777bab18995c24c339c9481"><div class="ttname"><a href="../../d6/da1/a01233_ad744c9941777bab18995c24c339c9481.html#ad744c9941777bab18995c24c339c9481">SystemEx.Base.NumberRangeStepper.Length</a></div><div class="ttdeci">long Length</div><div class="ttdoc">Gets the length of the range (To - From).</div><div class="ttdef"><b>Definition</b> <a href="#l00067">NumberRangeStepper.cs:67</a></div></div>
+<div class="ttc" id="aa01233_af9b113c23ab0704fb5fcd33660f6c7c3_html_af9b113c23ab0704fb5fcd33660f6c7c3"><div class="ttname"><a href="../../d6/da1/a01233_af9b113c23ab0704fb5fcd33660f6c7c3.html#af9b113c23ab0704fb5fcd33660f6c7c3">SystemEx.Base.NumberRangeStepper.Union</a></div><div class="ttdeci">IRange&lt; long &gt;? Union(IRange&lt; long &gt; other)</div><div class="ttdoc">Computes the union of this range with another range if they overlap or are adjacent....</div><div class="ttdef"><b>Definition</b> <a href="#l00178">NumberRangeStepper.cs:178</a></div></div>
+<div class="ttc" id="aa01233_afaff5d749f6bd34422c1089bcdebacd1_html_afaff5d749f6bd34422c1089bcdebacd1"><div class="ttname"><a href="../../d6/da1/a01233_afaff5d749f6bd34422c1089bcdebacd1.html#afaff5d749f6bd34422c1089bcdebacd1">SystemEx.Base.NumberRangeStepper.Contains</a></div><div class="ttdeci">bool Contains(long x)</div><div class="ttdoc">Determines whether the specified value lies within the range. Works for both ascending and descending...</div><div class="ttdef"><b>Definition</b> <a href="#l00095">NumberRangeStepper.cs:95</a></div></div>
+<div class="ttc" id="aa01233_html"><div class="ttname"><a href="../../d6/da1/a01233.html">SystemEx.Base.NumberRangeStepper</a></div><div class="ttdoc">Provides a cursor-based stepper over a normalized numeric range. The stepper moves from Start to End ...</div><div class="ttdef"><b>Definition</b> <a href="#l00029">NumberRangeStepper.cs:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>IFDelegate.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>NumberRangeStepper.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

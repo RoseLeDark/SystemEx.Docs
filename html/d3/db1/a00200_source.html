@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: Framework.cs Source File" />
+<meta property="og:title" content="SystemEX: ResultBuilder.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: Framework.cs Source File" />
+<meta name="twitter:title" content="SystemEX: ResultBuilder.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: Framework.cs Source File</title>
+<title>SystemEX: ResultBuilder.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d3/db1/a00200_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Framework.cs</div></div>
+  <div class="headertitle"><div class="title">ResultBuilder.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -158,111 +158,95 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d3/db1/a00200_
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dd/d5f/a00825.html">SystemEx</a> {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span>Framework {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          <span class="keyword">public</span> <span class="keyword">enum</span> InfoLevel {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>               Minimal,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>               Extended,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>               Full</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>          }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> Version =&gt; <span class="stringliteral">&quot;0.92.1902&quot;</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> CodeName =&gt; <span class="stringliteral">&quot;Lacking&quot;</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d12/a00911.html">SystemEx</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d1/d31/a01245.html">   39</a></span>     <span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class </span><a class="code hl_function" href="../../d1/d31/a01245_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>          <span class="keyword">private</span> <a class="code hl_struct" href="../../d3/d07/a01241.html">Result</a> m_result;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../d1/d31/a01245_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">   48</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../d1/d31/a01245_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> () {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>               m_result = <span class="keyword">new</span> <a class="code hl_struct" href="../../d3/d07/a01241.html">Result</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>          }</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../d1/d31/a01245_aea1f39ac9cf438dd19c4140b6cca8f8d.html#aea1f39ac9cf438dd19c4140b6cca8f8d">   57</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../d1/d31/a01245_aea1f39ac9cf438dd19c4140b6cca8f8d.html#aea1f39ac9cf438dd19c4140b6cca8f8d">ResultBuilder</a> ( <a class="code hl_struct" href="../../d3/d07/a01241.html">Result</a> existing ) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>               m_result = existing;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>          }</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../d1/d31/a01245_ae269f08ad7ca01326d942d3461420e36.html#ae269f08ad7ca01326d942d3461420e36">   66</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../d1/d31/a01245_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> <a class="code hl_function" href="../../d1/d31/a01245_ae269f08ad7ca01326d942d3461420e36.html#ae269f08ad7ca01326d942d3461420e36">Add</a> ( <span class="keywordtype">object</span> value ) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>               m_result[m_result.Count] = value;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>               <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>          }</div>
+</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#if WINDOWS</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> API =&gt; <span class="stringliteral">&quot;Windows&quot;</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#elif LINUX</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> API =&gt; <span class="stringliteral">&quot;Linux&quot;</span>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#elif MACOS</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> API =&gt; <span class="stringliteral">&quot;MacOS&quot;</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> API =&gt; <span class="stringliteral">&quot;AnyCPU&quot;</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> Major =&gt; 0;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> Minor =&gt; 92;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> Build =&gt; 1902;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>          <span class="keyword">public</span> <span class="keyword">static</span> uint iVersion =&gt; 0x00009201902;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> IsBeta =&gt; <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> IsRelease =&gt; <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> IsForked =&gt; <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#if DEBUG</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> IsDebug =&gt; <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> IsDebug =&gt; <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> User =&gt; <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> Infos ( InfoLevel level ) {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>               <span class="keywordflow">switch</span> ( level ) {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>               <span class="keywordflow">case</span> InfoLevel.Minimal:</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>               <span class="keywordflow">return</span> $<span class="stringliteral">&quot;{API} {Version}&quot;</span>;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>               <span class="keywordflow">case</span> InfoLevel.Extended:</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>               <span class="keywordflow">return</span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                    $<span class="stringliteral">&quot;API: {API}\n&quot;</span> +</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                    $<span class="stringliteral">&quot;Version: {Version}\n&quot;</span> +</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                    $<span class="stringliteral">&quot;Codename: {CodeName}\n&quot;</span> +</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                    $<span class="stringliteral">&quot;Debug: {IsDebug}\n&quot;</span> +</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                    $<span class="stringliteral">&quot;Beta: {IsBeta}\n&quot;</span> +</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                    $<span class="stringliteral">&quot;Forked: {IsForked}\n&quot;</span> +</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                    $<span class="stringliteral">&quot;User: {User}&quot;</span>;</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>               <span class="keywordflow">case</span> InfoLevel.Full:</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>               <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>               <span class="keywordflow">return</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                    $<span class="stringliteral">&quot;API: {API}\n&quot;</span> +</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                    <span class="stringliteral">&quot;Version: {Version}\n&quot;</span> +</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                    $<span class="stringliteral">&quot;Major: {Major}\n&quot;</span> +</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                    $<span class="stringliteral">&quot;Minor: {Minor}\n&quot;</span> +</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                    $<span class="stringliteral">&quot;Build: {Build}\n&quot;</span> +</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                    $<span class="stringliteral">&quot;iVersion: {iVersion}\n&quot;</span> +</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                    $<span class="stringliteral">&quot;Codename: {CodeName}\n&quot;</span> +</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                    $<span class="stringliteral">&quot;Debug: {IsDebug}\n&quot;</span> +</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                    $<span class="stringliteral">&quot;Beta: {IsBeta}\n&quot;</span> +</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                    $<span class="stringliteral">&quot;Release: {IsRelease}\n&quot;</span> +</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                    $<span class="stringliteral">&quot;Forked: {IsForked}\n&quot;</span> +</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                    $<span class="stringliteral">&quot;User: {User}&quot;</span>;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>               }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>          }</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span></div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> IsCompatible ( <span class="keywordtype">int</span> major, <span class="keywordtype">int</span> minor ) {</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>               <span class="keywordflow">if</span> ( major != Major )</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>               <span class="keywordflow">return</span> minor &lt;= Minor;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>          }</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span></div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> BuildString() {</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>               var _isBeta = IsBeta ? <span class="stringliteral">&quot;-bt&quot;</span> : <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>               var _forked = IsForked ? User == string.Empty ? <span class="stringliteral">&quot;-fk&quot;</span> : $<span class="stringliteral">&quot;-{User}&quot;</span> : <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>               <span class="keywordflow">return</span> $<span class="stringliteral">&quot;SystemEx-{Version}-{CodeName}{_isBeta}{_forked}&quot;</span>;</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>          }</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>     }</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>}</div>
-<div class="ttc" id="aa00825_html"><div class="ttname"><a href="../../dd/d5f/a00825.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d03/a00062_source.html#l00018">AIEnvironment .cs:18</a></div></div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../d1/d31/a01245_af6cc535c081955832b515f964a62c3fc.html#af6cc535c081955832b515f964a62c3fc">   76</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../d1/d31/a01245_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> <a class="code hl_function" href="../../d1/d31/a01245_af6cc535c081955832b515f964a62c3fc.html#af6cc535c081955832b515f964a62c3fc">Try</a> ( Action action ) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>               <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    action();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>               } <span class="keywordflow">catch</span> ( Exception ex ) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                    m_result.Catch(ex);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>               }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>               <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          }</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="../../d1/d31/a01245_ae6324d2a5ff2aa93eaa566deab66e011.html#ae6324d2a5ff2aa93eaa566deab66e011">   91</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../d1/d31/a01245_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> <a class="code hl_function" href="../../d1/d31/a01245_ae6324d2a5ff2aa93eaa566deab66e011.html#ae6324d2a5ff2aa93eaa566deab66e011">Try</a> ( Func&lt;object&gt; func ) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>               <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                    var value = func();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                    m_result[m_result.Count] = value;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>               } <span class="keywordflow">catch</span> ( Exception ex ) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                    m_result.Catch(ex);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>               }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>               <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>          }</div>
+</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="../../d1/d31/a01245_aded4b6c8522dc99fc8fafd2d57c126ff.html#aded4b6c8522dc99fc8fafd2d57c126ff">  108</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../d1/d31/a01245_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> <a class="code hl_function" href="../../d1/d31/a01245_aded4b6c8522dc99fc8fafd2d57c126ff.html#aded4b6c8522dc99fc8fafd2d57c126ff">Assert</a> ( <span class="keywordtype">bool</span> condition, <span class="keywordtype">string</span> message ) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>               m_result.<a class="code hl_function" href="../../d1/d31/a01245_aded4b6c8522dc99fc8fafd2d57c126ff.html#aded4b6c8522dc99fc8fafd2d57c126ff">Assert</a>(condition, message);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>               <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>          }</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../d1/d31/a01245_a25c25c6744475d2791ffae8ddec3b525.html#a25c25c6744475d2791ffae8ddec3b525">  118</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../d1/d31/a01245_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">ResultBuilder</a> <a class="code hl_function" href="../../d1/d31/a01245_a25c25c6744475d2791ffae8ddec3b525.html#a25c25c6744475d2791ffae8ddec3b525">Catch</a> ( Exception ex ) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>               m_result.<a class="code hl_function" href="../../d1/d31/a01245_a25c25c6744475d2791ffae8ddec3b525.html#a25c25c6744475d2791ffae8ddec3b525">Catch</a>(ex);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>               <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>          }</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="../../d1/d31/a01245_adc1ec2888cdcd032c458c35568b00fe7.html#adc1ec2888cdcd032c458c35568b00fe7">  126</a></span>          <span class="keyword">public</span> <a class="code hl_struct" href="../../d3/d07/a01241.html">Result</a> <a class="code hl_function" href="../../d1/d31/a01245_adc1ec2888cdcd032c458c35568b00fe7.html#adc1ec2888cdcd032c458c35568b00fe7">ToResult</a> () {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>               <span class="keywordflow">return</span> m_result;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>          }</div>
+</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>     }</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>     </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+<div class="ttc" id="aa00911_html"><div class="ttname"><a href="../../d7/d12/a00911.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d8b/a00059_source.html#l00018">AIEnvironment .cs:18</a></div></div>
+<div class="ttc" id="aa01241_html"><div class="ttname"><a href="../../d3/d07/a01241.html">SystemEx.Result</a></div><div class="ttdoc">Represents a flexible multi-value result container that can hold successful values,...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d25/a00182_source.html#l00038">Result.cs:38</a></div></div>
+<div class="ttc" id="aa01245_a25c25c6744475d2791ffae8ddec3b525_html_a25c25c6744475d2791ffae8ddec3b525"><div class="ttname"><a href="../../d1/d31/a01245_a25c25c6744475d2791ffae8ddec3b525.html#a25c25c6744475d2791ffae8ddec3b525">SystemEx.ResultBuilder.Catch</a></div><div class="ttdeci">ResultBuilder Catch(Exception ex)</div><div class="ttdoc">Appends an exception to the result without throwing it.</div><div class="ttdef"><b>Definition</b> <a href="#l00118">ResultBuilder.cs:118</a></div></div>
+<div class="ttc" id="aa01245_a9ec126b775fc938b4e27561d718378ef_html_a9ec126b775fc938b4e27561d718378ef"><div class="ttname"><a href="../../d1/d31/a01245_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef">SystemEx.ResultBuilder.ResultBuilder</a></div><div class="ttdeci">ResultBuilder()</div><div class="ttdoc">Initializes a new ResultBuilder with an empty result.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">ResultBuilder.cs:48</a></div></div>
+<div class="ttc" id="aa01245_adc1ec2888cdcd032c458c35568b00fe7_html_adc1ec2888cdcd032c458c35568b00fe7"><div class="ttname"><a href="../../d1/d31/a01245_adc1ec2888cdcd032c458c35568b00fe7.html#adc1ec2888cdcd032c458c35568b00fe7">SystemEx.ResultBuilder.ToResult</a></div><div class="ttdeci">Result ToResult()</div><div class="ttdoc">Returns the constructed Result instance.</div><div class="ttdef"><b>Definition</b> <a href="#l00126">ResultBuilder.cs:126</a></div></div>
+<div class="ttc" id="aa01245_aded4b6c8522dc99fc8fafd2d57c126ff_html_aded4b6c8522dc99fc8fafd2d57c126ff"><div class="ttname"><a href="../../d1/d31/a01245_aded4b6c8522dc99fc8fafd2d57c126ff.html#aded4b6c8522dc99fc8fafd2d57c126ff">SystemEx.ResultBuilder.Assert</a></div><div class="ttdeci">ResultBuilder Assert(bool condition, string message)</div><div class="ttdoc">Evaluates an assertion and records a failure message if the condition is false.</div><div class="ttdef"><b>Definition</b> <a href="#l00108">ResultBuilder.cs:108</a></div></div>
+<div class="ttc" id="aa01245_ae269f08ad7ca01326d942d3461420e36_html_ae269f08ad7ca01326d942d3461420e36"><div class="ttname"><a href="../../d1/d31/a01245_ae269f08ad7ca01326d942d3461420e36.html#ae269f08ad7ca01326d942d3461420e36">SystemEx.ResultBuilder.Add</a></div><div class="ttdeci">ResultBuilder Add(object value)</div><div class="ttdoc">Appends a value to the result.</div><div class="ttdef"><b>Definition</b> <a href="#l00066">ResultBuilder.cs:66</a></div></div>
+<div class="ttc" id="aa01245_ae6324d2a5ff2aa93eaa566deab66e011_html_ae6324d2a5ff2aa93eaa566deab66e011"><div class="ttname"><a href="../../d1/d31/a01245_ae6324d2a5ff2aa93eaa566deab66e011.html#ae6324d2a5ff2aa93eaa566deab66e011">SystemEx.ResultBuilder.Try</a></div><div class="ttdeci">ResultBuilder Try(Func&lt; object &gt; func)</div><div class="ttdoc">Executes a function and appends its return value to the result. Any thrown exception is captured.</div><div class="ttdef"><b>Definition</b> <a href="#l00091">ResultBuilder.cs:91</a></div></div>
+<div class="ttc" id="aa01245_aea1f39ac9cf438dd19c4140b6cca8f8d_html_aea1f39ac9cf438dd19c4140b6cca8f8d"><div class="ttname"><a href="../../d1/d31/a01245_aea1f39ac9cf438dd19c4140b6cca8f8d.html#aea1f39ac9cf438dd19c4140b6cca8f8d">SystemEx.ResultBuilder.ResultBuilder</a></div><div class="ttdeci">ResultBuilder(Result existing)</div><div class="ttdoc">Initializes a new ResultBuilder using an existing Result instance.</div><div class="ttdef"><b>Definition</b> <a href="#l00057">ResultBuilder.cs:57</a></div></div>
+<div class="ttc" id="aa01245_af6cc535c081955832b515f964a62c3fc_html_af6cc535c081955832b515f964a62c3fc"><div class="ttname"><a href="../../d1/d31/a01245_af6cc535c081955832b515f964a62c3fc.html#af6cc535c081955832b515f964a62c3fc">SystemEx.ResultBuilder.Try</a></div><div class="ttdeci">ResultBuilder Try(Action action)</div><div class="ttdoc">Executes an action and captures any thrown exception inside the result.</div><div class="ttdef"><b>Definition</b> <a href="#l00076">ResultBuilder.cs:76</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>Framework.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>ResultBuilder.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🧬_20systemex_20collections_20model_0',['🧬 SystemEx.Collections.Model',['../index.html#autotoc_md-systemexcollectionsmodel',1,'']]]
+  ['🚧_20status_0',['🚧 Status',['../index.html#autotoc_md-status',1,'']]]
 ];

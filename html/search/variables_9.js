@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['truestring_0',['TrueString',['../d4/da6/a01168_a26a0ff914b402c43d46cb341c679c00a.html#a26a0ff914b402c43d46cb341c679c00a',1,'SystemEx::Triple']]]
+  ['kilo_0',['Kilo',['../d9/d65/a01905_a90e74642258e2ecc0194f4f9046c1a91.html#a90e74642258e2ecc0194f4f9046c1a91',1,'SystemEx::Numeric::BigDecimal']]]
 ];

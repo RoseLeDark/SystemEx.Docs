@@ -1,18 +1,15 @@
 var topics =
 [
-    [ "Backend", "d4/dfd/a00810.html", "d4/dfd/a00810" ],
-    [ "Algorithms", "dd/d07/a00811.html", "dd/d07/a00811" ],
-    [ "AlgorithmsCompute", "d8/db7/a00812.html", "d8/db7/a00812" ],
-    [ "SystemEx", "de/d9d/a00813.html", "de/d9d/a00813" ],
-    [ "Collections", "da/d71/a00814.html", "da/d71/a00814" ],
-    [ "Device", "d8/d2d/a00815.html", "d8/d2d/a00815" ],
-    [ "Drawing", "d7/d60/a00816.html", "d7/d60/a00816" ],
-    [ "Hash", "dc/d5e/a00817.html", "dc/d5e/a00817" ],
-    [ "HashBlack", "d3/d60/a00818.html", null ],
-    [ "Numeric", "d7/d4f/a00819.html", "d7/d4f/a00819" ],
-    [ "Random", "dc/d00/a00820.html", "dc/d00/a00820" ],
-    [ "Runtime", "d6/d8b/a00821.html", "d6/d8b/a00821" ],
-    [ "InteropServices", "d6/da7/a00822.html", "d6/da7/a00822" ],
-    [ "Threading", "d3/db4/a00823.html", "d3/db4/a00823" ],
-    [ "Utils", "d8/d1c/a00824.html", "d8/d1c/a00824" ]
+    [ "Backend", "d3/d8a/a00899.html", "d3/d8a/a00899" ],
+    [ "AlgorithmsCompute", "d9/db0/a00900.html", "d9/db0/a00900" ],
+    [ "Algorithms", "d0/dac/a00901.html", "d0/dac/a00901" ],
+    [ "Collections", "d5/dd3/a00902.html", "d5/dd3/a00902" ],
+    [ "Drawing", "d4/d1c/a00903.html", "d4/d1c/a00903" ],
+    [ "Hash", "d8/d0a/a00904.html", "d8/d0a/a00904" ],
+    [ "HashBlack", "da/d5b/a00905.html", "da/d5b/a00905" ],
+    [ "Numeric", "da/dd8/a00906.html", "da/dd8/a00906" ],
+    [ "Random", "d5/d89/a00907.html", "d5/d89/a00907" ],
+    [ "Runtime", "d0/d85/a00908.html", "d0/d85/a00908" ],
+    [ "InteropServices", "de/dc3/a00909.html", "de/dc3/a00909" ],
+    [ "Threading", "d4/d12/a00910.html", "d4/d12/a00910" ]
 ];

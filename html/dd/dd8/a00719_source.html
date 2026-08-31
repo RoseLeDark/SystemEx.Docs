@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: LightThread.cs Source File" />
+<meta property="og:title" content="SystemEX: Isaac32Engine.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: LightThread.cs Source File" />
+<meta name="twitter:title" content="SystemEX: Isaac32Engine.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: LightThread.cs Source File</title>
+<title>SystemEX: Isaac32Engine.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd/dd8/a00719_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">LightThread.cs</div></div>
+  <div class="headertitle"><div class="title">Isaac32Engine.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -157,91 +157,173 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd/dd8/a00719_
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * If you modify this file, retain this notice and add a short description of your</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span><a class="code hl_namespace" href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/d37/a00849.html">SystemEx.Threading</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../de/def/a02064.html">   36</a></span>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../de/def/a02064_a23796517c43d9bd0ab2a87c2f84bd814.html#a23796517c43d9bd0ab2a87c2f84bd814">LightThread</a> : <a class="code hl_function" href="../../d7/db5/a02088_a3cc39d57b3742654ef2d02371f030fa8.html#a3cc39d57b3742654ef2d02371f030fa8">ThreadEx</a> {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keyword">private</span> readonly <a class="code hl_struct" href="../../da/dbe/a02084.html">Spinlock</a> m_waitState;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">private</span> readonly AutoResetEvent m_block;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../de/def/a02064_a5ac4e845ad324a17f98761fc74e50049.html#a5ac4e845ad324a17f98761fc74e50049">   44</a></span>        <span class="keyword">public</span> Action&lt;LightThread, bool&gt;? <a class="code hl_property" href="../../de/def/a02064_a5ac4e845ad324a17f98761fc74e50049.html#a5ac4e845ad324a17f98761fc74e50049">OnSignal</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../de/def/a02064_a23796517c43d9bd0ab2a87c2f84bd814.html#a23796517c43d9bd0ab2a87c2f84bd814">   57</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../de/def/a02064_a23796517c43d9bd0ab2a87c2f84bd814.html#a23796517c43d9bd0ab2a87c2f84bd814">LightThread</a> (<span class="keywordtype">string</span> strName, ThreadPriority prio, <span class="keywordtype">int</span> stackSize = 0 ) </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            : base (strName,prio, stackSize) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="comment">// Begin in a locked logical wait state</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            m_waitState = <span class="keyword">new</span> <a class="code hl_struct" href="../../da/dbe/a02084.html">Spinlock</a>();</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            m_waitState.Lock(-1);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="comment">// OS-level blocking primitive</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            m_block = <span class="keyword">new</span> AutoResetEvent(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d8/dbb/a00932.html">SystemEx.Random</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../de/d74/a02137.html">   26</a></span>     <span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class </span><a class="code hl_function" href="../../d5/d89/a00907_ga2f5a68fb4cfff8941e2894b4a73e1abc.html#ga2f5a68fb4cfff8941e2894b4a73e1abc">Isaac32Engine</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">private</span> <span class="keyword">const</span> uint GoldenRatio = 0x9e3779b9u; <span class="comment">// dein TGoldenRatio für 32 Bit</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keyword">private</span> <span class="keyword">const</span> <span class="keywordtype">int</span> Size = 256;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keyword">private</span> uint m_cnt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keyword">private</span> readonly uint[] m_rsl = <span class="keyword">new</span> uint[Size];</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keyword">private</span> readonly uint[] m_mem = <span class="keyword">new</span> uint[Size];</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">private</span> uint m_a, m_b, m_c;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../d5/d89/a00907_ga2f5a68fb4cfff8941e2894b4a73e1abc.html#ga2f5a68fb4cfff8941e2894b4a73e1abc">   45</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d5/d89/a00907_ga2f5a68fb4cfff8941e2894b4a73e1abc.html#ga2f5a68fb4cfff8941e2894b4a73e1abc">Isaac32Engine</a> (<a class="code hl_interface" href="../../d5/d88/a02141.html">ISeed</a> seed) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            var arr = seed.<a class="code hl_function" href="../../d5/d89/a00907_ga3d5d857a56f1652c91ee28f028c29d47.html#ga3d5d857a56f1652c91ee28f028c29d47">GetSeed</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordtype">int</span> len = arr.Length;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            uint a = len &gt; 0 ? arr[0] : 0;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            uint b = len &gt; 1 ? arr[1] : 0;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            uint c = len &gt; 2 ? arr[2] : 0;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            uint[]? s = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordflow">if</span> ( len &gt; 3 ) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                s = <span class="keyword">new</span> uint[len - 3];</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                Array.Copy(arr, 3, s, 0, s.Length);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <a class="code hl_function" href="../../d5/d89/a00907_ga2528cb1614ca381c1ed4ecf3811945b2.html#ga2528cb1614ca381c1ed4ecf3811945b2">Seed</a>(a, b, c, s);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
 </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
-<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../de/def/a02064_ae0572df212eb918f181f213d94b1aa31.html#ae0572df212eb918f181f213d94b1aa31">   77</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/def/a02064_ae0572df212eb918f181f213d94b1aa31.html#ae0572df212eb918f181f213d94b1aa31">Signal</a> (<span class="keywordtype">bool</span> bBroadCast) {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <a class="code hl_function" href="../../d7/db5/a02088_a7326538252a21e82283d51e26d32e155.html#a7326538252a21e82283d51e26d32e155">LockRunning</a>();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            m_waitState.Unlock();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../d5/d89/a00907_gaadb3a2653755ee5f07100ebcef592905.html#gaadb3a2653755ee5f07100ebcef592905">   68</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../d5/d89/a00907_gaadb3a2653755ee5f07100ebcef592905.html#gaadb3a2653755ee5f07100ebcef592905">Isaac32Engine</a> ( uint a = 0, uint b = 0, uint c = 0 ) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <a class="code hl_function" href="../../d5/d89/a00907_ga2528cb1614ca381c1ed4ecf3811945b2.html#ga2528cb1614ca381c1ed4ecf3811945b2">Seed</a>(a, b, c, <span class="keyword">null</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../d5/d89/a00907_ga2528cb1614ca381c1ed4ecf3811945b2.html#ga2528cb1614ca381c1ed4ecf3811945b2">   78</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/d89/a00907_ga2528cb1614ca381c1ed4ecf3811945b2.html#ga2528cb1614ca381c1ed4ecf3811945b2">Seed</a> ( uint a, uint b, uint c, uint[]? s = <span class="keyword">null</span> ) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            uint aa, bb, cc, dd, ee, ff, gg, hh;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            aa = bb = cc = dd = ee = ff = gg = hh = GoldenRatio;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="comment">// task_utils::notify_give(this);</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            m_block.Set();</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../de/def/a02064_a5ac4e845ad324a17f98761fc74e50049.html#a5ac4e845ad324a17f98761fc74e50049">OnSignal</a> != <span class="keyword">null</span> ) <a class="code hl_property" href="../../de/def/a02064_a5ac4e845ad324a17f98761fc74e50049.html#a5ac4e845ad324a17f98761fc74e50049">OnSignal</a>.Invoke(<span class="keyword">this</span>, bBroadCast);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <a class="code hl_function" href="../../d7/db5/a02088_ae386a036ea03b430a44ea5de3e23dd4e.html#ae386a036ea03b430a44ea5de3e23dd4e">UnlockRunning</a>();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="comment">// Seed‑Array oder Null → wie bei dir m_rsl</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; Size ; i++ )</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>               m_rsl[i] = s != <span class="keyword">null</span> ? s[i] : 0;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            m_a = a;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            m_b = b;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            m_c = c;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            Shuffle(ref aa, ref bb, ref cc, ref dd, ref ee, ref ff, ref gg, ref hh);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            Shuffle(ref aa, ref bb, ref cc, ref dd, ref ee, ref ff, ref gg, ref hh);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            Shuffle(ref aa, ref bb, ref cc, ref dd, ref ee, ref ff, ref gg, ref hh);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            Shuffle(ref aa, ref bb, ref cc, ref dd, ref ee, ref ff, ref gg, ref hh);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; Size ; i += 8 ) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                aa +=m_rsl[i + 0]; bb +=m_rsl[i + 1]; cc +=m_rsl[i + 2]; dd +=m_rsl[i + 3];</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                ee +=m_rsl[i + 4]; ff +=m_rsl[i + 5]; gg +=m_rsl[i + 6]; hh +=m_rsl[i + 7];</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                Shuffle(ref aa, ref bb, ref cc, ref dd, ref ee, ref ff, ref gg, ref hh);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                m_mem[i + 0] = aa; m_mem[i + 1] = bb; m_mem[i + 2] = cc; m_mem[i + 3] = dd;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                m_mem[i + 4] = ee; m_mem[i + 5] = ff; m_mem[i + 6] = gg; m_mem[i + 7] = hh;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0 ; i &lt; Size ; i += 8 ) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                aa += m_mem[i + 0]; bb += m_mem[i + 1]; cc += m_mem[i + 2]; dd += m_mem[i + 3];</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                ee += m_mem[i + 4]; ff += m_mem[i + 5]; gg += m_mem[i + 6]; hh += m_mem[i + 7];</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                Shuffle(ref aa, ref bb, ref cc, ref dd, ref ee, ref ff, ref gg, ref hh);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                m_mem[i + 0] = aa; m_mem[i + 1] = bb; m_mem[i + 2] = cc; m_mem[i + 3] = dd;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                m_mem[i + 4] = ee; m_mem[i + 5] = ff; m_mem[i + 6] = gg; m_mem[i + 7] = hh;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            setup();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            m_cnt = Size - 1;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        }</div>
 </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
-<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="../../de/def/a02064_a55294d7a4cc51162812f96d3b88345ae.html#a55294d7a4cc51162812f96d3b88345ae">  107</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../de/def/a02064_a55294d7a4cc51162812f96d3b88345ae.html#a55294d7a4cc51162812f96d3b88345ae">Wait</a> ( ref <a class="code hl_struct" href="../../d4/ddd/a02040.html">LightConditionVariable</a> cv, ref <a class="code hl_interface" href="../../df/df0/a02016.html">ILock</a> cvl, <span class="keywordtype">int</span> timeoutMs = -1) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <a class="code hl_function" href="../../d7/db5/a02088_a7326538252a21e82283d51e26d32e155.html#a7326538252a21e82283d51e26d32e155">LockRunning</a>();</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            cv.Add(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            cvl.Unlock();</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordtype">bool</span> _ret = m_waitState.Lock (-1);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#if DEBUG</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            cv.TotalWaits++;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>               cvl.Lock (timeoutMs);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="comment">//task_utils::notify_take(true, timeOut);</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            <span class="keywordtype">bool</span> _os = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">if</span>( timeoutMs &gt; 0 ) _os = m_block.WaitOne(timeoutMs);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            <span class="keywordflow">else</span> _os = m_block.WaitOne();</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <a class="code hl_function" href="../../d7/db5/a02088_ae386a036ea03b430a44ea5de3e23dd4e.html#ae386a036ea03b430a44ea5de3e23dd4e">UnlockRunning</a>();</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">return</span> _ret &amp; _os;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="../../d5/d89/a00907_gad75f62fae1ccab955c194bd3127e864f.html#gad75f62fae1ccab955c194bd3127e864f">  123</a></span>        <span class="keyword">public</span> uint <a class="code hl_function" href="../../d5/d89/a00907_gad75f62fae1ccab955c194bd3127e864f.html#gad75f62fae1ccab955c194bd3127e864f">Next</a> () {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keywordflow">if</span> ( m_cnt == 0 ) {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                setup();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                m_cnt = Size - 1;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                <span class="keywordflow">return</span> m_rsl[m_cnt];</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <span class="keywordflow">return</span> m_rsl[m_cnt--];</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
 </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> Shuffle ( ref uint a, ref uint b, ref uint c, ref uint d,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                                    ref uint e, ref uint f, ref uint g, ref uint h ) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            a ^= b &lt;&lt; 11; d += a; b += c;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            b ^= c &gt;&gt; 2; e += b; c += d;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            c ^= d &lt;&lt; 8; f += c; d += e;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            d ^= e &gt;&gt; 16; g += d; e += f;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            e ^= f &lt;&lt; 10; h += e; f += g;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            f ^= g &gt;&gt; 4; a += f; g += h;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            g ^= h &lt;&lt; 8; b += g; h += a;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            h ^= a &gt;&gt; 9; c += h; a += b;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keyword">private</span> <span class="keyword">static</span> uint Ind ( uint[] mm, uint x ) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keywordtype">int</span> idx = (int)((x &amp; (255u &lt;&lt; 2)) &gt;&gt; 2);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            <span class="keywordflow">return</span> mm[idx];</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> RngStep ( uint mix, ref uint a, ref uint b,</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                                    uint[] mm, ref <span class="keywordtype">int</span> m, ref <span class="keywordtype">int</span> m2,</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                                    uint[] r, ref <span class="keywordtype">int</span> rIdx, ref uint x, ref uint y ) {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            x = mm[m];</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            a = (a ^ mix) + mm[m2++];</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            y = mm[m] = Ind(mm, x) + a + b;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            r[rIdx++] = b = Ind(mm, y &gt;&gt; 8) + x;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            m++;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        }</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> setup () {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            uint x = 0, y = 0;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            uint[] mm = m_mem;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            uint[] r =m_rsl;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            uint a = m_a;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            uint b = m_b + (++m_c);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            <span class="keywordtype">int</span> m = 0;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            <span class="keywordtype">int</span> m2 = 128;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            <span class="keywordtype">int</span> rIdx = 0;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <span class="keywordflow">for</span> ( ; m &lt; 128 ; ) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                RngStep(a &lt;&lt; 13, ref a, ref b, mm, ref m, ref m2, r, ref rIdx, ref x, ref y);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                RngStep(a &gt;&gt; 6, ref a, ref b, mm, ref m, ref m2, r, ref rIdx, ref x, ref y);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                RngStep(a &lt;&lt; 2, ref a, ref b, mm, ref m, ref m2, r, ref rIdx, ref x, ref y);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                RngStep(a &gt;&gt; 16, ref a, ref b, mm, ref m, ref m2, r, ref rIdx, ref x, ref y);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            m2 = 0;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            <span class="keywordflow">for</span> ( ; m2 &lt; 128 ; ) {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                RngStep(a &lt;&lt; 13, ref a, ref b, mm, ref m, ref m2, r, ref rIdx, ref x, ref y);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                RngStep(a &gt;&gt; 6, ref a, ref b, mm, ref m, ref m2, r, ref rIdx, ref x, ref y);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                RngStep(a &lt;&lt; 2, ref a, ref b, mm, ref m, ref m2, r, ref rIdx, ref x, ref y);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                RngStep(a &gt;&gt; 16, ref a, ref b, mm, ref m, ref m2, r, ref rIdx, ref x, ref y);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            m_b = b;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            m_a = a;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    }</div>
 </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
-<div class="ttc" id="aa00833_html"><div class="ttname"><a href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/db5/a00374_source.html#l00023">BasicRope.cs:23</a></div></div>
-<div class="ttc" id="aa00849_html"><div class="ttname"><a href="../../de/d37/a00849.html">SystemEx.Threading</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d56/a00707_source.html#l00018">AtomicLock.cs:18</a></div></div>
-<div class="ttc" id="aa02016_html"><div class="ttname"><a href="../../df/df0/a02016.html">SystemEx.Threading.ILock</a></div><div class="ttdoc">Defines the minimal contract for a synchronization primitive capable of providing mutual exclusion....</div><div class="ttdef"><b>Definition</b> <a href="../../db/d77/a00683_source.html#l00029">ILock.cs:29</a></div></div>
-<div class="ttc" id="aa02040_html"><div class="ttname"><a href="../../d4/ddd/a02040.html">SystemEx.Threading.LightConditionVariable</a></div><div class="ttdoc">A lightweight and minimal condition variable designed for simple thread synchronization scenarios....</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d87/a00689_source.html#l00036">LightConditionVariable.cs:36</a></div></div>
-<div class="ttc" id="aa02064_a23796517c43d9bd0ab2a87c2f84bd814_html_a23796517c43d9bd0ab2a87c2f84bd814"><div class="ttname"><a href="../../de/def/a02064_a23796517c43d9bd0ab2a87c2f84bd814.html#a23796517c43d9bd0ab2a87c2f84bd814">SystemEx.Threading.LightThread.LightThread</a></div><div class="ttdeci">LightThread(string strName, ThreadPriority prio, int stackSize=0)</div><div class="ttdoc">Creates a new lightweight thread with the specified priority and optional stack size.</div><div class="ttdef"><b>Definition</b> <a href="#l00057">LightThread.cs:57</a></div></div>
-<div class="ttc" id="aa02064_a55294d7a4cc51162812f96d3b88345ae_html_a55294d7a4cc51162812f96d3b88345ae"><div class="ttname"><a href="../../de/def/a02064_a55294d7a4cc51162812f96d3b88345ae.html#a55294d7a4cc51162812f96d3b88345ae">SystemEx.Threading.LightThread.Wait</a></div><div class="ttdeci">bool Wait(ref LightConditionVariable cv, ref ILock cvl, int timeoutMs=-1)</div><div class="ttdoc">Blocks the thread until the associated LightConditionVariable signals it. The thread is added to the ...</div><div class="ttdef"><b>Definition</b> <a href="#l00107">LightThread.cs:107</a></div></div>
-<div class="ttc" id="aa02064_a5ac4e845ad324a17f98761fc74e50049_html_a5ac4e845ad324a17f98761fc74e50049"><div class="ttname"><a href="../../de/def/a02064_a5ac4e845ad324a17f98761fc74e50049.html#a5ac4e845ad324a17f98761fc74e50049">SystemEx.Threading.LightThread.OnSignal</a></div><div class="ttdeci">Action&lt; LightThread, bool &gt;? OnSignal</div><div class="ttdoc">Optional callback invoked when the thread is signaled. The boolean parameter indicates whether the si...</div><div class="ttdef"><b>Definition</b> <a href="#l00044">LightThread.cs:44</a></div></div>
-<div class="ttc" id="aa02064_ae0572df212eb918f181f213d94b1aa31_html_ae0572df212eb918f181f213d94b1aa31"><div class="ttname"><a href="../../de/def/a02064_ae0572df212eb918f181f213d94b1aa31.html#ae0572df212eb918f181f213d94b1aa31">SystemEx.Threading.LightThread.Signal</a></div><div class="ttdeci">void Signal(bool bBroadCast)</div><div class="ttdoc">Resumes the thread from its wait state. This method unlocks the internal wait lock and signals the OS...</div><div class="ttdef"><b>Definition</b> <a href="#l00077">LightThread.cs:77</a></div></div>
-<div class="ttc" id="aa02084_html"><div class="ttname"><a href="../../da/dbe/a02084.html">SystemEx.Threading.Spinlock</a></div><div class="ttdoc">Provides a thin wrapper around System.Threading.SpinLock to expose a busy‑wait mutual exclusion primi...</div><div class="ttdef"><b>Definition</b> <a href="../../df/d9e/a00686_source.html#l00031">Spinlock.cs:31</a></div></div>
-<div class="ttc" id="aa02088_a3cc39d57b3742654ef2d02371f030fa8_html_a3cc39d57b3742654ef2d02371f030fa8"><div class="ttname"><a href="../../d7/db5/a02088_a3cc39d57b3742654ef2d02371f030fa8.html#a3cc39d57b3742654ef2d02371f030fa8">SystemEx.Threading.ThreadEx.ThreadEx</a></div><div class="ttdeci">ThreadEx(string strName, ThreadPriority prio, int stackSize)</div><div class="ttdoc">Initializes a new ThreadEx instance with the specified thread priority and optional stack size....</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d57/a00701_source.html#l00240">ThreadEx.cs:240</a></div></div>
-<div class="ttc" id="aa02088_a7326538252a21e82283d51e26d32e155_html_a7326538252a21e82283d51e26d32e155"><div class="ttname"><a href="../../d7/db5/a02088_a7326538252a21e82283d51e26d32e155.html#a7326538252a21e82283d51e26d32e155">SystemEx.Threading.ThreadEx.LockRunning</a></div><div class="ttdeci">bool LockRunning()</div><div class="ttdoc">Lock Running LightLock.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d57/a00701_source.html#l00182">ThreadEx.cs:182</a></div></div>
-<div class="ttc" id="aa02088_ae386a036ea03b430a44ea5de3e23dd4e_html_ae386a036ea03b430a44ea5de3e23dd4e"><div class="ttname"><a href="../../d7/db5/a02088_ae386a036ea03b430a44ea5de3e23dd4e.html#ae386a036ea03b430a44ea5de3e23dd4e">SystemEx.Threading.ThreadEx.UnlockRunning</a></div><div class="ttdeci">void UnlockRunning()</div><div class="ttdoc">UnLock Running LightLock.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d57/a00701_source.html#l00189">ThreadEx.cs:189</a></div></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>     </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>}</div>
+<div class="ttc" id="aa00907_ga2528cb1614ca381c1ed4ecf3811945b2_html_ga2528cb1614ca381c1ed4ecf3811945b2"><div class="ttname"><a href="../../d5/d89/a00907_ga2528cb1614ca381c1ed4ecf3811945b2.html#ga2528cb1614ca381c1ed4ecf3811945b2">SystemEx.Random.Isaac32Engine.Seed</a></div><div class="ttdeci">void Seed(uint a, uint b, uint c, uint[]? s=null)</div><div class="ttdoc">Seeds the random number generator with the specified values.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">Isaac32Engine.cs:78</a></div></div>
+<div class="ttc" id="aa00907_ga2f5a68fb4cfff8941e2894b4a73e1abc_html_ga2f5a68fb4cfff8941e2894b4a73e1abc"><div class="ttname"><a href="../../d5/d89/a00907_ga2f5a68fb4cfff8941e2894b4a73e1abc.html#ga2f5a68fb4cfff8941e2894b4a73e1abc">SystemEx.Random.Isaac32Engine.Isaac32Engine</a></div><div class="ttdeci">Isaac32Engine(ISeed seed)</div><div class="ttdoc">Initializes a new instance of the Isaac32Engine class using a seed object implementing ISeed....</div><div class="ttdef"><b>Definition</b> <a href="#l00045">Isaac32Engine.cs:45</a></div></div>
+<div class="ttc" id="aa00907_ga3d5d857a56f1652c91ee28f028c29d47_html_ga3d5d857a56f1652c91ee28f028c29d47"><div class="ttname"><a href="../../d5/d89/a00907_ga3d5d857a56f1652c91ee28f028c29d47.html#ga3d5d857a56f1652c91ee28f028c29d47">SystemEx.Random.ISeed.GetSeed</a></div><div class="ttdeci">uint[] GetSeed()</div><div class="ttdoc">Returns the underlying seed values as an array of 32‑bit unsigned integers. The returned array define...</div></div>
+<div class="ttc" id="aa00907_gaadb3a2653755ee5f07100ebcef592905_html_gaadb3a2653755ee5f07100ebcef592905"><div class="ttname"><a href="../../d5/d89/a00907_gaadb3a2653755ee5f07100ebcef592905.html#gaadb3a2653755ee5f07100ebcef592905">SystemEx.Random.Isaac32Engine.Isaac32Engine</a></div><div class="ttdeci">Isaac32Engine(uint a=0, uint b=0, uint c=0)</div><div class="ttdoc">Initializes a new instance of the Isaac32Engine class with the specified seed values.</div><div class="ttdef"><b>Definition</b> <a href="#l00068">Isaac32Engine.cs:68</a></div></div>
+<div class="ttc" id="aa00907_gad75f62fae1ccab955c194bd3127e864f_html_gad75f62fae1ccab955c194bd3127e864f"><div class="ttname"><a href="../../d5/d89/a00907_gad75f62fae1ccab955c194bd3127e864f.html#gad75f62fae1ccab955c194bd3127e864f">SystemEx.Random.Isaac32Engine.Next</a></div><div class="ttdeci">uint Next()</div><div class="ttdoc">Generates the next random number in the sequence.</div><div class="ttdef"><b>Definition</b> <a href="#l00123">Isaac32Engine.cs:123</a></div></div>
+<div class="ttc" id="aa00932_html"><div class="ttname"><a href="../../d8/dbb/a00932.html">SystemEx.Random</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d56/a00707_source.html#l00020">HashedSeed.cs:20</a></div></div>
+<div class="ttc" id="aa02141_html"><div class="ttname"><a href="../../d5/d88/a02141.html">SystemEx.Random.ISeed</a></div><div class="ttdoc">Represents a generic seed source for random number generators. Implementations provide an array of 32...</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/a00713_source.html#l00028">ISeed.cs:28</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Threading</b></li><li class="navelem"><b>LightThread.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Random</b></li><li class="navelem"><b>Isaac32Engine.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

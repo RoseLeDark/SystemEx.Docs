@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: RCUObject.cs Source File" />
+<meta property="og:title" content="SystemEX: NativeHost .cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: RCUObject.cs Source File" />
+<meta name="twitter:title" content="SystemEX: NativeHost .cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: RCUObject.cs Source File</title>
+<title>SystemEX: NativeHost .cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/dce/a00740_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">RCUObject.cs</div></div>
+  <div class="headertitle"><div class="title">NativeHost .cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -158,184 +158,92 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/dce/a00740_
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span><a class="code hl_namespace" href="../../dc/d0a/a00850.html">SystemEx.Threading.intern</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span>System.Runtime.InteropServices;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span><a class="code hl_namespace" href="../../d1/d0b/a00919.html">SystemEx.Collections.Generic</a>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/d37/a00849.html">SystemEx.Threading</a> {</div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../d0/d5b/a00933.html">   21</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d0/df0/a00934.html">SystemEx.Runtime.InteropServices</a> {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d3/db4/a00823_gac92f2376444ddb17901deba5901f418b.html#gac92f2376444ddb17901deba5901f418b">   30</a></span>     <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="../../d3/db4/a00823_gac92f2376444ddb17901deba5901f418b.html#gac92f2376444ddb17901deba5901f418b">RCUState</a> {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d3/db4/a00823_gac92f2376444ddb17901deba5901f418b.html#ggac92f2376444ddb17901deba5901f418ba222a267cc5778206b253be35ee3ddab5">   34</a></span>          <a class="code hl_enumvalue" href="../../d3/db4/a00823_gac92f2376444ddb17901deba5901f418b.html#ggac92f2376444ddb17901deba5901f418ba222a267cc5778206b253be35ee3ddab5">Current</a>,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d3/db4/a00823_gac92f2376444ddb17901deba5901f418b.html#ggac92f2376444ddb17901deba5901f418ba06933067aafd48425d67bcb01bba5cb6">   40</a></span>          <a class="code hl_enumvalue" href="../../d3/db4/a00823_gac92f2376444ddb17901deba5901f418b.html#ggac92f2376444ddb17901deba5901f418ba06933067aafd48425d67bcb01bba5cb6">Update</a></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>     }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span>NativeHost {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;string, Module&gt; m_loadedModule = <span class="keyword">new</span> Map&lt;string, Module&gt;();</div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d0/d85/a00908_ga6e52e3a3bb5aca7f0317978c29a9a200.html#ga6e52e3a3bb5aca7f0317978c29a9a200">   53</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <a class="code hl_class" href="../../dd/d02/a02185.html">Module</a>? <a class="code hl_function" href="../../d0/d85/a00908_ga6e52e3a3bb5aca7f0317978c29a9a200.html#ga6e52e3a3bb5aca7f0317978c29a9a200">LoadModule</a>(<span class="keywordtype">string</span> strPath) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <a class="code hl_class" href="../../dd/d02/a02185.html">Module</a>? _ret =  <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">if</span> ( !m_loadedModule.ContainsKey(strPath) ) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                _ret =  <a class="code hl_class" href="../../dd/d02/a02185.html">Module</a>.LoadModule(strPath);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <span class="keywordflow">if</span>(_ret != <span class="keyword">null</span>) m_loadedModule.PushBack(strPath, _ret);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                var value =m_loadedModule[strPath];</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                _ret = value.IsNull ? null : value.Value!;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">return</span> _ret;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
 </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="../../db/d87/a02076.html">   51</a></span>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631">RCUObject</a>&lt;T&gt; : IEquatable&lt;RCUObject&lt;T&gt;&gt;, ILockedObject&lt;T&gt; {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_acd5563e53c20e6ccd07ab0f69304a9ac.html#acd5563e53c20e6ccd07ab0f69304a9ac">   55</a></span>          <span class="keyword">public</span> <span class="keyword">static</span> readonly <span class="keywordtype">byte</span> <a class="code hl_variable" href="../../db/d87/a02076_acd5563e53c20e6ccd07ab0f69304a9ac.html#acd5563e53c20e6ccd07ab0f69304a9ac">VALUE_INDEX</a> = 0;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_a9024956dd5c8c119b88f2ca18d2b795e.html#a9024956dd5c8c119b88f2ca18d2b795e">   61</a></span>          <span class="keyword">public</span> <span class="keyword">static</span> readonly <span class="keywordtype">byte</span> <a class="code hl_variable" href="../../db/d87/a02076_a9024956dd5c8c119b88f2ca18d2b795e.html#a9024956dd5c8c119b88f2ca18d2b795e">STATE_INDEX</a> = 1;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_af4e974d10a9631f8daa976a3afb3a9ab.html#af4e974d10a9631f8daa976a3afb3a9ab">   66</a></span>          <span class="keyword">public</span> <span class="keyword">static</span> readonly <span class="keywordtype">byte</span> <a class="code hl_variable" href="../../db/d87/a02076_af4e974d10a9631f8daa976a3afb3a9ab.html#af4e974d10a9631f8daa976a3afb3a9ab">COUNT_INDEX</a> = 2;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>          <span class="keyword">private</span> T? m_object;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>          <span class="keyword">private</span> <a class="code hl_struct" href="../../d3/dbb/a02004.html">Epoch</a> m_epochReader;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>          <span class="keyword">private</span> <a class="code hl_interface" href="../../df/df0/a02016.html">ILock</a> m_writerLock;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>          <span class="keyword">private</span> RCUGlobalDomain&lt;T&gt; m_rcuWriter;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
-<div class="foldopen" id="foldopen00079" data-start="{" data-end="};">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_a3cc77400a410d2afe83dba853720523d.html#a3cc77400a410d2afe83dba853720523d">   79</a></span>          <span class="keyword">public</span> T? <a class="code hl_property" href="../../db/d87/a02076_a3cc77400a410d2afe83dba853720523d.html#a3cc77400a410d2afe83dba853720523d">Value</a> {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>               <span class="keyword">get</span> =&gt; (T?)<a class="code hl_function" href="../../db/d87/a02076_a6d9cfb3e6e39cffc44b1d264ea959dc3.html#a6d9cfb3e6e39cffc44b1d264ea959dc3">ReadValue</a>().Get(<a class="code hl_variable" href="../../db/d87/a02076_acd5563e53c20e6ccd07ab0f69304a9ac.html#acd5563e53c20e6ccd07ab0f69304a9ac">VALUE_INDEX</a>);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>               <span class="keyword">set</span> =&gt; <a class="code hl_function" href="../../db/d87/a02076_a5fb272f0aab9baeafd36448dbb880161.html#a5fb272f0aab9baeafd36448dbb880161">WriteValue</a>( value );</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>          }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../d0/d85/a00908_ga31d0c58a569d5e341860c360f58cd2d5.html#ga31d0c58a569d5e341860c360f58cd2d5">   76</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d0/d85/a00908_ga31d0c58a569d5e341860c360f58cd2d5.html#ga31d0c58a569d5e341860c360f58cd2d5">FreeModule</a> ( <a class="code hl_class" href="../../dd/d02/a02185.html">Module</a> module ) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">if</span> ( !m_loadedModule.ContainsValue(module) )</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <a class="code hl_class" href="../../dd/d02/a02185.html">Module</a>.Unload(module);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="comment">// Key finden und entfernen</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">foreach</span> ( var kv <span class="keywordflow">in</span> m_loadedModule ) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                <span class="keywordflow">if</span> ( kv.EqualSecond(module) ) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    m_loadedModule.Remove(kv.First);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        }</div>
 </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_a0c2a938a02e53e03843ebbb04d790b7c.html#a0c2a938a02e53e03843ebbb04d790b7c">   96</a></span>          <span class="keyword">public</span> <a class="code hl_struct" href="../../d9/d42/a01156.html">Result</a> <a class="code hl_property" href="../../db/d87/a02076_a0c2a938a02e53e03843ebbb04d790b7c.html#a0c2a938a02e53e03843ebbb04d790b7c">ValueWithState</a> =&gt; <a class="code hl_function" href="../../db/d87/a02076_a6d9cfb3e6e39cffc44b1d264ea959dc3.html#a6d9cfb3e6e39cffc44b1d264ea959dc3">ReadValue</a>();</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631">  103</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631">RCUObject</a> ( T orig ) {</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>               m_object = orig;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>               m_epochReader = <span class="keyword">new</span> <a class="code hl_struct" href="../../d3/dbb/a02004.html">Epoch</a>();</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>               m_writerLock = <span class="keyword">new</span> <a class="code hl_struct" href="../../d3/df9/a02052.html">LightLock</a>();</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>               m_rcuWriter = <span class="keyword">new</span> RCUGlobalDomain&lt;T&gt;();</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>          }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="../../d0/d85/a00908_ga673a8c6ff46533e2b0ac458a7454b998.html#ga673a8c6ff46533e2b0ac458a7454b998">  105</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> T? <a class="code hl_function" href="../../d0/d85/a00908_ga673a8c6ff46533e2b0ac458a7454b998.html#ga673a8c6ff46533e2b0ac458a7454b998">GetFunction&lt;T&gt;</a> ( <span class="keywordtype">string</span> module, <span class="keywordtype">string</span> func ) where T : Delegate {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            Optional&lt;Module&gt; x = m_loadedModule[module];</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keywordflow">if</span>(x.<a class="code hl_property" href="../../dc/dab/a01237_ad50ac3985a6e78ce3a9736713b4a15c0.html#ad50ac3985a6e78ce3a9736713b4a15c0">IsSome</a>) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="../../d0/d85/a00908_ga673a8c6ff46533e2b0ac458a7454b998.html#ga673a8c6ff46533e2b0ac458a7454b998">GetFunction&lt;T&gt;</a>(x.<a class="code hl_property" href="../../dc/dab/a01237_a51e0011c11e5ac42a4cc163376e18c0f.html#a51e0011c11e5ac42a4cc163376e18c0f">Value</a>!, func);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        }</div>
 </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
-<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_a1fc7e4b87dda8b691cd797dc9a8eb488.html#a1fc7e4b87dda8b691cd797dc9a8eb488">  118</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../db/d87/a02076_a1fc7e4b87dda8b691cd797dc9a8eb488.html#a1fc7e4b87dda8b691cd797dc9a8eb488">RCUObject</a> (T orig, <a class="code hl_interface" href="../../df/df0/a02016.html">ILock</a> writer ) {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>               m_object = orig;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>               m_epochReader = <span class="keyword">new</span> <a class="code hl_struct" href="../../d3/dbb/a02004.html">Epoch</a>();</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>               m_writerLock = writer;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>               m_rcuWriter = <span class="keyword">new</span> RCUGlobalDomain&lt;T&gt;();</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>          }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="../../d0/d85/a00908_ga6091e3bc4b98142b027eee9a89c94150.html#ga6091e3bc4b98142b027eee9a89c94150">  128</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> T? <a class="code hl_function" href="../../d0/d85/a00908_ga673a8c6ff46533e2b0ac458a7454b998.html#ga673a8c6ff46533e2b0ac458a7454b998">GetFunction&lt;T&gt;</a>( <a class="code hl_class" href="../../dd/d02/a02185.html">Module</a>? module, <span class="keywordtype">string</span> func ) where T : Delegate {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">if</span> ( module == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            IntPtr _func = module.LoadFunc(func);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">if</span> ( _func == IntPtr.Zero ) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            <span class="keywordflow">return</span> Marshal.GetDelegateForFunctionPointer&lt;T&gt;(_func);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
 </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
-<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_a5fb272f0aab9baeafd36448dbb880161.html#a5fb272f0aab9baeafd36448dbb880161">  134</a></span>          <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../db/d87/a02076_a5fb272f0aab9baeafd36448dbb880161.html#a5fb272f0aab9baeafd36448dbb880161">WriteValue</a> ( T? value , <span class="keywordtype">int</span> timeout = -1) {</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>               </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>               <span class="keyword">using</span> ( var lk = <span class="keyword">new</span> ScopedLock&lt;ILock&gt;(ref m_writerLock, timeout) ) {</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                    <span class="keywordflow">if</span> ( m_epochReader )</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                         <span class="keywordflow">throw</span> <span class="keyword">new</span> InvalidOperationException(<span class="stringliteral">&quot;Readers active&quot;</span>);</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                    m_rcuWriter.Push(value);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>               }    </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>          }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor">#pragma warning restore CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}</div>
 </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span></div>
-<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_a6d9cfb3e6e39cffc44b1d264ea959dc3.html#a6d9cfb3e6e39cffc44b1d264ea959dc3">  151</a></span>          <span class="keyword">public</span> <a class="code hl_struct" href="../../d9/d42/a01156.html">Result</a> <a class="code hl_function" href="../../db/d87/a02076_a6d9cfb3e6e39cffc44b1d264ea959dc3.html#a6d9cfb3e6e39cffc44b1d264ea959dc3">ReadValue</a> (<span class="keywordtype">int</span> timeout = -1 ) {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>               <span class="keyword">using</span> (var _le = <span class="keyword">new</span> <a class="code hl_struct" href="../../d5/d6e/a02008.html">UniqueEpoch</a>(ref m_epochReader) ) {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                    var _res = <span class="keyword">new</span> <a class="code hl_struct" href="../../d9/d42/a01156.html">Result</a>();</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                    m_object = m_rcuWriter.Pop(m_object);</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                    _res[<a class="code hl_variable" href="../../db/d87/a02076_acd5563e53c20e6ccd07ab0f69304a9ac.html#acd5563e53c20e6ccd07ab0f69304a9ac">VALUE_INDEX</a>] = m_object;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                    _res[<a class="code hl_variable" href="../../db/d87/a02076_a9024956dd5c8c119b88f2ca18d2b795e.html#a9024956dd5c8c119b88f2ca18d2b795e">STATE_INDEX</a>] = m_writerLock.IsHeld ? <a class="code hl_enumvalue" href="../../d3/db4/a00823_gac92f2376444ddb17901deba5901f418b.html#ggac92f2376444ddb17901deba5901f418ba06933067aafd48425d67bcb01bba5cb6">RCUState.Update</a> : <a class="code hl_enumeration" href="../../d3/db4/a00823_gac92f2376444ddb17901deba5901f418b.html#gac92f2376444ddb17901deba5901f418b">RCUState</a>.Current;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                    _res[<a class="code hl_variable" href="../../db/d87/a02076_af4e974d10a9631f8daa976a3afb3a9ab.html#af4e974d10a9631f8daa976a3afb3a9ab">COUNT_INDEX</a>] = m_epochReader.Value;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                    <span class="keywordflow">return</span> _res;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>               }</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>          }</div>
-</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span></div>
-<div class="foldopen" id="foldopen00175" data-start="{" data-end="}">
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_a64a3514d3c9d0c29060d15e690b7136b.html#a64a3514d3c9d0c29060d15e690b7136b">  175</a></span>          <span class="keyword">public</span> <span class="keyword">static</span> implicit <span class="keyword">operator</span> <a class="code hl_function" href="../../db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631">RCUObject&lt;T&gt;</a> ( T value ) {</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>               <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="../../db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631">RCUObject&lt;T&gt;</a>(value);</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>          }</div>
-</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span></div>
-<div class="foldopen" id="foldopen00184" data-start="{" data-end="}">
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_a5dbbbc7cf3f4e3aaadb8870e1a4c1e43.html#a5dbbbc7cf3f4e3aaadb8870e1a4c1e43">  184</a></span>          <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../db/d87/a02076_a5dbbbc7cf3f4e3aaadb8870e1a4c1e43.html#a5dbbbc7cf3f4e3aaadb8870e1a4c1e43">Equals</a> ( <span class="keywordtype">object</span>? obj ) {</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>               <span class="keywordtype">bool</span> _ret = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>               <span class="keywordflow">if</span> ( obj is <a class="code hl_function" href="../../db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631">RCUObject&lt;T&gt;</a> b ) {</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                    _ret = this.<a class="code hl_function" href="../../db/d87/a02076_a5dbbbc7cf3f4e3aaadb8870e1a4c1e43.html#a5dbbbc7cf3f4e3aaadb8870e1a4c1e43">Equals</a>(b);</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>               }</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>               <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>          }</div>
-</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span></div>
-<div class="foldopen" id="foldopen00198" data-start="{" data-end="}">
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_ac1ec098524cd0080f737986d546d78c4.html#ac1ec098524cd0080f737986d546d78c4">  198</a></span>          <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../db/d87/a02076_ac1ec098524cd0080f737986d546d78c4.html#ac1ec098524cd0080f737986d546d78c4">Equals</a> ( <a class="code hl_function" href="../../db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631">RCUObject&lt;T&gt;</a>? obj ) {</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>               <span class="keywordflow">if</span> ( obj == <span class="keyword">null</span> ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>               <span class="keywordtype">bool</span> _ret = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>               var _thisValue = <a class="code hl_function" href="../../db/d87/a02076_a6d9cfb3e6e39cffc44b1d264ea959dc3.html#a6d9cfb3e6e39cffc44b1d264ea959dc3">ReadValue</a>().GetAs&lt;T&gt;(0);</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>               var _otherValue = obj.<a class="code hl_function" href="../../db/d87/a02076_a6d9cfb3e6e39cffc44b1d264ea959dc3.html#a6d9cfb3e6e39cffc44b1d264ea959dc3">ReadValue</a>().GetAs&lt;T&gt;(0);</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>               <span class="keywordflow">if</span> ( _thisValue.HasValue &amp;&amp; _otherValue.HasValue ) {</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                    _ret = _thisValue.Value!.Equals(_otherValue.Value);</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>               }</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>               <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>          }</div>
-</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span></div>
-<div class="foldopen" id="foldopen00217" data-start="{" data-end="}">
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_a2abfd6d239b90e24e1f202c766f4b32d.html#a2abfd6d239b90e24e1f202c766f4b32d">  217</a></span>          <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> <a class="code hl_function" href="../../db/d87/a02076_a2abfd6d239b90e24e1f202c766f4b32d.html#a2abfd6d239b90e24e1f202c766f4b32d">GetHashCode</a> () {</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>               var _thisValue = <a class="code hl_function" href="../../db/d87/a02076_a6d9cfb3e6e39cffc44b1d264ea959dc3.html#a6d9cfb3e6e39cffc44b1d264ea959dc3">ReadValue</a>().GetAs&lt;T&gt;(0); </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>               <span class="keywordflow">return</span> _thisValue.Value!.GetHashCode();</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>          }</div>
-</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span></div>
-<div class="foldopen" id="foldopen00226" data-start="{" data-end="}">
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_a571ff3383fc085d25e003ad2c845fdd0.html#a571ff3383fc085d25e003ad2c845fdd0">  226</a></span>          <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../db/d87/a02076_a571ff3383fc085d25e003ad2c845fdd0.html#a571ff3383fc085d25e003ad2c845fdd0">ToString</a> () {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>               var _thisValue = <a class="code hl_function" href="../../db/d87/a02076_a6d9cfb3e6e39cffc44b1d264ea959dc3.html#a6d9cfb3e6e39cffc44b1d264ea959dc3">ReadValue</a>().GetAs&lt;T&gt;(0);</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>               <span class="keywordflow">return</span> _thisValue.ToString();</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>          }</div>
-</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span></div>
-<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_a784d8cb45295cefa3b361ce8d070a513.html#a784d8cb45295cefa3b361ce8d070a513">  236</a></span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> operator == (<a class="code hl_function" href="../../db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631">RCUObject&lt;T&gt;</a>? a, <a class="code hl_function" href="../../db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631">RCUObject&lt;T&gt;</a>? b) {</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>               <span class="keywordflow">if</span> ( a == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>               <span class="keywordflow">return</span> a.<a class="code hl_function" href="../../db/d87/a02076_a5dbbbc7cf3f4e3aaadb8870e1a4c1e43.html#a5dbbbc7cf3f4e3aaadb8870e1a4c1e43">Equals</a>(b);</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>          }</div>
-</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span></div>
-<div class="foldopen" id="foldopen00245" data-start="{" data-end="}">
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="../../db/d87/a02076_a11983d4698278abf6d18e8d0d841a821.html#a11983d4698278abf6d18e8d0d841a821">  245</a></span>          <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> operator != ( <a class="code hl_function" href="../../db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631">RCUObject&lt;T&gt;</a>? a, <a class="code hl_function" href="../../db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631">RCUObject&lt;T&gt;</a>? b ) {</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>               <span class="keywordflow">return</span> !(a == b);</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>          }</div>
-</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>     }</div>
-</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span></div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>}</div>
-<div class="ttc" id="aa00823_gac92f2376444ddb17901deba5901f418b_html_gac92f2376444ddb17901deba5901f418b"><div class="ttname"><a href="../../d3/db4/a00823_gac92f2376444ddb17901deba5901f418b.html#gac92f2376444ddb17901deba5901f418b">SystemEx.Threading.RCUState</a></div><div class="ttdeci">RCUState</div><div class="ttdoc">Indicates the current operational state of an RCUObject&lt;T&gt;. Readers observe Current when no writer is...</div><div class="ttdef"><b>Definition</b> <a href="#l00030">RCUObject.cs:30</a></div></div>
-<div class="ttc" id="aa00823_gac92f2376444ddb17901deba5901f418b_html_ggac92f2376444ddb17901deba5901f418ba06933067aafd48425d67bcb01bba5cb6"><div class="ttname"><a href="../../d3/db4/a00823_gac92f2376444ddb17901deba5901f418b.html#ggac92f2376444ddb17901deba5901f418ba06933067aafd48425d67bcb01bba5cb6">SystemEx.Threading.RCUState.Update</a></div><div class="ttdeci">@ Update</div><div class="ttdoc">A writer is active; readers may observe stale data while the update operation is in progress.</div><div class="ttdef"><b>Definition</b> <a href="#l00040">RCUObject.cs:40</a></div></div>
-<div class="ttc" id="aa00823_gac92f2376444ddb17901deba5901f418b_html_ggac92f2376444ddb17901deba5901f418ba222a267cc5778206b253be35ee3ddab5"><div class="ttname"><a href="../../d3/db4/a00823_gac92f2376444ddb17901deba5901f418b.html#ggac92f2376444ddb17901deba5901f418ba222a267cc5778206b253be35ee3ddab5">SystemEx.Threading.RCUState.Current</a></div><div class="ttdeci">@ Current</div><div class="ttdoc">No writer is active; read operations observe the current stable data.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">RCUObject.cs:34</a></div></div>
-<div class="ttc" id="aa00849_html"><div class="ttname"><a href="../../de/d37/a00849.html">SystemEx.Threading</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d56/a00707_source.html#l00018">AtomicLock.cs:18</a></div></div>
-<div class="ttc" id="aa00850_html"><div class="ttname"><a href="../../dc/d0a/a00850.html">SystemEx.Threading.intern</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d9b/a00680_source.html#l00005">RCUDomain.cs:5</a></div></div>
-<div class="ttc" id="aa01156_html"><div class="ttname"><a href="../../d9/d42/a01156.html">SystemEx.Result</a></div><div class="ttdoc">Represents a flexible multi-value result container that can hold successful values,...</div><div class="ttdef"><b>Definition</b> <a href="../../d3/df8/a00155_source.html#l00040">Result.cs:40</a></div></div>
-<div class="ttc" id="aa02004_html"><div class="ttname"><a href="../../d3/dbb/a02004.html">SystemEx.Threading.Epoch</a></div><div class="ttdoc">Represents a lightweight Read-Copy-Update (RCU) epoch counter used to track active reader sections....</div><div class="ttdef"><b>Definition</b> <a href="../../d6/dc0/a00734_source.html#l00028">Epoch.cs:28</a></div></div>
-<div class="ttc" id="aa02008_html"><div class="ttname"><a href="../../d5/d6e/a02008.html">SystemEx.Threading.UniqueEpoch</a></div><div class="ttdoc">Provides an RAII-style scoped reader epoch for RCU-based objects. The epoch is incremented when the i...</div><div class="ttdef"><b>Definition</b> <a href="../../d6/dc0/a00734_source.html#l00102">Epoch.cs:102</a></div></div>
-<div class="ttc" id="aa02016_html"><div class="ttname"><a href="../../df/df0/a02016.html">SystemEx.Threading.ILock</a></div><div class="ttdoc">Defines the minimal contract for a synchronization primitive capable of providing mutual exclusion....</div><div class="ttdef"><b>Definition</b> <a href="../../db/d77/a00683_source.html#l00029">ILock.cs:29</a></div></div>
-<div class="ttc" id="aa02052_html"><div class="ttname"><a href="../../d3/df9/a02052.html">SystemEx.Threading.LightLock</a></div><div class="ttdoc">Provides a minimal wrapper around Monitor to offer lightweight mutual exclusion. LightLock is intende...</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d94/a00716_source.html#l00027">LightLock.cs:27</a></div></div>
-<div class="ttc" id="aa02076_a0c2a938a02e53e03843ebbb04d790b7c_html_a0c2a938a02e53e03843ebbb04d790b7c"><div class="ttname"><a href="../../db/d87/a02076_a0c2a938a02e53e03843ebbb04d790b7c.html#a0c2a938a02e53e03843ebbb04d790b7c">SystemEx.Threading.RCUObject-1-g.ValueWithState</a></div><div class="ttdeci">Result ValueWithState</div><div class="ttdoc">Retrieves the current value together with its associated RCU metadata.</div><div class="ttdef"><b>Definition</b> <a href="#l00096">RCUObject.cs:96</a></div></div>
-<div class="ttc" id="aa02076_a1fc7e4b87dda8b691cd797dc9a8eb488_html_a1fc7e4b87dda8b691cd797dc9a8eb488"><div class="ttname"><a href="../../db/d87/a02076_a1fc7e4b87dda8b691cd797dc9a8eb488.html#a1fc7e4b87dda8b691cd797dc9a8eb488">SystemEx.Threading.RCUObject-1-g.RCUObject</a></div><div class="ttdeci">RCUObject(T orig, ILock writer)</div><div class="ttdoc">Initializes a new instance of the RCUObject&lt;T&gt; class using a custom writer lock implementation.</div><div class="ttdef"><b>Definition</b> <a href="#l00118">RCUObject.cs:118</a></div></div>
-<div class="ttc" id="aa02076_a2abfd6d239b90e24e1f202c766f4b32d_html_a2abfd6d239b90e24e1f202c766f4b32d"><div class="ttname"><a href="../../db/d87/a02076_a2abfd6d239b90e24e1f202c766f4b32d.html#a2abfd6d239b90e24e1f202c766f4b32d">SystemEx.Threading.RCUObject-1-g.GetHashCode</a></div><div class="ttdeci">override int GetHashCode()</div><div class="ttdoc">Computes a hash code based on the protected value. The value is retrieved using RCU semantics,...</div><div class="ttdef"><b>Definition</b> <a href="#l00217">RCUObject.cs:217</a></div></div>
-<div class="ttc" id="aa02076_a3cc77400a410d2afe83dba853720523d_html_a3cc77400a410d2afe83dba853720523d"><div class="ttname"><a href="../../db/d87/a02076_a3cc77400a410d2afe83dba853720523d.html#a3cc77400a410d2afe83dba853720523d">SystemEx.Threading.RCUObject-1-g.Value</a></div><div class="ttdeci">T? Value</div><div class="ttdoc">Gets or sets the protected value. Reading the value enters a reader epoch, while writing requires exc...</div><div class="ttdef"><b>Definition</b> <a href="#l00079">RCUObject.cs:79</a></div></div>
-<div class="ttc" id="aa02076_a571ff3383fc085d25e003ad2c845fdd0_html_a571ff3383fc085d25e003ad2c845fdd0"><div class="ttname"><a href="../../db/d87/a02076_a571ff3383fc085d25e003ad2c845fdd0.html#a571ff3383fc085d25e003ad2c845fdd0">SystemEx.Threading.RCUObject-1-g.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">Returns a string representation of the protected value. The value is read using RCU semantics and con...</div><div class="ttdef"><b>Definition</b> <a href="#l00226">RCUObject.cs:226</a></div></div>
-<div class="ttc" id="aa02076_a5dbbbc7cf3f4e3aaadb8870e1a4c1e43_html_a5dbbbc7cf3f4e3aaadb8870e1a4c1e43"><div class="ttname"><a href="../../db/d87/a02076_a5dbbbc7cf3f4e3aaadb8870e1a4c1e43.html#a5dbbbc7cf3f4e3aaadb8870e1a4c1e43">SystemEx.Threading.RCUObject-1-g.Equals</a></div><div class="ttdeci">override bool Equals(object? obj)</div><div class="ttdoc">Determines whether this instance and the specified RCUObject&lt;T&gt; contain equal values....</div><div class="ttdef"><b>Definition</b> <a href="#l00184">RCUObject.cs:184</a></div></div>
-<div class="ttc" id="aa02076_a5fb272f0aab9baeafd36448dbb880161_html_a5fb272f0aab9baeafd36448dbb880161"><div class="ttname"><a href="../../db/d87/a02076_a5fb272f0aab9baeafd36448dbb880161.html#a5fb272f0aab9baeafd36448dbb880161">SystemEx.Threading.RCUObject-1-g.WriteValue</a></div><div class="ttdeci">void WriteValue(T? value, int timeout=-1)</div><div class="ttdoc">Writes a new value to the RCU object. Writer access is exclusive and requires acquiring the writer lo...</div><div class="ttdef"><b>Definition</b> <a href="#l00134">RCUObject.cs:134</a></div></div>
-<div class="ttc" id="aa02076_a6d9cfb3e6e39cffc44b1d264ea959dc3_html_a6d9cfb3e6e39cffc44b1d264ea959dc3"><div class="ttname"><a href="../../db/d87/a02076_a6d9cfb3e6e39cffc44b1d264ea959dc3.html#a6d9cfb3e6e39cffc44b1d264ea959dc3">SystemEx.Threading.RCUObject-1-g.ReadValue</a></div><div class="ttdeci">Result ReadValue(int timeout=-1)</div><div class="ttdoc">Reads the current value from the RCU object. The reader epoch is entered upon beginning the read oper...</div><div class="ttdef"><b>Definition</b> <a href="#l00151">RCUObject.cs:151</a></div></div>
-<div class="ttc" id="aa02076_a9024956dd5c8c119b88f2ca18d2b795e_html_a9024956dd5c8c119b88f2ca18d2b795e"><div class="ttname"><a href="../../db/d87/a02076_a9024956dd5c8c119b88f2ca18d2b795e.html#a9024956dd5c8c119b88f2ca18d2b795e">SystemEx.Threading.RCUObject-1-g.STATE_INDEX</a></div><div class="ttdeci">static readonly byte STATE_INDEX</div><div class="ttdoc">Index of the RCU state (RCUState) inside the Result container.</div><div class="ttdef"><b>Definition</b> <a href="#l00061">RCUObject.cs:61</a></div></div>
-<div class="ttc" id="aa02076_ac1ec098524cd0080f737986d546d78c4_html_ac1ec098524cd0080f737986d546d78c4"><div class="ttname"><a href="../../db/d87/a02076_ac1ec098524cd0080f737986d546d78c4.html#ac1ec098524cd0080f737986d546d78c4">SystemEx.Threading.RCUObject-1-g.Equals</a></div><div class="ttdeci">bool Equals(RCUObject&lt; T &gt;? obj)</div><div class="ttdoc">Determines whether this instance and the specified RCUObject&lt;T&gt; contain equal values....</div><div class="ttdef"><b>Definition</b> <a href="#l00198">RCUObject.cs:198</a></div></div>
-<div class="ttc" id="aa02076_acd5563e53c20e6ccd07ab0f69304a9ac_html_acd5563e53c20e6ccd07ab0f69304a9ac"><div class="ttname"><a href="../../db/d87/a02076_acd5563e53c20e6ccd07ab0f69304a9ac.html#acd5563e53c20e6ccd07ab0f69304a9ac">SystemEx.Threading.RCUObject-1-g.VALUE_INDEX</a></div><div class="ttdeci">static readonly byte VALUE_INDEX</div><div class="ttdoc">Index of the stored value inside the Result container.</div><div class="ttdef"><b>Definition</b> <a href="#l00055">RCUObject.cs:55</a></div></div>
-<div class="ttc" id="aa02076_ae9ff267fcad0dfc75480512adf437631_html_ae9ff267fcad0dfc75480512adf437631"><div class="ttname"><a href="../../db/d87/a02076_ae9ff267fcad0dfc75480512adf437631.html#ae9ff267fcad0dfc75480512adf437631">SystemEx.Threading.RCUObject-1-g.RCUObject</a></div><div class="ttdeci">RCUObject(T orig)</div><div class="ttdoc">Initializes a new instance of the RCUObject&lt;T&gt; class using a default LightLock for writer synchroniza...</div><div class="ttdef"><b>Definition</b> <a href="#l00103">RCUObject.cs:103</a></div></div>
-<div class="ttc" id="aa02076_af4e974d10a9631f8daa976a3afb3a9ab_html_af4e974d10a9631f8daa976a3afb3a9ab"><div class="ttname"><a href="../../db/d87/a02076_af4e974d10a9631f8daa976a3afb3a9ab.html#af4e974d10a9631f8daa976a3afb3a9ab">SystemEx.Threading.RCUObject-1-g.COUNT_INDEX</a></div><div class="ttdeci">static readonly byte COUNT_INDEX</div><div class="ttdoc">Index of the reader epoch counter inside the Result container.</div><div class="ttdef"><b>Definition</b> <a href="#l00066">RCUObject.cs:66</a></div></div>
+<div class="ttc" id="aa00908_ga31d0c58a569d5e341860c360f58cd2d5_html_ga31d0c58a569d5e341860c360f58cd2d5"><div class="ttname"><a href="../../d0/d85/a00908_ga31d0c58a569d5e341860c360f58cd2d5.html#ga31d0c58a569d5e341860c360f58cd2d5">SystemEx.Runtime.InteropServices.NativeHost.FreeModule</a></div><div class="ttdeci">static bool FreeModule(Module module)</div><div class="ttdoc">Frees a previously loaded module and removes it from the internal cache.   If the module is not curre...</div><div class="ttdef"><b>Definition</b> <a href="#l00076">NativeHost .cs:76</a></div></div>
+<div class="ttc" id="aa00908_ga673a8c6ff46533e2b0ac458a7454b998_html_ga673a8c6ff46533e2b0ac458a7454b998"><div class="ttname"><a href="../../d0/d85/a00908_ga673a8c6ff46533e2b0ac458a7454b998.html#ga673a8c6ff46533e2b0ac458a7454b998">SystemEx.Runtime.InteropServices.NativeHost.GetFunction&lt; T &gt;</a></div><div class="ttdeci">static ? T GetFunction&lt; T &gt;(string module, string func)</div><div class="ttdoc">Resolves a native function from a module identified by its path.   If the module is loaded,...</div><div class="ttdef"><b>Definition</b> <a href="#l00105">NativeHost .cs:105</a></div></div>
+<div class="ttc" id="aa00908_ga6e52e3a3bb5aca7f0317978c29a9a200_html_ga6e52e3a3bb5aca7f0317978c29a9a200"><div class="ttname"><a href="../../d0/d85/a00908_ga6e52e3a3bb5aca7f0317978c29a9a200.html#ga6e52e3a3bb5aca7f0317978c29a9a200">SystemEx.Runtime.InteropServices.NativeHost.LoadModule</a></div><div class="ttdeci">static ? Module LoadModule(string strPath)</div><div class="ttdoc">Loads a native module from the specified path.   If the module has already been loaded previously,...</div><div class="ttdef"><b>Definition</b> <a href="#l00053">NativeHost .cs:53</a></div></div>
+<div class="ttc" id="aa00919_html"><div class="ttname"><a href="../../d1/d0b/a00919.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d5d/a00311_source.html#l00021">Cache.cs:21</a></div></div>
+<div class="ttc" id="aa00934_html"><div class="ttname"><a href="../../d0/df0/a00934.html">SystemEx.Runtime.InteropServices</a></div><div class="ttdef"><b>Definition</b> <a href="#l00021">NativeHost .cs:21</a></div></div>
+<div class="ttc" id="aa01237_a51e0011c11e5ac42a4cc163376e18c0f_html_a51e0011c11e5ac42a4cc163376e18c0f"><div class="ttname"><a href="../../dc/dab/a01237_a51e0011c11e5ac42a4cc163376e18c0f.html#a51e0011c11e5ac42a4cc163376e18c0f">SystemEx.Optional-1-g.Value</a></div><div class="ttdeci">T? Value</div><div class="ttdoc">Gets or sets the underlying value. When retrieving, default(T) is returned if no value is present....</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d9a/a00152_source.html#l00046">Optional.cs:46</a></div></div>
+<div class="ttc" id="aa01237_ad50ac3985a6e78ce3a9736713b4a15c0_html_ad50ac3985a6e78ce3a9736713b4a15c0"><div class="ttname"><a href="../../dc/dab/a01237_ad50ac3985a6e78ce3a9736713b4a15c0.html#ad50ac3985a6e78ce3a9736713b4a15c0">SystemEx.Optional-1-g.IsSome</a></div><div class="ttdeci">bool IsSome</div><div class="ttdoc">Indicates whether this optional instance currently contains a value.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d9a/a00152_source.html#l00076">Optional.cs:76</a></div></div>
+<div class="ttc" id="aa02185_html"><div class="ttname"><a href="../../dd/d02/a02185.html">SystemEx.Runtime.Module</a></div><div class="ttdoc">Represents a loaded native module (DLL, SO, or DYLIB).   A Module encapsulates the operating system h...</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0a/a00743_source.html#l00061">Module.cs:61</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Threading</b></li><li class="navelem"><b>RCUObject.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Runtime</b></li><li class="navelem"><b>InteropServices</b></li><li class="navelem"><b>NativeHost .cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

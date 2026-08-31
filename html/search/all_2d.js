@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🏛️_20systemex_20architecture_20overview_0',['🏛️ SystemEx Architecture Overview',['../da/d14/a02245.html',1,'']]]
+  ['🎨_20systemex_20drawing_0',['🎨 SystemEx.Drawing',['../index.html#autotoc_md-systemexdrawing',1,'']]]
 ];

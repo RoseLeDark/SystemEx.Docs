@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: NumberRangeIterrator.cs Source File" />
+<meta property="og:title" content="SystemEX: TripleRaw..cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: NumberRangeIterrator.cs Source File" />
+<meta name="twitter:title" content="SystemEX: TripleRaw..cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: NumberRangeIterrator.cs Source File</title>
+<title>SystemEX: TripleRaw..cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('da/d1e/a00149_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">NumberRangeIterrator.cs</div></div>
+  <div class="headertitle"><div class="title">TripleRaw..cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -158,66 +158,32 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('da/d1e/a00149_
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span><a class="code hl_namespace" href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dd/d5f/a00825.html">SystemEx</a> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../db/d51/a01144.html">   28</a></span>     <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../db/d51/a01144_ac5ae0e92e797407936354e5c48b4b17e.html#ac5ae0e92e797407936354e5c48b4b17e">NumberRangeIterator</a>&lt;T&gt; : Iterrator&lt;T&gt; {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keyword">private</span> Vector&lt;T&gt; m_range;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">private</span> readonly <span class="keywordtype">long</span> m_end;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">private</span> <span class="keywordtype">long</span> m_index;</div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../db/d51/a01144_ac5ae0e92e797407936354e5c48b4b17e.html#ac5ae0e92e797407936354e5c48b4b17e">   38</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../db/d51/a01144_ac5ae0e92e797407936354e5c48b4b17e.html#ac5ae0e92e797407936354e5c48b4b17e">NumberRangeIterator</a> ( Vector&lt;T&gt; range, <span class="keywordtype">long</span> end ) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            m_range = range;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            m_end = end;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            m_index = 0;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d12/a00911.html">SystemEx</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma warning disable CS8981</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697">   24</a></span>     <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="../../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697">triple</a> : sbyte {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697af827cf462f62848df37c5e1e94a4da74">   29</a></span>        <a class="code hl_enumvalue" href="../../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697af827cf462f62848df37c5e1e94a4da74">True</a> = 1,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697af8320b26d30ab433c5a54546d21f414c">   33</a></span>        <a class="code hl_enumvalue" href="../../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697af8320b26d30ab433c5a54546d21f414c">False</a> = 0,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697af6becb7bb76db0da62691c2318c85004">   37</a></span>        <a class="code hl_enumvalue" href="../../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697af6becb7bb76db0da62691c2318c85004">Nin</a> = -1</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../db/d51/a01144_a92fb7f1616cb50b08ce87d159e31828f.html#a92fb7f1616cb50b08ce87d159e31828f">   47</a></span>        <span class="keyword">public</span> Optional&lt;T&gt; <a class="code hl_property" href="../../db/d51/a01144_a92fb7f1616cb50b08ce87d159e31828f.html#a92fb7f1616cb50b08ce87d159e31828f">Current</a> =&gt; m_range[m_index];</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../db/d51/a01144_a6596c3a7fa884cfae8725fee73e0e37c.html#a6596c3a7fa884cfae8725fee73e0e37c">   52</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../db/d51/a01144_a6596c3a7fa884cfae8725fee73e0e37c.html#a6596c3a7fa884cfae8725fee73e0e37c">IsEnd</a> =&gt;  m_index &gt; m_end;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../db/d51/a01144_a00f039d47db5dcaace912d38cfd23963.html#a00f039d47db5dcaace912d38cfd23963">   54</a></span>        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_property" href="../../db/d51/a01144_a00f039d47db5dcaace912d38cfd23963.html#a00f039d47db5dcaace912d38cfd23963">Index</a> { <span class="keyword">get</span> =&gt; m_index; <span class="keyword">set</span> =&gt; m_index = value; }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../db/d51/a01144_ab442ebbf9ee3ba8e9d764e257bf09680.html#ab442ebbf9ee3ba8e9d764e257bf09680">   59</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../db/d51/a01144_ab442ebbf9ee3ba8e9d764e257bf09680.html#ab442ebbf9ee3ba8e9d764e257bf09680">Forward</a> () {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">if</span> ( !<a class="code hl_property" href="../../db/d51/a01144_a6596c3a7fa884cfae8725fee73e0e37c.html#a6596c3a7fa884cfae8725fee73e0e37c">IsEnd</a> )</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                m_index += 1;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
-</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
-<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../db/d51/a01144_a74ffbc1f838d2a6798e5ed5096dcf16b.html#a74ffbc1f838d2a6798e5ed5096dcf16b">   67</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../db/d51/a01144_a74ffbc1f838d2a6798e5ed5096dcf16b.html#a74ffbc1f838d2a6798e5ed5096dcf16b">Forward</a> ( <span class="keywordtype">long</span> i ) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            var n = i;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">while</span> ( n &gt; 0 ) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                --n;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <a class="code hl_function" href="../../db/d51/a01144_ab442ebbf9ee3ba8e9d764e257bf09680.html#ab442ebbf9ee3ba8e9d764e257bf09680">Forward</a>();</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
-</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
-</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
-<div class="ttc" id="aa00825_html"><div class="ttname"><a href="../../dd/d5f/a00825.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d03/a00062_source.html#l00018">AIEnvironment .cs:18</a></div></div>
-<div class="ttc" id="aa00833_html"><div class="ttname"><a href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/db5/a00374_source.html#l00023">BasicRope.cs:23</a></div></div>
-<div class="ttc" id="aa01144_a00f039d47db5dcaace912d38cfd23963_html_a00f039d47db5dcaace912d38cfd23963"><div class="ttname"><a href="../../db/d51/a01144_a00f039d47db5dcaace912d38cfd23963.html#a00f039d47db5dcaace912d38cfd23963">SystemEx.NumberRangeIterator-1-g.Index</a></div><div class="ttdeci">long Index</div><div class="ttdoc">Gets or sets the current index of the iterator.</div><div class="ttdef"><b>Definition</b> <a href="#l00054">NumberRangeIterrator.cs:54</a></div></div>
-<div class="ttc" id="aa01144_a6596c3a7fa884cfae8725fee73e0e37c_html_a6596c3a7fa884cfae8725fee73e0e37c"><div class="ttname"><a href="../../db/d51/a01144_a6596c3a7fa884cfae8725fee73e0e37c.html#a6596c3a7fa884cfae8725fee73e0e37c">SystemEx.NumberRangeIterator-1-g.IsEnd</a></div><div class="ttdeci">bool IsEnd</div><div class="ttdoc">Indicates whether the iterator has reached the end boundary.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">NumberRangeIterrator.cs:52</a></div></div>
-<div class="ttc" id="aa01144_a74ffbc1f838d2a6798e5ed5096dcf16b_html_a74ffbc1f838d2a6798e5ed5096dcf16b"><div class="ttname"><a href="../../db/d51/a01144_a74ffbc1f838d2a6798e5ed5096dcf16b.html#a74ffbc1f838d2a6798e5ed5096dcf16b">SystemEx.NumberRangeIterator-1-g.Forward</a></div><div class="ttdeci">void Forward(long i)</div><div class="ttdoc">Moves the iterator N step forward.</div><div class="ttdef"><b>Definition</b> <a href="#l00067">NumberRangeIterrator.cs:67</a></div></div>
-<div class="ttc" id="aa01144_a92fb7f1616cb50b08ce87d159e31828f_html_a92fb7f1616cb50b08ce87d159e31828f"><div class="ttname"><a href="../../db/d51/a01144_a92fb7f1616cb50b08ce87d159e31828f.html#a92fb7f1616cb50b08ce87d159e31828f">SystemEx.NumberRangeIterator-1-g.Current</a></div><div class="ttdeci">Optional&lt; T &gt; Current</div><div class="ttdoc">Gets the element at the current iterator position.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">NumberRangeIterrator.cs:47</a></div></div>
-<div class="ttc" id="aa01144_ab442ebbf9ee3ba8e9d764e257bf09680_html_ab442ebbf9ee3ba8e9d764e257bf09680"><div class="ttname"><a href="../../db/d51/a01144_ab442ebbf9ee3ba8e9d764e257bf09680.html#ab442ebbf9ee3ba8e9d764e257bf09680">SystemEx.NumberRangeIterator-1-g.Forward</a></div><div class="ttdeci">void Forward()</div><div class="ttdoc">Moves the iterator one step forward.</div><div class="ttdef"><b>Definition</b> <a href="#l00059">NumberRangeIterrator.cs:59</a></div></div>
-<div class="ttc" id="aa01144_ac5ae0e92e797407936354e5c48b4b17e_html_ac5ae0e92e797407936354e5c48b4b17e"><div class="ttname"><a href="../../db/d51/a01144_ac5ae0e92e797407936354e5c48b4b17e.html#ac5ae0e92e797407936354e5c48b4b17e">SystemEx.NumberRangeIterator-1-g.NumberRangeIterator</a></div><div class="ttdeci">NumberRangeIterator(Vector&lt; T &gt; range, long end)</div><div class="ttdoc">Initializes a new iterator.</div><div class="ttdef"><b>Definition</b> <a href="#l00038">NumberRangeIterrator.cs:38</a></div></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#pragma warning restore CS8981 </span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="ttc" id="aa00911_aa60c11b2d2d4ff5084ed2276d3e06697_html_aa60c11b2d2d4ff5084ed2276d3e06697"><div class="ttname"><a href="../../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697">SystemEx.triple</a></div><div class="ttdeci">triple</div><div class="ttdoc">Represents a three-valued logic type with True, False, and Nin (neither true nor false) states.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">TripleRaw..cs:24</a></div></div>
+<div class="ttc" id="aa00911_aa60c11b2d2d4ff5084ed2276d3e06697_html_aa60c11b2d2d4ff5084ed2276d3e06697af6becb7bb76db0da62691c2318c85004"><div class="ttname"><a href="../../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697af6becb7bb76db0da62691c2318c85004">SystemEx.triple.Nin</a></div><div class="ttdeci">@ Nin</div><div class="ttdoc">The state representing neither true nor false.</div><div class="ttdef"><b>Definition</b> <a href="#l00037">TripleRaw..cs:37</a></div></div>
+<div class="ttc" id="aa00911_aa60c11b2d2d4ff5084ed2276d3e06697_html_aa60c11b2d2d4ff5084ed2276d3e06697af827cf462f62848df37c5e1e94a4da74"><div class="ttname"><a href="../../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697af827cf462f62848df37c5e1e94a4da74">SystemEx.triple.True</a></div><div class="ttdeci">@ True</div><div class="ttdoc">The state representing true.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">TripleRaw..cs:29</a></div></div>
+<div class="ttc" id="aa00911_aa60c11b2d2d4ff5084ed2276d3e06697_html_aa60c11b2d2d4ff5084ed2276d3e06697af8320b26d30ab433c5a54546d21f414c"><div class="ttname"><a href="../../d7/d12/a00911_aa60c11b2d2d4ff5084ed2276d3e06697.html#aa60c11b2d2d4ff5084ed2276d3e06697af8320b26d30ab433c5a54546d21f414c">SystemEx.triple.False</a></div><div class="ttdeci">@ False</div><div class="ttdoc">The state representing false.</div><div class="ttdef"><b>Definition</b> <a href="#l00033">TripleRaw..cs:33</a></div></div>
+<div class="ttc" id="aa00911_html"><div class="ttname"><a href="../../d7/d12/a00911.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d8b/a00059_source.html#l00018">AIEnvironment .cs:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>NumberRangeIterrator.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>TripleRaw..cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

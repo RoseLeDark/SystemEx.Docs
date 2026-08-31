@@ -1,521 +1,575 @@
 var hierarchy =
 [
     [ "Attribute", null, [
-      [ "SystemEx.Hash.HashAlgorithmAttribute", "de/d5c/a01708.html", null ]
+      [ "SystemEx.Hash.HashAlgorithmAttribute", "da/d8c/a01845.html", null ]
     ] ],
-    [ "SystemEx.Numeric.AxisAngle&lt; TV, T &gt;", "d7/d4f/a00819.html#dc/d51/a01764", null ],
-    [ "SystemEx.Collections.Generic.BasicRope&lt; T, TN &gt;", "d6/db6/a01172.html", null ],
-    [ "SystemEx.Utils.BitIntSpan", "d8/dd8/a02108.html", null ],
-    [ "SystemEx.Utils.BitLongSpan", "dc/d29/a02116.html", null ],
-    [ "SystemEx.Utils.BitUIntSpan", "db/d0e/a02124.html", null ],
-    [ "SystemEx.Utils.BitULongSpan", "dd/d07/a02132.html", null ],
-    [ "SystemEx.IO.Provider.ByteSeriablizeProvider", "d1/d04/a01744.html", [
-      [ "SystemEx.Drawing.ColorR10G10B10Serializer", "de/dd5/a01564.html", null ]
+    [ "SystemEx.Numeric.AxisAngle&lt; TV, T &gt;", "da/dd8/a00906.html#d5/d99/a01901", null ],
+    [ "SystemEx.Utils.BitIntSpan", "dc/dd6/a02309.html", null ],
+    [ "SystemEx.Utils.BitLongSpan", "da/d68/a02317.html", null ],
+    [ "SystemEx.Utils.BitUIntSpan", "db/d2a/a02325.html", null ],
+    [ "SystemEx.Utils.BitULongSpan", "d7/dbe/a02333.html", null ],
+    [ "SystemEx.IO.Provider.ByteSeriablizeProvider", "de/d9f/a01881.html", [
+      [ "SystemEx.Drawing.ColorR10G10B10Serializer", "dc/d87/a01649.html", null ]
     ] ],
-    [ "SystemEx.Drawing.ColorCMY", "da/d97/a01528.html", null ],
-    [ "SystemEx.Drawing.ColorGray", "d0/da6/a01536.html", null ],
-    [ "SystemEx.Algorithms.Compute.CosineDistanceF", "df/dbc/a01004.html", null ],
-    [ "SystemEx.Collections.Generic.DequeFlexSpan&lt; T &gt;", "df/d93/a01336.html", null ],
-    [ "SystemEx.Device.Memory.DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;", "dc/d57/a01512.html", null ],
-    [ "SystemEx.Numeric.DQuatf", "dd/d00/a01776.html", null ],
-    [ "SystemEx.Collections.Generic.DequeFlexSpan&lt; T &gt;.Enumerator", "df/d93/a01336.html#d7/d51/a01340", null ],
-    [ "SystemEx.Collections.Generic.QueueFlexSpan&lt; T &gt;.Enumerator", "d2/d29/a01376.html#dd/d6d/a01380", null ],
-    [ "SystemEx.Collections.Generic.VectorFlexSpan&lt; T, TContainer &gt;.Enumerator", "df/d31/a01440.html#d7/d32/a01444", null ],
-    [ "SystemEx.FlexSpan&lt; T &gt;.Enumerator", "de/d9d/a00813.html#da/db7/a01088", null ],
-    [ "SystemEx.Threading.Epoch", "d3/dbb/a02004.html", null ],
-    [ "SystemEx.Threading.EventGroup&lt; TFastType &gt;", "d5/d2c/a02012.html", null ],
+    [ "SystemEx.Drawing.ColorCMY", "d3/da1/a01613.html", null ],
+    [ "SystemEx.Drawing.ColorGray", "dd/dda/a01621.html", null ],
+    [ "SystemEx.Algorithms.Compute.CosineDistanceF", "d3/dc4/a01089.html", null ],
+    [ "SystemEx.Collections.Generic.DequeFlexSpan&lt; T &gt;", "d4/d20/a01421.html", null ],
+    [ "SystemEx.Device.Memory.DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;", "d0/d1d/a01597.html", null ],
+    [ "SystemEx.Numeric.DQuatf", "d2/d54/a01917.html", null ],
+    [ "SystemEx.Collections.Generic.DequeFlexSpan&lt; T &gt;.Enumerator", "d5/dd3/a00902.html#db/df2/a01425", null ],
+    [ "SystemEx.Collections.Generic.QueueFlexSpan&lt; T &gt;.Enumerator", "d5/dd3/a00902.html#d4/dfd/a01465", null ],
+    [ "SystemEx.Collections.Generic.VectorFlexSpan&lt; T, TContainer &gt;.Enumerator", "d5/dd3/a00902.html#db/dce/a01529", null ],
+    [ "SystemEx.FlexSpan&lt; T &gt;.Enumerator", "d7/daf/a01169.html#d7/d0c/a01173", null ],
+    [ "SystemEx.Threading.Epoch", "dd/d14/a02201.html", null ],
+    [ "SystemEx.Threading.EventGroup&lt; TFastType &gt;", "db/db1/a02209.html", null ],
     [ "Exception", null, [
-      [ "SystemEx.Collections.Generic.CacheIsSharedException", "d3/d32/a01176.html", null ],
-      [ "SystemEx.Threading.BarrierNewPhaseLockException", "d3/dcc/a01996.html", null ],
-      [ "SystemEx.Utils.MissingStructLayoutSequentialException", "df/d28/a02152.html", null ],
-      [ "SystemEx.Utils.SizeMismatchException", "dd/d3f/a02156.html", null ]
+      [ "SystemEx.Collections.Generic.CacheIsSharedException", "d9/de7/a01257.html", null ],
+      [ "SystemEx.Threading.BarrierNewPhaseLockException", "d5/dbb/a02193.html", null ],
+      [ "SystemEx.Utils.MissingStructLayoutSequentialException", "d1/db9/a02353.html", null ],
+      [ "SystemEx.Utils.SizeMismatchException", "d8/d26/a02357.html", null ]
     ] ],
-    [ "SystemEx.Numeric.Fast_Float", "d6/d3d/a01784.html", null ],
-    [ "SystemEx.Collections.Generic.Find&lt; T, TContainer &gt;", "d2/db4/a01192.html", null ],
-    [ "SystemEx.FlexSpan&lt; T &gt;", "da/d93/a01084.html", null ],
-    [ "SystemEx.Hash.Hash32", "da/d0e/a01720.html", null ],
-    [ "SystemEx.Hash.Hash64", "d3/d4c/a01724.html", null ],
-    [ "SystemEx.AI.IAIFunctionFactory&lt; T, TAITOOL &gt;", "d9/db0/a00900.html", null ],
-    [ "SystemEx.Collections.Generic.IAutoGrowe", "d7/d5a/a01204.html", [
-      [ "SystemEx.Collections.Generic.Deque< T >", "d9/d45/a01332.html", null ],
-      [ "SystemEx.Collections.Generic.PriorityQueue< TElement, TPriority >", "de/d1f/a01364.html", null ],
-      [ "SystemEx.Collections.Generic.Queue< T >", "df/d0b/a01372.html", null ],
-      [ "SystemEx.Collections.Generic.Sparsed< T >", "d9/d45/a01396.html", null ]
+    [ "SystemEx.Numeric.Fast_Float", "d6/d18/a01925.html", null ],
+    [ "SystemEx.Collections.Generic.Find&lt; T, TContainer &gt;", "de/d85/a01273.html", null ],
+    [ "SystemEx.FlexSpan&lt; T &gt;", "d7/daf/a01169.html", null ],
+    [ "SystemEx.Numeric.Float8UMX&lt; T &gt;", "d2/d23/a01961.html", [
+      [ "SystemEx.Numeric.FloatUE4M3b32", "d5/d92/a01977.html", null ],
+      [ "SystemEx.Numeric.FloatUE5M2b32", "d3/def/a01985.html", null ]
     ] ],
-    [ "SystemEx.IO.Provider.IByteFormatSchema", "d9/d0d/a01748.html", [
-      [ "SystemEx.Drawing.ColorR10G10B10FormatSchema", "de/d89/a01560.html", null ]
+    [ "SystemEx.Hash.Hash32", "de/d51/a01857.html", null ],
+    [ "SystemEx.Hash.Hash64", "d6/d56/a01861.html", null ],
+    [ "SystemEx.AI.IAIFunctionFactory&lt; T, TAITOOL &gt;", "da/deb/a00985.html", null ],
+    [ "SystemEx.Collections.Generic.IAutoGrowe", "d1/d1a/a01285.html", [
+      [ "SystemEx.Collections.Generic.Deque< T >", "de/daf/a01417.html", null ],
+      [ "SystemEx.Collections.Generic.PriorityQueue< TElement, TPriority >", "d2/d95/a01449.html", null ],
+      [ "SystemEx.Collections.Generic.Queue< T >", "da/df7/a01457.html", null ],
+      [ "SystemEx.Collections.Generic.Sparsed< T >", "d1/de4/a01481.html", null ]
     ] ],
-    [ "SystemEx.IByteSerializable&lt; TSelf &gt;", "d2/d20/a01096.html", [
-      [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d6/dc4/a01816.html", [
-        [ "SystemEx.Numeric.IBigFloat< TSelf >", "d2/dbd/a01844.html", null ],
-        [ "SystemEx.Numeric.ICDouble< TSelf >", "db/df3/a01836.html", null ],
-        [ "SystemEx.Numeric.ICFloat< TSelf >", "dc/d06/a01832.html", null ],
-        [ "SystemEx.Numeric.ICQuad< TSelf >", "d4/d8e/a01840.html", null ],
-        [ "SystemEx.Numeric.IHalf< TSelf >", "d2/d77/a01824.html", [
-          [ "SystemEx.Numeric.Half16", "d7/d02/a01808.html", null ],
-          [ "SystemEx.Numeric.Half16b", "dc/d5b/a01812.html", null ]
+    [ "SystemEx.IO.Provider.IByteFormatSchema", "d7/d9c/a01885.html", [
+      [ "SystemEx.Drawing.ColorR10G10B10FormatSchema", "d7/d53/a01645.html", null ]
+    ] ],
+    [ "SystemEx.IByteSerializable&lt; TSelf &gt;", "de/db5/a01181.html", [
+      [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d3/d39/a02005.html", [
+        [ "SystemEx.Numeric.Float32", "d9/d97/a01953.html", null ],
+        [ "SystemEx.Numeric.Float64", "d2/d6f/a01957.html", null ],
+        [ "SystemEx.Numeric.IBigFloat< TSelf >", "d6/d94/a02033.html", null ],
+        [ "SystemEx.Numeric.ICDouble< TSelf >", "d6/d19/a02029.html", null ],
+        [ "SystemEx.Numeric.ICFloat< TSelf >", "da/d3e/a02025.html", null ],
+        [ "SystemEx.Numeric.IFP8< TSelf >", "d1/dc5/a02013.html", [
+          [ "SystemEx.Numeric.FloatE4M3", "d6/d9a/a01965.html", null ],
+          [ "SystemEx.Numeric.FloatUE4M3", "d3/d59/a01973.html", null ],
+          [ "SystemEx.Numeric.FloatUE5M2", "df/db2/a01981.html", null ]
         ] ],
-        [ "SystemEx.Numeric.IMini< TSelf >", "dc/d79/a01828.html", null ]
+        [ "SystemEx.Numeric.IHalf< TSelf >", "d8/d45/a02021.html", [
+          [ "SystemEx.Numeric.Half16", "dc/d67/a01989.html", null ],
+          [ "SystemEx.Numeric.Half16b", "d0/dc1/a01993.html", null ]
+        ] ]
       ] ]
     ] ],
-    [ "SystemEx.IO.Provider.IByteSerialize&lt; T, TSchema &gt;", "d3/dbf/a01752.html", null ],
-    [ "SystemEx.Collections.Generic.ICache", "d9/d31/a01208.html", [
-      [ "SystemEx.Collections.Generic.Cache", "dd/d75/a01180.html", [
-        [ "SystemEx.Collections.Generic.MirroredCache", "d4/d64/a01296.html", null ],
-        [ "SystemEx.Collections.Generic.StrippedCache", "dc/d10/a01412.html", null ],
-        [ "SystemEx.Device.Memory.DeviceBuffer", "d0/deb/a01508.html", null ]
+    [ "SystemEx.IO.Provider.IByteSerialize&lt; T, TSchema &gt;", "d9/d9b/a01889.html", null ],
+    [ "SystemEx.Collections.Generic.ICache", "d9/dda/a01289.html", [
+      [ "SystemEx.Collections.Generic.Cache", "de/d34/a01261.html", [
+        [ "SystemEx.Collections.Generic.MirroredCache", "d3/dea/a01377.html", null ],
+        [ "SystemEx.Collections.Generic.StrippedCache", "db/d1e/a01497.html", null ],
+        [ "SystemEx.Device.Memory.DeviceBuffer", "d9/dc8/a01593.html", null ]
       ] ],
-      [ "SystemEx.Collections.Generic.RCUCache", "d1/dcc/a01392.html", null ]
+      [ "SystemEx.Collections.Generic.RCUCache", "d8/d67/a01477.html", null ]
     ] ],
-    [ "SystemEx.Drawing.ICanvas&lt; T &gt;", "d9/d34/a01524.html", [
-      [ "SystemEx.Drawing.ICanvasList< T >", "dd/d40/a01636.html", null ],
-      [ "SystemEx.Drawing.ISubCanvas< T >", "d6/daf/a01632.html", null ]
+    [ "SystemEx.Drawing.ICanvas&lt; T &gt;", "da/d24/a01609.html", [
+      [ "SystemEx.Drawing.ICanvasList< T >", "db/d66/a01721.html", null ],
+      [ "SystemEx.Drawing.ISubCanvas< T >", "dd/ddb/a01717.html", null ]
     ] ],
-    [ "SystemEx.Algorithms.Compute.IClassifier&lt; T &gt;", "d4/d45/a01012.html", null ],
-    [ "SystemEx.Collections.Generic.ICluster", "dc/db6/a01212.html", [
-      [ "SystemEx.Collections.Generic.ICluster< T >", "d8/df3/a01216.html", [
-        [ "SystemEx.Collections.Generic.Cluster< T >", "d6/d97/a01188.html", null ]
+    [ "SystemEx.Algorithms.Compute.IClassifier&lt; T &gt;", "d1/dfa/a01097.html", null ],
+    [ "SystemEx.Collections.Generic.ICluster", "dc/dd5/a01293.html", [
+      [ "SystemEx.Collections.Generic.ICluster< T >", "dc/d8c/a01297.html", [
+        [ "SystemEx.Collections.Generic.Cluster< T >", "d6/d16/a01269.html", null ]
       ] ]
     ] ],
     [ "ICollection", null, [
-      [ "SystemEx.Collections.Generic.TupleMap< T >", "d5/da5/a01424.html", null ]
+      [ "SystemEx.Collections.Generic.TupleMap< T >", "db/d06/a01509.html", null ]
     ] ],
     [ "ICollection", null, [
-      [ "SystemEx.Collections.Generic.Map< T, TU >", "dd/d18/a01284.html", null ]
+      [ "SystemEx.Collections.Generic.Map< T, TU >", "d7/d81/a01365.html", [
+        [ "SystemEx.Collections.Generic.MultiMap< T, TU >", "da/d77/a01381.html", null ]
+      ] ]
     ] ],
-    [ "SystemEx.Drawing.IColor&lt; T &gt;", "de/d14/a01640.html", [
-      [ "SystemEx.Drawing.ColorHDR", "d3/d4c/a01540.html", null ],
-      [ "SystemEx.Drawing.ColorHSV", "da/dc7/a01548.html", null ],
-      [ "SystemEx.Drawing.ColorR16G16B16", "d3/d22/a01572.html", null ],
-      [ "SystemEx.Drawing.ColorR8G8B8", "db/dfd/a01576.html", null ]
-    ] ],
-    [ "IComparable", null, [
-      [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d6/dc4/a01816.html", null ],
-      [ "SystemEx.Numeric.Quatd", "da/d5e/a01852.html", null ],
-      [ "SystemEx.Numeric.Quatf", "da/d66/a01856.html", null ],
-      [ "SystemEx.Numeric.Vec2d", "dd/d87/a01864.html", null ],
-      [ "SystemEx.Numeric.Vec2f", "dd/de7/a01868.html", null ],
-      [ "SystemEx.Numeric.Vec2h", "d8/d7b/a01872.html", null ],
-      [ "SystemEx.Numeric.Vec2hb", "de/d23/a01876.html", null ],
-      [ "SystemEx.Numeric.Vec2i", "d9/d7d/a01880.html", null ],
-      [ "SystemEx.Numeric.Vec2r", "dc/d7f/a01884.html", null ],
-      [ "SystemEx.Numeric.Vec3d", "d7/d5f/a01888.html", null ],
-      [ "SystemEx.Numeric.Vec3f", "dc/d31/a01892.html", null ],
-      [ "SystemEx.Numeric.Vec3h", "d9/d63/a01896.html", null ],
-      [ "SystemEx.Numeric.Vec3hb", "d5/dcc/a01900.html", null ],
-      [ "SystemEx.Numeric.Vec3i", "d4/d0d/a01904.html", null ],
-      [ "SystemEx.Numeric.Vec3r", "d8/d45/a01908.html", null ],
-      [ "SystemEx.Numeric.Vec4d", "df/dd0/a01912.html", null ],
-      [ "SystemEx.Numeric.Vec4f", "d0/d36/a01916.html", null ],
-      [ "SystemEx.Numeric.Vec4h", "d6/da2/a01920.html", null ],
-      [ "SystemEx.Numeric.Vec4hb", "d0/dde/a01924.html", null ],
-      [ "SystemEx.Numeric.Vec4i", "d1/db0/a01928.html", null ],
-      [ "SystemEx.Numeric.Vec4r", "d8/d22/a01932.html", null ]
+    [ "SystemEx.Drawing.IColor&lt; T &gt;", "d3/d5e/a01725.html", [
+      [ "SystemEx.Drawing.ColorHDR", "d3/d2d/a01625.html", null ],
+      [ "SystemEx.Drawing.ColorHSV", "d6/dd6/a01633.html", null ],
+      [ "SystemEx.Drawing.ColorR16G16B16", "d3/d21/a01657.html", null ],
+      [ "SystemEx.Drawing.ColorR8G8B8", "d4/d41/a01661.html", null ]
     ] ],
     [ "IComparable", null, [
-      [ "SystemEx.Delegate< T >", "d9/d67/a01080.html", null ],
-      [ "SystemEx.Drawing.ColorHSV", "da/dc7/a01548.html", null ],
-      [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d6/dc4/a01816.html", null ],
-      [ "SystemEx.Numeric.Quatd", "da/d5e/a01852.html", null ],
-      [ "SystemEx.Numeric.Quatf", "da/d66/a01856.html", null ],
-      [ "SystemEx.Numeric.Ratio", "d2/d38/a01860.html", null ],
-      [ "SystemEx.Numeric.Vec2d", "dd/d87/a01864.html", null ],
-      [ "SystemEx.Numeric.Vec2f", "dd/de7/a01868.html", null ],
-      [ "SystemEx.Numeric.Vec2h", "d8/d7b/a01872.html", null ],
-      [ "SystemEx.Numeric.Vec2hb", "de/d23/a01876.html", null ],
-      [ "SystemEx.Numeric.Vec2i", "d9/d7d/a01880.html", null ],
-      [ "SystemEx.Numeric.Vec2r", "dc/d7f/a01884.html", null ],
-      [ "SystemEx.Numeric.Vec3d", "d7/d5f/a01888.html", null ],
-      [ "SystemEx.Numeric.Vec3f", "dc/d31/a01892.html", null ],
-      [ "SystemEx.Numeric.Vec3h", "d9/d63/a01896.html", null ],
-      [ "SystemEx.Numeric.Vec3hb", "d5/dcc/a01900.html", null ],
-      [ "SystemEx.Numeric.Vec3i", "d4/d0d/a01904.html", null ],
-      [ "SystemEx.Numeric.Vec3r", "d8/d45/a01908.html", null ],
-      [ "SystemEx.Numeric.Vec4d", "df/dd0/a01912.html", null ],
-      [ "SystemEx.Numeric.Vec4f", "d0/d36/a01916.html", null ],
-      [ "SystemEx.Numeric.Vec4h", "d6/da2/a01920.html", null ],
-      [ "SystemEx.Numeric.Vec4hb", "d0/dde/a01924.html", null ],
-      [ "SystemEx.Numeric.Vec4i", "d1/db0/a01928.html", null ],
-      [ "SystemEx.Numeric.Vec4r", "d8/d22/a01932.html", null ],
-      [ "SystemEx.Optional< T >", "d9/d97/a01152.html", null ]
+      [ "SystemEx.Numeric.BigDecimal", "d9/d65/a01905.html", null ],
+      [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d3/d39/a02005.html", null ],
+      [ "SystemEx.Numeric.Quatd", "d8/d5a/a02049.html", null ],
+      [ "SystemEx.Numeric.Quatf", "d0/d55/a02053.html", null ],
+      [ "SystemEx.Numeric.Vec2d", "d8/de6/a02061.html", null ],
+      [ "SystemEx.Numeric.Vec2f", "d0/d67/a02065.html", null ],
+      [ "SystemEx.Numeric.Vec2h", "d3/d48/a02069.html", null ],
+      [ "SystemEx.Numeric.Vec2hb", "de/df8/a02073.html", null ],
+      [ "SystemEx.Numeric.Vec2i", "db/dac/a02077.html", null ],
+      [ "SystemEx.Numeric.Vec2r", "d2/d50/a02081.html", null ],
+      [ "SystemEx.Numeric.Vec3d", "d2/dde/a02085.html", null ],
+      [ "SystemEx.Numeric.Vec3f", "db/ddd/a02089.html", null ],
+      [ "SystemEx.Numeric.Vec3h", "d3/d1e/a02093.html", null ],
+      [ "SystemEx.Numeric.Vec3hb", "d4/dbb/a02097.html", null ],
+      [ "SystemEx.Numeric.Vec3i", "da/d71/a02101.html", null ],
+      [ "SystemEx.Numeric.Vec3r", "db/d7a/a02105.html", null ],
+      [ "SystemEx.Numeric.Vec4d", "d7/d16/a02109.html", null ],
+      [ "SystemEx.Numeric.Vec4f", "d8/dc6/a02113.html", null ],
+      [ "SystemEx.Numeric.Vec4h", "d0/d79/a02117.html", null ],
+      [ "SystemEx.Numeric.Vec4hb", "d6/d3b/a02121.html", null ],
+      [ "SystemEx.Numeric.Vec4i", "d8/db2/a02125.html", null ],
+      [ "SystemEx.Numeric.Vec4r", "db/d26/a02129.html", null ]
     ] ],
     [ "IComparable", null, [
-      [ "SystemEx.Collections.Generic.Pair< T, TU >", "df/dec/a01320.html", null ]
+      [ "SystemEx.Delegate< T >", "d8/d92/a01165.html", null ],
+      [ "SystemEx.Drawing.ColorHSV", "d6/dd6/a01633.html", null ],
+      [ "SystemEx.Numeric.BigDecimal", "d9/d65/a01905.html", null ],
+      [ "SystemEx.Numeric.Fast_Byte", "da/d6c/a01921.html", null ],
+      [ "SystemEx.Numeric.Fast_Int", "dc/dc8/a01929.html", null ],
+      [ "SystemEx.Numeric.Fast_UInt", "dc/da7/a01933.html", null ],
+      [ "SystemEx.Numeric.Fast_UShort", "da/d76/a01941.html", null ],
+      [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d3/d39/a02005.html", null ],
+      [ "SystemEx.Numeric.Quatd", "d8/d5a/a02049.html", null ],
+      [ "SystemEx.Numeric.Quatf", "d0/d55/a02053.html", null ],
+      [ "SystemEx.Numeric.Ratio", "d2/dea/a02057.html", null ],
+      [ "SystemEx.Numeric.Vec2d", "d8/de6/a02061.html", null ],
+      [ "SystemEx.Numeric.Vec2f", "d0/d67/a02065.html", null ],
+      [ "SystemEx.Numeric.Vec2h", "d3/d48/a02069.html", null ],
+      [ "SystemEx.Numeric.Vec2hb", "de/df8/a02073.html", null ],
+      [ "SystemEx.Numeric.Vec2i", "db/dac/a02077.html", null ],
+      [ "SystemEx.Numeric.Vec2r", "d2/d50/a02081.html", null ],
+      [ "SystemEx.Numeric.Vec3d", "d2/dde/a02085.html", null ],
+      [ "SystemEx.Numeric.Vec3f", "db/ddd/a02089.html", null ],
+      [ "SystemEx.Numeric.Vec3h", "d3/d1e/a02093.html", null ],
+      [ "SystemEx.Numeric.Vec3hb", "d4/dbb/a02097.html", null ],
+      [ "SystemEx.Numeric.Vec3i", "da/d71/a02101.html", null ],
+      [ "SystemEx.Numeric.Vec3r", "db/d7a/a02105.html", null ],
+      [ "SystemEx.Numeric.Vec4d", "d7/d16/a02109.html", null ],
+      [ "SystemEx.Numeric.Vec4f", "d8/dc6/a02113.html", null ],
+      [ "SystemEx.Numeric.Vec4h", "d0/d79/a02117.html", null ],
+      [ "SystemEx.Numeric.Vec4hb", "d6/d3b/a02121.html", null ],
+      [ "SystemEx.Numeric.Vec4i", "d8/db2/a02125.html", null ],
+      [ "SystemEx.Numeric.Vec4r", "db/d26/a02129.html", null ],
+      [ "SystemEx.Optional< T >", "dc/dab/a01237.html", null ]
     ] ],
-    [ "SystemEx.IComparableEx&lt; T &gt;", "d3/dbd/a01100.html", [
-      [ "SystemEx.Collections.Model.TreeNode< T >", "da/ddc/a01492.html", null ],
-      [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d6/dc4/a01816.html", null ],
-      [ "SystemEx.Numeric.Quatd", "da/d5e/a01852.html", null ],
-      [ "SystemEx.Numeric.Quatf", "da/d66/a01856.html", null ],
-      [ "SystemEx.Numeric.Ratio", "d2/d38/a01860.html", null ],
-      [ "SystemEx.Numeric.Vec2d", "dd/d87/a01864.html", null ],
-      [ "SystemEx.Numeric.Vec2f", "dd/de7/a01868.html", null ],
-      [ "SystemEx.Numeric.Vec2h", "d8/d7b/a01872.html", null ],
-      [ "SystemEx.Numeric.Vec2hb", "de/d23/a01876.html", null ],
-      [ "SystemEx.Numeric.Vec2i", "d9/d7d/a01880.html", null ],
-      [ "SystemEx.Numeric.Vec2r", "dc/d7f/a01884.html", null ],
-      [ "SystemEx.Numeric.Vec3d", "d7/d5f/a01888.html", null ],
-      [ "SystemEx.Numeric.Vec3f", "dc/d31/a01892.html", null ],
-      [ "SystemEx.Numeric.Vec3h", "d9/d63/a01896.html", null ],
-      [ "SystemEx.Numeric.Vec3hb", "d5/dcc/a01900.html", null ],
-      [ "SystemEx.Numeric.Vec3i", "d4/d0d/a01904.html", null ],
-      [ "SystemEx.Numeric.Vec3r", "d8/d45/a01908.html", null ],
-      [ "SystemEx.Numeric.Vec4d", "df/dd0/a01912.html", null ],
-      [ "SystemEx.Numeric.Vec4f", "d0/d36/a01916.html", null ],
-      [ "SystemEx.Numeric.Vec4h", "d6/da2/a01920.html", null ],
-      [ "SystemEx.Numeric.Vec4hb", "d0/dde/a01924.html", null ],
-      [ "SystemEx.Numeric.Vec4i", "d1/db0/a01928.html", null ],
-      [ "SystemEx.Numeric.Vec4r", "d8/d22/a01932.html", null ],
-      [ "SystemEx.Optional< T >", "d9/d97/a01152.html", null ]
+    [ "IComparable", null, [
+      [ "SystemEx.Collections.Generic.Pair< T, TU >", "d4/d1a/a01405.html", null ]
     ] ],
-    [ "SystemEx.Algorithms.ICompared&lt; T &gt;", "d0/ddd/a01044.html", [
-      [ "SystemEx.Algorithms.SimpleComparer< T >", "d5/d16/a01060.html", null ],
-      [ "SystemEx.Algorithms.ValueComparer< T >", "d9/db3/a01064.html", null ]
+    [ "SystemEx.IComparableEx&lt; T &gt;", "d3/dd3/a01185.html", [
+      [ "SystemEx.Collections.Model.TreeNode< T >", "d3/daa/a01577.html", null ],
+      [ "SystemEx.Numeric.Fast_Byte", "da/d6c/a01921.html", null ],
+      [ "SystemEx.Numeric.Fast_Int", "dc/dc8/a01929.html", null ],
+      [ "SystemEx.Numeric.Fast_UInt", "dc/da7/a01933.html", null ],
+      [ "SystemEx.Numeric.Fast_UShort", "da/d76/a01941.html", null ],
+      [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d3/d39/a02005.html", null ],
+      [ "SystemEx.Numeric.Quatd", "d8/d5a/a02049.html", null ],
+      [ "SystemEx.Numeric.Quatf", "d0/d55/a02053.html", null ],
+      [ "SystemEx.Numeric.Ratio", "d2/dea/a02057.html", null ],
+      [ "SystemEx.Numeric.Vec2d", "d8/de6/a02061.html", null ],
+      [ "SystemEx.Numeric.Vec2f", "d0/d67/a02065.html", null ],
+      [ "SystemEx.Numeric.Vec2h", "d3/d48/a02069.html", null ],
+      [ "SystemEx.Numeric.Vec2hb", "de/df8/a02073.html", null ],
+      [ "SystemEx.Numeric.Vec2i", "db/dac/a02077.html", null ],
+      [ "SystemEx.Numeric.Vec2r", "d2/d50/a02081.html", null ],
+      [ "SystemEx.Numeric.Vec3d", "d2/dde/a02085.html", null ],
+      [ "SystemEx.Numeric.Vec3f", "db/ddd/a02089.html", null ],
+      [ "SystemEx.Numeric.Vec3h", "d3/d1e/a02093.html", null ],
+      [ "SystemEx.Numeric.Vec3hb", "d4/dbb/a02097.html", null ],
+      [ "SystemEx.Numeric.Vec3i", "da/d71/a02101.html", null ],
+      [ "SystemEx.Numeric.Vec3r", "db/d7a/a02105.html", null ],
+      [ "SystemEx.Numeric.Vec4d", "d7/d16/a02109.html", null ],
+      [ "SystemEx.Numeric.Vec4f", "d8/dc6/a02113.html", null ],
+      [ "SystemEx.Numeric.Vec4h", "d0/d79/a02117.html", null ],
+      [ "SystemEx.Numeric.Vec4hb", "d6/d3b/a02121.html", null ],
+      [ "SystemEx.Numeric.Vec4i", "d8/db2/a02125.html", null ],
+      [ "SystemEx.Numeric.Vec4r", "db/d26/a02129.html", null ],
+      [ "SystemEx.Optional< T >", "dc/dab/a01237.html", null ]
+    ] ],
+    [ "SystemEx.Algorithms.ICompared&lt; T &gt;", "d9/d17/a01129.html", [
+      [ "SystemEx.Algorithms.SimpleComparer< T >", "d9/d65/a01145.html", null ],
+      [ "SystemEx.Algorithms.ValueComparer< T >", "d8/d02/a01149.html", null ]
     ] ],
     [ "IComparer", null, [
-      [ "SystemEx.Numeric.Ratio", "d2/d38/a01860.html", null ]
+      [ "SystemEx.Numeric.Ratio", "d2/dea/a02057.html", null ]
     ] ],
-    [ "SystemEx.Algorithms.Compute.ICVector", "d4/dc5/a01024.html", null ],
-    [ "SystemEx.IDelegate&lt; T &gt;", "d6/d80/a01076.html", [
-      [ "SystemEx.Delegate< T >", "d9/d67/a01080.html", null ]
+    [ "SystemEx.Algorithms.Compute.ICVector", "d8/dbf/a01109.html", null ],
+    [ "SystemEx.IDelegate&lt; T &gt;", "dc/d81/a01161.html", [
+      [ "SystemEx.Delegate< T >", "d8/d92/a01165.html", null ]
     ] ],
-    [ "SystemEx.Device.Intertropt.IDeviceSharedBackend", "d1/dde/a01496.html", [
-      [ "SystemEx.Device.Intertropt.RamSharedBackend", "dd/d05/a01504.html", null ]
+    [ "SystemEx.Device.Intertropt.IDeviceSharedBackend", "da/df3/a01581.html", [
+      [ "SystemEx.Device.Intertropt.RamSharedBackend", "d7/d29/a01589.html", null ]
     ] ],
     [ "IDisposable", null, [
-      [ "SystemEx.Device.Intertropt.UnmanagedObject", "de/d65/a01500.html", null ],
-      [ "SystemEx.Threading.ScopedLock< T, TLOCK >", "de/dd1/a02100.html", null ],
-      [ "SystemEx.Threading.ScopedLock< TLOCK >", "d4/de0/a02092.html", null ],
-      [ "SystemEx.Threading.ScopedUnlock< TLOCK >", "dd/d77/a02096.html", null ],
-      [ "SystemEx.Threading.UniqueEpoch", "d5/d6e/a02008.html", null ]
+      [ "SystemEx.Device.Intertropt.UnmanagedObject", "da/de2/a01585.html", null ],
+      [ "SystemEx.Threading.ScopedLock< T, TLOCK >", "db/db3/a02301.html", null ],
+      [ "SystemEx.Threading.ScopedLock< TLOCK >", "dd/dc5/a02293.html", null ],
+      [ "SystemEx.Threading.ScopedUnlock< TLOCK >", "d1/db8/a02297.html", null ],
+      [ "SystemEx.Threading.UniqueEpoch", "dc/d43/a02205.html", null ]
     ] ],
     [ "IEnumerable", null, [
-      [ "SystemEx.Collections.Generic.Map< T, TU >", "dd/d18/a01284.html", null ],
-      [ "SystemEx.Collections.Generic.TupleMap< T >", "d5/da5/a01424.html", null ]
+      [ "SystemEx.Collections.Generic.Map< T, TU >", "d7/d81/a01365.html", null ],
+      [ "SystemEx.Collections.Generic.TupleMap< T >", "db/d06/a01509.html", null ]
     ] ],
     [ "IEnumerable", null, [
-      [ "SystemEx.Base.NumberRangeStepper", "db/d17/a01148.html", null ],
-      [ "SystemEx.Collections.Generic.Node< T >", "d6/dae/a01304.html", [
-        [ "SystemEx.Collections.Generic.GroupNode< T >", "dc/dcc/a01200.html", null ],
-        [ "SystemEx.Collections.Generic.StarNode< T >", "df/d84/a01408.html", null ]
+      [ "SystemEx.Base.NumberRangeStepper", "d6/da1/a01233.html", null ],
+      [ "SystemEx.Collections.Generic.Node< T >", "d0/d95/a01389.html", [
+        [ "SystemEx.Collections.Generic.GroupNode< T >", "d5/d6f/a01281.html", null ],
+        [ "SystemEx.Collections.Generic.StarNode< T >", "d2/d41/a01493.html", null ]
       ] ],
-      [ "SystemEx.Collections.Generic.NodeChain< T >", "d1/d56/a01308.html", null ],
-      [ "SystemEx.Collections.Generic.NodeIterrator< T >", "d8/dc5/a01300.html", null ],
-      [ "SystemEx.Collections.Generic.NodeRange< T >", "d7/d41/a01312.html", null ],
-      [ "SystemEx.Collections.Generic.NodeSlice< T >", "d4/d49/a01316.html", null ],
-      [ "SystemEx.Collections.Generic.Sparsed< T >", "d9/d45/a01396.html", null ],
-      [ "SystemEx.Collections.Generic.TupleMap< T >", "d5/da5/a01424.html", null ],
-      [ "SystemEx.NumberRange", "dc/d64/a01140.html", null ]
+      [ "SystemEx.Collections.Generic.NodeChain< T >", "d3/d92/a01393.html", null ],
+      [ "SystemEx.Collections.Generic.NodeIterrator< T >", "df/d68/a01385.html", null ],
+      [ "SystemEx.Collections.Generic.NodeRange< T >", "d7/d1c/a01397.html", null ],
+      [ "SystemEx.Collections.Generic.NodeSlice< T >", "dc/df4/a01401.html", null ],
+      [ "SystemEx.Collections.Generic.Sparsed< T >", "d1/de4/a01481.html", null ],
+      [ "SystemEx.Collections.Generic.TupleMap< T >", "db/d06/a01509.html", null ],
+      [ "SystemEx.NumberRange", "d8/d53/a01225.html", null ]
     ] ],
     [ "IEnumerable", null, [
-      [ "SystemEx.Collections.Generic.Map< T, TU >", "dd/d18/a01284.html", null ],
-      [ "SystemEx.Delegate< T >", "d9/d67/a01080.html", null ]
+      [ "SystemEx.Collections.Generic.Map< T, TU >", "d7/d81/a01365.html", null ],
+      [ "SystemEx.Delegate< T >", "d8/d92/a01165.html", null ]
     ] ],
     [ "IEnumerator", null, [
-      [ "SystemEx.Collections.Generic.ListIterator< T >", "d7/d8d/a01288.html", null ]
+      [ "SystemEx.Collections.Generic.ListIterator< T >", "d1/d17/a01369.html", null ]
     ] ],
     [ "IEnumerator", null, [
-      [ "SystemEx.Collections.Generic.NodeIterrator< T >", "d8/dc5/a01300.html", null ],
-      [ "SystemEx.Utils.BitIntSpan.Enumerator", "d8/d84/a02112.html", null ],
-      [ "SystemEx.Utils.BitLongSpan.Enumerator", "d3/d23/a02120.html", null ],
-      [ "SystemEx.Utils.BitUIntSpan.Enumerator", "d1/d60/a02128.html", null ],
-      [ "SystemEx.Utils.BitULongSpan.Enumerator", "db/ddd/a02136.html", null ]
+      [ "SystemEx.Collections.Generic.NodeIterrator< T >", "df/d68/a01385.html", null ],
+      [ "SystemEx.Utils.BitIntSpan.Enumerator", "d4/d16/a02313.html", null ],
+      [ "SystemEx.Utils.BitLongSpan.Enumerator", "d2/d0a/a02321.html", null ],
+      [ "SystemEx.Utils.BitUIntSpan.Enumerator", "d0/d71/a02329.html", null ],
+      [ "SystemEx.Utils.BitULongSpan.Enumerator", "d7/d52/a02337.html", null ]
     ] ],
     [ "IEquatable", null, [
-      [ "SystemEx.Base.NumberRangeStepper", "db/d17/a01148.html", null ],
-      [ "SystemEx.Collections.Generic.Sparsed< T >", "d9/d45/a01396.html", null ],
-      [ "SystemEx.Delegate< T >", "d9/d67/a01080.html", null ],
-      [ "SystemEx.Drawing.ColorHSL", "d6/d83/a01544.html", null ],
-      [ "SystemEx.Drawing.ColorHSV", "da/dc7/a01548.html", null ],
-      [ "SystemEx.Drawing.ColorHWB", "d0/db9/a01552.html", null ],
-      [ "SystemEx.Drawing.ColorNCol", "d7/db6/a01556.html", null ],
-      [ "SystemEx.Drawing.ColorR10G10B10A2", "da/daf/a01568.html", null ],
-      [ "SystemEx.Drawing.ColorR16G16B16", "d3/d22/a01572.html", null ],
-      [ "SystemEx.Drawing.ColorXYZ", "de/df9/a01624.html", null ],
-      [ "SystemEx.Drawing.ColorYUV", "dd/deb/a01628.html", null ],
-      [ "SystemEx.NumberRange", "dc/d64/a01140.html", null ],
-      [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d6/dc4/a01816.html", null ],
-      [ "SystemEx.Numeric.Quatd", "da/d5e/a01852.html", null ],
-      [ "SystemEx.Numeric.Quatf", "da/d66/a01856.html", null ],
-      [ "SystemEx.Numeric.Ratio", "d2/d38/a01860.html", null ],
-      [ "SystemEx.Numeric.Vec2d", "dd/d87/a01864.html", null ],
-      [ "SystemEx.Numeric.Vec2f", "dd/de7/a01868.html", null ],
-      [ "SystemEx.Numeric.Vec2h", "d8/d7b/a01872.html", null ],
-      [ "SystemEx.Numeric.Vec2hb", "de/d23/a01876.html", null ],
-      [ "SystemEx.Numeric.Vec2i", "d9/d7d/a01880.html", null ],
-      [ "SystemEx.Numeric.Vec2r", "dc/d7f/a01884.html", null ],
-      [ "SystemEx.Numeric.Vec3d", "d7/d5f/a01888.html", null ],
-      [ "SystemEx.Numeric.Vec3f", "dc/d31/a01892.html", null ],
-      [ "SystemEx.Numeric.Vec3h", "d9/d63/a01896.html", null ],
-      [ "SystemEx.Numeric.Vec3hb", "d5/dcc/a01900.html", null ],
-      [ "SystemEx.Numeric.Vec3i", "d4/d0d/a01904.html", null ],
-      [ "SystemEx.Numeric.Vec3r", "d8/d45/a01908.html", null ],
-      [ "SystemEx.Numeric.Vec4d", "df/dd0/a01912.html", null ],
-      [ "SystemEx.Numeric.Vec4f", "d0/d36/a01916.html", null ],
-      [ "SystemEx.Numeric.Vec4h", "d6/da2/a01920.html", null ],
-      [ "SystemEx.Numeric.Vec4hb", "d0/dde/a01924.html", null ],
-      [ "SystemEx.Numeric.Vec4i", "d1/db0/a01928.html", null ],
-      [ "SystemEx.Numeric.Vec4r", "d8/d22/a01932.html", null ],
-      [ "SystemEx.Optional< T >", "d9/d97/a01152.html", null ],
-      [ "SystemEx.Threading.LockedObject< T >", "df/dfb/a02068.html", null ],
-      [ "SystemEx.Threading.RCUObject< T >", "db/d87/a02076.html", null ],
-      [ "SystemEx.Threading.SafeCounter", "d6/d0c/a02080.html", null ],
-      [ "SystemEx.Triple", "d4/da6/a01168.html", null ]
+      [ "SystemEx.Base.NumberRangeStepper", "d6/da1/a01233.html", null ],
+      [ "SystemEx.Collections.Generic.Sparsed< T >", "d1/de4/a01481.html", null ],
+      [ "SystemEx.Delegate< T >", "d8/d92/a01165.html", null ],
+      [ "SystemEx.Drawing.ColorHSL", "dc/d62/a01629.html", null ],
+      [ "SystemEx.Drawing.ColorHSV", "d6/dd6/a01633.html", null ],
+      [ "SystemEx.Drawing.ColorHWB", "db/d95/a01637.html", null ],
+      [ "SystemEx.Drawing.ColorNCol", "d0/d90/a01641.html", null ],
+      [ "SystemEx.Drawing.ColorR10G10B10A2", "d1/d03/a01653.html", null ],
+      [ "SystemEx.Drawing.ColorR16G16B16", "d3/d21/a01657.html", null ],
+      [ "SystemEx.Drawing.ColorXYZ", "d1/da7/a01709.html", null ],
+      [ "SystemEx.Drawing.ColorYUV", "d2/d0c/a01713.html", null ],
+      [ "SystemEx.NumberRange", "d8/d53/a01225.html", null ],
+      [ "SystemEx.Numeric.BigDecimal", "d9/d65/a01905.html", null ],
+      [ "SystemEx.Numeric.Fast_Byte", "da/d6c/a01921.html", null ],
+      [ "SystemEx.Numeric.Fast_Int", "dc/dc8/a01929.html", null ],
+      [ "SystemEx.Numeric.Fast_UInt", "dc/da7/a01933.html", null ],
+      [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d3/d39/a02005.html", null ],
+      [ "SystemEx.Numeric.Quatd", "d8/d5a/a02049.html", null ],
+      [ "SystemEx.Numeric.Quatf", "d0/d55/a02053.html", null ],
+      [ "SystemEx.Numeric.Ratio", "d2/dea/a02057.html", null ],
+      [ "SystemEx.Numeric.Vec2d", "d8/de6/a02061.html", null ],
+      [ "SystemEx.Numeric.Vec2f", "d0/d67/a02065.html", null ],
+      [ "SystemEx.Numeric.Vec2h", "d3/d48/a02069.html", null ],
+      [ "SystemEx.Numeric.Vec2hb", "de/df8/a02073.html", null ],
+      [ "SystemEx.Numeric.Vec2i", "db/dac/a02077.html", null ],
+      [ "SystemEx.Numeric.Vec2r", "d2/d50/a02081.html", null ],
+      [ "SystemEx.Numeric.Vec3d", "d2/dde/a02085.html", null ],
+      [ "SystemEx.Numeric.Vec3f", "db/ddd/a02089.html", null ],
+      [ "SystemEx.Numeric.Vec3h", "d3/d1e/a02093.html", null ],
+      [ "SystemEx.Numeric.Vec3hb", "d4/dbb/a02097.html", null ],
+      [ "SystemEx.Numeric.Vec3i", "da/d71/a02101.html", null ],
+      [ "SystemEx.Numeric.Vec3r", "db/d7a/a02105.html", null ],
+      [ "SystemEx.Numeric.Vec4d", "d7/d16/a02109.html", null ],
+      [ "SystemEx.Numeric.Vec4f", "d8/dc6/a02113.html", null ],
+      [ "SystemEx.Numeric.Vec4h", "d0/d79/a02117.html", null ],
+      [ "SystemEx.Numeric.Vec4hb", "d6/d3b/a02121.html", null ],
+      [ "SystemEx.Numeric.Vec4i", "d8/db2/a02125.html", null ],
+      [ "SystemEx.Numeric.Vec4r", "db/d26/a02129.html", null ],
+      [ "SystemEx.Optional< T >", "dc/dab/a01237.html", null ],
+      [ "SystemEx.Threading.LockedObject< T >", "de/d1b/a02269.html", null ],
+      [ "SystemEx.Threading.RCUObject< T >", "d0/dc1/a02277.html", null ],
+      [ "SystemEx.Threading.SafeCounter", "d0/d80/a02281.html", null ],
+      [ "SystemEx.Triple", "d3/d0b/a01253.html", null ]
     ] ],
     [ "IEquatable", null, [
-      [ "SystemEx.Collections.Generic.Slices< T, TContainer >", "db/d8b/a01464.html", null ],
-      [ "SystemEx.Collections.Generic.VectorMultiSet< T, TContainer >", "dd/d08/a01448.html", null ],
-      [ "SystemEx.Collections.Generic.VectorSet< T, TContainer >", "d4/d98/a01456.html", null ],
-      [ "SystemEx.Collections.Generic.VectorUnorderedMultiSet< T, TContainer >", "df/df3/a01468.html", null ],
-      [ "SystemEx.Collections.Generic.VectorUnorderedSet< T, TContainer >", "d2/d48/a01472.html", null ]
+      [ "SystemEx.Collections.Generic.Slices< T, TContainer >", "d3/d1b/a01549.html", null ],
+      [ "SystemEx.Collections.Generic.VectorMultiSet< T, TContainer >", "d1/d62/a01533.html", null ],
+      [ "SystemEx.Collections.Generic.VectorSet< T, TContainer >", "d5/dc8/a01541.html", null ],
+      [ "SystemEx.Collections.Generic.VectorUnorderedMultiSet< T, TContainer >", "de/d2c/a01553.html", null ],
+      [ "SystemEx.Collections.Generic.VectorUnorderedSet< T, TContainer >", "d9/dac/a01557.html", null ]
     ] ],
     [ "IEquatable", null, [
-      [ "SystemEx.Collections.Generic.Triple< TT, TU, TW >", "d5/dec/a01416.html", null ]
+      [ "SystemEx.Collections.Generic.Triple< TT, TU, TW >", "db/d2c/a01501.html", null ]
     ] ],
-    [ "SystemEx.Numeric.IFastType", "d1/d42/a01800.html", [
-      [ "SystemEx.Numeric.IFastType< T >", "dc/dec/a01804.html", [
-        [ "SystemEx.Numeric.Fast_Byte", "d0/dce/a01780.html", null ],
-        [ "SystemEx.Numeric.Fast_Int", "d4/d77/a01788.html", null ],
-        [ "SystemEx.Numeric.Fast_Long", "dd/de9/a01792.html", null ],
-        [ "SystemEx.Numeric.Fast_Short", "d3/d92/a01796.html", null ]
+    [ "SystemEx.Numeric.IFastType", "d5/d39/a01945.html", [
+      [ "SystemEx.Numeric.IFastType< T >", "dd/d2e/a01949.html", [
+        [ "SystemEx.Numeric.Fast_Byte", "da/d6c/a01921.html", null ],
+        [ "SystemEx.Numeric.Fast_Int", "dc/dc8/a01929.html", null ],
+        [ "SystemEx.Numeric.Fast_UInt", "dc/da7/a01933.html", null ],
+        [ "SystemEx.Numeric.Fast_ULong", "d9/d17/a01937.html", null ],
+        [ "SystemEx.Numeric.Fast_UShort", "da/d76/a01941.html", null ]
       ] ]
     ] ],
-    [ "SystemEx.IFDelegate&lt; T &gt;", "dd/dcb/a01104.html", null ],
-    [ "SystemEx.Hash.IHash", "df/de0/a01728.html", [
-      [ "SystemEx.Hash.AdlerHash", "d5/d8d/a01656.html", null ],
-      [ "SystemEx.Hash.BernsteinHash", "d6/d5e/a01660.html", null ],
-      [ "SystemEx.Hash.Black3Hasher", "d6/d53/a01688.html", null ],
-      [ "SystemEx.Hash.FletcherHash", "da/dc4/a01692.html", null ],
-      [ "SystemEx.Hash.Fnv1aHash", "d9/d49/a01696.html", null ],
-      [ "SystemEx.Hash.GrøstlHash", "d4/d26/a01700.html", null ],
-      [ "SystemEx.Hash.RamakrishnaHash", "de/d25/a01732.html", null ],
-      [ "SystemEx.Hash.WeinbergHash", "de/daf/a01736.html", null ]
+    [ "SystemEx.IFDelegate&lt; T &gt;", "d3/d10/a01189.html", null ],
+    [ "SystemEx.Numeric.IFloat", "d0/d2b/a01997.html", [
+      [ "SystemEx.Numeric.IFloat< TBias >", "d8/d24/a02001.html", [
+        [ "SystemEx.Numeric.IFP8", "d8/d98/a02009.html", [
+          [ "SystemEx.Numeric.IFP8< TSelf >", "d1/dc5/a02013.html", null ]
+        ] ],
+        [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d3/d39/a02005.html", null ]
+      ] ]
     ] ],
-    [ "SystemEx.Hash.IHashable&lt; T &gt;", "dc/d3e/a01712.html", [
-      [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d6/dc4/a01816.html", null ],
-      [ "SystemEx.Numeric.Quatd", "da/d5e/a01852.html", null ],
-      [ "SystemEx.Numeric.Quatf", "da/d66/a01856.html", null ],
-      [ "SystemEx.Numeric.Ratio", "d2/d38/a01860.html", null ],
-      [ "SystemEx.Numeric.Vec2d", "dd/d87/a01864.html", null ],
-      [ "SystemEx.Numeric.Vec2f", "dd/de7/a01868.html", null ],
-      [ "SystemEx.Numeric.Vec2h", "d8/d7b/a01872.html", null ],
-      [ "SystemEx.Numeric.Vec2hb", "de/d23/a01876.html", null ],
-      [ "SystemEx.Numeric.Vec2i", "d9/d7d/a01880.html", null ],
-      [ "SystemEx.Numeric.Vec2r", "dc/d7f/a01884.html", null ],
-      [ "SystemEx.Numeric.Vec3d", "d7/d5f/a01888.html", null ],
-      [ "SystemEx.Numeric.Vec3f", "dc/d31/a01892.html", null ],
-      [ "SystemEx.Numeric.Vec3h", "d9/d63/a01896.html", null ],
-      [ "SystemEx.Numeric.Vec3hb", "d5/dcc/a01900.html", null ],
-      [ "SystemEx.Numeric.Vec3i", "d4/d0d/a01904.html", null ],
-      [ "SystemEx.Numeric.Vec3r", "d8/d45/a01908.html", null ],
-      [ "SystemEx.Numeric.Vec4d", "df/dd0/a01912.html", null ],
-      [ "SystemEx.Numeric.Vec4f", "d0/d36/a01916.html", null ],
-      [ "SystemEx.Numeric.Vec4h", "d6/da2/a01920.html", null ],
-      [ "SystemEx.Numeric.Vec4hb", "d0/dde/a01924.html", null ],
-      [ "SystemEx.Numeric.Vec4i", "d1/db0/a01928.html", null ],
-      [ "SystemEx.Numeric.Vec4r", "d8/d22/a01932.html", null ]
+    [ "SystemEx.Hash.IHash", "d5/da8/a01865.html", [
+      [ "SystemEx.Hash.AdlerHash", "d0/d4e/a01741.html", null ],
+      [ "SystemEx.Hash.BernsteinHash", "d0/d78/a01745.html", null ],
+      [ "SystemEx.Hash.Black3Hasher", "d5/d36/a01773.html", null ],
+      [ "SystemEx.Hash.CRC32", "d6/d27/a01781.html", [
+        [ "SystemEx.Hash.CRC32BZip2", "d4/dd1/a01797.html", null ],
+        [ "SystemEx.Hash.CRC32C", "d6/d53/a01789.html", null ],
+        [ "SystemEx.Hash.CRC32IEEE", "d7/d10/a01785.html", null ],
+        [ "SystemEx.Hash.CRC32Koopman", "d4/dc6/a01793.html", null ],
+        [ "SystemEx.Hash.CRC32Mpeg2", "d2/d42/a01801.html", null ],
+        [ "SystemEx.Hash.CRC32Posix", "d7/d62/a01805.html", null ]
+      ] ],
+      [ "SystemEx.Hash.CRC64", "de/d3c/a01809.html", [
+        [ "SystemEx.Hash.CRC64.CRC64Ecma", "d1/d20/a01813.html", null ],
+        [ "SystemEx.Hash.CRC64.CRC64Iso", "d4/d29/a01817.html", null ],
+        [ "SystemEx.Hash.CRC64.CRC64We", "de/d3d/a01821.html", null ],
+        [ "SystemEx.Hash.CRC64.CRC64Xz", "df/dee/a01825.html", null ]
+      ] ],
+      [ "SystemEx.Hash.CrC< TC32, TC64 >", "d3/dac/a01777.html", null ],
+      [ "SystemEx.Hash.FletcherHash", "d6/dbd/a01829.html", null ],
+      [ "SystemEx.Hash.Fnv1aHash", "db/dd5/a01833.html", null ],
+      [ "SystemEx.Hash.GrøstlHash", "d7/db1/a01837.html", null ],
+      [ "SystemEx.Hash.RamakrishnaHash", "d8/d3a/a01869.html", null ],
+      [ "SystemEx.Hash.WeinbergHash", "de/dd3/a01873.html", null ]
     ] ],
-    [ "SystemEx.IO.Provider.IIsByteSeriablize", "d5/d14/a01756.html", [
-      [ "SystemEx.Drawing.ColorR10G10B10A2", "da/daf/a01568.html", null ]
+    [ "SystemEx.Hash.IHashable&lt; T &gt;", "db/dd4/a01849.html", [
+      [ "SystemEx.Numeric.IFloat< TSelf, TBias >", "d3/d39/a02005.html", null ],
+      [ "SystemEx.Numeric.Quatd", "d8/d5a/a02049.html", null ],
+      [ "SystemEx.Numeric.Quatf", "d0/d55/a02053.html", null ],
+      [ "SystemEx.Numeric.Ratio", "d2/dea/a02057.html", null ],
+      [ "SystemEx.Numeric.Vec2d", "d8/de6/a02061.html", null ],
+      [ "SystemEx.Numeric.Vec2f", "d0/d67/a02065.html", null ],
+      [ "SystemEx.Numeric.Vec2h", "d3/d48/a02069.html", null ],
+      [ "SystemEx.Numeric.Vec2hb", "de/df8/a02073.html", null ],
+      [ "SystemEx.Numeric.Vec2i", "db/dac/a02077.html", null ],
+      [ "SystemEx.Numeric.Vec2r", "d2/d50/a02081.html", null ],
+      [ "SystemEx.Numeric.Vec3d", "d2/dde/a02085.html", null ],
+      [ "SystemEx.Numeric.Vec3f", "db/ddd/a02089.html", null ],
+      [ "SystemEx.Numeric.Vec3h", "d3/d1e/a02093.html", null ],
+      [ "SystemEx.Numeric.Vec3hb", "d4/dbb/a02097.html", null ],
+      [ "SystemEx.Numeric.Vec3i", "da/d71/a02101.html", null ],
+      [ "SystemEx.Numeric.Vec3r", "db/d7a/a02105.html", null ],
+      [ "SystemEx.Numeric.Vec4d", "d7/d16/a02109.html", null ],
+      [ "SystemEx.Numeric.Vec4f", "d8/dc6/a02113.html", null ],
+      [ "SystemEx.Numeric.Vec4h", "d0/d79/a02117.html", null ],
+      [ "SystemEx.Numeric.Vec4hb", "d6/d3b/a02121.html", null ],
+      [ "SystemEx.Numeric.Vec4i", "d8/db2/a02125.html", null ],
+      [ "SystemEx.Numeric.Vec4r", "db/d26/a02129.html", null ]
     ] ],
-    [ "SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;", "db/dbf/a01516.html", [
-      [ "SystemEx.Device.NativeRAMKernel< TD >", "d4/d51/a01520.html", null ]
+    [ "SystemEx.IO.Provider.IIsByteSeriablize", "dd/d80/a01893.html", [
+      [ "SystemEx.Drawing.ColorR10G10B10A2", "d1/d03/a01653.html", null ]
     ] ],
-    [ "SystemEx.Threading.ILock", "df/df0/a02016.html", [
-      [ "SystemEx.Threading.ILock< T >", "dc/d62/a02020.html", [
-        [ "SystemEx.Threading.ISpinlock< T >", "d7/db2/a02036.html", [
-          [ "SystemEx.Threading.AtomicLock", "d6/d33/a01992.html", null ],
-          [ "SystemEx.Threading.LightCountingSpinlock< T >", "d8/d22/a02044.html", [
-            [ "SystemEx.Threading.LightMutex< T >", "d9/db6/a02056.html", null ]
+    [ "SystemEx.Device.Memory.IKernel&lt; TIDeviceSharedBackend &gt;", "d7/d82/a01601.html", [
+      [ "SystemEx.Device.NativeRAMKernel< TD >", "d5/d75/a01605.html", null ]
+    ] ],
+    [ "SystemEx.Threading.ILock", "de/d8e/a02213.html", [
+      [ "SystemEx.Threading.ILock< T >", "da/da2/a02217.html", [
+        [ "SystemEx.Threading.ISpinlock< T >", "d5/d3d/a02233.html", [
+          [ "SystemEx.Threading.AtomicLock", "d8/d85/a02189.html", null ],
+          [ "SystemEx.Threading.LightCountingSpinlock< T >", "df/de4/a02241.html", [
+            [ "SystemEx.Threading.LightMutex< T >", "de/dad/a02257.html", null ]
           ] ],
-          [ "SystemEx.Threading.LightSpinlock< T >", "d5/d8b/a02060.html", null ],
-          [ "SystemEx.Threading.Spinlock", "da/dbe/a02084.html", null ]
+          [ "SystemEx.Threading.LightFutex", "da/d14/a02245.html", null ],
+          [ "SystemEx.Threading.LightSpinlock< T >", "d7/d24/a02261.html", null ],
+          [ "SystemEx.Threading.Spinlock", "df/d4d/a02285.html", null ]
         ] ],
-        [ "SystemEx.Threading.LightLock", "d3/df9/a02052.html", null ],
-        [ "SystemEx.Threading.MutexLock", "de/d9d/a02072.html", null ]
+        [ "SystemEx.Threading.LightLock", "db/d7a/a02253.html", null ],
+        [ "SystemEx.Threading.MutexLock", "d7/d6e/a02273.html", null ]
       ] ]
     ] ],
-    [ "SystemEx.Threading.ILockedObject&lt; T &gt;", "d7/dbe/a02024.html", [
-      [ "SystemEx.Threading.LockedObject< T >", "df/dfb/a02068.html", null ],
-      [ "SystemEx.Threading.RCUObject< T >", "db/d87/a02076.html", null ]
+    [ "SystemEx.Threading.ILockedObject&lt; T &gt;", "dd/dd6/a02221.html", [
+      [ "SystemEx.Threading.LockedObject< T >", "de/d1b/a02269.html", null ],
+      [ "SystemEx.Threading.RCUObject< T >", "d0/dc1/a02277.html", null ]
     ] ],
-    [ "SystemEx.AI.IModel&lt; T, TTOOL &gt;", "d8/d0a/a00904.html", [
-      [ "SystemEx.AI.Model< T, TTOOL >", "de/d62/a00924.html", [
-        [ "SystemEx.AI.WebAIModel", "de/d49/a00952.html", null ]
+    [ "SystemEx.AI.IModel&lt; T, TTOOL &gt;", "d4/d95/a00989.html", [
+      [ "SystemEx.AI.Model< T, TTOOL >", "d7/ded/a01009.html", [
+        [ "SystemEx.AI.WebAIModel", "d2/d41/a01037.html", null ]
       ] ]
     ] ],
-    [ "SystemEx.AI.IModelBackend&lt; T, TAI &gt;", "d0/d85/a00908.html", [
-      [ "SystemEx.AI.Backend.WebAIBackend< T >", "d0/de2/a00892.html", null ]
+    [ "SystemEx.AI.IModelBackend&lt; T, TAI &gt;", "da/d0a/a00993.html", [
+      [ "SystemEx.AI.Backend.WebAIBackend< T >", "d5/d6c/a00977.html", null ]
     ] ],
-    [ "SystemEx.AI.IModelPromp&lt; T &gt;", "df/da5/a00912.html", [
-      [ "SystemEx.AI.ModelPromp< T >", "dd/d38/a00928.html", null ]
+    [ "SystemEx.AI.IModelPromp&lt; T &gt;", "d0/d28/a00997.html", [
+      [ "SystemEx.AI.ModelPromp< T >", "d7/d59/a01013.html", null ]
     ] ],
-    [ "SystemEx.AI.IModelResult&lt; T &gt;", "d6/d66/a00916.html", [
-      [ "SystemEx.AI.ModelResult< T >", "d8/dbb/a00932.html", null ]
+    [ "SystemEx.AI.IModelResult&lt; T &gt;", "df/d59/a01001.html", [
+      [ "SystemEx.AI.ModelResult< T >", "d3/ded/a01017.html", null ]
     ] ],
-    [ "SystemEx.AI.IModelTool&lt; T &gt;", "d6/d82/a00920.html", [
-      [ "SystemEx.AI.Tools.CalculatorTool", "d7/db6/a00940.html", null ],
-      [ "SystemEx.AI.Tools.DateDifferenceTool", "d9/dce/a00944.html", null ],
-      [ "SystemEx.AI.Tools.DateTimeTool", "d8/d18/a00948.html", null ]
+    [ "SystemEx.AI.IModelTool&lt; T &gt;", "d7/d06/a01005.html", [
+      [ "SystemEx.AI.Tools.CalculatorTool", "db/d23/a01025.html", null ],
+      [ "SystemEx.AI.Tools.DateDifferenceTool", "d0/daa/a01029.html", null ],
+      [ "SystemEx.AI.Tools.DateTimeTool", "d2/d57/a01033.html", null ]
     ] ],
-    [ "SystemEx.Collections.Model.INode", "d0/d38/a01476.html", [
-      [ "SystemEx.Collections.Model.INode< T >", "d1/d38/a01480.html", [
-        [ "SystemEx.Collections.Model.INode< T, TSelf >", "d2/d21/a01484.html", [
-          [ "SystemEx.Collections.Model.IParentebleNode< T, TSelf >", "d2/daa/a01488.html", [
-            [ "SystemEx.Collections.Model.TreeNode< T >", "da/ddc/a01492.html", null ]
+    [ "SystemEx.Collections.Model.INode", "d2/d49/a01561.html", [
+      [ "SystemEx.Collections.Model.INode< T >", "d6/d82/a01565.html", [
+        [ "SystemEx.Collections.Model.INode< T, TSelf >", "d9/d32/a01569.html", [
+          [ "SystemEx.Collections.Model.IParentebleNode< T, TSelf >", "d6/db5/a01573.html", [
+            [ "SystemEx.Collections.Model.TreeNode< T >", "d3/daa/a01577.html", null ]
           ] ]
         ] ]
       ] ]
     ] ],
-    [ "SystemEx.Collections.Generic.INode&lt; T &gt;", "de/d16/a01228.html", [
-      [ "SystemEx.Collections.Generic.Node< T >", "d6/dae/a01304.html", null ]
+    [ "SystemEx.Collections.Generic.INode&lt; T &gt;", "db/d4b/a01309.html", [
+      [ "SystemEx.Collections.Generic.Node< T >", "d0/d95/a01389.html", null ]
     ] ],
-    [ "SystemEx.Collections.Generic.IQueue", "d2/d3f/a01356.html", [
-      [ "SystemEx.Collections.Generic.IDeque", "d7/d57/a01348.html", [
-        [ "SystemEx.Collections.Generic.IBinQueue< T >", "dc/d54/a01344.html", [
-          [ "SystemEx.Collections.Generic.BinQueue< T >", "dc/dd9/a01328.html", null ]
+    [ "SystemEx.Numeric.Int4", "dd/dfc/a02037.html", null ],
+    [ "SystemEx.Numeric.IP8UMXEnable&lt; Tbase &gt;", "d3/dea/a02041.html", [
+      [ "SystemEx.Numeric.FloatUE4M3", "d3/d59/a01973.html", null ],
+      [ "SystemEx.Numeric.FloatUE5M2", "df/db2/a01981.html", null ]
+    ] ],
+    [ "SystemEx.Collections.Generic.IQueue", "d5/df9/a01441.html", [
+      [ "SystemEx.Collections.Generic.IDeque", "d2/d9b/a01433.html", [
+        [ "SystemEx.Collections.Generic.IBinQueue< T >", "d1/d3b/a01429.html", [
+          [ "SystemEx.Collections.Generic.BinQueue< T >", "d7/d68/a01413.html", null ]
         ] ],
-        [ "SystemEx.Collections.Generic.IDeque< T >", "d0/d85/a01352.html", [
-          [ "SystemEx.Collections.Generic.Deque< T >", "d9/d45/a01332.html", null ],
-          [ "SystemEx.Collections.Generic.Queue.UniqueDeque< T >", "d7/dde/a01384.html", null ]
+        [ "SystemEx.Collections.Generic.IDeque< T >", "d9/db0/a01437.html", [
+          [ "SystemEx.Collections.Generic.Deque< T >", "de/daf/a01417.html", null ],
+          [ "SystemEx.Collections.Generic.Queue.UniqueDeque< T >", "d9/d8b/a01469.html", null ]
         ] ]
       ] ],
-      [ "SystemEx.Collections.Generic.IQueue< T >", "d9/d79/a01360.html", [
-        [ "SystemEx.Collections.Generic.Queue< T >", "df/d0b/a01372.html", null ],
-        [ "SystemEx.Collections.Generic.UniqueQueue< T >", "d0/d36/a01388.html", null ]
+      [ "SystemEx.Collections.Generic.IQueue< T >", "d9/d6f/a01445.html", [
+        [ "SystemEx.Collections.Generic.Queue< T >", "da/df7/a01457.html", null ],
+        [ "SystemEx.Collections.Generic.UniqueQueue< T >", "de/d13/a01473.html", null ]
       ] ]
     ] ],
-    [ "SystemEx.IRange&lt; T &gt;", "d2/dd7/a01108.html", [
-      [ "SystemEx.Base.NumberRangeStepper", "db/d17/a01148.html", null ],
-      [ "SystemEx.NumberRange", "dc/d64/a01140.html", null ]
+    [ "SystemEx.IRange&lt; T &gt;", "dd/d43/a01193.html", [
+      [ "SystemEx.Base.NumberRangeStepper", "d6/da1/a01233.html", null ],
+      [ "SystemEx.NumberRange", "d8/d53/a01225.html", null ]
     ] ],
-    [ "SystemEx.Collections.Generic.IReadOnlyContainer&lt; T &gt;", "d8/d2b/a01236.html", [
-      [ "SystemEx.Collections.Generic.IContainer< T >", "db/d42/a01220.html", [
-        [ "SystemEx.Collections.Generic.FixedSparsed< T >", "d2/d22/a01196.html", null ],
-        [ "SystemEx.Collections.Generic.ILinearContainer< T >", "d8/d8e/a01224.html", [
-          [ "SystemEx.Collections.Generic.IVector< T >", "d8/d0d/a01280.html", [
-            [ "SystemEx.Collections.Generic.FixedVector< T >", "db/dff/a01432.html", null ],
-            [ "SystemEx.Collections.Generic.Vector< T >", "dc/d85/a01436.html", null ]
+    [ "SystemEx.Collections.Generic.IReadOnlyContainer&lt; T &gt;", "df/db8/a01317.html", [
+      [ "SystemEx.Collections.Generic.IContainer< T >", "d3/d07/a01301.html", [
+        [ "SystemEx.Collections.Generic.FixedSparsed< T >", "d2/d1d/a01277.html", null ],
+        [ "SystemEx.Collections.Generic.ILinearContainer< T >", "dc/d9e/a01305.html", [
+          [ "SystemEx.Collections.Generic.IVector< T >", "d2/d1f/a01361.html", [
+            [ "SystemEx.Collections.Generic.FixedVector< T >", "dc/d96/a01517.html", null ],
+            [ "SystemEx.Collections.Generic.Vector< T >", "dc/d42/a01521.html", null ]
           ] ]
         ] ],
-        [ "SystemEx.Collections.Generic.Sparsed< T >", "d9/d45/a01396.html", null ]
+        [ "SystemEx.Collections.Generic.Sparsed< T >", "d1/de4/a01481.html", null ]
       ] ]
     ] ],
-    [ "SystemEx.Random.Isaac32Engine", "d5/dba/a01940.html", null ],
-    [ "SystemEx.Algorithms.ISearchProvider&lt; T, TContainer &gt;", "d5/de7/a01048.html", [
-      [ "SystemEx.Algorithms.BinarySearcherProvider< T, TContainer >", "d3/de5/a00956.html", null ],
-      [ "SystemEx.Algorithms.FibonacciSearcherProvider< T, TContainer >", "db/d14/a01040.html", null ],
-      [ "SystemEx.Algorithms.LinearSearchProvider< T, TContainer >", "dc/d19/a01056.html", null ]
+    [ "SystemEx.Random.Isaac32Engine", "de/d74/a02137.html", null ],
+    [ "SystemEx.Algorithms.ISearchProvider&lt; T, TContainer &gt;", "db/d28/a01133.html", [
+      [ "SystemEx.Algorithms.BinarySearcherProvider< T, TContainer >", "d1/d83/a01041.html", null ],
+      [ "SystemEx.Algorithms.FibonacciSearcherProvider< T, TContainer >", "d6/dc4/a01125.html", null ],
+      [ "SystemEx.Algorithms.LinearSearchProvider< T, TContainer >", "de/df6/a01141.html", null ]
     ] ],
-    [ "SystemEx.Random.ISeed", "db/da1/a01944.html", [
-      [ "SystemEx.Random.ISeed< T >", "d6/db0/a01948.html", [
-        [ "SystemEx.Random.HashedSeed", "dd/d20/a01936.html", null ],
-        [ "SystemEx.Random.SeedMixed", "d0/d59/a01956.html", null ],
-        [ "SystemEx.Random.TimeBasedSeed", "de/d7f/a01960.html", null ],
-        [ "SystemEx.Random.ValueBasedSeed", "d6/d90/a01964.html", null ]
+    [ "SystemEx.Random.ISeed", "d5/d88/a02141.html", [
+      [ "SystemEx.Random.ISeed< T >", "d7/d2d/a02145.html", [
+        [ "SystemEx.Random.HashedSeed", "da/d67/a02133.html", null ],
+        [ "SystemEx.Random.SeedMixed", "df/de9/a02153.html", null ],
+        [ "SystemEx.Random.TimeBasedSeed", "db/dcf/a02157.html", null ],
+        [ "SystemEx.Random.ValueBasedSeed", "df/dbf/a02161.html", null ]
       ] ]
     ] ],
-    [ "SystemEx.Algorithms.Compute.ISimilarity&lt; T &gt;", "de/def/a01016.html", null ],
-    [ "SystemEx.Algorithms.ISimpleCompare&lt; T &gt;", "d9/dce/a01052.html", [
-      [ "SystemEx.Algorithms.EqualTo< T >", "d6/d48/a00988.html", null ],
-      [ "SystemEx.Algorithms.Greater< T >", "d2/d4c/a00984.html", null ],
-      [ "SystemEx.Algorithms.GreaterEqual< T >", "d7/df2/a01000.html", null ],
-      [ "SystemEx.Algorithms.KleenEqualTo< T >", "d0/d85/a00976.html", null ],
-      [ "SystemEx.Algorithms.KleenGreater< T >", "de/d4e/a00972.html", null ],
-      [ "SystemEx.Algorithms.KleenLess< T >", "d7/dd4/a00968.html", null ],
-      [ "SystemEx.Algorithms.KleeneEqual< T >", "da/d17/a00964.html", null ],
-      [ "SystemEx.Algorithms.Less< T >", "db/d20/a00980.html", null ],
-      [ "SystemEx.Algorithms.LessEqual< T >", "d3/daa/a00996.html", null ],
-      [ "SystemEx.Algorithms.NetStdCompare< T >", "dd/d11/a00960.html", null ],
-      [ "SystemEx.Algorithms.NotEqualTo< T >", "d7/d76/a00992.html", null ]
+    [ "SystemEx.Algorithms.Compute.ISimilarity&lt; T &gt;", "de/d99/a01101.html", null ],
+    [ "SystemEx.Algorithms.ISimpleCompare&lt; T &gt;", "d6/d6e/a01137.html", [
+      [ "SystemEx.Algorithms.EqualTo< T >", "d9/d7c/a01073.html", null ],
+      [ "SystemEx.Algorithms.Greater< T >", "d8/d18/a01069.html", null ],
+      [ "SystemEx.Algorithms.GreaterEqual< T >", "d2/df3/a01085.html", null ],
+      [ "SystemEx.Algorithms.KleenEqualTo< T >", "de/d9e/a01061.html", null ],
+      [ "SystemEx.Algorithms.KleenGreater< T >", "d2/db8/a01057.html", null ],
+      [ "SystemEx.Algorithms.KleenLess< T >", "dc/d99/a01053.html", null ],
+      [ "SystemEx.Algorithms.KleeneEqual< T >", "d0/d22/a01049.html", null ],
+      [ "SystemEx.Algorithms.Less< T >", "d0/dc9/a01065.html", null ],
+      [ "SystemEx.Algorithms.LessEqual< T >", "dd/dee/a01081.html", null ],
+      [ "SystemEx.Algorithms.NetStdCompare< T >", "d7/d46/a01045.html", null ],
+      [ "SystemEx.Algorithms.NotEqualTo< T >", "d0/dd3/a01077.html", null ]
     ] ],
-    [ "SystemEx.Collections.Generic.ISwappable&lt; T &gt;", "d5/d6e/a01240.html", [
-      [ "SystemEx.Collections.Generic.FixedVector< T >", "db/dff/a01432.html", null ],
-      [ "SystemEx.Collections.Generic.PriorityQueue< TElement, TPriority >", "de/d1f/a01364.html", null ],
-      [ "SystemEx.Collections.Generic.Sparsed< T >", "d9/d45/a01396.html", null ],
-      [ "SystemEx.Collections.Generic.Vector< T >", "dc/d85/a01436.html", null ]
+    [ "SystemEx.Collections.Generic.ISwappable&lt; T &gt;", "d9/d5c/a01321.html", [
+      [ "SystemEx.Collections.Generic.FixedVector< T >", "dc/d96/a01517.html", null ],
+      [ "SystemEx.Collections.Generic.PriorityQueue< TElement, TPriority >", "d2/d95/a01449.html", null ],
+      [ "SystemEx.Collections.Generic.Sparsed< T >", "d1/de4/a01481.html", null ],
+      [ "SystemEx.Collections.Generic.Vector< T >", "dc/d42/a01521.html", null ]
     ] ],
-    [ "SystemEx.Collections.Generic.Iterrator&lt; T &gt;", "d4/dd5/a01244.html", [
-      [ "SystemEx.Collections.Generic.BidirectionalIterator< T, TCollection >", "d0/d33/a01252.html", null ],
-      [ "SystemEx.Collections.Generic.CluserIterrator< TElemet >", "d1/d35/a01184.html", null ],
-      [ "SystemEx.Collections.Generic.ForwardIterrator< T, TCollection >", "da/de0/a01248.html", null ],
-      [ "SystemEx.Collections.Generic.ListIterator< T >", "d7/d8d/a01288.html", null ],
-      [ "SystemEx.Collections.Generic.RandomAccessIterator< T, TCollection >", "d6/d0f/a01256.html", null ],
-      [ "SystemEx.NumberRangeIterator< T >", "db/d51/a01144.html", null ]
+    [ "SystemEx.Collections.Generic.Iterrator&lt; T &gt;", "dd/d5d/a01325.html", [
+      [ "SystemEx.Collections.Generic.BidirectionalIterator< T, TCollection >", "dc/d2a/a01333.html", null ],
+      [ "SystemEx.Collections.Generic.CluserIterrator< TElemet >", "da/dd8/a01265.html", null ],
+      [ "SystemEx.Collections.Generic.ForwardIterrator< T, TCollection >", "df/d29/a01329.html", null ],
+      [ "SystemEx.Collections.Generic.ListIterator< T >", "d1/d17/a01369.html", null ],
+      [ "SystemEx.Collections.Generic.RandomAccessIterator< T, TCollection >", "db/dec/a01337.html", null ],
+      [ "SystemEx.NumberRangeIterator< T >", "db/d1c/a01229.html", null ]
     ] ],
-    [ "SystemEx.Algorithms.Compute.IThreshold", "d0/d43/a01020.html", [
-      [ "SystemEx.Algorithms.Compute.ThresholdClassifier", "d8/d79/a01036.html", null ]
+    [ "SystemEx.Algorithms.Compute.IThreshold", "de/d1d/a01105.html", [
+      [ "SystemEx.Algorithms.Compute.ThresholdClassifier", "dd/de4/a01121.html", null ]
     ] ],
-    [ "SystemEx.Algorithms.Compute.ITokenizer", "d8/db7/a00812.html#df/d89/a01032", null ],
+    [ "SystemEx.Algorithms.Compute.ITokenizer", "d9/db0/a00900.html#d6/d8b/a01117", null ],
     [ "ITraverse", null, [
-      [ "SystemEx.Collections.Generic.Map< T, TU >", "dd/d18/a01284.html", null ]
+      [ "SystemEx.Collections.Generic.Map< T, TU >", "d7/d81/a01365.html", null ]
     ] ],
-    [ "SystemEx.Collections.Generic.ITraverse&lt; T &gt;", "d3/d51/a01264.html", [
-      [ "SystemEx.Collections.Generic.Sparsed< T >", "d9/d45/a01396.html", null ],
-      [ "SystemEx.Collections.Generic.TupleMap< T >", "d5/da5/a01424.html", null ]
+    [ "SystemEx.Collections.Generic.ITraverse&lt; T &gt;", "d4/deb/a01345.html", [
+      [ "SystemEx.Collections.Generic.Sparsed< T >", "d1/de4/a01481.html", null ],
+      [ "SystemEx.Collections.Generic.TupleMap< T >", "db/d06/a01509.html", null ]
     ] ],
-    [ "SystemEx.Collections.Generic.ITuple&lt; TKey &gt;", "dc/dd9/a01268.html", [
-      [ "SystemEx.Collections.Generic.IPair< T, TU >", "d0/d67/a01232.html", [
-        [ "SystemEx.Collections.Generic.Pair< T, TU >", "df/dec/a01320.html", null ]
+    [ "SystemEx.Collections.Generic.ITuple&lt; TKey &gt;", "de/d6c/a01349.html", [
+      [ "SystemEx.Collections.Generic.IPair< T, TU >", "de/d90/a01313.html", [
+        [ "SystemEx.Collections.Generic.Pair< T, TU >", "d4/d1a/a01405.html", null ]
       ] ],
-      [ "SystemEx.Collections.Generic.Quad< TT, TU, TW, TJ >", "d5/d53/a01324.html", null ],
-      [ "SystemEx.Collections.Generic.Triple< TT, TU, TW >", "d5/dec/a01416.html", null ],
-      [ "SystemEx.Collections.Generic.Tuple< TKey >", "d0/d05/a01420.html", null ]
+      [ "SystemEx.Collections.Generic.Quad< TT, TU, TW, TJ >", "d9/d6e/a01409.html", null ],
+      [ "SystemEx.Collections.Generic.Triple< TT, TU, TW >", "db/d2c/a01501.html", null ],
+      [ "SystemEx.Collections.Generic.Tuple< TKey >", "dc/dce/a01505.html", null ]
     ] ],
-    [ "SystemEx.Collections.Generic.ITypeBuffer&lt; T &gt;", "d4/d0e/a01272.html", [
-      [ "SystemEx.Collections.Generic.TypeBuffer< T >", "d2/db1/a01428.html", null ]
+    [ "SystemEx.Collections.Generic.ITypeBuffer&lt; T &gt;", "d4/dad/a01353.html", [
+      [ "SystemEx.Collections.Generic.TypeBuffer< T >", "d0/d62/a01513.html", null ]
     ] ],
     [ "IUsedIterrator", null, [
-      [ "SystemEx.Collections.Generic.FixedVector< T >", "db/dff/a01432.html", null ],
-      [ "SystemEx.Collections.Generic.Vector< T >", "dc/d85/a01436.html", null ]
+      [ "SystemEx.Collections.Generic.FixedVector< T >", "dc/d96/a01517.html", null ],
+      [ "SystemEx.Collections.Generic.Vector< T >", "dc/d42/a01521.html", null ]
     ] ],
-    [ "SystemEx.IValueReader", "d0/d39/a01112.html", [
-      [ "SystemEx.Collections.Generic.Cache", "dd/d75/a01180.html", null ],
-      [ "SystemEx.Collections.Generic.RCUCache", "d1/dcc/a01392.html", null ],
-      [ "SystemEx.IO.CacheStream< TCache >", "df/d8f/a01740.html", null ],
-      [ "SystemEx.IO.RCUStream< TStream >", "d0/d9d/a01760.html", null ],
-      [ "SystemEx.IValueWriter", "dc/d51/a01120.html", [
-        [ "SystemEx.Collections.Generic.Cache", "dd/d75/a01180.html", null ],
-        [ "SystemEx.Collections.Generic.RCUCache", "d1/dcc/a01392.html", null ],
-        [ "SystemEx.IO.CacheStream< TCache >", "df/d8f/a01740.html", null ],
-        [ "SystemEx.IO.RCUStream< TStream >", "d0/d9d/a01760.html", null ]
+    [ "SystemEx.IValueReader", "d4/d10/a01197.html", [
+      [ "SystemEx.Collections.Generic.Cache", "de/d34/a01261.html", null ],
+      [ "SystemEx.Collections.Generic.RCUCache", "d8/d67/a01477.html", null ],
+      [ "SystemEx.IO.CacheStream< TCache >", "d9/d63/a01877.html", null ],
+      [ "SystemEx.IO.RCUStream< TStream >", "d9/d0c/a01897.html", null ],
+      [ "SystemEx.IValueWriter", "de/d61/a01205.html", [
+        [ "SystemEx.Collections.Generic.Cache", "de/d34/a01261.html", null ],
+        [ "SystemEx.Collections.Generic.RCUCache", "d8/d67/a01477.html", null ],
+        [ "SystemEx.IO.CacheStream< TCache >", "d9/d63/a01877.html", null ],
+        [ "SystemEx.IO.RCUStream< TStream >", "d9/d0c/a01897.html", null ]
       ] ]
     ] ],
-    [ "SystemEx.IValueReader&lt; T &gt;", "d4/dc5/a01116.html", [
-      [ "SystemEx.IValueWriter< T >", "d0/dc8/a01124.html", null ]
+    [ "SystemEx.IValueReader&lt; T &gt;", "de/df7/a01201.html", [
+      [ "SystemEx.IValueWriter< T >", "de/d04/a01209.html", null ]
     ] ],
-    [ "SystemEx.Drawing.Light", "d3/d3e/a01644.html", [
-      [ "SystemEx.Drawing.PointLight", "d0/dc0/a01652.html", null ],
-      [ "SystemEx.Drawing.SpotLight", "da/ddf/a01648.html", null ]
+    [ "SystemEx.Drawing.Light", "d2/d70/a01729.html", [
+      [ "SystemEx.Drawing.PointLight", "df/d2e/a01737.html", null ],
+      [ "SystemEx.Drawing.SpotLight", "d8/d9c/a01733.html", null ]
     ] ],
-    [ "SystemEx.Threading.LightConditionVariable", "d4/ddd/a02040.html", null ],
-    [ "SystemEx.Threading.LightLatch", "d1/d39/a02048.html", null ],
-    [ "SystemEx.AI.ModelToolParameter", "dc/d2b/a00936.html", null ],
-    [ "SystemEx.Runtime.Module", "d5/da1/a01988.html", null ],
-    [ "SystemEx.NoCopyable", "d1/dae/a01136.html", [
-      [ "SystemEx.Threading.Barrier", "da/d51/a02000.html", null ]
+    [ "SystemEx.Threading.LightConditionVariable", "d9/d13/a02237.html", null ],
+    [ "SystemEx.Threading.LightLatch", "dd/dc3/a02249.html", null ],
+    [ "SystemEx.AI.ModelToolParameter", "d5/dfb/a01021.html", null ],
+    [ "SystemEx.Runtime.Module", "dd/d02/a02185.html", null ],
+    [ "SystemEx.NoCopyable", "dd/d3f/a01221.html", [
+      [ "SystemEx.Threading.Barrier", "de/df6/a02197.html", null ]
     ] ],
-    [ "SystemEx.Collections.Generic.PriorityQueue&lt; TElement, TPriority &gt;.PriorityQueueCompare", "de/d1f/a01364.html#dd/d0c/a01368", null ],
-    [ "SystemEx.Numeric.Projection", "da/d4b/a01848.html", null ],
-    [ "SystemEx.Drawing.PurpelColors", "de/d40/a01592.html", null ],
-    [ "SystemEx.Collections.Generic.QueueFlexSpan&lt; T &gt;", "d2/d29/a01376.html", null ],
-    [ "SystemEx.Random.Randx", "d4/dec/a01952.html", null ],
-    [ "SystemEx.Result", "d9/d42/a01156.html", null ],
-    [ "SystemEx.ResultBuilder", "da/d20/a01160.html", null ],
-    [ "SystemEx.Collections.Generic.Stack&lt; T &gt;", "d2/d82/a01404.html", null ],
-    [ "SystemEx.Collections.Generic.StackLayer", "dc/d35/a01400.html", null ],
+    [ "SystemEx.Collections.Generic.PriorityQueue&lt; TElement, TPriority &gt;.PriorityQueueCompare", "d5/dd3/a00902.html#d9/dae/a01453", null ],
+    [ "SystemEx.Numeric.Projection", "d7/d13/a02045.html", null ],
+    [ "SystemEx.Drawing.PurpelColors", "d2/d44/a01677.html", null ],
+    [ "SystemEx.Collections.Generic.QueueFlexSpan&lt; T &gt;", "dc/d60/a01461.html", null ],
+    [ "SystemEx.Random.Randx", "d2/da0/a02149.html", null ],
+    [ "SystemEx.Result", "d3/d07/a01241.html", null ],
+    [ "SystemEx.ResultBuilder", "d1/d31/a01245.html", null ],
+    [ "SystemEx.Collections.Generic.Stack&lt; T &gt;", "d2/dac/a01489.html", null ],
+    [ "SystemEx.Collections.Generic.StackLayer", "d4/d39/a01485.html", null ],
     [ "Stream", null, [
-      [ "SystemEx.IO.CacheStream< TCache >", "df/d8f/a01740.html", null ],
-      [ "SystemEx.IO.RCUStream< TStream >", "d0/d9d/a01760.html", null ]
+      [ "SystemEx.IO.CacheStream< TCache >", "d9/d63/a01877.html", null ],
+      [ "SystemEx.IO.RCUStream< TStream >", "d9/d0c/a01897.html", null ]
     ] ],
-    [ "SystemEx.Collections.Generic.SubSlice&lt; T, TContainer &gt;", "d2/d2f/a01460.html", null ],
-    [ "SystemEx.SwitchDelegate&lt; TS, T &gt;", "d2/dd2/a01164.html", null ],
-    [ "SystemEx.Threading.ThreadEx", "d7/db5/a02088.html", [
-      [ "SystemEx.Threading.LightThread", "de/def/a02064.html", null ]
+    [ "SystemEx.Collections.Generic.SubSlice&lt; T, TContainer &gt;", "dd/dba/a01545.html", null ],
+    [ "SystemEx.SwitchDelegate&lt; TS, T &gt;", "d3/d7b/a01249.html", null ],
+    [ "SystemEx.Threading.ThreadEx", "de/d4e/a02289.html", [
+      [ "SystemEx.Threading.LightThread", "db/d6e/a02265.html", null ]
     ] ],
-    [ "SystemEx.Numeric.Uint256", "d7/d4f/a00819.html#d5/dd6/a01820", null ],
-    [ "SystemEx.Collections.Generic.VectorFlexSpan&lt; T, TContainer &gt;", "df/d31/a01440.html", null ],
-    [ "SystemEx.Collections.Generic.VectorSearch&lt; T, TContainer &gt;", "dd/d1c/a01452.html", null ],
-    [ "SystemEx.AI.Backend.WebAIBackendPayload&lt; T &gt;", "da/dd6/a00896.html", null ],
-    [ "SystemEx.Runtime.InteropServices.Platform.WindowsProcLoader", "d0/d38/a01984.html", null ]
+    [ "SystemEx.Numeric.Uint256", "df/dbc/a00931.html#d0/dfd/a02017", null ],
+    [ "SystemEx.Collections.Generic.VectorFlexSpan&lt; T, TContainer &gt;", "db/de9/a01525.html", null ],
+    [ "SystemEx.Collections.Generic.VectorSearch&lt; T, TContainer &gt;", "df/d3f/a01537.html", null ],
+    [ "SystemEx.AI.Backend.WebAIBackendPayload&lt; T &gt;", "dd/d24/a00981.html", null ],
+    [ "SystemEx.Runtime.InteropServices.Platform.WindowsProcLoader", "d5/d85/a02181.html", null ]
 ];

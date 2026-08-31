@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: SwitchDelegate.cs Source File" />
+<meta property="og:title" content="SystemEX: NoCopyable.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: SwitchDelegate.cs Source File" />
+<meta name="twitter:title" content="SystemEX: NoCopyable.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: SwitchDelegate.cs Source File</title>
+<title>SystemEX: NoCopyable.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('de/df3/a00185_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SwitchDelegate.cs</div></div>
+  <div class="headertitle"><div class="title">NoCopyable.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -157,90 +157,47 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('de/df3/a00185_
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * If you modify this file, retain this notice and add a short description of your</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span><a class="code hl_namespace" href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dd/d5f/a00825.html">SystemEx</a> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d2/dd2/a01164.html">   53</a></span>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="../../d2/dd2/a01164_a5f787db239fcf682d03d13f1d02580c3.html#a5f787db239fcf682d03d13f1d02580c3">SwitchDelegate</a>&lt;TS, T&gt; where TS : notnull {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">private</span> Map&lt;TS, Delegate&lt;T&gt;&gt; m_switchState;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keyword">private</span> readonly Func&lt;T, TS&gt; m_condition;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>          <span class="keyword">private</span>  Optional&lt;TS&gt; m_defaultKey;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d2/dd2/a01164_a5f787db239fcf682d03d13f1d02580c3.html#a5f787db239fcf682d03d13f1d02580c3">   62</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../d2/dd2/a01164_a5f787db239fcf682d03d13f1d02580c3.html#a5f787db239fcf682d03d13f1d02580c3">SwitchDelegate</a> ( Func&lt;T, TS&gt; condition ) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>               m_condition = condition;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>               m_switchState = <span class="keyword">new</span> Map&lt;TS, Delegate&lt;T&gt;&gt;();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>          }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span>System.Text;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d12/a00911.html">SystemEx</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../dd/d3f/a01221.html">   27</a></span>     <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span>NoCopyable {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>          <span class="keyword">private</span> <a class="code hl_function" href="../../dd/d3f/a01221_a412153d0b7045bf74f8df35b666799ce.html#a412153d0b7045bf74f8df35b666799ce">NoCopyable</a> ( NoCopyable other ) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>               <span class="keywordflow">throw</span> <span class="keyword">new</span> NotSupportedException(<span class="stringliteral">&quot;Copy constructor is disabled.&quot;</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>          }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../dd/d3f/a01221_a412153d0b7045bf74f8df35b666799ce.html#a412153d0b7045bf74f8df35b666799ce">   39</a></span>          <span class="keyword">protected</span> <a class="code hl_function" href="../../dd/d3f/a01221_a412153d0b7045bf74f8df35b666799ce.html#a412153d0b7045bf74f8df35b666799ce">NoCopyable</a> () {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>          }</div>
 </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
-<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../d2/dd2/a01164_a10c7a4c3d6d9725894abfe14f200b44b.html#a10c7a4c3d6d9725894abfe14f200b44b">   70</a></span>          <span class="keyword">public</span> <a class="code hl_function" href="../../d2/dd2/a01164_a10c7a4c3d6d9725894abfe14f200b44b.html#a10c7a4c3d6d9725894abfe14f200b44b">SwitchDelegate</a> (Func&lt;T, TS&gt; condition, Optional&lt;Pair&lt;Action&lt;IDelegate&lt;T&gt;, T&gt;, TS&gt;&gt; deft_case ) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            m_condition = condition;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            m_switchState = <span class="keyword">new</span> Map&lt;TS, Delegate&lt;T&gt;&gt;();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>               </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>               <span class="keywordflow">if</span> ( deft_case.HasValue ) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                    m_defaultKey = deft_case.Value!.Second;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    m_switchState[deft_case.Value!.Second] = <span class="keyword">new</span> Delegate&lt;T&gt;(deft_case.Value!.First);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>               }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>          }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../dd/d3f/a01221_a245969e25577a4f4eb7c8ad804b2dc4c.html#a245969e25577a4f4eb7c8ad804b2dc4c">   45</a></span>          <span class="keyword">public</span> <span class="keywordtype">object</span> <a class="code hl_function" href="../../dd/d3f/a01221_a245969e25577a4f4eb7c8ad804b2dc4c.html#a245969e25577a4f4eb7c8ad804b2dc4c">Clone</a> ()</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>               =&gt; <span class="keywordflow">throw</span> <span class="keyword">new</span> NotSupportedException(<span class="stringliteral">&quot;Clone is disabled.&quot;</span>);</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
-<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../d2/dd2/a01164_a93b5e5585371374930e9f8847b459dc6.html#a93b5e5585371374930e9f8847b459dc6">   88</a></span>          <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/dd2/a01164_a93b5e5585371374930e9f8847b459dc6.html#a93b5e5585371374930e9f8847b459dc6">Subscribe</a> ( Action&lt;IDelegate&lt;T&gt;, T&gt; func, TS _case ) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">if</span>(m_switchState.ContainsKey(_case)) {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                m_switchState[_case].Value!.Subscribe(func);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                m_switchState[_case] = <span class="keyword">new</span> Delegate&lt;T&gt;(func);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            }</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="../../dd/d3f/a01221_a9d43a2caf1825eb9c4f0828aa3b795c4.html#a9d43a2caf1825eb9c4f0828aa3b795c4">   51</a></span>          <span class="keyword">protected</span> <span class="keyword">new</span> <span class="keywordtype">object</span> <a class="code hl_function" href="../../dd/d3f/a01221_a9d43a2caf1825eb9c4f0828aa3b795c4.html#a9d43a2caf1825eb9c4f0828aa3b795c4">MemberwiseClone</a> ()</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>               =&gt; <span class="keywordflow">throw</span> <span class="keyword">new</span> NotSupportedException(<span class="stringliteral">&quot;MemberwiseClone is disabled.&quot;</span>);</div>
 </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
-<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="../../d2/dd2/a01164_a2e1f61869883d141caf0d691b8ace283.html#a2e1f61869883d141caf0d691b8ace283">  101</a></span>          <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/dd2/a01164_a2e1f61869883d141caf0d691b8ace283.html#a2e1f61869883d141caf0d691b8ace283">Invoke</a> ( T arg ) {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            var _switch = m_condition(arg);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            var _state  = m_switchState[_switch];</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">if</span>(_state.IsSome) {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                _state.Value!.Invoke(arg);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( m_defaultKey.HasValue) {</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                    var _def  = m_switchState[m_defaultKey.Value!];</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                    <span class="keywordflow">if</span> ( _def.IsSome ) _def.Value!.Invoke(arg);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>               }</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>     }</div>
 </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
-<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../d2/dd2/a01164_a8604e8f2e8feb866e7909030f521f05d.html#a8604e8f2e8feb866e7909030f521f05d">  118</a></span>          <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/dd2/a01164_a8604e8f2e8feb866e7909030f521f05d.html#a8604e8f2e8feb866e7909030f521f05d">UnSubscribe</a> ( Action&lt;IDelegate&lt;T&gt;, T&gt; func, TS _case ) {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">if</span> ( m_switchState.ContainsKey(_case) ) {</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                m_switchState[_case].Value!.UnSubscribe(func);</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
-</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
-</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
-<div class="ttc" id="aa00825_html"><div class="ttname"><a href="../../dd/d5f/a00825.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d03/a00062_source.html#l00018">AIEnvironment .cs:18</a></div></div>
-<div class="ttc" id="aa00833_html"><div class="ttname"><a href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/db5/a00374_source.html#l00023">BasicRope.cs:23</a></div></div>
-<div class="ttc" id="aa01164_a10c7a4c3d6d9725894abfe14f200b44b_html_a10c7a4c3d6d9725894abfe14f200b44b"><div class="ttname"><a href="../../d2/dd2/a01164_a10c7a4c3d6d9725894abfe14f200b44b.html#a10c7a4c3d6d9725894abfe14f200b44b">SystemEx.SwitchDelegate-2-g.SwitchDelegate</a></div><div class="ttdeci">SwitchDelegate(Func&lt; T, TS &gt; condition, Optional&lt; Pair&lt; Action&lt; IDelegate&lt; T &gt;, T &gt;, TS &gt; &gt; deft_case)</div><div class="ttdoc">Initializes a new switch‑based delegate dispatcher.</div><div class="ttdef"><b>Definition</b> <a href="#l00070">SwitchDelegate.cs:70</a></div></div>
-<div class="ttc" id="aa01164_a2e1f61869883d141caf0d691b8ace283_html_a2e1f61869883d141caf0d691b8ace283"><div class="ttname"><a href="../../d2/dd2/a01164_a2e1f61869883d141caf0d691b8ace283.html#a2e1f61869883d141caf0d691b8ace283">SystemEx.SwitchDelegate-2-g.Invoke</a></div><div class="ttdeci">void Invoke(T arg)</div><div class="ttdoc">Invokes the delegate chain associated with the case selected by the condition function....</div><div class="ttdef"><b>Definition</b> <a href="#l00101">SwitchDelegate.cs:101</a></div></div>
-<div class="ttc" id="aa01164_a5f787db239fcf682d03d13f1d02580c3_html_a5f787db239fcf682d03d13f1d02580c3"><div class="ttname"><a href="../../d2/dd2/a01164_a5f787db239fcf682d03d13f1d02580c3.html#a5f787db239fcf682d03d13f1d02580c3">SystemEx.SwitchDelegate-2-g.SwitchDelegate</a></div><div class="ttdeci">SwitchDelegate(Func&lt; T, TS &gt; condition)</div><div class="ttdoc">Initializes a new switch‑based delegate dispatcher.</div><div class="ttdef"><b>Definition</b> <a href="#l00062">SwitchDelegate.cs:62</a></div></div>
-<div class="ttc" id="aa01164_a8604e8f2e8feb866e7909030f521f05d_html_a8604e8f2e8feb866e7909030f521f05d"><div class="ttname"><a href="../../d2/dd2/a01164_a8604e8f2e8feb866e7909030f521f05d.html#a8604e8f2e8feb866e7909030f521f05d">SystemEx.SwitchDelegate-2-g.UnSubscribe</a></div><div class="ttdeci">void UnSubscribe(Action&lt; IDelegate&lt; T &gt;, T &gt; func, TS _case)</div><div class="ttdoc">Removes a callback from the delegate chain associated with the given case.</div><div class="ttdef"><b>Definition</b> <a href="#l00118">SwitchDelegate.cs:118</a></div></div>
-<div class="ttc" id="aa01164_a93b5e5585371374930e9f8847b459dc6_html_a93b5e5585371374930e9f8847b459dc6"><div class="ttname"><a href="../../d2/dd2/a01164_a93b5e5585371374930e9f8847b459dc6.html#a93b5e5585371374930e9f8847b459dc6">SystemEx.SwitchDelegate-2-g.Subscribe</a></div><div class="ttdeci">void Subscribe(Action&lt; IDelegate&lt; T &gt;, T &gt; func, TS _case)</div><div class="ttdoc">Subscribes a callback to the delegate chain associated with the given case. If the case does not exis...</div><div class="ttdef"><b>Definition</b> <a href="#l00088">SwitchDelegate.cs:88</a></div></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>     </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="ttc" id="aa00911_html"><div class="ttname"><a href="../../d7/d12/a00911.html">SystemEx</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d8b/a00059_source.html#l00018">AIEnvironment .cs:18</a></div></div>
+<div class="ttc" id="aa01221_a245969e25577a4f4eb7c8ad804b2dc4c_html_a245969e25577a4f4eb7c8ad804b2dc4c"><div class="ttname"><a href="../../dd/d3f/a01221_a245969e25577a4f4eb7c8ad804b2dc4c.html#a245969e25577a4f4eb7c8ad804b2dc4c">SystemEx.NoCopyable.Clone</a></div><div class="ttdeci">object Clone()</div><div class="ttdoc">Pedantisch safe: cloning is forbidden.</div><div class="ttdef"><b>Definition</b> <a href="#l00045">NoCopyable.cs:45</a></div></div>
+<div class="ttc" id="aa01221_a412153d0b7045bf74f8df35b666799ce_html_a412153d0b7045bf74f8df35b666799ce"><div class="ttname"><a href="../../dd/d3f/a01221_a412153d0b7045bf74f8df35b666799ce.html#a412153d0b7045bf74f8df35b666799ce">SystemEx.NoCopyable.NoCopyable</a></div><div class="ttdeci">NoCopyable()</div><div class="ttdoc">Protected default constructor.</div><div class="ttdef"><b>Definition</b> <a href="#l00039">NoCopyable.cs:39</a></div></div>
+<div class="ttc" id="aa01221_a9d43a2caf1825eb9c4f0828aa3b795c4_html_a9d43a2caf1825eb9c4f0828aa3b795c4"><div class="ttname"><a href="../../dd/d3f/a01221_a9d43a2caf1825eb9c4f0828aa3b795c4.html#a9d43a2caf1825eb9c4f0828aa3b795c4">SystemEx.NoCopyable.MemberwiseClone</a></div><div class="ttdeci">new object MemberwiseClone()</div><div class="ttdoc">Pedantisch safe: MemberwiseClone is blocked.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">NoCopyable.cs:51</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>SwitchDelegate.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Base</b></li><li class="navelem"><b>NoCopyable.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

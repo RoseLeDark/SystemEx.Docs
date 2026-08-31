@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: BinQueue.cs Source File" />
+<meta property="og:title" content="SystemEX: IQueue.cs Source File" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: BinQueue.cs Source File" />
+<meta name="twitter:title" content="SystemEX: IQueue.cs Source File" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: BinQueue.cs Source File</title>
+<title>SystemEX: IQueue.cs Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,7 +52,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../Logo_256.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SystemEX
-   &#160;<span id="projectnumber">Lacking</span>
+   &#160;<span id="projectnumber">0.95.5023-rc1 Lacking</span>
    </div>
    <div id="projectbrief">Additional generic collection types missing in .net</div>
   </td>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d2/d04/a00281_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">BinQueue.cs</div></div>
+  <div class="headertitle"><div class="title">IQueue.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
@@ -158,105 +158,47 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d2/d04/a00281_
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * changes and the date.</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span>System.Collections;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d1/d0b/a00919.html">SystemEx.Collections.Generic</a> {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../dc/dd9/a01328.html">   30</a></span>     <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_function" href="../../dc/dd9/a01328_aff347aaa61dec60bbbc4d019cacf64a0.html#aff347aaa61dec60bbbc4d019cacf64a0">BinQueue</a>&lt;T&gt; : IBinQueue&lt;T&gt; {</div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d5/df9/a01441.html">   26</a></span>     <span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="../../d5/df9/a01441.html">IQueue</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d5/dd3/a00902_gaed80365e6226d6dd80b15c2784f9af22.html#gaed80365e6226d6dd80b15c2784f9af22">   30</a></span>        <span class="keywordtype">int</span> <a class="code hl_property" href="../../d5/dd3/a00902_gaed80365e6226d6dd80b15c2784f9af22.html#gaed80365e6226d6dd80b15c2784f9af22">Size</a> { <span class="keyword">get</span>;  }</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">private</span> T[] m_elements;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d5/dd3/a00902_ga064fc0876cb23252459b30c2843d3fa1.html#ga064fc0876cb23252459b30c2843d3fa1">   35</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../d5/dd3/a00902_ga064fc0876cb23252459b30c2843d3fa1.html#ga064fc0876cb23252459b30c2843d3fa1">IsEmpty</a> { <span class="keyword">get</span>; }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">private</span> <span class="keywordtype">int</span> m_count;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d5/dd3/a00902_gae184bf1f866597e0ffca6d2c91e3bd8a.html#gae184bf1f866597e0ffca6d2c91e3bd8a">   40</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../d5/dd3/a00902_gae184bf1f866597e0ffca6d2c91e3bd8a.html#gae184bf1f866597e0ffca6d2c91e3bd8a">IsFull</a> { <span class="keyword">get</span>; }</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../dc/dd9/a01328_a08e721ea105b6a44ad4464493c2a0d1e.html#a08e721ea105b6a44ad4464493c2a0d1e">   45</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_property" href="../../dc/dd9/a01328_a08e721ea105b6a44ad4464493c2a0d1e.html#a08e721ea105b6a44ad4464493c2a0d1e">Count</a> =&gt; m_count;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../d5/dd3/a00902_ga3baf5dc61a1830313eebbc19c509dcac.html#ga3baf5dc61a1830313eebbc19c509dcac">   45</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/dd3/a00902_ga3baf5dc61a1830313eebbc19c509dcac.html#ga3baf5dc61a1830313eebbc19c509dcac">Clear</a> ();</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="../../dc/dd9/a01328_abff2dadc6c66f73b08adbdba18120711.html#abff2dadc6c66f73b08adbdba18120711">   51</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_property" href="../../dc/dd9/a01328_abff2dadc6c66f73b08adbdba18120711.html#abff2dadc6c66f73b08adbdba18120711">Size</a> =&gt; 2;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../dc/dd9/a01328_a0f5c1fef8463cbf8f63d661342c2733a.html#a0f5c1fef8463cbf8f63d661342c2733a">   56</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../dc/dd9/a01328_a0f5c1fef8463cbf8f63d661342c2733a.html#a0f5c1fef8463cbf8f63d661342c2733a">IsEmpty</a> =&gt; m_count == 0;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../dc/dd9/a01328_a89a43610fa05e085124b62ef0dd2011b.html#a89a43610fa05e085124b62ef0dd2011b">   61</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../dc/dd9/a01328_a89a43610fa05e085124b62ef0dd2011b.html#a89a43610fa05e085124b62ef0dd2011b">IsFull</a> =&gt; m_count == 2;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../dc/dd9/a01328_a543fff85e79b24021c7671052afaac29.html#a543fff85e79b24021c7671052afaac29">   66</a></span>        <span class="keyword">public</span> T <a class="code hl_property" href="../../dc/dd9/a01328_a543fff85e79b24021c7671052afaac29.html#a543fff85e79b24021c7671052afaac29">Front</a> =&gt; m_elements[0];</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../dc/dd9/a01328_ab3164f38648e1a4de4624c7bab8b237d.html#ab3164f38648e1a4de4624c7bab8b237d">   71</a></span>        <span class="keyword">public</span> T <a class="code hl_property" href="../../dc/dd9/a01328_ab3164f38648e1a4de4624c7bab8b237d.html#ab3164f38648e1a4de4624c7bab8b237d">End</a> =&gt; m_elements[1];</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
-<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../dc/dd9/a01328_aff347aaa61dec60bbbc4d019cacf64a0.html#aff347aaa61dec60bbbc4d019cacf64a0">   76</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="../../dc/dd9/a01328_aff347aaa61dec60bbbc4d019cacf64a0.html#aff347aaa61dec60bbbc4d019cacf64a0">BinQueue</a> ( ) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            m_elements = <span class="keyword">new</span> T[2];</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            m_count = 0;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
 </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="comment">// &lt;summary&gt;</span></div>
-<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="../../dc/dd9/a01328_a4d4f4b19b733d51472c44fbe2018ce76.html#a4d4f4b19b733d51472c44fbe2018ce76">   87</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/dd9/a01328_a4d4f4b19b733d51472c44fbe2018ce76.html#a4d4f4b19b733d51472c44fbe2018ce76">Enqueue</a> ( T value ) {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordflow">if</span> ( <a class="code hl_property" href="../../dc/dd9/a01328_a89a43610fa05e085124b62ef0dd2011b.html#a89a43610fa05e085124b62ef0dd2011b">IsFull</a> ) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                m_elements[0] = m_elements[1];</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                m_elements[1] = value;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                m_count = 2;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                m_elements[0] = value;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                m_count = 1;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d9/d6f/a01445.html">   53</a></span>    <span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="../../d5/df9/a01441.html">IQueue</a>&lt;T&gt; : <a class="code hl_interface" href="../../d5/df9/a01441.html">IQueue</a> {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d5/dd3/a00902_ga8e307fd9ea696d1852ce74209d0f890a.html#ga8e307fd9ea696d1852ce74209d0f890a">   62</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dd3/a00902_ga8e307fd9ea696d1852ce74209d0f890a.html#ga8e307fd9ea696d1852ce74209d0f890a">PushBack</a> ( T value );</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../d5/dd3/a00902_ga778336d81854e6b2dcb6b65e55a00478.html#ga778336d81854e6b2dcb6b65e55a00478">   76</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/dd3/a00902_ga778336d81854e6b2dcb6b65e55a00478.html#ga778336d81854e6b2dcb6b65e55a00478">PopFront</a> ( ref Optional&lt;T&gt; value );</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
 </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="../../dc/dd9/a01328_a173af5dab2808395f12000d225e4695d.html#a173af5dab2808395f12000d225e4695d">  101</a></span>        <span class="keyword">public</span> Optional&lt;T&gt; <a class="code hl_function" href="../../dc/dd9/a01328_a173af5dab2808395f12000d225e4695d.html#a173af5dab2808395f12000d225e4695d">Dequeue</a> ( ) {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            Optional&lt;T&gt; _ret = Optional&lt;T&gt;.<a class="code hl_variable" href="../../d9/d97/a01152_ac3f17a3379b6984c5671e849a63c5937.html#ac3f17a3379b6984c5671e849a63c5937">NONE</a>;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">if</span> ( !<a class="code hl_property" href="../../dc/dd9/a01328_a0f5c1fef8463cbf8f63d661342c2733a.html#a0f5c1fef8463cbf8f63d661342c2733a">IsEmpty</a> ) {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                _ret = m_elements[0];</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                m_elements[0] = m_elements[1];</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                m_count--;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            }</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordflow">return</span> _ret;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
-</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
-<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="../../dc/dd9/a01328_a6c8d88a89895a7a87f8dff7fbe76215d.html#a6c8d88a89895a7a87f8dff7fbe76215d">  115</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/dd9/a01328_a6c8d88a89895a7a87f8dff7fbe76215d.html#a6c8d88a89895a7a87f8dff7fbe76215d">Clear</a> () {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            m_elements = <span class="keyword">new</span> T[2];</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            m_count = 0;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        }</div>
-</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
-<div class="foldopen" id="foldopen00127" data-start="{" data-end="}">
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="../../dc/dd9/a01328_a82a1692c8fb74b29ecbc4d6e1750c9a7.html#a82a1692c8fb74b29ecbc4d6e1750c9a7">  127</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> FlexSpan&lt;T&gt; <a class="code hl_function" href="../../dc/dd9/a01328_a82a1692c8fb74b29ecbc4d6e1750c9a7.html#a82a1692c8fb74b29ecbc4d6e1750c9a7">AsFlexSpan</a> ( ref <a class="code hl_function" href="../../dc/dd9/a01328_aff347aaa61dec60bbbc4d019cacf64a0.html#aff347aaa61dec60bbbc4d019cacf64a0">BinQueue&lt;T&gt;</a> que, <a class="code hl_enumeration" href="../../de/d9d/a00813_ga3ef7d5832058e44f73e558fde87598f9.html#ga3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a> mode = <a class="code hl_enumeration" href="../../de/d9d/a00813_ga3ef7d5832058e44f73e558fde87598f9.html#ga3ef7d5832058e44f73e558fde87598f9">FlexSpanMode</a>.System ) {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> FlexSpan&lt;T&gt;(ref que.m_elements!, 0, que.m_count, mode);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
-</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
-</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>#pragma warning restore CS1587 <span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
-<div class="ttc" id="aa00813_ga3ef7d5832058e44f73e558fde87598f9_html_ga3ef7d5832058e44f73e558fde87598f9"><div class="ttname"><a href="../../de/d9d/a00813_ga3ef7d5832058e44f73e558fde87598f9.html#ga3ef7d5832058e44f73e558fde87598f9">SystemEx.FlexSpanMode</a></div><div class="ttdeci">FlexSpanMode</div><div class="ttdoc">Defines how FlexSpan indexes its underlying array.</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddf/a00164_source.html#l00029">FlexSpan.cs:29</a></div></div>
-<div class="ttc" id="aa00833_html"><div class="ttname"><a href="../../dc/d6e/a00833.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/db5/a00374_source.html#l00023">BasicRope.cs:23</a></div></div>
-<div class="ttc" id="aa01152_ac3f17a3379b6984c5671e849a63c5937_html_ac3f17a3379b6984c5671e849a63c5937"><div class="ttname"><a href="../../d9/d97/a01152_ac3f17a3379b6984c5671e849a63c5937.html#ac3f17a3379b6984c5671e849a63c5937">SystemEx.Optional-1-g.NONE</a></div><div class="ttdeci">static readonly Optional&lt; T &gt; NONE</div><div class="ttdoc">A predefined empty optional instance representing the absence of a value.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dce/a00143_source.html#l00040">Optional.cs:40</a></div></div>
-<div class="ttc" id="aa01328_a08e721ea105b6a44ad4464493c2a0d1e_html_a08e721ea105b6a44ad4464493c2a0d1e"><div class="ttname"><a href="../../dc/dd9/a01328_a08e721ea105b6a44ad4464493c2a0d1e.html#a08e721ea105b6a44ad4464493c2a0d1e">SystemEx.Collections.Generic.BinQueue-1-g.Count</a></div><div class="ttdeci">int Count</div><div class="ttdoc">Gets the number of elements currently stored in the BinQueue.</div><div class="ttdef"><b>Definition</b> <a href="#l00045">BinQueue.cs:45</a></div></div>
-<div class="ttc" id="aa01328_a0f5c1fef8463cbf8f63d661342c2733a_html_a0f5c1fef8463cbf8f63d661342c2733a"><div class="ttname"><a href="../../dc/dd9/a01328_a0f5c1fef8463cbf8f63d661342c2733a.html#a0f5c1fef8463cbf8f63d661342c2733a">SystemEx.Collections.Generic.BinQueue-1-g.IsEmpty</a></div><div class="ttdeci">bool IsEmpty</div><div class="ttdoc">Indicates whether the BinQueue contains no elements.</div><div class="ttdef"><b>Definition</b> <a href="#l00056">BinQueue.cs:56</a></div></div>
-<div class="ttc" id="aa01328_a173af5dab2808395f12000d225e4695d_html_a173af5dab2808395f12000d225e4695d"><div class="ttname"><a href="../../dc/dd9/a01328_a173af5dab2808395f12000d225e4695d.html#a173af5dab2808395f12000d225e4695d">SystemEx.Collections.Generic.BinQueue-1-g.Dequeue</a></div><div class="ttdeci">Optional&lt; T &gt; Dequeue()</div><div class="ttdoc">Removes the element at the front of the queue.</div><div class="ttdef"><b>Definition</b> <a href="#l00101">BinQueue.cs:101</a></div></div>
-<div class="ttc" id="aa01328_a4d4f4b19b733d51472c44fbe2018ce76_html_a4d4f4b19b733d51472c44fbe2018ce76"><div class="ttname"><a href="../../dc/dd9/a01328_a4d4f4b19b733d51472c44fbe2018ce76.html#a4d4f4b19b733d51472c44fbe2018ce76">SystemEx.Collections.Generic.BinQueue-1-g.Enqueue</a></div><div class="ttdeci">void Enqueue(T value)</div><div class="ttdef"><b>Definition</b> <a href="#l00087">BinQueue.cs:87</a></div></div>
-<div class="ttc" id="aa01328_a543fff85e79b24021c7671052afaac29_html_a543fff85e79b24021c7671052afaac29"><div class="ttname"><a href="../../dc/dd9/a01328_a543fff85e79b24021c7671052afaac29.html#a543fff85e79b24021c7671052afaac29">SystemEx.Collections.Generic.BinQueue-1-g.Front</a></div><div class="ttdeci">T Front</div><div class="ttdoc">Gets the element at the front of the BinQueue.</div><div class="ttdef"><b>Definition</b> <a href="#l00066">BinQueue.cs:66</a></div></div>
-<div class="ttc" id="aa01328_a6c8d88a89895a7a87f8dff7fbe76215d_html_a6c8d88a89895a7a87f8dff7fbe76215d"><div class="ttname"><a href="../../dc/dd9/a01328_a6c8d88a89895a7a87f8dff7fbe76215d.html#a6c8d88a89895a7a87f8dff7fbe76215d">SystemEx.Collections.Generic.BinQueue-1-g.Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Removes all elements from the BinQueue without modifying the underlying buffer.</div><div class="ttdef"><b>Definition</b> <a href="#l00115">BinQueue.cs:115</a></div></div>
-<div class="ttc" id="aa01328_a82a1692c8fb74b29ecbc4d6e1750c9a7_html_a82a1692c8fb74b29ecbc4d6e1750c9a7"><div class="ttname"><a href="../../dc/dd9/a01328_a82a1692c8fb74b29ecbc4d6e1750c9a7.html#a82a1692c8fb74b29ecbc4d6e1750c9a7">SystemEx.Collections.Generic.BinQueue-1-g.AsFlexSpan</a></div><div class="ttdeci">static FlexSpan&lt; T &gt; AsFlexSpan(ref BinQueue&lt; T &gt; que, FlexSpanMode mode=FlexSpanMode.System)</div><div class="ttdoc">Creates a FlexSpan view over the current contents of the BinQueue. The span directly references the i...</div><div class="ttdef"><b>Definition</b> <a href="#l00127">BinQueue.cs:127</a></div></div>
-<div class="ttc" id="aa01328_a89a43610fa05e085124b62ef0dd2011b_html_a89a43610fa05e085124b62ef0dd2011b"><div class="ttname"><a href="../../dc/dd9/a01328_a89a43610fa05e085124b62ef0dd2011b.html#a89a43610fa05e085124b62ef0dd2011b">SystemEx.Collections.Generic.BinQueue-1-g.IsFull</a></div><div class="ttdeci">bool IsFull</div><div class="ttdoc">Indicates whether the BinQueue has reached its maximum capacity.</div><div class="ttdef"><b>Definition</b> <a href="#l00061">BinQueue.cs:61</a></div></div>
-<div class="ttc" id="aa01328_ab3164f38648e1a4de4624c7bab8b237d_html_ab3164f38648e1a4de4624c7bab8b237d"><div class="ttname"><a href="../../dc/dd9/a01328_ab3164f38648e1a4de4624c7bab8b237d.html#ab3164f38648e1a4de4624c7bab8b237d">SystemEx.Collections.Generic.BinQueue-1-g.End</a></div><div class="ttdeci">T End</div><div class="ttdoc">Gets the element at the back of the BinQueue.</div><div class="ttdef"><b>Definition</b> <a href="#l00071">BinQueue.cs:71</a></div></div>
-<div class="ttc" id="aa01328_abff2dadc6c66f73b08adbdba18120711_html_abff2dadc6c66f73b08adbdba18120711"><div class="ttname"><a href="../../dc/dd9/a01328_abff2dadc6c66f73b08adbdba18120711.html#abff2dadc6c66f73b08adbdba18120711">SystemEx.Collections.Generic.BinQueue-1-g.Size</a></div><div class="ttdeci">int Size</div><div class="ttdoc">Gets the total capacity of the BinQueue.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">BinQueue.cs:51</a></div></div>
-<div class="ttc" id="aa01328_aff347aaa61dec60bbbc4d019cacf64a0_html_aff347aaa61dec60bbbc4d019cacf64a0"><div class="ttname"><a href="../../dc/dd9/a01328_aff347aaa61dec60bbbc4d019cacf64a0.html#aff347aaa61dec60bbbc4d019cacf64a0">SystemEx.Collections.Generic.BinQueue-1-g.BinQueue</a></div><div class="ttdeci">BinQueue()</div><div class="ttdoc">Creates a new BinQueue.</div><div class="ttdef"><b>Definition</b> <a href="#l00076">BinQueue.cs:76</a></div></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#pragma warning disable CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#pragma warning restore CS1587 </span><span class="comment">// Der XML-Kommentar ist auf keinem gültigen Sprachelement abgelegt.</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+<div class="ttc" id="aa00902_ga064fc0876cb23252459b30c2843d3fa1_html_ga064fc0876cb23252459b30c2843d3fa1"><div class="ttname"><a href="../../d5/dd3/a00902_ga064fc0876cb23252459b30c2843d3fa1.html#ga064fc0876cb23252459b30c2843d3fa1">SystemEx.Collections.Generic.IQueue.IsEmpty</a></div><div class="ttdeci">bool IsEmpty</div><div class="ttdoc">Gets a value indicating whether the queue contains no elements.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">IQueue.cs:35</a></div></div>
+<div class="ttc" id="aa00902_ga3baf5dc61a1830313eebbc19c509dcac_html_ga3baf5dc61a1830313eebbc19c509dcac"><div class="ttname"><a href="../../d5/dd3/a00902_ga3baf5dc61a1830313eebbc19c509dcac.html#ga3baf5dc61a1830313eebbc19c509dcac">SystemEx.Collections.Generic.IQueue.Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Removes all elements from the queue.</div></div>
+<div class="ttc" id="aa00902_ga778336d81854e6b2dcb6b65e55a00478_html_ga778336d81854e6b2dcb6b65e55a00478"><div class="ttname"><a href="../../d5/dd3/a00902_ga778336d81854e6b2dcb6b65e55a00478.html#ga778336d81854e6b2dcb6b65e55a00478">SystemEx.Collections.Generic.IQueue-1-g.PopFront</a></div><div class="ttdeci">bool PopFront(ref Optional&lt; T &gt; value)</div><div class="ttdoc">Removes the element at the front of the queue. Remaining elements are shifted one position to the lef...</div></div>
+<div class="ttc" id="aa00902_ga8e307fd9ea696d1852ce74209d0f890a_html_ga8e307fd9ea696d1852ce74209d0f890a"><div class="ttname"><a href="../../d5/dd3/a00902_ga8e307fd9ea696d1852ce74209d0f890a.html#ga8e307fd9ea696d1852ce74209d0f890a">SystemEx.Collections.Generic.IQueue-1-g.PushBack</a></div><div class="ttdeci">bool PushBack(T value)</div><div class="ttdoc">Inserts an element at the back of the queue.</div></div>
+<div class="ttc" id="aa00902_gae184bf1f866597e0ffca6d2c91e3bd8a_html_gae184bf1f866597e0ffca6d2c91e3bd8a"><div class="ttname"><a href="../../d5/dd3/a00902_gae184bf1f866597e0ffca6d2c91e3bd8a.html#gae184bf1f866597e0ffca6d2c91e3bd8a">SystemEx.Collections.Generic.IQueue.IsFull</a></div><div class="ttdeci">bool IsFull</div><div class="ttdoc">Gets a value indicating whether the queue has reached its maximum capacity.</div><div class="ttdef"><b>Definition</b> <a href="#l00040">IQueue.cs:40</a></div></div>
+<div class="ttc" id="aa00902_gaed80365e6226d6dd80b15c2784f9af22_html_gaed80365e6226d6dd80b15c2784f9af22"><div class="ttname"><a href="../../d5/dd3/a00902_gaed80365e6226d6dd80b15c2784f9af22.html#gaed80365e6226d6dd80b15c2784f9af22">SystemEx.Collections.Generic.IQueue.Size</a></div><div class="ttdeci">int Size</div><div class="ttdoc">Gets the number of elements currently stored in the queue.</div><div class="ttdef"><b>Definition</b> <a href="#l00030">IQueue.cs:30</a></div></div>
+<div class="ttc" id="aa00919_html"><div class="ttname"><a href="../../d1/d0b/a00919.html">SystemEx.Collections.Generic</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d5d/a00311_source.html#l00021">Cache.cs:21</a></div></div>
+<div class="ttc" id="aa01441_html"><div class="ttname"><a href="../../d5/df9/a01441.html">SystemEx.Collections.Generic.IQueue</a></div><div class="ttdoc">Defines the non-generic base interface for queue-like containers. Provides size information,...</div><div class="ttdef"><b>Definition</b> <a href="#l00026">IQueue.cs:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Collections</b></li><li class="navelem"><b>Generic</b></li><li class="navelem"><b>Queue</b></li><li class="navelem"><b>BinQueue.cs</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>Collections</b></li><li class="navelem"><b>Generic</b></li><li class="navelem"><b>Queue</b></li><li class="navelem"><b>IQueue.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
