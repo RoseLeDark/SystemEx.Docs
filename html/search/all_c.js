@@ -54,7 +54,7 @@ var searchData=
   ['buffer_51',['Buffer',['../d9/d1b/a01583_ad40390089d37f39c92390af693bdb199.html#ad40390089d37f39c92390af693bdb199',1,'SystemEx::Drawing::ICanvas-1-g']]],
   ['build_52',['Build',['../d4/d41/a01267_a5325db42bc7a89fe01463b4a922a5f41.html#a5325db42bc7a89fe01463b4a922a5f41',1,'SystemEx.Version.Build'],['../db/d09/a02502.html#build',1,'Build']]],
   ['build_20flags_20and_20development_20channels_53',['Build Flags and Development Channels',['../d4/dad/a02500.html#build-flags-and-development-channels',1,'']]],
-  ['build_20publish_20guide_54',['Build &amp;amp; Publish Guide',['../d9/de2/a02508.html',1,'']]],
+  ['build_20publish_20guide_54',['⚙️ Build &amp;amp; Publish Guide',['../d9/de2/a02508.html',1,'']]],
   ['build_20push_55',['3. Run Build &amp;amp; Push',['../d9/de2/a02508.html#autotoc_md3-run-build--push',1,'']]],
   ['building_20locally_56',['Building Locally',['../d9/de2/a02508.html#building-locally',1,'']]],
   ['byteindex_57',['ByteIndex',['../dd/d51/a02223.html',1,'SystemEx::Threading']]],

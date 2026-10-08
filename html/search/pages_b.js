@@ -10,7 +10,7 @@ var searchData=
   ['blocks_7',['Why does SystemEx use &lt;span class=&quot;tt&quot;&gt;#if USE_DEVBUILD_UNSTABLE&lt;/span&gt; blocks?',['../d1/d94/a02505.html#why-does-systemex-use-if-use_devbuild_unstable-blocks',1,'']]],
   ['build_8',['Build',['../db/d09/a02502.html#build',1,'']]],
   ['build_20flags_20and_20development_20channels_9',['Build Flags and Development Channels',['../d4/dad/a02500.html#build-flags-and-development-channels',1,'']]],
-  ['build_20publish_20guide_10',['Build &amp;amp; Publish Guide',['../d9/de2/a02508.html',1,'']]],
+  ['build_20publish_20guide_10',['⚙️ Build &amp;amp; Publish Guide',['../d9/de2/a02508.html',1,'']]],
   ['build_20push_11',['3. Run Build &amp;amp; Push',['../d9/de2/a02508.html#autotoc_md3-run-build--push',1,'']]],
   ['building_20locally_12',['Building Locally',['../d9/de2/a02508.html#building-locally',1,'']]]
 ];

@@ -12,7 +12,7 @@ var searchData=
   ['principles_9',['🧱 Core Principles',['../d4/dad/a02500.html#autotoc_md-core-principles',1,'']]],
   ['proposing_20changes_10',['2. Proposing Changes',['../d3/df4/a02504.html#autotoc_md2-proposing-changes',1,'']]],
   ['publish_20checklist_11',['1. Pre-Publish Checklist',['../d9/de2/a02508.html#autotoc_md1-pre-publish-checklist',1,'']]],
-  ['publish_20guide_12',['Build &amp;amp; Publish Guide',['../d9/de2/a02508.html',1,'']]],
+  ['publish_20guide_12',['⚙️ Build &amp;amp; Publish Guide',['../d9/de2/a02508.html',1,'']]],
   ['publishing_20to_20nuget_13',['Publishing to NuGet',['../d9/de2/a02508.html#publishing-to-nuget',1,'']]],
   ['pull_20requests_14',['3. Pull Requests',['../d3/df4/a02504.html#autotoc_md3-pull-requests',1,'']]],
   ['push_15',['3. Run Build &amp;amp; Push',['../d9/de2/a02508.html#autotoc_md3-run-build--push',1,'']]]

@@ -59,7 +59,7 @@ var searchData=
   ['proposing_20changes_56',['2. Proposing Changes',['../d3/df4/a02504.html#autotoc_md2-proposing-changes',1,'']]],
   ['psi_57',['PSI',['../d9/dca/a01879_ac94acf278a6a2688c6cf3fec24c98228.html#ac94acf278a6a2688c6cf3fec24c98228',1,'SystemEx.Numeric.BigDecimal.PSI'],['../d8/d38/a00926_a9e2f43b0219e53c5e2c92037f0e3b55b.html#a9e2f43b0219e53c5e2c92037f0e3b55bae589fb6e29e4df1b9f26b693cc39a295',1,'SystemEx.Numeric.PSI']]],
   ['publish_20checklist_58',['1. Pre-Publish Checklist',['../d9/de2/a02508.html#autotoc_md1-pre-publish-checklist',1,'']]],
-  ['publish_20guide_59',['Build &amp;amp; Publish Guide',['../d9/de2/a02508.html',1,'']]],
+  ['publish_20guide_59',['⚙️ Build &amp;amp; Publish Guide',['../d9/de2/a02508.html',1,'']]],
   ['publishing_20to_20nuget_60',['Publishing to NuGet',['../d9/de2/a02508.html#publishing-to-nuget',1,'']]],
   ['pull_20requests_61',['3. Pull Requests',['../d3/df4/a02504.html#autotoc_md3-pull-requests',1,'']]],
   ['purpelcolors_62',['PurpelColors',['../d5/de9/a01651.html',1,'SystemEx::Drawing']]],

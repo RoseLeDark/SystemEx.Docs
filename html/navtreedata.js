@@ -238,7 +238,7 @@ var NAVTREE =
     [ "Maintainers", "de/dbd/a02507.html", [
       [ "Primary Maintainer", "de/dbd/a02507.html#primary-maintainer", null ]
     ] ],
-    [ "Build &amp; Publish Guide", "d9/de2/a02508.html", [
+    [ "⚙️ Build &amp; Publish Guide", "d9/de2/a02508.html", [
       [ "Building Locally", "d9/de2/a02508.html#building-locally", [
         [ "Windows (PowerShell)", "d9/de2/a02508.html#windows-powershell", null ],
         [ "Linux / Unix (Make)", "d9/de2/a02508.html#linux--unix-make", null ]
