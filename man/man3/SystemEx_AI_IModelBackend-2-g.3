@@ -1,0 +1,267 @@
+.TH "SystemEx.AI.IModelBackend< T, TAI >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI.IModelBackend< T, TAI > \- Basic backend implementation for all using models with this framework\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Optional< object > \fBGetValue\fP (string key)"
+.br
+.RI "Get Value from config\&. "
+.ti -1c
+.RI "bool \fBHasTool\fP (string toolName)"
+.br
+.RI "Has this model tools\&. "
+.ti -1c
+.RI "bool \fBInitialization\fP (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+.br
+.RI "Initialization the model\&. "
+.ti -1c
+.RI "Task< IModelResult< T > > \fBInvokeAsync\fP (string systemPrompt, IModelPromp< T > input)"
+.br
+.RI "Executes the model by sending a payload to the model\&. "
+.ti -1c
+.RI "IReadOnlyList< TAI > \fBListTools\fP ()"
+.br
+.RI "Get A list of all regist tools with this model\&. "
+.ti -1c
+.RI "bool \fBRegistTool\fP (IModelTool< T > tool)"
+.br
+.RI "Regist a tool with this model\&. "
+.ti -1c
+.RI "void \fBRelease\fP (bool wait)"
+.br
+.RI "Release the model\&. "
+.ti -1c
+.RI "void \fBSetConfig\fP (string key, object value)"
+.br
+.RI "Set config\&. "
+.ti -1c
+.RI "bool \fBUnregistTool\fP (string toolName)"
+.br
+.RI "Unregist a tool with this model\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBBackendName\fP\fR [get]\fP"
+.br
+.RI "The backend name used for metadata and diagnostics\&. "
+.ti -1c
+.RI "Map< \fBBackendCapabilities\fP, object > \fBCapabilities\fP\fR [get]\fP"
+.br
+.RI "Describes backend capabilities (text, chat, JSON, remote, etc\&.)\&. "
+.ti -1c
+.RI "Map< string, object > \fBConfiguration\fP\fR [get]\fP"
+.br
+.RI "Stores backend configuration values such as the base URL\&. "
+.ti -1c
+.RI "Map< \fBSystemEx\&.AI\&.Environment\fP, object > \fBEnviro\fP\fR [get]\fP"
+.br
+.RI "Stores backend environment\&. "
+.ti -1c
+.RI "bool \fBIsAvailable\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the backend is available\&. The OS decides availability based on installed \fBAI\fP components\&. "
+.ti -1c
+.RI "string \fBModelName\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the identifier of the \fBAI\fP model that should be used by the backend\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Basic backend implementation for all using models with this framework\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the model's output and raw prompt\&. 
+.br
+\fITAI\fP The type of the model's output as TAI
+.RE
+.PP
+
+.PP
+Definition at line \fB31\fP of file \fBIModelBackend\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "Optional< object > SystemEx\&.AI\&.IModelBackend< T, TAI >\&.GetValue (string key)"
+
+.PP
+Get Value from config\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelBackend< T, TAI >\&.HasTool (string toolName)"
+
+.PP
+Has this model tools\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelBackend< T, TAI >\&.Initialization (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+
+.PP
+Initialization the model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP The configuration for this model\&.
+.br
+\fIenvironment\fP The enviroment for thie model\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP when init or \fRfalse\fP when not
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "Task< IModelResult< T > > SystemEx\&.AI\&.IModelBackend< T, TAI >\&.InvokeAsync (string systemPrompt, IModelPromp< T > input)"
+
+.PP
+Executes the model by sending a payload to the model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsystemPrompt\fP The system instruction for the model\&.
+.br
+\fIinput\fP The user prompt and context\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBModelResult<T>\fP containing:
+.IP "\(bu" 2
+The parsed output
+.IP "\(bu" 2
+Metadata
+.IP "\(bu" 2
+Raw JSON
+.IP "\(bu" 2
+Error information (if any) 
+.PP
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "IReadOnlyList< TAI > SystemEx\&.AI\&.IModelBackend< T, TAI >\&.ListTools ()"
+
+.PP
+Get A list of all regist tools with this model\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelBackend< T, TAI >\&.RegistTool (IModelTool< T > tool)"
+
+.PP
+Regist a tool with this model\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP when added or \fRfalse\fP when not
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "void SystemEx\&.AI\&.IModelBackend< T, TAI >\&.Release (bool wait)"
+
+.PP
+Release the model\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "void SystemEx\&.AI\&.IModelBackend< T, TAI >\&.SetConfig (string key, object value)"
+
+.PP
+Set config\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelBackend< T, TAI >\&.UnregistTool (string toolName)"
+
+.PP
+Unregist a tool with this model\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP when added or \fRfalse\fP when not
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "string SystemEx\&.AI\&.IModelBackend< T, TAI >\&.BackendName\fR [get]\fP"
+
+.PP
+The backend name used for metadata and diagnostics\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBIModelBackend\&.cs\fP\&.
+.SS "Map<\fBBackendCapabilities\fP, object> SystemEx\&.AI\&.IModelBackend< T, TAI >\&.Capabilities\fR [get]\fP"
+
+.PP
+Describes backend capabilities (text, chat, JSON, remote, etc\&.)\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.PP
+Definition at line \fB36\fP of file \fBIModelBackend\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.IModelBackend< T, TAI >\&.Configuration\fR [get]\fP"
+
+.PP
+Stores backend configuration values such as the base URL\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.PP
+Definition at line \fB41\fP of file \fBIModelBackend\&.cs\fP\&.
+.SS "Map<\fBSystemEx\&.AI\&.Environment\fP, object> SystemEx\&.AI\&.IModelBackend< T, TAI >\&.Enviro\fR [get]\fP"
+
+.PP
+Stores backend environment\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.PP
+Definition at line \fB46\fP of file \fBIModelBackend\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelBackend< T, TAI >\&.IsAvailable\fR [get]\fP"
+
+.PP
+Indicates whether the backend is available\&. The OS decides availability based on installed \fBAI\fP components\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.PP
+Definition at line \fB75\fP of file \fBIModelBackend\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.IModelBackend< T, TAI >\&.ModelName\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the identifier of the \fBAI\fP model that should be used by the backend\&. This value determines which model the Windows \fBAI\fP \fBRuntime\fP will load when executing a request\&. It can be changed at any time during runtime, allowing dynamic switching between different \fBAI\fP models (e\&.g\&., "phi-3-mini", "phi-3-medium", "gpt-4o", etc\&.)\&.
+
+.PP
+The \fBModelName\fP is independent from the agent name used in the Model<T> constructor\&. While the agent name describes the logical assistant (e\&.g\&., "DevAssistant"), the \fBModelName\fP specifies the actual \fBAI\fP model used for inference\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+A string representing the model identifier passed to the Windows \fBAI\fP \fBRuntime\fP\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.PP
+Definition at line \fB69\fP of file \fBIModelBackend\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

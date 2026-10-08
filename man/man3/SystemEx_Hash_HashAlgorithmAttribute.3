@@ -1,0 +1,84 @@
+.TH "SystemEx.Hash.HashAlgorithmAttribute" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Hash.HashAlgorithmAttribute \- Declares which hashing algorithm a \fRHashable\fP type should use\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Attribute\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHashAlgorithmAttribute\fP (Type hasherType, \fBEndian\fP endian)"
+.br
+.RI "Creates a new hash algorithm descriptor for a \fRHashable\fP type\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBEndian\fP \fBEndian\fP\fR [get]\fP"
+.br
+.RI "The endian mode used when assembling hash blocks from the byte array\&. "
+.ti -1c
+.RI "Type \fBHasherType\fP\fR [get]\fP"
+.br
+.RI "The hasher implementation type\&. 
+.br
+ Must implement \fBIHash\fP and provide either a constructor accepting \fBEndian\fP or a parameterless constructor\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Declares which hashing algorithm a \fRHashable\fP type should use\&. 
+
+The attribute binds a concrete hasher implementation (\fBIHash\fP) to a class or struct and specifies the byte‑order (\fBEndian\fP) used when interpreting the binary representation returned by Hashable\&.ToBytes\&.
+
+.PP
+The \fBSystemEx\fP hashing subsystem reads this attribute at runtime to instantiate the correct hasher and compute 32‑bit or 64‑bit hashes\&. 
+.PP
+Definition at line \fB34\fP of file \fBHashAlgorithmAttribute\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Hash\&.HashAlgorithmAttribute\&.HashAlgorithmAttribute (Type hasherType, \fBEndian\fP endian)"
+
+.PP
+Creates a new hash algorithm descriptor for a \fRHashable\fP type\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhasherType\fP Concrete hasher type implementing \fBIHash\fP\&.
+.br
+\fIendian\fP Byte‑order used by the hasher\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB53\fP of file \fBHashAlgorithmAttribute\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBEndian\fP SystemEx\&.Hash\&.HashAlgorithmAttribute\&.Endian\fR [get]\fP"
+
+.PP
+The endian mode used when assembling hash blocks from the byte array\&. 
+.PP
+Definition at line \fB46\fP of file \fBHashAlgorithmAttribute\&.cs\fP\&.
+.PP
+Referenced by \fBHashAlgorithmAttribute()\fP\&.
+.SS "Type SystemEx\&.Hash\&.HashAlgorithmAttribute\&.HasherType\fR [get]\fP"
+
+.PP
+The hasher implementation type\&. 
+.br
+ Must implement \fBIHash\fP and provide either a constructor accepting \fBEndian\fP or a parameterless constructor\&. 
+.PP
+Definition at line \fB41\fP of file \fBHashAlgorithmAttribute\&.cs\fP\&.
+.PP
+Referenced by \fBHashAlgorithmAttribute()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

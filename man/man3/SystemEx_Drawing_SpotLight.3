@@ -1,0 +1,169 @@
+.TH "SystemEx.Drawing.SpotLight" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Drawing.SpotLight \- Spot light implementation\&. Adds inner and outer cone angles (phi/theta) expressed as cosine values\&. These values are used for smooth falloff inside the spotlight cone\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Drawing\&.Light\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSpotLight\fP (float HalfPhi, float HalfTheta)"
+.br
+.ti -1c
+.RI "\fBSpotLight\fP (float HalfPhi, float HalfTheta, \fBVec3f\fP position, \fBVec3f\fP direction, \fBColorR8G8B8\fP ambient, \fBColorR8G8B8\fP diffuse)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Drawing\&.Light\fP
+.in +1c
+.ti -1c
+.RI "\fBLight\fP (\fBVec3f\fP position, \fBVec3f\fP direction, \fBColorR8G8B8\fP ambient, \fBColorR8G8B8\fP diffuse)"
+.br
+.ti -1c
+.RI "void \fBSetProjParams\fP (Projection projection)"
+.br
+.RI "Sets the projection parameters for lights that require a frustum (typically spot lights or shadow-casting lights)\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBm_cosHalfPhi\fP"
+.br
+.RI "Cosine of half the inner cone angle (phi)\&. Defines the fully illuminated inner region of the spotlight\&. "
+.ti -1c
+.RI "float \fBm_cosHalfTheta\fP"
+.br
+.RI "Cosine of half the outer cone angle (theta)\&. Defines the outer boundary of the spotlight\&. "
+.in -1c
+
+Protected Attributes inherited from \fBSystemEx\&.Drawing\&.Light\fP
+.in +1c
+.ti -1c
+.RI "\fBColorHSV\fP \fBm_AmbientColor\fP"
+.br
+.RI "Ambient color contribution of the light\&. Used for low-frequency indirect lighting\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBm_DiffuseColor\fP"
+.br
+.RI "Diffuse color contribution of the light\&. Defines the main visible light color\&. "
+.ti -1c
+.RI "\fBVec3f\fP \fBm_Direction\fP"
+.br
+.RI "Normalized world-space direction of the light\&. Used for directional and spot lights\&. "
+.ti -1c
+.RI "\fBVec3f\fP \fBm_Position\fP"
+.br
+.RI "World-space position of the light\&. "
+.ti -1c
+.RI "\fBVec3f\fP \fBm_Up\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "float \fBCosHalfPhi\fP\fR [get, set]\fP"
+.br
+.ti -1c
+.RI "float \fBCosHalfTheta\fP\fR [get, set]\fP"
+.br
+.ti -1c
+.RI "float \fBInnerConeAngle\fP\fR [get, set]\fP"
+.br
+.RI "Inner cone angle of the spotlight in degrees\&. Defines the fully illuminated inner region\&. "
+.ti -1c
+.RI "float \fBOuterConeAngle\fP\fR [get, set]\fP"
+.br
+.RI "Outer cone angle of the spotlight in degrees\&. Defines the soft falloff region of the spotlight\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Drawing\&.Light\fP
+.in +1c
+.ti -1c
+.RI "\fBColorHSV\fP \fBAmbient\fP\fR [get, set]\fP"
+.br
+.ti -1c
+.RI "\fBColorHSV\fP \fBDiffuse\fP\fR [get, set]\fP"
+.br
+.ti -1c
+.RI "\fBVec3f\fP \fBDirection\fP\fR [get, set]\fP"
+.br
+.ti -1c
+.RI "\fBVec3f\fP \fBLookAt\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "\fBVec3f\fP \fBPosition\fP\fR [get, set]\fP"
+.br
+.ti -1c
+.RI "Projection \fBProjection\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "\fBVec3f\fP \fBUp\fP\fR [get, set]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Spot light implementation\&. Adds inner and outer cone angles (phi/theta) expressed as cosine values\&. These values are used for smooth falloff inside the spotlight cone\&. 
+.PP
+Definition at line \fB114\fP of file \fBLight\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Drawing\&.SpotLight\&.SpotLight ()"
+
+.PP
+Definition at line \fB155\fP of file \fBLight\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.SpotLight\&.SpotLight (float HalfPhi, float HalfTheta)"
+
+.PP
+Definition at line \fB159\fP of file \fBLight\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.SpotLight\&.SpotLight (float HalfPhi, float HalfTheta, \fBVec3f\fP position, \fBVec3f\fP direction, \fBColorR8G8B8\fP ambient, \fBColorR8G8B8\fP diffuse)"
+
+.PP
+Definition at line \fB164\fP of file \fBLight\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "float SystemEx\&.Drawing\&.SpotLight\&.m_cosHalfPhi\fR [protected]\fP"
+
+.PP
+Cosine of half the inner cone angle (phi)\&. Defines the fully illuminated inner region of the spotlight\&. 
+.PP
+Definition at line \fB126\fP of file \fBLight\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.SpotLight\&.m_cosHalfTheta\fR [protected]\fP"
+
+.PP
+Cosine of half the outer cone angle (theta)\&. Defines the outer boundary of the spotlight\&. 
+.PP
+Definition at line \fB120\fP of file \fBLight\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "float SystemEx\&.Drawing\&.SpotLight\&.CosHalfPhi\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Definition at line \fB128\fP of file \fBLight\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.SpotLight\&.CosHalfTheta\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Definition at line \fB130\fP of file \fBLight\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.SpotLight\&.InnerConeAngle\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Inner cone angle of the spotlight in degrees\&. Defines the fully illuminated inner region\&. 
+.PP
+Definition at line \fB136\fP of file \fBLight\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.SpotLight\&.OuterConeAngle\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Outer cone angle of the spotlight in degrees\&. Defines the soft falloff region of the spotlight\&. 
+.PP
+Definition at line \fB147\fP of file \fBLight\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

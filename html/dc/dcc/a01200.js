@@ -1,10 +1,11 @@
 var a01200 =
 [
-    [ "Add", "dc/dcc/a01200_aec7dfae2a861270ec280420c8cafdfad.html#aec7dfae2a861270ec280420c8cafdfad", null ],
-    [ "AddRange", "dc/dcc/a01200_a9b5b75a59b142536a4705578bd3af735.html#a9b5b75a59b142536a4705578bd3af735", null ],
-    [ "GroupNode", "dc/dcc/a01200_ac29458562045c2a9566aeb40a3e00542.html#ac29458562045c2a9566aeb40a3e00542", null ],
-    [ "Remove", "dc/dcc/a01200_a20f5128ace110291c06a66cc84771563.html#a20f5128ace110291c06a66cc84771563", null ],
-    [ "Travers", "dc/dcc/a01200_ab32817ff2c239afcb970677306f63c67.html#ab32817ff2c239afcb970677306f63c67", null ],
-    [ "IsEmpty", "dc/dcc/a01200_a995640c52fdfebca080d122bdd43c5a4.html#a995640c52fdfebca080d122bdd43c5a4", null ],
-    [ "Nodes", "dc/dcc/a01200_a50fb768ea2865f4c4612d57b9cd8cbc2.html#a50fb768ea2865f4c4612d57b9cd8cbc2", null ]
+    [ "Write", "dc/dcc/a01200_abc8c2928bfbc6021a0fef12b3d34f2f8.html#abc8c2928bfbc6021a0fef12b3d34f2f8", null ],
+    [ "Write", "dc/dcc/a01200_aa43f93e2fd2ab34f4d3f1791d97c9df1.html#aa43f93e2fd2ab34f4d3f1791d97c9df1", null ],
+    [ "Write", "dc/dcc/a01200_af6d38cbd4f4397472995ba33fb93131b.html#af6d38cbd4f4397472995ba33fb93131b", null ],
+    [ "Write", "dc/dcc/a01200_abdafba73dd36bc6d68c4337a398897e3.html#abdafba73dd36bc6d68c4337a398897e3", null ],
+    [ "Write", "dc/dcc/a01200_a0cdd61069e191a5a86889a55d7d50579.html#a0cdd61069e191a5a86889a55d7d50579", null ],
+    [ "Write", "dc/dcc/a01200_ab20a2e68372024eda6713f98d718ae50.html#ab20a2e68372024eda6713f98d718ae50", null ],
+    [ "Write", "dc/dcc/a01200_a92636af95a445407f8bd63974703987b.html#a92636af95a445407f8bd63974703987b", null ],
+    [ "Write", "dc/dcc/a01200_aeefae8672b49307e2f0092415133fd78.html#aeefae8672b49307e2f0092415133fd78", null ]
 ];

@@ -1,0 +1,488 @@
+.TH "SystemEx.Version" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Version \- Represents a mutable version identifier with major, minor, and build components and additional build metadata\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable, IEquatable, IEquatable, and IEquatable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVersion\fP \fBDecrement\fP ()"
+.br
+.RI "Returns this version without changing its components\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (int obj)"
+.br
+.RI "Determines whether the major component of this version equals the specified value\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (int[] obj)"
+.br
+.RI "Determines whether this version matches the components in the specified array\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Determines whether this version is equal to the specified object\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (Pair< int, int > obj)"
+.br
+.RI "Determines whether the major and minor components of this version equal the values in the specified pair\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBVersion\fP obj)"
+.br
+.RI "Determines whether this version is equal to another version\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Returns a hash code for this version\&. "
+.ti -1c
+.RI "\fBVersion\fP \fBIncrement\fP ()"
+.br
+.RI "Advances this version to the next minor component and returns the updated value\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns this version as a string\&. "
+.ti -1c
+.RI "\fBVersion\fP (int major)"
+.br
+.RI "Initializes a version with the specified major component and zero minor and build components\&. "
+.ti -1c
+.RI "\fBVersion\fP (int major, int minor)"
+.br
+.RI "Initializes a version with the specified major and minor components and a zero build component\&. "
+.ti -1c
+.RI "\fBVersion\fP (int major, int minor, int build)"
+.br
+.RI "Initializes a version with the specified major, minor, and build components\&. "
+.ti -1c
+.RI "\fBVersion\fP (int major, int minor, int build, bool beta)"
+.br
+.RI "Initializes a version with the specified components and beta status\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBVersion\fP left, \fBVersion\fP right)"
+.br
+.RI "Determines whether two versions are not equal\&. "
+.ti -1c
+.RI "static \fBVersion\fP \fBoperator++\fP (\fBVersion\fP ver)"
+.br
+.RI "Advances the specified version using \fBIncrement\fP\&. "
+.ti -1c
+.RI "static \fBVersion\fP \fBoperator\-\-\fP (\fBVersion\fP ver)"
+.br
+.RI "Returns the specified version unchanged using \fBDecrement\fP\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBVersion\fP left, \fBVersion\fP right)"
+.br
+.RI "Determines whether two versions are equal\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBBuild\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the build number of this version\&. "
+.ti -1c
+.RI "string \fBDiscritions\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the descriptive text associated with this version\&. "
+.ti -1c
+.RI "bool \fBIsBeta\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets whether this version represents a beta build\&. "
+.ti -1c
+.RI "bool \fBIsDebug\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets whether this version was built with the \fRDEBUG\fP symbol defined\&. "
+.ti -1c
+.RI "bool \fBIsForked\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets whether this version belongs to a fork\&. "
+.ti -1c
+.RI "bool \fBIsRelease\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets whether this version represents a stable release\&. "
+.ti -1c
+.RI "int \fBMajor\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the major version component\&. "
+.ti -1c
+.RI "int \fBMinor\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the minor version component\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a mutable version identifier with major, minor, and build components and additional build metadata\&. 
+.PP
+Definition at line \fB26\fP of file \fBVersion\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Version\&.Version (int major)"
+
+.PP
+Initializes a version with the specified major component and zero minor and build components\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImajor\fP The major version component\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB101\fP of file \fBVersion\&.cs\fP\&.
+.PP
+Referenced by \fBDecrement()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBIncrement()\fP, \fBoperator!=()\fP, \fBoperator++()\fP, \fBoperator\-\-()\fP, and \fBoperator==()\fP\&.
+.SS "SystemEx\&.Version\&.Version (int major, int minor)"
+
+.PP
+Initializes a version with the specified major and minor components and a zero build component\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImajor\fP The major version component\&.
+.br
+\fIminor\fP The minor version component\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB109\fP of file \fBVersion\&.cs\fP\&.
+.SS "SystemEx\&.Version\&.Version (int major, int minor, int build)"
+
+.PP
+Initializes a version with the specified major, minor, and build components\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImajor\fP The major version component\&.
+.br
+\fIminor\fP The minor version component\&.
+.br
+\fIbuild\fP The build component\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB118\fP of file \fBVersion\&.cs\fP\&.
+.SS "SystemEx\&.Version\&.Version (int major, int minor, int build, bool beta)"
+
+.PP
+Initializes a version with the specified components and beta status\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImajor\fP The major version component\&.
+.br
+\fIminor\fP The minor version component\&.
+.br
+\fIbuild\fP The build component\&.
+.br
+\fIbeta\fP \fRtrue\fP if this is a beta build; otherwise, \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+The initial release and debug flags are set according to whether the \fRDEBUG\fP symbol is defined\&. 
+.PP
+Definition at line \fB132\fP of file \fBVersion\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBVersion\fP SystemEx\&.Version\&.Decrement ()"
+
+.PP
+Returns this version without changing its components\&. 
+.PP
+\fBReturns\fP
+.RS 4
+This version, unchanged\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB275\fP of file \fBVersion\&.cs\fP\&.
+.SS "bool SystemEx\&.Version\&.Equals (int obj)"
+
+.PP
+Determines whether the major component of this version equals the specified value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The major component to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the major components are equal; otherwise, \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB215\fP of file \fBVersion\&.cs\fP\&.
+.SS "bool SystemEx\&.Version\&.Equals (int[] obj)"
+
+.PP
+Determines whether this version matches the components in the specified array\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP An array containing one component (major), two components (major and minor), or at least three components (major, minor, and build)\&. A null array does not match\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the components selected by the array length match; otherwise, including when the array is null, \fRfalse\fP\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIIndexOutOfRangeException\fP The array is empty\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB242\fP of file \fBVersion\&.cs\fP\&.
+.SS "override bool SystemEx\&.Version\&.Equals (object? obj)"
+
+.PP
+Determines whether this version is equal to the specified object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object to compare with this version\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if \fIobj\fP  is a \fBVersion\fP equal to this instance; otherwise, \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB173\fP of file \fBVersion\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "bool SystemEx\&.Version\&.Equals (Pair< int, int > obj)"
+
+.PP
+Determines whether the major and minor components of this version equal the values in the specified pair\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The pair containing the major and minor components\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if both components are equal; otherwise, \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB226\fP of file \fBVersion\&.cs\fP\&.
+.SS "bool SystemEx\&.Version\&.Equals (\fBVersion\fP obj)"
+
+.PP
+Determines whether this version is equal to another version\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The version to compare with this instance\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if all version components and metadata match; otherwise, \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB186\fP of file \fBVersion\&.cs\fP\&.
+.SS "override int SystemEx\&.Version\&.GetHashCode ()"
+
+.PP
+Returns a hash code for this version\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A hash code based on the version components and metadata\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB203\fP of file \fBVersion\&.cs\fP\&.
+.SS "\fBVersion\fP SystemEx\&.Version\&.Increment ()"
+
+.PP
+Advances this version to the next minor component and returns the updated value\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The updated version\&.
+.RE
+.PP
+
+.PP
+If the build component exceeds its maximum, it is reset to zero and the minor component is advanced again\&. If the minor component exceeds its maximum, the major component is advanced and the minor component is reset to zero\&. 
+.PP
+Definition at line \fB263\fP of file \fBVersion\&.cs\fP\&.
+.SS "bool SystemEx\&.Version\&.operator!= (\fBVersion\fP left, \fBVersion\fP right)\fR [static]\fP"
+
+.PP
+Determines whether two versions are not equal\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIleft\fP The first version to compare\&.
+.br
+\fIright\fP The second version to compare\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the versions are not equal; otherwise, \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB314\fP of file \fBVersion\&.cs\fP\&.
+.SS "\fBVersion\fP SystemEx\&.Version\&.operator++ (\fBVersion\fP ver)\fR [static]\fP"
+
+.PP
+Advances the specified version using \fBIncrement\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIver\fP The version to advance\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The advanced version\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB285\fP of file \fBVersion\&.cs\fP\&.
+.SS "\fBVersion\fP SystemEx\&.Version\&.operator\-\- (\fBVersion\fP ver)\fR [static]\fP"
+
+.PP
+Returns the specified version unchanged using \fBDecrement\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIver\fP The version to decrement\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The unchanged version\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB292\fP of file \fBVersion\&.cs\fP\&.
+.SS "bool SystemEx\&.Version\&.operator== (\fBVersion\fP left, \fBVersion\fP right)\fR [static]\fP"
+
+.PP
+Determines whether two versions are equal\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIleft\fP The first version to compare\&.
+.br
+\fIright\fP The second version to compare\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the versions are equal; otherwise, \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB303\fP of file \fBVersion\&.cs\fP\&.
+.SS "override string SystemEx\&.Version\&.ToString ()"
+
+.PP
+Returns this version as a string\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A string in the form \fRmajor\&.minor-build\fP, with \fR-Beta\fP and \fR-dbg\fP suffixes when the corresponding flags are set\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB157\fP of file \fBVersion\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Version\&.Build\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the build number of this version\&. The build number\&.
+.PP
+Definition at line \fB63\fP of file \fBVersion\&.cs\fP\&.
+.SS "string SystemEx\&.Version\&.Discritions\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the descriptive text associated with this version\&. The descriptive text\&.
+
+.PP
+The member name retains its historical spelling\&.
+.PP
+Definition at line \fB95\fP of file \fBVersion\&.cs\fP\&.
+.SS "bool SystemEx\&.Version\&.IsBeta\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets whether this version represents a beta build\&. \fRtrue\fP if this is a beta build; otherwise, \fRfalse\fP\&.
+.PP
+Definition at line \fB70\fP of file \fBVersion\&.cs\fP\&.
+.PP
+Referenced by \fBToString()\fP\&.
+.SS "bool SystemEx\&.Version\&.IsDebug\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets whether this version was built with the \fRDEBUG\fP symbol defined\&. \fRtrue\fP if the \fRDEBUG\fP symbol was defined; otherwise, \fRfalse\fP\&.
+.PP
+Definition at line \fB88\fP of file \fBVersion\&.cs\fP\&.
+.PP
+Referenced by \fBToString()\fP\&.
+.SS "bool SystemEx\&.Version\&.IsForked\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets whether this version belongs to a fork\&. \fRtrue\fP if this version belongs to a fork; otherwise, \fRfalse\fP\&.
+.PP
+Definition at line \fB82\fP of file \fBVersion\&.cs\fP\&.
+.SS "bool SystemEx\&.Version\&.IsRelease\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets whether this version represents a stable release\&. \fRtrue\fP if this is a stable release; otherwise, \fRfalse\fP\&.
+.PP
+Definition at line \fB76\fP of file \fBVersion\&.cs\fP\&.
+.SS "int SystemEx\&.Version\&.Major\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the major version component\&. The major version component\&.
+.PP
+Definition at line \fB51\fP of file \fBVersion\&.cs\fP\&.
+.SS "int SystemEx\&.Version\&.Minor\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the minor version component\&. The minor version component\&.
+.PP
+Definition at line \fB57\fP of file \fBVersion\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

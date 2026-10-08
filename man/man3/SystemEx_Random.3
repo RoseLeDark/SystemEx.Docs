@@ -1,0 +1,857 @@
+.TH "SystemEx.Random" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Random \- Provides a high‑level wrapper around the \fBBase\fP Class Library (BCL) System\&.Random type\&. This implementation redirects all random‑number generation to the \fBSystemEx\fP random subsystem, allowing deterministic, engine‑agnostic, endian‑aware, and extended numeric random operations\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits System\&.Random\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override int \fBNext\fP ()"
+.br
+.RI "Returns a random 32‑bit integer within the full int range\&. "
+.ti -1c
+.RI "override int \fBNext\fP (int maxValue)"
+.br
+.RI "Returns a random 32‑bit integer less than the specified maximum\&. "
+.ti -1c
+.RI "override int \fBNext\fP (int minValue, int maxValue)"
+.br
+.RI "Returns a random 32‑bit integer within the specified range\&. "
+.ti -1c
+.RI "override void \fBNextBytes\fP (byte[] buffer)"
+.br
+.RI "Fills the specified buffer with random bytes\&. "
+.ti -1c
+.RI "virtual void \fBNextBytes\fP (FlexSpan< byte > buffer)"
+.br
+.RI "Fills the specified \fBFlexSpan<T>\fP with random bytes\&. "
+.ti -1c
+.RI "virtual void \fBNextBytes\fP (FlexSpan< byte > buffer, long start, long end)"
+.br
+.ti -1c
+.RI "override void \fBNextBytes\fP (Span< byte > buffer)"
+.br
+.RI "Fills the specified span with random bytes\&. "
+.ti -1c
+.RI "override double \fBNextDouble\fP ()"
+.br
+.RI "Returns a random double‑precision floating‑point value\&. The result is generated from eight random bytes and validated to be a normal IEEE‑754 value\&. "
+.ti -1c
+.RI "virtual double \fBNextDouble\fP (double maxValue)"
+.br
+.RI "Returns a random double‑precision floating‑point value\&. The result is generated from eight random bytes and validated to be a normal IEEE‑754 value\&. "
+.ti -1c
+.RI "virtual double \fBNextDouble\fP (double minValue, double maxValue)"
+.br
+.RI "Returns a random double‑precision floating‑point value\&. The result is generated from eight random bytes and validated to be a normal IEEE‑754 value\&. "
+.ti -1c
+.RI "virtual \fBFloatE4M3\fP \fBNextFloatE4M3\fP ()"
+.br
+.RI "Returns a random \fBFloatE4M3\fP value generated from a single byte\&. "
+.ti -1c
+.RI "virtual \fBFloatE5M2\fP \fBNextFloatE5M2\fP ()"
+.br
+.RI "Returns a random \fBFloatE5M2\fP value generated from a single byte\&. "
+.ti -1c
+.RI "virtual \fBHalf16\fP \fBNextHalf16\fP ()"
+.br
+.RI "Returns a random \fBHalf16\fP value generated from four random bytes\&. "
+.ti -1c
+.RI "virtual \fBHalf16\fP \fBNextHalf16\fP (\fBHalf16\fP max)"
+.br
+.RI "Returns a random \fBHalf16\fP value generated from four random bytes\&. "
+.ti -1c
+.RI "virtual \fBHalf16\fP \fBNextHalf16\fP (\fBHalf16\fP minValue, \fBHalf16\fP maxValue)"
+.br
+.RI "Returns a random \fBHalf16\fP value generated from four random bytes\&. "
+.ti -1c
+.RI "virtual \fBHalf16b\fP \fBNextHalf16b\fP ()"
+.br
+.RI "Returns a random \fBHalf16b\fP value generated from four random bytes\&. "
+.ti -1c
+.RI "virtual \fBHalf16b\fP \fBNextHalf16b\fP (\fBHalf16b\fP max)"
+.br
+.RI "Returns a random \fBHalf16\fP value generated from four random bytes\&. "
+.ti -1c
+.RI "virtual \fBHalf16b\fP \fBNextHalf16b\fP (\fBHalf16b\fP minValue, \fBHalf16b\fP maxValue)"
+.br
+.RI "Returns a random \fBHalf16\fP value generated from four random bytes\&. "
+.ti -1c
+.RI "virtual short \fBNextInt16\fP ()"
+.br
+.RI "Returns a random 16‑bit signed integer within the full short range\&. "
+.ti -1c
+.RI "virtual short \fBNextInt16\fP (short maxValue)"
+.br
+.RI "Returns a random 16‑bit signed integer less than the specified maximum\&. "
+.ti -1c
+.RI "virtual short \fBNextInt16\fP (short minValue, short maxValue)"
+.br
+.RI "Returns a random 16‑bit signed integer within the specified range\&. "
+.ti -1c
+.RI "virtual int \fBNextInt32\fP ()"
+.br
+.RI "Returns a random 32‑bit signed integer within the full int range\&. "
+.ti -1c
+.RI "virtual int \fBNextInt32\fP (int maxValue)"
+.br
+.RI "Returns a random 32‑bit signed integer less than the specified maximum\&. "
+.ti -1c
+.RI "virtual int \fBNextInt32\fP (int minValue, int maxValue)"
+.br
+.RI "Returns a random 32‑bit signed integer within the specified range\&. "
+.ti -1c
+.RI "override long \fBNextInt64\fP ()"
+.br
+.RI "Returns a random 64‑bit signed integer within the full long range\&. "
+.ti -1c
+.RI "override long \fBNextInt64\fP (long maxValue)"
+.br
+.RI "Returns a random 64‑bit signed integer less than the specified maximum\&. "
+.ti -1c
+.RI "override long \fBNextInt64\fP (long minValue, long maxValue)"
+.br
+.RI "Returns a random 64‑bit signed integer within the specified range\&. "
+.ti -1c
+.RI "override float \fBNextSingle\fP ()"
+.br
+.RI "Returns a random single‑precision floating‑point value\&. The result is generated from four random bytes and validated to be a normal IEEE‑754 value\&. "
+.ti -1c
+.RI "virtual float \fBNextSingle\fP (float maxValue)"
+.br
+.ti -1c
+.RI "virtual float \fBNextSingle\fP (float minValue, float maxValue)"
+.br
+.RI "Returns a random single‑precision floating‑point value\&. The result is generated from four random bytes and validated to be a normal IEEE‑754 value\&. "
+.ti -1c
+.RI "virtual ushort \fBNextUInt16\fP ()"
+.br
+.RI "Returns a random 16‑bit unsigned integer within the full ushort range\&. "
+.ti -1c
+.RI "virtual ushort \fBNextUInt16\fP (ushort maxValue)"
+.br
+.RI "Returns a random 16‑bit unsigned integer less than the specified maximum\&. "
+.ti -1c
+.RI "virtual ushort \fBNextUInt16\fP (ushort minValue, ushort maxValue)"
+.br
+.RI "Returns a random 16‑bit unsigned integer within the specified range\&. "
+.ti -1c
+.RI "virtual uint \fBNextUInt32\fP ()"
+.br
+.RI "Returns a random 32‑bit unsigned integer within the full uint range\&. "
+.ti -1c
+.RI "virtual uint \fBNextUInt32\fP (uint maxValue)"
+.br
+.RI "Returns a random 32‑bit unsigned integer less than the specified maximum\&. "
+.ti -1c
+.RI "virtual uint \fBNextUInt32\fP (uint minValue, uint maxValue)"
+.br
+.RI "Returns a random 32‑bit unsigned integer within the specified range\&. "
+.ti -1c
+.RI "virtual ulong \fBNextUInt64\fP ()"
+.br
+.RI "Returns a random 64‑bit unsigned integer within the full ulong range\&. "
+.ti -1c
+.RI "virtual ulong \fBNextUInt64\fP (ulong maxValue)"
+.br
+.RI "Returns a random 64‑bit unsigned integer less than the specified maximum\&. "
+.ti -1c
+.RI "virtual ulong \fBNextUInt64\fP (ulong minValue, ulong maxValue)"
+.br
+.RI "Returns a random 64‑bit unsigned integer within the specified range\&. "
+.ti -1c
+.RI "virtual \fBVec2d\fP \fBNextVec2d\fP (double minX=double\&.MinValue, double maxX=double\&.MaxValue, double minY=double\&.MinValue, double maxY=double\&.MaxValue)"
+.br
+.RI "Generates a random 2‑component vector of double values\&. Each component is independently sampled within the specified range\&. "
+.ti -1c
+.RI "virtual \fBVec2f\fP \fBNextVec2f\fP (float minX=float\&.MinValue, float maxX=float\&.MaxValue, float minY=float\&.MinValue, float maxY=float\&.MaxValue)"
+.br
+.RI "Generates a random 2‑component vector of float values\&. Each component is independently sampled within the specified range\&. "
+.ti -1c
+.RI "virtual \fBVec2h\fP \fBNextVec2h\fP (\fBHalf16\fP minX, \fBHalf16\fP maxX, \fBHalf16\fP minY, \fBHalf16\fP maxY)"
+.br
+.RI "Generates a random 2‑component vector of \fBHalf16 \fP values\&. Each component is independently sampled within the specified range\&. "
+.ti -1c
+.RI "virtual \fBVec2hb\fP \fBNextVec2hb\fP (\fBHalf16b\fP minX, \fBHalf16b\fP maxX, \fBHalf16b\fP minY, \fBHalf16b\fP maxY)"
+.br
+.RI "Generates a random 2‑component vector of \fBHalf16b\fP values\&. Each component is independently sampled within the specified range\&. "
+.ti -1c
+.RI "virtual \fBVec3d\fP \fBNextVec3d\fP (double minX=double\&.MinValue, double maxX=double\&.MaxValue, double minY=double\&.MinValue, double maxY=double\&.MaxValue, double minZ=double\&.MinValue, double maxZ=double\&.MaxValue)"
+.br
+.RI "Generates a random 3‑component vector of double values\&. Each component is independently sampled within the specified range\&. "
+.ti -1c
+.RI "virtual \fBVec3f\fP \fBNextVec3f\fP (float minX=float\&.MinValue, float maxX=float\&.MaxValue, float minY=float\&.MinValue, float maxY=float\&.MaxValue, float minZ=float\&.MinValue, float maxZ=float\&.MaxValue)"
+.br
+.RI "Generates a random 3‑component vector of float values\&. Each component is independently sampled within the specified range\&. "
+.ti -1c
+.RI "virtual \fBVec3h\fP \fBNextVec3h\fP (\fBHalf16\fP minX, \fBHalf16\fP maxX, \fBHalf16\fP minY, \fBHalf16\fP maxY, \fBHalf16\fP minZ, \fBHalf16\fP maxZ)"
+.br
+.RI "Generates a random 3‑component vector of \fBHalf16\fP values\&. Each component is independently sampled within the specified range\&. "
+.ti -1c
+.RI "virtual \fBVec3hb\fP \fBNextVec3hb\fP (\fBHalf16b\fP minX, \fBHalf16b\fP maxX, \fBHalf16b\fP minY, \fBHalf16b\fP maxY, \fBHalf16b\fP minZ, \fBHalf16b\fP maxZ)"
+.br
+.RI "Generates a random 3‑component vector of \fBHalf16b\fP values\&. Each component is independently sampled within the specified range\&. "
+.ti -1c
+.RI "virtual \fBVec4d\fP \fBNextVec4d\fP (double minX=double\&.MinValue, double maxX=double\&.MaxValue, double minY=double\&.MinValue, double maxY=double\&.MaxValue, double minZ=double\&.MinValue, double maxZ=double\&.MaxValue, double minW=double\&.MinValue, double maxW=double\&.MaxValue)"
+.br
+.RI "Generates a random 4‑component vector of double values\&. Each component is independently sampled within the specified range\&. "
+.ti -1c
+.RI "virtual \fBVec4f\fP \fBNextVec4f\fP (float minX=float\&.MinValue, float maxX=float\&.MaxValue, float minY=float\&.MinValue, float maxY=float\&.MaxValue, float minZ=float\&.MinValue, float maxZ=float\&.MaxValue, float minW=float\&.MinValue, float maxW=float\&.MaxValue)"
+.br
+.RI "Generates a random 4‑component vector of float values\&. Each component is independently sampled within the specified range\&. "
+.ti -1c
+.RI "virtual \fBVec4h\fP \fBNextVec4h\fP (\fBHalf16\fP minX, \fBHalf16\fP maxX, \fBHalf16\fP minY, \fBHalf16\fP maxY, \fBHalf16\fP minZ, \fBHalf16\fP maxZ, \fBHalf16\fP minW, \fBHalf16\fP maxW)"
+.br
+.RI "Generates a random 4‑component vector of \fB Half16\fP values\&. Each component is independently sampled within the specified range\&. "
+.ti -1c
+.RI "virtual \fBVec4hb\fP \fBNextVec4hb\fP (\fBHalf16b\fP minX, \fBHalf16b\fP maxX, \fBHalf16b\fP minY, \fBHalf16b\fP maxY, \fBHalf16b\fP minZ, \fBHalf16b\fP maxZ, \fBHalf16b\fP minW, \fBHalf16b\fP maxW)"
+.br
+.RI "Generates a random 4‑component vector of \fB Half16b\fP values\&. Each component is independently sampled within the specified range\&. "
+.ti -1c
+.RI "\fBRandom\fP ()"
+.br
+.RI "Initializes a new instance of the \fBRandom\fP class using a time‑based seed\&. The seed is forwarded to RandUtils to initialize the internal pseudo‑random engine\&. "
+.ti -1c
+.RI "\fBRandom\fP (\fBISeed\fP seed)"
+.br
+.RI "Initializes a new instance of the \fBRandom\fP class using a custom seed container implementing \fBISeed\fP\&. "
+.ti -1c
+.RI "\fBRandom\fP (uint seed)"
+.br
+.RI "Initializes a new instance of the \fBRandom\fP class using the specified 32‑bit seed value\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a high‑level wrapper around the \fBBase\fP Class Library (BCL) System\&.Random type\&. This implementation redirects all random‑number generation to the \fBSystemEx\fP random subsystem, allowing deterministic, engine‑agnostic, endian‑aware, and extended numeric random operations\&. 
+
+This class preserves the public API surface of System\&.Random while internally delegating all operations to RandUtils\&. The underlying engine is selected by \fBRandx\fP, which may use either Isaac32Engine (default) or MTwisterEngine depending on compilation flags or other\&. 
+.PP
+Definition at line \fB37\fP of file \fBRandomX\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Random\&.Random ()"
+
+.PP
+Initializes a new instance of the \fBRandom\fP class using a time‑based seed\&. The seed is forwarded to RandUtils to initialize the internal pseudo‑random engine\&. 
+.PP
+Definition at line \fB43\fP of file \fBRandomX\&.cs\fP\&.
+.SS "SystemEx\&.Random\&.Random (uint seed)"
+
+.PP
+Initializes a new instance of the \fBRandom\fP class using the specified 32‑bit seed value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIseed\fP The primary seed value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB51\fP of file \fBRandomX\&.cs\fP\&.
+.SS "SystemEx\&.Random\&.Random (\fBISeed\fP seed)"
+
+.PP
+Initializes a new instance of the \fBRandom\fP class using a custom seed container implementing \fBISeed\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIseed\fP The seed container used to initialize the engine\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB60\fP of file \fBRandomX\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override int SystemEx\&.Random\&.Next ()"
+
+.PP
+Returns a random 32‑bit integer within the full int range\&. 
+.PP
+Definition at line \fB68\fP of file \fBRandomX\&.cs\fP\&.
+.SS "override int SystemEx\&.Random\&.Next (int maxValue)"
+
+.PP
+Returns a random 32‑bit integer less than the specified maximum\&. 
+.PP
+Definition at line \fB80\fP of file \fBRandomX\&.cs\fP\&.
+.SS "override int SystemEx\&.Random\&.Next (int minValue, int maxValue)"
+
+.PP
+Returns a random 32‑bit integer within the specified range\&. 
+.PP
+Definition at line \fB74\fP of file \fBRandomX\&.cs\fP\&.
+.SS "override void SystemEx\&.Random\&.NextBytes (byte[] buffer)"
+
+.PP
+Fills the specified buffer with random bytes\&. 
+.PP
+Definition at line \fB365\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual void SystemEx\&.Random\&.NextBytes (FlexSpan< byte > buffer)\fR [virtual]\fP"
+
+.PP
+Fills the specified \fBFlexSpan<T>\fP with random bytes\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fIException\fP Thrown when the buffer is in \fBFlexSpanMode\&.Ring\fP mode\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB386\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual void SystemEx\&.Random\&.NextBytes (FlexSpan< byte > buffer, long start, long end)\fR [virtual]\fP"
+
+.PP
+Definition at line \fB395\fP of file \fBRandomX\&.cs\fP\&.
+.SS "override void SystemEx\&.Random\&.NextBytes (Span< byte > buffer)"
+
+.PP
+Fills the specified span with random bytes\&. 
+.PP
+Definition at line \fB374\fP of file \fBRandomX\&.cs\fP\&.
+.SS "override double SystemEx\&.Random\&.NextDouble ()"
+
+.PP
+Returns a random double‑precision floating‑point value\&. The result is generated from eight random bytes and validated to be a normal IEEE‑754 value\&. 
+.PP
+Definition at line \fB198\fP of file \fBRandomX\&.cs\fP\&.
+.PP
+Referenced by \fBNextDouble()\fP, \fBNextDouble()\fP, \fBNextVec2d()\fP, \fBNextVec3d()\fP, and \fBNextVec4d()\fP\&.
+.SS "virtual double SystemEx\&.Random\&.NextDouble (double maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random double‑precision floating‑point value\&. The result is generated from eight random bytes and validated to be a normal IEEE‑754 value\&. 
+.PP
+Definition at line \fB206\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual double SystemEx\&.Random\&.NextDouble (double minValue, double maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random double‑precision floating‑point value\&. The result is generated from eight random bytes and validated to be a normal IEEE‑754 value\&. 
+.PP
+Definition at line \fB215\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBFloatE4M3\fP SystemEx\&.Random\&.NextFloatE4M3 ()\fR [virtual]\fP"
+
+.PP
+Returns a random \fBFloatE4M3\fP value generated from a single byte\&. 
+.PP
+Definition at line \fB337\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBFloatE5M2\fP SystemEx\&.Random\&.NextFloatE5M2 ()\fR [virtual]\fP"
+
+.PP
+Returns a random \fBFloatE5M2\fP value generated from a single byte\&. 
+.PP
+Definition at line \fB351\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBHalf16\fP SystemEx\&.Random\&.NextHalf16 ()\fR [virtual]\fP"
+
+.PP
+Returns a random \fBHalf16\fP value generated from four random bytes\&. 
+.PP
+Definition at line \fB271\fP of file \fBRandomX\&.cs\fP\&.
+.PP
+Referenced by \fBNextHalf16()\fP, \fBNextHalf16()\fP, \fBNextVec2h()\fP, \fBNextVec3h()\fP, and \fBNextVec4h()\fP\&.
+.SS "virtual \fBHalf16\fP SystemEx\&.Random\&.NextHalf16 (\fBHalf16\fP max)\fR [virtual]\fP"
+
+.PP
+Returns a random \fBHalf16\fP value generated from four random bytes\&. 
+.PP
+Definition at line \fB278\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBHalf16\fP SystemEx\&.Random\&.NextHalf16 (\fBHalf16\fP minValue, \fBHalf16\fP maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random \fBHalf16\fP value generated from four random bytes\&. 
+.PP
+Definition at line \fB285\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBHalf16b\fP SystemEx\&.Random\&.NextHalf16b ()\fR [virtual]\fP"
+
+.PP
+Returns a random \fBHalf16b\fP value generated from four random bytes\&. 
+.PP
+Definition at line \fB304\fP of file \fBRandomX\&.cs\fP\&.
+.PP
+Referenced by \fBNextHalf16b()\fP, \fBNextHalf16b()\fP, \fBNextVec2hb()\fP, \fBNextVec3hb()\fP, and \fBNextVec4hb()\fP\&.
+.SS "virtual \fBHalf16b\fP SystemEx\&.Random\&.NextHalf16b (\fBHalf16b\fP max)\fR [virtual]\fP"
+
+.PP
+Returns a random \fBHalf16\fP value generated from four random bytes\&. 
+.PP
+Definition at line \fB311\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBHalf16b\fP SystemEx\&.Random\&.NextHalf16b (\fBHalf16b\fP minValue, \fBHalf16b\fP maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random \fBHalf16\fP value generated from four random bytes\&. 
+.PP
+Definition at line \fB318\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual short SystemEx\&.Random\&.NextInt16 ()\fR [virtual]\fP"
+
+.PP
+Returns a random 16‑bit signed integer within the full short range\&. 
+.PP
+Definition at line \fB86\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual short SystemEx\&.Random\&.NextInt16 (short maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random 16‑bit signed integer less than the specified maximum\&. 
+.PP
+Definition at line \fB98\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual short SystemEx\&.Random\&.NextInt16 (short minValue, short maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random 16‑bit signed integer within the specified range\&. 
+.PP
+Definition at line \fB92\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual int SystemEx\&.Random\&.NextInt32 ()\fR [virtual]\fP"
+
+.PP
+Returns a random 32‑bit signed integer within the full int range\&. 
+.PP
+Definition at line \fB104\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual int SystemEx\&.Random\&.NextInt32 (int maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random 32‑bit signed integer less than the specified maximum\&. 
+.PP
+Definition at line \fB116\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual int SystemEx\&.Random\&.NextInt32 (int minValue, int maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random 32‑bit signed integer within the specified range\&. 
+.PP
+Definition at line \fB110\fP of file \fBRandomX\&.cs\fP\&.
+.SS "override long SystemEx\&.Random\&.NextInt64 ()"
+
+.PP
+Returns a random 64‑bit signed integer within the full long range\&. 
+.PP
+Definition at line \fB122\fP of file \fBRandomX\&.cs\fP\&.
+.SS "override long SystemEx\&.Random\&.NextInt64 (long maxValue)"
+
+.PP
+Returns a random 64‑bit signed integer less than the specified maximum\&. 
+.PP
+Definition at line \fB134\fP of file \fBRandomX\&.cs\fP\&.
+.SS "override long SystemEx\&.Random\&.NextInt64 (long minValue, long maxValue)"
+
+.PP
+Returns a random 64‑bit signed integer within the specified range\&. 
+.PP
+Definition at line \fB128\fP of file \fBRandomX\&.cs\fP\&.
+.SS "override float SystemEx\&.Random\&.NextSingle ()"
+
+.PP
+Returns a random single‑precision floating‑point value\&. The result is generated from four random bytes and validated to be a normal IEEE‑754 value\&. 
+.PP
+Definition at line \fB239\fP of file \fBRandomX\&.cs\fP\&.
+.PP
+Referenced by \fBNextSingle()\fP, \fBNextVec2f()\fP, \fBNextVec3f()\fP, and \fBNextVec4f()\fP\&.
+.SS "virtual float SystemEx\&.Random\&.NextSingle (float maxValue)\fR [virtual]\fP"
+
+.PP
+Definition at line \fB243\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual float SystemEx\&.Random\&.NextSingle (float minValue, float maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random single‑precision floating‑point value\&. The result is generated from four random bytes and validated to be a normal IEEE‑754 value\&. 
+.PP
+Definition at line \fB252\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual ushort SystemEx\&.Random\&.NextUInt16 ()\fR [virtual]\fP"
+
+.PP
+Returns a random 16‑bit unsigned integer within the full ushort range\&. 
+.PP
+Definition at line \fB142\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual ushort SystemEx\&.Random\&.NextUInt16 (ushort maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random 16‑bit unsigned integer less than the specified maximum\&. 
+.PP
+Definition at line \fB154\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual ushort SystemEx\&.Random\&.NextUInt16 (ushort minValue, ushort maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random 16‑bit unsigned integer within the specified range\&. 
+.PP
+Definition at line \fB148\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual uint SystemEx\&.Random\&.NextUInt32 ()\fR [virtual]\fP"
+
+.PP
+Returns a random 32‑bit unsigned integer within the full uint range\&. 
+.PP
+Definition at line \fB160\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual uint SystemEx\&.Random\&.NextUInt32 (uint maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random 32‑bit unsigned integer less than the specified maximum\&. 
+.PP
+Definition at line \fB172\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual uint SystemEx\&.Random\&.NextUInt32 (uint minValue, uint maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random 32‑bit unsigned integer within the specified range\&. 
+.PP
+Definition at line \fB166\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual ulong SystemEx\&.Random\&.NextUInt64 ()\fR [virtual]\fP"
+
+.PP
+Returns a random 64‑bit unsigned integer within the full ulong range\&. 
+.PP
+Definition at line \fB178\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual ulong SystemEx\&.Random\&.NextUInt64 (ulong maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random 64‑bit unsigned integer less than the specified maximum\&. 
+.PP
+Definition at line \fB190\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual ulong SystemEx\&.Random\&.NextUInt64 (ulong minValue, ulong maxValue)\fR [virtual]\fP"
+
+.PP
+Returns a random 64‑bit unsigned integer within the specified range\&. 
+.PP
+Definition at line \fB184\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBVec2d\fP SystemEx\&.Random\&.NextVec2d (double minX = \fRdouble::MinValue\fP, double maxX = \fRdouble::MaxValue\fP, double minY = \fRdouble::MinValue\fP, double maxY = \fRdouble::MaxValue\fP)\fR [virtual]\fP"
+
+.PP
+Generates a random 2‑component vector of double values\&. Each component is independently sampled within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIminX\fP Minimum value for the X component\&.
+.br
+\fImaxX\fP Maximum value for the X component\&.
+.br
+\fIminY\fP Minimum value for the Y component\&.
+.br
+\fImaxY\fP Maximum value for the Y component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVec2d\fP containing random values in the given ranges\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB426\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBVec2f\fP SystemEx\&.Random\&.NextVec2f (float minX = \fRfloat::MinValue\fP, float maxX = \fRfloat::MaxValue\fP, float minY = \fRfloat::MinValue\fP, float maxY = \fRfloat::MaxValue\fP)\fR [virtual]\fP"
+
+.PP
+Generates a random 2‑component vector of float values\&. Each component is independently sampled within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIminX\fP Minimum value for the X component\&.
+.br
+\fImaxX\fP Maximum value for the X component\&.
+.br
+\fIminY\fP Minimum value for the Y component\&.
+.br
+\fImaxY\fP Maximum value for the Y component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVec2f\fP containing random values in the given ranges\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB409\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBVec2h\fP SystemEx\&.Random\&.NextVec2h (\fBHalf16\fP minX, \fBHalf16\fP maxX, \fBHalf16\fP minY, \fBHalf16\fP maxY)\fR [virtual]\fP"
+
+.PP
+Generates a random 2‑component vector of \fBHalf16 \fP values\&. Each component is independently sampled within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIminX\fP Minimum value for the X component\&.
+.br
+\fImaxX\fP Maximum value for the X component\&.
+.br
+\fIminY\fP Minimum value for the Y component\&.
+.br
+\fImaxY\fP Maximum value for the Y component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVec2h\fP containing random values in the given ranges\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB442\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBVec2hb\fP SystemEx\&.Random\&.NextVec2hb (\fBHalf16b\fP minX, \fBHalf16b\fP maxX, \fBHalf16b\fP minY, \fBHalf16b\fP maxY)\fR [virtual]\fP"
+
+.PP
+Generates a random 2‑component vector of \fBHalf16b\fP values\&. Each component is independently sampled within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIminX\fP Minimum value for the X component\&.
+.br
+\fImaxX\fP Maximum value for the X component\&.
+.br
+\fIminY\fP Minimum value for the Y component\&.
+.br
+\fImaxY\fP Maximum value for the Y component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVec2hb\fP containing random values in the given ranges\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB457\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBVec3d\fP SystemEx\&.Random\&.NextVec3d (double minX = \fRdouble::MinValue\fP, double maxX = \fRdouble::MaxValue\fP, double minY = \fRdouble::MinValue\fP, double maxY = \fRdouble::MaxValue\fP, double minZ = \fRdouble::MinValue\fP, double maxZ = \fRdouble::MaxValue\fP)\fR [virtual]\fP"
+
+.PP
+Generates a random 3‑component vector of double values\&. Each component is independently sampled within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIminX\fP Minimum value for the X component\&.
+.br
+\fImaxX\fP Maximum value for the X component\&.
+.br
+\fIminY\fP Minimum value for the Y component\&.
+.br
+\fImaxY\fP Maximum value for the Y component\&.
+.br
+\fIminZ\fP Minimum value for the Z component\&.
+.br
+\fImaxZ\fP Maximum value for the Z component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVec3d\fP containing random values in the given ranges\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB496\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBVec3f\fP SystemEx\&.Random\&.NextVec3f (float minX = \fRfloat::MinValue\fP, float maxX = \fRfloat::MaxValue\fP, float minY = \fRfloat::MinValue\fP, float maxY = \fRfloat::MaxValue\fP, float minZ = \fRfloat::MinValue\fP, float maxZ = \fRfloat::MaxValue\fP)\fR [virtual]\fP"
+
+.PP
+Generates a random 3‑component vector of float values\&. Each component is independently sampled within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIminX\fP Minimum value for the X component\&.
+.br
+\fImaxX\fP Maximum value for the X component\&.
+.br
+\fIminY\fP Minimum value for the Y component\&.
+.br
+\fImaxY\fP Maximum value for the Y component\&.
+.br
+\fIminZ\fP Minimum value for the Z component\&.
+.br
+\fImaxZ\fP Maximum value for the Z component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVec3f\fP containing random values in the given ranges\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB475\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBVec3h\fP SystemEx\&.Random\&.NextVec3h (\fBHalf16\fP minX, \fBHalf16\fP maxX, \fBHalf16\fP minY, \fBHalf16\fP maxY, \fBHalf16\fP minZ, \fBHalf16\fP maxZ)\fR [virtual]\fP"
+
+.PP
+Generates a random 3‑component vector of \fBHalf16\fP values\&. Each component is independently sampled within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIminX\fP Minimum value for the X component\&.
+.br
+\fImaxX\fP Maximum value for the X component\&.
+.br
+\fIminY\fP Minimum value for the Y component\&.
+.br
+\fImaxY\fP Maximum value for the Y component\&.
+.br
+\fIminZ\fP Minimum value for the Z component\&.
+.br
+\fImaxZ\fP Maximum value for the Z component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVec3h\fP containing random values in the given ranges\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB517\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBVec3hb\fP SystemEx\&.Random\&.NextVec3hb (\fBHalf16b\fP minX, \fBHalf16b\fP maxX, \fBHalf16b\fP minY, \fBHalf16b\fP maxY, \fBHalf16b\fP minZ, \fBHalf16b\fP maxZ)\fR [virtual]\fP"
+
+.PP
+Generates a random 3‑component vector of \fBHalf16b\fP values\&. Each component is independently sampled within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIminX\fP Minimum value for the X component\&.
+.br
+\fImaxX\fP Maximum value for the X component\&.
+.br
+\fIminY\fP Minimum value for the Y component\&.
+.br
+\fImaxY\fP Maximum value for the Y component\&.
+.br
+\fIminZ\fP Minimum value for the Z component\&.
+.br
+\fImaxZ\fP Maximum value for the Z component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVec3hb\fP containing random values in the given ranges\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB538\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBVec4d\fP SystemEx\&.Random\&.NextVec4d (double minX = \fRdouble::MinValue\fP, double maxX = \fRdouble::MaxValue\fP, double minY = \fRdouble::MinValue\fP, double maxY = \fRdouble::MaxValue\fP, double minZ = \fRdouble::MinValue\fP, double maxZ = \fRdouble::MaxValue\fP, double minW = \fRdouble::MinValue\fP, double maxW = \fRdouble::MaxValue\fP)\fR [virtual]\fP"
+
+.PP
+Generates a random 4‑component vector of double values\&. Each component is independently sampled within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIminX\fP Minimum value for the X component\&.
+.br
+\fImaxX\fP Maximum value for the X component\&.
+.br
+\fIminY\fP Minimum value for the Y component\&.
+.br
+\fImaxY\fP Maximum value for the Y component\&.
+.br
+\fIminZ\fP Minimum value for the Z component\&.
+.br
+\fImaxZ\fP Maximum value for the Z component\&.
+.br
+\fIminW\fP Minimum value for the Z component\&.
+.br
+\fImaxW\fP Maximum value for the Z component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVec4d\fP containing random values in the given ranges\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB587\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBVec4f\fP SystemEx\&.Random\&.NextVec4f (float minX = \fRfloat::MinValue\fP, float maxX = \fRfloat::MaxValue\fP, float minY = \fRfloat::MinValue\fP, float maxY = \fRfloat::MaxValue\fP, float minZ = \fRfloat::MinValue\fP, float maxZ = \fRfloat::MaxValue\fP, float minW = \fRfloat::MinValue\fP, float maxW = \fRfloat::MaxValue\fP)\fR [virtual]\fP"
+
+.PP
+Generates a random 4‑component vector of float values\&. Each component is independently sampled within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIminX\fP Minimum value for the X component\&.
+.br
+\fImaxX\fP Maximum value for the X component\&.
+.br
+\fIminY\fP Minimum value for the Y component\&.
+.br
+\fImaxY\fP Maximum value for the Y component\&.
+.br
+\fIminZ\fP Minimum value for the Z component\&.
+.br
+\fImaxZ\fP Maximum value for the Z component\&.
+.br
+\fIminW\fP Minimum value for the Z component\&.
+.br
+\fImaxW\fP Maximum value for the Z component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVec4f\fP containing random values in the given ranges\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB562\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBVec4h\fP SystemEx\&.Random\&.NextVec4h (\fBHalf16\fP minX, \fBHalf16\fP maxX, \fBHalf16\fP minY, \fBHalf16\fP maxY, \fBHalf16\fP minZ, \fBHalf16\fP maxZ, \fBHalf16\fP minW, \fBHalf16\fP maxW)\fR [virtual]\fP"
+
+.PP
+Generates a random 4‑component vector of \fB Half16\fP values\&. Each component is independently sampled within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIminX\fP Minimum value for the X component\&.
+.br
+\fImaxX\fP Maximum value for the X component\&.
+.br
+\fIminY\fP Minimum value for the Y component\&.
+.br
+\fImaxY\fP Maximum value for the Y component\&.
+.br
+\fIminZ\fP Minimum value for the Z component\&.
+.br
+\fImaxZ\fP Maximum value for the Z component\&.
+.br
+\fIminW\fP Minimum value for the Z component\&.
+.br
+\fImaxW\fP Maximum value for the Z component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVec4h\fP containing random values in the given ranges\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB612\fP of file \fBRandomX\&.cs\fP\&.
+.SS "virtual \fBVec4hb\fP SystemEx\&.Random\&.NextVec4hb (\fBHalf16b\fP minX, \fBHalf16b\fP maxX, \fBHalf16b\fP minY, \fBHalf16b\fP maxY, \fBHalf16b\fP minZ, \fBHalf16b\fP maxZ, \fBHalf16b\fP minW, \fBHalf16b\fP maxW)\fR [virtual]\fP"
+
+.PP
+Generates a random 4‑component vector of \fB Half16b\fP values\&. Each component is independently sampled within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIminX\fP Minimum value for the X component\&.
+.br
+\fImaxX\fP Maximum value for the X component\&.
+.br
+\fIminY\fP Minimum value for the Y component\&.
+.br
+\fImaxY\fP Maximum value for the Y component\&.
+.br
+\fIminZ\fP Minimum value for the Z component\&.
+.br
+\fImaxZ\fP Maximum value for the Z component\&.
+.br
+\fIminW\fP Minimum value for the Z component\&.
+.br
+\fImaxW\fP Maximum value for the Z component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVec4hb\fP containing random values in the given ranges\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB637\fP of file \fBRandomX\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

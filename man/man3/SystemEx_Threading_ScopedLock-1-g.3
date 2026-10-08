@@ -1,0 +1,85 @@
+.TH "SystemEx.Threading.ScopedLock< TLOCK >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.ScopedLock< TLOCK > \- Provides a scoped lock mechanism for an existing \fBILock\fP instance\&. Upon construction, the lock is acquired using the specified timeout\&. When the scope ends, \fBDispose\fP releases the lock\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IDisposable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDispose\fP ()"
+.br
+.RI "Releases the lock\&. This method is automatically invoked when the scope ends\&. "
+.ti -1c
+.RI "\fBScopedLock\fP (ref TLOCK ulock, \fBTimeOut\fP ms)"
+.br
+.RI "Initializes a new scoped lock\&. The provided lock is acquired immediately using the specified timeout\&. If the lock cannot be acquired, the caller may inspect the result via the implicit boolean operator\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static implicit \fBoperator bool\fP (\fBScopedLock\fP< TLOCK > slock)"
+.br
+.RI "Returns \fRtrue\fP if the underlying lock is currently held\&. This operator allows scoped locks to be used in conditional expressions, mirroring the behavior of C++ RAII lock wrappers\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a scoped lock mechanism for an existing \fBILock\fP instance\&. Upon construction, the lock is acquired using the specified timeout\&. When the scope ends, \fBDispose\fP releases the lock\&. 
+
+\fBScopedLock<TLOCK>\fP offers RAII‑style mutual exclusion similar to C++'s \fRstd::scoped_lock\fP, ensuring deterministic lock acquisition and release\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITLOCK\fP The lock type implementing \fBILock\fP\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITLOCK\fP : \fI\fBILock\fP\fP
+.PP
+Definition at line \fB33\fP of file \fBUniqueLock\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Threading\&.ScopedLock< TLOCK >\&.Dispose ()"
+
+.PP
+Releases the lock\&. This method is automatically invoked when the scope ends\&. 
+.PP
+Definition at line \fB55\fP of file \fBUniqueLock\&.cs\fP\&.
+.SS "implicit SystemEx\&.Threading\&.ScopedLock< TLOCK >\&.operator bool (\fBScopedLock\fP< TLOCK > slock)\fR [static]\fP"
+
+.PP
+Returns \fRtrue\fP if the underlying lock is currently held\&. This operator allows scoped locks to be used in conditional expressions, mirroring the behavior of C++ RAII lock wrappers\&. 
+.PP
+Definition at line \fB64\fP of file \fBUniqueLock\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.ScopedLock< TLOCK >\&.ScopedLock (ref TLOCK ulock, \fBTimeOut\fP ms)"
+
+.PP
+Initializes a new scoped lock\&. The provided lock is acquired immediately using the specified timeout\&. If the lock cannot be acquired, the caller may inspect the result via the implicit boolean operator\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIulock\fP \fBReference\fP to the lock instance to operate on\&.
+.br
+\fIms\fP Timeout in milliseconds used when acquiring the lock\&. A value of \fR-1\fP indicates an immediate attempt\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB47\fP of file \fBUniqueLock\&.cs\fP\&.
+.PP
+Referenced by \fBoperator bool()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

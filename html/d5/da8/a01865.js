@@ -1,5 +1,6 @@
 var a01865 =
 [
-    [ "Compute", "d8/d0a/a00904_gab492223af01ff84e14f736ddeca52199.html#gab492223af01ff84e14f736ddeca52199", null ],
-    [ "ComputeLong", "d8/d0a/a00904_gad462ad96611008488a7a3fab4411e592.html#gad462ad96611008488a7a3fab4411e592", null ]
+    [ "WeinbergHash", "d9/dfb/a00913_gaa63e93e408d408a06f9a17ed6f98d909.html#gaa63e93e408d408a06f9a17ed6f98d909", null ],
+    [ "Compute", "d9/dfb/a00913_gabf01ae4e91fa707fd45863780e51bfc4.html#gabf01ae4e91fa707fd45863780e51bfc4", null ],
+    [ "ComputeLong", "d9/dfb/a00913_gaeb764878ef7920026336af8fd9db97ed.html#gaeb764878ef7920026336af8fd9db97ed", null ]
 ];

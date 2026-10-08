@@ -1,0 +1,106 @@
+.TH "SystemEx.Numeric.Projection" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Projection \- Represents a basic geometric projection descriptor containing field‑of‑view, aspect ratio, and near/far clipping planes\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProjection\fP (float fFov, float fAspect, float fNearPlane, float fFarPlane)"
+.br
+.RI "Initializes a new \fBProjection\fP instance with the specified field‑of‑view, aspect ratio, and clipping plane distances\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBm_fAspect\fP"
+.br
+.RI "Aspect ratio of the viewport (width divided by height)\&. "
+.ti -1c
+.RI "float \fBm_fFarPlane\fP"
+.br
+.RI "Distance to the far clipping plane\&. Must be greater than the near plane\&. "
+.ti -1c
+.RI "float \fBm_fFov\fP"
+.br
+.RI "Field of view in radians\&. Defines the vertical viewing angle of the perspective projection\&. "
+.ti -1c
+.RI "float \fBm_fNearPlane\fP"
+.br
+.RI "Distance to the near clipping plane\&. Must be positive and non‑zero\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a basic geometric projection descriptor containing field‑of‑view, aspect ratio, and near/far clipping planes\&. 
+
+\fBProjection\fP stores the fundamental scalar parameters required to construct a perspective projection transform\&. Although this type does not generate matrices itself, it provides the canonical values used by rendering pipelines, shader systems, or future matrix utilities\&. 
+
+.PP
+The structure is intentionally lightweight and immutable in layout\&. It is suitable for passing projection parameters between CPU subsystems, GPU kernels, or mathematical utilities without imposing a specific matrix representation\&. 
+.PP
+Definition at line \fB40\fP of file \fBProjection\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.Projection\&.Projection (float fFov, float fAspect, float fNearPlane, float fFarPlane)"
+
+.PP
+Initializes a new \fBProjection\fP instance with the specified field‑of‑view, aspect ratio, and clipping plane distances\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfFov\fP Field of view in radians\&.
+.br
+\fIfAspect\fP Aspect ratio (width / height)\&.
+.br
+\fIfNearPlane\fP Near clipping plane distance\&.
+.br
+\fIfFarPlane\fP Far clipping plane distance\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB71\fP of file \fBProjection\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "float SystemEx\&.Numeric\&.Projection\&.m_fAspect"
+
+.PP
+Aspect ratio of the viewport (width divided by height)\&. 
+.PP
+Definition at line \fB51\fP of file \fBProjection\&.cs\fP\&.
+.PP
+Referenced by \fBProjection()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Projection\&.m_fFarPlane"
+
+.PP
+Distance to the far clipping plane\&. Must be greater than the near plane\&. 
+.PP
+Definition at line \fB61\fP of file \fBProjection\&.cs\fP\&.
+.PP
+Referenced by \fBProjection()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Projection\&.m_fFov"
+
+.PP
+Field of view in radians\&. Defines the vertical viewing angle of the perspective projection\&. 
+.PP
+Definition at line \fB46\fP of file \fBProjection\&.cs\fP\&.
+.PP
+Referenced by \fBProjection()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Projection\&.m_fNearPlane"
+
+.PP
+Distance to the near clipping plane\&. Must be positive and non‑zero\&. 
+.PP
+Definition at line \fB56\fP of file \fBProjection\&.cs\fP\&.
+.PP
+Referenced by \fBProjection()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,122 @@
+.TH "SystemEx.AI.IModelTool< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI.IModelTool< T > \- Represents a model‑executable tool that can be exposed to \fBAI\fP backends through an IAIFunctionFactory\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\fP, \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\fP, and \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Task< object?> \fBExecuteAsync\fP (Map< string, object?> args, CancellationToken ct)"
+.br
+.RI "Executes the tool asynchronously using the provided argument dictionary\&. 
+.br
+ The backend supplies validated parameters and a cancellation token\&. 
+.br
+ The returned object must be serializable or convertible into a model‑usable form\&. "
+.ti -1c
+.RI "IEnumerable< \fBModelToolParameter\fP > \fBGetParameters\fP ()"
+.br
+.RI "Returns the parameter schema describing all inputs accepted by the tool\&. 
+.br
+ Each parameter defines a name, type, and optional constraints\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBDescription\fP\fR [get]\fP"
+.br
+.RI "Gets a human‑readable description of the tool's purpose and behavior\&. 
+.br
+ Used by backends to generate tool metadata or documentation\&. "
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Gets the unique name of the tool\&. 
+.br
+ This identifier is used by model backends and tool factories to expose the tool to the model runtime\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a model‑executable tool that can be exposed to \fBAI\fP backends through an IAIFunctionFactory\&. 
+
+An \fBIModelTool<T>\fP defines a named operation with a description, a parameter schema, and an asynchronous execution method\&. 
+.br
+ Model backends may convert these tools into runtime‑callable functions when supported, enabling structured tool‑use inside model pipelines\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The prompt type used by the model backend when invoking the tool\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB38\fP of file \fBIModelTool\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "Task< object?> SystemEx\&.AI\&.IModelTool< T >\&.ExecuteAsync (Map< string, object?> args, CancellationToken ct)"
+
+.PP
+Executes the tool asynchronously using the provided argument dictionary\&. 
+.br
+ The backend supplies validated parameters and a cancellation token\&. 
+.br
+ The returned object must be serializable or convertible into a model‑usable form\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIargs\fP A map containing the tool parameters mapped by name\&. 
+.br
+\fIct\fP A cancellation token used to abort execution if required by the backend\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A task producing the tool's result, or \fRnull\fP if no output is generated\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\fP, \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\fP, and \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\fP\&.
+.SS "IEnumerable< \fBModelToolParameter\fP > SystemEx\&.AI\&.IModelTool< T >\&.GetParameters ()"
+
+.PP
+Returns the parameter schema describing all inputs accepted by the tool\&. 
+.br
+ Each parameter defines a name, type, and optional constraints\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\fP, \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\fP, and \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "string SystemEx\&.AI\&.IModelTool< T >\&.Description\fR [get]\fP"
+
+.PP
+Gets a human‑readable description of the tool's purpose and behavior\&. 
+.br
+ Used by backends to generate tool metadata or documentation\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\fP, \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\fP, and \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBIModelTool\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.IModelTool< T >\&.Name\fR [get]\fP"
+
+.PP
+Gets the unique name of the tool\&. 
+.br
+ This identifier is used by model backends and tool factories to expose the tool to the model runtime\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\fP, \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\fP, and \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\fP\&.
+.PP
+Definition at line \fB45\fP of file \fBIModelTool\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

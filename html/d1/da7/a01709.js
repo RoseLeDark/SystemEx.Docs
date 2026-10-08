@@ -1,11 +1,10 @@
 var a01709 =
 [
-    [ "ColorXYZ", "d4/d1c/a00903_ga39a3ae0dd212c74b312a22675f4412ec.html#ga39a3ae0dd212c74b312a22675f4412ec", null ],
-    [ "Equals", "d4/d1c/a00903_ga13e1615994895b6c4e1f729993da9c11.html#ga13e1615994895b6c4e1f729993da9c11", null ],
-    [ "Equals", "d4/d1c/a00903_gafa46c9dbdcb0a373e1bab091f2ca928c.html#gafa46c9dbdcb0a373e1bab091f2ca928c", null ],
-    [ "GetHashCode", "d4/d1c/a00903_ga0f64c5bfbff2c423b111cea14c3b0980.html#ga0f64c5bfbff2c423b111cea14c3b0980", null ],
-    [ "ToString", "d4/d1c/a00903_gad16f6ebd767aa2a97e824ba26d585e6a.html#gad16f6ebd767aa2a97e824ba26d585e6a", null ],
-    [ "X", "d4/d1c/a00903_gaf429e13fcc02fa5f8da728c742b02061.html#gaf429e13fcc02fa5f8da728c742b02061", null ],
-    [ "Y", "d4/d1c/a00903_ga625fa6b600c3b34aeac4109e7d47f152.html#ga625fa6b600c3b34aeac4109e7d47f152", null ],
-    [ "Z", "d4/d1c/a00903_ga02f8a1aafc8a9967457fcc1e71be559f.html#ga02f8a1aafc8a9967457fcc1e71be559f", null ]
+    [ "Enable", "df/da5/a00912_ga9579d3a0ea6a29286adfcc7f6b856085.html#ga9579d3a0ea6a29286adfcc7f6b856085", null ],
+    [ "HasMask", "df/da5/a00912_ga62b6fd8c6a5ac8c760fa5b8cd3eb1908.html#ga62b6fd8c6a5ac8c760fa5b8cd3eb1908", null ],
+    [ "IsDirty", "df/da5/a00912_gaf2adc6e4054c97d6fa0f0685261661ee.html#gaf2adc6e4054c97d6fa0f0685261661ee", null ],
+    [ "Mask", "df/da5/a00912_ga56fdfd38066c28e8d983c1255476871a.html#ga56fdfd38066c28e8d983c1255476871a", null ],
+    [ "Name", "df/da5/a00912_ga72fc96a3c67e89fd28c93e48043d1620.html#ga72fc96a3c67e89fd28c93e48043d1620", null ],
+    [ "Showing", "df/da5/a00912_gacb6e2d50b36fca23004dc5edef974f8c.html#gacb6e2d50b36fca23004dc5edef974f8c", null ],
+    [ "Visible", "df/da5/a00912_ga2ab6c7233f76242b3f82b7c64e421713.html#ga2ab6c7233f76242b3f82b7c64e421713", null ]
 ];

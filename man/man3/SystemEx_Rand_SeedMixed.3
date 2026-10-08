@@ -1,0 +1,212 @@
+.TH "SystemEx.Rand.SeedMixed" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Rand.SeedMixed \- Represents a composite seed that can be dynamically mixed with other seeds using a variety of mathematical operations\&. \fBSeedMixed\fP acts as a wrapper around an existing \fBISeed\fP instance and provides thread‑safe mixing functionality suitable for all random engines in \fBSystemEx\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Rand\&.ISeed< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "uint[] \fBGetSeed\fP ()"
+.br
+.RI "Returns the underlying seed values as an array of 32‑bit unsigned integers\&. The returned array defines the complete state of the seed at the time of access\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+A uint array containing the current seed values\&. 
+.RE
+.PP
+ "
+.ti -1c
+.RI "\fBSeedMixed\fP \fBMix< T >\fP (T other, \fBSeedMix\fP type, uint value=2)"
+.br
+.RI "Mixes the current seed with another seed using the specified mixing strategy\&. The operation is performed in a thread‑safe manner and may apply arithmetic, bitwise, shift, or rotation‑based transformations\&. When \fBSeedMix\&.User\fP is selected, the user‑defined mixing delegate \fBOnUserMix\fP is invoked instead\&. "
+.ti -1c
+.RI "\fBSeedMixed\fP (\fBISeed\fP seed)"
+.br
+.RI "Initializes a new \fBSeedMixed\fP instance wrapping the specified seed\&. The internal lock is created to ensure thread‑safe mixing\&. "
+.ti -1c
+.RI "void \fBUpdate\fP (\fBISeed\fP value)"
+.br
+.RI "Updates the seed by mixing it with another seed using the default multiplication strategy\&. This provides a simple way to refresh the composite seed without specifying a mix type explicitly\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Rand\&.ISeed< T >\fP
+.in +1c
+.ti -1c
+.RI "void \fBUpdate\fP (T value)"
+.br
+.RI "Updates the internal seed state using the specified value\&. The exact behavior depends on the implementation and may include mutation, recomputation, or partial replacement of seed components\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBLightLock\fP \fBm_lLock\fP"
+.br
+.ti -1c
+.RI "\fBISeed\fP \fBm_usable\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBISeed\fP \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the underlying seed currently wrapped by this instance\&. "
+.ti -1c
+.RI "int \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the number of 32‑bit values contained in the seed\&. This corresponds to the length of the array returned by \fBGetSeed\fP\&. "
+.ti -1c
+.RI "Func< \fBISeed\fP, \fBISeed\fP, \fBISeed\fP >? \fBOnUserMix\fP\fR [get]\fP"
+.br
+.RI "Gets an optional user‑defined mixing function\&. When the mix type \fBSeedMix\&.User\fP is selected, this delegate is invoked to perform custom mixing logic between the current seed and the provided seed instance\&. "
+.ti -1c
+.RI "uint \fBthis[int index]\fP\fR [get, set]\fP"
+.br
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Rand\&.ISeed\fP
+.in +1c
+.ti -1c
+.RI "uint \fBthis[int i]\fP\fR [get, set]\fP"
+.br
+.RI "Provides indexed access to individual seed values\&. Both reading and writing are supported, allowing engines or mixing operations to modify specific seed components directly\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a composite seed that can be dynamically mixed with other seeds using a variety of mathematical operations\&. \fBSeedMixed\fP acts as a wrapper around an existing \fBISeed\fP instance and provides thread‑safe mixing functionality suitable for all random engines in \fBSystemEx\fP\&. 
+.PP
+Definition at line \fB126\fP of file \fBSeedMixer\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Rand\&.SeedMixed\&.SeedMixed (\fBISeed\fP seed)"
+
+.PP
+Initializes a new \fBSeedMixed\fP instance wrapping the specified seed\&. The internal lock is created to ensure thread‑safe mixing\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIseed\fP The seed to wrap and operate on\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB157\fP of file \fBSeedMixer\&.cs\fP\&.
+.PP
+Referenced by \fBMix< T >()\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "uint[] SystemEx\&.Rand\&.SeedMixed\&.GetSeed ()"
+
+.PP
+Returns the underlying seed values as an array of 32‑bit unsigned integers\&. The returned array defines the complete state of the seed at the time of access\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+A uint array containing the current seed values\&. 
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.Rand\&.ISeed\fP\&.
+.PP
+Definition at line \fB164\fP of file \fBSeedMixer\&.cs\fP\&.
+.SS "\fBSeedMixed\fP SystemEx\&.Rand\&.SeedMixed\&.Mix< T > (T other, \fBSeedMix\fP type, uint value = \fR2\fP)"
+
+.PP
+Mixes the current seed with another seed using the specified mixing strategy\&. The operation is performed in a thread‑safe manner and may apply arithmetic, bitwise, shift, or rotation‑based transformations\&. When \fBSeedMix\&.User\fP is selected, the user‑defined mixing delegate \fBOnUserMix\fP is invoked instead\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The seed type, constrained to \fBISeed\fP\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The seed to mix with the current seed\&.
+.br
+\fItype\fP The mixing strategy to apply\&.
+.br
+\fIvalue\fP An optional parameter used by certain mix operations (e\&.g\&. shift and rotation amounts)\&. Defaults to 2\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The current \fBSeedMixed\fP instance after mixing\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fI\fBISeed\fP\fP
+.PP
+Definition at line \fB193\fP of file \fBSeedMixer\&.cs\fP\&.
+.SS "void SystemEx\&.Rand\&.SeedMixed\&.Update (\fBISeed\fP value)"
+
+.PP
+Updates the seed by mixing it with another seed using the default multiplication strategy\&. This provides a simple way to refresh the composite seed without specifying a mix type explicitly\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The seed used for updating\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB172\fP of file \fBSeedMixer\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBLightLock\fP SystemEx\&.Rand\&.SeedMixed\&.m_lLock"
+
+.PP
+Definition at line \fB128\fP of file \fBSeedMixer\&.cs\fP\&.
+.SS "\fBISeed\fP SystemEx\&.Rand\&.SeedMixed\&.m_usable"
+
+.PP
+Definition at line \fB127\fP of file \fBSeedMixer\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBISeed\fP SystemEx\&.Rand\&.SeedMixed\&.Current\fR [get]\fP"
+
+.PP
+Gets the underlying seed currently wrapped by this instance\&. 
+.PP
+Definition at line \fB141\fP of file \fBSeedMixer\&.cs\fP\&.
+.SS "int SystemEx\&.Rand\&.SeedMixed\&.Length\fR [get]\fP"
+
+.PP
+Gets the number of 32‑bit values contained in the seed\&. This corresponds to the length of the array returned by \fBGetSeed\fP\&. 
+.PP
+Implements \fBSystemEx\&.Rand\&.ISeed\fP\&.
+.PP
+Definition at line \fB150\fP of file \fBSeedMixer\&.cs\fP\&.
+.SS "Func<\fBISeed\fP, \fBISeed\fP, \fBISeed\fP>? SystemEx\&.Rand\&.SeedMixed\&.OnUserMix\fR [get]\fP"
+
+.PP
+Gets an optional user‑defined mixing function\&. When the mix type \fBSeedMix\&.User\fP is selected, this delegate is invoked to perform custom mixing logic between the current seed and the provided seed instance\&. 
+.PP
+Definition at line \fB136\fP of file \fBSeedMixer\&.cs\fP\&.
+.PP
+Referenced by \fBMix< T >()\fP, and \fBSeedMixed()\fP\&.
+.SS "uint SystemEx\&.Rand\&.SeedMixed\&.this[int index]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+
+.PP
+Definition at line \fB144\fP of file \fBSeedMixer\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

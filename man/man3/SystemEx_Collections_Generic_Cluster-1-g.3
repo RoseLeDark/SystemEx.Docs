@@ -1,0 +1,300 @@
+.TH "SystemEx.Collections.Generic.Cluster< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Cluster< T > \- Basic implementation of \fBICluster<T>\fP representing a node with weighted children\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.ICluster< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBAdd\fP (\fBICluster\fP< T > other, uint gewicht)"
+.br
+.RI "Add a child node with the specified weight\&. "
+.ti -1c
+.RI "\fBCluster\fP (T value, int childs=100)"
+.br
+.RI "Create a new cluster node with an initial capacity for children\&. "
+.ti -1c
+.RI "bool \fBContains\fP (\fBICluster\fP< T > other)"
+.br
+.RI "Check whether the specified node is a direct child\&. "
+.ti -1c
+.RI "bool \fBCost\fP (T value, ref ulong cost, ulong budget)"
+.br
+.RI "Perform a cost-limited search (Dijkstra-like) to find a node with the given value\&. Returns true and sets \fIcost\fP  when a path within \fIbudget\fP  is found\&. "
+.ti -1c
+.RI "uint \fBCostAt\fP (long index)"
+.br
+.RI "Get Cost of the element at position N\&. "
+.ti -1c
+.RI "\fBICluster\fP< T > \fBElementAt\fP (long index)"
+.br
+.RI "Get Element at Position N\&. "
+.ti -1c
+.RI "bool \fBfind\fP (T pradicat, \fBSearchType\fP type, ulong budget, ref Map< \fBICluster\fP< T >, uint > steps)"
+.br
+.RI "General search that propagates remaining energy or accumulates cost depending on \fItype\fP \&. Records remaining energy per visited node in \fIsteps\fP \&. "
+.ti -1c
+.RI "bool \fBRemove\fP (\fBICluster\fP< T > other)"
+.br
+.RI "Remove the specified child node if present\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Map< \fBICluster\fP< T >, uint > \fBm_childs\fP"
+.br
+.RI "Map of child node to edge weight\&. "
+.ti -1c
+.RI "T \fBm_value\fP"
+.br
+.RI "Stored node value\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "CluserIterrator< T > \fBBegin\fP\fR [get]\fP"
+.br
+.RI "Begin IT on current layer\&. "
+.ti -1c
+.RI "Map< \fBICluster\fP< T >, uint > \fBChild\fP\fR [get]\fP"
+.br
+.RI "Gets the child map\&. "
+.ti -1c
+.RI "CluserIterrator< T > \fBEnd\fP\fR [get]\fP"
+.br
+.RI "End IT im current layer\&. "
+.ti -1c
+.RI "bool \fBHaveChild\fP\fR [get]\fP"
+.br
+.RI "Have this node a Child\&. "
+.ti -1c
+.RI "bool \fBHaveParent\fP\fR [get]\fP"
+.br
+.RI "Have this Node a Parent\&. "
+.ti -1c
+.RI "Pair< \fBICluster\fP< T >, uint >? \fBParent\fP\fR [get, set]\fP"
+.br
+.RI "Optional parent pointer with edge weight\&. "
+.ti -1c
+.RI "long \fBSize\fP\fR [get]\fP"
+.br
+.RI "Gets the number of children\&. "
+.ti -1c
+.RI "Optional< uint > \fBthis[ICluster< T > key]\fP\fR [get, protected set]\fP"
+.br
+.RI "Indexer by child node key to access the edge weight\&. "
+.ti -1c
+.RI "Pair< \fBICluster\fP< T >, uint > \fBthis[int i]\fP\fR [get, protected set]\fP"
+.br
+.RI "Indexer by integer index into the child map\&. "
+.ti -1c
+.RI "T \fBValue\fP\fR [get]\fP"
+.br
+.RI "Gets the stored value\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Basic implementation of \fBICluster<T>\fP representing a node with weighted children\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Type of the stored value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB76\fP of file \fBCluster\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.Add (\fBICluster\fP< T > other, uint gewicht)"
+
+.PP
+Add a child node with the specified weight\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster< T >\fP\&.
+.PP
+Definition at line \fB142\fP of file \fBCluster\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.Cluster (T value, int childs = \fR100\fP)"
+
+.PP
+Create a new cluster node with an initial capacity for children\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP Value to store in the node\&.
+.br
+\fIchilds\fP Initial child capacity (optional)\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB133\fP of file \fBCluster\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.Contains (\fBICluster\fP< T > other)"
+
+.PP
+Check whether the specified node is a direct child\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster< T >\fP\&.
+.PP
+Definition at line \fB148\fP of file \fBCluster\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.Cost (T value, ref ulong cost, ulong budget)"
+
+.PP
+Perform a cost-limited search (Dijkstra-like) to find a node with the given value\&. Returns true and sets \fIcost\fP  when a path within \fIbudget\fP  is found\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster< T >\fP\&.
+.PP
+Definition at line \fB166\fP of file \fBCluster\&.cs\fP\&.
+.SS "uint SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.CostAt (long index)"
+
+.PP
+Get Cost of the element at position N\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The costs the elment on position N
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP\&.
+.PP
+Definition at line \fB305\fP of file \fBCluster\&.cs\fP\&.
+.SS "\fBICluster\fP< T > SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.ElementAt (long index)"
+
+.PP
+Get Element at Position N\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster< T >\fP\&.
+.PP
+Definition at line \fB303\fP of file \fBCluster\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.find (T pradicat, \fBSearchType\fP type, ulong budget, ref Map< \fBICluster\fP< T >, uint > steps)"
+
+.PP
+General search that propagates remaining energy or accumulates cost depending on \fItype\fP \&. Records remaining energy per visited node in \fIsteps\fP \&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster< T >\fP\&.
+.PP
+Definition at line \fB233\fP of file \fBCluster\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.Remove (\fBICluster\fP< T > other)"
+
+.PP
+Remove the specified child node if present\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster< T >\fP\&.
+.PP
+Definition at line \fB155\fP of file \fBCluster\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "Map<\fBICluster\fP<T>, uint> SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.m_childs\fR [protected]\fP"
+
+.PP
+Map of child node to edge weight\&. 
+.PP
+Definition at line \fB82\fP of file \fBCluster\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBCluster()\fP, \fBContains()\fP, \fBCostAt()\fP, \fBElementAt()\fP, and \fBRemove()\fP\&.
+.SS "T SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.m_value\fR [protected]\fP"
+
+.PP
+Stored node value\&. 
+.PP
+Definition at line \fB79\fP of file \fBCluster\&.cs\fP\&.
+.PP
+Referenced by \fBCluster()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "CluserIterrator<T> SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.Begin\fR [get]\fP"
+
+.PP
+Begin IT on current layer\&. 
+.PP
+Definition at line \fB100\fP of file \fBCluster\&.cs\fP\&.
+.SS "Map<\fBICluster\fP<T>, uint> SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.Child\fR [get]\fP"
+
+.PP
+Gets the child map\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster< T >\fP\&.
+.PP
+Definition at line \fB92\fP of file \fBCluster\&.cs\fP\&.
+.SS "CluserIterrator<T> SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.End\fR [get]\fP"
+
+.PP
+End IT im current layer\&. 
+.PP
+Definition at line \fB104\fP of file \fBCluster\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.HaveChild\fR [get]\fP"
+
+.PP
+Have this node a Child\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP\&.
+.PP
+Definition at line \fB107\fP of file \fBCluster\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.HaveParent\fR [get]\fP"
+
+.PP
+Have this Node a Parent\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP\&.
+.PP
+Definition at line \fB110\fP of file \fBCluster\&.cs\fP\&.
+.SS "Pair<\fBICluster\fP<T>, uint>? SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.Parent\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Optional parent pointer with edge weight\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster< T >\fP\&.
+.PP
+Definition at line \fB95\fP of file \fBCluster\&.cs\fP\&.
+.PP
+Referenced by \fBCluster()\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.Size\fR [get]\fP"
+
+.PP
+Gets the number of children\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP\&.
+.PP
+Definition at line \fB89\fP of file \fBCluster\&.cs\fP\&.
+.SS "Optional<uint> SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.this[\fBICluster\fP< T > key]\fR [get]\fP, \fR [protected set]\fP"
+
+.PP
+Indexer by child node key to access the edge weight\&. 
+.PP
+Definition at line \fB123\fP of file \fBCluster\&.cs\fP\&.
+.SS "Pair<\fBICluster\fP<T>, uint> SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.this[int i]\fR [get]\fP, \fR [protected set]\fP"
+
+.PP
+Indexer by integer index into the child map\&. 
+.PP
+Definition at line \fB115\fP of file \fBCluster\&.cs\fP\&.
+.SS "T SystemEx\&.Collections\&.Generic\&.Cluster< T >\&.Value\fR [get]\fP"
+
+.PP
+Gets the stored value\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICluster< T >\fP\&.
+.PP
+Definition at line \fB86\fP of file \fBCluster\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,6 +1,9 @@
 var a01773 =
 [
-    [ "Black3Hasher", "d8/d0a/a00904_ga17af8e1ee759024e0d57b730c739a969.html#ga17af8e1ee759024e0d57b730c739a969", null ],
-    [ "Compute", "d8/d0a/a00904_ga322178abf78db90bfc6e29636f597403.html#ga322178abf78db90bfc6e29636f597403", null ],
-    [ "ComputeLong", "d8/d0a/a00904_ga20013d9f5608babd5c031167e72ad679.html#ga20013d9f5608babd5c031167e72ad679", null ]
+    [ "CRC32", "d5/d36/a01773_a2b79cca25f27938400600120e5ced1ea.html#a2b79cca25f27938400600120e5ced1ea", null ],
+    [ "CRC32", "d5/d36/a01773_a8d82185375bbecf03534a0728bdcdf7b.html#a8d82185375bbecf03534a0728bdcdf7b", null ],
+    [ "Compute", "d5/d36/a01773_a48838d08421526068baa25b8487eea79.html#a48838d08421526068baa25b8487eea79", null ],
+    [ "ComputeLong", "d5/d36/a01773_a069c3e7f5e038d2a52d72441fae723b8.html#a069c3e7f5e038d2a52d72441fae723b8", null ],
+    [ "Polynomial", "d5/d36/a01773_ab9b6a2568c1ba99546112aa5a1c341df.html#ab9b6a2568c1ba99546112aa5a1c341df", null ],
+    [ "RollingState", "d5/d36/a01773_ac8542573dfcb5567d5941fdb5b0484fa.html#ac8542573dfcb5567d5941fdb5b0484fa", null ]
 ];

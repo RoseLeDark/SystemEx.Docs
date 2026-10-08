@@ -1,0 +1,212 @@
+.TH "SystemEx.Numeric.Fast_Float" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Fast_Float \- Provides low-level IEEE‑754 bit inspection and manipulation for 32‑bit floating-point values\&. This type follows the naming and structural conventions of the Fast_Type family, but is specialized for floating-point analysis rather than general-purpose bitmask operations\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFast_Float\fP (float value=0f)"
+.br
+.RI "Initializes a new \fBFast_Float\fP instance with an optional initial value\&. "
+.ti -1c
+.RI "void \fBFlipExponentBit\fP (byte pos)"
+.br
+.RI "Flips a single bit inside the exponent field (0–7)\&. "
+.ti -1c
+.RI "void \fBFlipMantissaBit\fP (byte pos)"
+.br
+.RI "Flips a single bit inside the mantissa field (0–22)\&. "
+.ti -1c
+.RI "void \fBFromBits\fP (uint bits)"
+.br
+.RI "Reinterprets a 32-bit unsigned integer as a float and stores it\&. "
+.ti -1c
+.RI "void \fBFromFastBits\fP (\fBFast_UInt\fP bits)"
+.br
+.ti -1c
+.RI "\fBFast_Byte\fP \fBGetExponent\fP ()"
+.br
+.RI "Gets the 8-bit exponent field (raw, not biased)\&. "
+.ti -1c
+.RI "\fBFast_UInt\fP \fBGetMantissa\fP ()"
+.br
+.RI "Gets the 23-bit mantissa field\&. "
+.ti -1c
+.RI "\fBFast_Byte\fP \fBGetSign\fP ()"
+.br
+.RI "Gets the sign bit (0 = positive, 1 = negative)\&. "
+.ti -1c
+.RI "bool \fBIsInfinity\fP ()"
+.br
+.RI "Returns true if the value is positive or negative infinity\&. "
+.ti -1c
+.RI "bool \fBIsNaN\fP ()"
+.br
+.RI "Returns true if the value is NaN\&. "
+.ti -1c
+.RI "bool \fBIsSubnormal\fP ()"
+.br
+.RI "Returns true if the value is a subnormal (denormalized) float\&. "
+.ti -1c
+.RI "void \fBSetExponent\fP (\fBFast_Byte\fP exponent)"
+.br
+.RI "Sets the exponent field (raw 8-bit value)\&. "
+.ti -1c
+.RI "void \fBSetMantissa\fP (\fBFast_UInt\fP mantissa)"
+.br
+.RI "Sets the mantissa field (raw 23-bit value)\&. "
+.ti -1c
+.RI "void \fBSetSign\fP (\fBFast_Byte\fP sign)"
+.br
+.RI "Sets the sign bit (0 or 1)\&. "
+.ti -1c
+.RI "uint \fBToBits\fP ()"
+.br
+.RI "Reinterprets the float as a 32-bit unsigned integer using \fBSystemEx\fP endian utilities\&. "
+.ti -1c
+.RI "\fBFast_UInt\fP \fBToFastBits\fP ()"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "float \fBValue\fP\fR [get]\fP"
+.br
+.RI "Gets the underlying floating-point value\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides low-level IEEE‑754 bit inspection and manipulation for 32‑bit floating-point values\&. This type follows the naming and structural conventions of the Fast_Type family, but is specialized for floating-point analysis rather than general-purpose bitmask operations\&. 
+
+Exposes:
+.IP "\(bu" 2
+Sign bit (1 bit)
+.IP "\(bu" 2
+Exponent (8 bits)
+.IP "\(bu" 2
+Mantissa (23 bits)
+.PP
+
+.PP
+Uses \fBSystemEx\fP byte conversion utilities for endian-safe reinterpretation\&. 
+.PP
+Definition at line \fB36\fP of file \fBFast_Float\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.Fast_Float\&.Fast_Float (float value = \fR0f\fP)"
+
+.PP
+Initializes a new \fBFast_Float\fP instance with an optional initial value\&. 
+.PP
+Definition at line \fB48\fP of file \fBFast_Float\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Numeric\&.Fast_Float\&.FlipExponentBit (byte pos)"
+
+.PP
+Flips a single bit inside the exponent field (0–7)\&. 
+.PP
+Definition at line \fB145\fP of file \fBFast_Float\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_Float\&.FlipMantissaBit (byte pos)"
+
+.PP
+Flips a single bit inside the mantissa field (0–22)\&. 
+.PP
+Definition at line \fB129\fP of file \fBFast_Float\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_Float\&.FromBits (uint bits)"
+
+.PP
+Reinterprets a 32-bit unsigned integer as a float and stores it\&. 
+.PP
+Definition at line \fB68\fP of file \fBFast_Float\&.cs\fP\&.
+.PP
+Referenced by \fBFlipExponentBit()\fP, \fBFlipMantissaBit()\fP, \fBSetExponent()\fP, \fBSetMantissa()\fP, and \fBSetSign()\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_Float\&.FromFastBits (\fBFast_UInt\fP bits)"
+
+.PP
+Definition at line \fB73\fP of file \fBFast_Float\&.cs\fP\&.
+.SS "\fBFast_Byte\fP SystemEx\&.Numeric\&.Fast_Float\&.GetExponent ()"
+
+.PP
+Gets the 8-bit exponent field (raw, not biased)\&. 
+.PP
+Definition at line \fB87\fP of file \fBFast_Float\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_Float\&.GetMantissa ()"
+
+.PP
+Gets the 23-bit mantissa field\&. 
+.PP
+Definition at line \fB95\fP of file \fBFast_Float\&.cs\fP\&.
+.SS "\fBFast_Byte\fP SystemEx\&.Numeric\&.Fast_Float\&.GetSign ()"
+
+.PP
+Gets the sign bit (0 = positive, 1 = negative)\&. 
+.PP
+Definition at line \fB80\fP of file \fBFast_Float\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_Float\&.IsInfinity ()"
+
+.PP
+Returns true if the value is positive or negative infinity\&. 
+.PP
+Definition at line \fB165\fP of file \fBFast_Float\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_Float\&.IsNaN ()"
+
+.PP
+Returns true if the value is NaN\&. 
+.PP
+Definition at line \fB160\fP of file \fBFast_Float\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_Float\&.IsSubnormal ()"
+
+.PP
+Returns true if the value is a subnormal (denormalized) float\&. 
+.PP
+Definition at line \fB170\fP of file \fBFast_Float\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_Float\&.SetExponent (\fBFast_Byte\fP exponent)"
+
+.PP
+Sets the exponent field (raw 8-bit value)\&. 
+.PP
+Definition at line \fB111\fP of file \fBFast_Float\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_Float\&.SetMantissa (\fBFast_UInt\fP mantissa)"
+
+.PP
+Sets the mantissa field (raw 23-bit value)\&. 
+.PP
+Definition at line \fB120\fP of file \fBFast_Float\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_Float\&.SetSign (\fBFast_Byte\fP sign)"
+
+.PP
+Sets the sign bit (0 or 1)\&. 
+.PP
+Definition at line \fB102\fP of file \fBFast_Float\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Fast_Float\&.ToBits ()"
+
+.PP
+Reinterprets the float as a 32-bit unsigned integer using \fBSystemEx\fP endian utilities\&. 
+.PP
+Definition at line \fB55\fP of file \fBFast_Float\&.cs\fP\&.
+.PP
+Referenced by \fBFlipExponentBit()\fP, \fBFlipMantissaBit()\fP, \fBGetExponent()\fP, \fBGetMantissa()\fP, \fBGetSign()\fP, \fBIsSubnormal()\fP, \fBSetExponent()\fP, \fBSetMantissa()\fP, and \fBSetSign()\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_Float\&.ToFastBits ()"
+
+.PP
+Definition at line \fB61\fP of file \fBFast_Float\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "float SystemEx\&.Numeric\&.Fast_Float\&.Value\fR [get]\fP"
+
+.PP
+Gets the underlying floating-point value\&. 
+.PP
+Definition at line \fB43\fP of file \fBFast_Float\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

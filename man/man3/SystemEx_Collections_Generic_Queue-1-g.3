@@ -1,0 +1,326 @@
+.TH "SystemEx.Collections.Generic.Queue< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Queue< T > \- Defines the generic FIFO queue\&. Provides operations for inserting elements at the back and removing elements from the front\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.IQueue< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.IAutoGrowe\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Removes all elements from the queue\&. "
+.ti -1c
+.RI "bool \fBDequeue\fP (ref Optional< T > value)"
+.br
+.RI "Removes the element at the front of the queue\&. "
+.ti -1c
+.RI "void \fBEnqueue\fP (T value)"
+.br
+.RI "Adds an element to the back of the queue\&. "
+.ti -1c
+.RI "bool \fBGrow\fP ()"
+.br
+.RI "Grows the internal buffer by GrowSize if AutoGrow is enabled\&. "
+.ti -1c
+.RI "bool \fBPopFront\fP (ref Optional< T > value)"
+.br
+.RI "Removes the element at the front of the queue\&. 
+.br
+ Remaining elements are shifted one position to the left\&. "
+.ti -1c
+.RI "bool \fBPushBack\fP (T value)"
+.br
+.RI "Adds an element to the back of the queue if space is available\&. "
+.ti -1c
+.RI "\fBQueue\fP (Deque< T > other)"
+.br
+.ti -1c
+.RI "\fBQueue\fP (int size, int growSize)"
+.br
+.RI "Creates a new queue with the specified capacity\&. "
+.ti -1c
+.RI "\fBQueue\fP (Queue< T > other)"
+.br
+.ti -1c
+.RI "\fBQueue\fP (T[] e, int growSize=16)"
+.br
+.RI "Creates a new \fBQueue\fP using an existing buffer\&. The buffer is adopted as-is, and Count is set to the last valid index\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QueueFlexSpan< T > \fBAsFlexSpan\fP (ref \fBQueue\fP< T > que, \fBFlexSpanMode\fP mode=\fBFlexSpanMode\&.System\fP)"
+.br
+.RI "Creates a FlexSpan view over the current contents of the \fBQueue\fP\&. The span directly references the internal array and does not allocate\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBAutoGrow\fP\fR [get, set]\fP"
+.br
+.RI "Enables or disables automatic resizing when the Vector becomes full\&. "
+.ti -1c
+.RI "T \fBFront\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the front of the queue\&. "
+.ti -1c
+.RI "long \fBGrowSize\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the number of elements the Vector grows by when AutoGrow is enabled\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the queue contains no elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the queue has reached its maximum capacity\&. "
+.ti -1c
+.RI "int \fBSize\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements currently stored in the queue\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines the generic FIFO queue\&. Provides operations for inserting elements at the back and removing elements from the front\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of elements stored in the queue\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB27\fP of file \fBQueue\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QueueFlexSpan< T > \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.AsFlexSpan (ref \fBQueue\fP< T > que, \fBFlexSpanMode\fP mode = \fR\fBFlexSpanMode::System\fP\fP)\fR [static]\fP"
+
+.PP
+Creates a FlexSpan view over the current contents of the \fBQueue\fP\&. The span directly references the internal array and does not allocate\&. 
+.PP
+Definition at line \fB190\fP of file \fBQueue\&.cs\fP\&.
+.SS "void \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.Clear ()"
+
+.PP
+Removes all elements from the queue\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB142\fP of file \fBQueue\&.cs\fP\&.
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.Dequeue (ref Optional< T > value)"
+
+.PP
+Removes the element at the front of the queue\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP Receives the removed element\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an element was removed; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB236\fP of file \fBQueue\&.cs\fP\&.
+.SS "void \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.Enqueue (T value)"
+
+.PP
+Adds an element to the back of the queue\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The element to enqueue\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB229\fP of file \fBQueue\&.cs\fP\&.
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.Grow ()"
+
+.PP
+Grows the internal buffer by GrowSize if AutoGrow is enabled\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if growth succeeded; false if AutoGrow was disabled\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IAutoGrowe\fP\&.
+.PP
+Definition at line \fB202\fP of file \fBQueue\&.cs\fP\&.
+.PP
+Referenced by \fBPushBack()\fP\&.
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.PopFront (ref Optional< T > value)"
+
+.PP
+Removes the element at the front of the queue\&. 
+.br
+ Remaining elements are shifted one position to the left\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP Receives the removed element\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an element was removed; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue< T >\fP\&.
+.PP
+Definition at line \fB152\fP of file \fBQueue\&.cs\fP\&.
+.PP
+Referenced by \fBDequeue()\fP\&.
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.PushBack (T value)"
+
+.PP
+Adds an element to the back of the queue if space is available\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The element to add\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue< T >\fP\&.
+.PP
+Definition at line \fB172\fP of file \fBQueue\&.cs\fP\&.
+.PP
+Referenced by \fBEnqueue()\fP\&.
+.SS "\fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.Queue (Deque< T > other)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB131\fP of file \fBQueue\&.cs\fP\&.
+.SS "\fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.Queue (int size, int growSize)"
+
+.PP
+Creates a new queue with the specified capacity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP The maximum number of elements the queue can hold\&.
+.br
+\fIgrowSize\fP Number of elements to add when automatic growth occurs\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB91\fP of file \fBQueue\&.cs\fP\&.
+.PP
+Referenced by \fBAsFlexSpan()\fP, and \fBQueue()\fP\&.
+.SS "\fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.Queue (Queue< T > other)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB119\fP of file \fBQueue\&.cs\fP\&.
+.SS "\fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.Queue (T[] e, int growSize = \fR16\fP)"
+
+.PP
+Creates a new \fBQueue\fP using an existing buffer\&. The buffer is adopted as-is, and Count is set to the last valid index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Existing array used as the internal storage\&. 
+.br
+\fIgrowSize\fP Number of elements to add when automatic growth occurs\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB108\fP of file \fBQueue\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.AutoGrow\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Enables or disables automatic resizing when the Vector becomes full\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IAutoGrowe\fP\&.
+.PP
+Definition at line \fB60\fP of file \fBQueue\&.cs\fP\&.
+.PP
+Referenced by \fBGrow()\fP, and \fBPushBack()\fP\&.
+.SS "T \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.Front\fR [get]\fP"
+
+.PP
+Gets the element at the front of the queue\&. 
+.PP
+Definition at line \fB82\fP of file \fBQueue\&.cs\fP\&.
+.SS "long \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.GrowSize\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the number of elements the Vector grows by when AutoGrow is enabled\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IAutoGrowe\fP\&.
+.PP
+Definition at line \fB50\fP of file \fBQueue\&.cs\fP\&.
+.PP
+Referenced by \fBGrow()\fP, \fBQueue()\fP, and \fBQueue()\fP\&.
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Indicates whether the queue contains no elements\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB72\fP of file \fBQueue\&.cs\fP\&.
+.PP
+Referenced by \fBPopFront()\fP\&.
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.IsFull\fR [get]\fP"
+
+.PP
+Indicates whether the queue has reached its maximum capacity\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB77\fP of file \fBQueue\&.cs\fP\&.
+.PP
+Referenced by \fBPushBack()\fP\&.
+.SS "int \fBSystemEx\&.Collections\&.Generic\&.Queue\fP< T >\&.Size\fR [get]\fP"
+
+.PP
+Gets the number of elements currently stored in the queue\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB45\fP of file \fBQueue\&.cs\fP\&.
+.PP
+Referenced by \fBQueue()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

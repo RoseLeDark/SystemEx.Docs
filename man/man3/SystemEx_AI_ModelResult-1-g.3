@@ -1,0 +1,153 @@
+.TH "SystemEx.AI.ModelResult< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI.ModelResult< T > \- Represents the result of an \fBAI\fP model execution\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBModelResult\fP (T result, Map< \fBModelMeta\fP, object > metadata, Optional< Exception > error, Optional< object > raw)"
+.br
+.RI "Creates a new \fBModelResult<T>\fP instance\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Optional< Exception > \fBError\fP\fR [get]\fP"
+.br
+.RI "Gets the optional error information\&. If \fBSuccess\fP is true, this value is null\&. "
+.ti -1c
+.RI "Map< \fBModelMeta\fP, object > \fBMetadata\fP\fR [get]\fP"
+.br
+.RI "Gets the metadata associated with the model execution\&. "
+.ti -1c
+.RI "Optional< object > \fBRaw\fP\fR [get]\fP"
+.br
+.RI "Gets the raw backend output, if available\&. "
+.ti -1c
+.RI "T \fBResult\fP\fR [get]\fP"
+.br
+.RI "Gets the final model output\&. "
+.ti -1c
+.RI "bool \fBSuccess\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the model execution succeeded\&. "
+.ti -1c
+.RI "DateTime \fBTimestamp\fP\fR [get]\fP"
+.br
+.RI "Gets the timestamp when the result was created (UTC)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents the result of an \fBAI\fP model execution\&. 
+
+A \fBModelResult<T>\fP contains:
+.IP "\(bu" 2
+The final model output (\fBResult\fP)
+.IP "\(bu" 2
+Metadata describing execution details (\fBMetadata\fP)
+.IP "\(bu" 2
+Optional error information (\fBError\fP)
+.IP "\(bu" 2
+Optional raw backend output (\fBRaw\fP)
+.IP "\(bu" 2
+A timestamp indicating when the result was produced (\fBTimestamp\fP)
+.IP "\(bu" 2
+A success flag (\fBSuccess\fP)
+.PP
+
+.PP
+This struct is immutable and safe to pass by value\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the model's output\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB44\fP of file \fBModelResult\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "SystemEx\&.AI\&.ModelResult< T >\&.ModelResult (T result, Map< \fBModelMeta\fP, object > metadata, Optional< Exception > error, Optional< object > raw)"
+
+.PP
+Creates a new \fBModelResult<T>\fP instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIresult\fP The final model output\&.
+.br
+\fImetadata\fP Execution metadata\&.
+.br
+\fIerror\fP Optional error information\&.
+.br
+\fIraw\fP Optional raw backend output\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB124\fP of file \fBModelResult\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "Optional<Exception> SystemEx\&.AI\&.ModelResult< T >\&.Error\fR [get]\fP"
+
+.PP
+Gets the optional error information\&. If \fBSuccess\fP is true, this value is null\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.PP
+Definition at line \fB95\fP of file \fBModelResult\&.cs\fP\&.
+.SS "Map<\fBModelMeta\fP, object> SystemEx\&.AI\&.ModelResult< T >\&.Metadata\fR [get]\fP"
+
+.PP
+Gets the metadata associated with the model execution\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.PP
+Definition at line \fB89\fP of file \fBModelResult\&.cs\fP\&.
+.SS "Optional<object> SystemEx\&.AI\&.ModelResult< T >\&.Raw\fR [get]\fP"
+
+.PP
+Gets the raw backend output, if available\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.PP
+Definition at line \fB100\fP of file \fBModelResult\&.cs\fP\&.
+.SS "T SystemEx\&.AI\&.ModelResult< T >\&.Result\fR [get]\fP"
+
+.PP
+Gets the final model output\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.PP
+Definition at line \fB84\fP of file \fBModelResult\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelResult< T >\&.Success\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the model execution succeeded\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.PP
+Definition at line \fB105\fP of file \fBModelResult\&.cs\fP\&.
+.SS "DateTime SystemEx\&.AI\&.ModelResult< T >\&.Timestamp\fR [get]\fP"
+
+.PP
+Gets the timestamp when the result was created (UTC)\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.PP
+Definition at line \fB110\fP of file \fBModelResult\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

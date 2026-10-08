@@ -1,16 +1,20 @@
 var a02108 =
 [
-    [ "Enumerator", "d8/d84/a02112.html", "d8/d84/a02112" ],
-    [ "BitIntSpan", "d8/dd8/a02108_ac85a041b084ac1da9e88d8269bbb1947.html#ac85a041b084ac1da9e88d8269bbb1947", null ],
-    [ "ElementAt", "d8/dd8/a02108_a4638c947118bf3c66b5322ba9b750f04.html#a4638c947118bf3c66b5322ba9b750f04", null ],
-    [ "ElementAt", "d8/dd8/a02108_a7ba1dcffbf61ce12608fbad1173bbbd3.html#a7ba1dcffbf61ce12608fbad1173bbbd3", null ],
-    [ "GetEnumerator", "d8/dd8/a02108_a58f12e4d307eb1471f972d8ebc5cce0f.html#a58f12e4d307eb1471f972d8ebc5cce0f", null ],
-    [ "GetMode", "d8/dd8/a02108_aa98ca38a8111ebd7d09cb56c887fae48.html#aa98ca38a8111ebd7d09cb56c887fae48", null ],
-    [ "Slice", "d8/dd8/a02108_a4e6d317d02af829ec289764d8a379527.html#a4e6d317d02af829ec289764d8a379527", null ],
-    [ "Slice", "d8/dd8/a02108_ac36ef907317fd1428390094573dd9f3a.html#ac36ef907317fd1428390094573dd9f3a", null ],
-    [ "Bits", "d8/dd8/a02108_aa3583735ac98bd0c654669c7d54ae7bb.html#aa3583735ac98bd0c654669c7d54ae7bb", null ],
-    [ "IsSigned", "d8/dd8/a02108_a1db112e8c5528923906a2e9fb574fb21.html#a1db112e8c5528923906a2e9fb574fb21", null ],
-    [ "IsUnsigned", "d8/dd8/a02108_aa3d300f4f8a7d71f078cc740c2ed5545.html#aa3d300f4f8a7d71f078cc740c2ed5545", null ],
-    [ "this[byte index]", "d8/dd8/a02108_a8a35f2feada62d69871b4e5c88744941.html#a8a35f2feada62d69871b4e5c88744941", null ],
-    [ "ViewLength", "d8/dd8/a02108_a591c370a3f6fd5b4a4e412c67ce39892.html#a591c370a3f6fd5b4a4e412c67ce39892", null ]
+    [ "Vec4i", "d4/d1c/a00903_ga860fafbcc3d21c147a5f261992d71810.html#ga860fafbcc3d21c147a5f261992d71810", null ],
+    [ "Vec4i", "d4/d1c/a00903_gaf14b05a6a060716fdf589f4b51ff2910.html#gaf14b05a6a060716fdf589f4b51ff2910", null ],
+    [ "Vec4i", "d4/d1c/a00903_gafa99b4cf4eb755df5a1f7bd248df9d0d.html#gafa99b4cf4eb755df5a1f7bd248df9d0d", null ],
+    [ "Vec4i", "d4/d1c/a00903_gab403707b8b480f7f16ffb8cc55e349a6.html#gab403707b8b480f7f16ffb8cc55e349a6", null ],
+    [ "Vec4i", "d4/d1c/a00903_gad53dd77d9429f637ff2567702c2680f4.html#gad53dd77d9429f637ff2567702c2680f4", null ],
+    [ "CompareTo", "d4/d1c/a00903_gaa9b10be10e0cb23eb3e9b897b6af1e7b.html#gaa9b10be10e0cb23eb3e9b897b6af1e7b", null ],
+    [ "CompareTo", "d4/d1c/a00903_gaab0a55f334267e6bf193a606c6f1c587.html#gaab0a55f334267e6bf193a606c6f1c587", null ],
+    [ "Equals", "d4/d1c/a00903_ga160511f6ce5a055e368193afcd48435d.html#ga160511f6ce5a055e368193afcd48435d", null ],
+    [ "Equals", "d4/d1c/a00903_gab5fb54adb0ce85443199b89e64c8d4c0.html#gab5fb54adb0ce85443199b89e64c8d4c0", null ],
+    [ "Get", "d4/d1c/a00903_gaec465ce8df1e69d5242d1370afe2692e.html#gaec465ce8df1e69d5242d1370afe2692e", null ],
+    [ "GetHashCode", "d4/d1c/a00903_ga3c88d864f06355d610ab0003ae525b6a.html#ga3c88d864f06355d610ab0003ae525b6a", null ],
+    [ "ToBytes", "d4/d1c/a00903_gae2436a0d2e9ad9bd02c1a4190a1c1755.html#gae2436a0d2e9ad9bd02c1a4190a1c1755", null ],
+    [ "Count", "d4/d1c/a00903_ga41cef27cb055407ef55f47933b240176.html#ga41cef27cb055407ef55f47933b240176", null ],
+    [ "W", "d4/d1c/a00903_ga9e86e88d7e443aac9422f55e2a0eada7.html#ga9e86e88d7e443aac9422f55e2a0eada7", null ],
+    [ "X", "d4/d1c/a00903_ga89465f344c5cb148c743d483145fa63e.html#ga89465f344c5cb148c743d483145fa63e", null ],
+    [ "Y", "d4/d1c/a00903_ga3b0f067dd3f96750f2efda2fe5632ecb.html#ga3b0f067dd3f96750f2efda2fe5632ecb", null ],
+    [ "Z", "d4/d1c/a00903_ga8b6e2bb63f2dd5d129ee0f6317f1bb78.html#ga8b6e2bb63f2dd5d129ee0f6317f1bb78", null ]
 ];

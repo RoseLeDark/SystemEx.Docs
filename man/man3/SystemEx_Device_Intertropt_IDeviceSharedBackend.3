@@ -1,0 +1,143 @@
+.TH "SystemEx.Device.Intertropt.IDeviceSharedBackend" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Device.Intertropt.IDeviceSharedBackend \- Defines the low‑level backend interface used by \fRDeviceSharedBuffer\fP and related shared‑memory abstractions\&. 
+.br
+ A backend represents a hardware‑specific buffer implementation such as RAM, OpenCL, Vulkan, CUDA, or any custom device memory\&. 
+.br
+ Each backend is responsible for creating, writing, reading, and closing its own hardware buffer handle\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Device\&.Intertropt\&.RamSharedBackend\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBCloseHardwareBuffer\fP (ref object hardwareBuffer)"
+.br
+.RI "Releases and invalidates the backend‑specific hardware buffer handle\&. 
+.br
+ After this call, the buffer must no longer be used\&. "
+.ti -1c
+.RI "long \fBCreateReadHardwareBuffer\fP (int size, out object hardwareBuffer)"
+.br
+.RI "Creates a hardware buffer intended for reading operations\&. 
+.br
+ The backend allocates a device‑specific buffer of the given size and returns an opaque handle via \fIhardwareBuffer\fP \&. "
+.ti -1c
+.RI "long \fBCreateWriteHardwareBuffer\fP (byte[] cache, out object hardwareBuffer)"
+.br
+.RI "Creates a hardware buffer intended for writing operations and initializes it with the provided cache data\&. 
+.br
+ The backend allocates a device‑specific buffer and uploads the data\&. "
+.ti -1c
+.RI "long \fBReciveFromHardwareBuffer\fP (out byte[] data, ref object hardwareBuffer)"
+.br
+.RI "Reads data from the hardware buffer into a managed byte array\&. 
+.br
+ The backend determines how the buffer is accessed and how much data is returned\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines the low‑level backend interface used by \fRDeviceSharedBuffer\fP and related shared‑memory abstractions\&. 
+.br
+ A backend represents a hardware‑specific buffer implementation such as RAM, OpenCL, Vulkan, CUDA, or any custom device memory\&. 
+.br
+ Each backend is responsible for creating, writing, reading, and closing its own hardware buffer handle\&. 
+.PP
+Definition at line \fB28\fP of file \fBIDeviceSharedBackend\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Device\&.Intertropt\&.IDeviceSharedBackend\&.CloseHardwareBuffer (ref object hardwareBuffer)"
+
+.PP
+Releases and invalidates the backend‑specific hardware buffer handle\&. 
+.br
+ After this call, the buffer must no longer be used\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhardwareBuffer\fP The backend‑specific buffer handle\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Device\&.Intertropt\&.RamSharedBackend\fP\&.
+.SS "long SystemEx\&.Device\&.Intertropt\&.IDeviceSharedBackend\&.CreateReadHardwareBuffer (int size, out object hardwareBuffer)"
+
+.PP
+Creates a hardware buffer intended for reading operations\&. 
+.br
+ The backend allocates a device‑specific buffer of the given size and returns an opaque handle via \fIhardwareBuffer\fP \&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP The size of the buffer to allocate\&.
+.br
+\fIhardwareBuffer\fP The backend‑specific buffer handle\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A backend‑specific status code\&. 
+.br
+ Typically \fR0\fP for success, non‑zero for errors\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Device\&.Intertropt\&.RamSharedBackend\fP\&.
+.SS "long SystemEx\&.Device\&.Intertropt\&.IDeviceSharedBackend\&.CreateWriteHardwareBuffer (byte[] cache, out object hardwareBuffer)"
+
+.PP
+Creates a hardware buffer intended for writing operations and initializes it with the provided cache data\&. 
+.br
+ The backend allocates a device‑specific buffer and uploads the data\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcache\fP The data to write into the hardware buffer\&.
+.br
+\fIhardwareBuffer\fP The backend‑specific buffer handle\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A backend‑specific status code\&. 
+.br
+ Typically \fR0\fP for success, non‑zero for errors\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Device\&.Intertropt\&.RamSharedBackend\fP\&.
+.SS "long SystemEx\&.Device\&.Intertropt\&.IDeviceSharedBackend\&.ReciveFromHardwareBuffer (out byte[] data, ref object hardwareBuffer)"
+
+.PP
+Reads data from the hardware buffer into a managed byte array\&. 
+.br
+ The backend determines how the buffer is accessed and how much data is returned\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP The byte array containing the received data\&.
+.br
+\fIhardwareBuffer\fP The backend‑specific buffer handle\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of bytes received, or a negative value on error\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Device\&.Intertropt\&.RamSharedBackend\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

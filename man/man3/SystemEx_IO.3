@@ -1,0 +1,52 @@
+.TH "SystemEx.IO" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.IO
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCacheStream< TCache >\fP"
+.br
+.RI "A Stream wrapper around a \fBCache\fP instance\&. 
+.br
+ Provides sequential read/write access to a cache, including endian‑aware primitive serialization, range operations, and chunked asynchronous copy methods\&. 
+.br
+ Seeking is supported only through the underlying cache\&. "
+.ti -1c
+.RI "class \fBRCUStream< TStream >\fP"
+.br
+.RI "A Read-Copy-Update (RCU) wrapper around a Stream that provides lock-free read operations and exclusive write operations\&. Reader activity is tracked through an \fBEpoch\fP, while writers are synchronized using an \fBILock\fP\&. This ensures deterministic behavior in concurrent read/write scenarios without requiring external synchronization\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBRCUStreamState\fP { \fBCurrent\fP, \fBUpdate\fP }"
+.br
+.RI "Indicates the current operational state of an \fBRCUStream<TStream>\fP\&. Readers observe Current when no writer is active, and Update when a writer holds the exclusive lock\&. "
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.IO\&.RCUStreamState\fP"
+
+.PP
+Indicates the current operational state of an \fBRCUStream<TStream>\fP\&. Readers observe Current when no writer is active, and Update when a writer holds the exclusive lock\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BICurrent \fP
+No writer is active; read operations observe the current stable data\&. 
+.TP
+\f(BIUpdate \fP
+A writer is active; readers may observe stale data while the update operation is in progress\&. 
+.PP
+Definition at line \fB27\fP of file \fBRCUStream\&.cs\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

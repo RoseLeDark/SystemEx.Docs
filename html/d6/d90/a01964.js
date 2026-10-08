@@ -1,8 +1,24 @@
 var a01964 =
 [
-    [ "ValueBasedSeed", "d6/d90/a01964_ad5e27a86f7a50e1d3bcd5afc475e48fc.html#ad5e27a86f7a50e1d3bcd5afc475e48fc", null ],
-    [ "GetSeed", "d6/d90/a01964_a607b91e590be1f396a85a79af11417ac.html#a607b91e590be1f396a85a79af11417ac", null ],
-    [ "Update", "d6/d90/a01964_a9fd4ef75c56ebf5c6c89db893e5c040b.html#a9fd4ef75c56ebf5c6c89db893e5c040b", null ],
-    [ "Length", "d6/d90/a01964_ae00e9998371198e491648ffc768f7530.html#ae00e9998371198e491648ffc768f7530", null ],
-    [ "this[int index]", "d6/d90/a01964_a19749c76e7343324ef1ea13452c1ffa6.html#a19749c76e7343324ef1ea13452c1ffa6", null ]
+    [ "Half16", "d4/d1c/a00903_gaf8fca19c86b2a89f3f269de8b541cdf9.html#gaf8fca19c86b2a89f3f269de8b541cdf9", null ],
+    [ "Half16", "d4/d1c/a00903_ga3ee4095e1258a8d79680d132ffc196aa.html#ga3ee4095e1258a8d79680d132ffc196aa", null ],
+    [ "CompareTo", "d4/d1c/a00903_ga298bb9867efd4658c9fc424c645c6754.html#ga298bb9867efd4658c9fc424c645c6754", null ],
+    [ "CompareTo", "d6/d90/a01964_ga298bb9867efd4658c9fc424c645c6754.html#ga298bb9867efd4658c9fc424c645c6754", null ],
+    [ "CompareTo", "d4/d1c/a00903_gad55f98e70efdbfcf3164b29deb0d1f69.html#gad55f98e70efdbfcf3164b29deb0d1f69", null ],
+    [ "Equals", "d4/d1c/a00903_ga837c8f605351a58304e9a5e2fce5bd52.html#ga837c8f605351a58304e9a5e2fce5bd52", null ],
+    [ "Equals", "d4/d1c/a00903_ga9ae27d713c48e694a6f4ac8ad3f6a84d.html#ga9ae27d713c48e694a6f4ac8ad3f6a84d", null ],
+    [ "GetHashCode", "d4/d1c/a00903_ga8e801113caf5c5a6426084c1487e09b0.html#ga8e801113caf5c5a6426084c1487e09b0", null ],
+    [ "ToBytes", "d4/d1c/a00903_ga55f71e64fe8bed4d882c49361663d0d3.html#ga55f71e64fe8bed4d882c49361663d0d3", null ],
+    [ "ToBytes", "d4/d1c/a00903_ga0b4b9a05aaffd2dc2aab690393c7d54a.html#ga0b4b9a05aaffd2dc2aab690393c7d54a", null ],
+    [ "ToBytes", "d4/d1c/a00903_gaa0b9971fb9fe4db4a410d38da5f9d8df.html#gaa0b9971fb9fe4db4a410d38da5f9d8df", null ],
+    [ "Exponent", "d4/d1c/a00903_ga807b94c15717ed07dd031d367b4c5c50.html#ga807b94c15717ed07dd031d367b4c5c50", null ],
+    [ "ExponentBias", "d4/d1c/a00903_ga875ccd4b53cb692b9e95b815e602938f.html#ga875ccd4b53cb692b9e95b815e602938f", null ],
+    [ "ExponentBits", "d4/d1c/a00903_gabbd7f639c65f76bc4ba929c53702a023.html#gabbd7f639c65f76bc4ba929c53702a023", null ],
+    [ "HiddenBit", "d4/d1c/a00903_ga9b3dab30e55f395c0f893386e76e3d57.html#ga9b3dab30e55f395c0f893386e76e3d57", null ],
+    [ "Mantissa", "d4/d1c/a00903_gaeb7ce0b531092858cf7ce049d2f6d420.html#gaeb7ce0b531092858cf7ce049d2f6d420", null ],
+    [ "MantissaBits", "d4/d1c/a00903_ga3b1bdd2f89455c40dd70d7457b848dcd.html#ga3b1bdd2f89455c40dd70d7457b848dcd", null ],
+    [ "Sign", "d4/d1c/a00903_ga38cb5c9b79edf1bb795b9536663dc37a.html#ga38cb5c9b79edf1bb795b9536663dc37a", null ],
+    [ "SignBits", "d4/d1c/a00903_gadf0e881f20e45ebcaf4bc311c1da5d8d.html#gadf0e881f20e45ebcaf4bc311c1da5d8d", null ],
+    [ "ToBase", "d4/d1c/a00903_ga3a77db211e6caf330e2f0a6142943e69.html#ga3a77db211e6caf330e2f0a6142943e69", null ],
+    [ "TotalBits", "d4/d1c/a00903_ga8510f14906a628d1c6f3fe5cf6920887.html#ga8510f14906a628d1c6f3fe5cf6920887", null ]
 ];

@@ -1,11 +1,9 @@
 var a02253 =
 [
-    [ "LightLock", "db/d7a/a02253_aad5dd10e0ab61e714ac6fb64dbaea3b7.html#aad5dd10e0ab61e714ac6fb64dbaea3b7", null ],
-    [ "Lock", "db/d7a/a02253_afd5d537f6db8f848414b80025bd41a44.html#afd5d537f6db8f848414b80025bd41a44", null ],
-    [ "Lock", "db/d7a/a02253_a4497ba1821c9f1e7e70e6d27150af2fd.html#a4497ba1821c9f1e7e70e6d27150af2fd", null ],
-    [ "TryLock", "db/d7a/a02253_abd27fea5852df735f8b9f86bb15ba5df.html#abd27fea5852df735f8b9f86bb15ba5df", null ],
-    [ "Unlock", "db/d7a/a02253_ad9456f25b97eda8ead9082560b132cba.html#ad9456f25b97eda8ead9082560b132cba", null ],
-    [ "Wait", "db/d7a/a02253_a6cd084b84084e4d82a0f11eef18f08db.html#a6cd084b84084e4d82a0f11eef18f08db", null ],
-    [ "Handle", "db/d7a/a02253_a30dae2d3e09ede11e199078cfe526069.html#a30dae2d3e09ede11e199078cfe526069", null ],
-    [ "IsHeld", "db/d7a/a02253_a4750b57fb451edbddb7f8ef25c3d7f3c.html#a4750b57fb451edbddb7f8ef25c3d7f3c", null ]
+    [ "Clear", "db/d7a/a02253_a742307389a548192c062e7f21eb41418.html#a742307389a548192c062e7f21eb41418", null ],
+    [ "EventGroup", "db/d7a/a02253_a05571cb91cb9ce84c4cb9a463e48158d.html#a05571cb91cb9ce84c4cb9a463e48158d", null ],
+    [ "Flip", "db/d7a/a02253_a39477de8902422ac1b35d31ca935b0b6.html#a39477de8902422ac1b35d31ca935b0b6", null ],
+    [ "IsSet", "db/d7a/a02253_a9cb6f126a1921ff0bdfb7ed8c598f416.html#a9cb6f126a1921ff0bdfb7ed8c598f416", null ],
+    [ "Set", "db/d7a/a02253_adae5aeec1cea7e5f0134857c54c4de1e.html#adae5aeec1cea7e5f0134857c54c4de1e", null ],
+    [ "Wait", "db/d7a/a02253_ab097043c6c80156f68bae8f9f7cb356a.html#ab097043c6c80156f68bae8f9f7cb356a", null ]
 ];

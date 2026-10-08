@@ -1,6 +1,6 @@
 var a01716 =
 [
-    [ "Hash64", "d4/df6/a01716.html#ad70d6749552e6e733112b3af96bd9b90", null ],
-    [ "ToString", "d4/df6/a01716.html#affa553c85c47438230afa3a2df8ed529", null ],
-    [ "Value", "d4/df6/a01716.html#a59803fc074a5a1d214de6bb7417fbd11", null ]
+    [ "AdlerHash", "d0/dac/a00901_ga8235075b6d394ed5c2db8070875e3c38.html#ga8235075b6d394ed5c2db8070875e3c38", null ],
+    [ "Compute", "d0/dac/a00901_gaa80a96796abfe116d7d7dac947f2d055.html#gaa80a96796abfe116d7d7dac947f2d055", null ],
+    [ "ComputeLong", "d0/dac/a00901_ga06d35da8313f902a101c5d44ec12ca75.html#ga06d35da8313f902a101c5d44ec12ca75", null ]
 ];

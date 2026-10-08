@@ -1,10 +1,20 @@
 var a02112 =
 [
-    [ "Dispose", "d8/d84/a02112_ae4f7ea7946f80f15f86d1c84beb61100.html#ae4f7ea7946f80f15f86d1c84beb61100", null ],
-    [ "MoveNext", "d8/d84/a02112_a58f5b7ddc46250225c8e44323a3a553b.html#a58f5b7ddc46250225c8e44323a3a553b", null ],
-    [ "Reset", "d8/d84/a02112_abf7d5313ec44b69b8edf0829a28cc6eb.html#abf7d5313ec44b69b8edf0829a28cc6eb", null ],
-    [ "Current", "d8/d84/a02112_aba2bdbc58fa84c3233d4da85d2026a33.html#aba2bdbc58fa84c3233d4da85d2026a33", null ],
-    [ "Current", "d8/d84/a02112_ac89eb5db0f85ae01b6f135a2343ffd5f.html#ac89eb5db0f85ae01b6f135a2343ffd5f", null ],
-    [ "Current", "d8/d84/a02112_aad00430dfd27d799410c580d7ee5fb38.html#aad00430dfd27d799410c580d7ee5fb38", null ],
-    [ "HasNext", "d8/d84/a02112_a268f0ac722c74213cebfd81b0966ec2a.html#a268f0ac722c74213cebfd81b0966ec2a", null ]
+    [ "Vec4r", "d4/d1c/a00903_ga2f5bbd55710c50311932a1cd27f969e4.html#ga2f5bbd55710c50311932a1cd27f969e4", null ],
+    [ "Vec4r", "d4/d1c/a00903_gab1475229f37c090b7900c6b2b800be39.html#gab1475229f37c090b7900c6b2b800be39", null ],
+    [ "Vec4r", "d4/d1c/a00903_ga02c198b25107755ba1c005f7ec353f7d.html#ga02c198b25107755ba1c005f7ec353f7d", null ],
+    [ "Vec4r", "d4/d1c/a00903_ga738e23f30b46d697080b154f9ccf331f.html#ga738e23f30b46d697080b154f9ccf331f", null ],
+    [ "Vec4r", "d4/d1c/a00903_ga6aa7c8a51117f012c9594b6b3d119904.html#ga6aa7c8a51117f012c9594b6b3d119904", null ],
+    [ "CompareTo", "d4/d1c/a00903_ga8f5bc04d6548cb9021348ef9acd5d55f.html#ga8f5bc04d6548cb9021348ef9acd5d55f", null ],
+    [ "CompareTo", "d4/d1c/a00903_gad9478901d69e9c36bfb36570d7629877.html#gad9478901d69e9c36bfb36570d7629877", null ],
+    [ "Equals", "d4/d1c/a00903_ga5df54fd2c7f5edcef9e14f32616ca553.html#ga5df54fd2c7f5edcef9e14f32616ca553", null ],
+    [ "Equals", "d4/d1c/a00903_ga3386e8e1b9c4e7ff178e844cab2b9bdf.html#ga3386e8e1b9c4e7ff178e844cab2b9bdf", null ],
+    [ "Get", "d4/d1c/a00903_ga60383e6ed9610e53d4916f47832cd938.html#ga60383e6ed9610e53d4916f47832cd938", null ],
+    [ "GetHashCode", "d4/d1c/a00903_ga01276a2750b466cad895040b6d5e275f.html#ga01276a2750b466cad895040b6d5e275f", null ],
+    [ "ToBytes", "d4/d1c/a00903_ga79e3df6aaa85c3393af3222818585dee.html#ga79e3df6aaa85c3393af3222818585dee", null ],
+    [ "Count", "d4/d1c/a00903_ga4b0371abb0b2070a3d9c7797145ad3d4.html#ga4b0371abb0b2070a3d9c7797145ad3d4", null ],
+    [ "W", "d4/d1c/a00903_ga85257faacad751f9515a820d234a19ec.html#ga85257faacad751f9515a820d234a19ec", null ],
+    [ "X", "d4/d1c/a00903_ga1b106f2ac5f0dc94ad8d006290e7d451.html#ga1b106f2ac5f0dc94ad8d006290e7d451", null ],
+    [ "Y", "d4/d1c/a00903_ga0071396d9e5a71825ec615530d9ae9a1.html#ga0071396d9e5a71825ec615530d9ae9a1", null ],
+    [ "Z", "d4/d1c/a00903_gae11fe40ae1139c4dc2c016ba5ddfb265.html#gae11fe40ae1139c4dc2c016ba5ddfb265", null ]
 ];

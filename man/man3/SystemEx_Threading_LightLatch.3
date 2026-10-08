@@ -1,0 +1,56 @@
+.TH "SystemEx.Threading.LightLatch" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.LightLatch \- A one-shot countdown synchronization primitive\&. The latch starts in the locked state and releases all waiting threads once its internal counter reaches zero\&. After releasing, the latch remains permanently open\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBArrive\fP (\fBTimeOut\fP maxWait)"
+.br
+.ti -1c
+.RI "\fBLightLatch\fP (int initialCount, \fBILock\fP lockType, string name='Latch')"
+.br
+.ti -1c
+.RI "void \fBWait\fP (ref \fBLightThread\fP thread, \fBTimeOut\fP maxWait)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A one-shot countdown synchronization primitive\&. The latch starts in the locked state and releases all waiting threads once its internal counter reaches zero\&. After releasing, the latch remains permanently open\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The lock type used to block threads until the latch opens\&. Must implement \fBILock\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB31\fP of file \fBLightLatch\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.LightLatch\&.LightLatch (int initialCount, \fBILock\fP lockType, string name = \fR'Latch'\fP)"
+
+.PP
+Definition at line \fB36\fP of file \fBLightLatch\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Threading\&.LightLatch\&.Arrive (\fBTimeOut\fP maxWait)"
+
+.PP
+Definition at line \fB42\fP of file \fBLightLatch\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.LightLatch\&.Wait (ref \fBLightThread\fP thread, \fBTimeOut\fP maxWait)"
+
+.PP
+Definition at line \fB53\fP of file \fBLightLatch\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

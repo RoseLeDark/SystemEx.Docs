@@ -1,8 +1,9 @@
 var a01560 =
 [
-    [ "ColorR10G10B10FormatSchema", "de/d89/a01560_a4ffa3faa8e5a5d94bca41b6e6488219e.html#a4ffa3faa8e5a5d94bca41b6e6488219e", null ],
-    [ "Endian", "de/d89/a01560_aed066a3aff2b4922dd780cc3a014e0ae.html#aed066a3aff2b4922dd780cc3a014e0ae", null ],
-    [ "HeaderSize", "de/d89/a01560_a55d999274b4eae00858780871696f74e.html#a55d999274b4eae00858780871696f74e", null ],
-    [ "Offsets", "de/d89/a01560_a57e8e53829f6d2f25eaae091a8c3c469.html#a57e8e53829f6d2f25eaae091a8c3c469", null ],
-    [ "TotalSize", "de/d89/a01560_a3d1e79397d933e28ecc5705ba5805723.html#a3d1e79397d933e28ecc5705ba5805723", null ]
+    [ "UnmanagedObject", "de/d89/a01560_a14aed2b1cfea656d65436290df59874a.html#a14aed2b1cfea656d65436290df59874a", null ],
+    [ "Dispose", "de/d89/a01560_a956659ae97324e807929f60c7d83486f.html#a956659ae97324e807929f60c7d83486f", null ],
+    [ "Data", "de/d89/a01560_a301a6542499c4ac865e5157b412d9551.html#a301a6542499c4ac865e5157b412d9551", null ],
+    [ "Handle", "de/d89/a01560_a1d1977cb3ec2a3b9645dd44c451733d8.html#a1d1977cb3ec2a3b9645dd44c451733d8", null ],
+    [ "Point", "de/d89/a01560_a6c32525df6e515c3530726169834949b.html#a6c32525df6e515c3530726169834949b", null ],
+    [ "Size", "de/d89/a01560_a55af49dd8668c7415aaa9b1faa544351.html#a55af49dd8668c7415aaa9b1faa544351", null ]
 ];

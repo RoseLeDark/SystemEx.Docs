@@ -1,0 +1,74 @@
+.TH "SystemEx.Rand.ISeed< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Rand.ISeed< T > \- Extends \fBISeed\fP with a typed update mechanism\&. This generic interface allows seed implementations to accept external values that influence or mutate the internal seed state\&. The type parameter defines the kind of input used for updating the seed\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Rand\&.ISeed\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Rand\&.HashedSeed\fP, \fBSystemEx\&.Rand\&.SeedMixed\fP, \fBSystemEx\&.Rand\&.TimeBasedSeed\fP, and \fBSystemEx\&.Rand\&.ValueBasedSeed\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUpdate\fP (T value)"
+.br
+.RI "Updates the internal seed state using the specified value\&. The exact behavior depends on the implementation and may include mutation, recomputation, or partial replacement of seed components\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Rand\&.ISeed\fP
+.in +1c
+.ti -1c
+.RI "uint[] \fBGetSeed\fP ()"
+.br
+.RI "Returns the underlying seed values as an array of 32‑bit unsigned integers\&. The returned array defines the complete state of the seed at the time of access\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Properties inherited from \fBSystemEx\&.Rand\&.ISeed\fP
+.in +1c
+.ti -1c
+.RI "int \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the number of 32‑bit values contained in the seed\&. This corresponds to the length of the array returned by \fBGetSeed\fP\&. "
+.ti -1c
+.RI "uint \fBthis[int i]\fP\fR [get, set]\fP"
+.br
+.RI "Provides indexed access to individual seed values\&. Both reading and writing are supported, allowing engines or mixing operations to modify specific seed components directly\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Extends \fBISeed\fP with a typed update mechanism\&. This generic interface allows seed implementations to accept external values that influence or mutate the internal seed state\&. The type parameter defines the kind of input used for updating the seed\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the value used to update the seed\&. Implementations may use this value to modify individual seed components, refresh time‑based values, apply mixing logic, or perform any custom mutation\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB66\fP of file \fBISeed\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void \fBSystemEx\&.Rand\&.ISeed\fP< T >\&.Update (T value)"
+
+.PP
+Updates the internal seed state using the specified value\&. The exact behavior depends on the implementation and may include mutation, recomputation, or partial replacement of seed components\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value used to update the seed\&. Its interpretation is defined by the implementing type\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

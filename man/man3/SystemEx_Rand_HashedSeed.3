@@ -1,0 +1,137 @@
+.TH "SystemEx.Rand.HashedSeed" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Rand.HashedSeed \- Provides a seed implementation based on a 32‑bit hash value\&. The hash may originate from any hashing algorithm available in \fBSystemEx\fP, including Bernstein, FNV‑1a, Murmur, Blake3, XXH3, and other supported hash functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Rand\&.ISeed< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "uint[] \fBGetSeed\fP ()"
+.br
+.RI "Returns the underlying seed values as an array of 32‑bit unsigned integers\&. The returned array defines the complete state of the seed at the time of access\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+A uint array containing the current seed values\&. 
+.RE
+.PP
+ "
+.ti -1c
+.RI "\fBHashedSeed\fP (\fBHash32\fP hash)"
+.br
+.RI "Initializes a new \fBHashedSeed\fP using the specified hash\&. The seed is immediately populated using \fBUpdate(Hash32)\fP\&. "
+.ti -1c
+.RI "void \fBUpdate\fP (\fBHash32\fP value)"
+.br
+.RI "Updates the seed using the specified \fBHash32\fP value\&. The hash is expanded into four distinct 32‑bit values using bitwise and arithmetic transformations\&. This method does not compute the hash;\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Rand\&.ISeed< T >\fP
+.in +1c
+.ti -1c
+.RI "void \fBUpdate\fP (T value)"
+.br
+.RI "Updates the internal seed state using the specified value\&. The exact behavior depends on the implementation and may include mutation, recomputation, or partial replacement of seed components\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the number of 32‑bit values contained in the seed\&. This corresponds to the length of the array returned by \fBGetSeed\fP\&. "
+.ti -1c
+.RI "uint \fBthis[int index]\fP\fR [get, set]\fP"
+.br
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Rand\&.ISeed\fP
+.in +1c
+.ti -1c
+.RI "uint \fBthis[int i]\fP\fR [get, set]\fP"
+.br
+.RI "Provides indexed access to individual seed values\&. Both reading and writing are supported, allowing engines or mixing operations to modify specific seed components directly\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a seed implementation based on a 32‑bit hash value\&. The hash may originate from any hashing algorithm available in \fBSystemEx\fP, including Bernstein, FNV‑1a, Murmur, Blake3, XXH3, and other supported hash functions\&. 
+
+This seed type is designed for use with all random engines in \fBSystemEx\fP\&. 
+.PP
+Definition at line \fB31\fP of file \fBHashedSeed\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Rand\&.HashedSeed\&.HashedSeed (\fBHash32\fP hash)"
+
+.PP
+Initializes a new \fBHashedSeed\fP using the specified hash\&. The seed is immediately populated using \fBUpdate(Hash32)\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhash\fP The initial \fBHash32\fP value used to populate the seed\&. The hash may originate from any hashing algorithm supported by \fBSystemEx\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB68\fP of file \fBHashedSeed\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "uint[] SystemEx\&.Rand\&.HashedSeed\&.GetSeed ()"
+
+.PP
+Returns the underlying seed values as an array of 32‑bit unsigned integers\&. The returned array defines the complete state of the seed at the time of access\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+A uint array containing the current seed values\&. 
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.Rand\&.ISeed\fP\&.
+.PP
+Definition at line \fB37\fP of file \fBHashedSeed\&.cs\fP\&.
+.SS "void SystemEx\&.Rand\&.HashedSeed\&.Update (\fBHash32\fP value)"
+
+.PP
+Updates the seed using the specified \fBHash32\fP value\&. The hash is expanded into four distinct 32‑bit values using bitwise and arithmetic transformations\&. This method does not compute the hash;\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The \fBHash32\fP instance used to refresh the seed\&. The hash may originate from any hashing algorithm supported by \fBSystemEx\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB47\fP of file \fBHashedSeed\&.cs\fP\&.
+.PP
+Referenced by \fBHashedSeed()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Rand\&.HashedSeed\&.Length\fR [get]\fP"
+
+.PP
+Gets the number of 32‑bit values contained in the seed\&. This corresponds to the length of the array returned by \fBGetSeed\fP\&. 
+.PP
+Implements \fBSystemEx\&.Rand\&.ISeed\fP\&.
+.PP
+Definition at line \fB35\fP of file \fBHashedSeed\&.cs\fP\&.
+.SS "uint SystemEx\&.Rand\&.HashedSeed\&.this[int index]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+
+.PP
+Definition at line \fB56\fP of file \fBHashedSeed\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

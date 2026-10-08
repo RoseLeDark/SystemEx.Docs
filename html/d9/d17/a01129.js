@@ -1,4 +1,5 @@
 var a01129 =
 [
-    [ "Compare", "d0/dac/a00901_gaa320a5824c4caa7a60039a61107ea307.html#gaa320a5824c4caa7a60039a61107ea307", null ]
+    [ "ThresholdClassifier", "de/dc3/a00909_ga5298a22b5f6da933b6cf11c91df5c931.html#ga5298a22b5f6da933b6cf11c91df5c931", null ],
+    [ "Evaluate", "de/dc3/a00909_gaf69b14dc8c37e0435b1041b2a21d4e25.html#gaf69b14dc8c37e0435b1041b2a21d4e25", null ]
 ];

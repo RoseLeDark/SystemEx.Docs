@@ -1,0 +1,140 @@
+.TH "SystemEx.Hash.CrC< TC32, TC64 >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Hash.CrC< TC32, TC64 > \- Provides a generic wrapper combining a CRC‑32 and a CRC‑64 hashing implementation\&. The generic parameters \fITC32\fP  and \fITC64\fP  specify the concrete CRC‑32 and CRC‑64 algorithm variants to use, allowing flexible configuration of polynomial families without modifying the pipeline\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Hash\&.IHash\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHash32\fP \fBCompute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes a CRC‑32 checksum over the specified input buffer by delegating to the internal \fITC32\fP  instance\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes a CRC‑64 checksum over the specified input buffer by delegating to the internal \fITC64\fP  instance\&. "
+.ti -1c
+.RI "\fBCrC\fP ()"
+.br
+.RI "Initializes a new \fBCrC<TC32, TC64>\fP instance using the default CRC‑32 and CRC‑64 polynomials provided by the concrete algorithm types \fITC32\fP  and \fITC64\fP \&. "
+.ti -1c
+.RI "\fBCrC\fP (Pair< Optional< uint >, Optional< ulong > > poly)"
+.br
+.RI "Initializes a new \fBCrC<TC32, TC64>\fP instance using optional custom CRC‑32 and CRC‑64 polynomials\&. If a polynomial is not provided, the corresponding CRC implementation uses its default polynomial\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Pair< Optional< uint >, Optional< ulong > > \fBPolynomial\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the CRC‑32 and CRC‑64 polynomials simultaneously\&. The first element of the pair corresponds to the CRC‑32 polynomial, and the second element corresponds to the CRC‑64 polynomial\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a generic wrapper combining a CRC‑32 and a CRC‑64 hashing implementation\&. The generic parameters \fITC32\fP  and \fITC64\fP  specify the concrete CRC‑32 and CRC‑64 algorithm variants to use, allowing flexible configuration of polynomial families without modifying the pipeline\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITC32\fP A concrete \fBCRC32\fP implementation used for 32‑bit hashing\&. Must provide a parameterless constructor\&. 
+.br
+\fITC64\fP A concrete \fBCRC64\fP implementation used for 64‑bit hashing\&. Must provide a parameterless constructor\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITC32\fP : \fI\fBCRC32\fP\fP
+.TP
+\fITC32\fP : \fInew()\fP
+.TP
+\fITC64\fP : \fI\fBCRC64\fP\fP
+.TP
+\fITC64\fP : \fInew()\fP
+.PP
+Definition at line \fB37\fP of file \fBCrC\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBHash32\fP SystemEx\&.Hash\&.CrC< TC32, TC64 >\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes a CRC‑32 checksum over the specified input buffer by delegating to the internal \fITC32\fP  instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input byte sequence to hash\&.
+.br
+\fIseed\fP The initial CRC‑32 seed\&. A value of zero continues from the rolling CRC‑32 state; a non‑zero value performs a one‑shot computation\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBHash32\fP containing the CRC‑32 checksum\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB109\fP of file \fBCrC\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.CrC< TC32, TC64 >\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes a CRC‑64 checksum over the specified input buffer by delegating to the internal \fITC64\fP  instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input byte sequence to hash\&.
+.br
+\fIseed\fP The initial CRC‑64 seed\&. A value of zero continues from the rolling CRC‑64 state; a non‑zero value performs a one‑shot computation\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB122\fP of file \fBCrC\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.CrC< TC32, TC64 >\&.CrC ()"
+
+.PP
+Initializes a new \fBCrC<TC32, TC64>\fP instance using the default CRC‑32 and CRC‑64 polynomials provided by the concrete algorithm types \fITC32\fP  and \fITC64\fP \&. 
+.PP
+Definition at line \fB75\fP of file \fBCrC\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.CrC< TC32, TC64 >\&.CrC (Pair< Optional< uint >, Optional< ulong > > poly)"
+
+.PP
+Initializes a new \fBCrC<TC32, TC64>\fP instance using optional custom CRC‑32 and CRC‑64 polynomials\&. If a polynomial is not provided, the corresponding CRC implementation uses its default polynomial\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpoly\fP A pair containing optional CRC‑32 and CRC‑64 polynomial values\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB88\fP of file \fBCrC\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "Pair<Optional<uint>, Optional<ulong> > SystemEx\&.Hash\&.CrC< TC32, TC64 >\&.Polynomial\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the CRC‑32 and CRC‑64 polynomials simultaneously\&. The first element of the pair corresponds to the CRC‑32 polynomial, and the second element corresponds to the CRC‑64 polynomial\&. If an element is \fBOptional<T>\&.HasValue\fP = \fRfalse\fP, the corresponding polynomial remains unchanged\&. 
+
+.PP
+Setting either polynomial regenerates the lookup table of the underlying CRC implementation and resets its rolling state\&. 
+.PP
+Definition at line \fB59\fP of file \fBCrC\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

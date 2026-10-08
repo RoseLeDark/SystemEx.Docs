@@ -1,0 +1,515 @@
+.TH "SystemEx.Collections.Generic.PriorityQueue< TElement, TPriority >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.PriorityQueue< TElement, TPriority > \- A Simple priority queue implemented \&. 
+.br
+ Elements are stored as \fBPair<T, TU>\fP where \fRT\fP is the value and \fRTU\fP is the priority\&. 
+.br
+ Supports enqueue, dequeue, peek, priority updates, cloning, and median‑based selection\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.IAutoGrowe\fP, and \fBSystemEx\&.Collections\&.Generic\&.ISwappable< T >\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBPriorityQueueCompare\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTriple\fP \fBCompare\fP (Optional< Pair< TElement, TPriority > > a, Optional< Pair< TElement, TPriority > > b)"
+.br
+.ti -1c
+.RI "Optional< TElement > \fBDequeue\fP ()"
+.br
+.RI "Removes and returns the value with the smallest priority\&. "
+.ti -1c
+.RI "Optional< TElement > \fBDequeueEnqueue\fP (TElement element, TPriority priority)"
+.br
+.RI "Removes the element with the smallest priority and inserts a new one\&. "
+.ti -1c
+.RI "bool \fBEnqueue\fP (TElement item, TPriority priority)"
+.br
+.RI "Inserts a new value with the specified priority\&. "
+.ti -1c
+.RI "Optional< TElement > \fBEnqueueDequeue\fP (TElement element, TPriority priority)"
+.br
+.RI "Inserts a new element and then removes the element with the smallest priority\&. "
+.ti -1c
+.RI "void \fBEnqueueRange\fP (Pair< TElement, TPriority >[] items)"
+.br
+.RI "Inserts a sequence of (value, priority) pairs into the queue\&. Sorting is temporarily disabled for performance\&. "
+.ti -1c
+.RI "void \fBEnqueueRange\fP (TElement[] elements, TPriority priority)"
+.br
+.RI "Inserts multiple values into the queue using the same priority for all of them\&. Sorting is temporarily disabled for performance\&. "
+.ti -1c
+.RI "long \fBEnsureCapacity\fP (int capacity)"
+.br
+.RI "Ensures that the internal buffer has at least the specified capacity\&. "
+.ti -1c
+.RI "bool \fBGrow\fP ()"
+.br
+.RI "Grows the internal buffer by GrowSize if AutoGrow is enabled\&. "
+.ti -1c
+.RI "Optional< TElement > \fBPeek\fP ()"
+.br
+.RI "Returns the value with the smallest priority without removing it\&. "
+.ti -1c
+.RI "\fBPriorityQueue\fP (int size, int growSize=2, PriorityQueueAction< Pair< TElement, TPriority >, ISimpleCompare< Pair< TElement, TPriority > > >? sorter=null)"
+.br
+.RI "Creates a priority queue\&. "
+.ti -1c
+.RI "\fBPriorityQueue\fP (int size, int \fBGrowSize\fP=8)"
+.br
+.RI "Creates a priority queue using the default priority comparison\&. "
+.ti -1c
+.RI "\fBPriorityQueue\fP (Pair< TElement, TPriority >[] elements, int growSize=2, PriorityQueueAction< Pair< TElement, TPriority >, ISimpleCompare< Pair< TElement, TPriority > > >? sorter=null)"
+.br
+.RI "Creates a priority queue from given elements, with sort and custom priority comparison\&. "
+.ti -1c
+.RI "void \fBSort\fP ()"
+.br
+.RI "Sorts the map using either the DEFAULTCOMPAR or the delegate-based function\&. 
+.br
+ Implements a simple O(n²) comparison-based sort\&. "
+.ti -1c
+.RI "void \fBSwap\fP (long i, long j)"
+.br
+.RI "Swaps two elements in the internal list\&. "
+.ti -1c
+.RI "bool \fBTryDequeue\fP (out Optional< TElement > element, out Optional< TPriority > priority)"
+.br
+.RI "Attempts to remove and return the element with the smallest priority\&. "
+.ti -1c
+.RI "bool \fBTryPeek\fP (out Optional< TElement > element, out Optional< TPriority > priority)"
+.br
+.RI "Attempts to retrieve the element with the smallest priority without removing it\&. "
+.ti -1c
+.RI "void \fBUpdatePriority\fP (TElement search, TPriority newPriority, long N=1)"
+.br
+.RI "Updates the priority of an existing value\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.ISwappable< T >\fP
+.in +1c
+.ti -1c
+.RI "void \fBSwap\fP (T i, T j)"
+.br
+.RI "Swaps the elements located at the given positions\&. Implementations must ensure that both indices are valid and that the operation is performed atomically with respect to the container's state\&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static readonly ISimpleCompare< Pair< TElement, TPriority > > \fBDEFAULTCOMPAR\fP = new \fBPriorityQueueCompare\fP()"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBAutoGrow\fP\fR [get, set]\fP"
+.br
+.RI "Enables or disables automatic resizing when the Vector becomes full\&. "
+.ti -1c
+.RI "bool \fBAutoSort\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the queue automatically sorts itself after insertions\&. "
+.ti -1c
+.RI "long \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements in the queue\&. "
+.ti -1c
+.RI "Pair< TElement, TPriority > \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the element with the smallest priority\&. "
+.ti -1c
+.RI "long \fBGrowSize\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the number of elements the Vector grows by when AutoGrow is enabled\&. "
+.ti -1c
+.RI "bool \fBIsDirty\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the internal buffer has been modified without being sorted\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the Vector contains no elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the Vector is full\&. "
+.ti -1c
+.RI "long \fBLength\fP\fR [get]\fP"
+.br
+.RI "The real size\&. "
+.ti -1c
+.RI "Pair< TElement, TPriority > \fBMax\fP\fR [get]\fP"
+.br
+.RI "Gets the element with the maximum priority\&. "
+.ti -1c
+.RI "Pair< TElement, TPriority >? \fBMedian\fP\fR [get]\fP"
+.br
+.RI "Gets the element whose priority is closest to the statistical median\&. "
+.ti -1c
+.RI "Pair< TElement, TPriority > \fBMin\fP\fR [get]\fP"
+.br
+.RI "Gets the element with the minimum priority\&. "
+.ti -1c
+.RI "PriorityQueueAction< Pair< TElement, TPriority >, ISimpleCompare< Pair< TElement, TPriority > > >? \fBSortFunctions\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the delegate used to sort the queue\&. When \fBAutoSort\fP is enabled, assigning a new sorter triggers sorting\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A Simple priority queue implemented \&. 
+.br
+ Elements are stored as \fBPair<T, TU>\fP where \fRT\fP is the value and \fRTU\fP is the priority\&. 
+.br
+ Supports enqueue, dequeue, peek, priority updates, cloning, and median‑based selection\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITElement\fP The stored value type\&.
+.br
+\fITPriority\fP The priority type, must implement INumber<TU> to allow arithmetic and comparison operations\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITPriority\fP : \fIINumber<TPriority>\fP
+.TP
+\fITElement\fP : \fInotnull\fP
+.PP
+Definition at line \fB59\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBTriple\fP SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Compare (Optional< Pair< TElement, TPriority > > a, Optional< Pair< TElement, TPriority > > b)"
+
+.PP
+Definition at line \fB64\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "Optional< TElement > SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Dequeue ()"
+
+.PP
+Removes and returns the value with the smallest priority\&. 
+.PP
+Definition at line \fB264\fP of file \fBPriorityQueue\&.cs\fP\&.
+.PP
+Referenced by \fBDequeueEnqueue()\fP, and \fBEnqueueDequeue()\fP\&.
+.SS "Optional< TElement > SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.DequeueEnqueue (TElement element, TPriority priority)"
+
+.PP
+Removes the element with the smallest priority and inserts a new one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIelement\fP The value to insert\&.
+.br
+\fIpriority\fP The priority of the new value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The value that was removed from the queue\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB314\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Enqueue (TElement item, TPriority priority)"
+
+.PP
+Inserts a new value with the specified priority\&. 
+.PP
+Definition at line \fB208\fP of file \fBPriorityQueue\&.cs\fP\&.
+.PP
+Referenced by \fBDequeueEnqueue()\fP, and \fBEnqueueDequeue()\fP\&.
+.SS "Optional< TElement > SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.EnqueueDequeue (TElement element, TPriority priority)"
+
+.PP
+Inserts a new element and then removes the element with the smallest priority\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIelement\fP The value to insert\&.
+.br
+\fIpriority\fP The priority of the new value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The value removed from the queue\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB328\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.EnqueueRange (Pair< TElement, TPriority >[] items)"
+
+.PP
+Inserts a sequence of (value, priority) pairs into the queue\&. Sorting is temporarily disabled for performance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIitems\fP The items to insert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB338\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.EnqueueRange (TElement[] elements, TPriority priority)"
+
+.PP
+Inserts multiple values into the queue using the same priority for all of them\&. Sorting is temporarily disabled for performance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIelements\fP The values to insert\&.
+.br
+\fIpriority\fP The priority assigned to each value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB367\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.EnsureCapacity (int capacity)"
+
+.PP
+Ensures that the internal buffer has at least the specified capacity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcapacity\fP The minimum required capacity\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The new buffer size after resizing\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB416\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Grow ()"
+
+.PP
+Grows the internal buffer by GrowSize if AutoGrow is enabled\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if growth succeeded; false if AutoGrow was disabled\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IAutoGrowe\fP\&.
+.PP
+Definition at line \fB508\fP of file \fBPriorityQueue\&.cs\fP\&.
+.PP
+Referenced by \fBEnqueue()\fP, \fBEnqueueRange()\fP, and \fBEnqueueRange()\fP\&.
+.SS "Optional< TElement > SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Peek ()"
+
+.PP
+Returns the value with the smallest priority without removing it\&. 
+.PP
+Definition at line \fB229\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.PriorityQueue (int size, int growSize = \fR2\fP, PriorityQueueAction< Pair< TElement, TPriority >, ISimpleCompare< Pair< TElement, TPriority > > >? sorter = \fRnull\fP)"
+
+.PP
+Creates a priority queue\&. 
+.PP
+Definition at line \fB183\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.PriorityQueue (int size, int GrowSize = \fR8\fP)"
+
+.PP
+Creates a priority queue using the default priority comparison\&. 
+.PP
+Definition at line \fB174\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.PriorityQueue (Pair< TElement, TPriority >[] elements, int growSize = \fR2\fP, PriorityQueueAction< Pair< TElement, TPriority >, ISimpleCompare< Pair< TElement, TPriority > > >? sorter = \fRnull\fP)"
+
+.PP
+Creates a priority queue from given elements, with sort and custom priority comparison\&. 
+.PP
+Definition at line \fB194\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Sort ()"
+
+.PP
+Sorts the map using either the DEFAULTCOMPAR or the delegate-based function\&. 
+.br
+ Implements a simple O(n²) comparison-based sort\&. 
+.PP
+Definition at line \fB425\fP of file \fBPriorityQueue\&.cs\fP\&.
+.PP
+Referenced by \fBEnqueue()\fP, \fBEnqueueRange()\fP, \fBEnqueueRange()\fP, \fBPriorityQueue()\fP, and \fBUpdatePriority()\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Swap (long i, long j)"
+
+.PP
+Swaps two elements in the internal list\&. 
+.PP
+Definition at line \fB445\fP of file \fBPriorityQueue\&.cs\fP\&.
+.PP
+Referenced by \fBSort()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.TryDequeue (out Optional< TElement > element, out Optional< TPriority > priority)"
+
+.PP
+Attempts to remove and return the element with the smallest priority\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIelement\fP Receives the dequeued value\&.
+.br
+\fIpriority\fP Receives the dequeued priority\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if an element was removed; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB288\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.TryPeek (out Optional< TElement > element, out Optional< TPriority > priority)"
+
+.PP
+Attempts to retrieve the element with the smallest priority without removing it\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIelement\fP Receives the value if available\&.
+.br
+\fIpriority\fP Receives the priority if available\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the queue contains at least one element; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB248\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.UpdatePriority (TElement search, TPriority newPriority, long N = \fR1\fP)"
+
+.PP
+Updates the priority of an existing value\&. 
+.PP
+Definition at line \fB395\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "readonly ISimpleCompare<Pair<TElement, TPriority> > SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.DEFAULTCOMPAR = new \fBPriorityQueueCompare\fP()\fR [static]\fP"
+
+.PP
+Definition at line \fB76\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.AutoGrow\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Enables or disables automatic resizing when the Vector becomes full\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IAutoGrowe\fP\&.
+.PP
+Definition at line \fB147\fP of file \fBPriorityQueue\&.cs\fP\&.
+.PP
+Referenced by \fBEnqueue()\fP, \fBEnqueueRange()\fP, \fBEnqueueRange()\fP, and \fBGrow()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.AutoSort\fR [get]\fP"
+
+.PP
+Indicates whether the queue automatically sorts itself after insertions\&. 
+.PP
+Definition at line \fB152\fP of file \fBPriorityQueue\&.cs\fP\&.
+.PP
+Referenced by \fBEnqueue()\fP, \fBEnqueueRange()\fP, \fBEnqueueRange()\fP, and \fBUpdatePriority()\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of elements in the queue\&. 
+.PP
+Definition at line \fB100\fP of file \fBPriorityQueue\&.cs\fP\&.
+.PP
+Referenced by \fBSort()\fP\&.
+.SS "Pair<TElement, TPriority> SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Current\fR [get]\fP"
+
+.PP
+Gets the element with the smallest priority\&. 
+.PP
+Definition at line \fB105\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.GrowSize\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the number of elements the Vector grows by when AutoGrow is enabled\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IAutoGrowe\fP\&.
+.PP
+Definition at line \fB137\fP of file \fBPriorityQueue\&.cs\fP\&.
+.PP
+Referenced by \fBGrow()\fP, and \fBPriorityQueue()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.IsDirty\fR [get]\fP"
+
+.PP
+Indicates whether the internal buffer has been modified without being sorted\&. 
+.PP
+Definition at line \fB157\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Indicates whether the Vector contains no elements\&. 
+.PP
+Definition at line \fB133\fP of file \fBPriorityQueue\&.cs\fP\&.
+.PP
+Referenced by \fBDequeue()\fP, \fBPeek()\fP, \fBTryDequeue()\fP, and \fBTryPeek()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.IsFull\fR [get]\fP"
+
+.PP
+Indicates whether the Vector is full\&. 
+.PP
+Definition at line \fB128\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Length\fR [get]\fP"
+
+.PP
+The real size\&. 
+.PP
+Definition at line \fB95\fP of file \fBPriorityQueue\&.cs\fP\&.
+.PP
+Referenced by \fBGrow()\fP\&.
+.SS "Pair<TElement, TPriority> SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Max\fR [get]\fP"
+
+.PP
+Gets the element with the maximum priority\&. 
+.PP
+Definition at line \fB118\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "Pair<TElement, TPriority>? SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Median\fR [get]\fP"
+
+.PP
+Gets the element whose priority is closest to the statistical median\&. 
+.PP
+Definition at line \fB123\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "Pair<TElement, TPriority> SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Min\fR [get]\fP"
+
+.PP
+Gets the element with the minimum priority\&. 
+.PP
+Definition at line \fB113\fP of file \fBPriorityQueue\&.cs\fP\&.
+.SS "PriorityQueueAction<Pair<TElement, TPriority>, ISimpleCompare<Pair<TElement, TPriority> > >? SystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.SortFunctions\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the delegate used to sort the queue\&. When \fBAutoSort\fP is enabled, assigning a new sorter triggers sorting\&. 
+.PP
+Definition at line \fB163\fP of file \fBPriorityQueue\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

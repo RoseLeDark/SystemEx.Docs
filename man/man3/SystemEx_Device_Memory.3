@@ -1,0 +1,71 @@
+.TH "SystemEx.Device.Memory" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Device.Memory
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBDeviceBuffer\fP"
+.br
+.RI "Represents a cache that can be shared with a hardware backend through \fBDeviceSharedBuffer<TDeviceSharedBackend>\fP\&. 
+.br
+ A \fBDeviceBuffer\fP behaves like a normal \fBCache\fP, but supports locking and shared‑memory synchronization for device kernels\&. "
+.ti -1c
+.RI "class \fBDeviceSharedBuffer< TDeviceSharedBackend >\fP"
+.br
+.RI "Represents a shared memory bridge between a \fBDeviceBuffer\fP and a hardware‑specific backend implementing \fBIDeviceSharedBackend\fP\&. 
+.br
+ Manages the lifecycle of a hardware buffer, including creation, upload, download, and cleanup, depending on the configured \fBSharedCacheType\fP\&. "
+.ti -1c
+.RI "interface \fBIKernel< TIDeviceSharedBackend >\fP"
+.br
+.RI "Defines the interface for a compute kernel that operates on one or more \fBDeviceSharedBuffer<TDeviceSharedBackend>\fP instances\&. 
+.br
+ A kernel represents a unit of computation that may run on different backends such as RAM, OpenCL, Vulkan, CUDA, or custom hardware\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSharedCacheType\fP : byte { \fBReadOnly\fP, \fBWriteOnly\fP, \fBReadWrite\fP }"
+.br
+.RI "Specifies how a shared cache interacts with the hardware backend\&. 
+.br
+ Determines the direction of data flow between the managed cache and the device‑specific hardware buffer\&. "
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.Device\&.Memory\&.SharedCacheType\fP : byte"
+
+.PP
+Specifies how a shared cache interacts with the hardware backend\&. 
+.br
+ Determines the direction of data flow between the managed cache and the device‑specific hardware buffer\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIReadOnly \fP
+Data flows from the cache to the hardware buffer only\&. 
+.br
+ Hardware cannot write back into the cache\&. 
+.TP
+\f(BIWriteOnly \fP
+Data flows from the hardware buffer into the cache only\&. 
+.br
+ The cache does not upload its contents to the hardware\&. 
+.TP
+\f(BIReadWrite \fP
+Bidirectional synchronization between cache and hardware buffer\&. 
+.br
+ The cache uploads its data to the hardware, and the hardware may write modified data back into the cache\&. 
+.PP
+Definition at line \fB34\fP of file \fBDeviceSharedBuffer\&.cs\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,122 @@
+.TH "SystemEx.AI.Tools.CalculatorTool" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI.Tools.CalculatorTool \- A basic arithmetic calculator tool\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "async Task< object?> \fBExecuteAsync\fP (Map< string, object?> args, CancellationToken ct)"
+.br
+.RI "Executes the calculator logic\&. "
+.ti -1c
+.RI "IEnumerable< \fBModelToolParameter\fP > \fBGetParameters\fP ()"
+.br
+.RI "Defines the parameters accepted by this tool\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBDescription\fP\fR [get]\fP"
+.br
+.RI "Gets a human-readable description of what the tool does\&. "
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Gets the unique tool name used by the \fBAI\fP runtime\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A basic arithmetic calculator tool\&. 
+
+This tool performs simple mathematical operations such as:
+.IP "\(bu" 2
+Addition
+.IP "\(bu" 2
+Subtraction
+.IP "\(bu" 2
+Multiplication
+.IP "\(bu" 2
+Division
+.PP
+
+.PP
+It is intended for use by \fBAI\fP models that should not invent numerical results but instead rely on deterministic tool output\&. 
+.PP
+Definition at line \fB35\fP of file \fBCalculatorTool\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "async Task< object?> SystemEx\&.AI\&.Tools\&.CalculatorTool\&.ExecuteAsync (Map< string, object?> args, CancellationToken ct)"
+
+.PP
+Executes the calculator logic\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIargs\fP Map containing tool arguments\&.
+.br
+\fIct\fP Cancellation token\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A numeric result of the requested operation\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIDivideByZeroException\fP Thrown when attempting to divide by zero\&. 
+.br
+\fIArgumentException\fP Thrown when an unknown operation is requested\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB86\fP of file \fBCalculatorTool\&.cs\fP\&.
+.SS "IEnumerable< \fBModelToolParameter\fP > SystemEx\&.AI\&.Tools\&.CalculatorTool\&.GetParameters ()"
+
+.PP
+Defines the parameters accepted by this tool\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A sequence of \fBModelToolParameter\fP describing the tool's inputs\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB52\fP of file \fBCalculatorTool\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "string SystemEx\&.AI\&.Tools\&.CalculatorTool\&.Description\fR [get]\fP"
+
+.PP
+Gets a human-readable description of what the tool does\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB44\fP of file \fBCalculatorTool\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Tools\&.CalculatorTool\&.Name\fR [get]\fP"
+
+.PP
+Gets the unique tool name used by the \fBAI\fP runtime\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB39\fP of file \fBCalculatorTool\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

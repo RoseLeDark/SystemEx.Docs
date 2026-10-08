@@ -1,0 +1,271 @@
+.TH "SystemEx.Device.Memory.IKernel< TIDeviceSharedBackend >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Device.Memory.IKernel< TIDeviceSharedBackend > \- Defines the interface for a compute kernel that operates on one or more \fBDeviceSharedBuffer<TDeviceSharedBackend>\fP instances\&. 
+.br
+ A kernel represents a unit of computation that may run on different backends such as RAM, OpenCL, Vulkan, CUDA, or custom hardware\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Device\&.NativeRAMKernel< TD >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBAddBuffer\fP (\fBDeviceBuffer\fP buffer, string name, int flags, object? configs)"
+.br
+.RI "Adds a shared buffer to the kernel with the specified name and usage type\&. "
+.ti -1c
+.RI "bool \fBBeginRun\fP (string strFunction)"
+.br
+.RI "Begins a kernel execution session and prepares the backend function identified by \fIstrFunction\fP \&. 
+.br
+ Typically uploads buffers, locks shared memory regions, and performs backend‑specific initialization required before \fBRun\fP can be called\&. "
+.ti -1c
+.RI "bool \fBCreate\fP (string dllPath)"
+.br
+.RI "Initializes the kernel by loading the native module located at \fIdllPath\fP \&. 
+.br
+ This typically resolves the underlying library, prepares backend‑specific resources, and performs any required setup before buffers can be added\&. "
+.ti -1c
+.RI "void \fBEndRun\fP ()"
+.br
+.RI "Ends the kernel execution session, synchronizes buffers, unlocks shared memory regions, and performs backend cleanup operations\&. 
+.br
+ Must be called after \fBRun\fP completes\&. "
+.ti -1c
+.RI "DeviceSharedBuffer< TIDeviceSharedBackend >? \fBGetBuffer\fP (string name)"
+.br
+.RI "Retrieves a shared buffer by its symbolic name\&. "
+.ti -1c
+.RI "bool \fBIsRunning\fP ()"
+.br
+.RI "Indicates whether the kernel is currently executing\&. 
+.br
+ Useful for asynchronous backends or long‑running compute operations\&. "
+.ti -1c
+.RI "bool \fBRemoveBuffer\fP (int index)"
+.br
+.RI "Removes a buffer from the kernel by its index in the internal buffer list\&. "
+.ti -1c
+.RI "bool \fBRemoveBuffer\fP (string name)"
+.br
+.RI "Removes a buffer from the kernel by its symbolic name\&. 
+.br
+ This typically releases backend‑specific resources and detaches the buffer from the kernel execution pipeline\&. "
+.ti -1c
+.RI "bool \fBRun\fP (object? options)"
+.br
+.RI "Executes the kernel with optional backend‑specific parameters\&. 
+.br
+ Implementations may run synchronously or asynchronously depending on the backend and kernel type\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "TIDeviceSharedBackend \fBBackend\fP\fR [get]\fP"
+.br
+.RI "Gets the backend instance associated with this kernel\&. 
+.br
+ The backend defines how shared buffers are allocated, synchronized, locked, and accessed during kernel execution\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines the interface for a compute kernel that operates on one or more \fBDeviceSharedBuffer<TDeviceSharedBackend>\fP instances\&. 
+.br
+ A kernel represents a unit of computation that may run on different backends such as RAM, OpenCL, Vulkan, CUDA, or custom hardware\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITIDeviceSharedBackend\fP The backend type used for shared buffer operations\&. 
+.br
+ Must implement \fBIDeviceSharedBackend\fP\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITIDeviceSharedBackend\fP : \fIIDeviceSharedBackend\fP
+.PP
+Definition at line \fB33\fP of file \fBIkernel\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int SystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\&.AddBuffer (\fBDeviceBuffer\fP buffer, string name, int flags, object? configs)"
+
+.PP
+Adds a shared buffer to the kernel with the specified name and usage type\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbuffer\fP The shared buffer to attach\&.
+.br
+\fIname\fP The symbolic name used by the kernel\&.
+.br
+\fIflags\fP Flags for the buffer
+.br
+\fIconfigs\fP Optional backend‑specific configuration data\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The index of the added buffer, or a negative value on failure\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Device\&.NativeRAMKernel< TD >\fP\&.
+.SS "bool SystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\&.BeginRun (string strFunction)"
+
+.PP
+Begins a kernel execution session and prepares the backend function identified by \fIstrFunction\fP \&. 
+.br
+ Typically uploads buffers, locks shared memory regions, and performs backend‑specific initialization required before \fBRun\fP can be called\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstrFunction\fP The name of the kernel function to execute\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if initialization succeeds\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Device\&.NativeRAMKernel< TD >\fP\&.
+.SS "bool SystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\&.Create (string dllPath)"
+
+.PP
+Initializes the kernel by loading the native module located at \fIdllPath\fP \&. 
+.br
+ This typically resolves the underlying library, prepares backend‑specific resources, and performs any required setup before buffers can be added\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdllPath\fP The absolute or symbolic path to the native module containing the kernel function(s)\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the module is successfully loaded and the kernel is ready for buffer registration; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Device\&.NativeRAMKernel< TD >\fP\&.
+.SS "void SystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\&.EndRun ()"
+
+.PP
+Ends the kernel execution session, synchronizes buffers, unlocks shared memory regions, and performs backend cleanup operations\&. 
+.br
+ Must be called after \fBRun\fP completes\&. 
+.PP
+Implemented in \fBSystemEx\&.Device\&.NativeRAMKernel< TD >\fP\&.
+.SS "DeviceSharedBuffer< TIDeviceSharedBackend >? SystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\&.GetBuffer (string name)"
+
+.PP
+Retrieves a shared buffer by its symbolic name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The symbolic buffer name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The associated \fBDeviceSharedBuffer<TIDeviceSharedBackend>\fP, or \fRnull\fP if no buffer with the given name exists\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Device\&.NativeRAMKernel< TD >\fP\&.
+.SS "bool SystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\&.IsRunning ()"
+
+.PP
+Indicates whether the kernel is currently executing\&. 
+.br
+ Useful for asynchronous backends or long‑running compute operations\&. 
+.PP
+Implemented in \fBSystemEx\&.Device\&.NativeRAMKernel< TD >\fP\&.
+.SS "bool SystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\&.RemoveBuffer (int index)"
+
+.PP
+Removes a buffer from the kernel by its index in the internal buffer list\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The buffer index\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the buffer was successfully removed; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Device\&.NativeRAMKernel< TD >\fP\&.
+.SS "bool SystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\&.RemoveBuffer (string name)"
+
+.PP
+Removes a buffer from the kernel by its symbolic name\&. 
+.br
+ This typically releases backend‑specific resources and detaches the buffer from the kernel execution pipeline\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The symbolic buffer name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the buffer was successfully removed; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Device\&.NativeRAMKernel< TD >\fP\&.
+.SS "bool SystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\&.Run (object? options)"
+
+.PP
+Executes the kernel with optional backend‑specific parameters\&. 
+.br
+ Implementations may run synchronously or asynchronously depending on the backend and kernel type\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIoptions\fP Optional execution parameters\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the kernel starts successfully; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Device\&.NativeRAMKernel< TD >\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "TIDeviceSharedBackend SystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\&.Backend\fR [get]\fP"
+
+.PP
+Gets the backend instance associated with this kernel\&. 
+.br
+ The backend defines how shared buffers are allocated, synchronized, locked, and accessed during kernel execution\&. 
+.PP
+Implemented in \fBSystemEx\&.Device\&.NativeRAMKernel< TD >\fP\&.
+.PP
+Definition at line \fB41\fP of file \fBIkernel\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

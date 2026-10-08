@@ -1,0 +1,207 @@
+.TH "SystemEx.Numeric.IFastType< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.IFastType< T > \- Extends \fBIFastType\fP with typed access to the underlying storage value\&. Implementations define how the raw value is represented (e\&.g\&., uint, ulong, ushort, double, long), enabling bit‑level inspection and mutation of arbitrary numeric formats\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIFastType\fP< T > \fBCmpOne\fP ()"
+.br
+.RI "Produces the one’s complement of the underlying value (bitwise NOT)\&. "
+.ti -1c
+.RI "\fBIFastType\fP< T > \fBCmpTwo\fP ()"
+.br
+.RI "Produces the two’s complement of the underlying value (\fR~value + 1\fP)\&. "
+.ti -1c
+.RI "\fBIFastType\fP< T > \fBCombine\fP (\fBIFastType\fP< T > other)"
+.br
+.RI "Combines the underlying value with another \fBIFastType<T>\fP using bitwise OR\&. All bits set in either value become set\&. "
+.ti -1c
+.RI "T \fBCreateMask\fP (byte start, byte end)"
+.br
+.RI "Creates a contiguous bitmask beginning at \fIstart\fP  with \fIend\fP  bits set to \fR1\fP\&. "
+.ti -1c
+.RI "void \fBMask\fP (T mask)"
+.br
+.RI "Applies a bitmask to the underlying value using bitwise AND\&. Only bits that are \fR1\fP in the mask remain set\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Numeric\&.IFastType\fP
+.in +1c
+.ti -1c
+.RI "void \fBAt\fP (byte pos, byte value)"
+.br
+.RI "Sets the bit at the specified position to \fR0\fP or \fR1\fP\&. "
+.ti -1c
+.RI "void \fBFlip\fP (byte pos)"
+.br
+.RI "Toggles (flips) the bit at the specified position\&. "
+.ti -1c
+.RI "byte \fBIs\fP (byte pos)"
+.br
+.RI "Returns the bit at the specified position as \fR0\fP or \fR1\fP\&. "
+.ti -1c
+.RI "byte \fBIsIt\fP ()"
+.br
+.RI "Counts the number of bits set to \fR1\fP in the underlying value\&. "
+.ti -1c
+.RI "byte \fBIsItNot\fP ()"
+.br
+.RI "Counts the number of bits set to \fR0\fP in the underlying value\&. Equivalent to \fRCount - \fBIsIt()\fP\fP\&. "
+.ti -1c
+.RI "void \fBRotateLeft\fP (byte count)"
+.br
+.RI "Rotates all bits to the left by the specified count\&. Rotation wraps around the bit range and preserves all bits\&. "
+.ti -1c
+.RI "void \fBRotateRight\fP (byte count)"
+.br
+.RI "Rotates all bits to the right by the specified count\&. Rotation wraps around the bit range and preserves all bits\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBWhere\fP ()"
+.br
+.RI "Returns a collection of all bit positions where the bit is \fR1\fP\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBWhereNot\fP ()"
+.br
+.RI "Returns a collection of all bit positions where the bit is \fR0\fP\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "T \fBValue\fP\fR [get]\fP"
+.br
+.RI "Gets the raw underlying value represented by this bit‑manipulation type\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Numeric\&.IFastType\fP
+.in +1c
+.ti -1c
+.RI "byte \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the total number of bits exposed by the implementation\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Extends \fBIFastType\fP with typed access to the underlying storage value\&. Implementations define how the raw value is represented (e\&.g\&., uint, ulong, ushort, double, long), enabling bit‑level inspection and mutation of arbitrary numeric formats\&. 
+
+This interface is type‑agnostic and supports both integer and floating‑point representations\&. For floating‑point types, the bit operations apply to the raw IEEE‑754 encoding (or custom formats such as \fR\fBHalf16\fP\fP)\&. 
+
+.PP
+Additional operations include: 
+
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBOne’s complement\fP (\fBCmpOne\fP) — invert all bits\&.   
+.IP "\(bu" 2
+\fBTwo’s complement\fP (\fBCmpTwo\fP) — invert all bits and add one\&.   
+.IP "\(bu" 2
+\fBMasking\fP (\fBMask\fP) — apply a bitmask using AND\&.   
+.IP "\(bu" 2
+\fBMask creation\fP (\fBCreateMask\fP) — generate a contiguous bitmask of arbitrary length\&.   
+.IP "\(bu" 2
+\fBCombination\fP (\fBCombine\fP) — merge two bit patterns using OR\&.   
+.PP
+
+.PP
+Implementations must guarantee that all operations modify or inspect the underlying value deterministically and without hidden conversions\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The underlying storage type (e\&.g\&., uint, ulong, ushort, double, long)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB166\fP of file \fBFastType\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBIFastType\fP< T > \fBSystemEx\&.Numeric\&.IFastType\fP< T >\&.CmpOne ()"
+
+.PP
+Produces the one’s complement of the underlying value (bitwise NOT)\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "\fBIFastType\fP< T > \fBSystemEx\&.Numeric\&.IFastType\fP< T >\&.CmpTwo ()"
+
+.PP
+Produces the two’s complement of the underlying value (\fR~value + 1\fP)\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "\fBIFastType\fP< T > \fBSystemEx\&.Numeric\&.IFastType\fP< T >\&.Combine (\fBIFastType\fP< T > other)"
+
+.PP
+Combines the underlying value with another \fBIFastType<T>\fP using bitwise OR\&. All bits set in either value become set\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The other bit‑type to combine with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The modified instance\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "T \fBSystemEx\&.Numeric\&.IFastType\fP< T >\&.CreateMask (byte start, byte end)"
+
+.PP
+Creates a contiguous bitmask beginning at \fIstart\fP  with \fIend\fP  bits set to \fR1\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP The starting bit position\&.
+.br
+\fIend\fP The number of bits to include\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A mask of type \fIT\fP \&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "void \fBSystemEx\&.Numeric\&.IFastType\fP< T >\&.Mask (T mask)"
+
+.PP
+Applies a bitmask to the underlying value using bitwise AND\&. Only bits that are \fR1\fP in the mask remain set\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImask\fP The mask to apply\&.
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "T \fBSystemEx\&.Numeric\&.IFastType\fP< T >\&.Value\fR [get]\fP"
+
+.PP
+Gets the raw underlying value represented by this bit‑manipulation type\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.PP
+Definition at line \fB171\fP of file \fBFastType\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.Fast_Byte\&.Combine()\fP, \fBSystemEx\&.Numeric\&.Fast_Int\&.Combine()\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\&.Combine()\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\&.Combine()\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\&.Combine()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

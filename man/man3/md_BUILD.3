@@ -1,0 +1,60 @@
+.TH "md_BUILD" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_BUILD \- Build & Publish Guide 
+.PP
+
+
+.PP
+The build output is located in \fRbuild/net10\&.0/\fP\&.
+.SH "Building Locally"
+.PP
+.SS "Windows (PowerShell)"
+.PP
+.nf
+\&./Build\&.ps1
+.fi
+.PP
+.SS "Linux / Unix (Make)"
+.PP
+.nf
+make
+.fi
+.PP
+.SH "Publishing to NuGet"
+.PP
+.SS "1\&. Pre-Publish Checklist"
+Before publishing a new version, ensure the following files are updated:
+
+.PP
+.IP "\(bu" 2
+\fB\fRCHANGELOG\&.md\fP\fP: Document the changes for the new release\&.
+.IP "\(bu" 2
+\fB\fRnuget/version\&.txt\fP\fP: Update with the target version string\&.
+.IP "\(bu" 2
+\fB\fRnuget/ReleaseNotes\&.md\fP\fP: Add the current changelog entry\&. 
+.PP
+.RS 4
+📌 \fBNote:\fP Do not modify any lines below the \fR---\fP separator in \fRReleaseNotes\&.md\fP\&. 
+.RE
+.PP
+
+.PP
+.SS "2\&. API Key Setup"
+.IP "1." 4
+Create a file named \fRAPI\&.txt\fP in the \fRnuget/\fP directory (\fRnuget/API\&.txt\fP) and paste your NuGet API key into it\&.
+.IP "2." 4
+\fBSecurity Warning:\fP Ensure that \fRAPI\&.txt\fP (along with your \fR\&.snk\fP files) is listed in your \fR\&.gitignore\fP\&. Your credentials and private keys must \fBunder no circumstances\fP be committed or pushed online!
+.PP
+.SS "3\&. Run Build & Push"
+Execute the following commands in your terminal:
+
+.PP
+.PP
+.nf
+make 
+make push API_KEY=$(cat \&./nuget/API\&.txt)
+.fi
+.PP
+ 

@@ -1,0 +1,434 @@
+.TH "SystemEx.AI" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "interface \fBIAIFunctionFactory< T, TAITOOL >\fP"
+.br
+.RI "Converts an \fBIModelTool<T>\fP definition into a backend‑specific function object that can be exposed to an \fBAI\fP model\&. "
+.ti -1c
+.RI "interface \fBIModel< T, TTOOL >\fP"
+.br
+.RI "Represents a generic \fBAI\fP model with configuration, environment information, backend integration, tool support, and execution capabilities\&. "
+.ti -1c
+.RI "interface \fBIModelBackend< T, TAI >\fP"
+.br
+.RI "Basic backend implementation for all using models with this framework\&. "
+.ti -1c
+.RI "interface \fBIModelPromp< T >\fP"
+.br
+.RI "Represents a model‑agnostic prompt container used by all IModelBackend implementations and embedded models\&. "
+.ti -1c
+.RI "interface \fBIModelResult< T >\fP"
+.br
+.RI "Represents the result produced by a model execution\&. 
+.br
+ Provides access to the final output, metadata, raw backend information, error details, and execution status\&. "
+.ti -1c
+.RI "interface \fBIModelTool< T >\fP"
+.br
+.RI "Represents a model‑executable tool that can be exposed to \fBAI\fP backends through an IAIFunctionFactory\&. "
+.ti -1c
+.RI "class \fBModel< T, TTOOL >\fP"
+.br
+.RI "Represents a generic \fBAI\fP model instance within the SystemEX framework\&. "
+.ti -1c
+.RI "struct \fBModelPromp< T >\fP"
+.br
+.RI "Represents a concrete implementation of \fBIModelPromp<T>\fP used to encapsulate model input, contextual metadata, session information, execution parameters, and optional tags\&. "
+.ti -1c
+.RI "struct \fBModelResult< T >\fP"
+.br
+.RI "Represents the result of an \fBAI\fP model execution\&. "
+.ti -1c
+.RI "struct \fBModelToolParameter\fP"
+.br
+.RI "Represents a single parameter definition used by an \fBIModelTool<T>\fP\&. "
+.ti -1c
+.RI "class \fBWebAIModel\fP"
+.br
+.RI "Provides a basic implementation of a web‑based \fBAI\fP model wrapper\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBBackendCapabilities\fP : int { \fBBackendCapabilities\&.AI_BACKEND_CAPS_TEXT\fP = 0x1001, \fBBackendCapabilities\&.AI_BACKEND_CAPS_CHAT\fP = 0x1002, \fBBackendCapabilities\&.AI_BACKEND_CAPS_JSON\fP = 0x1003, \fBBackendCapabilities\&.AI_BACKEND_CAPS_INSTRUCT\fP = 0x1004, \fBBackendCapabilities\&.AI_BACKEND_CAPS_VISION\fP = 0x1101, \fBBackendCapabilities\&.AI_BACKEND_CAPS_AUDIO\fP = 0x1102, \fBBackendCapabilities\&.AI_BACKEND_CAPS_VIDEO\fP = 0x1103, \fBBackendCapabilities\&.AI_BACKEND_CAPS_MULTIMODAL\fP = 0x1104, \fBBackendCapabilities\&.AI_BACKEND_CAPS_TOOLS\fP = 0x1201, \fBBackendCapabilities\&.AI_BACKEND_CAPS_AGENT\fP = 0x1202, \fBBackendCapabilities\&.AI_BACKEND_CAPS_CODE\fP = 0x1203, \fBBackendCapabilities\&.AI_BACKEND_CAPS_EMBEDDING\fP = 0x1301, \fBBackendCapabilities\&.AI_BACKEND_CAPS_VECTOR_SEARCH\fP = 0x1302, \fBBackendCapabilities\&.AI_BACKEND_CAPS_LOCAL\fP = 0x1401, \fBBackendCapabilities\&.AI_BACKEND_CAPS_REMOTE\fP = 0x1402, \fBBackendCapabilities\&.AI_BACKEND_CAPS_GPU\fP = 0x1403, \fBBackendCapabilities\&.AI_BACKEND_CAPS_CPU\fP = 0x1404, \fBBackendCapabilities\&.AI_BACKEND_CAPS_WASM\fP = 0x1405, \fBBackendCapabilities\&.AI_BACKEND_CAPS_NATIVE\fP = 0x1406, \fBBackendCapabilities\&.AI_PLATFORM_CAP_WINDOWS\fP = 0x1501, \fBBackendCapabilities\&.AI_PLATFORM_CAP_ALL\fP = 0x1502, \fBBackendCapabilities\&.AI_CAP_FREE\fP = 0x1503, \fBBackendCapabilities\&.AI_PLATFORM_CAP_MOBILE\fP = 0x1504, \fBBackendCapabilities\&.AI_BACKEND_CAPS_STREAMING\fP = 0x1601, \fBBackendCapabilities\&.AI_BACKEND_CAPS_BATCH\fP = 0x1602, \fBBackendCapabilities\&.AI_BACKEND_CAPS_LOW_LATENCY\fP = 0x1603, \fBBackendCapabilities\&.AI_BACKEND_CAPS_NEEDS_INTERNET\fP = 0x1701, \fBBackendCapabilities\&.AI_BACKEND_CAPS_NEEDS_API_KEY\fP = 0x1702, \fBBackendCapabilities\&.AI_BACKEND_CAPS_NEEDS_LOCAL_CONFIG\fP = 0x1703, \fBBackendCapabilities\&.AI_BACKEND_CAPS_NEEDS_HARDWARE\fP = 0x1704, \fBBackendCapabilities\&.AI_BACKEND_CAPS_NEEDS_LOGIN\fP = 0x1705, \fBBackendCapabilities\&.AI_BACKEND_CAPS_TRANSPORT_REST\fP = 0x1801, \fBBackendCapabilities\&.AI_BACKEND_CAPS_TRANSPORT_WS\fP = 0x1802, \fBBackendCapabilities\&.AI_BACKEND_CAPS_TRANSPORT_NATIVE\fP = 0x1803, \fBBackendCapabilities\&.AI_BACKEND_CAPS_TRANSPORT_IPC\fP = 0x1804, \fBBackendCapabilities\&.AI_BACKEND_CAPS_TRANSPORT_WASM\fP = 0x1805, \fBBackendCapabilities\&.AI_BACKEND_CAPS_RUNTIME_LOCAL\fP = 0x1901, \fBBackendCapabilities\&.AI_BACKEND_CAPS_RUNTIME_CLOUD\fP = 0x1902, \fBBackendCapabilities\&.AI_BACKEND_CAPS_RUNTIME_BROWSER\fP = 0x1903, \fBBackendCapabilities\&.AI_BACKEND_CAPS_RUNTIME_NATIVE\fP = 0x1904, \fBBackendCapabilities\&.AI_BACKEND_CAPS_CONFIGURABLE\fP = 0x1A01, \fBBackendCapabilities\&.AI_BACKEND_CAPS_CONFIG_DYNAMIC\fP = 0x1A02, \fBBackendCapabilities\&.AI_BACKEND_CAPS_CONFIG_ENV\fP = 0x1A03, \fBBackendCapabilities\&.AI_BACKEND_CAPS_CUSTOM\fP = 0x1FFF }"
+.br
+.RI "Defines capability flags for \fBAI\fP backends\&. "
+.ti -1c
+.RI "enum \fBEnvironment\fP : int { \fBAI_ENV_OS_WINDOWS\fP = 0x3001, \fBAI_ENV_OS_LINUX\fP = 0x3002, \fBAI_ENV_OS_MACOS\fP = 0x3003, \fBAI_ENV_OS_ANDROID\fP = 0x3004, \fBAI_ENV_OS_IOS\fP = 0x3005, \fBAI_ENV_OS_BROWSER\fP = 0x3006, \fBAI_ENV_ARCH_X64\fP = 0x3101, \fBAI_ENV_ARCH_ARM64\fP = 0x3102, \fBAI_ENV_HW_CPU\fP = 0x3201, \fBAI_ENV_HW_GPU\fP = 0x3202, \fBAI_ENV_HW_NPU\fP = 0x3203, \fBAI_ENV_HW_MICROPHONE\fP = 0x3204, \fBAI_ENV_HW_CAMERA\fP = 0x3205, \fBAI_ENV_MEM_RAM\fP = 0x3301, \fBAI_ENV_MEM_VRAM\fP = 0x3302, \fBAI_ENV_FS_TEMP_DIR\fP = 0x3303, \fBAI_ENV_FS_WORK_DIR\fP = 0x3304, \fBAI_ENV_FS_HOME_DIR\fP = 0x3305, \fBAI_ENV_FS_CACHE_DIR\fP = 0x3306, \fBAI_ENV_RT_DOTNET\fP = 0x3401, \fBAI_ENV_RT_WASM\fP = 0x3402, \fBAI_ENV_RT_NATIVE\fP = 0x3403, \fBAI_ENV_RT_SANDBOX\fP = 0x3404, \fBAI_ENV_NET_ONLINE\fP = 0x3501, \fBAI_ENV_NET_OFFLINE\fP = 0x3502, \fBAI_ENV_NET_LIMITED\fP = 0x3503, \fBAI_ENV_LOCALE\fP = 0x3601, \fBAI_ENV_CULTURE\fP = 0x3602, \fBAI_ENV_SEC_SANDBOXED\fP = 0x3701, \fBAI_ENV_SEC_FULL_TRUST\fP = 0x3702, \fBAI_ENV_SEC_NO_FILE_ACCESS\fP = 0x3703, \fBAI_ENV_CUSTOM\fP = 0x3FFF }"
+.br
+.RI "Describes the runtime environment required or used by an \fBAI\fP backend\&. This enum is intentionally broad and future-proof\&. "
+.ti -1c
+.RI "enum \fBMetaFormat\fP : int { \fBMetaFormat\&.AI_FORMAT_JSON\fP = 1, \fBMetaFormat\&.AI_FORMAT_TEXT\fP = 2, \fBMetaFormat\&.AI_FORMAT_XML\fP = 3, \fBMetaFormat\&.AI_FORMAT_YAML\fP = 4, \fBMetaFormat\&.AI_FORMAT_INI\fP = 5, \fBMetaFormat\&.AI_FORMAT_BINARY\fP = 6, \fBMetaFormat\&.AI_FORMAT_PROTOBUF\fP = 7, \fBMetaFormat\&.AI_FORMAT_MSGPACK\fP = 8, \fBMetaFormat\&.AI_FORMAT_HTML\fP = 9, \fBMetaFormat\&.AI_FORMAT_MARKDOWN\fP = 10, \fBMetaFormat\&.AI_FORMAT_TOKENS\fP = 11, \fBMetaFormat\&.AI_FORMAT_EMBEDDING\fP = 12, \fBMetaFormat\&.AI_FORMAT_IMAGE\fP = 13, \fBMetaFormat\&.AI_FORMAT_AUDIO\fP = 14, \fBMetaFormat\&.AI_FORMAT_VIDEO\fP = 15, \fBMetaFormat\&.AI_FORMAT_CUSTOM\fP = 100 }"
+.br
+.RI "Defines the data format returned by a backend during model execution\&. "
+.ti -1c
+.RI "enum \fBModelMeta\fP : int { \fBModelMeta\&.AI_META_BACKEND\fP = 0x1001, \fBModelMeta\&.AI_META_BACKEND_VERSION\fP = 0x1002, \fBModelMeta\&.AI_META_BACKEND_TYPE\fP = 0x1003, \fBModelMeta\&.AI_META_BACKEND_LATENCY\fP = 0x1004, \fBModelMeta\&.AI_META_PLATFORM\fP = 0x1005, \fBModelMeta\&.AI_META_MODEL\fP = 0x1101, \fBModelMeta\&.AI_META_MODEL_VERSION\fP = 0x1102, \fBModelMeta\&.AI_META_MODEL_PROVIDER\fP = 0x1103, \fBModelMeta\&.AI_META_MODEL_CAPS\fP = 0x1104, \fBModelMeta\&.AI_META_URL\fP = 0x1201, \fBModelMeta\&.AI_META_HTTP_STATUS\fP = 0x1202, \fBModelMeta\&.AI_META_HTTP_HEADERS\fP = 0x1203, \fBModelMeta\&.AI_META_REQUEST_SIZE\fP = 0x1204, \fBModelMeta\&.AI_META_RESPONSE_SIZE\fP = 0x1205, \fBModelMeta\&.AI_META_RAW\fP = 0x1301, \fBModelMeta\&.AI_META_CONTENT_OUT\fP = 0x1302, \fBModelMeta\&.AI_META_CONTENT_IN\fP = 0x1303, \fBModelMeta\&.AI_META_TRACE_ID\fP = 0x1304, \fBModelMeta\&.AI_META_FORMAT\fP = 0x1300, \fBModelMeta\&.AI_META_EXEC_TIME\fP = 0x1401, \fBModelMeta\&.AI_META_EXEC_START\fP = 0x1402, \fBModelMeta\&.AI_META_EXEC_END\fP = 0x1403, \fBModelMeta\&.AI_META_TOKENS_IN\fP = 0x1404, \fBModelMeta\&.AI_META_TOKENS_OUT\fP = 0x1405, \fBModelMeta\&.AI_META_TOKENS_TOTAL\fP = 0x1406, \fBModelMeta\&.AI_META_TOOL_USED\fP = 0x1501, \fBModelMeta\&.AI_META_TOOL_COUNT\fP = 0x1502, \fBModelMeta\&.AI_META_TOOL_LATENCY\fP = 0x1503, \fBModelMeta\&.AI_META_ERROR_TYPE\fP = 0x1601, \fBModelMeta\&.AI_META_ERROR_MESSAGE\fP = 0x1602, \fBModelMeta\&.AI_META_ERROR_STACK\fP = 0x1603, \fBModelMeta\&.AI_META_ERROR_CODE\fP = 0x1604, \fBModelMeta\&.AI_META_SESSION_ID\fP = 0x1701, \fBModelMeta\&.AI_META_TOOLS_USED\fP = 0x1702, \fBModelMeta\&.AI_META_SYSTEMPROMPT_HASH\fP = 0x1703, \fBModelMeta\&.AI_META_MODEL_PARAMETERS\fP = 0x1704, \fBModelMeta\&.AI_META_BACKEND_CONFIG\fP = 0x1705, \fBAI_META_DURATION\fP = 0x1707, \fBAI_META_EXECUTION_MODE\fP = 0x1706, \fBAI_META_RUNTIME_VERSION\fP = 0x1707, \fBAI_META_CLIENT_VERSION\fP = 0x1708 }"
+.br
+.RI "Defines strongly typed metadata keys for model execution\&. "
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.AI\&.BackendCapabilities\fP : int"
+
+.PP
+Defines capability flags for \fBAI\fP backends\&. Naming follows the AI_BACKEND_CAPS_XXX convention\&. These flags describe what features a backend supports, such as text generation, audio processing, vision models, tool execution, platform integration, and hardware acceleration\&.
+
+.PP
+Describes capabilities supported by an \fBAI\fP backend\&.
+
+.PP
+This enum is intentionally broad and future-proof\&. It covers:
+.IP "\(bu" 2
+Local and remote execution
+.IP "\(bu" 2
+GPU/CPU/WASM/native runtimes
+.IP "\(bu" 2
+Text, chat, audio, vision, video, multimodal
+.IP "\(bu" 2
+\fBTools\fP, agents, function calling
+.IP "\(bu" 2
+Embeddings, vector search, batch processing
+.IP "\(bu" 2
+Platform-specific capabilities (Windows, Web, Mobile)
+.IP "\(bu" 2
+Custom developer-defined capabilities
+.PP
+
+.PP
+Naming follows AI_BACKEND_CAPS_XXX\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIAI_BACKEND_CAPS_TEXT \fP
+\fBBackend\fP supports text generation or completion\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CHAT \fP
+\fBBackend\fP supports chat-style conversational models\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_JSON \fP
+\fBBackend\fP supports structured JSON output\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_INSTRUCT \fP
+\fBBackend\fP supports instruction-following models\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_VISION \fP
+\fBBackend\fP supports image generation or vision models\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_AUDIO \fP
+\fBBackend\fP supports audio input or audio generation\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_VIDEO \fP
+\fBBackend\fP supports video processing or video generation\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_MULTIMODAL \fP
+\fBBackend\fP supports multimodal input (text + image + audio)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_TOOLS \fP
+\fBBackend\fP supports tool execution or function calling\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_AGENT \fP
+\fBBackend\fP supports autonomous agent behavior\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CODE \fP
+\fBBackend\fP supports code execution or code generation tools\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_EMBEDDING \fP
+\fBBackend\fP supports embedding generation\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_VECTOR_SEARCH \fP
+\fBBackend\fP supports vector search or similarity queries\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_LOCAL \fP
+\fBBackend\fP runs locally on the user's machine\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_REMOTE \fP
+\fBBackend\fP runs remotely (Web API, cloud service)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_GPU \fP
+\fBBackend\fP supports GPU acceleration\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CPU \fP
+\fBBackend\fP supports CPU-only execution\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_WASM \fP
+\fBBackend\fP supports WebAssembly execution\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_NATIVE \fP
+\fBBackend\fP supports native OS-level execution\&. 
+.TP
+\f(BIAI_PLATFORM_CAP_WINDOWS \fP
+\fBBackend\fP is part of the Windows \fBAI\fP platform\&. 
+.TP
+\f(BIAI_PLATFORM_CAP_ALL \fP
+\fBBackend\fP is available on all platforms\&. 
+.TP
+\f(BIAI_CAP_FREE \fP
+\fBBackend\fP is part of a free or open platform\&. 
+.TP
+\f(BIAI_PLATFORM_CAP_MOBILE \fP
+\fBBackend\fP is optimized for mobile devices\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_STREAMING \fP
+\fBBackend\fP supports streaming output\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_BATCH \fP
+\fBBackend\fP supports batch processing\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_LOW_LATENCY \fP
+\fBBackend\fP supports low-latency execution\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_NEEDS_INTERNET \fP
+\fBBackend\fP requires an active internet connection\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_NEEDS_API_KEY \fP
+\fBBackend\fP requires an API key for authentication\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_NEEDS_LOCAL_CONFIG \fP
+\fBBackend\fP requires local configuration files\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_NEEDS_HARDWARE \fP
+\fBBackend\fP requires access to local hardware (GPU, microphone, camera)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_NEEDS_LOGIN \fP
+\fBBackend\fP requires user login or OAuth authentication\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_TRANSPORT_REST \fP
+\fBBackend\fP communicates via REST (HTTP/JSON)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_TRANSPORT_WS \fP
+\fBBackend\fP communicates via WebSocket (streaming, HTML push)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_TRANSPORT_NATIVE \fP
+\fBBackend\fP communicates via native DLL calls\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_TRANSPORT_IPC \fP
+\fBBackend\fP communicates via local process IPC (pipes, shared memory)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_TRANSPORT_WASM \fP
+\fBBackend\fP communicates via WASM runtime (browser or sandbox)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_RUNTIME_LOCAL \fP
+\fBBackend\fP runs inside a local OS runtime (WindowsAI, DirectML)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_RUNTIME_CLOUD \fP
+\fBBackend\fP runs inside a cloud runtime (OpenAI, Anthropic, etc\&.)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_RUNTIME_BROWSER \fP
+\fBBackend\fP runs inside a browser runtime (JavaScript/WASM)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_RUNTIME_NATIVE \fP
+\fBBackend\fP runs inside a native runtime (C++, CUDA, Vulkan)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CONFIGURABLE \fP
+\fBBackend\fP supports custom configuration parameters\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CONFIG_DYNAMIC \fP
+\fBBackend\fP supports dynamic runtime configuration changes\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CONFIG_ENV \fP
+\fBBackend\fP supports environment variables for configuration\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CUSTOM \fP
+Custom capability defined by the developer\&. 
+.PP
+Definition at line \fB45\fP of file \fBBackendCapabilities\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.AI\&.Environment\fP : int"
+
+.PP
+Describes the runtime environment required or used by an \fBAI\fP backend\&. This enum is intentionally broad and future-proof\&. 
+.PP
+Definition at line \fB26\fP of file \fBAIEnvironment \&.cs\fP\&.
+.SS "enum \fBSystemEx\&.AI\&.MetaFormat\fP : int"
+
+.PP
+Defines the data format returned by a backend during model execution\&. This enum follows the AI_FORMAT_XXX naming convention and provides stable integer identifiers for all supported formats\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIAI_FORMAT_JSON \fP
+JSON object or array\&. The default format for most Web APIs\&. 
+.TP
+\f(BIAI_FORMAT_TEXT \fP
+Plain text or raw string output\&. 
+.TP
+\f(BIAI_FORMAT_XML \fP
+XML document format\&. 
+.TP
+\f(BIAI_FORMAT_YAML \fP
+YAML document format, commonly used for configuration files\&. 
+.TP
+\f(BIAI_FORMAT_INI \fP
+INI-style key-value configuration format\&. 
+.TP
+\f(BIAI_FORMAT_BINARY \fP
+Raw binary data without a predefined structure\&. 
+.TP
+\f(BIAI_FORMAT_PROTOBUF \fP
+Google Protocol Buffers (Protobuf) binary format\&. 
+.TP
+\f(BIAI_FORMAT_MSGPACK \fP
+MessagePack binary JSON format\&. 
+.TP
+\f(BIAI_FORMAT_HTML \fP
+HTML document format\&. 
+.TP
+\f(BIAI_FORMAT_MARKDOWN \fP
+Markdown text format\&. 
+.TP
+\f(BIAI_FORMAT_TOKENS \fP
+Token arrays or token streams produced by language models\&. 
+.TP
+\f(BIAI_FORMAT_EMBEDDING \fP
+Vector embeddings (float arrays) produced by embedding models\&. 
+.TP
+\f(BIAI_FORMAT_IMAGE \fP
+Image data (PNG, JPG, BMP, WebP, etc\&.)\&. 
+.TP
+\f(BIAI_FORMAT_AUDIO \fP
+Audio data (WAV, MP3, OGG, PCM, etc\&.)\&. 
+.TP
+\f(BIAI_FORMAT_VIDEO \fP
+Video data (MP4, WebM, etc\&.)\&. 
+.TP
+\f(BIAI_FORMAT_CUSTOM \fP
+Any custom developer-defined format not covered by the predefined types\&. 
+.PP
+Definition at line \fB29\fP of file \fBModelMeta\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.AI\&.ModelMeta\fP : int"
+
+.PP
+Defines strongly typed metadata keys for model execution\&. Naming follows the AI_META_XXX convention, Values are grouped logically and designed to remain stable for long-term API usage\&.
+
+.PP
+These metadata keys describe backend information, model details, request/response properties, execution metrics, tool usage, and error diagnostics\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIAI_META_BACKEND \fP
+Name of the backend used to execute the model\&. 
+.TP
+\f(BIAI_META_BACKEND_VERSION \fP
+\fBVersion\fP string of the backend implementation\&. 
+.TP
+\f(BIAI_META_BACKEND_TYPE \fP
+Type of backend (e\&.g\&., Local, Remote, WebAPI, WindowsAI)\&. 
+.TP
+\f(BIAI_META_BACKEND_LATENCY \fP
+Measured backend latency in milliseconds\&. 
+.TP
+\f(BIAI_META_PLATFORM \fP
+The Platform where run the backend\&. 
+.TP
+\f(BIAI_META_MODEL \fP
+Identifier of the model used (e\&.g\&., "gpt-4", "llama3")\&. 
+.TP
+\f(BIAI_META_MODEL_VERSION \fP
+\fBVersion\fP of the model, if provided by the backend\&. 
+.TP
+\f(BIAI_META_MODEL_PROVIDER \fP
+Provider of the model (OpenAI, Microsoft, HuggingFace, FreeWeb, etc\&.)\&. 
+.TP
+\f(BIAI_META_MODEL_CAPS \fP
+Capability flags describing supported features of the model\&. 
+.TP
+\f(BIAI_META_URL \fP
+URL used to send the request to the backend\&. 
+.TP
+\f(BIAI_META_HTTP_STATUS \fP
+HTTP status code returned by the backend\&. 
+.TP
+\f(BIAI_META_HTTP_HEADERS \fP
+HTTP response headers returned by the backend\&. 
+.TP
+\f(BIAI_META_REQUEST_SIZE \fP
+Size of the request payload in bytes\&. 
+.TP
+\f(BIAI_META_RESPONSE_SIZE \fP
+Size of the response payload in bytes\&. 
+.TP
+\f(BIAI_META_RAW \fP
+Raw content returned by the backend (JSON, text, binary, etc\&.)\&. 
+.TP
+\f(BIAI_META_CONTENT_OUT \fP
+Parsed output content (JSON element, XML DOM, text, binary blob, etc\&.)\&. 
+.TP
+\f(BIAI_META_CONTENT_IN \fP
+Serialized input content sent to the backend\&. 
+.TP
+\f(BIAI_META_TRACE_ID \fP
+Trace identifier used for debugging or correlation\&. 
+.TP
+\f(BIAI_META_FORMAT \fP
+Format of the returned content\&. See \fBMetaFormat\fP\&. 
+.TP
+\f(BIAI_META_EXEC_TIME \fP
+Total execution time in milliseconds\&. 
+.TP
+\f(BIAI_META_EXEC_START \fP
+Timestamp marking the start of execution\&. 
+.TP
+\f(BIAI_META_EXEC_END \fP
+Timestamp marking the end of execution\&. 
+.TP
+\f(BIAI_META_TOKENS_IN \fP
+Number of input tokens processed by the model\&. 
+.TP
+\f(BIAI_META_TOKENS_OUT \fP
+Number of output tokens generated by the model\&. 
+.TP
+\f(BIAI_META_TOKENS_TOTAL \fP
+Total number of tokens involved in the request\&. 
+.TP
+\f(BIAI_META_TOOL_USED \fP
+Name of the tool used during execution, if any\&. 
+.TP
+\f(BIAI_META_TOOL_COUNT \fP
+Number of tools invoked during execution\&. 
+.TP
+\f(BIAI_META_TOOL_LATENCY \fP
+Execution time of the tool in milliseconds\&. 
+.TP
+\f(BIAI_META_ERROR_TYPE \fP
+Type of exception thrown during execution\&. 
+.TP
+\f(BIAI_META_ERROR_MESSAGE \fP
+Error message describing the failure\&. 
+.TP
+\f(BIAI_META_ERROR_STACK \fP
+Stack trace of the exception, if available\&. 
+.TP
+\f(BIAI_META_ERROR_CODE \fP
+Backend-specific error code or HResult\&. 
+.TP
+\f(BIAI_META_SESSION_ID \fP
+Session identifier used for conversational or stateful backends\&. 
+.TP
+\f(BIAI_META_TOOLS_USED \fP
+List of tool names used during execution\&. 
+.TP
+\f(BIAI_META_SYSTEMPROMPT_HASH \fP
+\fBHash\fP of the system prompt for debugging or caching\&. 
+.TP
+\f(BIAI_META_MODEL_PARAMETERS \fP
+Model parameters passed to the backend (temperature, top_p, etc\&.)\&. 
+.TP
+\f(BIAI_META_BACKEND_CONFIG \fP
+\fBBackend\fP configuration snapshot used during execution\&. 
+.PP
+Definition at line \fB158\fP of file \fBModelMeta\&.cs\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

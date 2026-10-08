@@ -1,0 +1,61 @@
+.TH "SystemEx.Algorithms.ICompared< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Algorithms.ICompared< T > \- Defines a comparison interface for types that support custom ordering\&. Implementations return a \fBCompareResult\fP describing the relationship between two values\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Algorithms\&.SimpleComparer< T >\fP, and \fBSystemEx\&.Algorithms\&.ValueComparer< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompare\fP (Optional< T > x, Optional< T > y)"
+.br
+.RI "Compares two values and returns a \fBCompareResult\fP indicating whether \fIx\fP  is smaller, larger, or equal to \fIy\fP \&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines a comparison interface for types that support custom ordering\&. Implementations return a \fBCompareResult\fP describing the relationship between two values\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type being compared\&. The constraint allows \fRref struct\fP types, enabling high‑performance stack‑only comparisons\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB33\fP of file \fBICompared\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCompareResult\fP SystemEx\&.Algorithms\&.ICompared< T >\&.Compare (Optional< T > x, Optional< T > y)"
+
+.PP
+Compares two values and returns a \fBCompareResult\fP indicating whether \fIx\fP  is smaller, larger, or equal to \fIy\fP \&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The first value to compare\&.
+.br
+\fIy\fP The second value to compare\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBCompareResult\fP describing the ordering relationship between the two values\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Algorithms\&.SimpleComparer< T >\fP, and \fBSystemEx\&.Algorithms\&.ValueComparer< T >\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Algorithms\&.BinarySearcherProvider< T, TContainer >\&.Find()\fP, \fBSystemEx\&.Algorithms\&.FibonacciSearcherProvider< T, TContainer >\&.Find()\fP, and \fBSystemEx\&.Algorithms\&.LinearSearchProvider< T, TContainer >\&.Find()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

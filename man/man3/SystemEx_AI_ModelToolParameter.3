@@ -1,0 +1,99 @@
+.TH "SystemEx.AI.ModelToolParameter" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI.ModelToolParameter \- Represents a single parameter definition used by an \fBIModelTool<T>\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBModelToolParameter\fP (string name, \fBType\fP type, string description)"
+.br
+.RI "Initializes a new parameter definition with the specified name, type, and description\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBDescription\fP\fR [get]\fP"
+.br
+.RI "Gets a human‑readable description of the parameter's purpose\&. 
+.br
+ Used by backends, documentation systems, and model‑side tool introspection\&. "
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Gets the unique parameter name used to identify the value in argument dictionaries and tool schemas\&. "
+.ti -1c
+.RI "Type \fBType\fP\fR [get]\fP"
+.br
+.RI "Gets the \&.NET type of the parameter\&. 
+.br
+ This determines how values are validated, serialized, and passed into the tool execution pipeline\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a single parameter definition used by an \fBIModelTool<T>\fP\&. 
+
+A \fBModelToolParameter\fP describes the name, \&.NET type, and human‑readable description of a tool parameter\&. 
+.br
+ Tool factories and \fBAI\fP backends use this metadata to construct parameter schemas, validate input, and expose structured tool interfaces to models\&. 
+.PP
+Definition at line \fB35\fP of file \fBModelToolParameter\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.AI\&.ModelToolParameter\&.ModelToolParameter (string name, \fBType\fP type, string description)"
+
+.PP
+Initializes a new parameter definition with the specified name, type, and description\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The parameter name\&.
+.br
+\fItype\fP The \&.NET type of the parameter\&.
+.br
+\fIdescription\fP A human‑readable description\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB63\fP of file \fBModelToolParameter\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "string SystemEx\&.AI\&.ModelToolParameter\&.Description\fR [get]\fP"
+
+.PP
+Gets a human‑readable description of the parameter's purpose\&. 
+.br
+ Used by backends, documentation systems, and model‑side tool introspection\&. 
+.PP
+Definition at line \fB54\fP of file \fBModelToolParameter\&.cs\fP\&.
+.PP
+Referenced by \fBModelToolParameter()\fP\&.
+.SS "string SystemEx\&.AI\&.ModelToolParameter\&.Name\fR [get]\fP"
+
+.PP
+Gets the unique parameter name used to identify the value in argument dictionaries and tool schemas\&. 
+.PP
+Definition at line \fB41\fP of file \fBModelToolParameter\&.cs\fP\&.
+.PP
+Referenced by \fBModelToolParameter()\fP\&.
+.SS "Type SystemEx\&.AI\&.ModelToolParameter\&.Type\fR [get]\fP"
+
+.PP
+Gets the \&.NET type of the parameter\&. 
+.br
+ This determines how values are validated, serialized, and passed into the tool execution pipeline\&. 
+.PP
+Definition at line \fB48\fP of file \fBModelToolParameter\&.cs\fP\&.
+.PP
+Referenced by \fBModelToolParameter()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

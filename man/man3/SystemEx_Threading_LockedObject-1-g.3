@@ -1,0 +1,181 @@
+.TH "SystemEx.Threading.LockedObject< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.LockedObject< T > \- Provides a minimal lock‑protected wrapper around a value of type \fIT\fP  using a caller‑supplied lock implementation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable, and \fBSystemEx\&.Threading\&.ILockedObject< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBEquals\fP (\fBLockedObject\fP< T >? obj)"
+.br
+.RI "Determines whether this instance and the specified \fBLockedObject<T>\fP contain equal values\&. Both objects are read using RCU semantics, ensuring lock‑free comparison of the protected values\&. "
+.ti -1c
+.RI "\fBLockedObject\fP (T value)"
+.br
+.RI "Initializes a new instance of the \fBLockedObject<T>\fP class using the specified initial value\&. "
+.ti -1c
+.RI "\fBLockedObject\fP (T value, \fBILock\fP l)"
+.br
+.RI "Initializes a new instance of the \fBLockedObject<T>\fP class using the specified initial value and lock implementation\&. "
+.ti -1c
+.RI "\fBResult\fP \fBReadValue\fP (\fBTimeOut\fP timeoutms)"
+.br
+.RI "Reads the protected value using the underlying lock\&. The operation may block for up to \fItimeoutms\fP  milliseconds depending on the lock implementation\&. "
+.ti -1c
+.RI "void \fBWriteValue\fP (T? value, \fBTimeOut\fP timeoutms)"
+.br
+.RI "Attempts to write a new value\&. The method tries to acquire the underlying lock within the specified timeout\&. If successful, the stored value is updated\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static implicit \fBoperator LockedObject< T >\fP (T value)"
+.br
+.RI "Implicitly converts a value of type \fIT\fP  into an \fBRCUObject<T>\fP instance\&. This allows direct assignment of a raw value to an RCU container without explicitly invoking the constructor\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "T? \fBValue\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the protected value\&. Accessing the value attempts to acquire the underlying lock\&. If the lock cannot be obtained, an UnauthorizedAccessException is thrown\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a minimal lock‑protected wrapper around a value of type \fIT\fP  using a caller‑supplied lock implementation\&. 
+
+LockedObject<T, TL> offers simple, scoped access to a protected value\&. Read and write operations attempt to acquire the underlying lock and return \fRfalse\fP if the lock cannot be obtained within the specified timeout\&. 
+
+.PP
+This type is intentionally lightweight and does not provide RAII‑style access or complex synchronization semantics\&. It is suitable for small, isolated critical sections where a single value must be protected\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the stored value\&.
+.br
+\fITL\fP The lock type used to guard access\&. Must implement \fBILock\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB43\fP of file \fBLockedObject\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.LockedObject< T >\&.Equals (\fBLockedObject\fP< T >? obj)"
+
+.PP
+Determines whether this instance and the specified \fBLockedObject<T>\fP contain equal values\&. Both objects are read using RCU semantics, ensuring lock‑free comparison of the protected values\&. 
+.PP
+Definition at line \fB129\fP of file \fBLockedObject\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.LockedObject< T >\&.LockedObject (T value)"
+
+.PP
+Initializes a new instance of the \fBLockedObject<T>\fP class using the specified initial value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The initial value to store\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB67\fP of file \fBLockedObject\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBoperator LockedObject< T >()\fP\&.
+.SS "SystemEx\&.Threading\&.LockedObject< T >\&.LockedObject (T value, \fBILock\fP l)"
+
+.PP
+Initializes a new instance of the \fBLockedObject<T>\fP class using the specified initial value and lock implementation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The initial value to store\&.
+.br
+\fIl\fP The lock instance used to guard access\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB78\fP of file \fBLockedObject\&.cs\fP\&.
+.SS "implicit SystemEx\&.Threading\&.LockedObject< T >\&.operator \fBLockedObject\fP< T > (T value)\fR [static]\fP"
+
+.PP
+Implicitly converts a value of type \fIT\fP  into an \fBRCUObject<T>\fP instance\&. This allows direct assignment of a raw value to an RCU container without explicitly invoking the constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to wrap inside the RCU object\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new \fBRCUObject<T>\fP containing the specified value\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB120\fP of file \fBLockedObject\&.cs\fP\&.
+.SS "\fBResult\fP SystemEx\&.Threading\&.LockedObject< T >\&.ReadValue (\fBTimeOut\fP timeoutms)"
+
+.PP
+Reads the protected value using the underlying lock\&. The operation may block for up to \fItimeoutms\fP  milliseconds depending on the lock implementation\&. The returned \fBResult\fP typically contains the value at index \fR0\fP, but implementations may include additional diagnostic information\&. 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fItimeoutms\fP The timeout in milliseconds\&. A value of \fR-1\fP indicates an infinite wait\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBResult\fP containing the retrieved value and optional metadata\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockedObject< T >\fP\&.
+.PP
+Definition at line \fB84\fP of file \fBLockedObject\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "void SystemEx\&.Threading\&.LockedObject< T >\&.WriteValue (T? value, \fBTimeOut\fP timeoutms)"
+
+.PP
+Attempts to write a new value\&. The method tries to acquire the underlying lock within the specified timeout\&. If successful, the stored value is updated\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The new value to store\&.
+.br
+\fItimeoutms\fP The timeout in milliseconds\&. A value of \fR-1\fP waits indefinitely\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockedObject< T >\fP\&.
+.PP
+Definition at line \fB105\fP of file \fBLockedObject\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "T? SystemEx\&.Threading\&.LockedObject< T >\&.Value\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the protected value\&. Accessing the value attempts to acquire the underlying lock\&. If the lock cannot be obtained, an UnauthorizedAccessException is thrown\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockedObject< T >\fP\&.
+.PP
+Definition at line \fB53\fP of file \fBLockedObject\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

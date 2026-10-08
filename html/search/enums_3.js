@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['flexspanmode_0',['FlexSpanMode',['../d7/d12/a00911_a3ef7d5832058e44f73e558fde87598f9.html#a3ef7d5832058e44f73e558fde87598f9',1,'SystemEx']]]
+  ['endian_0',['Endian',['../d5/d89/a00907_ab37b6205838476a6d1b48cfa0440cacd.html#ab37b6205838476a6d1b48cfa0440cacd',1,'SystemEx']]],
+  ['environment_1',['Environment',['../da/dd6/a00896_ga4d917ef25b0278576ef3ceafcf822ab5.html#ga4d917ef25b0278576ef3ceafcf822ab5',1,'SystemEx::AI']]]
 ];

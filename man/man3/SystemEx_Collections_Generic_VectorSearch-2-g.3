@@ -1,0 +1,193 @@
+.TH "SystemEx.Collections.Generic.VectorSearch< T, TContainer >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.VectorSearch< T, TContainer > \- Provides an extensible search wrapper over a container using a configurable \fBISearchProvider<TContainer, T>\fP strategy\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Search objects do not define structural equality\&. This override always returns false\&. "
+.ti -1c
+.RI "bool \fBExists\fP (T value, ICompared< T > comp)"
+.br
+.RI "Determines whether the specified value exists in the container\&. "
+.ti -1c
+.RI "long \fBFind\fP (T value, ICompared< T > comp)"
+.br
+.RI "Searches for the specified value using the provider's strategy\&. "
+.ti -1c
+.RI "long \fBFindEx\fP (Func< Optional< T >, \fBCompareResult\fP > func)"
+.br
+.RI "Performs a predicate‑based search using a callback function\&. The provider determines how the predicate is evaluated\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Returns the hash code of the underlying container\&. "
+.ti -1c
+.RI "\fBVectorSearch\fP (ref TContainer container, ISearchProvider< T, TContainer > provider)"
+.br
+.RI "Creates a new Search object bound to the given container and search provider\&. "
+.ti -1c
+.RI "Vector< Pair< long, Optional< T > > > \fBWhere\fP (Func< Optional< T >, \fBCompareResult\fP > func)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBVectorSearch\fP< T, TContainer > a, T value)"
+.br
+.RI "Checks whether the search object does not contain the specified value\&. Equivalent to \fR!Exists(value)\fP\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBVectorSearch\fP< T, TContainer > a, T value)"
+.br
+.RI "Checks whether the search object contains the specified value\&. Equivalent to Exists(T)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides an extensible search wrapper over a container using a configurable \fBISearchProvider<TContainer, T>\fP strategy\&. 
+
+\fBPurpose:\fP The \fRSearch\fP struct is designed for advanced and domain‑specific search algorithms that go beyond the simple linear scan implemented by \fBFind<T, TContainer>\fP\&. While \fRFind\fP offers a fixed, straightforward lookup, \fRSearch\fP allows plugging in custom providers such as binary search, segmented search, pattern matching, or any specialized logic required by the application\&. 
+
+.PP
+\fBFallback behavior:\fP A \fRLinearSearchProvider\fP may be used as a fallback, but it is not the primary purpose of this type\&. \fRSearch\fP exists to support complex, optimized, or domain‑specific search strategies\&. 
+
+.PP
+\fBEquality operators:\fP The operators \fR==\fP and \fR!=\fP are overloaded to provide concise existence checks: 
+.PP
+.nf
+if (search == value) { \&.\&.\&. }   // value exists
+if (search != value) { \&.\&.\&. }   // value does not exist
+
+.fi
+.PP
+ These operators do \fBnot\fP define structural equality\&. They only test whether the given value is present in the underlying container\&. 
+
+.PP
+\fBEquals(object):\fP Always returns \fRfalse\fP\&. \fRSearch\fP is a \fRref struct\fP and cannot be compared to arbitrary boxed objects\&. Structural equality is intentionally not defined\&. 
+.PP
+\fBType Constraints\fP
+.TP
+\fITContainer\fP : \fIIVector<T>\fP
+.TP
+\fIT\fP : \fIIComparable<T>\fP
+.PP
+Definition at line \fB65\fP of file \fBVectorSearch\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override bool SystemEx\&.Collections\&.Generic\&.VectorSearch< T, TContainer >\&.Equals (object? obj)"
+
+.PP
+Search objects do not define structural equality\&. This override always returns false\&. 
+.PP
+Definition at line \fB144\fP of file \fBVectorSearch\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorSearch< T, TContainer >\&.Exists (T value, ICompared< T > comp)"
+
+.PP
+Determines whether the specified value exists in the container\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to test\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the value exists; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB123\fP of file \fBVectorSearch\&.cs\fP\&.
+.PP
+Referenced by \fBoperator!=()\fP, and \fBoperator==()\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.VectorSearch< T, TContainer >\&.Find (T value, ICompared< T > comp)"
+
+.PP
+Searches for the specified value using the provider's strategy\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to search for\&.
+.br
+\fIcomp\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The index of the first matching element, or -1 if not found\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB93\fP of file \fBVectorSearch\&.cs\fP\&.
+.PP
+Referenced by \fBExists()\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.VectorSearch< T, TContainer >\&.FindEx (Func< Optional< T >, \fBCompareResult\fP > func)"
+
+.PP
+Performs a predicate‑based search using a callback function\&. The provider determines how the predicate is evaluated\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfunc\fP A callback invoked for each element\&. The callback receives the element and a boolean flag indicating whether it matches\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The index of the first element for which the predicate indicates a match, or -1 if no element satisfies the condition\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB108\fP of file \fBVectorSearch\&.cs\fP\&.
+.SS "override int SystemEx\&.Collections\&.Generic\&.VectorSearch< T, TContainer >\&.GetHashCode ()"
+
+.PP
+Returns the hash code of the underlying container\&. 
+.PP
+Definition at line \fB150\fP of file \fBVectorSearch\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorSearch< T, TContainer >\&.operator!= (\fBVectorSearch\fP< T, TContainer > a, T value)\fR [static]\fP"
+
+.PP
+Checks whether the search object does not contain the specified value\&. Equivalent to \fR!Exists(value)\fP\&. 
+.PP
+Definition at line \fB137\fP of file \fBVectorSearch\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorSearch< T, TContainer >\&.operator== (\fBVectorSearch\fP< T, TContainer > a, T value)\fR [static]\fP"
+
+.PP
+Checks whether the search object contains the specified value\&. Equivalent to Exists(T)\&. 
+.PP
+Definition at line \fB130\fP of file \fBVectorSearch\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.VectorSearch< T, TContainer >\&.VectorSearch (ref TContainer container, ISearchProvider< T, TContainer > provider)"
+
+.PP
+Creates a new Search object bound to the given container and search provider\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontainer\fP The container to search\&.
+.br
+\fIprovider\fP The search provider implementing the lookup strategy\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB80\fP of file \fBVectorSearch\&.cs\fP\&.
+.PP
+Referenced by \fBoperator!=()\fP, and \fBoperator==()\fP\&.
+.SS "Vector< Pair< long, Optional< T > > > SystemEx\&.Collections\&.Generic\&.VectorSearch< T, TContainer >\&.Where (Func< Optional< T >, \fBCompareResult\fP > func)"
+
+.PP
+Definition at line \fB112\fP of file \fBVectorSearch\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,191 @@
+.TH "SystemEx.Collections.Generic.RandomAccessIterator< T, TCollection >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.RandomAccessIterator< T, TCollection > \- A random-access iterator supporting forward, backward, and indexed movement\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.Iterrator< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRandomAccessIterator\fP< T, TCollection > \fBAdvance\fP (long n)"
+.br
+.RI "Moves the iterator forward or backward by \fIn\fP  positions\&. "
+.ti -1c
+.RI "void \fBBack\fP ()"
+.br
+.RI "Moves the iterator one position backward\&. "
+.ti -1c
+.RI "void \fBForward\fP ()"
+.br
+.RI "Advances the iterator by one position\&. "
+.ti -1c
+.RI "void \fBForward\fP (long i)"
+.br
+.RI "Advances the iterator by \fIi\fP  positions\&. "
+.ti -1c
+.RI "\fBRandomAccessIterator\fP (TCollection collection, long index)"
+.br
+.RI "Initializes a new instance of the \fBRandomAccessIterator<T, TCollection>\fP struct\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Optional< T > \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the current iterator position\&. Returns an \fBOptional<T>\fP that may be empty if the iterator is out of range\&. "
+.ti -1c
+.RI "long \fBIndex\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the current index of the iterator\&. "
+.ti -1c
+.RI "bool \fBIsBegin\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the iterator is positioned at the beginning\&. "
+.ti -1c
+.RI "bool \fBIsEnd\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the iterator has reached the end of the sequence\&. "
+.ti -1c
+.RI "bool \fBIsNext\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether another element is available\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A random-access iterator supporting forward, backward, and indexed movement\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The element type\&.
+.br
+\fITCollection\fP The underlying container type\&.
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITCollection\fP : \fIIContainer<T>\fP
+.PP
+Definition at line \fB194\fP of file \fBIterrator\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBRandomAccessIterator\fP< T, TCollection > SystemEx\&.Collections\&.Generic\&.RandomAccessIterator< T, TCollection >\&.Advance (long n)"
+
+.PP
+Moves the iterator forward or backward by \fIn\fP  positions\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIn\fP The number of positions to move\&. Positive values move forward; negative values move backward\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The updated iterator\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB264\fP of file \fBIterrator\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RandomAccessIterator< T, TCollection >\&.Back ()"
+
+.PP
+Moves the iterator one position backward\&. 
+.PP
+Definition at line \fB254\fP of file \fBIterrator\&.cs\fP\&.
+.PP
+Referenced by \fBAdvance()\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RandomAccessIterator< T, TCollection >\&.Forward ()"
+
+.PP
+Advances the iterator by one position\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.Iterrator< T >\fP\&.
+.PP
+Definition at line \fB234\fP of file \fBIterrator\&.cs\fP\&.
+.PP
+Referenced by \fBAdvance()\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RandomAccessIterator< T, TCollection >\&.Forward (long i)"
+
+.PP
+Advances the iterator by \fIi\fP  positions\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi\fP The number of positions to advance\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB243\fP of file \fBIterrator\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.RandomAccessIterator< T, TCollection >\&.RandomAccessIterator (TCollection collection, long index)"
+
+.PP
+Initializes a new instance of the \fBRandomAccessIterator<T, TCollection>\fP struct\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcollection\fP The container to iterate over\&.
+.br
+\fIindex\fP The starting index\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB228\fP of file \fBIterrator\&.cs\fP\&.
+.PP
+Referenced by \fBAdvance()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "Optional<T> SystemEx\&.Collections\&.Generic\&.RandomAccessIterator< T, TCollection >\&.Current\fR [get]\fP"
+
+.PP
+Gets the element at the current iterator position\&. Returns an \fBOptional<T>\fP that may be empty if the iterator is out of range\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.Iterrator< T >\fP\&.
+.PP
+Definition at line \fB210\fP of file \fBIterrator\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.RandomAccessIterator< T, TCollection >\&.Index\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the current index of the iterator\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.Iterrator< T >\fP\&.
+.PP
+Definition at line \fB213\fP of file \fBIterrator\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.RandomAccessIterator< T, TCollection >\&.IsBegin\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the iterator is positioned at the beginning\&. 
+.PP
+Definition at line \fB221\fP of file \fBIterrator\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.RandomAccessIterator< T, TCollection >\&.IsEnd\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the iterator has reached the end of the sequence\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.Iterrator< T >\fP\&.
+.PP
+Definition at line \fB202\fP of file \fBIterrator\&.cs\fP\&.
+.PP
+Referenced by \fBForward()\fP, and \fBForward()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.RandomAccessIterator< T, TCollection >\&.IsNext\fR [get]\fP"
+
+.PP
+Gets a value indicating whether another element is available\&. 
+.PP
+Definition at line \fB207\fP of file \fBIterrator\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

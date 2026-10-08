@@ -1,0 +1,173 @@
+.TH "SystemEx.IO.Provider.ByteSeriablizeProvider" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.IO.Provider.ByteSeriablizeProvider \- Provides a base implementation for serializing objects to and from byte arrays\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Drawing\&.ColorR10G10B10Serializer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBByteSeriablizeProvider\fP (\fBIByteFormatSchema\fP schema, \fBEndian\fP endian)"
+.br
+.RI "Initializes a new instance of the \fBByteSeriablizeProvider\fP class\&. "
+.ti -1c
+.RI "object? \fBFromBytes\fP (\fBCache\fP obj)"
+.br
+.RI "Deserializes the specified byte array to an object\&. "
+.ti -1c
+.RI "\fBCache\fP? \fBToBytes< U >\fP (U? obj)"
+.br
+.RI "Serializes the specified object to a byte array\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "object? \fBCreateObjectFromEntrys\fP (Map< string, byte[]> entries, \fBEndian\fP endian)"
+.br
+.RI "Creates an object from the specified entries\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBGetBytesForEntry\fP (object obj, string name, \fBEndian\fP endian)"
+.br
+.RI "Gets the bytes for the specified entry\&. "
+.ti -1c
+.RI "long \fBGetEntrySize\fP (\fBCache\fP obj, string name, \fBEndian\fP endian)"
+.br
+.RI "Gets the size of the specified entry\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a base implementation for serializing objects to and from byte arrays\&. 
+.PP
+Definition at line \fB29\fP of file \fBByteSeriablizeProvider\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\&.ByteSeriablizeProvider (\fBIByteFormatSchema\fP schema, \fBEndian\fP endian)"
+
+.PP
+Initializes a new instance of the \fBByteSeriablizeProvider\fP class\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschema\fP The byte format schema\&.
+.br
+\fIendian\fP The endianness for the serialization\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB37\fP of file \fBByteSeriablizeProvider\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "object? SystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\&.CreateObjectFromEntrys (Map< string, byte[]> entries, \fBEndian\fP endian)\fR [abstract]\fP, \fR [protected]\fP"
+
+.PP
+Creates an object from the specified entries\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIentries\fP The entries\&.
+.br
+\fIendian\fP The endianness\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Referenced by \fBFromBytes()\fP\&.
+.SS "object? SystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\&.FromBytes (\fBCache\fP obj)"
+
+.PP
+Deserializes the specified byte array to an object\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIU\fP The type of the object to deserialize\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The byte array containing the serialized data\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The deserialized object\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB69\fP of file \fBByteSeriablizeProvider\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\&.GetBytesForEntry (object obj, string name, \fBEndian\fP endian)\fR [abstract]\fP, \fR [protected]\fP"
+
+.PP
+Gets the bytes for the specified entry\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object
+.br
+\fIname\fP The entry
+.br
+\fIendian\fP \fBEndian\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Referenced by \fBToBytes< U >()\fP\&.
+.SS "long SystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\&.GetEntrySize (\fBCache\fP obj, string name, \fBEndian\fP endian)\fR [abstract]\fP, \fR [protected]\fP"
+
+.PP
+Gets the size of the specified entry\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object
+.br
+\fIname\fP The entry
+.br
+\fIendian\fP \fBEndian\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Referenced by \fBFromBytes()\fP\&.
+.SS "\fBCache\fP? SystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\&.ToBytes< U > (U? obj)"
+
+.PP
+Serializes the specified object to a byte array\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object to serialize\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The byte array containing the serialized data\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB46\fP of file \fBByteSeriablizeProvider\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,5 +1,7 @@
 var a01360 =
 [
-    [ "PopFront", "d9/d79/a01360_a778336d81854e6b2dcb6b65e55a00478.html#a778336d81854e6b2dcb6b65e55a00478", null ],
-    [ "PushBack", "d9/d79/a01360_a8e307fd9ea696d1852ce74209d0f890a.html#a8e307fd9ea696d1852ce74209d0f890a", null ]
+    [ "EqualFirst", "d3/d8a/a00899_gabe6cfe7cdc0391d762998db8e73d49e2.html#gabe6cfe7cdc0391d762998db8e73d49e2", null ],
+    [ "Get", "d3/d8a/a00899_gae6c4aec1455cb8fbbd00c788487fbd7d.html#gae6c4aec1455cb8fbbd00c788487fbd7d", null ],
+    [ "Count", "d3/d8a/a00899_ga0ba525cb3fef46f3462ad6dc8e289fc2.html#ga0ba525cb3fef46f3462ad6dc8e289fc2", null ],
+    [ "First", "d3/d8a/a00899_ga50a7c8b99bb49ea31e4ff0ad982f67a5.html#ga50a7c8b99bb49ea31e4ff0ad982f67a5", null ]
 ];

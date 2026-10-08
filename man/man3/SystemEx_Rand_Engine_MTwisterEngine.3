@@ -1,0 +1,98 @@
+.TH "SystemEx.Rand.Engine.MTwisterEngine" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Rand.Engine.MTwisterEngine
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Rand\&.Engine\&.IRandomEngine\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMTwisterEngine\fP (\fBISeed\fP seed)"
+.br
+.RI "Initializes a new instance of the \fBMTwisterEngine\fP class\&. "
+.ti -1c
+.RI "\fBMTwisterEngine\fP (uint seed)"
+.br
+.RI "Initializes a new instance of the \fBMTwisterEngine\fP class using the specified 32-bit seed value\&. The engine is fully initialized using the MT19937 "init_by_array" procedure\&. "
+.ti -1c
+.RI "uint \fBNext\fP ()"
+.br
+.RI "Generates the next 32-bit unsigned integer in the MT19937 sequence\&. Performs the twist transformation when the internal state has been exhausted\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBISeed\fP \fBStartSeed\fP\fR [get]\fP"
+.br
+.RI "Gets the seed object used to initialize this engine\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implements the MT19937 32-bit Mersenne Twister random number generator\&. Produces a deterministic sequence of 32-bit values based on the provided seed\&. 
+.PP
+Definition at line \fB85\fP of file \fBMTwisterEngine\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Rand\&.Engine\&.MTwisterEngine\&.MTwisterEngine (uint seed)"
+
+.PP
+Initializes a new instance of the \fBMTwisterEngine\fP class using the specified 32-bit seed value\&. The engine is fully initialized using the MT19937 "init_by_array" procedure\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIseed\fP The primary seed value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB103\fP of file \fBMTwisterEngine\&.cs\fP\&.
+.SS "SystemEx\&.Rand\&.Engine\&.MTwisterEngine\&.MTwisterEngine (\fBISeed\fP seed)"
+
+.PP
+Initializes a new instance of the \fBMTwisterEngine\fP class\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIseed\fP The primary seed value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB115\fP of file \fBMTwisterEngine\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "uint SystemEx\&.Rand\&.Engine\&.MTwisterEngine\&.Next ()"
+
+.PP
+Generates the next 32-bit unsigned integer in the MT19937 sequence\&. Performs the twist transformation when the internal state has been exhausted\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The next 32-bit random value\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Rand\&.Engine\&.IRandomEngine\fP\&.
+.PP
+Definition at line \fB128\fP of file \fBMTwisterEngine\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBISeed\fP SystemEx\&.Rand\&.Engine\&.MTwisterEngine\&.StartSeed\fR [get]\fP"
+
+.PP
+Gets the seed object used to initialize this engine\&. 
+.PP
+Implements \fBSystemEx\&.Rand\&.Engine\&.IRandomEngine\fP\&.
+.PP
+Definition at line \fB96\fP of file \fBMTwisterEngine\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

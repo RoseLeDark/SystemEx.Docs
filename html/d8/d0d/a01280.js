@@ -1,10 +1,10 @@
 var a01280 =
 [
-    [ "Duplicate", "d8/d0d/a01280_a28c04cf8766d0554cabe914055db6522.html#a28c04cf8766d0554cabe914055db6522", null ],
-    [ "Erase", "d8/d0d/a01280_abb08fd228fc50a0a7a063ba2b91142aa.html#abb08fd228fc50a0a7a063ba2b91142aa", null ],
-    [ "Erase", "d8/d0d/a01280_a92ce8f9f10ccaa4b6304c8bccdf124f0.html#a92ce8f9f10ccaa4b6304c8bccdf124f0", null ],
-    [ "Grow", "d8/d0d/a01280_aed2b8af7a489e3d4042dca1a0cc43510.html#aed2b8af7a489e3d4042dca1a0cc43510", null ],
-    [ "InsertRange", "d8/d0d/a01280_a9e8446aa640eb367ba53753135d3f662.html#a9e8446aa640eb367ba53753135d3f662", null ],
-    [ "Replace", "d8/d0d/a01280_a8400db289456a8a2d1bf578d5b135e3f.html#a8400db289456a8a2d1bf578d5b135e3f", null ],
-    [ "ReplaceRange", "d8/d0d/a01280_a5ca04735eeb1ac514ea1e236130f5835.html#a5ca04735eeb1ac514ea1e236130f5835", null ]
+    [ "CacheStack", "d8/d0d/a01280_ae88305eab7aabaaa17885a924cd3c8b3.html#ae88305eab7aabaaa17885a924cd3c8b3", null ],
+    [ "CacheStack", "d8/d0d/a01280_a6c4d3a64e8074362ec1e567e4a8bd83b.html#a6c4d3a64e8074362ec1e567e4a8bd83b", null ],
+    [ "Peek", "d8/d0d/a01280_a2c2ddbef5f2ea3d7519a9c1aea643282.html#a2c2ddbef5f2ea3d7519a9c1aea643282", null ],
+    [ "Pop", "d8/d0d/a01280_a1d1758d24073b9c646321ffea3898af8.html#a1d1758d24073b9c646321ffea3898af8", null ],
+    [ "Push", "d8/d0d/a01280_a641c63c7cf61f0a6f70402cdaa2cd1b5.html#a641c63c7cf61f0a6f70402cdaa2cd1b5", null ],
+    [ "IsEmpty", "d8/d0d/a01280_a477aaca7c8ca729ab812f710f3988eb3.html#a477aaca7c8ca729ab812f710f3988eb3", null ],
+    [ "IsFull", "d8/d0d/a01280_a29b7652fdb0713152cb2f143a5744f9f.html#a29b7652fdb0713152cb2f143a5744f9f", null ]
 ];

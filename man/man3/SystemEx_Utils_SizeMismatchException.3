@@ -1,0 +1,82 @@
+.TH "SystemEx.Utils.SizeMismatchException" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Utils.SizeMismatchException \- Exception thrown when the managed size of a struct does not match the expected unmanaged size\&. 
+.br
+ Used to validate binary compatibility between C# structs and native memory layouts\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Exception\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSizeMismatchException\fP (Type type, long managed, long expected)"
+.br
+.RI "Creates a new exception describing the size mismatch\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "long \fBExpectedSize\fP\fR [get]\fP"
+.br
+.RI "Gets the expected unmanaged size provided by the caller\&. "
+.ti -1c
+.RI "long \fBManagedSize\fP\fR [get]\fP"
+.br
+.RI "Gets the size of the struct as computed by \fRsizeof(T)\fP\&. "
+.ti -1c
+.RI "Type \fBStructType\fP\fR [get]\fP"
+.br
+.RI "Gets the struct type that failed the size validation\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Exception thrown when the managed size of a struct does not match the expected unmanaged size\&. 
+.br
+ Used to validate binary compatibility between C# structs and native memory layouts\&. 
+.PP
+Definition at line \fB58\fP of file \fBLayout\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Utils\&.SizeMismatchException\&.SizeMismatchException (Type type, long managed, long expected)"
+
+.PP
+Creates a new exception describing the size mismatch\&. 
+.PP
+Definition at line \fB77\fP of file \fBLayout\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "long SystemEx\&.Utils\&.SizeMismatchException\&.ExpectedSize\fR [get]\fP"
+
+.PP
+Gets the expected unmanaged size provided by the caller\&. 
+.PP
+Definition at line \fB72\fP of file \fBLayout\&.cs\fP\&.
+.PP
+Referenced by \fBSizeMismatchException()\fP\&.
+.SS "long SystemEx\&.Utils\&.SizeMismatchException\&.ManagedSize\fR [get]\fP"
+
+.PP
+Gets the size of the struct as computed by \fRsizeof(T)\fP\&. 
+.PP
+Definition at line \fB67\fP of file \fBLayout\&.cs\fP\&.
+.PP
+Referenced by \fBSizeMismatchException()\fP\&.
+.SS "Type SystemEx\&.Utils\&.SizeMismatchException\&.StructType\fR [get]\fP"
+
+.PP
+Gets the struct type that failed the size validation\&. 
+.PP
+Definition at line \fB62\fP of file \fBLayout\&.cs\fP\&.
+.PP
+Referenced by \fBSizeMismatchException()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,239 @@
+.TH "SystemEx.Collections.Generic.ICluster< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.ICluster< T > \- Represents a cluster node in a weighted graph structure\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBAdd\fP (\fBICluster\fP< T > other, uint gewicht)"
+.br
+.RI "Add a directed edge from this node to \fIother\fP  with the given weight\&. "
+.ti -1c
+.RI "bool \fBContains\fP (\fBICluster\fP< T > other)"
+.br
+.RI "Determines whether \fIother\fP  is a direct child of this node\&. "
+.ti -1c
+.RI "bool \fBCost\fP (T value, ref ulong cost, ulong budget)"
+.br
+.RI "Search for a node whose Value equals \fIvalue\fP  using a cost-limited Dijkstra-like search\&. If found, sets \fIcost\fP  to the accumulated cost\&. "
+.ti -1c
+.RI "\fBICluster\fP< T > \fBElementAt\fP (long index)"
+.br
+.RI "Get Element at Position N\&. "
+.ti -1c
+.RI "bool \fBfind\fP (T pradicat, \fBSearchType\fP type, ulong budget, ref Map< \fBICluster\fP< T >, uint > steps)"
+.br
+.RI "General search that propagates either remaining energy or accumulated cost according to \fItype\fP \&. Fills \fIsteps\fP  with the remaining energy for visited nodes\&. "
+.ti -1c
+.RI "bool \fBRemove\fP (\fBICluster\fP< T > other)"
+.br
+.RI "Remove the directed edge to \fIother\fP \&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP
+.in +1c
+.ti -1c
+.RI "uint \fBCostAt\fP (long index)"
+.br
+.RI "Get Cost of the element at position N\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Map< \fBICluster\fP< T >, uint > \fBChild\fP\fR [get]\fP"
+.br
+.RI "Mapping of child node to edge weight\&. "
+.ti -1c
+.RI "Pair< \fBICluster\fP< T >, uint >? \fBParent\fP\fR [get]\fP"
+.br
+.RI "Optional parent pointer and the weight of the edge to the parent\&. "
+.ti -1c
+.RI "T? \fBValue\fP\fR [get]\fP"
+.br
+.RI "The value stored in this cluster node\&. May be null\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP
+.in +1c
+.ti -1c
+.RI "bool \fBHaveChild\fP\fR [get]\fP"
+.br
+.RI "Have this node a Child\&. "
+.ti -1c
+.RI "bool \fBHaveParent\fP\fR [get]\fP"
+.br
+.RI "Have this Node a Parent\&. "
+.ti -1c
+.RI "long \fBSize\fP\fR [get]\fP"
+.br
+.RI "Number of direct children (outgoing edges) of this node\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a cluster node in a weighted graph structure\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Type of the value stored in the cluster node\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB52\fP of file \fBICluster\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP< T >\&.Add (\fBICluster\fP< T > other, uint gewicht)"
+
+.PP
+Add a directed edge from this node to \fIother\fP  with the given weight\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP Target child node\&.
+.br
+\fIgewicht\fP Edge weight\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the child was added; otherwise false\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\fP\&.
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP< T >\&.Contains (\fBICluster\fP< T > other)"
+
+.PP
+Determines whether \fIother\fP  is a direct child of this node\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP Node to check\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if \fIother\fP  is a child; otherwise false\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\fP\&.
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP< T >\&.Cost (T value, ref ulong cost, ulong budget)"
+
+.PP
+Search for a node whose Value equals \fIvalue\fP  using a cost-limited Dijkstra-like search\&. If found, sets \fIcost\fP  to the accumulated cost\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP Value to search for\&.
+.br
+\fIcost\fP \fBReference\fP to store the found cost\&.
+.br
+\fIbudget\fP Maximum allowed cost for the search\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if a matching node was found within budget; otherwise false\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\fP\&.
+.SS "\fBICluster\fP< T > \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP< T >\&.ElementAt (long index)"
+
+.PP
+Get Element at Position N\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\fP\&.
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP< T >\&.find (T pradicat, \fBSearchType\fP type, ulong budget, ref Map< \fBICluster\fP< T >, uint > steps)"
+
+.PP
+General search that propagates either remaining energy or accumulated cost according to \fItype\fP \&. Fills \fIsteps\fP  with the remaining energy for visited nodes\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpradicat\fP Predicate value to match against node values\&.
+.br
+\fItype\fP Search mode that controls how weights affect energy/cost\&.
+.br
+\fIbudget\fP Energy or cost budget depending on the search type\&.
+.br
+\fIsteps\fP Map to record remaining energy per visited node\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if a matching node was found within constraints; otherwise false\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\fP\&.
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP< T >\&.Remove (\fBICluster\fP< T > other)"
+
+.PP
+Remove the directed edge to \fIother\fP \&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP Child node to remove\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the child was removed; otherwise false\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "Map<\fBICluster\fP<T>, uint> \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP< T >\&.Child\fR [get]\fP"
+
+.PP
+Mapping of child node to edge weight\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\fP\&.
+.PP
+Definition at line \fB62\fP of file \fBICluster\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\&.find()\fP\&.
+.SS "Pair<\fBICluster\fP<T>, uint>? \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP< T >\&.Parent\fR [get]\fP"
+
+.PP
+Optional parent pointer and the weight of the edge to the parent\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\fP\&.
+.PP
+Definition at line \fB66\fP of file \fBICluster\&.cs\fP\&.
+.SS "T? \fBSystemEx\&.Collections\&.Generic\&.ICluster\fP< T >\&.Value\fR [get]\fP"
+
+.PP
+The value stored in this cluster node\&. May be null\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\fP\&.
+.PP
+Definition at line \fB56\fP of file \fBICluster\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\&.find()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,1026 @@
+.TH "SystemEx.Numeric.FloatE4M3" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.FloatE4M3 \- Represents an FP8 value encoded in the industry‑standard E4M3 format\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Numeric\&.IFP8< TSelf >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (\fBFloatE4M3\fP b)"
+.br
+.ti -1c
+.RI "int IComparable< \fBFloatE4M3\fP >\&. \fBCompareTo\fP (\fBFloatE4M3\fP other)"
+.br
+.RI "Explicit IComparable<T> implementation that forwards to the extended \fBCompareTo(FloatE4M3)\fP method and casts the \fBCompareResult\fP to int\&. "
+.ti -1c
+.RI "int \fBCompareTo\fP (object? obj)"
+.br
+.RI "Compares this FP8 value with another using FP8 ordering rules\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBFloatE4M3\fP other)"
+.br
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "\fBFloatE4M3\fP ()"
+.br
+.RI "Initializes a new FP8 value set to zero\&. "
+.ti -1c
+.RI "\fBFloatE4M3\fP (byte raw)"
+.br
+.RI "Initializes a new FP8 value from a raw byte\&. "
+.ti -1c
+.RI "\fBFloatE4M3\fP (byte sign, byte exponent, byte mantissa)"
+.br
+.RI "Constructs an FP8 value from explicit sign, exponent, and mantissa fields\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.ti -1c
+.RI "FixedVector< byte > \fBToBytes\fP ()"
+.br
+.RI "Converts the FP8 value into a raw byte vector\&. "
+.ti -1c
+.RI "byte[] \fBToBytes\fP (\fBEndian\fP endian)"
+.br
+.RI "Encodes the current instance into a newly allocated byte array using the specified \fIendian\fP  order\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The byte order used to encode the value\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new byte array containing the binary representation of the instance\&. 
+.RE
+.PP
+ "
+.ti -1c
+.RI "void \fBToBytes\fP (ref byte[] destination, long offset, \fBEndian\fP endian)"
+.br
+.RI "Writes the binary representation of the current instance into an existing \fIdestination\fP  buffer at the specified \fIoffset\fP \&.
+
+.PP
+The caller is responsible for ensuring that the buffer is large enough to hold the encoded data starting at the given offset\&. Bytes before the offset remain untouched and can contain arbitrary user data\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdestination\fP The target buffer into which the encoded value will be written\&. 
+.br
+\fIoffset\fP The position within \fIdestination\fP  where the encoded data will be written\&. For example, if \fRoffset = 100\fP, bytes \fR0\fP through \fR99\fP remain unchanged, and the encoded value begins at index \fR100\fP\&. 
+.br
+\fIendian\fP The byte order used to encode the value\&. 
+.RE
+.PP
+ "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBAbs\fP (\fBFloatE4M3\fP value)"
+.br
+.RI "Returns the absolute value of the FP8 number\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBAdd\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.RI "Adds two FP8 values using E4M3 arithmetic rules\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBCeil\fP (\fBFloatE4M3\fP x)"
+.br
+.RI "Returns the smallest integer greater than or equal to the value\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBClamp\fP (\fBFloatE4M3\fP x, \fBFloatE4M3\fP min, \fBFloatE4M3\fP max)"
+.br
+.RI "Clamps the value to the inclusive range [min, max]\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBDiv\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.RI "Divides one FP8 value by another using E4M3 arithmetic rules\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBFloor\fP (\fBFloatE4M3\fP x)"
+.br
+.RI "Returns the largest integer less than or equal to the value\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBFromBytes\fP (byte[] bytes, long offset, \fBEndian\fP endian)"
+.br
+.RI "Constructs an FP8 value from a byte array\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBFromComponent\fP (\fBFast_Byte\fP sign, \fBFast_Byte\fP mantissa, \fBFast_Byte\fP expotent)"
+.br
+.ti -1c
+.RI "static bool \fBIsFinite\fP (\fBFloatE4M3\fP value)"
+.br
+.RI "Determines whether the value is finite (not NaN)\&. "
+.ti -1c
+.RI "static bool \fBIsInfinity\fP (\fBFloatE4M3\fP value)"
+.br
+.RI "E4M3 does not support infinity\&. "
+.ti -1c
+.RI "static bool \fBIsInteger\fP (\fBFloatE4M3\fP x)"
+.br
+.RI "Determines whether the value represents an integer\&. "
+.ti -1c
+.RI "static bool \fBIsNaN\fP (\fBFloatE4M3\fP value)"
+.br
+.RI "Determines whether the value is a NaN\&. "
+.ti -1c
+.RI "static bool \fBIsNegative\fP (\fBFloatE4M3\fP value)"
+.br
+.RI "Determines whether the value is negative\&. "
+.ti -1c
+.RI "static bool \fBIsNormal\fP (\fBFloatE4M3\fP value)"
+.br
+.RI "Determines whether the value is a normalized FP8 number\&. "
+.ti -1c
+.RI "static bool \fBIsSubnormal\fP (\fBFloatE4M3\fP value)"
+.br
+.RI "Determines whether the value is subnormal (exponent = 0 and mantissa ≠ 0)\&. "
+.ti -1c
+.RI "static bool \fBIsZero\fP (\fBFloatE4M3\fP value)"
+.br
+.RI "Determines whether the value is zero (positive or negative)\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBMax\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.RI "Returns the larger of two FP8 values\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBMin\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBMul\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.RI "Multiplies two FP8 values using E4M3 arithmetic rules\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBNegate\fP (\fBFloatE4M3\fP x)"
+.br
+.RI "Returns the negation of the FP8 number\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBoperator*\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.RI "Multiplication operator\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBoperator+\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.RI "Addition operator\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBoperator++\fP (\fBFloatE4M3\fP a)"
+.br
+.RI "Increment operator\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBoperator\-\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.RI "Subtraction operator\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBoperator\-\-\fP (\fBFloatE4M3\fP a)"
+.br
+.RI "Decrement operator\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBoperator/\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.RI "Division operator\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.RI "Greater‑than operator\&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)"
+.br
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBSignum\fP (\fBFloatE4M3\fP x)"
+.br
+.RI "Returns −1, 0, or +1 depending on the sign of the value\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBTrunc\fP (\fBFloatE4M3\fP x)"
+.br
+.RI "Truncates the fractional part of the FP8 value\&. "
+.in -1c
+
+Static Public Member Functions inherited from \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP
+.in +1c
+.ti -1c
+.RI "static TSelf \fBAbs\fP (TSelf value)"
+.br
+.RI "Returns the absolute value of the given floating‑point number\&. "
+.ti -1c
+.RI "static TSelf \fBAdd\fP (TSelf a, TSelf b)"
+.br
+.RI "Adds two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBCeil\fP (TSelf value)"
+.br
+.RI "Returns the smallest integer greater than or equal to the value\&. "
+.ti -1c
+.RI "static TSelf \fBClamp\fP (TSelf x, TSelf min, TSelf max)"
+.br
+.RI "Clamps the value to the inclusive range [min, max]\&. "
+.ti -1c
+.RI "static TSelf \fBDiv\fP (TSelf a, TSelf b)"
+.br
+.RI "Divides one floating‑point value by another\&. "
+.ti -1c
+.RI "static TSelf \fBFloor\fP (TSelf value)"
+.br
+.RI "Returns the largest integer less than or equal to the value\&. "
+.ti -1c
+.RI "static bool \fBIsFinite\fP (TSelf value)"
+.br
+.RI "Determines whether the value is finite (not NaN or infinity)\&. "
+.ti -1c
+.RI "static bool \fBIsInfinity\fP (TSelf value)"
+.br
+.RI "Determines whether the value is positive or negative infinity\&. "
+.ti -1c
+.RI "static bool \fBIsInteger\fP (TSelf value)"
+.br
+.RI "Determines whether the value represents an integer (mantissa zero)\&. "
+.ti -1c
+.RI "static bool \fBIsNaN\fP (TSelf value)"
+.br
+.RI "Determines whether the value is a NaN (not‑a‑number)\&. "
+.ti -1c
+.RI "static bool \fBIsNegative\fP (TSelf value)"
+.br
+.RI "Determines whether the value is negative\&. "
+.ti -1c
+.RI "static bool \fBIsNormal\fP (TSelf value)"
+.br
+.RI "Determines whether the value is a normalized floating‑point number\&. "
+.ti -1c
+.RI "static bool \fBIsSubnormal\fP (TSelf value)"
+.br
+.RI "Determines whether the value is subnormal (exponent field zero but mantissa non‑zero)\&. "
+.ti -1c
+.RI "static bool \fBIsZero\fP (TSelf value)"
+.br
+.RI "Determines whether the value is zero (positive or negative)\&. "
+.ti -1c
+.RI "static TSelf \fBMax\fP (TSelf a, TSelf b)"
+.br
+.RI "Returns the larger of two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBMin\fP (TSelf a, TSelf b)"
+.br
+.RI "Returns the smaller of two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBMul\fP (TSelf a, TSelf b)"
+.br
+.RI "Multiplies two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBNegate\fP (TSelf value)"
+.br
+.RI "Returns the negation of the given floating‑point number\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether two floating‑point values are not equal\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is strictly less than \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is less than or equal to \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether two floating‑point values are equal\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is strictly greater than \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is greater than or equal to \fIb\fP \&. "
+.ti -1c
+.RI "static TSelf \fBSignum\fP (TSelf value)"
+.br
+.RI "Returns the sign of the value: −1, 0, or +1\&. "
+.ti -1c
+.RI "static TSelf \fBTrunc\fP (TSelf value)"
+.br
+.RI "Truncates the fractional part of the value\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBE\fP\fR [get]\fP"
+.br
+.RI "Approximation of Euler’s number e\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBEpsilon\fP\fR [get]\fP"
+.br
+.RI "Smallest positive subnormal increment\&. "
+.ti -1c
+.RI "\fBFast_Byte\fP \fBExponent\fP\fR [get]\fP"
+.br
+.RI "Extracts the exponent field (bits 3–6)\&. "
+.ti -1c
+.RI "\fBFast_Byte\fP \fBExponentBias\fP\fR [get]\fP"
+.br
+.RI "Exponent bias used by the E4M3 format (always 7)\&. "
+.ti -1c
+.RI "\fBFast_Byte\fP \fBExponentBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the exponent field (always 4)\&. "
+.ti -1c
+.RI "\fBFast_Byte\fP \fBHiddenBit\fP\fR [get]\fP"
+.br
+.RI "Hidden bit used for normalized numbers\&. Always 1 for E4M3\&. "
+.ti -1c
+.RI "static bool \fBIsMXSupport\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "\fBFast_Byte\fP \fBMantissa\fP\fR [get]\fP"
+.br
+.RI "Extracts the mantissa field (bits 0–2)\&. "
+.ti -1c
+.RI "\fBFast_Byte\fP \fBMantissaBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the mantissa field (always 3)\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBMaxValue\fP\fR [get]\fP"
+.br
+.RI "Largest representable positive value\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBMinValue\fP\fR [get]\fP"
+.br
+.RI "Smallest representable negative value\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBNaN\fP\fR [get]\fP"
+.br
+.RI "Represents the canonical NaN encoding (exponent = 0x0F, mantissa = 0x07)\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBNaN2\fP\fR [get]\fP"
+.br
+.RI "Represents an alternative NaN encoding (sign bit set)\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBNegativeInfinity\fP\fR [get]\fP"
+.br
+.RI "Infinity is not supported in the E4M3 format\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBNegativeOne\fP\fR [get]\fP"
+.br
+.RI "Represents the FP8 value −1\&.0\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBNegativeZero\fP\fR [get]\fP"
+.br
+.RI "Represents the FP8 value −0\&.0\&. "
+.ti -1c
+.RI "\fBFast_Byte\fP \fBNSign\fP\fR [get]\fP"
+.br
+.RI "Gets the sign bit, as \fBFast_Byte\fP\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBOne\fP\fR [get]\fP"
+.br
+.RI "Represents the FP8 value +1\&.0\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBPi\fP\fR [get]\fP"
+.br
+.RI "Approximation of π\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBPositiveInfinity\fP\fR [get]\fP"
+.br
+.RI "Infinity is not supported in the E4M3 format\&. "
+.ti -1c
+.RI "bool \fBSign\fP\fR [get]\fP"
+.br
+.RI "Gets the sign bit\&. True indicates a negative value\&. "
+.ti -1c
+.RI "\fBFast_Byte\fP \fBSignBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the sign field (always 1)\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBTau\fP\fR [get]\fP"
+.br
+.RI "Approximation of τ = 2π\&. "
+.ti -1c
+.RI "\fBFast_Byte\fP \fBToBase\fP\fR [get]\fP"
+.br
+.RI "Returns the raw FP8 storage byte\&. "
+.ti -1c
+.RI "\fBFast_Byte\fP \fBTotalBits\fP\fR [get]\fP"
+.br
+.RI "Total number of bits in the FP8 representation (always 8)\&. "
+.ti -1c
+.RI "static \fBFloatE4M3\fP \fBZero\fP\fR [get]\fP"
+.br
+.RI "Represents the FP8 value +0\&.0\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents an FP8 value encoded in the industry‑standard E4M3 format\&. 
+
+This format uses: 
+
+.PP
+• 1 sign bit
+
+.PP
+• 4 exponent bits (bias = 7)
+
+.PP
+• 3 mantissa bits
+
+.PP
+The hidden bit is always 1 for normalized numbers\&. Subnormal numbers use an exponent of zero and do not include the hidden bit\&.
+
+.PP
+This implementation is fully self‑contained and performs all arithmetic, comparisons, and classifications purely on FP8 bit‑patterns without converting to host floating‑point types\&. 
+.PP
+Definition at line \fB42\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.FloatE4M3\&.FloatE4M3 ()"
+
+.PP
+Initializes a new FP8 value set to zero\&. 
+.PP
+Definition at line \fB183\fP of file \fBFloatE4M3\&.cs\fP\&.
+.PP
+Referenced by \fBAbs()\fP, \fBAdd()\fP, \fBCeil()\fP, \fBClamp()\fP, \fBCompareTo()\fP, \fBCompareTo()\fP, \fBCompareTo()\fP, \fBDiv()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBFloor()\fP, \fBFromBytes()\fP, \fBIsFinite()\fP, \fBIsInfinity()\fP, \fBIsInteger()\fP, \fBIsNaN()\fP, \fBIsNegative()\fP, \fBIsNormal()\fP, \fBIsSubnormal()\fP, \fBIsZero()\fP, \fBMax()\fP, \fBMin()\fP, \fBMul()\fP, \fBNegate()\fP, \fBoperator!=()\fP, \fBoperator*()\fP, \fBoperator+()\fP, \fBoperator++()\fP, \fBoperator\-()\fP, \fBoperator\-\-()\fP, \fBoperator/()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, \fBoperator>()\fP, \fBoperator>=()\fP, \fBSignum()\fP, and \fBTrunc()\fP\&.
+.SS "SystemEx\&.Numeric\&.FloatE4M3\&.FloatE4M3 (byte raw)"
+
+.PP
+Initializes a new FP8 value from a raw byte\&. 
+.PP
+Definition at line \fB189\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.FloatE4M3\&.FloatE4M3 (byte sign, byte exponent, byte mantissa)"
+
+.PP
+Constructs an FP8 value from explicit sign, exponent, and mantissa fields\&. 
+.PP
+Definition at line \fB194\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Abs (\fBFloatE4M3\fP value)\fR [static]\fP"
+
+.PP
+Returns the absolute value of the FP8 number\&. 
+.PP
+Definition at line \fB251\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Add (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+Adds two FP8 values using E4M3 arithmetic rules\&. 
+.PP
+Definition at line \fB309\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Ceil (\fBFloatE4M3\fP x)\fR [static]\fP"
+
+.PP
+Returns the smallest integer greater than or equal to the value\&. 
+.PP
+Definition at line \fB282\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Clamp (\fBFloatE4M3\fP x, \fBFloatE4M3\fP min, \fBFloatE4M3\fP max)\fR [static]\fP"
+
+.PP
+Clamps the value to the inclusive range [min, max]\&. 
+.PP
+Definition at line \fB301\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Numeric\&.FloatE4M3\&.CompareTo (\fBFloatE4M3\fP b)"
+
+.PP
+
+.PP
+Definition at line \fB478\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "int IComparable< \fBFloatE4M3\fP >\&. SystemEx\&.Numeric\&.FloatE4M3\&.CompareTo (\fBFloatE4M3\fP other)"
+
+.PP
+Explicit IComparable<T> implementation that forwards to the extended \fBCompareTo(FloatE4M3)\fP method and casts the \fBCompareResult\fP to int\&. This keeps the standard \&.NET comparison API compatible while still exposing a strongly typed comparison result via \fBIComparableEx<FloatE4M3>\fP\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A signed integer indicating the relative order\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB471\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "int SystemEx\&.Numeric\&.FloatE4M3\&.CompareTo (object? obj)"
+
+.PP
+Compares this FP8 value with another using FP8 ordering rules\&. 
+.PP
+Definition at line \fB451\fP of file \fBFloatE4M3\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP, and \fBCompareTo()\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Div (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+Divides one FP8 value by another using E4M3 arithmetic rules\&. 
+.PP
+Definition at line \fB400\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.Equals (\fBFloatE4M3\fP other)"
+
+.PP
+
+.PP
+Definition at line \fB445\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.FloatE4M3\&.Equals (object? obj)"
+
+.PP
+
+.PP
+Definition at line \fB525\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Floor (\fBFloatE4M3\fP x)\fR [static]\fP"
+
+.PP
+Returns the largest integer less than or equal to the value\&. 
+.PP
+Definition at line \fB272\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.FromBytes (byte[] bytes, long offset, \fBEndian\fP endian)\fR [static]\fP"
+
+.PP
+Constructs an FP8 value from a byte array\&. 
+.PP
+Implements \fBSystemEx\&.IByteSerializable< TSelf >\fP\&.
+.PP
+Definition at line \fB499\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.FromComponent (\fBFast_Byte\fP sign, \fBFast_Byte\fP mantissa, \fBFast_Byte\fP expotent)\fR [static]\fP"
+
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFP8< TSelf >\fP\&.
+.PP
+Definition at line \fB640\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "override int SystemEx\&.Numeric\&.FloatE4M3\&.GetHashCode ()"
+
+.PP
+
+.PP
+Definition at line \fB532\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.IsFinite (\fBFloatE4M3\fP value)\fR [static]\fP"
+
+.PP
+Determines whether the value is finite (not NaN)\&. 
+.PP
+Definition at line \fB224\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.IsInfinity (\fBFloatE4M3\fP value)\fR [static]\fP"
+
+.PP
+E4M3 does not support infinity\&. 
+.PP
+Definition at line \fB218\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.IsInteger (\fBFloatE4M3\fP x)\fR [static]\fP"
+
+.PP
+Determines whether the value represents an integer\&. 
+.PP
+Definition at line \fB242\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.IsNaN (\fBFloatE4M3\fP value)\fR [static]\fP"
+
+.PP
+Determines whether the value is a NaN\&. 
+.PP
+Definition at line \fB212\fP of file \fBFloatE4M3\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBCeil()\fP, \fBCompareTo()\fP, \fBDiv()\fP, \fBFloor()\fP, \fBIsInteger()\fP, \fBMul()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, \fBSignum()\fP, and \fBTrunc()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.IsNegative (\fBFloatE4M3\fP value)\fR [static]\fP"
+
+.PP
+Determines whether the value is negative\&. 
+.PP
+Definition at line \fB206\fP of file \fBFloatE4M3\&.cs\fP\&.
+.PP
+Referenced by \fBoperator<()\fP, and \fBoperator<=()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.IsNormal (\fBFloatE4M3\fP value)\fR [static]\fP"
+
+.PP
+Determines whether the value is a normalized FP8 number\&. 
+.PP
+Definition at line \fB236\fP of file \fBFloatE4M3\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Random\&.NextFloatE4M3()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.IsSubnormal (\fBFloatE4M3\fP value)\fR [static]\fP"
+
+.PP
+Determines whether the value is subnormal (exponent = 0 and mantissa ≠ 0)\&. 
+.PP
+Definition at line \fB230\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.IsZero (\fBFloatE4M3\fP value)\fR [static]\fP"
+
+.PP
+Determines whether the value is zero (positive or negative)\&. 
+.PP
+Definition at line \fB200\fP of file \fBFloatE4M3\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBCeil()\fP, \fBDiv()\fP, \fBFloor()\fP, \fBIsInteger()\fP, \fBMul()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, and \fBSignum()\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Max (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+Returns the larger of two FP8 values\&. 
+.PP
+Definition at line \fB439\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Min (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+Returns the smaller of two FP8 values\&. 
+.PP
+Definition at line \fB433\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Mul (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+Multiplies two FP8 values using E4M3 arithmetic rules\&. 
+.PP
+Definition at line \fB367\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Negate (\fBFloatE4M3\fP x)\fR [static]\fP"
+
+.PP
+Returns the negation of the FP8 number\&. 
+.PP
+Definition at line \fB257\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.operator!= (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB583\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.operator* (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+Multiplication operator\&. 
+.PP
+Definition at line \fB606\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.operator+ (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+Addition operator\&. 
+.PP
+Definition at line \fB596\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.operator++ (\fBFloatE4M3\fP a)\fR [static]\fP"
+
+.PP
+Increment operator\&. 
+.PP
+Definition at line \fB616\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.operator\- (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+Subtraction operator\&. 
+.PP
+Definition at line \fB601\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.operator\-\- (\fBFloatE4M3\fP a)\fR [static]\fP"
+
+.PP
+Decrement operator\&. 
+.PP
+Definition at line \fB621\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.operator/ (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+Division operator\&. 
+.PP
+Definition at line \fB611\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.operator< (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB538\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.operator<= (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB554\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.operator== (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB576\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.operator> (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+Greater‑than operator\&. 
+.PP
+Definition at line \fB590\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.operator>= (\fBFloatE4M3\fP a, \fBFloatE4M3\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB570\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Signum (\fBFloatE4M3\fP x)\fR [static]\fP"
+
+.PP
+Returns −1, 0, or +1 depending on the sign of the value\&. 
+.PP
+Definition at line \fB263\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.FloatE4M3\&.ToBytes ()"
+
+.PP
+Converts the FP8 value into a raw byte vector\&. 
+.PP
+Implements \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.PP
+Definition at line \fB493\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "byte[] SystemEx\&.Numeric\&.FloatE4M3\&.ToBytes (\fBEndian\fP endian)"
+
+.PP
+Encodes the current instance into a newly allocated byte array using the specified \fIendian\fP  order\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The byte order used to encode the value\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new byte array containing the binary representation of the instance\&. 
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.IByteSerializable< TSelf >\fP\&.
+.PP
+Definition at line \fB505\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.FloatE4M3\&.ToBytes (ref byte[] destination, long offset, \fBEndian\fP endian)"
+
+.PP
+Writes the binary representation of the current instance into an existing \fIdestination\fP  buffer at the specified \fIoffset\fP \&.
+
+.PP
+The caller is responsible for ensuring that the buffer is large enough to hold the encoded data starting at the given offset\&. Bytes before the offset remain untouched and can contain arbitrary user data\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdestination\fP The target buffer into which the encoded value will be written\&. 
+.br
+\fIoffset\fP The position within \fIdestination\fP  where the encoded data will be written\&. For example, if \fRoffset = 100\fP, bytes \fR0\fP through \fR99\fP remain unchanged, and the encoded value begins at index \fR100\fP\&. 
+.br
+\fIendian\fP The byte order used to encode the value\&. 
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.IByteSerializable< TSelf >\fP\&.
+.PP
+Definition at line \fB511\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Trunc (\fBFloatE4M3\fP x)\fR [static]\fP"
+
+.PP
+Truncates the fractional part of the FP8 value\&. 
+.PP
+Definition at line \fB292\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.E\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Approximation of Euler’s number e\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB157\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Epsilon\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Smallest positive subnormal increment\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB152\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFast_Byte\fP SystemEx\&.Numeric\&.FloatE4M3\&.Exponent\fR [get]\fP"
+
+.PP
+Extracts the exponent field (bits 3–6)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB93\fP of file \fBFloatE4M3\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBCeil()\fP, \fBFloor()\fP, \fBIsInteger()\fP, and \fBTrunc()\fP\&.
+.SS "\fBFast_Byte\fP SystemEx\&.Numeric\&.FloatE4M3\&.ExponentBias\fR [get]\fP"
+
+.PP
+Exponent bias used by the E4M3 format (always 7)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB68\fP of file \fBFloatE4M3\&.cs\fP\&.
+.PP
+Referenced by \fBCeil()\fP, \fBDiv()\fP, \fBFloor()\fP, \fBIsInteger()\fP, \fBMul()\fP, and \fBTrunc()\fP\&.
+.SS "\fBFast_Byte\fP SystemEx\&.Numeric\&.FloatE4M3\&.ExponentBits\fR [get]\fP"
+
+.PP
+Number of bits used for the exponent field (always 4)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB58\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFast_Byte\fP SystemEx\&.Numeric\&.FloatE4M3\&.HiddenBit\fR [get]\fP"
+
+.PP
+Hidden bit used for normalized numbers\&. Always 1 for E4M3\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB78\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.IsMXSupport\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFP8< TSelf >\fP\&.
+.PP
+Definition at line \fB179\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFast_Byte\fP SystemEx\&.Numeric\&.FloatE4M3\&.Mantissa\fR [get]\fP"
+
+.PP
+Extracts the mantissa field (bits 0–2)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB102\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFast_Byte\fP SystemEx\&.Numeric\&.FloatE4M3\&.MantissaBits\fR [get]\fP"
+
+.PP
+Number of bits used for the mantissa field (always 3)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB63\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.MaxValue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Largest representable positive value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB177\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.MinValue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Smallest representable negative value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB172\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.NaN\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the canonical NaN encoding (exponent = 0x0F, mantissa = 0x07)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB142\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.NaN2\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents an alternative NaN encoding (sign bit set)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB147\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.NegativeInfinity\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Infinity is not supported in the E4M3 format\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB137\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.NegativeOne\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the FP8 value −1\&.0\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB122\fP of file \fBFloatE4M3\&.cs\fP\&.
+.PP
+Referenced by \fBFloor()\fP, and \fBSignum()\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.NegativeZero\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the FP8 value −0\&.0\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB127\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFast_Byte\fP SystemEx\&.Numeric\&.FloatE4M3\&.NSign\fR [get]\fP"
+
+.PP
+Gets the sign bit, as \fBFast_Byte\fP\&. 
+.PP
+Definition at line \fB88\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.One\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the FP8 value +1\&.0\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB117\fP of file \fBFloatE4M3\&.cs\fP\&.
+.PP
+Referenced by \fBoperator++()\fP, and \fBoperator\-\-()\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Pi\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Approximation of π\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB167\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.PositiveInfinity\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Infinity is not supported in the E4M3 format\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB132\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.FloatE4M3\&.Sign\fR [get]\fP"
+
+.PP
+Gets the sign bit\&. True indicates a negative value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB83\fP of file \fBFloatE4M3\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBDiv()\fP, and \fBMul()\fP\&.
+.SS "\fBFast_Byte\fP SystemEx\&.Numeric\&.FloatE4M3\&.SignBits\fR [get]\fP"
+
+.PP
+Number of bits used for the sign field (always 1)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB53\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Tau\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Approximation of τ = 2π\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB162\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFast_Byte\fP SystemEx\&.Numeric\&.FloatE4M3\&.ToBase\fR [get]\fP"
+
+.PP
+Returns the raw FP8 storage byte\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB48\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFast_Byte\fP SystemEx\&.Numeric\&.FloatE4M3\&.TotalBits\fR [get]\fP"
+
+.PP
+Total number of bits in the FP8 representation (always 8)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB73\fP of file \fBFloatE4M3\&.cs\fP\&.
+.SS "\fBFloatE4M3\fP SystemEx\&.Numeric\&.FloatE4M3\&.Zero\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the FP8 value +0\&.0\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB111\fP of file \fBFloatE4M3\&.cs\fP\&.
+.PP
+Referenced by \fBCeil()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

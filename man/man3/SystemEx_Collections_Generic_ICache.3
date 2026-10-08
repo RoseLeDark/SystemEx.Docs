@@ -1,0 +1,184 @@
+.TH "SystemEx.Collections.Generic.ICache" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.ICache \- Defines a typed cache a low-level byte buffer with position tracking, typed read/write helpers, and optional locking behavior\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, and \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBRead\fP (byte[] buffer, int offset, int count)"
+.br
+.RI "Reads bytes into the specified buffer and advances the internal position\&. "
+.ti -1c
+.RI "byte \fBReadByte\fP (ulong position)"
+.br
+.RI "Reads a single byte from the specified position\&. "
+.ti -1c
+.RI "byte?[] \fBReadRange\fP (ulong position, uint count)"
+.br
+.RI "Reads a range of bytes starting at the specified position\&. "
+.ti -1c
+.RI "byte[] \fBToArray\fP ()"
+.br
+.RI "Returns a copy of the internal buffer\&. "
+.ti -1c
+.RI "int \fBWrite\fP (byte[] buffer, int offset, int count)"
+.br
+.RI "Writes bytes from the specified buffer and advances the internal position\&. "
+.ti -1c
+.RI "ulong \fBWriteRange\fP (ulong position, byte[] data)"
+.br
+.RI "Writes a byte range into the cache starting at the specified position\&. "
+.ti -1c
+.RI "ulong \fBWriteRange\fP (ulong start, ulong iend, byte[] data)"
+.br
+.RI "Writes a byte range into the cache between \fIstart\fP  and \fIiend\fP \&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBCanRead\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the cache is readable\&. "
+.ti -1c
+.RI "bool \fBCanWrite\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the cache is writable\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the cache contains no data\&. "
+.ti -1c
+.RI "ulong \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the total buffer length in bytes\&. "
+.ti -1c
+.RI "ulong \fBPosition\fP\fR [get]\fP"
+.br
+.RI "Gets the current read/write position\&. "
+.ti -1c
+.RI "\fBCacheType\fP \fBType\fP\fR [get]\fP"
+.br
+.RI "Gets the configured cache type (read, write, or both)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines a typed cache a low-level byte buffer with position tracking, typed read/write helpers, and optional locking behavior\&. 
+.PP
+Definition at line \fB27\fP of file \fBICache\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int SystemEx\&.Collections\&.Generic\&.ICache\&.Read (byte[] buffer, int offset, int count)"
+
+.PP
+Reads bytes into the specified buffer and advances the internal position\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, and \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP\&.
+.SS "byte SystemEx\&.Collections\&.Generic\&.ICache\&.ReadByte (ulong position)"
+
+.PP
+Reads a single byte from the specified position\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, and \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP\&.
+.SS "byte?[] SystemEx\&.Collections\&.Generic\&.ICache\&.ReadRange (ulong position, uint count)"
+
+.PP
+Reads a range of bytes starting at the specified position\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, \fBSystemEx\&.Collections\&.Generic\&.MirroredCache\fP, and \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP\&.
+.PP
+Referenced by \fBSystemEx\&.IO\&.CacheStream< TCache >\&.ReadAsync()\fP, and \fBSystemEx\&.IO\&.CacheStream< TCache >\&.WriteAsync()\fP\&.
+.SS "byte[] SystemEx\&.Collections\&.Generic\&.ICache\&.ToArray ()"
+
+.PP
+Returns a copy of the internal buffer\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, and \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.ICache\&.Write (byte[] buffer, int offset, int count)"
+
+.PP
+Writes bytes from the specified buffer and advances the internal position\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, and \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP\&.
+.SS "ulong SystemEx\&.Collections\&.Generic\&.ICache\&.WriteRange (ulong position, byte[] data)"
+
+.PP
+Writes a byte range into the cache starting at the specified position\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP, and \fBSystemEx\&.Collections\&.Generic\&.StrippedCache\fP\&.
+.PP
+Referenced by \fBSystemEx\&.IO\&.CacheStream< TCache >\&.ReadAsync()\fP\&.
+.SS "ulong SystemEx\&.Collections\&.Generic\&.ICache\&.WriteRange (ulong start, ulong iend, byte[] data)"
+
+.PP
+Writes a byte range into the cache between \fIstart\fP  and \fIiend\fP \&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, \fBSystemEx\&.Collections\&.Generic\&.MirroredCache\fP, \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP, and \fBSystemEx\&.Collections\&.Generic\&.StrippedCache\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.ICache\&.CanRead\fR [get]\fP"
+
+.PP
+Indicates whether the cache is readable\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, and \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP\&.
+.PP
+Definition at line \fB48\fP of file \fBICache\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.IO\&.CacheStream< TCache >\&.WriteAsync()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.ICache\&.CanWrite\fR [get]\fP"
+
+.PP
+Indicates whether the cache is writable\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, and \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP\&.
+.PP
+Definition at line \fB44\fP of file \fBICache\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.IO\&.CacheStream< TCache >\&.ReadAsync()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.ICache\&.IsEmpty\fR [get]\fP"
+
+.PP
+Indicates whether the cache contains no data\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, and \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP\&.
+.PP
+Definition at line \fB36\fP of file \fBICache\&.cs\fP\&.
+.SS "ulong SystemEx\&.Collections\&.Generic\&.ICache\&.Length\fR [get]\fP"
+
+.PP
+Gets the total buffer length in bytes\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP, and \fBSystemEx\&.Collections\&.Generic\&.StrippedCache\fP\&.
+.PP
+Definition at line \fB31\fP of file \fBICache\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.IO\&.CacheStream< TCache >\&.WriteAsync()\fP\&.
+.SS "ulong SystemEx\&.Collections\&.Generic\&.ICache\&.Position\fR [get]\fP"
+
+.PP
+Gets the current read/write position\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, and \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP\&.
+.PP
+Definition at line \fB52\fP of file \fBICache\&.cs\fP\&.
+.SS "\fBCacheType\fP SystemEx\&.Collections\&.Generic\&.ICache\&.Type\fR [get]\fP"
+
+.PP
+Gets the configured cache type (read, write, or both)\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Cache\fP, and \fBSystemEx\&.Collections\&.Generic\&.RCUCache\fP\&.
+.PP
+Definition at line \fB40\fP of file \fBICache\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

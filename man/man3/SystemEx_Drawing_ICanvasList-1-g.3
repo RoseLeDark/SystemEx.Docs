@@ -1,0 +1,342 @@
+.TH "SystemEx.Drawing.ICanvasList< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Drawing.ICanvasList< T > \- Represents a layered mathematical canvas system composed of multiple sub‑canvases\&. Each layer is a deterministic transformation applied on top of the base canvas, forming a purely mathematical composition model rather than a graphical drawing system\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Drawing\&.ICanvas< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBAddLayer\fP (ISubCanvas< T > layer, \fBBlendMode\fP mode)"
+.br
+.RI "Adds a new layer to the canvas list\&. The layer becomes part of the mathematical composition pipeline and will influence the final pixel buffer depending on its blend mode\&. "
+.ti -1c
+.RI "ISubCanvas< T > \fBGetLayer\fP (int index)"
+.br
+.RI "Retrieves the sub‑canvas at the specified index\&. "
+.ti -1c
+.RI "T \fBGetPixel\fP (int layer, int x, int y)"
+.br
+.RI "Retrieves the mathematically composed pixel value at the specified coordinates for the given layer index\&. "
+.ti -1c
+.RI "FixedVector< T > \fBGetPixels\fP (int layer)"
+.br
+.RI "Returns the mathematically composed pixel buffer for the specified layer index\&. This canvas system is purely mathematical and does not perform real drawing; each layer represents a deterministic transformation applied on top of the layers beneath it\&. "
+.ti -1c
+.RI "bool \fBIsShowing\fP (int index=0)"
+.br
+.RI "Gets the visibility state of the specified layer\&. Hidden layers do not contribute to the mathematical composition\&. "
+.ti -1c
+.RI "ISubCanvas< T > \fBRemoveLayer\fP (int index)"
+.br
+.RI "Removes the layer at the specified index\&. "
+.ti -1c
+.RI "bool \fBSetShowing\fP (bool show, int index)"
+.br
+.RI "Sets the visibility state of the specified layer\&. A hidden layer does not participate in the mathematical composition when \fBGetPixels\fP is invoked\&. "
+.ti -1c
+.RI "int \fBSwapIn\fP (int x, int y, int width, int height, ref ICanvas< T > toDraw)"
+.br
+.RI "Swaps the mathematically composed region of this canvas into another canvas\&. The region defined by \fIx\fP , \fIy\fP , \fIwidth\fP , and \fIheight\fP  is computed mathematically and then written into \fItoDraw\fP \&. "
+.ti -1c
+.RI "int \fBSwapIn\fP (ref ICanvas< T > toDraw)"
+.br
+.RI "Swaps the entire mathematically composed canvas into another canvas\&. This transfers the full computed pixel buffer into \fItoDraw\fP \&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Drawing\&.ICanvas< T >\fP
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clears the canvas by resetting all stored values to their default state\&. This operation affects only the mathematical buffer\&. "
+.ti -1c
+.RI "ICanvas< T > \fBClone\fP ()"
+.br
+.RI "Creates a full mathematical clone of this canvas, duplicating all stored values\&. "
+.ti -1c
+.RI "ICanvas< T > \fBCopyRegion\fP (int x, int y, int width, int height)"
+.br
+.RI "Creates a new canvas containing a rectangular region of this canvas\&. The region is copied mathematically; no rendering or blending occurs\&. "
+.ti -1c
+.RI "void \fBFill\fP (T objcolor)"
+.br
+.RI "Fills the entire canvas with the specified color value\&. This operation replaces all stored data deterministically and does not perform any graphical drawing\&. "
+.ti -1c
+.RI "void \fBFillRect\fP (int x1, int y1, int x2, int y2)"
+.br
+.RI "Fills a rectangular region of the canvas with the specified color value\&. This modifies only the mathematical buffer and does not perform rendering\&. "
+.ti -1c
+.RI "Pair< int, int > \fBFind\fP (T color)"
+.br
+.RI "Searches the canvas for the first occurrence of the specified color value\&. Returns the coordinates of the match or \fR(-1, -1)\fP if no match is found\&. "
+.ti -1c
+.RI "int \fBFindLast\fP (T color)"
+.br
+.RI "Searches the canvas for the last occurrence of the specified color value\&. Returns the index in the underlying buffer or \fR-1\fP if no match is found\&. "
+.ti -1c
+.RI "T \fBGetPixel\fP (int x, int y)"
+.br
+.RI "Returns the color value at the specified coordinates\&. This method provides direct access to the underlying mathematical buffer without performing any rendering\&. "
+.ti -1c
+.RI "bool \fBResize\fP (int size)"
+.br
+.RI "Resizes the canvas to the specified total size (Width × Height)\&. Existing values may be truncated or expanded depending on the implementation\&. This operation modifies only the mathematical buffer\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Map< ISubCanvas< T >, \fBBlendMode\fP > \fBLayers\fP\fR [get]\fP"
+.br
+.RI "Gets the collection of layers associated with this canvas list\&. Each layer is represented as an \fBISubCanvas<T>\fP paired with a \fBBlendMode\fP describing how the layer mathematically interacts with the layers beneath it\&. "
+.ti -1c
+.RI "ISubCanvas< T > \fBthis[int index]\fP\fR [get]\fP"
+.br
+.RI "Gets the sub‑canvas at the specified index\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Drawing\&.ICanvas< T >\fP
+.in +1c
+.ti -1c
+.RI "IEnumerable< T > \fBBuffer\fP\fR [get]\fP"
+.br
+.RI "Gets an enumerable view of the underlying buffer\&. The buffer contains the raw mathematical color values in row‑major order\&. No rendering or transformation occurs when accessing this property\&. "
+.ti -1c
+.RI "int \fBHeight\fP\fR [get]\fP"
+.br
+.RI "Gets the height of the canvas in mathematical units (rows)\&. "
+.ti -1c
+.RI "int \fBWidth\fP\fR [get]\fP"
+.br
+.RI "Gets the width of the canvas in mathematical units (columns)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a layered mathematical canvas system composed of multiple sub‑canvases\&. Each layer is a deterministic transformation applied on top of the base canvas, forming a purely mathematical composition model rather than a graphical drawing system\&. 
+
+Layers do not store rendered pixels\&. Instead, each layer contributes transformation rules, blend operations, or color modifications that are applied when the final pixel buffer is requested through \fBGetPixels\fP or when swapped into another canvas via \fBSwapIn\fP\&.
+
+.PP
+The system is fully deterministic: the same layer configuration always produces the same composed result\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The color type used by the canvas\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB169\fP of file \fBICanvasList\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int SystemEx\&.Drawing\&.ICanvasList< T >\&.AddLayer (ISubCanvas< T > layer, \fBBlendMode\fP mode)"
+
+.PP
+Adds a new layer to the canvas list\&. The layer becomes part of the mathematical composition pipeline and will influence the final pixel buffer depending on its blend mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlayer\fP The sub‑canvas to add as a layer\&.
+.br
+\fImode\fP The blend mode describing how the layer interacts with lower layers\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The index at which the layer was added\&.
+.RE
+.PP
+
+.SS "ISubCanvas< T > SystemEx\&.Drawing\&.ICanvasList< T >\&.GetLayer (int index)"
+
+.PP
+Retrieves the sub‑canvas at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index of the layer to retrieve\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The sub‑canvas at the given index\&.
+.RE
+.PP
+
+.SS "T SystemEx\&.Drawing\&.ICanvasList< T >\&.GetPixel (int layer, int x, int y)"
+
+.PP
+Retrieves the mathematically composed pixel value at the specified coordinates for the given layer index\&. The returned pixel is computed by folding the transformations of all layers from the specified layer down to the base canvas\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIlayer\fP The layer index to compose from\&.
+.br
+\fIx\fP The X coordinate\&.
+.br
+\fIy\fP The Y coordinate\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The composed pixel value at the given coordinates\&.
+.RE
+.PP
+
+.SS "FixedVector< T > SystemEx\&.Drawing\&.ICanvasList< T >\&.GetPixels (int layer)"
+
+.PP
+Returns the mathematically composed pixel buffer for the specified layer index\&. This canvas system is purely mathematical and does not perform real drawing; each layer represents a deterministic transformation applied on top of the layers beneath it\&. Layer index semantics: 
+.PD 0
+.IP "\(bu" 2
+\fRlayer = Length\fP — Returns the fully composed pixel buffer of this canvas, including all layers that have been added\&. This represents the final accumulated state of the entire layered canvas\&.   
+.IP "\(bu" 2
+\fRlayer = N\fP — Returns the pixel buffer resulting from combining all layers from \fRN\fP down to \fR1\fP, in order\&. The returned buffer reflects the mathematical accumulation of transformations up to the specified layer index, starting from that layer and folding downward into the base canvas\&.   
+.PP
+
+.PP
+Example: If the canvas contains 10 layers, calling \fRGetPixels(10)\fP produces the composed buffer of layers \fR10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1\fP\&. No rendering is performed; the result is computed entirely through deterministic layer composition rules\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIlayer\fP The layer index to compose from\&. \fRLength\fP returns the complete final canvas; values greater than zero return the accumulated mathematical result of all layers from the specified index down to the base canvas\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+An \fBFixedVector<T>\fP containing the composed pixel data for the requested layer range\&. 
+.RE
+.PP
+
+.SS "bool SystemEx\&.Drawing\&.ICanvasList< T >\&.IsShowing (int index = \fR0\fP)"
+
+.PP
+Gets the visibility state of the specified layer\&. Hidden layers do not contribute to the mathematical composition\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The layer index to query\&. \fR0\fP refers to the base canvas\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the layer is visible; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.SS "ISubCanvas< T > SystemEx\&.Drawing\&.ICanvasList< T >\&.RemoveLayer (int index)"
+
+.PP
+Removes the layer at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index of the layer to remove\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The removed layer instance\&.
+.RE
+.PP
+
+.SS "bool SystemEx\&.Drawing\&.ICanvasList< T >\&.SetShowing (bool show, int index)"
+
+.PP
+Sets the visibility state of the specified layer\&. A hidden layer does not participate in the mathematical composition when \fBGetPixels\fP is invoked\&. Layer index semantics: \fR0\fP refers to the base canvas, \fR1\fP refers to the first added layer, \fR2\fP to the second, and so on\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIshow\fP Whether the layer should be included in composition\&.
+.br
+\fIindex\fP The layer index whose visibility is being changed\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the visibility was changed; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.SS "int SystemEx\&.Drawing\&.ICanvasList< T >\&.SwapIn (int x, int y, int width, int height, ref ICanvas< T > toDraw)"
+
+.PP
+Swaps the mathematically composed region of this canvas into another canvas\&. The region defined by \fIx\fP , \fIy\fP , \fIwidth\fP , and \fIheight\fP  is computed mathematically and then written into \fItoDraw\fP \&. No drawing occurs; the operation transfers computed pixel values\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The X coordinate of the region\&.
+.br
+\fIy\fP The Y coordinate of the region\&.
+.br
+\fIwidth\fP The width of the region\&.
+.br
+\fIheight\fP The height of the region\&.
+.br
+\fItoDraw\fP The target canvas receiving the computed pixels\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of pixels swapped\&.
+.RE
+.PP
+
+.SS "int SystemEx\&.Drawing\&.ICanvasList< T >\&.SwapIn (ref ICanvas< T > toDraw)"
+
+.PP
+Swaps the entire mathematically composed canvas into another canvas\&. This transfers the full computed pixel buffer into \fItoDraw\fP \&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItoDraw\fP The target canvas receiving the composed pixel buffer\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of pixels swapped\&.
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "Map<ISubCanvas<T>, \fBBlendMode\fP> SystemEx\&.Drawing\&.ICanvasList< T >\&.Layers\fR [get]\fP"
+
+.PP
+Gets the collection of layers associated with this canvas list\&. Each layer is represented as an \fBISubCanvas<T>\fP paired with a \fBBlendMode\fP describing how the layer mathematically interacts with the layers beneath it\&. Layers do not contain rendered pixel data; they define transformation rules that are applied when the composed buffer is requested\&. 
+.PP
+Definition at line \fB180\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "ISubCanvas<T> SystemEx\&.Drawing\&.ICanvasList< T >\&.this[int index]\fR [get]\fP"
+
+.PP
+Gets the sub‑canvas at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index of the sub‑canvas to retrieve\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The sub‑canvas at the given index\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB187\fP of file \fBICanvasList\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

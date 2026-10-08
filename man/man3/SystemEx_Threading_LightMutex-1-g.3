@@ -1,0 +1,201 @@
+.TH "SystemEx.Threading.LightMutex< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.LightMutex< T > \- A lightweight non‑blocking mutex built on top of \fBLightCountingSpinlock<T>\fP\&. This mutex provides binary spinlock semantics (capacity 1) combined with strict owner‑tracking to ensure that only the thread which successfully acquired the lock may access the protected value or release the lock\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLightMutex\fP (string name='LightMutex')"
+.br
+.RI "Initializes a new instance of the \fBLightMutex<T>\fP class\&. The underlying counting spinlock is configured as a binary spinlock with a minimum capacity of 0 and a maximum capacity of 1\&. "
+.ti -1c
+.RI "override bool \fBLock\fP (\fBTimeOut\fP ms)"
+.br
+.RI "Attempts to acquire the mutex within the specified timeout\&. If the underlying binary spinlock is successfully acquired, the current thread becomes the owner of the mutex\&. "
+.ti -1c
+.RI "override void \fBUnlock\fP ()"
+.br
+.RI "Releases the mutex\&. Only the thread that owns the mutex may unlock it\&. Attempting to unlock the mutex from a non‑owner thread results in an InvalidOperationException\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBLightCountingSpinlock\fP (int minCapacity, int maxCapacity, string name='CountingSpinlock')"
+.br
+.RI "Initializes a new instance of the \fBLightCountingSpinlock<T>\fP with the specified minimum and maximum capacity\&. "
+.ti -1c
+.RI "virtual bool \fBLock\fP (int millisecondsTimeout=\-1)"
+.br
+.RI "Attempts to acquire capacity using busy‑wait atomic operations\&. "
+.ti -1c
+.RI "virtual bool \fBTryLock\fP ()"
+.br
+.RI "Attempts to acquire capacity without blocking\&. "
+.ti -1c
+.RI "virtual bool \fBWait\fP (\fBTimeOut\fP span, bool exitContext)"
+.br
+.RI "Counting spinlocks do not support wait/pulse semantics\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "override bool \fBIsHeldbyCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the current thread is the owner of the mutex\&. The mutex is considered held by the current thread only if: 
+.PD 0
+.IP "\(bu" 2
+The mutex is locked (capacity consumed) 
+.IP "\(bu" 2
+The stored owner thread ID matches the current thread ID 
+.PP
+\&. "
+.ti -1c
+.RI "override? T \fBValue\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the value protected by the mutex\&. Access is only permitted to the thread that currently owns the mutex\&. Any attempt to read or write the value from a non‑owner thread results in an UnauthorizedAccessException\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP
+.in +1c
+.ti -1c
+.RI "bool \fBHandle\fP\fR [get]\fP"
+.br
+.RI "Gets the current counter value representing available capacity\&. "
+.ti -1c
+.RI "bool \fBIsHeld\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the lock is currently saturated (no capacity left)\&. "
+.ti -1c
+.RI "virtual bool \fBIsHeldbyCurrent\fP\fR [get]\fP"
+.br
+.RI "Counting spinlocks do not track thread ownership\&. This property always returns \fRfalse\fP\&. "
+.ti -1c
+.RI "virtual bool \fBIsThreadOwnerTrackingEnabled\fP\fR [get]\fP"
+.br
+.RI "Indicates whether thread‑owner tracking is enabled\&. Counting spinlocks do not support owner tracking\&. "
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Gets the descriptive name assigned to this lock instance\&. "
+.ti -1c
+.RI "virtual ? T \fBValue\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the protected value\&. Access is permitted only when the calling thread has successfully acquired capacity\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Attributes inherited from \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP
+.in +1c
+.ti -1c
+.RI "T? \fBm_value\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A lightweight non‑blocking mutex built on top of \fBLightCountingSpinlock<T>\fP\&. This mutex provides binary spinlock semantics (capacity 1) combined with strict owner‑tracking to ensure that only the thread which successfully acquired the lock may access the protected value or release the lock\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the value protected by the mutex\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB29\fP of file \fBLightMutex\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.LightMutex< T >\&.LightMutex (string name = \fR'LightMutex'\fP)"
+
+.PP
+Initializes a new instance of the \fBLightMutex<T>\fP class\&. The underlying counting spinlock is configured as a binary spinlock with a minimum capacity of 0 and a maximum capacity of 1\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Optional name used for diagnostics or debugging\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB81\fP of file \fBLightMutex\&.cs\fP\&.
+.SS "override bool SystemEx\&.Threading\&.LightMutex< T >\&.Lock (\fBTimeOut\fP ms)\fR [virtual]\fP"
+
+.PP
+Attempts to acquire the mutex within the specified timeout\&. If the underlying binary spinlock is successfully acquired, the current thread becomes the owner of the mutex\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIms\fP Timeout in milliseconds\&. A value of -1 means infinite waiting\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the mutex was successfully acquired; otherwise, \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP\&.
+.PP
+Definition at line \fB97\fP of file \fBLightMutex\&.cs\fP\&.
+.SS "override void SystemEx\&.Threading\&.LightMutex< T >\&.Unlock ()\fR [virtual]\fP"
+
+.PP
+Releases the mutex\&. Only the thread that owns the mutex may unlock it\&. Attempting to unlock the mutex from a non‑owner thread results in an InvalidOperationException\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fIInvalidOperationException\fP Thrown when a thread other than the owner attempts to unlock the mutex\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP\&.
+.PP
+Definition at line \fB116\fP of file \fBLightMutex\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "override bool SystemEx\&.Threading\&.LightMutex< T >\&.IsHeldbyCurrent\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the current thread is the owner of the mutex\&. The mutex is considered held by the current thread only if: 
+.PD 0
+.IP "\(bu" 2
+The mutex is locked (capacity consumed) 
+.IP "\(bu" 2
+The stored owner thread ID matches the current thread ID 
+.PP
+\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.PP
+Definition at line \fB44\fP of file \fBLightMutex\&.cs\fP\&.
+.SS "override? T SystemEx\&.Threading\&.LightMutex< T >\&.Value\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the value protected by the mutex\&. Access is only permitted to the thread that currently owns the mutex\&. Any attempt to read or write the value from a non‑owner thread results in an UnauthorizedAccessException\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fIUnauthorizedAccessException\fP Thrown when the current thread does not own the mutex\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB60\fP of file \fBLightMutex\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

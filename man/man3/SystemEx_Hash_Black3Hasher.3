@@ -1,0 +1,104 @@
+.TH "SystemEx.Hash.Black3Hasher" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Hash.Black3Hasher \- Public BLAKE3 hasher implementation used by the \fBSystemEx\fP hashing subsystem\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Hash\&.IHash\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBlack3Hasher\fP (\fBEndian\fP endian, byte[] IV)"
+.br
+.RI "Initializes a new BLAKE3 hasher with the given endian mode and key\&. "
+.ti -1c
+.RI "\fBHash32\fP \fBCompute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes the BLAKE3 hash of the given input\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes the BLAKE3 hash of the given input\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Public BLAKE3 hasher implementation used by the \fBSystemEx\fP hashing subsystem\&. 
+
+\fBBlack3Hasher\fP is a high‑level wrapper around the internal BLAKE3 chunk and tree‑hashing engine\&. It supports keyed hashing, endian‑aware output conversion, and integrates with the \fBSystemEx\fP attribute‑driven hashing model via \fBHashAlgorithmAttribute\fP\&. 
+
+.PP
+Unlike simple one‑shot hash functions, this hasher drives the full BLAKE3 state machine: chunk accumulation, compression, chaining‑value propagation, and finalization\&. It produces stable 32‑bit and 64‑bit hash values suitable for identifiers, lightweight integrity checks, or general hashing tasks\&. 
+.PP
+Definition at line \fB44\fP of file \fBBlack3Hasher\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Hash\&.Black3Hasher\&.Black3Hasher (\fBEndian\fP endian, byte[] IV)"
+
+.PP
+Initializes a new BLAKE3 hasher with the given endian mode and key\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP \fBEndian\fP mode for output conversion\&.
+.br
+\fIIV\fP Key or initialization vector\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB60\fP of file \fBBlack3Hasher\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBHash32\fP SystemEx\&.Hash\&.Black3Hasher\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes the BLAKE3 hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed BLAKE3 hash as a \fBHash32\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB71\fP of file \fBBlack3Hasher\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.Black3Hasher\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes the BLAKE3 hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed BLAKE3 hash as a \fBHash64\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB90\fP of file \fBBlack3Hasher\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

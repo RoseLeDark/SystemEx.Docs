@@ -1,0 +1,324 @@
+.TH "SystemEx.AI.WebAIModel" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI.WebAIModel \- Provides a basic implementation of a web‑based \fBAI\fP model wrapper\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBSetAPIKey\fP (string key)"
+.br
+.RI "Sets the API key used for authenticated backend access\&. 
+.br
+ This value is stored as a configuration parameter and may be used by the backend during request construction\&. "
+.ti -1c
+.RI "bool \fBSetMaxTokens\fP (int value)"
+.br
+.RI "Sets the maximum number of tokens the backend may generate\&. "
+.ti -1c
+.RI "bool \fBSetTemperatur\fP (float value)"
+.br
+.RI "Sets the sampling temperature used by the backend\&. 
+.br
+ The value is clamped to the range [0\&.0, 2\&.0]\&. "
+.ti -1c
+.RI "bool \fBSetTopP\fP (float value)"
+.br
+.RI "Sets the nucleus‑sampling parameter \fRtop‑p\fP\&. 
+.br
+ The value is clamped to the range [0\&.0, 1\&.0]\&. "
+.ti -1c
+.RI "bool \fBSetURL\fP (string strURL)"
+.br
+.RI "Updates the backend endpoint URL used for model execution\&. "
+.ti -1c
+.RI "bool \fBTryChangeModel\fP (string command)"
+.br
+.RI "Attempts to change the backend model by parsing a command of the form \fR"chg_model &lt;modelName&gt;"\fP\&. 
+.br
+ If the command is valid, the internal Model\&.ModelName property is updated\&. "
+.ti -1c
+.RI "\fBWebAIModel\fP (string strURL, string stringModelName, bool FreeAPI=true)"
+.br
+.RI "Initializes a new web‑based \fBAI\fP model using the specified endpoint URL and model identifier\&. 
+.br
+ Default configuration values are applied to ensure consistent behavior across backends, including JSON output formatting and disabled streaming\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP
+.in +1c
+.ti -1c
+.RI "bool \fBAddConfig\fP (string key, object value)"
+.br
+.RI "Adds or updates a configuration value\&. "
+.ti -1c
+.RI "bool \fBAddTool\fP (IModelTool< T > tool)"
+.br
+.RI "Registers a tool with the backend\&. "
+.ti -1c
+.RI "bool \fBGetConfigValue\fP (string key, ref object value)"
+.br
+.RI "Retrieves a configuration value\&. "
+.ti -1c
+.RI "bool \fBHasTool\fP (string toolName)"
+.br
+.RI "Checks whether a tool is registered\&. "
+.ti -1c
+.RI "bool \fBHaveCap\fP (\fBBackendCapabilities\fP pCapabilities)"
+.br
+.RI "Checks whether the model has a specific capability\&. "
+.ti -1c
+.RI "bool \fBInitialization\fP (Map< string, object > configuration)"
+.br
+.RI "Initializes the model using the provided configuration and set the environment data automatic\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP Backend‑specific configuration values (API keys, URLs, model parameters, etc\&.)\&. 
+.RE
+.PP
+ "
+.ti -1c
+.RI "bool \fBInitialization\fP (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+.br
+.RI "Initializes the model using the provided configuration and environment data\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP Backend‑specific configuration values (API keys, URLs, model parameters, etc\&.)\&. 
+.br
+\fIenvironment\fP Environment information describing the client machine (OS, hardware, paths, runtime)\&. 
+.RE
+.PP
+ "
+.ti -1c
+.RI "\fBModel\fP (string name, string strModelName, string strPrompt, IModelBackend< T, TTOOL > backend)"
+.br
+.RI "Creates a new model instance with default capability, configuration, state, and environment maps\&. "
+.ti -1c
+.RI "void \fBRelease\fP ()"
+.br
+.RI "Finalizes backend execution\&. "
+.ti -1c
+.RI "bool \fBRemoveTool\fP (string toolName)"
+.br
+.RI "Removes a tool from the backend\&. "
+.ti -1c
+.RI "Task< IModelResult< T > > \fBRunAsync\fP (IModelPromp< T > input)"
+.br
+.RI "Executes the model asynchronously using the backend\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Properties inherited from \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP
+.in +1c
+.ti -1c
+.RI "IModelBackend< T, TTOOL > \fBBackend\fP\fR [get]\fP"
+.br
+.RI "\fBBackend\fP responsible for executing model requests\&. "
+.ti -1c
+.RI "CancellationToken? \fBCancel\fP\fR [get, set]\fP"
+.br
+.RI "Optional cancellation token used to cancel long‑running operations\&. "
+.ti -1c
+.RI "Map< string, object > \fBConfiguration\fP\fR [get]\fP"
+.br
+.RI "Configuration map containing runtime settings\&. "
+.ti -1c
+.RI "Map< \fBEnvironment\fP, object > \fBEnvironment\fP\fR [get, protected set]\fP"
+.br
+.RI "The Environment\&. "
+.ti -1c
+.RI "string \fBModelName\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the identifier of the \fBAI\fP model used by the backend\&. "
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Gets the logical name of this model instance\&. "
+.ti -1c
+.RI "Map< string, object > \fBState\fP\fR [get]\fP"
+.br
+.RI "State map used for dynamic runtime information\&. "
+.ti -1c
+.RI "string \fBSystemPrompt\fP\fR [get, set]\fP"
+.br
+.RI "Gets the system prompt used by the model\&. This is typically a static instruction or initialization text\&. "
+.ti -1c
+.RI "bool \fBthis[BackendCapabilities capability]\fP\fR [get]\fP"
+.br
+.RI "Checks whether a capability exists in the capability map\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP
+.in +1c
+.ti -1c
+.RI "bool \fBthis[BackendCapabilities capabilities]\fP\fR [get]\fP"
+.br
+.RI "Indexer that checks whether the model supports a specific backend capability\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a basic implementation of a web‑based \fBAI\fP model wrapper\&. 
+
+\fBWebAIModel\fP integrates a remote HTTP‑driven backend (\fBWebAIBackend<T>\fP) with the generic \fBModel<TPrompt, TResult>\fP abstraction\&. 
+.br
+ It configures default runtime parameters, establishes the backend endpoint, and exposes convenience methods for adjusting model‑specific settings such as temperature, token limits, sampling parameters, and API keys\&. 
+
+.PP
+This class serves as a lightweight foundation for connecting external web‑hosted \fBAI\fP services to the \fBSystemEx\fP \fBAI\fP pipeline\&. 
+.PP
+Definition at line \fB43\fP of file \fBWebAIModel\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.AI\&.WebAIModel\&.WebAIModel (string strURL, string stringModelName, bool FreeAPI = \fRtrue\fP)"
+
+.PP
+Initializes a new web‑based \fBAI\fP model using the specified endpoint URL and model identifier\&. 
+.br
+ Default configuration values are applied to ensure consistent behavior across backends, including JSON output formatting and disabled streaming\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstrURL\fP The remote backend endpoint URL\&.
+.br
+\fIstringModelName\fP The model identifier used by the backend\&.
+.br
+\fIFreeAPI\fP Indicates whether the backend is accessed without authentication or API‑key requirements\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB56\fP of file \fBWebAIModel\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.AI\&.WebAIModel\&.SetAPIKey (string key)"
+
+.PP
+Sets the API key used for authenticated backend access\&. 
+.br
+ This value is stored as a configuration parameter and may be used by the backend during request construction\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The API key string\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the configuration value was applied; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB153\fP of file \fBWebAIModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.WebAIModel\&.SetMaxTokens (int value)"
+
+.PP
+Sets the maximum number of tokens the backend may generate\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The token limit\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the configuration value was applied; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB119\fP of file \fBWebAIModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.WebAIModel\&.SetTemperatur (float value)"
+
+.PP
+Sets the sampling temperature used by the backend\&. 
+.br
+ The value is clamped to the range [0\&.0, 2\&.0]\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The desired temperature\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the configuration value was applied; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB108\fP of file \fBWebAIModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.WebAIModel\&.SetTopP (float value)"
+
+.PP
+Sets the nucleus‑sampling parameter \fRtop‑p\fP\&. 
+.br
+ The value is clamped to the range [0\&.0, 1\&.0]\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The top‑p sampling value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the configuration value was applied; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB130\fP of file \fBWebAIModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.WebAIModel\&.SetURL (string strURL)"
+
+.PP
+Updates the backend endpoint URL used for model execution\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstrURL\fP The new backend URL\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the configuration value was applied; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB141\fP of file \fBWebAIModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.WebAIModel\&.TryChangeModel (string command)"
+
+.PP
+Attempts to change the backend model by parsing a command of the form \fR"chg_model &lt;modelName&gt;"\fP\&. 
+.br
+ If the command is valid, the internal Model\&.ModelName property is updated\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcommand\fP The command string containing the new model name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the model name was successfully changed; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB86\fP of file \fBWebAIModel\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

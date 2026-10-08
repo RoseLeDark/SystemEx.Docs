@@ -1,19 +1,15 @@
 var searchData=
 [
-  ['maintainer_0',['Maintainer',['../d8/d9a/a02447.html#maintainer',1,'Maintainer'],['../d3/d27/a02453.html#primary-maintainer',1,'Primary Maintainer']]],
-  ['maintainer_20note_1',['🧩 Maintainer Note',['../d3/d6c/a02446.html#autotoc_md-maintainer-note',1,'']]],
-  ['maintainers_2',['Maintainers',['../d3/d27/a02453.html',1,'']]],
-  ['maintains_20systemex_3',['Who maintains SystemEx?',['../da/d74/a02451.html#who-maintains-systemex',1,'']]],
-  ['major_20changes_20first_4',['3.3 Discuss major changes first',['../dc/d4e/a02449.html#autotoc_md33-discuss-major-changes-first',1,'']]],
-  ['major_20documentation_20milestone_5',['Major Documentation Milestone',['../d0/dbb/a02448.html#major-documentation-milestone',1,'']]],
-  ['manual_6',['Manual',['../index.html#manual',1,'']]],
-  ['many_20numeric_20types_7',['Why are there so many numeric types?',['../da/d74/a02451.html#why-are-there-so-many-numeric-types',1,'']]],
-  ['matrix_20types_8',['Matrix Types',['../index.html#matrix-types',1,'']]],
-  ['might_20responses_20be_20delayed_9',['Why might responses be delayed?',['../da/d74/a02451.html#why-might-responses-be-delayed',1,'']]],
-  ['migration_10',['Notes / Migration',['../d0/dbb/a02448.html#notes--migration',1,'']]],
-  ['milestone_11',['Major Documentation Milestone',['../d0/dbb/a02448.html#major-documentation-milestone',1,'']]],
-  ['model_12',['Model',['../index.html#autotoc_md-systemexcollectionsmodel',1,'🧬 SystemEx.Collections.Model'],['../d3/d6c/a02446.html#systemexcollectionsmodel',1,'SystemEx.Collections.Model']]],
-  ['modular_20design_13',['3.2 Respect modular design',['../dc/d4e/a02449.html#autotoc_md32-respect-modular-design',1,'']]],
-  ['module_20overview_14',['🧩 Module Overview',['../d3/d6c/a02446.html#autotoc_md-module-overview',1,'']]],
-  ['multiple_20classes_20instead_20of_20one_20big_20list_15',['Why are the colors split into multiple classes instead of one big list?',['../da/d74/a02451.html#why-are-the-colors-split-into-multiple-classes-instead-of-one-big-list',1,'']]]
+  ['lacking_0',['Lacking',['../db/d09/a02502.html#autotoc_md-0955645rc1-31082026--internal-preview-for-10--lacking',1,'⭐ [0.95.5645‑rc1] 31.08.2026 — internal Preview for 1.0 → Lacking'],['../db/d09/a02502.html#autotoc_md-0956023-rc4-08102026--internal-preview-for-10--lacking',1,'⭐ [0.95.6023-rc4] 08.10.2026 — internal Preview for 1.0 → Lacking'],['../db/d09/a02502.html#autotoc_md05000---03072026----lacking',1,'[0.50.00] - 03.07.2026 -&amp;gt; Lacking'],['../db/d09/a02502.html#autotoc_md05505---13072026----lacking',1,'[0.55.05] - 13.07.2026 -&amp;gt; Lacking'],['../db/d09/a02502.html#autotoc_md059164-21072026---lacking',1,'[0.59.164] 21.07.2026 -&amp;gt; Lacking'],['../db/d09/a02502.html#autotoc_md070658-30072026---lacking',1,'[0.70.658] 30.07.2026 -&amp;gt; Lacking'],['../db/d09/a02502.html#autotoc_md0901785-18082026-intern-preview-for-10---lacking',1,'[0.90.1785] 18.08.2026 intern Preview for 1.0 -&amp;gt; Lacking'],['../db/d09/a02502.html#autotoc_md0921902-24082026-intern-preview-for-10---lacking',1,'[0.92.1902] 24.08.2026 intern Preview for 1.0 -&amp;gt; Lacking'],['../db/d09/a02502.html#autotoc_md0931957-25082026-intern-preview-for-10---lacking',1,'[0.93.1957] 25.08.2026 intern Preview for 1.0 -&amp;gt; Lacking'],['../db/d09/a02502.html#autotoc_md0953545rc1-28082026--internal-preview-for-10--lacking',1,'[0.95.3545‑rc1] 28.08.2026 — internal Preview for 1.0 → Lacking'],['../db/d09/a02502.html#autotoc_md0955000rc1-31082026--internal-preview-for-10--lacking',1,'[0.95.5000‑rc1] 31.08.2026 — internal Preview for 1.0 → Lacking'],['../db/d09/a02502.html#autotoc_md095xxx-26082026-intern-preview-for-10---lacking',1,'[0.95.xxx] 26.08.2026 intern Preview for 1.0 -&amp;gt; Lacking'],['../db/d09/a02502.html#codename-update-ignoring--lacking',1,'Codename Update: Ignoring → Lacking']]],
+  ['layer_1',['Layer',['../index.html#autotoc_md-systemex-base-layer',1,'🧱 SystemEx (Base Layer)'],['../d4/dad/a02500.html#systemex-base-layer',1,'SystemEx (Base Layer)']]],
+  ['license_2',['License',['../d0/dff/a02506.html',1,'⚖️ SystemEx License'],['../index.html#autotoc_md-license',1,'📝 License']]],
+  ['lightconditionvariable_3',['Why does SystemEx include LightConditionVariable?',['../d1/d94/a02505.html#why-does-systemex-include-lightconditionvariable',1,'']]],
+  ['lightcountingspinlock_4',['Why does SystemEx include LightCountingSpinlock?',['../d1/d94/a02505.html#why-does-systemex-include-lightcountingspinlock',1,'']]],
+  ['lightlock_5',['Why does SystemEx include LightLock?',['../d1/d94/a02505.html#why-does-systemex-include-lightlock',1,'']]],
+  ['lighttask_6',['Why does SystemEx include EventGroup‑based LightTask?',['../d1/d94/a02505.html#why-does-systemex-include-eventgroupbased-lighttask',1,'']]],
+  ['lightthread_7',['Why does SystemEx include LightThread?',['../d1/d94/a02505.html#why-does-systemex-include-lightthread',1,'']]],
+  ['linux_20unix_20make_8',['Linux / Unix (Make)',['../d9/de2/a02508.html#linux--unix-make',1,'']]],
+  ['list_9',['Why are the colors split into multiple classes instead of one big list?',['../d1/d94/a02505.html#why-are-the-colors-split-into-multiple-classes-instead-of-one-big-list',1,'']]],
+  ['list_20of_20predefined_20colors_10',['Where can I find a list of predefined colors?',['../d1/d94/a02505.html#where-can-i-find-a-list-of-predefined-colors',1,'']]],
+  ['locally_11',['Building Locally',['../d9/de2/a02508.html#building-locally',1,'']]]
 ];

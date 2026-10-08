@@ -1,0 +1,336 @@
+.TH "SystemEx.Threading.SmallIndex" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.SmallIndex \- Represents a thread-safe index counter that can be incremented, decremented, and compared atomically\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable, IComparable, IComparable, \fBSystemEx\&.IComparableEx< T >\fP, and IFormattable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "SmallIndex \fBAssign\fP (int value)"
+.br
+.ti -1c
+.RI "SmallIndex \fBAssign\fP (SmallIndex other)"
+.br
+.RI "Assigns the value of another index\&. "
+.ti -1c
+.RI "int IComparable< int >\&. \fBCompareTo\fP (int other)"
+.br
+.RI "Compares the index to a value\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (int other)"
+.br
+.RI "Compares the index to a value\&. "
+.ti -1c
+.RI "int IComparable< SmallIndex >\&. \fBCompareTo\fP (SmallIndex other)"
+.br
+.RI "Compares the index to another index\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (SmallIndex other)"
+.br
+.RI "Compares the index to another index\&. "
+.ti -1c
+.RI "int \fBDecrement\fP ()"
+.br
+.RI "Prefix decrement\&. "
+.ti -1c
+.RI "int \fBDecrementPost\fP ()"
+.br
+.RI "Postfix decrement\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (int other)"
+.br
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "bool \fBEquals\fP (SmallIndex other)"
+.br
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Standard override for hash code generation\&. "
+.ti -1c
+.RI "int \fBIncrement\fP ()"
+.br
+.RI "Prefix increment\&. "
+.ti -1c
+.RI "int \fBIncrementPost\fP ()"
+.br
+.RI "Postfix increment\&. "
+.ti -1c
+.RI "\fBSmallIndex\fP (int value)"
+.br
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.ti -1c
+.RI "string \fBToString\fP (string? format, IFormatProvider? formatProvider)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static implicit \fBoperator int\fP (SmallIndex i)"
+.br
+.RI "Converts the index to its underlying T value\&. "
+.ti -1c
+.RI "static implicit \fBoperator SmallIndex\fP (int value)"
+.br
+.RI "Converts a value to an index\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (SmallIndex a, SmallIndex b)"
+.br
+.RI "Compares two counters for inequality using atomic reads\&. "
+.ti -1c
+.RI "static SmallIndex \fBoperator+\fP (SmallIndex a, int value)"
+.br
+.RI "Adds a value to the counter atomically\&. "
+.ti -1c
+.RI "static SmallIndex \fBoperator++\fP (SmallIndex a)"
+.br
+.RI "Prefix increment operator (++x)\&. "
+.ti -1c
+.RI "static SmallIndex \fBoperator\-\fP (SmallIndex a, int value)"
+.br
+.RI "Subtracts a value from the counter atomically\&. "
+.ti -1c
+.RI "static SmallIndex \fBoperator\-\-\fP (SmallIndex a)"
+.br
+.RI "Prefix decrement operator (--x)\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (SmallIndex a, SmallIndex b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator<=\fP (SmallIndex a, SmallIndex b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator==\fP (SmallIndex a, SmallIndex b)"
+.br
+.RI "Compares two counters for equality using atomic reads\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (SmallIndex a, SmallIndex b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>=\fP (SmallIndex a, SmallIndex b)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsZero\fP\fR [get]\fP"
+.br
+.RI "Returns true if the index is zero\&. "
+.ti -1c
+.RI "int \fBValue\fP\fR [get, set]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a thread-safe index counter that can be incremented, decremented, and compared atomically\&. 
+.PP
+Definition at line \fB25\fP of file \fBSmallIndex\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.SmallIndex\&.SmallIndex ()"
+
+.PP
+Definition at line \fB42\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.SmallIndex\&.SmallIndex (int value)"
+
+.PP
+Definition at line \fB46\fP of file \fBSmallIndex\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "SmallIndex SystemEx\&.Threading\&.SmallIndex\&.Assign (int value)"
+Assigns a value\&. 
+.PP
+Definition at line \fB61\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "SmallIndex SystemEx\&.Threading\&.SmallIndex\&.Assign (SmallIndex other)"
+
+.PP
+Assigns the value of another index\&. 
+.PP
+Definition at line \fB53\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "int IComparable< int >\&. SystemEx\&.Threading\&.SmallIndex\&.CompareTo (int other)"
+
+.PP
+Compares the index to a value\&. 
+.PP
+Definition at line \fB150\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Threading\&.SmallIndex\&.CompareTo (int other)"
+
+.PP
+Compares the index to a value\&. 
+.PP
+Definition at line \fB143\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "int IComparable< SmallIndex >\&. SystemEx\&.Threading\&.SmallIndex\&.CompareTo (SmallIndex other)"
+
+.PP
+Compares the index to another index\&. 
+.PP
+Definition at line \fB136\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Threading\&.SmallIndex\&.CompareTo (SmallIndex other)"
+
+.PP
+Compares the index to another index\&. 
+.PP
+Definition at line \fB129\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "int SystemEx\&.Threading\&.SmallIndex\&.Decrement ()"
+
+.PP
+Prefix decrement\&. 
+.PP
+Definition at line \fB75\fP of file \fBSmallIndex\&.cs\fP\&.
+.PP
+Referenced by \fBoperator\-\-()\fP\&.
+.SS "int SystemEx\&.Threading\&.SmallIndex\&.DecrementPost ()"
+
+.PP
+Postfix decrement\&. 
+.PP
+Definition at line \fB87\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.SmallIndex\&.Equals (int other)"
+
+.PP
+
+.PP
+Definition at line \fB112\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "override bool SystemEx\&.Threading\&.SmallIndex\&.Equals (object? obj)"
+Standard override for equality comparison\&. 
+.PP
+Definition at line \fB93\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.SmallIndex\&.Equals (SmallIndex other)"
+
+.PP
+
+.PP
+Definition at line \fB107\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "override int SystemEx\&.Threading\&.SmallIndex\&.GetHashCode ()"
+
+.PP
+Standard override for hash code generation\&. 
+.PP
+Definition at line \fB102\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "int SystemEx\&.Threading\&.SmallIndex\&.Increment ()"
+
+.PP
+Prefix increment\&. 
+.PP
+Definition at line \fB69\fP of file \fBSmallIndex\&.cs\fP\&.
+.PP
+Referenced by \fBoperator++()\fP\&.
+.SS "int SystemEx\&.Threading\&.SmallIndex\&.IncrementPost ()"
+
+.PP
+Postfix increment\&. 
+.PP
+Definition at line \fB81\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "implicit SystemEx\&.Threading\&.SmallIndex\&.operator int (SmallIndex i)\fR [static]\fP"
+
+.PP
+Converts the index to its underlying T value\&. 
+.PP
+Definition at line \fB158\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "implicit SystemEx\&.Threading\&.SmallIndex\&.operator SmallIndex (int value)\fR [static]\fP"
+
+.PP
+Converts a value to an index\&. 
+.PP
+Definition at line \fB163\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.SmallIndex\&.operator!= (SmallIndex a, SmallIndex b)\fR [static]\fP"
+
+.PP
+Compares two counters for inequality using atomic reads\&. 
+.PP
+Definition at line \fB205\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "SmallIndex SystemEx\&.Threading\&.SmallIndex\&.operator+ (SmallIndex a, int value)\fR [static]\fP"
+
+.PP
+Adds a value to the counter atomically\&. 
+.PP
+Definition at line \fB183\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "SmallIndex SystemEx\&.Threading\&.SmallIndex\&.operator++ (SmallIndex a)\fR [static]\fP"
+
+.PP
+Prefix increment operator (++x)\&. 
+.PP
+Definition at line \fB175\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "SmallIndex SystemEx\&.Threading\&.SmallIndex\&.operator\- (SmallIndex a, int value)\fR [static]\fP"
+
+.PP
+Subtracts a value from the counter atomically\&. 
+.PP
+Definition at line \fB191\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "SmallIndex SystemEx\&.Threading\&.SmallIndex\&.operator\-\- (SmallIndex a)\fR [static]\fP"
+
+.PP
+Prefix decrement operator (--x)\&. 
+.PP
+Definition at line \fB167\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.SmallIndex\&.operator< (SmallIndex a, SmallIndex b)\fR [static]\fP"
+
+.PP
+Definition at line \fB210\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.SmallIndex\&.operator<= (SmallIndex a, SmallIndex b)\fR [static]\fP"
+
+.PP
+Definition at line \fB218\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.SmallIndex\&.operator== (SmallIndex a, SmallIndex b)\fR [static]\fP"
+
+.PP
+Compares two counters for equality using atomic reads\&. 
+.PP
+Definition at line \fB198\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.SmallIndex\&.operator> (SmallIndex a, SmallIndex b)\fR [static]\fP"
+
+.PP
+Definition at line \fB214\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.SmallIndex\&.operator>= (SmallIndex a, SmallIndex b)\fR [static]\fP"
+
+.PP
+Definition at line \fB222\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "override string SystemEx\&.Threading\&.SmallIndex\&.ToString ()"
+
+.PP
+
+.PP
+Definition at line \fB116\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "string SystemEx\&.Threading\&.SmallIndex\&.ToString (string? format, IFormatProvider? formatProvider)"
+
+.PP
+
+.PP
+Definition at line \fB121\fP of file \fBSmallIndex\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.SmallIndex\&.IsZero\fR [get]\fP"
+
+.PP
+Returns true if the index is zero\&. 
+.PP
+Definition at line \fB35\fP of file \fBSmallIndex\&.cs\fP\&.
+.SS "int SystemEx\&.Threading\&.SmallIndex\&.Value\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Definition at line \fB37\fP of file \fBSmallIndex\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

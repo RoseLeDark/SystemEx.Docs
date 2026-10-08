@@ -1,0 +1,1023 @@
+.TH "SystemEx.Numeric.Half16b" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Half16b \- This value type represents A \fBHalf16b\fP value\&. See https://cloud.google.com/blog/products/ai-machine-learning/bfloat16-the-secret-to-high-performance-on-cloud-tpus for details,\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Numeric\&.IHalf< TSelf >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (\fBHalf16b\fP b)"
+.br
+.RI "Compares this instance with another \fBHalf16\fP and returns a \fBCompareResult\fP describing the relationship\&. "
+.ti -1c
+.RI "int IComparable< \fBHalf16b\fP >\&. \fBCompareTo\fP (\fBHalf16b\fP other)"
+.br
+.RI "Explicit IComparable<T> implementation that forwards to the extended \fBCompareTo(Half16b)\fP method and casts the \fBCompareResult\fP to int\&. "
+.ti -1c
+.RI "int \fBCompareTo\fP (object? obj)"
+.br
+.RI "Compares this instance with another object and returns an integer indicating the relative order, following the standard IComparable contract\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBHalf16b\fP other)"
+.br
+.RI "Determines whether this instance is equal to another \fBHalf16\fP value, using the same semantics as the \fBoperator ==(Half16b,Half16b)\fP\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Returns a hash code for this instance\&. "
+.ti -1c
+.RI "\fBHalf16b\fP (Half16b other)"
+.br
+.ti -1c
+.RI "\fBHalf16b\fP (ushort sign, ushort exponent, ushort mantissa)"
+.br
+.RI "Creates a \fBHalf16b\fP from explicit sign, exponent, and mantissa fields\&. "
+.ti -1c
+.RI "\fBHalf16b\fP (ushort value)"
+.br
+.ti -1c
+.RI "FixedVector< byte > \fBToBytes\fP ()"
+.br
+.RI "Converts this instance into a deterministic byte array suitable for hashing, serialization, or low‑level processing\&. "
+.ti -1c
+.RI "byte[] \fBToBytes\fP (\fBEndian\fP endian)"
+.br
+.RI "Converts the value into a byte array using the specified endianness\&. "
+.ti -1c
+.RI "void \fBToBytes\fP (ref byte[] destination, long offset, \fBEndian\fP endian)"
+.br
+.RI "Writes the binary representation of the current instance into an existing \fIdestination\fP  buffer at the specified \fIoffset\fP \&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBHalf16b\fP \fBAbs\fP (\fBHalf16b\fP x)"
+.br
+.ti -1c
+.RI "static \fBHalf16b\fP \fBAdd\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.ti -1c
+.RI "static \fBHalf16b\fP \fBCeil\fP (\fBHalf16b\fP x)"
+.br
+.ti -1c
+.RI "static \fBHalf16b\fP \fBClamp\fP (\fBHalf16b\fP x, \fBHalf16b\fP min, \fBHalf16b\fP max)"
+.br
+.ti -1c
+.RI "static \fBHalf16b\fP \fBDiv\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.ti -1c
+.RI "static \fBHalf16b\fP \fBFloor\fP (\fBHalf16b\fP x)"
+.br
+.ti -1c
+.RI "static \fBHalf16b\fP \fBFromBytes\fP (byte[] input, long offsets, \fBEndian\fP endian)"
+.br
+.RI "Constructs a \fBHalf16\fP from a byte array\&. "
+.ti -1c
+.RI "static bool \fBIsFinite\fP (\fBHalf16b\fP x)"
+.br
+.ti -1c
+.RI "static bool \fBIsInfinity\fP (\fBHalf16b\fP val)"
+.br
+.ti -1c
+.RI "static bool \fBIsInteger\fP (\fBHalf16b\fP x)"
+.br
+.ti -1c
+.RI "static bool \fBIsNaN\fP (\fBHalf16b\fP val)"
+.br
+.RI "Returns true if the value is a NaN\&. "
+.ti -1c
+.RI "static bool \fBIsNegative\fP (\fBHalf16b\fP val)"
+.br
+.ti -1c
+.RI "static bool \fBIsNormal\fP (\fBHalf16b\fP x)"
+.br
+.ti -1c
+.RI "static bool \fBIsSubnormal\fP (\fBHalf16b\fP x)"
+.br
+.ti -1c
+.RI "static bool \fBIsZero\fP (\fBHalf16b\fP value)"
+.br
+.ti -1c
+.RI "static \fBHalf16b\fP \fBMax\fP (\fBHalf16b\fP x, \fBHalf16b\fP y)"
+.br
+.RI "Returns the larger of two \fBHalf16\fP values\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBMin\fP (\fBHalf16b\fP x, \fBHalf16b\fP y)"
+.br
+.RI "Returns the smaller of two \fBHalf16\fP values\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBMul\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.ti -1c
+.RI "static \fBHalf16b\fP \fBNegate\fP (\fBHalf16b\fP h)"
+.br
+.ti -1c
+.RI "static \fBHalf16b\fP \fBNormalize\fP (ushort sign, int exp, uint mant, ushort hiddenbit)"
+.br
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Inequality operator\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBoperator*\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Multiplication operator\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBoperator+\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Addition operator\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBoperator++\fP (\fBHalf16b\fP a)"
+.br
+.RI "Increment operator\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBoperator\-\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Subtraction operator\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBoperator\-\-\fP (\fBHalf16b\fP a)"
+.br
+.RI "Decrement operator\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBoperator/\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Division operator\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Less‑than comparison operator with full IEEE‑754 semantics\&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Less‑than‑or‑equal comparison operator\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Equality operator with zero handling\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Greater‑than operator\&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBHalf16b\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Greater‑than‑or‑equal operator\&. "
+.ti -1c
+.RI "static uint \fBRoundToNearestEven\fP (uint mant)"
+.br
+.ti -1c
+.RI "static \fBHalf16b\fP \fBSignum\fP (\fBHalf16b\fP x)"
+.br
+.ti -1c
+.RI "static \fBHalf16b\fP \fBTrunc\fP (\fBHalf16b\fP x)"
+.br
+.in -1c
+
+Static Public Member Functions inherited from \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP
+.in +1c
+.ti -1c
+.RI "static TSelf \fBAbs\fP (TSelf value)"
+.br
+.RI "Returns the absolute value of the given floating‑point number\&. "
+.ti -1c
+.RI "static TSelf \fBAdd\fP (TSelf a, TSelf b)"
+.br
+.RI "Adds two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBCeil\fP (TSelf value)"
+.br
+.RI "Returns the smallest integer greater than or equal to the value\&. "
+.ti -1c
+.RI "static TSelf \fBClamp\fP (TSelf x, TSelf min, TSelf max)"
+.br
+.RI "Clamps the value to the inclusive range [min, max]\&. "
+.ti -1c
+.RI "static TSelf \fBDiv\fP (TSelf a, TSelf b)"
+.br
+.RI "Divides one floating‑point value by another\&. "
+.ti -1c
+.RI "static TSelf \fBFloor\fP (TSelf value)"
+.br
+.RI "Returns the largest integer less than or equal to the value\&. "
+.ti -1c
+.RI "static bool \fBIsFinite\fP (TSelf value)"
+.br
+.RI "Determines whether the value is finite (not NaN or infinity)\&. "
+.ti -1c
+.RI "static bool \fBIsInfinity\fP (TSelf value)"
+.br
+.RI "Determines whether the value is positive or negative infinity\&. "
+.ti -1c
+.RI "static bool \fBIsInteger\fP (TSelf value)"
+.br
+.RI "Determines whether the value represents an integer (mantissa zero)\&. "
+.ti -1c
+.RI "static bool \fBIsNaN\fP (TSelf value)"
+.br
+.RI "Determines whether the value is a NaN (not‑a‑number)\&. "
+.ti -1c
+.RI "static bool \fBIsNegative\fP (TSelf value)"
+.br
+.RI "Determines whether the value is negative\&. "
+.ti -1c
+.RI "static bool \fBIsNormal\fP (TSelf value)"
+.br
+.RI "Determines whether the value is a normalized floating‑point number\&. "
+.ti -1c
+.RI "static bool \fBIsSubnormal\fP (TSelf value)"
+.br
+.RI "Determines whether the value is subnormal (exponent field zero but mantissa non‑zero)\&. "
+.ti -1c
+.RI "static bool \fBIsZero\fP (TSelf value)"
+.br
+.RI "Determines whether the value is zero (positive or negative)\&. "
+.ti -1c
+.RI "static TSelf \fBMax\fP (TSelf a, TSelf b)"
+.br
+.RI "Returns the larger of two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBMin\fP (TSelf a, TSelf b)"
+.br
+.RI "Returns the smaller of two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBMul\fP (TSelf a, TSelf b)"
+.br
+.RI "Multiplies two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBNegate\fP (TSelf value)"
+.br
+.RI "Returns the negation of the given floating‑point number\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether two floating‑point values are not equal\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is strictly less than \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is less than or equal to \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether two floating‑point values are equal\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is strictly greater than \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is greater than or equal to \fIb\fP \&. "
+.ti -1c
+.RI "static TSelf \fBSignum\fP (TSelf value)"
+.br
+.RI "Returns the sign of the value: −1, 0, or +1\&. "
+.ti -1c
+.RI "static TSelf \fBTrunc\fP (TSelf value)"
+.br
+.RI "Truncates the fractional part of the value\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "static \fBHalf16b\fP \fBE\fP\fR [get]\fP"
+.br
+.RI "Euler's number (approximation)\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBEpsilon\fP\fR [get]\fP"
+.br
+.RI "Represents the smallest positive increment representable by the format\&. "
+.ti -1c
+.RI "ushort \fBExponent\fP\fR [get]\fP"
+.br
+.RI "Gets the exponent field as stored in the encoded representation\&. "
+.ti -1c
+.RI "ushort \fBExponentBias\fP\fR [get]\fP"
+.br
+.RI "Exponent bias applied to the exponent field\&. Defines the offset used when converting between encoded exponent and real exponent\&. "
+.ti -1c
+.RI "ushort \fBExponentBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the exponent field (bfloat16 uses 8)\&. "
+.ti -1c
+.RI "ushort \fBHiddenBit\fP\fR [get]\fP"
+.br
+.RI "Gets the hidden bit (implicit leading mantissa bit)\&. For IEEE‑like formats this is typically \fR1\fP for normalized numbers and \fR0\fP for subnormals\&. "
+.ti -1c
+.RI "ushort \fBMantissa\fP\fR [get]\fP"
+.br
+.RI "Gets the mantissa (fraction) field as stored in the encoded representation\&. "
+.ti -1c
+.RI "ushort \fBMantissaBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the mantissa (fraction) field (7 bits)\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBMaxValue\fP\fR [get]\fP"
+.br
+.RI "Largest representable positive value\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBMinValue\fP\fR [get]\fP"
+.br
+.RI "Smallest representable negative value\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBNaN\fP\fR [get]\fP"
+.br
+.RI "Represents a quiet NaN value\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBNaN2\fP\fR [get]\fP"
+.br
+.RI "Alternative NaN encoding\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBNegativeInfinity\fP\fR [get]\fP"
+.br
+.RI "Represents negative infinity\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBNegativeOne\fP\fR [get]\fP"
+.br
+.RI "Represents the floating‑point value negative one\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBNegativeZero\fP\fR [get]\fP"
+.br
+.RI "Represents negative zero (sign bit set, exponent and mantissa zero)\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBOne\fP\fR [get]\fP"
+.br
+.RI "Represents the floating‑point value one\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBPi\fP\fR [get]\fP"
+.br
+.RI "π (approximation)\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBPositiveInfinity\fP\fR [get]\fP"
+.br
+.RI "Represents positive infinity\&. "
+.ti -1c
+.RI "bool \fBSign\fP\fR [get]\fP"
+.br
+.RI "Gets the sign bit\&. \fRtrue\fP indicates a negative value\&. "
+.ti -1c
+.RI "ushort \fBSignBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the sign field (always 1)\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBTau\fP\fR [get]\fP"
+.br
+.RI "τ = 2π (approximation)\&. "
+.ti -1c
+.RI "ushort \fBToBase\fP\fR [get]\fP"
+.br
+.RI "Returns the raw 16‑bit representation\&. "
+.ti -1c
+.RI "ushort \fBTotalBits\fP\fR [get]\fP"
+.br
+.RI "Total number of bits in the floating‑point representation\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBZero\fP\fR [get]\fP"
+.br
+.RI "Represents the floating‑point value zero\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+This value type represents A \fBHalf16b\fP value\&. See https://cloud.google.com/blog/products/ai-machine-learning/bfloat16-the-secret-to-high-performance-on-cloud-tpus for details,\&. 
+.PP
+Definition at line \fB33\fP of file \fBHalf16b\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.Half16b\&.Half16b ()"
+
+.PP
+Definition at line \fB120\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Half16b\&.Half16b (ushort value)"
+
+.PP
+Definition at line \fB124\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Half16b\&.Half16b (Half16b other)"
+
+.PP
+Definition at line \fB127\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Half16b\&.Half16b (ushort sign, ushort exponent, ushort mantissa)"
+
+.PP
+Creates a \fBHalf16b\fP from explicit sign, exponent, and mantissa fields\&. 
+.PP
+Definition at line \fB134\fP of file \fBHalf16b\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Abs (\fBHalf16b\fP x)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB219\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.Vec2hb\&.NearEqual()\fP, \fBSystemEx\&.Numeric\&.Vec3hb\&.NearEqual()\fP, and \fBSystemEx\&.Numeric\&.Vec4hb\&.NearEqual()\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Add (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB224\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Ceil (\fBHalf16b\fP x)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB278\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Clamp (\fBHalf16b\fP x, \fBHalf16b\fP min, \fBHalf16b\fP max)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB414\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Numeric\&.Half16b\&.CompareTo (\fBHalf16b\fP b)"
+
+.PP
+Compares this instance with another \fBHalf16\fP and returns a \fBCompareResult\fP describing the relationship\&. NaN is treated as unordered: if this instance is NaN and the other is not, the result is \fBCompareResult\&.AIsSmallerB\fP to provide a deterministic ordering for sorting and data structures\&. 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIb\fP The value to compare with this instance\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBCompareResult\fP indicating whether this instance is smaller than, equal to, or larger than \fIb\fP \&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB451\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP, and \fBCompareTo()\fP\&.
+.SS "int IComparable< \fBHalf16b\fP >\&. SystemEx\&.Numeric\&.Half16b\&.CompareTo (\fBHalf16b\fP other)"
+
+.PP
+Explicit IComparable<T> implementation that forwards to the extended \fBCompareTo(Half16b)\fP method and casts the \fBCompareResult\fP to int\&. This keeps the standard \&.NET comparison API compatible while still exposing a strongly typed comparison result via \fBIComparableEx<Half16b>\fP\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A signed integer indicating the relative order\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB636\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "int SystemEx\&.Numeric\&.Half16b\&.CompareTo (object? obj)"
+
+.PP
+Compares this instance with another object and returns an integer indicating the relative order, following the standard IComparable contract\&. If \fIobj\fP  is a \fBHalf16b\fP, the comparison is delegated to \fBCompareTo(Half16b)\fP and the resulting \fBCompareResult\fP is cast to int\&. 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A signed integer indicating the relative order: negative if this instance is smaller, zero if equal, positive if larger\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIArgumentException\fP Thrown if \fIobj\fP  is not a \fBHalf16\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB617\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Div (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB299\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.Equals (\fBHalf16b\fP other)"
+
+.PP
+Determines whether this instance is equal to another \fBHalf16\fP value, using the same semantics as the \fBoperator ==(Half16b,Half16b)\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the values are equal; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB578\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.Half16b\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. The object is considered equal if it is a \fBHalf16\fP and compares equal using Equals(Half16)\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if \fIobj\fP  is a \fBHalf16\fP and equal to this instance; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB593\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Floor (\fBHalf16b\fP x)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB333\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.FromBytes (byte[] input, long offsets, \fBEndian\fP endian)\fR [static]\fP"
+
+.PP
+Constructs a \fBHalf16\fP from a byte array\&. 
+.PP
+Implements \fBSystemEx\&.IByteSerializable< TSelf >\fP\&.
+.PP
+Definition at line \fB165\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "override int SystemEx\&.Numeric\&.Half16b\&.GetHashCode ()"
+
+.PP
+Returns a hash code for this instance\&. The hash is computed using HashFactory\&.Hash32<T>(T,uint) with a fixed seed\&. If the computed hash is non‑zero, it is used; otherwise the raw ushort value is hashed\&.
+
+.PP
+This ensures a deterministic, stable hash suitable for use in dictionaries, sets, and other hash‑based containers\&. 
+.PP
+Definition at line \fB563\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBGetHashCode()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.IsFinite (\fBHalf16b\fP x)\fR [static]\fP"
+
+.PP
+Definition at line \fB169\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.IsInfinity (\fBHalf16b\fP val)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB173\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBCeil()\fP, \fBDiv()\fP, \fBFloor()\fP, \fBIsInteger()\fP, \fBMul()\fP, and \fBTrunc()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.IsInteger (\fBHalf16b\fP x)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB177\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.IsNaN (\fBHalf16b\fP val)\fR [static]\fP"
+
+.PP
+Returns true if the value is a NaN\&. 
+.PP
+Definition at line \fB196\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBCeil()\fP, \fBCompareTo()\fP, \fBDiv()\fP, \fBFloor()\fP, \fBIsInteger()\fP, \fBMul()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, \fBSignum()\fP, and \fBTrunc()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.IsNegative (\fBHalf16b\fP val)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB201\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBoperator<()\fP, and \fBoperator<=()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.IsNormal (\fBHalf16b\fP x)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB205\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Random\&.NextHalf16b()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.IsSubnormal (\fBHalf16b\fP x)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB211\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.IsZero (\fBHalf16b\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB215\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBCeil()\fP, \fBDiv()\fP, \fBFloor()\fP, \fBIsInteger()\fP, \fBMul()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, and \fBSignum()\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Max (\fBHalf16b\fP x, \fBHalf16b\fP y)\fR [static]\fP"
+
+.PP
+Returns the larger of two \fBHalf16\fP values\&. 
+.PP
+Definition at line \fB113\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Min (\fBHalf16b\fP x, \fBHalf16b\fP y)\fR [static]\fP"
+
+.PP
+Returns the smaller of two \fBHalf16\fP values\&. 
+.PP
+Definition at line \fB118\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Mul (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB355\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Negate (\fBHalf16b\fP h)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB385\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Normalize (ushort sign, int exp, uint mant, ushort hiddenbit)\fR [static]\fP"
+
+.PP
+Definition at line \fB641\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.operator!= (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Inequality operator\&. 
+.PP
+Definition at line \fB520\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.operator* (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Multiplication operator\&. 
+.PP
+Definition at line \fB535\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.operator+ (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Addition operator\&. 
+.PP
+Definition at line \fB525\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.operator++ (\fBHalf16b\fP a)\fR [static]\fP"
+
+.PP
+Increment operator\&. 
+.PP
+Definition at line \fB545\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.operator\- (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Subtraction operator\&. 
+.PP
+Definition at line \fB530\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.operator\-\- (\fBHalf16b\fP a)\fR [static]\fP"
+
+.PP
+Decrement operator\&. 
+.PP
+Definition at line \fB550\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.operator/ (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Division operator\&. 
+.PP
+Definition at line \fB540\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.operator< (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Less‑than comparison operator with full IEEE‑754 semantics\&. 
+.PP
+Definition at line \fB467\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.operator<= (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Less‑than‑or‑equal comparison operator\&. 
+.PP
+Definition at line \fB484\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.operator== (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Equality operator with zero handling\&. 
+.PP
+Definition at line \fB501\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.operator> (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Greater‑than operator\&. 
+.PP
+Definition at line \fB510\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.operator>= (\fBHalf16b\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Greater‑than‑or‑equal operator\&. 
+.PP
+Definition at line \fB515\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Half16b\&.RoundToNearestEven (uint mant)\fR [static]\fP"
+
+.PP
+Definition at line \fB660\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Signum (\fBHalf16b\fP x)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB390\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.Half16b\&.ToBytes ()"
+
+.PP
+Converts this instance into a deterministic byte array suitable for hashing, serialization, or low‑level processing\&. The returned array contains the raw 16‑bit representation of the value in the system's native endianness, wrapped in a \fBSystemEx\fP \fBFixedVector<T>\fP\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+A new \fBFixedVector<T>\fP containing the raw bytes of this \fBHalf16\fP value\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.PP
+Definition at line \fB432\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "byte[] SystemEx\&.Numeric\&.Half16b\&.ToBytes (\fBEndian\fP endian)"
+
+.PP
+Converts the value into a byte array using the specified endianness\&. 
+.PP
+Implements \fBSystemEx\&.IByteSerializable< TSelf >\fP\&.
+.PP
+Definition at line \fB146\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Half16b\&.ToBytes (ref byte[] destination, long offset, \fBEndian\fP endian)"
+
+.PP
+Writes the binary representation of the current instance into an existing \fIdestination\fP  buffer at the specified \fIoffset\fP \&. The caller is responsible for ensuring that the buffer is large enough to hold the encoded data starting at the given offset\&. Bytes before the offset remain untouched and can contain arbitrary user data\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdestination\fP The target buffer into which the encoded value will be written\&. 
+.br
+\fIoffset\fP The position within \fIdestination\fP  where the encoded data will be written\&. For example, if \fRoffset = 100\fP, bytes \fR0\fP through \fR99\fP remain unchanged, and the encoded value begins at index \fR100\fP\&. 
+.br
+\fIendian\fP The byte order used to encode the value\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.IByteSerializable< TSelf >\fP\&.
+.PP
+Definition at line \fB149\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Trunc (\fBHalf16b\fP x)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB396\fP of file \fBHalf16b\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.E\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Euler's number (approximation)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB99\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Epsilon\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the smallest positive increment representable by the format\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB79\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "ushort SystemEx\&.Numeric\&.Half16b\&.Exponent\fR [get]\fP"
+
+.PP
+Gets the exponent field as stored in the encoded representation\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB60\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBCeil()\fP, \fBDiv()\fP, \fBFloor()\fP, \fBIsInteger()\fP, \fBIsNormal()\fP, \fBMul()\fP, \fBNegate()\fP, and \fBTrunc()\fP\&.
+.SS "ushort SystemEx\&.Numeric\&.Half16b\&.ExponentBias\fR [get]\fP"
+
+.PP
+Exponent bias applied to the exponent field\&. Defines the offset used when converting between encoded exponent and real exponent\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "ushort SystemEx\&.Numeric\&.Half16b\&.ExponentBits\fR [get]\fP"
+
+.PP
+Number of bits used for the exponent field (bfloat16 uses 8)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB44\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "ushort SystemEx\&.Numeric\&.Half16b\&.HiddenBit\fR [get]\fP"
+
+.PP
+Gets the hidden bit (implicit leading mantissa bit)\&. For IEEE‑like formats this is typically \fR1\fP for normalized numbers and \fR0\fP for subnormals\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB55\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBCeil()\fP, \fBDiv()\fP, \fBFloor()\fP, \fBIsInteger()\fP, \fBMul()\fP, and \fBTrunc()\fP\&.
+.SS "ushort SystemEx\&.Numeric\&.Half16b\&.Mantissa\fR [get]\fP"
+
+.PP
+Gets the mantissa (fraction) field as stored in the encoded representation\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB62\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBCeil()\fP, \fBDiv()\fP, \fBFloor()\fP, \fBIsInteger()\fP, \fBMul()\fP, \fBNegate()\fP, and \fBTrunc()\fP\&.
+.SS "ushort SystemEx\&.Numeric\&.Half16b\&.MantissaBits\fR [get]\fP"
+
+.PP
+Number of bits used for the mantissa (fraction) field (7 bits)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB48\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBHalf16b()\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.MaxValue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Largest representable positive value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB94\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.MinValue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Smallest representable negative value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB89\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Random\&.NextHalf16b()\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.NaN\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents a quiet NaN value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB76\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBDiv()\fP, \fBMul()\fP, and \fBSignum()\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.NaN2\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Alternative NaN encoding\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB84\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.NegativeInfinity\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents negative infinity\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB74\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.NegativeOne\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the floating‑point value negative one\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB68\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBFloor()\fP, and \fBSignum()\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.NegativeZero\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents negative zero (sign bit set, exponent and mantissa zero)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB70\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.One\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the floating‑point value one\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB66\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Random\&.NextHalf16b()\fP, \fBoperator++()\fP, and \fBoperator\-\-()\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Pi\fR [static]\fP, \fR [get]\fP"
+
+.PP
+π (approximation)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB104\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.PositiveInfinity\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents positive infinity\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB72\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Half16b\&.Sign\fR [get]\fP"
+
+.PP
+Gets the sign bit\&. \fRtrue\fP indicates a negative value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB58\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBCeil()\fP, \fBDiv()\fP, \fBFloor()\fP, \fBMul()\fP, \fBNegate()\fP, and \fBTrunc()\fP\&.
+.SS "ushort SystemEx\&.Numeric\&.Half16b\&.SignBits\fR [get]\fP"
+
+.PP
+Number of bits used for the sign field (always 1)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB40\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Tau\fR [static]\fP, \fR [get]\fP"
+
+.PP
+τ = 2π (approximation)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB109\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "ushort SystemEx\&.Numeric\&.Half16b\&.ToBase\fR [get]\fP"
+
+.PP
+Returns the raw 16‑bit representation\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB141\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "ushort SystemEx\&.Numeric\&.Half16b\&.TotalBits\fR [get]\fP"
+
+.PP
+Total number of bits in the floating‑point representation\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB53\fP of file \fBHalf16b\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Half16b\&.Zero\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the floating‑point value zero\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB64\fP of file \fBHalf16b\&.cs\fP\&.
+.PP
+Referenced by \fBCeil()\fP, \fBDiv()\fP, \fBMul()\fP, \fBSystemEx\&.Random\&.NextHalf16b()\fP, \fBSignum()\fP, \fBSystemEx\&.Numeric\&.Vec2hb\&.Vec2hb()\fP, \fBSystemEx\&.Numeric\&.Vec3hb\&.Vec3hb()\fP, and \fBSystemEx\&.Numeric\&.Vec4hb\&.Vec4hb()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

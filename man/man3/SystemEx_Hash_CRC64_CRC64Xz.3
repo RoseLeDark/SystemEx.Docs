@@ -1,0 +1,70 @@
+.TH "SystemEx.Hash.CRC64.CRC64Xz" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Hash.CRC64.CRC64Xz \- Implements the CRC‑64/XZ checksum algorithm (used in LZMA/XZ)\&. Polynomial: 0x42F0E1EBA9EA3693 (reflected)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Hash\&.CRC64\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCRC64Xz\fP ()"
+.br
+.RI "Initializes a new instance of the \fBCRC64Xz\fP class using the CRC‑64/ISO polynomial\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Hash\&.CRC64\fP
+.in +1c
+.ti -1c
+.RI "\fBHash32\fP \fBCompute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes a 32‑bit hash value\&. CRC‑64 does not produce 32‑bit output, therefore this method is not implemented\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes a CRC‑64 checksum over the specified input buffer\&. If a non‑zero seed is provided, the computation is performed as a one‑shot operation\&. If the seed is zero, the computation continues from the internal rolling CRC‑64 state\&. "
+.ti -1c
+.RI "\fBCRC64\fP ()"
+.br
+.RI "Initializes a new instance of the \fBCRC64\fP class using the standard reflected ECMA‑182 polynomial (0xC96C5795D7870F42)\&. "
+.ti -1c
+.RI "\fBCRC64\fP (ulong polynomial)"
+.br
+.RI "Initializes a new instance of the \fBCRC64\fP class using a custom reflected CRC‑64 polynomial\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Properties inherited from \fBSystemEx\&.Hash\&.CRC64\fP
+.in +1c
+.ti -1c
+.RI "ulong \fBPolynomial\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the CRC‑64 polynomial used for table generation\&. Changing the polynomial regenerates the lookup table and resets the rolling CRC‑64 state\&. "
+.ti -1c
+.RI "ulong \fBRollingState\fP\fR [get]\fP"
+.br
+.RI "Gets the current rolling CRC‑64 state maintained across successive \fBComputeLong\fP calls\&. This value represents the intermediate checksum after all data processed so far\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implements the CRC‑64/XZ checksum algorithm (used in LZMA/XZ)\&. Polynomial: 0x42F0E1EBA9EA3693 (reflected)\&. 
+.PP
+Definition at line \fB208\fP of file \fBCRC64\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Hash\&.CRC64\&.CRC64Xz\&.CRC64Xz ()"
+
+.PP
+Initializes a new instance of the \fBCRC64Xz\fP class using the CRC‑64/ISO polynomial\&. 
+.PP
+Definition at line \fB213\fP of file \fBCRC64\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

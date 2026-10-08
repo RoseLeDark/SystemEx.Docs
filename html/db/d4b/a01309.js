@@ -1,5 +1,14 @@
 var a01309 =
 [
-    [ "NChilds", "d5/dd3/a00902_ga920a66312ffea732341aba1bfe0aae21.html#ga920a66312ffea732341aba1bfe0aae21", null ],
-    [ "Value", "d5/dd3/a00902_gad4807355f33adfe0fb061958a1814f90.html#gad4807355f33adfe0fb061958a1814f90", null ]
+    [ "Exists", "d7/d12/a00911_ga9a281bb1e01008e08739a07fc622af9f.html#ga9a281bb1e01008e08739a07fc622af9f", null ],
+    [ "Find", "d7/d12/a00911_ga6be674975bd5b3ad321da1cc7d4964d3.html#ga6be674975bd5b3ad321da1cc7d4964d3", null ],
+    [ "First", "d7/d12/a00911_ga4af602db3b1a29b3edb075c079644230.html#ga4af602db3b1a29b3edb075c079644230", null ],
+    [ "First", "d7/d12/a00911_ga7c4f131feb373e7d840574234280dd91.html#ga7c4f131feb373e7d840574234280dd91", null ],
+    [ "Last", "d7/d12/a00911_ga2af00d59a155a5ed884140ecccf9e8e9.html#ga2af00d59a155a5ed884140ecccf9e8e9", null ],
+    [ "Last", "d7/d12/a00911_ga6c2a514456538f696972faca5a8b8fb7.html#ga6c2a514456538f696972faca5a8b8fb7", null ],
+    [ "LowerBound", "d7/d12/a00911_ga98fa8ee40615b8fde2b53bd9121797a1.html#ga98fa8ee40615b8fde2b53bd9121797a1", null ],
+    [ "Of", "d7/d12/a00911_gaaafe6cbf5216b5447e9a9184cadc3d91.html#gaaafe6cbf5216b5447e9a9184cadc3d91", null ],
+    [ "TryGet", "d7/d12/a00911_gadfb3f74a3f26aafe30374ac7a62f56b5.html#gadfb3f74a3f26aafe30374ac7a62f56b5", null ],
+    [ "UpperBound", "d7/d12/a00911_ga1679a481e7f6b62d11ac82842c4156a0.html#ga1679a481e7f6b62d11ac82842c4156a0", null ],
+    [ "Where", "d7/d12/a00911_ga3bd4a4a72cb0a7e2c59991d4b93ee898.html#ga3bd4a4a72cb0a7e2c59991d4b93ee898", null ]
 ];

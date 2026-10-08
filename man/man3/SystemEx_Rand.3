@@ -1,0 +1,114 @@
+.TH "SystemEx.Rand" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Rand
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBGenericRand< TEngine >\fP"
+.br
+.RI "Provides a simple interface for generating random numbers using varibale Engines algorithm\&. "
+.ti -1c
+.RI "struct \fBHashedSeed\fP"
+.br
+.RI "Provides a seed implementation based on a 32‑bit hash value\&. The hash may originate from any hashing algorithm available in \fBSystemEx\fP, including Bernstein, FNV‑1a, Murmur, Blake3, XXH3, and other supported hash functions\&. "
+.ti -1c
+.RI "interface \fBISeed\fP"
+.br
+.RI "Represents a generic seed source for random number generators\&. Implementations provide an array of 32‑bit seed values, support indexed access, and may update their internal state when required\&. "
+.ti -1c
+.RI "interface \fBISeed< T >\fP"
+.br
+.RI "Extends \fBISeed\fP with a typed update mechanism\&. This generic interface allows seed implementations to accept external values that influence or mutate the internal seed state\&. The type parameter defines the kind of input used for updating the seed\&. "
+.ti -1c
+.RI "class \fBRandx\fP"
+.br
+.RI "Provides the high-level random number generator implementation using the \fBIsaac32Engine\fP as the underlying engine\&. This variant is compiled when \fRDEFAULT_RANDENGIEN_MTWIST\fP is not defined\&. "
+.ti -1c
+.RI "struct \fBSeedMixed\fP"
+.br
+.RI "Represents a composite seed that can be dynamically mixed with other seeds using a variety of mathematical operations\&. \fBSeedMixed\fP acts as a wrapper around an existing \fBISeed\fP instance and provides thread‑safe mixing functionality suitable for all random engines in \fBSystemEx\fP\&. "
+.ti -1c
+.RI "struct \fBTimeBasedSeed\fP"
+.br
+.RI "Provides a time‑based seed implementation using DateTime as the update source\&. The seed consists of multiple 32‑bit values derived from the current timestamp, system tick count, and optionally a GUID hash\&. "
+.ti -1c
+.RI "struct \fBValueBasedSeed\fP"
+.br
+.RI "Provides a seed implementation based on a simple integer value\&. The input integer is expanded into multiple 32‑bit components using bitwise and arithmetic transformations\&. This seed type is suitable for all random engines in \fBSystemEx\fP\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSeedMix\fP : byte { \fBXOR\fP, \fBAddition\fP, \fBSubtraction\fP, \fBMultiplication\fP, \fBAnd\fP, \fBOr\fP, \fBShiftLeft\fP, \fBShiftRight\fP, \fBRotateLeft\fP, \fBRotateRight\fP, \fBNot\fP, \fBMinimal\fP, \fBMaximal\fP, \fBAverage\fP, \fBNew\fP, \fBUser\fP }"
+.br
+.RI "Defines the available mixing strategies used to combine two random seeds\&. These operations are purely mathematical and intended for non‑cryptographic random number generation\&. Each mode describes how the corresponding seed values are combined to produce a new mixed seed\&. "
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.Rand\&.SeedMix\fP : byte"
+
+.PP
+Defines the available mixing strategies used to combine two random seeds\&. These operations are purely mathematical and intended for non‑cryptographic random number generation\&. Each mode describes how the corresponding seed values are combined to produce a new mixed seed\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIXOR \fP
+Bitwise exclusive OR (XOR) between corresponding seed values\&. Produces strong bit diffusion and is commonly used in PRNG mixing\&. 
+.TP
+\f(BIAddition \fP
+Adds corresponding seed values\&. Useful for linear seed combination\&. 
+.TP
+\f(BISubtraction \fP
+Subtracts the other seed value from the current one\&. 
+.TP
+\f(BIMultiplication \fP
+Multiplies corresponding seed values\&. Produces strong variation and is used in several classical random generators\&. 
+.TP
+\f(BIAnd \fP
+Bitwise AND between corresponding seed values\&. Can be used to mask or restrict certain bits\&. 
+.TP
+\f(BIOr \fP
+Bitwise OR between corresponding seed values\&. Aggregates bits from both seeds\&. 
+.TP
+\f(BIShiftLeft \fP
+Shifts the current seed value left by a shift amount derived from the other seed and the provided mix parameter\&. 
+.TP
+\f(BIShiftRight \fP
+Shifts the current seed value right by a shift amount derived from the other seed and the provided mix parameter\&. 
+.TP
+\f(BIRotateLeft \fP
+Rotates the current seed value left by a rotation amount derived from the other seed and the provided mix parameter\&. 
+.TP
+\f(BIRotateRight \fP
+Rotates the current seed value right by a rotation amount derived from the other seed and the provided mix parameter\&. 
+.TP
+\f(BINot \fP
+Bitwise negation (NOT) of the current seed value\&. 
+.TP
+\f(BIMinimal \fP
+Takes the minimum of the two corresponding seed values\&. 
+.TP
+\f(BIMaximal \fP
+Takes the maximum of the two corresponding seed values\&. 
+.TP
+\f(BIAverage \fP
+Computes the average of the two corresponding seed values\&. 
+.TP
+\f(BINew \fP
+Replaces the current seed entirely with the other seed\&. 
+.TP
+\f(BIUser \fP
+Uses a user‑defined mixing function provided via \fRFunc<\fBISeed\fP, \fBISeed\fP, \fBISeed\fP> OnUserMix\fP\&. This allows custom mixing logic beyond the predefined strategies\&. 
+.PP
+Definition at line \fB29\fP of file \fBSeedMixer\&.cs\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

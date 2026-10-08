@@ -1,9 +1,7 @@
 var a02213 =
 [
-    [ "Lock", "de/d8e/a02213_a80a7413c32227f052dca942f0a730485.html#a80a7413c32227f052dca942f0a730485", null ],
-    [ "Lock", "de/d8e/a02213_a6c47f24b499eaeaa7f71565fe9e9412a.html#a6c47f24b499eaeaa7f71565fe9e9412a", null ],
-    [ "TryLock", "de/d8e/a02213_ac706089c9d2d44576db5df713868bfc7.html#ac706089c9d2d44576db5df713868bfc7", null ],
-    [ "Unlock", "de/d8e/a02213_af553ce4ced74c4279bb9b8d4db7fcb2d.html#af553ce4ced74c4279bb9b8d4db7fcb2d", null ],
-    [ "Wait", "de/d8e/a02213_af41d2b10c70d1dc568f5ad6610f702ba.html#af41d2b10c70d1dc568f5ad6610f702ba", null ],
-    [ "IsHeld", "de/d8e/a02213_a05c0fd862c826275215b0001ed0e38a8.html#a05c0fd862c826275215b0001ed0e38a8", null ]
+    [ "Call", "d4/ddc/a00917_gaf1b0dc0aba8ca224247b5445eae9bbb8.html#gaf1b0dc0aba8ca224247b5445eae9bbb8", null ],
+    [ "GetDelegate", "d4/ddc/a00917_ga1dfb5c254c15213de62d68e0b0a21d00.html#ga1dfb5c254c15213de62d68e0b0a21d00", null ],
+    [ "Name", "d4/ddc/a00917_ga83732fc0895eb9c33c3dc77f03b39210.html#ga83732fc0895eb9c33c3dc77f03b39210", null ],
+    [ "Pointer", "d4/ddc/a00917_ga96779a3524afb74c14a5a9cabb4cc32a.html#ga96779a3524afb74c14a5a9cabb4cc32a", null ]
 ];

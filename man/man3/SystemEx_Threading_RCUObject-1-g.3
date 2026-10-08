@@ -1,0 +1,285 @@
+.TH "SystemEx.Threading.RCUObject< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.RCUObject< T > \- Represents a minimal Read-Copy-Update (RCU) container that provides lock-free read access and exclusive write access to a protected value\&. Reader activity is tracked through an \fBEpoch\fP instance, while writers are synchronized using an \fBILock\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable, and \fBSystemEx\&.Threading\&.ILockedObject< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Determines whether this instance and the specified \fBRCUObject<T>\fP contain equal values\&. Both objects are read using RCU semantics, ensuring lock‑free comparison of the protected values\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBRCUObject\fP< T >? obj)"
+.br
+.RI "Determines whether this instance and the specified \fBRCUObject<T>\fP contain equal values\&. Both objects are read using RCU semantics, ensuring lock‑free comparison of the protected values\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Computes a hash code based on the protected value\&. The value is retrieved using RCU semantics, ensuring deterministic behavior even under concurrent access\&. "
+.ti -1c
+.RI "\fBRCUObject\fP (T orig)"
+.br
+.RI "Initializes a new instance of the \fBRCUObject<T>\fP class using a default \fBLightLock\fP for writer synchronization\&. "
+.ti -1c
+.RI "\fBRCUObject\fP (T orig, \fBILock\fP writer)"
+.br
+.RI "Initializes a new instance of the \fBRCUObject<T>\fP class using a custom writer lock implementation\&. "
+.ti -1c
+.RI "\fBResult\fP \fBReadValue\fP (\fBTimeOut\fP timeout)"
+.br
+.RI "Reads the current value from the RCU object\&. The reader epoch is entered upon beginning the read operation and exited automatically when the scope ends, ensuring deterministic tracking of reader activity even in the presence of exceptions\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns a string representation of the protected value\&. The value is read using RCU semantics and converted via its \fR\fBToString()\fP\fP implementation\&. "
+.ti -1c
+.RI "void \fBWriteValue\fP (T? value, \fBTimeOut\fP timeout)"
+.br
+.RI "Writes a new value to the RCU object\&. Writer access is exclusive and requires acquiring the writer lock\&. The write operation is only allowed when no readers are currently active\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static implicit \fBoperator RCUObject< T >\fP (T value)"
+.br
+.RI "Implicitly converts a value of type \fIT\fP  into an \fBRCUObject<T>\fP instance\&. This allows direct assignment of a raw value to an RCU container without explicitly invoking the constructor\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBRCUObject\fP< T >? a, \fBRCUObject\fP< T >? b)"
+.br
+.RI "Determines whether two \fBRCUObject<T>\fP instances contain different values\&. This is the logical negation of \fBoperator==\fP\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBRCUObject\fP< T >? a, \fBRCUObject\fP< T >? b)"
+.br
+.RI "Determines whether two \fBRCUObject<T>\fP instances contain equal values\&. Both operands are compared using RCU‑safe read operations\&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static readonly byte \fBCOUNT_INDEX\fP = 2"
+.br
+.RI "\fBIndex\fP of the reader epoch counter inside the \fBResult\fP container\&. "
+.ti -1c
+.RI "static readonly byte \fBSTATE_INDEX\fP = 1"
+.br
+.RI "\fBIndex\fP of the RCU state (\fBRCUState\fP) inside the \fBResult\fP container\&. "
+.ti -1c
+.RI "static readonly byte \fBVALUE_INDEX\fP = 0"
+.br
+.RI "\fBIndex\fP of the stored value inside the \fBResult\fP container\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "T? \fBValue\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the protected value\&. Reading the value enters a reader epoch, while writing requires exclusive writer access and is only permitted when no readers are active\&. "
+.ti -1c
+.RI "\fBResult\fP \fBValueWithState\fP\fR [get]\fP"
+.br
+.RI "Retrieves the current value together with its associated RCU metadata\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a minimal Read-Copy-Update (RCU) container that provides lock-free read access and exclusive write access to a protected value\&. Reader activity is tracked through an \fBEpoch\fP instance, while writers are synchronized using an \fBILock\fP\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the value being protected by the RCU object\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB49\fP of file \fBRCUObject\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override bool SystemEx\&.Threading\&.RCUObject< T >\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance and the specified \fBRCUObject<T>\fP contain equal values\&. Both objects are read using RCU semantics, ensuring lock‑free comparison of the protected values\&. 
+.PP
+Definition at line \fB186\fP of file \fBRCUObject\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBoperator==()\fP\&.
+.SS "bool SystemEx\&.Threading\&.RCUObject< T >\&.Equals (\fBRCUObject\fP< T >? obj)"
+
+.PP
+Determines whether this instance and the specified \fBRCUObject<T>\fP contain equal values\&. Both objects are read using RCU semantics, ensuring lock‑free comparison of the protected values\&. 
+.PP
+Definition at line \fB200\fP of file \fBRCUObject\&.cs\fP\&.
+.SS "override int SystemEx\&.Threading\&.RCUObject< T >\&.GetHashCode ()"
+
+.PP
+Computes a hash code based on the protected value\&. The value is retrieved using RCU semantics, ensuring deterministic behavior even under concurrent access\&. 
+.PP
+Definition at line \fB219\fP of file \fBRCUObject\&.cs\fP\&.
+.SS "implicit SystemEx\&.Threading\&.RCUObject< T >\&.operator \fBRCUObject\fP< T > (T value)\fR [static]\fP"
+
+.PP
+Implicitly converts a value of type \fIT\fP  into an \fBRCUObject<T>\fP instance\&. This allows direct assignment of a raw value to an RCU container without explicitly invoking the constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to wrap inside the RCU object\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new \fBRCUObject<T>\fP containing the specified value\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB177\fP of file \fBRCUObject\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.RCUObject< T >\&.operator!= (\fBRCUObject\fP< T >? a, \fBRCUObject\fP< T >? b)\fR [static]\fP"
+
+.PP
+Determines whether two \fBRCUObject<T>\fP instances contain different values\&. This is the logical negation of \fBoperator==\fP\&. 
+.PP
+Definition at line \fB247\fP of file \fBRCUObject\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.RCUObject< T >\&.operator== (\fBRCUObject\fP< T >? a, \fBRCUObject\fP< T >? b)\fR [static]\fP"
+
+.PP
+Determines whether two \fBRCUObject<T>\fP instances contain equal values\&. Both operands are compared using RCU‑safe read operations\&. 
+.PP
+Definition at line \fB238\fP of file \fBRCUObject\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.RCUObject< T >\&.RCUObject (T orig)"
+
+.PP
+Initializes a new instance of the \fBRCUObject<T>\fP class using a default \fBLightLock\fP for writer synchronization\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIorig\fP The initial value to store\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB103\fP of file \fBRCUObject\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, \fBEquals()\fP, \fBoperator RCUObject< T >()\fP, \fBoperator!=()\fP, and \fBoperator==()\fP\&.
+.SS "SystemEx\&.Threading\&.RCUObject< T >\&.RCUObject (T orig, \fBILock\fP writer)"
+
+.PP
+Initializes a new instance of the \fBRCUObject<T>\fP class using a custom writer lock implementation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIorig\fP The initial value to store\&.
+.br
+\fIwriter\fP The lock instance used to synchronize writer access\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB118\fP of file \fBRCUObject\&.cs\fP\&.
+.SS "\fBResult\fP SystemEx\&.Threading\&.RCUObject< T >\&.ReadValue (\fBTimeOut\fP timeout)"
+
+.PP
+Reads the current value from the RCU object\&. The reader epoch is entered upon beginning the read operation and exited automatically when the scope ends, ensuring deterministic tracking of reader activity even in the presence of exceptions\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The currently stored value\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockedObject< T >\fP\&.
+.PP
+Definition at line \fB151\fP of file \fBRCUObject\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, \fBGetHashCode()\fP, and \fBToString()\fP\&.
+.SS "override string SystemEx\&.Threading\&.RCUObject< T >\&.ToString ()"
+
+.PP
+Returns a string representation of the protected value\&. The value is read using RCU semantics and converted via its \fR\fBToString()\fP\fP implementation\&. 
+.PP
+Definition at line \fB228\fP of file \fBRCUObject\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.RCUObject< T >\&.WriteValue (T? value, \fBTimeOut\fP timeout)"
+
+.PP
+Writes a new value to the RCU object\&. Writer access is exclusive and requires acquiring the writer lock\&. The write operation is only allowed when no readers are currently active\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The new value to store\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIInvalidOperationException\fP Thrown when one or more readers are active during the write attempt\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockedObject< T >\fP\&.
+.PP
+Definition at line \fB134\fP of file \fBRCUObject\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "readonly byte SystemEx\&.Threading\&.RCUObject< T >\&.COUNT_INDEX = 2\fR [static]\fP"
+
+.PP
+\fBIndex\fP of the reader epoch counter inside the \fBResult\fP container\&. 
+.PP
+Definition at line \fB64\fP of file \fBRCUObject\&.cs\fP\&.
+.PP
+Referenced by \fBReadValue()\fP\&.
+.SS "readonly byte SystemEx\&.Threading\&.RCUObject< T >\&.STATE_INDEX = 1\fR [static]\fP"
+
+.PP
+\fBIndex\fP of the RCU state (\fBRCUState\fP) inside the \fBResult\fP container\&. 
+.PP
+Definition at line \fB59\fP of file \fBRCUObject\&.cs\fP\&.
+.PP
+Referenced by \fBReadValue()\fP\&.
+.SS "readonly byte SystemEx\&.Threading\&.RCUObject< T >\&.VALUE_INDEX = 0\fR [static]\fP"
+
+.PP
+\fBIndex\fP of the stored value inside the \fBResult\fP container\&. 
+.PP
+Definition at line \fB53\fP of file \fBRCUObject\&.cs\fP\&.
+.PP
+Referenced by \fBReadValue()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "T? SystemEx\&.Threading\&.RCUObject< T >\&.Value\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the protected value\&. Reading the value enters a reader epoch, while writing requires exclusive writer access and is only permitted when no readers are active\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockedObject< T >\fP\&.
+.PP
+Definition at line \fB79\fP of file \fBRCUObject\&.cs\fP\&.
+.SS "\fBResult\fP SystemEx\&.Threading\&.RCUObject< T >\&.ValueWithState\fR [get]\fP"
+
+.PP
+Retrieves the current value together with its associated RCU metadata\&. The returned \fBResult\fP contains: 
+.PD 0
+.IP "\(bu" 2
+\fR[0]\fP — the stored value 
+.IP "\(bu" 2
+\fR[1]\fP — the current RCU state (\fBRCUState\fP) 
+.IP "\(bu" 2
+\fR[2]\fP — the active reader epoch count 
+.PP
+
+.PP
+Definition at line \fB96\fP of file \fBRCUObject\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

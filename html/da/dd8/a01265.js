@@ -1,7 +1,11 @@
 var a01265 =
 [
-    [ "Forward", "d5/dd3/a00902_ga56fe5c01625fc6ae5ddf4e7072e23882.html#ga56fe5c01625fc6ae5ddf4e7072e23882", null ],
-    [ "Current", "d5/dd3/a00902_gaa69cdfd4aed4580f2cc2860a172f9e71.html#gaa69cdfd4aed4580f2cc2860a172f9e71", null ],
-    [ "Index", "d5/dd3/a00902_gaa67a306430e682430e3e0e1489d25f5b.html#gaa67a306430e682430e3e0e1489d25f5b", null ],
-    [ "IsEnd", "d5/dd3/a00902_ga4773191203a1be73030d57a9cd387094.html#ga4773191203a1be73030d57a9cd387094", null ]
+    [ "ResultBuilder", "da/dd8/a01265_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef", null ],
+    [ "ResultBuilder", "da/dd8/a01265_aea1f39ac9cf438dd19c4140b6cca8f8d.html#aea1f39ac9cf438dd19c4140b6cca8f8d", null ],
+    [ "Add", "da/dd8/a01265_ae269f08ad7ca01326d942d3461420e36.html#ae269f08ad7ca01326d942d3461420e36", null ],
+    [ "Assert", "da/dd8/a01265_aded4b6c8522dc99fc8fafd2d57c126ff.html#aded4b6c8522dc99fc8fafd2d57c126ff", null ],
+    [ "Catch", "da/dd8/a01265_a25c25c6744475d2791ffae8ddec3b525.html#a25c25c6744475d2791ffae8ddec3b525", null ],
+    [ "ToResult", "da/dd8/a01265_adc1ec2888cdcd032c458c35568b00fe7.html#adc1ec2888cdcd032c458c35568b00fe7", null ],
+    [ "Try", "da/dd8/a01265_af6cc535c081955832b515f964a62c3fc.html#af6cc535c081955832b515f964a62c3fc", null ],
+    [ "Try", "da/dd8/a01265_ae6324d2a5ff2aa93eaa566deab66e011.html#ae6324d2a5ff2aa93eaa566deab66e011", null ]
 ];

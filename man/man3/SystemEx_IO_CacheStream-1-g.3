@@ -1,0 +1,505 @@
+.TH "SystemEx.IO.CacheStream< TCache >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.IO.CacheStream< TCache > \- A Stream wrapper around a \fBCache\fP instance\&. 
+.br
+ Provides sequential read/write access to a cache, including endian‑aware primitive serialization, range operations, and chunked asynchronous copy methods\&. 
+.br
+ Seeking is supported only through the underlying cache\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Stream, \fBSystemEx\&.IValueWriter\fP, and \fBSystemEx\&.IValueReader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCacheStream\fP (TCache cache)"
+.br
+.RI "Creates a new stream wrapper for the specified cache\&. "
+.ti -1c
+.RI "override void \fBCopyTo\fP (Stream destination, int bufferSize)"
+.br
+.RI "Copies the contents of this stream to another stream using the specified buffer size\&. "
+.ti -1c
+.RI "override void \fBFlush\fP ()"
+.br
+.RI "Flushes the stream\&. No‑op for cache streams\&. "
+.ti -1c
+.RI "override int \fBRead\fP (byte[] buffer, int offset, int count)"
+.br
+.RI "Reads bytes from the cache into the specified buffer\&. "
+.ti -1c
+.RI "virtual Task< \fBICache\fP > \fBReadAsync\fP (\fBICache\fP dest, CancellationToken cancellationToken=default)"
+.br
+.RI "Asynchronously reads the contents of this stream's cache into another cache using fixed‑size chunks\&. 
+.br
+ Supports cancellation and lock checking\&. "
+.ti -1c
+.RI "char \fBReadChar\fP (ulong position)"
+.br
+.ti -1c
+.RI "double \fBReadDouble\fP (\fBEndian\fP endian, double errval)"
+.br
+.RI "Reads a double-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "float \fBReadFloat\fP (\fBEndian\fP endian, float errval)"
+.br
+.RI "Reads a single-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "int \fBReadInt\fP (\fBEndian\fP endian, int errval)"
+.br
+.RI "Reads a signed 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "long \fBReadLong\fP (\fBEndian\fP endian, long errval)"
+.br
+.RI "Reads a signed 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "byte?[] \fBReadRange\fP (uint count)"
+.br
+.ti -1c
+.RI "short \fBReadShort\fP (\fBEndian\fP endian, short errval)"
+.br
+.RI "Reads a signed 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "uint \fBReadUInt\fP (\fBEndian\fP endian, uint errval)"
+.br
+.RI "Reads an unsigned 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "ulong \fBReadULong\fP (\fBEndian\fP endian, ulong errval)"
+.br
+.RI "Reads an unsigned 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "ushort \fBReadUShort\fP (\fBEndian\fP endian, ushort errval)"
+.br
+.RI "Reads an unsigned 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "override long \fBSeek\fP (long offset, SeekOrigin origin)"
+.br
+.RI "Moves the cache position using the specified origin and offset\&. "
+.ti -1c
+.RI "override void \fBSetLength\fP (long value)"
+.br
+.ti -1c
+.RI "byte[] \fBToArray\fP ()"
+.br
+.RI "Returns the entire cache content as a byte array\&. "
+.ti -1c
+.RI "void \fBWrite\fP (byte value)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware\&. "
+.ti -1c
+.RI "override void \fBWrite\fP (byte[] buffer, int offset, int count)"
+.br
+.RI "Writes bytes from the buffer into the cache\&. "
+.ti -1c
+.RI "void \fBWrite\fP (char value)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware\&. "
+.ti -1c
+.RI "void \fBWrite\fP (double value, \fBEndian\fP endian)"
+.br
+.RI "Writes a double-precision floating-point value using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (float value, \fBEndian\fP endian)"
+.br
+.RI "Writes a single-precision floating-point value using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (int value, \fBEndian\fP endian)"
+.br
+.RI "Writes a signed 32-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (long value, \fBEndian\fP endian)"
+.br
+.RI "Writes a signed 64-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (short value, \fBEndian\fP endian)"
+.br
+.RI "Writes a signed 16-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (uint value, \fBEndian\fP endian)"
+.br
+.RI "Writes an unsigned 32-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong value, \fBEndian\fP endian)"
+.br
+.RI "Writes an unsigned 64-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ushort value, \fBEndian\fP endian)"
+.br
+.RI "Writes an unsigned 16-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "virtual Task \fBWriteAsync\fP (\fBICache\fP src, CancellationToken cancellationToken=default)"
+.br
+.RI "Asynchronously copies the contents of a source cache into this stream's cache using fixed‑size chunks\&. 
+.br
+ Supports cancellation and lock checking\&. "
+.ti -1c
+.RI "ulong \fBWriteRange\fP (byte[] data)"
+.br
+.ti -1c
+.RI "ulong \fBWriteRange\fP (ulong iend, byte[] data)"
+.br
+.ti -1c
+.RI "virtual void \fBWriteTo\fP (Stream stream)"
+.br
+.RI "Writes the entire cache content to another stream\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "override bool \fBCanRead\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the stream supports reading\&. "
+.ti -1c
+.RI "override bool \fBCanSeek\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the stream supports seeking\&. 
+.br
+ Always \fRtrue\fP for \fBCacheStream<TCache>\fP\&. "
+.ti -1c
+.RI "override bool \fBCanWrite\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the stream supports writing\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "override long \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the length of the underlying cache\&. "
+.ti -1c
+.RI "ulong \fBLongLength\fP\fR [get]\fP"
+.br
+.RI "Gets the LongLength of the underlying cache\&. "
+.ti -1c
+.RI "override long \fBPosition\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the current position within the cache\&. "
+.ti -1c
+.RI "int \fBWritten\fP\fR [get, set]\fP"
+.br
+.RI "Gets the number of bytes written by the last write operation\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A Stream wrapper around a \fBCache\fP instance\&. 
+.br
+ Provides sequential read/write access to a cache, including endian‑aware primitive serialization, range operations, and chunked asynchronous copy methods\&. 
+.br
+ Seeking is supported only through the underlying cache\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITCache\fP The cache type used as the backing store\&. Must derive from \fBCache\fP\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITCache\fP : \fICache\fP
+.PP
+Definition at line \fB36\fP of file \fBCachStream\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "SystemEx\&.IO\&.CacheStream< TCache >\&.CacheStream (TCache cache)"
+
+.PP
+Creates a new stream wrapper for the specified cache\&. 
+.PP
+Definition at line \fB46\fP of file \fBCachStream\&.cs\fP\&.
+.PP
+Referenced by \fBWriteTo()\fP\&.
+.SS "override void SystemEx\&.IO\&.CacheStream< TCache >\&.CopyTo (Stream destination, int bufferSize)"
+
+.PP
+Copies the contents of this stream to another stream using the specified buffer size\&. 
+.PP
+Definition at line \fB60\fP of file \fBCachStream\&.cs\fP\&.
+.SS "override void SystemEx\&.IO\&.CacheStream< TCache >\&.Flush ()"
+
+.PP
+Flushes the stream\&. No‑op for cache streams\&. 
+.PP
+Definition at line \fB115\fP of file \fBCachStream\&.cs\fP\&.
+.SS "override int SystemEx\&.IO\&.CacheStream< TCache >\&.Read (byte[] buffer, int offset, int count)"
+
+.PP
+Reads bytes from the cache into the specified buffer\&. 
+.PP
+Definition at line \fB121\fP of file \fBCachStream\&.cs\fP\&.
+.SS "virtual Task< \fBICache\fP > SystemEx\&.IO\&.CacheStream< TCache >\&.ReadAsync (\fBICache\fP dest, CancellationToken cancellationToken = \fRdefault\fP)\fR [virtual]\fP"
+
+.PP
+Asynchronously reads the contents of this stream's cache into another cache using fixed‑size chunks\&. 
+.br
+ Supports cancellation and lock checking\&. 
+.PP
+Definition at line \fB259\fP of file \fBCachStream\&.cs\fP\&.
+.SS "char SystemEx\&.IO\&.CacheStream< TCache >\&.ReadChar (ulong position)"
+
+.PP
+
+.PP
+Definition at line \fB195\fP of file \fBCachStream\&.cs\fP\&.
+.SS "double SystemEx\&.IO\&.CacheStream< TCache >\&.ReadDouble (\fBEndian\fP endian, double errval)"
+
+.PP
+Reads a double-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB199\fP of file \fBCachStream\&.cs\fP\&.
+.SS "float SystemEx\&.IO\&.CacheStream< TCache >\&.ReadFloat (\fBEndian\fP endian, float errval)"
+
+.PP
+Reads a single-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB197\fP of file \fBCachStream\&.cs\fP\&.
+.SS "int SystemEx\&.IO\&.CacheStream< TCache >\&.ReadInt (\fBEndian\fP endian, int errval)"
+
+.PP
+Reads a signed 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB185\fP of file \fBCachStream\&.cs\fP\&.
+.SS "long SystemEx\&.IO\&.CacheStream< TCache >\&.ReadLong (\fBEndian\fP endian, long errval)"
+
+.PP
+Reads a signed 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB191\fP of file \fBCachStream\&.cs\fP\&.
+.SS "byte?[] SystemEx\&.IO\&.CacheStream< TCache >\&.ReadRange (uint count)"
+
+.PP
+Definition at line \fB208\fP of file \fBCachStream\&.cs\fP\&.
+.SS "short SystemEx\&.IO\&.CacheStream< TCache >\&.ReadShort (\fBEndian\fP endian, short errval)"
+
+.PP
+Reads a signed 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB187\fP of file \fBCachStream\&.cs\fP\&.
+.SS "uint SystemEx\&.IO\&.CacheStream< TCache >\&.ReadUInt (\fBEndian\fP endian, uint errval)"
+
+.PP
+Reads an unsigned 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB183\fP of file \fBCachStream\&.cs\fP\&.
+.SS "ulong SystemEx\&.IO\&.CacheStream< TCache >\&.ReadULong (\fBEndian\fP endian, ulong errval)"
+
+.PP
+Reads an unsigned 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB193\fP of file \fBCachStream\&.cs\fP\&.
+.SS "ushort SystemEx\&.IO\&.CacheStream< TCache >\&.ReadUShort (\fBEndian\fP endian, ushort errval)"
+
+.PP
+Reads an unsigned 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB189\fP of file \fBCachStream\&.cs\fP\&.
+.SS "override long SystemEx\&.IO\&.CacheStream< TCache >\&.Seek (long offset, SeekOrigin origin)"
+
+.PP
+Moves the cache position using the specified origin and offset\&. 
+.PP
+Definition at line \fB135\fP of file \fBCachStream\&.cs\fP\&.
+.SS "override void SystemEx\&.IO\&.CacheStream< TCache >\&.SetLength (long value)"
+
+.PP
+Definition at line \fB139\fP of file \fBCachStream\&.cs\fP\&.
+.SS "byte[] SystemEx\&.IO\&.CacheStream< TCache >\&.ToArray ()"
+
+.PP
+Returns the entire cache content as a byte array\&. 
+.PP
+Definition at line \fB214\fP of file \fBCachStream\&.cs\fP\&.
+.PP
+Referenced by \fBWriteTo()\fP\&.
+.SS "void SystemEx\&.IO\&.CacheStream< TCache >\&.Write (byte value)"
+
+.PP
+Writes a typed value at the specified position using endian‑aware\&. 
+.PP
+Definition at line \fB149\fP of file \fBCachStream\&.cs\fP\&.
+.SS "override void SystemEx\&.IO\&.CacheStream< TCache >\&.Write (byte[] buffer, int offset, int count)"
+
+.PP
+Writes bytes from the buffer into the cache\&. 
+.PP
+Definition at line \fB128\fP of file \fBCachStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.CacheStream< TCache >\&.Write (char value)"
+
+.PP
+Writes a typed value at the specified position using endian‑aware\&. 
+.PP
+Definition at line \fB145\fP of file \fBCachStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.CacheStream< TCache >\&.Write (double value, \fBEndian\fP endian)"
+
+.PP
+Writes a double-precision floating-point value using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB179\fP of file \fBCachStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.CacheStream< TCache >\&.Write (float value, \fBEndian\fP endian)"
+
+.PP
+Writes a single-precision floating-point value using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB175\fP of file \fBCachStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.CacheStream< TCache >\&.Write (int value, \fBEndian\fP endian)"
+
+.PP
+Writes a signed 32-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB155\fP of file \fBCachStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.CacheStream< TCache >\&.Write (long value, \fBEndian\fP endian)"
+
+.PP
+Writes a signed 64-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB167\fP of file \fBCachStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.CacheStream< TCache >\&.Write (short value, \fBEndian\fP endian)"
+
+.PP
+Writes a signed 16-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB159\fP of file \fBCachStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.CacheStream< TCache >\&.Write (uint value, \fBEndian\fP endian)"
+
+.PP
+Writes an unsigned 32-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB151\fP of file \fBCachStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.CacheStream< TCache >\&.Write (ulong value, \fBEndian\fP endian)"
+
+.PP
+Writes an unsigned 64-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB171\fP of file \fBCachStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.CacheStream< TCache >\&.Write (ushort value, \fBEndian\fP endian)"
+
+.PP
+Writes an unsigned 16-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB163\fP of file \fBCachStream\&.cs\fP\&.
+.SS "virtual Task SystemEx\&.IO\&.CacheStream< TCache >\&.WriteAsync (\fBICache\fP src, CancellationToken cancellationToken = \fRdefault\fP)\fR [virtual]\fP"
+
+.PP
+Asynchronously copies the contents of a source cache into this stream's cache using fixed‑size chunks\&. 
+.br
+ Supports cancellation and lock checking\&. 
+.PP
+Definition at line \fB221\fP of file \fBCachStream\&.cs\fP\&.
+.SS "ulong SystemEx\&.IO\&.CacheStream< TCache >\&.WriteRange (byte[] data)"
+
+.PP
+Definition at line \fB201\fP of file \fBCachStream\&.cs\fP\&.
+.SS "ulong SystemEx\&.IO\&.CacheStream< TCache >\&.WriteRange (ulong iend, byte[] data)"
+
+.PP
+
+.PP
+Definition at line \fB205\fP of file \fBCachStream\&.cs\fP\&.
+.SS "virtual void SystemEx\&.IO\&.CacheStream< TCache >\&.WriteTo (Stream stream)\fR [virtual]\fP"
+
+.PP
+Writes the entire cache content to another stream\&. 
+.PP
+Definition at line \fB71\fP of file \fBCachStream\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "override bool SystemEx\&.IO\&.CacheStream< TCache >\&.CanRead\fR [get]\fP"
+
+.PP
+Indicates whether the stream supports reading\&. 
+.PP
+Definition at line \fB87\fP of file \fBCachStream\&.cs\fP\&.
+.PP
+Referenced by \fBRead()\fP\&.
+.SS "override bool SystemEx\&.IO\&.CacheStream< TCache >\&.CanSeek\fR [get]\fP"
+
+.PP
+Indicates whether the stream supports seeking\&. 
+.br
+ Always \fRtrue\fP for \fBCacheStream<TCache>\fP\&. 
+.PP
+Definition at line \fB92\fP of file \fBCachStream\&.cs\fP\&.
+.SS "override bool SystemEx\&.IO\&.CacheStream< TCache >\&.CanWrite\fR [get]\fP"
+
+.PP
+Indicates whether the stream supports writing\&. 
+.PP
+Definition at line \fB96\fP of file \fBCachStream\&.cs\fP\&.
+.PP
+Referenced by \fBWrite()\fP, and \fBWriteTo()\fP\&.
+.SS "bool SystemEx\&.IO\&.CacheStream< TCache >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Definition at line \fB110\fP of file \fBCachStream\&.cs\fP\&.
+.SS "override long SystemEx\&.IO\&.CacheStream< TCache >\&.Length\fR [get]\fP"
+
+.PP
+Gets the length of the underlying cache\&. 
+.PP
+Definition at line \fB100\fP of file \fBCachStream\&.cs\fP\&.
+.SS "ulong SystemEx\&.IO\&.CacheStream< TCache >\&.LongLength\fR [get]\fP"
+
+.PP
+Gets the LongLength of the underlying cache\&. 
+.PP
+Definition at line \fB108\fP of file \fBCachStream\&.cs\fP\&.
+.SS "override long SystemEx\&.IO\&.CacheStream< TCache >\&.Position\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the current position within the cache\&. 
+.PP
+Definition at line \fB52\fP of file \fBCachStream\&.cs\fP\&.
+.PP
+Referenced by \fBReadChar()\fP, \fBReadDouble()\fP, and \fBWriteRange()\fP\&.
+.SS "int SystemEx\&.IO\&.CacheStream< TCache >\&.Written\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets the number of bytes written by the last write operation\&. 
+.PP
+Definition at line \fB104\fP of file \fBCachStream\&.cs\fP\&.
+.PP
+Referenced by \fBWrite()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

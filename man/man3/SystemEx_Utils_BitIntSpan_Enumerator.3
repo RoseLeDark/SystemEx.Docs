@@ -1,0 +1,107 @@
+.TH "SystemEx.Utils.BitIntSpan.Enumerator" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Utils.BitIntSpan.Enumerator \- Enumerates the bits of a \fBBitIntSpan\fP according to its indexing mode\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEnumerator\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void IDisposable\&. \fBDispose\fP ()"
+.br
+.RI "No resources to dispose\&. "
+.ti -1c
+.RI "bool \fBMoveNext\fP ()"
+.br
+.RI "Moves to the next element in the span\&. "
+.ti -1c
+.RI "void IEnumerator\&. \fBReset\fP ()"
+.br
+.RI "Resets the enumerator to the initial position\&. Ring mode resets to index 0; other modes reset to -1\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "object IEnumerator\&. \fBCurrent\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "bool IEnumerator< bool >\&. \fBCurrent\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "bool \fBCurrent\fP\fR [get, set]\fP"
+.br
+.RI "Gets the element at the current enumerator position\&. "
+.ti -1c
+.RI "bool \fBHasNext\fP\fR [get]\fP"
+.br
+.RI "Indicates whether another element can be produced\&. Ring mode always returns true (infinite iteration)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Enumerates the bits of a \fBBitIntSpan\fP according to its indexing mode\&. 
+
+\fBWarning:\fP When the span is in \fBFlexSpanMode\&.Ring\fP, enumeration is infinite\&. Consumers must implement their own termination conditions to avoid non-returning loops\&. 
+
+.PP
+The enumerator yields live bit values\&. Mutating the underlying integer during enumeration will affect subsequent results\&. 
+.PP
+Definition at line \fB73\fP of file \fBBitIntSpan\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void IDisposable\&. SystemEx\&.Utils\&.BitIntSpan\&.Enumerator\&.Dispose ()"
+
+.PP
+No resources to dispose\&. 
+.PP
+Definition at line \fB148\fP of file \fBBitIntSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.Utils\&.BitIntSpan\&.Enumerator\&.MoveNext ()"
+
+.PP
+Moves to the next element in the span\&. 
+.PP
+Definition at line \fB114\fP of file \fBBitIntSpan\&.cs\fP\&.
+.SS "void IEnumerator\&. SystemEx\&.Utils\&.BitIntSpan\&.Enumerator\&.Reset ()"
+
+.PP
+Resets the enumerator to the initial position\&. Ring mode resets to index 0; other modes reset to -1\&. 
+.PP
+Definition at line \fB143\fP of file \fBBitIntSpan\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "object IEnumerator\&. SystemEx\&.Utils\&.BitIntSpan\&.Enumerator\&.Current\fR [get]\fP"
+
+.PP
+
+.PP
+Definition at line \fB137\fP of file \fBBitIntSpan\&.cs\fP\&.
+.SS "bool IEnumerator<bool>\&. SystemEx\&.Utils\&.BitIntSpan\&.Enumerator\&.Current\fR [get]\fP"
+
+.PP
+
+.PP
+Definition at line \fB134\fP of file \fBBitIntSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.Utils\&.BitIntSpan\&.Enumerator\&.Current\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets the element at the current enumerator position\&. 
+.PP
+Definition at line \fB128\fP of file \fBBitIntSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.Utils\&.BitIntSpan\&.Enumerator\&.HasNext\fR [get]\fP"
+
+.PP
+Indicates whether another element can be produced\&. Ring mode always returns true (infinite iteration)\&. 
+.PP
+Definition at line \fB88\fP of file \fBBitIntSpan\&.cs\fP\&.
+.PP
+Referenced by \fBMoveNext()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

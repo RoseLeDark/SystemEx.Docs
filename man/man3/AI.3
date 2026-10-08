@@ -1,0 +1,3124 @@
+.TH "AI" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AI \- Backend
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\fP"
+.br
+.RI "A basic arithmetic calculator tool\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\fP"
+.br
+.RI "A tool that calculates the difference between two dates\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\fP"
+.br
+.RI "A simple tool that returns the current date and time\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.AI\&.IAIFunctionFactory< T, TAITOOL >\fP"
+.br
+.RI "Converts an \fBIModelTool<T>\fP definition into a backend‑specific function object that can be exposed to an \fBAI\fP model\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP"
+.br
+.RI "Represents a generic \fBAI\fP model with configuration, environment information, backend integration, tool support, and execution capabilities\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP"
+.br
+.RI "Basic backend implementation for all using models with this framework\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.AI\&.IModelPromp< T >\fP"
+.br
+.RI "Represents a model‑agnostic prompt container used by all IModelBackend implementations and embedded models\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.AI\&.IModelResult< T >\fP"
+.br
+.RI "Represents the result produced by a model execution\&. 
+.br
+ Provides access to the final output, metadata, raw backend information, error details, and execution status\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.AI\&.IModelTool< T >\fP"
+.br
+.RI "Represents a model‑executable tool that can be exposed to \fBAI\fP backends through an IAIFunctionFactory\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP"
+.br
+.RI "Represents a generic \fBAI\fP model instance within the SystemEX framework\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.AI\&.ModelPromp< T >\fP"
+.br
+.RI "Represents a concrete implementation of \fBIModelPromp<T>\fP used to encapsulate model input, contextual metadata, session information, execution parameters, and optional tags\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.AI\&.ModelResult< T >\fP"
+.br
+.RI "Represents the result of an \fBAI\fP model execution\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.AI\&.ModelToolParameter\fP"
+.br
+.RI "Represents a single parameter definition used by an \fBIModelTool<T>\fP\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP"
+.br
+.RI "backend implementation for \fBAI\fP models that communicate with remote Web‑API services using HTTP POST requests\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\fP"
+.br
+.RI "Represents the payload sent to a remote Web‑API based \fBAI\fP backend\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.AI\&.WebAIModel\fP"
+.br
+.RI "Provides a basic implementation of a web‑based \fBAI\fP model wrapper\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSystemEx\&.AI\&.BackendCapabilities\fP : int { \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_TEXT\fP = 0x1001, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_CHAT\fP = 0x1002, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_JSON\fP = 0x1003, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_INSTRUCT\fP = 0x1004, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_VISION\fP = 0x1101, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_AUDIO\fP = 0x1102, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_VIDEO\fP = 0x1103, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_MULTIMODAL\fP = 0x1104, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_TOOLS\fP = 0x1201, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_AGENT\fP = 0x1202, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_CODE\fP = 0x1203, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_EMBEDDING\fP = 0x1301, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_VECTOR_SEARCH\fP = 0x1302, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_LOCAL\fP = 0x1401, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_REMOTE\fP = 0x1402, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_GPU\fP = 0x1403, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_CPU\fP = 0x1404, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_WASM\fP = 0x1405, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_NATIVE\fP = 0x1406, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_PLATFORM_CAP_WINDOWS\fP = 0x1501, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_PLATFORM_CAP_ALL\fP = 0x1502, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_CAP_FREE\fP = 0x1503, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_PLATFORM_CAP_MOBILE\fP = 0x1504, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_STREAMING\fP = 0x1601, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_BATCH\fP = 0x1602, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_LOW_LATENCY\fP = 0x1603, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_NEEDS_INTERNET\fP = 0x1701, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_NEEDS_API_KEY\fP = 0x1702, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_NEEDS_LOCAL_CONFIG\fP = 0x1703, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_NEEDS_HARDWARE\fP = 0x1704, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_NEEDS_LOGIN\fP = 0x1705, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_TRANSPORT_REST\fP = 0x1801, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_TRANSPORT_WS\fP = 0x1802, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_TRANSPORT_NATIVE\fP = 0x1803, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_TRANSPORT_IPC\fP = 0x1804, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_TRANSPORT_WASM\fP = 0x1805, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_RUNTIME_LOCAL\fP = 0x1901, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_RUNTIME_CLOUD\fP = 0x1902, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_RUNTIME_BROWSER\fP = 0x1903, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_RUNTIME_NATIVE\fP = 0x1904, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_CONFIGURABLE\fP = 0x1A01, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_CONFIG_DYNAMIC\fP = 0x1A02, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_CONFIG_ENV\fP = 0x1A03, \fBSystemEx\&.AI\&.BackendCapabilities\&.AI_BACKEND_CAPS_CUSTOM\fP = 0x1FFF }"
+.br
+.RI "Defines capability flags for \fBAI\fP backends\&. "
+.ti -1c
+.RI "enum \fBSystemEx\&.AI\&.Environment\fP : int { \fBAI_ENV_OS_WINDOWS\fP = 0x3001, \fBAI_ENV_OS_LINUX\fP = 0x3002, \fBAI_ENV_OS_MACOS\fP = 0x3003, \fBAI_ENV_OS_ANDROID\fP = 0x3004, \fBAI_ENV_OS_IOS\fP = 0x3005, \fBAI_ENV_OS_BROWSER\fP = 0x3006, \fBAI_ENV_ARCH_X64\fP = 0x3101, \fBAI_ENV_ARCH_ARM64\fP = 0x3102, \fBAI_ENV_HW_CPU\fP = 0x3201, \fBAI_ENV_HW_GPU\fP = 0x3202, \fBAI_ENV_HW_NPU\fP = 0x3203, \fBAI_ENV_HW_MICROPHONE\fP = 0x3204, \fBAI_ENV_HW_CAMERA\fP = 0x3205, \fBAI_ENV_MEM_RAM\fP = 0x3301, \fBAI_ENV_MEM_VRAM\fP = 0x3302, \fBAI_ENV_FS_TEMP_DIR\fP = 0x3303, \fBAI_ENV_FS_WORK_DIR\fP = 0x3304, \fBAI_ENV_FS_HOME_DIR\fP = 0x3305, \fBAI_ENV_FS_CACHE_DIR\fP = 0x3306, \fBAI_ENV_RT_DOTNET\fP = 0x3401, \fBAI_ENV_RT_WASM\fP = 0x3402, \fBAI_ENV_RT_NATIVE\fP = 0x3403, \fBAI_ENV_RT_SANDBOX\fP = 0x3404, \fBAI_ENV_NET_ONLINE\fP = 0x3501, \fBAI_ENV_NET_OFFLINE\fP = 0x3502, \fBAI_ENV_NET_LIMITED\fP = 0x3503, \fBAI_ENV_LOCALE\fP = 0x3601, \fBAI_ENV_CULTURE\fP = 0x3602, \fBAI_ENV_SEC_SANDBOXED\fP = 0x3701, \fBAI_ENV_SEC_FULL_TRUST\fP = 0x3702, \fBAI_ENV_SEC_NO_FILE_ACCESS\fP = 0x3703, \fBAI_ENV_CUSTOM\fP = 0x3FFF }"
+.br
+.RI "Describes the runtime environment required or used by an \fBAI\fP backend\&. This enum is intentionally broad and future-proof\&. "
+.ti -1c
+.RI "enum \fBSystemEx\&.AI\&.MetaFormat\fP : int { \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_JSON\fP = 1, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_TEXT\fP = 2, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_XML\fP = 3, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_YAML\fP = 4, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_INI\fP = 5, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_BINARY\fP = 6, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_PROTOBUF\fP = 7, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_MSGPACK\fP = 8, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_HTML\fP = 9, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_MARKDOWN\fP = 10, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_TOKENS\fP = 11, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_EMBEDDING\fP = 12, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_IMAGE\fP = 13, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_AUDIO\fP = 14, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_VIDEO\fP = 15, \fBSystemEx\&.AI\&.MetaFormat\&.AI_FORMAT_CUSTOM\fP = 100 }"
+.br
+.RI "Defines the data format returned by a backend during model execution\&. "
+.ti -1c
+.RI "enum \fBSystemEx\&.AI\&.ModelMeta\fP : int { \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_BACKEND\fP = 0x1001, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_BACKEND_VERSION\fP = 0x1002, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_BACKEND_TYPE\fP = 0x1003, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_BACKEND_LATENCY\fP = 0x1004, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_PLATFORM\fP = 0x1005, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_MODEL\fP = 0x1101, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_MODEL_VERSION\fP = 0x1102, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_MODEL_PROVIDER\fP = 0x1103, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_MODEL_CAPS\fP = 0x1104, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_URL\fP = 0x1201, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_HTTP_STATUS\fP = 0x1202, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_HTTP_HEADERS\fP = 0x1203, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_REQUEST_SIZE\fP = 0x1204, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_RESPONSE_SIZE\fP = 0x1205, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_RAW\fP = 0x1301, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_CONTENT_OUT\fP = 0x1302, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_CONTENT_IN\fP = 0x1303, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_TRACE_ID\fP = 0x1304, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_FORMAT\fP = 0x1300, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_EXEC_TIME\fP = 0x1401, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_EXEC_START\fP = 0x1402, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_EXEC_END\fP = 0x1403, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_TOKENS_IN\fP = 0x1404, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_TOKENS_OUT\fP = 0x1405, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_TOKENS_TOTAL\fP = 0x1406, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_TOOL_USED\fP = 0x1501, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_TOOL_COUNT\fP = 0x1502, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_TOOL_LATENCY\fP = 0x1503, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_ERROR_TYPE\fP = 0x1601, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_ERROR_MESSAGE\fP = 0x1602, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_ERROR_STACK\fP = 0x1603, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_ERROR_CODE\fP = 0x1604, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_SESSION_ID\fP = 0x1701, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_TOOLS_USED\fP = 0x1702, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_SYSTEMPROMPT_HASH\fP = 0x1703, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_MODEL_PARAMETERS\fP = 0x1704, \fBSystemEx\&.AI\&.ModelMeta\&.AI_META_BACKEND_CONFIG\fP = 0x1705, \fBAI_META_DURATION\fP = 0x1707, \fBAI_META_EXECUTION_MODE\fP = 0x1706, \fBAI_META_RUNTIME_VERSION\fP = 0x1707, \fBAI_META_CLIENT_VERSION\fP = 0x1708 }"
+.br
+.RI "Defines strongly typed metadata keys for model execution\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.AddConfig\fP (string key, object value)"
+.br
+.RI "Adds or updates a configuration value\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.AddConfig\fP (string key, object value)"
+.br
+.RI "Adds or updates a configuration value\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.AI\&.ModelPromp< T >\&.AddContext\fP (string key, object value)"
+.br
+.RI "Adds or replaces a context value associated with the specified key\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.AI\&.ModelPromp< T >\&.AddParameter\fP (string key, object value)"
+.br
+.RI "Adds or replaces a parameter value associated with the specified key\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.AI\&.ModelPromp< T >\&.AddTag\fP (string key, object value)"
+.br
+.RI "Adds or replaces a tag value associated with the specified key\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.AddTool\fP (IModelTool< T > tool)"
+.br
+.RI "Adds a tool to the model\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.AddTool\fP (IModelTool< T > tool)"
+.br
+.RI "Registers a tool with the backend\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IAIFunctionFactory< T, TAITOOL >\&.Convert\fP (IModelTool< T > tool, out TAITOOL converted)"
+.br
+.RI "Converts the given \fBIModelTool<T>\fP into a backend‑compatible function object\&. 
+.br
+ Returns \fRtrue\fP if conversion succeeded; otherwise \fRfalse\fP\&. "
+.ti -1c
+.RI "Task< object?> \fBSystemEx\&.AI\&.IModelTool< T >\&.ExecuteAsync\fP (Map< string, object?> args, CancellationToken ct)"
+.br
+.RI "Executes the tool asynchronously using the provided argument dictionary\&. 
+.br
+ The backend supplies validated parameters and a cancellation token\&. 
+.br
+ The returned object must be serializable or convertible into a model‑usable form\&. "
+.ti -1c
+.RI "async Task< object?> \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\&.ExecuteAsync\fP (Map< string, object?> args, CancellationToken ct)"
+.br
+.RI "Executes the calculator logic\&. "
+.ti -1c
+.RI "async Task< object?> \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\&.ExecuteAsync\fP (Map< string, object?> args, CancellationToken ct)"
+.br
+.RI "Executes the date difference calculation\&. "
+.ti -1c
+.RI "async Task< object?> \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\&.ExecuteAsync\fP (Map< string, object?> args, CancellationToken ct)"
+.br
+.RI "Executes the tool logic\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.GetConfigValue\fP (string key, ref object value)"
+.br
+.RI "Retrieves a configuration value\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.GetConfigValue\fP (string key, ref object value)"
+.br
+.RI "Retrieves a configuration value\&. "
+.ti -1c
+.RI "IEnumerable< \fBModelToolParameter\fP > \fBSystemEx\&.AI\&.IModelTool< T >\&.GetParameters\fP ()"
+.br
+.RI "Returns the parameter schema describing all inputs accepted by the tool\&. 
+.br
+ Each parameter defines a name, type, and optional constraints\&. "
+.ti -1c
+.RI "IEnumerable< \fBModelToolParameter\fP > \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\&.GetParameters\fP ()"
+.br
+.RI "Defines the parameters accepted by this tool\&. "
+.ti -1c
+.RI "IEnumerable< \fBModelToolParameter\fP > \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\&.GetParameters\fP ()"
+.br
+.RI "Defines the parameters accepted by this tool\&. "
+.ti -1c
+.RI "IEnumerable< \fBModelToolParameter\fP > \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\&.GetParameters\fP ()"
+.br
+.RI "Defines the parameters accepted by this tool\&. "
+.ti -1c
+.RI "Optional< object > \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.GetValue\fP (string key)"
+.br
+.RI "Get Value from config\&. "
+.ti -1c
+.RI "Optional< object > \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.GetValue\fP (string key)"
+.br
+.RI "Get Value from config\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.ModelPromp< T >\&.HasContext\fP (string key)"
+.br
+.RI "Determines whether a context entry with the specified key exists\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.ModelPromp< T >\&.HasParameter\fP (string key)"
+.br
+.RI "Determines whether a parameter entry with the specified key exists\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.ModelPromp< T >\&.HasTag\fP (string key)"
+.br
+.RI "Determines whether a tag entry with the specified key exists\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.HasTool\fP (string toolName)"
+.br
+.RI "Web‑API backends do not support tools\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.HasTool\fP (string toolName)"
+.br
+.RI "Checks whether a tool with the given name exists\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.HasTool\fP (string toolName)"
+.br
+.RI "Has this model tools\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.HasTool\fP (string toolName)"
+.br
+.RI "Checks whether a tool is registered\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.HaveCap\fP (\fBBackendCapabilities\fP pCapabilities)"
+.br
+.RI "Checks whether the model has a specific backend capability\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.HaveCap\fP (\fBBackendCapabilities\fP pCapabilities)"
+.br
+.RI "Checks whether the model has a specific capability\&. "
+.ti -1c
+.RI "virtual bool \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Initialization\fP (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+.br
+.RI "Initialization the model\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP The configuration for this model\&.
+.br
+\fIenvironment\fP The enviroment for thie model\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP when init or \fRfalse\fP when not
+.RE
+.PP
+ "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.Initialization\fP (Map< string, object > configuration)"
+.br
+.RI "Initializes the model using the provided configuration and set the environment data automatic\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.Initialization\fP (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+.br
+.RI "Initializes the model using the provided configuration and environment data\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.Initialization\fP (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+.br
+.RI "Initialization the model\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.Initialization\fP (Map< string, object > configuration)"
+.br
+.RI "Initializes the model using the provided configuration and set the environment data automatic\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP Backend‑specific configuration values (API keys, URLs, model parameters, etc\&.)\&. 
+.RE
+.PP
+ "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.Initialization\fP (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+.br
+.RI "Initializes the model using the provided configuration and environment data\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP Backend‑specific configuration values (API keys, URLs, model parameters, etc\&.)\&. 
+.br
+\fIenvironment\fP Environment information describing the client machine (OS, hardware, paths, runtime)\&. 
+.RE
+.PP
+ "
+.ti -1c
+.RI "async Task< IModelResult< T > > \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync\fP (string systemPrompt, IModelPromp< T > input)"
+.br
+.RI "Executes the model by sending a JSON payload to the remote Web‑API\&. "
+.ti -1c
+.RI "Task< IModelResult< T > > \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.InvokeAsync\fP (string systemPrompt, IModelPromp< T > input)"
+.br
+.RI "Executes the model by sending a payload to the model\&. "
+.ti -1c
+.RI "IReadOnlyList< object > \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.ListTools\fP ()"
+.br
+.RI "Web‑API backends do not support tools\&. "
+.ti -1c
+.RI "IReadOnlyList< TAI > \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.ListTools\fP ()"
+.br
+.RI "Get A list of all regist tools with this model\&. "
+.ti -1c
+.RI "\fBSystemEx\&.AI\&.Model< T, TTOOL >\&.Model\fP (string name, string strModelName, string strPrompt, IModelBackend< T, TTOOL > backend)"
+.br
+.RI "Creates a new model instance with default capability, configuration, state, and environment maps\&. "
+.ti -1c
+.RI "\fBSystemEx\&.AI\&.ModelPromp< T >\&.ModelPromp\fP (T prompt, Map< string, object > context, Optional< string > sessionId, Optional< Map< string, object > > parameters)"
+.br
+.RI "Initializes a new prompt using explicit context and parameter maps\&. "
+.ti -1c
+.RI "\fBSystemEx\&.AI\&.ModelPromp< T >\&.ModelPromp\fP (T prompt, Map< string, object > context, Optional< string > sessionId, Optional< Map< string, object > > parameters, bool cancel, Optional< Map< string, object > > tags)"
+.br
+.RI "Initializes a new prompt with full control over context, parameters, tags, and cancellation state\&. "
+.ti -1c
+.RI "\fBSystemEx\&.AI\&.ModelPromp< T >\&.ModelPromp\fP (T prompt, Optional< string > sessionId)"
+.br
+.RI "Initializes a new prompt with the specified raw value and session identifier\&. Context, parameters, and tags are created empty\&. "
+.ti -1c
+.RI "\fBSystemEx\&.AI\&.ModelResult< T >\&.ModelResult\fP (T result, Map< \fBModelMeta\fP, object > metadata, Optional< Exception > error, Optional< object > raw)"
+.br
+.RI "Creates a new \fBModelResult<T>\fP instance\&. "
+.ti -1c
+.RI "\fBSystemEx\&.AI\&.ModelToolParameter\&.ModelToolParameter\fP (string name, \fBType\fP type, string description)"
+.br
+.RI "Initializes a new parameter definition with the specified name, type, and description\&. "
+.ti -1c
+.RI "virtual string \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.OnCreateURL\fP (WebAIBackendPayload< T > payload)"
+.br
+.RI "Creates the final URL used for the HTTP request\&. "
+.ti -1c
+.RI "virtual \fBTriple\fP< T, \fBMetaFormat\fP, object > \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.OnDeserialize\fP (string raw)"
+.br
+.RI "Deserializes the raw JSON response from the backend using JsonElement\&. "
+.ti -1c
+.RI "virtual StringContent \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.OnSerialize\fP (WebAIBackendPayload< T > payload)"
+.br
+.RI "Serializes the payload into JSON and wraps it in a StringContent suitable for HTTP POST requests\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.RegistTool\fP (IModelTool< T > tool)"
+.br
+.RI "Web‑API backends do not support tools\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.RegistTool\fP (IModelTool< T > tool)"
+.br
+.RI "Regist a tool with this model\&. "
+.ti -1c
+.RI "virtual void \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Release\fP (bool wait)"
+.br
+.RI "Release the model\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.Release\fP ()"
+.br
+.RI "Releases all resources associated with the model\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.Release\fP (bool wait)"
+.br
+.RI "Release the model\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.Release\fP ()"
+.br
+.RI "Finalizes backend execution\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.ModelPromp< T >\&.RemoveContext\fP (string key)"
+.br
+.RI "Removes a context entry if it exists\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.ModelPromp< T >\&.RemoveParameter\fP (string key)"
+.br
+.RI "Removes a parameter entry if it exists\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.ModelPromp< T >\&.RemoveTag\fP (string key)"
+.br
+.RI "Removes a tag entry if it exists\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.RemoveTool\fP (string toolName)"
+.br
+.RI "Removes a tool from the model by name\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.RemoveTool\fP (string toolName)"
+.br
+.RI "Removes a tool from the backend\&. "
+.ti -1c
+.RI "Task< IModelResult< T > > \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.RunAsync\fP (IModelPromp< T > input)"
+.br
+.RI "Executes the model asynchronously using the provided prompt\&. "
+.ti -1c
+.RI "Task< IModelResult< T > > \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.RunAsync\fP (IModelPromp< T > input)"
+.br
+.RI "Executes the model asynchronously using the backend\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.WebAIModel\&.SetAPIKey\fP (string key)"
+.br
+.RI "Sets the API key used for authenticated backend access\&. 
+.br
+ This value is stored as a configuration parameter and may be used by the backend during request construction\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.SetConfig\fP (string key, object value)"
+.br
+.RI "Set config\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.SetConfig\fP (string key, object value)"
+.br
+.RI "Set config\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.WebAIModel\&.SetMaxTokens\fP (int value)"
+.br
+.RI "Sets the maximum number of tokens the backend may generate\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.WebAIModel\&.SetTemperatur\fP (float value)"
+.br
+.RI "Sets the sampling temperature used by the backend\&. 
+.br
+ The value is clamped to the range [0\&.0, 2\&.0]\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.WebAIModel\&.SetTopP\fP (float value)"
+.br
+.RI "Sets the nucleus‑sampling parameter \fRtop‑p\fP\&. 
+.br
+ The value is clamped to the range [0\&.0, 1\&.0]\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.WebAIModel\&.SetURL\fP (string strURL)"
+.br
+.RI "Updates the backend endpoint URL used for model execution\&. "
+.ti -1c
+.RI "override string \fBSystemEx\&.AI\&.ModelPromp< T >\&.ToString\fP ()"
+.br
+.RI "Returns a human‑readable representation of the prompt, including prompt value, session identifier, cancellation state, context, parameters, and tags\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.WebAIModel\&.TryChangeModel\fP (string command)"
+.br
+.RI "Attempts to change the backend model by parsing a command of the form \fR"chg_model &lt;modelName&gt;"\fP\&. 
+.br
+ If the command is valid, the internal Model\&.ModelName property is updated\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.ModelPromp< T >\&.TryGetContext\fP (string key, out object? value)"
+.br
+.RI "Attempts to retrieve a context value\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.ModelPromp< T >\&.TryGetParameter\fP (string key, out object? value)"
+.br
+.RI "Attempts to retrieve a parameter value\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.ModelPromp< T >\&.TryGetTag\fP (string key, out object? value)"
+.br
+.RI "Attempts to retrieve a tag value\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.UnregistTool\fP (string toolName)"
+.br
+.RI "Web‑API backends do not support tools\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.UnregistTool\fP (string toolName)"
+.br
+.RI "Unregist a tool with this model\&. "
+.ti -1c
+.RI "\fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WebAIBackend\fP (string strURL, bool freeUsable=true)"
+.br
+.RI "Initializes a new Web‑API backend with the specified base URL\&. "
+.ti -1c
+.RI "\fBSystemEx\&.AI\&.WebAIModel\&.WebAIModel\fP (string strURL, string stringModelName, bool FreeAPI=true)"
+.br
+.RI "Initializes a new web‑based \fBAI\fP model using the specified endpoint URL and model identifier\&. 
+.br
+ Default configuration values are applied to ensure consistent behavior across backends, including JSON output formatting and disabled streaming\&. "
+.ti -1c
+.RI "\fBModelPromp\fP< T > \fBSystemEx\&.AI\&.ModelPromp< T >\&.WithContext\fP (string key, object value)"
+.br
+.RI "Creates a new prompt instance with an updated context value\&. "
+.ti -1c
+.RI "\fBModelPromp\fP< T > \fBSystemEx\&.AI\&.ModelPromp< T >\&.WithParameter\fP (string key, object value)"
+.br
+.RI "Creates a new prompt instance with an updated parameter value\&. The original instance remains unchanged\&. "
+.ti -1c
+.RI "\fBModelPromp\fP< T > \fBSystemEx\&.AI\&.ModelPromp< T >\&.WithTag\fP (string key, object value)"
+.br
+.RI "Creates a new prompt instance with an updated tag value\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const string \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_MAX_TOKENS\fP = 'WEBAI_MAX_TOKENS'"
+.br
+.ti -1c
+.RI "const string \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_RESPONSE_FORMAT\fP = 'WEBAI_RESPONSE_FORMAT'"
+.br
+.ti -1c
+.RI "const string \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_STREAM\fP = 'WEBAI_STREAM'"
+.br
+.ti -1c
+.RI "const string \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_TEMPERATUR\fP = 'WEBAI_TEMPERATURE'"
+.br
+.ti -1c
+.RI "const string \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_TOP_P\fP = 'WEBAI_TOP_P'"
+.br
+.ti -1c
+.RI "const string \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_URL\fP = 'WB_BACKEND_CONFIG_URL'"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "IModelBackend< T, TTOOL > \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.Backend\fP\fR [get]\fP"
+.br
+.RI "Gets the backend implementation used by this model\&. "
+.ti -1c
+.RI "IModelBackend< T, TTOOL > \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.Backend\fP\fR [get]\fP"
+.br
+.RI "\fBBackend\fP responsible for executing model requests\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.BackendName\fP\fR [get]\fP"
+.br
+.RI "The backend name used for metadata and diagnostics\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.BackendName\fP\fR [get]\fP"
+.br
+.RI "The backend name used for metadata and diagnostics\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModelPromp< T >\&.Cancel\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the prompt should be cancelled before reaching the backend\&. Useful for pre‑processing tools or pipeline guards\&. "
+.ti -1c
+.RI "CancellationToken? \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.Cancel\fP\fR [get, set]\fP"
+.br
+.RI "Optional cancellation token used to cancel long‑running operations\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.ModelPromp< T >\&.Cancel\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the prompt should be cancelled before reaching the backend\&. Useful for pre‑processing tools or pipeline guards\&. "
+.ti -1c
+.RI "Map< \fBBackendCapabilities\fP, object > \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Capabilities\fP\fR [get]\fP"
+.br
+.RI "Describes backend capabilities (text, chat, JSON, remote, etc\&.)\&. "
+.ti -1c
+.RI "Map< \fBBackendCapabilities\fP, object > \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.Capabilities\fP\fR [get]\fP"
+.br
+.RI "Describes backend capabilities (text, chat, JSON, remote, etc\&.)\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Configuration\fP\fR [get, set]\fP"
+.br
+.RI "Stores backend configuration values such as the base URL\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.Configuration\fP\fR [get]\fP"
+.br
+.RI "Gets the backend‑specific configuration map\&. Configuration values are backend‑defined and may vary between systems\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.Configuration\fP\fR [get]\fP"
+.br
+.RI "Stores backend configuration values such as the base URL\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.Configuration\fP\fR [get]\fP"
+.br
+.RI "Configuration map containing runtime settings\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Context\fP\fR [get, set]\fP"
+.br
+.RI "Conversation context (previous messages, metadata)\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.IModelPromp< T >\&.Context\fP\fR [get]\fP"
+.br
+.RI "Gets a metadata map containing contextual information such as temperature, top‑p, tool hints, memory handles, or session‑level settings\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.ModelPromp< T >\&.Context\fP\fR [get]\fP"
+.br
+.RI "Gets a metadata map containing contextual information such as temperature, top‑p, tool hints, memory handles, or session‑level settings\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.IModelTool< T >\&.Description\fP\fR [get]\fP"
+.br
+.RI "Gets a human‑readable description of the tool's purpose and behavior\&. 
+.br
+ Used by backends to generate tool metadata or documentation\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.ModelToolParameter\&.Description\fP\fR [get]\fP"
+.br
+.RI "Gets a human‑readable description of the parameter's purpose\&. 
+.br
+ Used by backends, documentation systems, and model‑side tool introspection\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\&.Description\fP\fR [get]\fP"
+.br
+.RI "Gets a human-readable description of what the tool does\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\&.Description\fP\fR [get]\fP"
+.br
+.RI "Gets a human-readable description of what the tool does\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\&.Description\fP\fR [get]\fP"
+.br
+.RI "Gets a human-readable description of what the tool does\&. "
+.ti -1c
+.RI "Map< \fBSystemEx\&.AI\&.Environment\fP, object > \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Enviro\fP\fR [get, set]\fP"
+.br
+.RI "Stores backend environment\&. "
+.ti -1c
+.RI "Map< \fBSystemEx\&.AI\&.Environment\fP, object > \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.Enviro\fP\fR [get]\fP"
+.br
+.RI "Stores backend environment\&. "
+.ti -1c
+.RI "Map< \fBEnvironment\fP, object > \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.Environment\fP\fR [get]\fP"
+.br
+.RI "Gets the environment map describing the client machine\&. This includes OS, architecture, hardware, paths, runtime, and other system properties\&. "
+.ti -1c
+.RI "Map< \fBEnvironment\fP, object > \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.Environment\fP\fR [get, protected set]\fP"
+.br
+.RI "The Environment\&. "
+.ti -1c
+.RI "Optional< Exception > \fBSystemEx\&.AI\&.IModelResult< T >\&.Error\fP\fR [get]\fP"
+.br
+.RI "Gets an optional exception describing an error that occurred during model execution\&. 
+.br
+ If \fBSuccess\fP is true, this value is typically null\&. "
+.ti -1c
+.RI "Optional< Exception > \fBSystemEx\&.AI\&.ModelResult< T >\&.Error\fP\fR [get]\fP"
+.br
+.RI "Gets the optional error information\&. If \fBSuccess\fP is true, this value is null\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.IsAvailable\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the backend is available\&. Always true for Web‑API based backends\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.IsAvailable\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the backend is available\&. The OS decides availability based on installed \fBAI\fP components\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Metadata\fP\fR [get, set]\fP"
+.br
+.RI "Optional: metadata for logging or session tracking\&. "
+.ti -1c
+.RI "Map< \fBModelMeta\fP, object > \fBSystemEx\&.AI\&.IModelResult< T >\&.Metadata\fP\fR [get]\fP"
+.br
+.RI "Gets a metadata map containing execution details such as timing, backend identifiers, token counts, or pipeline‑specific annotations\&. "
+.ti -1c
+.RI "Map< \fBModelMeta\fP, object > \fBSystemEx\&.AI\&.ModelResult< T >\&.Metadata\fP\fR [get]\fP"
+.br
+.RI "Gets the metadata associated with the model execution\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Model\fP\fR [get, set]\fP"
+.br
+.RI "The model name (e\&.g\&., gpt-4o-mini, gpt-4o, gpt-3\&.5-turbo)\&. "
+.ti -1c
+.RI "virtual string \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.ModelName\fP = 'default'\fR [get, set]\fP"
+.br
+.RI "Web‑API Modelname\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\&.ModelName\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the identifier of the \fBAI\fP model that should be used by the backend\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.ModelName\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the identifier of the \fBAI\fP model used by the backend\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.Name\fP\fR [get]\fP"
+.br
+.RI "Gets the model's unique name\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.IModelTool< T >\&.Name\fP\fR [get]\fP"
+.br
+.RI "Gets the unique name of the tool\&. 
+.br
+ This identifier is used by model backends and tool factories to expose the tool to the model runtime\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.Name\fP\fR [get]\fP"
+.br
+.RI "Gets the logical name of this model instance\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.ModelToolParameter\&.Name\fP\fR [get]\fP"
+.br
+.RI "Gets the unique parameter name used to identify the value in argument dictionaries and tool schemas\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\&.Name\fP\fR [get]\fP"
+.br
+.RI "Gets the unique tool name used by the \fBAI\fP runtime\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\&.Name\fP\fR [get]\fP"
+.br
+.RI "Gets the unique tool name used by the \fBAI\fP runtime\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\&.Name\fP\fR [get]\fP"
+.br
+.RI "Gets the unique tool name used by the \fBAI\fP runtime\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Parameters\fP\fR [get, set]\fP"
+.br
+.RI "Generation parameters (temperature, max_tokens, etc\&.)\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.IModelPromp< T >\&.Parameters\fP\fR [get]\fP"
+.br
+.RI "Gets a map of backend‑specific parameters that may influence execution, routing, or tool behavior\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.ModelPromp< T >\&.Parameters\fP\fR [get]\fP"
+.br
+.RI "Gets a map of backend‑specific parameters that may influence execution, routing, or tool behavior\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.AI\&.IModelPromp< T >\&.Prompt\fP\fR [get]\fP"
+.br
+.RI "Gets the raw prompt data supplied to the model\&. This may represent text, tokens, binary data, or any other prompt format\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.AI\&.ModelPromp< T >\&.Prompt\fP\fR [get]\fP"
+.br
+.RI "Gets the raw prompt data supplied to the model\&. This may represent text, tokens, binary data, or any other prompt format\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.PromptRaw\fP\fR [get, set]\fP"
+.br
+.RI "Raw user prompt (generic type)\&. "
+.ti -1c
+.RI "Optional< object > \fBSystemEx\&.AI\&.IModelResult< T >\&.Raw\fP\fR [get]\fP"
+.br
+.RI "Gets the raw backend output, if available\&. 
+.br
+ This may include unprocessed JSON, binary data, or internal model structures that were not converted into \fIT\fP \&. "
+.ti -1c
+.RI "Optional< object > \fBSystemEx\&.AI\&.ModelResult< T >\&.Raw\fP\fR [get]\fP"
+.br
+.RI "Gets the raw backend output, if available\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.AI\&.IModelResult< T >\&.Result\fP\fR [get]\fP"
+.br
+.RI "Gets the final output produced by the model\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.AI\&.ModelResult< T >\&.Result\fP\fR [get]\fP"
+.br
+.RI "Gets the final model output\&. "
+.ti -1c
+.RI "Optional< string > \fBSystemEx\&.AI\&.IModelPromp< T >\&.SessionId\fP\fR [get]\fP"
+.br
+.RI "Gets the optional session identifier used to maintain conversational continuity across multiple model invocations\&. "
+.ti -1c
+.RI "Optional< string > \fBSystemEx\&.AI\&.ModelPromp< T >\&.SessionId\fP\fR [get]\fP"
+.br
+.RI "Gets the optional session identifier used to maintain conversational continuity across multiple model invocations\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.State\fP\fR [get]\fP"
+.br
+.RI "State map used for dynamic runtime information\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModelResult< T >\&.Success\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the model execution completed successfully without errors\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.ModelResult< T >\&.Success\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the model execution succeeded\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.SystemPrompt\fP\fR [get, set]\fP"
+.br
+.RI "System instruction / system prompt\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.SystemPrompt\fP\fR [get]\fP"
+.br
+.RI "Gets the system prompt used by the model\&. This is typically a static instruction or initialization text\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.SystemPrompt\fP\fR [get, set]\fP"
+.br
+.RI "Gets the system prompt used by the model\&. This is typically a static instruction or initialization text\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.IModelPromp< T >\&.Tags\fP\fR [get]\fP"
+.br
+.RI "Gets a tag map used for classification, annotation, or pipeline‑level processing\&. Tags do not affect model execution directly but may be used by tools or middleware\&. "
+.ti -1c
+.RI "Map< string, object > \fBSystemEx\&.AI\&.ModelPromp< T >\&.Tags\fP\fR [get]\fP"
+.br
+.RI "Gets a tag map used for classification, annotation, or pipeline‑level processing\&. Tags do not affect model execution directly but may be used by tools or middleware\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.IModel< T, TTOOL >\&.this[BackendCapabilities capabilities]\fP\fR [get]\fP"
+.br
+.RI "Indexer that checks whether the model supports a specific backend capability\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.this[BackendCapabilities capability]\fP\fR [get]\fP"
+.br
+.RI "Checks whether a capability exists in the capability map\&. "
+.ti -1c
+.RI "object \fBSystemEx\&.AI\&.IModelPromp< T >\&.this[string parameter]\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets a backend parameter by name\&. 
+.br
+ Provides convenient indexed access to \fBParameters\fP\&. "
+.ti -1c
+.RI "object \fBSystemEx\&.AI\&.ModelPromp< T >\&.this[string parameter]\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets a backend parameter by name\&. 
+.br
+ Provides convenient indexed access to \fBParameters\fP\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIparameter\fP The parameter key\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The associated parameter value\&.
+.RE
+.PP
+ "
+.ti -1c
+.RI "DateTime \fBSystemEx\&.AI\&.IModelResult< T >\&.Timestamp\fP\fR [get]\fP"
+.br
+.RI "Gets the timestamp (UTC) when the result was created\&. Useful for logging, tracing, and chronological ordering\&. "
+.ti -1c
+.RI "DateTime \fBSystemEx\&.AI\&.ModelResult< T >\&.Timestamp\fP\fR [get]\fP"
+.br
+.RI "Gets the timestamp when the result was created (UTC)\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.ToolChoice\fP\fR [get, set]\fP"
+.br
+.RI "Optional: tool selection mode ("auto", "none", or specific tool)\&. "
+.ti -1c
+.RI "List< object > \fBSystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Tools\fP\fR [get, set]\fP"
+.br
+.RI "Optional: \fBTools\fP / function-calling definitions\&. "
+.ti -1c
+.RI "Type \fBSystemEx\&.AI\&.ModelToolParameter\&.Type\fP\fR [get]\fP"
+.br
+.RI "Gets the \&.NET type of the parameter\&. 
+.br
+ This determines how values are validated, serialized, and passed into the tool execution pipeline\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.URL\fP\fR [get, set]\fP"
+.br
+.RI "Target URL of the remote \fBAI\fP service (OpenAI, Azure, custom gateway)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.AI\&.BackendCapabilities\fP : int"
+
+.PP
+Defines capability flags for \fBAI\fP backends\&. Naming follows the AI_BACKEND_CAPS_XXX convention\&. These flags describe what features a backend supports, such as text generation, audio processing, vision models, tool execution, platform integration, and hardware acceleration\&.
+
+.PP
+Describes capabilities supported by an \fBAI\fP backend\&.
+
+.PP
+This enum is intentionally broad and future-proof\&. It covers:
+.IP "\(bu" 2
+Local and remote execution
+.IP "\(bu" 2
+GPU/CPU/WASM/native runtimes
+.IP "\(bu" 2
+Text, chat, audio, vision, video, multimodal
+.IP "\(bu" 2
+\fBTools\fP, agents, function calling
+.IP "\(bu" 2
+Embeddings, vector search, batch processing
+.IP "\(bu" 2
+Platform-specific capabilities (Windows, Web, Mobile)
+.IP "\(bu" 2
+Custom developer-defined capabilities
+.PP
+
+.PP
+Naming follows AI_BACKEND_CAPS_XXX\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIAI_BACKEND_CAPS_TEXT \fP
+\fBBackend\fP supports text generation or completion\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CHAT \fP
+\fBBackend\fP supports chat-style conversational models\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_JSON \fP
+\fBBackend\fP supports structured JSON output\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_INSTRUCT \fP
+\fBBackend\fP supports instruction-following models\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_VISION \fP
+\fBBackend\fP supports image generation or vision models\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_AUDIO \fP
+\fBBackend\fP supports audio input or audio generation\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_VIDEO \fP
+\fBBackend\fP supports video processing or video generation\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_MULTIMODAL \fP
+\fBBackend\fP supports multimodal input (text + image + audio)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_TOOLS \fP
+\fBBackend\fP supports tool execution or function calling\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_AGENT \fP
+\fBBackend\fP supports autonomous agent behavior\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CODE \fP
+\fBBackend\fP supports code execution or code generation tools\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_EMBEDDING \fP
+\fBBackend\fP supports embedding generation\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_VECTOR_SEARCH \fP
+\fBBackend\fP supports vector search or similarity queries\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_LOCAL \fP
+\fBBackend\fP runs locally on the user's machine\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_REMOTE \fP
+\fBBackend\fP runs remotely (Web API, cloud service)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_GPU \fP
+\fBBackend\fP supports GPU acceleration\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CPU \fP
+\fBBackend\fP supports CPU-only execution\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_WASM \fP
+\fBBackend\fP supports WebAssembly execution\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_NATIVE \fP
+\fBBackend\fP supports native OS-level execution\&. 
+.TP
+\f(BIAI_PLATFORM_CAP_WINDOWS \fP
+\fBBackend\fP is part of the Windows \fBAI\fP platform\&. 
+.TP
+\f(BIAI_PLATFORM_CAP_ALL \fP
+\fBBackend\fP is available on all platforms\&. 
+.TP
+\f(BIAI_CAP_FREE \fP
+\fBBackend\fP is part of a free or open platform\&. 
+.TP
+\f(BIAI_PLATFORM_CAP_MOBILE \fP
+\fBBackend\fP is optimized for mobile devices\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_STREAMING \fP
+\fBBackend\fP supports streaming output\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_BATCH \fP
+\fBBackend\fP supports batch processing\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_LOW_LATENCY \fP
+\fBBackend\fP supports low-latency execution\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_NEEDS_INTERNET \fP
+\fBBackend\fP requires an active internet connection\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_NEEDS_API_KEY \fP
+\fBBackend\fP requires an API key for authentication\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_NEEDS_LOCAL_CONFIG \fP
+\fBBackend\fP requires local configuration files\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_NEEDS_HARDWARE \fP
+\fBBackend\fP requires access to local hardware (GPU, microphone, camera)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_NEEDS_LOGIN \fP
+\fBBackend\fP requires user login or OAuth authentication\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_TRANSPORT_REST \fP
+\fBBackend\fP communicates via REST (HTTP/JSON)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_TRANSPORT_WS \fP
+\fBBackend\fP communicates via WebSocket (streaming, HTML push)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_TRANSPORT_NATIVE \fP
+\fBBackend\fP communicates via native DLL calls\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_TRANSPORT_IPC \fP
+\fBBackend\fP communicates via local process IPC (pipes, shared memory)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_TRANSPORT_WASM \fP
+\fBBackend\fP communicates via WASM runtime (browser or sandbox)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_RUNTIME_LOCAL \fP
+\fBBackend\fP runs inside a local OS runtime (WindowsAI, DirectML)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_RUNTIME_CLOUD \fP
+\fBBackend\fP runs inside a cloud runtime (OpenAI, Anthropic, etc\&.)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_RUNTIME_BROWSER \fP
+\fBBackend\fP runs inside a browser runtime (JavaScript/WASM)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_RUNTIME_NATIVE \fP
+\fBBackend\fP runs inside a native runtime (C++, CUDA, Vulkan)\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CONFIGURABLE \fP
+\fBBackend\fP supports custom configuration parameters\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CONFIG_DYNAMIC \fP
+\fBBackend\fP supports dynamic runtime configuration changes\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CONFIG_ENV \fP
+\fBBackend\fP supports environment variables for configuration\&. 
+.TP
+\f(BIAI_BACKEND_CAPS_CUSTOM \fP
+Custom capability defined by the developer\&. 
+.PP
+Definition at line \fB45\fP of file \fBBackendCapabilities\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.AI\&.Environment\fP : int"
+
+.PP
+Describes the runtime environment required or used by an \fBAI\fP backend\&. This enum is intentionally broad and future-proof\&. 
+.PP
+Definition at line \fB26\fP of file \fBAIEnvironment \&.cs\fP\&.
+.SS "enum \fBSystemEx\&.AI\&.MetaFormat\fP : int"
+
+.PP
+Defines the data format returned by a backend during model execution\&. This enum follows the AI_FORMAT_XXX naming convention and provides stable integer identifiers for all supported formats\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIAI_FORMAT_JSON \fP
+JSON object or array\&. The default format for most Web APIs\&. 
+.TP
+\f(BIAI_FORMAT_TEXT \fP
+Plain text or raw string output\&. 
+.TP
+\f(BIAI_FORMAT_XML \fP
+XML document format\&. 
+.TP
+\f(BIAI_FORMAT_YAML \fP
+YAML document format, commonly used for configuration files\&. 
+.TP
+\f(BIAI_FORMAT_INI \fP
+INI-style key-value configuration format\&. 
+.TP
+\f(BIAI_FORMAT_BINARY \fP
+Raw binary data without a predefined structure\&. 
+.TP
+\f(BIAI_FORMAT_PROTOBUF \fP
+Google Protocol Buffers (Protobuf) binary format\&. 
+.TP
+\f(BIAI_FORMAT_MSGPACK \fP
+MessagePack binary JSON format\&. 
+.TP
+\f(BIAI_FORMAT_HTML \fP
+HTML document format\&. 
+.TP
+\f(BIAI_FORMAT_MARKDOWN \fP
+Markdown text format\&. 
+.TP
+\f(BIAI_FORMAT_TOKENS \fP
+Token arrays or token streams produced by language models\&. 
+.TP
+\f(BIAI_FORMAT_EMBEDDING \fP
+Vector embeddings (float arrays) produced by embedding models\&. 
+.TP
+\f(BIAI_FORMAT_IMAGE \fP
+Image data (PNG, JPG, BMP, WebP, etc\&.)\&. 
+.TP
+\f(BIAI_FORMAT_AUDIO \fP
+Audio data (WAV, MP3, OGG, PCM, etc\&.)\&. 
+.TP
+\f(BIAI_FORMAT_VIDEO \fP
+Video data (MP4, WebM, etc\&.)\&. 
+.TP
+\f(BIAI_FORMAT_CUSTOM \fP
+Any custom developer-defined format not covered by the predefined types\&. 
+.PP
+Definition at line \fB29\fP of file \fBModelMeta\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.AI\&.ModelMeta\fP : int"
+
+.PP
+Defines strongly typed metadata keys for model execution\&. Naming follows the AI_META_XXX convention, Values are grouped logically and designed to remain stable for long-term API usage\&.
+
+.PP
+These metadata keys describe backend information, model details, request/response properties, execution metrics, tool usage, and error diagnostics\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIAI_META_BACKEND \fP
+Name of the backend used to execute the model\&. 
+.TP
+\f(BIAI_META_BACKEND_VERSION \fP
+\fBVersion\fP string of the backend implementation\&. 
+.TP
+\f(BIAI_META_BACKEND_TYPE \fP
+Type of backend (e\&.g\&., Local, Remote, WebAPI, WindowsAI)\&. 
+.TP
+\f(BIAI_META_BACKEND_LATENCY \fP
+Measured backend latency in milliseconds\&. 
+.TP
+\f(BIAI_META_PLATFORM \fP
+The Platform where run the backend\&. 
+.TP
+\f(BIAI_META_MODEL \fP
+Identifier of the model used (e\&.g\&., "gpt-4", "llama3")\&. 
+.TP
+\f(BIAI_META_MODEL_VERSION \fP
+\fBVersion\fP of the model, if provided by the backend\&. 
+.TP
+\f(BIAI_META_MODEL_PROVIDER \fP
+Provider of the model (OpenAI, Microsoft, HuggingFace, FreeWeb, etc\&.)\&. 
+.TP
+\f(BIAI_META_MODEL_CAPS \fP
+Capability flags describing supported features of the model\&. 
+.TP
+\f(BIAI_META_URL \fP
+URL used to send the request to the backend\&. 
+.TP
+\f(BIAI_META_HTTP_STATUS \fP
+HTTP status code returned by the backend\&. 
+.TP
+\f(BIAI_META_HTTP_HEADERS \fP
+HTTP response headers returned by the backend\&. 
+.TP
+\f(BIAI_META_REQUEST_SIZE \fP
+Size of the request payload in bytes\&. 
+.TP
+\f(BIAI_META_RESPONSE_SIZE \fP
+Size of the response payload in bytes\&. 
+.TP
+\f(BIAI_META_RAW \fP
+Raw content returned by the backend (JSON, text, binary, etc\&.)\&. 
+.TP
+\f(BIAI_META_CONTENT_OUT \fP
+Parsed output content (JSON element, XML DOM, text, binary blob, etc\&.)\&. 
+.TP
+\f(BIAI_META_CONTENT_IN \fP
+Serialized input content sent to the backend\&. 
+.TP
+\f(BIAI_META_TRACE_ID \fP
+Trace identifier used for debugging or correlation\&. 
+.TP
+\f(BIAI_META_FORMAT \fP
+Format of the returned content\&. See \fBMetaFormat\fP\&. 
+.TP
+\f(BIAI_META_EXEC_TIME \fP
+Total execution time in milliseconds\&. 
+.TP
+\f(BIAI_META_EXEC_START \fP
+Timestamp marking the start of execution\&. 
+.TP
+\f(BIAI_META_EXEC_END \fP
+Timestamp marking the end of execution\&. 
+.TP
+\f(BIAI_META_TOKENS_IN \fP
+Number of input tokens processed by the model\&. 
+.TP
+\f(BIAI_META_TOKENS_OUT \fP
+Number of output tokens generated by the model\&. 
+.TP
+\f(BIAI_META_TOKENS_TOTAL \fP
+Total number of tokens involved in the request\&. 
+.TP
+\f(BIAI_META_TOOL_USED \fP
+Name of the tool used during execution, if any\&. 
+.TP
+\f(BIAI_META_TOOL_COUNT \fP
+Number of tools invoked during execution\&. 
+.TP
+\f(BIAI_META_TOOL_LATENCY \fP
+Execution time of the tool in milliseconds\&. 
+.TP
+\f(BIAI_META_ERROR_TYPE \fP
+Type of exception thrown during execution\&. 
+.TP
+\f(BIAI_META_ERROR_MESSAGE \fP
+Error message describing the failure\&. 
+.TP
+\f(BIAI_META_ERROR_STACK \fP
+Stack trace of the exception, if available\&. 
+.TP
+\f(BIAI_META_ERROR_CODE \fP
+Backend-specific error code or HResult\&. 
+.TP
+\f(BIAI_META_SESSION_ID \fP
+Session identifier used for conversational or stateful backends\&. 
+.TP
+\f(BIAI_META_TOOLS_USED \fP
+List of tool names used during execution\&. 
+.TP
+\f(BIAI_META_SYSTEMPROMPT_HASH \fP
+\fBHash\fP of the system prompt for debugging or caching\&. 
+.TP
+\f(BIAI_META_MODEL_PARAMETERS \fP
+Model parameters passed to the backend (temperature, top_p, etc\&.)\&. 
+.TP
+\f(BIAI_META_BACKEND_CONFIG \fP
+\fBBackend\fP configuration snapshot used during execution\&. 
+.PP
+Definition at line \fB158\fP of file \fBModelMeta\&.cs\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.AddConfig (string key, object value)"
+
+.PP
+Adds or updates a configuration value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP Configuration key\&.
+.br
+\fIvalue\fP Configuration value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the value was added or updated successfully\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.Model< T, TTOOL >\&.AddConfig (string key, object value)"
+
+.PP
+Adds or updates a configuration value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP Configuration key\&.
+.br
+\fIvalue\fP Configuration value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Always true\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB206\fP of file \fBModel\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.AI\&.WebAIModel\&.SetAPIKey()\fP, \fBSystemEx\&.AI\&.WebAIModel\&.SetMaxTokens()\fP, \fBSystemEx\&.AI\&.WebAIModel\&.SetTemperatur()\fP, \fBSystemEx\&.AI\&.WebAIModel\&.SetTopP()\fP, \fBSystemEx\&.AI\&.WebAIModel\&.SetURL()\fP, and \fBSystemEx\&.AI\&.WebAIModel\&.WebAIModel()\fP\&.
+.SS "void SystemEx\&.AI\&.ModelPromp< T >\&.AddContext (string key, object value)"
+
+.PP
+Adds or replaces a context value associated with the specified key\&. 
+.PP
+Definition at line \fB129\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "void SystemEx\&.AI\&.ModelPromp< T >\&.AddParameter (string key, object value)"
+
+.PP
+Adds or replaces a parameter value associated with the specified key\&. 
+.PP
+Definition at line \fB157\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "void SystemEx\&.AI\&.ModelPromp< T >\&.AddTag (string key, object value)"
+
+.PP
+Adds or replaces a tag value associated with the specified key\&. 
+.PP
+Definition at line \fB183\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.AddTool (IModelTool< T > tool)"
+
+.PP
+Adds a tool to the model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItool\fP Tool instance\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the tool was added successfully\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.Model< T, TTOOL >\&.AddTool (IModelTool< T > tool)"
+
+.PP
+Registers a tool with the backend\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItool\fP Tool to register\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if registration succeeded\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB236\fP of file \fBModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IAIFunctionFactory< T, TAITOOL >\&.Convert (IModelTool< T > tool, out TAITOOL converted)"
+
+.PP
+Converts the given \fBIModelTool<T>\fP into a backend‑compatible function object\&. 
+.br
+ Returns \fRtrue\fP if conversion succeeded; otherwise \fRfalse\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItool\fP The model tool definition to convert\&. 
+.br
+\fIconverted\fP When the method returns, contains the converted backend‑specific tool object if conversion succeeded; otherwise \fRnull\fP\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the tool was successfully converted; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.SS "Task< object?> SystemEx\&.AI\&.IModelTool< T >\&.ExecuteAsync (Map< string, object?> args, CancellationToken ct)"
+
+.PP
+Executes the tool asynchronously using the provided argument dictionary\&. 
+.br
+ The backend supplies validated parameters and a cancellation token\&. 
+.br
+ The returned object must be serializable or convertible into a model‑usable form\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIargs\fP A map containing the tool parameters mapped by name\&. 
+.br
+\fIct\fP A cancellation token used to abort execution if required by the backend\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A task producing the tool's result, or \fRnull\fP if no output is generated\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\fP, \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\fP, and \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\fP\&.
+.SS "async Task< object?> SystemEx\&.AI\&.Tools\&.CalculatorTool\&.ExecuteAsync (Map< string, object?> args, CancellationToken ct)"
+
+.PP
+Executes the calculator logic\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIargs\fP Map containing tool arguments\&.
+.br
+\fIct\fP Cancellation token\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A numeric result of the requested operation\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIDivideByZeroException\fP Thrown when attempting to divide by zero\&. 
+.br
+\fIArgumentException\fP Thrown when an unknown operation is requested\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB86\fP of file \fBCalculatorTool\&.cs\fP\&.
+.SS "async Task< object?> SystemEx\&.AI\&.Tools\&.DateDifferenceTool\&.ExecuteAsync (Map< string, object?> args, CancellationToken ct)"
+
+.PP
+Executes the date difference calculation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIargs\fP Map containing tool arguments\&.
+.br
+\fIct\fP Cancellation token\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A double representing the number of days between the two dates\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIArgumentException\fP Thrown when required parameters are missing or invalid\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB71\fP of file \fBDateDifferenceTool\&.cs\fP\&.
+.SS "async Task< object?> SystemEx\&.AI\&.Tools\&.DateTimeTool\&.ExecuteAsync (Map< string, object?> args, CancellationToken ct)"
+
+.PP
+Executes the tool logic\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIargs\fP Map containing tool arguments\&.
+.br
+\fIct\fP Cancellation token\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A string containing the current date/time in ISO 8601 format\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB62\fP of file \fBDateTimeTool\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.GetConfigValue (string key, ref object value)"
+
+.PP
+Retrieves a configuration value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP Configuration key\&.
+.br
+\fIvalue\fP \fBReference\fP to the output value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the key exists and the value was retrieved\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.Model< T, TTOOL >\&.GetConfigValue (string key, ref object value)"
+
+.PP
+Retrieves a configuration value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP Configuration key\&.
+.br
+\fIvalue\fP Output value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the key exists; otherwise false\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB217\fP of file \fBModel\&.cs\fP\&.
+.SS "IEnumerable< \fBModelToolParameter\fP > SystemEx\&.AI\&.IModelTool< T >\&.GetParameters ()"
+
+.PP
+Returns the parameter schema describing all inputs accepted by the tool\&. 
+.br
+ Each parameter defines a name, type, and optional constraints\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\fP, \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\fP, and \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\fP\&.
+.SS "IEnumerable< \fBModelToolParameter\fP > SystemEx\&.AI\&.Tools\&.CalculatorTool\&.GetParameters ()"
+
+.PP
+Defines the parameters accepted by this tool\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A sequence of \fBModelToolParameter\fP describing the tool's inputs\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB52\fP of file \fBCalculatorTool\&.cs\fP\&.
+.SS "IEnumerable< \fBModelToolParameter\fP > SystemEx\&.AI\&.Tools\&.DateDifferenceTool\&.GetParameters ()"
+
+.PP
+Defines the parameters accepted by this tool\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A sequence of \fBModelToolParameter\fP describing the tool's inputs\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB46\fP of file \fBDateDifferenceTool\&.cs\fP\&.
+.SS "IEnumerable< \fBModelToolParameter\fP > SystemEx\&.AI\&.Tools\&.DateTimeTool\&.GetParameters ()"
+
+.PP
+Defines the parameters accepted by this tool\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A sequence of \fBModelToolParameter\fP describing the tool's inputs\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB46\fP of file \fBDateTimeTool\&.cs\fP\&.
+.SS "Optional< object > SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.GetValue (string key)"
+
+.PP
+Get Value from config\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB104\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "Optional< object > SystemEx\&.AI\&.IModelBackend< T, TAI >\&.GetValue (string key)"
+
+.PP
+Get Value from config\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.HasContext (string key)"
+
+.PP
+Determines whether a context entry with the specified key exists\&. 
+.PP
+Definition at line \fB142\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.HasParameter (string key)"
+
+.PP
+Determines whether a parameter entry with the specified key exists\&. 
+.PP
+Definition at line \fB167\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.HasTag (string key)"
+
+.PP
+Determines whether a tag entry with the specified key exists\&. 
+.PP
+Definition at line \fB193\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.HasTool (string toolName)"
+
+.PP
+Web‑API backends do not support tools\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB443\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.HasTool (string toolName)"
+
+.PP
+Checks whether a tool with the given name exists\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItoolName\fP Tool name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the tool is present\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelBackend< T, TAI >\&.HasTool (string toolName)"
+
+.PP
+Has this model tools\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "bool SystemEx\&.AI\&.Model< T, TTOOL >\&.HasTool (string toolName)"
+
+.PP
+Checks whether a tool is registered\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItoolName\fP Tool name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the tool exists\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB252\fP of file \fBModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.HaveCap (\fBBackendCapabilities\fP pCapabilities)"
+
+.PP
+Checks whether the model has a specific backend capability\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpCapabilities\fP Capability key\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the capability exists and is enabled\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.Model< T, TTOOL >\&.HaveCap (\fBBackendCapabilities\fP pCapabilities)"
+
+.PP
+Checks whether the model has a specific capability\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpCapabilities\fP Capability key\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the capability exists\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB180\fP of file \fBModel\&.cs\fP\&.
+.SS "virtual bool SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Initialization (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)\fR [virtual]\fP"
+
+.PP
+Initialization the model\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP The configuration for this model\&.
+.br
+\fIenvironment\fP The enviroment for thie model\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP when init or \fRfalse\fP when not
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB264\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.Initialization (Map< string, object > configuration)"
+
+.PP
+Initializes the model using the provided configuration and set the environment data automatic\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP Backend‑specific configuration values (API keys, URLs, model parameters, etc\&.)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.Initialization (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+
+.PP
+Initializes the model using the provided configuration and environment data\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP Backend‑specific configuration values (API keys, URLs, model parameters, etc\&.)\&. 
+.br
+\fIenvironment\fP Environment information describing the client machine (OS, hardware, paths, runtime)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelBackend< T, TAI >\&.Initialization (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+
+.PP
+Initialization the model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP The configuration for this model\&.
+.br
+\fIenvironment\fP The enviroment for thie model\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP when init or \fRfalse\fP when not
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "bool SystemEx\&.AI\&.Model< T, TTOOL >\&.Initialization (Map< string, object > configuration)"
+
+.PP
+Initializes the model using the provided configuration and set the environment data automatic\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP Backend‑specific configuration values (API keys, URLs, model parameters, etc\&.)\&. 
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB257\fP of file \fBModel\&.cs\fP\&.
+.PP
+Referenced by \fBInitialization()\fP\&.
+.SS "bool SystemEx\&.AI\&.Model< T, TTOOL >\&.Initialization (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+
+.PP
+Initializes the model using the provided configuration and environment data\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP Backend‑specific configuration values (API keys, URLs, model parameters, etc\&.)\&. 
+.br
+\fIenvironment\fP Environment information describing the client machine (OS, hardware, paths, runtime)\&. 
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB298\fP of file \fBModel\&.cs\fP\&.
+.SS "async Task< IModelResult< T > > SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync (string systemPrompt, IModelPromp< T > input)"
+
+.PP
+Executes the model by sending a JSON payload to the remote Web‑API\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsystemPrompt\fP The system instruction for the model\&.
+.br
+\fIinput\fP The user prompt and context\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBModelResult<T>\fP containing:
+.IP "\(bu" 2
+The parsed output
+.IP "\(bu" 2
+Metadata
+.IP "\(bu" 2
+Raw JSON
+.IP "\(bu" 2
+Error information (if any) 
+.PP
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB291\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "Task< IModelResult< T > > SystemEx\&.AI\&.IModelBackend< T, TAI >\&.InvokeAsync (string systemPrompt, IModelPromp< T > input)"
+
+.PP
+Executes the model by sending a payload to the model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsystemPrompt\fP The system instruction for the model\&.
+.br
+\fIinput\fP The user prompt and context\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBModelResult<T>\fP containing:
+.IP "\(bu" 2
+The parsed output
+.IP "\(bu" 2
+Metadata
+.IP "\(bu" 2
+Raw JSON
+.IP "\(bu" 2
+Error information (if any) 
+.PP
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "IReadOnlyList< object > SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.ListTools ()"
+
+.PP
+Web‑API backends do not support tools\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB448\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "IReadOnlyList< TAI > SystemEx\&.AI\&.IModelBackend< T, TAI >\&.ListTools ()"
+
+.PP
+Get A list of all regist tools with this model\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "SystemEx\&.AI\&.Model< T, TTOOL >\&.Model (string name, string strModelName, string strPrompt, IModelBackend< T, TTOOL > backend)"
+
+.PP
+Creates a new model instance with default capability, configuration, state, and environment maps\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Logical name of the model instance\&.
+.br
+\fIstrModelName\fP \fBAI\fP model identifier used by the backend\&. Add to config and to backend
+.br
+\fIbackend\fP \fBBackend\fP responsible for executing requests\&.
+.br
+\fIstrPrompt\fP "Ich bin eine KI die nur so schalu is t wie 42"
+.RE
+.PP
+
+.PP
+Definition at line \fB146\fP of file \fBModel\&.cs\fP\&.
+.SS "SystemEx\&.AI\&.ModelPromp< T >\&.ModelPromp (T prompt, Map< string, object > context, Optional< string > sessionId, Optional< Map< string, object > > parameters)"
+
+.PP
+Initializes a new prompt using explicit context and parameter maps\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIprompt\fP The raw prompt value\&.
+.br
+\fIcontext\fP The contextual metadata map\&.
+.br
+\fIsessionId\fP Optional session identifier\&.
+.br
+\fIparameters\fP Optional parameter map; if null, an empty map is created\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB86\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "SystemEx\&.AI\&.ModelPromp< T >\&.ModelPromp (T prompt, Map< string, object > context, Optional< string > sessionId, Optional< Map< string, object > > parameters, bool cancel, Optional< Map< string, object > > tags)"
+
+.PP
+Initializes a new prompt with full control over context, parameters, tags, and cancellation state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIprompt\fP The raw prompt value\&.
+.br
+\fIcontext\fP The contextual metadata map\&.
+.br
+\fIsessionId\fP Optional session identifier\&.
+.br
+\fIparameters\fP Optional parameter map\&.
+.br
+\fIcancel\fP Indicates whether the prompt should be cancelled\&.
+.br
+\fItags\fP Optional tag map\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB105\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "SystemEx\&.AI\&.ModelPromp< T >\&.ModelPromp (T prompt, Optional< string > sessionId)"
+
+.PP
+Initializes a new prompt with the specified raw value and session identifier\&. Context, parameters, and tags are created empty\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIprompt\fP The raw prompt value\&.
+.br
+\fIsessionId\fP Optional session identifier\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB68\fP of file \fBModelPrompt\&.cs\fP\&.
+.PP
+Referenced by \fBWithContext()\fP, \fBWithParameter()\fP, and \fBWithTag()\fP\&.
+.SS "SystemEx\&.AI\&.ModelResult< T >\&.ModelResult (T result, Map< \fBModelMeta\fP, object > metadata, Optional< Exception > error, Optional< object > raw)"
+
+.PP
+Creates a new \fBModelResult<T>\fP instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIresult\fP The final model output\&.
+.br
+\fImetadata\fP Execution metadata\&.
+.br
+\fIerror\fP Optional error information\&.
+.br
+\fIraw\fP Optional raw backend output\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB124\fP of file \fBModelResult\&.cs\fP\&.
+.SS "SystemEx\&.AI\&.ModelToolParameter\&.ModelToolParameter (string name, \fBType\fP type, string description)"
+
+.PP
+Initializes a new parameter definition with the specified name, type, and description\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The parameter name\&.
+.br
+\fItype\fP The \&.NET type of the parameter\&.
+.br
+\fIdescription\fP A human‑readable description\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB63\fP of file \fBModelToolParameter\&.cs\fP\&.
+.SS "virtual string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.OnCreateURL (WebAIBackendPayload< T > payload)\fR [virtual]\fP"
+
+.PP
+Creates the final URL used for the HTTP request\&. This method is \fRvirtual\fP so that derived backends may customize how the request URL is constructed\&. Typical use cases include:
+.IP "\(bu" 2
+Appending query parameters
+.IP "\(bu" 2
+Switching between multiple endpoints
+.IP "\(bu" 2
+Adding API keys or version identifiers
+.IP "\(bu" 2
+Routing based on payload content
+.PP
+
+.PP
+The default implementation simply returns \fBWebAIBackendPayload<T>\&.URL\fP, making the backend functional without requiring subclass overrides\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIpayload\fP The payload that will be sent to the backend\&. This may contain additional information that derived classes can use to construct dynamic URLs\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The fully constructed URL used for the HTTP POST request\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB128\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "virtual \fBTriple\fP< T, \fBMetaFormat\fP, object > SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.OnDeserialize (string raw)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Deserializes the raw JSON response from the backend using JsonElement\&. This method expects the backend to return a JSON object containing an "output" field\&. The entire JSON document is preserved as a JsonElement so that callers can inspect additional metadata\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIraw\fP Raw JSON string returned by the backend\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pair containing:
+.IP "\(bu" 2
+The parsed output of type \fIT\fP 
+.IP "\(bu" 2
+The full JSON document as JsonElement 
+.PP
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIInvalidDataException\fP Thrown when the backend does not return an "output" field\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB159\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "virtual StringContent SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.OnSerialize (WebAIBackendPayload< T > payload)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Serializes the payload into JSON and wraps it in a StringContent suitable for HTTP POST requests\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpayload\fP The payload to serialize\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+JSON content for HTTP transmission\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB138\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "bool SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.RegistTool (IModelTool< T > tool)"
+
+.PP
+Web‑API backends do not support tools\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB433\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelBackend< T, TAI >\&.RegistTool (IModelTool< T > tool)"
+
+.PP
+Regist a tool with this model\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP when added or \fRfalse\fP when not
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "virtual void SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Release (bool wait)\fR [virtual]\fP"
+
+.PP
+Release the model\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB276\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "void SystemEx\&.AI\&.IModel< T, TTOOL >\&.Release ()"
+
+.PP
+Releases all resources associated with the model\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "void SystemEx\&.AI\&.IModelBackend< T, TAI >\&.Release (bool wait)"
+
+.PP
+Release the model\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "void SystemEx\&.AI\&.Model< T, TTOOL >\&.Release ()"
+
+.PP
+Finalizes backend execution\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB313\fP of file \fBModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.RemoveContext (string key)"
+
+.PP
+Removes a context entry if it exists\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if the entry was removed; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB137\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.RemoveParameter (string key)"
+
+.PP
+Removes a parameter entry if it exists\&. 
+.PP
+Definition at line \fB162\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.RemoveTag (string key)"
+
+.PP
+Removes a tag entry if it exists\&. 
+.PP
+Definition at line \fB188\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.RemoveTool (string toolName)"
+
+.PP
+Removes a tool from the model by name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItoolName\fP Name of the tool\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the tool was removed\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.Model< T, TTOOL >\&.RemoveTool (string toolName)"
+
+.PP
+Removes a tool from the backend\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItoolName\fP Name of the tool to remove\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the tool was removed\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB244\fP of file \fBModel\&.cs\fP\&.
+.SS "Task< IModelResult< T > > SystemEx\&.AI\&.IModel< T, TTOOL >\&.RunAsync (IModelPromp< T > input)"
+
+.PP
+Executes the model asynchronously using the provided prompt\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP Model input prompt and context\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A task that produces the model result\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "Task< IModelResult< T > > SystemEx\&.AI\&.Model< T, TTOOL >\&.RunAsync (IModelPromp< T > input)"
+
+.PP
+Executes the model asynchronously using the backend\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP Prompt and context information\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Model result including metadata and raw output\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB307\fP of file \fBModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.WebAIModel\&.SetAPIKey (string key)"
+
+.PP
+Sets the API key used for authenticated backend access\&. 
+.br
+ This value is stored as a configuration parameter and may be used by the backend during request construction\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The API key string\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the configuration value was applied; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB153\fP of file \fBWebAIModel\&.cs\fP\&.
+.SS "void SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.SetConfig (string key, object value)"
+
+.PP
+Set config\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB97\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "void SystemEx\&.AI\&.IModelBackend< T, TAI >\&.SetConfig (string key, object value)"
+
+.PP
+Set config\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "bool SystemEx\&.AI\&.WebAIModel\&.SetMaxTokens (int value)"
+
+.PP
+Sets the maximum number of tokens the backend may generate\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The token limit\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the configuration value was applied; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB119\fP of file \fBWebAIModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.WebAIModel\&.SetTemperatur (float value)"
+
+.PP
+Sets the sampling temperature used by the backend\&. 
+.br
+ The value is clamped to the range [0\&.0, 2\&.0]\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The desired temperature\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the configuration value was applied; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB108\fP of file \fBWebAIModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.WebAIModel\&.SetTopP (float value)"
+
+.PP
+Sets the nucleus‑sampling parameter \fRtop‑p\fP\&. 
+.br
+ The value is clamped to the range [0\&.0, 1\&.0]\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The top‑p sampling value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the configuration value was applied; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB130\fP of file \fBWebAIModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.WebAIModel\&.SetURL (string strURL)"
+
+.PP
+Updates the backend endpoint URL used for model execution\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstrURL\fP The new backend URL\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the configuration value was applied; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB141\fP of file \fBWebAIModel\&.cs\fP\&.
+.SS "override string SystemEx\&.AI\&.ModelPromp< T >\&.ToString ()"
+
+.PP
+Returns a human‑readable representation of the prompt, including prompt value, session identifier, cancellation state, context, parameters, and tags\&. 
+.PP
+Definition at line \fB262\fP of file \fBModelPrompt\&.cs\fP\&.
+.PP
+Referenced by \fBToString()\fP\&.
+.SS "bool SystemEx\&.AI\&.WebAIModel\&.TryChangeModel (string command)"
+
+.PP
+Attempts to change the backend model by parsing a command of the form \fR"chg_model &lt;modelName&gt;"\fP\&. 
+.br
+ If the command is valid, the internal Model\&.ModelName property is updated\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcommand\fP The command string containing the new model name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the model name was successfully changed; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB86\fP of file \fBWebAIModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.TryGetContext (string key, out object? value)"
+
+.PP
+Attempts to retrieve a context value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The context key\&.
+.br
+\fIvalue\fP The retrieved value, if present\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the value exists; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB152\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.TryGetParameter (string key, out object? value)"
+
+.PP
+Attempts to retrieve a parameter value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The parameter key\&.
+.br
+\fIvalue\fP The retrieved value, if present\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the value exists; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB177\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.TryGetTag (string key, out object? value)"
+
+.PP
+Attempts to retrieve a tag value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The tag key\&.
+.br
+\fIvalue\fP The retrieved value, if present\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the value exists; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB203\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.UnregistTool (string toolName)"
+
+.PP
+Web‑API backends do not support tools\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB438\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelBackend< T, TAI >\&.UnregistTool (string toolName)"
+
+.PP
+Unregist a tool with this model\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP when added or \fRfalse\fP when not
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.SS "SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WebAIBackend (string strURL, bool freeUsable = \fRtrue\fP)"
+
+.PP
+Initializes a new Web‑API backend with the specified base URL\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstrURL\fP \fBBase\fP URL of the remote \fBAI\fP service\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB222\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "SystemEx\&.AI\&.WebAIModel\&.WebAIModel (string strURL, string stringModelName, bool FreeAPI = \fRtrue\fP)"
+
+.PP
+Initializes a new web‑based \fBAI\fP model using the specified endpoint URL and model identifier\&. 
+.br
+ Default configuration values are applied to ensure consistent behavior across backends, including JSON output formatting and disabled streaming\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstrURL\fP The remote backend endpoint URL\&.
+.br
+\fIstringModelName\fP The model identifier used by the backend\&.
+.br
+\fIFreeAPI\fP Indicates whether the backend is accessed without authentication or API‑key requirements\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB56\fP of file \fBWebAIModel\&.cs\fP\&.
+.SS "\fBModelPromp\fP< T > SystemEx\&.AI\&.ModelPromp< T >\&.WithContext (string key, object value)"
+
+.PP
+Creates a new prompt instance with an updated context value\&. 
+.PP
+Definition at line \fB244\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "\fBModelPromp\fP< T > SystemEx\&.AI\&.ModelPromp< T >\&.WithParameter (string key, object value)"
+
+.PP
+Creates a new prompt instance with an updated parameter value\&. The original instance remains unchanged\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The parameter key\&.
+.br
+\fIvalue\fP The new value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new \fBModelPromp<T>\fP instance\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB212\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "\fBModelPromp\fP< T > SystemEx\&.AI\&.ModelPromp< T >\&.WithTag (string key, object value)"
+
+.PP
+Creates a new prompt instance with an updated tag value\&. 
+.PP
+Definition at line \fB228\fP of file \fBModelPrompt\&.cs\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_MAX_TOKENS = 'WEBAI_MAX_TOKENS'\fR [static]\fP"
+
+.PP
+Definition at line \fB47\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "const string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_RESPONSE_FORMAT = 'WEBAI_RESPONSE_FORMAT'\fR [static]\fP"
+
+.PP
+Definition at line \fB50\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "const string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_STREAM = 'WEBAI_STREAM'\fR [static]\fP"
+
+.PP
+Definition at line \fB51\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "const string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_TEMPERATUR = 'WEBAI_TEMPERATURE'\fR [static]\fP"
+
+.PP
+Definition at line \fB48\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "const string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_TOP_P = 'WEBAI_TOP_P'\fR [static]\fP"
+
+.PP
+Definition at line \fB49\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "const string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_URL = 'WB_BACKEND_CONFIG_URL'\fR [static]\fP"
+
+.PP
+Definition at line \fB52\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SH "Properties"
+.PP 
+.SS "IModelBackend<T, TTOOL> SystemEx\&.AI\&.IModel< T, TTOOL >\&.Backend\fR [get]\fP"
+
+.PP
+Gets the backend implementation used by this model\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB57\fP of file \fBAI/IModel\&.cs\fP\&.
+.SS "IModelBackend<T, TTOOL> SystemEx\&.AI\&.Model< T, TTOOL >\&.Backend\fR [get]\fP"
+
+.PP
+\fBBackend\fP responsible for executing model requests\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB113\fP of file \fBModel\&.cs\fP\&.
+.PP
+Referenced by \fBAddConfig()\fP, \fBAddTool()\fP, \fBGetConfigValue()\fP, \fBHasTool()\fP, \fBHaveCap()\fP, \fBInitialization()\fP, \fBRelease()\fP, \fBRemoveTool()\fP, and \fBRunAsync()\fP\&.
+.SS "string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.BackendName\fR [get]\fP"
+
+.PP
+The backend name used for metadata and diagnostics\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB75\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "string SystemEx\&.AI\&.IModelBackend< T, TAI >\&.BackendName\fR [get]\fP"
+
+.PP
+The backend name used for metadata and diagnostics\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBIModelBackend\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelPromp< T >\&.Cancel\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the prompt should be cancelled before reaching the backend\&. Useful for pre‑processing tools or pipeline guards\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelPromp< T >\fP\&.
+.PP
+Definition at line \fB69\fP of file \fBIModelPromp\&.cs\fP\&.
+.SS "CancellationToken? SystemEx\&.AI\&.Model< T, TTOOL >\&.Cancel\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Optional cancellation token used to cancel long‑running operations\&. 
+.PP
+Definition at line \fB118\fP of file \fBModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.Cancel\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the prompt should be cancelled before reaching the backend\&. Useful for pre‑processing tools or pipeline guards\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB60\fP of file \fBModelPrompt\&.cs\fP\&.
+.PP
+Referenced by \fBModelPromp()\fP, \fBModelPromp()\fP, \fBModelPromp()\fP, \fBToString()\fP, \fBWithContext()\fP, \fBWithParameter()\fP, and \fBWithTag()\fP\&.
+.SS "Map<\fBBackendCapabilities\fP, object> SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Capabilities\fR [get]\fP"
+
+.PP
+Describes backend capabilities (text, chat, JSON, remote, etc\&.)\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB62\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "Map<\fBBackendCapabilities\fP, object> SystemEx\&.AI\&.IModelBackend< T, TAI >\&.Capabilities\fR [get]\fP"
+
+.PP
+Describes backend capabilities (text, chat, JSON, remote, etc\&.)\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.PP
+Definition at line \fB36\fP of file \fBIModelBackend\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Configuration\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Stores backend configuration values such as the base URL\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB67\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.IModel< T, TTOOL >\&.Configuration\fR [get]\fP"
+
+.PP
+Gets the backend‑specific configuration map\&. Configuration values are backend‑defined and may vary between systems\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB46\fP of file \fBAI/IModel\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.IModelBackend< T, TAI >\&.Configuration\fR [get]\fP"
+
+.PP
+Stores backend configuration values such as the base URL\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.PP
+Definition at line \fB41\fP of file \fBIModelBackend\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.Model< T, TTOOL >\&.Configuration\fR [get]\fP"
+
+.PP
+Configuration map containing runtime settings\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB103\fP of file \fBModel\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Context\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Conversation context (previous messages, metadata)\&. 
+.PP
+Definition at line \fB68\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.IModelPromp< T >\&.Context\fR [get]\fP"
+
+.PP
+Gets a metadata map containing contextual information such as temperature, top‑p, tool hints, memory handles, or session‑level settings\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelPromp< T >\fP\&.
+.PP
+Definition at line \fB48\fP of file \fBIModelPromp\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync()\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.ModelPromp< T >\&.Context\fR [get]\fP"
+
+.PP
+Gets a metadata map containing contextual information such as temperature, top‑p, tool hints, memory handles, or session‑level settings\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB52\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.IModelTool< T >\&.Description\fR [get]\fP"
+
+.PP
+Gets a human‑readable description of the tool's purpose and behavior\&. 
+.br
+ Used by backends to generate tool metadata or documentation\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\fP, \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\fP, and \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBIModelTool\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.ModelToolParameter\&.Description\fR [get]\fP"
+
+.PP
+Gets a human‑readable description of the parameter's purpose\&. 
+.br
+ Used by backends, documentation systems, and model‑side tool introspection\&. 
+.PP
+Definition at line \fB54\fP of file \fBModelToolParameter\&.cs\fP\&.
+.PP
+Referenced by \fBModelToolParameter()\fP\&.
+.SS "string SystemEx\&.AI\&.Tools\&.CalculatorTool\&.Description\fR [get]\fP"
+
+.PP
+Gets a human-readable description of what the tool does\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB44\fP of file \fBCalculatorTool\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Tools\&.DateDifferenceTool\&.Description\fR [get]\fP"
+
+.PP
+Gets a human-readable description of what the tool does\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB38\fP of file \fBDateDifferenceTool\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Tools\&.DateTimeTool\&.Description\fR [get]\fP"
+
+.PP
+Gets a human-readable description of what the tool does\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB38\fP of file \fBDateTimeTool\&.cs\fP\&.
+.SS "Map<\fBSystemEx\&.AI\&.Environment\fP, object> SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Enviro\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Stores backend environment\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB70\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "Map<\fBSystemEx\&.AI\&.Environment\fP, object> SystemEx\&.AI\&.IModelBackend< T, TAI >\&.Enviro\fR [get]\fP"
+
+.PP
+Stores backend environment\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.PP
+Definition at line \fB46\fP of file \fBIModelBackend\&.cs\fP\&.
+.SS "Map<\fBEnvironment\fP, object> SystemEx\&.AI\&.IModel< T, TTOOL >\&.\fBEnvironment\fP\fR [get]\fP"
+
+.PP
+Gets the environment map describing the client machine\&. This includes OS, architecture, hardware, paths, runtime, and other system properties\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB52\fP of file \fBAI/IModel\&.cs\fP\&.
+.SS "Map<\fBEnvironment\fP, object> SystemEx\&.AI\&.Model< T, TTOOL >\&.\fBEnvironment\fP\fR [get]\fP, \fR [protected set]\fP"
+
+.PP
+The Environment\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB136\fP of file \fBModel\&.cs\fP\&.
+.SS "Optional<Exception> SystemEx\&.AI\&.IModelResult< T >\&.Error\fR [get]\fP"
+
+.PP
+Gets an optional exception describing an error that occurred during model execution\&. 
+.br
+ If \fBSuccess\fP is true, this value is typically null\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.PP
+Definition at line \fB57\fP of file \fBIModelResult\&.cs\fP\&.
+.SS "Optional<Exception> SystemEx\&.AI\&.ModelResult< T >\&.Error\fR [get]\fP"
+
+.PP
+Gets the optional error information\&. If \fBSuccess\fP is true, this value is null\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.PP
+Definition at line \fB95\fP of file \fBModelResult\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.IsAvailable\fR [get]\fP"
+
+.PP
+Indicates whether the backend is available\&. Always true for Web‑API based backends\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB81\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelBackend< T, TAI >\&.IsAvailable\fR [get]\fP"
+
+.PP
+Indicates whether the backend is available\&. The OS decides availability based on installed \fBAI\fP components\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.PP
+Definition at line \fB75\fP of file \fBIModelBackend\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Metadata\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Optional: metadata for logging or session tracking\&. 
+.PP
+Definition at line \fB88\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "Map<\fBModelMeta\fP, object> SystemEx\&.AI\&.IModelResult< T >\&.Metadata\fR [get]\fP"
+
+.PP
+Gets a metadata map containing execution details such as timing, backend identifiers, token counts, or pipeline‑specific annotations\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.PP
+Definition at line \fB50\fP of file \fBIModelResult\&.cs\fP\&.
+.SS "Map<\fBModelMeta\fP, object> SystemEx\&.AI\&.ModelResult< T >\&.Metadata\fR [get]\fP"
+
+.PP
+Gets the metadata associated with the model execution\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.PP
+Definition at line \fB89\fP of file \fBModelResult\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Model\fR [get]\fP, \fR [set]\fP"
+
+.PP
+The model name (e\&.g\&., gpt-4o-mini, gpt-4o, gpt-3\&.5-turbo)\&. 
+.PP
+Definition at line \fB53\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "virtual string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.ModelName = 'default'\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Web‑API Modelname\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB86\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "string SystemEx\&.AI\&.IModelBackend< T, TAI >\&.ModelName\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the identifier of the \fBAI\fP model that should be used by the backend\&. This value determines which model the Windows \fBAI\fP \fBRuntime\fP will load when executing a request\&. It can be changed at any time during runtime, allowing dynamic switching between different \fBAI\fP models (e\&.g\&., "phi-3-mini", "phi-3-medium", "gpt-4o", etc\&.)\&.
+
+.PP
+The \fBModelName\fP is independent from the agent name used in the Model<T> constructor\&. While the agent name describes the logical assistant (e\&.g\&., "DevAssistant"), the \fBModelName\fP specifies the actual \fBAI\fP model used for inference\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+A string representing the model identifier passed to the Windows \fBAI\fP \fBRuntime\fP\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\fP\&.
+.PP
+Definition at line \fB69\fP of file \fBIModelBackend\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Model< T, TTOOL >\&.ModelName\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the identifier of the \fBAI\fP model used by the backend\&. This value determines which model the backend will load during execution\&. It can be changed at any time, allowing dynamic switching between models\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+A string representing the model identifier passed to the backend\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB129\fP of file \fBModel\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.IModel< T, TTOOL >\&.Name\fR [get]\fP"
+
+.PP
+Gets the model's unique name\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB34\fP of file \fBAI/IModel\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.IModelTool< T >\&.Name\fR [get]\fP"
+
+.PP
+Gets the unique name of the tool\&. 
+.br
+ This identifier is used by model backends and tool factories to expose the tool to the model runtime\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Tools\&.CalculatorTool\fP, \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\fP, and \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\fP\&.
+.PP
+Definition at line \fB45\fP of file \fBIModelTool\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Model< T, TTOOL >\&.Name\fR [get]\fP"
+
+.PP
+Gets the logical name of this model instance\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB97\fP of file \fBModel\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.ModelToolParameter\&.Name\fR [get]\fP"
+
+.PP
+Gets the unique parameter name used to identify the value in argument dictionaries and tool schemas\&. 
+.PP
+Definition at line \fB41\fP of file \fBModelToolParameter\&.cs\fP\&.
+.PP
+Referenced by \fBModelToolParameter()\fP\&.
+.SS "string SystemEx\&.AI\&.Tools\&.CalculatorTool\&.Name\fR [get]\fP"
+
+.PP
+Gets the unique tool name used by the \fBAI\fP runtime\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB39\fP of file \fBCalculatorTool\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Tools\&.DateDifferenceTool\&.Name\fR [get]\fP"
+
+.PP
+Gets the unique tool name used by the \fBAI\fP runtime\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB33\fP of file \fBDateDifferenceTool\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Tools\&.DateTimeTool\&.Name\fR [get]\fP"
+
+.PP
+Gets the unique tool name used by the \fBAI\fP runtime\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelTool< T >\fP\&.
+.PP
+Definition at line \fB33\fP of file \fBDateTimeTool\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Parameters\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Generation parameters (temperature, max_tokens, etc\&.)\&. 
+.PP
+Definition at line \fB73\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.IModelPromp< T >\&.Parameters\fR [get]\fP"
+
+.PP
+Gets a map of backend‑specific parameters that may influence execution, routing, or tool behavior\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelPromp< T >\fP\&.
+.PP
+Definition at line \fB58\fP of file \fBIModelPromp\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync()\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.ModelPromp< T >\&.Parameters\fR [get]\fP"
+
+.PP
+Gets a map of backend‑specific parameters that may influence execution, routing, or tool behavior\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB56\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "T SystemEx\&.AI\&.IModelPromp< T >\&.Prompt\fR [get]\fP"
+
+.PP
+Gets the raw prompt data supplied to the model\&. This may represent text, tokens, binary data, or any other prompt format\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelPromp< T >\fP\&.
+.PP
+Definition at line \fB43\fP of file \fBIModelPromp\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync()\fP\&.
+.SS "T SystemEx\&.AI\&.ModelPromp< T >\&.Prompt\fR [get]\fP"
+
+.PP
+Gets the raw prompt data supplied to the model\&. This may represent text, tokens, binary data, or any other prompt format\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB50\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "T SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.PromptRaw\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Raw user prompt (generic type)\&. 
+.PP
+Definition at line \fB63\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "Optional<object> SystemEx\&.AI\&.IModelResult< T >\&.Raw\fR [get]\fP"
+
+.PP
+Gets the raw backend output, if available\&. 
+.br
+ This may include unprocessed JSON, binary data, or internal model structures that were not converted into \fIT\fP \&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.PP
+Definition at line \fB64\fP of file \fBIModelResult\&.cs\fP\&.
+.SS "Optional<object> SystemEx\&.AI\&.ModelResult< T >\&.Raw\fR [get]\fP"
+
+.PP
+Gets the raw backend output, if available\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.PP
+Definition at line \fB100\fP of file \fBModelResult\&.cs\fP\&.
+.SS "T SystemEx\&.AI\&.IModelResult< T >\&.Result\fR [get]\fP"
+
+.PP
+Gets the final output produced by the model\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.PP
+Definition at line \fB44\fP of file \fBIModelResult\&.cs\fP\&.
+.SS "T SystemEx\&.AI\&.ModelResult< T >\&.Result\fR [get]\fP"
+
+.PP
+Gets the final model output\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.PP
+Definition at line \fB84\fP of file \fBModelResult\&.cs\fP\&.
+.SS "Optional<string> SystemEx\&.AI\&.IModelPromp< T >\&.SessionId\fR [get]\fP"
+
+.PP
+Gets the optional session identifier used to maintain conversational continuity across multiple model invocations\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelPromp< T >\fP\&.
+.PP
+Definition at line \fB53\fP of file \fBIModelPromp\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync()\fP\&.
+.SS "Optional<string> SystemEx\&.AI\&.ModelPromp< T >\&.SessionId\fR [get]\fP"
+
+.PP
+Gets the optional session identifier used to maintain conversational continuity across multiple model invocations\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB54\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.Model< T, TTOOL >\&.State\fR [get]\fP"
+
+.PP
+State map used for dynamic runtime information\&. 
+.PP
+Definition at line \fB108\fP of file \fBModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelResult< T >\&.Success\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the model execution completed successfully without errors\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.PP
+Definition at line \fB70\fP of file \fBIModelResult\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelResult< T >\&.Success\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the model execution succeeded\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.PP
+Definition at line \fB105\fP of file \fBModelResult\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.SystemPrompt\fR [get]\fP, \fR [set]\fP"
+
+.PP
+System instruction / system prompt\&. 
+.PP
+Definition at line \fB58\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.IModel< T, TTOOL >\&.SystemPrompt\fR [get]\fP"
+
+.PP
+Gets the system prompt used by the model\&. This is typically a static instruction or initialization text\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB40\fP of file \fBAI/IModel\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Model< T, TTOOL >\&.SystemPrompt\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets the system prompt used by the model\&. This is typically a static instruction or initialization text\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModel< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB92\fP of file \fBModel\&.cs\fP\&.
+.PP
+Referenced by \fBRunAsync()\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.IModelPromp< T >\&.Tags\fR [get]\fP"
+
+.PP
+Gets a tag map used for classification, annotation, or pipeline‑level processing\&. Tags do not affect model execution directly but may be used by tools or middleware\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelPromp< T >\fP\&.
+.PP
+Definition at line \fB64\fP of file \fBIModelPromp\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync()\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.ModelPromp< T >\&.Tags\fR [get]\fP"
+
+.PP
+Gets a tag map used for classification, annotation, or pipeline‑level processing\&. Tags do not affect model execution directly but may be used by tools or middleware\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB58\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.this[\fBBackendCapabilities\fP capabilities]\fR [get]\fP"
+
+.PP
+Indexer that checks whether the model supports a specific backend capability\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcapabilities\fP The capability key to check\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the capability exists and is enabled\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB64\fP of file \fBAI/IModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.Model< T, TTOOL >\&.this[\fBBackendCapabilities\fP capability]\fR [get]\fP"
+
+.PP
+Checks whether a capability exists in the capability map\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcapability\fP Capability key\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the capability exists; otherwise false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB170\fP of file \fBModel\&.cs\fP\&.
+.SS "object SystemEx\&.AI\&.IModelPromp< T >\&.this[string parameter]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets a backend parameter by name\&. 
+.br
+ Provides convenient indexed access to \fBParameters\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIparameter\fP The parameter key\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The associated parameter value\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelPromp< T >\fP\&.
+.PP
+Definition at line \fB76\fP of file \fBIModelPromp\&.cs\fP\&.
+.SS "object SystemEx\&.AI\&.ModelPromp< T >\&.this[string parameter]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets a backend parameter by name\&. 
+.br
+ Provides convenient indexed access to \fBParameters\fP\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIparameter\fP The parameter key\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The associated parameter value\&.
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB117\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "DateTime SystemEx\&.AI\&.IModelResult< T >\&.Timestamp\fR [get]\fP"
+
+.PP
+Gets the timestamp (UTC) when the result was created\&. Useful for logging, tracing, and chronological ordering\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.PP
+Definition at line \fB76\fP of file \fBIModelResult\&.cs\fP\&.
+.SS "DateTime SystemEx\&.AI\&.ModelResult< T >\&.Timestamp\fR [get]\fP"
+
+.PP
+Gets the timestamp when the result was created (UTC)\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelResult< T >\fP\&.
+.PP
+Definition at line \fB110\fP of file \fBModelResult\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.ToolChoice\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Optional: tool selection mode ("auto", "none", or specific tool)\&. 
+.PP
+Definition at line \fB83\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "List<object> SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Tools\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Optional: \fBTools\fP / function-calling definitions\&. 
+.PP
+Definition at line \fB78\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "Type SystemEx\&.AI\&.ModelToolParameter\&.Type\fR [get]\fP"
+
+.PP
+Gets the \&.NET type of the parameter\&. 
+.br
+ This determines how values are validated, serialized, and passed into the tool execution pipeline\&. 
+.PP
+Definition at line \fB48\fP of file \fBModelToolParameter\&.cs\fP\&.
+.PP
+Referenced by \fBModelToolParameter()\fP\&.
+.SS "string SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.URL\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Target URL of the remote \fBAI\fP service (OpenAI, Azure, custom gateway)\&. 
+.PP
+Definition at line \fB48\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

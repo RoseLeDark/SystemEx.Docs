@@ -1,7 +1,6 @@
 var a01748 =
 [
-    [ "Endian", "d9/d0d/a01748_a4b2d9bb731b30bc9afd8f93cf4758235.html#a4b2d9bb731b30bc9afd8f93cf4758235", null ],
-    [ "HeaderSize", "d9/d0d/a01748_aae4f5f9c04b6acc20131ffdb9f17c417.html#aae4f5f9c04b6acc20131ffdb9f17c417", null ],
-    [ "Offsets", "d9/d0d/a01748_a4790d0105df8de618921df697c4a6065.html#a4790d0105df8de618921df697c4a6065", null ],
-    [ "TotalSize", "d9/d0d/a01748_a9b81b0cf12a773f04bb895c49c14ea35.html#a9b81b0cf12a773f04bb895c49c14ea35", null ]
+    [ "Black3Hasher", "d0/dac/a00901_ga17af8e1ee759024e0d57b730c739a969.html#ga17af8e1ee759024e0d57b730c739a969", null ],
+    [ "Compute", "d0/dac/a00901_ga322178abf78db90bfc6e29636f597403.html#ga322178abf78db90bfc6e29636f597403", null ],
+    [ "ComputeLong", "d0/dac/a00901_ga20013d9f5608babd5c031167e72ad679.html#ga20013d9f5608babd5c031167e72ad679", null ]
 ];

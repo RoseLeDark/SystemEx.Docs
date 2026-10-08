@@ -1,14 +1,16 @@
 var a01273 =
 [
-    [ "Exists", "d5/dd3/a00902_ga9a281bb1e01008e08739a07fc622af9f.html#ga9a281bb1e01008e08739a07fc622af9f", null ],
-    [ "Find", "d5/dd3/a00902_ga6be674975bd5b3ad321da1cc7d4964d3.html#ga6be674975bd5b3ad321da1cc7d4964d3", null ],
-    [ "First", "d5/dd3/a00902_ga4af602db3b1a29b3edb075c079644230.html#ga4af602db3b1a29b3edb075c079644230", null ],
-    [ "First", "d5/dd3/a00902_ga7c4f131feb373e7d840574234280dd91.html#ga7c4f131feb373e7d840574234280dd91", null ],
-    [ "Last", "d5/dd3/a00902_ga2af00d59a155a5ed884140ecccf9e8e9.html#ga2af00d59a155a5ed884140ecccf9e8e9", null ],
-    [ "Last", "d5/dd3/a00902_ga6c2a514456538f696972faca5a8b8fb7.html#ga6c2a514456538f696972faca5a8b8fb7", null ],
-    [ "LowerBound", "d5/dd3/a00902_ga98fa8ee40615b8fde2b53bd9121797a1.html#ga98fa8ee40615b8fde2b53bd9121797a1", null ],
-    [ "Of", "d5/dd3/a00902_gaaafe6cbf5216b5447e9a9184cadc3d91.html#gaaafe6cbf5216b5447e9a9184cadc3d91", null ],
-    [ "TryGet", "d5/dd3/a00902_gadfb3f74a3f26aafe30374ac7a62f56b5.html#gadfb3f74a3f26aafe30374ac7a62f56b5", null ],
-    [ "UpperBound", "d5/dd3/a00902_ga1679a481e7f6b62d11ac82842c4156a0.html#ga1679a481e7f6b62d11ac82842c4156a0", null ],
-    [ "Where", "d5/dd3/a00902_ga3bd4a4a72cb0a7e2c59991d4b93ee898.html#ga3bd4a4a72cb0a7e2c59991d4b93ee898", null ]
+    [ "TimeOut", "de/d85/a01273_a768a821a219966343bc5fba26f154c83.html#a768a821a219966343bc5fba26f154c83", null ],
+    [ "TimeOut", "de/d85/a01273_afde4598921003a6c66945a8385deeb13.html#afde4598921003a6c66945a8385deeb13", null ],
+    [ "CompareTo", "de/d85/a01273_a7fb564c03f65f65a37917774954b5cb3.html#a7fb564c03f65f65a37917774954b5cb3", null ],
+    [ "CompareTo", "de/d85/a01273_a8309e26c80eaa5fef3f715f60501fa79.html#a8309e26c80eaa5fef3f715f60501fa79", null ],
+    [ "Equals", "de/d85/a01273_ac6f972144ea4c25071d59cbc2201277c.html#ac6f972144ea4c25071d59cbc2201277c", null ],
+    [ "Equals", "de/d85/a01273_a9237e0300defad9a0ffb9a4ac44299b2.html#a9237e0300defad9a0ffb9a4ac44299b2", null ],
+    [ "GetHashCode", "de/d85/a01273_ae9dba5b68fa04b18f5460b4e5668c70d.html#ae9dba5b68fa04b18f5460b4e5668c70d", null ],
+    [ "ToString", "de/d85/a01273_a0a4c1c5297d42fe5fd3513f60936c3fa.html#a0a4c1c5297d42fe5fd3513f60936c3fa", null ],
+    [ "ToString", "de/d85/a01273_abeffb26460b644034d18f5ae197627f4.html#abeffb26460b644034d18f5ae197627f4", null ],
+    [ "ToTimeSpan", "de/d85/a01273_a5b27ac5f0c1dccb4dd959054cbcf7b7c.html#a5b27ac5f0c1dccb4dd959054cbcf7b7c", null ],
+    [ "IsInfinite", "de/d85/a01273_a9a66244e8cf4ce4e3adf46e9c80f82a4.html#a9a66244e8cf4ce4e3adf46e9c80f82a4", null ],
+    [ "IsZero", "de/d85/a01273_a9dfa7bb5f213dca7f9511fa2186aa895.html#a9dfa7bb5f213dca7f9511fa2186aa895", null ],
+    [ "Milliseconds", "de/d85/a01273_ab9bb9c46d75061bff3767225b655090a.html#ab9bb9c46d75061bff3767225b655090a", null ]
 ];

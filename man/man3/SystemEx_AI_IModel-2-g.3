@@ -1,0 +1,329 @@
+.TH "SystemEx.AI.IModel< T, TTOOL >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI.IModel< T, TTOOL > \- Represents a generic \fBAI\fP model with configuration, environment information, backend integration, tool support, and execution capabilities\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBAddConfig\fP (string key, object value)"
+.br
+.RI "Adds or updates a configuration value\&. "
+.ti -1c
+.RI "bool \fBAddTool\fP (IModelTool< T > tool)"
+.br
+.RI "Adds a tool to the model\&. "
+.ti -1c
+.RI "bool \fBGetConfigValue\fP (string key, ref object value)"
+.br
+.RI "Retrieves a configuration value\&. "
+.ti -1c
+.RI "bool \fBHasTool\fP (string toolName)"
+.br
+.RI "Checks whether a tool with the given name exists\&. "
+.ti -1c
+.RI "bool \fBHaveCap\fP (\fBBackendCapabilities\fP pCapabilities)"
+.br
+.RI "Checks whether the model has a specific backend capability\&. "
+.ti -1c
+.RI "bool \fBInitialization\fP (Map< string, object > configuration)"
+.br
+.RI "Initializes the model using the provided configuration and set the environment data automatic\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&. "
+.ti -1c
+.RI "bool \fBInitialization\fP (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+.br
+.RI "Initializes the model using the provided configuration and environment data\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&. "
+.ti -1c
+.RI "void \fBRelease\fP ()"
+.br
+.RI "Releases all resources associated with the model\&. "
+.ti -1c
+.RI "bool \fBRemoveTool\fP (string toolName)"
+.br
+.RI "Removes a tool from the model by name\&. "
+.ti -1c
+.RI "Task< IModelResult< T > > \fBRunAsync\fP (IModelPromp< T > input)"
+.br
+.RI "Executes the model asynchronously using the provided prompt\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "IModelBackend< T, TTOOL > \fBBackend\fP\fR [get]\fP"
+.br
+.RI "Gets the backend implementation used by this model\&. "
+.ti -1c
+.RI "Map< string, object > \fBConfiguration\fP\fR [get]\fP"
+.br
+.RI "Gets the backend‑specific configuration map\&. Configuration values are backend‑defined and may vary between systems\&. "
+.ti -1c
+.RI "Map< \fBEnvironment\fP, object > \fBEnvironment\fP\fR [get]\fP"
+.br
+.RI "Gets the environment map describing the client machine\&. This includes OS, architecture, hardware, paths, runtime, and other system properties\&. "
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Gets the model's unique name\&. "
+.ti -1c
+.RI "string \fBSystemPrompt\fP\fR [get]\fP"
+.br
+.RI "Gets the system prompt used by the model\&. This is typically a static instruction or initialization text\&. "
+.ti -1c
+.RI "bool \fBthis[BackendCapabilities capabilities]\fP\fR [get]\fP"
+.br
+.RI "Indexer that checks whether the model supports a specific backend capability\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a generic \fBAI\fP model with configuration, environment information, backend integration, tool support, and execution capabilities\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The primary data type used by the model (input/output)\&.
+.br
+\fITTOOL\fP The tool type supported by the model\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB30\fP of file \fBAI/IModel\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.AddConfig (string key, object value)"
+
+.PP
+Adds or updates a configuration value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP Configuration key\&.
+.br
+\fIvalue\fP Configuration value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the value was added or updated successfully\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.AddTool (IModelTool< T > tool)"
+
+.PP
+Adds a tool to the model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItool\fP Tool instance\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the tool was added successfully\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.GetConfigValue (string key, ref object value)"
+
+.PP
+Retrieves a configuration value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP Configuration key\&.
+.br
+\fIvalue\fP \fBReference\fP to the output value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the key exists and the value was retrieved\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.HasTool (string toolName)"
+
+.PP
+Checks whether a tool with the given name exists\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItoolName\fP Tool name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the tool is present\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.HaveCap (\fBBackendCapabilities\fP pCapabilities)"
+
+.PP
+Checks whether the model has a specific backend capability\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpCapabilities\fP Capability key\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the capability exists and is enabled\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.Initialization (Map< string, object > configuration)"
+
+.PP
+Initializes the model using the provided configuration and set the environment data automatic\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP Backend‑specific configuration values (API keys, URLs, model parameters, etc\&.)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.Initialization (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+
+.PP
+Initializes the model using the provided configuration and environment data\&. This method is called before the first execution and allows the backend to prepare resources, validate settings, and adapt to the client's system\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP Backend‑specific configuration values (API keys, URLs, model parameters, etc\&.)\&. 
+.br
+\fIenvironment\fP Environment information describing the client machine (OS, hardware, paths, runtime)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "void SystemEx\&.AI\&.IModel< T, TTOOL >\&.Release ()"
+
+.PP
+Releases all resources associated with the model\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.RemoveTool (string toolName)"
+
+.PP
+Removes a tool from the model by name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItoolName\fP Name of the tool\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the tool was removed\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SS "Task< IModelResult< T > > SystemEx\&.AI\&.IModel< T, TTOOL >\&.RunAsync (IModelPromp< T > input)"
+
+.PP
+Executes the model asynchronously using the provided prompt\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP Model input prompt and context\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A task that produces the model result\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "IModelBackend<T, TTOOL> SystemEx\&.AI\&.IModel< T, TTOOL >\&.Backend\fR [get]\fP"
+
+.PP
+Gets the backend implementation used by this model\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB57\fP of file \fBAI/IModel\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.IModel< T, TTOOL >\&.Configuration\fR [get]\fP"
+
+.PP
+Gets the backend‑specific configuration map\&. Configuration values are backend‑defined and may vary between systems\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB46\fP of file \fBAI/IModel\&.cs\fP\&.
+.SS "Map<\fBEnvironment\fP, object> SystemEx\&.AI\&.IModel< T, TTOOL >\&.\fBEnvironment\fP\fR [get]\fP"
+
+.PP
+Gets the environment map describing the client machine\&. This includes OS, architecture, hardware, paths, runtime, and other system properties\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB52\fP of file \fBAI/IModel\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.IModel< T, TTOOL >\&.Name\fR [get]\fP"
+
+.PP
+Gets the model's unique name\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB34\fP of file \fBAI/IModel\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.IModel< T, TTOOL >\&.SystemPrompt\fR [get]\fP"
+
+.PP
+Gets the system prompt used by the model\&. This is typically a static instruction or initialization text\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.Model< T, TTOOL >\fP\&.
+.PP
+Definition at line \fB40\fP of file \fBAI/IModel\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModel< T, TTOOL >\&.this[\fBBackendCapabilities\fP capabilities]\fR [get]\fP"
+
+.PP
+Indexer that checks whether the model supports a specific backend capability\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcapabilities\fP The capability key to check\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the capability exists and is enabled\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB64\fP of file \fBAI/IModel\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

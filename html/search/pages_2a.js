@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['👤_20systemex_20authors_0',['👤 SystemEx Authors',['../d8/d9a/a02447.html',1,'']]]
+  ['🏛️_20systemex_20architecture_20overview_0',['🏛️ SystemEx Architecture Overview',['../d4/dad/a02500.html',1,'']]]
 ];

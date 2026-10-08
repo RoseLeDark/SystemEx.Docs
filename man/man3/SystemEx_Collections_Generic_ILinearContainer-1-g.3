@@ -1,0 +1,134 @@
+.TH "SystemEx.Collections.Generic.ILinearContainer< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.ILinearContainer< T > \- Extends \fBIContainer<T>\fP with linear append semantics\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.IContainer< T >\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Collections\&.Generic\&.IVector< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBPushBack\fP (T entry)"
+.br
+.RI "Appends an element to the end of the container\&. Automatically grows the buffer if AutoGrow is enabled\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.IContainer< T >\fP
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clears the container by resetting the logical index\&. "
+.ti -1c
+.RI "bool \fBErase\fP ()"
+.br
+.RI "Removes the last element from the container\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long index)"
+.br
+.RI "Erase overloads are API stubs and always return true\&. Actual removal logic is handled by Remove() methods\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long index, T entry)"
+.br
+.RI "Inserts an element at the specified index, shifting elements to the right\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long start, long end, T entry)"
+.br
+.RI "Fills a range of indices with a single value\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (long index, T entry)"
+.br
+.RI "Replaces the element at the specified index\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP
+.in +1c
+.ti -1c
+.RI "Optional< T > \fBElementAt\fP (long index)"
+.br
+.RI "Returns the element at the specified index\&. "
+.ti -1c
+.RI "Type \fBGetElementType\fP ()"
+.br
+.RI "Returns the runtime type of the stored elements\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Properties inherited from \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP
+.in +1c
+.ti -1c
+.RI "Optional< T > \fBBack\fP\fR [get]\fP"
+.br
+.RI "Gets the Last element of the container\&. "
+.ti -1c
+.RI "long \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements currently stored in the container\&. "
+.ti -1c
+.RI "Optional< T > \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the current logical position\&. The meaning of the current position is implementation‑defined\&. "
+.ti -1c
+.RI "Optional< T > \fBFront\fP\fR [get]\fP"
+.br
+.RI "Gets the first element of the container\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the container contains no elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the container is full\&. "
+.ti -1c
+.RI "long \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the total capacity of the container, including unused slots\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Extends \fBIContainer<T>\fP with linear append semantics\&. 
+
+A linear container supports efficient push‑back operations and may automatically grow its internal storage when \fBIAutoGrowe\&.AutoGrow\fP is enabled\&. This interface is typically implemented by dynamic arrays, ring buffers, and other sequential data structures\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The element type stored in the container\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB101\fP of file \fBIContainer\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.ILinearContainer< T >\&.PushBack (T entry)"
+
+.PP
+Appends an element to the end of the container\&. Automatically grows the buffer if AutoGrow is enabled\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIentry\fP Element to append\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the element was appended; false if the container was full and AutoGrow was disabled\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

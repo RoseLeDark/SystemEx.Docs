@@ -1,0 +1,96 @@
+.TH "SystemEx.Threading.ILockedObject< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.ILockedObject< T > \- Defines a minimal lock‑protected value container interface\&. Implementations provide controlled read and write access to a value of type \fIT\fP  using a caller‑supplied synchronization mechanism\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Threading\&.LockedObject< T >\fP, and \fBSystemEx\&.Threading\&.RCUObject< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBResult\fP \fBReadValue\fP (\fBTimeOut\fP timeoutms)"
+.br
+.RI "Reads the protected value using the underlying lock\&. The operation may block for up to \fItimeoutms\fP  milliseconds depending on the lock implementation\&. "
+.ti -1c
+.RI "void \fBWriteValue\fP (T? value, \fBTimeOut\fP timeoutms)"
+.br
+.RI "Writes a new value using the underlying lock\&. The operation may block for up to \fItimeoutms\fP  milliseconds depending on the lock implementation\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "T? \fBValue\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the protected value\&. Implementations must ensure that access is synchronized through the underlying lock mechanism\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines a minimal lock‑protected value container interface\&. Implementations provide controlled read and write access to a value of type \fIT\fP  using a caller‑supplied synchronization mechanism\&. 
+
+The interface abstracts simple lock‑based protection for a single value\&. Read and write operations may block depending on the lock implementation and the specified timeout\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the protected value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB34\fP of file \fBILockedObject\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBResult\fP SystemEx\&.Threading\&.ILockedObject< T >\&.ReadValue (\fBTimeOut\fP timeoutms)"
+
+.PP
+Reads the protected value using the underlying lock\&. The operation may block for up to \fItimeoutms\fP  milliseconds depending on the lock implementation\&. The returned \fBResult\fP typically contains the value at index \fR0\fP, but implementations may include additional diagnostic information\&. 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fItimeoutms\fP The timeout in milliseconds\&. A value of \fR-1\fP indicates an infinite wait\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBResult\fP containing the retrieved value and optional metadata\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LockedObject< T >\fP, and \fBSystemEx\&.Threading\&.RCUObject< T >\fP\&.
+.SS "void SystemEx\&.Threading\&.ILockedObject< T >\&.WriteValue (T? value, \fBTimeOut\fP timeoutms)"
+
+.PP
+Writes a new value using the underlying lock\&. The operation may block for up to \fItimeoutms\fP  milliseconds depending on the lock implementation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The new value to store\&.
+.br
+\fItimeoutms\fP The timeout in milliseconds\&. A value of \fR-1\fP indicates an infinite wait\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LockedObject< T >\fP, and \fBSystemEx\&.Threading\&.RCUObject< T >\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "T? SystemEx\&.Threading\&.ILockedObject< T >\&.Value\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the protected value\&. Implementations must ensure that access is synchronized through the underlying lock mechanism\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LockedObject< T >\fP, and \fBSystemEx\&.Threading\&.RCUObject< T >\fP\&.
+.PP
+Definition at line \fB40\fP of file \fBILockedObject\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

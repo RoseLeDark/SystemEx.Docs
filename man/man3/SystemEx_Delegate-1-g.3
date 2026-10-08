@@ -1,0 +1,221 @@
+.TH "SystemEx.Delegate< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Delegate< T > \- A delegate container that stores multiple callback functions and allows invocation, subscription, unsubscription, enumeration, and basic comparison\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.IDelegate< T >\fP, IComparable, IEquatable, and IEnumerable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Removes all subscribed callback functions\&. "
+.ti -1c
+.RI "int \fBCompareTo\fP (\fBDelegate\fP< T > ? other)"
+.br
+.RI "Compares this delegate to another based on the number of subscribed functions\&. "
+.ti -1c
+.RI "\fBDelegate\fP (Action< IDelegate< T >, T > func)"
+.br
+.RI "Initializes a new delegate container with an optional initial callback\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBDelegate\fP< T >? other)"
+.br
+.RI "Determines whether this delegate is equal to another delegate\&. Equality is based on reference equality of the internal storage container\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "IEnumerator< Action< IDelegate< T >, T > > \fBGetEnumerator\fP ()"
+.br
+.RI "Returns an enumerator that iterates through all subscribed callback functions\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.ti -1c
+.RI "void \fBInvoke\fP (T arg)"
+.br
+.RI "Invokes all subscribed callback functions with the specified argument\&. "
+.ti -1c
+.RI "void \fBSubscribe\fP (Action< IDelegate< T >, T > func)"
+.br
+.RI "Subscribes a new callback function to this delegate\&. "
+.ti -1c
+.RI "void \fBUnSubscribe\fP (Action< IDelegate< T >, T > func)"
+.br
+.RI "Removes a previously subscribed callback function\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBDelegate\fP< T > a, \fBDelegate\fP< T > b)"
+.br
+.RI "Determines whether two delegates are not equal\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBDelegate\fP< T > a, \fBDelegate\fP< T > b)"
+.br
+.RI "Determines whether two delegates are equal\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A delegate container that stores multiple callback functions and allows invocation, subscription, unsubscription, enumeration, and basic comparison\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The argument type passed to all subscribed callbacks\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB61\fP of file \fBDelegate\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Delegate< T >\&.Clear ()"
+
+.PP
+Removes all subscribed callback functions\&. 
+.PP
+Implements \fBSystemEx\&.IDelegate< T >\fP\&.
+.PP
+Definition at line \fB104\fP of file \fBDelegate\&.cs\fP\&.
+.SS "int SystemEx\&.Delegate< T >\&.CompareTo (\fBDelegate\fP< T > ? other)"
+
+.PP
+Compares this delegate to another based on the number of subscribed functions\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The other delegate to compare against\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A value indicating whether this delegate has fewer, equal, or more subscribed functions\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB114\fP of file \fBDelegate\&.cs\fP\&.
+.SS "SystemEx\&.Delegate< T >\&.Delegate (Action< IDelegate< T >, T > func)"
+
+.PP
+Initializes a new delegate container with an optional initial callback\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfunc\fP An optional callback function to subscribe immediately\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB71\fP of file \fBDelegate\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBoperator!=()\fP, and \fBoperator==()\fP\&.
+.SS "bool SystemEx\&.Delegate< T >\&.Equals (\fBDelegate\fP< T >? other)"
+
+.PP
+Determines whether this delegate is equal to another delegate\&. Equality is based on reference equality of the internal storage container\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The other delegate to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if both delegates reference the same storage container; otherwise false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB142\fP of file \fBDelegate\&.cs\fP\&.
+.PP
+Referenced by \fBoperator!=()\fP, and \fBoperator==()\fP\&.
+.SS "override bool SystemEx\&.Delegate< T >\&.Equals (object? obj)"
+
+.PP
+
+.PP
+Definition at line \fB161\fP of file \fBDelegate\&.cs\fP\&.
+.SS "IEnumerator< Action< IDelegate< T >, T > > SystemEx\&.Delegate< T >\&.GetEnumerator ()"
+
+.PP
+Returns an enumerator that iterates through all subscribed callback functions\&. 
+.PP
+Definition at line \fB128\fP of file \fBDelegate\&.cs\fP\&.
+.SS "override int SystemEx\&.Delegate< T >\&.GetHashCode ()"
+
+.PP
+
+.PP
+Definition at line \fB177\fP of file \fBDelegate\&.cs\fP\&.
+.SS "void SystemEx\&.Delegate< T >\&.Invoke (T arg)"
+
+.PP
+Invokes all subscribed callback functions with the specified argument\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIarg\fP The argument passed to each callback\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.IDelegate< T >\fP\&.
+.PP
+Definition at line \fB80\fP of file \fBDelegate\&.cs\fP\&.
+.SS "bool SystemEx\&.Delegate< T >\&.operator!= (\fBDelegate\fP< T > a, \fBDelegate\fP< T > b)\fR [static]\fP"
+
+.PP
+Determines whether two delegates are not equal\&. 
+.PP
+Definition at line \fB156\fP of file \fBDelegate\&.cs\fP\&.
+.SS "bool SystemEx\&.Delegate< T >\&.operator== (\fBDelegate\fP< T > a, \fBDelegate\fP< T > b)\fR [static]\fP"
+
+.PP
+Determines whether two delegates are equal\&. 
+.PP
+Definition at line \fB149\fP of file \fBDelegate\&.cs\fP\&.
+.SS "void SystemEx\&.Delegate< T >\&.Subscribe (Action< IDelegate< T >, T > func)"
+
+.PP
+Subscribes a new callback function to this delegate\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfunc\fP The callback function to add\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.IDelegate< T >\fP\&.
+.PP
+Definition at line \fB91\fP of file \fBDelegate\&.cs\fP\&.
+.SS "void SystemEx\&.Delegate< T >\&.UnSubscribe (Action< IDelegate< T >, T > func)"
+
+.PP
+Removes a previously subscribed callback function\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfunc\fP The callback function to remove\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.IDelegate< T >\fP\&.
+.PP
+Definition at line \fB98\fP of file \fBDelegate\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

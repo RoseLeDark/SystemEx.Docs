@@ -1,0 +1,61 @@
+.TH "SystemEx.Algorithms.ISimpleCompare< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Algorithms.ISimpleCompare< T >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Algorithms\&.EqualTo< T >\fP, \fBSystemEx\&.Algorithms\&.Greater< T >\fP, \fBSystemEx\&.Algorithms\&.GreaterEqual< T >\fP, \fBSystemEx\&.Algorithms\&.KleenEqualTo< T >\fP, \fBSystemEx\&.Algorithms\&.KleenGreater< T >\fP, \fBSystemEx\&.Algorithms\&.KleenLess< T >\fP, \fBSystemEx\&.Algorithms\&.KleeneEqual< T >\fP, \fBSystemEx\&.Algorithms\&.Less< T >\fP, \fBSystemEx\&.Algorithms\&.LessEqual< T >\fP, \fBSystemEx\&.Algorithms\&.NetStdCompare< T >\fP, and \fBSystemEx\&.Algorithms\&.NotEqualTo< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTriple\fP \fBCompare\fP (Optional< T > a, Optional< T > b)"
+.br
+.RI "Compares two values and returns \fRtrue\fP if the comparison condition defined by the implementation holds; otherwise \fRfalse\fP\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB31\fP of file \fBISimpleCompare\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBTriple\fP SystemEx\&.Algorithms\&.ISimpleCompare< T >\&.Compare (Optional< T > a, Optional< T > b)"
+
+.PP
+Compares two values and returns \fRtrue\fP if the comparison condition defined by the implementation holds; otherwise \fRfalse\fP\&. The meaning of “comparison condition” depends on the specific comparer: 
+.PD 0
+.IP "\(bu" 2
+\fBGreater<T>\fP returns \fRtrue\fP if \fIa\fP  is strictly greater than \fIb\fP \&.  
+.IP "\(bu" 2
+\fBLess<T>\fP returns \fRtrue\fP if \fIa\fP  is strictly less than \fIb\fP \&.  
+.IP "\(bu" 2
+\fBEqualTo<T>\fP returns \fRtrue\fP if both values are equal\&.  
+.PP
+
+.PP
+Comparers may define additional rules for handling empty or null optionals, depending on the semantics required by the container or algorithm\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The first value to compare\&.
+.br
+\fIb\fP The second value to compare\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the comparison condition is satisfied; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Algorithms\&.EqualTo< T >\fP, \fBSystemEx\&.Algorithms\&.Greater< T >\fP, \fBSystemEx\&.Algorithms\&.GreaterEqual< T >\fP, \fBSystemEx\&.Algorithms\&.KleeneEqual< T >\fP, \fBSystemEx\&.Algorithms\&.KleenEqualTo< T >\fP, \fBSystemEx\&.Algorithms\&.KleenGreater< T >\fP, \fBSystemEx\&.Algorithms\&.KleenLess< T >\fP, \fBSystemEx\&.Algorithms\&.Less< T >\fP, \fBSystemEx\&.Algorithms\&.LessEqual< T >\fP, \fBSystemEx\&.Algorithms\&.NetStdCompare< T >\fP, and \fBSystemEx\&.Algorithms\&.NotEqualTo< T >\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Collections\&.Generic\&.IteratorUtils\&.Find< T >()\fP, \fBSystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.LowerBound()\fP, \fBSystemEx\&.Numeric\&.BigDecimal\&.MinMax()\fP, \fBSystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.UpperBound()\fP, and \fBSystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Validate()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

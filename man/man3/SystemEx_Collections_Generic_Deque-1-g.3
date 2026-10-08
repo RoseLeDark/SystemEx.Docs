@@ -1,0 +1,328 @@
+.TH "SystemEx.Collections.Generic.Deque< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Deque< T > \- A simple fixed‑size double‑ended queue (deque) implemented using a linear array\&. Supports pushing and popping at both the front and the back\&. 
+.br
+ This implementation does not use a ring buffer; shifting is performed when inserting or removing at the front\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.IDeque< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.IAutoGrowe\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Removes all elements from the deque without modifying the underlying buffer\&. "
+.ti -1c
+.RI "\fBDeque\fP (int size, int growSize)"
+.br
+.RI "Creates a new deque with the specified capacity\&. "
+.ti -1c
+.RI "\fBDeque\fP (T[] e, int growSize=16)"
+.br
+.RI "Creates a new Dequeue using an existing buffer\&. The buffer is adopted as-is, and Count is set to the last valid index\&. "
+.ti -1c
+.RI "bool \fBGrow\fP ()"
+.br
+.RI "Grows the internal buffer by GrowSize if AutoGrow is enabled\&. "
+.ti -1c
+.RI "bool \fBPopBack\fP (ref Optional< T > value)"
+.br
+.RI "Removes the element at the back of the deque\&. "
+.ti -1c
+.RI "bool \fBPopFront\fP (out Optional< T > value)"
+.br
+.RI "Removes the element at the front of the deque\&. 
+.br
+ Remaining elements are shifted one position to the left\&. "
+.ti -1c
+.RI "bool \fBPushBack\fP (T value)"
+.br
+.RI "Adds an element to the back of the deque if space is available\&. "
+.ti -1c
+.RI "bool \fBPushFront\fP (T value)"
+.br
+.RI "Adds an element to the front of the deque\&. 
+.br
+ Existing elements are shifted one position to the right\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static DequeFlexSpan< T > \fBAsFlexSpan\fP (ref \fBDeque\fP< T > que, \fBFlexSpanMode\fP mode=\fBFlexSpanMode\&.System\fP)"
+.br
+.RI "Creates a FlexSpan view over the current deque\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBAutoGrow\fP\fR [get, set]\fP"
+.br
+.RI "Enables or disables automatic resizing when the Vector becomes full\&. "
+.ti -1c
+.RI "int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements currently stored in the deque\&. "
+.ti -1c
+.RI "T \fBEnd\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the back of the deque\&. "
+.ti -1c
+.RI "T \fBFront\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the front of the deque\&. "
+.ti -1c
+.RI "long \fBGrowSize\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the number of elements the Vector grows by when AutoGrow is enabled\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the deque contains no elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the deque has reached its maximum capacity\&. "
+.ti -1c
+.RI "int \fBSize\fP\fR [get]\fP"
+.br
+.RI "Gets the total capacity of the deque\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A simple fixed‑size double‑ended queue (deque) implemented using a linear array\&. Supports pushing and popping at both the front and the back\&. 
+.br
+ This implementation does not use a ring buffer; shifting is performed when inserting or removing at the front\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of elements stored in the deque\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB36\fP of file \fBDeque\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "DequeFlexSpan< T > SystemEx\&.Collections\&.Generic\&.Deque< T >\&.AsFlexSpan (ref \fBDeque\fP< T > que, \fBFlexSpanMode\fP mode = \fR\fBFlexSpanMode::System\fP\fP)\fR [static]\fP"
+
+.PP
+Creates a FlexSpan view over the current deque\&. 
+.PP
+Definition at line \fB209\fP of file \fBDeque\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Deque< T >\&.Clear ()"
+
+.PP
+Removes all elements from the deque without modifying the underlying buffer\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB201\fP of file \fBDeque\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Deque< T >\&.Deque (int size, int growSize)"
+
+.PP
+Creates a new deque with the specified capacity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP The maximum number of elements the deque can hold\&.
+.br
+\fIgrowSize\fP Number of elements to add when automatic growth occurs\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB102\fP of file \fBDeque\&.cs\fP\&.
+.PP
+Referenced by \fBAsFlexSpan()\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Deque< T >\&.Deque (T[] e, int growSize = \fR16\fP)"
+
+.PP
+Creates a new Dequeue using an existing buffer\&. The buffer is adopted as-is, and Count is set to the last valid index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Existing array used as the internal storage\&. 
+.br
+\fIgrowSize\fP Number of elements to add when automatic growth occurs\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB119\fP of file \fBDeque\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Deque< T >\&.Grow ()"
+
+.PP
+Grows the internal buffer by GrowSize if AutoGrow is enabled\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if growth succeeded; false if AutoGrow was disabled\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IAutoGrowe\fP\&.
+.PP
+Definition at line \fB218\fP of file \fBDeque\&.cs\fP\&.
+.PP
+Referenced by \fBPushBack()\fP, and \fBPushFront()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Deque< T >\&.PopBack (ref Optional< T > value)"
+
+.PP
+Removes the element at the back of the deque\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP Receives the removed element\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an element was removed; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IDeque< T >\fP\&.
+.PP
+Definition at line \fB147\fP of file \fBDeque\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Deque< T >\&.PopFront (out Optional< T > value)"
+
+.PP
+Removes the element at the front of the deque\&. 
+.br
+ Remaining elements are shifted one position to the left\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP Receives the removed element\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an element was removed; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB182\fP of file \fBDeque\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Deque< T >\&.PushBack (T value)"
+
+.PP
+Adds an element to the back of the deque if space is available\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The element to add\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB130\fP of file \fBDeque\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Deque< T >\&.PushFront (T value)"
+
+.PP
+Adds an element to the front of the deque\&. 
+.br
+ Existing elements are shifted one position to the right\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The element to add\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IDeque< T >\fP\&.
+.PP
+Definition at line \fB159\fP of file \fBDeque\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.Deque< T >\&.AutoGrow\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Enables or disables automatic resizing when the Vector becomes full\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IAutoGrowe\fP\&.
+.PP
+Definition at line \fB68\fP of file \fBDeque\&.cs\fP\&.
+.PP
+Referenced by \fBGrow()\fP, \fBPushBack()\fP, \fBPushFront()\fP, and \fBSystemEx\&.Collections\&.Generic\&.Queue< T >\&.Queue()\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.Deque< T >\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of elements currently stored in the deque\&. 
+.PP
+Definition at line \fB53\fP of file \fBDeque\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Collections\&.Generic\&.Queue< T >\&.Queue()\fP\&.
+.SS "T SystemEx\&.Collections\&.Generic\&.Deque< T >\&.End\fR [get]\fP"
+
+.PP
+Gets the element at the back of the deque\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IDeque< T >\fP\&.
+.PP
+Definition at line \fB95\fP of file \fBDeque\&.cs\fP\&.
+.SS "T SystemEx\&.Collections\&.Generic\&.Deque< T >\&.Front\fR [get]\fP"
+
+.PP
+Gets the element at the front of the deque\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IDeque< T >\fP\&.
+.PP
+Definition at line \fB90\fP of file \fBDeque\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Deque< T >\&.GrowSize\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the number of elements the Vector grows by when AutoGrow is enabled\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IAutoGrowe\fP\&.
+.PP
+Definition at line \fB58\fP of file \fBDeque\&.cs\fP\&.
+.PP
+Referenced by \fBDeque()\fP, \fBDeque()\fP, \fBGrow()\fP, and \fBSystemEx\&.Collections\&.Generic\&.Queue< T >\&.Queue()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Deque< T >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Indicates whether the deque contains no elements\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB80\fP of file \fBDeque\&.cs\fP\&.
+.PP
+Referenced by \fBPopBack()\fP, and \fBPopFront()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Deque< T >\&.IsFull\fR [get]\fP"
+
+.PP
+Indicates whether the deque has reached its maximum capacity\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB85\fP of file \fBDeque\&.cs\fP\&.
+.PP
+Referenced by \fBPushBack()\fP, and \fBPushFront()\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.Deque< T >\&.Size\fR [get]\fP"
+
+.PP
+Gets the total capacity of the deque\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB75\fP of file \fBDeque\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Collections\&.Generic\&.Queue< T >\&.Queue()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

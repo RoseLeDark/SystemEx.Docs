@@ -1,0 +1,652 @@
+.TH "SystemEx.Numeric.Fast_UInt" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Fast_UInt \- Represents an 16‑bit fast bit‑manipulation type\&. This struct provides low‑level operations for inspecting, modifying, rotating, masking, and counting bits inside a single uint\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Numeric\&.IFastType< T >\fP, IComparable, \fBSystemEx\&.IComparableEx< T >\fP, and IEquatable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFast_UInt\fP \fBAdd\fP (\fBFast_UInt\fP oth)"
+.br
+.RI "Addition\&. "
+.ti -1c
+.RI "void \fBAt\fP (byte pos, byte value)"
+.br
+.RI "Sets the bit at the specified position to the given value (0 or 1)\&. The bit is only modified if the new value differs from the current one\&. This avoids unnecessary writes and preserves performance\&. "
+.ti -1c
+.RI "\fBIFastType\fP< uint > \fBCmpOne\fP ()"
+.br
+.RI "Produces the one's complement of the current value\&. All bits are inverted (bitwise NOT)\&. "
+.ti -1c
+.RI "\fBIFastType\fP< uint > \fBCmpTwo\fP ()"
+.br
+.RI "Produces the two's complement of the current value\&. This is equivalent to (~value + 1) and is commonly used for subtraction in low‑level arithmetic\&. "
+.ti -1c
+.RI "\fBIFastType\fP< uint > \fBCombine\fP (\fBIFastType\fP< uint > other)"
+.br
+.RI "Combines this value with another \fBFast_Int\fP using bitwise OR\&. All bits that are set in either value become set\&. "
+.ti -1c
+.RI "int IComparable< \fBFast_UInt\fP >\&. \fBCompareTo\fP (\fBFast_UInt\fP a)"
+.br
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (\fBFast_UInt\fP a)"
+.br
+.ti -1c
+.RI "uint \fBCreateMask\fP (byte start, byte length)"
+.br
+.RI "Creates a bitmask with a given start position and length\&. The mask contains 'length' consecutive 1‑bits beginning at 'start'\&. "
+.ti -1c
+.RI "Pair< \fBFast_UInt\fP, \fBFast_UInt\fP > \fBDiv\fP (\fBFast_UInt\fP oth)"
+.br
+.RI "Division\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "bool \fBEquals\fP (ushort b)"
+.br
+.ti -1c
+.RI "\fBFast_UInt\fP ()"
+.br
+.RI "Initializes a new \fBFast_Int\fP instance with an optional initial value\&. "
+.ti -1c
+.RI "\fBFast_UInt\fP (uint value)"
+.br
+.RI "Initializes a new \fBFast_Int\fP instance with an optional initial value\&. "
+.ti -1c
+.RI "void \fBFlip\fP (byte pos)"
+.br
+.RI "Flips (toggles) the bit at the specified position\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.ti -1c
+.RI "byte \fBIs\fP (byte pos)"
+.br
+.RI "Returns the bit at the specified position (0 or 1)\&. "
+.ti -1c
+.RI "byte \fBIsIt\fP ()"
+.br
+.RI "Counts the number of bits set to 1 in a 32‑bit unsigned integer\&. Uses a branchless parallel bit‑count algorithm ("Hacker's Delight")\&. This avoids loops and provides excellent performance\&. "
+.ti -1c
+.RI "byte \fBIsItNot\fP ()"
+.br
+.RI "Counts the number of bits set to 0\&. Equivalent to Count - \fBIsIt()\fP\&. "
+.ti -1c
+.RI "void \fBMask\fP (uint mask)"
+.br
+.RI "Applies a bitmask to the current value using bitwise AND\&. Only bits that are 1 in the mask remain set\&. "
+.ti -1c
+.RI "\fBFast_UInt\fP \fBMul\fP (\fBFast_UInt\fP oth)"
+.br
+.RI "Multiplikation\&. "
+.ti -1c
+.RI "void \fBRotateLeft\fP (byte count)"
+.br
+.RI "Rotates the bits to the left by the specified count\&. Rotation is limited to 0–31 to ensure correct 32‑bit behavior\&. "
+.ti -1c
+.RI "void \fBRotateRight\fP (byte count)"
+.br
+.RI "Rotates the bits to the right by the specified count\&. Rotation is limited to 0–15 to ensure correct 32‑bit behavior\&. "
+.ti -1c
+.RI "\fBFast_UInt\fP \fBSub\fP (\fBFast_UInt\fP oth)"
+.br
+.RI "Subtraktion\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.ti -1c
+.RI "FixedVector< byte > \fBWhere\fP ()"
+.br
+.RI "Returns all bit positions where the bit is set to 1\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBWhereNot\fP ()"
+.br
+.RI "Returns all bit positions where the bit is set to 0\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Numeric\&.IFastType< T >\fP
+.in +1c
+.ti -1c
+.RI "void \fBMask\fP (T mask)"
+.br
+.RI "Applies a bitmask to the underlying value using bitwise AND\&. Only bits that are \fR1\fP in the mask remain set\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBMax\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBMin\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static \fBoperator Fast_Byte\fP (\fBFast_UInt\fP opt)"
+.br
+.ti -1c
+.RI "static implicit \fBoperator Fast_UInt\fP (\fBFast_Byte\fP value)"
+.br
+.ti -1c
+.RI "static implicit \fBoperator Fast_UInt\fP (\fBFast_UShort\fP value)"
+.br
+.ti -1c
+.RI "static implicit \fBoperator Fast_UInt\fP (int value)"
+.br
+.RI "Implicitly converts a int value into an \fBFast_UInt \fP\&. "
+.ti -1c
+.RI "static implicit \fBoperator Fast_UInt\fP (uint value)"
+.br
+.RI "Implicitly converts a uint value into an \fBFast_UInt \fP\&. "
+.ti -1c
+.RI "static \fBoperator Fast_UShort\fP (\fBFast_UInt\fP opt)"
+.br
+.ti -1c
+.RI "static \fBoperator uint\fP (\fBFast_UInt\fP opt)"
+.br
+.RI "Explicitly extracts the underlying value from an \fBFast_UInt \fP\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator%\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator&\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator*\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator+\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator++\fP (\fBFast_UInt\fP a)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator\-\fP (\fBFast_UInt\fP a)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator\-\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator\-\-\fP (\fBFast_UInt\fP a)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator/\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator<<\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator>>\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator^\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UInt\fP \fBoperator|\fP (\fBFast_UInt\fP a, \fBFast_UInt\fP b)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "byte \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of bits available in this type (always 32)\&. "
+.ti -1c
+.RI "bool \fBIsSigned\fP\fR [get]\fP"
+.br
+.RI "Is signed number\&. "
+.ti -1c
+.RI "bool \fBIsZero\fP\fR [get]\fP"
+.br
+.RI "Is Zero\&. "
+.ti -1c
+.RI "uint \fBValue\fP\fR [get]\fP"
+.br
+.RI "Gets the raw underlying 32‑bit unsigned integer value\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents an 16‑bit fast bit‑manipulation type\&. This struct provides low‑level operations for inspecting, modifying, rotating, masking, and counting bits inside a single uint\&. 
+
+\fBFast_Int\fP is intended for systems that require precise bit control, such as event groups, flag sets, embedded‑style logic, or any performance‑critical bitmask operations\&.
+
+.PP
+Users must understand bitwise operations, as incorrect usage can intentionally overwrite or corrupt the underlying value\&. 
+.PP
+Definition at line \fB40\fP of file \fBFast_UInt\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.Fast_UInt\&.Fast_UInt ()"
+
+.PP
+Initializes a new \fBFast_Int\fP instance with an optional initial value\&. 
+.PP
+Definition at line \fB68\fP of file \fBFast_UInt\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBDiv()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBMul()\fP, \fBoperator Fast_UInt()\fP, \fBoperator Fast_UInt()\fP, \fBoperator uint()\fP, \fBoperator!=()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, \fBoperator>()\fP, \fBoperator>=()\fP, and \fBSub()\fP\&.
+.SS "SystemEx\&.Numeric\&.Fast_UInt\&.Fast_UInt (uint value)"
+
+.PP
+Initializes a new \fBFast_Int\fP instance with an optional initial value\&. 
+.PP
+Definition at line \fB74\fP of file \fBFast_UInt\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.Add (\fBFast_UInt\fP oth)"
+
+.PP
+Addition\&. 
+.PP
+Definition at line \fB245\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_UInt\&.At (byte pos, byte value)"
+
+.PP
+Sets the bit at the specified position to the given value (0 or 1)\&. The bit is only modified if the new value differs from the current one\&. This avoids unnecessary writes and preserves performance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP Bit position (0–16)\&.
+.br
+\fIvalue\fP New bit value (0 or 1)\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB86\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBIFastType\fP< uint > SystemEx\&.Numeric\&.Fast_UInt\&.CmpOne ()"
+
+.PP
+Produces the one's complement of the current value\&. All bits are inverted (bitwise NOT)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType< T >\fP\&.
+.PP
+Definition at line \fB98\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBIFastType\fP< uint > SystemEx\&.Numeric\&.Fast_UInt\&.CmpTwo ()"
+
+.PP
+Produces the two's complement of the current value\&. This is equivalent to (~value + 1) and is commonly used for subtraction in low‑level arithmetic\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType< T >\fP\&.
+.PP
+Definition at line \fB105\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBIFastType\fP< uint > SystemEx\&.Numeric\&.Fast_UInt\&.Combine (\fBIFastType\fP< uint > other)"
+
+.PP
+Combines this value with another \fBFast_Int\fP using bitwise OR\&. All bits that are set in either value become set\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType< T >\fP\&.
+.PP
+Definition at line \fB173\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "int IComparable< \fBFast_UInt\fP >\&. SystemEx\&.Numeric\&.Fast_UInt\&.CompareTo (\fBFast_UInt\fP a)"
+
+.PP
+Definition at line \fB276\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Numeric\&.Fast_UInt\&.CompareTo (\fBFast_UInt\fP a)"
+
+.PP
+Definition at line \fB270\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Fast_UInt\&.CreateMask (byte start, byte length)"
+
+.PP
+Creates a bitmask with a given start position and length\&. The mask contains 'length' consecutive 1‑bits beginning at 'start'\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType< T >\fP\&.
+.PP
+Definition at line \fB159\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "Pair< \fBFast_UInt\fP, \fBFast_UInt\fP > SystemEx\&.Numeric\&.Fast_UInt\&.Div (\fBFast_UInt\fP oth)"
+
+.PP
+Division\&. 
+.PP
+Definition at line \fB263\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UInt\&.Equals (\fBFast_UInt\fP b)"
+
+.PP
+
+.PP
+Definition at line \fB393\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.Fast_UInt\&.Equals (object? obj)"
+
+.PP
+
+.PP
+Definition at line \fB386\fP of file \fBFast_UInt\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UInt\&.Equals (ushort b)"
+
+.PP
+Definition at line \fB397\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_UInt\&.Flip (byte pos)"
+
+.PP
+Flips (toggles) the bit at the specified position\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB111\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "override int SystemEx\&.Numeric\&.Fast_UInt\&.GetHashCode ()"
+
+.PP
+
+.PP
+Definition at line \fB402\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "byte SystemEx\&.Numeric\&.Fast_UInt\&.Is (byte pos)"
+
+.PP
+Returns the bit at the specified position (0 or 1)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB119\fP of file \fBFast_UInt\&.cs\fP\&.
+.PP
+Referenced by \fBWhere()\fP, and \fBWhereNot()\fP\&.
+.SS "byte SystemEx\&.Numeric\&.Fast_UInt\&.IsIt ()"
+
+.PP
+Counts the number of bits set to 1 in a 32‑bit unsigned integer\&. Uses a branchless parallel bit‑count algorithm ("Hacker's Delight")\&. This avoids loops and provides excellent performance\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB183\fP of file \fBFast_UInt\&.cs\fP\&.
+.PP
+Referenced by \fBWhere()\fP\&.
+.SS "byte SystemEx\&.Numeric\&.Fast_UInt\&.IsItNot ()"
+
+.PP
+Counts the number of bits set to 0\&. Equivalent to Count - \fBIsIt()\fP\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB205\fP of file \fBFast_UInt\&.cs\fP\&.
+.PP
+Referenced by \fBWhereNot()\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_UInt\&.Mask (uint mask)"
+
+.PP
+Applies a bitmask to the current value using bitwise AND\&. Only bits that are 1 in the mask remain set\&. 
+.PP
+Definition at line \fB126\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.Max (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB283\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.Min (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB280\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.Mul (\fBFast_UInt\fP oth)"
+
+.PP
+Multiplikation\&. 
+.PP
+Definition at line \fB257\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Fast_UInt\&.operator \fBFast_Byte\fP (\fBFast_UInt\fP opt)\fR [explicit]\fP, \fR [static]\fP"
+
+.PP
+Definition at line \fB377\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.Fast_UInt\&.operator \fBFast_UInt\fP (\fBFast_Byte\fP value)\fR [static]\fP"
+
+.PP
+Definition at line \fB344\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.Fast_UInt\&.operator \fBFast_UInt\fP (\fBFast_UShort\fP value)\fR [static]\fP"
+
+.PP
+Definition at line \fB347\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.Fast_UInt\&.operator \fBFast_UInt\fP (int value)\fR [static]\fP"
+
+.PP
+Implicitly converts a int value into an \fBFast_UInt \fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The int value to convert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB355\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.Fast_UInt\&.operator \fBFast_UInt\fP (uint value)\fR [static]\fP"
+
+.PP
+Implicitly converts a uint value into an \fBFast_UInt \fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The uint value to convert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB363\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Fast_UInt\&.operator \fBFast_UShort\fP (\fBFast_UInt\fP opt)\fR [explicit]\fP, \fR [static]\fP"
+
+.PP
+Definition at line \fB381\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Fast_UInt\&.operator uint (\fBFast_UInt\fP opt)\fR [explicit]\fP, \fR [static]\fP"
+
+.PP
+Explicitly extracts the underlying value from an \fBFast_UInt \fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIopt\fP The optional instance to extract from\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The stored value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB373\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UInt\&.operator!= (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB293\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator% (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB413\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator& (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB410\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator* (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB334\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator+ (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB314\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator++ (\fBFast_UInt\fP a)\fR [static]\fP"
+
+.PP
+Definition at line \fB330\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator\- (\fBFast_UInt\fP a)\fR [static]\fP"
+
+.PP
+Definition at line \fB322\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator\- (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB318\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator\-\- (\fBFast_UInt\fP a)\fR [static]\fP"
+
+.PP
+Definition at line \fB326\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator/ (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB338\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UInt\&.operator< (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB306\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator<< (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB423\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UInt\&.operator<= (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB298\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UInt\&.operator== (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB288\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UInt\&.operator> (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB310\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UInt\&.operator>= (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB302\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator>> (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB427\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator^ (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB419\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.operator| (\fBFast_UInt\fP a, \fBFast_UInt\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB416\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_UInt\&.RotateLeft (byte count)"
+
+.PP
+Rotates the bits to the left by the specified count\&. Rotation is limited to 0–31 to ensure correct 32‑bit behavior\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB137\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_UInt\&.RotateRight (byte count)"
+
+.PP
+Rotates the bits to the right by the specified count\&. Rotation is limited to 0–15 to ensure correct 32‑bit behavior\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB148\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "\fBFast_UInt\fP SystemEx\&.Numeric\&.Fast_UInt\&.Sub (\fBFast_UInt\fP oth)"
+
+.PP
+Subtraktion\&. 
+.PP
+Definition at line \fB251\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "override string SystemEx\&.Numeric\&.Fast_UInt\&.ToString ()"
+
+.PP
+
+.PP
+Definition at line \fB406\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.Fast_UInt\&.Where ()"
+
+.PP
+Returns all bit positions where the bit is set to 1\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB210\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.Fast_UInt\&.WhereNot ()"
+
+.PP
+Returns all bit positions where the bit is set to 0\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB227\fP of file \fBFast_UInt\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "byte SystemEx\&.Numeric\&.Fast_UInt\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of bits available in this type (always 32)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB47\fP of file \fBFast_UInt\&.cs\fP\&.
+.PP
+Referenced by \fBCreateMask()\fP, \fBIsItNot()\fP, \fBRotateLeft()\fP, \fBRotateRight()\fP, \fBWhere()\fP, and \fBWhereNot()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UInt\&.IsSigned\fR [get]\fP"
+
+.PP
+Is signed number\&. 
+.PP
+Definition at line \fB58\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UInt\&.IsZero\fR [get]\fP"
+
+.PP
+Is Zero\&. 
+.PP
+Definition at line \fB62\fP of file \fBFast_UInt\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Fast_UInt\&.Value\fR [get]\fP"
+
+.PP
+Gets the raw underlying 32‑bit unsigned integer value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType< T >\fP\&.
+.PP
+Definition at line \fB53\fP of file \fBFast_UInt\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.Fast_Float\&.SetMantissa()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

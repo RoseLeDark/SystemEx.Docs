@@ -1,0 +1,336 @@
+.TH "SystemEx.Device.Memory.DeviceBuffer" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Device.Memory.DeviceBuffer \- Represents a cache that can be shared with a hardware backend through \fBDeviceSharedBuffer<TDeviceSharedBackend>\fP\&. 
+.br
+ A \fBDeviceBuffer\fP behaves like a normal \fBCache\fP, but supports locking and shared‑memory synchronization for device kernels\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.Cache\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDeviceBuffer\fP (int capacity, \fBCacheType\fP type)"
+.br
+.RI "Creates a new device buffer with the specified capacity and cache type\&. "
+.ti -1c
+.RI "DeviceSharedBuffer< TDeviceSharedBackend > \fBToShared< TDeviceSharedBackend >\fP (TDeviceSharedBackend shared, int flags, object? config)"
+.br
+.RI "Creates a \fBDeviceSharedBuffer<TDeviceSharedBackend>\fP wrapper for this buffer using the specified backend and configuration\&. 
+.br
+ The resulting shared buffer type is determined by the \fBCacheType\fP: 
+.PD 0
+.IP "\(bu" 2
+\fRToDevice\fP → \fBSharedCacheType\&.ReadOnly\fP 
+.IP "\(bu" 2
+\fRFromDevice\fP → \fBSharedCacheType\&.WriteOnly\fP 
+.IP "\(bu" 2
+otherwise → \fBSharedCacheType\&.ReadWrite\fP 
+.PP
+\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.Cache\fP
+.in +1c
+.ti -1c
+.RI "virtual VectorFlexSpan< byte, FixedVector< byte > > \fBAsFlexSpan\fP (\fBFlexSpanMode\fP mode=\fBFlexSpanMode\&.System\fP)"
+.br
+.RI "Creates a FlexSpan view over the valid portion of this array\&. The span does not copy data; it directly references the internal buffer\&. "
+.ti -1c
+.RI "virtual VectorFlexSpan< byte, FixedVector< byte > > \fBAsFlexSpan\fP (long start, \fBFlexSpanMode\fP mode=\fBFlexSpanMode\&.System\fP)"
+.br
+.RI "Creates a FlexSpan view starting at the specified offset\&. The span references the internal buffer directly and does not allocate\&. "
+.ti -1c
+.RI "virtual VectorFlexSpan< byte, FixedVector< byte > > \fBAsFlexSpan\fP (long start, long endi, \fBFlexSpanMode\fP mode=\fBFlexSpanMode\&.System\fP)"
+.br
+.RI "Creates a FlexSpan view starting at the specified offset\&. The span references the internal buffer directly and does not allocate\&. "
+.ti -1c
+.RI "\fBCache\fP (byte[] arr, \fBCacheType\fP type)"
+.br
+.RI "Initializes a new cache from given array\&. "
+.ti -1c
+.RI "\fBCache\fP (Cache cache)"
+.br
+.RI "Create a Copy from stream\&. "
+.ti -1c
+.RI "\fBCache\fP (FixedVector< byte > arr, \fBCacheType\fP type)"
+.br
+.RI "Initializes a new cache from given array\&. "
+.ti -1c
+.RI "\fBCache\fP (long capacity, \fBCacheType\fP type=\fBCacheType\&.OnlySystem\fP)"
+.br
+.RI "Initializes a new cache with the specified capacity and type\&. "
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "See SetZero\&. "
+.ti -1c
+.RI "int \fBRead\fP (byte[] buffer, int offset, int count)"
+.br
+.RI "Reads bytes into the specified buffer and advances the internal position\&. "
+.ti -1c
+.RI "byte \fBReadByte\fP (ulong position)"
+.br
+.RI "Reads a single byte from the specified position\&. "
+.ti -1c
+.RI "double \fBReadDouble\fP (\fBEndian\fP endian, double ervlue=0)"
+.br
+.RI "Reads a double-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "float \fBReadFloat\fP (\fBEndian\fP endian, float ervlue=0)"
+.br
+.RI "Reads a single-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "int \fBReadInt\fP (\fBEndian\fP endian, int ervlue=0)"
+.br
+.RI "Reads a signed 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "long \fBReadLong\fP (\fBEndian\fP endian, long ervlue=0)"
+.br
+.RI "Reads a signed 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "virtual ? byte[] \fBReadRange\fP (ulong position, uint count)"
+.br
+.RI "Reads a range of bytes starting at the specified position\&. "
+.ti -1c
+.RI "virtual FixedVector< byte > \fBReadRangeEx\fP (ulong position, uint count)"
+.br
+.RI "Reads a range of bytes starting at the specified position\&. "
+.ti -1c
+.RI "short \fBReadShort\fP (\fBEndian\fP endian, short ervlue=0)"
+.br
+.RI "Reads a signed 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "uint \fBReadUInt\fP (\fBEndian\fP endian, uint ervlue=0)"
+.br
+.RI "Reads an unsigned 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "ulong \fBReadULong\fP (\fBEndian\fP endian, ulong ervlue=0)"
+.br
+.RI "Reads an unsigned 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "ushort \fBReadUShort\fP (\fBEndian\fP endian, ushort ervlue=0)"
+.br
+.RI "Reads an unsigned 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "ulong \fBSeek\fP (SeekOrigin org, int pos)"
+.br
+.RI "Moves the internal position according to the specified origin and offset\&. "
+.ti -1c
+.RI "void \fBSetZero\fP ()"
+.br
+.RI "Set \fBCache\fP to Zero\&. "
+.ti -1c
+.RI "byte[] \fBToArray\fP ()"
+.br
+.RI "Returns a copy of the internal buffer\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBToArrayEx\fP ()"
+.br
+.RI "Returns a copy of the internal buffer, as \fBFixedVector<T>\fP\&. "
+.ti -1c
+.RI "int \fBWrite\fP (byte[] buffer, int offset, int count)"
+.br
+.RI "Writes bytes from the specified buffer and advances the internal position\&. "
+.ti -1c
+.RI "void \fBWrite\fP (double value, \fBEndian\fP endian)"
+.br
+.RI "Writes a double-precision floating-point value using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (float value, \fBEndian\fP endian)"
+.br
+.RI "Writes a single-precision floating-point value using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (int value, \fBEndian\fP endian)"
+.br
+.RI "Writes a signed 32-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (long value, \fBEndian\fP endian)"
+.br
+.RI "Writes a signed 64-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (short value, \fBEndian\fP endian)"
+.br
+.RI "Writes a signed 16-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (uint value, \fBEndian\fP endian)"
+.br
+.RI "Writes an unsigned 32-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, double value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, float value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, int value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, long value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, short value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, uint value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, ulong value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, ushort value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong value, \fBEndian\fP endian)"
+.br
+.RI "Writes an unsigned 64-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ushort value, \fBEndian\fP endian)"
+.br
+.RI "Writes an unsigned 16-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWriteByte\fP (byte value)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "virtual ulong \fBWriteRange\fP (ulong position, byte[] data)"
+.br
+.RI "Writes a byte range into the cache starting at the specified position\&. "
+.ti -1c
+.RI "ulong \fBWriteRange\fP (ulong position, FixedVector< byte > data)"
+.br
+.ti -1c
+.RI "virtual ulong \fBWriteRange\fP (ulong start, ulong iend, byte[] data)"
+.br
+.RI "Writes a byte range into the cache between \fIstart\fP  and \fIiend\fP \&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsShared\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the buffer is currently locked for shared access\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Collections\&.Generic\&.Cache\fP
+.in +1c
+.ti -1c
+.RI "bool \fBCanRead\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the cache is readable\&. "
+.ti -1c
+.RI "bool \fBCanWrite\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the cache is writable\&. "
+.ti -1c
+.RI "virtual ulong \fBFree\fP\fR [get]\fP"
+.br
+.RI "Gets the total free bytes\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the cache contains no data\&. "
+.ti -1c
+.RI "bool \fBIsLocked\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the internal lock state\&. "
+.ti -1c
+.RI "virtual ulong \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the total buffer length in bytes\&. "
+.ti -1c
+.RI "ulong \fBPosition\fP\fR [get, set]\fP"
+.br
+.RI "Gets and Set the current read/write position\&. "
+.ti -1c
+.RI "byte \fBthis[long adress]\fP\fR [get, set]\fP"
+.br
+.ti -1c
+.RI "\fBCacheType\fP \fBType\fP\fR [get]\fP"
+.br
+.RI "Gets the configured cache type (read, write, or both)\&. "
+.ti -1c
+.RI "virtual ulong \fBUsed\fP\fR [get]\fP"
+.br
+.RI "Gets the total used bytes\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a cache that can be shared with a hardware backend through \fBDeviceSharedBuffer<TDeviceSharedBackend>\fP\&. 
+.br
+ A \fBDeviceBuffer\fP behaves like a normal \fBCache\fP, but supports locking and shared‑memory synchronization for device kernels\&. 
+.PP
+Definition at line \fB50\fP of file \fBDeviceBuffer\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Device\&.Memory\&.DeviceBuffer\&.DeviceBuffer (int capacity, \fBCacheType\fP type)"
+
+.PP
+Creates a new device buffer with the specified capacity and cache type\&. 
+.PP
+Definition at line \fB65\fP of file \fBDeviceBuffer\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "DeviceSharedBuffer< TDeviceSharedBackend > SystemEx\&.Device\&.Memory\&.DeviceBuffer\&.ToShared< TDeviceSharedBackend > (TDeviceSharedBackend shared, int flags, object? config)"
+
+.PP
+Creates a \fBDeviceSharedBuffer<TDeviceSharedBackend>\fP wrapper for this buffer using the specified backend and configuration\&. 
+.br
+ The resulting shared buffer type is determined by the \fBCacheType\fP: 
+.PD 0
+.IP "\(bu" 2
+\fRToDevice\fP → \fBSharedCacheType\&.ReadOnly\fP 
+.IP "\(bu" 2
+\fRFromDevice\fP → \fBSharedCacheType\&.WriteOnly\fP 
+.IP "\(bu" 2
+otherwise → \fBSharedCacheType\&.ReadWrite\fP 
+.PP
+\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITDeviceSharedBackend\fP The backend type\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIshared\fP The backend instance\&.
+.br
+\fIflags\fP Backend‑specific flags\&.
+.br
+\fIconfig\fP Optional backend configuration\&.
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITDeviceSharedBackend\fP : \fIIDeviceSharedBackend\fP
+.PP
+Definition at line \fB82\fP of file \fBDeviceBuffer\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Device\&.Memory\&.DeviceBuffer\&.IsShared\fR [get]\fP"
+
+.PP
+Indicates whether the buffer is currently locked for shared access\&. 
+.PP
+Definition at line \fB60\fP of file \fBDeviceBuffer\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

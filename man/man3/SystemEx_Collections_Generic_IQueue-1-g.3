@@ -1,0 +1,107 @@
+.TH "SystemEx.Collections.Generic.IQueue< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.IQueue< T > \- Defines the generic FIFO queue interface\&. Provides operations for inserting elements at the back and removing elements from the front\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Collections\&.Generic\&.Queue< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.UniqueQueue< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBPopFront\fP (ref Optional< T > value)"
+.br
+.RI "Removes the element at the front of the queue\&. Remaining elements are shifted one position to the left\&. "
+.ti -1c
+.RI "bool \fBPushBack\fP (T value)"
+.br
+.RI "Inserts an element at the back of the queue\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Removes all elements from the queue\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Properties inherited from \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP
+.in +1c
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the queue contains no elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the queue has reached its maximum capacity\&. "
+.ti -1c
+.RI "int \fBSize\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements currently stored in the queue\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines the generic FIFO queue interface\&. Provides operations for inserting elements at the back and removing elements from the front\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of elements stored in the queue\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB53\fP of file \fBIQueue\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP< T >\&.PopFront (ref Optional< T > value)"
+
+.PP
+Removes the element at the front of the queue\&. Remaining elements are shifted one position to the left\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP When this method returns, contains the removed element if the operation succeeded; otherwise contains \fRnull\fP\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an element was removed; otherwise \fRfalse\fP (for example, if the queue is empty)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Queue< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.UniqueQueue< T >\fP\&.
+.SS "bool \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP< T >\&.PushBack (T value)"
+
+.PP
+Inserts an element at the back of the queue\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The element to insert\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the element was successfully inserted; otherwise \fRfalse\fP (for example, if the queue is full)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Queue< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.UniqueQueue< T >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

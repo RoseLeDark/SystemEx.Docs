@@ -1,0 +1,194 @@
+.TH "SystemEx.Collections.Generic.BinQueue< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.BinQueue< T > \- A fixed-size queue that stores up to two elements\&. When full, the oldest element is automatically removed to make room for a new one\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.IBinQueue< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBinQueue\fP ()"
+.br
+.RI "Creates a new BinQueue\&. "
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Removes all elements from the BinQueue without modifying the underlying buffer\&. "
+.ti -1c
+.RI "Optional< T > \fBDequeue\fP ()"
+.br
+.RI "Removes the element at the front of the queue\&. "
+.ti -1c
+.RI "void \fBEnqueue\fP (T value)"
+.br
+.RI "Adds a new element to the queue\&. If the queue is full, the oldest element is removed automatically before inserting the new one\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static FlexSpan< T > \fBAsFlexSpan\fP (ref \fBBinQueue\fP< T > que, \fBFlexSpanMode\fP mode=\fBFlexSpanMode\&.System\fP)"
+.br
+.RI "Creates a FlexSpan view over the current contents of the BinQueue\&. The span directly references the internal array and does not allocate\&. /summary> 
+.PP
+\fBReturns\fP
+.RS 4
+A FlexSpan that views the range [0 \&.\&. m_count) of the internal buffer\&. 
+.RE
+.PP
+\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements currently stored in the BinQueue\&. "
+.ti -1c
+.RI "T \fBEnd\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the back of the BinQueue\&. "
+.ti -1c
+.RI "T \fBFront\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the front of the BinQueue\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the BinQueue contains no elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the BinQueue has reached its maximum capacity\&. "
+.ti -1c
+.RI "int \fBSize\fP\fR [get]\fP"
+.br
+.RI "Gets the total capacity of the BinQueue\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A fixed-size queue that stores up to two elements\&. When full, the oldest element is automatically removed to make room for a new one\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of elements stored in the queue\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB30\fP of file \fBBinQueue\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "FlexSpan< T > SystemEx\&.Collections\&.Generic\&.BinQueue< T >\&.AsFlexSpan (ref \fBBinQueue\fP< T > que, \fBFlexSpanMode\fP mode = \fR\fBFlexSpanMode::System\fP\fP)\fR [static]\fP"
+
+.PP
+Creates a FlexSpan view over the current contents of the BinQueue\&. The span directly references the internal array and does not allocate\&. /summary> 
+.PP
+\fBReturns\fP
+.RS 4
+A FlexSpan that views the range [0 \&.\&. m_count) of the internal buffer\&. 
+.RE
+.PP
+\&. 
+.PP
+Definition at line \fB127\fP of file \fBBinQueue\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.BinQueue< T >\&.BinQueue ()"
+
+.PP
+Creates a new BinQueue\&. 
+.PP
+Definition at line \fB76\fP of file \fBBinQueue\&.cs\fP\&.
+.PP
+Referenced by \fBAsFlexSpan()\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.BinQueue< T >\&.Clear ()"
+
+.PP
+Removes all elements from the BinQueue without modifying the underlying buffer\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB115\fP of file \fBBinQueue\&.cs\fP\&.
+.SS "Optional< T > SystemEx\&.Collections\&.Generic\&.BinQueue< T >\&.Dequeue ()"
+
+.PP
+Removes the element at the front of the queue\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IBinQueue< T >\fP\&.
+.PP
+Definition at line \fB101\fP of file \fBBinQueue\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.BinQueue< T >\&.Enqueue (T value)"
+
+.PP
+Adds a new element to the queue\&. If the queue is full, the oldest element is removed automatically before inserting the new one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to enqueue\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IBinQueue< T >\fP\&.
+.PP
+Definition at line \fB87\fP of file \fBBinQueue\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Collections\&.Generic\&.BinQueue< T >\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of elements currently stored in the BinQueue\&. 
+.PP
+Definition at line \fB45\fP of file \fBBinQueue\&.cs\fP\&.
+.SS "T SystemEx\&.Collections\&.Generic\&.BinQueue< T >\&.End\fR [get]\fP"
+
+.PP
+Gets the element at the back of the BinQueue\&. 
+.PP
+Definition at line \fB71\fP of file \fBBinQueue\&.cs\fP\&.
+.SS "T SystemEx\&.Collections\&.Generic\&.BinQueue< T >\&.Front\fR [get]\fP"
+
+.PP
+Gets the element at the front of the BinQueue\&. 
+.PP
+Definition at line \fB66\fP of file \fBBinQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.BinQueue< T >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Indicates whether the BinQueue contains no elements\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB56\fP of file \fBBinQueue\&.cs\fP\&.
+.PP
+Referenced by \fBDequeue()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.BinQueue< T >\&.IsFull\fR [get]\fP"
+
+.PP
+Indicates whether the BinQueue has reached its maximum capacity\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB61\fP of file \fBBinQueue\&.cs\fP\&.
+.PP
+Referenced by \fBEnqueue()\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.BinQueue< T >\&.Size\fR [get]\fP"
+
+.PP
+Gets the total capacity of the BinQueue\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBBinQueue\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

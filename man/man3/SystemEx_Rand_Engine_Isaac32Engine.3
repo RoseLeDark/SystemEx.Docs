@@ -1,0 +1,128 @@
+.TH "SystemEx.Rand.Engine.Isaac32Engine" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Rand.Engine.Isaac32Engine \- Represents the ISAAC 32-bit random number generator\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Rand\&.Engine\&.IRandomEngine\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIsaac32Engine\fP (\fBISeed\fP seed)"
+.br
+.RI "Initializes a new instance of the \fBIsaac32Engine\fP class using a seed object implementing \fBISeed\fP\&. The first three values of the seed are used as the primary ISAAC seeds (a, b, c)\&. Any additional values are forwarded as the optional seed array s in Seed(a, b, c, s) >\&. "
+.ti -1c
+.RI "\fBIsaac32Engine\fP (uint a=0, uint b=0, uint c=0)"
+.br
+.RI "Initializes a new instance of the \fBIsaac32Engine\fP class with the specified seed values\&. "
+.ti -1c
+.RI "uint \fBNext\fP ()"
+.br
+.RI "Generates the next random number in the sequence\&. "
+.ti -1c
+.RI "void \fBSeed\fP (uint a, uint b, uint c, uint[]? s=null)"
+.br
+.RI "Seeds the random number generator with the specified values\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBISeed\fP \fBStartSeed\fP\fR [get]\fP"
+.br
+.RI "Gets the seed object that was used to initialize this engine\&. The seed allows deterministic reproduction of the generated sequence\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents the ISAAC 32-bit random number generator\&. 
+.PP
+Definition at line \fB65\fP of file \fBIsaac32Engine\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Rand\&.Engine\&.Isaac32Engine\&.Isaac32Engine (\fBISeed\fP seed)"
+
+.PP
+Initializes a new instance of the \fBIsaac32Engine\fP class using a seed object implementing \fBISeed\fP\&. The first three values of the seed are used as the primary ISAAC seeds (a, b, c)\&. Any additional values are forwarded as the optional seed array s in Seed(a, b, c, s) >\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIseed\fP The seed object used to initialize the engine\&. If the seed contains more than three values, the remaining values are passed as the seed array\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB89\fP of file \fBIsaac32Engine\&.cs\fP\&.
+.SS "SystemEx\&.Rand\&.Engine\&.Isaac32Engine\&.Isaac32Engine (uint a = \fR0\fP, uint b = \fR0\fP, uint c = \fR0\fP)"
+
+.PP
+Initializes a new instance of the \fBIsaac32Engine\fP class with the specified seed values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The first seed value\&.
+.br
+\fIb\fP The second seed value\&.
+.br
+\fIc\fP The third seed value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB114\fP of file \fBIsaac32Engine\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "uint SystemEx\&.Rand\&.Engine\&.Isaac32Engine\&.Next ()"
+
+.PP
+Generates the next random number in the sequence\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The next random number\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Rand\&.Engine\&.IRandomEngine\fP\&.
+.PP
+Definition at line \fB170\fP of file \fBIsaac32Engine\&.cs\fP\&.
+.SS "void SystemEx\&.Rand\&.Engine\&.Isaac32Engine\&.Seed (uint a, uint b, uint c, uint?[] s = \fRnull\fP)"
+
+.PP
+Seeds the random number generator with the specified values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The first seed value\&.
+.br
+\fIb\fP The second seed value\&.
+.br
+\fIc\fP The third seed value\&.
+.br
+\fIs\fP The seed array, or null to use default values\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB125\fP of file \fBIsaac32Engine\&.cs\fP\&.
+.PP
+Referenced by \fBIsaac32Engine()\fP, and \fBIsaac32Engine()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBISeed\fP SystemEx\&.Rand\&.Engine\&.Isaac32Engine\&.StartSeed\fR [get]\fP"
+
+.PP
+Gets the seed object that was used to initialize this engine\&. The seed allows deterministic reproduction of the generated sequence\&. 
+.PP
+Implements \fBSystemEx\&.Rand\&.Engine\&.IRandomEngine\fP\&.
+.PP
+Definition at line \fB77\fP of file \fBIsaac32Engine\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

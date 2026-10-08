@@ -1,4 +1,4 @@
 var a01789 =
 [
-    [ "CRC32C", "d6/d53/a01789_a652dd8f436e101afbdf7419b5c2de5ae.html#a652dd8f436e101afbdf7419b5c2de5ae", null ]
+    [ "CRC32BZip2", "d6/d53/a01789_adcedbba5ee7f2bef990c27ed36f6404d.html#adcedbba5ee7f2bef990c27ed36f6404d", null ]
 ];

@@ -1,0 +1,230 @@
+.TH "SystemEx.Numeric.Float8UMX< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Float8UMX< T > \- Represents a generic FP8 MX‑block consisting of 32 FP8 elements of type \fIT\fP  sharing a common block exponent\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Numeric\&.FloatUE4M3b32\fP, and \fBSystemEx\&.Numeric\&.FloatUE5M2b32\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBEquals\fP (\fBFloat8UMX\fP< T > other)"
+.br
+.RI "Determines whether this MX‑block is equal to another MX‑block by comparing shared exponent and all 32 FP8 elements\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "\fBFloat8UMX\fP (byte sharedExponent, T[]? vector)"
+.br
+.RI "Initializes a new MX‑block with a shared exponent and a 32‑element FP8 vector\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFloat8UMX\fP< T > \fBAdd\fP (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)"
+.br
+.RI "Adds two MX‑blocks element‑wise, applying exponent alignment and FP8 renormalization\&. "
+.ti -1c
+.RI "static \fBFloat8UMX\fP< T > \fBDiv\fP (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)"
+.br
+.RI "Divides two MX‑blocks element‑wise using FP8 division rules\&. "
+.ti -1c
+.RI "static \fBFloat8UMX\fP< T > \fBMul\fP (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)"
+.br
+.RI "Multiplies two MX‑blocks element‑wise using FP8 multiplication rules\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)"
+.br
+.RI "Inequality operator\&. "
+.ti -1c
+.RI "static \fBFloat8UMX\fP< T > \fBoperator*\fP (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)"
+.br
+.RI "See Float8UMX<T>\&.Mul(Float8UMX<T>, Float8UMX<T>)\&. "
+.ti -1c
+.RI "static \fBFloat8UMX\fP< T > \fBoperator+\fP (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)"
+.br
+.RI "See Float8UMX<T>\&.Add(Float8UMX<T>, Float8UMX<T>)\&. "
+.ti -1c
+.RI "static \fBFloat8UMX\fP< T > \fBoperator\-\fP (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)"
+.br
+.RI "See Float8UMX<T>\&.Sub(Float8UMX<T>, Float8UMX<T>)\&. "
+.ti -1c
+.RI "static \fBFloat8UMX\fP< T > \fBoperator/\fP (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)"
+.br
+.RI "See Float8UMX<T>\&.Div(Float8UMX<T>, Float8UMX<T>)\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)"
+.br
+.RI "Equality operator\&. "
+.ti -1c
+.RI "static \fBFloat8UMX\fP< T > \fBSub\fP (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)"
+.br
+.RI "Subtracts two MX‑blocks element‑wise using unsigned FP8 subtraction rules\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "byte \fBSharedExponent\fP\fR [get]\fP"
+.br
+.RI "Gets the shared exponent applied to all FP8 elements in this MX‑block\&. "
+.ti -1c
+.RI "T \fBthis[int index]\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the FP8 element at the specified index within the MX‑block\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a generic FP8 MX‑block consisting of 32 FP8 elements of type \fIT\fP  sharing a common block exponent\&. 
+
+MX‑blocks are used to accelerate FP8 vector operations by applying a shared exponent scaling across all 32 elements\&. This allows efficient SIMD‑style arithmetic while preserving FP8 semantics\&. 
+
+.PP
+The type parameter \fIT\fP  must implement \fBIFP8<T>\fP and IP8MXEnable, providing FP8 format metadata such as HiddenBit, MantissaMask, ExponentBias, MaxExponent, and ShiftRaster\&. 
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fIstruct\fP
+.TP
+\fIT\fP : \fI\fBIFP8\fP<T>\fP
+.TP
+\fIT\fP : \fIIP8UMXEnable<\fBFast_Byte\fP>\fP
+.PP
+Definition at line \fB21\fP of file \fBFloat8UMX\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFloat8UMX\fP< T > SystemEx\&.Numeric\&.Float8UMX< T >\&.Add (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)\fR [static]\fP"
+
+.PP
+Adds two MX‑blocks element‑wise, applying exponent alignment and FP8 renormalization\&. 
+.PP
+Definition at line \fB56\fP of file \fBFloat8UMX\&.cs\fP\&.
+.PP
+Referenced by \fBoperator+()\fP\&.
+.SS "\fBFloat8UMX\fP< T > SystemEx\&.Numeric\&.Float8UMX< T >\&.Div (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)\fR [static]\fP"
+
+.PP
+Divides two MX‑blocks element‑wise using FP8 division rules\&. 
+.PP
+Definition at line \fB179\fP of file \fBFloat8UMX\&.cs\fP\&.
+.PP
+Referenced by \fBoperator/()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float8UMX< T >\&.Equals (\fBFloat8UMX\fP< T > other)"
+
+.PP
+Determines whether this MX‑block is equal to another MX‑block by comparing shared exponent and all 32 FP8 elements\&. 
+.PP
+Definition at line \fB347\fP of file \fBFloat8UMX\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.Float8UMX< T >\&.Equals (object? obj)"
+
+.PP
+
+.PP
+Definition at line \fB365\fP of file \fBFloat8UMX\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Float8UMX< T >\&.Float8UMX (byte sharedExponent, T?[] vector)"
+
+.PP
+Initializes a new MX‑block with a shared exponent and a 32‑element FP8 vector\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsharedExponent\fP The block‑wide exponent scaling factor\&.
+.br
+\fIvector\fP The FP8 element array (must contain exactly 32 elements)\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB44\fP of file \fBFloat8UMX\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBDiv()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBMul()\fP, \fBoperator!=()\fP, \fBoperator*()\fP, \fBoperator+()\fP, \fBoperator\-()\fP, \fBoperator/()\fP, \fBoperator==()\fP, and \fBSub()\fP\&.
+.SS "override int SystemEx\&.Numeric\&.Float8UMX< T >\&.GetHashCode ()"
+
+.PP
+
+.PP
+Definition at line \fB403\fP of file \fBFloat8UMX\&.cs\fP\&.
+.SS "\fBFloat8UMX\fP< T > SystemEx\&.Numeric\&.Float8UMX< T >\&.Mul (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)\fR [static]\fP"
+
+.PP
+Multiplies two MX‑blocks element‑wise using FP8 multiplication rules\&. 
+.PP
+Definition at line \fB123\fP of file \fBFloat8UMX\&.cs\fP\&.
+.PP
+Referenced by \fBoperator*()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float8UMX< T >\&.operator!= (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)\fR [static]\fP"
+
+.PP
+Inequality operator\&. 
+.PP
+Definition at line \fB399\fP of file \fBFloat8UMX\&.cs\fP\&.
+.SS "\fBFloat8UMX\fP< T > SystemEx\&.Numeric\&.Float8UMX< T >\&.operator* (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)\fR [static]\fP"
+
+.PP
+See Float8UMX<T>\&.Mul(Float8UMX<T>, Float8UMX<T>)\&. 
+.PP
+Definition at line \fB385\fP of file \fBFloat8UMX\&.cs\fP\&.
+.SS "\fBFloat8UMX\fP< T > SystemEx\&.Numeric\&.Float8UMX< T >\&.operator+ (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)\fR [static]\fP"
+
+.PP
+See Float8UMX<T>\&.Add(Float8UMX<T>, Float8UMX<T>)\&. 
+.PP
+Definition at line \fB373\fP of file \fBFloat8UMX\&.cs\fP\&.
+.SS "\fBFloat8UMX\fP< T > SystemEx\&.Numeric\&.Float8UMX< T >\&.operator\- (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)\fR [static]\fP"
+
+.PP
+See Float8UMX<T>\&.Sub(Float8UMX<T>, Float8UMX<T>)\&. 
+.PP
+Definition at line \fB379\fP of file \fBFloat8UMX\&.cs\fP\&.
+.SS "\fBFloat8UMX\fP< T > SystemEx\&.Numeric\&.Float8UMX< T >\&.operator/ (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)\fR [static]\fP"
+
+.PP
+See Float8UMX<T>\&.Div(Float8UMX<T>, Float8UMX<T>)\&. 
+.PP
+Definition at line \fB391\fP of file \fBFloat8UMX\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float8UMX< T >\&.operator== (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)\fR [static]\fP"
+
+.PP
+Equality operator\&. 
+.PP
+Definition at line \fB395\fP of file \fBFloat8UMX\&.cs\fP\&.
+.SS "\fBFloat8UMX\fP< T > SystemEx\&.Numeric\&.Float8UMX< T >\&.Sub (\fBFloat8UMX\fP< T > a, \fBFloat8UMX\fP< T > b)\fR [static]\fP"
+
+.PP
+Subtracts two MX‑blocks element‑wise using unsigned FP8 subtraction rules\&. 
+.PP
+Definition at line \fB234\fP of file \fBFloat8UMX\&.cs\fP\&.
+.PP
+Referenced by \fBoperator\-()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "byte SystemEx\&.Numeric\&.Float8UMX< T >\&.SharedExponent\fR [get]\fP"
+
+.PP
+Gets the shared exponent applied to all FP8 elements in this MX‑block\&. 
+.PP
+Definition at line \fB37\fP of file \fBFloat8UMX\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "T SystemEx\&.Numeric\&.Float8UMX< T >\&.this[int index]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the FP8 element at the specified index within the MX‑block\&. 
+.PP
+Definition at line \fB29\fP of file \fBFloat8UMX\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

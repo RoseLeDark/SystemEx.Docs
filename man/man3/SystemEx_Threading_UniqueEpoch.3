@@ -1,0 +1,55 @@
+.TH "SystemEx.Threading.UniqueEpoch" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.UniqueEpoch \- Provides an RAII-style scoped reader epoch for RCU-based objects\&. The epoch is incremented when the instance is created and decremented when the instance is disposed\&. This guarantees deterministic reader tracking even in the presence of exceptions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IDisposable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDispose\fP ()"
+.br
+.RI "Marks the end of the reader section by decrementing the epoch counter\&. "
+.ti -1c
+.RI "\fBUniqueEpoch\fP (ref \fBEpoch\fP epoch)"
+.br
+.RI "Creates a new \fBUniqueEpoch\fP and marks the beginning of a reader section by incrementing the epoch counter\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides an RAII-style scoped reader epoch for RCU-based objects\&. The epoch is incremented when the instance is created and decremented when the instance is disposed\&. This guarantees deterministic reader tracking even in the presence of exceptions\&. 
+.PP
+Definition at line \fB166\fP of file \fBEpoch\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.UniqueEpoch\&.UniqueEpoch (ref \fBEpoch\fP epoch)"
+
+.PP
+Creates a new \fBUniqueEpoch\fP and marks the beginning of a reader section by incrementing the epoch counter\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIepoch\fP The epoch instance to operate on\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB174\fP of file \fBEpoch\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Threading\&.UniqueEpoch\&.Dispose ()"
+
+.PP
+Marks the end of the reader section by decrementing the epoch counter\&. 
+.PP
+Definition at line \fB182\fP of file \fBEpoch\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,138 @@
+.TH "SystemEx.Algorithms.FibonacciSearcherProvider< T, TContainer >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Algorithms.FibonacciSearcherProvider< T, TContainer > \- Provides a Fibonacci‑based search strategy for containers implementing \fBIContainer<T>\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Algorithms\&.ISearchProvider< T, TContainer >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "long \fBFind\fP (ref TContainer container, Func< Optional< T >, \fBCompareResult\fP > func)"
+.br
+.RI "Performs a best‑effort Fibonacci‑based search and counts the number of elements for which the provided predicate returns a non‑strict match\&. "
+.ti -1c
+.RI "long \fBFind\fP (ref TContainer container, ICompared< T > comp, T value)"
+.br
+.RI "Searches the container for elements matching \fIvalue\fP  using a Fibonacci search strategy and a comparison provider\&. "
+.ti -1c
+.RI "Vector< Pair< long, Optional< T > > > \fBWhere\fP (ref TContainer container, Func< Optional< T >, \fBCompareResult\fP > func)"
+.br
+.RI "Performs a best‑effort multi‑match search using Fibonacci probing\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a Fibonacci‑based search strategy for containers implementing \fBIContainer<T>\fP\&. 
+
+Fibonacci search is an alternative to binary search that uses decreasing Fibonacci intervals to narrow the search space\&. It is particularly suited for sorted containers and scenarios where comparison operations are more expensive than index arithmetic\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The element type stored in the container\&. 
+.br
+\fITContainer\fP The container type being searched\&. Must implement \fBIVector<T>\fP\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITContainer\fP : \fIIVector<T>\fP
+.PP
+Definition at line \fB39\fP of file \fBFibonacciSearcherProvider\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "long SystemEx\&.Algorithms\&.FibonacciSearcherProvider< T, TContainer >\&.Find (ref TContainer container, Func< Optional< T >, \fBCompareResult\fP > func)"
+
+.PP
+Performs a best‑effort Fibonacci‑based search and counts the number of elements for which the provided predicate returns a non‑strict match\&. Fibonacci search is inherently designed for locating a single target value in a sorted container\&. This overload extends the algorithm to count matches encountered during Fibonacci probing, but due to the nature of the search — which discards large portions of the container during interval reduction — it does \fBnot\fP guarantee that all matching elements will be visited\&.
+
+.PP
+This method is suitable for experimental or specialized scenarios where approximate or probe‑based counting is acceptable\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontainer\fP The container to search\&. Passed by reference to avoid copying\&. 
+.br
+\fIfunc\fP A callback that evaluates each probed element and returns a \fBCompareResult\fP describing its relation to the desired target\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of matches encountered during Fibonacci probing\&. 
+.br
+ This value may be less than the actual number of matching elements\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Algorithms\&.ISearchProvider< T, TContainer >\fP\&.
+.PP
+Definition at line \fB142\fP of file \fBFibonacciSearcherProvider\&.cs\fP\&.
+.SS "long SystemEx\&.Algorithms\&.FibonacciSearcherProvider< T, TContainer >\&.Find (ref TContainer container, ICompared< T > comp, T value)"
+
+.PP
+Searches the container for elements matching \fIvalue\fP  using a Fibonacci search strategy and a comparison provider\&. The search iteratively reduces the interval size using Fibonacci numbers, comparing elements at calculated probe positions until the target value is found or the search space is exhausted\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontainer\fP The container to search\&. Passed by reference to avoid copying\&. 
+.br
+\fIcomp\fP The comparison provider used to evaluate the relation between container elements and the target value\&. 
+.br
+\fIvalue\fP The value to search for, wrapped in \fBOptional<T>\fP\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of matches found\&. 
+.br
+ Typically \fR0\fP or \fR1\fP for strictly ordered containers\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Algorithms\&.ISearchProvider< T, TContainer >\fP\&.
+.PP
+Definition at line \fB64\fP of file \fBFibonacciSearcherProvider\&.cs\fP\&.
+.SS "Vector< Pair< long, Optional< T > > > SystemEx\&.Algorithms\&.FibonacciSearcherProvider< T, TContainer >\&.Where (ref TContainer container, Func< Optional< T >, \fBCompareResult\fP > func)"
+
+.PP
+Performs a best‑effort multi‑match search using Fibonacci probing\&. Although Fibonacci search is traditionally designed for locating a single target value in a sorted container, this method extends the algorithm to collect all elements for which the provided predicate returns a non‑strict match result\&.
+
+.PP
+Due to the nature of Fibonacci search — which discards large portions of the search space during probing — this method does not guarantee that all matching elements will be visited\&. It is intended for experimental or specialized use cases only\&.
+
+.PP
+In other words: only Bob can do this\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontainer\fP The container to search\&. Passed by reference to avoid copying\&. 
+.br
+\fIfunc\fP A callback that evaluates each probed element and returns a \fBCompareResult\fP describing its relation to the desired target\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVector<T>\fP containing index/value pairs for all elements encountered during Fibonacci probing that satisfy the predicate\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Algorithms\&.ISearchProvider< T, TContainer >\fP\&.
+.PP
+Definition at line \fB225\fP of file \fBFibonacciSearcherProvider\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

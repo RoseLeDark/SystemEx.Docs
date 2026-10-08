@@ -1,0 +1,93 @@
+.TH "SystemEx.Threading.ScopedLock< T, TLOCK >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.ScopedLock< T, TLOCK > \- Provides an RAII-style scoped lock for any \fBILock\fP implementation and exposes a snapshot of a protected value\&. The lock is acquired in the constructor and automatically released when the instance is disposed\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IDisposable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDispose\fP ()"
+.br
+.RI "Releases the lock acquired by this instance\&. "
+.ti -1c
+.RI "\fBScopedLock\fP (ref TLOCK l, ref T value, \fBTimeOut\fP timeout)"
+.br
+.RI "Creates a new \fBScopedLock<T, TL>\fP and attempts to acquire the specified lock\&. If the lock cannot be acquired within the given timeout, an UnauthorizedAccessException is thrown\&. The provided value is captured by reference and stored as a snapshot\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "ref T \fBValue\fP\fR [get]\fP"
+.br
+.RI "Gets the value captured at the moment the lock was acquired\&. This is a snapshot and does not provide write access to the underlying object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides an RAII-style scoped lock for any \fBILock\fP implementation and exposes a snapshot of a protected value\&. The lock is acquired in the constructor and automatically released when the instance is disposed\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the protected value\&. 
+.br
+\fITL\fP The lock type implementing \fBILock\fP\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITLOCK\fP : \fI\fBILock\fP\fP
+.PP
+Definition at line \fB130\fP of file \fBUniqueLock\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Threading\&.ScopedLock< T, TLOCK >\&.Dispose ()"
+
+.PP
+Releases the lock acquired by this instance\&. 
+.PP
+Definition at line \fB178\fP of file \fBUniqueLock\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.ScopedLock< T, TLOCK >\&.ScopedLock (ref TLOCK l, ref T value, \fBTimeOut\fP timeout)"
+
+.PP
+Creates a new \fBScopedLock<T, TL>\fP and attempts to acquire the specified lock\&. If the lock cannot be acquired within the given timeout, an UnauthorizedAccessException is thrown\&. The provided value is captured by reference and stored as a snapshot\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIl\fP The lock instance to acquire\&.
+.br
+\fIvalue\fP A reference to the protected value\&. The value is copied into the \fBValue\fP property once the lock is acquired\&. 
+.br
+\fItimeout\fP The timeout in milliseconds\&. A value of -1 indicates an infinite wait\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIUnauthorizedAccessException\fP Thrown when the lock cannot be acquired within the specified timeout\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB167\fP of file \fBUniqueLock\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "ref T SystemEx\&.Threading\&.ScopedLock< T, TLOCK >\&.Value\fR [get]\fP"
+
+.PP
+Gets the value captured at the moment the lock was acquired\&. This is a snapshot and does not provide write access to the underlying object\&. 
+.PP
+Definition at line \fB140\fP of file \fBUniqueLock\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

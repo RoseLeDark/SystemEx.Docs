@@ -1,4 +1,5 @@
 var a01100 =
 [
-    [ "CompareTo", "de/d9d/a00813_ga31f1419e9cf0b785e10516da24de2d0b.html#ga31f1419e9cf0b785e10516da24de2d0b", null ]
+    [ "Dimension", "de/d01/a00897_gaa46927f31d6697a2d9ddb2370d7e8328.html#gaa46927f31d6697a2d9ddb2370d7e8328", null ],
+    [ "this[int index]", "de/d01/a00897_ga283e91501d56d9b86af18150b68dfa44.html#ga283e91501d56d9b86af18150b68dfa44", null ]
 ];

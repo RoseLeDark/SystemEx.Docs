@@ -1,0 +1,326 @@
+.TH "SystemEx.Collections.Generic.VectorUnorderedMultiSet< T, TContainer >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.VectorUnorderedMultiSet< T, TContainer > \- Represents an unordered set view over an underlying container\&. Elements are not sorted and no ordering guarantees are provided\&. Duplicate values are not allowed\&. All operations work directly on the underlying container without applying any sorting logic\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBEquals\fP (\fBVectorUnorderedMultiSet\fP< T, TContainer > other)"
+.br
+.RI "Compares this UnorderedMultiSet with another UnorderedMultiSet for structural equality\&. Both UnorderedMultiSets must contain the same number of elements and each element at the same position must be equal\&. The comparison assumes both containers are sorted and aligned\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long first, long last)"
+.br
+.RI "Removes a continuous range of elements from the underlying container\&. The range is defined by the start index \fIfirst\fP  and the end index \fIlast\fP \&. "
+.ti -1c
+.RI "bool \fBErase\fP (long index)"
+.br
+.RI "Removes the element at the specified index\&. "
+.ti -1c
+.RI "bool \fBErase\fP (T value)"
+.br
+.RI "Removes the first occurrence of the specified value from the UnorderedMultiSet\&. The element is located using the internal finder\&. If the element exists, it is removed from the underlying container\&. "
+.ti -1c
+.RI "T[] \fBExtract\fP (long index)"
+.br
+.RI "Extracts all elements starting at the given index\&. The extracted elements are removed from the underlying container and returned as a new array\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long index, T value)"
+.br
+.RI "Inserts a value at the specified index\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long start, long end, T value)"
+.br
+.RI "Inserts a value into a range\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (T value)"
+.br
+.RI "Inserts a value into the container\&. "
+.ti -1c
+.RI "bool \fBInsertRange\fP (long start, T[] values)"
+.br
+.RI "Inserts multiple values starting at the specified index\&. "
+.ti -1c
+.RI "void \fBSwapIn\fP (\fBVectorUnorderedMultiSet\fP< T, TContainer > other)"
+.br
+.RI "Moves all elements from this UnorderedMultiSet into the specified target UnorderedMultiSet\&. The elements are copied into a temporary array, removed from the underlying container of this UnorderedMultiSet, and then inserted into the target UnorderedMultiSet\&. This UnorderedMultiSet becomes empty after the operation\&. "
+.ti -1c
+.RI "bool \fBValidate\fP ()"
+.br
+.RI "tests is this view validated return only true "
+.ti -1c
+.RI "\fBVectorUnorderedMultiSet\fP (ref TContainer keys)"
+.br
+.RI "Creates a new unsorted view over the given container\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "long \fBCount\fP\fR [get]\fP"
+.br
+.RI "Returns the number of elements stored in the container\&. "
+.ti -1c
+.RI "T? \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Returns the current element of the underlying container\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the underlying container is empty\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the underlying container is full\&. "
+.ti -1c
+.RI "long \fBLength\fP\fR [get]\fP"
+.br
+.RI "Returns the total capacity of the underlying container\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents an unordered set view over an underlying container\&. Elements are not sorted and no ordering guarantees are provided\&. Duplicate values are not allowed\&. All operations work directly on the underlying container without applying any sorting logic\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The element type stored in the container\&.
+.br
+\fITContainer\fP The container type that stores the elements\&. Must implement IContainerEx for the same element type\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITContainer\fP : \fIIVector<T>\fP
+.PP
+Definition at line \fB36\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.Equals (\fBVectorUnorderedMultiSet\fP< T, TContainer > other)"
+
+.PP
+Compares this UnorderedMultiSet with another UnorderedMultiSet for structural equality\&. Both UnorderedMultiSets must contain the same number of elements and each element at the same position must be equal\&. The comparison assumes both containers are sorted and aligned\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The UnorderedMultiSet to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if both UnorderedMultiSets contain the same elements in the same order; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB264\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.Erase (long first, long last)"
+
+.PP
+Removes a continuous range of elements from the underlying container\&. The range is defined by the start index \fIfirst\fP  and the end index \fIlast\fP \&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfirst\fP The starting index of the range to erase\&.
+.br
+\fIlast\fP The ending index of the range to erase\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the specified range was removed; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB201\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.Erase (long index)"
+
+.PP
+Removes the element at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index of the element to remove\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB186\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.Erase (T value)"
+
+.PP
+Removes the first occurrence of the specified value from the UnorderedMultiSet\&. The element is located using the internal finder\&. If the element exists, it is removed from the underlying container\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to erase\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the value was found and removed; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB215\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "T[] SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.Extract (long index)"
+
+.PP
+Extracts all elements starting at the given index\&. The extracted elements are removed from the underlying container and returned as a new array\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP Start index of extraction\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new array containing all elements from index to the end\&. If the index is out of range, an empty array is returned\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB88\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.Insert (long index, T value)"
+
+.PP
+Inserts a value at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index at which the value is inserted\&.
+.br
+\fIvalue\fP The value to insert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB131\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.Insert (long start, long end, T value)"
+
+.PP
+Inserts a value into a range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP Start index of the range\&.
+.br
+\fIend\fP End index of the range\&.
+.br
+\fIvalue\fP The value to insert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB145\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.Insert (T value)"
+
+.PP
+Inserts a value into the container\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to insert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB118\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.InsertRange (long start, T[] values)"
+
+.PP
+Inserts multiple values starting at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP The index at which the range begins\&.
+.br
+\fIvalues\fP Array of values to insert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB158\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.SwapIn (\fBVectorUnorderedMultiSet\fP< T, TContainer > other)"
+
+.PP
+Moves all elements from this UnorderedMultiSet into the specified target UnorderedMultiSet\&. The elements are copied into a temporary array, removed from the underlying container of this UnorderedMultiSet, and then inserted into the target UnorderedMultiSet\&. This UnorderedMultiSet becomes empty after the operation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The target UnorderedMultiSet that receives all elements from this UnorderedMultiSet\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB238\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.Validate ()"
+
+.PP
+tests is this view validated return only true 
+.PP
+Definition at line \fB176\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.VectorUnorderedMultiSet (ref TContainer keys)"
+
+.PP
+Creates a new unsorted view over the given container\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkeys\fP \fBReference\fP to the underlying container\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB46\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBSwapIn()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "long SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.Count\fR [get]\fP"
+
+.PP
+Returns the number of elements stored in the container\&. 
+.PP
+Definition at line \fB70\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "T? SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.Current\fR [get]\fP"
+
+.PP
+Returns the current element of the underlying container\&. 
+.PP
+Definition at line \fB65\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Indicates whether the underlying container is empty\&. 
+.PP
+Definition at line \fB60\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.IsFull\fR [get]\fP"
+
+.PP
+Indicates whether the underlying container is full\&. 
+.PP
+Definition at line \fB55\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.VectorUnorderedMultiSet< T, TContainer >\&.Length\fR [get]\fP"
+
+.PP
+Returns the total capacity of the underlying container\&. 
+.PP
+Definition at line \fB75\fP of file \fBVectorUnorderedMultiSet\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

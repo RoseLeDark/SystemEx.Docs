@@ -1,0 +1,274 @@
+.TH "SystemEx.Collections.Generic.TypeBuffer< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.TypeBuffer< T > \- A typed view over a raw \fR\fBCache\fP\fP that exposes elements of an unmanaged type \fIT\fP \&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.ITypeBuffer< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clears the entire buffer content to zero and resets internal usage state\&. "
+.ti -1c
+.RI "ITypeBuffer< T > \fBClone\fP ()"
+.br
+.RI "Creates a deep clone of this \fBTypeBuffer<T>\fP\&. "
+.ti -1c
+.RI "ITypeBuffer< T > \fBFill\fP (T value)"
+.br
+.RI "Fills the entire buffer with the specified value\&. "
+.ti -1c
+.RI "T \fBRead\fP (int offset, int count, \fBEndian\fP endian)"
+.br
+.RI "Reads a single element value from the underlying cache at the specified byte offset\&. "
+.ti -1c
+.RI "\fBTypeBuffer\fP (int length, \fBEndian\fP endian)"
+.br
+.RI "Creates a new \fBTypeBuffer<T>\fP with the specified element count and endian mode\&. "
+.ti -1c
+.RI "\fBTypeBuffer\fP (TypeBuffer< T > other)"
+.br
+.RI "Copy constructor\&. Creates a new buffer that is a copy of \fIother\fP \&. "
+.ti -1c
+.RI "int \fBWrite\fP (T value, int offset, int count, \fBEndian\fP endian)"
+.br
+.RI "Writes a single element value into the underlying cache at the specified byte offset\&. "
+.ti -1c
+.RI "void \fBZero\fP ()"
+.br
+.RI "Alias for \fBClear\fP\&. Zeroes the buffer content and resets usage\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBEndian\fP \fBEndian\fP\fR [get]\fP"
+.br
+.RI "Gets the configured endian mode used for conversions\&. "
+.ti -1c
+.RI "int \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements in the buffer\&. "
+.ti -1c
+.RI "T \fBthis[int i]\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the element at the specified index\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A typed view over a raw \fR\fBCache\fP\fP that exposes elements of an unmanaged type \fIT\fP \&. 
+
+\fRTypeBuffer<T>\fP provides element access, cloning, clearing and simple fill semantics for fixed‑stride unmanaged types\&. The buffer owns an internal \fR\fBCache\fP\fP instance sized to \fRlength * sizeof(T)\fP\&. All reads and writes perform endian conversion using the configured \fBEndian\fP value\&. 
+
+.PP
+This type assumes \fIT\fP  is an unmanaged value type and uses a fixed stride equal to \fRsizeof(T)\fP\&. Index and offset parameters are validated by the underlying cache and may throw on out‑of‑range access\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP An unmanaged value type stored in the buffer\&.
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fIunmanaged\fP
+.PP
+Definition at line \fB39\fP of file \fBTypeBuffer\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Collections\&.Generic\&.TypeBuffer< T >\&.Clear ()"
+
+.PP
+Clears the entire buffer content to zero and resets internal usage state\&. This method zeroes the underlying cache and resets the cache's used address counter\&. It does not modify any external cursor or position values that may exist outside the cache\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITypeBuffer< T >\fP\&.
+.PP
+Definition at line \fB108\fP of file \fBTypeBuffer\&.cs\fP\&.
+.SS "ITypeBuffer< T > SystemEx\&.Collections\&.Generic\&.TypeBuffer< T >\&.Clone ()"
+
+.PP
+Creates a deep clone of this \fBTypeBuffer<T>\fP\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A new \fBITypeBuffer<T>\fP instance containing a copy of the current data\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITypeBuffer< T >\fP\&.
+.PP
+Definition at line \fB116\fP of file \fBTypeBuffer\&.cs\fP\&.
+.SS "ITypeBuffer< T > SystemEx\&.Collections\&.Generic\&.TypeBuffer< T >\&.Fill (T value)"
+
+.PP
+Fills the entire buffer with the specified value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to write into every element slot\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The current instance for fluent usage\&.
+.RE
+.PP
+
+.PP
+The fill operation writes each element using the configured endian mode\&. This method performs \fRLength\fP individual writes and may be slower than a block memory fill for large buffers; it is intentionally simple and portable\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITypeBuffer< T >\fP\&.
+.PP
+Definition at line \fB137\fP of file \fBTypeBuffer\&.cs\fP\&.
+.SS "T SystemEx\&.Collections\&.Generic\&.TypeBuffer< T >\&.Read (int offset, int count, \fBEndian\fP endian)"
+
+.PP
+Reads a single element value from the underlying cache at the specified byte offset\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIoffset\fP Byte offset within the cache where the element will be read\&.
+.br
+\fIcount\fP Number of bytes to read; expected to equal the element stride\&.
+.br
+\fIendian\fP Endian mode to use for the conversion\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The element value read from the buffer\&.
+.RE
+.PP
+
+.PP
+The method reads \fRcount\fP bytes into a temporary buffer and converts them to \fIT\fP  using \fRConversion\&.FromBytes<T>\fP\&. If the underlying cache cannot satisfy the read, the conversion may receive a zeroed or partial buffer depending on the cache semantics\&. 
+.PP
+Definition at line \fB173\fP of file \fBTypeBuffer\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.TypeBuffer< T >\&.TypeBuffer (int length, \fBEndian\fP endian)"
+
+.PP
+Creates a new \fBTypeBuffer<T>\fP with the specified element count and endian mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlength\fP Number of elements to allocate\&.
+.br
+\fIendian\fP Endian mode used for conversions\&.
+.RE
+.PP
+
+.PP
+The constructor allocates an internal \fR\fBCache\fP\fP sized to \fRlength * sizeof(T)\fP\&. 
+.PP
+Definition at line \fB79\fP of file \fBTypeBuffer\&.cs\fP\&.
+.PP
+Referenced by \fBClone()\fP, and \fBTypeBuffer()\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.TypeBuffer< T >\&.TypeBuffer (TypeBuffer< T > other)"
+
+.PP
+Copy constructor\&. Creates a new buffer that is a copy of \fIother\fP \&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The source \fBTypeBuffer<T>\fP to clone\&.
+.RE
+.PP
+
+.PP
+The new instance receives its own \fR\fBCache\fP\fP copy so subsequent modifications do not affect the original buffer\&. 
+.PP
+Definition at line \fB94\fP of file \fBTypeBuffer\&.cs\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.TypeBuffer< T >\&.Write (T value, int offset, int count, \fBEndian\fP endian)"
+
+.PP
+Writes a single element value into the underlying cache at the specified byte offset\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to write\&.
+.br
+\fIoffset\fP Byte offset within the cache where the element will be written\&.
+.br
+\fIcount\fP Number of bytes to write; expected to equal the element stride\&.
+.br
+\fIendian\fP Endian mode to use for the conversion\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of bytes written\&.
+.RE
+.PP
+
+.PP
+The method converts \fIvalue\fP  to a byte array using \fRConversion\&.ToBytes<T>\fP and forwards the result to the cache write implementation\&. The caller is responsible for providing a valid offset and count consistent with the buffer stride\&. 
+.PP
+Definition at line \fB156\fP of file \fBTypeBuffer\&.cs\fP\&.
+.PP
+Referenced by \fBFill()\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.TypeBuffer< T >\&.Zero ()"
+
+.PP
+Alias for \fBClear\fP\&. Zeroes the buffer content and resets usage\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITypeBuffer< T >\fP\&.
+.PP
+Definition at line \fB123\fP of file \fBTypeBuffer\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBEndian\fP SystemEx\&.Collections\&.Generic\&.TypeBuffer< T >\&.\fBEndian\fP\fR [get]\fP"
+
+.PP
+Gets the configured endian mode used for conversions\&. 
+.PP
+Definition at line \fB54\fP of file \fBTypeBuffer\&.cs\fP\&.
+.PP
+Referenced by \fBRead()\fP, \fBTypeBuffer()\fP, and \fBWrite()\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.TypeBuffer< T >\&.Length\fR [get]\fP"
+
+.PP
+Gets the number of elements in the buffer\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITypeBuffer< T >\fP\&.
+.PP
+Definition at line \fB49\fP of file \fBTypeBuffer\&.cs\fP\&.
+.SS "T SystemEx\&.Collections\&.Generic\&.TypeBuffer< T >\&.this[int i]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the element at the specified index\&. The indexer performs a full read or write of a single element using the buffer's stride and endian configuration\&. Index bounds are validated by the underlying cache operations\&. 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIi\fP Zero‑based element index\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The element value at index \fIi\fP \&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIIndexOutOfRangeException\fP Thrown when \fIi\fP  is outside [0, \fBLength\fP)\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITypeBuffer< T >\fP\&.
+.PP
+Definition at line \fB66\fP of file \fBTypeBuffer\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

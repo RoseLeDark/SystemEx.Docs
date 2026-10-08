@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['⚙️_20systemex_20runtime_0',['⚙️ SystemEx.Runtime',['../index.html#️-systemexruntime',1,'']]]
+  ['⚖️_20systemex_20license_0',['⚖️ SystemEx License',['../d0/dff/a02506.html',1,'']]]
 ];

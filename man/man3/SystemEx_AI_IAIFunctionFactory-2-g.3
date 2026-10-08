@@ -1,0 +1,64 @@
+.TH "SystemEx.AI.IAIFunctionFactory< T, TAITOOL >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI.IAIFunctionFactory< T, TAITOOL > \- Converts an \fBIModelTool<T>\fP definition into a backend‑specific function object that can be exposed to an \fBAI\fP model\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBConvert\fP (IModelTool< T > tool, out TAITOOL converted)"
+.br
+.RI "Converts the given \fBIModelTool<T>\fP into a backend‑compatible function object\&. 
+.br
+ Returns \fRtrue\fP if conversion succeeded; otherwise \fRfalse\fP\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Converts an \fBIModelTool<T>\fP definition into a backend‑specific function object that can be exposed to an \fBAI\fP model\&. 
+
+A factory implementing \fBIAIFunctionFactory<T, TAITOOL>\fP is used by model backends to translate internal tool definitions into the concrete function format required by the underlying \fBAI\fP runtime\&. 
+.br
+ This enables consistent tool‑exposure across different model backends, runtimes, and execution environments\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The prompt type used by the model backend\&. 
+.br
+\fITAITOOL\fP The backend‑specific function type produced by the factory\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB41\fP of file \fBIAIFunctionFactory\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.AI\&.IAIFunctionFactory< T, TAITOOL >\&.Convert (IModelTool< T > tool, out TAITOOL converted)"
+
+.PP
+Converts the given \fBIModelTool<T>\fP into a backend‑compatible function object\&. 
+.br
+ Returns \fRtrue\fP if conversion succeeded; otherwise \fRfalse\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItool\fP The model tool definition to convert\&. 
+.br
+\fIconverted\fP When the method returns, contains the converted backend‑specific tool object if conversion succeeded; otherwise \fRnull\fP\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the tool was successfully converted; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['✨_20core_20philosophy_0',['✨ Core Philosophy',['../index.html#autotoc_md-core-philosophy',1,'']]]
+  ['⚙️_20systemex_20runtime_0',['⚙️ SystemEx.Runtime',['../index.html#️-systemexruntime',1,'']]]
 ];

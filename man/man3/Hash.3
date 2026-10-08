@@ -1,0 +1,864 @@
+.TH "Hash" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Hash \- Hash
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.AdlerHash\fP"
+.br
+.RI "Implements the Adler hash algorithm\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.BernsteinHash\fP"
+.br
+.RI "Simple non‑cryptographic hash function based on the Bernstein family of hash algorithms\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.Black3Hasher\fP"
+.br
+.RI "Public BLAKE3 hasher implementation used by the \fBSystemEx\fP hashing subsystem\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.FletcherHash\fP"
+.br
+.RI "Implements the Fletcher hash algorithm\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.Fnv1aHash\fP"
+.br
+.RI "Implements the FNV-1a hash algorithm\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.GrøstlHash\fP"
+.br
+.RI "Implements the Grøstl-256 and Grøstl-512 hashing functions as part of the \fBSystemEx\fP low-level cryptographic subsystem\&. This class provides a fully self-contained, allocation-free, deterministic hash engine based on the original Grøstl specification (SHA-3 finalist)\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.Hash\&.Hash32\fP"
+.br
+.RI "Represents a 32‑bit hash value produced by a \fBSystemEx\fP hashing algorithm\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.Hash\&.Hash64\fP"
+.br
+.RI "Represents a 64‑bit hash value produced by a \fBSystemEx\fP hashing algorithm\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.HashAlgorithmAttribute\fP"
+.br
+.RI "Declares which hashing algorithm a \fRHashable\fP type should use\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.HashFactory\fP"
+.br
+.RI "Provides factory methods for computing 32‑bit and 64‑bit hashes for objects implementing \fBIHashable<T>\fP\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Hash\&.IHash\fP"
+.br
+.RI "Interface for \fBSystemEx\fP hashing algorithms\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Hash\&.IHashable< T >\fP"
+.br
+.RI "Defines a contract for objects that can be converted into a raw byte representation suitable for hashing, serialization, or low‑level processing\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.Hash\&.GrøstlHash\&.PaddingState\fP"
+.br
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.RamakrishnaHash\fP"
+.br
+.RI "Implements the Ramakrishna hash algorithm\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.WeinbergHash\fP"
+.br
+.RI "Implements the Weinberg hash algorithm\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.AdlerHash\&.AdlerHash\fP (\fBEndian\fP endian)"
+.br
+.RI "Craate a new instance\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.BernsteinHash\&.BernsteinHash\fP (\fBEndian\fP endian)"
+.br
+.RI "Craate a new instance\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.Black3Hasher\&.Black3Hasher\fP (\fBEndian\fP endian, byte[] IV)"
+.br
+.RI "Initializes a new BLAKE3 hasher with the given endian mode and key\&. "
+.ti -1c
+.RI "\fBHash32\fP \fBSystemEx\&.Hash\&.AdlerHash\&.Compute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes the Adler hash of the given input\&. "
+.ti -1c
+.RI "\fBHash32\fP \fBSystemEx\&.Hash\&.BernsteinHash\&.Compute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes a simple 32‑bit hash from the given byte sequence\&. "
+.ti -1c
+.RI "\fBHash32\fP \fBSystemEx\&.Hash\&.Black3Hasher\&.Compute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes the BLAKE3 hash of the given input\&. "
+.ti -1c
+.RI "\fBHash32\fP \fBSystemEx\&.Hash\&.FletcherHash\&.Compute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes the Fletcher hash of the given input\&. "
+.ti -1c
+.RI "\fBHash32\fP \fBSystemEx\&.Hash\&.Fnv1aHash\&.Compute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes the FNV-1a hash of the given input\&. "
+.ti -1c
+.RI "\fBHash32\fP \fBSystemEx\&.Hash\&.GrøstlHash\&.Compute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes a 32-bit hash value based on the Grøstl-256 digest for the specified input buffer, with optional seed mixing and endian-aware extraction\&. "
+.ti -1c
+.RI "\fBHash32\fP \fBSystemEx\&.Hash\&.IHash\&.Compute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes a 32‑bit hash over the given byte vector using the specified seed and endian mode\&. "
+.ti -1c
+.RI "\fBHash32\fP \fBSystemEx\&.Hash\&.RamakrishnaHash\&.Compute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes the Ramakrishna hash of the given input\&. "
+.ti -1c
+.RI "\fBHash32\fP \fBSystemEx\&.Hash\&.WeinbergHash\&.Compute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes the Weinberg hash of the given input\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBSystemEx\&.Hash\&.AdlerHash\&.ComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes the Adler hash of the given input\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBSystemEx\&.Hash\&.BernsteinHash\&.ComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes a simple 64‑bit hash from the given byte sequence\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBSystemEx\&.Hash\&.Black3Hasher\&.ComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes the BLAKE3 hash of the given input\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBSystemEx\&.Hash\&.FletcherHash\&.ComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes the Fletcher hash of the given input\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBSystemEx\&.Hash\&.Fnv1aHash\&.ComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes the FNV-1a hash of the given input\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBSystemEx\&.Hash\&.GrøstlHash\&.ComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes a 64-bit hash value based on the Grøstl-512 digest for the specified input buffer, with optional seed mixing and endian-aware extraction\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBSystemEx\&.Hash\&.IHash\&.ComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes a 64‑bit hash over the given byte vector using the specified seed and endian mode\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBSystemEx\&.Hash\&.RamakrishnaHash\&.ComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes the Ramakrishna hash of the given input\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBSystemEx\&.Hash\&.WeinbergHash\&.ComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes the Weinberg hash of the given input\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.FletcherHash\&.FletcherHash\fP (\fBEndian\fP endian)"
+.br
+.RI "Craate a new instance\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.Fnv1aHash\&.Fnv1aHash\fP (\fBEndian\fP endian)"
+.br
+.RI "Craate a new instance\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.GrøstlHash\&.GrøstlHash\fP (\fBEndian\fP endian)"
+.br
+.RI "Craate a new instance\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.Hash32\&.Hash32\fP (uint value)"
+.br
+.RI "Creates a new 32‑bit hash wrapper\&. "
+.ti -1c
+.RI "static \fBHash32\fP \fBSystemEx\&.Hash\&.HashFactory\&.Hash32< T >\fP (T obj, uint seed=45544544U)"
+.br
+.RI "Computes a 32‑bit hash for the specified object using the hashing algorithm declared via \fBHashAlgorithmAttribute\fP on the object's type\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.Hash64\&.Hash64\fP (ulong value)"
+.br
+.RI "Creates a new 64‑bit hash wrapper\&. "
+.ti -1c
+.RI "static \fBHash64\fP \fBSystemEx\&.Hash\&.HashFactory\&.Hash64< T >\fP (T obj, uint seed)"
+.br
+.RI "Computes a 64‑bit hash for the specified object using the hashing algorithm declared via \fBHashAlgorithmAttribute\fP on the object's type\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.HashAlgorithmAttribute\&.HashAlgorithmAttribute\fP (Type hasherType, \fBEndian\fP endian)"
+.br
+.RI "Creates a new hash algorithm descriptor for a \fRHashable\fP type\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.RamakrishnaHash\&.RamakrishnaHash\fP (\fBEndian\fP endian)"
+.br
+.RI "Craate a new instance\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBSystemEx\&.Hash\&.IHashable< T >\&.ToBytes\fP ()"
+.br
+.RI "Converts this instance into a deterministic byte array\&. The returned data is used as input for hashing algorithms\&. "
+.ti -1c
+.RI "override string \fBSystemEx\&.Hash\&.Hash32\&.ToString\fP ()"
+.br
+.ti -1c
+.RI "override string \fBSystemEx\&.Hash\&.Hash64\&.ToString\fP ()"
+.br
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.WeinbergHash\&.WeinbergHash\fP (\fBEndian\fP endian)"
+.br
+.RI "Craate a new instance\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "readonly uint \fBSystemEx\&.Hash\&.Hash32\&.Value\fP"
+.br
+.RI "The raw 32‑bit hash value\&. "
+.ti -1c
+.RI "readonly ulong \fBSystemEx\&.Hash\&.Hash64\&.Value\fP"
+.br
+.RI "The raw 64‑bit hash value\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBEndian\fP \fBSystemEx\&.Hash\&.HashAlgorithmAttribute\&.Endian\fP\fR [get]\fP"
+.br
+.RI "The endian mode used when assembling hash blocks from the byte array\&. "
+.ti -1c
+.RI "Type \fBSystemEx\&.Hash\&.HashAlgorithmAttribute\&.HasherType\fP\fR [get]\fP"
+.br
+.RI "The hasher implementation type\&. 
+.br
+ Must implement \fBIHash\fP and provide either a constructor accepting \fBEndian\fP or a parameterless constructor\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Function Documentation"
+.PP 
+.SS "SystemEx\&.Hash\&.AdlerHash\&.AdlerHash (\fBEndian\fP endian)"
+
+.PP
+Craate a new instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The suing endian for creating a hash
+.RE
+.PP
+
+.PP
+Definition at line \fB42\fP of file \fBAdlerHash\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.BernsteinHash\&.BernsteinHash (\fBEndian\fP endian)"
+
+.PP
+Craate a new instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The suing endian for creating a hash
+.RE
+.PP
+
+.PP
+Definition at line \fB52\fP of file \fBBernsteinHash\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.Black3Hasher\&.Black3Hasher (\fBEndian\fP endian, byte[] IV)"
+
+.PP
+Initializes a new BLAKE3 hasher with the given endian mode and key\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP \fBEndian\fP mode for output conversion\&.
+.br
+\fIIV\fP Key or initialization vector\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB60\fP of file \fBBlack3Hasher\&.cs\fP\&.
+.SS "\fBHash32\fP SystemEx\&.Hash\&.AdlerHash\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes the Adler hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed Adler hash as a \fBHash32\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBAdlerHash\&.cs\fP\&.
+.SS "\fBHash32\fP SystemEx\&.Hash\&.BernsteinHash\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes a simple 32‑bit hash from the given byte sequence\&. The hash starts with the provided \fIseed\fP  and mixes each byte using a small multiplier (31), similar to traditional Bernstein/DJB hash variants\&.
+
+.PP
+\fBEndian\fP does not affect this algorithm directly; it is included for interface compatibility with other \fBSystemEx\fP hashers\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed Bernstein hash as a \fBHash32\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB68\fP of file \fBBernsteinHash\&.cs\fP\&.
+.SS "\fBHash32\fP SystemEx\&.Hash\&.Black3Hasher\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes the BLAKE3 hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed BLAKE3 hash as a \fBHash32\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB71\fP of file \fBBlack3Hasher\&.cs\fP\&.
+.SS "\fBHash32\fP SystemEx\&.Hash\&.FletcherHash\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes the Fletcher hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed Fletcher hash as a \fBHash32\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB44\fP of file \fBFletcherHash\&.cs\fP\&.
+.PP
+Referenced by \fBComputeLong()\fP\&.
+.SS "\fBHash32\fP SystemEx\&.Hash\&.Fnv1aHash\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes the FNV-1a hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed FNV-1a hash as a \fBHash32\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBFnv1aHash\&.cs\fP\&.
+.SS "\fBHash32\fP SystemEx\&.Hash\&.GrøstlHash\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes a 32-bit hash value based on the Grøstl-256 digest for the specified input buffer, with optional seed mixing and endian-aware extraction\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input byte sequence to be hashed\&. This is treated as an opaque binary buffer and processed according to the Grøstl-256 specification, including padding and compression\&. The full 256-bit digest is computed internally and then reduced to a 32-bit value\&. 
+.br
+\fIseed\fP An optional 21-bit seed value that is XOR-mixed into the final hash result\&. This allows callers to derive distinct hash domains, build keyed hash variants, or introduce additional application-specific entropy without altering the core Grøstl-256 computation\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBHash32\fP instance containing the 32-bit hash value derived from the Grøstl-256 digest of \fIinput\fP , after endian-aware extraction and XOR-mixing with \fIseed\fP \&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB453\fP of file \fBGrøstlHash\&.cs\fP\&.
+.SS "\fBHash32\fP SystemEx\&.Hash\&.IHash\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes a 32‑bit hash over the given byte vector using the specified seed and endian mode\&. 
+.PP
+Implemented in \fBSystemEx\&.Hash\&.AdlerHash\fP, \fBSystemEx\&.Hash\&.BernsteinHash\fP, \fBSystemEx\&.Hash\&.Black3Hasher\fP, \fBSystemEx\&.Hash\&.CrC< TC32, TC64 >\fP, \fBSystemEx\&.Hash\&.CRC32\fP, \fBSystemEx\&.Hash\&.CRC64\fP, \fBSystemEx\&.Hash\&.FletcherHash\fP, \fBSystemEx\&.Hash\&.Fnv1aHash\fP, \fBSystemEx\&.Hash\&.GrøstlHash\fP, \fBSystemEx\&.Hash\&.RamakrishnaHash\fP, and \fBSystemEx\&.Hash\&.WeinbergHash\fP\&.
+.SS "\fBHash32\fP SystemEx\&.Hash\&.RamakrishnaHash\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes the Ramakrishna hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed Ramakrishna hash as a 32-bit value\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB45\fP of file \fBRamakrishnaHash \&.cs\fP\&.
+.SS "\fBHash32\fP SystemEx\&.Hash\&.WeinbergHash\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes the Weinberg hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed Weinberg hash as a 32-bit value\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB46\fP of file \fBWeinbergHash\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.AdlerHash\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes the Adler hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed Adler hash as a \fBHash64\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB70\fP of file \fBAdlerHash\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.BernsteinHash\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes a simple 64‑bit hash from the given byte sequence\&. The hash starts with the provided \fIseed\fP  and mixes each byte using a larger multiplier (1315423911), a common constant used in JSHash‑style Bernstein derivatives to improve diffusion in 64‑bit space\&.
+
+.PP
+\fBEndian\fP does not affect this algorithm directly; it is included for interface compatibility with other \fBSystemEx\fP hashers\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed Bernstein hash as a \fBHash64\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB95\fP of file \fBBernsteinHash\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.Black3Hasher\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes the BLAKE3 hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed BLAKE3 hash as a \fBHash64\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB90\fP of file \fBBlack3Hasher\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.FletcherHash\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes the Fletcher hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed Fletcher hash as a \fBHash64\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB70\fP of file \fBFletcherHash\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.Fnv1aHash\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes the FNV-1a hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed FNV-1a hash as a \fBHash64\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB68\fP of file \fBFnv1aHash\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.GrøstlHash\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes a 64-bit hash value based on the Grøstl-512 digest for the specified input buffer, with optional seed mixing and endian-aware extraction\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input byte sequence to be hashed\&. This is treated as an opaque binary buffer and processed according to the Grøstl-512 specification, including padding and compression\&. The full 512-bit digest is computed internally and then reduced to a 64-bit value\&. 
+.br
+\fIseed\fP An optional 64-bit seed value that is XOR-mixed into the final hash result\&. This allows callers to derive distinct hash domains, build keyed hash variants, or introduce additional application-specific entropy without altering the core Grøstl-512 computation\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBHash64\fP instance containing the 64-bit hash value derived from the Grøstl-512 digest of \fIinput\fP , after endian-aware extraction and XOR-mixing with \fIseed\fP \&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB420\fP of file \fBGrøstlHash\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.IHash\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes a 64‑bit hash over the given byte vector using the specified seed and endian mode\&. 
+.PP
+Implemented in \fBSystemEx\&.Hash\&.AdlerHash\fP, \fBSystemEx\&.Hash\&.BernsteinHash\fP, \fBSystemEx\&.Hash\&.Black3Hasher\fP, \fBSystemEx\&.Hash\&.CrC< TC32, TC64 >\fP, \fBSystemEx\&.Hash\&.CRC32\fP, \fBSystemEx\&.Hash\&.CRC64\fP, \fBSystemEx\&.Hash\&.FletcherHash\fP, \fBSystemEx\&.Hash\&.Fnv1aHash\fP, \fBSystemEx\&.Hash\&.GrøstlHash\fP, \fBSystemEx\&.Hash\&.RamakrishnaHash\fP, and \fBSystemEx\&.Hash\&.WeinbergHash\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.RamakrishnaHash\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes the Ramakrishna hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed Ramakrishna hash as a 64-bit value\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB62\fP of file \fBRamakrishnaHash \&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.WeinbergHash\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes the Weinberg hash of the given input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed Weinberg hash as a 64-bit value\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB67\fP of file \fBWeinbergHash\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.FletcherHash\&.FletcherHash (\fBEndian\fP endian)"
+
+.PP
+Craate a new instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The suing endian for creating a hash
+.RE
+.PP
+
+.PP
+Definition at line \fB35\fP of file \fBFletcherHash\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.Fnv1aHash\&.Fnv1aHash (\fBEndian\fP endian)"
+
+.PP
+Craate a new instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The suing endian for creating a hash
+.RE
+.PP
+
+.PP
+Definition at line \fB41\fP of file \fBFnv1aHash\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.GrøstlHash\&.GrøstlHash (\fBEndian\fP endian)"
+
+.PP
+Craate a new instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The suing endian for creating a hash
+.RE
+.PP
+
+.PP
+Definition at line \fB71\fP of file \fBGrøstlHash\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.Hash32\&.Hash32 (uint value)"
+
+.PP
+Creates a new 32‑bit hash wrapper\&. 
+.PP
+Definition at line \fB41\fP of file \fBIHash\&.cs\fP\&.
+.SS "\fBHash32\fP SystemEx\&.Hash\&.HashFactory\&.Hash32< T > (T obj, uint seed = \fR45544544U\fP)\fR [static]\fP"
+
+.PP
+Computes a 32‑bit hash for the specified object using the hashing algorithm declared via \fBHashAlgorithmAttribute\fP on the object's type\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP A type implementing \fBIHashable<T>\fP\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object to hash\&. 
+.br
+\fIseed\fP Optional seed value passed to the hashing algorithm\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A computed \fBHash32\fP value\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fIIHashable<T>\fP
+.PP
+Definition at line \fB123\fP of file \fBHashFactory\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.Hash64\&.Hash64 (ulong value)"
+
+.PP
+Creates a new 64‑bit hash wrapper\&. 
+.PP
+Definition at line \fB65\fP of file \fBIHash\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.HashFactory\&.Hash64< T > (T obj, uint seed)\fR [static]\fP"
+
+.PP
+Computes a 64‑bit hash for the specified object using the hashing algorithm declared via \fBHashAlgorithmAttribute\fP on the object's type\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP A type implementing \fBIHashable<T>\fP\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object to hash\&. 
+.br
+\fIseed\fP Optional seed value passed to the hashing algorithm\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A computed \fBHash64\fP value\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fIIHashable<T>\fP
+.PP
+Definition at line \fB174\fP of file \fBHashFactory\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.HashAlgorithmAttribute\&.HashAlgorithmAttribute (Type hasherType, \fBEndian\fP endian)"
+
+.PP
+Creates a new hash algorithm descriptor for a \fRHashable\fP type\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhasherType\fP Concrete hasher type implementing \fBIHash\fP\&.
+.br
+\fIendian\fP Byte‑order used by the hasher\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB53\fP of file \fBHashAlgorithmAttribute\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.RamakrishnaHash\&.RamakrishnaHash (\fBEndian\fP endian)"
+
+.PP
+Craate a new instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The suing endian for creating a hash
+.RE
+.PP
+
+.PP
+Definition at line \fB35\fP of file \fBRamakrishnaHash \&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Hash\&.IHashable< T >\&.ToBytes ()"
+
+.PP
+Converts this instance into a deterministic byte array\&. The returned data is used as input for hashing algorithms\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, \fBSystemEx\&.Numeric\&.Half16b\fP, \fBSystemEx\&.Numeric\&.Quatd\fP, \fBSystemEx\&.Numeric\&.Quatf\fP, \fBSystemEx\&.Numeric\&.Ratio\fP, \fBSystemEx\&.Numeric\&.Vec2d\fP, \fBSystemEx\&.Numeric\&.Vec2f\fP, \fBSystemEx\&.Numeric\&.Vec2h\fP, \fBSystemEx\&.Numeric\&.Vec2hb\fP, \fBSystemEx\&.Numeric\&.Vec2i\fP, \fBSystemEx\&.Numeric\&.Vec2r\fP, \fBSystemEx\&.Numeric\&.Vec3d\fP, \fBSystemEx\&.Numeric\&.Vec3f\fP, \fBSystemEx\&.Numeric\&.Vec3h\fP, \fBSystemEx\&.Numeric\&.Vec3hb\fP, \fBSystemEx\&.Numeric\&.Vec3i\fP, \fBSystemEx\&.Numeric\&.Vec3r\fP, \fBSystemEx\&.Numeric\&.Vec4d\fP, \fBSystemEx\&.Numeric\&.Vec4f\fP, \fBSystemEx\&.Numeric\&.Vec4h\fP, \fBSystemEx\&.Numeric\&.Vec4hb\fP, \fBSystemEx\&.Numeric\&.Vec4i\fP, and \fBSystemEx\&.Numeric\&.Vec4r\fP\&.
+.SS "override string SystemEx\&.Hash\&.Hash32\&.ToString ()"
+
+.PP
+
+.PP
+Definition at line \fB44\fP of file \fBIHash\&.cs\fP\&.
+.SS "override string SystemEx\&.Hash\&.Hash64\&.ToString ()"
+
+.PP
+
+.PP
+Definition at line \fB68\fP of file \fBIHash\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.WeinbergHash\&.WeinbergHash (\fBEndian\fP endian)"
+
+.PP
+Craate a new instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The suing endian for creating a hash
+.RE
+.PP
+
+.PP
+Definition at line \fB36\fP of file \fBWeinbergHash\&.cs\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "readonly uint SystemEx\&.Hash\&.Hash32\&.Value"
+
+.PP
+The raw 32‑bit hash value\&. 
+.PP
+Definition at line \fB36\fP of file \fBIHash\&.cs\fP\&.
+.PP
+Referenced by \fBHash32()\fP, \fBSystemEx\&.Hash\&.HashFactory\&.Hash32< T >()\fP, \fBToString()\fP, and \fBSystemEx\&.Rand\&.HashedSeed\&.Update()\fP\&.
+.SS "readonly ulong SystemEx\&.Hash\&.Hash64\&.Value"
+
+.PP
+The raw 64‑bit hash value\&. 
+.PP
+Definition at line \fB60\fP of file \fBIHash\&.cs\fP\&.
+.PP
+Referenced by \fBHash64()\fP, \fBSystemEx\&.Hash\&.HashFactory\&.Hash64< T >()\fP, and \fBToString()\fP\&.
+.SH "Properties"
+.PP 
+.SS "\fBEndian\fP SystemEx\&.Hash\&.HashAlgorithmAttribute\&.Endian\fR [get]\fP"
+
+.PP
+The endian mode used when assembling hash blocks from the byte array\&. 
+.PP
+Definition at line \fB46\fP of file \fBHashAlgorithmAttribute\&.cs\fP\&.
+.PP
+Referenced by \fBHashAlgorithmAttribute()\fP\&.
+.SS "Type SystemEx\&.Hash\&.HashAlgorithmAttribute\&.HasherType\fR [get]\fP"
+
+.PP
+The hasher implementation type\&. 
+.br
+ Must implement \fBIHash\fP and provide either a constructor accepting \fBEndian\fP or a parameterless constructor\&. 
+.PP
+Definition at line \fB41\fP of file \fBHashAlgorithmAttribute\&.cs\fP\&.
+.PP
+Referenced by \fBHashAlgorithmAttribute()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

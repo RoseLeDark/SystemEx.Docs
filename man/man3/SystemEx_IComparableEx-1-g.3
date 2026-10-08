@@ -1,0 +1,88 @@
+.TH "SystemEx.IComparableEx< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.IComparableEx< T > \- Provides an extended and strongly typed comparison contract for \fBSystemEx\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_UShort\fP, \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP, \fBSystemEx\&.Numeric\&.Quatd\fP, \fBSystemEx\&.Numeric\&.Quatf\fP, \fBSystemEx\&.Numeric\&.Ratio\fP, \fBSystemEx\&.Numeric\&.Vec2d\fP, \fBSystemEx\&.Numeric\&.Vec2f\fP, \fBSystemEx\&.Numeric\&.Vec2h\fP, \fBSystemEx\&.Numeric\&.Vec2hb\fP, \fBSystemEx\&.Numeric\&.Vec2i\fP, \fBSystemEx\&.Numeric\&.Vec2r\fP, \fBSystemEx\&.Numeric\&.Vec3d\fP, \fBSystemEx\&.Numeric\&.Vec3f\fP, \fBSystemEx\&.Numeric\&.Vec3h\fP, \fBSystemEx\&.Numeric\&.Vec3hb\fP, \fBSystemEx\&.Numeric\&.Vec3i\fP, \fBSystemEx\&.Numeric\&.Vec3r\fP, \fBSystemEx\&.Numeric\&.Vec4d\fP, \fBSystemEx\&.Numeric\&.Vec4f\fP, \fBSystemEx\&.Numeric\&.Vec4h\fP, \fBSystemEx\&.Numeric\&.Vec4hb\fP, \fBSystemEx\&.Numeric\&.Vec4i\fP, \fBSystemEx\&.Numeric\&.Vec4r\fP, \fBSystemEx\&.Optional< T >\fP, \fBSystemEx\&.Threading\&.ByteIndex\fP, \fBSystemEx\&.Threading\&.ByteIndex\fP, \fBSystemEx\&.Threading\&.Index\fP, \fBSystemEx\&.Threading\&.Index\fP, \fBSystemEx\&.Threading\&.SmallIndex\fP, and \fBSystemEx\&.TimeOut\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides an extended and strongly typed comparison contract for \fBSystemEx\fP\&. 
+
+Unlike System\&.IComparable<T>, which returns an integer (-1, 0, +1), this interface uses the explicit \fBCompareResult\fP enumeration\&. This makes comparison outcomes easier to interpret and avoids ambiguity, especially in low‑level or domain‑specific types\&.
+
+.PP
+\fBCompatibility with IComparable<T>:\fP
+.br
+ Since \fBCompareResult\fP is backed by an integer, any type can implement both interfaces simultaneously\&. The standard CompareTo method can simply cast the extended result: 
+
+.PP
+.PP
+.nf
+public sealed class Foo : IComparableEx&lt;Foo&gt;, IComparable&lt;Foo&gt;
+{
+    public CompareResult CompareTo(Foo other)
+    {
+        // Custom comparison logic\&.\&.\&.
+        return CompareResult\&.Equal;
+    }
+
+    int IComparable&lt;Foo&gt;\&.CompareTo(Foo other)
+    {
+        // Cast the extended comparison result to an int\&.
+        return (int)CompareTo(other);
+    }
+}
+.fi
+.PP
+
+.PP
+This interface is intentionally generic and can be implemented by any type: numeric primitives, geometric structures, colors, states, or any other domain‑specific objects requiring deterministic comparison semantics\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type that this instance can be compared against\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB137\fP of file \fBIComparableEx\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCompareResult\fP SystemEx\&.IComparableEx< T >\&.CompareTo (T a)"
+
+.PP
+Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. Implementations may define their own comparison rules, such as: magnitude-based, lexicographical, structural, bitwise, or any domain-specific logic required by the type\&.
+
+.PP
+The comparison must be deterministic and should not depend on external state, floating‑point environment, or platform-specific behavior\&. This makes the interface suitable for low-level systems, serialization, math primitives, and engine-independent utilities\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The value to compare with this instance\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBCompareResult\fP indicating whether this instance is less than, equal to, or greater than \fIa\fP \&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

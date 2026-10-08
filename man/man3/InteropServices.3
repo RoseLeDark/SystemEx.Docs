@@ -1,0 +1,311 @@
+.TH "InteropServices" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InteropServices \- InteropServices
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\fP"
+.br
+.RI "Provides Linux-specific native module loading and symbol resolution using the \fRlibdl\fP API\&. 
+.br
+ This backend is responsible for locating shared objects (\&.so), loading them via \fRdlopen\fP, resolving exported functions via \fRdlsym\fP, and unloading modules via \fRdlclose\fP\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\fP"
+.br
+.RI "Provides macOS-specific native module loading and symbol resolution using the \fRlibdl\fP API\&. 
+.br
+ This backend supports loading dynamic libraries (\&.dylib), resolving exported symbols, and searching system library paths including \fR/usr/lib\fP, \fR/usr/local/lib\fP, and \fRDYLD_LIBRARY_PATH\fP\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\fP"
+.br
+.RI "Provides a fallback implementation for platforms that do not support native module loading or symbol resolution\&. 
+.br
+ Instead of performing real dynamic loading, this loader simulates all operations by printing diagnostic messages to the console\&. 
+.br
+ It allows the rest of the runtime to function without throwing exceptions, making it useful for testing, unsupported environments, or platforms without dynamic linking capabilities\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.FreeLibrary\fP (\fBModule\fP lib)"
+.br
+.RI "Unloads a module using \fRdlclose\fP\&. "
+.ti -1c
+.RI "static int \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.FreeLibrary\fP (\fBModule\fP lib)"
+.br
+.RI "Unloads a module using \fRdlclose\fP\&. "
+.ti -1c
+.RI "static int \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\&.FreeLibrary\fP (\fBModule\fP lib)"
+.br
+.RI "Simulates unloading a native module\&. 
+.br
+ Prints a diagnostic message and returns zero to indicate success\&. "
+.ti -1c
+.RI "static string \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.GetFromPath\fP (string path, string module)"
+.br
+.RI "Searches a directory for a file matching the requested module name\&. Returns the full path if found, otherwise \fBNO_PATH\fP\&. "
+.ti -1c
+.RI "static string \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.GetFromPath\fP (string path, string module)"
+.br
+.RI "Searches a directory for a file matching the requested module name\&. Returns the full path if found, otherwise \fBNO_PATH\fP\&. "
+.ti -1c
+.RI "static string \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\&.GetFromPath\fP (string path, string module)"
+.br
+.ti -1c
+.RI "static string \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.GetLibaryPath\fP (string somodule)"
+.br
+.RI "Attempts to locate a shared object (\&.so) by searching common Linux library directories and the \fRLD_LIBRARY_PATH\fP environment variable\&. 
+.br
+ Returns the resolved path or \fBNO_PATH\fP if not found\&. "
+.ti -1c
+.RI "static string \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.GetLibaryPath\fP (string dynmodule)"
+.br
+.RI "Attempts to locate a dynamic library (\&.dylib) by searching common macOS library directories and the \fRDYLD_LIBRARY_PATH\fP environment variable\&. 
+.br
+ Returns the resolved path or \fBNO_PATH\fP if not found\&. "
+.ti -1c
+.RI "static string \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\&.GetLibaryPath\fP (string dllname)"
+.br
+.RI "Simulates resolving a library path\&. 
+.br
+ Prints a diagnostic message and always returns \fBNO_PATH\fP, indicating that no real path resolution is performed\&. "
+.ti -1c
+.RI "static IntPtr \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.LoadFunction\fP (\fBModule\fP lib, string name)"
+.br
+.RI "Resolves an exported function from a loaded module\&. "
+.ti -1c
+.RI "static IntPtr \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.LoadFunction\fP (\fBModule\fP lib, string name)"
+.br
+.RI "Resolves an exported function from a loaded module\&. "
+.ti -1c
+.RI "static IntPtr \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\&.LoadFunction\fP (\fBModule\fP lib, string name)"
+.br
+.RI "Simulates resolving a function from a native module\&. 
+.br
+ Prints a diagnostic message and returns IntPtr\&.Zero, indicating that no real function pointer exists\&. "
+.ti -1c
+.RI "static \fBModule\fP \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.LoadLibrary\fP (string path)"
+.br
+.RI "Loads a module from an explicit file path and wraps the handle in a \fBModule\fP instance\&. "
+.ti -1c
+.RI "static \fBModule\fP \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.LoadLibrary\fP (string path)"
+.br
+.RI "Loads a module from an explicit file path and wraps the handle in a \fBModule\fP instance\&. "
+.ti -1c
+.RI "static \fBModule\fP \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\&.LoadLibrary\fP (string path)"
+.br
+.RI "Simulates loading a native library\&. 
+.br
+ Prints a diagnostic message and returns a \fBModule\fP instance with a zero handle, indicating that no real library was loaded\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const string \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.NO_PATH\fP = 'NO_PATH'"
+.br
+.RI "Special marker returned when no valid library path can be resolved\&. "
+.ti -1c
+.RI "const string \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.NO_PATH\fP = 'NO_PATH'"
+.br
+.RI "Marker returned when no valid library path can be resolved\&. "
+.ti -1c
+.RI "const string \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\&.NO_PATH\fP = 'NO_PATH'"
+.br
+.RI "Marker returned when no valid library path can be resolved\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Function Documentation"
+.PP 
+.SS "int SystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.FreeLibrary (\fBModule\fP lib)\fR [static]\fP"
+
+.PP
+Unloads a module using \fRdlclose\fP\&. 
+.PP
+Definition at line \fB92\fP of file \fBLinuxProcLoader\&.cs\fP\&.
+.SS "int SystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.FreeLibrary (\fBModule\fP lib)\fR [static]\fP"
+
+.PP
+Unloads a module using \fRdlclose\fP\&. 
+.PP
+Definition at line \fB88\fP of file \fBMacProcLoader\&.cs\fP\&.
+.SS "int SystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\&.FreeLibrary (\fBModule\fP lib)\fR [static]\fP"
+
+.PP
+Simulates unloading a native module\&. 
+.br
+ Prints a diagnostic message and returns zero to indicate success\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlib\fP The simulated module\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Always \fR0\fP, indicating a successful simulated unload\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB80\fP of file \fBNoSupportProcLoader\&.cs\fP\&.
+.SS "string SystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.GetFromPath (string path, string module)\fR [static]\fP"
+
+.PP
+Searches a directory for a file matching the requested module name\&. Returns the full path if found, otherwise \fBNO_PATH\fP\&. 
+.PP
+Definition at line \fB130\fP of file \fBLinuxProcLoader\&.cs\fP\&.
+.PP
+Referenced by \fBGetLibaryPath()\fP\&.
+.SS "string SystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.GetFromPath (string path, string module)\fR [static]\fP"
+
+.PP
+Searches a directory for a file matching the requested module name\&. Returns the full path if found, otherwise \fBNO_PATH\fP\&. 
+.PP
+Definition at line \fB125\fP of file \fBMacProcLoader\&.cs\fP\&.
+.PP
+Referenced by \fBGetLibaryPath()\fP\&.
+.SS "string SystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\&.GetFromPath (string path, string module)\fR [static]\fP"
+
+.PP
+Definition at line \fB99\fP of file \fBNoSupportProcLoader\&.cs\fP\&.
+.SS "string SystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.GetLibaryPath (string somodule)\fR [static]\fP"
+
+.PP
+Attempts to locate a shared object (\&.so) by searching common Linux library directories and the \fRLD_LIBRARY_PATH\fP environment variable\&. 
+.br
+ Returns the resolved path or \fBNO_PATH\fP if not found\&. 
+.PP
+Definition at line \fB102\fP of file \fBLinuxProcLoader\&.cs\fP\&.
+.SS "string SystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.GetLibaryPath (string dynmodule)\fR [static]\fP"
+
+.PP
+Attempts to locate a dynamic library (\&.dylib) by searching common macOS library directories and the \fRDYLD_LIBRARY_PATH\fP environment variable\&. 
+.br
+ Returns the resolved path or \fBNO_PATH\fP if not found\&. 
+.PP
+Definition at line \fB98\fP of file \fBMacProcLoader\&.cs\fP\&.
+.SS "string SystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\&.GetLibaryPath (string dllname)\fR [static]\fP"
+
+.PP
+Simulates resolving a library path\&. 
+.br
+ Prints a diagnostic message and always returns \fBNO_PATH\fP, indicating that no real path resolution is performed\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdllname\fP The requested library name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Always \fBNO_PATH\fP because this backend does not support library discovery\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB95\fP of file \fBNoSupportProcLoader\&.cs\fP\&.
+.SS "IntPtr SystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.LoadFunction (\fBModule\fP lib, string name)\fR [static]\fP"
+
+.PP
+Resolves an exported function from a loaded module\&. 
+.PP
+Definition at line \fB85\fP of file \fBLinuxProcLoader\&.cs\fP\&.
+.SS "IntPtr SystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.LoadFunction (\fBModule\fP lib, string name)\fR [static]\fP"
+
+.PP
+Resolves an exported function from a loaded module\&. 
+.PP
+Definition at line \fB81\fP of file \fBMacProcLoader\&.cs\fP\&.
+.SS "IntPtr SystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\&.LoadFunction (\fBModule\fP lib, string name)\fR [static]\fP"
+
+.PP
+Simulates resolving a function from a native module\&. 
+.br
+ Prints a diagnostic message and returns IntPtr\&.Zero, indicating that no real function pointer exists\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlib\fP The simulated module\&.
+.br
+\fIname\fP The requested function name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Always IntPtr\&.Zero, because no real symbol resolution occurs\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB67\fP of file \fBNoSupportProcLoader\&.cs\fP\&.
+.SS "\fBModule\fP SystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.LoadLibrary (string path)\fR [static]\fP"
+
+.PP
+Loads a module from an explicit file path and wraps the handle in a \fBModule\fP instance\&. 
+.PP
+Definition at line \fB78\fP of file \fBLinuxProcLoader\&.cs\fP\&.
+.SS "\fBModule\fP SystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.LoadLibrary (string path)\fR [static]\fP"
+
+.PP
+Loads a module from an explicit file path and wraps the handle in a \fBModule\fP instance\&. 
+.PP
+Definition at line \fB74\fP of file \fBMacProcLoader\&.cs\fP\&.
+.SS "\fBModule\fP SystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\&.LoadLibrary (string path)\fR [static]\fP"
+
+.PP
+Simulates loading a native library\&. 
+.br
+ Prints a diagnostic message and returns a \fBModule\fP instance with a zero handle, indicating that no real library was loaded\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP The requested library path\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBModule\fP instance with IntPtr\&.Zero as its handle\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB51\fP of file \fBNoSupportProcLoader\&.cs\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const string SystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.NO_PATH = 'NO_PATH'\fR [static]\fP"
+
+.PP
+Special marker returned when no valid library path can be resolved\&. 
+.PP
+Definition at line \fB51\fP of file \fBLinuxProcLoader\&.cs\fP\&.
+.PP
+Referenced by \fBGetFromPath()\fP, and \fBGetLibaryPath()\fP\&.
+.SS "const string SystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.NO_PATH = 'NO_PATH'\fR [static]\fP"
+
+.PP
+Marker returned when no valid library path can be resolved\&. 
+.PP
+Definition at line \fB49\fP of file \fBMacProcLoader\&.cs\fP\&.
+.PP
+Referenced by \fBGetFromPath()\fP, and \fBGetLibaryPath()\fP\&.
+.SS "const string SystemEx\&.Runtime\&.InteropServices\&.Platform\&.NoSupportProcLoader\&.NO_PATH = 'NO_PATH'\fR [static]\fP"
+
+.PP
+Marker returned when no valid library path can be resolved\&. 
+.PP
+Definition at line \fB40\fP of file \fBNoSupportProcLoader\&.cs\fP\&.
+.PP
+Referenced by \fBGetLibaryPath()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

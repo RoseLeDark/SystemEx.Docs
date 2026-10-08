@@ -1,0 +1,402 @@
+.TH "SystemEx.Optional< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Optional< T > \- Represents a optional value container that stores a value only when \fBHasValue\fP is true\&. Unlike Nullable<T>, this type does not preserve \fRnull\fP as a stored value; assigning \fRnull\fP clears the optional state\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.IComparableEx< T >\fP, IComparable, and IEquatable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int IComparable< \fBOptional\fP< T > >\&. \fBCompareTo\fP (\fBOptional\fP< T > other)"
+.br
+.RI "Compares this optional instance with another optional instance using the CompareTo(Optional<T>) method and returns a standard integer comparison result compatible with IComparable<T>\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (\fBOptional\fP< T > other)"
+.br
+.RI "Compares this optional instance with another optional instance and returns a \fBCompareResult\fP describing their relative ordering\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "bool \fBEquals\fP (\fBOptional\fP< T > b)"
+.br
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.ti -1c
+.RI "void \fBNullable\fP ()"
+.br
+.RI "Clears the optional state, removing any stored value and marking the instance as empty\&. "
+.ti -1c
+.RI "\fBOptional\fP ()"
+.br
+.RI "Created A empty Optional Object\&. "
+.ti -1c
+.RI "\fBOptional\fP (T? value)"
+.br
+.RI "Initializes a new instance of \fBOptional<T>\fP using the provided value\&. Assigning \fRnull\fP results in an empty optional; otherwise the value is stored\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBoperator bool\fP (\fBOptional\fP< T > opt)"
+.br
+.RI "Explicitly converts an \fBOptional<T>\fP to a boolean indicating whether the instance contains a value\&. This allows optional values to be used directly in conditional expressions\&. "
+.ti -1c
+.RI "static bool \fBoperator false\fP (\fBOptional\fP< T > opt)"
+.br
+.RI "Determines whether the optional instance should be considered logically false\&. This operator returns \fRtrue\fP when no value is present, allowing the optional to be used directly in boolean contexts that rely on \fRfalse\fP evaluation\&. "
+.ti -1c
+.RI "static implicit \fBoperator Optional< T >\fP (T? value)"
+.br
+.RI "Implicitly converts a nullable value into an \fBOptional<T>\fP\&. A \fRnull\fP value produces an empty optional; otherwise the value is stored\&. "
+.ti -1c
+.RI "static \fBoperator T\fP (\fBOptional\fP< T > opt)"
+.br
+.RI "Explicitly extracts the underlying value from an \fBOptional<T>\fP\&. This operation does not check \fBHasValue\fP; callers must ensure that a value is present before casting\&. "
+.ti -1c
+.RI "static bool \fBoperator true\fP (\fBOptional\fP< T > opt)"
+.br
+.RI "Determines whether the optional instance should be considered logically true\&. This operator returns \fRtrue\fP when a value is present, enabling the optional to participate naturally in conditional expressions and short‑circuit logic\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBOptional\fP< T > a, \fBOptional\fP< T > b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBOptional\fP< T > a, T? b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBOptional\fP< T > a, \fBOptional\fP< T > b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBOptional\fP< T > a, T? b)"
+.br
+.ti -1c
+.RI "static \fBOptional\fP< T > \fBSome\fP (T value)"
+.br
+.RI "Creates a new \fBOptional<T>\fP instance containing the specified value\&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static readonly \fBOptional\fP< T > \fBNONE\fP = new \fBOptional\fP<T> { m_hasValue = false }"
+.br
+.RI "A predefined empty optional instance representing the absence of a value\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBHasValue\fP\fR [get, set]\fP"
+.br
+.RI "Indicates whether this optional instance currently contains a value\&. "
+.ti -1c
+.RI "bool \fBIsNull\fP\fR [get]\fP"
+.br
+.RI "Indicates whether this optional instance currently represents an empty state\&. This is functionally equivalent to checking \fBHasValue\fP and returning \fRfalse\fP when no value is present\&. "
+.ti -1c
+.RI "bool \fBIsSome\fP\fR [get]\fP"
+.br
+.RI "Indicates whether this optional instance currently contains a value\&. "
+.ti -1c
+.RI "T? \fBValue\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the underlying value\&. When retrieving, \fRdefault(T)\fP is returned if no value is present\&. When assigning, \fRnull\fP clears the optional state, while any non-null value sets \fBHasValue\fP to true and stores the value\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a optional value container that stores a value only when \fBHasValue\fP is true\&. Unlike Nullable<T>, this type does not preserve \fRnull\fP as a stored value; assigning \fRnull\fP clears the optional state\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The underlying value type\&. Can be either a reference type or a value type\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB31\fP of file \fBOptional\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int IComparable< \fBOptional\fP< T > >\&. SystemEx\&.Optional< T >\&.CompareTo (\fBOptional\fP< T > other)"
+
+.PP
+Compares this optional instance with another optional instance using the CompareTo(Optional<T>) method and returns a standard integer comparison result compatible with IComparable<T>\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The optional instance to compare against\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fR-1\fP if this instance is considered less than \fIother\fP , \fR0\fP if both instances are equal, or \fR1\fP if this instance is greater\&. 
+.RE
+.PP
+
+.PP
+This method simply forwards to CompareTo(Optional<T>) and casts the resulting \fBCompareResult\fP to an integer, making the optional type compatible with standard \&.NET sorting and comparison mechanisms\&. 
+.PP
+Definition at line \fB174\fP of file \fBOptional\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Optional< T >\&.CompareTo (\fBOptional\fP< T > other)"
+
+.PP
+Compares this optional instance with another optional instance and returns a \fBCompareResult\fP describing their relative ordering\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The optional instance to compare against\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBCompareResult\fP value indicating whether this instance is less than, equal to, or greater than the specified instance\&. 
+.RE
+.PP
+
+.PP
+Comparison rules: 
+.PD 0
+.IP "\(bu" 2
+An empty optional (\fBHasValue\fP is \fRfalse\fP) is always considered greater than a non‑empty optional, ensuring that empty values sort last\&.  
+.IP "\(bu" 2
+If both optionals are empty, they are considered equal\&.  
+.IP "\(bu" 2
+If both contain values, the comparison is performed using Comparer<T>\&.Default and the result is cast directly to \fBCompareResult\fP\&.  
+.PP
+
+.PP
+Definition at line \fB138\fP of file \fBOptional\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Algorithms\&.SimpleComparer< T >\&.Compare()\fP, and \fBCompareTo()\fP\&.
+.SS "override bool SystemEx\&.Optional< T >\&.Equals (object? obj)"
+
+.PP
+
+.PP
+Definition at line \fB287\fP of file \fBOptional\&.cs\fP\&.
+.SS "bool SystemEx\&.Optional< T >\&.Equals (\fBOptional\fP< T > b)"
+
+.PP
+Definition at line \fB178\fP of file \fBOptional\&.cs\fP\&.
+.SS "override int SystemEx\&.Optional< T >\&.GetHashCode ()"
+
+.PP
+
+.PP
+Definition at line \fB294\fP of file \fBOptional\&.cs\fP\&.
+.PP
+Referenced by \fBoperator==()\fP, and \fBoperator==()\fP\&.
+.SS "void SystemEx\&.Optional< T >\&.Nullable ()"
+
+.PP
+Clears the optional state, removing any stored value and marking the instance as empty\&. 
+.PP
+Definition at line \fB106\fP of file \fBOptional\&.cs\fP\&.
+.SS "SystemEx\&.Optional< T >\&.operator bool (\fBOptional\fP< T > opt)\fR [explicit]\fP, \fR [static]\fP"
+
+.PP
+Explicitly converts an \fBOptional<T>\fP to a boolean indicating whether the instance contains a value\&. This allows optional values to be used directly in conditional expressions\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIopt\fP The optional instance to evaluate\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the optional contains a value; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB221\fP of file \fBOptional\&.cs\fP\&.
+.SS "bool SystemEx\&.Optional< T >\&.operator false (\fBOptional\fP< T > opt)\fR [static]\fP"
+
+.PP
+Determines whether the optional instance should be considered logically false\&. This operator returns \fRtrue\fP when no value is present, allowing the optional to be used directly in boolean contexts that rely on \fRfalse\fP evaluation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIopt\fP The optional instance to evaluate\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the optional does not contain a value; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB247\fP of file \fBOptional\&.cs\fP\&.
+.SS "implicit SystemEx\&.Optional< T >\&.operator \fBOptional\fP< T > (T? value)\fR [static]\fP"
+
+.PP
+Implicitly converts a nullable value into an \fBOptional<T>\fP\&. A \fRnull\fP value produces an empty optional; otherwise the value is stored\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The nullable value to convert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB195\fP of file \fBOptional\&.cs\fP\&.
+.SS "SystemEx\&.Optional< T >\&.operator T (\fBOptional\fP< T > opt)\fR [explicit]\fP, \fR [static]\fP"
+
+.PP
+Explicitly extracts the underlying value from an \fBOptional<T>\fP\&. This operation does not check \fBHasValue\fP; callers must ensure that a value is present before casting\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIopt\fP The optional instance to extract from\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The stored value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB208\fP of file \fBOptional\&.cs\fP\&.
+.SS "bool SystemEx\&.Optional< T >\&.operator true (\fBOptional\fP< T > opt)\fR [static]\fP"
+
+.PP
+Determines whether the optional instance should be considered logically true\&. This operator returns \fRtrue\fP when a value is present, enabling the optional to participate naturally in conditional expressions and short‑circuit logic\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIopt\fP The optional instance to evaluate\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the optional contains a value; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB234\fP of file \fBOptional\&.cs\fP\&.
+.SS "bool SystemEx\&.Optional< T >\&.operator!= (\fBOptional\fP< T > a, \fBOptional\fP< T > b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB281\fP of file \fBOptional\&.cs\fP\&.
+.SS "bool SystemEx\&.Optional< T >\&.operator!= (\fBOptional\fP< T > a, T? b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB276\fP of file \fBOptional\&.cs\fP\&.
+.SS "bool SystemEx\&.Optional< T >\&.operator== (\fBOptional\fP< T > a, \fBOptional\fP< T > b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB252\fP of file \fBOptional\&.cs\fP\&.
+.SS "bool SystemEx\&.Optional< T >\&.operator== (\fBOptional\fP< T > a, T? b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB264\fP of file \fBOptional\&.cs\fP\&.
+.SS "SystemEx\&.Optional< T >\&.Optional ()"
+
+.PP
+Created A empty Optional Object\&. 
+.PP
+Definition at line \fB81\fP of file \fBOptional\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP, \fBEquals()\fP, \fBoperator bool()\fP, \fBoperator false()\fP, \fBoperator Optional< T >()\fP, \fBoperator T()\fP, \fBoperator true()\fP, \fBoperator!=()\fP, \fBoperator!=()\fP, \fBoperator==()\fP, \fBoperator==()\fP, and \fBSome()\fP\&.
+.SS "SystemEx\&.Optional< T >\&.Optional (T? value)"
+
+.PP
+Initializes a new instance of \fBOptional<T>\fP using the provided value\&. Assigning \fRnull\fP results in an empty optional; otherwise the value is stored\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to assign\&. If \fRnull\fP, the optional becomes empty\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB92\fP of file \fBOptional\&.cs\fP\&.
+.SS "\fBOptional\fP< T > SystemEx\&.Optional< T >\&.Some (T value)\fR [static]\fP"
+
+.PP
+Creates a new \fBOptional<T>\fP instance containing the specified value\&. 
+.PP
+Definition at line \fB311\fP of file \fBOptional\&.cs\fP\&.
+.SS "override string SystemEx\&.Optional< T >\&.ToString ()"
+Returns a string representation of this object\&. 
+.PP
+Definition at line \fB301\fP of file \fBOptional\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "readonly \fBOptional\fP<T> SystemEx\&.Optional< T >\&.NONE = new \fBOptional\fP<T> { m_hasValue = false }\fR [static]\fP"
+
+.PP
+A predefined empty optional instance representing the absence of a value\&. 
+.PP
+Definition at line \fB38\fP of file \fBOptional\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Collections\&.Generic\&.BinQueue< T >\&.Dequeue()\fP, \fBSystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Dequeue()\fP, \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Get()\fP, \fBSystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Get< TU >()\fP, \fBSystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.Peek()\fP, \fBSystemEx\&.Collections\&.Generic\&.FixedSparsed< T >\&.Pop()\fP, and \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\&.Pop()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Optional< T >\&.HasValue\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Indicates whether this optional instance currently contains a value\&. 
+.PP
+Definition at line \fB64\fP of file \fBOptional\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Threading\&.LightConditionVariable\&.Broadcast()\fP, \fBSystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\&.Replace()\fP, and \fBSystemEx\&.Threading\&.LightConditionVariable\&.Signal()\fP\&.
+.SS "bool SystemEx\&.Optional< T >\&.IsNull\fR [get]\fP"
+
+.PP
+Indicates whether this optional instance currently represents an empty state\&. This is functionally equivalent to checking \fBHasValue\fP and returning \fRfalse\fP when no value is present\&. 
+.PP
+Definition at line \fB71\fP of file \fBOptional\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Algorithms\&.EqualTo< T >\&.Compare()\fP, \fBSystemEx\&.Algorithms\&.Greater< T >\&.Compare()\fP, \fBSystemEx\&.Algorithms\&.GreaterEqual< T >\&.Compare()\fP, \fBSystemEx\&.Algorithms\&.KleeneEqual< T >\&.Compare()\fP, \fBSystemEx\&.Algorithms\&.KleenEqualTo< T >\&.Compare()\fP, \fBSystemEx\&.Algorithms\&.KleenGreater< T >\&.Compare()\fP, \fBSystemEx\&.Algorithms\&.KleenLess< T >\&.Compare()\fP, \fBSystemEx\&.Algorithms\&.Less< T >\&.Compare()\fP, \fBSystemEx\&.Algorithms\&.LessEqual< T >\&.Compare()\fP, \fBSystemEx\&.Algorithms\&.NetStdCompare< T >\&.Compare()\fP, \fBSystemEx\&.Algorithms\&.NotEqualTo< T >\&.Compare()\fP, \fBSystemEx\&.Algorithms\&.ValueComparer< T >\&.Compare()\fP, \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\&.Cost()\fP, \fBSystemEx\&.Algorithms\&.BinarySearcherProvider< T, TContainer >\&.Find()\fP, \fBSystemEx\&.Algorithms\&.BinarySearcherProvider< T, TContainer >\&.Find()\fP, \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync()\fP, \fBSystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.LowerBound()\fP, \fBSystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.LowerBound()\fP, \fBSystemEx\&.Collections\&.Generic\&.VectorSet< T, TContainer >\&.Merge()\fP, \fBSystemEx\&.Collections\&.Generic\&.VectorUnorderedSet< T, TContainer >\&.Merge()\fP, \fBSystemEx\&.AI\&.ModelResult< T >\&.ModelResult()\fP, \fBoperator==()\fP, \fBoperator==()\fP, \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Replace()\fP, \fBSystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.UpperBound()\fP, \fBSystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.UpperBound()\fP, and \fBSystemEx\&.Algorithms\&.BinarySearcherProvider< T, TContainer >\&.Where()\fP\&.
+.SS "bool SystemEx\&.Optional< T >\&.IsSome\fR [get]\fP"
+
+.PP
+Indicates whether this optional instance currently contains a value\&. 
+.PP
+Definition at line \fB76\fP of file \fBOptional\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Algorithms\&.ValueComparer< T >\&.Compare()\fP, \fBSystemEx\&.Algorithms\&.FibonacciSearcherProvider< T, TContainer >\&.Find()\fP, \fBSystemEx\&.Algorithms\&.FibonacciSearcherProvider< T, TContainer >\&.Find()\fP, \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.GetConfigValue()\fP, \fBSystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.GetFunction< T >()\fP, \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.GetOrDefault()\fP, \fBoperator==()\fP, \fBoperator==()\fP, \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.TryGetValue()\fP, and \fBSystemEx\&.Algorithms\&.FibonacciSearcherProvider< T, TContainer >\&.Where()\fP\&.
+.SS "T? SystemEx\&.Optional< T >\&.Value\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the underlying value\&. When retrieving, \fRdefault(T)\fP is returned if no value is present\&. When assigning, \fRnull\fP clears the optional state, while any non-null value sets \fBHasValue\fP to true and stores the value\&. 
+.PP
+Definition at line \fB46\fP of file \fBOptional\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Threading\&.LightConditionVariable\&.Broadcast()\fP, \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\&.Cost()\fP, \fBSystemEx\&.Algorithms\&.BinarySearcherProvider< T, TContainer >\&.Find()\fP, \fBSystemEx\&.Algorithms\&.BinarySearcherProvider< T, TContainer >\&.Find()\fP, \fBSystemEx\&.Device\&.NativeRAMKernel< TD >\&.GetBuffer()\fP, \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.GetConfigValue()\fP, \fBSystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.GetFunction< T >()\fP, \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.GetOrDefault()\fP, \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync()\fP, \fBSystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.LowerBound()\fP, \fBSystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.LowerBound()\fP, \fBSystemEx\&.Collections\&.Generic\&.VectorSet< T, TContainer >\&.Merge()\fP, \fBSystemEx\&.Collections\&.Generic\&.VectorUnorderedSet< T, TContainer >\&.Merge()\fP, \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Replace()\fP, \fBSystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\&.Replace()\fP, \fBSystemEx\&.Threading\&.LightConditionVariable\&.Signal()\fP, \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.TryGetValue()\fP, \fBSystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.UpperBound()\fP, \fBSystemEx\&.Algorithms\&.BinarySearcherProvider< T, TContainer >\&.Where()\fP, and \fBSystemEx\&.Algorithms\&.FibonacciSearcherProvider< T, TContainer >\&.Where()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

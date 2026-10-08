@@ -1,0 +1,195 @@
+.TH "SystemEx.Collections.Generic.IContainer< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.IContainer< T > \- Defines the core mutation operations for a writable container\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Collections\&.Generic\&.FixedSparsed< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.ILinearContainer< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clears the container by resetting the logical index\&. "
+.ti -1c
+.RI "bool \fBErase\fP ()"
+.br
+.RI "Removes the last element from the container\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long index)"
+.br
+.RI "Erase overloads are API stubs and always return true\&. Actual removal logic is handled by Remove() methods\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long index, T entry)"
+.br
+.RI "Inserts an element at the specified index, shifting elements to the right\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long start, long end, T entry)"
+.br
+.RI "Fills a range of indices with a single value\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (long index, T entry)"
+.br
+.RI "Replaces the element at the specified index\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP
+.in +1c
+.ti -1c
+.RI "Optional< T > \fBElementAt\fP (long index)"
+.br
+.RI "Returns the element at the specified index\&. "
+.ti -1c
+.RI "Type \fBGetElementType\fP ()"
+.br
+.RI "Returns the runtime type of the stored elements\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Properties inherited from \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP
+.in +1c
+.ti -1c
+.RI "Optional< T > \fBBack\fP\fR [get]\fP"
+.br
+.RI "Gets the Last element of the container\&. "
+.ti -1c
+.RI "long \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements currently stored in the container\&. "
+.ti -1c
+.RI "Optional< T > \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the current logical position\&. The meaning of the current position is implementation‑defined\&. "
+.ti -1c
+.RI "Optional< T > \fBFront\fP\fR [get]\fP"
+.br
+.RI "Gets the first element of the container\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the container contains no elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the container is full\&. "
+.ti -1c
+.RI "long \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the total capacity of the container, including unused slots\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines the core mutation operations for a writable container\&. 
+
+\fBIContainer<T>\fP extends \fBIReadOnlyContainer<T>\fP by providing insertion, replacement, removal, and clearing capabilities\&. Implementations may support automatic growth through \fBIAutoGrowe\fP or enforce fixed‑capacity semantics\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The element type stored in the container\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB31\fP of file \fBIContainer\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Collections\&.Generic\&.IContainer< T >\&.Clear ()"
+
+.PP
+Clears the container by resetting the logical index\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedSparsed< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.IContainer< T >\&.Erase ()"
+
+.PP
+Removes the last element from the container\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if an element was removed; false if the container was empty\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedSparsed< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.IContainer< T >\&.Erase (long index)"
+
+.PP
+Erase overloads are API stubs and always return true\&. Actual removal logic is handled by Remove() methods\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedSparsed< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.IContainer< T >\&.Insert (long index, T entry)"
+
+.PP
+Inserts an element at the specified index, shifting elements to the right\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP Insertion index\&.
+.br
+\fIentry\fP Element to insert\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if insertion succeeded; false if the index was invalid or growth was not allowed\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedSparsed< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.IContainer< T >\&.Insert (long start, long end, T entry)"
+
+.PP
+Fills a range of indices with a single value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP Start index\&.
+.br
+\fIend\fP End index (inclusive)\&.
+.br
+\fIentry\fP Value to write\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the operation succeeded; false if the range was invalid or growth was not allowed\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedSparsed< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.IContainer< T >\&.Replace (long index, T entry)"
+
+.PP
+Replaces the element at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP Index to replace\&.
+.br
+\fIentry\fP New value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if replacement succeeded; false if the index was invalid or growth was not allowed\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedSparsed< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,81 @@
+.TH "SystemEx.Numeric.IP8UMXEnable< Tbase >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.IP8UMXEnable< Tbase > \- Provides FP8‑format specific parameters required for MX‑block arithmetic\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, and \fBSystemEx\&.Numeric\&.FloatUE5M2\fP\&.
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Tbase \fBMantissaMask\fP\fR [get]\fP"
+.br
+.RI "Gets the bit mask used to extract the mantissa field of the FP8 value\&. The mask corresponds to \fR(1 << MantissaBits) - 1\fP\&. "
+.ti -1c
+.RI "Tbase \fBMaxExponent\fP\fR [get]\fP"
+.br
+.RI "Gets the maximum exponent value supported by the FP8 format\&. This corresponds to \fR(1 << ExponentBits) - 1\fP\&. "
+.ti -1c
+.RI "Tbase \fBShiftRaster\fP\fR [get]\fP"
+.br
+.RI "Gets the shift‑raster used for MX mantissa alignment\&. This value defines how far the mantissa is shifted left during MX arithmetic operations (Add/Sub/Mul/Div)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides FP8‑format specific parameters required for MX‑block arithmetic\&. 
+
+Implementations expose the structural properties of an FP8 type such as: 
+.PD 0
+.IP "\(bu" 2
+The mantissa bit mask 
+.IP "\(bu" 2
+The maximum exponent value 
+.IP "\(bu" 2
+The shift‑raster used for MX mantissa alignment 
+.PP
+These values allow \fRFloat8UMX{T}\fP to operate generically across different FP8 formats (e\&.g\&., E5M2, E4M3, E3M4) without hard‑coded constants\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITbase\fP The underlying numeric type used to represent FP8 bit‑fields (typically \fR\fBFast_Byte\fP\fP or \fRbyte\fP)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB37\fP of file \fBIP8UMXEnable\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "Tbase SystemEx\&.Numeric\&.IP8UMXEnable< Tbase >\&.MantissaMask\fR [get]\fP"
+
+.PP
+Gets the bit mask used to extract the mantissa field of the FP8 value\&. The mask corresponds to \fR(1 << MantissaBits) - 1\fP\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, and \fBSystemEx\&.Numeric\&.FloatUE5M2\fP\&.
+.PP
+Definition at line \fB42\fP of file \fBIP8UMXEnable\&.cs\fP\&.
+.SS "Tbase SystemEx\&.Numeric\&.IP8UMXEnable< Tbase >\&.MaxExponent\fR [get]\fP"
+
+.PP
+Gets the maximum exponent value supported by the FP8 format\&. This corresponds to \fR(1 << ExponentBits) - 1\fP\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, and \fBSystemEx\&.Numeric\&.FloatUE5M2\fP\&.
+.PP
+Definition at line \fB48\fP of file \fBIP8UMXEnable\&.cs\fP\&.
+.SS "Tbase SystemEx\&.Numeric\&.IP8UMXEnable< Tbase >\&.ShiftRaster\fR [get]\fP"
+
+.PP
+Gets the shift‑raster used for MX mantissa alignment\&. This value defines how far the mantissa is shifted left during MX arithmetic operations (Add/Sub/Mul/Div)\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, and \fBSystemEx\&.Numeric\&.FloatUE5M2\fP\&.
+.PP
+Definition at line \fB55\fP of file \fBIP8UMXEnable\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

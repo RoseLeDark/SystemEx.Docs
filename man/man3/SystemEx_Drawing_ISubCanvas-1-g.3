@@ -1,0 +1,164 @@
+.TH "SystemEx.Drawing.ISubCanvas< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Drawing.ISubCanvas< T > \- Represents a mathematical sub‑canvas that participates as a layer within a layered canvas system\&. A sub‑canvas does not perform graphical drawing; instead, it defines deterministic transformation rules, visibility states, and optional masking that influence the final composed pixel buffer when requested through \fBICanvasList<T>\&.GetPixels\fP or \fBICanvasList<T>\&.SwapIn\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Drawing\&.ICanvas< T >\fP\&.
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBEnable\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets whether this sub‑canvas is enabled\&. Disabled sub‑canvases do not participate in mathematical composition and behave as if they were absent from the layer stack\&. "
+.ti -1c
+.RI "bool \fBHasMask\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets a value indicating whether the sub‑canvas uses a mask\&. When enabled, the mask determines which regions of the sub‑canvas contribute to the mathematical composition\&. "
+.ti -1c
+.RI "bool \fBIsDirty\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets whether the sub‑canvas is marked as dirty\&. A dirty state indicates that its mathematical content has changed and that dependent compositions may need to be recalculated\&. "
+.ti -1c
+.RI "ICanvas< \fBColorGray\fP > \fBMask\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the grayscale mask applied to this sub‑canvas\&. The mask defines per‑pixel visibility weights, allowing selective inclusion or exclusion of regions during composition\&. A mask does not draw pixels; it modifies how the sub‑canvas mathematically interacts with underlying layers\&. "
+.ti -1c
+.RI "string \fBName\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the name of the sub‑canvas\&. This is a user‑defined identifier useful for organizing, labeling, or referencing layers within a canvas list\&. "
+.ti -1c
+.RI "bool \fBShowing\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets whether this sub‑canvas is visible\&. A hidden sub‑canvas remains present in the layer structure but does not contribute to the composed pixel buffer\&. "
+.ti -1c
+.RI "byte \fBVisible\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the visibility weight of the sub‑canvas\&. This value represents a mathematical transparency factor used during layer blending\&. Higher values increase the influence of the sub‑canvas on the final composition\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Drawing\&.ICanvas< T >\fP
+.in +1c
+.ti -1c
+.RI "IEnumerable< T > \fBBuffer\fP\fR [get]\fP"
+.br
+.RI "Gets an enumerable view of the underlying buffer\&. The buffer contains the raw mathematical color values in row‑major order\&. No rendering or transformation occurs when accessing this property\&. "
+.ti -1c
+.RI "int \fBHeight\fP\fR [get]\fP"
+.br
+.RI "Gets the height of the canvas in mathematical units (rows)\&. "
+.ti -1c
+.RI "int \fBWidth\fP\fR [get]\fP"
+.br
+.RI "Gets the width of the canvas in mathematical units (columns)\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBSystemEx\&.Drawing\&.ICanvas< T >\fP
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clears the canvas by resetting all stored values to their default state\&. This operation affects only the mathematical buffer\&. "
+.ti -1c
+.RI "ICanvas< T > \fBClone\fP ()"
+.br
+.RI "Creates a full mathematical clone of this canvas, duplicating all stored values\&. "
+.ti -1c
+.RI "ICanvas< T > \fBCopyRegion\fP (int x, int y, int width, int height)"
+.br
+.RI "Creates a new canvas containing a rectangular region of this canvas\&. The region is copied mathematically; no rendering or blending occurs\&. "
+.ti -1c
+.RI "void \fBFill\fP (T objcolor)"
+.br
+.RI "Fills the entire canvas with the specified color value\&. This operation replaces all stored data deterministically and does not perform any graphical drawing\&. "
+.ti -1c
+.RI "void \fBFillRect\fP (int x1, int y1, int x2, int y2)"
+.br
+.RI "Fills a rectangular region of the canvas with the specified color value\&. This modifies only the mathematical buffer and does not perform rendering\&. "
+.ti -1c
+.RI "Pair< int, int > \fBFind\fP (T color)"
+.br
+.RI "Searches the canvas for the first occurrence of the specified color value\&. Returns the coordinates of the match or \fR(-1, -1)\fP if no match is found\&. "
+.ti -1c
+.RI "int \fBFindLast\fP (T color)"
+.br
+.RI "Searches the canvas for the last occurrence of the specified color value\&. Returns the index in the underlying buffer or \fR-1\fP if no match is found\&. "
+.ti -1c
+.RI "T \fBGetPixel\fP (int x, int y)"
+.br
+.RI "Returns the color value at the specified coordinates\&. This method provides direct access to the underlying mathematical buffer without performing any rendering\&. "
+.ti -1c
+.RI "bool \fBResize\fP (int size)"
+.br
+.RI "Resizes the canvas to the specified total size (Width × Height)\&. Existing values may be truncated or expanded depending on the implementation\&. This operation modifies only the mathematical buffer\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a mathematical sub‑canvas that participates as a layer within a layered canvas system\&. A sub‑canvas does not perform graphical drawing; instead, it defines deterministic transformation rules, visibility states, and optional masking that influence the final composed pixel buffer when requested through \fBICanvasList<T>\&.GetPixels\fP or \fBICanvasList<T>\&.SwapIn\fP\&. 
+
+Sub‑canvases act as structural components in a purely mathematical model: they contribute color values, transformations, or blend interactions, but no pixels are rendered until the composition pipeline is evaluated\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The color type used by the canvas\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB99\fP of file \fBICanvasList\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Drawing\&.ISubCanvas< T >\&.Enable\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets whether this sub‑canvas is enabled\&. Disabled sub‑canvases do not participate in mathematical composition and behave as if they were absent from the layer stack\&. 
+.PP
+Definition at line \fB105\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ISubCanvas< T >\&.HasMask\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets a value indicating whether the sub‑canvas uses a mask\&. When enabled, the mask determines which regions of the sub‑canvas contribute to the mathematical composition\&. 
+.PP
+Definition at line \fB141\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ISubCanvas< T >\&.IsDirty\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets whether the sub‑canvas is marked as dirty\&. A dirty state indicates that its mathematical content has changed and that dependent compositions may need to be recalculated\&. 
+.PP
+Definition at line \fB119\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "ICanvas<\fBColorGray\fP> SystemEx\&.Drawing\&.ISubCanvas< T >\&.Mask\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the grayscale mask applied to this sub‑canvas\&. The mask defines per‑pixel visibility weights, allowing selective inclusion or exclusion of regions during composition\&. A mask does not draw pixels; it modifies how the sub‑canvas mathematically interacts with underlying layers\&. 
+.PP
+Definition at line \fB150\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "string SystemEx\&.Drawing\&.ISubCanvas< T >\&.Name\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the name of the sub‑canvas\&. This is a user‑defined identifier useful for organizing, labeling, or referencing layers within a canvas list\&. 
+.PP
+Definition at line \fB126\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ISubCanvas< T >\&.Showing\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets whether this sub‑canvas is visible\&. A hidden sub‑canvas remains present in the layer structure but does not contribute to the composed pixel buffer\&. 
+.PP
+Definition at line \fB112\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "byte SystemEx\&.Drawing\&.ISubCanvas< T >\&.Visible\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the visibility weight of the sub‑canvas\&. This value represents a mathematical transparency factor used during layer blending\&. Higher values increase the influence of the sub‑canvas on the final composition\&. 
+.PP
+Definition at line \fB134\fP of file \fBICanvasList\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

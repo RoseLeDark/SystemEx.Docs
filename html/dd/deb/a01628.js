@@ -1,12 +1,14 @@
 var a01628 =
 [
-    [ "ColorYUV", "dd/deb/a01628_aa0d359dcbfce7a9db542f057ceb9c5a3.html#aa0d359dcbfce7a9db542f057ceb9c5a3", null ],
-    [ "ColorYUV", "dd/deb/a01628_a6b044317c98fadf6344c326610d5ce2b.html#a6b044317c98fadf6344c326610d5ce2b", null ],
-    [ "Equals", "dd/deb/a01628_a56db38f3081a9d808277b1eacfd51a25.html#a56db38f3081a9d808277b1eacfd51a25", null ],
-    [ "Equals", "dd/deb/a01628_a026a19eea44954df92a2712f2b9f5b6d.html#a026a19eea44954df92a2712f2b9f5b6d", null ],
-    [ "GetHashCode", "dd/deb/a01628_ae550b80cdb800113eca30858b4000ea7.html#ae550b80cdb800113eca30858b4000ea7", null ],
-    [ "ToString", "dd/deb/a01628_a877fde1f33ac52b5c34676bcfbc88e91.html#a877fde1f33ac52b5c34676bcfbc88e91", null ],
-    [ "U", "dd/deb/a01628_ae469b6e35e25c51e8c394e7bd5ecbd17.html#ae469b6e35e25c51e8c394e7bd5ecbd17", null ],
-    [ "V", "dd/deb/a01628_a154df444d5bdce3e66362a2aab06ec7b.html#a154df444d5bdce3e66362a2aab06ec7b", null ],
-    [ "Y", "dd/deb/a01628_a4e5a715c2184061561f7caacfd4314e8.html#a4e5a715c2184061561f7caacfd4314e8", null ]
+    [ "ColorR10G10B10A2", "d9/db0/a00900_ga8fae3bcb6c266b1ff8f86611413da46c.html#ga8fae3bcb6c266b1ff8f86611413da46c", null ],
+    [ "ColorR10G10B10A2", "d9/db0/a00900_gadb2beef2d925157cfef9ef045f0f3acb.html#gadb2beef2d925157cfef9ef045f0f3acb", null ],
+    [ "ColorR10G10B10A2", "d9/db0/a00900_ga3c941c1088e44446df1cba5e2dae165a.html#ga3c941c1088e44446df1cba5e2dae165a", null ],
+    [ "Equals", "d9/db0/a00900_gaa964f61a2f2231e87cc079155cf19a2c.html#gaa964f61a2f2231e87cc079155cf19a2c", null ],
+    [ "Equals", "d9/db0/a00900_gab4649996ff8e756245518b2fa4b9f83c.html#gab4649996ff8e756245518b2fa4b9f83c", null ],
+    [ "GetHashCode", "d9/db0/a00900_gaccf75b7f53c69c71069bdcf9c27921cc.html#gaccf75b7f53c69c71069bdcf9c27921cc", null ],
+    [ "ToString", "d9/db0/a00900_ga5010dbe425bd54a243b9e75fea21f20e.html#ga5010dbe425bd54a243b9e75fea21f20e", null ],
+    [ "A", "d9/db0/a00900_ga0bbf27739d3bfc088b8b04a212ad5b1a.html#ga0bbf27739d3bfc088b8b04a212ad5b1a", null ],
+    [ "B", "d9/db0/a00900_ga95da31197c07430cb04288473fc3aca1.html#ga95da31197c07430cb04288473fc3aca1", null ],
+    [ "G", "d9/db0/a00900_ga692566f0a0865f43491b5792b3514113.html#ga692566f0a0865f43491b5792b3514113", null ],
+    [ "R", "d9/db0/a00900_gaf1eda119d84a54b142c8b6bc039d3fa8.html#gaf1eda119d84a54b142c8b6bc039d3fa8", null ]
 ];

@@ -1,0 +1,252 @@
+.TH "SystemEx.Collections.Generic.Find< T, TContainer >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Find< T, TContainer > \- Provides search operations over a container implementing \fBIVector<T>\fP\&. This struct performs non‑modifying lookups such as first/last occurrence, existence checks and counting matches\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBExists\fP (T value)"
+.br
+.RI "Determines whether the container contains at least one element equal to the specified value\&. "
+.ti -1c
+.RI "\fBFind\fP (ref TContainer container)"
+.br
+.RI "Initializes a new search helper bound to the specified container\&. "
+.ti -1c
+.RI "long \fBFirst\fP (Func< T, bool > pred)"
+.br
+.RI "Returns the index of the first element matching the given predicate\&. If no element matches, -1 is returned\&. "
+.ti -1c
+.RI "long \fBFirst\fP (T value)"
+.br
+.RI "Returns the index of the first occurrence of the specified value\&. If the value is not found, -1 is returned\&. "
+.ti -1c
+.RI "long \fBLast\fP (Func< T, bool > pred)"
+.br
+.RI "Returns the index of the last element matching the given predicate\&. If no element matches, -1 is returned\&. "
+.ti -1c
+.RI "long \fBLast\fP (T value)"
+.br
+.RI "Returns the index of the last occurrence of the specified value\&. If the value is not found, -1 is returned\&. "
+.ti -1c
+.RI "long \fBLowerBound\fP (T key, ISimpleCompare< T > cmp)"
+.br
+.RI "Finds the first index at which the element is not smaller than the specified key\&. The comparison is performed using the provided \fBISimpleCompare<T>\fP predicate, which defines the relation \fRa < b\fP\&. "
+.ti -1c
+.RI "int \fBOf\fP (T value)"
+.br
+.RI "Counts how many elements in the container equal the specified value\&. "
+.ti -1c
+.RI "bool \fBTryGet\fP (T Key, out int index)"
+.br
+.RI "Attempts to find the index of the specified key\&. "
+.ti -1c
+.RI "long \fBUpperBound\fP (T key, ISimpleCompare< T > cmp)"
+.br
+.RI "Finds the first index at which the element is strictly larger than the specified key\&. The comparison is performed using the provided \fBISimpleCompare<T>\fP predicate, which defines the relation \fRa < b\fP\&. "
+.ti -1c
+.RI "int \fBWhere\fP (Func< T, bool > pred)"
+.br
+.RI "Counts how many elements in the container satisfy the given predicate\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides search operations over a container implementing \fBIVector<T>\fP\&. This struct performs non‑modifying lookups such as first/last occurrence, existence checks and counting matches\&. 
+
+Example usage with a vector: 
+.PP
+.nf
+// Create a vector of int with initial values and auto grow enabled
+// AutoGrow is controlled by the second parameter:
+// growSize > 0  \-> AutoGrow ON
+// growSize == 0 \-> AutoGrow OFF
+var vec = new vector<int>( new int[]{10, 20, 30, 40 } );
+
+var finder = new Find<int, vector<int>>(ref vec);
+
+long first20 = finder\&.First(20);   // returns 1
+long last20  = finder\&.Last(20);    // returns 2
+int count20  = finder\&.Of(20);      // returns 2
+bool exists30 = finder\&.Exists(30); // returns true
+
+.fi
+.PP
+ 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The element type stored inside the container\&.
+.br
+\fITContainer\fP The container type implementing \fBIVector<T>\fP used as the search target\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITContainer\fP : \fIIVector<T>\fP
+.PP
+Definition at line \fB55\fP of file \fBFind\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.Exists (T value)"
+
+.PP
+Determines whether the container contains at least one element equal to the specified value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to search for\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB178\fP of file \fBFind\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.Find (ref TContainer container)"
+
+.PP
+Initializes a new search helper bound to the specified container\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontainer\fP \fBReference\fP to the container to operate on\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB63\fP of file \fBFind\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.First (Func< T, bool > pred)"
+
+.PP
+Returns the index of the first element matching the given predicate\&. If no element matches, -1 is returned\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpred\fP The predicate used to test each element\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB91\fP of file \fBFind\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.First (T value)"
+
+.PP
+Returns the index of the first occurrence of the specified value\&. If the value is not found, -1 is returned\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to search for\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB73\fP of file \fBFind\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.Last (Func< T, bool > pred)"
+
+.PP
+Returns the index of the last element matching the given predicate\&. If no element matches, -1 is returned\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpred\fP The predicate used to test each element\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB128\fP of file \fBFind\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.Last (T value)"
+
+.PP
+Returns the index of the last occurrence of the specified value\&. If the value is not found, -1 is returned\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to search for\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB110\fP of file \fBFind\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.LowerBound (T key, ISimpleCompare< T > cmp)"
+
+.PP
+Finds the first index at which the element is not smaller than the specified key\&. The comparison is performed using the provided \fBISimpleCompare<T>\fP predicate, which defines the relation \fRa < b\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The key used for comparison\&.
+.br
+\fIcmp\fP A simple comparison predicate that returns \fRtrue\fP when \fIa\fP  is considered smaller than \fIb\fP \&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The index of the first element that is not smaller than \fIkey\fP , or -1 if no such element exists\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB223\fP of file \fBFind\&.cs\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.Of (T value)"
+
+.PP
+Counts how many elements in the container equal the specified value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to count\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB146\fP of file \fBFind\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.TryGet (T Key, out int index)"
+
+.PP
+Attempts to find the index of the specified key\&. 
+.PP
+Definition at line \fB195\fP of file \fBFind\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.UpperBound (T key, ISimpleCompare< T > cmp)"
+
+.PP
+Finds the first index at which the element is strictly larger than the specified key\&. The comparison is performed using the provided \fBISimpleCompare<T>\fP predicate, which defines the relation \fRa < b\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The key used for comparison\&.
+.br
+\fIcmp\fP A simple comparison predicate that returns \fRtrue\fP when \fIa\fP  is considered smaller than \fIb\fP \&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The index of the first element that is strictly larger than \fIkey\fP , or -1 if no such element exists\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB267\fP of file \fBFind\&.cs\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.Find< T, TContainer >\&.Where (Func< T, bool > pred)"
+
+.PP
+Counts how many elements in the container satisfy the given predicate\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpred\fP The predicate used to test each element\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB162\fP of file \fBFind\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

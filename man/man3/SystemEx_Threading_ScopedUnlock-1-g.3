@@ -1,0 +1,85 @@
+.TH "SystemEx.Threading.ScopedUnlock< TLOCK >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.ScopedUnlock< TLOCK > \- Provides a scoped unlock mechanism for an existing \fBILock\fP instance\&. Upon construction, the lock is immediately released\&. When the scope ends, \fBDispose\fP reacquires the lock using the specified timeout\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IDisposable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDispose\fP ()"
+.br
+.RI "Reacquires the lock using the timeout specified during construction\&. This method is automatically invoked when the scope ends\&. "
+.ti -1c
+.RI "\fBScopedUnlock\fP (ref TLOCK ulock, \fBTimeOut\fP ms)"
+.br
+.RI "Initializes a new scoped unlock\&. The provided lock is released immediately, allowing other threads or processes to proceed\&. When the scope ends, the lock is reacquired using the specified timeout\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static implicit \fBoperator bool\fP (\fBScopedUnlock\fP< TLOCK > slock)"
+.br
+.RI "Returns \fRtrue\fP if the underlying lock is currently not held\&. This operator allows scoped unlocks to be used in conditional expressions\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a scoped unlock mechanism for an existing \fBILock\fP instance\&. Upon construction, the lock is immediately released\&. When the scope ends, \fBDispose\fP reacquires the lock using the specified timeout\&. 
+
+\fBScopedUnlock<TLOCK>\fP is useful for wait‑and‑resume patterns, producer/consumer scenarios, or any situation where a lock must be temporarily released while guaranteeing reacquisition\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITLOCK\fP The lock type implementing \fBILock\fP\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITLOCK\fP : \fI\fBILock\fP\fP
+.PP
+Definition at line \fB81\fP of file \fBUniqueLock\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Threading\&.ScopedUnlock< TLOCK >\&.Dispose ()"
+
+.PP
+Reacquires the lock using the timeout specified during construction\&. This method is automatically invoked when the scope ends\&. 
+.PP
+Definition at line \fB106\fP of file \fBUniqueLock\&.cs\fP\&.
+.SS "implicit SystemEx\&.Threading\&.ScopedUnlock< TLOCK >\&.operator bool (\fBScopedUnlock\fP< TLOCK > slock)\fR [static]\fP"
+
+.PP
+Returns \fRtrue\fP if the underlying lock is currently not held\&. This operator allows scoped unlocks to be used in conditional expressions\&. 
+.PP
+Definition at line \fB114\fP of file \fBUniqueLock\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.ScopedUnlock< TLOCK >\&.ScopedUnlock (ref TLOCK ulock, \fBTimeOut\fP ms)"
+
+.PP
+Initializes a new scoped unlock\&. The provided lock is released immediately, allowing other threads or processes to proceed\&. When the scope ends, the lock is reacquired using the specified timeout\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIulock\fP \fBReference\fP to the lock instance to operate on\&.
+.br
+\fIms\fP Timeout in milliseconds used when reacquiring the lock\&. A value of \fR-1\fP indicates an immediate attempt\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB97\fP of file \fBUniqueLock\&.cs\fP\&.
+.PP
+Referenced by \fBoperator bool()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

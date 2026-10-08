@@ -1,0 +1,515 @@
+.TH "SystemEx.Triple" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Triple \- Represents a three-valued logic value\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override bool \fBEquals\fP ([NotNullWhen(true)] object? obj)"
+.br
+.RI "Determines whether the current instance and a specified object are equal\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (bool obj)"
+.br
+.RI "Determines whether the current instance and a specified boolean value are equal\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBtriple\fP obj)"
+.br
+.RI "Determines whether the current instance and a specified triple value are equal\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Gets the hash code for the current instance\&. "
+.ti -1c
+.RI "bool \fBToBoolean\fP ()"
+.br
+.RI "Returns the boolean value of the current instance\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns a string that represents the current instance\&. "
+.ti -1c
+.RI "\fBTriple\fP ()"
+.br
+.RI "Initializes a new instance of the \fBTriple\fP struct\&. "
+.ti -1c
+.RI "\fBTriple\fP (bool v)"
+.br
+.RI "Initializes a new instance of the \fBTriple\fP struct\&. "
+.ti -1c
+.RI "\fBTriple\fP (\fBtriple\fP v)"
+.br
+.RI "Initializes a new instance of the \fBTriple\fP struct\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBTriple\fP \fBEQUIV\fP (\fBTriple\fP a, \fBTriple\fP b)"
+.br
+.RI "Kleene three-valued equivalence (A ↔ B)\&. Truth table: T↔T = T F↔F = T T↔F = F F↔T = F Any combination with N = N\&. "
+.ti -1c
+.RI "static \fBTriple\fP \fBIMPLIES\fP (\fBTriple\fP a, \fBTriple\fP b)"
+.br
+.RI "Kleene three-valued IMPLIES (A → B)\&. Truth table: T→T = T T→F = F T→N = N F→X = T N→T = T N→F = N N→N = N\&. "
+.ti -1c
+.RI "static \fBTriple\fP \fBNAND\fP (\fBTriple\fP a, \fBTriple\fP b)"
+.br
+.RI "Kleene three-valued NAND\&. Defined as: !(A and B)\&. "
+.ti -1c
+.RI "static \fBTriple\fP \fBNOR\fP (\fBTriple\fP a, \fBTriple\fP b)"
+.br
+.RI "Kleene three-valued NOR\&. Defined as: !(A | B)\&. "
+.ti -1c
+.RI "static implicit \fBoperator bool\fP (\fBTriple\fP value)"
+.br
+.RI "Implicitly converts a \fBTriple\fP to a boolean value\&. Only \fBtriple\&.True\fP maps to \fRtrue\fP; all other states map to \fRfalse\fP\&. "
+.ti -1c
+.RI "static bool \fBoperator false\fP (\fBTriple\fP opt)"
+.br
+.RI "Defines the logical \fRfalse\fP state for control‑flow usage\&. This operator does \fBnot\fP implement three‑valued logic\&. It exists solely so that \fBTriple\fP can be used in C# conditional statements such as \fRif\fP, \fRwhile\fP, and logical operators\&. "
+.ti -1c
+.RI "static implicit \fBoperator Triple\fP (bool value)"
+.br
+.RI "Implicitly converts a boolean value to a \fBTriple\fP\&. \fRtrue\fP becomes \fBtriple\&.True\fP, \fRfalse\fP becomes \fBtriple\&.False\fP\&. "
+.ti -1c
+.RI "static implicit \fBoperator Triple\fP (\fBtriple\fP value)"
+.br
+.RI "Implicitly converts a \fBtriple\fP enum value to a \fBTriple\fP\&. "
+.ti -1c
+.RI "static bool \fBoperator true\fP (\fBTriple\fP opt)"
+.br
+.RI "Defines the logical \fRtrue\fP state for control‑flow usage\&. This operator does \fBnot\fP implement three‑valued logic\&. It exists solely so that \fBTriple\fP can be used in C# conditional statements such as \fRif\fP, \fRwhile\fP, and logical operators\&. "
+.ti -1c
+.RI "static \fBTriple\fP \fBoperator!\fP (\fBTriple\fP a)"
+.br
+.RI "Kleene three-valued logical NOT\&. Truth table: !T = F !F = T !N = N\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (bool left, \fBTriple\fP right)"
+.br
+.RI "Determines whether a boolean value and an instance of the \fBTriple\fP struct are not equal\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBTriple\fP left, bool right)"
+.br
+.RI "Determines whether an instance of the \fBTriple\fP struct and a boolean value are not equal\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBTriple\fP left, \fBTriple\fP right)"
+.br
+.RI "Determines whether two instances of the \fBTriple\fP struct are not equal\&. "
+.ti -1c
+.RI "static \fBTriple\fP \fBoperator&\fP (\fBTriple\fP a, \fBTriple\fP b)"
+.br
+.RI "Kleene three-valued logical AND\&. Truth table: T and T = T T and F = F T and N = N F and X = F N and T = N N and F = F N and N = N\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (bool left, \fBTriple\fP right)"
+.br
+.RI "Determines whether a boolean value and an instance of the \fBTriple\fP struct are equal\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBTriple\fP left, bool right)"
+.br
+.RI "Determines whether an instance of the \fBTriple\fP struct and a boolean value are equal\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBTriple\fP left, \fBTriple\fP right)"
+.br
+.RI "Determines whether two instances of the \fBTriple\fP struct are equal\&. "
+.ti -1c
+.RI "static \fBTriple\fP \fBoperator|\fP (\fBTriple\fP a, \fBTriple\fP b)"
+.br
+.RI "Kleene three-valued logical OR\&. Truth table: T | X = T F | F = F F | N = N N | T = T N | F = N N | N = N\&. "
+.ti -1c
+.RI "static \fBTriple\fP \fBXOR\fP (\fBTriple\fP a, \fBTriple\fP b)"
+.br
+.RI "Kleene three-valued XOR\&. Truth table: T⊕T = F F⊕F = F T⊕F = T F⊕T = T Any combination with N = N\&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static readonly string \fBFalseString\fP = 'False'"
+.br
+.RI "Gets the string representation for the false value\&. "
+.ti -1c
+.RI "static readonly string \fBNinString\fP = 'Nin'"
+.br
+.RI "Gets the string representation for the neither true nor false value\&. "
+.ti -1c
+.RI "static readonly string \fBTrueString\fP = 'True'"
+.br
+.RI "Gets the string representation for the true value\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a three-valued logic value\&. 
+.PP
+Definition at line \fB24\fP of file \fBBase/Triple\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Triple\&.Triple ()"
+
+.PP
+Initializes a new instance of the \fBTriple\fP struct\&. 
+.PP
+Definition at line \fB86\fP of file \fBBase/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, \fBEQUIV()\fP, \fBIMPLIES()\fP, \fBNAND()\fP, \fBNOR()\fP, \fBoperator bool()\fP, \fBoperator false()\fP, \fBoperator Triple()\fP, \fBoperator Triple()\fP, \fBoperator true()\fP, \fBoperator!()\fP, \fBoperator!=()\fP, \fBoperator!=()\fP, \fBoperator!=()\fP, \fBoperator&()\fP, \fBoperator==()\fP, \fBoperator==()\fP, \fBoperator==()\fP, \fBoperator|()\fP, and \fBXOR()\fP\&.
+.SS "SystemEx\&.Triple\&.Triple (bool v)"
+
+.PP
+Initializes a new instance of the \fBTriple\fP struct\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIv\fP The boolean value to initialize with\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB93\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "SystemEx\&.Triple\&.Triple (\fBtriple\fP v)"
+
+.PP
+Initializes a new instance of the \fBTriple\fP struct\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIv\fP The triple value to initialize with\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB100\fP of file \fBBase/Triple\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override bool SystemEx\&.Triple\&.Equals ([NotNullWhen(true)] object? obj)"
+
+.PP
+Determines whether the current instance and a specified object are equal\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object to compare with the current instance\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the current instance and \fIobj\fP  are equal; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB109\fP of file \fBBase/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBoperator!=()\fP, \fBoperator!=()\fP, \fBoperator!=()\fP, \fBoperator==()\fP, \fBoperator==()\fP, and \fBoperator==()\fP\&.
+.SS "bool SystemEx\&.Triple\&.Equals (bool obj)"
+
+.PP
+Determines whether the current instance and a specified boolean value are equal\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The boolean value to compare with the current instance\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the current instance and \fIobj\fP  are equal; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB124\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "bool SystemEx\&.Triple\&.Equals (\fBtriple\fP obj)"
+
+.PP
+Determines whether the current instance and a specified triple value are equal\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The triple value to compare with the current instance\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the current instance and \fIobj\fP  are equal; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB139\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "\fBTriple\fP SystemEx\&.Triple\&.EQUIV (\fBTriple\fP a, \fBTriple\fP b)\fR [static]\fP"
+
+.PP
+Kleene three-valued equivalence (A ↔ B)\&. Truth table: T↔T = T F↔F = T T↔F = F F↔T = F Any combination with N = N\&. 
+.PP
+Definition at line \fB345\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "override int SystemEx\&.Triple\&.GetHashCode ()"
+
+.PP
+Gets the hash code for the current instance\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The hash code\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB62\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "\fBTriple\fP SystemEx\&.Triple\&.IMPLIES (\fBTriple\fP a, \fBTriple\fP b)\fR [static]\fP"
+
+.PP
+Kleene three-valued IMPLIES (A → B)\&. Truth table: T→T = T T→F = F T→N = N F→X = T N→T = T N→F = N N→N = N\&. 
+.PP
+Definition at line \fB322\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "\fBTriple\fP SystemEx\&.Triple\&.NAND (\fBTriple\fP a, \fBTriple\fP b)\fR [static]\fP"
+
+.PP
+Kleene three-valued NAND\&. Defined as: !(A and B)\&. 
+.PP
+Definition at line \fB379\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "\fBTriple\fP SystemEx\&.Triple\&.NOR (\fBTriple\fP a, \fBTriple\fP b)\fR [static]\fP"
+
+.PP
+Kleene three-valued NOR\&. Defined as: !(A | B)\&. 
+.PP
+Definition at line \fB386\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "implicit SystemEx\&.Triple\&.operator bool (\fBTriple\fP value)\fR [static]\fP"
+
+.PP
+Implicitly converts a \fBTriple\fP to a boolean value\&. Only \fBtriple\&.True\fP maps to \fRtrue\fP; all other states map to \fRfalse\fP\&. 
+.PP
+Definition at line \fB243\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "bool SystemEx\&.Triple\&.operator false (\fBTriple\fP opt)\fR [static]\fP"
+
+.PP
+Defines the logical \fRfalse\fP state for control‑flow usage\&. This operator does \fBnot\fP implement three‑valued logic\&. It exists solely so that \fBTriple\fP can be used in C# conditional statements such as \fRif\fP, \fRwhile\fP, and logical operators\&. A \fBTriple\fP evaluates to \fRfalse\fP when its underlying value is \fBtriple\&.False\fP or \fBtriple\&.Nin\fP\&. 
+.PP
+Definition at line \fB221\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "implicit SystemEx\&.Triple\&.operator \fBTriple\fP (bool value)\fR [static]\fP"
+
+.PP
+Implicitly converts a boolean value to a \fBTriple\fP\&. \fRtrue\fP becomes \fBtriple\&.True\fP, \fRfalse\fP becomes \fBtriple\&.False\fP\&. 
+.PP
+Definition at line \fB228\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "implicit SystemEx\&.Triple\&.operator \fBTriple\fP (\fBtriple\fP value)\fR [static]\fP"
+
+.PP
+Implicitly converts a \fBtriple\fP enum value to a \fBTriple\fP\&. 
+.PP
+Definition at line \fB235\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "bool SystemEx\&.Triple\&.operator true (\fBTriple\fP opt)\fR [static]\fP"
+
+.PP
+Defines the logical \fRtrue\fP state for control‑flow usage\&. This operator does \fBnot\fP implement three‑valued logic\&. It exists solely so that \fBTriple\fP can be used in C# conditional statements such as \fRif\fP, \fRwhile\fP, and logical operators\&. A \fBTriple\fP evaluates to \fRtrue\fP only when its underlying value is \fBtriple\&.True\fP\&. 
+.PP
+Definition at line \fB208\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "\fBTriple\fP SystemEx\&.Triple\&.operator! (\fBTriple\fP a)\fR [static]\fP"
+
+.PP
+Kleene three-valued logical NOT\&. Truth table: !T = F !F = T !N = N\&. 
+.PP
+Definition at line \fB301\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "bool \fBSystemEx\&.Triple\&.operator!\fP= (bool left, \fBTriple\fP right)\fR [static]\fP"
+
+.PP
+Determines whether a boolean value and an instance of the \fBTriple\fP struct are not equal\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIleft\fP The boolean value to compare\&.
+.br
+\fIright\fP The instance of the \fBTriple\fP struct to compare with the boolean value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the boolean value and the instance are not equal; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB195\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "bool \fBSystemEx\&.Triple\&.operator!\fP= (\fBTriple\fP left, bool right)\fR [static]\fP"
+
+.PP
+Determines whether an instance of the \fBTriple\fP struct and a boolean value are not equal\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIleft\fP The instance of the \fBTriple\fP struct to compare\&.
+.br
+\fIright\fP The boolean value to compare with the instance\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the instance and the boolean value are not equal; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB186\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "bool \fBSystemEx\&.Triple\&.operator!\fP= (\fBTriple\fP left, \fBTriple\fP right)\fR [static]\fP"
+
+.PP
+Determines whether two instances of the \fBTriple\fP struct are not equal\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIleft\fP The first instance to compare\&.
+.br
+\fIright\fP The second instance to compare\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the instances are not equal; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB177\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "\fBTriple\fP SystemEx\&.Triple\&.operator& (\fBTriple\fP a, \fBTriple\fP b)\fR [static]\fP"
+
+.PP
+Kleene three-valued logical AND\&. Truth table: T and T = T T and F = F T and N = N F and X = F N and T = N N and F = F N and N = N\&. 
+.PP
+Definition at line \fB258\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "bool SystemEx\&.Triple\&.operator== (bool left, \fBTriple\fP right)\fR [static]\fP"
+
+.PP
+Determines whether a boolean value and an instance of the \fBTriple\fP struct are equal\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIleft\fP The boolean value to compare\&.
+.br
+\fIright\fP The instance of the \fBTriple\fP struct to compare with the boolean value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the boolean value and the instance are equal; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB168\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "bool SystemEx\&.Triple\&.operator== (\fBTriple\fP left, bool right)\fR [static]\fP"
+
+.PP
+Determines whether an instance of the \fBTriple\fP struct and a boolean value are equal\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIleft\fP The instance of the \fBTriple\fP struct to compare\&.
+.br
+\fIright\fP The boolean value to compare with the instance\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the instance and the boolean value are equal; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB158\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "bool SystemEx\&.Triple\&.operator== (\fBTriple\fP left, \fBTriple\fP right)\fR [static]\fP"
+
+.PP
+Determines whether two instances of the \fBTriple\fP struct are equal\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIleft\fP The first instance to compare\&.
+.br
+\fIright\fP The second instance to compare\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the instances are equal; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB148\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "\fBTriple\fP SystemEx\&.Triple\&.operator| (\fBTriple\fP a, \fBTriple\fP b)\fR [static]\fP"
+
+.PP
+Kleene three-valued logical OR\&. Truth table: T | X = T F | F = F F | N = N N | T = T N | F = N N | N = N\&. 
+.PP
+Definition at line \fB281\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "bool SystemEx\&.Triple\&.ToBoolean ()"
+
+.PP
+Returns the boolean value of the current instance\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The boolean value of the current instance\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB131\fP of file \fBBase/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, \fBEquals()\fP, and \fBoperator bool()\fP\&.
+.SS "override string SystemEx\&.Triple\&.ToString ()"
+
+.PP
+Returns a string that represents the current instance\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A string that represents the current instance\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB72\fP of file \fBBase/Triple\&.cs\fP\&.
+.SS "\fBTriple\fP SystemEx\&.Triple\&.XOR (\fBTriple\fP a, \fBTriple\fP b)\fR [static]\fP"
+
+.PP
+Kleene three-valued XOR\&. Truth table: T⊕T = F F⊕F = F T⊕F = T F⊕T = T Any combination with N = N\&. 
+.PP
+Definition at line \fB365\fP of file \fBBase/Triple\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "readonly string SystemEx\&.Triple\&.FalseString = 'False'\fR [static]\fP"
+
+.PP
+Gets the string representation for the false value\&. 
+.PP
+Definition at line \fB52\fP of file \fBBase/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBToString()\fP\&.
+.SS "readonly string SystemEx\&.Triple\&.NinString = 'Nin'\fR [static]\fP"
+
+.PP
+Gets the string representation for the neither true nor false value\&. 
+.PP
+Definition at line \fB56\fP of file \fBBase/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBToString()\fP\&.
+.SS "readonly string SystemEx\&.Triple\&.TrueString = 'True'\fR [static]\fP"
+
+.PP
+Gets the string representation for the true value\&. 
+.PP
+Definition at line \fB48\fP of file \fBBase/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBToString()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

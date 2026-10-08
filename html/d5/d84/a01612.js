@@ -1,8 +1,12 @@
 var a01612 =
 [
-    [ "SetProjParams", "d5/d84/a01612.html#a5aad79c72984557821f0485bcc25c540", null ],
-    [ "m_AmbientColor", "d5/d84/a01612.html#a95ef223f59c8dadc1345d36fb8cc007f", null ],
-    [ "m_DiffuseColor", "d5/d84/a01612.html#a0a251361e96c4d71e760e216ba184c14", null ],
-    [ "m_Direction", "d5/d84/a01612.html#aed36b687e44190e4836c216b88ad0221", null ],
-    [ "m_Position", "d5/d84/a01612.html#ae98941800708d242d574a233094bf18b", null ]
+    [ "ColorHWB", "d9/db0/a00900_ga56b67263288e9581f4f8574cd7a00463.html#ga56b67263288e9581f4f8574cd7a00463", null ],
+    [ "ColorHWB", "d9/db0/a00900_ga6089dd15a17ba1e8f92dc65af0f158cc.html#ga6089dd15a17ba1e8f92dc65af0f158cc", null ],
+    [ "Equals", "d9/db0/a00900_gabb8a918c2cfc16211d8c308eaf31cda2.html#gabb8a918c2cfc16211d8c308eaf31cda2", null ],
+    [ "Equals", "d9/db0/a00900_ga0d1904b0ffb747188fe0fa0dec192ebb.html#ga0d1904b0ffb747188fe0fa0dec192ebb", null ],
+    [ "GetHashCode", "d9/db0/a00900_ga5c80628949683d3a9b02cb6c88bd5cef.html#ga5c80628949683d3a9b02cb6c88bd5cef", null ],
+    [ "ToString", "d9/db0/a00900_ga6be473922fb1fd20b3cae940c2fa73cf.html#ga6be473922fb1fd20b3cae940c2fa73cf", null ],
+    [ "Blackness", "d9/db0/a00900_ga80b798bd0ca8651816c82b38c0b63359.html#ga80b798bd0ca8651816c82b38c0b63359", null ],
+    [ "H", "d9/db0/a00900_gad6f1f96b43b5e7c9209b72fc4f5be2d5.html#gad6f1f96b43b5e7c9209b72fc4f5be2d5", null ],
+    [ "Whiteness", "d9/db0/a00900_ga5415666ad605558f1c623b2087466fff.html#ga5415666ad605558f1c623b2087466fff", null ]
 ];

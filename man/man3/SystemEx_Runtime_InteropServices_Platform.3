@@ -1,0 +1,41 @@
+.TH "SystemEx.Runtime.InteropServices.Platform" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Runtime.InteropServices.Platform
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBLinuxProcLoader\fP"
+.br
+.RI "Provides Linux-specific native module loading and symbol resolution using the \fRlibdl\fP API\&. 
+.br
+ This backend is responsible for locating shared objects (\&.so), loading them via \fRdlopen\fP, resolving exported functions via \fRdlsym\fP, and unloading modules via \fRdlclose\fP\&. "
+.ti -1c
+.RI "class \fBMacProcLoader\fP"
+.br
+.RI "Provides macOS-specific native module loading and symbol resolution using the \fRlibdl\fP API\&. 
+.br
+ This backend supports loading dynamic libraries (\&.dylib), resolving exported symbols, and searching system library paths including \fR/usr/lib\fP, \fR/usr/local/lib\fP, and \fRDYLD_LIBRARY_PATH\fP\&. "
+.ti -1c
+.RI "class \fBNoSupportProcLoader\fP"
+.br
+.RI "Provides a fallback implementation for platforms that do not support native module loading or symbol resolution\&. 
+.br
+ Instead of performing real dynamic loading, this loader simulates all operations by printing diagnostic messages to the console\&. 
+.br
+ It allows the rest of the runtime to function without throwing exceptions, making it useful for testing, unsupported environments, or platforms without dynamic linking capabilities\&. "
+.ti -1c
+.RI "class \fBWindowsProcLoader\fP"
+.br
+.RI "Provides Windows-specific native module loading and symbol resolution using the \fRdll\fP API\&. 
+.br
+ This backend supports loading dynamic libraries (\&.dll)\&. "
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

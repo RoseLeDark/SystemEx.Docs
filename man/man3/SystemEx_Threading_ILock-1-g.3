@@ -1,0 +1,79 @@
+.TH "SystemEx.Threading.ILock< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.ILock< T > \- Extends \fBILock\fP by exposing the underlying synchronization handle\&. This is useful for advanced scenarios where the caller may need direct access to the wrapped primitive (e\&.g\&., Mutex, Monitor object)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Threading\&.ISpinlock< T >\fP, \fBSystemEx\&.Threading\&.LightLock\fP, and \fBSystemEx\&.Threading\&.MutexLock\fP\&.
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "T \fBHandle\fP\fR [get]\fP"
+.br
+.RI "Gets the underlying synchronization handle associated with this lock\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Threading\&.ILock\fP
+.in +1c
+.ti -1c
+.RI "bool \fBIsHeld\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the lock is currently held by the calling thread\&. Implementations must update this flag whenever the lock is acquired or released\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBSystemEx\&.Threading\&.ILock\fP
+.in +1c
+.ti -1c
+.RI "bool \fBLock\fP (\fBTimeOut\fP ms)"
+.br
+.RI "Attempts to acquire the lock using a millisecond timeout\&. A negative value indicates an immediate, non‑blocking attempt\&. Positive values specify the maximum duration to wait for the lock\&. "
+.ti -1c
+.RI "bool \fBTryLock\fP ()"
+.br
+.RI "Attempts to acquire the lock without implying a blocking intent\&. This method is semantically equivalent to\&. "
+.ti -1c
+.RI "void \fBUnlock\fP ()"
+.br
+.RI "Releases the lock\&. Every successful call to Lock(int) or Lock(TimeSpan) must be paired with a corresponding call to \fBUnlock\fP to avoid deadlocks or inconsistent state\&. "
+.ti -1c
+.RI "bool \fBWait\fP (\fBTimeOut\fP span, bool exitContext)"
+.br
+.RI "Temporarily releases the lock and suspends the current thread until a notification is received or the specified timeout expires\&. Upon completion, the lock is automatically reacquired\&. This method provides a generalized wait‑and‑reacquire pattern similar to Monitor\&.Wait(object, TimeOut, bool)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Extends \fBILock\fP by exposing the underlying synchronization handle\&. This is useful for advanced scenarios where the caller may need direct access to the wrapped primitive (e\&.g\&., Mutex, Monitor object)\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the underlying synchronization handle\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB87\fP of file \fBILock\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "T \fBSystemEx\&.Threading\&.ILock\fP< T >\&.Handle\fR [get]\fP"
+
+.PP
+Gets the underlying synchronization handle associated with this lock\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.AtomicLock\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP, \fBSystemEx\&.Threading\&.LightFutex\fP, \fBSystemEx\&.Threading\&.LightLock\fP, \fBSystemEx\&.Threading\&.LightSpinlock< T >\fP, \fBSystemEx\&.Threading\&.MutexLock\fP, and \fBSystemEx\&.Threading\&.Spinlock\fP\&.
+.PP
+Definition at line \fB92\fP of file \fBILock\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

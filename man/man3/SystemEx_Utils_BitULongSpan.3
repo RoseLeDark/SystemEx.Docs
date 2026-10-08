@@ -1,0 +1,280 @@
+.TH "SystemEx.Utils.BitULongSpan" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Utils.BitULongSpan \- Provides a low-level bit window over a referenced ulong value\&. This type exposes individual bits as a mutable span-like view with support for forward, reverse, and ring-based indexing modes\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBEnumerator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBitULongSpan\fP (ref ulong value, short startPos, short endPos, \fBFlexSpanMode\fP mode)"
+.br
+.RI "Initializes a new \fBBitULongSpan\fP over the specified referenced long value, exposing a window of bits between \fIstartPos\fP  and \fIendPos\fP  using the specified indexing mode\&. "
+.ti -1c
+.RI "bool \fBElementAt\fP (byte index)"
+.br
+.RI "Reads the bit at the specified window-relative index using the configured indexing mode (System, Reverse, or Ring)\&. "
+.ti -1c
+.RI "void \fBElementAt\fP (byte index, bool value)"
+.br
+.RI "Writes a bit at the specified window-relative index using the configured indexing mode (System, Reverse, or Ring)\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "\fBEnumerator\fP \fBGetEnumerator\fP ()"
+.br
+.RI "Returns an enumerator that iterates over the bit span according to the configured indexing mode\&. In ring mode, enumeration never terminates\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.ti -1c
+.RI "\fBFlexSpanMode\fP \fBGetMode\fP ()"
+.br
+.RI "Gets the indexing mode used by this bit span\&. "
+.ti -1c
+.RI "\fBBitULongSpan\fP \fBSlice\fP (short start, \fBFlexSpanMode\fP? mode=null)"
+.br
+.RI "Creates a new bit span beginning at the specified offset within the current window\&. The new span references the same underlying integer\&. "
+.ti -1c
+.RI "\fBBitULongSpan\fP \fBSlice\fP (short start, short length, \fBFlexSpanMode\fP? mode=null)"
+.br
+.RI "Creates a new bit span beginning at the specified offset within the current window\&. The new span references the same underlying integer\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBBitULongSpan\fP left, \fBBitULongSpan\fP right)"
+.br
+.RI "Determines whether two bit spans differ in referenced value, window boundaries, or indexing mode\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBBitULongSpan\fP left, \fBBitULongSpan\fP right)"
+.br
+.RI "Determines whether two bit spans reference the same underlying integer and expose the same window and indexing mode\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "short \fBBits\fP\fR [get]\fP"
+.br
+.RI "Gets the total number of bits in a ulong value\&. "
+.ti -1c
+.RI "static \fBBitIntSpan\fP \fBEmpty\fP\fR [get]\fP"
+.br
+.RI "Returns an empty instance\&. "
+.ti -1c
+.RI "bool \fBIsSigned\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the underlying integer is treated as a signed value\&. "
+.ti -1c
+.RI "bool \fBIsUnsigned\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the underlying integer is treated as an unsigned value\&. "
+.ti -1c
+.RI "bool \fBthis[byte index]\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the bit at the specified window-relative index\&. This is equivalent to calling \fBElementAt(byte)\fP\&. "
+.ti -1c
+.RI "short \fBViewLength\fP\fR [get]\fP"
+.br
+.RI "Length of the view (End - Start)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a low-level bit window over a referenced ulong value\&. This type exposes individual bits as a mutable span-like view with support for forward, reverse, and ring-based indexing modes\&. 
+
+\fBWarning:\fP This API is intended for advanced developers only\&. It operates directly on a referenced integer and mutates its bits without safety guards, bounds normalization, or copy-on-write semantics\&. Incorrect usage may lead to unexpected side effects, corrupted state, or infinite iteration when using ring mode\&. 
+
+.PP
+\fBref struct:\fP The type is stack-only and cannot be boxed, stored on the heap, captured by lambdas, or used in async methods\&. 
+
+.PP
+\fBDirect bit mutation:\fP All operations modify the underlying integer in-place\&. Multiple spans referencing the same integer will observe each other's changes\&. 
+
+.PP
+\fBWindowed view:\fP The span exposes only the bits between \fRStart\fP and \fREnd\fP\&. Access outside this range throws exceptions\&. 
+
+.PP
+\fBIndexing modes:\fP 
+.PD 0
+.IP "\(bu" 2
+\fBSystem\fP: forward indexing (Start → End)\&. 
+.IP "\(bu" 2
+\fBReverse\fP: backward indexing (End-1 → Start)\&. 
+.IP "\(bu" 2
+\fBRing\fP: cyclic indexing; enumeration never terminates\&. 
+.PP
+
+.PP
+Definition at line \fB59\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Utils\&.BitULongSpan\&.BitULongSpan (ref ulong value, short startPos, short endPos, \fBFlexSpanMode\fP mode)"
+
+.PP
+Initializes a new \fBBitULongSpan\fP over the specified referenced long value, exposing a window of bits between \fIstartPos\fP  and \fIendPos\fP  using the specified indexing mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The referenced integer whose bits are exposed\&.
+.br
+\fIstartPos\fP The first bit index of the window\&.
+.br
+\fIendPos\fP The exclusive end bit index of the window\&.
+.br
+\fImode\fP The indexing mode used for bit access\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB189\fP of file \fBBitULongSpan\&.cs\fP\&.
+.PP
+Referenced by \fBoperator!=()\fP, \fBoperator==()\fP, \fBSlice()\fP, and \fBSlice()\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Utils\&.BitULongSpan\&.ElementAt (byte index)"
+
+.PP
+Reads the bit at the specified window-relative index using the configured indexing mode (System, Reverse, or Ring)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The window-relative bit index\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the bit is set; otherwise \fRfalse\fP\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIArgumentOutOfRangeException\fP Thrown when the index exceeds the window length\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB214\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "void SystemEx\&.Utils\&.BitULongSpan\&.ElementAt (byte index, bool value)"
+
+.PP
+Writes a bit at the specified window-relative index using the configured indexing mode (System, Reverse, or Ring)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The window-relative bit index\&.
+.br
+\fIvalue\fP The bit value to write\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIArgumentOutOfRangeException\fP Thrown when the index exceeds the window length\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB258\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "override bool SystemEx\&.Utils\&.BitULongSpan\&.Equals (object? obj)"
+
+.PP
+Definition at line \fB334\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "\fBEnumerator\fP SystemEx\&.Utils\&.BitULongSpan\&.GetEnumerator ()"
+
+.PP
+Returns an enumerator that iterates over the bit span according to the configured indexing mode\&. In ring mode, enumeration never terminates\&. 
+.PP
+Definition at line \fB177\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "override int SystemEx\&.Utils\&.BitULongSpan\&.GetHashCode ()"
+
+.PP
+Definition at line \fB337\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "\fBFlexSpanMode\fP SystemEx\&.Utils\&.BitULongSpan\&.GetMode ()"
+
+.PP
+Gets the indexing mode used by this bit span\&. 
+.PP
+Definition at line \fB281\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.Utils\&.BitULongSpan\&.operator!= (\fBBitULongSpan\fP left, \fBBitULongSpan\fP right)\fR [static]\fP"
+
+.PP
+Determines whether two bit spans differ in referenced value, window boundaries, or indexing mode\&. 
+.PP
+Definition at line \fB329\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.Utils\&.BitULongSpan\&.operator== (\fBBitULongSpan\fP left, \fBBitULongSpan\fP right)\fR [static]\fP"
+
+.PP
+Determines whether two bit spans reference the same underlying integer and expose the same window and indexing mode\&. 
+.PP
+Definition at line \fB319\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "\fBBitULongSpan\fP SystemEx\&.Utils\&.BitULongSpan\&.Slice (short start, \fBFlexSpanMode\fP? mode = \fRnull\fP)"
+
+.PP
+Creates a new bit span beginning at the specified offset within the current window\&. The new span references the same underlying integer\&. 
+.PP
+Definition at line \fB304\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "\fBBitULongSpan\fP SystemEx\&.Utils\&.BitULongSpan\&.Slice (short start, short length, \fBFlexSpanMode\fP? mode = \fRnull\fP)"
+
+.PP
+Creates a new bit span beginning at the specified offset within the current window\&. The new span references the same underlying integer\&. 
+.PP
+Definition at line \fB312\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "short SystemEx\&.Utils\&.BitULongSpan\&.Bits\fR [get]\fP"
+
+.PP
+Gets the total number of bits in a ulong value\&. 
+.PP
+Definition at line \fB158\fP of file \fBBitULongSpan\&.cs\fP\&.
+.PP
+Referenced by \fBSlice()\fP\&.
+.SS "\fBBitIntSpan\fP SystemEx\&.Utils\&.BitULongSpan\&.Empty\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Returns an empty instance\&. 
+.PP
+Definition at line \fB296\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.Utils\&.BitULongSpan\&.IsSigned\fR [get]\fP"
+
+.PP
+Indicates whether the underlying integer is treated as a signed value\&. 
+.PP
+Definition at line \fB163\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.Utils\&.BitULongSpan\&.IsUnsigned\fR [get]\fP"
+
+.PP
+Indicates whether the underlying integer is treated as an unsigned value\&. 
+.PP
+Definition at line \fB168\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.Utils\&.BitULongSpan\&.this[byte index]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the bit at the specified window-relative index\&. This is equivalent to calling \fBElementAt(byte)\fP\&. 
+.PP
+Definition at line \fB288\fP of file \fBBitULongSpan\&.cs\fP\&.
+.SS "short SystemEx\&.Utils\&.BitULongSpan\&.ViewLength\fR [get]\fP"
+
+.PP
+Length of the view (End - Start)\&. 
+.PP
+Definition at line \fB154\fP of file \fBBitULongSpan\&.cs\fP\&.
+.PP
+Referenced by \fBElementAt()\fP, and \fBElementAt()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

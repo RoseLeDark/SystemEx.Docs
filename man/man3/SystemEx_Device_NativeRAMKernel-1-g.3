@@ -1,0 +1,377 @@
+.TH "SystemEx.Device.NativeRAMKernel< TD >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Device.NativeRAMKernel< TD > \- Provides a base implementation for RAM‑based compute kernels that operate on \fBDeviceSharedBuffer<RamSharedBackend>\fP instances\&. 
+.br
+ This class handles module loading, buffer management, backend initialization, locking/unlocking of shared buffers, and asynchronous kernel execution\&. 
+.br
+ Derived classes only need to implement backend‑specific behavior such as buffer creation (\fBOnCreate\fP) and kernel invocation (\fBOnRun\fP)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBAddBuffer\fP (\fBDeviceBuffer\fP buffer, string name, int flags, object? configs)"
+.br
+.RI "Adds a shared buffer to the kernel and converts the provided \fBDeviceBuffer\fP into a \fBDeviceSharedBuffer<RamSharedBackend>\fP using the RAM backend\&. 
+.br
+ Derived classes may override \fBOnAddBuffer\fP to perform validation or backend‑specific configuration\&. "
+.ti -1c
+.RI "virtual bool \fBBeginRun\fP (string strFunction)"
+.br
+.RI "Begins a kernel execution session by loading the native function specified by \fIstrFunction\fP  and locking all shared buffers\&. 
+.br
+ Derived classes may override \fBOnBegin\fP to perform additional backend‑specific setup\&. "
+.ti -1c
+.RI "bool \fBCreate\fP (string dllPath)"
+.br
+.RI "Loads the native module located at \fIdllPath\fP  and performs backend‑specific initialization via \fBOnCreate\fP\&. 
+.br
+ Must be called before buffers are added or the kernel is executed\&. "
+.ti -1c
+.RI "virtual void \fBEndRun\fP ()"
+.br
+.RI "Ends the kernel execution session, unlocks all shared buffers, and performs backend cleanup via \fBOnEnd\fP\&. "
+.ti -1c
+.RI "DeviceSharedBuffer< \fBRamSharedBackend\fP >? \fBGetBuffer\fP (string name)"
+.br
+.RI "Retrieves a shared buffer by its symbolic name\&. "
+.ti -1c
+.RI "bool \fBIsRunning\fP ()"
+.br
+.RI "Indicates whether the kernel is currently running\&. "
+.ti -1c
+.RI "\fBNativeRAMKernel\fP ()"
+.br
+.RI "Initializes a new RAM kernel instance with an empty buffer set and a default \fBRamSharedBackend\fP backend\&. 
+.br
+ The native module is not loaded until \fBCreate\fP is called\&. "
+.ti -1c
+.RI "bool \fBRemoveBuffer\fP (int index)"
+.br
+.RI "Removes a buffer by index and buffer type\&. "
+.ti -1c
+.RI "bool \fBRemoveBuffer\fP (string name)"
+.br
+.RI "Removes a buffer by name and buffer type\&. "
+.ti -1c
+.RI "unsafe bool \fBRun\fP (object? options)"
+.br
+.RI "Executes the kernel asynchronously using the delegate loaded during \fBBeginRun\fP\&. 
+.br
+ The actual kernel logic is implemented in \fBOnRun\fP\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBOnAddBuffer\fP (string name, DeviceSharedBuffer< \fBRamSharedBackend\fP > buffer)"
+.br
+.RI "Called when a buffer is added to the kernel\&. 
+.br
+ Derived classes may override this method to validate buffer names or apply backend‑specific configuration\&. "
+.ti -1c
+.RI "virtual bool \fBOnBegin\fP (string strFunction)"
+.br
+.RI "Called when a kernel execution session begins\&. 
+.br
+ Loads the native function delegate using NativeHost and returns \fRtrue\fP if the function is successfully resolved\&. "
+.ti -1c
+.RI "virtual bool \fBOnCreate\fP ()"
+.br
+.RI "Called after the native module is loaded\&. 
+.br
+ Derived classes may override this method to create buffers or perform backend‑specific initialization\&. "
+.ti -1c
+.RI "virtual void \fBOnEnd\fP ()"
+.br
+.RI "Called when a kernel execution session ends\&. 
+.br
+ Derived classes may override this method to perform backend‑specific cleanup\&. "
+.ti -1c
+.RI "virtual bool \fBOnRun\fP (TD function)"
+.br
+.RI "Executes the native kernel function\&. 
+.br
+ Derived classes must override this method to implement backend‑specific compute logic using the resolved delegate \fIfunction\fP \&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBRamSharedBackend\fP \fBBackend\fP\fR [get]\fP"
+.br
+.RI "Gets the backend instance used for RAM‑based shared buffer operations\&. "
+.ti -1c
+.RI "TD? \fBFunction\fP\fR [get, protected set]\fP"
+.br
+.RI "Gets the resolved native kernel function delegate\&. 
+.br
+ The delegate is created during \fBBeginRun\fP using the function name provided by the caller and represents the entry point of the native compute routine\&. 
+.br
+ If the function cannot be resolved, this property is \fRnull\fP\&. "
+.ti -1c
+.RI "Module? \fBModule\fP\fR [get, protected set]\fP"
+.br
+.RI "Gets the native module loaded for this kernel\&. 
+.br
+ The module represents the underlying shared library (DLL, SO, DYLIB) from which the kernel function delegate is resolved\&. 
+.br
+ This property is assigned during \fBCreate\fP and remains available for the entire lifetime of the kernel instance\&. "
+.ti -1c
+.RI "bool \fBRunning\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the kernel is currently running\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a base implementation for RAM‑based compute kernels that operate on \fBDeviceSharedBuffer<RamSharedBackend>\fP instances\&. 
+.br
+ This class handles module loading, buffer management, backend initialization, locking/unlocking of shared buffers, and asynchronous kernel execution\&. 
+.br
+ Derived classes only need to implement backend‑specific behavior such as buffer creation (\fBOnCreate\fP) and kernel invocation (\fBOnRun\fP)\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITD\fP The delegate type representing the native kernel function signature\&. 
+.br
+ Must be a Delegate compatible with the loaded module\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITD\fP : \fIDelegate\fP
+.PP
+Definition at line \fB40\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int SystemEx\&.Device\&.NativeRAMKernel< TD >\&.AddBuffer (\fBDeviceBuffer\fP buffer, string name, int flags, object? configs)"
+
+.PP
+Adds a shared buffer to the kernel and converts the provided \fBDeviceBuffer\fP into a \fBDeviceSharedBuffer<RamSharedBackend>\fP using the RAM backend\&. 
+.br
+ Derived classes may override \fBOnAddBuffer\fP to perform validation or backend‑specific configuration\&. 
+.PP
+Implements \fBSystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\fP\&.
+.PP
+Definition at line \fB118\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.SS "virtual bool SystemEx\&.Device\&.NativeRAMKernel< TD >\&.BeginRun (string strFunction)\fR [virtual]\fP"
+
+.PP
+Begins a kernel execution session by loading the native function specified by \fIstrFunction\fP  and locking all shared buffers\&. 
+.br
+ Derived classes may override \fBOnBegin\fP to perform additional backend‑specific setup\&. 
+.PP
+Implements \fBSystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\fP\&.
+.PP
+Definition at line \fB168\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.SS "bool SystemEx\&.Device\&.NativeRAMKernel< TD >\&.Create (string dllPath)"
+
+.PP
+Loads the native module located at \fIdllPath\fP  and performs backend‑specific initialization via \fBOnCreate\fP\&. 
+.br
+ Must be called before buffers are added or the kernel is executed\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdllPath\fP The path to the native module containing the kernel function\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the module is successfully loaded and initialization succeeds; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\fP\&.
+.PP
+Definition at line \fB102\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.SS "virtual void SystemEx\&.Device\&.NativeRAMKernel< TD >\&.EndRun ()\fR [virtual]\fP"
+
+.PP
+Ends the kernel execution session, unlocks all shared buffers, and performs backend cleanup via \fBOnEnd\fP\&. 
+.PP
+Implements \fBSystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\fP\&.
+.PP
+Definition at line \fB181\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.SS "DeviceSharedBuffer< \fBRamSharedBackend\fP >? SystemEx\&.Device\&.NativeRAMKernel< TD >\&.GetBuffer (string name)"
+
+.PP
+Retrieves a shared buffer by its symbolic name\&. 
+.PP
+Implements \fBSystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\fP\&.
+.PP
+Definition at line \fB132\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.SS "bool SystemEx\&.Device\&.NativeRAMKernel< TD >\&.IsRunning ()"
+
+.PP
+Indicates whether the kernel is currently running\&. 
+.PP
+Implements \fBSystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\fP\&.
+.PP
+Definition at line \fB189\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.SS "SystemEx\&.Device\&.NativeRAMKernel< TD >\&.NativeRAMKernel ()"
+
+.PP
+Initializes a new RAM kernel instance with an empty buffer set and a default \fBRamSharedBackend\fP backend\&. 
+.br
+ The native module is not loaded until \fBCreate\fP is called\&. 
+.PP
+Definition at line \fB85\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.SS "virtual bool SystemEx\&.Device\&.NativeRAMKernel< TD >\&.OnAddBuffer (string name, DeviceSharedBuffer< \fBRamSharedBackend\fP > buffer)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Called when a buffer is added to the kernel\&. 
+.br
+ Derived classes may override this method to validate buffer names or apply backend‑specific configuration\&. 
+.PP
+Definition at line \fB249\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.PP
+Referenced by \fBAddBuffer()\fP\&.
+.SS "virtual bool SystemEx\&.Device\&.NativeRAMKernel< TD >\&.OnBegin (string strFunction)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Called when a kernel execution session begins\&. 
+.br
+ Loads the native function delegate using NativeHost and returns \fRtrue\fP if the function is successfully resolved\&. 
+.PP
+Definition at line \fB232\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.PP
+Referenced by \fBBeginRun()\fP\&.
+.SS "virtual bool SystemEx\&.Device\&.NativeRAMKernel< TD >\&.OnCreate ()\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Called after the native module is loaded\&. 
+.br
+ Derived classes may override this method to create buffers or perform backend‑specific initialization\&. 
+.PP
+Definition at line \fB224\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.PP
+Referenced by \fBCreate()\fP\&.
+.SS "virtual void SystemEx\&.Device\&.NativeRAMKernel< TD >\&.OnEnd ()\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Called when a kernel execution session ends\&. 
+.br
+ Derived classes may override this method to perform backend‑specific cleanup\&. 
+.PP
+Definition at line \fB241\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.PP
+Referenced by \fBEndRun()\fP\&.
+.SS "virtual bool SystemEx\&.Device\&.NativeRAMKernel< TD >\&.OnRun (TD function)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Executes the native kernel function\&. 
+.br
+ Derived classes must override this method to implement backend‑specific compute logic using the resolved delegate \fIfunction\fP \&. 
+.PP
+Definition at line \fB257\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.PP
+Referenced by \fBRun()\fP\&.
+.SS "bool SystemEx\&.Device\&.NativeRAMKernel< TD >\&.RemoveBuffer (int index)"
+
+.PP
+Removes a buffer by index and buffer type\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The buffer index\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true by removing the buffers, or a false on failure\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\fP\&.
+.PP
+Definition at line \fB156\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.SS "bool SystemEx\&.Device\&.NativeRAMKernel< TD >\&.RemoveBuffer (string name)"
+
+.PP
+Removes a buffer by name and buffer type\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The symbolic buffer name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true by removing the buffers, or a false on failure\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\fP\&.
+.PP
+Definition at line \fB146\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.PP
+Referenced by \fBRemoveBuffer()\fP\&.
+.SS "unsafe bool SystemEx\&.Device\&.NativeRAMKernel< TD >\&.Run (object? options)"
+
+.PP
+Executes the kernel asynchronously using the delegate loaded during \fBBeginRun\fP\&. 
+.br
+ The actual kernel logic is implemented in \fBOnRun\fP\&. 
+.PP
+Implements \fBSystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\fP\&.
+.PP
+Definition at line \fB199\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBRamSharedBackend\fP SystemEx\&.Device\&.NativeRAMKernel< TD >\&.Backend\fR [get]\fP"
+
+.PP
+Gets the backend instance used for RAM‑based shared buffer operations\&. 
+.PP
+Implements \fBSystemEx\&.Device\&.Memory\&.IKernel< TIDeviceSharedBackend >\fP\&.
+.PP
+Definition at line \fB54\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.SS "TD? SystemEx\&.Device\&.NativeRAMKernel< TD >\&.Function\fR [get]\fP, \fR [protected set]\fP"
+
+.PP
+Gets the resolved native kernel function delegate\&. 
+.br
+ The delegate is created during \fBBeginRun\fP using the function name provided by the caller and represents the entry point of the native compute routine\&. 
+.br
+ If the function cannot be resolved, this property is \fRnull\fP\&. 
+.PP
+Definition at line \fB72\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.PP
+Referenced by \fBOnBegin()\fP\&.
+.SS "Module? SystemEx\&.Device\&.NativeRAMKernel< TD >\&.Module\fR [get]\fP, \fR [protected set]\fP"
+
+.PP
+Gets the native module loaded for this kernel\&. 
+.br
+ The module represents the underlying shared library (DLL, SO, DYLIB) from which the kernel function delegate is resolved\&. 
+.br
+ This property is assigned during \fBCreate\fP and remains available for the entire lifetime of the kernel instance\&. 
+.PP
+Definition at line \fB63\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+.PP
+Referenced by \fBCreate()\fP, and \fBOnBegin()\fP\&.
+.SS "bool SystemEx\&.Device\&.NativeRAMKernel< TD >\&.Running\fR [get]\fP"
+
+.PP
+Indicates whether the kernel is currently running\&. 
+.PP
+Definition at line \fB78\fP of file \fBNativeRAMKernel\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

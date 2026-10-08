@@ -1,0 +1,283 @@
+.TH "SystemEx.Threading.LightThread" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.LightThread \- A lightweight and minimal thread implementation designed for simple and common synchronization scenarios\&. Unlike the complex and business-oriented threading abstractions in \&.NET, \fBLightThread\fP provides a straightforward wait-and-wake mechanism suitable for 90% of everyday use cases\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Threading\&.ThreadEx\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLightThread\fP (string strName, ThreadPriority prio, int stackSize=0)"
+.br
+.RI "Creates a new lightweight thread with the specified priority and optional stack size\&. "
+.ti -1c
+.RI "void \fBSignal\fP (bool bBroadCast)"
+.br
+.RI "Resumes the thread from its wait state\&. This method unlocks the internal wait lock and signals the OS-level wait handle, allowing the thread to continue\&. "
+.ti -1c
+.RI "bool \fBWait\fP (ref \fBLightConditionVariable\fP cv, ref \fBILock\fP cvl, \fBTimeOut\fP timeoutMs)"
+.br
+.RI "Blocks the thread until the associated \fBLightConditionVariable\fP signals it\&. The thread is added to the condition variable's wait queue and temporarily releases the provided lock during the wait period\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Threading\&.ThreadEx\fP
+.in +1c
+.ti -1c
+.RI "bool \fBAbandon\fP ()"
+.br
+.RI "Aborts the active invoke context\&. "
+.ti -1c
+.RI "int \fBAbort\fP (bool hardt)"
+.br
+.RI "Requests termination of the running thread\&. Optionally interrupts the thread if \fIhardt\fP  is \fRtrue\fP\&. "
+.ti -1c
+.RI "int \fBAbortAndWait\fP (bool hardt=false, int timeoutMs=\-1)"
+.br
+.RI "Aborts the thread and waits for it to finish execution\&. "
+.ti -1c
+.RI "bool \fBCommit\fP (bool end=true)"
+.br
+.RI "Finalizes the active invoke context without adding a message, provided the commit window has not expired\&. "
+.ti -1c
+.RI "bool \fBCommit\fP (\fBThreadInvokeMessage\fP type, Object message, byte prio, bool end=false)"
+.br
+.RI "Commits a message into the active invoke context, provided the commit window has not expired\&. "
+.ti -1c
+.RI "bool \fBInvoke\fP (int msOpen=1000)"
+.br
+.RI "Begins a new invoke context by acquiring the context mutex, enabling the invoke-state bit, and opening a timed commit window\&. "
+.ti -1c
+.RI "bool \fBIsResume\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsSuspend\fP ()"
+.br
+.RI "Determines whether the thread is currently suspended\&. "
+.ti -1c
+.RI "int \fBJoin\fP (int timeOut=\-1)"
+.br
+.RI "Waits for the thread to finish execution or until the timeout expires\&. "
+.ti -1c
+.RI "int \fBKill\fP ()"
+.br
+.RI "Requests an immediate stop of the thread via interruption\&. "
+.ti -1c
+.RI "bool \fBResume\fP ()"
+.br
+.RI "Requests the thread to resume from a suspended state\&. "
+.ti -1c
+.RI "bool \fBSendEvent\fP (byte Event)"
+.br
+.RI "Sends a custom event to the running thread\&. Event bits 0–3 are reserved\&. "
+.ti -1c
+.RI "bool \fBStart\fP (Object? userData, int timeoutMS=\-1)"
+.br
+.RI "Starts the thread and waits until the thread signals that it has begun execution or until the optional timeout expires\&. "
+.ti -1c
+.RI "int \fBStop\fP ()"
+.br
+.RI "Requests a graceful stop of the thread\&. "
+.ti -1c
+.RI "bool \fBSuspend\fP ()"
+.br
+.RI "Requests the thread to enter a suspended state\&. "
+.ti -1c
+.RI "\fBThreadEx\fP (string strName, ThreadPriority prio, int stackSize)"
+.br
+.RI "Initializes a new \fBThreadEx\fP instance with the specified thread priority and optional stack size\&. The thread object is created but not started\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Action< \fBLightThread\fP, bool >? \fBOnSignal\fP\fR [get, set]\fP"
+.br
+.RI "Optional callback invoked when the thread is signaled\&. The boolean parameter indicates whether the signal originated from a broadcast operation\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Threading\&.ThreadEx\fP
+.in +1c
+.ti -1c
+.RI "int \fBID\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Get the name of the thread\&. "
+.ti -1c
+.RI "Action< \fBThreadEx\fP, Object?>? \fBOnBegin\fP\fR [get, set]\fP"
+.br
+.RI "Occurs when the thread begins execution, before entering the main loop\&. "
+.ti -1c
+.RI "Action< \fBThreadEx\fP, Object?>? \fBOnCleanUp\fP\fR [get, set]\fP"
+.br
+.RI "Occurs when the thread finishes execution and performs cleanup\&. "
+.ti -1c
+.RI "Action< \fBThreadEx\fP, bool >? \fBOnKill\fP\fR [get, set]\fP"
+.br
+.RI "Occurs when the thread is terminated via \fBAbort\fP or \fBKill\fP\&. "
+.ti -1c
+.RI "Action< \fBThreadEx\fP, Object?>? \fBOnResume\fP\fR [get, set]\fP"
+.br
+.RI "Occurs when the thread resumes from a suspended state\&. "
+.ti -1c
+.RI "Func< \fBThreadEx\fP, Object?, int >? \fBOnTask\fP\fR [get, set]\fP"
+.br
+.RI "Occurs when the thread performs its main task loop\&. Called repeatedly while the thread is running and not suspended\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBSystemEx\&.Threading\&.ThreadEx\fP
+.in +1c
+.ti -1c
+.RI "static readonly byte \fBEVENTGROUP_BIT_CONTINUE\fP = 4"
+.br
+.ti -1c
+.RI "static readonly byte \fBEVENTGROUP_BIT_INVOKEMESSAGE\fP = 6"
+.br
+.ti -1c
+.RI "static readonly byte \fBEVENTGROUP_BIT_INVOKESTATE\fP = 5"
+.br
+.ti -1c
+.RI "static readonly byte \fBEVENTGROUP_BIT_JOINABLE\fP = 0"
+.br
+.ti -1c
+.RI "static readonly byte \fBEVENTGROUP_BIT_PAUSE\fP = 3"
+.br
+.ti -1c
+.RI "static readonly byte \fBEVENTGROUP_BIT_STARTED\fP = 1"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBSystemEx\&.Threading\&.ThreadEx\fP
+.in +1c
+.ti -1c
+.RI "bool \fBIsEvent\fP (byte Event)"
+.br
+.RI "Checks whether the specified event bit is set\&. "
+.ti -1c
+.RI "bool \fBLockRunning\fP ()"
+.br
+.RI "Lock Running \fBLightLock\fP\&. "
+.ti -1c
+.RI "virtual void \fBOnExit\fP (\fBThreadEx\fP e, Object? userdata)"
+.br
+.RI "Called after the main loop finishes execution\&. "
+.ti -1c
+.RI "virtual int \fBOnRunning\fP (\fBThreadEx\fP e, Object? userdata)"
+.br
+.RI "Main execution loop\&. Handles pause/resume events and repeatedly invokes \fBOnTask\fP while the thread is running\&. "
+.ti -1c
+.RI "virtual bool \fBOnSetup\fP (\fBThreadEx\fP e, Object? userdata)"
+.br
+.RI "Called before the thread enters its main loop\&. "
+.ti -1c
+.RI "virtual void \fBOnStop\fP (\fBThreadEx\fP e, bool hardt)"
+.br
+.RI "Called when the thread is terminated\&. "
+.ti -1c
+.RI "void \fBUnlockRunning\fP ()"
+.br
+.RI "UnLock Running \fBLightLock\fP\&. "
+.ti -1c
+.RI "bool \fBWaitOfEvent\fP (byte Event, int timeout=1)"
+.br
+.RI "Waits for the specified event bit to be set or until the timeout expires\&. "
+.in -1c
+
+Protected Attributes inherited from \fBSystemEx\&.Threading\&.ThreadEx\fP
+.in +1c
+.ti -1c
+.RI "\fBThreadExState\fP \fBm_eState\fP"
+.br
+.ti -1c
+.RI "volatile EventGroup< \fBFast_UInt\fP > \fBm_eventGroup\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A lightweight and minimal thread implementation designed for simple and common synchronization scenarios\&. Unlike the complex and business-oriented threading abstractions in \&.NET, \fBLightThread\fP provides a straightforward wait-and-wake mechanism suitable for 90% of everyday use cases\&. 
+
+The thread can enter a controlled wait state and be resumed explicitly through \fBSignal(bool)\fP\&. No advanced scheduling, no task frameworks, and no heavy runtime features are involved\&. 
+.PP
+Definition at line \fB34\fP of file \fBLightThread\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.LightThread\&.LightThread (string strName, ThreadPriority prio, int stackSize = \fR0\fP)"
+
+.PP
+Creates a new lightweight thread with the specified priority and optional stack size\&. The thread starts in a locked wait state and will not continue until \fBSignal(bool)\fP is called\&. This design avoids the overhead of high-level \&.NET threading constructs and keeps behavior predictable and simple\&. 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIstrName\fP the name 
+.br
+\fIprio\fP The priority of the underlying thread\&.
+.br
+\fIstackSize\fP Optional stack size for the thread\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB55\fP of file \fBLightThread\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Threading\&.LightThread\&.Signal (bool bBroadCast)"
+
+.PP
+Resumes the thread from its wait state\&. This method unlocks the internal wait lock and signals the OS-level wait handle, allowing the thread to continue\&. This is the lightweight equivalent of a wake operation, without any of the heavy abstractions found in standard \&.NET threading APIs\&. 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIbBroadCast\fP Indicates whether the signal originated from a broadcast operation\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB75\fP of file \fBLightThread\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightThread\&.Wait (ref \fBLightConditionVariable\fP cv, ref \fBILock\fP cvl, \fBTimeOut\fP timeoutMs)"
+
+.PP
+Blocks the thread until the associated \fBLightConditionVariable\fP signals it\&. The thread is added to the condition variable's wait queue and temporarily releases the provided lock during the wait period\&. This method provides a minimal and predictable wait mechanism without relying on \&.NET's complex task or monitor systems\&. 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIcv\fP The condition variable to wait on\&.
+.br
+\fIcvl\fP The lock protecting the condition variable\&. It is released before waiting and reacquired afterwards\&. 
+.br
+\fItimeoutMs\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the logical wait state was successfully reacquired; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB105\fP of file \fBLightThread\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "Action<\fBLightThread\fP, bool>? SystemEx\&.Threading\&.LightThread\&.OnSignal\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Optional callback invoked when the thread is signaled\&. The boolean parameter indicates whether the signal originated from a broadcast operation\&. 
+.PP
+Definition at line \fB42\fP of file \fBLightThread\&.cs\fP\&.
+.PP
+Referenced by \fBSignal()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

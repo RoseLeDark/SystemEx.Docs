@@ -1,4 +1,29 @@
 var a01948 =
 [
-    [ "Update", "d6/db0/a01948_a1f665d4f070daf54b84b8e5f8eb41c87.html#a1f665d4f070daf54b84b8e5f8eb41c87", null ]
+    [ "FloatUE4M3", "d6/db0/a01948_a09125140b0ac461d40647255f308f068.html#a09125140b0ac461d40647255f308f068", null ],
+    [ "FloatUE4M3", "d6/db0/a01948_ab96272802dfd3cb31a09d61bb84a99f2.html#ab96272802dfd3cb31a09d61bb84a99f2", null ],
+    [ "FloatUE4M3", "d6/db0/a01948_a6108c4718fcc8deda3cf692ba7afc6e9.html#a6108c4718fcc8deda3cf692ba7afc6e9", null ],
+    [ "CompareTo", "d6/db0/a01948_ac9adbd80755b6c2455d67436e4e0c678.html#ac9adbd80755b6c2455d67436e4e0c678", null ],
+    [ "CompareTo", "d6/db0/a01948_a4efb2c8d26a3a07e858ce8bb8f698912.html#a4efb2c8d26a3a07e858ce8bb8f698912", null ],
+    [ "CompareTo", "d6/db0/a01948_ae085e1229e860307db3b8169f67120b6.html#ae085e1229e860307db3b8169f67120b6", null ],
+    [ "Equals", "d6/db0/a01948_acb13375326a38bce4216e9151d418bc2.html#acb13375326a38bce4216e9151d418bc2", null ],
+    [ "Equals", "d6/db0/a01948_aa4e6596ec097c4af0a4f314924924a72.html#aa4e6596ec097c4af0a4f314924924a72", null ],
+    [ "GetHashCode", "d6/db0/a01948_a3f6026dc395987f6e77b7bbf00a26261.html#a3f6026dc395987f6e77b7bbf00a26261", null ],
+    [ "ToBytes", "d6/db0/a01948_a03fbe0877943a966f38e68e31db943d7.html#a03fbe0877943a966f38e68e31db943d7", null ],
+    [ "ToBytes", "d6/db0/a01948_a0b45b4dae87e44806bbdbd59aebb61de.html#a0b45b4dae87e44806bbdbd59aebb61de", null ],
+    [ "ToBytes", "d6/db0/a01948_a4948fe400e7c490bf2668c7cd8b327ef.html#a4948fe400e7c490bf2668c7cd8b327ef", null ],
+    [ "Exponent", "d6/db0/a01948_a96b3407383818e46bcfaf72cadb8b834.html#a96b3407383818e46bcfaf72cadb8b834", null ],
+    [ "ExponentBias", "d6/db0/a01948_a6922fa1bdebbf1adcc89f9fda439db14.html#a6922fa1bdebbf1adcc89f9fda439db14", null ],
+    [ "ExponentBits", "d6/db0/a01948_a1de0c6618118c6a5f0e73cb9d7026946.html#a1de0c6618118c6a5f0e73cb9d7026946", null ],
+    [ "HiddenBit", "d6/db0/a01948_acf1b77e9b9f09b64a6e498e17dca5038.html#acf1b77e9b9f09b64a6e498e17dca5038", null ],
+    [ "Mantissa", "d6/db0/a01948_a791938de5d5a38dc80047ab7cb4b7002.html#a791938de5d5a38dc80047ab7cb4b7002", null ],
+    [ "MantissaBits", "d6/db0/a01948_a6e859e05d1427837c60df7bc30b94606.html#a6e859e05d1427837c60df7bc30b94606", null ],
+    [ "MantissaMask", "d6/db0/a01948_ae2e40a05566a87a7b3facd17737beb62.html#ae2e40a05566a87a7b3facd17737beb62", null ],
+    [ "MaxExponent", "d6/db0/a01948_a65978b7d5c20edefa82849dbbebaa3cb.html#a65978b7d5c20edefa82849dbbebaa3cb", null ],
+    [ "NSign", "d6/db0/a01948_a15d567497d692d030b91a77bdba525e4.html#a15d567497d692d030b91a77bdba525e4", null ],
+    [ "ShiftRaster", "d6/db0/a01948_ae5514ed4171007ea6b505dce47963149.html#ae5514ed4171007ea6b505dce47963149", null ],
+    [ "Sign", "d6/db0/a01948_ae1fe9b0c73434f6982e742f7f1ea3814.html#ae1fe9b0c73434f6982e742f7f1ea3814", null ],
+    [ "SignBits", "d6/db0/a01948_aa377c8e3a5a559a84b96625c5058c4e6.html#aa377c8e3a5a559a84b96625c5058c4e6", null ],
+    [ "ToBase", "d6/db0/a01948_a113dffbc6b34c6b0a322738c5c477b69.html#a113dffbc6b34c6b0a322738c5c477b69", null ],
+    [ "TotalBits", "d6/db0/a01948_a7a6c765f287370d1fb7c00800aa6aa76.html#a7a6c765f287370d1fb7c00800aa6aa76", null ]
 ];

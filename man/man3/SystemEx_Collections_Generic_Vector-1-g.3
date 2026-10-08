@@ -1,0 +1,1134 @@
+.TH "SystemEx.Collections.Generic.Vector< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Vector< T > \- A modern, policy‑driven dynamic Vector container that provides fast indexed access, optional auto‑growth, insertion, removal, traversal, and multiple zero‑overhead reinterpretation views\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.IVector< T >\fP, IUsedIterrator, and \fBSystemEx\&.Collections\&.Generic\&.ISwappable< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVector\fP< T > \fBAsSegment\fP (long start, long length)"
+.br
+.RI "Creates a logical segment (sub-Vector) over the internal buffer\&. The segment shares the same underlying Vector and does not copy data\&. "
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clears the vector by resetting the logical index\&. "
+.ti -1c
+.RI "Pair< bool, long > \fBCopyFrom\fP (\fBVector\fP< T > source, ulong sourceOffset, ulong destinationOffset, ulong count)"
+.br
+.RI "Copies data from another vector into this vector\&. "
+.ti -1c
+.RI "Pair< bool, long > \fBCopyTo\fP (uint sourceOffset, \fBVector\fP< T > destination, ulong destinationOffset, ulong count)"
+.br
+.RI "Copies a range of elements from this vector into another vector\&. "
+.ti -1c
+.RI "Pair< bool, long > \fBCopyTo\fP (\fBVector\fP< T > vector, ulong VectorIndex)"
+.br
+.RI "Copies all valid elements of this vector into another vector, starting at the specified destination index\&. "
+.ti -1c
+.RI "IVector< T > \fBDuplicate\fP ()"
+.br
+.RI "Create a duplicate from this\&. "
+.ti -1c
+.RI "Optional< T > \fBElementAt\fP (long index)"
+.br
+.RI "Returns the element at the specified index\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "bool \fBErase\fP ()"
+.br
+.RI "Removes the last element from the vector\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long index)"
+.br
+.RI "Erase overloads are API stubs and always return true\&. Actual removal logic is handled by Remove() methods\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long start, long end)"
+.br
+.RI "Erase overloads are API stubs and always return true\&. Actual removal logic is handled by Remove() methods\&. "
+.ti -1c
+.RI "bool \fBErase\fP (T value)"
+.br
+.RI "Erase overloads are API stubs and always return true\&. Actual removal logic is handled by Remove() methods\&. "
+.ti -1c
+.RI "Type \fBGetElementType\fP ()"
+.br
+.RI "Get The Type of T\&. "
+.ti -1c
+.RI "IEnumerator< T > \fBGetEnumerator\fP ()"
+.br
+.RI "Enumerates all valid elements in forward order\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.ti -1c
+.RI "bool \fBGrow\fP ()"
+.br
+.RI "Grows the internal buffer by GrowSize if AutoGrow is enabled\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long index, T entry)"
+.br
+.RI "Inserts an element at the specified index, shifting elements to the right\&. Automatically grows the buffer if needed and AutoGrow is enabled\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long start, long end, T entry)"
+.br
+.RI "Fills a range of indices with a single value\&. Automatically grows the buffer if needed and AutoGrow is enabled\&. "
+.ti -1c
+.RI "bool \fBInsertRange\fP (long start, T[] entrys)"
+.br
+.RI "Inserts a sequence of elements starting at the specified index\&. "
+.ti -1c
+.RI "bool \fBPushBack\fP (T entry)"
+.br
+.RI "Appends an element to the end of the vector\&. Automatically grows the buffer if AutoGrow is enabled\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (long index, T entry)"
+.br
+.RI "Replaces the element at the specified index\&. Automatically grows the buffer if needed and AutoGrow is enabled\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (long start, long end, T entry)"
+.br
+.RI "Replaces a range of elements with a single value\&. "
+.ti -1c
+.RI "bool \fBReplaceRange\fP (long start, T[] entrys)"
+.br
+.RI "Replaces a sequence of elements starting at the specified index\&. "
+.ti -1c
+.RI "void \fBSwap\fP (long i, long j)"
+.br
+.RI "Swaps two elements inside the valid range\&. "
+.ti -1c
+.RI "T[] \fBToNative\fP ()"
+.br
+.RI "Returns a copy of the internal buffer\&. "
+.ti -1c
+.RI "void \fBTraverse\fP (\fBTraversMode\fP mode, long startIndex, long endIndex, Action< T > func)"
+.br
+.RI "Traverses a range of elements in forward or backward order\&. "
+.ti -1c
+.RI "\fBVector\fP (IEnumerable< T > e, int growSize=16)"
+.br
+.RI "Creates a new Vector from an enumerable collection\&. The internal buffer is created from the collection, and Count is set to the last valid index\&. "
+.ti -1c
+.RI "\fBVector\fP (long size, int growSize=16)"
+.br
+.RI "Creates a new Vector with a specified initial capacity\&. The vector starts empty (Count = 0) and grows according to GrowSize\&. "
+.ti -1c
+.RI "\fBVector\fP (T[] e, int growSize=16)"
+.br
+.RI "Creates a new Vector using an existing buffer\&. The buffer is adopted as-is, and Count is set to the last valid index\&. "
+.ti -1c
+.RI "\fBVector\fP (Vector< T > other)"
+.br
+.RI "Copy ctor\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.ISwappable< T >\fP
+.in +1c
+.ti -1c
+.RI "void \fBSwap\fP (T i, T j)"
+.br
+.RI "Swaps the elements located at the given positions\&. Implementations must ensure that both indices are valid and that the operation is performed atomically with respect to the container's state\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static Find< T, \fBVector\fP< T > > \fBAsFinder\fP (ref \fBVector\fP< T > vec)"
+.br
+.RI "Creates a \fBFind<T, TContainer>\fP wrapper for this vector, providing direct access to element lookup utilities\&. "
+.ti -1c
+.RI "static VectorFlexSpan< T, \fBVector\fP< T > > \fBAsFlexSpan\fP (ref \fBVector\fP< T > vector, \fBFlexSpanMode\fP mode=\fBFlexSpanMode\&.System\fP)"
+.br
+.RI "Creates a FlexSpan view over the entire vector starting at index 0\&. "
+.ti -1c
+.RI "static VectorFlexSpan< T, \fBVector\fP< T > > \fBAsFlexSpan\fP (ref \fBVector\fP< T > vector, long start, long end, \fBFlexSpanMode\fP mode=\fBFlexSpanMode\&.System\fP)"
+.br
+.RI "Creates a FlexSpan view over a specific range of the vector\&. "
+.ti -1c
+.RI "static VectorMultiSet< T, \fBVector\fP< T > > \fBAsMultiSet\fP (ref \fBVector\fP< T > vec, ISimpleCompare< T >? comparer=null, SortAction< ISimpleCompare< T >, \fBVector\fP< T > >? sorter=null)"
+.br
+.RI "Creates a \fBVectorMultiSet<T, TC>\fP view over the given vector, allowing duplicate elements while preserving a defined ordering\&. "
+.ti -1c
+.RI "static Slices< T, \fBVector\fP< T > > \fBAsMultiSlices\fP (ref \fBVector\fP< T > vector, int devider)"
+.br
+.ti -1c
+.RI "static VectorSearch< U, \fBVector\fP< U > > \fBAsSearch< U >\fP (ref \fBVector\fP< U > vec, ISearchProvider< U, \fBVector\fP< U > >? provider=null)"
+.br
+.RI "Creates a \fBVectorSearch<T, TC>\fP wrapper for this vector, enabling search operations using the specified search provider\&. "
+.ti -1c
+.RI "static VectorSet< T, \fBVector\fP< T > > \fBAsSet\fP (ref \fBVector\fP< T > vec, ISimpleCompare< T >? comparer=null, SortAction< ISimpleCompare< T >, \fBVector\fP< T > >? sorter=null)"
+.br
+.RI "Creates a \fBVectorSet<T, TC>\fP view over the given vector\&. "
+.ti -1c
+.RI "static VectorUnorderedMultiSet< T, \fBVector\fP< T > > \fBAsUnorderedMultiSet\fP (ref \fBVector\fP< T > vec)"
+.br
+.RI "Creates an \fBVectorUnorderedMultiSet<T, TC>\fP view over the vector, representing a collection that allows duplicates without enforcing any ordering\&. "
+.ti -1c
+.RI "static VectorUnorderedSet< T, \fBVector\fP< T > > \fBAsUnorderedSet\fP (ref \fBVector\fP< T > vec)"
+.br
+.RI "Creates an \fBVectorUnorderedSet<T, TC>\fP view over the vector, representing a unique collection without any defined ordering\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBVector\fP< T > a, \fBVector\fP< T > b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBVector\fP< T > a, \fBVector\fP< T > b)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBAutoGrow\fP\fR [get, set]\fP"
+.br
+.RI "Enables or disables automatic resizing when the Vector becomes full\&. "
+.ti -1c
+.RI "Optional< T > \fBBack\fP\fR [get]\fP"
+.br
+.RI "Gets the last element of the Vector\&. "
+.ti -1c
+.RI "RandomAccessIterator< T, \fBVector\fP< T > > \fBBegin\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "long \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of valid elements currently stored in the vector\&. "
+.ti -1c
+.RI "Optional< T > \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the current logical position (m_index)\&. "
+.ti -1c
+.RI "RandomAccessIterator< T, \fBVector\fP< T > > \fBEnd\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "Optional< T > \fBFront\fP\fR [get]\fP"
+.br
+.RI "Gets the first element of the Vector\&. "
+.ti -1c
+.RI "long \fBGrowSize\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the number of elements the Vector grows by when AutoGrow is enabled\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the Vector contains no elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the Vector is full\&. "
+.ti -1c
+.RI "long \fBLength\fP\fR [get]\fP"
+.br
+.RI "The real size\&. "
+.ti -1c
+.RI "RandomAccessIterator< T, \fBVector\fP< T > > \fBReverseBegin\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "RandomAccessIterator< T, \fBVector\fP< T > > \fBReverseEnd\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "T \fBthis[long index]\fP\fR [get, set]\fP"
+.br
+.RI "Provides indexed access to the Vector elements\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A modern, policy‑driven dynamic Vector container that provides fast indexed access, optional auto‑growth, insertion, removal, traversal, and multiple zero‑overhead reinterpretation views\&. 
+
+These views allow the same underlying Vector to be interpreted as a span, a sorted set, a multiset, an unordered set, or a search helper — without copying or allocating additional memory\&.
+
+.PP
+Beginners: 
+.br
+ Think of \fBVector<T>\fP as a dynamic array that can instantly transform into different “shapes” such as a set, a multiset, or a span, depending on what you need\&. 
+
+.PP
+Professionals: 
+.br
+ \fBVector<T>\fP follows a modern C++‑style multi‑view design\&. Ordering is defined by \fBISimpleCompare<T>\fP strategies, sorting is controlled by SortAction<TCompare, TContainer> policies, and all reinterpretations are zero‑overhead wrappers\&. 
+.br
+ This enables policy‑based sorting, strategy‑based comparison, and flexible container semantics without hidden allocations or implicit behavior\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The element type stored in the Vector\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB55\fP of file \fBVector\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "Find< T, \fBVector\fP< T > > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.AsFinder (ref \fBVector\fP< T > vec)\fR [static]\fP"
+
+.PP
+Creates a \fBFind<T, TContainer>\fP wrapper for this vector, providing direct access to element lookup utilities\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvec\fP The vector instance to operate on\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBFind<T, TContainer>\fP bound to the given vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB238\fP of file \fBVector\&.cs\fP\&.
+.SS "VectorFlexSpan< T, \fBVector\fP< T > > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.AsFlexSpan (ref \fBVector\fP< T > vector, \fBFlexSpanMode\fP mode = \fR\fBFlexSpanMode::System\fP\fP)\fR [static]\fP"
+
+.PP
+Creates a FlexSpan view over the entire vector starting at index 0\&. The view uses the specified indexing mode (System, Reverse, Ring) and provides a span-like interface backed directly by this vector\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIvector\fP \fBReference\fP to the vector\&. Passed by ref to avoid copying the struct and to ensure the FlexSpan reflects the actual container\&. 
+.br
+\fImode\fP Indexing mode for the view: System = forward indexing, Reverse = backward indexing, Ring = circular wrap-around indexing\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A FlexSpan representing the full vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB143\fP of file \fBVector\&.cs\fP\&.
+.SS "VectorFlexSpan< T, \fBVector\fP< T > > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.AsFlexSpan (ref \fBVector\fP< T > vector, long start, long end, \fBFlexSpanMode\fP mode = \fR\fBFlexSpanMode::System\fP\fP)\fR [static]\fP"
+
+.PP
+Creates a FlexSpan view over a specific range of the vector\&. The view covers the range [start \&.\&. end) and uses the specified indexing mode\&. No memory is allocated; this is a pure logical slice backed by the vector\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIvector\fP \fBReference\fP to the vector\&. Passed by ref so the FlexSpan operates on the actual container rather than a copy\&. 
+.br
+\fIstart\fP Starting index of the view\&. Must be within the vector's logical bounds\&. 
+.br
+\fIend\fP Exclusive end index of the view\&. Must be greater than or equal to start and within the vector's logical bounds\&. 
+.br
+\fImode\fP Indexing mode for the view: System = forward indexing, Reverse = backward indexing, Ring = circular wrap-around indexing\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A FlexSpan representing the specified range of the vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB181\fP of file \fBVector\&.cs\fP\&.
+.SS "VectorMultiSet< T, \fBVector\fP< T > > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.AsMultiSet (ref \fBVector\fP< T > vec, ISimpleCompare< T >? comparer = \fRnull\fP, SortAction< ISimpleCompare< T >, \fBVector\fP< T > >? sorter = \fRnull\fP)\fR [static]\fP"
+
+.PP
+Creates a \fBVectorMultiSet<T, TC>\fP view over the given vector, allowing duplicate elements while preserving a defined ordering\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvec\fP The vector whose contents should be interpreted as an ordered multiset\&. 
+.br
+\fIcomparer\fP Optional comparison strategy used to determine ordering inside the multiset\&. If \fRnull\fP, the default \fBLess<T>\fP comparer is used, producing ascending order\&. 
+.br
+\fIsorter\fP Optional sorting algorithm used to arrange the vector before constructing the multiset\&. 
+.br
+ If \fRnull\fP, SortActions\&.ShellSorter is used as a safe, fast, non‑recursive default\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVectorMultiSet<T, TC>\fP wrapper that interprets the vector as a sorted collection that may contain duplicates\&. 
+.RE
+.PP
+
+.PP
+This method transforms the vector into a logical multiset by: 
+
+.PP
+.PD 0
+.IP "1." 4
+Sorting the vector using the chosen or default sorter\&.  
+.IP "2." 4
+Applying the comparer to define element ordering\&.  
+.IP "3." 4
+Constructing a multiset wrapper that allows duplicates while maintaining sorted order\&.   
+.PP
+
+.PP
+Beginners: 
+.br
+ Think of this as “turn my vector into a sorted collection that allows duplicates”\&. 
+
+.PP
+Professionals: 
+.br
+ Provides full control over ordering and sorting policies while maintaining predictable defaults (\fBLess<T>\fP + ShellSort)\&. 
+.br
+ Suitable for frequency tables, histograms, and domain‑specific ordering\&. 
+.PP
+Definition at line \fB372\fP of file \fBVector\&.cs\fP\&.
+.SS "Slices< T, \fBVector\fP< T > > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.AsMultiSlices (ref \fBVector\fP< T > vector, int devider)\fR [static]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIvector\fP 
+.br
+\fIdevider\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definition at line \fB152\fP of file \fBVector\&.cs\fP\&.
+.SS "VectorSearch< U, \fBVector\fP< U > > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.AsSearch< U > (ref \fBVector\fP< U > vec, ISearchProvider< U, \fBVector\fP< U > >? provider = \fRnull\fP)\fR [static]\fP"
+
+.PP
+Creates a \fBVectorSearch<T, TC>\fP wrapper for this vector, enabling search operations using the specified search provider\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIU\fP The element type stored in the vector\&. Must implement IComparable<U> to support ordered search strategies\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIvec\fP The vector instance to operate on\&. 
+.br
+\fIprovider\fP The search provider defining the search strategy (linear, binary, Fibonacci, etc\&.)\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVectorSearch<T, TC>\fP bound to the given vector\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIU\fP : \fIIComparable<U>\fP
+.PP
+Definition at line \fB462\fP of file \fBVector\&.cs\fP\&.
+.SS "\fBVector\fP< T > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.AsSegment (long start, long length)"
+
+.PP
+Creates a logical segment (sub-Vector) over the internal buffer\&. The segment shares the same underlying Vector and does not copy data\&. This is \fInot\fP a slicing List-like structure: it behaves as a memory segment with its own logical length but without shifting or relocating elements\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP The starting index of the segment\&. 
+.br
+\fIlength\fP The number of elements included in the segment\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB199\fP of file \fBVector\&.cs\fP\&.
+.SS "VectorSet< T, \fBVector\fP< T > > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.AsSet (ref \fBVector\fP< T > vec, ISimpleCompare< T >? comparer = \fRnull\fP, SortAction< ISimpleCompare< T >, \fBVector\fP< T > >? sorter = \fRnull\fP)\fR [static]\fP"
+
+.PP
+Creates a \fBVectorSet<T, TC>\fP view over the given vector\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvec\fP The vector whose contents should be interpreted as a sorted, unique set\&. 
+.br
+\fIcomparer\fP Optional comparison strategy used to determine ordering inside the set\&. If \fRnull\fP, the default \fBLess<T>\fP comparer is used, which orders elements in ascending order\&. 
+.br
+\fIsorter\fP Optional sorting algorithm used to arrange the vector before constructing the set\&. If \fRnull\fP, SortActions\&.ShellSorter is used as the default, providing fast, predictable, non‑recursive sorting suitable for general use\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVectorSet<T, TC>\fP that wraps the provided vector, ensuring that elements are sorted according to the chosen comparer and that duplicates are handled according to the set's semantics\&. 
+.RE
+.PP
+
+.PP
+This method transforms a \fBVector<T>\fP into a logical set by: 
+
+.PP
+.PD 0
+.IP "1." 4
+Sorting the vector using the provided or default sorting algorithm\&.   
+.IP "2." 4
+Applying the comparison strategy to define the ordering of elements\&.   
+.IP "3." 4
+Constructing a \fBVectorSet<T, TC>\fP wrapper that interprets the sorted vector as a unique, ordered collection\&.   
+.PP
+
+.PP
+Beginners: 
+.br
+ Think of this as “turn my vector into a sorted set”, where the library chooses sensible defaults if you don’t specify anything\&. 
+
+.PP
+Professionals: 
+.br
+ This method provides full control over ordering and sorting policies while maintaining predictable defaults (\fBLess<T>\fP + ShellSort)\&. 
+.br
+ It allows custom comparers (e\&.g\&., reverse order, length‑based, domain‑specific) and custom sorting strategies (QuickSort, CombSort, etc\&.) without forcing the user to configure them for common cases\&. 
+.PP
+Definition at line \fB299\fP of file \fBVector\&.cs\fP\&.
+.SS "VectorUnorderedMultiSet< T, \fBVector\fP< T > > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.AsUnorderedMultiSet (ref \fBVector\fP< T > vec)\fR [static]\fP"
+
+.PP
+Creates an \fBVectorUnorderedMultiSet<T, TC>\fP view over the vector, representing a collection that allows duplicates without enforcing any ordering\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvec\fP The vector whose contents should be interpreted as an unordered multiset\&. 
+.RE
+.PP
+
+.PP
+This structure does not sort or reorder the vector\&. 
+.br
+ It simply exposes it as a multiset where element frequency matters, but ordering does not\&. 
+
+.PP
+Beginners: 
+.br
+ Think of this as “a bag of items where duplicates are allowed and order does not matter”\&. 
+
+.PP
+Professionals: 
+.br
+ Useful for frequency counting, histogram‑like structures, or any domain where ordering is irrelevant\&. 
+.br
+ No comparer or sorter is required\&. 
+.PP
+Definition at line \fB441\fP of file \fBVector\&.cs\fP\&.
+.SS "VectorUnorderedSet< T, \fBVector\fP< T > > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.AsUnorderedSet (ref \fBVector\fP< T > vec)\fR [static]\fP"
+
+.PP
+Creates an \fBVectorUnorderedSet<T, TC>\fP view over the vector, representing a unique collection without any defined ordering\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvec\fP The vector whose contents should be interpreted as an unordered set\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+An \fBVectorUnorderedSet<T, TC>\fP wrapper that treats the vector as a unique, unordered collection\&. 
+.RE
+.PP
+
+.PP
+Unlike \fBVectorSet<T, TC>\fP, this structure does not sort the vector\&. It simply ensures that elements are treated as unique, ignoring duplicates\&. 
+
+.PP
+Beginners: 
+.br
+ Think of this as “a set where order does not matter”\&. 
+
+.PP
+Professionals: 
+.br
+ Useful when ordering is irrelevant or when hashing/bucketing semantics are preferred\&. 
+.br
+ No sorting or comparison strategy is required\&. 
+.PP
+Definition at line \fB412\fP of file \fBVector\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Clear ()"
+
+.PP
+Clears the vector by resetting the logical index\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IContainer< T >\fP\&.
+.PP
+Definition at line \fB766\fP of file \fBVector\&.cs\fP\&.
+.SS "Pair< bool, long > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.CopyFrom (\fBVector\fP< T > source, ulong sourceOffset, ulong destinationOffset, ulong count)"
+
+.PP
+Copies data from another vector into this vector\&. If the destination range exceeds the current capacity and AutoGrow is enabled, the vector automatically expands using Resize()\&. After copying, the logical element count (m_index) is updated if necessary\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIsource\fP Source vector providing the data\&. 
+.br
+\fIsourceOffset\fP Offset inside \fIsource\fP  where copying begins\&. 
+.br
+\fIdestinationOffset\fP Offset inside this vector where copied data is written\&. 
+.br
+\fIcount\fP Maximum number of elements to copy\&. The actual number copied may be smaller depending on available space\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of elements actually copied and the status 
+.RE
+.PP
+
+.PP
+Definition at line \fB885\fP of file \fBVector\&.cs\fP\&.
+.SS "Pair< bool, long > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.CopyTo (uint sourceOffset, \fBVector\fP< T > destination, ulong destinationOffset, ulong count)"
+
+.PP
+Copies a range of elements from this vector into another vector\&. Copying is performed using Buffer\&.LongCopy(), which supports long offsets\&. No automatic growth occurs in the destination; the caller must ensure sufficient capacity\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIsourceOffset\fP Offset inside this vector where copying begins\&. 
+.br
+\fIdestination\fP Destination vector receiving the copied elements\&. 
+.br
+\fIdestinationOffset\fP Offset inside \fIdestination\fP  where copied data is written\&. 
+.br
+\fIcount\fP Maximum number of elements to copy\&. The actual number copied may be smaller if either vector does not have enough remaining elements\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of elements actually copied and the status\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB843\fP of file \fBVector\&.cs\fP\&.
+.SS "Pair< bool, long > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.CopyTo (\fBVector\fP< T > vector, ulong VectorIndex)"
+
+.PP
+Copies all valid elements of this vector into another vector, starting at the specified destination index\&. This overload copies from the beginning of this vector (sourceOffset = 0) into the destination vector at \fIVectorIndex\fP \&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIvector\fP Destination vector receiving the copied elements\&. 
+.br
+\fIVectorIndex\fP Destination offset inside \fIvector\fP  where copying begins\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB814\fP of file \fBVector\&.cs\fP\&.
+.PP
+Referenced by \fBCopyTo()\fP\&.
+.SS "IVector< T > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Duplicate ()"
+
+.PP
+Create a duplicate from this\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The new instance from this
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IVector< T >\fP\&.
+.PP
+Definition at line \fB939\fP of file \fBVector\&.cs\fP\&.
+.SS "Optional< T > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.ElementAt (long index)"
+
+.PP
+Returns the element at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP Index to access\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The element at the given index\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIArgumentOutOfRangeException\fP Thrown if the vector is empty or the index exceeds the logical length\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP\&.
+.PP
+Definition at line \fB746\fP of file \fBVector\&.cs\fP\&.
+.PP
+Referenced by \fBoperator==()\fP\&.
+.SS "override bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Equals (object? obj)"
+
+.PP
+
+.PP
+Definition at line \fB990\fP of file \fBVector\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Erase ()"
+
+.PP
+Removes the last element from the vector\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if an element was removed; false if the vector was empty\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IContainer< T >\fP\&.
+.PP
+Definition at line \fB698\fP of file \fBVector\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Erase (long index)"
+
+.PP
+Erase overloads are API stubs and always return true\&. Actual removal logic is handled by Remove() methods\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IContainer< T >\fP\&.
+.PP
+Definition at line \fB707\fP of file \fBVector\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Erase (long start, long end)"
+
+.PP
+Erase overloads are API stubs and always return true\&. Actual removal logic is handled by Remove() methods\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IVector< T >\fP\&.
+.PP
+Definition at line \fB714\fP of file \fBVector\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Erase (T value)"
+
+.PP
+Erase overloads are API stubs and always return true\&. Actual removal logic is handled by Remove() methods\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IVector< T >\fP\&.
+.PP
+Definition at line \fB721\fP of file \fBVector\&.cs\fP\&.
+.SS "Type SystemEx\&.Collections\&.Generic\&.Vector< T >\&.GetElementType ()"
+
+.PP
+Get The Type of T\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The Type of T
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP\&.
+.PP
+Definition at line \fB218\fP of file \fBVector\&.cs\fP\&.
+.SS "IEnumerator< T > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.GetEnumerator ()"
+
+.PP
+Enumerates all valid elements in forward order\&. 
+.PP
+Definition at line \fB775\fP of file \fBVector\&.cs\fP\&.
+.SS "override int SystemEx\&.Collections\&.Generic\&.Vector< T >\&.GetHashCode ()"
+
+.PP
+
+.PP
+Definition at line \fB996\fP of file \fBVector\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Grow ()"
+
+.PP
+Grows the internal buffer by GrowSize if AutoGrow is enabled\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if growth succeeded; false if AutoGrow was disabled\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IVector< T >\fP\&.
+.PP
+Definition at line \fB757\fP of file \fBVector\&.cs\fP\&.
+.PP
+Referenced by \fBPushBack()\fP, \fBReplace()\fP, and \fBReplace()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Insert (long index, T entry)"
+
+.PP
+Inserts an element at the specified index, shifting elements to the right\&. Automatically grows the buffer if needed and AutoGrow is enabled\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP Insertion index\&.
+.br
+\fIentry\fP Element to insert\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if insertion succeeded; false if the index was invalid or growth was not allowed\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IContainer< T >\fP\&.
+.PP
+Definition at line \fB558\fP of file \fBVector\&.cs\fP\&.
+.PP
+Referenced by \fBInsertRange()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Insert (long start, long end, T entry)"
+
+.PP
+Fills a range of indices with a single value\&. Automatically grows the buffer if needed and AutoGrow is enabled\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP Start index\&.
+.br
+\fIend\fP End index (inclusive)\&.
+.br
+\fIentry\fP Value to write\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the operation succeeded; false if the range was invalid or growth was not allowed\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IContainer< T >\fP\&.
+.PP
+Definition at line \fB590\fP of file \fBVector\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.InsertRange (long start, T[] entrys)"
+
+.PP
+Inserts a sequence of elements starting at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP Start index\&.
+.br
+\fIentrys\fP Elements to insert\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if all elements were inserted; false if any insertion failed\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IVector< T >\fP\&.
+.PP
+Definition at line \fB622\fP of file \fBVector\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.operator!= (\fBVector\fP< T > a, \fBVector\fP< T > b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB985\fP of file \fBVector\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.operator== (\fBVector\fP< T > a, \fBVector\fP< T > b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB964\fP of file \fBVector\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.PushBack (T entry)"
+
+.PP
+Appends an element to the end of the vector\&. Automatically grows the buffer if AutoGrow is enabled\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIentry\fP Element to append\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the element was appended; false if the vector was full and AutoGrow was disabled\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ILinearContainer< T >\fP\&.
+.PP
+Definition at line \fB536\fP of file \fBVector\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Replace (long index, T entry)"
+
+.PP
+Replaces the element at the specified index\&. Automatically grows the buffer if needed and AutoGrow is enabled\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP Index to replace\&.
+.br
+\fIentry\fP New value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if replacement succeeded; false if the index was invalid or growth was not allowed\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IContainer< T >\fP\&.
+.PP
+Definition at line \fB639\fP of file \fBVector\&.cs\fP\&.
+.PP
+Referenced by \fBReplaceRange()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Replace (long start, long end, T entry)"
+
+.PP
+Replaces a range of elements with a single value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP Start index\&.
+.br
+\fIend\fP End index (inclusive)\&.
+.br
+\fIentry\fP Value to write\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if replacement succeeded; false if the range was invalid\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IVector< T >\fP\&.
+.PP
+Definition at line \fB666\fP of file \fBVector\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.ReplaceRange (long start, T[] entrys)"
+
+.PP
+Replaces a sequence of elements starting at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP Start index\&.
+.br
+\fIentrys\fP Elements to write\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if all replacements succeeded; false if any failed\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IVector< T >\fP\&.
+.PP
+Definition at line \fB684\fP of file \fBVector\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Swap (long i, long j)"
+
+.PP
+Swaps two elements inside the valid range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi\fP First index\&.
+.br
+\fIj\fP Second index\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB729\fP of file \fBVector\&.cs\fP\&.
+.SS "T[] SystemEx\&.Collections\&.Generic\&.Vector< T >\&.ToNative ()"
+
+.PP
+Returns a copy of the internal buffer\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IVector< T >\fP\&.
+.PP
+Definition at line \fB933\fP of file \fBVector\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Traverse (\fBTraversMode\fP mode, long startIndex, long endIndex, Action< T > func)"
+
+.PP
+Traverses a range of elements in forward or backward order\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImode\fP Traversal direction\&.
+.br
+\fIstartIndex\fP Start index\&.
+.br
+\fIendIndex\fP End index\&.
+.br
+\fIfunc\fP Action applied to each element\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB787\fP of file \fBVector\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Vector (IEnumerable< T > e, int growSize = \fR16\fP)"
+
+.PP
+Creates a new Vector from an enumerable collection\&. The internal buffer is created from the collection, and Count is set to the last valid index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Source collection used to populate the vector\&. 
+.br
+\fIgrowSize\fP Number of elements to add when automatic growth occurs\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB510\fP of file \fBVector\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Vector (long size, int growSize = \fR16\fP)"
+
+.PP
+Creates a new Vector with a specified initial capacity\&. The vector starts empty (Count = 0) and grows according to GrowSize\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP Initial capacity of the internal buffer\&. No elements are considered valid yet\&. 
+.br
+\fIgrowSize\fP Number of elements to add when automatic growth occurs\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB473\fP of file \fBVector\&.cs\fP\&.
+.PP
+Referenced by \fBAsFinder()\fP, \fBAsFlexSpan()\fP, \fBAsFlexSpan()\fP, \fBAsMultiSet()\fP, \fBAsMultiSlices()\fP, \fBAsSearch< U >()\fP, \fBAsSegment()\fP, \fBAsSet()\fP, \fBAsUnorderedMultiSet()\fP, \fBAsUnorderedSet()\fP, \fBCopyFrom()\fP, \fBCopyTo()\fP, \fBCopyTo()\fP, \fBDuplicate()\fP, \fBEquals()\fP, \fBoperator!=()\fP, \fBoperator==()\fP, \fBVector()\fP, and \fBVector()\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Vector (T[] e, int growSize = \fR16\fP)"
+
+.PP
+Creates a new Vector using an existing buffer\&. The buffer is adopted as-is, and Count is set to the last valid index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Existing array used as the internal storage\&. 
+.br
+\fIgrowSize\fP Number of elements to add when automatic growth occurs\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB492\fP of file \fBVector\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Vector (Vector< T > other)"
+
+.PP
+Copy ctor\&. 
+.PP
+Definition at line \fB521\fP of file \fBVector\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.AutoGrow\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Enables or disables automatic resizing when the Vector becomes full\&. 
+.PP
+Definition at line \fB103\fP of file \fBVector\&.cs\fP\&.
+.PP
+Referenced by \fBCopyFrom()\fP, \fBGrow()\fP, \fBInsert()\fP, \fBInsert()\fP, \fBPushBack()\fP, and \fBReplace()\fP\&.
+.SS "Optional<T> SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Back\fR [get]\fP"
+
+.PP
+Gets the last element of the Vector\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP\&.
+.PP
+Definition at line \fB80\fP of file \fBVector\&.cs\fP\&.
+.SS "RandomAccessIterator<T, \fBVector\fP<T> > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Begin\fR [get]\fP"
+
+.PP
+Definition at line \fB310\fP of file \fBVector\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of valid elements currently stored in the vector\&. This is the logical element count, not the underlying array length\&. The value corresponds to the next free index (m_index)\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP\&.
+.PP
+Definition at line \fB112\fP of file \fBVector\&.cs\fP\&.
+.PP
+Referenced by \fBAsSet()\fP\&.
+.SS "Optional<T> SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Current\fR [get]\fP"
+
+.PP
+Gets the element at the current logical position (m_index)\&. This is primarily useful during manual iteration or when treating the vector as a stack-like structure\&. Accessing Current when the vector is empty or m_index is out of range is undefined\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP\&.
+.PP
+Definition at line \fB121\fP of file \fBVector\&.cs\fP\&.
+.SS "RandomAccessIterator<T, \fBVector\fP<T> > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.End\fR [get]\fP"
+
+.PP
+Definition at line \fB312\fP of file \fBVector\&.cs\fP\&.
+.SS "Optional<T> SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Front\fR [get]\fP"
+
+.PP
+Gets the first element of the Vector\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP\&.
+.PP
+Definition at line \fB76\fP of file \fBVector\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Vector< T >\&.GrowSize\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the number of elements the Vector grows by when AutoGrow is enabled\&. 
+.PP
+Definition at line \fB94\fP of file \fBVector\&.cs\fP\&.
+.PP
+Referenced by \fBCopyFrom()\fP, \fBGrow()\fP, \fBInsert()\fP, \fBInsert()\fP, \fBReplace()\fP, \fBVector()\fP, \fBVector()\fP, \fBVector()\fP, and \fBVector()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Indicates whether the Vector contains no elements\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP\&.
+.PP
+Definition at line \fB90\fP of file \fBVector\&.cs\fP\&.
+.PP
+Referenced by \fBElementAt()\fP, and \fBErase()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Vector< T >\&.IsFull\fR [get]\fP"
+
+.PP
+Indicates whether the Vector is full\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP\&.
+.PP
+Definition at line \fB85\fP of file \fBVector\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Vector< T >\&.Length\fR [get]\fP"
+
+.PP
+The real size\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP\&.
+.PP
+Definition at line \fB71\fP of file \fBVector\&.cs\fP\&.
+.PP
+Referenced by \fBCopyFrom()\fP, \fBCopyTo()\fP, \fBElementAt()\fP, \fBGrow()\fP, \fBoperator==()\fP, \fBPushBack()\fP, and \fBVector()\fP\&.
+.SS "RandomAccessIterator<T, \fBVector\fP<T> > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.ReverseBegin\fR [get]\fP"
+
+.PP
+Definition at line \fB315\fP of file \fBVector\&.cs\fP\&.
+.SS "RandomAccessIterator<T, \fBVector\fP<T> > SystemEx\&.Collections\&.Generic\&.Vector< T >\&.ReverseEnd\fR [get]\fP"
+
+.PP
+Definition at line \fB317\fP of file \fBVector\&.cs\fP\&.
+.SS "T SystemEx\&.Collections\&.Generic\&.Vector< T >\&.this[long index]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Provides indexed access to the Vector elements\&. 
+.PP
+Definition at line \fB224\fP of file \fBVector\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

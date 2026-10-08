@@ -1,19 +1,12 @@
 var a00989 =
 [
-    [ "AddConfig", "d3/d8a/a00899_ga7b54a8671dbd76d1d9fff17dbd33fc3f.html#ga7b54a8671dbd76d1d9fff17dbd33fc3f", null ],
-    [ "AddTool", "d3/d8a/a00899_ga08854b9668f4d96b67b24ac85cf35dff.html#ga08854b9668f4d96b67b24ac85cf35dff", null ],
-    [ "GetConfigValue", "d3/d8a/a00899_ga7e8aa68f8a3cad43244783acccd3e349.html#ga7e8aa68f8a3cad43244783acccd3e349", null ],
-    [ "HasTool", "d3/d8a/a00899_gaaacbb3899f20265350f85c6ae9c20ed1.html#gaaacbb3899f20265350f85c6ae9c20ed1", null ],
-    [ "HaveCap", "d3/d8a/a00899_ga6c787c018b6bf139753696716a6d021f.html#ga6c787c018b6bf139753696716a6d021f", null ],
-    [ "Initialization", "d3/d8a/a00899_ga3c87906870d0f465a9c76a51a5e95b00.html#ga3c87906870d0f465a9c76a51a5e95b00", null ],
-    [ "Initialization", "d3/d8a/a00899_ga54fb200d008503d31a7065a4f1fae8d0.html#ga54fb200d008503d31a7065a4f1fae8d0", null ],
-    [ "Release", "d3/d8a/a00899_ga1b4ec86c1cd99e7c771c439c11eb269c.html#ga1b4ec86c1cd99e7c771c439c11eb269c", null ],
-    [ "RemoveTool", "d3/d8a/a00899_ga0bc1a52d982c1624df8559b2b9b5e84c.html#ga0bc1a52d982c1624df8559b2b9b5e84c", null ],
-    [ "RunAsync", "d3/d8a/a00899_ga9f3aeb334d2bd59965917da75b4bd3da.html#ga9f3aeb334d2bd59965917da75b4bd3da", null ],
-    [ "Backend", "d3/d8a/a00899_ga7e511c30da6dbca382fa22a1fa3e2226.html#ga7e511c30da6dbca382fa22a1fa3e2226", null ],
-    [ "Configuration", "d3/d8a/a00899_gaadcc88022ba779a14f678b5e51d13361.html#gaadcc88022ba779a14f678b5e51d13361", null ],
-    [ "Environment", "d3/d8a/a00899_ga1eeb8f1a2a10a0cdd1ca7d4a4f4f9bd5.html#ga1eeb8f1a2a10a0cdd1ca7d4a4f4f9bd5", null ],
-    [ "Name", "d3/d8a/a00899_gae81fecd1caaa86667d9c9cd798804936.html#gae81fecd1caaa86667d9c9cd798804936", null ],
-    [ "SystemPrompt", "d3/d8a/a00899_gabcb7c69a5ae986acf9904fc53985c6c2.html#gabcb7c69a5ae986acf9904fc53985c6c2", null ],
-    [ "this[BackendCapabilities capabilities]", "d3/d8a/a00899_ga97d418c157609f2798152e55a4f45b26.html#ga97d418c157609f2798152e55a4f45b26", null ]
+    [ "Context", "d0/d85/a00908_ga39891f5ff3cb6b3bf1a89e31caf788e8.html#ga39891f5ff3cb6b3bf1a89e31caf788e8", null ],
+    [ "Metadata", "d0/d85/a00908_ga7b970e2b2985c93d0afc67937fd50b58.html#ga7b970e2b2985c93d0afc67937fd50b58", null ],
+    [ "Model", "d0/d85/a00908_ga41646982e736bf1d628741f962e0a927.html#ga41646982e736bf1d628741f962e0a927", null ],
+    [ "Parameters", "d0/d85/a00908_ga2bf5dae28746bd993bebd8b1a6ed0328.html#ga2bf5dae28746bd993bebd8b1a6ed0328", null ],
+    [ "PromptRaw", "d0/d85/a00908_ga99d2cf18257d462eddc6b67a87812c99.html#ga99d2cf18257d462eddc6b67a87812c99", null ],
+    [ "SystemPrompt", "d0/d85/a00908_ga63cdbbd282e90b8d84eddcdf7e4e4b03.html#ga63cdbbd282e90b8d84eddcdf7e4e4b03", null ],
+    [ "ToolChoice", "d0/d85/a00908_ga320fa5c573c0df59a934e5ce5d0c400c.html#ga320fa5c573c0df59a934e5ce5d0c400c", null ],
+    [ "Tools", "d0/d85/a00908_gac3acaeab314e47de26b49921cc46a239.html#gac3acaeab314e47de26b49921cc46a239", null ],
+    [ "URL", "d0/d85/a00908_gade4566c811c976f43e8272a68ebb82ad.html#gade4566c811c976f43e8272a68ebb82ad", null ]
 ];

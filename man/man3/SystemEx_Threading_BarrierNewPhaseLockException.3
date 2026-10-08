@@ -1,0 +1,101 @@
+.TH "SystemEx.Threading.BarrierNewPhaseLockException" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.BarrierNewPhaseLockException \- Exception thrown when a barrier phase transition fails due to an invalid lock state or an inconsistent phase update\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Exception\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBarrierNewPhaseLockException\fP ()"
+.br
+.RI "Initializes a new instance of the \fBBarrierNewPhaseLockException\fP class with no message or inner exception\&. "
+.ti -1c
+.RI "\fBBarrierNewPhaseLockException\fP (Exception? innerException)"
+.br
+.RI "Initializes a new instance of the \fBBarrierNewPhaseLockException\fP class with the specified inner exception\&. "
+.ti -1c
+.RI "\fBBarrierNewPhaseLockException\fP (string? message)"
+.br
+.RI "Initializes a new instance of the \fBBarrierNewPhaseLockException\fP class with a custom error message\&. "
+.ti -1c
+.RI "\fBBarrierNewPhaseLockException\fP (string? message, Exception? innerException)"
+.br
+.RI "Initializes a new instance of the \fBBarrierNewPhaseLockException\fP class with a custom error message and an inner exception\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Exception thrown when a barrier phase transition fails due to an invalid lock state or an inconsistent phase update\&. 
+
+This exception is raised when the barrier attempts to enter a new phase but the writer lock cannot be reacquired, or when the number of dropped participants exceeds the allowed threshold\&. 
+
+.PP
+Typical failure scenarios include: 
+.PD 0
+.IP "\(bu" 2
+The barrier cannot reacquire its internal lock after releasing it for phase completion\&.   
+.IP "\(bu" 2
+A phase drop count results in an invalid new maximum participant count\&.   
+.PP
+
+.PP
+Definition at line \fB47\fP of file \fBBarrier\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.BarrierNewPhaseLockException\&.BarrierNewPhaseLockException ()"
+
+.PP
+Initializes a new instance of the \fBBarrierNewPhaseLockException\fP class with no message or inner exception\&. 
+.PP
+Definition at line \fB53\fP of file \fBBarrier\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.BarrierNewPhaseLockException\&.BarrierNewPhaseLockException (Exception? innerException)"
+
+.PP
+Initializes a new instance of the \fBBarrierNewPhaseLockException\fP class with the specified inner exception\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinnerException\fP The exception that caused the barrier phase transition to fail\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB64\fP of file \fBBarrier\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.BarrierNewPhaseLockException\&.BarrierNewPhaseLockException (string? message)"
+
+.PP
+Initializes a new instance of the \fBBarrierNewPhaseLockException\fP class with a custom error message\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP The message describing the reason for the failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB75\fP of file \fBBarrier\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.BarrierNewPhaseLockException\&.BarrierNewPhaseLockException (string? message, Exception? innerException)"
+
+.PP
+Initializes a new instance of the \fBBarrierNewPhaseLockException\fP class with a custom error message and an inner exception\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP The message describing the reason for the failure\&. 
+.br
+\fIinnerException\fP The exception that caused the barrier phase transition to fail\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB89\fP of file \fBBarrier\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

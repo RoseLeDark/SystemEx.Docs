@@ -1,0 +1,146 @@
+.TH "SystemEx.Reference" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Reference \- A base class for reference-counted objects\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IDisposable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBAddRef\fP ()"
+.br
+.RI "Increments the reference count of the object\&. "
+.ti -1c
+.RI "\fBReference\fP \fBClone\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBDispose\fP ()"
+.br
+.RI "Disposes the object and releases any resources it holds\&. Override this method in derived classes to clean up resources\&. "
+.ti -1c
+.RI "\fBReference\fP ()"
+.br
+.RI "Initializes a new instance of the \fBReference\fP class with a reference count of zero\&. "
+.ti -1c
+.RI "void \fBRelease\fP ()"
+.br
+.RI "Decrements the reference count of the object and disposes it if the count reaches zero\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBAddRef\fP (ref \fBReference\fP reference)"
+.br
+.RI "Disposes the object and releases any resources it holds\&. "
+.ti -1c
+.RI "static bool \fBCreateInstance< T >\fP (out T instance, object args)"
+.br
+.RI "Creates an instance of a class derived from \fBReference\fP and initializes it with the specified arguments\&. "
+.ti -1c
+.RI "static void \fBRelease\fP (ref \fBReference\fP reference)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBOnCreate\fP (object args)"
+.br
+.RI "Called when the object is created\&. Override this method in derived classes to perform initialization with the specified arguments\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBRefCount\fP\fR [get]\fP"
+.br
+.RI "Gets the current reference count of the object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A base class for reference-counted objects\&. 
+.PP
+Definition at line \fB22\fP of file \fBReference\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Reference\&.Reference ()"
+
+.PP
+Initializes a new instance of the \fBReference\fP class with a reference count of zero\&. 
+.PP
+Definition at line \fB35\fP of file \fBReference\&.cs\fP\&.
+.PP
+Referenced by \fBAddRef()\fP, and \fBCreateInstance< T >()\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Reference\&.AddRef ()"
+
+.PP
+Increments the reference count of the object\&. 
+.PP
+Definition at line \fB42\fP of file \fBReference\&.cs\fP\&.
+.SS "void SystemEx\&.Reference\&.AddRef (ref \fBReference\fP reference)\fR [static]\fP"
+
+.PP
+Disposes the object and releases any resources it holds\&. 
+.PP
+Definition at line \fB66\fP of file \fBReference\&.cs\fP\&.
+.SS "\fBReference\fP SystemEx\&.Reference\&.Clone ()"
+
+.PP
+Definition at line \fB56\fP of file \fBReference\&.cs\fP\&.
+.SS "bool SystemEx\&.Reference\&.CreateInstance< T > (out T instance, object args)\fR [static]\fP"
+
+.PP
+Creates an instance of a class derived from \fBReference\fP and initializes it with the specified arguments\&. 
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fI\fBReference\fP\fP
+.TP
+\fIT\fP : \fInew()\fP
+.PP
+Definition at line \fB81\fP of file \fBReference\&.cs\fP\&.
+.SS "virtual void SystemEx\&.Reference\&.Dispose ()\fR [virtual]\fP"
+
+.PP
+Disposes the object and releases any resources it holds\&. Override this method in derived classes to clean up resources\&. 
+.PP
+Definition at line \fB94\fP of file \fBReference\&.cs\fP\&.
+.PP
+Referenced by \fBRelease()\fP\&.
+.SS "virtual bool SystemEx\&.Reference\&.OnCreate (object args)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Called when the object is created\&. Override this method in derived classes to perform initialization with the specified arguments\&. 
+.PP
+Definition at line \fB101\fP of file \fBReference\&.cs\fP\&.
+.SS "void SystemEx\&.Reference\&.Release ()"
+
+.PP
+Decrements the reference count of the object and disposes it if the count reaches zero\&. 
+.PP
+Definition at line \fB49\fP of file \fBReference\&.cs\fP\&.
+.SS "void SystemEx\&.Reference\&.Release (ref \fBReference\fP reference)\fR [static]\fP"
+
+.PP
+Definition at line \fB70\fP of file \fBReference\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Reference\&.RefCount\fR [get]\fP"
+
+.PP
+Gets the current reference count of the object\&. 
+.PP
+Definition at line \fB28\fP of file \fBReference\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

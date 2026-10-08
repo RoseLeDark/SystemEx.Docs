@@ -1,29 +1,19 @@
 var a00898 =
 [
-    [ "AddContext", "d2/d79/a00898.html#a5ee62ce3abd2cea738c33064f5a32d20", null ],
-    [ "AddParameter", "d2/d79/a00898.html#a8808b878fc297aad0eb7eca7d4ee7872", null ],
-    [ "AddTag", "d2/d79/a00898.html#ad8c2f113854ad36a99a6985d904e6817", null ],
-    [ "HasContext", "d2/d79/a00898.html#a28e7ef7b1a825232523f92dcc0dc8958", null ],
-    [ "HasParameter", "d2/d79/a00898.html#a38556db3263654efea7ff408ef319572", null ],
-    [ "HasTag", "d2/d79/a00898.html#abf252a1eaba772339a6d0b323a9dd9c4", null ],
-    [ "ModelPromp", "d2/d79/a00898.html#acc5e7441fb79c1050cda57723679ebaf", null ],
-    [ "ModelPromp", "d2/d79/a00898.html#ac4413b5d179cd64c2009a5b5f8667a19", null ],
-    [ "ModelPromp", "d2/d79/a00898.html#a14aa861d0220b1de99d406e1088319e7", null ],
-    [ "RemoveContext", "d2/d79/a00898.html#a043276afe6ffd8ed8be35516e2d0a925", null ],
-    [ "RemoveParameter", "d2/d79/a00898.html#a5d01324b90d919aa1caf0171ecadef09", null ],
-    [ "RemoveTag", "d2/d79/a00898.html#abd7e10c068ee6f06ffdbba9ff1c1a1a6", null ],
-    [ "ToString", "d2/d79/a00898.html#aed3e209d1fb6b36605ec2545f2215362", null ],
-    [ "TryGetContext", "d2/d79/a00898.html#aff650242111e6115bd194c7ed582c040", null ],
-    [ "TryGetParameter", "d2/d79/a00898.html#a5fb756150b068112962d121f143e5fa8", null ],
-    [ "TryGetTag", "d2/d79/a00898.html#ad588471e88c89cfd96d404181b184c2b", null ],
-    [ "WithContext", "d2/d79/a00898.html#a4dcc2818e05ef3ccd485eeab41b9bb3e", null ],
-    [ "WithParameter", "d2/d79/a00898.html#a66216f9d524702d8b8420fa5d6b23acc", null ],
-    [ "WithTag", "d2/d79/a00898.html#a5dae460f419001087e86580775a6732d", null ],
-    [ "Cancel", "d2/d79/a00898.html#a2f267ffc3fdb5e2cc9a7964b2a966f16", null ],
-    [ "Context", "d2/d79/a00898.html#a00e691410c05f6d9ff71e1609098b2df", null ],
-    [ "Parameters", "d2/d79/a00898.html#abb865c88cb029f812e165cffe26e5f58", null ],
-    [ "Prompt", "d2/d79/a00898.html#a002ba488f49e0973b2b8192f7baac738", null ],
-    [ "SessionId", "d2/d79/a00898.html#a9a4df778f2c6c3273a33e035836cff91", null ],
-    [ "Tags", "d2/d79/a00898.html#a3cd0553b45507b0aa3fe2411e3b5fdd0", null ],
-    [ "this[string parameter]", "d2/d79/a00898.html#a23e36b7fc850ed4fc646d46608f422e3", null ]
+    [ "SystemEx.Algorithms.ICompared&lt; T &gt;", "d0/d02/a01119.html", [
+      [ "Compare", "d2/d79/a00898_gaa320a5824c4caa7a60039a61107ea307.html#gaa320a5824c4caa7a60039a61107ea307", null ]
+    ] ],
+    [ "SystemEx.Algorithms.ISearchProvider&lt; T, TContainer &gt;", "de/de5/a01123.html", [
+      [ "Find", "d2/d79/a00898_ga092769eeb911bad5d898ad5e9b8b3964.html#ga092769eeb911bad5d898ad5e9b8b3964", null ],
+      [ "Find", "d2/d79/a00898_ga5fb9025025ebc7f0c4301dd3ec10a57b.html#ga5fb9025025ebc7f0c4301dd3ec10a57b", null ],
+      [ "Where", "d2/d79/a00898_gac34e730969ccef8a0cd660ac96215695.html#gac34e730969ccef8a0cd660ac96215695", null ]
+    ] ],
+    [ "SystemEx.Algorithms.ISimpleCompare&lt; T &gt;", "d9/d5b/a01127.html", [
+      [ "Compare", "d2/d79/a00898_gadd89811e074da32305dbf56e1aeebdad.html#gadd89811e074da32305dbf56e1aeebdad", null ]
+    ] ],
+    [ "SystemEx.Algorithms.ICompared-1-g.Compare", "d2/d79/a00898_gaa320a5824c4caa7a60039a61107ea307.html#gaa320a5824c4caa7a60039a61107ea307", null ],
+    [ "SystemEx.Algorithms.ISimpleCompare-1-g.Compare", "d2/d79/a00898_gadd89811e074da32305dbf56e1aeebdad.html#gadd89811e074da32305dbf56e1aeebdad", null ],
+    [ "SystemEx.Algorithms.ISearchProvider-2-g.Find", "d2/d79/a00898_ga092769eeb911bad5d898ad5e9b8b3964.html#ga092769eeb911bad5d898ad5e9b8b3964", null ],
+    [ "SystemEx.Algorithms.ISearchProvider-2-g.Find", "d2/d79/a00898_ga5fb9025025ebc7f0c4301dd3ec10a57b.html#ga5fb9025025ebc7f0c4301dd3ec10a57b", null ],
+    [ "SystemEx.Algorithms.ISearchProvider-2-g.Where", "d2/d79/a00898_gac34e730969ccef8a0cd660ac96215695.html#gac34e730969ccef8a0cd660ac96215695", null ]
 ];

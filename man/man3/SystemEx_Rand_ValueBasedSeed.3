@@ -1,0 +1,136 @@
+.TH "SystemEx.Rand.ValueBasedSeed" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Rand.ValueBasedSeed \- Provides a seed implementation based on a simple integer value\&. The input integer is expanded into multiple 32‑bit components using bitwise and arithmetic transformations\&. This seed type is suitable for all random engines in \fBSystemEx\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Rand\&.ISeed< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "uint[] \fBGetSeed\fP ()"
+.br
+.RI "Returns the underlying seed values as an array of 32‑bit unsigned integers\&. "
+.ti -1c
+.RI "void \fBUpdate\fP (int value)"
+.br
+.RI "Updates the seed using the specified integer value\&. The value is expanded into four distinct 32‑bit components using bitwise and arithmetic operations\&. This method does not perform hashing; it simply adapts the integer into a usable seed format for random engines\&. "
+.ti -1c
+.RI "\fBValueBasedSeed\fP (int value, int length=4)"
+.br
+.RI "Initializes a new \fBValueBasedSeed\fP using the specified integer\&. The seed is immediately populated using \fBUpdate(int)\fP\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Rand\&.ISeed< T >\fP
+.in +1c
+.ti -1c
+.RI "void \fBUpdate\fP (T value)"
+.br
+.RI "Updates the internal seed state using the specified value\&. The exact behavior depends on the implementation and may include mutation, recomputation, or partial replacement of seed components\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the number of 32‑bit values contained in the seed\&. "
+.ti -1c
+.RI "uint \fBthis[int index]\fP\fR [get, set]\fP"
+.br
+.RI "Provides indexed access to individual seed values\&. Both reading and writing are supported, allowing engines or mixing operations to modify specific seed components directly\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Rand\&.ISeed\fP
+.in +1c
+.ti -1c
+.RI "uint \fBthis[int i]\fP\fR [get, set]\fP"
+.br
+.RI "Provides indexed access to individual seed values\&. Both reading and writing are supported, allowing engines or mixing operations to modify specific seed components directly\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a seed implementation based on a simple integer value\&. The input integer is expanded into multiple 32‑bit components using bitwise and arithmetic transformations\&. This seed type is suitable for all random engines in \fBSystemEx\fP\&. 
+.PP
+Definition at line \fB25\fP of file \fBValueBasedSeed\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Rand\&.ValueBasedSeed\&.ValueBasedSeed (int value, int length = \fR4\fP)"
+
+.PP
+Initializes a new \fBValueBasedSeed\fP using the specified integer\&. The seed is immediately populated using \fBUpdate(int)\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The initial integer used to populate the seed\&. 
+.br
+\fIlength\fP The desired number of seed values\&. A minimum of four values is enforced\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB76\fP of file \fBValueBasedSeed\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "uint[] SystemEx\&.Rand\&.ValueBasedSeed\&.GetSeed ()"
+
+.PP
+Returns the underlying seed values as an array of 32‑bit unsigned integers\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A uint array containing the current seed values\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Rand\&.ISeed\fP\&.
+.PP
+Definition at line \fB38\fP of file \fBValueBasedSeed\&.cs\fP\&.
+.SS "void SystemEx\&.Rand\&.ValueBasedSeed\&.Update (int value)"
+
+.PP
+Updates the seed using the specified integer value\&. The value is expanded into four distinct 32‑bit components using bitwise and arithmetic operations\&. This method does not perform hashing; it simply adapts the integer into a usable seed format for random engines\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The integer used to refresh the seed\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB48\fP of file \fBValueBasedSeed\&.cs\fP\&.
+.PP
+Referenced by \fBValueBasedSeed()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Rand\&.ValueBasedSeed\&.Length\fR [get]\fP"
+
+.PP
+Gets the number of 32‑bit values contained in the seed\&. 
+.PP
+Implements \fBSystemEx\&.Rand\&.ISeed\fP\&.
+.PP
+Definition at line \fB31\fP of file \fBValueBasedSeed\&.cs\fP\&.
+.SS "uint SystemEx\&.Rand\&.ValueBasedSeed\&.this[int index]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Provides indexed access to individual seed values\&. Both reading and writing are supported, allowing engines or mixing operations to modify specific seed components directly\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The zero‑based index of the seed value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB62\fP of file \fBValueBasedSeed\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

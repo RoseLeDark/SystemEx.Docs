@@ -1,0 +1,87 @@
+.TH "SystemEx.Rand.ISeed" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Rand.ISeed \- Represents a generic seed source for random number generators\&. Implementations provide an array of 32‑bit seed values, support indexed access, and may update their internal state when required\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Rand\&.Engine\&.Isaac32EngineSeed\fP, \fBSystemEx\&.Rand\&.Engine\&.MTwisterEngineSeed\fP, and \fBSystemEx\&.Rand\&.ISeed< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "uint[] \fBGetSeed\fP ()"
+.br
+.RI "Returns the underlying seed values as an array of 32‑bit unsigned integers\&. The returned array defines the complete state of the seed at the time of access\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the number of 32‑bit values contained in the seed\&. This corresponds to the length of the array returned by \fBGetSeed\fP\&. "
+.ti -1c
+.RI "uint \fBthis[int i]\fP\fR [get, set]\fP"
+.br
+.RI "Provides indexed access to individual seed values\&. Both reading and writing are supported, allowing engines or mixing operations to modify specific seed components directly\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a generic seed source for random number generators\&. Implementations provide an array of 32‑bit seed values, support indexed access, and may update their internal state when required\&. 
+.PP
+Definition at line \fB25\fP of file \fBISeed\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "uint[] SystemEx\&.Rand\&.ISeed\&.GetSeed ()"
+
+.PP
+Returns the underlying seed values as an array of 32‑bit unsigned integers\&. The returned array defines the complete state of the seed at the time of access\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A uint array containing the current seed values\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Rand\&.Engine\&.Isaac32EngineSeed\fP, \fBSystemEx\&.Rand\&.Engine\&.MTwisterEngineSeed\fP, \fBSystemEx\&.Rand\&.HashedSeed\fP, \fBSystemEx\&.Rand\&.SeedMixed\fP, \fBSystemEx\&.Rand\&.TimeBasedSeed\fP, and \fBSystemEx\&.Rand\&.ValueBasedSeed\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Rand\&.Engine\&.Isaac32Engine\&.Isaac32Engine()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Rand\&.ISeed\&.Length\fR [get]\fP"
+
+.PP
+Gets the number of 32‑bit values contained in the seed\&. This corresponds to the length of the array returned by \fBGetSeed\fP\&. 
+.PP
+Implemented in \fBSystemEx\&.Rand\&.Engine\&.Isaac32EngineSeed\fP, \fBSystemEx\&.Rand\&.Engine\&.MTwisterEngineSeed\fP, \fBSystemEx\&.Rand\&.HashedSeed\fP, \fBSystemEx\&.Rand\&.SeedMixed\fP, \fBSystemEx\&.Rand\&.TimeBasedSeed\fP, and \fBSystemEx\&.Rand\&.ValueBasedSeed\fP\&.
+.PP
+Definition at line \fB39\fP of file \fBISeed\&.cs\fP\&.
+.SS "uint SystemEx\&.Rand\&.ISeed\&.this[int i]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Provides indexed access to individual seed values\&. Both reading and writing are supported, allowing engines or mixing operations to modify specific seed components directly\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi\fP The zero‑based index of the seed value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The 32‑bit unsigned integer stored at the specified index\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Rand\&.Engine\&.Isaac32EngineSeed\fP, and \fBSystemEx\&.Rand\&.Engine\&.MTwisterEngineSeed\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBISeed\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

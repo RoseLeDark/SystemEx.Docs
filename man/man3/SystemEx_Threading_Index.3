@@ -1,0 +1,336 @@
+.TH "SystemEx.Threading.Index" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.Index \- Represents a thread-safe index counter that can be incremented, decremented, and compared atomically\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable, IComparable, \fBSystemEx\&.IComparableEx< T >\fP, IComparable, \fBSystemEx\&.IComparableEx< T >\fP, and IFormattable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Index \fBAssign\fP (Index other)"
+.br
+.RI "Assigns the value of another index\&. "
+.ti -1c
+.RI "Index \fBAssign\fP (long value)"
+.br
+.ti -1c
+.RI "int IComparable< Index >\&. \fBCompareTo\fP (Index other)"
+.br
+.RI "Compares the index to another index\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (Index other)"
+.br
+.RI "Compares the index to another index\&. "
+.ti -1c
+.RI "int IComparable< long >\&. \fBCompareTo\fP (long other)"
+.br
+.RI "Compares the index to a value\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (long other)"
+.br
+.RI "Compares the index to a value\&. "
+.ti -1c
+.RI "long \fBDecrement\fP ()"
+.br
+.RI "Prefix decrement\&. "
+.ti -1c
+.RI "long \fBDecrementPost\fP ()"
+.br
+.RI "Postfix decrement\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (Index other)"
+.br
+.ti -1c
+.RI "bool \fBEquals\fP (long other)"
+.br
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Standard override for hash code generation\&. "
+.ti -1c
+.RI "long \fBIncrement\fP ()"
+.br
+.RI "Prefix increment\&. "
+.ti -1c
+.RI "long \fBIncrementPost\fP ()"
+.br
+.RI "Postfix increment\&. "
+.ti -1c
+.RI "\fBIndex\fP (long value)"
+.br
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.ti -1c
+.RI "string \fBToString\fP (string? format, IFormatProvider? formatProvider)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static implicit \fBoperator Index\fP (long value)"
+.br
+.RI "Converts a value to an index\&. "
+.ti -1c
+.RI "static implicit \fBoperator long\fP (Index i)"
+.br
+.RI "Converts the index to its underlying T value\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (Index a, Index b)"
+.br
+.RI "Compares two counters for inequality using atomic reads\&. "
+.ti -1c
+.RI "static Index \fBoperator+\fP (Index a, long value)"
+.br
+.RI "Adds a value to the counter atomically\&. "
+.ti -1c
+.RI "static Index \fBoperator++\fP (Index a)"
+.br
+.RI "Prefix increment operator (++x)\&. "
+.ti -1c
+.RI "static Index \fBoperator\-\fP (Index a, long value)"
+.br
+.RI "Subtracts a value from the counter atomically\&. "
+.ti -1c
+.RI "static Index \fBoperator\-\-\fP (Index a)"
+.br
+.RI "Prefix decrement operator (--x)\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (Index a, Index b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator<=\fP (Index a, Index b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator==\fP (Index a, Index b)"
+.br
+.RI "Compares two counters for equality using atomic reads\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (Index a, Index b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>=\fP (Index a, Index b)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsZero\fP\fR [get]\fP"
+.br
+.RI "Returns true if the index is zero\&. "
+.ti -1c
+.RI "long \fBValue\fP\fR [get, set]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a thread-safe index counter that can be incremented, decremented, and compared atomically\&. 
+.PP
+Definition at line \fB25\fP of file \fBIndex\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.Index\&.Index ()"
+
+.PP
+Definition at line \fB43\fP of file \fBIndex\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.Index\&.Index (long value)"
+
+.PP
+Definition at line \fB47\fP of file \fBIndex\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "Index SystemEx\&.Threading\&.Index\&.Assign (Index other)"
+
+.PP
+Assigns the value of another index\&. 
+.PP
+Definition at line \fB54\fP of file \fBIndex\&.cs\fP\&.
+.SS "Index SystemEx\&.Threading\&.Index\&.Assign (long value)"
+Assigns a value\&. 
+.PP
+Definition at line \fB62\fP of file \fBIndex\&.cs\fP\&.
+.SS "int IComparable< Index >\&. SystemEx\&.Threading\&.Index\&.CompareTo (Index other)"
+
+.PP
+Compares the index to another index\&. 
+.PP
+Definition at line \fB137\fP of file \fBIndex\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Threading\&.Index\&.CompareTo (Index other)"
+
+.PP
+Compares the index to another index\&. 
+.PP
+Definition at line \fB130\fP of file \fBIndex\&.cs\fP\&.
+.SS "int IComparable< long >\&. SystemEx\&.Threading\&.Index\&.CompareTo (long other)"
+
+.PP
+Compares the index to a value\&. 
+.PP
+Definition at line \fB151\fP of file \fBIndex\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Threading\&.Index\&.CompareTo (long other)"
+
+.PP
+Compares the index to a value\&. 
+.PP
+Definition at line \fB144\fP of file \fBIndex\&.cs\fP\&.
+.SS "long SystemEx\&.Threading\&.Index\&.Decrement ()"
+
+.PP
+Prefix decrement\&. 
+.PP
+Definition at line \fB76\fP of file \fBIndex\&.cs\fP\&.
+.PP
+Referenced by \fBoperator\-\-()\fP\&.
+.SS "long SystemEx\&.Threading\&.Index\&.DecrementPost ()"
+
+.PP
+Postfix decrement\&. 
+.PP
+Definition at line \fB88\fP of file \fBIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Index\&.Equals (Index other)"
+
+.PP
+
+.PP
+Definition at line \fB108\fP of file \fBIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Index\&.Equals (long other)"
+
+.PP
+
+.PP
+Definition at line \fB113\fP of file \fBIndex\&.cs\fP\&.
+.SS "override bool SystemEx\&.Threading\&.Index\&.Equals (object? obj)"
+Standard override for equality comparison\&. 
+.PP
+Definition at line \fB94\fP of file \fBIndex\&.cs\fP\&.
+.SS "override int SystemEx\&.Threading\&.Index\&.GetHashCode ()"
+
+.PP
+Standard override for hash code generation\&. 
+.PP
+Definition at line \fB103\fP of file \fBIndex\&.cs\fP\&.
+.SS "long SystemEx\&.Threading\&.Index\&.Increment ()"
+
+.PP
+Prefix increment\&. 
+.PP
+Definition at line \fB70\fP of file \fBIndex\&.cs\fP\&.
+.PP
+Referenced by \fBoperator++()\fP\&.
+.SS "long SystemEx\&.Threading\&.Index\&.IncrementPost ()"
+
+.PP
+Postfix increment\&. 
+.PP
+Definition at line \fB82\fP of file \fBIndex\&.cs\fP\&.
+.SS "implicit SystemEx\&.Threading\&.Index\&.operator Index (long value)\fR [static]\fP"
+
+.PP
+Converts a value to an index\&. 
+.PP
+Definition at line \fB164\fP of file \fBIndex\&.cs\fP\&.
+.SS "implicit SystemEx\&.Threading\&.Index\&.operator long (Index i)\fR [static]\fP"
+
+.PP
+Converts the index to its underlying T value\&. 
+.PP
+Definition at line \fB159\fP of file \fBIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Index\&.operator!= (Index a, Index b)\fR [static]\fP"
+
+.PP
+Compares two counters for inequality using atomic reads\&. 
+.PP
+Definition at line \fB206\fP of file \fBIndex\&.cs\fP\&.
+.SS "Index SystemEx\&.Threading\&.Index\&.operator+ (Index a, long value)\fR [static]\fP"
+
+.PP
+Adds a value to the counter atomically\&. 
+.PP
+Definition at line \fB184\fP of file \fBIndex\&.cs\fP\&.
+.SS "Index SystemEx\&.Threading\&.Index\&.operator++ (Index a)\fR [static]\fP"
+
+.PP
+Prefix increment operator (++x)\&. 
+.PP
+Definition at line \fB176\fP of file \fBIndex\&.cs\fP\&.
+.SS "Index SystemEx\&.Threading\&.Index\&.operator\- (Index a, long value)\fR [static]\fP"
+
+.PP
+Subtracts a value from the counter atomically\&. 
+.PP
+Definition at line \fB192\fP of file \fBIndex\&.cs\fP\&.
+.SS "Index SystemEx\&.Threading\&.Index\&.operator\-\- (Index a)\fR [static]\fP"
+
+.PP
+Prefix decrement operator (--x)\&. 
+.PP
+Definition at line \fB168\fP of file \fBIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Index\&.operator< (Index a, Index b)\fR [static]\fP"
+
+.PP
+Definition at line \fB211\fP of file \fBIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Index\&.operator<= (Index a, Index b)\fR [static]\fP"
+
+.PP
+Definition at line \fB219\fP of file \fBIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Index\&.operator== (Index a, Index b)\fR [static]\fP"
+
+.PP
+Compares two counters for equality using atomic reads\&. 
+.PP
+Definition at line \fB199\fP of file \fBIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Index\&.operator> (Index a, Index b)\fR [static]\fP"
+
+.PP
+Definition at line \fB215\fP of file \fBIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Index\&.operator>= (Index a, Index b)\fR [static]\fP"
+
+.PP
+Definition at line \fB223\fP of file \fBIndex\&.cs\fP\&.
+.SS "override string SystemEx\&.Threading\&.Index\&.ToString ()"
+
+.PP
+
+.PP
+Definition at line \fB117\fP of file \fBIndex\&.cs\fP\&.
+.SS "string SystemEx\&.Threading\&.Index\&.ToString (string? format, IFormatProvider? formatProvider)"
+
+.PP
+
+.PP
+Definition at line \fB122\fP of file \fBIndex\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.Index\&.IsZero\fR [get]\fP"
+
+.PP
+Returns true if the index is zero\&. 
+.PP
+Definition at line \fB36\fP of file \fBIndex\&.cs\fP\&.
+.SS "long SystemEx\&.Threading\&.Index\&.Value\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Definition at line \fB38\fP of file \fBIndex\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

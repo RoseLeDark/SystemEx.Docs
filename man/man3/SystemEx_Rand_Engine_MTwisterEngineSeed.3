@@ -1,0 +1,116 @@
+.TH "SystemEx.Rand.Engine.MTwisterEngineSeed" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Rand.Engine.MTwisterEngineSeed \- Represents the seed container used by the \fBMTwisterEngine\fP\&. The seed consists of five 32-bit values: the primary user-provided seed and four additional system-derived values to increase initialization entropy\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Rand\&.ISeed\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "uint[] \fBGetSeed\fP ()"
+.br
+.RI "Returns the underlying array of seed values\&. "
+.ti -1c
+.RI "\fBMTwisterEngineSeed\fP ()"
+.br
+.RI "Initializes a new instance of the \fBMTwisterEngineSeed\fP struct using the default MT19937 seed value (19650218)\&. "
+.ti -1c
+.RI "\fBMTwisterEngineSeed\fP (uint seed)"
+.br
+.RI "Initializes a new instance of the \fBMTwisterEngineSeed\fP struct using the specified primary seed value\&. Additional system-derived values are included to enrich the initialization state\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the number of seed values stored in this seed container\&. "
+.ti -1c
+.RI "uint \fBthis[int i]\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the seed value at the specified index\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents the seed container used by the \fBMTwisterEngine\fP\&. The seed consists of five 32-bit values: the primary user-provided seed and four additional system-derived values to increase initialization entropy\&. 
+.PP
+Definition at line \fB40\fP of file \fBMTwisterEngine\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Rand\&.Engine\&.MTwisterEngineSeed\&.MTwisterEngineSeed ()"
+
+.PP
+Initializes a new instance of the \fBMTwisterEngineSeed\fP struct using the default MT19937 seed value (19650218)\&. 
+.PP
+Definition at line \fB63\fP of file \fBMTwisterEngine\&.cs\fP\&.
+.SS "SystemEx\&.Rand\&.Engine\&.MTwisterEngineSeed\&.MTwisterEngineSeed (uint seed)"
+
+.PP
+Initializes a new instance of the \fBMTwisterEngineSeed\fP struct using the specified primary seed value\&. Additional system-derived values are included to enrich the initialization state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIseed\fP The primary 32-bit seed value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB71\fP of file \fBMTwisterEngine\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "uint[] SystemEx\&.Rand\&.Engine\&.MTwisterEngineSeed\&.GetSeed ()"
+
+.PP
+Returns the underlying array of seed values\&. 
+.PP
+\fBReturns\fP
+.RS 4
+An array containing all seed values\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Rand\&.ISeed\fP\&.
+.PP
+Definition at line \fB56\fP of file \fBMTwisterEngine\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Rand\&.Engine\&.MTwisterEngineSeed\&.Length\fR [get]\fP"
+
+.PP
+Gets the number of seed values stored in this seed container\&. 
+.PP
+Implements \fBSystemEx\&.Rand\&.ISeed\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBMTwisterEngine\&.cs\fP\&.
+.SS "uint SystemEx\&.Rand\&.Engine\&.MTwisterEngineSeed\&.this[int i]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the seed value at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi\fP The index of the seed value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The seed value at the specified index\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Rand\&.ISeed\fP\&.
+.PP
+Definition at line \fB47\fP of file \fBMTwisterEngine\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

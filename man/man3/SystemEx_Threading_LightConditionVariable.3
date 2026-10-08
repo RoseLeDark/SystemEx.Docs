@@ -1,0 +1,125 @@
+.TH "SystemEx.Threading.LightConditionVariable" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.LightConditionVariable \- A lightweight and minimal condition variable designed for simple thread synchronization scenarios\&. Unlike the heavy and business‑oriented primitives in \&.NET, \fBLightConditionVariable\fP provides a straightforward FIFO wait‑list and wake‑up mechanism suitable for most everyday use cases\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBBroadcast\fP ()"
+.br
+.RI "Wakes all threads currently waiting on this condition variable\&. Each thread in the FIFO wait‑list is resumed in order\&. "
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clear all Waiter from the Wait \fBQueue\fP\&. "
+.ti -1c
+.RI "\fBLightConditionVariable\fP (string strName)"
+.br
+.RI "Initializes a new lightweight condition variable with an internal FIFO wait‑list\&. The structure is intentionally minimal and avoids the overhead of traditional \&.NET synchronization constructs\&. "
+.ti -1c
+.RI "void \fBNotify\fP (bool all=false)"
+.br
+.RI "Convenience method that either wakes a single thread or all threads, depending on the \fIall\fP  parameter\&. "
+.ti -1c
+.RI "void \fBSignal\fP ()"
+.br
+.RI "Wakes a single waiting thread, if any\&. The first thread in the FIFO wait‑list is resumed\&. This operation is intentionally simple and does not involve any advanced signaling semantics\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Count of Waiters\&. "
+.ti -1c
+.RI "bool \fBHasWaiters\fP\fR [get]\fP"
+.br
+.RI "Has this ConditionVariable any waiters\&. "
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Get The Name of this Object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A lightweight and minimal condition variable designed for simple thread synchronization scenarios\&. Unlike the heavy and business‑oriented primitives in \&.NET, \fBLightConditionVariable\fP provides a straightforward FIFO wait‑list and wake‑up mechanism suitable for most everyday use cases\&. 
+
+Threads can register themselves using Add(LightThread) and will be resumed explicitly through \fBSignal\fP or \fBBroadcast\fP\&. No complex monitor logic or advanced runtime scheduling is involved\&. 
+.PP
+Definition at line \fB34\fP of file \fBLightConditionVariable\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.LightConditionVariable\&.LightConditionVariable (string strName)"
+
+.PP
+Initializes a new lightweight condition variable with an internal FIFO wait‑list\&. The structure is intentionally minimal and avoids the overhead of traditional \&.NET synchronization constructs\&. 
+.PP
+Definition at line \fB91\fP of file \fBLightConditionVariable\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Threading\&.LightConditionVariable\&.Broadcast ()"
+
+.PP
+Wakes all threads currently waiting on this condition variable\&. Each thread in the FIFO wait‑list is resumed in order\&. 
+.PP
+Definition at line \fB129\fP of file \fBLightConditionVariable\&.cs\fP\&.
+.PP
+Referenced by \fBNotify()\fP\&.
+.SS "void SystemEx\&.Threading\&.LightConditionVariable\&.Clear ()"
+
+.PP
+Clear all Waiter from the Wait \fBQueue\fP\&. 
+.PP
+Definition at line \fB166\fP of file \fBLightConditionVariable\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.LightConditionVariable\&.Notify (bool all = \fRfalse\fP)"
+
+.PP
+Convenience method that either wakes a single thread or all threads, depending on the \fIall\fP  parameter\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIall\fP If \fRtrue\fP, all waiting threads are resumed; otherwise only one\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB158\fP of file \fBLightConditionVariable\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.LightConditionVariable\&.Signal ()"
+
+.PP
+Wakes a single waiting thread, if any\&. The first thread in the FIFO wait‑list is resumed\&. This operation is intentionally simple and does not involve any advanced signaling semantics\&. 
+.PP
+Definition at line \fB108\fP of file \fBLightConditionVariable\&.cs\fP\&.
+.PP
+Referenced by \fBNotify()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Threading\&.LightConditionVariable\&.Count\fR [get]\fP"
+
+.PP
+Count of Waiters\&. 
+.PP
+Definition at line \fB47\fP of file \fBLightConditionVariable\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightConditionVariable\&.HasWaiters\fR [get]\fP"
+
+.PP
+Has this ConditionVariable any waiters\&. 
+.PP
+Definition at line \fB42\fP of file \fBLightConditionVariable\&.cs\fP\&.
+.SS "string SystemEx\&.Threading\&.LightConditionVariable\&.Name\fR [get]\fP"
+
+.PP
+Get The Name of this Object\&. 
+.PP
+Definition at line \fB84\fP of file \fBLightConditionVariable\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

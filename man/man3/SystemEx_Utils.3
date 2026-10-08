@@ -1,0 +1,137 @@
+.TH "SystemEx.Utils" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Utils
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAlgorithm\fP"
+.br
+.RI "Provides generic algorithm utilities similar to the C++ STL, including fill, copy, move, min/max, clamp, rotation, equality, lexicographical comparison, and several sorting algorithms for arrays\&. "
+.ti -1c
+.RI "struct \fBBitIntSpan\fP"
+.br
+.RI "Provides a low-level bit window over a referenced int value\&. This type exposes individual bits as a mutable span-like view with support for forward, reverse, and ring-based indexing modes\&. "
+.ti -1c
+.RI "struct \fBBitLongSpan\fP"
+.br
+.RI "Provides a low-level bit window over a referenced long value\&. This type exposes individual bits as a mutable span-like view with support for forward, reverse, and ring-based indexing modes\&. "
+.ti -1c
+.RI "struct \fBBitUIntSpan\fP"
+.br
+.RI "Provides a low-level bit window over a referenced uint value\&. This type exposes individual bits as a mutable span-like view with support for forward, reverse, and ring-based indexing modes\&. "
+.ti -1c
+.RI "struct \fBBitULongSpan\fP"
+.br
+.RI "Provides a low-level bit window over a referenced ulong value\&. This type exposes individual bits as a mutable span-like view with support for forward, reverse, and ring-based indexing modes\&. "
+.ti -1c
+.RI "class \fBBitUtils\fP"
+.br
+.RI "Provides low‑level bit manipulation utilities for all primitive integer types\&. 
+.br
+ Includes bit extraction, bit setting, bit flipping, bit masks, and bit rotation for signed and unsigned 8‑, 16‑, 32‑ and 64‑bit values\&. "
+.ti -1c
+.RI "class \fBBitView\fP"
+.br
+.RI "Provides factory methods for creating bit‑level span views over primitive integer types\&. Each method returns a windowed, mutable bit span that exposes the underlying value without copying it\&. "
+.ti -1c
+.RI "class \fBLayout\fP"
+.br
+.RI "Provides validation utilities for unmanaged structs used in native interop, binary serialization, GPU buffers, and memory‑mapped structures\&. 
+.br
+ Ensures that a struct: 
+.PD 0
+.IP "\(bu" 2
+uses LayoutKind\&.Sequential 
+.IP "\(bu" 2
+has identical \fRsizeof(T)\fP and System\&.Runtime\&.InteropServices\&.Marshal\&.SizeOf<T>(T) 
+.IP "\(bu" 2
+matches an optional expected unmanaged size 
+.PP
+\&. "
+.ti -1c
+.RI "class \fBMissingStructLayoutSequentialException\fP"
+.br
+.RI "Exception thrown when a struct used for unmanaged interop does not specify StructLayoutAttribute with LayoutKind\&.Sequential\&. 
+.br
+ Required for deterministic field ordering in native interop, binary serialization, and memory‑mapped structures\&. "
+.ti -1c
+.RI "class \fBRandUtils\fP"
+.br
+.RI "Provides random number and random character generation utilities for all primitive numeric types, including endian‑aware range mapping\&. 
+.br
+ Also includes password generation using configurable character sets\&. "
+.ti -1c
+.RI "class \fBSizeMismatchException\fP"
+.br
+.RI "Exception thrown when the managed size of a struct does not match the expected unmanaged size\&. 
+.br
+ Used to validate binary compatibility between C# structs and native memory layouts\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBRandPasswordLevel\fP { \fBSimple\fP = 16, \fBStrong\fP = 32 }"
+.br
+.RI "Specifies predefined password lengths for random password generation\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "delegate \fBCompareResult\fP \fBCompFunc< T >\fP (T? a, T? b)"
+.br
+.RI "Represents a comparison function for two values of type \fIT\fP \&. "
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.Utils\&.RandPasswordLevel\fP"
+
+.PP
+Specifies predefined password lengths for random password generation\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BISimple \fP
+Generates a 16‑character password using the basic character set\&. 
+.TP
+\f(BIStrong \fP
+Generates a 32‑character password using the extended strong character set\&. 
+.PP
+Definition at line \fB27\fP of file \fBRandUtils\&.cs\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "delegate \fBCompareResult\fP SystemEx\&.Utils\&.CompFunc< T > (T? a, T? b)"
+
+.PP
+Represents a comparison function for two values of type \fIT\fP \&. The function receives two operands \fRa\fP and \fRb\fP and returns a \fBCompareResult\fP describing their ordering relation\&. This delegate is used throughout Algorithm to implement generic, type‑agnostic algorithms such as sorting, min/max selection, and lexicographical comparison\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The value type to compare\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The first value\&.
+.br
+\fIb\fP The second value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBCompareResult\fP indicating how \fRa\fP relates to \fRb\fP\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

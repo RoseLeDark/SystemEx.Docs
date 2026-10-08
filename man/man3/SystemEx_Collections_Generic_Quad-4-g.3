@@ -1,0 +1,267 @@
+.TH "SystemEx.Collections.Generic.Quad< TT, TU, TW, TJ >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Quad< TT, TU, TW, TJ > \- A lightweight, serializable four‑element tuple consisting of strongly typed first, second, third, and fourth values\&. 
+.br
+ Implements ITuple for indexed access and structural comparison\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "readonly bool \fBEqualFirst\fP (TT? other)"
+.br
+.RI "Determines whether the first element equals the specified value\&. "
+.ti -1c
+.RI "readonly bool \fBEqualFourth\fP (TJ? other)"
+.br
+.RI "Determines whether the fourth element equals the specified value\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBQuad\fP< TT, TU, TW, TJ > other)"
+.br
+.RI "Determines whether this quad is equal to another quad by comparing all four elements\&. "
+.ti -1c
+.RI "readonly bool \fBEqualSecond\fP (TU? other)"
+.br
+.RI "Determines whether the second element equals the specified value\&. "
+.ti -1c
+.RI "readonly bool \fBEqualThird\fP (TW? other)"
+.br
+.RI "Determines whether the third element equals the specified value\&. "
+.ti -1c
+.RI "Optional< object > ITuple< TT >\&. \fBGet\fP (int index)"
+.br
+.RI "Retrieves the element at the specified index\&. 
+.br
+ Index 0 returns the first element, index 1 the second, 
+.br
+ index 2 the third, index 3 the fourth\&. "
+.ti -1c
+.RI "readonly Optional< object > \fBGet\fP (int index)"
+.br
+.RI "Retrieves the element at the specified index\&. 
+.br
+ Index 0 returns the first element, index 1 the second, 
+.br
+ index 2 the third, index 3 the fourth\&. "
+.ti -1c
+.RI "\fBQuad\fP (TT first, TU second, TW third, TJ fourth)"
+.br
+.RI "Creates a new quad with the specified values\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns a string representation of the quad in the form \fR[first, second, third, fourth]\fP\&. 
+.br
+ Uses a stack‑allocated buffer for performance\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP
+.in +1c
+.ti -1c
+.RI "bool \fBEqualFirst\fP (TKey key)"
+.br
+.RI "Determines whether the first element of the tuple is equal to the specified key\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "readonly int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements in the tuple (always 4)\&. "
+.ti -1c
+.RI "TT \fBFirst\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the first element of the quad\&. "
+.ti -1c
+.RI "TJ \fBFourth\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the fourth element of the quad\&. "
+.ti -1c
+.RI "TU \fBSecond\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the second element of the quad\&. "
+.ti -1c
+.RI "TW \fBThird\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the third element of the quad\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A lightweight, serializable four‑element tuple consisting of strongly typed first, second, third, and fourth values\&. 
+.br
+ Implements ITuple for indexed access and structural comparison\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITT\fP The type of the first element\&.
+.br
+\fITU\fP The type of the second element\&.
+.br
+\fITW\fP The type of the third element\&.
+.br
+\fITJ\fP The type of the fourth element\&.
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITT\fP : \fInotnull\fP
+.PP
+Definition at line \fB32\fP of file \fBQuad\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "readonly bool SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.EqualFirst (TT? other)"
+
+.PP
+Determines whether the first element equals the specified value\&. 
+.PP
+Definition at line \fB125\fP of file \fBQuad\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "readonly bool SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.EqualFourth (TJ? other)"
+
+.PP
+Determines whether the fourth element equals the specified value\&. 
+.PP
+Definition at line \fB152\fP of file \fBQuad\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.Equals (\fBQuad\fP< TT, TU, TW, TJ > other)"
+
+.PP
+Determines whether this quad is equal to another quad by comparing all four elements\&. 
+.PP
+Definition at line \fB105\fP of file \fBQuad\&.cs\fP\&.
+.SS "readonly bool SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.EqualSecond (TU? other)"
+
+.PP
+Determines whether the second element equals the specified value\&. 
+.PP
+Definition at line \fB134\fP of file \fBQuad\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "readonly bool SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.EqualThird (TW? other)"
+
+.PP
+Determines whether the third element equals the specified value\&. 
+.PP
+Definition at line \fB143\fP of file \fBQuad\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "Optional< object > ITuple< TT >\&. SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.Get (int index)"
+
+.PP
+Retrieves the element at the specified index\&. 
+.br
+ Index 0 returns the first element, index 1 the second, 
+.br
+ index 2 the third, index 3 the fourth\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fIIndexOutOfRangeException\fP Thrown when the index is not 0–3\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB191\fP of file \fBQuad\&.cs\fP\&.
+.SS "readonly Optional< object > SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.Get (int index)"
+
+.PP
+Retrieves the element at the specified index\&. 
+.br
+ Index 0 returns the first element, index 1 the second, 
+.br
+ index 2 the third, index 3 the fourth\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fIIndexOutOfRangeException\fP Thrown when the index is not 0–3\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB166\fP of file \fBQuad\&.cs\fP\&.
+.PP
+Referenced by \fBGet()\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.Quad (TT first, TU second, TW third, TJ fourth)"
+
+.PP
+Creates a new quad with the specified values\&. 
+.PP
+Definition at line \fB94\fP of file \fBQuad\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override string SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.ToString ()"
+
+.PP
+Returns a string representation of the quad in the form \fR[first, second, third, fourth]\fP\&. 
+.br
+ Uses a stack‑allocated buffer for performance\&. 
+.PP
+Definition at line \fB117\fP of file \fBQuad\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "readonly int SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of elements in the tuple (always 4)\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB89\fP of file \fBQuad\&.cs\fP\&.
+.PP
+Referenced by \fBGet()\fP\&.
+.SS "TT SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.First\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the first element of the quad\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB57\fP of file \fBQuad\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "TJ SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.Fourth\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the fourth element of the quad\&. 
+.PP
+Definition at line \fB81\fP of file \fBQuad\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "TU SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.Second\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the second element of the quad\&. 
+.PP
+Definition at line \fB65\fP of file \fBQuad\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "TW SystemEx\&.Collections\&.Generic\&.Quad< TT, TU, TW, TJ >\&.Third\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the third element of the quad\&. 
+.PP
+Definition at line \fB73\fP of file \fBQuad\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

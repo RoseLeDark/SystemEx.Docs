@@ -1,7 +1,7 @@
 var a01581 =
 [
-    [ "CloseHardwareBuffer", "da/df3/a01581_a9f914e66eb1f111f799049c827bef125.html#a9f914e66eb1f111f799049c827bef125", null ],
-    [ "CreateReadHardwareBuffer", "da/df3/a01581_a833aff35554009c28025b975f13d4dfe.html#a833aff35554009c28025b975f13d4dfe", null ],
-    [ "CreateWriteHardwareBuffer", "da/df3/a01581_ae46d08af2aeec81c004385b0eba87bb9.html#ae46d08af2aeec81c004385b0eba87bb9", null ],
-    [ "ReciveFromHardwareBuffer", "da/df3/a01581_ad1a998c4c1c2bcf87d3cc71848521729.html#ad1a998c4c1c2bcf87d3cc71848521729", null ]
+    [ "CloseHardwareBuffer", "da/df3/a01581_a836f662fbb93b2bfe6cdf75c7d181181.html#a836f662fbb93b2bfe6cdf75c7d181181", null ],
+    [ "CreateReadHardwareBuffer", "da/df3/a01581_a4420b7952d57f3d5abaa9de7e29ce5ba.html#a4420b7952d57f3d5abaa9de7e29ce5ba", null ],
+    [ "CreateWriteHardwareBuffer", "da/df3/a01581_a38bb2947d40b091d13169a0f253f49ea.html#a38bb2947d40b091d13169a0f253f49ea", null ],
+    [ "ReciveFromHardwareBuffer", "da/df3/a01581_a1e1bbd70cac562cca27943802e8ec1d3.html#a1e1bbd70cac562cca27943802e8ec1d3", null ]
 ];

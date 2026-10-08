@@ -1,18 +1,6 @@
 var a01836 =
 [
-    [ "Vec2f", "db/df3/a01836.html#ad6d27f477acecc253fee2f7fd1d08ab4", null ],
-    [ "Vec2f", "db/df3/a01836.html#ab2371bb62b97ce56a620486a766ce1aa", null ],
-    [ "Vec2f", "db/df3/a01836.html#a483afe5aa195dc80bf04251fe0cb0cce", null ],
-    [ "Vec2f", "db/df3/a01836.html#a4bcb80dd7dc15656bc82abc42d63bf70", null ],
-    [ "Vec2f", "db/df3/a01836.html#ac56ea4189627fa84e88acceddfecce4e", null ],
-    [ "CompareTo", "db/df3/a01836.html#afb97722da5dbdf5370a0ec3fecbcec32", null ],
-    [ "CompareTo", "db/df3/a01836.html#a6be7651cdee9c8e9cf17206145e3f99f", null ],
-    [ "Equals", "db/df3/a01836.html#a8eff8641531e06c2313dbd8d8f138749", null ],
-    [ "Equals", "db/df3/a01836.html#a2b0d04ba2991bc28b6c34d412386068f", null ],
-    [ "Get", "db/df3/a01836.html#a0eae4d2a1fb06873701cf480aa9cbc3e", null ],
-    [ "GetHashCode", "db/df3/a01836.html#a3999e0641066b222e49ba4ae23fe1a04", null ],
-    [ "ToBytes", "db/df3/a01836.html#ac1e6e37ea440d0fb42c688c088ab79d9", null ],
-    [ "Count", "db/df3/a01836.html#a93fb3b5cadeba98ba752eafa298f16e5", null ],
-    [ "X", "db/df3/a01836.html#ac0f94179dac91b079d4ead659b516c9d", null ],
-    [ "Y", "db/df3/a01836.html#aa59a1fe3e033d2d26fcf9b633c88738f", null ]
+    [ "Hash64", "d0/dac/a00901_gad70d6749552e6e733112b3af96bd9b90.html#gad70d6749552e6e733112b3af96bd9b90", null ],
+    [ "ToString", "d0/dac/a00901_gaffa553c85c47438230afa3a2df8ed529.html#gaffa553c85c47438230afa3a2df8ed529", null ],
+    [ "Value", "d0/dac/a00901_ga59803fc074a5a1d214de6bb7417fbd11.html#ga59803fc074a5a1d214de6bb7417fbd11", null ]
 ];

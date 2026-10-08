@@ -1,0 +1,239 @@
+.TH "SystemEx.Collections.Generic.Queue.UniqueDeque< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Queue.UniqueDeque< T > \- Represents a deque that only accepts unique elements\&. Attempts to insert a value already contained in the queue will fail\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.IDeque< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Removes all elements from the queue\&. "
+.ti -1c
+.RI "bool \fBPopBack\fP (ref Optional< T > value)"
+.br
+.RI "Removes the element at the back of the deque\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP When this method returns, contains the removed element if the operation succeeded; otherwise remains unchanged\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an element was removed; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+ "
+.ti -1c
+.RI "bool \fBPopFront\fP (out Optional< T > value)"
+.br
+.RI "Removes the element at the front of the queue\&. "
+.ti -1c
+.RI "bool \fBPushBack\fP (T value)"
+.br
+.ti -1c
+.RI "bool \fBPushFront\fP (T value)"
+.br
+.RI "Inserts an element at the front of the deque\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The element to insert at the front\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the element was successfully inserted; otherwise \fRfalse\fP \&. 
+.RE
+.PP
+ "
+.ti -1c
+.RI "\fBUniqueDeque\fP (int size, int growSize=2)"
+.br
+.RI "Initializes a new instance of the \fBUniqueQueue<T>\fP struct\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "T \fBEnd\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the back of the deque\&. "
+.ti -1c
+.RI "T \fBFront\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the front of the deque\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the queue contains no elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the queue has reached its maximum capacity\&. "
+.ti -1c
+.RI "int \fBSize\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements currently stored in the queue\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a deque that only accepts unique elements\&. Attempts to insert a value already contained in the queue will fail\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of elements stored in the queue\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB31\fP of file \fBUniqueDeque\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Collections\&.Generic\&.Queue\&.UniqueDeque< T >\&.Clear ()"
+
+.PP
+Removes all elements from the queue\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB55\fP of file \fBUniqueDeque\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Queue\&.UniqueDeque< T >\&.PopBack (ref Optional< T > value)"
+
+.PP
+Removes the element at the back of the deque\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP When this method returns, contains the removed element if the operation succeeded; otherwise remains unchanged\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an element was removed; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IDeque< T >\fP\&.
+.PP
+Definition at line \fB110\fP of file \fBUniqueDeque\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Queue\&.UniqueDeque< T >\&.PopFront (out Optional< T > value)"
+
+.PP
+Removes the element at the front of the queue\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP When this method returns, contains the removed element if the operation succeeded; otherwise contains \fRnull\fP\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an element was removed; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB66\fP of file \fBUniqueDeque\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Queue\&.UniqueDeque< T >\&.PushBack (T value)"
+
+.PP
+
+.PP
+Definition at line \fB79\fP of file \fBUniqueDeque\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Queue\&.UniqueDeque< T >\&.PushFront (T value)"
+
+.PP
+Inserts an element at the front of the deque\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The element to insert at the front\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the element was successfully inserted; otherwise \fRfalse\fP \&. 
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IDeque< T >\fP\&.
+.PP
+Definition at line \fB112\fP of file \fBUniqueDeque\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Queue\&.UniqueDeque< T >\&.UniqueDeque (int size, int growSize = \fR2\fP)"
+
+.PP
+Initializes a new instance of the \fBUniqueQueue<T>\fP struct\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP The initial capacity of the queue\&.
+.br
+\fIgrowSize\fP The number of additional elements to allocate when the queue grows\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB74\fP of file \fBUniqueDeque\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "T SystemEx\&.Collections\&.Generic\&.Queue\&.UniqueDeque< T >\&.End\fR [get]\fP"
+
+.PP
+Gets the element at the back of the deque\&. Accessing this property does not modify the deque\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IDeque< T >\fP\&.
+.PP
+Definition at line \fB50\fP of file \fBUniqueDeque\&.cs\fP\&.
+.SS "T SystemEx\&.Collections\&.Generic\&.Queue\&.UniqueDeque< T >\&.Front\fR [get]\fP"
+
+.PP
+Gets the element at the front of the deque\&. Accessing this property does not modify the deque\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IDeque< T >\fP\&.
+.PP
+Definition at line \fB48\fP of file \fBUniqueDeque\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Queue\&.UniqueDeque< T >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the queue contains no elements\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB42\fP of file \fBUniqueDeque\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Queue\&.UniqueDeque< T >\&.IsFull\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the queue has reached its maximum capacity\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB46\fP of file \fBUniqueDeque\&.cs\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.Queue\&.UniqueDeque< T >\&.Size\fR [get]\fP"
+
+.PP
+Gets the number of elements currently stored in the queue\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB37\fP of file \fBUniqueDeque\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,244 @@
+.TH "SystemEx.Threading" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAtomicLock\fP"
+.br
+.RI "A minimal user‑mode spin lock based on an atomic integer\&. The lock stores the managed thread ID of the owning thread\&. A value of \fR0\fP means the lock is free\&. "
+.ti -1c
+.RI "class \fBBarrier\fP"
+.br
+.RI "A user‑mode barrier that synchronizes multiple threads across repeated phases\&. The barrier waits until a specified number of threads have arrived, then opens and allows all participants to continue\&. After the phase completes, the barrier resets and becomes ready for the next cycle\&. "
+.ti -1c
+.RI "class \fBBarrierNewPhaseLockException\fP"
+.br
+.RI "Exception thrown when a barrier phase transition fails due to an invalid lock state or an inconsistent phase update\&. "
+.ti -1c
+.RI "struct \fBByteIndex\fP"
+.br
+.RI "Represents a thread-safe index counter that can be incremented, decremented, and compared atomically\&. "
+.ti -1c
+.RI "struct \fBEpoch\fP"
+.br
+.RI "Represents a lightweight Read-Copy-Update (RCU) epoch counter used to track active reader sections\&. Each call to \fBAssign\fP enters a reader epoch, and each call to \fBLeave\fP exits it\&. Writers may only proceed when the epoch value indicates that no readers are active\&. "
+.ti -1c
+.RI "class \fBEventGroup< TFastType >\fP"
+.br
+.RI "Represents a lightweight event group based on a fast bit‑storage type\&. \fBEventGroup<TFastType>\fP allows individual bit positions to be set, cleared, flipped, queried, or waited on\&. The underlying bit container is provided by \fITFastType\fP , which must implement \fBIFastType\fP\&. "
+.ti -1c
+.RI "interface \fBILock\fP"
+.br
+.RI "Defines the minimal contract for a synchronization primitive capable of providing mutual exclusion\&. Implementations of \fBILock\fP may wrap lightweight in‑process mechanisms (such as Monitor) or heavier inter‑process constructs (such as Mutex)\&. "
+.ti -1c
+.RI "interface \fBILock< T >\fP"
+.br
+.RI "Extends \fBILock\fP by exposing the underlying synchronization handle\&. This is useful for advanced scenarios where the caller may need direct access to the wrapped primitive (e\&.g\&., Mutex, Monitor object)\&. "
+.ti -1c
+.RI "interface \fBILockedObject< T >\fP"
+.br
+.RI "Defines a minimal lock‑protected value container interface\&. Implementations provide controlled read and write access to a value of type \fIT\fP  using a caller‑supplied synchronization mechanism\&. "
+.ti -1c
+.RI "interface \fBILockFreeQueue< T >\fP"
+.br
+.ti -1c
+.RI "struct \fBIndex\fP"
+.br
+.RI "Represents a thread-safe index counter that can be incremented, decremented, and compared atomically\&. "
+.ti -1c
+.RI "interface \fBISpinlock< T >\fP"
+.br
+.RI "Extends \fBILock<T>\fP with spin‑lock‑specific diagnostics and metadata\&. Implementations of \fBISpinlock<T>\fP represent busy‑wait mutual exclusion primitives where threads repeatedly attempt to acquire the lock without yielding\&. "
+.ti -1c
+.RI "struct \fBLightConditionVariable\fP"
+.br
+.RI "A lightweight and minimal condition variable designed for simple thread synchronization scenarios\&. Unlike the heavy and business‑oriented primitives in \&.NET, \fBLightConditionVariable\fP provides a straightforward FIFO wait‑list and wake‑up mechanism suitable for most everyday use cases\&. "
+.ti -1c
+.RI "class \fBLightCountingSpinlock< T >\fP"
+.br
+.RI "Implements a counting spinlock, a non‑blocking synchronization primitive that allows a bounded number of threads to enter a critical section concurrently\&. Unlike traditional binary spinlocks, which permit only a single thread at a time, a counting spinlock maintains an atomic counter representing the current available capacity\&. "
+.ti -1c
+.RI "class \fBLightFutex\fP"
+.br
+.RI "Provides a lightweight reentrant futex-like synchronization primitive\&. "
+.ti -1c
+.RI "struct \fBLightLatch\fP"
+.br
+.RI "A one-shot countdown synchronization primitive\&. The latch starts in the locked state and releases all waiting threads once its internal counter reaches zero\&. After releasing, the latch remains permanently open\&. "
+.ti -1c
+.RI "struct \fBLightLock\fP"
+.br
+.RI "Provides a minimal wrapper around Monitor to offer lightweight mutual exclusion\&. \fBLightLock\fP is intended for short, low‑overhead critical sections where a full synchronization primitive would be unnecessary\&. "
+.ti -1c
+.RI "struct \fBLightMMQueue< T >\fP"
+.br
+.RI "A bounded lock‑free multi‑producer, multi‑consumer (MPMC) queue\&. "
+.ti -1c
+.RI "class \fBLightMutex< T >\fP"
+.br
+.RI "A lightweight non‑blocking mutex built on top of \fBLightCountingSpinlock<T>\fP\&. This mutex provides binary spinlock semantics (capacity 1) combined with strict owner‑tracking to ensure that only the thread which successfully acquired the lock may access the protected value or release the lock\&. "
+.ti -1c
+.RI "struct \fBLightSaveQueueEntry< T >\fP"
+.br
+.RI "Represents a single slot inside a lock‑free LightQueue\&. Each entry stores a sequence number used for producer/consumer coordination, and an optional value of type \fIT\fP \&. "
+.ti -1c
+.RI "struct \fBLightSpinlock< T >\fP"
+.br
+.RI "Provides a lightweight atomic spinlock that protects a single value\&. \fBLightSpinlock<T>\fP uses pure atomic operations and busy‑wait acquisition, making it suitable for extremely short critical sections\&. "
+.ti -1c
+.RI "class \fBLightThread\fP"
+.br
+.RI "A lightweight and minimal thread implementation designed for simple and common synchronization scenarios\&. Unlike the complex and business-oriented threading abstractions in \&.NET, \fBLightThread\fP provides a straightforward wait-and-wake mechanism suitable for 90% of everyday use cases\&. "
+.ti -1c
+.RI "class \fBLockedObject< T >\fP"
+.br
+.RI "Provides a minimal lock‑protected wrapper around a value of type \fIT\fP  using a caller‑supplied lock implementation\&. "
+.ti -1c
+.RI "class \fBMutexLock\fP"
+.br
+.RI "A thin wrapper around operating‑system synchronization primitives (Mutex and EventWaitHandle)\&. "
+.ti -1c
+.RI "class \fBRCUObject< T >\fP"
+.br
+.RI "Represents a minimal Read-Copy-Update (RCU) container that provides lock-free read access and exclusive write access to a protected value\&. Reader activity is tracked through an \fBEpoch\fP instance, while writers are synchronized using an \fBILock\fP\&. "
+.ti -1c
+.RI "class \fBSafeCounter\fP"
+.br
+.RI "Provides a lightweight atomic counter with increment, decrement and assignment\&. "
+.ti -1c
+.RI "struct \fBScopedLock< T, TLOCK >\fP"
+.br
+.RI "Provides an RAII-style scoped lock for any \fBILock\fP implementation and exposes a snapshot of a protected value\&. The lock is acquired in the constructor and automatically released when the instance is disposed\&. "
+.ti -1c
+.RI "struct \fBScopedLock< TLOCK >\fP"
+.br
+.RI "Provides a scoped lock mechanism for an existing \fBILock\fP instance\&. Upon construction, the lock is acquired using the specified timeout\&. When the scope ends, \fBDispose\fP releases the lock\&. "
+.ti -1c
+.RI "struct \fBScopedUnlock< TLOCK >\fP"
+.br
+.RI "Provides a scoped unlock mechanism for an existing \fBILock\fP instance\&. Upon construction, the lock is immediately released\&. When the scope ends, \fBDispose\fP reacquires the lock using the specified timeout\&. "
+.ti -1c
+.RI "struct \fBSmallIndex\fP"
+.br
+.RI "Represents a thread-safe index counter that can be incremented, decremented, and compared atomically\&. "
+.ti -1c
+.RI "struct \fBSpinlock\fP"
+.br
+.RI "Provides a thin wrapper around System\&.Threading\&.SpinLock to expose a busy‑wait mutual exclusion primitive through the \fBISpinlock<T>\fP interface\&. "
+.ti -1c
+.RI "class \fBThreadEx\fP"
+.br
+.RI "Provides a managed thread wrapper with event‑based control mechanisms\&. \fBThreadEx\fP supports starting, stopping, pausing, resuming, joining, and sending custom events to the running thread\&. "
+.ti -1c
+.RI "struct \fBUniqueEpoch\fP"
+.br
+.RI "Provides an RAII-style scoped reader epoch for RCU-based objects\&. The epoch is incremented when the instance is created and decremented when the instance is disposed\&. This guarantees deterministic reader tracking even in the presence of exceptions\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBRCUState\fP { \fBCurrent\fP, \fBUpdate\fP }"
+.br
+.RI "Indicates the current operational state of an \fBRCUObject<T>\fP\&. Readers observe Current when no writer is active, and Update when a writer holds the exclusive lock\&. "
+.ti -1c
+.RI "enum \fBThreadExState\fP { \fBCreating\fP, \fBWaiting\fP, \fBStarted\fP, \fBRequestAbort\fP, \fBRequestKill\fP, \fBPause\fP, \fBSuspend\fP, \fBStopped\fP, \fBRunning\fP }"
+.br
+.RI "Represents the lifecycle states used by \fBThreadEx\fP and lightweight thread implementations\&. These states describe creation, startup, execution, pausing, and termination requests in a minimal and predictable manner\&. "
+.ti -1c
+.RI "enum \fBThreadInvokeMessage\fP { \fBMessage\fP, \fBPropertie\fP, \fBCoRoutine\fP, \fBStack\fP }"
+.br
+.RI "Defines the types of invoke messages that can be delivered to a \fBLightThread\fP during an active invoke context\&. "
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.Threading\&.RCUState\fP"
+
+.PP
+Indicates the current operational state of an \fBRCUObject<T>\fP\&. Readers observe Current when no writer is active, and Update when a writer holds the exclusive lock\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BICurrent \fP
+No writer is active; read operations observe the current stable data\&. 
+.TP
+\f(BIUpdate \fP
+A writer is active; readers may observe stale data while the update operation is in progress\&. 
+.PP
+Definition at line \fB28\fP of file \fBRCUObject\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.Threading\&.ThreadExState\fP"
+
+.PP
+Represents the lifecycle states used by \fBThreadEx\fP and lightweight thread implementations\&. These states describe creation, startup, execution, pausing, and termination requests in a minimal and predictable manner\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BICreating \fP
+The thread object is being constructed and has not yet been started\&. 
+.TP
+\f(BIWaiting \fP
+The thread has been scheduled to start (Start() was called), but its execution routine has not begun running yet\&. 
+.TP
+\f(BIStarted \fP
+The thread has begun executing its entry routine\&. 
+.TP
+\f(BIRequestAbort \fP
+A cooperative request to abort the thread has been issued\&. The thread should terminate itself at the next safe point\&. 
+.TP
+\f(BIRequestKill \fP
+A forced termination request has been issued\&. This indicates an immediate kill operation rather than a cooperative shutdown\&. 
+.TP
+\f(BIPause \fP
+The thread is paused and will resume only when explicitly signaled\&. 
+.TP
+\f(BISuspend \fP
+The thread is suspended and not allowed to continue until a resume operation occurs\&. 
+.TP
+\f(BIStopped \fP
+The thread has fully stopped and will not execute further instructions\&. 
+.TP
+\f(BIRunning \fP
+The thread is actively running and executing its assigned work\&. 
+.PP
+Definition at line \fB29\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.Threading\&.ThreadInvokeMessage\fP"
+
+.PP
+Defines the types of invoke messages that can be delivered to a \fBLightThread\fP during an active invoke context\&. Each message type represents a different category of thread‑side operation, ranging from general data delivery to coroutine scheduling and stack transfer\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIMessage \fP
+A general-purpose message containing arbitrary external or internal data for the thread\&. 
+.br
+ Typical use cases include input events (e\&.g\&., mouse or device data), sensor updates, or any other runtime information the thread may consume\&. 
+.TP
+\f(BIPropertie \fP
+A property or configuration update for the thread\&. 
+.br
+ Used to modify thread-specific settings, behavior flags, or other control parameters\&. 
+.TP
+\f(BICoRoutine \fP
+A coroutine scheduling request\&. 
+.br
+ The message payload contains the entry point for a new coroutine that the thread should initialize and execute in future cycles\&. 
+.TP
+\f(BIStack \fP
+A stack transfer message used by coroutine execution\&. 
+.br
+ Provides a stack of objects that represents coroutine state, arguments, or continuation data for internal coroutine processing\&. 
+.PP
+Definition at line \fB90\fP of file \fBThreadEx\&.cs\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

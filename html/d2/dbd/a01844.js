@@ -1,25 +1,6 @@
 var a01844 =
 [
-    [ "Quatd", "d2/dbd/a01844.html#a660a8302b484570a30838e023af78cf8", null ],
-    [ "Quatd", "d2/dbd/a01844.html#a38f157e235b44b013186760c1d0e3e33", null ],
-    [ "Quatd", "d2/dbd/a01844.html#a28aebc7e67ba016a5d8dedb55140cd8a", null ],
-    [ "Quatd", "d2/dbd/a01844.html#abc03cf0691324d7385fcbe13cd787be9", null ],
-    [ "Quatd", "d2/dbd/a01844.html#ae62d1c8f66c58b2cb22774a0dc3da88f", null ],
-    [ "Quatd", "d2/dbd/a01844.html#a8e9897289a0d36b1666e712f2707bc2e", null ],
-    [ "CompareTo", "d2/dbd/a01844.html#acbe413c0fc41adca79b8cbc9587bee8e", null ],
-    [ "CompareTo", "d2/dbd/a01844.html#a065a617c53fa7fc673d428a67eda6bc5", null ],
-    [ "Equals", "d2/dbd/a01844.html#a42f53860b3848f2f4c6d34eac1533dd5", null ],
-    [ "Equals", "d2/dbd/a01844.html#afc17849a30a23fd5fef411817d040f53", null ],
-    [ "Get", "d2/dbd/a01844.html#a35b381e4e6ba8844c433320f64047928", null ],
-    [ "GetHashCode", "d2/dbd/a01844.html#a9dc226b36659594aaafc453c2e1924be", null ],
-    [ "GetRotationAngle", "d2/dbd/a01844.html#a6c86030073a9e5a26265036858b006a2", null ],
-    [ "GetRotationAxis", "d2/dbd/a01844.html#a82a70f9e064d1abeaaab0c2bafb0334f", null ],
-    [ "ToBytes", "d2/dbd/a01844.html#a2679859c2bf61726d549a9af68642e02", null ],
-    [ "AxisAngle", "d2/dbd/a01844.html#a1836eb8e704bac01443e1392f1290fa3", null ],
-    [ "CompareMode", "d2/dbd/a01844.html#a02eb3359f687cc36f381d567f0a4e6dc", null ],
-    [ "S", "d2/dbd/a01844.html#a8f1d2329c3a508703b368d3555cc64dc", null ],
-    [ "V", "d2/dbd/a01844.html#a62e3f314893708f7dc98c85f7666954f", null ],
-    [ "X", "d2/dbd/a01844.html#a84a03f6809819d456dae04021895edd8", null ],
-    [ "Y", "d2/dbd/a01844.html#a8ad1551c01e76a025cf8895b0b577343", null ],
-    [ "Z", "d2/dbd/a01844.html#a821f230d0a3417f30d528bf6aa1e897d", null ]
+    [ "RamakrishnaHash", "d0/dac/a00901_gade7b11ccfcdc48f1639d6150a9e6e3b9.html#gade7b11ccfcdc48f1639d6150a9e6e3b9", null ],
+    [ "Compute", "d0/dac/a00901_ga7ef6060d652f6c8e5cc6f5b01393dfa4.html#ga7ef6060d652f6c8e5cc6f5b01393dfa4", null ],
+    [ "ComputeLong", "d0/dac/a00901_ga99121ac9f6abbc6245230a13c9aad6a0.html#ga99121ac9f6abbc6245230a13c9aad6a0", null ]
 ];

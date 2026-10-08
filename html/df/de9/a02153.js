@@ -1,11 +1,13 @@
 var a02153 =
 [
-    [ "SeedMixed", "d5/d89/a00907_ga118f1e16f7161c5a85afca622a99e879.html#ga118f1e16f7161c5a85afca622a99e879", null ],
-    [ "GetSeed", "d5/d89/a00907_gae487fce8628306f2b753efa4f2f53a62.html#gae487fce8628306f2b753efa4f2f53a62", null ],
-    [ "Mix< T >", "d5/d89/a00907_gadac49cc0337d9d3699fe0412961e82dc.html#gadac49cc0337d9d3699fe0412961e82dc", null ],
-    [ "Update", "d5/d89/a00907_ga348824000222054b5eb35467da2f0936.html#ga348824000222054b5eb35467da2f0936", null ],
-    [ "Current", "d5/d89/a00907_gaea2db1d837e90ebc6ac3e42869f0bef5.html#gaea2db1d837e90ebc6ac3e42869f0bef5", null ],
-    [ "Length", "d5/d89/a00907_ga9fcceac5418f1ad22139df9a71465fd1.html#ga9fcceac5418f1ad22139df9a71465fd1", null ],
-    [ "OnUserMix", "d5/d89/a00907_gacf60cb95ee8954ebbc9302a81ae662cd.html#gacf60cb95ee8954ebbc9302a81ae662cd", null ],
-    [ "this[int index]", "d5/d89/a00907_gaf194201cae5860f474a891d20c109ac7.html#gaf194201cae5860f474a891d20c109ac7", null ]
+    [ "Next", "df/de9/a02153_add46b96927852f08ec3115ed1a5abd32.html#add46b96927852f08ec3115ed1a5abd32", null ],
+    [ "Next", "df/de9/a02153_a58667144dfe33b5b9d883174435a0cec.html#a58667144dfe33b5b9d883174435a0cec", null ],
+    [ "Next32", "df/de9/a02153_a755512f9f3806f4dc1d88bd0570ed929.html#a755512f9f3806f4dc1d88bd0570ed929", null ],
+    [ "Next64", "df/de9/a02153_a3667b8f0c2bfde01dac54ac755abf65b.html#a3667b8f0c2bfde01dac54ac755abf65b", null ],
+    [ "NextByte", "df/de9/a02153_a3df4f2278477802709dec97e83cb2da3.html#a3df4f2278477802709dec97e83cb2da3", null ],
+    [ "NextBytes", "df/de9/a02153_a4fdfd9ecb4c2b6db544edd6f7fbf75f8.html#a4fdfd9ecb4c2b6db544edd6f7fbf75f8", null ],
+    [ "NextChar", "df/de9/a02153_a48f68361dd0427f8b9373ef89bbcb4d0.html#a48f68361dd0427f8b9373ef89bbcb4d0", null ],
+    [ "NextHashSeed32", "df/de9/a02153_ab4d2950b697ec65cd78961497c67337f.html#ab4d2950b697ec65cd78961497c67337f", null ],
+    [ "NextHashSeed64", "df/de9/a02153_a65d828bf906379ca226eb6558acdc42a.html#a65d828bf906379ca226eb6558acdc42a", null ],
+    [ "NextString", "df/de9/a02153_a2c675b7b202c955c4dffc338a745b421.html#a2c675b7b202c955c4dffc338a745b421", null ]
 ];

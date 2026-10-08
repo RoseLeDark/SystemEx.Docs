@@ -1,0 +1,240 @@
+.TH "SystemEx.Numeric.DQuatf" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.DQuatf \- Dual quaternion using single-precision floating point values\&. Represents a rigid 3D transformation consisting of rotation (real part) and translation (dual part)\&. Provides stable, non-drifting transformations compared to matrix-based approaches\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDQuatf\fP (\fBQuatf\fP rotation)"
+.br
+.RI "Creates a dual quaternion with rotation only\&. Translation is initialized to zero\&. "
+.ti -1c
+.RI "\fBDQuatf\fP (\fBQuatf\fP rotation, \fBVec3f\fP translation)"
+.br
+.RI "Creates a dual quaternion from rotation and translation\&. "
+.ti -1c
+.RI "\fBDQuatf\fP \fBInvert\fP ()"
+.br
+.RI "Computes the inverse of the dual quaternion\&. Inverts rotation and adjusts translation accordingly\&. "
+.ti -1c
+.RI "void \fBNormalize\fP ()"
+.br
+.RI "Normalizes both rotation and dual components\&. Required for stable interpolation and accumulation\&. "
+.ti -1c
+.RI "void \fBRotation\fP (\fBQuatf\fP rotation)"
+.br
+.RI "Sets the rotation component of the dual quaternion\&. "
+.ti -1c
+.RI "void \fBRotationTranslation\fP (\fBQuatf\fP rotation, \fBVec3f\fP translation)"
+.br
+.RI "Sets both rotation and translation components\&. Translation is encoded into the dual part\&. "
+.ti -1c
+.RI "\fBVec3f\fP \fBTransform\fP (\fBVec3f\fP v)"
+.br
+.RI "Transforms a vector using the dual quaternion\&. Applies rotation and translation without matrix drift\&. "
+.ti -1c
+.RI "void \fBTranslation\fP (\fBVec3f\fP translation)"
+.br
+.RI "Sets the translation component of the dual quaternion\&. Translation is encoded into the dual part using: qd = 0\&.5 * (translation_quat * rotation)\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBDQuatf\fP \fBFromRotationTranslation\fP (\fBQuatf\fP rotation, \fBVec3f\fP translation)"
+.br
+.RI "Creates a dual quaternion from rotation and translation\&. Translation is encoded into the dual part using: qd = 0\&.5 * (translation_quat * rotation)\&. "
+.ti -1c
+.RI "static \fBDQuatf\fP \fBFromRotationTranslationConjugated\fP (\fBQuatf\fP rotation, \fBVec3f\fP translation)"
+.br
+.RI "Creates a dual quaternion using the conjugated rotation\&. Useful for inverse transformation chains\&. "
+.ti -1c
+.RI "static \fBDQuatf\fP \fBoperator*\fP (\fBDQuatf\fP a, \fBDQuatf\fP b)"
+.br
+.RI "Multiplies two dual quaternions, combining their transformations\&. "
+.ti -1c
+.RI "static \fBDQuatf\fP \fBoperator+\fP (\fBDQuatf\fP a, \fBDQuatf\fP b)"
+.br
+.RI "Linear addition of dual quaternions\&. Not a valid rigid transformation; used for blending only\&. "
+.ti -1c
+.RI "static \fBDQuatf\fP \fBoperator\-\fP (\fBDQuatf\fP a, \fBDQuatf\fP b)"
+.br
+.RI "Linear subtraction of dual quaternions\&. Not a valid rigid transformation; used for blending only\&. "
+.ti -1c
+.RI "static \fBDQuatf\fP \fBoperator/\fP (\fBDQuatf\fP a, float s)"
+.br
+.RI "Divides both components by a scalar\&. Useful for normalization and weighted blending\&. "
+.ti -1c
+.RI "static \fBDQuatf\fP \fBSlerp\fP (\fBDQuatf\fP a, \fBDQuatf\fP b, float t)"
+.br
+.RI "Performs screw-motion interpolation between two dual quaternions\&. Interpolates rotation and translation simultaneously\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQuatf\fP \fBm_rot\fP"
+.br
+.RI "Rotation component (real part)\&. "
+.ti -1c
+.RI "\fBQuatf\fP \fBm_translation\fP"
+.br
+.RI "Translation component (dual part)\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBQuatf\fP \fBDual\fP\fR [get]\fP"
+.br
+.RI "Gets the translation component of the dual quaternion\&. "
+.ti -1c
+.RI "\fBQuatf\fP \fBReal\fP\fR [get]\fP"
+.br
+.RI "Gets the rotation component of the dual quaternion\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Dual quaternion using single-precision floating point values\&. Represents a rigid 3D transformation consisting of rotation (real part) and translation (dual part)\&. Provides stable, non-drifting transformations compared to matrix-based approaches\&. 
+.PP
+Definition at line \fB71\fP of file \fBDQuadv\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.DQuatf\&.DQuatf (\fBQuatf\fP rotation)"
+
+.PP
+Creates a dual quaternion with rotation only\&. Translation is initialized to zero\&. 
+.PP
+Definition at line \fB96\fP of file \fBDQuadv\&.cs\fP\&.
+.PP
+Referenced by \fBFromRotationTranslation()\fP, \fBFromRotationTranslationConjugated()\fP, \fBInvert()\fP, \fBoperator*()\fP, \fBoperator+()\fP, \fBoperator\-()\fP, \fBoperator/()\fP, and \fBSlerp()\fP\&.
+.SS "SystemEx\&.Numeric\&.DQuatf\&.DQuatf (\fBQuatf\fP rotation, \fBVec3f\fP translation)"
+
+.PP
+Creates a dual quaternion from rotation and translation\&. 
+.PP
+Definition at line \fB105\fP of file \fBDQuadv\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBDQuatf\fP SystemEx\&.Numeric\&.DQuatf\&.FromRotationTranslation (\fBQuatf\fP rotation, \fBVec3f\fP translation)\fR [static]\fP"
+
+.PP
+Creates a dual quaternion from rotation and translation\&. Translation is encoded into the dual part using: qd = 0\&.5 * (translation_quat * rotation)\&. 
+.PP
+Definition at line \fB257\fP of file \fBDQuadv\&.cs\fP\&.
+.PP
+Referenced by \fBDQuatf()\fP\&.
+.SS "\fBDQuatf\fP SystemEx\&.Numeric\&.DQuatf\&.FromRotationTranslationConjugated (\fBQuatf\fP rotation, \fBVec3f\fP translation)\fR [static]\fP"
+
+.PP
+Creates a dual quaternion using the conjugated rotation\&. Useful for inverse transformation chains\&. 
+.PP
+Definition at line \fB274\fP of file \fBDQuadv\&.cs\fP\&.
+.SS "\fBDQuatf\fP SystemEx\&.Numeric\&.DQuatf\&.Invert ()"
+
+.PP
+Computes the inverse of the dual quaternion\&. Inverts rotation and adjusts translation accordingly\&. 
+.PP
+Definition at line \fB157\fP of file \fBDQuadv\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.DQuatf\&.Normalize ()"
+
+.PP
+Normalizes both rotation and dual components\&. Required for stable interpolation and accumulation\&. 
+.PP
+Definition at line \fB116\fP of file \fBDQuadv\&.cs\fP\&.
+.SS "\fBDQuatf\fP SystemEx\&.Numeric\&.DQuatf\&.operator* (\fBDQuatf\fP a, \fBDQuatf\fP b)\fR [static]\fP"
+
+.PP
+Multiplies two dual quaternions, combining their transformations\&. 
+.PP
+Definition at line \fB205\fP of file \fBDQuadv\&.cs\fP\&.
+.SS "\fBDQuatf\fP SystemEx\&.Numeric\&.DQuatf\&.operator+ (\fBDQuatf\fP a, \fBDQuatf\fP b)\fR [static]\fP"
+
+.PP
+Linear addition of dual quaternions\&. Not a valid rigid transformation; used for blending only\&. 
+.PP
+Definition at line \fB219\fP of file \fBDQuadv\&.cs\fP\&.
+.SS "\fBDQuatf\fP SystemEx\&.Numeric\&.DQuatf\&.operator\- (\fBDQuatf\fP a, \fBDQuatf\fP b)\fR [static]\fP"
+
+.PP
+Linear subtraction of dual quaternions\&. Not a valid rigid transformation; used for blending only\&. 
+.PP
+Definition at line \fB232\fP of file \fBDQuadv\&.cs\fP\&.
+.SS "\fBDQuatf\fP SystemEx\&.Numeric\&.DQuatf\&.operator/ (\fBDQuatf\fP a, float s)\fR [static]\fP"
+
+.PP
+Divides both components by a scalar\&. Useful for normalization and weighted blending\&. 
+.PP
+Definition at line \fB244\fP of file \fBDQuadv\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.DQuatf\&.Rotation (\fBQuatf\fP rotation)"
+
+.PP
+Sets the rotation component of the dual quaternion\&. 
+.PP
+Definition at line \fB126\fP of file \fBDQuadv\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.DQuatf\&.RotationTranslation (\fBQuatf\fP rotation, \fBVec3f\fP translation)"
+
+.PP
+Sets both rotation and translation components\&. Translation is encoded into the dual part\&. 
+.PP
+Definition at line \fB146\fP of file \fBDQuadv\&.cs\fP\&.
+.SS "\fBDQuatf\fP SystemEx\&.Numeric\&.DQuatf\&.Slerp (\fBDQuatf\fP a, \fBDQuatf\fP b, float t)\fR [static]\fP"
+
+.PP
+Performs screw-motion interpolation between two dual quaternions\&. Interpolates rotation and translation simultaneously\&. 
+.PP
+Definition at line \fB190\fP of file \fBDQuadv\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.DQuatf\&.Transform (\fBVec3f\fP v)"
+
+.PP
+Transforms a vector using the dual quaternion\&. Applies rotation and translation without matrix drift\&. 
+.PP
+Definition at line \fB174\fP of file \fBDQuadv\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.DQuatf\&.Translation (\fBVec3f\fP translation)"
+
+.PP
+Sets the translation component of the dual quaternion\&. Translation is encoded into the dual part using: qd = 0\&.5 * (translation_quat * rotation)\&. 
+.PP
+Definition at line \fB136\fP of file \fBDQuadv\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.DQuatf\&.m_rot"
+
+.PP
+Rotation component (real part)\&. 
+.PP
+Definition at line \fB75\fP of file \fBDQuadv\&.cs\fP\&.
+.PP
+Referenced by \fBDQuatf()\fP, \fBDQuatf()\fP, \fBFromRotationTranslation()\fP, \fBFromRotationTranslationConjugated()\fP, \fBInvert()\fP, \fBNormalize()\fP, \fBoperator*()\fP, \fBoperator+()\fP, \fBoperator\-()\fP, \fBoperator/()\fP, \fBRotation()\fP, \fBRotationTranslation()\fP, \fBSlerp()\fP, \fBTransform()\fP, and \fBTranslation()\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.DQuatf\&.m_translation"
+
+.PP
+Translation component (dual part)\&. 
+.PP
+Definition at line \fB80\fP of file \fBDQuadv\&.cs\fP\&.
+.PP
+Referenced by \fBDQuatf()\fP, \fBDQuatf()\fP, \fBFromRotationTranslation()\fP, \fBFromRotationTranslationConjugated()\fP, \fBInvert()\fP, \fBNormalize()\fP, \fBoperator+()\fP, \fBoperator\-()\fP, \fBoperator/()\fP, \fBRotationTranslation()\fP, \fBSlerp()\fP, \fBTransform()\fP, and \fBTranslation()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.DQuatf\&.Dual\fR [get]\fP"
+
+.PP
+Gets the translation component of the dual quaternion\&. 
+.PP
+Definition at line \fB90\fP of file \fBDQuadv\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.DQuatf\&.Real\fR [get]\fP"
+
+.PP
+Gets the rotation component of the dual quaternion\&. 
+.PP
+Definition at line \fB85\fP of file \fBDQuadv\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,154 @@
+.TH "SystemEx.Drawing.ColorNCol" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Drawing.ColorNCol \- Represents a compact N‑Color classification based on the HWB color model\&. The color is expressed using a hue segment index (0–5), a percentage within that segment (0–100), and the whiteness/blackness components\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBColorNCol\fP (byte index, byte percent, float c, float l)"
+.br
+.RI "Erstellt eine neue N‑Color‑Struktur\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBColorNCol\fP other)"
+.br
+.RI "Determines whether this instance is equal to another NCol color\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Returns a hash code based on the C, L, and N components\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns a string representation of the NCOL color\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "float \fBC\fP\fR [get]\fP"
+.br
+.RI "Gets the whiteness component (0–100)\&. "
+.ti -1c
+.RI "byte \fBI\fP\fR [get, set]\fP"
+.br
+.RI "Gets the hue segment index (0–5)\&. "
+.ti -1c
+.RI "float \fBL\fP\fR [get]\fP"
+.br
+.RI "Gets the lightness component (0–100)\&. "
+.ti -1c
+.RI "string \fBN\fP\fR [get]\fP"
+.br
+.RI "Gets the generated N‑Color name, e\&.g\&. "R20", "G55", "B03"\&. "
+.ti -1c
+.RI "byte \fBP\fP\fR [get, set]\fP"
+.br
+.RI "Gets the percentage position within the hue segment (0–100)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a compact N‑Color classification based on the HWB color model\&. The color is expressed using a hue segment index (0–5), a percentage within that segment (0–100), and the whiteness/blackness components\&. 
+.PP
+Definition at line \fB25\fP of file \fBColorNCol\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Drawing\&.ColorNCol\&.ColorNCol (byte index, byte percent, float c, float l)"
+
+.PP
+Erstellt eine neue N‑Color‑Struktur\&. 
+.PP
+Definition at line \fB64\fP of file \fBColorNCol\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBEquals()\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Drawing\&.ColorNCol\&.Equals (\fBColorNCol\fP other)"
+
+.PP
+Determines whether this instance is equal to another NCol color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The color to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the components match; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB78\fP of file \fBColorNCol\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorNCol\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB87\fP of file \fBColorNCol\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorNCol\&.GetHashCode ()"
+
+.PP
+Returns a hash code based on the C, L, and N components\&. 
+.PP
+Definition at line \fB94\fP of file \fBColorNCol\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorNCol\&.ToString ()"
+
+.PP
+Returns a string representation of the NCOL color\&. 
+.PP
+Definition at line \fB101\fP of file \fBColorNCol\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "float SystemEx\&.Drawing\&.ColorNCol\&.C\fR [get]\fP"
+
+.PP
+Gets the whiteness component (0–100)\&. 
+.PP
+Definition at line \fB54\fP of file \fBColorNCol\&.cs\fP\&.
+.SS "byte SystemEx\&.Drawing\&.ColorNCol\&.I\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets the hue segment index (0–5)\&. 
+.PP
+Definition at line \fB39\fP of file \fBColorNCol\&.cs\fP\&.
+.PP
+Referenced by \fBColorNCol()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorNCol\&.L\fR [get]\fP"
+
+.PP
+Gets the lightness component (0–100)\&. 
+.PP
+Definition at line \fB59\fP of file \fBColorNCol\&.cs\fP\&.
+.SS "string SystemEx\&.Drawing\&.ColorNCol\&.N\fR [get]\fP"
+
+.PP
+Gets the generated N‑Color name, e\&.g\&. "R20", "G55", "B03"\&. 
+.PP
+Definition at line \fB49\fP of file \fBColorNCol\&.cs\fP\&.
+.SS "byte SystemEx\&.Drawing\&.ColorNCol\&.P\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets the percentage position within the hue segment (0–100)\&. 
+.PP
+Definition at line \fB44\fP of file \fBColorNCol\&.cs\fP\&.
+.PP
+Referenced by \fBColorNCol()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

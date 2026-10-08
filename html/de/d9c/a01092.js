@@ -1,4 +1,4 @@
 var a01092 =
 [
-    [ "CompareTo", "d4/dfd/a00810.html#ga31f1419e9cf0b785e10516da24de2d0b", null ]
+    [ "IsSimilar", "de/d01/a00897_ga1ca9f38b052a0b791fa20e7ae1eb8fa2.html#ga1ca9f38b052a0b791fa20e7ae1eb8fa2", null ]
 ];

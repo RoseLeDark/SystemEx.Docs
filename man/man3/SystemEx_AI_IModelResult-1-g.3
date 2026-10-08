@@ -1,0 +1,120 @@
+.TH "SystemEx.AI.IModelResult< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI.IModelResult< T > \- Represents the result produced by a model execution\&. 
+.br
+ Provides access to the final output, metadata, raw backend information, error details, and execution status\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Optional< Exception > \fBError\fP\fR [get]\fP"
+.br
+.RI "Gets an optional exception describing an error that occurred during model execution\&. 
+.br
+ If \fBSuccess\fP is true, this value is typically null\&. "
+.ti -1c
+.RI "Map< \fBModelMeta\fP, object > \fBMetadata\fP\fR [get]\fP"
+.br
+.RI "Gets a metadata map containing execution details such as timing, backend identifiers, token counts, or pipeline‑specific annotations\&. "
+.ti -1c
+.RI "Optional< object > \fBRaw\fP\fR [get]\fP"
+.br
+.RI "Gets the raw backend output, if available\&. 
+.br
+ This may include unprocessed JSON, binary data, or internal model structures that were not converted into \fIT\fP \&. "
+.ti -1c
+.RI "T \fBResult\fP\fR [get]\fP"
+.br
+.RI "Gets the final output produced by the model\&. "
+.ti -1c
+.RI "bool \fBSuccess\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the model execution completed successfully without errors\&. "
+.ti -1c
+.RI "DateTime \fBTimestamp\fP\fR [get]\fP"
+.br
+.RI "Gets the timestamp (UTC) when the result was created\&. Useful for logging, tracing, and chronological ordering\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents the result produced by a model execution\&. 
+.br
+ Provides access to the final output, metadata, raw backend information, error details, and execution status\&. 
+
+An \fBIModelResult<T>\fP is returned by all model backends and processing pipelines\&. It encapsulates both the structured result and diagnostic information that may be relevant for logging, tracing, debugging, or post‑processing\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the model's output (e\&.g\&., text, tokens, embeddings, objects)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB39\fP of file \fBIModelResult\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "Optional<Exception> SystemEx\&.AI\&.IModelResult< T >\&.Error\fR [get]\fP"
+
+.PP
+Gets an optional exception describing an error that occurred during model execution\&. 
+.br
+ If \fBSuccess\fP is true, this value is typically null\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.PP
+Definition at line \fB57\fP of file \fBIModelResult\&.cs\fP\&.
+.SS "Map<\fBModelMeta\fP, object> SystemEx\&.AI\&.IModelResult< T >\&.Metadata\fR [get]\fP"
+
+.PP
+Gets a metadata map containing execution details such as timing, backend identifiers, token counts, or pipeline‑specific annotations\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.PP
+Definition at line \fB50\fP of file \fBIModelResult\&.cs\fP\&.
+.SS "Optional<object> SystemEx\&.AI\&.IModelResult< T >\&.Raw\fR [get]\fP"
+
+.PP
+Gets the raw backend output, if available\&. 
+.br
+ This may include unprocessed JSON, binary data, or internal model structures that were not converted into \fIT\fP \&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.PP
+Definition at line \fB64\fP of file \fBIModelResult\&.cs\fP\&.
+.SS "T SystemEx\&.AI\&.IModelResult< T >\&.Result\fR [get]\fP"
+
+.PP
+Gets the final output produced by the model\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.PP
+Definition at line \fB44\fP of file \fBIModelResult\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.IModelResult< T >\&.Success\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the model execution completed successfully without errors\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.PP
+Definition at line \fB70\fP of file \fBIModelResult\&.cs\fP\&.
+.SS "DateTime SystemEx\&.AI\&.IModelResult< T >\&.Timestamp\fR [get]\fP"
+
+.PP
+Gets the timestamp (UTC) when the result was created\&. Useful for logging, tracing, and chronological ordering\&. 
+.PP
+Implemented in \fBSystemEx\&.AI\&.ModelResult< T >\fP\&.
+.PP
+Definition at line \fB76\fP of file \fBIModelResult\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,110 @@
+.TH "SystemEx.Rand.Randx" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Rand.Randx \- Provides the high-level random number generator implementation using the \fBIsaac32Engine\fP as the underlying engine\&. This variant is compiled when \fRDEFAULT_RANDENGIEN_MTWIST\fP is not defined\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Rand\&.GenericRand< TEngine >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRandx\fP (\fBISeed\fP seed)"
+.br
+.ti -1c
+.RI "\fBRandx\fP (uint seedA=0, uint seedB=0, uint seedC=0)"
+.br
+.RI "Initializes a new instance of the \fBRandx\fP class using the specified seed values\&. All three seed parameters are forwarded to the \fBIsaac32Engine\fP for initialization\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Rand\&.GenericRand< TEngine >\fP
+.in +1c
+.ti -1c
+.RI "\fBGenericRand\fP (TEngine engine)"
+.br
+.ti -1c
+.RI "uint \fBNext\fP (uint min, uint max)"
+.br
+.RI "Generates the next random number in the specified range\&. "
+.ti -1c
+.RI "ulong \fBNext\fP (ulong min, ulong max)"
+.br
+.RI "Generates the next random number in the specified range\&. "
+.ti -1c
+.RI "uint \fBNext32\fP ()"
+.br
+.RI "Generates the next random 32-bit number in the sequence\&. "
+.ti -1c
+.RI "ulong \fBNext64\fP ()"
+.br
+.RI "Generates the next random 64-bit number in the sequence\&. "
+.ti -1c
+.RI "byte \fBNextByte\fP ()"
+.br
+.RI "Generates the next random byte in the sequence\&. "
+.ti -1c
+.RI "void \fBNextBytes\fP (byte[] buffer)"
+.br
+.RI "Generates the next random number in the specified range\&. "
+.ti -1c
+.RI "char \fBNextChar\fP ()"
+.br
+.RI "Generates the next random character in the sequence\&. "
+.ti -1c
+.RI "uint \fBNextHashSeed32\fP ()"
+.br
+.RI "Generates the next random hash seed in the sequence\&. "
+.ti -1c
+.RI "ulong \fBNextHashSeed64\fP ()"
+.br
+.RI "Generates the next random hash seed in the sequence\&. "
+.ti -1c
+.RI "string \fBNextString\fP (int length)"
+.br
+.RI "Generates the next random string in the sequence\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Properties inherited from \fBSystemEx\&.Rand\&.GenericRand< TEngine >\fP
+.in +1c
+.ti -1c
+.RI "\fBIRandomEngine\fP \fBDefaultEngine\fP\fR [get]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides the high-level random number generator implementation using the \fBIsaac32Engine\fP as the underlying engine\&. This variant is compiled when \fRDEFAULT_RANDENGIEN_MTWIST\fP is not defined\&. 
+.PP
+Definition at line \fB52\fP of file \fBRandx\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Rand\&.Randx\&.Randx (uint seedA = \fR0\fP, uint seedB = \fR0\fP, uint seedC = \fR0\fP)"
+
+.PP
+Initializes a new instance of the \fBRandx\fP class using the specified seed values\&. All three seed parameters are forwarded to the \fBIsaac32Engine\fP for initialization\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIseedA\fP The first seed value\&.
+.br
+\fIseedB\fP The second seed value\&.
+.br
+\fIseedC\fP The third seed value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB62\fP of file \fBRandx\&.cs\fP\&.
+.SS "SystemEx\&.Rand\&.Randx\&.Randx (\fBISeed\fP seed)"
+
+.PP
+Definition at line \fB65\fP of file \fBRandx\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,7 +1,9 @@
 var a00929 =
 [
-    [ "ByteSeriablizeProvider", "de/d9f/a01881.html", "de/d9f/a01881" ],
-    [ "IByteFormatSchema", "d7/d9c/a01885.html", "d7/d9c/a01885" ],
-    [ "IByteSerialize&lt; T, TSchema &gt;", "d9/d9b/a01889.html", "d9/d9b/a01889" ],
-    [ "IIsByteSeriablize", "dd/d80/a01893.html", null ]
+    [ "Backend", "d7/d16/a00930.html", "d7/d16/a00930" ],
+    [ "InteropServices", "d8/dbb/a00932.html", "d8/dbb/a00932" ],
+    [ "Function&lt; TReturn, TDelegate &gt;", "df/d0e/a02195.html", "df/d0e/a02195" ],
+    [ "Module", "db/dd5/a02199.html", "db/dd5/a02199" ],
+    [ "ModuleInfo", "d3/d0f/a02203.html", null ],
+    [ "ModulePreloader", "dd/d6f/a02207.html", "dd/d6f/a02207" ]
 ];

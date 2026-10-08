@@ -1,0 +1,155 @@
+.TH "md_ARCHITECTURE" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_ARCHITECTURE \- 🏛️ SystemEx Architecture Overview 
+.PP
+
+
+.PP
+\fBSystemEx\fP is a modular, deterministic low‑level framework for \&.NET\&. 
+.br
+ Its architecture is intentionally divided into isolated subsystems to ensure stability, clarity, and predictable behavior\&.
+.SH "🧱 Core Principles"
+.PP
+.IP "\(bu" 2
+Deterministic behavior 
+.br
+
+.IP "\(bu" 2
+Zero hidden allocations 
+.br
+
+.IP "\(bu" 2
+Explicit numeric semantics 
+.br
+
+.IP "\(bu" 2
+STL‑style algorithms and iterators 
+.br
+
+.IP "\(bu" 2
+Modular subsystems with minimal cross‑dependencies 
+.br
+
+.IP "\(bu" 2
+Engine‑oriented design (numeric, threading, random, interop) 
+.br
+
+.IP "\(bu" 2
+Debug‑friendly structure 
+.br
+
+.PP
+.SH "🧩 Module Overview"
+.PP
+.SS "SystemEx (Base Layer)"
+Foundational primitives: \fRBuffer\fP, \fRFlexSpan\fP, \fRMath\fP, ranges, base tuples\&.
+.SS "SystemEx\&.Collections\&.Generic"
+High‑performance containers, node‑based traversal\&.
+.SS "SystemEx\&.Collections\&.Model"
+Higher‑level abstractions built on generic collections\&.
+.SS "SystemEx\&.Algorithms"
+STL‑style algorithms operating on \fBSystemEx\fP iterators\&.
+.SS "SystemEx\&.Drawing"
+HDR color models, HSV, RGB, CMY, XYZ, YUV, NCol, light models, canvas utilities\&.
+.SS "SystemEx\&.Hash"
+Hashing utilities: Bernstein, HashFactory, HashAttribute\&.
+.SS "SystemEx\&.IO"
+Deterministic IO streams: \fRCacheStream\fP, \fRWriteStream\fP\&.
+.SS "SystemEx\&.Numeric"
+Custom numeric types (Half16, Half16b, Ratio, Fast_Int, Fast_Byte), vectors, matrices, AxisAngle, projections\&.
+.SS "SystemEx\&.Random"
+ISAAC engine, Randx, SeedMixer, HashedSeed\&.
+.SS "SystemEx\&.Runtime"
+Cross‑platform dynamic loading and interop utilities\&.
+.SS "SystemEx\&.Threading"
+Lightweight threading primitives: EventGroup, LightTask, spinlocks\&.
+.SS "SystemEx\&.Utils / Utils\&.Bits"
+General utilities, bit operations, layout validation, random helpers\&.
+.SH "🧱 Design Choice: Controlled Duplication"
+.PP
+Some structures exist in multiple forms (e\&.g\&., \fRMap<TKey, TValue>\fP using \fRPair<TKey, TValue>[]\fP instead of \fRVector<Pair<\&.\&.\&.>>\fP)\&. 
+.br
+ This is intentional:
+
+.PP
+.IP "\(bu" 2
+Prevents deep dependency chains 
+.br
+
+.IP "\(bu" 2
+Keeps subsystems isolated 
+.br
+
+.IP "\(bu" 2
+Makes debugging easier 
+.br
+
+.IP "\(bu" 2
+Allows safe experimentation without affecting other modules 
+.br
+
+.IP "\(bu" 2
+Reduces risk of regressions in a large generic codebase 
+.br
+
+.PP
+.SH "Build Flags and Development Channels"
+.PP
+\fBSystemEx\fP uses build‑flags to separate stable functionality from experimental work\&. The primary flag is:
+.SS "\fRUSE_DEVBUILD_UNSTABLE\fP"
+This flag enables experimental subsystems, unfinished modules, and active development code\&. These blocks are wrapped in:
+
+.PP
+.PP
+.nf
+#if USE_DEVBUILD_UNSTABLE
+    // experimental code
+#endif
+.fi
+.PP
+
+.PP
+The purpose of this flag is architectural isolation:
+
+.PP
+.IP "\(bu" 2
+Clean repository: unstable code does not pollute stable modules
+.IP "\(bu" 2
+Safe iteration: new ideas can be tested without affecting existing APIs
+.IP "\(bu" 2
+Debuggability: experimental code paths remain invisible in normal builds
+.IP "\(bu" 2
+Controlled exposure: contributors must opt‑in to unstable features
+.IP "\(bu" 2
+Reduced regression risk: stable modules remain unaffected by ongoing work
+.PP
+
+.PP
+Build‑flag isolation ensures that new subsystems can be developed safely without destabilizing the stable architecture\&.
+
+.PP
+Development Channels \fBSystemEx\fP conceptually distinguishes two build channels:
+
+.PP
+.IP "\(bu" 2
+Stable Build (default) 
+.br
+ Contains only production‑ready modules\&. No experimental code is compiled\&.
+.IP "\(bu" 2
+Unstable Devbuild (USE_DEVBUILD_UNSTABLE) 
+.br
+ Contains experimental features, prototypes, debugging utilities, and unfinished subsystems\&. Intended for contributors and advanced users\&.
+.PP
+
+.PP
+This separation keeps the architecture predictable, maintainable, and safe for long‑term evolution\&.
+.SH "🧩 Maintainer Note"
+.PP
+\fBSystemEx\fP is developed by a single author (pronouns: dey/deren/dem/dem)\&. 
+.br
+ The architecture reflects the need for clarity, stability, and maintainability in a solo‑maintained project\&.
+
+.PP
+Contributions and technical discussions are welcome\&. 

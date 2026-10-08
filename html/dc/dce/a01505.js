@@ -1,11 +1,25 @@
 var a01505 =
 [
-    [ "EqualFirst", "d5/dd3/a00902_ga26d53a0cedb6ea41fd3719570486bfa6.html#ga26d53a0cedb6ea41fd3719570486bfa6", null ],
-    [ "Get", "d5/dd3/a00902_ga8333056b256bd9dd4b10e8b022b32ef4.html#ga8333056b256bd9dd4b10e8b022b32ef4", null ],
-    [ "Set", "d5/dd3/a00902_gaaad27d83ed52e6f8562ccacf23a3501c.html#gaaad27d83ed52e6f8562ccacf23a3501c", null ],
-    [ "Tuple", "d5/dd3/a00902_ga3fba042f1ba92525b663bf49a5a630a8.html#ga3fba042f1ba92525b663bf49a5a630a8", null ],
-    [ "Tuple", "d5/dd3/a00902_ga91a460d22023a00a326d276379c5eede.html#ga91a460d22023a00a326d276379c5eede", null ],
-    [ "Count", "d5/dd3/a00902_ga6c99837e506d2e3186de1025c91f1ae9.html#ga6c99837e506d2e3186de1025c91f1ae9", null ],
-    [ "First", "d5/dd3/a00902_ga8f202c9a6acac4a609224dd8b52a791b.html#ga8f202c9a6acac4a609224dd8b52a791b", null ],
-    [ "this[int index]", "d5/dd3/a00902_gafc9a09491979a1be4bad24df21275893.html#gafc9a09491979a1be4bad24df21275893", null ]
+    [ "AsFlexSpan", "dc/dce/a01505_acc9248032dec74728eabdb8330872bc4.html#acc9248032dec74728eabdb8330872bc4", null ],
+    [ "AsFlexSpan", "dc/dce/a01505_ad8a0487b516a3509ee453868c5426687.html#ad8a0487b516a3509ee453868c5426687", null ],
+    [ "Peek", "dc/dce/a01505_aa04fb1bd4ead74be0e68d39eb66d4998.html#aa04fb1bd4ead74be0e68d39eb66d4998", null ],
+    [ "Peek", "dc/dce/a01505_a716b270a05b22e6ebfb02eda033f8945.html#a716b270a05b22e6ebfb02eda033f8945", null ],
+    [ "Pop", "dc/dce/a01505_ac843f7e4a3c4d7c2e77c0c71571951e4.html#ac843f7e4a3c4d7c2e77c0c71571951e4", null ],
+    [ "Pop", "dc/dce/a01505_a40626db6e36e54394fbd09935ddd9be9.html#a40626db6e36e54394fbd09935ddd9be9", null ],
+    [ "PopRange", "dc/dce/a01505_ad8f09f693bfb6f4bc561229340007a3a.html#ad8f09f693bfb6f4bc561229340007a3a", null ],
+    [ "Push", "dc/dce/a01505_aaacaa8d4f932befbe254f0b93990903f.html#aaacaa8d4f932befbe254f0b93990903f", null ],
+    [ "Push", "dc/dce/a01505_a865c014a433a43cac3da172a4bd3fe04.html#a865c014a433a43cac3da172a4bd3fe04", null ],
+    [ "PushRange", "dc/dce/a01505_a8e62fa7bda8b25453cc90ed0e0c1f70b.html#a8e62fa7bda8b25453cc90ed0e0c1f70b", null ],
+    [ "ResetFilter", "dc/dce/a01505_a48b25f1a9959b399cf220c0b7a63f025.html#a48b25f1a9959b399cf220c0b7a63f025", null ],
+    [ "SetLayer", "dc/dce/a01505_a35df22b4f027201cfac7e05cbd735cb1.html#a35df22b4f027201cfac7e05cbd735cb1", null ],
+    [ "SetLayerOn", "dc/dce/a01505_a2d3f2d3e1f7655eeb40e979cf8e7182a.html#a2d3f2d3e1f7655eeb40e979cf8e7182a", null ],
+    [ "Stack", "dc/dce/a01505_a9f182bd5c425a9fa71675acc121a85f4.html#a9f182bd5c425a9fa71675acc121a85f4", null ],
+    [ "Current", "dc/dce/a01505_ae1a91ecfea18f52f0261d4e60dde1fec.html#ae1a91ecfea18f52f0261d4e60dde1fec", null ],
+    [ "Elements", "dc/dce/a01505_acc3cd699795bbc1bfc9fad3df697b7aa.html#acc3cd699795bbc1bfc9fad3df697b7aa", null ],
+    [ "Ende", "dc/dce/a01505_aab8eb42eadc10d346bedbcd0fd58fc9a.html#aab8eb42eadc10d346bedbcd0fd58fc9a", null ],
+    [ "EndFilter", "dc/dce/a01505_a828b2454879793f93f5cf2fb6e9385db.html#a828b2454879793f93f5cf2fb6e9385db", null ],
+    [ "IsEmpty", "dc/dce/a01505_ab21d836db11c4e812935c31866dbcbd9.html#ab21d836db11c4e812935c31866dbcbd9", null ],
+    [ "IsFull", "dc/dce/a01505_a5905601230255479410b907469491d0e.html#a5905601230255479410b907469491d0e", null ],
+    [ "Start", "dc/dce/a01505_a2ae717e434c504837aba12642317bc47.html#a2ae717e434c504837aba12642317bc47", null ],
+    [ "StartFilter", "dc/dce/a01505_a61dc491ce8fee1f2ab3be8002e5b99fe.html#a61dc491ce8fee1f2ab3be8002e5b99fe", null ]
 ];

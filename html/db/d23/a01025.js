@@ -1,7 +1,10 @@
 var a01025 =
 [
-    [ "ExecuteAsync", "d3/d8a/a00899_ga5cba0f89b40d0da6d09cd1364ce9ffea.html#ga5cba0f89b40d0da6d09cd1364ce9ffea", null ],
-    [ "GetParameters", "d3/d8a/a00899_ga71aa7f5116cb8f870bb7f13d74dab615.html#ga71aa7f5116cb8f870bb7f13d74dab615", null ],
-    [ "Description", "d3/d8a/a00899_ga20102a96d632785368e0cefada828f7f.html#ga20102a96d632785368e0cefada828f7f", null ],
-    [ "Name", "d3/d8a/a00899_gad9f0155efdebf9b3481bfaf12dfa166a.html#gad9f0155efdebf9b3481bfaf12dfa166a", null ]
+    [ "ModelResult", "d0/d85/a00908_ga1281ab08090465fa1cb131f4ac9d914b.html#ga1281ab08090465fa1cb131f4ac9d914b", null ],
+    [ "Error", "d0/d85/a00908_ga439652b38b729e3e0538dbb1392adbae.html#ga439652b38b729e3e0538dbb1392adbae", null ],
+    [ "Metadata", "d0/d85/a00908_ga7eb9b18eb2c8e43b6afdc1998b64e09a.html#ga7eb9b18eb2c8e43b6afdc1998b64e09a", null ],
+    [ "Raw", "d0/d85/a00908_ga7d6f77a650ecc20a0ab28d3b7e8c486f.html#ga7d6f77a650ecc20a0ab28d3b7e8c486f", null ],
+    [ "Result", "d0/d85/a00908_ga4e54b4ff33f5d51eaca49582ef5054b0.html#ga4e54b4ff33f5d51eaca49582ef5054b0", null ],
+    [ "Success", "d0/d85/a00908_ga8eb3da176c42fe913663540fe571ac0e.html#ga8eb3da176c42fe913663540fe571ac0e", null ],
+    [ "Timestamp", "d0/d85/a00908_ga5203cd739568da01dc572662e9b028a8.html#ga5203cd739568da01dc572662e9b028a8", null ]
 ];

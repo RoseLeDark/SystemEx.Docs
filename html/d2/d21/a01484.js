@@ -1,13 +1,8 @@
 var a01484 =
 [
-    [ "AddBuffer", "d2/d21/a01484.html#a7bc4002350665b4fe10aeeaebfed8ee1", null ],
-    [ "BeginRun", "d2/d21/a01484.html#a003fc294274846fba616b3d4e7b3a55d", null ],
-    [ "Create", "d2/d21/a01484.html#adc2f30a0d3b0b9f94fdcb83bad7dd2f9", null ],
-    [ "EndRun", "d2/d21/a01484.html#a23aa92269514ccc3f2cab9edc47b3460", null ],
-    [ "GetBuffer", "d2/d21/a01484.html#a5680e822b8842aa8d863e557ba40f9ec", null ],
-    [ "IsRunning", "d2/d21/a01484.html#ac0021bf73172da0bc789fece42f3b246", null ],
-    [ "RemoveBuffer", "d2/d21/a01484.html#ad6d9c0b9112797e6bd094e8e56abec3c", null ],
-    [ "RemoveBuffer", "d2/d21/a01484.html#a7611094d330cd73aa03c3e406dd54739", null ],
-    [ "Run", "d2/d21/a01484.html#a950dfa83692a5e63f062a846e859d6ae", null ],
-    [ "Backend", "d2/d21/a01484.html#ab18d6f9f562f69f5ede1d56410ef306e", null ]
+    [ "StackLayer", "d2/d21/a01484_abfed11b5d62c7f60b813d66366c19f69.html#abfed11b5d62c7f60b813d66366c19f69", null ],
+    [ "Current", "d2/d21/a01484_a91343d76659018c68250bc4bc56bacfe.html#a91343d76659018c68250bc4bc56bacfe", null ],
+    [ "Enable", "d2/d21/a01484_a87be649f351e3f6e0d55b15b1a48d507.html#a87be649f351e3f6e0d55b15b1a48d507", null ],
+    [ "EndMarker", "d2/d21/a01484_a3309f6c63785b7532b4b1a0fd9138d7a.html#a3309f6c63785b7532b4b1a0fd9138d7a", null ],
+    [ "StartMarker", "d2/d21/a01484_ace372d7653484e35f4610bba4d90a913.html#ace372d7653484e35f4610bba4d90a913", null ]
 ];

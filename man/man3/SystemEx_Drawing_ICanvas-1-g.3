@@ -1,0 +1,239 @@
+.TH "SystemEx.Drawing.ICanvas< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Drawing.ICanvas< T > \- Represents a mathematical 2D canvas storing color values of type \fIT\fP \&. This interface defines a deterministic data structure that models a rectangular grid of values\&. The canvas does not perform graphical drawing; instead, it provides structured access, mutation, and region‑based operations on its underlying data\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Drawing\&.ICanvasList< T >\fP, and \fBSystemEx\&.Drawing\&.ISubCanvas< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clears the canvas by resetting all stored values to their default state\&. This operation affects only the mathematical buffer\&. "
+.ti -1c
+.RI "ICanvas< T > \fBClone\fP ()"
+.br
+.RI "Creates a full mathematical clone of this canvas, duplicating all stored values\&. "
+.ti -1c
+.RI "ICanvas< T > \fBCopyRegion\fP (int x, int y, int width, int height)"
+.br
+.RI "Creates a new canvas containing a rectangular region of this canvas\&. The region is copied mathematically; no rendering or blending occurs\&. "
+.ti -1c
+.RI "void \fBFill\fP (T objcolor)"
+.br
+.RI "Fills the entire canvas with the specified color value\&. This operation replaces all stored data deterministically and does not perform any graphical drawing\&. "
+.ti -1c
+.RI "void \fBFillRect\fP (int x1, int y1, int x2, int y2)"
+.br
+.RI "Fills a rectangular region of the canvas with the specified color value\&. This modifies only the mathematical buffer and does not perform rendering\&. "
+.ti -1c
+.RI "Pair< int, int > \fBFind\fP (T color)"
+.br
+.RI "Searches the canvas for the first occurrence of the specified color value\&. Returns the coordinates of the match or \fR(-1, -1)\fP if no match is found\&. "
+.ti -1c
+.RI "int \fBFindLast\fP (T color)"
+.br
+.RI "Searches the canvas for the last occurrence of the specified color value\&. Returns the index in the underlying buffer or \fR-1\fP if no match is found\&. "
+.ti -1c
+.RI "T \fBGetPixel\fP (int x, int y)"
+.br
+.RI "Returns the color value at the specified coordinates\&. This method provides direct access to the underlying mathematical buffer without performing any rendering\&. "
+.ti -1c
+.RI "bool \fBResize\fP (int size)"
+.br
+.RI "Resizes the canvas to the specified total size (Width × Height)\&. Existing values may be truncated or expanded depending on the implementation\&. This operation modifies only the mathematical buffer\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "IEnumerable< T > \fBBuffer\fP\fR [get]\fP"
+.br
+.RI "Gets an enumerable view of the underlying buffer\&. The buffer contains the raw mathematical color values in row‑major order\&. No rendering or transformation occurs when accessing this property\&. "
+.ti -1c
+.RI "int \fBHeight\fP\fR [get]\fP"
+.br
+.RI "Gets the height of the canvas in mathematical units (rows)\&. "
+.ti -1c
+.RI "int \fBWidth\fP\fR [get]\fP"
+.br
+.RI "Gets the width of the canvas in mathematical units (columns)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a mathematical 2D canvas storing color values of type \fIT\fP \&. This interface defines a deterministic data structure that models a rectangular grid of values\&. The canvas does not perform graphical drawing; instead, it provides structured access, mutation, and region‑based operations on its underlying data\&. 
+
+All operations are purely mathematical and affect only the internal buffer\&. Visual output is never produced directly; color values are only observable through \fBGetPixel\fP, \fBBuffer\fP, or by transferring computed data into another canvas\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The color type stored in the canvas\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB34\fP of file \fBCanvas\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Drawing\&.ICanvas< T >\&.Clear ()"
+
+.PP
+Clears the canvas by resetting all stored values to their default state\&. This operation affects only the mathematical buffer\&. 
+.SS "ICanvas< T > SystemEx\&.Drawing\&.ICanvas< T >\&.Clone ()"
+
+.PP
+Creates a full mathematical clone of this canvas, duplicating all stored values\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A new canvas with identical content\&.
+.RE
+.PP
+
+.SS "ICanvas< T > SystemEx\&.Drawing\&.ICanvas< T >\&.CopyRegion (int x, int y, int width, int height)"
+
+.PP
+Creates a new canvas containing a rectangular region of this canvas\&. The region is copied mathematically; no rendering or blending occurs\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The X coordinate of the region\&.
+.br
+\fIy\fP The Y coordinate of the region\&.
+.br
+\fIwidth\fP The width of the region\&.
+.br
+\fIheight\fP The height of the region\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new canvas containing the extracted region\&.
+.RE
+.PP
+
+.SS "void SystemEx\&.Drawing\&.ICanvas< T >\&.Fill (T objcolor)"
+
+.PP
+Fills the entire canvas with the specified color value\&. This operation replaces all stored data deterministically and does not perform any graphical drawing\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobjcolor\fP The color value to assign to every element\&.
+.RE
+.PP
+
+.SS "void SystemEx\&.Drawing\&.ICanvas< T >\&.FillRect (int x1, int y1, int x2, int y2)"
+
+.PP
+Fills a rectangular region of the canvas with the specified color value\&. This modifies only the mathematical buffer and does not perform rendering\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx1\fP The starting X coordinate\&.
+.br
+\fIy1\fP The starting Y coordinate\&.
+.br
+\fIx2\fP The ending X coordinate\&.
+.br
+\fIy2\fP The ending Y coordinate\&.
+.RE
+.PP
+
+.SS "Pair< int, int > SystemEx\&.Drawing\&.ICanvas< T >\&.Find (T color)"
+
+.PP
+Searches the canvas for the first occurrence of the specified color value\&. Returns the coordinates of the match or \fR(-1, -1)\fP if no match is found\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcolor\fP The color value to search for\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pair containing the coordinates of the first match\&.
+.RE
+.PP
+
+.SS "int SystemEx\&.Drawing\&.ICanvas< T >\&.FindLast (T color)"
+
+.PP
+Searches the canvas for the last occurrence of the specified color value\&. Returns the index in the underlying buffer or \fR-1\fP if no match is found\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcolor\fP The color value to search for\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The buffer index of the last match\&.
+.RE
+.PP
+
+.SS "T SystemEx\&.Drawing\&.ICanvas< T >\&.GetPixel (int x, int y)"
+
+.PP
+Returns the color value at the specified coordinates\&. This method provides direct access to the underlying mathematical buffer without performing any rendering\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The X coordinate\&.
+.br
+\fIy\fP The Y coordinate\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The color value at the given position\&.
+.RE
+.PP
+
+.SS "bool SystemEx\&.Drawing\&.ICanvas< T >\&.Resize (int size)"
+
+.PP
+Resizes the canvas to the specified total size (Width × Height)\&. Existing values may be truncated or expanded depending on the implementation\&. This operation modifies only the mathematical buffer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP The new total number of elements\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the resize succeeded; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "IEnumerable<T> SystemEx\&.Drawing\&.ICanvas< T >\&.Buffer\fR [get]\fP"
+
+.PP
+Gets an enumerable view of the underlying buffer\&. The buffer contains the raw mathematical color values in row‑major order\&. No rendering or transformation occurs when accessing this property\&. 
+.PP
+Definition at line \fB60\fP of file \fBCanvas\&.cs\fP\&.
+.SS "int SystemEx\&.Drawing\&.ICanvas< T >\&.Height\fR [get]\fP"
+
+.PP
+Gets the height of the canvas in mathematical units (rows)\&. 
+.PP
+Definition at line \fB48\fP of file \fBCanvas\&.cs\fP\&.
+.SS "int SystemEx\&.Drawing\&.ICanvas< T >\&.Width\fR [get]\fP"
+
+.PP
+Gets the width of the canvas in mathematical units (columns)\&. 
+.PP
+Definition at line \fB53\fP of file \fBCanvas\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

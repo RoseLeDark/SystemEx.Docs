@@ -1,0 +1,336 @@
+.TH "SystemEx.Threading.ByteIndex" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.ByteIndex \- Represents a thread-safe index counter that can be incremented, decremented, and compared atomically\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable, IComparable, \fBSystemEx\&.IComparableEx< T >\fP, IComparable, \fBSystemEx\&.IComparableEx< T >\fP, and IFormattable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "ByteIndex \fBAssign\fP (byte value)"
+.br
+.ti -1c
+.RI "ByteIndex \fBAssign\fP (ByteIndex other)"
+.br
+.RI "Assigns the value of another index\&. "
+.ti -1c
+.RI "\fBByteIndex\fP (byte value)"
+.br
+.ti -1c
+.RI "int IComparable< byte >\&. \fBCompareTo\fP (byte other)"
+.br
+.RI "Compares the index to a value\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (byte other)"
+.br
+.RI "Compares the index to a value\&. "
+.ti -1c
+.RI "int IComparable< ByteIndex >\&. \fBCompareTo\fP (ByteIndex other)"
+.br
+.RI "Compares the index to another index\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (ByteIndex other)"
+.br
+.RI "Compares the index to another index\&. "
+.ti -1c
+.RI "byte \fBDecrement\fP ()"
+.br
+.RI "Prefix decrement\&. "
+.ti -1c
+.RI "byte \fBDecrementPost\fP ()"
+.br
+.RI "Postfix decrement\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (byte other)"
+.br
+.ti -1c
+.RI "bool \fBEquals\fP (ByteIndex other)"
+.br
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Standard override for hash code generation\&. "
+.ti -1c
+.RI "byte \fBIncrement\fP ()"
+.br
+.RI "Prefix increment\&. "
+.ti -1c
+.RI "byte \fBIncrementPost\fP ()"
+.br
+.RI "Postfix increment\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.ti -1c
+.RI "string \fBToString\fP (string? format, IFormatProvider? formatProvider)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static implicit \fBoperator byte\fP (ByteIndex i)"
+.br
+.RI "Converts the index to its underlying T value\&. "
+.ti -1c
+.RI "static implicit \fBoperator ByteIndex\fP (byte value)"
+.br
+.RI "Converts a value to an index\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (ByteIndex a, ByteIndex b)"
+.br
+.RI "Compares two counters for inequality using atomic reads\&. "
+.ti -1c
+.RI "static ByteIndex \fBoperator+\fP (ByteIndex a, byte value)"
+.br
+.RI "Adds a value to the counter atomically\&. "
+.ti -1c
+.RI "static ByteIndex \fBoperator++\fP (ByteIndex a)"
+.br
+.RI "Prefix increment operator (++x)\&. "
+.ti -1c
+.RI "static ByteIndex \fBoperator\-\fP (ByteIndex a, byte value)"
+.br
+.RI "Subtracts a value from the counter atomically\&. "
+.ti -1c
+.RI "static ByteIndex \fBoperator\-\-\fP (ByteIndex a)"
+.br
+.RI "Prefix decrement operator (--x)\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (ByteIndex a, ByteIndex b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator<=\fP (ByteIndex a, ByteIndex b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator==\fP (ByteIndex a, ByteIndex b)"
+.br
+.RI "Compares two counters for equality using atomic reads\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (ByteIndex a, ByteIndex b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>=\fP (ByteIndex a, ByteIndex b)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsZero\fP\fR [get]\fP"
+.br
+.RI "Returns true if the index is zero\&. "
+.ti -1c
+.RI "byte \fBValue\fP\fR [get, set]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a thread-safe index counter that can be incremented, decremented, and compared atomically\&. 
+.PP
+Definition at line \fB25\fP of file \fBByteIndex\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.ByteIndex\&.ByteIndex ()"
+
+.PP
+Definition at line \fB43\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.ByteIndex\&.ByteIndex (byte value)"
+
+.PP
+Definition at line \fB47\fP of file \fBByteIndex\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "ByteIndex SystemEx\&.Threading\&.ByteIndex\&.Assign (byte value)"
+Assigns a value\&. 
+.PP
+Definition at line \fB62\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "ByteIndex SystemEx\&.Threading\&.ByteIndex\&.Assign (ByteIndex other)"
+
+.PP
+Assigns the value of another index\&. 
+.PP
+Definition at line \fB54\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "int IComparable< byte >\&. SystemEx\&.Threading\&.ByteIndex\&.CompareTo (byte other)"
+
+.PP
+Compares the index to a value\&. 
+.PP
+Definition at line \fB165\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Threading\&.ByteIndex\&.CompareTo (byte other)"
+
+.PP
+Compares the index to a value\&. 
+.PP
+Definition at line \fB158\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "int IComparable< ByteIndex >\&. SystemEx\&.Threading\&.ByteIndex\&.CompareTo (ByteIndex other)"
+
+.PP
+Compares the index to another index\&. 
+.PP
+Definition at line \fB151\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Threading\&.ByteIndex\&.CompareTo (ByteIndex other)"
+
+.PP
+Compares the index to another index\&. 
+.PP
+Definition at line \fB144\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "byte SystemEx\&.Threading\&.ByteIndex\&.Decrement ()"
+
+.PP
+Prefix decrement\&. 
+.PP
+Definition at line \fB79\fP of file \fBByteIndex\&.cs\fP\&.
+.PP
+Referenced by \fBoperator\-\-()\fP\&.
+.SS "byte SystemEx\&.Threading\&.ByteIndex\&.DecrementPost ()"
+
+.PP
+Postfix decrement\&. 
+.PP
+Definition at line \fB98\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ByteIndex\&.Equals (byte other)"
+
+.PP
+
+.PP
+Definition at line \fB127\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ByteIndex\&.Equals (ByteIndex other)"
+
+.PP
+
+.PP
+Definition at line \fB122\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "override bool SystemEx\&.Threading\&.ByteIndex\&.Equals (object? obj)"
+Standard override for equality comparison\&. 
+.PP
+Definition at line \fB108\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "override int SystemEx\&.Threading\&.ByteIndex\&.GetHashCode ()"
+
+.PP
+Standard override for hash code generation\&. 
+.PP
+Definition at line \fB117\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "byte SystemEx\&.Threading\&.ByteIndex\&.Increment ()"
+
+.PP
+Prefix increment\&. 
+.PP
+Definition at line \fB70\fP of file \fBByteIndex\&.cs\fP\&.
+.PP
+Referenced by \fBoperator++()\fP\&.
+.SS "byte SystemEx\&.Threading\&.ByteIndex\&.IncrementPost ()"
+
+.PP
+Postfix increment\&. 
+.PP
+Definition at line \fB88\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "implicit SystemEx\&.Threading\&.ByteIndex\&.operator byte (ByteIndex i)\fR [static]\fP"
+
+.PP
+Converts the index to its underlying T value\&. 
+.PP
+Definition at line \fB173\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "implicit SystemEx\&.Threading\&.ByteIndex\&.operator ByteIndex (byte value)\fR [static]\fP"
+
+.PP
+Converts a value to an index\&. 
+.PP
+Definition at line \fB178\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ByteIndex\&.operator!= (ByteIndex a, ByteIndex b)\fR [static]\fP"
+
+.PP
+Compares two counters for inequality using atomic reads\&. 
+.PP
+Definition at line \fB220\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "ByteIndex SystemEx\&.Threading\&.ByteIndex\&.operator+ (ByteIndex a, byte value)\fR [static]\fP"
+
+.PP
+Adds a value to the counter atomically\&. 
+.PP
+Definition at line \fB198\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "ByteIndex SystemEx\&.Threading\&.ByteIndex\&.operator++ (ByteIndex a)\fR [static]\fP"
+
+.PP
+Prefix increment operator (++x)\&. 
+.PP
+Definition at line \fB190\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "ByteIndex SystemEx\&.Threading\&.ByteIndex\&.operator\- (ByteIndex a, byte value)\fR [static]\fP"
+
+.PP
+Subtracts a value from the counter atomically\&. 
+.PP
+Definition at line \fB206\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "ByteIndex SystemEx\&.Threading\&.ByteIndex\&.operator\-\- (ByteIndex a)\fR [static]\fP"
+
+.PP
+Prefix decrement operator (--x)\&. 
+.PP
+Definition at line \fB182\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ByteIndex\&.operator< (ByteIndex a, ByteIndex b)\fR [static]\fP"
+
+.PP
+Definition at line \fB225\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ByteIndex\&.operator<= (ByteIndex a, ByteIndex b)\fR [static]\fP"
+
+.PP
+Definition at line \fB233\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ByteIndex\&.operator== (ByteIndex a, ByteIndex b)\fR [static]\fP"
+
+.PP
+Compares two counters for equality using atomic reads\&. 
+.PP
+Definition at line \fB213\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ByteIndex\&.operator> (ByteIndex a, ByteIndex b)\fR [static]\fP"
+
+.PP
+Definition at line \fB229\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ByteIndex\&.operator>= (ByteIndex a, ByteIndex b)\fR [static]\fP"
+
+.PP
+Definition at line \fB237\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "override string SystemEx\&.Threading\&.ByteIndex\&.ToString ()"
+
+.PP
+
+.PP
+Definition at line \fB131\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "string SystemEx\&.Threading\&.ByteIndex\&.ToString (string? format, IFormatProvider? formatProvider)"
+
+.PP
+
+.PP
+Definition at line \fB136\fP of file \fBByteIndex\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.ByteIndex\&.IsZero\fR [get]\fP"
+
+.PP
+Returns true if the index is zero\&. 
+.PP
+Definition at line \fB36\fP of file \fBByteIndex\&.cs\fP\&.
+.SS "byte SystemEx\&.Threading\&.ByteIndex\&.Value\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Definition at line \fB38\fP of file \fBByteIndex\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

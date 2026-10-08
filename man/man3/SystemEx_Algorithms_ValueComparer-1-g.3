@@ -1,0 +1,80 @@
+.TH "SystemEx.Algorithms.ValueComparer< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Algorithms.ValueComparer< T > \- Provides a numeric comparison implementation for values wrapped in \fBOptional<T>\fP where \fIT\fP  implements INumber<T>\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Algorithms\&.ICompared< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompare\fP (Optional< T > x, Optional< T > y)"
+.br
+.RI "Compares two numeric values using relational operators provided by INumber<T>\&. Supports both strict and non‑strict ordering\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a numeric comparison implementation for values wrapped in \fBOptional<T>\fP where \fIT\fP  implements INumber<T>\&. 
+
+This comparer supports both strict and non‑strict relational operators, enabling finer‑grained comparison results for numeric types\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The numeric type being compared\&. Must implement INumber<T>\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fIINumber<T>\fP
+.PP
+Definition at line \fB71\fP of file \fBSimpleComparer\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCompareResult\fP SystemEx\&.Algorithms\&.ValueComparer< T >\&.Compare (Optional< T > x, Optional< T > y)"
+
+.PP
+Compares two numeric values using relational operators provided by INumber<T>\&. Supports both strict and non‑strict ordering\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The first numeric value\&. May be \fRnull\fP\&.
+.br
+\fIy\fP The second numeric value\&. May be \fRnull\fP\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBCompareResult\fP describing the relation: 
+.PD 0
+.IP "\(bu" 2
+\fBCompareResult\&.EqualLess\fP if \fRx <= y\fP\&. 
+.IP "\(bu" 2
+\fBCompareResult\&.EqualGreater\fP if \fRx >= y\fP\&. 
+.IP "\(bu" 2
+\fBCompareResult\&.Less\fP if \fRx < y\fP\&. 
+.IP "\(bu" 2
+\fBCompareResult\&.Greater\fP if \fRx > y\fP\&. 
+.IP "\(bu" 2
+\fBCompareResult\&.Equal\fP if both values are numerically equal\&. 
+.IP "\(bu" 2
+\fBCompareResult\&.Null\fP if both values are \fRnull\fP\&. 
+.PP
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Algorithms\&.ICompared< T >\fP\&.
+.PP
+Definition at line \fB90\fP of file \fBSimpleComparer\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

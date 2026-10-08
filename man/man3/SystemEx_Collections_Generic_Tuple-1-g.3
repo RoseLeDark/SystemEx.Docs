@@ -1,0 +1,207 @@
+.TH "SystemEx.Collections.Generic.Tuple< TKey >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Tuple< TKey > \- A dynamically sized tuple storing elements as object values\&. Provides indexed access, mutation, and compatibility with the ITuple interface used throughout the \fBSystemEx\fP collection and iterator framework\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBEqualFirst\fP (TKey key)"
+.br
+.RI "Determines whether the first element equals the specified key\&. "
+.ti -1c
+.RI "bool \fBEqualValue\fP (long index, object value)"
+.br
+.ti -1c
+.RI "Optional< object > \fBGet\fP (int index)"
+.br
+.RI "Retrieves the element at the specified index\&. "
+.ti -1c
+.RI "void \fBSet\fP (int index, object value)"
+.br
+.RI "Sets the element at the specified index to the given value\&. "
+.ti -1c
+.RI "\fBTuple\fP (TKey key, FixedVector< object > elements)"
+.br
+.RI "Creates a tuple using an existing \fBFixedVector<T>\fP as storage\&. "
+.ti -1c
+.RI "\fBTuple\fP (TKey key, int N)"
+.br
+.RI "Creates a tuple with the specified capacity\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements stored in the tuple\&. "
+.ti -1c
+.RI "TKey \fBFirst\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the first element of the pair\&. "
+.ti -1c
+.RI "object \fBthis[int index]\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the element at the specified index\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A dynamically sized tuple storing elements as object values\&. Provides indexed access, mutation, and compatibility with the ITuple interface used throughout the \fBSystemEx\fP collection and iterator framework\&. 
+.PP
+\fBType Constraints\fP
+.TP
+\fITKey\fP : \fInotnull\fP
+.PP
+Definition at line \fB28\fP of file \fBTuple\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.Tuple< TKey >\&.EqualFirst (TKey key)"
+
+.PP
+Determines whether the first element equals the specified key\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The value to compare against the first element\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Always throws NotImplementedException because this tuple does not define a semantic "first" element\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB125\fP of file \fBTuple\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Tuple< TKey >\&.EqualValue (long index, object value)"
+
+.PP
+Definition at line \fB128\fP of file \fBTuple\&.cs\fP\&.
+.SS "Optional< object > SystemEx\&.Collections\&.Generic\&.Tuple< TKey >\&.Get (int index)"
+
+.PP
+Retrieves the element at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The zero‑based index of the element\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The element at the given index\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIIndexOutOfRangeException\fP Thrown when the index is outside the valid range\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB87\fP of file \fBTuple\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Tuple< TKey >\&.Set (int index, object value)"
+
+.PP
+Sets the element at the specified index to the given value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index to modify\&.
+.br
+\fIvalue\fP The new value to assign\&.
+.RE
+.PP
+
+.PP
+If the index is out of range, the operation is ignored\&. 
+.PP
+Definition at line \fB105\fP of file \fBTuple\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Replace()\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Tuple< TKey >\&.Tuple (TKey key, FixedVector< object > elements)"
+
+.PP
+Creates a tuple using an existing \fBFixedVector<T>\fP as storage\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIelements\fP The array used as the underlying element buffer\&.
+.br
+\fIkey\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB74\fP of file \fBTuple\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Tuple< TKey >\&.Tuple (TKey key, int N)"
+
+.PP
+Creates a tuple with the specified capacity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP 
+.br
+\fIN\fP The number of elements the tuple can hold\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB64\fP of file \fBTuple\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Collections\&.Generic\&.Tuple< TKey >\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of elements stored in the tuple\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB39\fP of file \fBTuple\&.cs\fP\&.
+.PP
+Referenced by \fBGet()\fP\&.
+.SS "TKey SystemEx\&.Collections\&.Generic\&.Tuple< TKey >\&.First\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the first element of the pair\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB41\fP of file \fBTuple\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Insert()\fP, \fBSystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.PushBack()\fP, and \fBSystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.PushFront()\fP\&.
+.SS "object SystemEx\&.Collections\&.Generic\&.Tuple< TKey >\&.this[int index]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the element at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The zero‑based index of the element\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIIndexOutOfRangeException\fP Thrown when the index is outside the valid range\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB53\fP of file \fBTuple\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

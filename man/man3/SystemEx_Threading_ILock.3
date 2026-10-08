@@ -1,0 +1,117 @@
+.TH "SystemEx.Threading.ILock" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.ILock \- Defines the minimal contract for a synchronization primitive capable of providing mutual exclusion\&. Implementations of \fBILock\fP may wrap lightweight in‑process mechanisms (such as Monitor) or heavier inter‑process constructs (such as Mutex)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Threading\&.ILock< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBLock\fP (\fBTimeOut\fP ms)"
+.br
+.RI "Attempts to acquire the lock using a millisecond timeout\&. A negative value indicates an immediate, non‑blocking attempt\&. Positive values specify the maximum duration to wait for the lock\&. "
+.ti -1c
+.RI "bool \fBTryLock\fP ()"
+.br
+.RI "Attempts to acquire the lock without implying a blocking intent\&. This method is semantically equivalent to\&. "
+.ti -1c
+.RI "void \fBUnlock\fP ()"
+.br
+.RI "Releases the lock\&. Every successful call to Lock(int) or Lock(TimeSpan) must be paired with a corresponding call to \fBUnlock\fP to avoid deadlocks or inconsistent state\&. "
+.ti -1c
+.RI "bool \fBWait\fP (\fBTimeOut\fP span, bool exitContext)"
+.br
+.RI "Temporarily releases the lock and suspends the current thread until a notification is received or the specified timeout expires\&. Upon completion, the lock is automatically reacquired\&. This method provides a generalized wait‑and‑reacquire pattern similar to Monitor\&.Wait(object, TimeOut, bool)\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsHeld\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the lock is currently held by the calling thread\&. Implementations must update this flag whenever the lock is acquired or released\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines the minimal contract for a synchronization primitive capable of providing mutual exclusion\&. Implementations of \fBILock\fP may wrap lightweight in‑process mechanisms (such as Monitor) or heavier inter‑process constructs (such as Mutex)\&. 
+.PP
+Definition at line \fB27\fP of file \fBILock\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.ILock\&.Lock (\fBTimeOut\fP ms)"
+
+.PP
+Attempts to acquire the lock using a millisecond timeout\&. A negative value indicates an immediate, non‑blocking attempt\&. Positive values specify the maximum duration to wait for the lock\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIms\fP Timeout in milliseconds, or \fR-1\fP for immediate attempt\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the lock was successfully acquired; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Threading\&.AtomicLock\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP, \fBSystemEx\&.Threading\&.LightFutex\fP, \fBSystemEx\&.Threading\&.LightLock\fP, \fBSystemEx\&.Threading\&.LightMutex< T >\fP, \fBSystemEx\&.Threading\&.LightSpinlock< T >\fP, \fBSystemEx\&.Threading\&.MutexLock\fP, and \fBSystemEx\&.Threading\&.Spinlock\fP\&.
+.SS "bool SystemEx\&.Threading\&.ILock\&.TryLock ()"
+
+.PP
+Attempts to acquire the lock without implying a blocking intent\&. This method is semantically equivalent to\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the lock was acquired; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Threading\&.AtomicLock\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP, \fBSystemEx\&.Threading\&.LightFutex\fP, \fBSystemEx\&.Threading\&.LightLock\fP, \fBSystemEx\&.Threading\&.LightSpinlock< T >\fP, \fBSystemEx\&.Threading\&.MutexLock\fP, and \fBSystemEx\&.Threading\&.Spinlock\fP\&.
+.SS "void SystemEx\&.Threading\&.ILock\&.Unlock ()"
+
+.PP
+Releases the lock\&. Every successful call to Lock(int) or Lock(TimeSpan) must be paired with a corresponding call to \fBUnlock\fP to avoid deadlocks or inconsistent state\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.AtomicLock\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP, \fBSystemEx\&.Threading\&.LightFutex\fP, \fBSystemEx\&.Threading\&.LightLock\fP, \fBSystemEx\&.Threading\&.LightMutex< T >\fP, \fBSystemEx\&.Threading\&.LightSpinlock< T >\fP, \fBSystemEx\&.Threading\&.MutexLock\fP, and \fBSystemEx\&.Threading\&.Spinlock\fP\&.
+.SS "bool SystemEx\&.Threading\&.ILock\&.Wait (\fBTimeOut\fP span, bool exitContext)"
+
+.PP
+Temporarily releases the lock and suspends the current thread until a notification is received or the specified timeout expires\&. Upon completion, the lock is automatically reacquired\&. This method provides a generalized wait‑and‑reacquire pattern similar to Monitor\&.Wait(object, TimeOut, bool)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIspan\fP Maximum duration to wait for a notification\&.
+.br
+\fIexitContext\fP Indicates whether the synchronization context should be exited before waiting\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the wait completed due to a notification; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Threading\&.AtomicLock\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP, \fBSystemEx\&.Threading\&.LightFutex\fP, \fBSystemEx\&.Threading\&.LightLock\fP, \fBSystemEx\&.Threading\&.LightSpinlock< T >\fP, \fBSystemEx\&.Threading\&.MutexLock\fP, and \fBSystemEx\&.Threading\&.Spinlock\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.ILock\&.IsHeld\fR [get]\fP"
+
+.PP
+Indicates whether the lock is currently held by the calling thread\&. Implementations must update this flag whenever the lock is acquired or released\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.AtomicLock\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP, \fBSystemEx\&.Threading\&.LightFutex\fP, \fBSystemEx\&.Threading\&.LightLock\fP, \fBSystemEx\&.Threading\&.LightSpinlock< T >\fP, \fBSystemEx\&.Threading\&.MutexLock\fP, and \fBSystemEx\&.Threading\&.Spinlock\fP\&.
+.PP
+Definition at line \fB75\fP of file \fBILock\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

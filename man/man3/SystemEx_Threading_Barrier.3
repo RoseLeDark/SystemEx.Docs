@@ -1,0 +1,171 @@
+.TH "SystemEx.Threading.Barrier" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.Barrier \- A user‑mode barrier that synchronizes multiple threads across repeated phases\&. The barrier waits until a specified number of threads have arrived, then opens and allows all participants to continue\&. After the phase completes, the barrier resets and becomes ready for the next cycle\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.NoCopyable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBArrive\fP (uint n)"
+.br
+.ti -1c
+.RI "void \fBArriveAndDrop\fP (uint n=1)"
+.br
+.RI "Signals arrival at the barrier and requests to drop out of future phases\&. The thread participates in the current phase but reduces the expected participant count for all subsequent phases\&. Equivalent to \fRstd::barrier::arrive_and_drop()\fP in C++20\&. "
+.ti -1c
+.RI "void \fBArriveAndWait\fP (uint n=1)"
+.br
+.RI "Convenience method combining Arrive and \fBWait\fP\&. The thread signals arrival and then waits for the phase to complete\&. "
+.ti -1c
+.RI "\fBBarrier\fP (uint max)"
+.br
+.RI "Initializes a new barrier with the specified maximum participant count\&. The barrier starts closed and will open once \fRmax\fP arrivals occur\&. "
+.ti -1c
+.RI "\fBBarrier\fP (uint max, Action< int, Barrier > onCompl)"
+.br
+.RI "Initializes a new barrier with a completion callback\&. "
+.ti -1c
+.RI "\fBBarrier\fP (uint min, uint max, Action< int, Barrier > onCompl)"
+.br
+.RI "Initializes a new barrier with explicit minimum and maximum counters, a lock instance, and an optional completion callback\&. "
+.ti -1c
+.RI "void \fBWait\fP ()"
+.br
+.RI "Blocks the calling thread until the current phase completes\&. If the barrier is already open, the call returns immediately\&. "
+.ti -1c
+.RI "long \fBWaitOpen\fP (\fBTimeOut\fP waitMS)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.NoCopyable\fP
+.in +1c
+.ti -1c
+.RI "object \fBClone\fP ()"
+.br
+.RI "Pedantisch safe: cloning is forbidden\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Action< int, \fBBarrier\fP > \fBOnComplition\fP"
+.br
+.RI "Optional callback invoked whenever the barrier completes a phase\&. Receives the phase index and the barrier instance\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "long \fBCurrent\fP\fR [get]\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBSystemEx\&.NoCopyable\fP
+.in +1c
+.ti -1c
+.RI "new object \fBMemberwiseClone\fP ()"
+.br
+.RI "Pedantisch safe: MemberwiseClone is blocked\&. "
+.ti -1c
+.RI "\fBNoCopyable\fP ()"
+.br
+.RI "Protected default constructor\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A user‑mode barrier that synchronizes multiple threads across repeated phases\&. The barrier waits until a specified number of threads have arrived, then opens and allows all participants to continue\&. After the phase completes, the barrier resets and becomes ready for the next cycle\&. 
+
+The implementation uses two separate locks to keep the logic clean: 
+.PD 0
+.IP "\(bu" 2
+\fRm_hold\fP controls when the barrier is open or closed\&. Threads arriving at the barrier wait until this lock is released\&.   
+.IP "\(bu" 2
+\fRm_context\fP protects the phase‑transition logic\&. Only one thread is allowed to perform the phase reset, update counters, apply drops, and invoke the completion callback\&.   
+.PP
+
+.PP
+Each thread calls \fRArrive()\fP to increment the arrival counter\&. When the counter reaches the required maximum, the barrier opens and all waiting threads proceed\&. Afterward, the barrier resets its counters and prepares for the next phase\&. The optional \fROnComplition\fP callback is invoked whenever a phase finishes\&.
+
+.PP
+Because this is a user‑mode barrier, it does not serialize console output\&. Multiple threads may print messages at the same time, causing the text to appear out of order\&. This is normal and does not indicate any problem with the synchronization logic\&. 
+.PP
+Definition at line \fB130\fP of file \fBBarrier\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.Barrier\&.Barrier (uint max)"
+
+.PP
+Initializes a new barrier with the specified maximum participant count\&. The barrier starts closed and will open once \fRmax\fP arrivals occur\&. 
+.PP
+Definition at line \fB177\fP of file \fBBarrier\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.Barrier\&.Barrier (uint max, Action< int, Barrier > onCompl)"
+
+.PP
+Initializes a new barrier with a completion callback\&. 
+.PP
+Definition at line \fB183\fP of file \fBBarrier\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.Barrier\&.Barrier (uint min, uint max, Action< int, Barrier > onCompl)"
+
+.PP
+Initializes a new barrier with explicit minimum and maximum counters, a lock instance, and an optional completion callback\&. 
+.PP
+Definition at line \fB190\fP of file \fBBarrier\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int SystemEx\&.Threading\&.Barrier\&.Arrive (uint n)"
+
+.PP
+Definition at line \fB248\fP of file \fBBarrier\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.Barrier\&.ArriveAndDrop (uint n = \fR1\fP)"
+
+.PP
+Signals arrival at the barrier and requests to drop out of future phases\&. The thread participates in the current phase but reduces the expected participant count for all subsequent phases\&. Equivalent to \fRstd::barrier::arrive_and_drop()\fP in C++20\&. 
+.PP
+Definition at line \fB288\fP of file \fBBarrier\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.Barrier\&.ArriveAndWait (uint n = \fR1\fP)"
+
+.PP
+Convenience method combining Arrive and \fBWait\fP\&. The thread signals arrival and then waits for the phase to complete\&. 
+.PP
+Definition at line \fB277\fP of file \fBBarrier\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.Barrier\&.Wait ()"
+
+.PP
+Blocks the calling thread until the current phase completes\&. If the barrier is already open, the call returns immediately\&. 
+.PP
+Definition at line \fB269\fP of file \fBBarrier\&.cs\fP\&.
+.PP
+Referenced by \fBArriveAndWait()\fP\&.
+.SS "long SystemEx\&.Threading\&.Barrier\&.WaitOpen (\fBTimeOut\fP waitMS)"
+
+.PP
+Definition at line \fB209\fP of file \fBBarrier\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "Action<int, \fBBarrier\fP> SystemEx\&.Threading\&.Barrier\&.OnComplition"
+
+.PP
+Optional callback invoked whenever the barrier completes a phase\&. Receives the phase index and the barrier instance\&. 
+.PP
+Definition at line \fB167\fP of file \fBBarrier\&.cs\fP\&.
+.PP
+Referenced by \fBBarrier()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "long SystemEx\&.Threading\&.Barrier\&.Current\fR [get]\fP"
+
+.PP
+Definition at line \fB171\fP of file \fBBarrier\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

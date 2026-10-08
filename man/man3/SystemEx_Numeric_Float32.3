@@ -1,0 +1,975 @@
+.TH "SystemEx.Numeric.Float32" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Float32 \- Represents a 32‑bit IEEE‑754 single‑precision floating‑point value\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (\fBFloat32\fP a)"
+.br
+.ti -1c
+.RI "int IComparable< \fBFloat32\fP >\&. \fBCompareTo\fP (\fBFloat32\fP obj)"
+.br
+.ti -1c
+.RI "int \fBCompareTo\fP (object? obj)"
+.br
+.ti -1c
+.RI "bool \fBEquals\fP (\fBFloat32\fP other)"
+.br
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "\fBFloat32\fP (float fval)"
+.br
+.RI "Create a \fBFloat32\fP from a float value\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.ti -1c
+.RI "FixedVector< byte > \fBToBytes\fP ()"
+.br
+.RI "Converts this instance into a deterministic byte array\&. The returned data is used as input for hashing algorithms\&. "
+.ti -1c
+.RI "byte[] \fBToBytes\fP (\fBEndian\fP endian)"
+.br
+.RI "Encodes the current instance into a newly allocated byte array using the specified \fIendian\fP  order\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The byte order used to encode the value\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new byte array containing the binary representation of the instance\&. 
+.RE
+.PP
+ "
+.ti -1c
+.RI "void \fBToBytes\fP (ref byte[] destination, long offset, \fBEndian\fP endian)"
+.br
+.RI "Writes the binary representation of the current instance into an existing \fIdestination\fP  buffer at the specified \fIoffset\fP \&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFloat32\fP \fBAbs\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBAdd\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBCeil\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBClamp\fP (\fBFloat32\fP x, \fBFloat32\fP min, \fBFloat32\fP max)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBDiv\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBFloor\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBFromBytes\fP (byte[] bytes, long offset, \fBEndian\fP endian)"
+.br
+.RI "Creates an instance of \fITSelf\fP  from a byte array\&. The method reads the encoded representation starting at the specified \fIoffset\fP  using the given \fIendian\fP  order\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIbytes\fP The source buffer containing the binary representation of the value\&. 
+.br
+\fIoffset\fP The position within \fIbytes\fP  where the encoded data begins\&. 
+.br
+\fIendian\fP The byte order used to interpret the binary data\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A reconstructed \fITSelf\fP  instance based on the provided binary data\&. 
+.RE
+.PP
+ "
+.ti -1c
+.RI "static bool \fBIsFinite\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static bool \fBIsInfinity\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static bool \fBIsInteger\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static bool \fBIsNaN\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static bool \fBIsNegative\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static bool \fBIsNormal\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static bool \fBIsSubnormal\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static bool \fBIsZero\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBMax\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBMin\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBMul\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBNegate\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static \fBoperator float\fP (\fBFloat32\fP val)"
+.br
+.RI "Converts explicit a \fBFloat32\fP to float\&. without Byteconverter\&. "
+.ti -1c
+.RI "static implicit \fBoperator Float32\fP (float val)"
+.br
+.RI "Converts implicit a float value to \fBFloat32\fP\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBoperator*\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.RI "Multiplication operator\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBoperator+\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.RI "Addition operator\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBoperator++\fP (\fBFloat32\fP a)"
+.br
+.RI "Increment operator\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBoperator\-\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.RI "Subtraction operator\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBoperator\-\-\fP (\fBFloat32\fP a)"
+.br
+.RI "Decrement operator\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBoperator/\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.RI "Division operator\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBSignum\fP (\fBFloat32\fP value)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBSub\fP (\fBFloat32\fP a, \fBFloat32\fP b)"
+.br
+.ti -1c
+.RI "static \fBFloat32\fP \fBTrunc\fP (\fBFloat32\fP value)"
+.br
+.in -1c
+
+Static Public Member Functions inherited from \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP
+.in +1c
+.ti -1c
+.RI "static TSelf \fBAbs\fP (TSelf value)"
+.br
+.RI "Returns the absolute value of the given floating‑point number\&. "
+.ti -1c
+.RI "static TSelf \fBAdd\fP (TSelf a, TSelf b)"
+.br
+.RI "Adds two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBCeil\fP (TSelf value)"
+.br
+.RI "Returns the smallest integer greater than or equal to the value\&. "
+.ti -1c
+.RI "static TSelf \fBClamp\fP (TSelf x, TSelf min, TSelf max)"
+.br
+.RI "Clamps the value to the inclusive range [min, max]\&. "
+.ti -1c
+.RI "static TSelf \fBDiv\fP (TSelf a, TSelf b)"
+.br
+.RI "Divides one floating‑point value by another\&. "
+.ti -1c
+.RI "static TSelf \fBFloor\fP (TSelf value)"
+.br
+.RI "Returns the largest integer less than or equal to the value\&. "
+.ti -1c
+.RI "static bool \fBIsFinite\fP (TSelf value)"
+.br
+.RI "Determines whether the value is finite (not NaN or infinity)\&. "
+.ti -1c
+.RI "static bool \fBIsInfinity\fP (TSelf value)"
+.br
+.RI "Determines whether the value is positive or negative infinity\&. "
+.ti -1c
+.RI "static bool \fBIsInteger\fP (TSelf value)"
+.br
+.RI "Determines whether the value represents an integer (mantissa zero)\&. "
+.ti -1c
+.RI "static bool \fBIsNaN\fP (TSelf value)"
+.br
+.RI "Determines whether the value is a NaN (not‑a‑number)\&. "
+.ti -1c
+.RI "static bool \fBIsNegative\fP (TSelf value)"
+.br
+.RI "Determines whether the value is negative\&. "
+.ti -1c
+.RI "static bool \fBIsNormal\fP (TSelf value)"
+.br
+.RI "Determines whether the value is a normalized floating‑point number\&. "
+.ti -1c
+.RI "static bool \fBIsSubnormal\fP (TSelf value)"
+.br
+.RI "Determines whether the value is subnormal (exponent field zero but mantissa non‑zero)\&. "
+.ti -1c
+.RI "static bool \fBIsZero\fP (TSelf value)"
+.br
+.RI "Determines whether the value is zero (positive or negative)\&. "
+.ti -1c
+.RI "static TSelf \fBMax\fP (TSelf a, TSelf b)"
+.br
+.RI "Returns the larger of two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBMin\fP (TSelf a, TSelf b)"
+.br
+.RI "Returns the smaller of two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBMul\fP (TSelf a, TSelf b)"
+.br
+.RI "Multiplies two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBNegate\fP (TSelf value)"
+.br
+.RI "Returns the negation of the given floating‑point number\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether two floating‑point values are not equal\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is strictly less than \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is less than or equal to \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether two floating‑point values are equal\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is strictly greater than \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is greater than or equal to \fIb\fP \&. "
+.ti -1c
+.RI "static TSelf \fBSignum\fP (TSelf value)"
+.br
+.RI "Returns the sign of the value: −1, 0, or +1\&. "
+.ti -1c
+.RI "static TSelf \fBTrunc\fP (TSelf value)"
+.br
+.RI "Truncates the fractional part of the value\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "static \fBFloat32\fP \fBE\fP\fR [get]\fP"
+.br
+.RI "Represents Euler’s number \fRe\fP\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBEpsilon\fP\fR [get]\fP"
+.br
+.RI "Represents the smallest positive increment representable by the format\&. "
+.ti -1c
+.RI "uint \fBExponent\fP\fR [get]\fP"
+.br
+.RI "Gets the exponent field as stored in the encoded representation\&. "
+.ti -1c
+.RI "uint \fBExponentBias\fP\fR [get]\fP"
+.br
+.RI "Exponent bias applied to the exponent field\&. Defines the offset used when converting between encoded exponent and real exponent\&. "
+.ti -1c
+.RI "uint \fBExponentBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the exponent field\&. "
+.ti -1c
+.RI "uint \fBHiddenBit\fP\fR [get]\fP"
+.br
+.RI "Gets the hidden bit (implicit leading mantissa bit)\&. For IEEE‑like formats this is typically \fR1\fP for normalized numbers and \fR0\fP for subnormals\&. "
+.ti -1c
+.RI "uint \fBMantissa\fP\fR [get]\fP"
+.br
+.RI "Gets the mantissa (fraction) field as stored in the encoded representation\&. "
+.ti -1c
+.RI "uint \fBMantissaBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the mantissa (fraction) field\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBMaxValue\fP\fR [get]\fP"
+.br
+.RI "Largest representable positive value\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBMinValue\fP\fR [get]\fP"
+.br
+.RI "Smallest representable negative value\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBNaN\fP\fR [get]\fP"
+.br
+.RI "Represents a quiet NaN value\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBNaN2\fP\fR [get]\fP"
+.br
+.RI "Represents an alternative NaN encoding (implementation‑specific)\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBNegativeInfinity\fP\fR [get]\fP"
+.br
+.RI "Represents negative infinity\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBNegativeOne\fP\fR [get]\fP"
+.br
+.RI "Represents the floating‑point value negative one\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBNegativeZero\fP\fR [get]\fP"
+.br
+.RI "Represents negative zero (sign bit set, exponent and mantissa zero)\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBOne\fP\fR [get]\fP"
+.br
+.RI "Represents the floating‑point value one\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBPi\fP\fR [get]\fP"
+.br
+.RI "Represents π\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBPositiveInfinity\fP\fR [get]\fP"
+.br
+.RI "Represents positive infinity\&. "
+.ti -1c
+.RI "bool \fBSign\fP\fR [get]\fP"
+.br
+.RI "Gets the sign bit\&. \fRtrue\fP indicates a negative value\&. "
+.ti -1c
+.RI "uint \fBSignBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the sign field\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBTau\fP\fR [get]\fP"
+.br
+.RI "Represents τ = 2π\&. "
+.ti -1c
+.RI "uint \fBToBase\fP\fR [get]\fP"
+.br
+.RI "Gets the underlying raw storage type used for bit extraction\&. Implementations typically return \fRushort\fP or \fRuint\fP depending on the float width\&. "
+.ti -1c
+.RI "uint \fBTotalBits\fP\fR [get]\fP"
+.br
+.RI "Total number of bits in the floating‑point representation\&. "
+.ti -1c
+.RI "static \fBFloat32\fP \fBZero\fP\fR [get]\fP"
+.br
+.RI "Represents the floating‑point value zero\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a 32‑bit IEEE‑754 single‑precision floating‑point value\&. 
+
+This format uses: 
+
+.PP
+• 1 sign bit
+
+.PP
+• 8 exponent bits (bias = 127)
+
+.PP
+• 23 mantissa bits
+
+.PP
+Normalized numbers include an implicit hidden bit (1 << 23)\&. 
+.br
+ Subnormal numbers use an exponent of zero and omit the hidden bit\&.
+
+.PP
+The value is stored as a raw 32‑bit unsigned integer, allowing exact bit‑level manipulation of sign, exponent, and mantissa fields without relying on the host floating‑point unit\&. 
+
+.PP
+All conversions use \fBSystemEx\fP endian‑aware utilities, ensuring consistent reinterpretation between byte arrays, raw bit patterns, and float values\&. 
+.PP
+Definition at line \fB45\fP of file \fBFloat32\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.Float32\&.Float32 (float fval)"
+
+.PP
+Create a \fBFloat32\fP from a float value\&. 
+.PP
+Definition at line \fB106\fP of file \fBFloat32\&.cs\fP\&.
+.PP
+Referenced by \fBAbs()\fP, \fBAdd()\fP, \fBCeil()\fP, \fBClamp()\fP, \fBDiv()\fP, \fBEquals()\fP, \fBFloor()\fP, \fBFromBytes()\fP, \fBIsFinite()\fP, \fBIsInfinity()\fP, \fBIsInteger()\fP, \fBIsNaN()\fP, \fBIsNegative()\fP, \fBIsNormal()\fP, \fBIsSubnormal()\fP, \fBIsZero()\fP, \fBMax()\fP, \fBMin()\fP, \fBMul()\fP, \fBNegate()\fP, \fBoperator float()\fP, \fBoperator Float32()\fP, \fBoperator*()\fP, \fBoperator+()\fP, \fBoperator++()\fP, \fBoperator\-()\fP, \fBoperator\-\-()\fP, \fBoperator/()\fP, \fBSignum()\fP, \fBSub()\fP, and \fBTrunc()\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Abs (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB127\fP of file \fBFloat32\&.cs\fP\&.
+.PP
+Referenced by \fBAbs()\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Add (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB131\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Ceil (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB135\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Clamp (\fBFloat32\fP x, \fBFloat32\fP min, \fBFloat32\fP max)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB139\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Numeric\&.Float32\&.CompareTo (\fBFloat32\fP a)"
+
+.PP
+Definition at line \fB251\fP of file \fBFloat32\&.cs\fP\&.
+.SS "int IComparable< \fBFloat32\fP >\&. SystemEx\&.Numeric\&.Float32\&.CompareTo (\fBFloat32\fP obj)"
+
+.PP
+Definition at line \fB256\fP of file \fBFloat32\&.cs\fP\&.
+.SS "int SystemEx\&.Numeric\&.Float32\&.CompareTo (object? obj)"
+
+.PP
+Definition at line \fB260\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Div (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB149\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.Equals (\fBFloat32\fP other)"
+
+.PP
+
+.PP
+Definition at line \fB226\fP of file \fBFloat32\&.cs\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.Float32\&.Equals (object? obj)"
+
+.PP
+Definition at line \fB265\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Floor (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB157\fP of file \fBFloat32\&.cs\fP\&.
+.PP
+Referenced by \fBFloor()\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.FromBytes (byte[] bytes, long offset, \fBEndian\fP endian)\fR [static]\fP"
+
+.PP
+Creates an instance of \fITSelf\fP  from a byte array\&. The method reads the encoded representation starting at the specified \fIoffset\fP  using the given \fIendian\fP  order\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIbytes\fP The source buffer containing the binary representation of the value\&. 
+.br
+\fIoffset\fP The position within \fIbytes\fP  where the encoded data begins\&. 
+.br
+\fIendian\fP The byte order used to interpret the binary data\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A reconstructed \fITSelf\fP  instance based on the provided binary data\&. 
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.IByteSerializable< TSelf >\fP\&.
+.PP
+Definition at line \fB161\fP of file \fBFloat32\&.cs\fP\&.
+.SS "override int SystemEx\&.Numeric\&.Float32\&.GetHashCode ()"
+
+.PP
+Definition at line \fB269\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.IsFinite (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB165\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.IsInfinity (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB170\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.IsInteger (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB174\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.IsNaN (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB178\fP of file \fBFloat32\&.cs\fP\&.
+.PP
+Referenced by \fBSignum()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.IsNegative (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB182\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.IsNormal (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB186\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.IsSubnormal (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB190\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.IsZero (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB194\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Max (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB198\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Min (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB202\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Mul (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB206\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Negate (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB210\fP of file \fBFloat32\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Float32\&.operator float (\fBFloat32\fP val)\fR [explicit]\fP, \fR [static]\fP"
+
+.PP
+Converts explicit a \fBFloat32\fP to float\&. without Byteconverter\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIval\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB122\fP of file \fBFloat32\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.Float32\&.operator \fBFloat32\fP (float val)\fR [static]\fP"
+
+.PP
+Converts implicit a float value to \fBFloat32\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIval\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB114\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.operator!= (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB277\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.operator* (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+Multiplication operator\&. 
+.PP
+Definition at line \fB312\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.operator+ (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+Addition operator\&. 
+.PP
+Definition at line \fB302\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.operator++ (\fBFloat32\fP a)\fR [static]\fP"
+
+.PP
+Increment operator\&. 
+.PP
+Definition at line \fB322\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.operator\- (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+Subtraction operator\&. 
+.PP
+Definition at line \fB307\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.operator\-\- (\fBFloat32\fP a)\fR [static]\fP"
+
+.PP
+Decrement operator\&. 
+.PP
+Definition at line \fB327\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.operator/ (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+Division operator\&. 
+.PP
+Definition at line \fB317\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.operator< (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB281\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.operator<= (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB289\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.operator== (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB273\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.operator> (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB285\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.operator>= (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB293\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Signum (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB214\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Sub (\fBFloat32\fP a, \fBFloat32\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB153\fP of file \fBFloat32\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.Float32\&.ToBytes ()"
+
+.PP
+Converts this instance into a deterministic byte array\&. The returned data is used as input for hashing algorithms\&. 
+.PP
+Implements \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.PP
+Definition at line \fB230\fP of file \fBFloat32\&.cs\fP\&.
+.PP
+Referenced by \fBoperator float()\fP, and \fBToBytes()\fP\&.
+.SS "byte[] SystemEx\&.Numeric\&.Float32\&.ToBytes (\fBEndian\fP endian)"
+
+.PP
+Encodes the current instance into a newly allocated byte array using the specified \fIendian\fP  order\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The byte order used to encode the value\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new byte array containing the binary representation of the instance\&. 
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.IByteSerializable< TSelf >\fP\&.
+.PP
+Definition at line \fB235\fP of file \fBFloat32\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Float32\&.ToBytes (ref byte[] destination, long offset, \fBEndian\fP endian)"
+
+.PP
+Writes the binary representation of the current instance into an existing \fIdestination\fP  buffer at the specified \fIoffset\fP \&. The caller is responsible for ensuring that the buffer is large enough to hold the encoded data starting at the given offset\&. Bytes before the offset remain untouched and can contain arbitrary user data\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdestination\fP The target buffer into which the encoded value will be written\&. 
+.br
+\fIoffset\fP The position within \fIdestination\fP  where the encoded data will be written\&. For example, if \fRoffset = 100\fP, bytes \fR0\fP through \fR99\fP remain unchanged, and the encoded value begins at index \fR100\fP\&. 
+.br
+\fIendian\fP The byte order used to encode the value\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.IByteSerializable< TSelf >\fP\&.
+.PP
+Definition at line \fB239\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Trunc (\fBFloat32\fP value)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB222\fP of file \fBFloat32\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.E\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents Euler’s number \fRe\fP\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB67\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Epsilon\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the smallest positive increment representable by the format\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB65\fP of file \fBFloat32\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Float32\&.Exponent\fR [get]\fP"
+
+.PP
+Gets the exponent field as stored in the encoded representation\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB89\fP of file \fBFloat32\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Float32\&.ExponentBias\fR [get]\fP"
+
+.PP
+Exponent bias applied to the exponent field\&. Defines the offset used when converting between encoded exponent and real exponent\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB81\fP of file \fBFloat32\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Float32\&.ExponentBits\fR [get]\fP"
+
+.PP
+Number of bits used for the exponent field\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB77\fP of file \fBFloat32\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Float32\&.HiddenBit\fR [get]\fP"
+
+.PP
+Gets the hidden bit (implicit leading mantissa bit)\&. For IEEE‑like formats this is typically \fR1\fP for normalized numbers and \fR0\fP for subnormals\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB85\fP of file \fBFloat32\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Float32\&.Mantissa\fR [get]\fP"
+
+.PP
+Gets the mantissa (fraction) field as stored in the encoded representation\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB91\fP of file \fBFloat32\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Float32\&.MantissaBits\fR [get]\fP"
+
+.PP
+Number of bits used for the mantissa (fraction) field\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB79\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.MaxValue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Largest representable positive value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB101\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.MinValue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Smallest representable negative value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB96\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.NaN\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents a quiet NaN value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB61\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.NaN2\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents an alternative NaN encoding (implementation‑specific)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB63\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.NegativeInfinity\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents negative infinity\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB59\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.NegativeOne\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the floating‑point value negative one\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB53\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.NegativeZero\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents negative zero (sign bit set, exponent and mantissa zero)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB55\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.One\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the floating‑point value one\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBFloat32\&.cs\fP\&.
+.PP
+Referenced by \fBoperator++()\fP, and \fBoperator\-\-()\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Pi\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents π\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB71\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.PositiveInfinity\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents positive infinity\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB57\fP of file \fBFloat32\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Float32\&.Sign\fR [get]\fP"
+
+.PP
+Gets the sign bit\&. \fRtrue\fP indicates a negative value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB87\fP of file \fBFloat32\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Float32\&.SignBits\fR [get]\fP"
+
+.PP
+Number of bits used for the sign field\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB75\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Tau\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents τ = 2π\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB69\fP of file \fBFloat32\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Float32\&.ToBase\fR [get]\fP"
+
+.PP
+Gets the underlying raw storage type used for bit extraction\&. Implementations typically return \fRushort\fP or \fRuint\fP depending on the float width\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB73\fP of file \fBFloat32\&.cs\fP\&.
+.SS "uint SystemEx\&.Numeric\&.Float32\&.TotalBits\fR [get]\fP"
+
+.PP
+Total number of bits in the floating‑point representation\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP\&.
+.PP
+Definition at line \fB83\fP of file \fBFloat32\&.cs\fP\&.
+.SS "\fBFloat32\fP SystemEx\&.Numeric\&.Float32\&.Zero\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the floating‑point value zero\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.PP
+Definition at line \fB49\fP of file \fBFloat32\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,17 +1,14 @@
 var a01292 =
 [
-    [ "Back", "d8/d7a/a01292.html#ae49d1c90f27f496be09596221bca4410", null ],
-    [ "Equals", "d8/d7a/a01292.html#ae13ae26c218788a0faa86e26f5436b33", null ],
-    [ "Equals", "d8/d7a/a01292.html#a47e9d5faf076c1c9ec12e630b996996b", null ],
-    [ "Forward", "d8/d7a/a01292.html#ad162fa5306621998247f72ccec0d6b27", null ],
-    [ "Forward", "d8/d7a/a01292.html#aff39d85b03d013e732e2f417fd9495df", null ],
-    [ "GetEnumerator", "d8/d7a/a01292.html#a899ba48cac2882f869b4dde3186dc5a3", null ],
-    [ "GetHashCode", "d8/d7a/a01292.html#affa466487abd85f9f46aa20bd1038c90", null ],
-    [ "MoveNext", "d8/d7a/a01292.html#a1361e804a70cdd08d45a6b523999e185", null ],
-    [ "NodeIterrator", "d8/d7a/a01292.html#af40dd75298d2afac4183d994202bd60a", null ],
-    [ "NodeIterrator", "d8/d7a/a01292.html#ad21398df34456d3065598d40cb1a3bb0", null ],
-    [ "AdvanceRest", "d8/d7a/a01292.html#a960673ddb842270a92046ca5c58d8a95", null ],
-    [ "Current", "d8/d7a/a01292.html#a62205106c53e89e35eb683d673566554", null ],
-    [ "IsBegin", "d8/d7a/a01292.html#a460b35cc59d8b2d14d831d3753347a00", null ],
-    [ "IsEnd", "d8/d7a/a01292.html#af43f19384271f9bb54d171e128bf3e34", null ]
+    [ "Exists", "d3/d8a/a00899_ga9a281bb1e01008e08739a07fc622af9f.html#ga9a281bb1e01008e08739a07fc622af9f", null ],
+    [ "Find", "d3/d8a/a00899_ga6be674975bd5b3ad321da1cc7d4964d3.html#ga6be674975bd5b3ad321da1cc7d4964d3", null ],
+    [ "First", "d3/d8a/a00899_ga4af602db3b1a29b3edb075c079644230.html#ga4af602db3b1a29b3edb075c079644230", null ],
+    [ "First", "d3/d8a/a00899_ga7c4f131feb373e7d840574234280dd91.html#ga7c4f131feb373e7d840574234280dd91", null ],
+    [ "Last", "d3/d8a/a00899_ga2af00d59a155a5ed884140ecccf9e8e9.html#ga2af00d59a155a5ed884140ecccf9e8e9", null ],
+    [ "Last", "d3/d8a/a00899_ga6c2a514456538f696972faca5a8b8fb7.html#ga6c2a514456538f696972faca5a8b8fb7", null ],
+    [ "LowerBound", "d3/d8a/a00899_ga98fa8ee40615b8fde2b53bd9121797a1.html#ga98fa8ee40615b8fde2b53bd9121797a1", null ],
+    [ "Of", "d3/d8a/a00899_gaaafe6cbf5216b5447e9a9184cadc3d91.html#gaaafe6cbf5216b5447e9a9184cadc3d91", null ],
+    [ "TryGet", "d3/d8a/a00899_gadfb3f74a3f26aafe30374ac7a62f56b5.html#gadfb3f74a3f26aafe30374ac7a62f56b5", null ],
+    [ "UpperBound", "d3/d8a/a00899_ga1679a481e7f6b62d11ac82842c4156a0.html#ga1679a481e7f6b62d11ac82842c4156a0", null ],
+    [ "Where", "d3/d8a/a00899_ga3bd4a4a72cb0a7e2c59991d4b93ee898.html#ga3bd4a4a72cb0a7e2c59991d4b93ee898", null ]
 ];

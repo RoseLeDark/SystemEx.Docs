@@ -1,0 +1,156 @@
+.TH "SystemEx.Collections.Generic.UniqueQueue< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.UniqueQueue< T > \- Represents a queue that only accepts unique elements\&. Attempts to insert a value already contained in the queue will fail\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.IQueue< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Removes all elements from the queue\&. "
+.ti -1c
+.RI "bool \fBPopFront\fP (ref Optional< T > value)"
+.br
+.RI "Removes the element at the front of the queue\&. "
+.ti -1c
+.RI "bool \fBPushBack\fP (T value)"
+.br
+.RI "Inserts an element at the back of the queue if it is not already present\&. "
+.ti -1c
+.RI "\fBUniqueQueue\fP (int size, int growSize=2)"
+.br
+.RI "Initializes a new instance of the \fBUniqueQueue<T>\fP struct\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the queue contains no elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the queue has reached its maximum capacity\&. "
+.ti -1c
+.RI "int \fBSize\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements currently stored in the queue\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a queue that only accepts unique elements\&. Attempts to insert a value already contained in the queue will fail\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of elements stored in the queue\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB32\fP of file \fBUniqueQueue\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Collections\&.Generic\&.UniqueQueue< T >\&.Clear ()"
+
+.PP
+Removes all elements from the queue\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBUniqueQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.UniqueQueue< T >\&.PopFront (ref Optional< T > value)"
+
+.PP
+Removes the element at the front of the queue\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP When this method returns, contains the removed element if the operation succeeded; otherwise contains \fRnull\fP\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an element was removed; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue< T >\fP\&.
+.PP
+Definition at line \fB62\fP of file \fBUniqueQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.UniqueQueue< T >\&.PushBack (T value)"
+
+.PP
+Inserts an element at the back of the queue if it is not already present\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The element to insert\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the element was successfully inserted; \fRfalse\fP if the element already exists in the queue or the queue is full\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue< T >\fP\&.
+.PP
+Definition at line \fB81\fP of file \fBUniqueQueue\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.UniqueQueue< T >\&.UniqueQueue (int size, int growSize = \fR2\fP)"
+
+.PP
+Initializes a new instance of the \fBUniqueQueue<T>\fP struct\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP The initial capacity of the queue\&.
+.br
+\fIgrowSize\fP The number of additional elements to allocate when the queue grows\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB70\fP of file \fBUniqueQueue\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.UniqueQueue< T >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the queue contains no elements\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB43\fP of file \fBUniqueQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.UniqueQueue< T >\&.IsFull\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the queue has reached its maximum capacity\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB47\fP of file \fBUniqueQueue\&.cs\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.UniqueQueue< T >\&.Size\fR [get]\fP"
+
+.PP
+Gets the number of elements currently stored in the queue\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IQueue\fP\&.
+.PP
+Definition at line \fB38\fP of file \fBUniqueQueue\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

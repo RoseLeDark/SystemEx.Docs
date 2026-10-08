@@ -1,14 +1,19 @@
 var a01469 =
 [
-    [ "Clear", "d5/dd3/a00902_ga5c62cdff80c59129a7c84636ce57f0de.html#ga5c62cdff80c59129a7c84636ce57f0de", null ],
-    [ "PopBack", "d5/dd3/a00902_gae764df02dca627d1fec8f6f3959d3334.html#gae764df02dca627d1fec8f6f3959d3334", null ],
-    [ "PopFront", "d5/dd3/a00902_gae55a7b14aad27732a2437241d0509155.html#gae55a7b14aad27732a2437241d0509155", null ],
-    [ "PushBack", "d5/dd3/a00902_ga7d8d88674da68d5486cdcf16d521b627.html#ga7d8d88674da68d5486cdcf16d521b627", null ],
-    [ "PushFront", "d5/dd3/a00902_gad2561685dfab24472e417623b1a2045e.html#gad2561685dfab24472e417623b1a2045e", null ],
-    [ "UniqueDeque", "d5/dd3/a00902_gac6883dc3790c71909fa5b191106cd23c.html#gac6883dc3790c71909fa5b191106cd23c", null ],
-    [ "End", "d5/dd3/a00902_gaca4e60d0ee362d9f3f5777fbeba3bae4.html#gaca4e60d0ee362d9f3f5777fbeba3bae4", null ],
-    [ "Front", "d5/dd3/a00902_ga7b99f973686252d957f2d14585c7a4ff.html#ga7b99f973686252d957f2d14585c7a4ff", null ],
-    [ "IsEmpty", "d5/dd3/a00902_ga04824dbd96f8f0b9904a439f23538468.html#ga04824dbd96f8f0b9904a439f23538468", null ],
-    [ "IsFull", "d5/dd3/a00902_gaaef34a373c65e350c81cfdd9a77901fb.html#gaaef34a373c65e350c81cfdd9a77901fb", null ],
-    [ "Size", "d5/dd3/a00902_ga6602ee7fc9e1718d717aa46ac387ec52.html#ga6602ee7fc9e1718d717aa46ac387ec52", null ]
+    [ "Clear", "d7/d12/a00911_ga6ae9ddefacc20a0340bdf9044bafbeb8.html#ga6ae9ddefacc20a0340bdf9044bafbeb8", null ],
+    [ "Dequeue", "d7/d12/a00911_gaf8accf7d0484bb70cf7939c4baae6cae.html#gaf8accf7d0484bb70cf7939c4baae6cae", null ],
+    [ "Enqueue", "d7/d12/a00911_ga3436658ddf770f88a4f650344b903395.html#ga3436658ddf770f88a4f650344b903395", null ],
+    [ "Grow", "d7/d12/a00911_ga18acca41446674e6a3eb1df3f94fc770.html#ga18acca41446674e6a3eb1df3f94fc770", null ],
+    [ "PopFront", "d7/d12/a00911_gadd013779bf8b12137e65b982d03e4b1d.html#gadd013779bf8b12137e65b982d03e4b1d", null ],
+    [ "PushBack", "d7/d12/a00911_ga65e48057e30abcdafa8f3d9c454cb21f.html#ga65e48057e30abcdafa8f3d9c454cb21f", null ],
+    [ "Queue", "d7/d12/a00911_gaa233bc9a184c4803e18544c31e378489.html#gaa233bc9a184c4803e18544c31e378489", null ],
+    [ "Queue", "d7/d12/a00911_gaa39ff0b1a5affb89a771261d8fe18f3a.html#gaa39ff0b1a5affb89a771261d8fe18f3a", null ],
+    [ "Queue", "d7/d12/a00911_ga2ff0103924ee9a83174fb36daff160dd.html#ga2ff0103924ee9a83174fb36daff160dd", null ],
+    [ "Queue", "d7/d12/a00911_gab72021a301ea66b9e51f5f0e22a85cc7.html#gab72021a301ea66b9e51f5f0e22a85cc7", null ],
+    [ "AutoGrow", "d7/d12/a00911_ga0521496559880ab5a7001f48a621e86e.html#ga0521496559880ab5a7001f48a621e86e", null ],
+    [ "Front", "d7/d12/a00911_gac52ca0c612f0f79a3358d121db73e6fa.html#gac52ca0c612f0f79a3358d121db73e6fa", null ],
+    [ "GrowSize", "d7/d12/a00911_ga5c365cb3fd5cad435893ef6cd953481a.html#ga5c365cb3fd5cad435893ef6cd953481a", null ],
+    [ "IsEmpty", "d7/d12/a00911_gae693bc6ce447cbe40d516ba2d80f0740.html#gae693bc6ce447cbe40d516ba2d80f0740", null ],
+    [ "IsFull", "d7/d12/a00911_ga4bb5064b1403962da59d6aa5d937a61c.html#ga4bb5064b1403962da59d6aa5d937a61c", null ],
+    [ "Size", "d7/d12/a00911_gaa4591aab94618a64a42c5bfa19820edd.html#gaa4591aab94618a64a42c5bfa19820edd", null ]
 ];

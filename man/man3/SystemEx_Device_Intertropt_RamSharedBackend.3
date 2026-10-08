@@ -1,0 +1,97 @@
+.TH "SystemEx.Device.Intertropt.RamSharedBackend" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Device.Intertropt.RamSharedBackend \- RAM‑based backend for shared device buffers\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Device\&.Intertropt\&.IDeviceSharedBackend\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBCloseHardwareBuffer\fP (ref object hardwareBuffer)"
+.br
+.RI "Closes a hardware buffer and releases its unmanaged memory\&. "
+.ti -1c
+.RI "long \fBCreateReadHardwareBuffer\fP (int size, out object hardwareBuffer)"
+.br
+.RI "Creates a pinned hardware buffer for reading data produced by the native kernel\&. "
+.ti -1c
+.RI "long \fBCreateWriteHardwareBuffer\fP (byte[] cache, out object hardwareBuffer)"
+.br
+.RI "Creates a pinned hardware buffer for writing data to the native kernel\&. "
+.ti -1c
+.RI "long \fBReciveFromHardwareBuffer\fP (out byte[] data, ref object hardwareBuffer)"
+.br
+.RI "Copies the contents of the backend buffer into a new managed array\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+RAM‑based backend for shared device buffers\&. 
+
+\fBRamSharedBackend\fP is the simplest backend in \fBSystemEx\fP\&. It stores buffer data directly in managed RAM and exposes it to native kernels by pinning the underlying \fRbyte[]\fP and providing an unmanaged pointer via \fBUnmanagedObject\fP\&. 
+
+.PP
+This backend is primarily used for: 
+.PD 0
+.IP "\(bu" 2
+Testing native kernels without GPU or hardware devices 
+.IP "\(bu" 2
+Debugging compute logic in a safe environment 
+.IP "\(bu" 2
+Providing a fallback backend for platforms without specialized hardware 
+.PP
+
+.PP
+The backend implements the \fBIDeviceSharedBackend\fP interface, allowing \fBSystemEx\fP to treat RAM buffers exactly like hardware buffers\&. This makes native kernel execution backend‑agnostic: 
+.br
+ kernels do not care whether the memory comes from RAM, GPU, or another device\&. 
+.PP
+Definition at line \fB119\fP of file \fBRamSharedBackend\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Device\&.Intertropt\&.RamSharedBackend\&.CloseHardwareBuffer (ref object hardwareBuffer)"
+
+.PP
+Closes a hardware buffer and releases its unmanaged memory\&. 
+.PP
+Implements \fBSystemEx\&.Device\&.Intertropt\&.IDeviceSharedBackend\fP\&.
+.PP
+Definition at line \fB162\fP of file \fBRamSharedBackend\&.cs\fP\&.
+.SS "long SystemEx\&.Device\&.Intertropt\&.RamSharedBackend\&.CreateReadHardwareBuffer (int size, out object hardwareBuffer)"
+
+.PP
+Creates a pinned hardware buffer for reading data produced by the native kernel\&. A new buffer of the requested size is allocated and pinned\&. 
+.br
+ The native kernel writes its output directly into this memory block\&. 
+.PP
+Implements \fBSystemEx\&.Device\&.Intertropt\&.IDeviceSharedBackend\fP\&.
+.PP
+Definition at line \fB191\fP of file \fBRamSharedBackend\&.cs\fP\&.
+.SS "long SystemEx\&.Device\&.Intertropt\&.RamSharedBackend\&.CreateWriteHardwareBuffer (byte[] cache, out object hardwareBuffer)"
+
+.PP
+Creates a pinned hardware buffer for writing data to the native kernel\&. The provided cache is pinned and exposed to native code as a stable unmanaged pointer\&. Kernels can safely read or modify the buffer\&. 
+.PP
+Implements \fBSystemEx\&.Device\&.Intertropt\&.IDeviceSharedBackend\fP\&.
+.PP
+Definition at line \fB175\fP of file \fBRamSharedBackend\&.cs\fP\&.
+.SS "long SystemEx\&.Device\&.Intertropt\&.RamSharedBackend\&.ReciveFromHardwareBuffer (out byte[] data, ref object hardwareBuffer)"
+
+.PP
+Copies the contents of the backend buffer into a new managed array\&. A defensive copy is used instead of returning \fRm_Buffer\fP directly\&. This prevents callers from accidentally modifying the backend's internal memory and ensures that the shared buffer lifetime remains isolated from user code\&. 
+
+.PP
+The unmanaged buffer is released after copying, because native kernels no longer require access to the pinned memory once execution has finished\&. 
+.PP
+Implements \fBSystemEx\&.Device\&.Intertropt\&.IDeviceSharedBackend\fP\&.
+.PP
+Definition at line \fB143\fP of file \fBRamSharedBackend\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

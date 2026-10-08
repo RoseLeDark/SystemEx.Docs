@@ -1,0 +1,398 @@
+.TH "SystemEx.Collections.Generic.MultiMap< T, TU >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.MultiMap< T, TU > \- Represents a sparse, linear key–value container, with multkex support\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMultiMap\fP ()"
+.br
+.RI "Initializes a new eempty map\&. "
+.ti -1c
+.RI "\fBMultiMap\fP (IEnumerable< Pair< T, TU > > e, int growSize=16)"
+.br
+.RI "Initializes a new map from an enumerable sequence of pairs\&. "
+.ti -1c
+.RI "\fBMultiMap\fP (long size, int growSize=16)"
+.br
+.RI "Initializes a new map with the specified initial capacity\&. "
+.ti -1c
+.RI "\fBMultiMap\fP (MultiMap< T, TU > other)"
+.br
+.RI "Initializes a new map by copying another map instance\&. "
+.ti -1c
+.RI "\fBMultiMap\fP (Pair< T, TU >[] e, int growSize=16)"
+.br
+.RI "Initializes a new map by copying an existing array of pairs\&. "
+.ti -1c
+.RI "override bool \fBReplace\fP (T key, Optional< TU > value)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\fP
+.in +1c
+.ti -1c
+.RI "void \fBAdd\fP (Pair< T, TU > item)"
+.br
+.RI "Adds an element to the map\&. "
+.ti -1c
+.RI "\fBMap\fP< T, TU > \fBAsSegment\fP (long start, long length)"
+.br
+.RI "Creates a logical segment view over the map using the same underlying buffer\&. "
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clears the map by resetting the logical index and reinitializing the buffers\&. "
+.ti -1c
+.RI "bool \fBContains\fP (Pair< T, TU > item)"
+.br
+.RI "Determines whether the specified key–value pair exists\&. "
+.ti -1c
+.RI "bool \fBContainsKey\fP (T Key)"
+.br
+.RI "Determines whether any element has the specified key\&. "
+.ti -1c
+.RI "bool \fBContainsValue\fP (TU value)"
+.br
+.RI "Determines whether any element has the specified value\&. "
+.ti -1c
+.RI "Pair< bool, long > \fBCopyFrom\fP (\fBMap\fP< T, TU > source, ulong sourceOffset, ulong destinationOffset, ulong count)"
+.br
+.RI "Copies a range of elements from another map into this map\&. Automatically grows the buffer if required\&. "
+.ti -1c
+.RI "Pair< bool, long > \fBCopyTo\fP (\fBMap\fP< T, TU > vector, ulong VectorIndex)"
+.br
+.RI "Copies a range of elements to another map starting at the specified index\&. "
+.ti -1c
+.RI "void \fBCopyTo\fP (Pair< T, TU >[] array, int arrayIndex)"
+.br
+.RI "Copies the internal buffer to an external array\&. "
+.ti -1c
+.RI "Pair< bool, long > \fBCopyTo\fP (uint sourceOffset, \fBMap\fP< T, TU > destination, ulong destinationOffset, ulong count)"
+.br
+.RI "Copies a range of elements to another map\&. "
+.ti -1c
+.RI "Pair< T, TU > \fBElementAt\fP (long index)"
+.br
+.RI "Returns the element at the specified index\&. "
+.ti -1c
+.RI "bool \fBErase\fP ()"
+.br
+.RI "Removes the last active element\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long index)"
+.br
+.RI "Removes the element at the specified index\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long start, long end)"
+.br
+.RI "Removes all elements in the specified range\&. "
+.ti -1c
+.RI "bool \fBErase\fP (Pair< T, TU > value)"
+.br
+.RI "Removes the specified key–value pair\&. "
+.ti -1c
+.RI "IEnumerable< Pair< T, TU > > \fBFind\fP (T Key)"
+.br
+.RI "Finds all entries matching the specified key\&. "
+.ti -1c
+.RI "Optional< TU > \fBGet\fP (T Key)"
+.br
+.RI "Retrieves the value associated with the specified key\&. "
+.ti -1c
+.RI "Type \fBGetElementType\fP ()"
+.br
+.RI "Gets the element type stored in the map\&. "
+.ti -1c
+.RI "IEnumerator< Pair< T, TU > > \fBGetEnumerator\fP ()"
+.br
+.RI "Enumerates all active elements in the map\&. "
+.ti -1c
+.RI "TU \fBGetOrDefault\fP (T key, TU v2)"
+.br
+.RI "Retrieves a value or returns a fallback if the key does not exist\&. "
+.ti -1c
+.RI "bool \fBGrow\fP ()"
+.br
+.RI "Grows the internal buffer by \fBGrowSize\fP if automatic growth is enabled\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long index, Pair< T, TU > entry)"
+.br
+.RI "Inserts an element at the specified index, shifting elements to the right\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long start, long end, Pair< T, TU > entry)"
+.br
+.RI "Inserts an element at the specified index, shifting elements to the right\&. "
+.ti -1c
+.RI "bool \fBInsertRange\fP (int start, IEnumerable< Pair< T, TU > > items)"
+.br
+.RI "Inserts a range of elements starting at the specified index\&. "
+.ti -1c
+.RI "bool \fBInsertRange\fP (long start, Pair< T, TU >[] entrys)"
+.br
+.RI "Inserts a range of elements starting at the specified index\&. "
+.ti -1c
+.RI "\fBMap\fP ()"
+.br
+.RI "Create a empty map with 8 entrys\&. "
+.ti -1c
+.RI "\fBMap\fP (IEnumerable< Pair< T, TU > > e, int growSize=16)"
+.br
+.RI "Initializes a new map from an enumerable sequence of pairs\&. "
+.ti -1c
+.RI "\fBMap\fP (long size, int growSize=16)"
+.br
+.RI "Initializes a new map with the specified initial capacity\&. "
+.ti -1c
+.RI "\fBMap\fP (Map< T, TU > other)"
+.br
+.RI "Initializes a new map by copying another map instance\&. "
+.ti -1c
+.RI "\fBMap\fP (Pair< T, TU >[] e, int growSize=16)"
+.br
+.RI "Initializes a new map by copying an existing array of pairs\&. "
+.ti -1c
+.RI "void \fBPushBack\fP (\fBMap\fP< T, TU > other)"
+.br
+.RI "Appends all active elements from another map\&. "
+.ti -1c
+.RI "bool \fBPushBack\fP (Pair< T, TU > entry)"
+.br
+.RI "Appends a key–value pair to the end of the map\&. "
+.ti -1c
+.RI "bool \fBPushBack\fP (T key, TU value)"
+.br
+.RI "Appends a key–value pair to the end of the map\&. "
+.ti -1c
+.RI "bool \fBPushFront\fP (Pair< T, TU > entry)"
+.br
+.RI "Inserts a key–value pair at the front of the map\&. "
+.ti -1c
+.RI "bool \fBPushFront\fP (T key, TU value)"
+.br
+.RI "Inserts a key–value pair at the front of the map\&. "
+.ti -1c
+.RI "bool \fBRemove\fP (Pair< T, TU > item)"
+.br
+.RI "Removes the specified key–value pair\&. "
+.ti -1c
+.RI "bool \fBRemove\fP (T key)"
+.br
+.RI "Removes the element with the specified key\&. "
+.ti -1c
+.RI "void \fBRemoveAt\fP (int pos)"
+.br
+.RI "Removes the element at the specified index\&. "
+.ti -1c
+.RI "void \fBRemoveAt\fP (int start, int iend)"
+.br
+.RI "Removes all elements in the specified range\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (long index, Pair< T, TU > entry)"
+.br
+.RI "Replaces the element at the specified index\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (long start, long end, Pair< T, TU > entry)"
+.br
+.RI "Replaces a range of elements with the specified entry\&. "
+.ti -1c
+.RI "bool \fBReplaceRange\fP (long start, Pair< T, TU >[] entrys)"
+.br
+.RI "Replaces a range of elements with the specified entries\&. "
+.ti -1c
+.RI "void \fBSet\fP (T v, TU value)"
+.br
+.RI "Sets a value for the specified key (not implemented)\&. "
+.ti -1c
+.RI "void \fBSwap\fP (long i, long j)"
+.br
+.RI "Swaps two elements in the map, including their active/inactive state\&. "
+.ti -1c
+.RI "Pair< T, TU >[] \fBToNative\fP ()"
+.br
+.RI "Returns a copy of the internal buffer\&. "
+.ti -1c
+.RI "void \fBTraverse\fP (\fBTraversMode\fP mode, long startIndex, long endIndex, Action< Pair< T, TU > > func)"
+.br
+.RI "Traverses a range of elements using the specified traversal mode\&. "
+.ti -1c
+.RI "bool \fBTryGetValue\fP (T key, out TU? value)"
+.br
+.RI "Attempts to retrieve a value by key\&. "
+.ti -1c
+.RI "bool \fBTryGeValue\fP (T key, [MaybeNullWhen(false)] out TU value)"
+.br
+.RI "Attempts to retrieve a value by key\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override bool \fBintContainsKey\fP (T Key)"
+.br
+.RI "return always flase "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Properties inherited from \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\fP
+.in +1c
+.ti -1c
+.RI "bool \fBAutoGrow\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets a value indicating whether the map should automatically grow when full\&. "
+.ti -1c
+.RI "Pair< T, TU > \fBBack\fP\fR [get]\fP"
+.br
+.RI "Gets the last active element in the map\&. "
+.ti -1c
+.RI "long \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of active elements stored in the map\&. "
+.ti -1c
+.RI "Pair< T, TU >? \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the current logical position (m_index)\&. "
+.ti -1c
+.RI "Pair< T, TU >? \fBFirst\fP\fR [get]\fP"
+.br
+.RI "Gets the first active element in the map\&. "
+.ti -1c
+.RI "Pair< T, TU > \fBFront\fP\fR [get]\fP"
+.br
+.RI "Gets the first active element in the map\&. "
+.ti -1c
+.RI "long \fBGrowSize\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the automatic growth size\&. When positive, the map grows by this amount whenever additional capacity is required\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the map contains no active elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the map is full and cannot grow\&. "
+.ti -1c
+.RI "bool \fBIsReadOnly\fP\fR [get]\fP"
+.br
+.RI "Always false; the map supports modification\&. "
+.ti -1c
+.RI "ICollection< T > \fBKeys\fP\fR [get]\fP"
+.br
+.RI "Gets a collection containing all active keys in the map\&. "
+.ti -1c
+.RI "Pair< T, TU >? \fBLast\fP\fR [get]\fP"
+.br
+.RI "Gets the last active element in the map\&. "
+.ti -1c
+.RI "long \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the number of allocated slots in the internal buffer\&. "
+.ti -1c
+.RI "long \fBSize\fP\fR [get]\fP"
+.br
+.RI "Gets the theoretical maximum logical size of the map\&. "
+.ti -1c
+.RI "Optional< TU > \fBthis[T key]\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the value associated with the specified key\&. If the key does not exist, a new entry is appended\&. "
+.ti -1c
+.RI "ICollection< TU > \fBValues\fP\fR [get]\fP"
+.br
+.RI "Gets a collection containing all active values in the map\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a sparse, linear key–value container, with multkex support\&. 
+
+Automatic growth is controlled through \fBMap<T, TU>\&.GrowSize\fP and \fBMap<T, TU>\&.AutoGrow\fP\&. When enabled, the internal buffer expands automatically to accommodate new elements\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Key type\&. Must be non‑nullable\&.
+.br
+\fITU\fP Value type\&.
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fInotnull\fP
+.PP
+Definition at line \fB17\fP of file \fBMultiMap\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override bool SystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\&.intContainsKey (T Key)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+return always flase 
+.PP
+Reimplemented from \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\fP\&.
+.PP
+Definition at line \fB60\fP of file \fBMultiMap\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\&.MultiMap ()"
+
+.PP
+Initializes a new eempty map\&. 
+.PP
+Definition at line \fB22\fP of file \fBMultiMap\&.cs\fP\&.
+.PP
+Referenced by \fBMultiMap()\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\&.MultiMap (IEnumerable< Pair< T, TU > > e, int growSize = \fR16\fP)"
+
+.PP
+Initializes a new map from an enumerable sequence of pairs\&. 
+.PP
+Definition at line \fB37\fP of file \fBMultiMap\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\&.MultiMap (long size, int growSize = \fR16\fP)"
+
+.PP
+Initializes a new map with the specified initial capacity\&. 
+.PP
+Definition at line \fB27\fP of file \fBMultiMap\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\&.MultiMap (MultiMap< T, TU > other)"
+
+.PP
+Initializes a new map by copying another map instance\&. 
+.PP
+Definition at line \fB43\fP of file \fBMultiMap\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\&.MultiMap (Pair< T, TU >[] e, int growSize = \fR16\fP)"
+
+.PP
+Initializes a new map by copying an existing array of pairs\&. 
+.PP
+Definition at line \fB32\fP of file \fBMultiMap\&.cs\fP\&.
+.SS "override bool SystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\&.Replace (T key, Optional< TU > value)\fR [virtual]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP 
+.br
+\fIvalue\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Reimplemented from \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\fP\&.
+.PP
+Definition at line \fB52\fP of file \fBMultiMap\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,305 @@
+.TH "SystemEx.Collections.Generic.DequeFlexSpan< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.DequeFlexSpan< T > \- FlexSpan fpr Dequeue\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBEnumerator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBCopyTo\fP (\fBDequeFlexSpan\fP< T > destination)"
+.br
+.RI "Copies the contents of this FlexSpan's view into another FlexSpan\&. "
+.ti -1c
+.RI "\fBDequeFlexSpan\fP (ref Deque< T > con, long start, \fBFlexSpanMode\fP mode)"
+.br
+.RI "Creates a FlexSpan view starting at \fIstart\fP  and extending to the end of the underlying container\&. "
+.ti -1c
+.RI "\fBDequeFlexSpan\fP (ref Deque< T > con, long start, long length, \fBFlexSpanMode\fP mode)"
+.br
+.RI "Creates a FlexSpan view with explicit start and length\&. "
+.ti -1c
+.RI "void IDisposable\&. \fBDispose\fP ()"
+.br
+.RI "No resources to dispose\&. "
+.ti -1c
+.RI "T? \fBElementAt\fP (long index)"
+.br
+.RI "Returns the element at the given index according to the current indexing mode\&. "
+.ti -1c
+.RI "bool \fBMoveNext\fP ()"
+.br
+.RI "Moves to the next element in the span\&. "
+.ti -1c
+.RI "void IEnumerator\&. \fBReset\fP ()"
+.br
+.RI "Resets the enumerator\&. Ring mode resets to index 0\&. Other modes reset to -1\&. "
+.ti -1c
+.RI "bool \fBSetAt\fP (long index, T? value)"
+.br
+.RI "Writes a value into the underlying container at the mapped position\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "object IEnumerator\&. \fBCurrent\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "T IEnumerator< T >\&. \fBCurrent\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "T \fBCurrent\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the current element\&. \fBSetAt()\fP uses Replace() on the underlying container\&. "
+.ti -1c
+.RI "static \fBDequeFlexSpan\fP< T > \fBEmpty\fP\fR [get]\fP"
+.br
+.RI "A \fBEmpty\fP Object\&. "
+.ti -1c
+.RI "long \fBEnd\fP\fR [get]\fP"
+.br
+.RI "End index of the view (exclusive)\&. "
+.ti -1c
+.RI "bool \fBHasNext\fP\fR [get]\fP"
+.br
+.RI "Indicates whether another element can be produced\&. Ring mode always returns true (infinite wrap-around)\&. Other modes stop at ViewLength\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "True if the span has zero length\&. "
+.ti -1c
+.RI "long \fBLength\fP\fR [get]\fP"
+.br
+.RI "Total length of the underlying array\&. "
+.ti -1c
+.RI "long \fBStart\fP\fR [get]\fP"
+.br
+.RI "Start index of the view\&. "
+.ti -1c
+.RI "long \fBViewLength\fP\fR [get]\fP"
+.br
+.RI "Length of the view (End - Start)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+FlexSpan fpr Dequeue\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB28\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.CopyTo (\fBDequeFlexSpan\fP< T > destination)"
+
+.PP
+Copies the contents of this FlexSpan's view into another FlexSpan\&. Both spans must have compatible lengths\&. Copying is performed element-by-element using the underlying container's Replace() method\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdestination\fP The target FlexSpan receiving the copied elements\&. Must have a ViewLength greater than or equal to this span's ViewLength\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB242\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.DequeFlexSpan (ref Deque< T > con, long start, \fBFlexSpanMode\fP mode)"
+
+.PP
+Creates a FlexSpan view starting at \fIstart\fP  and extending to the end of the underlying container\&. This constructor does not allocate memory\&. It simply creates a logical view over the container using the specified indexing mode\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIcon\fP \fBReference\fP to the underlying container\&. Passed by ref to avoid copying the container struct and to ensure the view always reflects the actual container\&. 
+.br
+\fIstart\fP The starting index of the view\&. Must be within the bounds of the container\&. 
+.br
+\fImode\fP Indexing mode used by the view: System = forward indexing, Reverse = backward indexing, Ring = circular wrap-around indexing\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB182\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.PP
+Referenced by \fBCopyTo()\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.DequeFlexSpan (ref Deque< T > con, long start, long length, \fBFlexSpanMode\fP mode)"
+
+.PP
+Creates a FlexSpan view with explicit start and length\&. The view covers the range [start \&.\&. start + length), using the specified indexing mode\&. No memory is allocated; this is a pure logical slice\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIcon\fP \fBReference\fP to the underlying container\&. Passed by ref so the FlexSpan reflects the actual container rather than a copy\&. 
+.br
+\fIstart\fP Starting index of the view\&. Must be within the container bounds\&. 
+.br
+\fIlength\fP Number of elements in the view\&. Must not exceed the remaining container length starting at \fIstart\fP \&. 
+.br
+\fImode\fP Indexing mode used by the view: System = forward indexing, Reverse = backward indexing, Ring = circular wrap-around indexing\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB216\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "void IDisposable\&. SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.Dispose ()"
+
+.PP
+No resources to dispose\&. 
+.PP
+Definition at line \fB105\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "T? SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.ElementAt (long index)"
+
+.PP
+Returns the element at the given index according to the current indexing mode\&. System: Start + index 
+.br
+ Reverse: End - (1 + index) 
+.br
+ Ring: Start + (index % ViewLength)
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP Index inside the view (0-based)\&. Must be less than ViewLength\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The element mapped to the underlying container according to the active mode\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB266\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.MoveNext ()"
+
+.PP
+Moves to the next element in the span\&. 
+.PP
+Definition at line \fB69\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "void IEnumerator\&. SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.Reset ()"
+
+.PP
+Resets the enumerator\&. Ring mode resets to index 0\&. Other modes reset to -1\&. 
+.PP
+Definition at line \fB100\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.SetAt (long index, T? value)"
+
+.PP
+Writes a value into the underlying container at the mapped position\&. The mapping depends on the current indexing mode: System: Start + index 
+.br
+ Reverse: End - (1 + index) 
+.br
+ Ring: Start + (index % ViewLength)
+
+.PP
+Replace() is used to perform the write operation\&. No length extension occurs\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP Index inside the view (0-based)\&. Must be less than ViewLength\&. 
+.br
+\fIvalue\fP The value to write\&. Must not be null\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the underlying container accepted the write operation\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB311\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.PP
+Referenced by \fBCopyTo()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "object IEnumerator\&. SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.Current\fR [get]\fP"
+
+.PP
+
+.PP
+Definition at line \fB93\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "T IEnumerator<T>\&. SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.Current\fR [get]\fP"
+
+.PP
+
+.PP
+Definition at line \fB90\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "T SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.Current\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the current element\&. \fBSetAt()\fP uses Replace() on the underlying container\&. 
+.PP
+Definition at line \fB84\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "\fBDequeFlexSpan\fP<T> SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.Empty\fR [static]\fP, \fR [get]\fP"
+
+.PP
+A \fBEmpty\fP Object\&. 
+.PP
+Definition at line \fB160\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.End\fR [get]\fP"
+
+.PP
+End index of the view (exclusive)\&. 
+.PP
+Definition at line \fB155\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.HasNext\fR [get]\fP"
+
+.PP
+Indicates whether another element can be produced\&. Ring mode always returns true (infinite wrap-around)\&. Other modes stop at ViewLength\&. 
+.PP
+Definition at line \fB46\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.PP
+Referenced by \fBMoveNext()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.IsEmpty\fR [get]\fP"
+
+.PP
+True if the span has zero length\&. 
+.PP
+Definition at line \fB135\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.Length\fR [get]\fP"
+
+.PP
+Total length of the underlying array\&. 
+.PP
+Definition at line \fB140\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.Start\fR [get]\fP"
+
+.PP
+Start index of the view\&. 
+.PP
+Definition at line \fB150\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.DequeFlexSpan< T >\&.ViewLength\fR [get]\fP"
+
+.PP
+Length of the view (End - Start)\&. 
+.PP
+Definition at line \fB145\fP of file \fBDequeFlexSpan\&.cs\fP\&.
+.PP
+Referenced by \fBCopyTo()\fP, \fBElementAt()\fP, and \fBSetAt()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

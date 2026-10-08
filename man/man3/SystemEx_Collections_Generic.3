@@ -1,0 +1,447 @@
+.TH "SystemEx.Collections.Generic" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBBidirectionalIterator< T, TCollection >\fP"
+.br
+.RI "A bidirectional iterator supporting forward and backward movement\&. "
+.ti -1c
+.RI "struct \fBBinQueue< T >\fP"
+.br
+.RI "A fixed-size queue that stores up to two elements\&. When full, the oldest element is automatically removed to make room for a new one\&. "
+.ti -1c
+.RI "class \fBCache\fP"
+.br
+.RI "Represents a low-level byte buffer with position tracking, typed read/write helpers, and optional locking behavior\&. "
+.ti -1c
+.RI "class \fBCacheIsSharedException\fP"
+.br
+.RI "Exception thrown when an operation is attempted on a shared or locked cache\&. "
+.ti -1c
+.RI "struct \fBCacheStack< T >\fP"
+.br
+.RI "A fixed‑size, backward‑growing stack implementation that operates on a shared cache buffer\&. "
+.ti -1c
+.RI "struct \fBCluserIterrator< TElemet >\fP"
+.br
+.ti -1c
+.RI "class \fBCluster< T >\fP"
+.br
+.RI "Basic implementation of \fBICluster<T>\fP representing a node with weighted children\&. "
+.ti -1c
+.RI "struct \fBDeque< T >\fP"
+.br
+.RI "A simple fixed‑size double‑ended queue (deque) implemented using a linear array\&. Supports pushing and popping at both the front and the back\&. 
+.br
+ This implementation does not use a ring buffer; shifting is performed when inserting or removing at the front\&. "
+.ti -1c
+.RI "struct \fBDequeFlexSpan< T >\fP"
+.br
+.RI "FlexSpan fpr Dequeue\&. "
+.ti -1c
+.RI "struct \fBFind< T, TContainer >\fP"
+.br
+.RI "Provides search operations over a container implementing \fBIVector<T>\fP\&. This struct performs non‑modifying lookups such as first/last occurrence, existence checks and counting matches\&. "
+.ti -1c
+.RI "struct \fBFixedSparsed< T >\fP"
+.br
+.RI "A sparse container that stores elements in fixed slots without enforcing contiguous or linear placement\&. Slots may be empty, and operations do not shift or compact elements\&. Designed for scenarios where random-access sparse storage is required without the overhead of dynamic resizing\&. "
+.ti -1c
+.RI "struct \fBFixedVector< T >\fP"
+.br
+.RI "A fixed-size array container that provides indexed access, insertion, traversal, and basic search operations\&. Unlike dynamic arrays, this structure never grows and always maintains a constant capacity\&. "
+.ti -1c
+.RI "struct \fBForwardIterrator< T, TCollection >\fP"
+.br
+.RI "A forward-only iterator over a container\&. Supports sequential access starting at a specified index\&. "
+.ti -1c
+.RI "interface \fBIAutoGrowe\fP"
+.br
+.RI "Defines a contract for collections that can automatically grow their internal storage when additional capacity is required\&. "
+.ti -1c
+.RI "interface \fBIBinQueue< T >\fP"
+.br
+.RI "A fixed-size queue that stores up to two elements\&. When full, the oldest element is automatically removed to make room for a new one\&. "
+.ti -1c
+.RI "interface \fBICache\fP"
+.br
+.RI "Defines a typed cache a low-level byte buffer with position tracking, typed read/write helpers, and optional locking behavior\&. "
+.ti -1c
+.RI "interface \fBICluster\fP"
+.br
+.RI "Represents a cluster node in a weighted graph structure\&. "
+.ti -1c
+.RI "interface \fBICluster< T >\fP"
+.br
+.RI "Represents a cluster node in a weighted graph structure\&. "
+.ti -1c
+.RI "interface \fBIContainer< T >\fP"
+.br
+.RI "Defines the core mutation operations for a writable container\&. "
+.ti -1c
+.RI "interface \fBIDeque\fP"
+.br
+.RI "Defines the non-generic base interface for double-ended queue (deque) containers\&. A deque extends the basic queue interface with support for operations at both ends\&. "
+.ti -1c
+.RI "interface \fBIDeque< T >\fP"
+.br
+.RI "Defines the generic interface for a double-ended queue (deque)\&. A deque allows insertion and removal of elements at both the front and the back\&. "
+.ti -1c
+.RI "interface \fBILinearContainer< T >\fP"
+.br
+.RI "Extends \fBIContainer<T>\fP with linear append semantics\&. "
+.ti -1c
+.RI "interface \fBIPair< T, TU >\fP"
+.br
+.RI "Represents a two‑element tuple consisting of a key and a value\&. Extends ITuple with strongly typed accessors and comparison helpers for the first and second elements\&. "
+.ti -1c
+.RI "interface \fBIQueue\fP"
+.br
+.RI "Defines the non-generic base interface for queue-like containers\&. Provides size information, capacity checks, and a method to clear the queue\&. "
+.ti -1c
+.RI "interface \fBIQueue< T >\fP"
+.br
+.RI "Defines the generic FIFO queue interface\&. Provides operations for inserting elements at the back and removing elements from the front\&. "
+.ti -1c
+.RI "interface \fBIReadOnlyContainer< T >\fP"
+.br
+.RI "Defines the minimal read‑only functionality required for a generic container used by the \fBSystemEx\fP collection framework\&. Implementations provide indexed access and structural inspection without allowing modification of stored elements\&. "
+.ti -1c
+.RI "interface \fBISwappable< T >\fP"
+.br
+.RI "Defines a container capability for swapping two elements\&. "
+.ti -1c
+.RI "class \fBIteratorUtils\fP"
+.br
+.RI "Provides utility algorithms for working with iterators\&. "
+.ti -1c
+.RI "interface \fBIterrator< T >\fP"
+.br
+.RI "Represents a generic iterator over a collection\&. Provides access to the current element and supports advancing the iterator\&. "
+.ti -1c
+.RI "interface \fBITraverse< T >\fP"
+.br
+.RI "Defines a traversal operation over a range of elements using a specified direction and index boundaries\&. "
+.ti -1c
+.RI "interface \fBITuple< TKey >\fP"
+.br
+.RI "A lightweight interface for serializable N‑element tuple consisting of strongly typed\&. "
+.ti -1c
+.RI "interface \fBITypeBuffer< T >\fP"
+.br
+.RI "Defines a typed, fixed‑stride buffer abstraction for unmanaged element types\&. "
+.ti -1c
+.RI "interface \fBIUsedIterrator< T, TItterator >\fP"
+.br
+.ti -1c
+.RI "interface \fBIVector< T >\fP"
+.br
+.RI "Defines the minimal functionality required for a generic vextzu used by the \fBSystemEx\fP collection framework\&. Implementations provide indexed access, insertion, replacement, removal, and structural duplication of stored elements\&. "
+.ti -1c
+.RI "struct \fBListIterator< T >\fP"
+.br
+.RI "A random‑access iterator for List<T> that also implements \fBIterrator<T>\fP to support foreach‑style enumeration\&. Provides forward, backward, and offset‑based movement\&. "
+.ti -1c
+.RI "class \fBListIteratorExtensions\fP"
+.br
+.RI "Provides extension methods for creating iterators from List<T>\&. "
+.ti -1c
+.RI "class \fBMap< T, TU >\fP"
+.br
+.RI "Represents a sparse, linear key–value container\&. "
+.ti -1c
+.RI "class \fBMapException\fP"
+.br
+.ti -1c
+.RI "class \fBMirroredCache\fP"
+.br
+.RI "A cache that maintains a mirrored copy of all written data\&. 
+.br
+ Every write operation is performed on the primary cache and a reversed (byte‑mirrored) version of the data is written to the secondary cache\&. 
+.br
+ During reads, both caches are compared to ensure data integrity\&. "
+.ti -1c
+.RI "class \fBMultiMap< T, TU >\fP"
+.br
+.RI "Represents a sparse, linear key–value container, with multkex support\&. "
+.ti -1c
+.RI "struct \fBPair< T, TU >\fP"
+.br
+.RI "A lightweight, serializable two‑element tuple consisting of a strongly typed key and value\&. Implements \fBIPair<T, TU>\fP and provides typed comparison helpers as well as ITuple compatibility\&. "
+.ti -1c
+.RI "struct \fBPriorityQueue< TElement, TPriority >\fP"
+.br
+.RI "A Simple priority queue implemented \&. 
+.br
+ Elements are stored as \fBPair<T, TU>\fP where \fRT\fP is the value and \fRTU\fP is the priority\&. 
+.br
+ Supports enqueue, dequeue, peek, priority updates, cloning, and median‑based selection\&. "
+.ti -1c
+.RI "struct \fBQuad< TT, TU, TW, TJ >\fP"
+.br
+.RI "A lightweight, serializable four‑element tuple consisting of strongly typed first, second, third, and fourth values\&. 
+.br
+ Implements ITuple for indexed access and structural comparison\&. "
+.ti -1c
+.RI "class \fBQueue< T >\fP"
+.br
+.RI "Defines the generic FIFO queue\&. Provides operations for inserting elements at the back and removing elements from the front\&. "
+.ti -1c
+.RI "struct \fBQueueFlexSpan< T >\fP"
+.br
+.RI "FlexSpan for the \fBQueue\fP\&. "
+.ti -1c
+.RI "struct \fBRandomAccessIterator< T, TCollection >\fP"
+.br
+.RI "A random-access iterator supporting forward, backward, and indexed movement\&. "
+.ti -1c
+.RI "class \fBRCUCache\fP"
+.br
+.RI "Provides a Read‑Copy‑Update (RCU) wrapper around a \fBCache\fP instance\&. Readers operate lock‑free using epoch tracking, while writers acquire an exclusive lock to ensure consistent updates\&. This enables deterministic, high‑performance concurrent access to a byte‑addressable memory buffer\&. "
+.ti -1c
+.RI "struct \fBSlices< T, TContainer >\fP"
+.br
+.RI "Provides a deterministic multi-thread slicing model over a container\&. A slice represents a continuous range of elements inside the container\&. Each slice can be exclusively owned by exactly one thread\&. "
+.ti -1c
+.RI "class \fBSortedList\fP"
+.br
+.ti -1c
+.RI "struct \fBSparsed< T >\fP"
+.br
+.RI "A sparse container that stores elements in dynamic slots without enforcing contiguous or linear placement\&. Slots may be empty, and operations do not shift or compact elements\&. Designed for scenarios where random-access sparse storage is required with dynamic resizing\&. "
+.ti -1c
+.RI "class \fBStack< T >\fP"
+.br
+.RI "A fixed‑size, backward‑growing stack implementation that supports multiple independent virtual stack layers sharing the same underlying buffer\&. "
+.ti -1c
+.RI "struct \fBStackLayer\fP"
+.br
+.RI "Represents a logical sub‑stack inside a shared stack buffer\&. A layer defines its own independent boundaries and a current pointer, allowing multiple virtual stacks to coexist within the same array\&. "
+.ti -1c
+.RI "class \fBStrippedCache\fP"
+.br
+.RI "A segmented cache implementation that splits a large logical address space into multiple fixed-size cache segments\&. 
+.br
+ The first segment is the base \fBCache\fP instance, while all additional segments are stored in an internal array of \fBICache\fP\&. "
+.ti -1c
+.RI "struct \fBSubSlice< T, TContainer >\fP"
+.br
+.RI "SubSlice describes a mathematical range and ownership state\&. "
+.ti -1c
+.RI "struct \fBTriple< TT, TU, TW >\fP"
+.br
+.RI "A lightweight, serializable three‑element tuple consisting of strongly typed first, second, and third values\&. Implements ITuple and IEquatable<T> for structural comparison\&. "
+.ti -1c
+.RI "class \fBTuple< TKey >\fP"
+.br
+.RI "A dynamically sized tuple storing elements as object values\&. Provides indexed access, mutation, and compatibility with the ITuple interface used throughout the \fBSystemEx\fP collection and iterator framework\&. "
+.ti -1c
+.RI "class \fBTupleMap< T >\fP"
+.br
+.RI "A sparse, linear container that stores elements as \fBTuple<T>\fP objects, each consisting of a single key of type \fIT\fP  and an arbitrary number of additional values\&. "
+.ti -1c
+.RI "class \fBTypeBuffer< T >\fP"
+.br
+.RI "A typed view over a raw \fR\fBCache\fP\fP that exposes elements of an unmanaged type \fIT\fP \&. "
+.ti -1c
+.RI "struct \fBUniqueQueue< T >\fP"
+.br
+.RI "Represents a queue that only accepts unique elements\&. Attempts to insert a value already contained in the queue will fail\&. "
+.ti -1c
+.RI "struct \fBVector< T >\fP"
+.br
+.RI "A modern, policy‑driven dynamic Vector container that provides fast indexed access, optional auto‑growth, insertion, removal, traversal, and multiple zero‑overhead reinterpretation views\&. "
+.ti -1c
+.RI "struct \fBVectorFlexSpan< T, TContainer >\fP"
+.br
+.RI "A container-backed span-like view over any \fBIVector<T>\fP \&. Unlike System\&.Span, this type provides mode-based indexing (System, Reverse, Ring) and supports mutable access through Replace()\&. "
+.ti -1c
+.RI "struct \fBVectorMultiSet< T, TContainer >\fP"
+.br
+.RI "Equivalent to a std::flat_multiset, but implemented as an open, non-owning sorted view over any IContainerEx instance\&. The MultiSet struct does not store elements itself; it maintains ordering by sorting the referenced container using either a user-provided sorting delegate or a built-in BubbleSort fallback when no delegate is supplied\&. "
+.ti -1c
+.RI "struct \fBVectorSearch< T, TContainer >\fP"
+.br
+.RI "Provides an extensible search wrapper over a container using a configurable \fBISearchProvider<TContainer, T>\fP strategy\&. "
+.ti -1c
+.RI "struct \fBVectorSet< T, TContainer >\fP"
+.br
+.RI "Equivalent to a std::flat_set, but implemented as an open, non-owning sorted view over any IContainerEx instance\&. The Set struct does not store elements itself; it maintains ordering by sorting the referenced container using either a user-provided sorting delegate or a built-in BubbleSort fallback when no delegate is supplied\&. "
+.ti -1c
+.RI "struct \fBVectorUnorderedMultiSet< T, TContainer >\fP"
+.br
+.RI "Represents an unordered set view over an underlying container\&. Elements are not sorted and no ordering guarantees are provided\&. Duplicate values are not allowed\&. All operations work directly on the underlying container without applying any sorting logic\&. "
+.ti -1c
+.RI "struct \fBVectorUnorderedSet< T, TContainer >\fP"
+.br
+.RI "Represents an unordered set view over an underlying container\&. Elements are not sorted and no ordering guarantees are provided\&. Duplicate values are not allowed\&. All operations work directly on the underlying container without applying any sorting logic\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBCacheType\fP { \fBToDevice\fP, \fBFromDevice\fP, \fBBoth\fP, \fBOnlySystem\fP }"
+.br
+.RI "Specifies the access mode of a \fBCache\fP instance\&. "
+.ti -1c
+.RI "enum \fBSearchType\fP { \fBSearchType\&.SubtractWeight\fP, \fBSearchType\&.SetToWeight\fP, \fBSearchType\&.AccumulateCost\fP }"
+.br
+.RI "Defines how the search algorithm treats edge weights during traversal\&. "
+.ti -1c
+.RI "enum \fBTraversMode\fP { \fBTraversMode\&.Forwards\fP, \fBTraversMode\&.Backwards\fP, \fBInOrder\fP, \fBPreOrder\fP }"
+.br
+.RI "Specifies the traversal direction for iterating over a sequence\&. "
+.ti -1c
+.RI "enum \fBTraversOrder\fP { \fBTraversOrder\&.Preorder\fP, \fBTraversOrder\&.Inorder\fP, \fBTraversOrder\&.Postorder\fP, \fBTraversOrder\&.ListOrder\fP, \fBTraversOrder\&.ReservListOrder\fP }"
+.br
+.RI "Defines the supported traversal orders for Node<T> structures\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "delegate void \fBPriorityQueueAction< T, TCompare >\fP (ref T[] container, TCompare comparer)"
+.br
+.RI "Represents a delegate that performs a sorting or rearrangement operation on a priority‑queue container\&. 
+.br
+ The action receives the underlying array by reference and a comparison strategy used to determine the ordering of elements\&. "
+.ti -1c
+.RI "delegate void \fBSortAction< TCompare, TContainer >\fP (ref TContainer container, TCompare comparer)"
+.br
+.RI "Defines a sorting action used by the Set wrapper\&. The delegate receives the underlying container and its comparer and performs a complete sort operation on the container's elements\&. "
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.Collections\&.Generic\&.CacheType\fP"
+
+.PP
+Specifies the access mode of a \fBCache\fP instance\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIToDevice \fP
+\fBCache\fP is intended for writing data to a device\&. 
+.TP
+\f(BIFromDevice \fP
+\fBCache\fP is intended for reading data from a device\&. 
+.TP
+\f(BIBoth \fP
+\fBCache\fP supports both reading and writing operations\&. 
+.TP
+\f(BIOnlySystem \fP
+\fBCache\fP ist only on host, don't used with a device\&. 
+.PP
+Definition at line \fB27\fP of file \fBCache\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.Collections\&.Generic\&.SearchType\fP"
+
+.PP
+Defines how the search algorithm treats edge weights during traversal\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BISubtractWeight \fP
+Subtract the edge weight from the current energy: energy = energy - weight\&. 
+.TP
+\f(BISetToWeight \fP
+Replace the current energy with the edge weight: energy = weight\&. 
+.TP
+\f(BIAccumulateCost \fP
+Do not consume energy; instead accumulate the edge weight into the cost: cost += weight\&. 
+.PP
+Definition at line \fB28\fP of file \fBCluster\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.Collections\&.Generic\&.TraversMode\fP"
+
+.PP
+Specifies the traversal direction for iterating over a sequence\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIForwards \fP
+Traverses elements from lower to higher indices\&. 
+.TP
+\f(BIBackwards \fP
+Traverses elements from higher to lower indices\&. 
+.PP
+Definition at line \fB26\fP of file \fBITraverse\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.Collections\&.Generic\&.TraversOrder\fP"
+
+.PP
+Defines the supported traversal orders for Node<T> structures\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIPreorder \fP
+Visit the current node before its children and siblings\&. 
+.TP
+\f(BIInorder \fP
+Visit the left subtree, then the node, then the right subtree (not implemented)\&. 
+.TP
+\f(BIPostorder \fP
+Visit children and siblings before the current node\&. 
+.TP
+\f(BIListOrder \fP
+Traverse the linked list in forward direction\&. 
+.TP
+\f(BIReservListOrder \fP
+Traverse the linked list in reverse direction\&. 
+.PP
+Definition at line \fB25\fP of file \fBTraversOrder\&.cs\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "delegate void SystemEx\&.Collections\&.Generic\&.PriorityQueueAction< T, TCompare > (ref T[] container, TCompare comparer)"
+
+.PP
+Represents a delegate that performs a sorting or rearrangement operation on a priority‑queue container\&. 
+.br
+ The action receives the underlying array by reference and a comparison strategy used to determine the ordering of elements\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The element type stored in the container\&. 
+.br
+\fITCompare\fP The comparison strategy used to evaluate element ordering\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontainer\fP \fBReference\fP to the underlying array of elements to be sorted or rearranged\&. 
+.br
+\fIcomparer\fP The comparison provider used to determine the relative ordering of elements\&. 
+.RE
+.PP
+
+.SS "delegate void SystemEx\&.Collections\&.Generic\&.SortAction< TCompare, TContainer > (ref TContainer container, TCompare comparer)"
+
+.PP
+Defines a sorting action used by the Set wrapper\&. The delegate receives the underlying container and its comparer and performs a complete sort operation on the container's elements\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITCompare\fP Comparer type used to compare two elements\&.
+.br
+\fITContainer\fP Container type implementing IContainerEx for T\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontainer\fP \fBReference\fP to the container whose elements should be sorted\&.
+.br
+\fIcomparer\fP Comparer used to determine the ordering of elements\&.
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

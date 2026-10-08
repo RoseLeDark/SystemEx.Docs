@@ -1,16 +1,18 @@
 var a02044 =
 [
-    [ "LightCountingSpinlock", "d8/d22/a02044_ace25b7149aa32b65259025e77100de47.html#ace25b7149aa32b65259025e77100de47", null ],
-    [ "Lock", "d8/d22/a02044_a5c8bae41a4f3c435e6e23573dc51a521.html#a5c8bae41a4f3c435e6e23573dc51a521", null ],
-    [ "Lock", "d8/d22/a02044_abdf3b38bd2432c0cbc65c92e8db09aac.html#abdf3b38bd2432c0cbc65c92e8db09aac", null ],
-    [ "TryLock", "d8/d22/a02044_a4fd94d141700fb8f7ce9006c9ac03440.html#a4fd94d141700fb8f7ce9006c9ac03440", null ],
-    [ "Unlock", "d8/d22/a02044_af4137b51338949939577c3e7f67fd37e.html#af4137b51338949939577c3e7f67fd37e", null ],
-    [ "Wait", "d8/d22/a02044_aaec8c31a6a6cdcf71c0eb66bd8333cda.html#aaec8c31a6a6cdcf71c0eb66bd8333cda", null ],
-    [ "Handle", "d8/d22/a02044_aa7ace3af528d3cdaa30c7f95fc0368d3.html#aa7ace3af528d3cdaa30c7f95fc0368d3", null ],
-    [ "IsHeld", "d8/d22/a02044_ab90dc46ff0cecd7d9f92af75b78fd55f.html#ab90dc46ff0cecd7d9f92af75b78fd55f", null ],
-    [ "IsHeldbyCurrent", "d8/d22/a02044_a1112e4fc88ea08140ae10b5db8aa5665.html#a1112e4fc88ea08140ae10b5db8aa5665", null ],
-    [ "IsLocked", "d8/d22/a02044_a11b8aabec674d34420b755a20941efa8.html#a11b8aabec674d34420b755a20941efa8", null ],
-    [ "IsThreadOwnerTrackingEnabled", "d8/d22/a02044_ab433e469b544fc704377dd5afde10589.html#ab433e469b544fc704377dd5afde10589", null ],
-    [ "Name", "d8/d22/a02044_a192403bb4d8e9d562f040d7f6726cfe5.html#a192403bb4d8e9d562f040d7f6726cfe5", null ],
-    [ "Value", "d8/d22/a02044_ad609e4df948b663f0a8c4738e6a826fc.html#ad609e4df948b663f0a8c4738e6a826fc", null ]
+    [ "Vec2d", "d4/d1c/a00903_gad4a6640ea1f9f7e46b0d5cf8abc6b254.html#gad4a6640ea1f9f7e46b0d5cf8abc6b254", null ],
+    [ "Vec2d", "d4/d1c/a00903_gafd52dcab7c3d07272e7a519ee4635e9f.html#gafd52dcab7c3d07272e7a519ee4635e9f", null ],
+    [ "Vec2d", "d4/d1c/a00903_ga95c89b4460c97b8d5e85a6a3367517bc.html#ga95c89b4460c97b8d5e85a6a3367517bc", null ],
+    [ "Vec2d", "d4/d1c/a00903_ga89ddfacbc2c58fbf1ae97ed20259004b.html#ga89ddfacbc2c58fbf1ae97ed20259004b", null ],
+    [ "Vec2d", "d4/d1c/a00903_gad63b7c781ceb4729eb74701f4b4d6357.html#gad63b7c781ceb4729eb74701f4b4d6357", null ],
+    [ "CompareTo", "d4/d1c/a00903_gac27a3be5978d0f5f9f9c3cd7fc48f318.html#gac27a3be5978d0f5f9f9c3cd7fc48f318", null ],
+    [ "CompareTo", "d4/d1c/a00903_ga4784f9cfc27dcd3d0fcff2c9a2de9be5.html#ga4784f9cfc27dcd3d0fcff2c9a2de9be5", null ],
+    [ "Equals", "d4/d1c/a00903_gadd89721dea6794ba0d99f58edad182ad.html#gadd89721dea6794ba0d99f58edad182ad", null ],
+    [ "Equals", "d4/d1c/a00903_gade519895371531e54d5a20ebaa76fec1.html#gade519895371531e54d5a20ebaa76fec1", null ],
+    [ "Get", "d4/d1c/a00903_ga94046a165313fedaf0ead759f73920fc.html#ga94046a165313fedaf0ead759f73920fc", null ],
+    [ "GetHashCode", "d4/d1c/a00903_gac0b015a6748cf2fc2aea194782559850.html#gac0b015a6748cf2fc2aea194782559850", null ],
+    [ "ToBytes", "d4/d1c/a00903_ga7a5aacf3351d5fcb8e0a81b41c81643f.html#ga7a5aacf3351d5fcb8e0a81b41c81643f", null ],
+    [ "Count", "d4/d1c/a00903_ga316f0f9f0fa1341aa5312645e82716f8.html#ga316f0f9f0fa1341aa5312645e82716f8", null ],
+    [ "X", "d4/d1c/a00903_ga73f118199e0872f33a2ed1d09ad90caa.html#ga73f118199e0872f33a2ed1d09ad90caa", null ],
+    [ "Y", "d4/d1c/a00903_gadffe55e1a7902e9aeac265c8a2ac84b4.html#gadffe55e1a7902e9aeac265c8a2ac84b4", null ]
 ];

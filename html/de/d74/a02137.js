@@ -1,7 +1,7 @@
 var a02137 =
 [
-    [ "Isaac32Engine", "d5/d89/a00907_ga2f5a68fb4cfff8941e2894b4a73e1abc.html#ga2f5a68fb4cfff8941e2894b4a73e1abc", null ],
-    [ "Isaac32Engine", "d5/d89/a00907_gaadb3a2653755ee5f07100ebcef592905.html#gaadb3a2653755ee5f07100ebcef592905", null ],
-    [ "Next", "d5/d89/a00907_gad75f62fae1ccab955c194bd3127e864f.html#gad75f62fae1ccab955c194bd3127e864f", null ],
-    [ "Seed", "d5/d89/a00907_ga2528cb1614ca381c1ed4ecf3811945b2.html#ga2528cb1614ca381c1ed4ecf3811945b2", null ]
+    [ "Isaac32EngineSeed", "de/d74/a02137_a19420769c6b8f6573f408036d642bbdb.html#a19420769c6b8f6573f408036d642bbdb", null ],
+    [ "GetSeed", "de/d74/a02137_ab643784b5a792d14e007eba5db413030.html#ab643784b5a792d14e007eba5db413030", null ],
+    [ "Length", "de/d74/a02137_ad88c1d9b7d8bfc25ceea98e29c5fa98b.html#ad88c1d9b7d8bfc25ceea98e29c5fa98b", null ],
+    [ "this[int i]", "de/d74/a02137_a5efca5e82c927418afbea2476a9b83f3.html#a5efca5e82c927418afbea2476a9b83f3", null ]
 ];

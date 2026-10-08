@@ -1,0 +1,695 @@
+.TH "SystemEx.Numeric.Vec2hb" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Vec2hb \- Represents a 2‑component floating‑point vector\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IComparable, \fBSystemEx\&.IComparableEx< T >\fP, IComparable, IEquatable, and \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBCompareTo\fP (object? obj)"
+.br
+.RI "Compares this vector to another object\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (\fBVec2hb\fP a)"
+.br
+.RI "Compares two vectors lexicographically\&. "
+.ti -1c
+.RI "int IComparable< \fBVec2hb\fP >\&. \fBCompareTo\fP (\fBVec2hb\fP other)"
+.br
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBVec2hb\fP other)"
+.br
+.RI "Determines whether this instance is equal to another \fBVec2hb\fP value, using the same semantics as the \fBoperator ==(Vec2hb,Vec2hb)\fP\&. "
+.ti -1c
+.RI "\fBHalf16b\fP \fBGet\fP (int index)"
+.br
+.RI "Gets a component by index (0 = X, 1 = Y)\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Computes a hash code for this vector\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBToBytes\fP ()"
+.br
+.RI "Converts the vector into a deterministic byte sequence\&. "
+.ti -1c
+.RI "\fBVec2hb\fP ()"
+.br
+.RI "Initializes a zero vector (0,0)\&. "
+.ti -1c
+.RI "\fBVec2hb\fP (\fBHalf16b\fP _f)"
+.br
+.RI "Initializes both components with the same value\&. "
+.ti -1c
+.RI "\fBVec2hb\fP (\fBHalf16b\fP _x, \fBHalf16b\fP _y)"
+.br
+.RI "Initializes a vector with explicit X and Y values\&. "
+.ti -1c
+.RI "\fBVec2hb\fP (\fBHalf16b\fP[] lpvec)"
+.br
+.RI "Initializes the vector from a float array\&. "
+.ti -1c
+.RI "\fBVec2hb\fP (Vec2hb vec)"
+.br
+.RI "Copy constructor\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBHalf16b\fP \fBDot\fP (\fBVec2hb\fP v1, \fBVec2hb\fP v2)"
+.br
+.RI "Computes the dot product of two vectors\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBInterpolateCoords\fP (\fBVec2hb\fP v1, \fBVec2hb\fP v2, \fBHalf16b\fP p)"
+.br
+.RI "Linearly interpolates between two vectors\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBInterpolateNormal\fP (\fBVec2hb\fP v1, \fBVec2hb\fP v2, \fBHalf16b\fP p)"
+.br
+.RI "Interpolates and normalizes the result\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBLenght\fP (\fBVec2hb\fP v)"
+.br
+.RI "Computes the squared length of the vector\&. "
+.ti -1c
+.RI "static \fBHalf16b\fP \fBLenghtSqrt\fP (\fBVec2hb\fP v)"
+.br
+.RI "Computes the Euclidean length of the vector\&. "
+.ti -1c
+.RI "static bool \fBNearEqual\fP (\fBVec2hb\fP v1, \fBVec2hb\fP v2, \fBHalf16b\fP epsilon)"
+.br
+.RI "Checks whether two vectors are approximately equal\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBNormalize\fP (\fBVec2hb\fP v, bool ex=false)"
+.br
+.RI "Normalizes the vector\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBHalf16b\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Determines whether a scalar differs from any component of the vector\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBVec2hb\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Determines whether any vector component differs from the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBVec2hb\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Determines whether two vectors differ in any component\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBoperator*\fP (\fBHalf16b\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Multiplies a scalar with each component of the vector\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBoperator*\fP (\fBVec2hb\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Multiplies both components of the vector by a scalar\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBoperator*\fP (\fBVec2hb\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Multiplies two vectors component‑wise\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBoperator+\fP (\fBHalf16b\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Adds a scalar to each component of the vector\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBoperator+\fP (\fBVec2hb\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Adds a scalar to both components of the vector\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBoperator+\fP (\fBVec2hb\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Adds two vectors component‑wise\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBoperator\-\fP (\fBHalf16b\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Subtracts each component of the vector from a scalar\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBoperator\-\fP (\fBVec2hb\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Subtracts a scalar from both components of the vector\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBoperator\-\fP (\fBVec2hb\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Subtracts two vectors component‑wise\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBoperator/\fP (\fBHalf16b\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Divides a scalar by each component of the vector\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBoperator/\fP (\fBVec2hb\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Divides both components of the vector by a scalar\&. "
+.ti -1c
+.RI "static \fBVec2hb\fP \fBoperator/\fP (\fBVec2hb\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Divides two vectors component‑wise\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBHalf16b\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Determines whether a scalar is strictly less than both vector components\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBVec2hb\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Determines whether both vector components are strictly less than the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBVec2hb\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Determines whether all components of \fIa\fP  are strictly less than those of \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBHalf16b\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Determines whether a scalar is less than or equal to both vector components\&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBVec2hb\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Determines whether both vector components are less than or equal to the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBVec2hb\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Determines whether all components of \fIa\fP  are less than or equal to those of \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBHalf16b\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Determines whether a scalar equals both components of the vector\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBVec2hb\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Determines whether both vector components equal the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBVec2hb\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Determines whether two vectors are equal component‑wise\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBHalf16b\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Determines whether a scalar is strictly greater than both vector components\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBVec2hb\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Determines whether both vector components are strictly greater than the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBVec2hb\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Determines whether all components of \fIa\fP  are strictly greater than those of \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBHalf16b\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Determines whether a scalar is greater than or equal to both vector components\&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBVec2hb\fP a, \fBHalf16b\fP b)"
+.br
+.RI "Determines whether both vector components are greater than or equal to the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBVec2hb\fP a, \fBVec2hb\fP b)"
+.br
+.RI "Determines whether all components of \fIa\fP  are greater than or equal to those of \fIb\fP \&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static readonly \fBVec2hb\fP \fBMax\fP = new \fBVec2hb\fP(\fBHalf16b\&.MaxValue\fP)"
+.br
+.RI "Represents Vector(MAX,MAX)\&. "
+.ti -1c
+.RI "static readonly \fBVec2hb\fP \fBMin\fP = new \fBVec2hb\fP(\fBHalf16b\&.MinValue\fP)"
+.br
+.RI "Represents Vector(MIN,MIN)\&. "
+.ti -1c
+.RI "static readonly \fBVec2hb\fP \fBNegativeOne\fP = new \fBVec2hb\fP(\fBHalf16b\&.NegativeOne\fP)"
+.br
+.RI "Represents Vector(-1,-1)\&. "
+.ti -1c
+.RI "static readonly \fBVec2hb\fP \fBOne\fP = new \fBVec2hb\fP(\fBHalf16b\&.One\fP)"
+.br
+.RI "Represents Vector(1,1)\&. "
+.ti -1c
+.RI "static readonly \fBVec2hb\fP \fBZero\fP = new \fBVec2hb\fP(\fBHalf16b\&.Zero\fP)"
+.br
+.RI "Represents Vector(0,0)\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of components in this vector (always 2)\&. "
+.ti -1c
+.RI "\fBHalf16b\fP \fBX\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the X component\&. "
+.ti -1c
+.RI "\fBHalf16b\fP \fBY\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the Y component\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a 2‑component floating‑point vector\&. 
+
+\fBVec2hb\fP is a lightweight numeric type used throughout \fBSystemEx\fP for geometry, math utilities, device operations, and compute kernels\&. It stores two \fBHalf16b\fP values (\fRX\fP and \fRY\fP) in a sequential memory layout, making it compatible with native interop and high‑performance compute backends\&. 
+
+.PP
+The struct is annotated with \fBHashAlgorithmAttribute\fP to enable attribute‑driven hashing via HashFactory\&. 
+.br
+ \fBBernsteinHash\fP is used because it is fast, byte‑linear, and ideal for small fixed‑size numeric types such as vectors\&. 
+
+.PP
+\fBVec2hb\fP implements multiple comparison and hashing interfaces: 
+.PD 0
+.IP "\(bu" 2
+IComparable and IComparable<T> for ordering 
+.IP "\(bu" 2
+IEquatable<T> for equality checks 
+.IP "\(bu" 2
+\fBIHashable<T>\fP for deterministic byte‑level hashing 
+.PP
+This makes the type suitable for use in dictionaries, sorting, spatial hashing, and compute pipelines\&. 
+.PP
+Definition at line \fB60\fP of file \fBvec2hb\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.Vec2hb\&.Vec2hb ()"
+
+.PP
+Initializes a zero vector (0,0)\&. 
+.PP
+Definition at line \fB106\fP of file \fBvec2hb\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP, \fBCompareTo()\fP, \fBDot()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBInterpolateCoords()\fP, \fBInterpolateNormal()\fP, \fBLenght()\fP, \fBLenghtSqrt()\fP, \fBNearEqual()\fP, \fBNormalize()\fP, \fBoperator!=()\fP, \fBoperator!=()\fP, \fBoperator!=()\fP, \fBoperator*()\fP, \fBoperator*()\fP, \fBoperator*()\fP, \fBoperator+()\fP, \fBoperator+()\fP, \fBoperator+()\fP, \fBoperator\-()\fP, \fBoperator\-()\fP, \fBoperator\-()\fP, \fBoperator/()\fP, \fBoperator/()\fP, \fBoperator/()\fP, \fBoperator<()\fP, \fBoperator<()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator<=()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, \fBoperator==()\fP, \fBoperator==()\fP, \fBoperator>()\fP, \fBoperator>()\fP, \fBoperator>()\fP, \fBoperator>=()\fP, \fBoperator>=()\fP, \fBoperator>=()\fP, and \fBVec2hb()\fP\&.
+.SS "SystemEx\&.Numeric\&.Vec2hb\&.Vec2hb (\fBHalf16b\fP _x, \fBHalf16b\fP _y)"
+
+.PP
+Initializes a vector with explicit X and Y values\&. 
+.PP
+Definition at line \fB113\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Vec2hb\&.Vec2hb (\fBHalf16b\fP _f)"
+
+.PP
+Initializes both components with the same value\&. 
+.PP
+Definition at line \fB122\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Vec2hb\&.Vec2hb (Vec2hb vec)"
+
+.PP
+Copy constructor\&. 
+.PP
+Definition at line \fB130\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Vec2hb\&.Vec2hb (\fBHalf16b\fP[] lpvec)"
+
+.PP
+Initializes the vector from a float array\&. 
+.PP
+Definition at line \fB138\fP of file \fBvec2hb\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int SystemEx\&.Numeric\&.Vec2hb\&.CompareTo (object? obj)"
+
+.PP
+Compares this vector to another object\&. 
+.PP
+Definition at line \fB225\fP of file \fBvec2hb\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Numeric\&.Vec2hb\&.CompareTo (\fBVec2hb\fP a)"
+
+.PP
+Compares two vectors lexicographically\&. 
+.PP
+Definition at line \fB234\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "int IComparable< \fBVec2hb\fP >\&. SystemEx\&.Numeric\&.Vec2hb\&.CompareTo (\fBVec2hb\fP other)"
+
+.PP
+Definition at line \fB273\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Vec2hb\&.Dot (\fBVec2hb\fP v1, \fBVec2hb\fP v2)\fR [static]\fP"
+
+.PP
+Computes the dot product of two vectors\&. 
+.PP
+Definition at line \fB169\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.Vec2hb\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. The object is considered equal if it is a \fBVec2hb\fP and compares equal using \fBEquals(Vec2hb)\fP\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if \fIobj\fP  is a \fBVec2hb\fP and equal to this instance; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB268\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.Equals (\fBVec2hb\fP other)"
+
+.PP
+Determines whether this instance is equal to another \fBVec2hb\fP value, using the same semantics as the \fBoperator ==(Vec2hb,Vec2hb)\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the values are equal; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB253\fP of file \fBvec2hb\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Vec2hb\&.Get (int index)"
+
+.PP
+Gets a component by index (0 = X, 1 = Y)\&. 
+.PP
+Definition at line \fB146\fP of file \fBvec2hb\&.cs\fP\&.
+.PP
+Referenced by \fBToBytes()\fP\&.
+.SS "override int SystemEx\&.Numeric\&.Vec2hb\&.GetHashCode ()"
+
+.PP
+Computes a hash code for this vector\&. The primary hash is generated using HashFactory and the \fBHashAlgorithmAttribute\fP applied to this struct\&. 
+.br
+ If hashing fails (rare), a fallback XOR‑based hash is used\&. 
+.PP
+Definition at line \fB216\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.InterpolateCoords (\fBVec2hb\fP v1, \fBVec2hb\fP v2, \fBHalf16b\fP p)\fR [static]\fP"
+
+.PP
+Linearly interpolates between two vectors\&. 
+.PP
+Definition at line \fB177\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.InterpolateNormal (\fBVec2hb\fP v1, \fBVec2hb\fP v2, \fBHalf16b\fP p)\fR [static]\fP"
+
+.PP
+Interpolates and normalizes the result\&. 
+.PP
+Definition at line \fB184\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Vec2hb\&.Lenght (\fBVec2hb\fP v)\fR [static]\fP"
+
+.PP
+Computes the squared length of the vector\&. 
+.PP
+Definition at line \fB154\fP of file \fBvec2hb\&.cs\fP\&.
+.PP
+Referenced by \fBLenghtSqrt()\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Vec2hb\&.LenghtSqrt (\fBVec2hb\fP v)\fR [static]\fP"
+
+.PP
+Computes the Euclidean length of the vector\&. 
+.PP
+Definition at line \fB159\fP of file \fBvec2hb\&.cs\fP\&.
+.PP
+Referenced by \fBNormalize()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.NearEqual (\fBVec2hb\fP v1, \fBVec2hb\fP v2, \fBHalf16b\fP epsilon)\fR [static]\fP"
+
+.PP
+Checks whether two vectors are approximately equal\&. 
+.PP
+Definition at line \fB191\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.Normalize (\fBVec2hb\fP v, bool ex = \fRfalse\fP)\fR [static]\fP"
+
+.PP
+Normalizes the vector\&. 
+.PP
+Definition at line \fB199\fP of file \fBvec2hb\&.cs\fP\&.
+.PP
+Referenced by \fBInterpolateNormal()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator!= (\fBHalf16b\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar differs from any component of the vector\&. 
+.PP
+Definition at line \fB413\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator!= (\fBVec2hb\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Determines whether any vector component differs from the scalar\&. 
+.PP
+Definition at line \fB455\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator!= (\fBVec2hb\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Determines whether two vectors differ in any component\&. 
+.PP
+Definition at line \fB374\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.operator* (\fBHalf16b\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Multiplies a scalar with each component of the vector\&. 
+.PP
+Definition at line \fB356\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.operator* (\fBVec2hb\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Multiplies both components of the vector by a scalar\&. 
+.PP
+Definition at line \fB338\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.operator* (\fBVec2hb\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Multiplies two vectors component‑wise\&. 
+.PP
+Definition at line \fB314\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.operator+ (\fBHalf16b\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Adds a scalar to each component of the vector\&. 
+.PP
+Definition at line \fB362\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.operator+ (\fBVec2hb\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Adds a scalar to both components of the vector\&. 
+.PP
+Definition at line \fB320\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.operator+ (\fBVec2hb\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Adds two vectors component‑wise\&. 
+.PP
+Definition at line \fB296\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.operator\- (\fBHalf16b\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Subtracts each component of the vector from a scalar\&. 
+.PP
+Definition at line \fB344\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.operator\- (\fBVec2hb\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Subtracts a scalar from both components of the vector\&. 
+.PP
+Definition at line \fB326\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.operator\- (\fBVec2hb\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Subtracts two vectors component‑wise\&. 
+.PP
+Definition at line \fB302\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.operator/ (\fBHalf16b\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Divides a scalar by each component of the vector\&. 
+.PP
+Definition at line \fB350\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.operator/ (\fBVec2hb\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Divides both components of the vector by a scalar\&. 
+.PP
+Definition at line \fB332\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.operator/ (\fBVec2hb\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Divides two vectors component‑wise\&. 
+.PP
+Definition at line \fB308\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator< (\fBHalf16b\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar is strictly less than both vector components\&. 
+.PP
+Definition at line \fB434\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator< (\fBVec2hb\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components are strictly less than the scalar\&. 
+.PP
+Definition at line \fB476\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator< (\fBVec2hb\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Determines whether all components of \fIa\fP  are strictly less than those of \fIb\fP \&. 
+.PP
+Definition at line \fB392\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator<= (\fBHalf16b\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar is less than or equal to both vector components\&. 
+.PP
+Definition at line \fB420\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator<= (\fBVec2hb\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components are less than or equal to the scalar\&. 
+.PP
+Definition at line \fB462\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator<= (\fBVec2hb\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Determines whether all components of \fIa\fP  are less than or equal to those of \fIb\fP \&. 
+.PP
+Definition at line \fB380\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator== (\fBHalf16b\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar equals both components of the vector\&. 
+.PP
+Definition at line \fB406\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator== (\fBVec2hb\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components equal the scalar\&. 
+.PP
+Definition at line \fB448\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator== (\fBVec2hb\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Determines whether two vectors are equal component‑wise\&. 
+.PP
+Definition at line \fB368\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator> (\fBHalf16b\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar is strictly greater than both vector components\&. 
+.PP
+Definition at line \fB441\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator> (\fBVec2hb\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components are strictly greater than the scalar\&. 
+.PP
+Definition at line \fB483\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator> (\fBVec2hb\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Determines whether all components of \fIa\fP  are strictly greater than those of \fIb\fP \&. 
+.PP
+Definition at line \fB398\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator>= (\fBHalf16b\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar is greater than or equal to both vector components\&. 
+.PP
+Definition at line \fB427\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator>= (\fBVec2hb\fP a, \fBHalf16b\fP b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components are greater than or equal to the scalar\&. 
+.PP
+Definition at line \fB469\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec2hb\&.operator>= (\fBVec2hb\fP a, \fBVec2hb\fP b)\fR [static]\fP"
+
+.PP
+Determines whether all components of \fIa\fP  are greater than or equal to those of \fIb\fP \&. 
+.PP
+Definition at line \fB386\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.Vec2hb\&.ToBytes ()"
+
+.PP
+Converts the vector into a deterministic byte sequence\&. This method is used by HashFactory to compute attribute‑driven hashes\&. The byte layout is stable and platform‑safe, ensuring consistent hashing across devices and backends\&. 
+.PP
+Implements \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.PP
+Definition at line \fB285\fP of file \fBvec2hb\&.cs\fP\&.
+.PP
+Referenced by \fBToBytes()\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "readonly \fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.Max = new \fBVec2hb\fP(\fBHalf16b\&.MaxValue\fP)\fR [static]\fP"
+
+.PP
+Represents Vector(MAX,MAX)\&. 
+.PP
+Definition at line \fB91\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "readonly \fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.Min = new \fBVec2hb\fP(\fBHalf16b\&.MinValue\fP)\fR [static]\fP"
+
+.PP
+Represents Vector(MIN,MIN)\&. 
+.PP
+Definition at line \fB86\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "readonly \fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.NegativeOne = new \fBVec2hb\fP(\fBHalf16b\&.NegativeOne\fP)\fR [static]\fP"
+
+.PP
+Represents Vector(-1,-1)\&. 
+.PP
+Definition at line \fB81\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "readonly \fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.One = new \fBVec2hb\fP(\fBHalf16b\&.One\fP)\fR [static]\fP"
+
+.PP
+Represents Vector(1,1)\&. 
+.PP
+Definition at line \fB76\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "readonly \fBVec2hb\fP SystemEx\&.Numeric\&.Vec2hb\&.Zero = new \fBVec2hb\fP(\fBHalf16b\&.Zero\fP)\fR [static]\fP"
+
+.PP
+Represents Vector(0,0)\&. 
+.PP
+Definition at line \fB72\fP of file \fBvec2hb\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Numeric\&.Vec2hb\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of components in this vector (always 2)\&. 
+.PP
+Definition at line \fB67\fP of file \fBvec2hb\&.cs\fP\&.
+.PP
+Referenced by \fBGet()\fP, and \fBToBytes()\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Vec2hb\&.X\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the X component\&. 
+.PP
+Definition at line \fB96\fP of file \fBvec2hb\&.cs\fP\&.
+.SS "\fBHalf16b\fP SystemEx\&.Numeric\&.Vec2hb\&.Y\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the Y component\&. 
+.PP
+Definition at line \fB101\fP of file \fBvec2hb\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

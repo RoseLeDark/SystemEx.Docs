@@ -1,13 +1,15 @@
 var a01601 =
 [
-    [ "AddBuffer", "d7/d82/a01601_a7bc4002350665b4fe10aeeaebfed8ee1.html#a7bc4002350665b4fe10aeeaebfed8ee1", null ],
-    [ "BeginRun", "d7/d82/a01601_a003fc294274846fba616b3d4e7b3a55d.html#a003fc294274846fba616b3d4e7b3a55d", null ],
-    [ "Create", "d7/d82/a01601_adc2f30a0d3b0b9f94fdcb83bad7dd2f9.html#adc2f30a0d3b0b9f94fdcb83bad7dd2f9", null ],
-    [ "EndRun", "d7/d82/a01601_a23aa92269514ccc3f2cab9edc47b3460.html#a23aa92269514ccc3f2cab9edc47b3460", null ],
-    [ "GetBuffer", "d7/d82/a01601_a5680e822b8842aa8d863e557ba40f9ec.html#a5680e822b8842aa8d863e557ba40f9ec", null ],
-    [ "IsRunning", "d7/d82/a01601_ac0021bf73172da0bc789fece42f3b246.html#ac0021bf73172da0bc789fece42f3b246", null ],
-    [ "RemoveBuffer", "d7/d82/a01601_ad6d9c0b9112797e6bd094e8e56abec3c.html#ad6d9c0b9112797e6bd094e8e56abec3c", null ],
-    [ "RemoveBuffer", "d7/d82/a01601_a7611094d330cd73aa03c3e406dd54739.html#a7611094d330cd73aa03c3e406dd54739", null ],
-    [ "Run", "d7/d82/a01601_a950dfa83692a5e63f062a846e859d6ae.html#a950dfa83692a5e63f062a846e859d6ae", null ],
-    [ "Backend", "d7/d82/a01601_ab18d6f9f562f69f5ede1d56410ef306e.html#ab18d6f9f562f69f5ede1d56410ef306e", null ]
+    [ "Clear", "df/da5/a00912_gafd5b20bdffb13afcc73caf1e06ab33cf.html#gafd5b20bdffb13afcc73caf1e06ab33cf", null ],
+    [ "Clone", "df/da5/a00912_ga2503504ee768f34e3f4f22d0e51be2c8.html#ga2503504ee768f34e3f4f22d0e51be2c8", null ],
+    [ "CopyRegion", "df/da5/a00912_ga35deb2cd1f99bab6642156254871e53b.html#ga35deb2cd1f99bab6642156254871e53b", null ],
+    [ "Fill", "df/da5/a00912_gaa4c0ffc2295eb778669a8a9f5e1b643e.html#gaa4c0ffc2295eb778669a8a9f5e1b643e", null ],
+    [ "FillRect", "df/da5/a00912_ga3ca6167e3a1144e8ccbdc6e68ca6ba84.html#ga3ca6167e3a1144e8ccbdc6e68ca6ba84", null ],
+    [ "Find", "df/da5/a00912_ga1d5df6442eebe297315ed829ca9d8974.html#ga1d5df6442eebe297315ed829ca9d8974", null ],
+    [ "FindLast", "df/da5/a00912_ga7f42a1742cc7bf424903a51627c15cfa.html#ga7f42a1742cc7bf424903a51627c15cfa", null ],
+    [ "GetPixel", "df/da5/a00912_ga72725b0eec47c5c97f7a4e8e0bec73c5.html#ga72725b0eec47c5c97f7a4e8e0bec73c5", null ],
+    [ "Resize", "df/da5/a00912_gab1c9faf58087c0f319453703331d2c17.html#gab1c9faf58087c0f319453703331d2c17", null ],
+    [ "Buffer", "df/da5/a00912_gad40390089d37f39c92390af693bdb199.html#gad40390089d37f39c92390af693bdb199", null ],
+    [ "Height", "df/da5/a00912_ga4b0ab0e3e74115c37b005e19707947c7.html#ga4b0ab0e3e74115c37b005e19707947c7", null ],
+    [ "Width", "df/da5/a00912_ga28d54d8b9207f24d63a3a6f8f78971ae.html#ga28d54d8b9207f24d63a3a6f8f78971ae", null ]
 ];

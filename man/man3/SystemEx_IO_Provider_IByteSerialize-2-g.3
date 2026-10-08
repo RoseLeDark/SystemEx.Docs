@@ -1,0 +1,90 @@
+.TH "SystemEx.IO.Provider.IByteSerialize< T, TSchema >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.IO.Provider.IByteSerialize< T, TSchema > \- Provides deterministic binary serialization and deserialization for a type \fIT\fP  using a schema \fITSchema\fP \&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "TSchema \fBGetSchema\fP ()"
+.br
+.RI "Returns the schema instance associated with this type\&. Hidden from IntelliSense to avoid accidental misuse\&. "
+.ti -1c
+.RI "\fBCache\fP \fBPack\fP (TSchema schema)"
+.br
+.RI "Packs the current instance into a new \fRbyte[]\fP using the specified schema\&. "
+.ti -1c
+.RI "T \fBUnpack\fP (\fBCache\fP data, TSchema schema)"
+.br
+.RI "Reconstructs a new instance of \fIT\fP  from the given binary data using the specified schema\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides deterministic binary serialization and deserialization for a type \fIT\fP  using a schema \fITSchema\fP \&. 
+
+Implementations must operate strictly on \fR\fBCache\fP\fP and must not allocate temporary buffers other than the final output array\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The data type being serialized\&. 
+.br
+\fITSchema\fP The schema describing the binary layout of \fIT\fP \&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITSchema\fP : \fI\fBIByteFormatSchema\fP\fP
+.PP
+Definition at line \fB66\fP of file \fBIByteSerialize\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "TSchema SystemEx\&.IO\&.Provider\&.IByteSerialize< T, TSchema >\&.GetSchema ()"
+
+.PP
+Returns the schema instance associated with this type\&. Hidden from IntelliSense to avoid accidental misuse\&. 
+.SS "\fBCache\fP SystemEx\&.IO\&.Provider\&.IByteSerialize< T, TSchema >\&.Pack (TSchema schema)"
+
+.PP
+Packs the current instance into a new \fRbyte[]\fP using the specified schema\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschema\fP The schema describing the binary layout\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A newly allocated byte array containing the packed data\&.
+.RE
+.PP
+
+.SS "T SystemEx\&.IO\&.Provider\&.IByteSerialize< T, TSchema >\&.Unpack (\fBCache\fP data, TSchema schema)"
+
+.PP
+Reconstructs a new instance of \fIT\fP  from the given binary data using the specified schema\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP The raw binary data\&.
+.br
+\fIschema\fP The schema describing the binary layout\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A fully reconstructed instance of \fIT\fP \&.
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

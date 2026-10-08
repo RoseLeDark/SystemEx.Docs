@@ -1,0 +1,300 @@
+.TH "SystemEx" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBuffer\fP"
+.br
+.RI "Performs a raw, pointer‑based copy operation between two managed arrays\&. "
+.ti -1c
+.RI "class \fBConversion\fP"
+.br
+.RI "Provides low‑level numeric and binary conversion utilities, including endian‑aware serialization, deserialization, boundary alignment, and human‑readable size parsing\&. "
+.ti -1c
+.RI "class \fBDelegate< T >\fP"
+.br
+.RI "A delegate container that stores multiple callback functions and allows invocation, subscription, unsubscription, enumeration, and basic comparison\&. "
+.ti -1c
+.RI "class \fBEmpty\fP"
+.br
+.RI "Represents an empty class\&. "
+.ti -1c
+.RI "struct \fBFlexSpan< T >\fP"
+.br
+.RI "A lightweight view over an array supporting System, Reverse, and Ring (circular) indexing\&. FlexSpan does not allocate and provides ref-return access to elements\&. "
+.ti -1c
+.RI "class \fBFramework\fP"
+.br
+.RI "Provides metadata about the \fBSystemEx\fP framework, including versioning, build information, platform API, release state, and fork/user identity\&. "
+.ti -1c
+.RI "interface \fBIByteSerializable< TSelf >\fP"
+.br
+.RI "Provides binary serialization and deserialization capabilities for a type\&. Implementations define how an instance is encoded into a byte sequence and how it is reconstructed from raw binary data\&. "
+.ti -1c
+.RI "interface \fBIComparableEx< T >\fP"
+.br
+.RI "Provides an extended and strongly typed comparison contract for \fBSystemEx\fP\&. "
+.ti -1c
+.RI "interface \fBIDelegate< T >\fP"
+.br
+.RI "Represents a delegate container that can hold multiple callback functions\&. Each callback receives the delegate instance itself and an argument of type \fIT\fP \&. "
+.ti -1c
+.RI "class \fBIFDelegate< T >\fP"
+.br
+.RI "Represents a conditional delegate dispatcher that routes invocation to one of two delegate branches based on a boolean condition\&. "
+.ti -1c
+.RI "interface \fBIRange< T >\fP"
+.br
+.RI "Defines the basic contract for a numeric range with a start and end value\&. Provides validation, containment checks, range slicing, merging, adjacency detection, and intersection logic\&. "
+.ti -1c
+.RI "interface \fBIValueReader\fP"
+.br
+.RI "Provides endian-aware read operations for primitive numeric types\&. Implementations convert the underlying byte sequence into the requested value using the specified \fBEndian\fP format\&. If insufficient bytes are available, the provided fallback value is returned\&. "
+.ti -1c
+.RI "interface \fBIValueReader< T >\fP"
+.br
+.RI "Provides a strongly typed read operation for a specific value type\&. Implementations convert the underlying byte sequence into the requested type using the specified \fBEndian\fP format\&. If insufficient bytes are available, the provided fallback value is returned\&. "
+.ti -1c
+.RI "interface \fBIValueWriter\fP"
+.br
+.RI "Provides endian-aware write operations for primitive numeric types\&. Implementations convert the specified value into a byte sequence using the given \fBEndian\fP format and write it to the underlying data sink\&. "
+.ti -1c
+.RI "interface \fBIValueWriter< T >\fP"
+.br
+.RI "Extends \fBIValueReader<T>\fP by providing a strongly typed write operation for a specific value type\&. Implementations convert the given value into a byte sequence using the specified \fBEndian\fP format\&. "
+.ti -1c
+.RI "class \fBMath\fP"
+.br
+.RI "Provides mathematical helper functions that are not included in System\&.Math\&. 
+.br
+ Contains a deterministic implementation of the C/C++ \fRfmod\fP operation for both double and float\&. "
+.ti -1c
+.RI "class \fBMathR\fP"
+.br
+.RI "Provides exact rational mathematics for the \fBRatio\fP type, following the structural pattern of System\&.MathF but without any floating‑point operations or irrational functions\&. "
+.ti -1c
+.RI "class \fBNoCopyable\fP"
+.br
+.RI "\fBBase\fP class that strictly forbids any form of copying\&. Pedantisch safe: no cloning, no copy constructor, no MemberwiseClone\&. "
+.ti -1c
+.RI "struct \fBNumberRange\fP"
+.br
+.RI "Represents a numeric range defined by a start and end value\&. Provides range validation, containment checks, normalization, intersection, adjacency, union, and enumeration\&. "
+.ti -1c
+.RI "struct \fBNumberRangeIterator< T >\fP"
+.br
+.RI "Forward iterator over a normalized numeric range\&. Supports stepping by one unit and exposes the current value and end-of-range state\&. "
+.ti -1c
+.RI "struct \fBOptional< T >\fP"
+.br
+.RI "Represents a optional value container that stores a value only when \fBHasValue\fP is true\&. Unlike Nullable<T>, this type does not preserve \fRnull\fP as a stored value; assigning \fRnull\fP clears the optional state\&. "
+.ti -1c
+.RI "class \fBRandom\fP"
+.br
+.RI "Provides a high‑level wrapper around the \fBBase\fP Class Library (BCL) System\&.Random type\&. This implementation redirects all random‑number generation to the \fBSystemEx\fP random subsystem, allowing deterministic, engine‑agnostic, endian‑aware, and extended numeric random operations\&. "
+.ti -1c
+.RI "class \fBReference\fP"
+.br
+.RI "A base class for reference-counted objects\&. "
+.ti -1c
+.RI "struct \fBResult\fP"
+.br
+.RI "Represents a flexible multi-value result container that can hold successful values, multiple return objects, assertion messages, or exception information\&. "
+.ti -1c
+.RI "class \fBResultBuilder\fP"
+.br
+.RI "Provides a fluent builder for constructing complex \fBResult\fP objects across multiple processing steps, compiler stages, or mathematical operations\&. "
+.ti -1c
+.RI "class \fBSwitchDelegate< TS, T >\fP"
+.br
+.RI "Provides a multi‑branch delegate dispatcher driven by a switch‑condition\&. "
+.ti -1c
+.RI "struct \fBTimeOut\fP"
+.br
+.RI "Represents a timeout value that can be used to specify a duration for operations that may block or wait\&. "
+.ti -1c
+.RI "struct \fBTriple\fP"
+.br
+.RI "Represents a three-valued logic value\&. "
+.ti -1c
+.RI "class \fBTripleUtils\fP"
+.br
+.ti -1c
+.RI "struct \fBVersion\fP"
+.br
+.RI "Represents a mutable version identifier with major, minor, and build components and additional build metadata\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBArchitecture\fP { \fBx86\fP = 0, \fBx64\fP = 1, \fBARM\fP = 2, \fBARM64\fP = 3, \fBRiscV64\fP = 4, \fBOther\fP = 99 }"
+.br
+.RI "The processor architecture\&. "
+.ti -1c
+.RI "enum \fBCompareResult\fP : sbyte { \fBLess\fP = AIsSmallerB, \fBGreater\fP = 1, \fBEqualLess\fP = AIsEqualSmallerB, \fBEqualGreater\fP = AIsEqualLargerB, \fBAIsLargerB\fP = 1, \fBAIsSmallerB\fP = -1, \fBEqual\fP = 0, \fBAIsEqualLargerB\fP = 2, \fBAIsEqualSmallerB\fP = 3, \fBNull\fP = 10 }"
+.br
+.RI "Specifies the result of a comparison between two values\&. "
+.ti -1c
+.RI "enum \fBEndian\fP { \fBLittleEndian\fP, \fBBigEndian\fP, \fBSystem\fP }"
+.br
+.RI "Specifies the byte order used when converting values to and from raw byte sequences\&. "
+.ti -1c
+.RI "enum \fBFlexSpanMode\fP { \fBRing\fP, \fBReverse\fP, \fBSystem\fP }"
+.br
+.RI "Defines how FlexSpan indexes its underlying array\&. "
+.ti -1c
+.RI "enum \fBPlatform\fP { \fBWindows\fP, \fBLinux\fP, \fBMacOs\fP, \fBFreeBSD\fP, \fBOther\fP }"
+.br
+.ti -1c
+.RI "enum \fBtriple\fP : sbyte { \fBTrue\fP = 1, \fBFalse\fP = 0, \fBNin\fP = -1 }"
+.br
+.RI "Represents a three-valued logic type with True, False, and Nin (neither true nor false) states\&. "
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.Architecture\fP"
+
+.PP
+The processor architecture\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIx86 \fP
+Intel32-bit processor architecture\&. 
+.TP
+\f(BIx64 \fP
+Intel64-bit processor architecture\&. 
+.TP
+\f(BIARM \fP
+ARM 32-bit processor architecture\&. 
+.TP
+\f(BIARM64 \fP
+ARM 64-bit processor architecture\&. 
+.TP
+\f(BIRiscV64 \fP
+RISC-V 64-bit processor architecture\&. 
+.PP
+Definition at line \fB23\fP of file \fBArchitecture\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.CompareResult\fP : sbyte"
+
+.PP
+Specifies the result of a comparison between two values\&. This enumeration is used by CompFunc<T> and the generic algorithms in Algorithm to express ordering relations between two operands \fRA\fP and \fRB\fP\&. It generalizes the usual "less/greater/equal" semantics with additional states for "equal butsmaller" and "equal but larger" to support nuanced ordering logic\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BILess \fP
+Alias for \fBCompareResult\&.AIsSmallerB\fP\&. Indicates that the first operand is strictly smaller than the second\&. 
+.TP
+\f(BIGreater \fP
+Alias for \fBCompareResult\&.AIsLargerB\fP\&. Indicates that the first operand is strictly larger than the second\&. 
+.TP
+\f(BIEqualLess \fP
+Alias for \fBCompareResult\&.AIsEqualSmallerB\fP\&. Indicates that the first operand is equal to the second but considered "smaller" in a secondary ordering dimension\&. 
+.TP
+\f(BIEqualGreater \fP
+Alias for \fBCompareResult\&.AIsEqualLargerB\fP\&. Indicates that the first operand is equal to the second but considered "larger" in a secondary ordering dimension\&. 
+.TP
+\f(BIAIsLargerB \fP
+The first operand \fRA\fP is strictly larger than the second operand \fRB\fP\&. 
+.TP
+\f(BIAIsSmallerB \fP
+The first operand \fRA\fP is strictly smaller than the second operand \fRB\fP\&. 
+.TP
+\f(BIEqual \fP
+The operands \fRA\fP and \fRB\fP are considered equal in the primary ordering dimension\&. 
+.TP
+\f(BIAIsEqualLargerB \fP
+The operands are equal in the primary dimension, but \fRA\fP is treated as "greater" in a secondary dimension (e\&.g\&. tie‑breaking)\&. 
+.TP
+\f(BIAIsEqualSmallerB \fP
+The operands are equal in the primary dimension, but \fRA\fP is treated as "smaller" in a secondary dimension\&. 
+.TP
+\f(BINull \fP
+One or both operands are \fRnull\fP, or the comparison function cannot produce a meaningful ordering result\&. 
+.PP
+Definition at line \fB33\fP of file \fBIComparableEx\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.Endian\fP"
+
+.PP
+Specifies the byte order used when converting values to and from raw byte sequences\&. Endianness determines how multi‑byte numeric values are represented in memory and serialized into byte arrays\&. All conversion methods in SystemEx\&.Conversion support explicit endianness to ensure deterministic binary layouts across platforms\&. 
+
+.PP
+The enumeration provides three modes: 
+.PD 0
+.IP "\(bu" 2
+\fBEndian\&.LittleEndian\fP — least significant byte first\&.   
+.IP "\(bu" 2
+\fBEndian\&.BigEndian\fP — most significant byte first\&.   
+.IP "\(bu" 2
+\fBEndian\&.System\fP — use the native endianness of the current machine as detected by SystemEx\&.Conversion\&.GetEndian\&.   
+.PP
+
+.PP
+\fBNote:\fP When \fBEndian\&.System\fP is specified, conversion methods do not perform byte‑swapping\&. They serialize values exactly as the CPU represents them in memory\&. This is typically little‑endian on modern x86/x64 systems\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BILittleEndian \fP
+Least significant byte first (little‑endian)\&. This is the native format on most modern architectures including x86 and x64\&. 
+.TP
+\f(BIBigEndian \fP
+Most significant byte first (big‑endian)\&. Common in network protocols and some older CPU architectures\&. 
+.TP
+\f(BISystem \fP
+Uses the system’s native endianness as detected by SystemEx\&.Conversion\&.GetEndian\&. This mode ensures that values are serialized exactly as the CPU stores them in memory, without performing any byte‑swapping\&. 
+.PP
+Definition at line \fB64\fP of file \fBConversion\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.FlexSpanMode\fP"
+
+.PP
+Defines how FlexSpan indexes its underlying array\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIRing \fP
+circular indexing (wrap-around) 
+.TP
+\f(BIReverse \fP
+reverse indexing 
+.TP
+\f(BISystem \fP
+forward indexing 
+.PP
+Definition at line \fB27\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "enum SystemEx\&.Platform"
+
+.PP
+Definition at line \fB21\fP of file \fBFramework\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.triple\fP : sbyte"
+
+.PP
+Represents a three-valued logic type with True, False, and Nin (neither true nor false) states\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BITrue \fP
+The state representing true\&. 
+.TP
+\f(BIFalse \fP
+The state representing false\&. 
+.TP
+\f(BINin \fP
+The state representing neither true nor false\&. 
+.PP
+Definition at line \fB24\fP of file \fBTripleRaw\&.\&.cs\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

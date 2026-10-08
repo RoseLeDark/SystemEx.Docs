@@ -1,0 +1,177 @@
+.TH "SystemEx.Threading.ILockFreeQueue< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.ILockFreeQueue< T >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Threading\&.LightMMQueue< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP (bool bFast)"
+.br
+.RI "Clear the queue, be careful with bFast = true: This not save\&. "
+.ti -1c
+.RI "bool \fBDequeue\fP (out T? result)"
+.br
+.RI "Attempts to dequeue an item from the queue\&. "
+.ti -1c
+.RI "bool \fBEnqueue\fP (T item)"
+.br
+.RI "Attempts to enqueue an item into the queue\&. "
+.ti -1c
+.RI "bool \fBPeek\fP (out T? result)"
+.br
+.RI "Attempts to read the next item without removing it from the queue\&. This operation is lock-free and does not modify the queue state\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "long \fBCapacity\fP\fR [get]\fP"
+.br
+.RI "Gets the total capacity of the queue\&. The queue is bounded and cannot grow beyond this size\&. "
+.ti -1c
+.RI "long \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets an approximate count of items in the queue\&. This value is not strictly linearizable but provides a best‑effort estimate suitable for monitoring or non‑critical logic\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Gets whether the queue currently contains no items\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Gets whether the queue currently full\&. "
+.ti -1c
+.RI "bool \fBSupportMultiConsumer\fP\fR [get]\fP"
+.br
+.RI "Supported the current queue multi consumer\&. "
+.ti -1c
+.RI "bool \fBSupportMultiProducer\fP\fR [get]\fP"
+.br
+.RI "Supported the current queue multi producer\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB18\fP of file \fBILockFreeQueue\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Threading\&.ILockFreeQueue< T >\&.Clear (bool bFast)"
+
+.PP
+Clear the queue, be careful with bFast = true: This not save\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LightMMQueue< T >\fP\&.
+.SS "bool SystemEx\&.Threading\&.ILockFreeQueue< T >\&.Dequeue (out T? result)"
+
+.PP
+Attempts to dequeue an item from the queue\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIresult\fP When successful, receives the dequeued item; otherwise \fRnull\fP\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an item was dequeued; \fRfalse\fP if the queue is empty\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LightMMQueue< T >\fP\&.
+.SS "bool SystemEx\&.Threading\&.ILockFreeQueue< T >\&.Enqueue (T item)"
+
+.PP
+Attempts to enqueue an item into the queue\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIitem\fP The item to enqueue\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the item was successfully enqueued; \fRfalse\fP if the queue is full\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LightMMQueue< T >\fP\&.
+.SS "bool SystemEx\&.Threading\&.ILockFreeQueue< T >\&.Peek (out T? result)"
+
+.PP
+Attempts to read the next item without removing it from the queue\&. This operation is lock-free and does not modify the queue state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIresult\fP Receives the next item if available; otherwise \fRnull\fP\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an item is available to peek; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LightMMQueue< T >\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "long SystemEx\&.Threading\&.ILockFreeQueue< T >\&.Capacity\fR [get]\fP"
+
+.PP
+Gets the total capacity of the queue\&. The queue is bounded and cannot grow beyond this size\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LightMMQueue< T >\fP\&.
+.PP
+Definition at line \fB23\fP of file \fBILockFreeQueue\&.cs\fP\&.
+.SS "long SystemEx\&.Threading\&.ILockFreeQueue< T >\&.Count\fR [get]\fP"
+
+.PP
+Gets an approximate count of items in the queue\&. This value is not strictly linearizable but provides a best‑effort estimate suitable for monitoring or non‑critical logic\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LightMMQueue< T >\fP\&.
+.PP
+Definition at line \fB30\fP of file \fBILockFreeQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ILockFreeQueue< T >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Gets whether the queue currently contains no items\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LightMMQueue< T >\fP\&.
+.PP
+Definition at line \fB35\fP of file \fBILockFreeQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ILockFreeQueue< T >\&.IsFull\fR [get]\fP"
+
+.PP
+Gets whether the queue currently full\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LightMMQueue< T >\fP\&.
+.PP
+Definition at line \fB39\fP of file \fBILockFreeQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ILockFreeQueue< T >\&.SupportMultiConsumer\fR [get]\fP"
+
+.PP
+Supported the current queue multi consumer\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LightMMQueue< T >\fP\&.
+.PP
+Definition at line \fB44\fP of file \fBILockFreeQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ILockFreeQueue< T >\&.SupportMultiProducer\fR [get]\fP"
+
+.PP
+Supported the current queue multi producer\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.LightMMQueue< T >\fP\&.
+.PP
+Definition at line \fB49\fP of file \fBILockFreeQueue\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

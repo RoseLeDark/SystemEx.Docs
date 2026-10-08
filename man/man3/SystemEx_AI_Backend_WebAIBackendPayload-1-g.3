@@ -1,0 +1,138 @@
+.TH "SystemEx.AI.Backend.WebAIBackendPayload< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI.Backend.WebAIBackendPayload< T > \- Represents the payload sent to a remote Web‑API based \fBAI\fP backend\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Map< string, object > \fBContext\fP\fR [get, set]\fP"
+.br
+.RI "Conversation context (previous messages, metadata)\&. "
+.ti -1c
+.RI "Map< string, object > \fBMetadata\fP\fR [get, set]\fP"
+.br
+.RI "Optional: metadata for logging or session tracking\&. "
+.ti -1c
+.RI "string \fBModel\fP\fR [get, set]\fP"
+.br
+.RI "The model name (e\&.g\&., gpt-4o-mini, gpt-4o, gpt-3\&.5-turbo)\&. "
+.ti -1c
+.RI "Map< string, object > \fBParameters\fP\fR [get, set]\fP"
+.br
+.RI "Generation parameters (temperature, max_tokens, etc\&.)\&. "
+.ti -1c
+.RI "T \fBPromptRaw\fP\fR [get, set]\fP"
+.br
+.RI "Raw user prompt (generic type)\&. "
+.ti -1c
+.RI "string \fBSystemPrompt\fP\fR [get, set]\fP"
+.br
+.RI "System instruction / system prompt\&. "
+.ti -1c
+.RI "string \fBToolChoice\fP\fR [get, set]\fP"
+.br
+.RI "Optional: tool selection mode ("auto", "none", or specific tool)\&. "
+.ti -1c
+.RI "List< object > \fBTools\fP\fR [get, set]\fP"
+.br
+.RI "Optional: \fBTools\fP / function-calling definitions\&. "
+.ti -1c
+.RI "string \fBURL\fP\fR [get, set]\fP"
+.br
+.RI "Target URL of the remote \fBAI\fP service (OpenAI, Azure, custom gateway)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents the payload sent to a remote Web‑API based \fBAI\fP backend\&. 
+
+This struct is serialized into JSON and transmitted via HTTP POST\&. It contains:
+.IP "\(bu" 2
+The target URL
+.IP "\(bu" 2
+The system prompt
+.IP "\(bu" 2
+The raw user prompt
+.IP "\(bu" 2
+Context information
+.IP "\(bu" 2
+Additional model parameters
+.PP
+
+.PP
+The generic type \fIT\fP  represents the raw prompt type used by the model (e\&.g\&., string, structured object)\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the raw prompt passed to the backend\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB44\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "Map<string, object> SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Context\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Conversation context (previous messages, metadata)\&. 
+.PP
+Definition at line \fB68\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Metadata\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Optional: metadata for logging or session tracking\&. 
+.PP
+Definition at line \fB88\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Model\fR [get]\fP, \fR [set]\fP"
+
+.PP
+The model name (e\&.g\&., gpt-4o-mini, gpt-4o, gpt-3\&.5-turbo)\&. 
+.PP
+Definition at line \fB53\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Parameters\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Generation parameters (temperature, max_tokens, etc\&.)\&. 
+.PP
+Definition at line \fB73\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "T SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.PromptRaw\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Raw user prompt (generic type)\&. 
+.PP
+Definition at line \fB63\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.SystemPrompt\fR [get]\fP, \fR [set]\fP"
+
+.PP
+System instruction / system prompt\&. 
+.PP
+Definition at line \fB58\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.ToolChoice\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Optional: tool selection mode ("auto", "none", or specific tool)\&. 
+.PP
+Definition at line \fB83\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "List<object> SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.Tools\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Optional: \fBTools\fP / function-calling definitions\&. 
+.PP
+Definition at line \fB78\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+.SS "string SystemEx\&.AI\&.Backend\&.WebAIBackendPayload< T >\&.URL\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Target URL of the remote \fBAI\fP service (OpenAI, Azure, custom gateway)\&. 
+.PP
+Definition at line \fB48\fP of file \fBWebAIBackendPayload\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

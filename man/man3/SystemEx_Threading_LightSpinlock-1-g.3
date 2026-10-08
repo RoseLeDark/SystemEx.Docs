@@ -1,0 +1,206 @@
+.TH "SystemEx.Threading.LightSpinlock< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.LightSpinlock< T > \- Provides a lightweight atomic spinlock that protects a single value\&. \fBLightSpinlock<T>\fP uses pure atomic operations and busy‑wait acquisition, making it suitable for extremely short critical sections\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLightSpinlock\fP (string name='LightSpinlock')"
+.br
+.RI "Initializes a new instance of the \fBLightSpinlock<T>\fP struct\&. "
+.ti -1c
+.RI "\fBLightSpinlock\fP (T value, string name='LightSpinlock')"
+.br
+.RI "Initializes the spinlock with an initial value\&. "
+.ti -1c
+.RI "bool \fBLock\fP (\fBTimeOut\fP span)"
+.br
+.RI "Acquires the lock using busy‑wait atomic operations\&. "
+.ti -1c
+.RI "bool \fBLock\fP (TimeSpan span)"
+.br
+.RI "Acquires the lock using busy‑wait atomic operations\&. "
+.ti -1c
+.RI "bool \fBTryLock\fP ()"
+.br
+.RI "Attempts to acquire the lock without blocking\&. "
+.ti -1c
+.RI "void \fBUnlock\fP ()"
+.br
+.RI "Releases the lock\&. "
+.ti -1c
+.RI "bool \fBWait\fP (\fBTimeOut\fP span, bool exitContext)"
+.br
+.RI "Spinlocks do not support wait/pulse semantics\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBHandle\fP\fR [get]\fP"
+.br
+.RI "Gets the underlying atomic flag used by the spinlock\&. "
+.ti -1c
+.RI "bool \fBIsHeld\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the lock is currently held by any thread\&. "
+.ti -1c
+.RI "bool \fBIsHeldbyCurrent\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the lock is held by the calling thread\&. "
+.ti -1c
+.RI "bool \fBIsLocked\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the lock is currently held\&. "
+.ti -1c
+.RI "bool \fBIsThreadOwnerTrackingEnabled\fP\fR [get]\fP"
+.br
+.RI "Indicates whether thread‑owner tracking is enabled\&. "
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Gets the descriptive name assigned to this lock instance\&. "
+.ti -1c
+.RI "T? \fBValue\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the protected value\&. Access is not atomic; callers must acquire the lock before reading or writing\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a lightweight atomic spinlock that protects a single value\&. \fBLightSpinlock<T>\fP uses pure atomic operations and busy‑wait acquisition, making it suitable for extremely short critical sections\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the protected value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB27\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.LightSpinlock< T >\&.LightSpinlock (string name = \fR'LightSpinlock'\fP)"
+
+.PP
+Initializes a new instance of the \fBLightSpinlock<T>\fP struct\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Optional human‑readable name for diagnostics\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB82\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.LightSpinlock< T >\&.LightSpinlock (T value, string name = \fR'LightSpinlock'\fP)"
+
+.PP
+Initializes the spinlock with an initial value\&. 
+.PP
+Definition at line \fB91\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightSpinlock< T >\&.Lock (\fBTimeOut\fP span)"
+
+.PP
+Acquires the lock using busy‑wait atomic operations\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB101\fP of file \fBLightSpinLock\&.cs\fP\&.
+.PP
+Referenced by \fBLock()\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightSpinlock< T >\&.Lock (TimeSpan span)"
+
+.PP
+Acquires the lock using busy‑wait atomic operations\&. 
+.PP
+Definition at line \fB113\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightSpinlock< T >\&.TryLock ()"
+
+.PP
+Attempts to acquire the lock without blocking\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB137\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.LightSpinlock< T >\&.Unlock ()"
+
+.PP
+Releases the lock\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB120\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightSpinlock< T >\&.Wait (\fBTimeOut\fP span, bool exitContext)"
+
+.PP
+Spinlocks do not support wait/pulse semantics\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB130\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.LightSpinlock< T >\&.Handle\fR [get]\fP"
+
+.PP
+Gets the underlying atomic flag used by the spinlock\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock< T >\fP\&.
+.PP
+Definition at line \fB57\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightSpinlock< T >\&.IsHeld\fR [get]\fP"
+
+.PP
+Indicates whether the lock is currently held by any thread\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB41\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightSpinlock< T >\&.IsHeldbyCurrent\fR [get]\fP"
+
+.PP
+Indicates whether the lock is held by the calling thread\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.PP
+Definition at line \fB46\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightSpinlock< T >\&.IsLocked\fR [get]\fP"
+
+.PP
+Indicates whether the lock is currently held\&. 
+.PP
+Definition at line \fB62\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightSpinlock< T >\&.IsThreadOwnerTrackingEnabled\fR [get]\fP"
+
+.PP
+Indicates whether thread‑owner tracking is enabled\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.PP
+Definition at line \fB52\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SS "string SystemEx\&.Threading\&.LightSpinlock< T >\&.Name\fR [get]\fP"
+
+.PP
+Gets the descriptive name assigned to this lock instance\&. 
+.PP
+Definition at line \fB36\fP of file \fBLightSpinLock\&.cs\fP\&.
+.SS "T? SystemEx\&.Threading\&.LightSpinlock< T >\&.Value\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the protected value\&. Access is not atomic; callers must acquire the lock before reading or writing\&. 
+.PP
+Definition at line \fB68\fP of file \fBLightSpinLock\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,210 @@
+.TH "SystemEx.Collections.Generic.Triple< TT, TU, TW >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Triple< TT, TU, TW > \- A lightweight, serializable three‑element tuple consisting of strongly typed first, second, and third values\&. Implements ITuple and IEquatable<T> for structural comparison\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable, and \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBEqualFirst\fP (object key)"
+.br
+.RI "Determines whether the first element equals the specified object\&. Used for ITuple compatibility\&. "
+.ti -1c
+.RI "readonly bool \fBEqualFirst\fP (TT? other)"
+.br
+.RI "Determines whether the first element equals the specified value\&. "
+.ti -1c
+.RI "readonly bool \fBEquals\fP (\fBTriple\fP< TT, TU, TW > other)"
+.br
+.RI "Determines whether this triple is equal to another triple by comparing all three elements\&. "
+.ti -1c
+.RI "readonly bool \fBEqualSecond\fP (TU? other)"
+.br
+.RI "Determines whether the second element equals the specified value\&. "
+.ti -1c
+.RI "readonly bool \fBEqualThird\fP (TW? other)"
+.br
+.RI "Determines whether the third element equals the specified value\&. "
+.ti -1c
+.RI "Optional< object > \fBGet\fP (int index)"
+.br
+.RI "Retrieves the element at the specified index\&. Index 0 returns the first element, index 1 the second, index 2 the third\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns a string representation of the triple in the form \fR[first, second, third]\fP\&. 
+.br
+ Uses a stack‑allocated buffer for performance\&. "
+.ti -1c
+.RI "\fBTriple\fP (TT first, TU second, TW third)"
+.br
+.RI "Creates a new triple with the specified values\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP
+.in +1c
+.ti -1c
+.RI "bool \fBEqualFirst\fP (TKey key)"
+.br
+.RI "Determines whether the first element of the tuple is equal to the specified key\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "readonly int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements in the tuple (always 3)\&. "
+.ti -1c
+.RI "TT \fBFirst\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the first element of the triple\&. "
+.ti -1c
+.RI "TU \fBSecond\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the second element of the triple\&. "
+.ti -1c
+.RI "TW \fBThird\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the third element of the triple\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A lightweight, serializable three‑element tuple consisting of strongly typed first, second, and third values\&. Implements ITuple and IEquatable<T> for structural comparison\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITT\fP The type of the first element\&.
+.br
+\fITU\fP The type of the second element\&.
+.br
+\fITW\fP The type of the third element\&.
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITT\fP : \fInotnull\fP
+.PP
+Definition at line \fB31\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.Triple< TT, TU, TW >\&.EqualFirst (object key)"
+
+.PP
+Determines whether the first element equals the specified object\&. Used for ITuple compatibility\&. 
+.PP
+Definition at line \fB160\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.SS "readonly bool SystemEx\&.Collections\&.Generic\&.Triple< TT, TU, TW >\&.EqualFirst (TT? other)"
+
+.PP
+Determines whether the first element equals the specified value\&. 
+.PP
+Definition at line \fB111\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBEqualFirst()\fP, and \fBEquals()\fP\&.
+.SS "readonly bool SystemEx\&.Collections\&.Generic\&.Triple< TT, TU, TW >\&.Equals (\fBTriple\fP< TT, TU, TW > other)"
+
+.PP
+Determines whether this triple is equal to another triple by comparing all three elements\&. 
+.PP
+Definition at line \fB92\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.SS "readonly bool SystemEx\&.Collections\&.Generic\&.Triple< TT, TU, TW >\&.EqualSecond (TU? other)"
+
+.PP
+Determines whether the second element equals the specified value\&. 
+.PP
+Definition at line \fB120\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "readonly bool SystemEx\&.Collections\&.Generic\&.Triple< TT, TU, TW >\&.EqualThird (TW? other)"
+
+.PP
+Determines whether the third element equals the specified value\&. 
+.PP
+Definition at line \fB129\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "Optional< object > SystemEx\&.Collections\&.Generic\&.Triple< TT, TU, TW >\&.Get (int index)"
+
+.PP
+Retrieves the element at the specified index\&. Index 0 returns the first element, index 1 the second, index 2 the third\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fIIndexOutOfRangeException\fP Thrown when the index is not 0, 1, or 2\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB142\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.SS "override string SystemEx\&.Collections\&.Generic\&.Triple< TT, TU, TW >\&.ToString ()"
+
+.PP
+Returns a string representation of the triple in the form \fR[first, second, third]\fP\&. 
+.br
+ Uses a stack‑allocated buffer for performance\&. 
+.PP
+Definition at line \fB103\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Triple< TT, TU, TW >\&.Triple (TT first, TU second, TW third)"
+
+.PP
+Creates a new triple with the specified values\&. 
+.PP
+Definition at line \fB82\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "readonly int SystemEx\&.Collections\&.Generic\&.Triple< TT, TU, TW >\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of elements in the tuple (always 3)\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB77\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBGet()\fP\&.
+.SS "TT SystemEx\&.Collections\&.Generic\&.Triple< TT, TU, TW >\&.First\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the first element of the triple\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB53\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync()\fP\&.
+.SS "TU SystemEx\&.Collections\&.Generic\&.Triple< TT, TU, TW >\&.Second\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the second element of the triple\&. 
+.PP
+Definition at line \fB61\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync()\fP\&.
+.SS "TW SystemEx\&.Collections\&.Generic\&.Triple< TT, TU, TW >\&.Third\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the third element of the triple\&. 
+.PP
+Definition at line \fB69\fP of file \fBCollections/Generic/Triple\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBSystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

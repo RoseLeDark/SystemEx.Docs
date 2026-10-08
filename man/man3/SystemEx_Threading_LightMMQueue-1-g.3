@@ -1,0 +1,219 @@
+.TH "SystemEx.Threading.LightMMQueue< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.LightMMQueue< T > \- A bounded lock‑free multi‑producer, multi‑consumer (MPMC) queue\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Threading\&.ILockFreeQueue< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP (bool bFast)"
+.br
+.RI "Clears the queue\&. When \fIbFast\fP  is true, the queue is reset by reinitializing all slot sequence numbers and values\&. Otherwise, items are dequeued until the queue becomes empty\&. "
+.ti -1c
+.RI "bool \fBDequeue\fP (out T? result)"
+.br
+.RI "Attempts to dequeue an item from the queue\&. "
+.ti -1c
+.RI "bool \fBEnqueue\fP (T item)"
+.br
+.RI "Attempts to enqueue an item into the queue\&. Multiple producers may safely call this method concurrently\&. The operation succeeds only if the target slot's sequence number indicates that it is ready for writing\&. "
+.ti -1c
+.RI "\fBLightMMQueue\fP (long capacity)"
+.br
+.RI "Initializes a new instance of the \fBLightMMQueue<T>\fP with the specified capacity\&. "
+.ti -1c
+.RI "bool \fBPeek\fP (out T? result)"
+.br
+.RI "Attempts to read the next item without removing it from the queue\&. This operation is lock-free and does not modify the queue state\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "long \fBCapacity\fP\fR [get]\fP"
+.br
+.RI "Gets the total capacity of the queue\&. The queue is bounded and cannot grow beyond this size\&. "
+.ti -1c
+.RI "long \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets an approximate count of items in the queue\&. This value is not strictly linearizable but provides a best‑effort estimate suitable for monitoring or non‑critical logic\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Determines whether the queue is empty in a lock-free, best-effort manner\&. The result is suitable for guarding dequeue operations\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Determines whether the queue is full in a lock-free, best-effort manner\&. The result is suitable for guarding enqueue operations\&. "
+.ti -1c
+.RI "bool \fBSupportMultiConsumer\fP\fR [get]\fP"
+.br
+.RI "Supported the current queue multi consumer\&. "
+.ti -1c
+.RI "bool \fBSupportMultiProducer\fP\fR [get]\fP"
+.br
+.RI "Supported the current queue multi producer\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A bounded lock‑free multi‑producer, multi‑consumer (MPMC) queue\&. 
+
+Producers and consumers coordinate through atomic sequence checks and CAS operations on \fRm_head\fP and \fRm_tail\fP\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of items stored in the queue\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB15\fP of file \fBLightMMQueue\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Threading\&.LightMMQueue< T >\&.Clear (bool bFast)"
+
+.PP
+Clears the queue\&. When \fIbFast\fP  is true, the queue is reset by reinitializing all slot sequence numbers and values\&. Otherwise, items are dequeued until the queue becomes empty\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockFreeQueue< T >\fP\&.
+.PP
+Definition at line \fB97\fP of file \fBLightMMQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightMMQueue< T >\&.Dequeue (out T? result)"
+
+.PP
+Attempts to dequeue an item from the queue\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIresult\fP When successful, receives the dequeued item; otherwise \fRnull\fP\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an item was dequeued; \fRfalse\fP if the queue is empty\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockFreeQueue< T >\fP\&.
+.PP
+Definition at line \fB151\fP of file \fBLightMMQueue\&.cs\fP\&.
+.PP
+Referenced by \fBClear()\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightMMQueue< T >\&.Enqueue (T item)"
+
+.PP
+Attempts to enqueue an item into the queue\&. Multiple producers may safely call this method concurrently\&. The operation succeeds only if the target slot's sequence number indicates that it is ready for writing\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIitem\fP The item to enqueue\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the item was successfully enqueued; \fRfalse\fP if the queue is full\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockFreeQueue< T >\fP\&.
+.PP
+Definition at line \fB119\fP of file \fBLightMMQueue\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.LightMMQueue< T >\&.LightMMQueue (long capacity)"
+
+.PP
+Initializes a new instance of the \fBLightMMQueue<T>\fP with the specified capacity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcapacity\fP The fixed size of the queue\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB84\fP of file \fBLightMMQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightMMQueue< T >\&.Peek (out T? result)"
+
+.PP
+Attempts to read the next item without removing it from the queue\&. This operation is lock-free and does not modify the queue state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIresult\fP Receives the next item if available; otherwise \fRnull\fP\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an item is available to peek; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockFreeQueue< T >\fP\&.
+.PP
+Definition at line \fB201\fP of file \fBLightMMQueue\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "long SystemEx\&.Threading\&.LightMMQueue< T >\&.Capacity\fR [get]\fP"
+
+.PP
+Gets the total capacity of the queue\&. The queue is bounded and cannot grow beyond this size\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockFreeQueue< T >\fP\&.
+.PP
+Definition at line \fB38\fP of file \fBLightMMQueue\&.cs\fP\&.
+.PP
+Referenced by \fBClear()\fP, and \fBLightMMQueue()\fP\&.
+.SS "long SystemEx\&.Threading\&.LightMMQueue< T >\&.Count\fR [get]\fP"
+
+.PP
+Gets an approximate count of items in the queue\&. This value is not strictly linearizable but provides a best‑effort estimate suitable for monitoring or non‑critical logic\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockFreeQueue< T >\fP\&.
+.PP
+Definition at line \fB63\fP of file \fBLightMMQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightMMQueue< T >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Determines whether the queue is empty in a lock-free, best-effort manner\&. The result is suitable for guarding dequeue operations\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockFreeQueue< T >\fP\&.
+.PP
+Definition at line \fB25\fP of file \fBLightMMQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightMMQueue< T >\&.IsFull\fR [get]\fP"
+
+.PP
+Determines whether the queue is full in a lock-free, best-effort manner\&. The result is suitable for guarding enqueue operations\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockFreeQueue< T >\fP\&.
+.PP
+Definition at line \fB49\fP of file \fBLightMMQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightMMQueue< T >\&.SupportMultiConsumer\fR [get]\fP"
+
+.PP
+Supported the current queue multi consumer\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockFreeQueue< T >\fP\&.
+.PP
+Definition at line \fB41\fP of file \fBLightMMQueue\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightMMQueue< T >\&.SupportMultiProducer\fR [get]\fP"
+
+.PP
+Supported the current queue multi producer\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILockFreeQueue< T >\fP\&.
+.PP
+Definition at line \fB43\fP of file \fBLightMMQueue\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

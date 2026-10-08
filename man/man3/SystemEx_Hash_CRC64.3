@@ -1,0 +1,133 @@
+.TH "SystemEx.Hash.CRC64" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Hash.CRC64 \- Implements a CRC‑64 checksum calculator using a configurable reflected polynomial\&. This class supports both rolling and one‑shot hashing modes while remaining fully compatible with the \fBIHash\fP pipeline\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Hash\&.CRC64\&.CRC64Ecma\fP, \fBSystemEx\&.Hash\&.CRC64\&.CRC64Iso\fP, \fBSystemEx\&.Hash\&.CRC64\&.CRC64We\fP, and \fBSystemEx\&.Hash\&.CRC64\&.CRC64Xz\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCRC64Ecma\fP"
+.br
+.RI "Implements the CRC‑64/ECMA‑182 checksum algorithm\&. Polynomial: 0xC96C5795D7870F42 (reflected)\&. "
+.ti -1c
+.RI "class \fBCRC64Iso\fP"
+.br
+.RI "Implements the CRC‑64/ISO checksum algorithm\&. Polynomial: 0x000000000000001B (normal)\&. "
+.ti -1c
+.RI "class \fBCRC64We\fP"
+.br
+.RI "Implements the CRC‑64/WE (Weiner) checksum algorithm\&. Polynomial: 0x42F0E1EBA9EA3693 (reflected)\&. "
+.ti -1c
+.RI "class \fBCRC64Xz\fP"
+.br
+.RI "Implements the CRC‑64/XZ checksum algorithm (used in LZMA/XZ)\&. Polynomial: 0x42F0E1EBA9EA3693 (reflected)\&. "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHash32\fP \fBCompute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes a 32‑bit hash value\&. CRC‑64 does not produce 32‑bit output, therefore this method is not implemented\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes a CRC‑64 checksum over the specified input buffer\&. If a non‑zero seed is provided, the computation is performed as a one‑shot operation\&. If the seed is zero, the computation continues from the internal rolling CRC‑64 state\&. "
+.ti -1c
+.RI "\fBCRC64\fP ()"
+.br
+.RI "Initializes a new instance of the \fBCRC64\fP class using the standard reflected ECMA‑182 polynomial (0xC96C5795D7870F42)\&. "
+.ti -1c
+.RI "\fBCRC64\fP (ulong polynomial)"
+.br
+.RI "Initializes a new instance of the \fBCRC64\fP class using a custom reflected CRC‑64 polynomial\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "ulong \fBPolynomial\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the CRC‑64 polynomial used for table generation\&. Changing the polynomial regenerates the lookup table and resets the rolling CRC‑64 state\&. "
+.ti -1c
+.RI "ulong \fBRollingState\fP\fR [get]\fP"
+.br
+.RI "Gets the current rolling CRC‑64 state maintained across successive \fBComputeLong\fP calls\&. This value represents the intermediate checksum after all data processed so far\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implements a CRC‑64 checksum calculator using a configurable reflected polynomial\&. This class supports both rolling and one‑shot hashing modes while remaining fully compatible with the \fBIHash\fP pipeline\&. 
+.PP
+Definition at line \fB26\fP of file \fBCRC64\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Hash\&.CRC64\&.CRC64 ()"
+
+.PP
+Initializes a new instance of the \fBCRC64\fP class using the standard reflected ECMA‑182 polynomial (0xC96C5795D7870F42)\&. 
+.PP
+Definition at line \fB80\fP of file \fBCRC64\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.CRC64\&.CRC64 (ulong polynomial)"
+
+.PP
+Initializes a new instance of the \fBCRC64\fP class using a custom reflected CRC‑64 polynomial\&. 
+.PP
+Definition at line \fB91\fP of file \fBCRC64\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBHash32\fP SystemEx\&.Hash\&.CRC64\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes a 32‑bit hash value\&. CRC‑64 does not produce 32‑bit output, therefore this method is not implemented\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fINotImplementedException\fP Always thrown, as CRC‑64 is a 64‑bit algorithm\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB106\fP of file \fBCRC64\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.CRC64\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes a CRC‑64 checksum over the specified input buffer\&. If a non‑zero seed is provided, the computation is performed as a one‑shot operation\&. If the seed is zero, the computation continues from the internal rolling CRC‑64 state\&. This design allows CRC‑64 to operate in both streaming (rolling) and one‑shot modes without modifying the \fBIHash\fP pipeline\&. 
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB121\fP of file \fBCRC64\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "ulong SystemEx\&.Hash\&.CRC64\&.Polynomial\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the CRC‑64 polynomial used for table generation\&. Changing the polynomial regenerates the lookup table and resets the rolling CRC‑64 state\&. 
+.PP
+Definition at line \fB48\fP of file \fBCRC64\&.cs\fP\&.
+.SS "ulong SystemEx\&.Hash\&.CRC64\&.RollingState\fR [get]\fP"
+
+.PP
+Gets the current rolling CRC‑64 state maintained across successive \fBComputeLong\fP calls\&. This value represents the intermediate checksum after all data processed so far\&. The rolling state allows CRC‑64 to operate in streaming mode without modifying the \fBIHash\fP pipeline interface\&.
+
+.PP
+If \fBComputeLong\fP is invoked with a seed value of zero, the computation continues from the existing rolling state\&. If a non‑zero seed is provided, the rolling state is replaced with the newly computed checksum\&.
+
+.PP
+This property exposes the internal CRC‑64 accumulator for diagnostic or pipeline‑level inspection, but does not alter hashing behavior\&. 
+.PP
+Definition at line \fB74\fP of file \fBCRC64\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

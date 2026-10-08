@@ -1,0 +1,554 @@
+.TH "SystemEx.Numeric.Quatf" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Quatf \- Represents a floating‑point quaternion used for 3D rotations\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IComparable, \fBSystemEx\&.IComparableEx< T >\fP, IComparable, IEquatable, and \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBCompareTo\fP (object? obj)"
+.br
+.RI "Compares this quaternion to another object\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (\fBQuatf\fP a)"
+.br
+.RI "Compares two quaternions using the configured \fBCompareMode\fP\&. "
+.ti -1c
+.RI "int IComparable< \fBQuatf\fP >\&. \fBCompareTo\fP (\fBQuatf\fP other)"
+.br
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBQuatf\fP other)"
+.br
+.ti -1c
+.RI "float \fBGet\fP (int index)"
+.br
+.RI "Gets a component by index \&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Computes a hash code for this vector\&. "
+.ti -1c
+.RI "float \fBGetRotationAngle\fP ()"
+.br
+.RI "Returns the rotation angle represented by this quaternion\&. "
+.ti -1c
+.RI "\fBVec3f\fP \fBGetRotationAxis\fP ()"
+.br
+.RI "Computes the normalized rotation axis of this quaternion\&. "
+.ti -1c
+.RI "\fBQuatf\fP ()"
+.br
+.RI "Initializes the identity quaternion (1,0,0,0)\&. "
+.ti -1c
+.RI "\fBQuatf\fP (\fBAxisAngle\fP< \fBVec3f\fP, float > axisAngle)"
+.br
+.RI "Initializes a quaternion from an axis‑angle representation\&. "
+.ti -1c
+.RI "\fBQuatf\fP (float fs, float fx, float fy, float fz)"
+.br
+.RI "Initializes a quaternion from explicit components\&. "
+.ti -1c
+.RI "\fBQuatf\fP (float[] pfs)"
+.br
+.RI "Initializes a quaternion from a float array\&. "
+.ti -1c
+.RI "\fBQuatf\fP (Quatf other)"
+.br
+.RI "Copy constructor\&. "
+.ti -1c
+.RI "\fBQuatf\fP (\fBVec3f\fP angles)"
+.br
+.RI "Initializes a quaternion from Euler angles (XYZ order)\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBToBytes\fP ()"
+.br
+.RI "Converts the vector into a deterministic byte sequence\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBQuatf\fP \fBConjugate\fP (\fBQuatf\fP v)"
+.br
+.RI "Computes the quaternion conjugate\&. "
+.ti -1c
+.RI "static float \fBDotProduct\fP (\fBQuatf\fP a, \fBQuatf\fP b)"
+.br
+.RI "Computes the DotProduct product of two quaternions\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBExponent\fP (\fBQuatf\fP v)"
+.br
+.RI "Computes the quaternion exponential\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBFromAxis\fP (\fBAxisAngle\fP< \fBVec3f\fP, float > axisAngle)"
+.br
+.RI "Creates a quaternion from an axis‑angle representation\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBInvert\fP (\fBQuatf\fP q)"
+.br
+.RI "Computes the inverse of a quaternion\&. "
+.ti -1c
+.RI "static bool \fBIsIdentity\fP (\fBQuatf\fP v)"
+.br
+.RI "Determines whether a quaternion is the identity rotation\&. "
+.ti -1c
+.RI "static float \fBLenght\fP (\fBQuatf\fP v)"
+.br
+.RI "Computes the squared length of the quaternion\&. "
+.ti -1c
+.RI "static float \fBLenghtSqrt\fP (\fBQuatf\fP v)"
+.br
+.RI "Computes the Euclidean length of the quaternion\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBLogarithm\fP (\fBQuatf\fP v)"
+.br
+.RI "Computes the quaternion logarithm\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBNormalize\fP (\fBQuatf\fP v)"
+.br
+.RI "Normalizes a quaternion to unit length\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBoperator*\fP (float a, \fBQuatf\fP b)"
+.br
+.RI "Multiplicate a float with a quaternion\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBoperator*\fP (\fBQuatf\fP a, float b)"
+.br
+.RI "Multiplicate a quaternion with a float\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBoperator*\fP (\fBQuatf\fP a, \fBQuatf\fP b)"
+.br
+.RI "Multiplies two \fBQuatf\fP component‑wise\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBoperator+\fP (\fBQuatf\fP a, \fBQuatf\fP b)"
+.br
+.RI "Adds two \fBQuatf\fP component‑wise\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBoperator\-\fP (\fBQuatf\fP a)"
+.br
+.RI "Invert\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBoperator\-\fP (\fBQuatf\fP a, \fBQuatf\fP b)"
+.br
+.RI "Subtracts two \fBQuatf\fP component‑wise\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBoperator/\fP (\fBQuatf\fP a, float b)"
+.br
+.RI "Divides both components of the \fBQuatf\fP by a float\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBoperator/\fP (\fBQuatf\fP a, \fBQuatf\fP b)"
+.br
+.RI "Divides two \fBQuatf\fP component‑wise\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBPower\fP (\fBQuatf\fP v, float Exp)"
+.br
+.RI "Raises a quaternion to a scalar power\&. "
+.ti -1c
+.RI "static \fBQuatf\fP \fBSlerp\fP (\fBQuatf\fP q0, \fBQuatf\fP q1, float t)"
+.br
+.RI "Performs spherical linear interpolation between two quaternions\&. "
+.ti -1c
+.RI "static \fBAxisAngle\fP< \fBVec3f\fP, float > \fBToAxisAngle\fP (\fBQuatf\fP q)"
+.br
+.RI "Converts a quaternion into an axis‑angle representation\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "AxisAngle< \fBVec3f\fP, float > \fBAxisAngle\fP\fR [get]\fP"
+.br
+.RI "Gets the axis‑angle representation of this quaternion\&. "
+.ti -1c
+.RI "\fBCompareType\fP \fBCompareMode\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the comparison mode used by \fBCompareTo(Quatf)\fP\&. "
+.ti -1c
+.RI "float \fBS\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the scalar component (w) of the quaternion\&. "
+.ti -1c
+.RI "\fBVec3f\fP \fBV\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the vector component (x,y,z) of the quaternion\&. "
+.ti -1c
+.RI "float \fBX\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the X component of the quaternion's vector part\&. "
+.ti -1c
+.RI "float \fBY\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the Y component of the quaternion's vector part\&. "
+.ti -1c
+.RI "float \fBZ\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the Z component of the quaternion's vector part\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a floating‑point quaternion used for 3D rotations\&. 
+
+\fBQuatf\fP stores a scalar component \fRw\fP and a vector component \fR(x,y,z)\fP in a sequential memory layout, making it suitable for native interop, compute kernels, and deterministic hashing\&. 
+
+.PP
+The struct is annotated with \fBHashAlgorithmAttribute\fP to enable attribute‑driven hashing via HashFactory\&. 
+.br
+ \fBBernsteinHash\fP is used because it is fast, byte‑linear, and ideal for small fixed‑size numeric types\&. 
+
+.PP
+\fBQuatf\fP implements multiple comparison and hashing interfaces: 
+.PD 0
+.IP "\(bu" 2
+IComparable and IComparable<T> for ordering 
+.IP "\(bu" 2
+IEquatable<T> for equality checks 
+.IP "\(bu" 2
+\fBIHashable<T>\fP for deterministic byte‑level hashing 
+.PP
+
+.PP
+Definition at line \fB77\fP of file \fBQuatf\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.Quatf\&.Quatf ()"
+
+.PP
+Initializes the identity quaternion (1,0,0,0)\&. 
+.PP
+Definition at line \fB131\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP, \fBCompareTo()\fP, \fBConjugate()\fP, \fBDotProduct()\fP, \fBEquals()\fP, \fBExponent()\fP, \fBFromAxis()\fP, \fBInvert()\fP, \fBIsIdentity()\fP, \fBLenght()\fP, \fBLenghtSqrt()\fP, \fBLogarithm()\fP, \fBNormalize()\fP, \fBoperator*()\fP, \fBoperator*()\fP, \fBoperator*()\fP, \fBoperator+()\fP, \fBoperator\-()\fP, \fBoperator\-()\fP, \fBoperator/()\fP, \fBoperator/()\fP, \fBPower()\fP, \fBQuatf()\fP, \fBSlerp()\fP, and \fBToAxisAngle()\fP\&.
+.SS "SystemEx\&.Numeric\&.Quatf\&.Quatf (\fBVec3f\fP angles)"
+
+.PP
+Initializes a quaternion from Euler angles (XYZ order)\&. 
+.PP
+Definition at line \fB153\fP of file \fBQuatf\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Quatf\&.Quatf (float fs, float fx, float fy, float fz)"
+
+.PP
+Initializes a quaternion from explicit components\&. 
+.PP
+Definition at line \fB175\fP of file \fBQuatf\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Quatf\&.Quatf (float[] pfs)"
+
+.PP
+Initializes a quaternion from a float array\&. 
+.PP
+Definition at line \fB184\fP of file \fBQuatf\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Quatf\&.Quatf (\fBAxisAngle\fP< \fBVec3f\fP, float > axisAngle)"
+
+.PP
+Initializes a quaternion from an axis‑angle representation\&. 
+.PP
+Definition at line \fB193\fP of file \fBQuatf\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Quatf\&.Quatf (Quatf other)"
+
+.PP
+Copy constructor\&. 
+.PP
+Definition at line \fB203\fP of file \fBQuatf\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int SystemEx\&.Numeric\&.Quatf\&.CompareTo (object? obj)"
+
+.PP
+Compares this quaternion to another object\&. 
+.PP
+Definition at line \fB535\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Numeric\&.Quatf\&.CompareTo (\fBQuatf\fP a)"
+
+.PP
+Compares two quaternions using the configured \fBCompareMode\fP\&. 
+.PP
+Definition at line \fB503\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP\&.
+.SS "int IComparable< \fBQuatf\fP >\&. SystemEx\&.Numeric\&.Quatf\&.CompareTo (\fBQuatf\fP other)"
+
+.PP
+Definition at line \fB528\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.Conjugate (\fBQuatf\fP v)\fR [static]\fP"
+
+.PP
+Computes the quaternion conjugate\&. 
+.PP
+Definition at line \fB425\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.DQuatf\&.FromRotationTranslationConjugated()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Quatf\&.DotProduct (\fBQuatf\fP a, \fBQuatf\fP b)\fR [static]\fP"
+
+.PP
+Computes the DotProduct product of two quaternions\&. 
+.PP
+Definition at line \fB379\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBSlerp()\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.Quatf\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. The object is considered equal if it is a \fBQuatf\fP and compares equal using Equals(Quatf)\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if \fIobj\fP  is a \fBQuatf\fP and equal to this instance; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB591\fP of file \fBQuatf\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Quatf\&.Equals (\fBQuatf\fP other)"
+
+.PP
+Definition at line \fB541\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.Exponent (\fBQuatf\fP v)\fR [static]\fP"
+
+.PP
+Computes the quaternion exponential\&. 
+.PP
+Definition at line \fB285\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.FromAxis (\fBAxisAngle\fP< \fBVec3f\fP, float > axisAngle)\fR [static]\fP"
+
+.PP
+Creates a quaternion from an axis‑angle representation\&. 
+.PP
+Definition at line \fB241\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBQuatf()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Quatf\&.Get (int index)"
+
+.PP
+Gets a component by index \&. 
+.PP
+Definition at line \fB139\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBToBytes()\fP\&.
+.SS "override int SystemEx\&.Numeric\&.Quatf\&.GetHashCode ()"
+
+.PP
+Computes a hash code for this vector\&. The primary hash is generated using HashFactory and the \fBHashAlgorithmAttribute\fP applied to this struct\&. 
+.br
+ If hashing fails (rare), a fallback XOR‑based hash is used\&. 
+.PP
+Definition at line \fB571\fP of file \fBQuatf\&.cs\fP\&.
+.SS "float SystemEx\&.Numeric\&.Quatf\&.GetRotationAngle ()"
+
+.PP
+Returns the rotation angle represented by this quaternion\&. 
+.PP
+Definition at line \fB271\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP, and \fBToAxisAngle()\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Quatf\&.GetRotationAxis ()"
+
+.PP
+Computes the normalized rotation axis of this quaternion\&. 
+.PP
+Definition at line \fB212\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBToAxisAngle()\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.Invert (\fBQuatf\fP q)\fR [static]\fP"
+
+.PP
+Computes the inverse of a quaternion\&. 
+.PP
+Definition at line \fB389\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.DQuatf\&.Invert()\fP, \fBoperator/()\fP, and \fBSystemEx\&.Numeric\&.DQuatf\&.Transform()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Quatf\&.IsIdentity (\fBQuatf\fP v)\fR [static]\fP"
+
+.PP
+Determines whether a quaternion is the identity rotation\&. 
+.PP
+Definition at line \fB279\fP of file \fBQuatf\&.cs\fP\&.
+.SS "float SystemEx\&.Numeric\&.Quatf\&.Lenght (\fBQuatf\fP v)\fR [static]\fP"
+
+.PP
+Computes the squared length of the quaternion\&. 
+.PP
+Definition at line \fB342\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBInvert()\fP, and \fBSystemEx\&.Numeric\&.DQuatf\&.Normalize()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Quatf\&.LenghtSqrt (\fBQuatf\fP v)\fR [static]\fP"
+
+.PP
+Computes the Euclidean length of the quaternion\&. 
+.PP
+Definition at line \fB331\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBNormalize()\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.Logarithm (\fBQuatf\fP v)\fR [static]\fP"
+
+.PP
+Computes the quaternion logarithm\&. 
+.PP
+Definition at line \fB308\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.Normalize (\fBQuatf\fP v)\fR [static]\fP"
+
+.PP
+Normalizes a quaternion to unit length\&. 
+.PP
+Definition at line \fB402\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBFromAxis()\fP, and \fBPower()\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.operator* (float a, \fBQuatf\fP b)\fR [static]\fP"
+
+.PP
+Multiplicate a float with a quaternion\&. 
+.PP
+Definition at line \fB627\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.operator* (\fBQuatf\fP a, float b)\fR [static]\fP"
+
+.PP
+Multiplicate a quaternion with a float\&. 
+.PP
+Definition at line \fB638\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.operator* (\fBQuatf\fP a, \fBQuatf\fP b)\fR [static]\fP"
+
+.PP
+Multiplies two \fBQuatf\fP component‑wise\&. 
+.PP
+Definition at line \fB598\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.operator+ (\fBQuatf\fP a, \fBQuatf\fP b)\fR [static]\fP"
+
+.PP
+Adds two \fBQuatf\fP component‑wise\&. 
+.PP
+Definition at line \fB649\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.operator\- (\fBQuatf\fP a)\fR [static]\fP"
+
+.PP
+Invert\&. 
+.PP
+Definition at line \fB671\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.operator\- (\fBQuatf\fP a, \fBQuatf\fP b)\fR [static]\fP"
+
+.PP
+Subtracts two \fBQuatf\fP component‑wise\&. 
+.PP
+Definition at line \fB660\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.operator/ (\fBQuatf\fP a, float b)\fR [static]\fP"
+
+.PP
+Divides both components of the \fBQuatf\fP by a float\&. 
+.PP
+Definition at line \fB688\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.operator/ (\fBQuatf\fP a, \fBQuatf\fP b)\fR [static]\fP"
+
+.PP
+Divides two \fBQuatf\fP component‑wise\&. 
+.PP
+Definition at line \fB682\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.Power (\fBQuatf\fP v, float Exp)\fR [static]\fP"
+
+.PP
+Raises a quaternion to a scalar power\&. 
+.PP
+Definition at line \fB351\fP of file \fBQuatf\&.cs\fP\&.
+.SS "\fBQuatf\fP SystemEx\&.Numeric\&.Quatf\&.Slerp (\fBQuatf\fP q0, \fBQuatf\fP q1, float t)\fR [static]\fP"
+
+.PP
+Performs spherical linear interpolation between two quaternions\&. 
+.PP
+Definition at line \fB438\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.DQuatf\&.Slerp()\fP\&.
+.SS "\fBAxisAngle\fP< \fBVec3f\fP, float > SystemEx\&.Numeric\&.Quatf\&.ToAxisAngle (\fBQuatf\fP q)\fR [static]\fP"
+
+.PP
+Converts a quaternion into an axis‑angle representation\&. 
+.PP
+Definition at line \fB230\fP of file \fBQuatf\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.Quatf\&.ToBytes ()"
+
+.PP
+Converts the vector into a deterministic byte sequence\&. This method is used by HashFactory to compute attribute‑driven hashes\&. The byte layout is stable and platform‑safe, ensuring consistent hashing across devices and backends\&. 
+.PP
+Implements \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.PP
+Definition at line \fB553\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBToBytes()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "AxisAngle<\fBVec3f\fP, float> SystemEx\&.Numeric\&.Quatf\&.AxisAngle\fR [get]\fP"
+
+.PP
+Gets the axis‑angle representation of this quaternion\&. 
+.PP
+Definition at line \fB116\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBFromAxis()\fP, \fBQuatf()\fP, and \fBToAxisAngle()\fP\&.
+.SS "\fBCompareType\fP SystemEx\&.Numeric\&.Quatf\&.CompareMode\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the comparison mode used by \fBCompareTo(Quatf)\fP\&. 
+.PP
+Definition at line \fB126\fP of file \fBQuatf\&.cs\fP\&.
+.SS "float SystemEx\&.Numeric\&.Quatf\&.S\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the scalar component (w) of the quaternion\&. 
+.PP
+Definition at line \fB91\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBGet()\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Quatf\&.V\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the vector component (x,y,z) of the quaternion\&. 
+.PP
+Definition at line \fB96\fP of file \fBQuatf\&.cs\fP\&.
+.SS "float SystemEx\&.Numeric\&.Quatf\&.X\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the X component of the quaternion's vector part\&. 
+.PP
+Definition at line \fB101\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBGet()\fP, and \fBSystemEx\&.Numeric\&.DQuatf\&.Transform()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Quatf\&.Y\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the Y component of the quaternion's vector part\&. 
+.PP
+Definition at line \fB106\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBGet()\fP, and \fBSystemEx\&.Numeric\&.DQuatf\&.Transform()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Quatf\&.Z\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the Z component of the quaternion's vector part\&. 
+.PP
+Definition at line \fB111\fP of file \fBQuatf\&.cs\fP\&.
+.PP
+Referenced by \fBGet()\fP, and \fBSystemEx\&.Numeric\&.DQuatf\&.Transform()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

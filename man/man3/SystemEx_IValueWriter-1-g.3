@@ -1,0 +1,60 @@
+.TH "SystemEx.IValueWriter< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.IValueWriter< T > \- Extends \fBIValueReader<T>\fP by providing a strongly typed write operation for a specific value type\&. Implementations convert the given value into a byte sequence using the specified \fBEndian\fP format\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.IValueReader< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBWrite\fP (T value, \fBEndian\fP endian)"
+.br
+.RI "Writes a value of type \fIT\fP  using the specified endian format\&. The conversion rules depend on the concrete type and the implementation of the writer\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IValueReader< T >\fP
+.in +1c
+.ti -1c
+.RI "T \fBReadValue\fP (\fBEndian\fP endian, T? errvalue=default(T))"
+.br
+.RI "Reads a value of type \fIT\fP  using the specified endian format\&. The conversion rules depend on the concrete type and the implementation of the reader\&. If insufficient bytes are available, the specified fallback value is returned\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Extends \fBIValueReader<T>\fP by providing a strongly typed write operation for a specific value type\&. Implementations convert the given value into a byte sequence using the specified \fBEndian\fP format\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the value written by \fBWrite(T, Endian)\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB78\fP of file \fBIValueWriter\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void \fBSystemEx\&.IValueWriter\fP< T >\&.Write (T value, \fBEndian\fP endian)"
+
+.PP
+Writes a value of type \fIT\fP  using the specified endian format\&. The conversion rules depend on the concrete type and the implementation of the writer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to write\&.
+.br
+\fIendian\fP The byte order used for conversion\&.
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

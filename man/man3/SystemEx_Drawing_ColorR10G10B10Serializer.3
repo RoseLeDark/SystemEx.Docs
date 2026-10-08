@@ -1,0 +1,159 @@
+.TH "SystemEx.Drawing.ColorR10G10B10Serializer" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Drawing.ColorR10G10B10Serializer \- The \fBColorR10G10B10FormatSchema\fP class defines the schema for serializing and deserializing a \fBColorR10G10B10A2\fP color to and from a binary representation\&. It specifies the total size, header size, endianness, and field offsets for the color data\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBColorR10G10B10Serializer\fP (\fBIByteFormatSchema\fP schema, \fBEndian\fP endian)"
+.br
+.RI "Created a new \fBColorR10G10B10Serializer\fP with the specified schema and endianness\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\fP
+.in +1c
+.ti -1c
+.RI "\fBByteSeriablizeProvider\fP (\fBIByteFormatSchema\fP schema, \fBEndian\fP endian)"
+.br
+.RI "Initializes a new instance of the \fBByteSeriablizeProvider\fP class\&. "
+.ti -1c
+.RI "object? \fBFromBytes\fP (\fBCache\fP obj)"
+.br
+.RI "Deserializes the specified byte array to an object\&. "
+.ti -1c
+.RI "\fBCache\fP? \fBToBytes< U >\fP (U? obj)"
+.br
+.RI "Serializes the specified object to a byte array\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override? object \fBCreateObjectFromEntrys\fP (Map< string, byte[]> entries, \fBEndian\fP endian)"
+.br
+.RI "Get the object from the given entries and endianness\&. "
+.ti -1c
+.RI "override FixedVector< byte > \fBGetBytesForEntry\fP (object obj, string name, \fBEndian\fP endian)"
+.br
+.RI "Gets the byte representation of the specified object for the given field name\&. ///\&. "
+.ti -1c
+.RI "override long \fBGetEntrySize\fP (\fBCache\fP obj, string name, \fBEndian\fP endian)"
+.br
+.RI "Gets the size of the specified entry in the cache\&. ///\&. "
+.in -1c
+
+Protected Member Functions inherited from \fBSystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\fP
+.in +1c
+.ti -1c
+.RI "object? \fBCreateObjectFromEntrys\fP (Map< string, byte[]> entries, \fBEndian\fP endian)"
+.br
+.RI "Creates an object from the specified entries\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBGetBytesForEntry\fP (object obj, string name, \fBEndian\fP endian)"
+.br
+.RI "Gets the bytes for the specified entry\&. "
+.ti -1c
+.RI "long \fBGetEntrySize\fP (\fBCache\fP obj, string name, \fBEndian\fP endian)"
+.br
+.RI "Gets the size of the specified entry\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBColorR10G10B10FormatSchema\fP class defines the schema for serializing and deserializing a \fBColorR10G10B10A2\fP color to and from a binary representation\&. It specifies the total size, header size, endianness, and field offsets for the color data\&. 
+.PP
+Definition at line \fB66\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Drawing\&.ColorR10G10B10Serializer\&.ColorR10G10B10Serializer (\fBIByteFormatSchema\fP schema, \fBEndian\fP endian)"
+
+.PP
+Created a new \fBColorR10G10B10Serializer\fP with the specified schema and endianness\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschema\fP The format schema for the color data\&.
+.br
+\fIendian\fP The endianness for the binary representation\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB72\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override? object SystemEx\&.Drawing\&.ColorR10G10B10Serializer\&.CreateObjectFromEntrys (Map< string, byte[]> entries, \fBEndian\fP endian)\fR [protected]\fP"
+
+.PP
+Get the object from the given entries and endianness\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIentries\fP The map of entries\&.
+.br
+\fIendian\fP The endianness for the binary representation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The created object, or null if not found\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB121\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "override FixedVector< byte > SystemEx\&.Drawing\&.ColorR10G10B10Serializer\&.GetBytesForEntry (object obj, string name, \fBEndian\fP endian)\fR [protected]\fP"
+
+.PP
+Gets the byte representation of the specified object for the given field name\&. ///\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobjx\fP The object to serialize\&.
+.br
+\fIname\fP The name of the field to serialize\&.
+.br
+\fIendian\fP The endianness for the binary representation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The byte array representing the serialized field, or null if not found\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB81\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "override long SystemEx\&.Drawing\&.ColorR10G10B10Serializer\&.GetEntrySize (\fBCache\fP obj, string name, \fBEndian\fP endian)\fR [protected]\fP"
+
+.PP
+Gets the size of the specified entry in the cache\&. ///\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The cache object\&.
+.br
+\fIname\fP The name of the entry\&.
+.br
+\fIendian\fP The endianness for the binary representation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The size of the entry, or -1 if not found\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB112\fP of file \fBColorR10G10B10\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

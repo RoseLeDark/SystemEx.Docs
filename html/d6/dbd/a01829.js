@@ -1,6 +1,6 @@
 var a01829 =
 [
-    [ "FletcherHash", "d8/d0a/a00904_gaa0ea321773de765b007e7c3333f4c632.html#gaa0ea321773de765b007e7c3333f4c632", null ],
-    [ "Compute", "d8/d0a/a00904_ga1a23079932bd6c4f45bc05756ce8c41b.html#ga1a23079932bd6c4f45bc05756ce8c41b", null ],
-    [ "ComputeLong", "d8/d0a/a00904_gac22e658290acb05ba0ef38c63411c90f.html#gac22e658290acb05ba0ef38c63411c90f", null ]
+    [ "GrøstlHash", "d9/dfb/a00913_ga283300feb809d70e4816c3b773be6006.html#ga283300feb809d70e4816c3b773be6006", null ],
+    [ "Compute", "d9/dfb/a00913_ga0eb87928746f2291ded7bcde1ddf7dd8.html#ga0eb87928746f2291ded7bcde1ddf7dd8", null ],
+    [ "ComputeLong", "d9/dfb/a00913_ga95421be4baadfd1fe9a6448417eea57d.html#ga95421be4baadfd1fe9a6448417eea57d", null ]
 ];

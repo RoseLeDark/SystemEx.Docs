@@ -1,0 +1,66 @@
+.TH "SystemEx.Hash.IHashable< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Hash.IHashable< T > \- Defines a contract for objects that can be converted into a raw byte representation suitable for hashing, serialization, or low‑level processing\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP, \fBSystemEx\&.Numeric\&.Quatd\fP, \fBSystemEx\&.Numeric\&.Quatf\fP, \fBSystemEx\&.Numeric\&.Ratio\fP, \fBSystemEx\&.Numeric\&.Vec2d\fP, \fBSystemEx\&.Numeric\&.Vec2f\fP, \fBSystemEx\&.Numeric\&.Vec2h\fP, \fBSystemEx\&.Numeric\&.Vec2hb\fP, \fBSystemEx\&.Numeric\&.Vec2i\fP, \fBSystemEx\&.Numeric\&.Vec2r\fP, \fBSystemEx\&.Numeric\&.Vec3d\fP, \fBSystemEx\&.Numeric\&.Vec3f\fP, \fBSystemEx\&.Numeric\&.Vec3h\fP, \fBSystemEx\&.Numeric\&.Vec3hb\fP, \fBSystemEx\&.Numeric\&.Vec3i\fP, \fBSystemEx\&.Numeric\&.Vec3r\fP, \fBSystemEx\&.Numeric\&.Vec4d\fP, \fBSystemEx\&.Numeric\&.Vec4f\fP, \fBSystemEx\&.Numeric\&.Vec4h\fP, \fBSystemEx\&.Numeric\&.Vec4hb\fP, \fBSystemEx\&.Numeric\&.Vec4i\fP, and \fBSystemEx\&.Numeric\&.Vec4r\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "FixedVector< byte > \fBToBytes\fP ()"
+.br
+.RI "Converts this instance into a deterministic byte array\&. The returned data is used as input for hashing algorithms\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines a contract for objects that can be converted into a raw byte representation suitable for hashing, serialization, or low‑level processing\&. 
+
+The interface is intentionally minimal: any type implementing \fRIHashable<T>\fP must provide a deterministic and stable \fBToBytes\fP method\&. The returned byte sequence is used by \fBSystemEx\fP hashing algorithms and must remain consistent across platforms and runtime sessions\&. 
+
+.PP
+\fBExample:\fP
+.br
+ A type implementing both \fRIHashable<T>\fP and a hash attribute: 
+
+.PP
+.PP
+.nf
+[HashAlgorithm(typeof(Bernstein))]
+public class Foo : IHashable&lt;Foo&gt;
+{
+    public FixedVector&lt;byte&gt; ToBytes()
+    {
+        // Convert internal fields into a deterministic byte array\&.
+        return new FixedVector&lt;byte&gt;( \&.\&.\&. );
+    }
+}
+.fi
+.PP
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type that provides its own byte representation\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB59\fP of file \fBHashFactory\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "FixedVector< byte > SystemEx\&.Hash\&.IHashable< T >\&.ToBytes ()"
+
+.PP
+Converts this instance into a deterministic byte array\&. The returned data is used as input for hashing algorithms\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, \fBSystemEx\&.Numeric\&.Half16b\fP, \fBSystemEx\&.Numeric\&.Quatd\fP, \fBSystemEx\&.Numeric\&.Quatf\fP, \fBSystemEx\&.Numeric\&.Ratio\fP, \fBSystemEx\&.Numeric\&.Vec2d\fP, \fBSystemEx\&.Numeric\&.Vec2f\fP, \fBSystemEx\&.Numeric\&.Vec2h\fP, \fBSystemEx\&.Numeric\&.Vec2hb\fP, \fBSystemEx\&.Numeric\&.Vec2i\fP, \fBSystemEx\&.Numeric\&.Vec2r\fP, \fBSystemEx\&.Numeric\&.Vec3d\fP, \fBSystemEx\&.Numeric\&.Vec3f\fP, \fBSystemEx\&.Numeric\&.Vec3h\fP, \fBSystemEx\&.Numeric\&.Vec3hb\fP, \fBSystemEx\&.Numeric\&.Vec3i\fP, \fBSystemEx\&.Numeric\&.Vec3r\fP, \fBSystemEx\&.Numeric\&.Vec4d\fP, \fBSystemEx\&.Numeric\&.Vec4f\fP, \fBSystemEx\&.Numeric\&.Vec4h\fP, \fBSystemEx\&.Numeric\&.Vec4hb\fP, \fBSystemEx\&.Numeric\&.Vec4i\fP, and \fBSystemEx\&.Numeric\&.Vec4r\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

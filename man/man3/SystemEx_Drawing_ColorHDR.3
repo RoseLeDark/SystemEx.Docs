@@ -1,0 +1,378 @@
+.TH "SystemEx.Drawing.ColorHDR" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Drawing.ColorHDR \- Represents a high‑dynamic‑range color in the HSV color space, where the value component can exceed the normalized range (0–1) and extend up to \fBMaxValue\fP\&. Provides hue‑aware interpolation, brightness manipulation, and arithmetic operations for HDR color processing\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBAddition\fP (\fBColorHDR\fP a)"
+.br
+.RI "Adds another HDR color to this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. "
+.ti -1c
+.RI "\fBColorHDR\fP \fBAddition\fP (float a, float b, float c)"
+.br
+.RI "Adds the specified HSV components to this HDR color\&. This is a convenience overload that constructs a temporary HDR color\&. "
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBBrightness\fP (float delta)"
+.br
+.RI "Adjusts the HDR brightness by the specified delta\&. "
+.ti -1c
+.RI "\fBColorHDR\fP (float h, float s, float v)"
+.br
+.RI "Initializes a new HDR color with the specified HSV components\&. "
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBDivision\fP (\fBColorHDR\fP a)"
+.br
+.RI "Divides this HDR color by another, component by component\&. Hue is not affected\&. "
+.ti -1c
+.RI "\fBColorHDR\fP \fBDivision\fP (float a, float b, float c)"
+.br
+.RI "Divides this HDR color by the specified HSV components\&. This is a convenience overload that constructs a temporary HDR color\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBColorHDR\fP? other)"
+.br
+.RI "Determines whether this instance is equal to another HDR color\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Returns a hash code based on the hue, saturation, and HDR value\&. "
+.ti -1c
+.RI "\fBColorHDR\fP \fBLerp\fP (\fBColorHDR\fP value, float amount)"
+.br
+.RI "Performs a quadratic interpolation toward another HDR color\&. Hue interpolation follows the shortest path around the color wheel\&. "
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBLightIntensity\fP (float intensity)"
+.br
+.RI "Increases the HDR brightness by the specified intensity\&. "
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBMultiplication\fP (\fBColorHDR\fP a)"
+.br
+.RI "Multiplies this HDR color with another, component by component\&. Hue is not affected\&. "
+.ti -1c
+.RI "\fBColorHDR\fP \fBMultiplication\fP (float a, float b, float c)"
+.br
+.RI "Multiplies this HDR color by the specified HSV components\&. This is a convenience overload that constructs a temporary HDR color\&. "
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBSaturation\fP (float delta)"
+.br
+.RI "Adjusts the saturation by the specified delta\&. "
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBSubtraction\fP (\fBColorHDR\fP a)"
+.br
+.RI "Subtracts another HDR color from this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. "
+.ti -1c
+.RI "\fBColorHDR\fP \fBSubtraction\fP (float a, float b, float c)"
+.br
+.RI "Subtracts the specified HSV components from this HDR color\&. This is a convenience overload that constructs a temporary HDR color\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns a string representation of the HDR color\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Drawing\&.IColor< T >\fP
+.in +1c
+.ti -1c
+.RI "T \fBAddition\fP (T value)"
+.br
+.RI "Adds the specified color to this color\&. "
+.ti -1c
+.RI "T \fBDivision\fP (T value)"
+.br
+.RI "Divides this color by the specified color\&. "
+.ti -1c
+.RI "T \fBLerp\fP (T value, float amount)"
+.br
+.RI "Performs linear interpolation between this color and another color\&. "
+.ti -1c
+.RI "T \fBMultiplication\fP (T value)"
+.br
+.RI "Multiplies this color with the specified color\&. "
+.ti -1c
+.RI "T \fBSubtraction\fP (T value)"
+.br
+.RI "Subtracts the specified color from this color\&. "
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static float \fBClampHue\fP (float h)"
+.br
+.RI "Wraps a hue value into the range 0–360 degrees\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "virtual float \fBH\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the hue component in degrees (0–360)\&. Values outside the range are wrapped automatically\&. "
+.ti -1c
+.RI "virtual float \fBMaxValue\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the maximum allowed HDR value\&. "
+.ti -1c
+.RI "virtual float \fBS\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the saturation component in the range 0–1\&. "
+.ti -1c
+.RI "virtual float \fBV\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the HDR value (brightness) component\&. The value is clamped to the range 0–\fBMaxValue\fP\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a high‑dynamic‑range color in the HSV color space, where the value component can exceed the normalized range (0–1) and extend up to \fBMaxValue\fP\&. Provides hue‑aware interpolation, brightness manipulation, and arithmetic operations for HDR color processing\&. 
+.PP
+Definition at line \fB27\fP of file \fBColorHDR\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Drawing\&.ColorHDR\&.ColorHDR (float h, float s, float v)"
+
+.PP
+Initializes a new HDR color with the specified HSV components\&. 
+.PP
+Definition at line \fB54\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP, \fBAddition()\fP, \fBBrightness()\fP, \fBDivision()\fP, \fBDivision()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBLerp()\fP, \fBLightIntensity()\fP, \fBMultiplication()\fP, \fBMultiplication()\fP, \fBSaturation()\fP, \fBSubtraction()\fP, and \fBSubtraction()\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Addition (\fBColorHDR\fP a)\fR [virtual]\fP"
+
+.PP
+Adds another HDR color to this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. 
+.PP
+Definition at line \fB77\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP\&.
+.SS "\fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Addition (float a, float b, float c)"
+
+.PP
+Adds the specified HSV components to this HDR color\&. This is a convenience overload that constructs a temporary HDR color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP Hue component\&.
+.br
+\fIb\fP Saturation component\&.
+.br
+\fIc\fP Value component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The modified HDR color\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB129\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Brightness (float delta)\fR [virtual]\fP"
+
+.PP
+Adjusts the HDR brightness by the specified delta\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB69\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorHDR\&.ClampHue (float h)\fR [static]\fP, \fR [protected]\fP"
+
+.PP
+Wraps a hue value into the range 0–360 degrees\&. 
+.PP
+Definition at line \fB169\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP, \fBLerp()\fP, and \fBSubtraction()\fP\&.
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Division (\fBColorHDR\fP a)\fR [virtual]\fP"
+
+.PP
+Divides this HDR color by another, component by component\&. Hue is not affected\&. 
+.PP
+Definition at line \fB107\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBDivision()\fP\&.
+.SS "\fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Division (float a, float b, float c)"
+
+.PP
+Divides this HDR color by the specified HSV components\&. This is a convenience overload that constructs a temporary HDR color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP Hue component\&.
+.br
+\fIb\fP Saturation component\&.
+.br
+\fIc\fP Value component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The modified HDR color\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB162\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHDR\&.Equals (\fBColorHDR\fP? other)"
+
+.PP
+Determines whether this instance is equal to another HDR color\&. 
+.PP
+Definition at line \fB194\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorHDR\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB204\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorHDR\&.GetHashCode ()"
+
+.PP
+Returns a hash code based on the hue, saturation, and HDR value\&. 
+.PP
+Definition at line \fB216\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "\fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Lerp (\fBColorHDR\fP value, float amount)"
+
+.PP
+Performs a quadratic interpolation toward another HDR color\&. Hue interpolation follows the shortest path around the color wheel\&. 
+.PP
+Definition at line \fB177\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.LightIntensity (float intensity)\fR [virtual]\fP"
+
+.PP
+Increases the HDR brightness by the specified intensity\&. 
+.PP
+Definition at line \fB117\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Multiplication (\fBColorHDR\fP a)\fR [virtual]\fP"
+
+.PP
+Multiplies this HDR color with another, component by component\&. Hue is not affected\&. 
+.PP
+Definition at line \fB97\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBMultiplication()\fP\&.
+.SS "\fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Multiplication (float a, float b, float c)"
+
+.PP
+Multiplies this HDR color by the specified HSV components\&. This is a convenience overload that constructs a temporary HDR color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP Hue component\&.
+.br
+\fIb\fP Saturation component\&.
+.br
+\fIc\fP Value component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The modified HDR color\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB151\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Saturation (float delta)\fR [virtual]\fP"
+
+.PP
+Adjusts the saturation by the specified delta\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB62\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Subtraction (\fBColorHDR\fP a)\fR [virtual]\fP"
+
+.PP
+Subtracts another HDR color from this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. 
+.PP
+Definition at line \fB87\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBSubtraction()\fP\&.
+.SS "\fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Subtraction (float a, float b, float c)"
+
+.PP
+Subtracts the specified HSV components from this HDR color\&. This is a convenience overload that constructs a temporary HDR color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP Hue component\&.
+.br
+\fIb\fP Saturation component\&.
+.br
+\fIc\fP Value component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The modified HDR color\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB140\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorHDR\&.ToString ()"
+
+.PP
+Returns a string representation of the HDR color\&. 
+.PP
+Definition at line \fB222\fP of file \fBColorHDR\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "virtual float SystemEx\&.Drawing\&.ColorHDR\&.H\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the hue component in degrees (0–360)\&. Values outside the range are wrapped automatically\&. 
+.PP
+Definition at line \fB37\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBColorHDR()\fP\&.
+.SS "virtual float SystemEx\&.Drawing\&.ColorHDR\&.MaxValue\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the maximum allowed HDR value\&. 
+.PP
+Definition at line \fB50\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "virtual float SystemEx\&.Drawing\&.ColorHDR\&.S\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the saturation component in the range 0–1\&. 
+.PP
+Definition at line \fB46\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBColorHDR()\fP\&.
+.SS "virtual float SystemEx\&.Drawing\&.ColorHDR\&.V\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the HDR value (brightness) component\&. The value is clamped to the range 0–\fBMaxValue\fP\&. 
+.PP
+Definition at line \fB42\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBColorHDR()\fP, and \fBLightIntensity()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

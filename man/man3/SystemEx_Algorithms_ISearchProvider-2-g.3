@@ -1,0 +1,108 @@
+.TH "SystemEx.Algorithms.ISearchProvider< T, TContainer >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Algorithms.ISearchProvider< T, TContainer >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Algorithms\&.BinarySearcherProvider< T, TContainer >\fP, \fBSystemEx\&.Algorithms\&.FibonacciSearcherProvider< T, TContainer >\fP, and \fBSystemEx\&.Algorithms\&.LinearSearchProvider< T, TContainer >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "long \fBFind\fP (ref TContainer container, Func< Optional< T >, \fBCompareResult\fP > func)"
+.br
+.RI "Searches the container using a custom predicate callback\&. The callback receives each element and a boolean flag that can be used to indicate a match condition\&. "
+.ti -1c
+.RI "long \fBFind\fP (ref TContainer container, ICompared< T > comp, T value)"
+.br
+.RI "Searches the container for the specified value using the provider's lookup strategy\&. "
+.ti -1c
+.RI "Vector< Pair< long, Optional< T > > > \fBWhere\fP (ref TContainer container, Func< Optional< T >, \fBCompareResult\fP > func)"
+.br
+.RI "Performs a full linear scan over the container and returns all elements that satisfy the given predicate together with their positions\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBType Constraints\fP
+.TP
+\fITContainer\fP : \fIIVector<T>\fP
+.PP
+Definition at line \fB40\fP of file \fBISearchProvider\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "long SystemEx\&.Algorithms\&.ISearchProvider< T, TContainer >\&.Find (ref TContainer container, Func< Optional< T >, \fBCompareResult\fP > func)"
+
+.PP
+Searches the container using a custom predicate callback\&. The callback receives each element and a boolean flag that can be used to indicate a match condition\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontainer\fP The container to search\&.
+.br
+\fIfunc\fP A predicate callback invoked for each element\&. The callback receives the element and a boolean indicating whether it matches the desired condition\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The index of the first element for which the callback indicates a match, or -1 if no element satisfies the predicate\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Algorithms\&.BinarySearcherProvider< T, TContainer >\fP, \fBSystemEx\&.Algorithms\&.FibonacciSearcherProvider< T, TContainer >\fP, and \fBSystemEx\&.Algorithms\&.LinearSearchProvider< T, TContainer >\fP\&.
+.SS "long SystemEx\&.Algorithms\&.ISearchProvider< T, TContainer >\&.Find (ref TContainer container, ICompared< T > comp, T value)"
+
+.PP
+Searches the container for the specified value using the provider's lookup strategy\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontainer\fP The container to search\&.
+.br
+\fIvalue\fP The value to locate\&.
+.br
+\fIcomp\fP The comparer
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The index of the first matching element, or -1 if no match is found\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Algorithms\&.BinarySearcherProvider< T, TContainer >\fP, and \fBSystemEx\&.Algorithms\&.FibonacciSearcherProvider< T, TContainer >\fP\&.
+.SS "Vector< Pair< long, Optional< T > > > SystemEx\&.Algorithms\&.ISearchProvider< T, TContainer >\&.Where (ref TContainer container, Func< Optional< T >, \fBCompareResult\fP > func)"
+
+.PP
+Performs a full linear scan over the container and returns all elements that satisfy the given predicate together with their positions\&. Unlike \fRFind\fP, which only returns the number of matches, \fRWhere\fP provides detailed match information\&. Each result contains both the index of the element inside the container and the element itself\&. This is especially useful when \fIT\fP  is a reference type and positional context is required\&. 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontainer\fP The container to search\&.
+.br
+\fIfunc\fP Predicate used to test each element\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVector<T>\fP containing all matching elements\&. Each pair stores: 
+.PD 0
+.IP "\(bu" 2
+The index of the element in the container 
+.IP "\(bu" 2
+The element itself 
+.PP
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Algorithms\&.BinarySearcherProvider< T, TContainer >\fP, \fBSystemEx\&.Algorithms\&.FibonacciSearcherProvider< T, TContainer >\fP, and \fBSystemEx\&.Algorithms\&.LinearSearchProvider< T, TContainer >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

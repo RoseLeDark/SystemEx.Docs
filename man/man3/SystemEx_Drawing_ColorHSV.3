@@ -1,0 +1,382 @@
+.TH "SystemEx.Drawing.ColorHSV" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Drawing.ColorHSV \- Represents a color in the HSV (Hue–Saturation–Value) color space using floating‑point components\&. 
+.br
+ Provides hue‑aware interpolation, component manipulation, arithmetic operations, and normalization utilities\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Drawing\&.IColor< T >\fP, IEquatable, and IComparable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBColorHSV\fP \fBAddition\fP (\fBColorHSV\fP a)"
+.br
+.RI "Adds another HSV color to this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBAddition\fP (float a, float b, float c)"
+.br
+.RI "Addition another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBBrightness\fP (float delta)"
+.br
+.RI "Adjusts the value (brightness) by the specified delta\&. "
+.ti -1c
+.RI "\fBColorHSV\fP (float h, float s, float v)"
+.br
+.RI "Initializes a new HSV color with the specified component values\&. "
+.ti -1c
+.RI "int \fBCompareTo\fP (\fBColorHSV\fP other)"
+.br
+.ti -1c
+.RI "\fBColorHSV\fP \fBDivision\fP (\fBColorHSV\fP a)"
+.br
+.RI "Divides this color by another, component by component\&. Hue is not affected\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBDivision\fP (float a, float b, float c)"
+.br
+.RI "Divisionication another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBColorHSV\fP other)"
+.br
+.RI "Determines whether this instance is equal to another HSV color\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Returns a hash code based on the hue, saturation, and value components\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBLerp\fP (\fBColorHSV\fP value, float amount)"
+.br
+.RI "Performs a quadratic interpolation toward another HSV color\&. 
+.br
+ Hue interpolation follows the shortest path around the color wheel\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBMultiplication\fP (\fBColorHSV\fP a)"
+.br
+.RI "Multiplies this color with another, component by component\&. Hue is not affected\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBMultiplication\fP (float a, float b, float c)"
+.br
+.RI "Multiplication another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSaturation\fP (float delta)"
+.br
+.RI "Adjusts the saturation by the specified delta\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSubtraction\fP (\fBColorHSV\fP a)"
+.br
+.RI "Subtracts another HSV color from this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSubtraction\fP (float a, float b, float c)"
+.br
+.RI "Subtraction another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns a string representation of the HSV color\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Drawing\&.IColor< T >\fP
+.in +1c
+.ti -1c
+.RI "T \fBAddition\fP (T value)"
+.br
+.RI "Adds the specified color to this color\&. "
+.ti -1c
+.RI "T \fBDivision\fP (T value)"
+.br
+.RI "Divides this color by the specified color\&. "
+.ti -1c
+.RI "T \fBLerp\fP (T value, float amount)"
+.br
+.RI "Performs linear interpolation between this color and another color\&. "
+.ti -1c
+.RI "T \fBMultiplication\fP (T value)"
+.br
+.RI "Multiplies this color with the specified color\&. "
+.ti -1c
+.RI "T \fBSubtraction\fP (T value)"
+.br
+.RI "Subtracts the specified color from this color\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBColorHSV\fP left, \fBColorHSV\fP right)"
+.br
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBColorHSV\fP left, \fBColorHSV\fP right)"
+.br
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBColorHSV\fP left, \fBColorHSV\fP right)"
+.br
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBColorHSV\fP left, \fBColorHSV\fP right)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBColorHSV\fP left, \fBColorHSV\fP right)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBColorHSV\fP left, \fBColorHSV\fP right)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "float \fBH\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the hue component in degrees (0–360)\&. 
+.br
+ Values outside the range are wrapped automatically\&. "
+.ti -1c
+.RI "static \fBColorHSV\fP \fBOne\fP\fR [get]\fP"
+.br
+.RI "A static property that returns a \fBColorHSV\fP instance representing white (H=0, S=0, V=1)\&. "
+.ti -1c
+.RI "float \fBS\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the saturation component in the range 0–1\&. "
+.ti -1c
+.RI "float \fBV\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the value (brightness) component in the range 0–1\&. "
+.ti -1c
+.RI "static \fBColorHSV\fP \fBZero\fP\fR [get]\fP"
+.br
+.RI "A static property that returns a \fBColorHSV\fP instance representing black (H=0, S=0, V=0)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a color in the HSV (Hue–Saturation–Value) color space using floating‑point components\&. 
+.br
+ Provides hue‑aware interpolation, component manipulation, arithmetic operations, and normalization utilities\&. 
+.PP
+Definition at line \fB25\fP of file \fBColorHSV\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Drawing\&.ColorHSV\&.ColorHSV (float h, float s, float v)"
+
+.PP
+Initializes a new HSV color with the specified component values\&. 
+.PP
+Definition at line \fB61\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP, \fBAddition()\fP, \fBBrightness()\fP, \fBDivision()\fP, \fBDivision()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBLerp()\fP, \fBMultiplication()\fP, \fBMultiplication()\fP, \fBSaturation()\fP, \fBSubtraction()\fP, and \fBSubtraction()\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Addition (\fBColorHSV\fP a)"
+
+.PP
+Adds another HSV color to this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. 
+.PP
+Definition at line \fB87\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Addition (float a, float b, float c)"
+
+.PP
+Addition another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB195\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Brightness (float delta)"
+
+.PP
+Adjusts the value (brightness) by the specified delta\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB78\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "int SystemEx\&.Drawing\&.ColorHSV\&.CompareTo (\fBColorHSV\fP other)"
+
+.PP
+Definition at line \fB217\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Division (\fBColorHSV\fP a)"
+
+.PP
+Divides this color by another, component by component\&. Hue is not affected\&. 
+.PP
+Definition at line \fB119\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBDivision()\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Division (float a, float b, float c)"
+
+.PP
+Divisionication another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB213\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.Equals (\fBColorHSV\fP other)"
+
+.PP
+Determines whether this instance is equal to another HSV color\&. 
+.PP
+Definition at line \fB152\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorHSV\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB162\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorHSV\&.GetHashCode ()"
+
+.PP
+Returns a hash code based on the hue, saturation, and value components\&. 
+.PP
+Definition at line \fB172\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Lerp (\fBColorHSV\fP value, float amount)"
+
+.PP
+Performs a quadratic interpolation toward another HSV color\&. 
+.br
+ Hue interpolation follows the shortest path around the color wheel\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The target color\&.
+.br
+\fIamount\fP Interpolation factor in the range 0–1\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB135\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Multiplication (\fBColorHSV\fP a)"
+
+.PP
+Multiplies this color with another, component by component\&. Hue is not affected\&. 
+.PP
+Definition at line \fB109\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBMultiplication()\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Multiplication (float a, float b, float c)"
+
+.PP
+Multiplication another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB207\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.operator!= (\fBColorHSV\fP left, \fBColorHSV\fP right)\fR [static]\fP"
+
+.PP
+Definition at line \fB226\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.operator< (\fBColorHSV\fP left, \fBColorHSV\fP right)\fR [static]\fP"
+
+.PP
+Definition at line \fB230\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.operator<= (\fBColorHSV\fP left, \fBColorHSV\fP right)\fR [static]\fP"
+
+.PP
+Definition at line \fB234\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.operator== (\fBColorHSV\fP left, \fBColorHSV\fP right)\fR [static]\fP"
+
+.PP
+Definition at line \fB222\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.operator> (\fBColorHSV\fP left, \fBColorHSV\fP right)\fR [static]\fP"
+
+.PP
+Definition at line \fB238\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.operator>= (\fBColorHSV\fP left, \fBColorHSV\fP right)\fR [static]\fP"
+
+.PP
+Definition at line \fB242\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Saturation (float delta)"
+
+.PP
+Adjusts the saturation by the specified delta\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB70\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Subtraction (\fBColorHSV\fP a)"
+
+.PP
+Subtracts another HSV color from this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. 
+.PP
+Definition at line \fB98\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBSubtraction()\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Subtraction (float a, float b, float c)"
+
+.PP
+Subtraction another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB201\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorHSV\&.ToString ()"
+
+.PP
+Returns a string representation of the HSV color\&. 
+.PP
+Definition at line \fB189\fP of file \fBColorHSV\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "float SystemEx\&.Drawing\&.ColorHSV\&.H\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the hue component in degrees (0–360)\&. 
+.br
+ Values outside the range are wrapped automatically\&. 
+.PP
+Definition at line \fB46\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.One\fR [static]\fP, \fR [get]\fP"
+
+.PP
+A static property that returns a \fBColorHSV\fP instance representing white (H=0, S=0, V=1)\&. 
+.PP
+\fBReturns\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Definition at line \fB40\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorHSV\&.S\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the saturation component in the range 0–1\&. 
+.PP
+Definition at line \fB56\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorHSV\&.V\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the value (brightness) component in the range 0–1\&. 
+.PP
+Definition at line \fB51\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorGray\&.ColorGray()\fP, and \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.GetNextContrastColor()\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Zero\fR [static]\fP, \fR [get]\fP"
+
+.PP
+A static property that returns a \fBColorHSV\fP instance representing black (H=0, S=0, V=0)\&. 
+.PP
+\fBReturns\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Definition at line \fB34\fP of file \fBColorHSV\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

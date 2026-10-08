@@ -1,0 +1,1696 @@
+.TH "SystemEx.Numeric.BigDecimal" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.BigDecimal \- Represents an arbitrary‑precision decimal number stored in scientific notation using a BigInteger mantissa and a base‑10 exponent\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IComparable, IComparable, and IEquatable\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBRoundMode\fP { \fBToEven\fP, \fBAwayFromZero\fP, \fBTowardZero\fP, \fBFloor\fP, \fBCeiling\fP }"
+.br
+.RI "Specifies the rounding strategy used by \fBBigDecimal\&.Round(int, RoundMode)\fP\&. These modes correspond to common numerical rounding conventions used in scientific, financial, and engineering computations\&. "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBigDecimal\fP \fBAbs\fP ()"
+.br
+.RI "Returns the absolute value of this \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBAsin\fP ()"
+.br
+.RI "Computes the arcsine (inverse sine) using IEEE‑754 double precision\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBAtan2\fP (\fBBigDecimal\fP x)"
+.br
+.RI "Computes the two‑argument arctangent using IEEE‑754 double precision\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBAtanh\fP (double d)"
+.br
+.RI "Computes the inverse hyperbolic tangent (atanh)\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP (BigInteger baseValue, int scale)"
+.br
+.RI "Initializes a new \fBBigDecimal\fP with the specified mantissa and exponent\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP (BigInteger numerator, BigInteger denominator)"
+.br
+.RI "Initializes a new \fBBigDecimal\fP from a rational value represented by a numerator and denominator\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP (BigInteger value)"
+.br
+.RI "Initializes a new \fBBigDecimal\fP with the specified mantissa and an exponent of zero\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP (Collections\&.Generic\&.Tuple< BigInteger > tuple)"
+.br
+.RI "Initializes a new \fBBigDecimal\fP from a tuple containing a mantissa and exponent pair\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP (int value)"
+.br
+.RI "Initializes a new \fBBigDecimal\fP from a 32‑bit integer\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP (long value)"
+.br
+.RI "Initializes a new \fBBigDecimal\fP from a 64‑bit integer\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP (Pair< BigInteger, Int32 > tuple)"
+.br
+.RI "Initializes a new \fBBigDecimal\fP from a tuple containing a mantissa and exponent pair\&. "
+.ti -1c
+.RI "int \fBCompareTo\fP (\fBBigDecimal\fP other)"
+.br
+.RI "Compares this \fBBigDecimal\fP to another instance and returns a value indicating their relative order\&. "
+.ti -1c
+.RI "int \fBCompareTo\fP (object? obj)"
+.br
+.RI "Compares this instance to another object\&. Only \fBBigDecimal\fP instances are supported\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBCos\fP ()"
+.br
+.RI "Computes the cosine of this \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBCosh\fP ()"
+.br
+.RI "Computes the hyperbolic cosine (cosh)\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBBigDecimal\fP other)"
+.br
+.RI "Determines whether this instance and the specified \fBBigDecimal\fP represent the same numeric value\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Determines whether this instance and the specified object represent the same numeric value\&. Only \fBBigDecimal\fP instances are supported\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBExp\fP ()"
+.br
+.RI "Computes e^x for this \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBExp10\fP ()"
+.br
+.RI "Computes 10^x for this \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBExp2\fP ()"
+.br
+.RI "Computes 2^x for this \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Computes a hash code for this \fBBigDecimal\fP instance\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBLog\fP ()"
+.br
+.RI "Computes the natural logarithm (ln) of this \fBBigDecimal\fP\&. Uses IEEE‑754 double precision internally\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBLog10\fP ()"
+.br
+.RI "Computes the base‑10 logarithm (log10)\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBLog2\fP ()"
+.br
+.RI "Computes the base‑2 logarithm (log2)\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBMax\fP (\fBBigDecimal\fP other)"
+.br
+.RI "Returns the greater of this value and \fIother\fP  (numeric comparison)\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBMin\fP (\fBBigDecimal\fP other)"
+.br
+.RI "Returns the lesser of this value and \fIother\fP  (numeric comparison)\&. "
+.ti -1c
+.RI "Pair< \fBBigDecimal\fP, \fBBigDecimal\fP > \fBMinMax\fP (\fBBigDecimal\fP other)"
+.br
+.RI "Returns a pair containing the minimum and maximum of this value and \fIother\fP  using the default ascending numeric comparison\&. "
+.ti -1c
+.RI "Pair< \fBBigDecimal\fP, \fBBigDecimal\fP > \fBMinMax\fP (\fBBigDecimal\fP other, ISimpleCompare< \fBBigDecimal\fP > cmp)"
+.br
+.RI "Returns a pair containing the minimum and maximum of this value and \fIother\fP  using a custom comparison strategy\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBNormalize\fP ()"
+.br
+.RI "Normalizes the \fBBigDecimal\fP by removing trailing powers of ten from the mantissa and adjusting the exponent accordingly\&. The normalized form ensures that the mantissa is not divisible by 10, unless the value is zero\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBRound\fP (int digits, \fBRoundMode\fP mode)"
+.br
+.RI "Rounds this \fBBigDecimal\fP to a specified number of decimal digits\&. Uses BigInteger arithmetic for exact rounding without floating‑point errors\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBRoundToExponent\fP (int exp, \fBRoundMode\fP mode=\fBRoundMode\&.ToEven\fP)"
+.br
+.RI "Rounds this value to the specified decimal exponent using the given rounding mode\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBRoundToInteger\fP (\fBRoundMode\fP mode=\fBRoundMode\&.ToEven\fP)"
+.br
+.RI "Rounds this value to the nearest integer using the specified rounding mode\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBShifRight\fP (int n)"
+.br
+.RI "Multiplies the value by 10^n without modifying the mantissa\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBShiftLeft\fP (int n)"
+.br
+.RI "Multiplies the value by 10^n without modifying the mantissa\&. "
+.ti -1c
+.RI "int \fBSignum\fP ()"
+.br
+.RI "Returns -1, 0, or +1 depending on the sign of the value\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBSin\fP ()"
+.br
+.RI "Computes the sine of this \fBBigDecimal\fP using IEEE‑754 double precision internally\&. The result is converted back into a \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBSinh\fP ()"
+.br
+.RI "Computes the hyperbolic sine (sinh) of this \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBSqrt\fP ()"
+.br
+.RI "Computes the square root of this \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBTan\fP ()"
+.br
+.RI "Computes the tangent of this \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "\fBBigDecimal\fP \fBTanh\fP ()"
+.br
+.RI "Computes the hyperbolic tangent (tanh)\&. "
+.ti -1c
+.RI "double \fBToDouble\fP ()"
+.br
+.RI "Converts this \fBBigDecimal\fP into an IEEE‑754 double using mathematically correct scaling\&. The conversion applies exact base‑10 to base‑2 exponent transformation and performs a precise mantissa adjustment\&. "
+.ti -1c
+.RI "string \fBToEngineeringString\fP ()"
+.br
+.RI "Formats the value using engineering notation, where the exponent is always a multiple of three\&. This representation aligns with SI prefixes and is commonly used in electrical and mechanical engineering\&. "
+.ti -1c
+.RI "string \fBToSIString\fP (\fBSIUnit\fP unit)"
+.br
+.RI "Formats the value using SI prefixes and a specified SI unit\&. The value is first converted to engineering notation, ensuring alignment with standard SI scaling conventions\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Converts this \fBBigDecimal\fP into a canonical scientific notation string\&. The value is normalized before formatting to ensure removal of trailing zeros and consistent exponent representation\&. "
+.ti -1c
+.RI "string \fBToUSString\fP (\fBUSUnit\fP unit)"
+.br
+.RI "Formats the value using U\&.S\&. customary engineering units\&. The value is divided by the corresponding unit factor and then expressed in engineering notation\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBClamp\fP (\fBBigDecimal\fP value, \fBBigDecimal\fP min, \fBBigDecimal\fP max)"
+.br
+.RI "Clamps \fIvalue\fP  to the inclusive range [\fImin\fP , \fImax\fP ]\&. "
+.ti -1c
+.RI "static bool \fBIsCanonical\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Indicates whether the specified \fBBigDecimal\fP is in canonical representation\&. Currently always returns \fRtrue\fP\&. "
+.ti -1c
+.RI "static bool \fBIsComplexNumber\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Determines whether a value is a complex number\&. Always \fRfalse\fP\&. "
+.ti -1c
+.RI "static bool \fBIsFinite\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Determines whether a value is finite\&. Always \fRtrue\fP for \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "static bool \fBIsImaginaryNumber\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Determines whether a value is imaginary\&. Always \fRfalse\fP\&. "
+.ti -1c
+.RI "static bool \fBIsInfinity\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Determines whether a value is infinite\&. Always \fRfalse\fP for \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "static bool \fBIsNaN\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Determines whether a value is not a number (NaN)\&. Always \fRfalse\fP for \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "static bool \fBIsNegativeInfinity\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Determines whether a value is negative infinity\&. Always \fRfalse\fP\&. "
+.ti -1c
+.RI "static bool \fBIsNormal\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Determines whether a value is considered normal\&. For \fBBigDecimal\fP, this is defined as any non‑zero value\&. "
+.ti -1c
+.RI "static bool \fBIsPositiveInfinity\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Determines whether a value is positive infinity\&. Always \fRfalse\fP\&. "
+.ti -1c
+.RI "static bool \fBIsRealNumber\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Determines whether a value is a real number\&. Always \fRtrue\fP for \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "static bool \fBIsSubnormal\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Determines whether a value is subnormal\&. Always \fRfalse\fP for \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBMax\fP (\fBBigDecimal\fP x, \fBBigDecimal\fP y)"
+.br
+.RI "Returns the greater of two \fBBigDecimal\fP values\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBMin\fP (\fBBigDecimal\fP x, \fBBigDecimal\fP y)"
+.br
+.RI "Returns the lesser of two \fBBigDecimal\fP values\&. "
+.ti -1c
+.RI "static Int32 \fBNumberOfDigits\fP (BigInteger value)"
+.br
+.RI "Returns the number of decimal digits in the specified integer value\&. "
+.ti -1c
+.RI "static implicit \fBoperator BigDecimal\fP (BigInteger value)"
+.br
+.RI "Implicitly converts a BigInteger into a \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "static implicit \fBoperator BigDecimal\fP (decimal value)"
+.br
+.RI "Implicitly converts a decimal into a \fBBigDecimal\fP by extracting the internal 96‑bit integer representation and the scale factor\&. The conversion is exact and preserves all decimal digits\&. "
+.ti -1c
+.RI "static implicit \fBoperator BigDecimal\fP (double value)"
+.br
+.RI "Implicitly converts an IEEE‑754 double into a \fBBigDecimal\fP by reconstructing the binary exponent and significand\&. This conversion is exact and does not introduce floating‑point rounding artifacts beyond those already present in the input double\&. "
+.ti -1c
+.RI "static implicit \fBoperator BigDecimal\fP (int value)"
+.br
+.RI "Implicitly converts a 32‑bit signed integer into a \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "static implicit \fBoperator BigDecimal\fP (long value)"
+.br
+.RI "Implicitly converts a 64‑bit signed integer into a \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "static implicit \fBoperator BigDecimal\fP (ulong value)"
+.br
+.RI "Implicitly converts a 64‑bit unsigned integer into a \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "static \fBoperator BigInteger\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Explicitly converts a \fBBigDecimal\fP into a BigInteger\&. The conversion is only valid if the decimal exponent allows an exact integer representation\&. If the value contains fractional components, an ArithmeticException is thrown\&. "
+.ti -1c
+.RI "static \fBoperator double\fP (\fBBigDecimal\fP value)"
+.br
+.RI "Explicitly converts a \fBBigDecimal\fP into a double using \fBToDouble\fP\&. This conversion may lose precision if the \fBBigDecimal\fP exceeds the 53‑bit mantissa capacity of IEEE‑754\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBBigDecimal\fP a, \fBBigDecimal\fP b)"
+.br
+.RI "Determines whether two \fBBigDecimal\fP values are not numerically equal\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBoperator%\fP (\fBBigDecimal\fP a, \fBBigDecimal\fP b)"
+.br
+.RI "Computes the modulo of two \fBBigDecimal\fP values\&. Exponents must match; otherwise the operation is undefined\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBoperator*\fP (\fBBigDecimal\fP a, \fBBigDecimal\fP b)"
+.br
+.RI "Multiplies two \fBBigDecimal\fP values with exact precision\&. Mantissas are multiplied and exponents are added\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBoperator+\fP (\fBBigDecimal\fP a)"
+.br
+.RI "Return the same value\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBoperator+\fP (\fBBigDecimal\fP a, \fBBigDecimal\fP b)"
+.br
+.RI "Adds two \fBBigDecimal\fP values with exact precision by aligning their exponents and summing their mantissas\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBoperator\-\fP (\fBBigDecimal\fP a)"
+.br
+.RI "Returns the negated value of this \fBBigDecimal\fP\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBoperator\-\fP (\fBBigDecimal\fP a, \fBBigDecimal\fP b)"
+.br
+.RI "Subtracts two \fBBigDecimal\fP values with exact precision\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBoperator/\fP (\fBBigDecimal\fP a, \fBBigDecimal\fP b)"
+.br
+.RI "Divides two \fBBigDecimal\fP values with exact precision\&. If the division is not exact, an ArithmeticException is thrown\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBBigDecimal\fP a, \fBBigDecimal\fP b)"
+.br
+.RI "Determines whether the first \fBBigDecimal\fP is numerically smaller than the second\&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBBigDecimal\fP a, \fBBigDecimal\fP b)"
+.br
+.RI "Determines whether the first \fBBigDecimal\fP is numerically smaller than or equal to the second\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBBigDecimal\fP a, \fBBigDecimal\fP b)"
+.br
+.RI "Determines whether two \fBBigDecimal\fP values are numerically equal\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBBigDecimal\fP a, \fBBigDecimal\fP b)"
+.br
+.RI "Determines whether the first \fBBigDecimal\fP is numerically greater than the second\&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBBigDecimal\fP a, \fBBigDecimal\fP b)"
+.br
+.RI "Determines whether the first \fBBigDecimal\fP is numerically greater than or equal to the second\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBParseEngineering\fP (string s)"
+.br
+.RI "Parses a \fBBigDecimal\fP from engineering notation such as "12e3" or "450e-6"\&. The exponent is typically a multiple of three, although this is not strictly enforced\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBParseScientific\fP (string s)"
+.br
+.RI "Parses a \fBBigDecimal\fP from scientific notation such as "1\&.23e-9"\&. The mantissa may contain a decimal point, and the exponent must follow either 'e' or 'E'\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBPow\fP (\fBBigDecimal\fP value, int power)"
+.br
+.RI "Raises a \fBBigDecimal\fP to an integer power\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBPow\fP (\fBBigDecimal\fP x, \fBBigDecimal\fP y)"
+.br
+.RI "Raises a \fBBigDecimal\fP to a \fBBigDecimal\fP power\&. Uses scientific functions internally\&. "
+.ti -1c
+.RI "static bool \fBTryParseEngineering\fP (string? s, out \fBBigDecimal\fP value)"
+.br
+.RI "Attempts to parse a \fBBigDecimal\fP from engineering notation\&. Returns \fRtrue\fP on success; otherwise \fRfalse\fP\&. "
+.ti -1c
+.RI "static bool \fBTryParseScientific\fP (string? s, out \fBBigDecimal\fP value)"
+.br
+.RI "Attempts to parse a \fBBigDecimal\fP from scientific notation\&. Returns \fRtrue\fP on success; otherwise \fRfalse\fP\&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBAtto\fP = new \fBBigDecimal\fP(1, \-18)"
+.br
+.RI "Atto (10^-18)\&. Commonly used in high‑precision measurement systems, including attoseconds, attocoulombs, and other quantum-scale quantities\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBBTU\fP = new \fBBigDecimal\fP(1, 0)"
+.br
+.RI "BTU (British Thermal Unit)\&. Used in amerikanische HVAC and heating systems\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBCenti\fP = new \fBBigDecimal\fP(1, \-2)"
+.br
+.RI "Centi (10^-2)\&. Less frequently used in scientific notation but common in everyday measurements such as centimeters (cm)\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBCup\fP = new \fBBigDecimal\fP(8, 0)"
+.br
+.RI "Cup (1 cup = 8 fl oz)\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBDeca\fP = new \fBBigDecimal\fP(1, 1)"
+.br
+.RI "Deca (10^1)\&. Infrequently used in technical fields but part of the official SI prefix set\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBDeci\fP = new \fBBigDecimal\fP(1, \-1)"
+.br
+.RI "Deci (10^-1)\&. Rarely used in engineering applications but included for completeness as part of the SI standard\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBExa\fP = new \fBBigDecimal\fP(1, 18)"
+.br
+.RI "Exa (10^18)\&. Typically encountered in high‑performance computing, astrophysics, and extremely large scientific datasets\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBFemto\fP = new \fBBigDecimal\fP(1, \-15)"
+.br
+.RI "Femto (10^-15)\&. Frequently used in optics, photonics, and quantum physics, such as femtosecond laser pulses and femtowatt power levels\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBFoot\fP = new \fBBigDecimal\fP(12, 0)"
+.br
+.RI "Foot (1 ft = 12 in)\&. Common in construction and mechanical engineering\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBGallon\fP = new \fBBigDecimal\fP(128, 0)"
+.br
+.RI "Gallon (1 gal = 128 fl oz)\&. Standard amerikanische volume unit\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBGiga\fP = new \fBBigDecimal\fP(1, 9)"
+.br
+.RI "Giga (10^9)\&. Used for very large digital storage capacities, high-frequency signals, and large-scale energy measurements\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBHecto\fP = new \fBBigDecimal\fP(1, 2)"
+.br
+.RI "Hecto (10^2)\&. Primarily used in meteorology, for example in hectopascals (hPa)\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBHorsepower\fP = new \fBBigDecimal\fP(1, 0)"
+.br
+.RI "Horsepower (hp)\&. Used in amerikanische automotive and mechanical engineering\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBInch\fP = new \fBBigDecimal\fP(1, 0)"
+.br
+.RI "Inch (1 in)\&. \fBBase\fP unit in many US technical domains\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBKilo\fP = new \fBBigDecimal\fP(1, 3)"
+.br
+.RI "Kilo (10^3)\&. A very common engineering scale used for kiloohms (kΩ), kilograms (kg), kilohertz (kHz), and similar quantities\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBMaxValue\fP = new \fBBigDecimal\fP((BigInteger\&.One << 96) \- BigInteger\&.One, 0)"
+.br
+.RI "Gets the maximum representable \fBBigDecimal\fP value within the current safe range\&. The mantissa is limited to 96 bits\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBMega\fP = new \fBBigDecimal\fP(1, 6)"
+.br
+.RI "Mega (10^6)\&. Standard prefix for large-scale values such as megawatts (MW), megabytes (MB), and megahertz (MHz)\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBMicro\fP = new \fBBigDecimal\fP(1, \-6)"
+.br
+.RI "Micro (10^-6)\&. A widely used SI prefix in electrical and mechanical engineering, including microamps (µA), microfarads (µF), and micrometers (µm)\&. Supports both 'µ' and 'u' representations in parsing\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBMile\fP = new \fBBigDecimal\fP(63360, 0)"
+.br
+.RI "Mile (1 mi = 63360 in)\&. Used for large‑scale distances\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBMilli\fP = new \fBBigDecimal\fP(1, \-3)"
+.br
+.RI "Milli (10^-3)\&. A common engineering scale used for milliamps (mA), millimeters (mm), millivolts (mV), and similar everyday technical units\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBMinValue\fP = new \fBBigDecimal\fP(\-(BigInteger\&.One << 96), 0)"
+.br
+.RI "Gets the minimum representable \fBBigDecimal\fP value within the current safe range\&. The mantissa is limited to 96 bits and negative\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBNano\fP = new \fBBigDecimal\fP(1, \-9)"
+.br
+.RI "Nano (10^-9)\&. A standard engineering scale used for nanofarads (nF), nanometers (nm), nanoseconds (ns), and other common nano‑level quantities\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBOunce\fP = new \fBBigDecimal\fP(1, 0)"
+.br
+.RI "Ounce (1 oz)\&. Small mass unit used in everyday amerikanische measurements\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBPeta\fP = new \fBBigDecimal\fP(1, 15)"
+.br
+.RI "Peta (10^15)\&. Used for massive computational workloads, data volumes, and large-scale physical measurements\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBPico\fP = new \fBBigDecimal\fP(1, \-12)"
+.br
+.RI "Pico (10^-12)\&. Widely used in electronics and RF engineering, including picofarads (pF), picoamps (pA), and picosecond timing\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBPint\fP = new \fBBigDecimal\fP(16, 0)"
+.br
+.RI "Pint (1 pt = 16 fl oz)\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBPound\fP = new \fBBigDecimal\fP(16, 0)"
+.br
+.RI "Pound (1 lb = 16 oz)\&. Standard US mass unit\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBPSI\fP = new \fBBigDecimal\fP(1, 0)"
+.br
+.RI "PSI (pounds per square inch)\&. Very common in amerikanische automotive and industrial systems\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBQuart\fP = new \fBBigDecimal\fP(32, 0)"
+.br
+.RI "Quart (1 qt = 32 fl oz)\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBSafeMantissaLimit\fP = new \fBBigDecimal\fP((BigInteger\&.One << 256) \- BigInteger\&.One, 0)"
+.br
+.RI "Gets a \fBBigDecimal\fP representing the safe mantissa limit used for internal operations\&. The mantissa is limited to 256 bits\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBTera\fP = new \fBBigDecimal\fP(1, 12)"
+.br
+.RI "Tera (10^12)\&. Represents extremely large quantities, commonly used for terabytes (TB) and terahertz (THz)\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBYard\fP = new \fBBigDecimal\fP(36, 0)"
+.br
+.RI "Yard (1 yd = 36 in)\&. Used in manufacturing and textile industries\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBYocto\fP = new \fBBigDecimal\fP(1, \-24)"
+.br
+.RI "Yocto (10^-24)\&. Represents an extremely small scale factor used in advanced scientific contexts such as particle physics and quantum-level measurements\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBYotta\fP = new \fBBigDecimal\fP(1, 24)"
+.br
+.RI "Yotta (10^24)\&. The largest officially recognized SI prefix, used for astronomical-scale quantities and extreme data measurements\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBZepto\fP = new \fBBigDecimal\fP(1, \-21)"
+.br
+.RI "Zepto (10^-21)\&. Used for ultra-small magnitudes in nanotechnology, molecular chemistry, and precision scientific instrumentation\&. "
+.ti -1c
+.RI "static readonly \fBBigDecimal\fP \fBZetta\fP = new \fBBigDecimal\fP(1, 21)"
+.br
+.RI "Zetta (10^21)\&. Represents extraordinarily large magnitudes used in theoretical physics and global-scale data systems\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBExponent\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the base‑10 exponent of the number\&. "
+.ti -1c
+.RI "bool \fBIsNegative\fP\fR [get]\fP"
+.br
+.RI "Gets whether the value is strictly negative\&. "
+.ti -1c
+.RI "bool \fBIsPositive\fP\fR [get]\fP"
+.br
+.RI "Gets whether the value is positive or zero\&. "
+.ti -1c
+.RI "bool \fBIsZero\fP\fR [get]\fP"
+.br
+.RI "Gets whether the value is exactly zero\&. "
+.ti -1c
+.RI "BigInteger \fBMantissa\fP\fR [get]\fP"
+.br
+.RI "Gets the mantissa component of the number\&. The mantissa is stored as an arbitrary‑precision integer and may be positive, negative, or zero\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBNegativeOne\fP = new \fBBigDecimal\fP(BigInteger\&.MinusOne, 0)\fR [get]\fP"
+.br
+.RI "Gets a \fBBigDecimal\fP representing negative one (-1 × 10^0)\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBOne\fP = new \fBBigDecimal\fP(BigInteger\&.One, 0)\fR [get]\fP"
+.br
+.RI "Gets a \fBBigDecimal\fP representing one (1 × 10^0)\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBOneHalf\fP\fR [get]\fP"
+.br
+.RI "Gets a value that represents the number 0\&.5 (one half)\&. "
+.ti -1c
+.RI "int \fBPrecision\fP\fR [get]\fP"
+.br
+.RI "Gets the number of significant decimal digits in the mantissa\&. "
+.ti -1c
+.RI "static int \fBRadix\fP\fR [get]\fP"
+.br
+.RI "Gets the numeric radix (base) used by \fBBigDecimal\fP\&. For decimal numbers this is always 10\&. "
+.ti -1c
+.RI "\fBTriple\fP \fBSign\fP\fR [get]\fP"
+.br
+.RI "Gets the sign of the mantissa as a \fBTriple\fP value: 
+.PD 0
+.IP "\(bu" 2
+\fRTrue\fP — positive 
+.IP "\(bu" 2
+\fRFalse\fP — negative 
+.IP "\(bu" 2
+\fRNin\fP — zero 
+.PP
+\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBTen\fP = new \fBBigDecimal\fP(new BigInteger(10), 0)\fR [get]\fP"
+.br
+.RI "Gets a \fBBigDecimal\fP representing ten (10 × 10^0)\&. "
+.ti -1c
+.RI "static \fBBigDecimal\fP \fBZero\fP = new \fBBigDecimal\fP(BigInteger\&.Zero, 0)\fR [get]\fP"
+.br
+.RI "Gets a \fBBigDecimal\fP representing zero (0 × 10^0)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents an arbitrary‑precision decimal number stored in scientific notation using a BigInteger mantissa and a base‑10 exponent\&. 
+
+Provides amerikanische (US‑Customary) engineering units directly within \fBBigDecimal\fP\&. These units are widely used in US technical industries, automotive systems, HVAC, construction, and aerospace\&.
+
+.PP
+A \fBBigDecimal\fP models values of the form: 
+.PP
+.nf
+value = mantissa × 10^exponent
+
+.fi
+.PP
+ The mantissa is stored as an unbounded BigInteger, while the exponent is a signed 32‑bit integer\&. This representation allows exact modeling of extremely small or extremely large numbers without rounding artifacts or loss of precision\&. 
+
+.PP
+Unlike floating‑point types (\fRfloat\fP, \fRdouble\fP), \fBBigDecimal\fP does not normalize its mantissa automatically\&. The caller may choose any mantissa/exponent combination that represents the desired value\&. This makes the type suitable for scientific, financial, and mathematical applications where deterministic precision and explicit exponent control are required\&. 
+
+.PP
+All values are represented exakt as \fBBigDecimal\fP without floating‑ point rounding, making them suitable for precise technical calculations\&. 
+.PP
+Definition at line \fB21\fP of file \fBBigDecimal\&.Convert\&.cs\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.Numeric\&.BigDecimal\&.RoundMode\fP"
+
+.PP
+Specifies the rounding strategy used by \fBBigDecimal\&.Round(int, RoundMode)\fP\&. These modes correspond to common numerical rounding conventions used in scientific, financial, and engineering computations\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIToEven \fP
+Round to the nearest value; if equidistant, round to the nearest even number\&. Also known as “banker's rounding”\&. 
+.TP
+\f(BIAwayFromZero \fP
+Round away from zero, increasing magnitude regardless of sign\&. 
+.TP
+\f(BITowardZero \fP
+Round toward zero, decreasing magnitude regardless of sign\&. 
+.TP
+\f(BIFloor \fP
+Round toward negative infinity\&. Equivalent to mathematical floor\&. 
+.TP
+\f(BICeiling \fP
+Round toward positive infinity\&. Equivalent to mathematical ceiling\&. 
+.PP
+Definition at line \fB30\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.BigDecimal\&.BigDecimal (BigInteger value)"
+
+.PP
+Initializes a new \fBBigDecimal\fP with the specified mantissa and an exponent of zero\&. 
+.PP
+Definition at line \fB212\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBAbs()\fP, \fBAsin()\fP, \fBAtan2()\fP, \fBAtanh()\fP, \fBBigDecimal()\fP, \fBClamp()\fP, \fBCompareTo()\fP, \fBCompareTo()\fP, \fBCos()\fP, \fBCosh()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBExp()\fP, \fBExp10()\fP, \fBExp2()\fP, \fBIsCanonical()\fP, \fBIsComplexNumber()\fP, \fBIsFinite()\fP, \fBIsImaginaryNumber()\fP, \fBIsInfinity()\fP, \fBIsNaN()\fP, \fBIsNegativeInfinity()\fP, \fBIsNormal()\fP, \fBIsPositiveInfinity()\fP, \fBIsRealNumber()\fP, \fBIsSubnormal()\fP, \fBLog()\fP, \fBLog10()\fP, \fBLog2()\fP, \fBMax()\fP, \fBMax()\fP, \fBMin()\fP, \fBMin()\fP, \fBMinMax()\fP, \fBMinMax()\fP, \fBNormalize()\fP, \fBoperator BigDecimal()\fP, \fBoperator BigDecimal()\fP, \fBoperator BigInteger()\fP, \fBoperator double()\fP, \fBoperator!=()\fP, \fBoperator%()\fP, \fBoperator*()\fP, \fBoperator+()\fP, \fBoperator+()\fP, \fBoperator\-()\fP, \fBoperator\-()\fP, \fBoperator/()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, \fBoperator>()\fP, \fBoperator>=()\fP, \fBParseEngineering()\fP, \fBParseScientific()\fP, \fBPow()\fP, \fBPow()\fP, \fBRound()\fP, \fBRoundToExponent()\fP, \fBRoundToInteger()\fP, \fBShifRight()\fP, \fBShiftLeft()\fP, \fBSin()\fP, \fBSinh()\fP, \fBSqrt()\fP, \fBTan()\fP, \fBTanh()\fP, \fBToUSString()\fP, \fBTryParseEngineering()\fP, and \fBTryParseScientific()\fP\&.
+.SS "SystemEx\&.Numeric\&.BigDecimal\&.BigDecimal (int value)"
+
+.PP
+Initializes a new \fBBigDecimal\fP from a 32‑bit integer\&. 
+.PP
+Definition at line \fB218\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.BigDecimal\&.BigDecimal (long value)"
+
+.PP
+Initializes a new \fBBigDecimal\fP from a 64‑bit integer\&. 
+.PP
+Definition at line \fB224\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.BigDecimal\&.BigDecimal (BigInteger baseValue, int scale)"
+
+.PP
+Initializes a new \fBBigDecimal\fP with the specified mantissa and exponent\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbaseValue\fP The mantissa\&.
+.br
+\fIscale\fP The base‑10 exponent\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB233\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.BigDecimal\&.BigDecimal (Pair< BigInteger, Int32 > tuple)"
+
+.PP
+Initializes a new \fBBigDecimal\fP from a tuple containing a mantissa and exponent pair\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItuple\fP A pair whose \fRFirst\fP element is the mantissa and whose \fRSecond\fP element is the base‑10 exponent\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB245\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.BigDecimal\&.BigDecimal (Collections\&.Generic\&.Tuple< BigInteger > tuple)"
+
+.PP
+Initializes a new \fBBigDecimal\fP from a tuple containing a mantissa and exponent pair\&. 
+.PP
+Definition at line \fB254\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.BigDecimal\&.BigDecimal (BigInteger numerator, BigInteger denominator)"
+
+.PP
+Initializes a new \fBBigDecimal\fP from a rational value represented by a numerator and denominator\&. The division \fRnumerator / denominator\fP is performed using the existing \fBBigDecimal\fP division logic, and the resulting mantissa and exponent are stored in this instance\&. 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fInumerator\fP The rational numerator\&.
+.br
+\fIdenominator\fP The rational denominator\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB272\fP of file \fBBigDecimal\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Abs ()"
+
+.PP
+Returns the absolute value of this \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB232\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Asin ()"
+
+.PP
+Computes the arcsine (inverse sine) using IEEE‑754 double precision\&. 
+.PP
+Definition at line \fB387\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBAsin()\fP, and \fBAtanh()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Atan2 (\fBBigDecimal\fP x)"
+
+.PP
+Computes the two‑argument arctangent using IEEE‑754 double precision\&. 
+.PP
+Definition at line \fB401\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBAtan2()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Atanh (double d)"
+
+.PP
+Computes the inverse hyperbolic tangent (atanh)\&. 
+.PP
+Definition at line \fB394\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Clamp (\fBBigDecimal\fP value, \fBBigDecimal\fP min, \fBBigDecimal\fP max)\fR [static]\fP"
+
+.PP
+Clamps \fIvalue\fP  to the inclusive range [\fImin\fP , \fImax\fP ]\&. 
+.PP
+Definition at line \fB258\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "int SystemEx\&.Numeric\&.BigDecimal\&.CompareTo (\fBBigDecimal\fP other)"
+
+.PP
+Compares this \fBBigDecimal\fP to another instance and returns a value indicating their relative order\&. The comparison takes into account both mantissa and exponent\&. Values with different scales are aligned using powers of ten so that their numeric value can be compared without loss of precision\&. 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare with this instance\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A negative number if this instance is less than \fIother\fP , zero if they are equal, or a positive number if this instance is greater\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB331\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "int SystemEx\&.Numeric\&.BigDecimal\&.CompareTo (object? obj)"
+
+.PP
+Compares this instance to another object\&. Only \fBBigDecimal\fP instances are supported\&. 
+.PP
+Definition at line \fB282\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Cos ()"
+
+.PP
+Computes the cosine of this \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB324\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBCos()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Cosh ()"
+
+.PP
+Computes the hyperbolic cosine (cosh)\&. 
+.PP
+Definition at line \fB345\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBCosh()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.Equals (\fBBigDecimal\fP other)"
+
+.PP
+Determines whether this instance and the specified \fBBigDecimal\fP represent the same numeric value\&. 
+.PP
+Definition at line \fB389\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.BigDecimal\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance and the specified object represent the same numeric value\&. Only \fBBigDecimal\fP instances are supported\&. 
+.PP
+Definition at line \fB395\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Exp ()"
+
+.PP
+Computes e^x for this \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB284\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Exp10 ()"
+
+.PP
+Computes 10^x for this \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB373\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Exp2 ()"
+
+.PP
+Computes 2^x for this \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB380\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "override int SystemEx\&.Numeric\&.BigDecimal\&.GetHashCode ()"
+
+.PP
+Computes a hash code for this \fBBigDecimal\fP instance\&. The value is first normalized using \fBNormalize\fP to ensure that numerically equivalent representations (e\&.g\&. 100 × 10⁻² and 1 × 10⁰) produce identical hash codes\&. The hash is then derived from the normalized mantissa and exponent\&. 
+
+.PP
+This guarantees that the hash code reflects the actual numeric value rather than the internal mantissa/exponent representation, which may vary because \fBBigDecimal\fP does not normalize automatically\&. 
+.PP
+Definition at line \fB372\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsCanonical (\fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Indicates whether the specified \fBBigDecimal\fP is in canonical representation\&. Currently always returns \fRtrue\fP\&. 
+.PP
+Definition at line \fB74\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsComplexNumber (\fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Determines whether a value is a complex number\&. Always \fRfalse\fP\&. 
+.PP
+Definition at line \fB79\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsFinite (\fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Determines whether a value is finite\&. Always \fRtrue\fP for \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB84\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsImaginaryNumber (\fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Determines whether a value is imaginary\&. Always \fRfalse\fP\&. 
+.PP
+Definition at line \fB89\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsInfinity (\fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Determines whether a value is infinite\&. Always \fRfalse\fP for \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB94\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBoperator BigDecimal()\fP, and \fBToDouble()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsNaN (\fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Determines whether a value is not a number (NaN)\&. Always \fRfalse\fP for \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB99\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBoperator BigDecimal()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsNegativeInfinity (\fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Determines whether a value is negative infinity\&. Always \fRfalse\fP\&. 
+.PP
+Definition at line \fB103\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsNormal (\fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Determines whether a value is considered normal\&. For \fBBigDecimal\fP, this is defined as any non‑zero value\&. 
+.PP
+Definition at line \fB108\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsPositiveInfinity (\fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Determines whether a value is positive infinity\&. Always \fRfalse\fP\&. 
+.PP
+Definition at line \fB112\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsRealNumber (\fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Determines whether a value is a real number\&. Always \fRtrue\fP for \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB117\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsSubnormal (\fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Determines whether a value is subnormal\&. Always \fRfalse\fP for \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB122\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Log ()"
+
+.PP
+Computes the natural logarithm (ln) of this \fBBigDecimal\fP\&. Uses IEEE‑754 double precision internally\&. 
+.PP
+Definition at line \fB273\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBLog2()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Log10 ()"
+
+.PP
+Computes the base‑10 logarithm (log10)\&. 
+.PP
+Definition at line \fB359\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBLog10()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Log2 ()"
+
+.PP
+Computes the base‑2 logarithm (log2)\&. 
+.PP
+Definition at line \fB366\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Max (\fBBigDecimal\fP other)"
+
+.PP
+Returns the greater of this value and \fIother\fP  (numeric comparison)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare against\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+This value if it is greater than or equal to \fIother\fP ; otherwise \fIother\fP \&.
+.RE
+.PP
+
+.PP
+This mirrors Java's \fRBigDecimal\&.max\fP\&.
+.PP
+Definition at line \fB63\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Max (\fBBigDecimal\fP x, \fBBigDecimal\fP y)\fR [static]\fP"
+
+.PP
+Returns the greater of two \fBBigDecimal\fP values\&. 
+.PP
+Definition at line \fB63\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Min (\fBBigDecimal\fP other)"
+
+.PP
+Returns the lesser of this value and \fIother\fP  (numeric comparison)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare against\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+This value if it is less than or equal to \fIother\fP ; otherwise \fIother\fP \&.
+.RE
+.PP
+
+.PP
+This mirrors Java's \fRBigDecimal\&.min\fP\&.
+.PP
+Definition at line \fB69\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Min (\fBBigDecimal\fP x, \fBBigDecimal\fP y)\fR [static]\fP"
+
+.PP
+Returns the lesser of two \fBBigDecimal\fP values\&. 
+.PP
+Definition at line \fB68\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "Pair< \fBBigDecimal\fP, \fBBigDecimal\fP > SystemEx\&.Numeric\&.BigDecimal\&.MinMax (\fBBigDecimal\fP other)"
+
+.PP
+Returns a pair containing the minimum and maximum of this value and \fIother\fP  using the default ascending numeric comparison\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare against\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBPair<T1,T2>\fP where the first element is the smaller value and the second element is the larger value\&. 
+.RE
+.PP
+
+.PP
+This overload uses \fBLess<T>\fP as the default comparison strategy, equivalent to standard numeric “less‑than” ordering\&. 
+.PP
+Definition at line \fB85\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBMinMax()\fP\&.
+.SS "Pair< \fBBigDecimal\fP, \fBBigDecimal\fP > SystemEx\&.Numeric\&.BigDecimal\&.MinMax (\fBBigDecimal\fP other, ISimpleCompare< \fBBigDecimal\fP > cmp)"
+
+.PP
+Returns a pair containing the minimum and maximum of this value and \fIother\fP  using a custom comparison strategy\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare against\&.
+.br
+\fIcmp\fP A comparison strategy implementing \fBISimpleCompare<T>\fP used to determine ordering between the two values\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBPair<T1,T2>\fP where the first element is the smaller value and the second element is the larger value, according to the provided comparison strategy\&. 
+.RE
+.PP
+
+.PP
+This overload allows callers to supply domain‑specific comparison logic, such as custom ordering rules or alternative “less‑than” semantics\&. 
+.PP
+Definition at line \fB109\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Normalize ()"
+
+.PP
+Normalizes the \fBBigDecimal\fP by removing trailing powers of ten from the mantissa and adjusting the exponent accordingly\&. The normalized form ensures that the mantissa is not divisible by 10, unless the value is zero\&. 
+.PP
+Definition at line \fB297\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBGetHashCode()\fP, \fBToEngineeringString()\fP, and \fBToString()\fP\&.
+.SS "Int32 SystemEx\&.Numeric\&.BigDecimal\&.NumberOfDigits (BigInteger value)\fR [static]\fP"
+
+.PP
+Returns the number of decimal digits in the specified integer value\&. 
+.PP
+Definition at line \fB381\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.BigDecimal\&.operator \fBBigDecimal\fP (BigInteger value)\fR [static]\fP"
+
+.PP
+Implicitly converts a BigInteger into a \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB114\fP of file \fBBigDecimal\&.Convert\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.BigDecimal\&.operator \fBBigDecimal\fP (decimal value)\fR [static]\fP"
+
+.PP
+Implicitly converts a decimal into a \fBBigDecimal\fP by extracting the internal 96‑bit integer representation and the scale factor\&. The conversion is exact and preserves all decimal digits\&. 
+.PP
+Definition at line \fB154\fP of file \fBBigDecimal\&.Convert\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.BigDecimal\&.operator \fBBigDecimal\fP (double value)\fR [static]\fP"
+
+.PP
+Implicitly converts an IEEE‑754 double into a \fBBigDecimal\fP by reconstructing the binary exponent and significand\&. This conversion is exact and does not introduce floating‑point rounding artifacts beyond those already present in the input double\&. NaN and Infinity cannot be represented as \fBBigDecimal\fP and will cause an OverflowException\&. 
+.PP
+Definition at line \fB61\fP of file \fBBigDecimal\&.Convert\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.BigDecimal\&.operator \fBBigDecimal\fP (int value)\fR [static]\fP"
+
+.PP
+Implicitly converts a 32‑bit signed integer into a \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB99\fP of file \fBBigDecimal\&.Convert\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.BigDecimal\&.operator \fBBigDecimal\fP (long value)\fR [static]\fP"
+
+.PP
+Implicitly converts a 64‑bit signed integer into a \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB104\fP of file \fBBigDecimal\&.Convert\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.BigDecimal\&.operator \fBBigDecimal\fP (ulong value)\fR [static]\fP"
+
+.PP
+Implicitly converts a 64‑bit unsigned integer into a \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB109\fP of file \fBBigDecimal\&.Convert\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.BigDecimal\&.operator BigInteger (\fBBigDecimal\fP value)\fR [explicit]\fP, \fR [static]\fP"
+
+.PP
+Explicitly converts a \fBBigDecimal\fP into a BigInteger\&. The conversion is only valid if the decimal exponent allows an exact integer representation\&. If the value contains fractional components, an ArithmeticException is thrown\&. Extremely large exponent values may cause an OverflowException\&. 
+.PP
+Definition at line \fB126\fP of file \fBBigDecimal\&.Convert\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.BigDecimal\&.operator double (\fBBigDecimal\fP value)\fR [explicit]\fP, \fR [static]\fP"
+
+.PP
+Explicitly converts a \fBBigDecimal\fP into a double using \fBToDouble\fP\&. This conversion may lose precision if the \fBBigDecimal\fP exceeds the 53‑bit mantissa capacity of IEEE‑754\&. 
+.PP
+Definition at line \fB173\fP of file \fBBigDecimal\&.Convert\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.operator!= (\fBBigDecimal\fP a, \fBBigDecimal\fP b)\fR [static]\fP"
+
+.PP
+Determines whether two \fBBigDecimal\fP values are not numerically equal\&. 
+.PP
+Definition at line \fB431\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.operator% (\fBBigDecimal\fP a, \fBBigDecimal\fP b)\fR [static]\fP"
+
+.PP
+Computes the modulo of two \fBBigDecimal\fP values\&. Exponents must match; otherwise the operation is undefined\&. 
+.PP
+Definition at line \fB204\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.operator* (\fBBigDecimal\fP a, \fBBigDecimal\fP b)\fR [static]\fP"
+
+.PP
+Multiplies two \fBBigDecimal\fP values with exact precision\&. Mantissas are multiplied and exponents are added\&. 
+.PP
+Definition at line \fB164\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.operator+ (\fBBigDecimal\fP a)\fR [static]\fP"
+
+.PP
+Return the same value\&. 
+.PP
+Definition at line \fB156\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.operator+ (\fBBigDecimal\fP a, \fBBigDecimal\fP b)\fR [static]\fP"
+
+.PP
+Adds two \fBBigDecimal\fP values with exact precision by aligning their exponents and summing their mantissas\&. 
+.PP
+Definition at line \fB119\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.operator\- (\fBBigDecimal\fP a)\fR [static]\fP"
+
+.PP
+Returns the negated value of this \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB149\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.operator\- (\fBBigDecimal\fP a, \fBBigDecimal\fP b)\fR [static]\fP"
+
+.PP
+Subtracts two \fBBigDecimal\fP values with exact precision\&. 
+.PP
+Definition at line \fB142\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.operator/ (\fBBigDecimal\fP a, \fBBigDecimal\fP b)\fR [static]\fP"
+
+.PP
+Divides two \fBBigDecimal\fP values with exact precision\&. If the division is not exact, an ArithmeticException is thrown\&. 
+.PP
+Definition at line \fB178\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.operator< (\fBBigDecimal\fP a, \fBBigDecimal\fP b)\fR [static]\fP"
+
+.PP
+Determines whether the first \fBBigDecimal\fP is numerically smaller than the second\&. 
+.PP
+Definition at line \fB406\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.operator<= (\fBBigDecimal\fP a, \fBBigDecimal\fP b)\fR [static]\fP"
+
+.PP
+Determines whether the first \fBBigDecimal\fP is numerically smaller than or equal to the second\&. 
+.PP
+Definition at line \fB425\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.operator== (\fBBigDecimal\fP a, \fBBigDecimal\fP b)\fR [static]\fP"
+
+.PP
+Determines whether two \fBBigDecimal\fP values are numerically equal\&. 
+.PP
+Definition at line \fB400\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.operator> (\fBBigDecimal\fP a, \fBBigDecimal\fP b)\fR [static]\fP"
+
+.PP
+Determines whether the first \fBBigDecimal\fP is numerically greater than the second\&. 
+.PP
+Definition at line \fB412\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.operator>= (\fBBigDecimal\fP a, \fBBigDecimal\fP b)\fR [static]\fP"
+
+.PP
+Determines whether the first \fBBigDecimal\fP is numerically greater than or equal to the second\&. 
+.PP
+Definition at line \fB418\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.ParseEngineering (string s)\fR [static]\fP"
+
+.PP
+Parses a \fBBigDecimal\fP from engineering notation such as "12e3" or "450e-6"\&. The exponent is typically a multiple of three, although this is not strictly enforced\&. 
+.PP
+Definition at line \fB316\fP of file \fBBigDecimal\&.String\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.ParseScientific (string s)\fR [static]\fP"
+
+.PP
+Parses a \fBBigDecimal\fP from scientific notation such as "1\&.23e-9"\&. The mantissa may contain a decimal point, and the exponent must follow either 'e' or 'E'\&. 
+.PP
+Definition at line \fB272\fP of file \fBBigDecimal\&.String\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Pow (\fBBigDecimal\fP value, int power)\fR [static]\fP"
+
+.PP
+Raises a \fBBigDecimal\fP to an integer power\&. 
+.PP
+Definition at line \fB215\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBExp10()\fP, and \fBExp2()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Pow (\fBBigDecimal\fP x, \fBBigDecimal\fP y)\fR [static]\fP"
+
+.PP
+Raises a \fBBigDecimal\fP to a \fBBigDecimal\fP power\&. Uses scientific functions internally\&. 
+.PP
+Definition at line \fB303\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Round (int digits, \fBRoundMode\fP mode)"
+
+.PP
+Rounds this \fBBigDecimal\fP to a specified number of decimal digits\&. Uses BigInteger arithmetic for exact rounding without floating‑point errors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdigits\fP Number of decimal digits to keep\&.
+.br
+\fImode\fP Rounding mode\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB428\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBRoundToExponent()\fP, and \fBRoundToInteger()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.RoundToExponent (int exp, \fBRoundMode\fP mode = \fR\fBRoundMode::ToEven\fP\fP)"
+
+.PP
+Rounds this value to the specified decimal exponent using the given rounding mode\&. 
+.PP
+Definition at line \fB487\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.RoundToInteger (\fBRoundMode\fP mode = \fR\fBRoundMode::ToEven\fP\fP)"
+
+.PP
+Rounds this value to the nearest integer using the specified rounding mode\&. 
+.PP
+Definition at line \fB480\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.ShifRight (int n)"
+
+.PP
+Multiplies the value by 10^n without modifying the mantissa\&. 
+.PP
+Definition at line \fB253\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.ShiftLeft (int n)"
+
+.PP
+Multiplies the value by 10^n without modifying the mantissa\&. 
+.PP
+Definition at line \fB246\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "int SystemEx\&.Numeric\&.BigDecimal\&.Signum ()"
+
+.PP
+Returns -1, 0, or +1 depending on the sign of the value\&. 
+.PP
+Definition at line \fB239\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Sin ()"
+
+.PP
+Computes the sine of this \fBBigDecimal\fP using IEEE‑754 double precision internally\&. The result is converted back into a \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB317\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBSin()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Sinh ()"
+
+.PP
+Computes the hyperbolic sine (sinh) of this \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB338\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBSinh()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Sqrt ()"
+
+.PP
+Computes the square root of this \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB291\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Tan ()"
+
+.PP
+Computes the tangent of this \fBBigDecimal\fP\&. 
+.PP
+Definition at line \fB331\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBTan()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Tanh ()"
+
+.PP
+Computes the hyperbolic tangent (tanh)\&. 
+.PP
+Definition at line \fB352\fP of file \fBBigDecimal\&.Math\&.cs\fP\&.
+.PP
+Referenced by \fBTanh()\fP\&.
+.SS "double SystemEx\&.Numeric\&.BigDecimal\&.ToDouble ()"
+
+.PP
+Converts this \fBBigDecimal\fP into an IEEE‑754 double using mathematically correct scaling\&. The conversion applies exact base‑10 to base‑2 exponent transformation and performs a precise mantissa adjustment\&. If the resulting value exceeds the representable range of double, an OverflowException is thrown\&. 
+.PP
+Definition at line \fB33\fP of file \fBBigDecimal\&.Convert\&.cs\fP\&.
+.PP
+Referenced by \fBAsin()\fP, \fBAtan2()\fP, \fBAtanh()\fP, \fBCos()\fP, \fBCosh()\fP, \fBExp()\fP, \fBExp10()\fP, \fBExp2()\fP, \fBLog()\fP, \fBLog10()\fP, \fBLog2()\fP, \fBSin()\fP, \fBSinh()\fP, \fBSqrt()\fP, \fBTan()\fP, and \fBTanh()\fP\&.
+.SS "string SystemEx\&.Numeric\&.BigDecimal\&.ToEngineeringString ()"
+
+.PP
+Formats the value using engineering notation, where the exponent is always a multiple of three\&. This representation aligns with SI prefixes and is commonly used in electrical and mechanical engineering\&. Examples: 
+.PP
+.nf
+12000 → "12e3"
+0\&.00045 → "450e\-6"
+1\&.2e4 → "12e3"
+
+.fi
+.PP
+ 
+.PP
+Definition at line \fB241\fP of file \fBBigDecimal\&.String\&.cs\fP\&.
+.PP
+Referenced by \fBToSIString()\fP\&.
+.SS "string SystemEx\&.Numeric\&.BigDecimal\&.ToSIString (\fBSIUnit\fP unit)"
+
+.PP
+Formats the value using SI prefixes and a specified SI unit\&. The value is first converted to engineering notation, ensuring alignment with standard SI scaling conventions\&. 
+.PP
+Definition at line \fB447\fP of file \fBBigDecimal\&.String\&.cs\fP\&.
+.SS "override string SystemEx\&.Numeric\&.BigDecimal\&.ToString ()"
+
+.PP
+Converts this \fBBigDecimal\fP into a canonical scientific notation string\&. The value is normalized before formatting to ensure removal of trailing zeros and consistent exponent representation\&. Examples: 
+.PP
+.nf
+12345 → "1\&.2345e4"
+0\&.00123 → "1\&.23e\-3"
+
+.fi
+.PP
+ 
+.PP
+Definition at line \fB197\fP of file \fBBigDecimal\&.String\&.cs\fP\&.
+.SS "string SystemEx\&.Numeric\&.BigDecimal\&.ToUSString (\fBUSUnit\fP unit)"
+
+.PP
+Formats the value using U\&.S\&. customary engineering units\&. The value is divided by the corresponding unit factor and then expressed in engineering notation\&. 
+.PP
+Definition at line \fB419\fP of file \fBBigDecimal\&.String\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.TryParseEngineering (string? s, out \fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Attempts to parse a \fBBigDecimal\fP from engineering notation\&. Returns \fRtrue\fP on success; otherwise \fRfalse\fP\&. 
+.PP
+Definition at line \fB389\fP of file \fBBigDecimal\&.String\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.TryParseScientific (string? s, out \fBBigDecimal\fP value)\fR [static]\fP"
+
+.PP
+Attempts to parse a \fBBigDecimal\fP from scientific notation\&. Returns \fRtrue\fP on success; otherwise \fRfalse\fP\&. 
+.PP
+Definition at line \fB340\fP of file \fBBigDecimal\&.String\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Atto = new \fBBigDecimal\fP(1, \-18)\fR [static]\fP"
+
+.PP
+Atto (10^-18)\&. Commonly used in high‑precision measurement systems, including attoseconds, attocoulombs, and other quantum-scale quantities\&. 
+.PP
+Definition at line \fB40\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.BTU = new \fBBigDecimal\fP(1, 0)\fR [static]\fP"
+
+.PP
+BTU (British Thermal Unit)\&. Used in amerikanische HVAC and heating systems\&. 
+.PP
+Definition at line \fB77\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Centi = new \fBBigDecimal\fP(1, \-2)\fR [static]\fP"
+
+.PP
+Centi (10^-2)\&. Less frequently used in scientific notation but common in everyday measurements such as centimeters (cm)\&. 
+.PP
+Definition at line \fB77\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Cup = new \fBBigDecimal\fP(8, 0)\fR [static]\fP"
+
+.PP
+Cup (1 cup = 8 fl oz)\&. 
+.PP
+Definition at line \fB51\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Deca = new \fBBigDecimal\fP(1, 1)\fR [static]\fP"
+
+.PP
+Deca (10^1)\&. Infrequently used in technical fields but part of the official SI prefix set\&. 
+.PP
+Definition at line \fB94\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Deci = new \fBBigDecimal\fP(1, \-1)\fR [static]\fP"
+
+.PP
+Deci (10^-1)\&. Rarely used in engineering applications but included for completeness as part of the SI standard\&. 
+.PP
+Definition at line \fB83\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Exa = new \fBBigDecimal\fP(1, 18)\fR [static]\fP"
+
+.PP
+Exa (10^18)\&. Typically encountered in high‑performance computing, astrophysics, and extremely large scientific datasets\&. 
+.PP
+Definition at line \fB135\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Femto = new \fBBigDecimal\fP(1, \-15)\fR [static]\fP"
+
+.PP
+Femto (10^-15)\&. Frequently used in optics, photonics, and quantum physics, such as femtosecond laser pulses and femtowatt power levels\&. 
+.PP
+Definition at line \fB46\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Foot = new \fBBigDecimal\fP(12, 0)\fR [static]\fP"
+
+.PP
+Foot (1 ft = 12 in)\&. Common in construction and mechanical engineering\&. 
+.PP
+Definition at line \fB26\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Gallon = new \fBBigDecimal\fP(128, 0)\fR [static]\fP"
+
+.PP
+Gallon (1 gal = 128 fl oz)\&. Standard amerikanische volume unit\&. 
+.PP
+Definition at line \fB66\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Giga = new \fBBigDecimal\fP(1, 9)\fR [static]\fP"
+
+.PP
+Giga (10^9)\&. Used for very large digital storage capacities, high-frequency signals, and large-scale energy measurements\&. 
+.PP
+Definition at line \fB117\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Hecto = new \fBBigDecimal\fP(1, 2)\fR [static]\fP"
+
+.PP
+Hecto (10^2)\&. Primarily used in meteorology, for example in hectopascals (hPa)\&. 
+.PP
+Definition at line \fB99\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Horsepower = new \fBBigDecimal\fP(1, 0)\fR [static]\fP"
+
+.PP
+Horsepower (hp)\&. Used in amerikanische automotive and mechanical engineering\&. 
+.PP
+Definition at line \fB83\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Inch = new \fBBigDecimal\fP(1, 0)\fR [static]\fP"
+
+.PP
+Inch (1 in)\&. \fBBase\fP unit in many US technical domains\&. 
+.PP
+Definition at line \fB21\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Kilo = new \fBBigDecimal\fP(1, 3)\fR [static]\fP"
+
+.PP
+Kilo (10^3)\&. A very common engineering scale used for kiloohms (kΩ), kilograms (kg), kilohertz (kHz), and similar quantities\&. 
+.PP
+Definition at line \fB105\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.MaxValue = new \fBBigDecimal\fP((BigInteger\&.One << 96) \- BigInteger\&.One, 0)\fR [static]\fP"
+
+.PP
+Gets the maximum representable \fBBigDecimal\fP value within the current safe range\&. The mantissa is limited to 96 bits\&. 
+.PP
+Definition at line \fB127\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBoperator BigInteger()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Mega = new \fBBigDecimal\fP(1, 6)\fR [static]\fP"
+
+.PP
+Mega (10^6)\&. Standard prefix for large-scale values such as megawatts (MW), megabytes (MB), and megahertz (MHz)\&. 
+.PP
+Definition at line \fB111\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Micro = new \fBBigDecimal\fP(1, \-6)\fR [static]\fP"
+
+.PP
+Micro (10^-6)\&. A widely used SI prefix in electrical and mechanical engineering, including microamps (µA), microfarads (µF), and micrometers (µm)\&. Supports both 'µ' and 'u' representations in parsing\&. 
+.PP
+Definition at line \fB65\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Mile = new \fBBigDecimal\fP(63360, 0)\fR [static]\fP"
+
+.PP
+Mile (1 mi = 63360 in)\&. Used for large‑scale distances\&. 
+.PP
+Definition at line \fB36\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Milli = new \fBBigDecimal\fP(1, \-3)\fR [static]\fP"
+
+.PP
+Milli (10^-3)\&. A common engineering scale used for milliamps (mA), millimeters (mm), millivolts (mV), and similar everyday technical units\&. 
+.PP
+Definition at line \fB71\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.MinValue = new \fBBigDecimal\fP(\-(BigInteger\&.One << 96), 0)\fR [static]\fP"
+
+.PP
+Gets the minimum representable \fBBigDecimal\fP value within the current safe range\&. The mantissa is limited to 96 bits and negative\&. 
+.PP
+Definition at line \fB137\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Nano = new \fBBigDecimal\fP(1, \-9)\fR [static]\fP"
+
+.PP
+Nano (10^-9)\&. A standard engineering scale used for nanofarads (nF), nanometers (nm), nanoseconds (ns), and other common nano‑level quantities\&. 
+.PP
+Definition at line \fB58\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Ounce = new \fBBigDecimal\fP(1, 0)\fR [static]\fP"
+
+.PP
+Ounce (1 oz)\&. Small mass unit used in everyday amerikanische measurements\&. 
+.PP
+Definition at line \fB41\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Peta = new \fBBigDecimal\fP(1, 15)\fR [static]\fP"
+
+.PP
+Peta (10^15)\&. Used for massive computational workloads, data volumes, and large-scale physical measurements\&. 
+.PP
+Definition at line \fB129\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Pico = new \fBBigDecimal\fP(1, \-12)\fR [static]\fP"
+
+.PP
+Pico (10^-12)\&. Widely used in electronics and RF engineering, including picofarads (pF), picoamps (pA), and picosecond timing\&. 
+.PP
+Definition at line \fB52\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Pint = new \fBBigDecimal\fP(16, 0)\fR [static]\fP"
+
+.PP
+Pint (1 pt = 16 fl oz)\&. 
+.PP
+Definition at line \fB56\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Pound = new \fBBigDecimal\fP(16, 0)\fR [static]\fP"
+
+.PP
+Pound (1 lb = 16 oz)\&. Standard US mass unit\&. 
+.PP
+Definition at line \fB46\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.PSI = new \fBBigDecimal\fP(1, 0)\fR [static]\fP"
+
+.PP
+PSI (pounds per square inch)\&. Very common in amerikanische automotive and industrial systems\&. 
+.PP
+Definition at line \fB72\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Quart = new \fBBigDecimal\fP(32, 0)\fR [static]\fP"
+
+.PP
+Quart (1 qt = 32 fl oz)\&. 
+.PP
+Definition at line \fB61\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.SafeMantissaLimit = new \fBBigDecimal\fP((BigInteger\&.One << 256) \- BigInteger\&.One, 0)\fR [static]\fP"
+
+.PP
+Gets a \fBBigDecimal\fP representing the safe mantissa limit used for internal operations\&. The mantissa is limited to 256 bits\&. 
+.PP
+Definition at line \fB132\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Tera = new \fBBigDecimal\fP(1, 12)\fR [static]\fP"
+
+.PP
+Tera (10^12)\&. Represents extremely large quantities, commonly used for terabytes (TB) and terahertz (THz)\&. 
+.PP
+Definition at line \fB123\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Yard = new \fBBigDecimal\fP(36, 0)\fR [static]\fP"
+
+.PP
+Yard (1 yd = 36 in)\&. Used in manufacturing and textile industries\&. 
+.PP
+Definition at line \fB31\fP of file \fBBigDecimal\&.SI\&.US\&.cs\fP\&.
+.PP
+Referenced by \fBToUSString()\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Yocto = new \fBBigDecimal\fP(1, \-24)\fR [static]\fP"
+
+.PP
+Yocto (10^-24)\&. Represents an extremely small scale factor used in advanced scientific contexts such as particle physics and quantum-level measurements\&. 
+.PP
+Definition at line \fB28\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Yotta = new \fBBigDecimal\fP(1, 24)\fR [static]\fP"
+
+.PP
+Yotta (10^24)\&. The largest officially recognized SI prefix, used for astronomical-scale quantities and extreme data measurements\&. 
+.PP
+Definition at line \fB147\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Zepto = new \fBBigDecimal\fP(1, \-21)\fR [static]\fP"
+
+.PP
+Zepto (10^-21)\&. Used for ultra-small magnitudes in nanotechnology, molecular chemistry, and precision scientific instrumentation\&. 
+.PP
+Definition at line \fB34\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SS "readonly \fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Zetta = new \fBBigDecimal\fP(1, 21)\fR [static]\fP"
+
+.PP
+Zetta (10^21)\&. Represents extraordinarily large magnitudes used in theoretical physics and global-scale data systems\&. 
+.PP
+Definition at line \fB141\fP of file \fBBigDecimal\&.SI\&.DE\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Numeric\&.BigDecimal\&.Exponent\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the base‑10 exponent of the number\&. The exponent determines the scale of the value: 
+.PP
+.nf
+value = mantissa × 10^exponent
+
+.fi
+.PP
+ Changing the exponent does not modify the mantissa\&. The caller is responsible for maintaining a consistent representation\&. 
+.PP
+Definition at line \fB184\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBAbs()\fP, \fBCompareTo()\fP, \fBoperator BigInteger()\fP, \fBRound()\fP, \fBShifRight()\fP, \fBShiftLeft()\fP, and \fBToDouble()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsNegative\fR [get]\fP"
+
+.PP
+Gets whether the value is strictly negative\&. 
+.PP
+Definition at line \fB165\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBLog()\fP, and \fBSqrt()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsPositive\fR [get]\fP"
+
+.PP
+Gets whether the value is positive or zero\&. 
+.PP
+Definition at line \fB160\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.BigDecimal\&.IsZero\fR [get]\fP"
+
+.PP
+Gets whether the value is exactly zero\&. 
+.PP
+Definition at line \fB170\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBLog()\fP, and \fBToDouble()\fP\&.
+.SS "BigInteger SystemEx\&.Numeric\&.BigDecimal\&.Mantissa\fR [get]\fP"
+
+.PP
+Gets the mantissa component of the number\&. The mantissa is stored as an arbitrary‑precision integer and may be positive, negative, or zero\&. 
+.PP
+Definition at line \fB206\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBAbs()\fP, \fBoperator BigInteger()\fP, \fBRound()\fP, \fBShifRight()\fP, \fBShiftLeft()\fP, \fBSignum()\fP, and \fBToDouble()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.NegativeOne = new \fBBigDecimal\fP(BigInteger\&.MinusOne, 0)\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets a \fBBigDecimal\fP representing negative one (-1 × 10^0)\&. 
+.PP
+Definition at line \fB49\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.One = new \fBBigDecimal\fP(BigInteger\&.One, 0)\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets a \fBBigDecimal\fP representing one (1 × 10^0)\&. 
+.PP
+Definition at line \fB44\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBPow()\fP, and \fBToUSString()\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.OneHalf\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets a value that represents the number 0\&.5 (one half)\&. 
+.PP
+Definition at line \fB52\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "int SystemEx\&.Numeric\&.BigDecimal\&.Precision\fR [get]\fP"
+
+.PP
+Gets the number of significant decimal digits in the mantissa\&. For non‑zero values this is defined as: 
+.PP
+.nf
+precision = floor(log10(|mantissa|)) + 1
+
+.fi
+.PP
+ For zero, the precision is defined as 1\&. 
+.PP
+Definition at line \fB199\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP\&.
+.SS "int SystemEx\&.Numeric\&.BigDecimal\&.Radix\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the numeric radix (base) used by \fBBigDecimal\fP\&. For decimal numbers this is always 10\&. 
+.PP
+Definition at line \fB58\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "\fBTriple\fP SystemEx\&.Numeric\&.BigDecimal\&.Sign\fR [get]\fP"
+
+.PP
+Gets the sign of the mantissa as a \fBTriple\fP value: 
+.PD 0
+.IP "\(bu" 2
+\fRTrue\fP — positive 
+.IP "\(bu" 2
+\fRFalse\fP — negative 
+.IP "\(bu" 2
+\fRNin\fP — zero 
+.PP
+\&. 
+.PP
+Definition at line \fB152\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Ten = new \fBBigDecimal\fP(new BigInteger(10), 0)\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets a \fBBigDecimal\fP representing ten (10 × 10^0)\&. 
+.PP
+Definition at line \fB142\fP of file \fBBigDecimal\&.cs\fP\&.
+.SS "\fBBigDecimal\fP SystemEx\&.Numeric\&.BigDecimal\&.Zero = new \fBBigDecimal\fP(BigInteger\&.Zero, 0)\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets a \fBBigDecimal\fP representing zero (0 × 10^0)\&. 
+.PP
+Definition at line \fB39\fP of file \fBBigDecimal\&.cs\fP\&.
+.PP
+Referenced by \fBNormalize()\fP, \fBoperator BigDecimal()\fP, \fBoperator*()\fP, \fBoperator/()\fP, and \fBPow()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

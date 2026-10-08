@@ -1,12 +1,9 @@
 var a01333 =
 [
-    [ "Back", "d5/dd3/a00902_gae67069cc9e774855a1a022423e0d8504.html#gae67069cc9e774855a1a022423e0d8504", null ],
-    [ "BidirectionalIterator", "d5/dd3/a00902_ga0937e15f88cf3d796cb5c13f323b363f.html#ga0937e15f88cf3d796cb5c13f323b363f", null ],
-    [ "Forward", "d5/dd3/a00902_ga3f48ed779885a6c99741639e2e0b4746.html#ga3f48ed779885a6c99741639e2e0b4746", null ],
-    [ "Forward", "d5/dd3/a00902_ga3e71da1a3bfe2b645459532ac3464e9e.html#ga3e71da1a3bfe2b645459532ac3464e9e", null ],
-    [ "Current", "d5/dd3/a00902_gac17b2bc20bf934a71d070ccbffed9354.html#gac17b2bc20bf934a71d070ccbffed9354", null ],
-    [ "Index", "d5/dd3/a00902_ga81a5a3773494c934a27e7cbbc37d3370.html#ga81a5a3773494c934a27e7cbbc37d3370", null ],
-    [ "IsBegin", "d5/dd3/a00902_ga7bb7f43f1d50e915abf7f2218ca2d206.html#ga7bb7f43f1d50e915abf7f2218ca2d206", null ],
-    [ "IsEnd", "d5/dd3/a00902_ga6b28e4496e4de27f6635a9c8fe02799e.html#ga6b28e4496e4de27f6635a9c8fe02799e", null ],
-    [ "IsNext", "d5/dd3/a00902_ga61a780eb7599afd1103c4f9dc6c03bbd.html#ga61a780eb7599afd1103c4f9dc6c03bbd", null ]
+    [ "Clear", "dc/d2a/a01333_a13b963912d5c241db7c7a9079fa5b8e8.html#a13b963912d5c241db7c7a9079fa5b8e8", null ],
+    [ "Erase", "dc/d2a/a01333_a2f3f5c1c16d5c5b237447b407faf5c3b.html#a2f3f5c1c16d5c5b237447b407faf5c3b", null ],
+    [ "Erase", "dc/d2a/a01333_a11816da98e4af2aa85d41f537919625b.html#a11816da98e4af2aa85d41f537919625b", null ],
+    [ "Insert", "dc/d2a/a01333_ac52f1a0091d7559386231ef4a69e3719.html#ac52f1a0091d7559386231ef4a69e3719", null ],
+    [ "Insert", "dc/d2a/a01333_abd2d7be24a97a81fd99b24cc535a3913.html#abd2d7be24a97a81fd99b24cc535a3913", null ],
+    [ "Replace", "dc/d2a/a01333_add1da40627ac40bf9b90f20aa7e76d8f.html#add1da40627ac40bf9b90f20aa7e76d8f", null ]
 ];

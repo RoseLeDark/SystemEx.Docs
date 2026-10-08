@@ -1,0 +1,675 @@
+.TH "SystemEx.Numeric.Vec4r" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Vec4r \- Represents a 4‑component \fBRatio\fP vector\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IComparable, \fBSystemEx\&.IComparableEx< T >\fP, IComparable, IEquatable, and \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBCompareTo\fP (object? obj)"
+.br
+.RI "Compares this vector to another object\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (\fBVec4r\fP a)"
+.br
+.RI "Compares two vectors lexicographically\&. "
+.ti -1c
+.RI "int IComparable< \fBVec4r\fP >\&. \fBCompareTo\fP (\fBVec4r\fP other)"
+.br
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBVec4r\fP other)"
+.br
+.RI "Determines whether this instance is equal to another \fBHalf16\fP value, using the same semantics as the \fBoperator ==(Vec4r,Vec4r)\fP\&. "
+.ti -1c
+.RI "\fBRatio\fP \fBGet\fP (int index)"
+.br
+.RI "Gets a component by index (0 = X, 1 = Y)\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Computes a hash code for this vector\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBToBytes\fP ()"
+.br
+.RI "Converts the vector into a deterministic byte sequence\&. "
+.ti -1c
+.RI "\fBVec4r\fP ()"
+.br
+.RI "Initializes a zero vector (0,0)\&. "
+.ti -1c
+.RI "\fBVec4r\fP (\fBRatio\fP _f)"
+.br
+.RI "Initializes both components with the same value\&. "
+.ti -1c
+.RI "\fBVec4r\fP (\fBRatio\fP _x, \fBRatio\fP _y, \fBRatio\fP _z, \fBRatio\fP _w)"
+.br
+.RI "Initializes a vector with explicit X Y Z W values\&. "
+.ti -1c
+.RI "\fBVec4r\fP (\fBRatio\fP[] lpvec)"
+.br
+.RI "Initializes the vector from a \fBRatio\fP array\&. "
+.ti -1c
+.RI "\fBVec4r\fP (Vec4r vec)"
+.br
+.RI "Copy constructor\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBRatio\fP \fBDot\fP (\fBVec4r\fP v1, \fBVec4r\fP v2)"
+.br
+.RI "Computes the dot product of two vectors\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBInterpolateCoords\fP (\fBVec4r\fP v1, \fBVec4r\fP v2, int p)"
+.br
+.RI "Linearly interpolates between two vectors\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBInterpolateCoords\fP (\fBVec4r\fP v1, \fBVec4r\fP v2, \fBRatio\fP p)"
+.br
+.RI "Linearly interpolates between two vectors\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBLenght\fP (\fBVec4r\fP v)"
+.br
+.RI "Computes the squared length of the vector\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBRatio\fP a, \fBVec4r\fP b)"
+.br
+.RI "Determines whether a scalar differs from any component of the vector\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBVec4r\fP a, \fBRatio\fP b)"
+.br
+.RI "Determines whether any vector component differs from the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBVec4r\fP a, \fBVec4r\fP b)"
+.br
+.RI "Determines whether two vectors differ in any component\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBoperator*\fP (\fBRatio\fP a, \fBVec4r\fP b)"
+.br
+.RI "Multiplies a scalar with each component of the vector\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBoperator*\fP (\fBVec4r\fP a, \fBRatio\fP b)"
+.br
+.RI "Multiplies both components of the vector by a scalar\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBoperator*\fP (\fBVec4r\fP a, \fBVec4r\fP b)"
+.br
+.RI "Multiplies two vectors component‑wise\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBoperator+\fP (\fBRatio\fP a, \fBVec4r\fP b)"
+.br
+.RI "Adds a scalar to each component of the vector\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBoperator+\fP (\fBVec4r\fP a, \fBRatio\fP b)"
+.br
+.RI "Adds a scalar to both components of the vector\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBoperator+\fP (\fBVec4r\fP a, \fBVec4r\fP b)"
+.br
+.RI "Adds two vectors component‑wise\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBoperator\-\fP (\fBRatio\fP a, \fBVec4r\fP b)"
+.br
+.RI "Subtracts each component of the vector from a scalar\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBoperator\-\fP (\fBVec4r\fP a, \fBRatio\fP b)"
+.br
+.RI "Subtracts a scalar from both components of the vector\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBoperator\-\fP (\fBVec4r\fP a, \fBVec4r\fP b)"
+.br
+.RI "Subtracts two vectors component‑wise\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBoperator/\fP (\fBRatio\fP a, \fBVec4r\fP b)"
+.br
+.RI "Divides a scalar by each component of the vector\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBoperator/\fP (\fBVec4r\fP a, \fBRatio\fP b)"
+.br
+.RI "Divides both components of the vector by a scalar\&. "
+.ti -1c
+.RI "static \fBVec4r\fP \fBoperator/\fP (\fBVec4r\fP a, \fBVec4r\fP b)"
+.br
+.RI "Divides two vectors component‑wise\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBRatio\fP a, \fBVec4r\fP b)"
+.br
+.RI "Determines whether a scalar is strictly less than both vector components\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBVec4r\fP a, \fBRatio\fP b)"
+.br
+.RI "Determines whether both vector components are strictly less than the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBVec4r\fP a, \fBVec4r\fP b)"
+.br
+.RI "Determines whether all components of \fIa\fP  are strictly less than those of \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBRatio\fP a, \fBVec4r\fP b)"
+.br
+.RI "Determines whether a scalar is less than or equal to both vector components\&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBVec4r\fP a, \fBRatio\fP b)"
+.br
+.RI "Determines whether both vector components are less than or equal to the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBVec4r\fP a, \fBVec4r\fP b)"
+.br
+.RI "Determines whether all components of \fIa\fP  are less than or equal to those of \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBRatio\fP a, \fBVec4r\fP b)"
+.br
+.RI "Determines whether a scalar equals both components of the vector\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBVec4r\fP a, \fBRatio\fP b)"
+.br
+.RI "Determines whether both vector components equal the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBVec4r\fP a, \fBVec4r\fP b)"
+.br
+.RI "Determines whether two vectors are equal component‑wise\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBRatio\fP a, \fBVec4r\fP b)"
+.br
+.RI "Determines whether a scalar is strictly greater than both vector components\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBVec4r\fP a, \fBRatio\fP b)"
+.br
+.RI "Determines whether both vector components are strictly greater than the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBVec4r\fP a, \fBVec4r\fP b)"
+.br
+.RI "Determines whether all components of \fIa\fP  are strictly greater than those of \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBRatio\fP a, \fBVec4r\fP b)"
+.br
+.RI "Determines whether a scalar is greater than or equal to both vector components\&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBVec4r\fP a, \fBRatio\fP b)"
+.br
+.RI "Determines whether both vector components are greater than or equal to the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBVec4r\fP a, \fBVec4r\fP b)"
+.br
+.RI "Determines whether all components of \fIa\fP  are greater than or equal to those of \fIb\fP \&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static readonly \fBVec4r\fP \fBMax\fP = new \fBVec4r\fP(\fBRatio\&.MaxValue\fP)"
+.br
+.RI "Represents Vector(MAX,MAX,MAX)\&. "
+.ti -1c
+.RI "static readonly \fBVec4r\fP \fBMin\fP = new \fBVec4r\fP(\fBRatio\&.MinValue\fP)"
+.br
+.RI "Represents Vector(MIN,MIN,MIN)\&. "
+.ti -1c
+.RI "static readonly \fBVec4r\fP \fBNegativeOne\fP = new \fBVec4r\fP(\-\fBRatio\&.One\fP)"
+.br
+.RI "Represents Vector(-Ratio\&.One,-Ratio\&.One,-Ratio\&.One)\&. "
+.ti -1c
+.RI "static readonly \fBVec4r\fP \fBOne\fP = new \fBVec4r\fP(\fBRatio\&.One\fP)"
+.br
+.RI "Represents Vector(\fBRatio\&.One\fP,\fBRatio\&.One\fP,\fBRatio\&.One\fP)\&. "
+.ti -1c
+.RI "static readonly \fBVec4r\fP \fBZero\fP = new \fBVec4r\fP(\fBRatio\&.Zero\fP)"
+.br
+.RI "Represents Vector(atio\&.Zero,atio\&.Zero,\fBRatio\&.Zero\fP)\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of components in this vector (always 4)\&. "
+.ti -1c
+.RI "\fBRatio\fP \fBW\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the W component\&. "
+.ti -1c
+.RI "\fBRatio\fP \fBX\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the X component\&. "
+.ti -1c
+.RI "\fBRatio\fP \fBY\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the Y component\&. "
+.ti -1c
+.RI "\fBRatio\fP \fBZ\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the Z component\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a 4‑component \fBRatio\fP vector\&. 
+
+\fBVec4r\fP is a lightweight numeric type used throughout \fBSystemEx\fP for geometry, math utilities, device operations, and compute kernels\&. It stores two \fBRatio\fP values (\fRX\fP and \fRY\fP) in a sequential memory layout, making it compatible with native interop and high‑performance compute backends\&. 
+
+.PP
+The struct is annotated with \fBHashAlgorithmAttribute\fP to enable attribute‑driven hashing via HashFactory\&. 
+.br
+ \fBBernsteinHash\fP is used because it is fast, byte‑linear, and ideal for small fixed‑size numeric types such as vectors\&. 
+
+.PP
+\fBVec3r\fP implements multiple comparison and hashing interfaces: 
+.PD 0
+.IP "\(bu" 2
+IComparable and IComparable<T> for ordering 
+.IP "\(bu" 2
+IEquatable<T> for equality checks 
+.IP "\(bu" 2
+\fBIHashable<T>\fP for deterministic byte‑level hashing 
+.PP
+This makes the type suitable for use in dictionaries, sorting, spatial hashing, and compute pipelines\&. 
+.PP
+Definition at line \fB60\fP of file \fBVec4r\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.Vec4r\&.Vec4r ()"
+
+.PP
+Initializes a zero vector (0,0)\&. 
+.PP
+Definition at line \fB116\fP of file \fBVec4r\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP, \fBCompareTo()\fP, \fBDot()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBInterpolateCoords()\fP, \fBInterpolateCoords()\fP, \fBLenght()\fP, \fBoperator!=()\fP, \fBoperator!=()\fP, \fBoperator!=()\fP, \fBoperator*()\fP, \fBoperator*()\fP, \fBoperator*()\fP, \fBoperator+()\fP, \fBoperator+()\fP, \fBoperator+()\fP, \fBoperator\-()\fP, \fBoperator\-()\fP, \fBoperator\-()\fP, \fBoperator/()\fP, \fBoperator/()\fP, \fBoperator/()\fP, \fBoperator<()\fP, \fBoperator<()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator<=()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, \fBoperator==()\fP, \fBoperator==()\fP, \fBoperator>()\fP, \fBoperator>()\fP, \fBoperator>()\fP, \fBoperator>=()\fP, \fBoperator>=()\fP, \fBoperator>=()\fP, and \fBVec4r()\fP\&.
+.SS "SystemEx\&.Numeric\&.Vec4r\&.Vec4r (\fBRatio\fP _x, \fBRatio\fP _y, \fBRatio\fP _z, \fBRatio\fP _w)"
+
+.PP
+Initializes a vector with explicit X Y Z W values\&. 
+.PP
+Definition at line \fB123\fP of file \fBVec4r\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Vec4r\&.Vec4r (\fBRatio\fP _f)"
+
+.PP
+Initializes both components with the same value\&. 
+.PP
+Definition at line \fB134\fP of file \fBVec4r\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Vec4r\&.Vec4r (Vec4r vec)"
+
+.PP
+Copy constructor\&. 
+.PP
+Definition at line \fB144\fP of file \fBVec4r\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Vec4r\&.Vec4r (\fBRatio\fP[] lpvec)"
+
+.PP
+Initializes the vector from a \fBRatio\fP array\&. 
+.PP
+Definition at line \fB154\fP of file \fBVec4r\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int SystemEx\&.Numeric\&.Vec4r\&.CompareTo (object? obj)"
+
+.PP
+Compares this vector to another object\&. 
+.PP
+Definition at line \fB223\fP of file \fBVec4r\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Numeric\&.Vec4r\&.CompareTo (\fBVec4r\fP a)"
+
+.PP
+Compares two vectors lexicographically\&. 
+.PP
+Definition at line \fB232\fP of file \fBVec4r\&.cs\fP\&.
+.SS "int IComparable< \fBVec4r\fP >\&. SystemEx\&.Numeric\&.Vec4r\&.CompareTo (\fBVec4r\fP other)"
+
+.PP
+Definition at line \fB271\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Vec4r\&.Dot (\fBVec4r\fP v1, \fBVec4r\fP v2)\fR [static]\fP"
+
+.PP
+Computes the dot product of two vectors\&. 
+.PP
+Definition at line \fB185\fP of file \fBVec4r\&.cs\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.Vec4r\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. The object is considered equal if it is a \fBVec4r\fP and compares equal using \fBEquals(Vec4r)\fP\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if \fIobj\fP  is a \fBVec4r\fP and equal to this instance; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB266\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.Equals (\fBVec4r\fP other)"
+
+.PP
+Determines whether this instance is equal to another \fBHalf16\fP value, using the same semantics as the \fBoperator ==(Vec4r,Vec4r)\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the values are equal; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB251\fP of file \fBVec4r\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Vec4r\&.Get (int index)"
+
+.PP
+Gets a component by index (0 = X, 1 = Y)\&. 
+.PP
+Definition at line \fB164\fP of file \fBVec4r\&.cs\fP\&.
+.SS "override int SystemEx\&.Numeric\&.Vec4r\&.GetHashCode ()"
+
+.PP
+Computes a hash code for this vector\&. The primary hash is generated using HashFactory and the \fBHashAlgorithmAttribute\fP applied to this struct\&. 
+.br
+ If hashing fails (rare), a fallback XOR‑based hash is used\&. 
+.PP
+Definition at line \fB213\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.InterpolateCoords (\fBVec4r\fP v1, \fBVec4r\fP v2, int p)\fR [static]\fP"
+
+.PP
+Linearly interpolates between two vectors\&. 
+.PP
+Definition at line \fB200\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.InterpolateCoords (\fBVec4r\fP v1, \fBVec4r\fP v2, \fBRatio\fP p)\fR [static]\fP"
+
+.PP
+Linearly interpolates between two vectors\&. 
+.PP
+Definition at line \fB193\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Vec4r\&.Lenght (\fBVec4r\fP v)\fR [static]\fP"
+
+.PP
+Computes the squared length of the vector\&. 
+.PP
+Definition at line \fB179\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator!= (\fBRatio\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar differs from any component of the vector\&. 
+.PP
+Definition at line \fB412\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator!= (\fBVec4r\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Determines whether any vector component differs from the scalar\&. 
+.PP
+Definition at line \fB454\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator!= (\fBVec4r\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Determines whether two vectors differ in any component\&. 
+.PP
+Definition at line \fB374\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.operator* (\fBRatio\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Multiplies a scalar with each component of the vector\&. 
+.PP
+Definition at line \fB356\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.operator* (\fBVec4r\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Multiplies both components of the vector by a scalar\&. 
+.PP
+Definition at line \fB338\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.operator* (\fBVec4r\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Multiplies two vectors component‑wise\&. 
+.PP
+Definition at line \fB314\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.operator+ (\fBRatio\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Adds a scalar to each component of the vector\&. 
+.PP
+Definition at line \fB362\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.operator+ (\fBVec4r\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Adds a scalar to both components of the vector\&. 
+.PP
+Definition at line \fB320\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.operator+ (\fBVec4r\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Adds two vectors component‑wise\&. 
+.PP
+Definition at line \fB296\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.operator\- (\fBRatio\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Subtracts each component of the vector from a scalar\&. 
+.PP
+Definition at line \fB344\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.operator\- (\fBVec4r\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Subtracts a scalar from both components of the vector\&. 
+.PP
+Definition at line \fB326\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.operator\- (\fBVec4r\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Subtracts two vectors component‑wise\&. 
+.PP
+Definition at line \fB302\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.operator/ (\fBRatio\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Divides a scalar by each component of the vector\&. 
+.PP
+Definition at line \fB350\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.operator/ (\fBVec4r\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Divides both components of the vector by a scalar\&. 
+.PP
+Definition at line \fB332\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.operator/ (\fBVec4r\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Divides two vectors component‑wise\&. 
+.PP
+Definition at line \fB308\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator< (\fBRatio\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar is strictly less than both vector components\&. 
+.PP
+Definition at line \fB433\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator< (\fBVec4r\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components are strictly less than the scalar\&. 
+.PP
+Definition at line \fB475\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator< (\fBVec4r\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Determines whether all components of \fIa\fP  are strictly less than those of \fIb\fP \&. 
+.PP
+Definition at line \fB392\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator<= (\fBRatio\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar is less than or equal to both vector components\&. 
+.PP
+Definition at line \fB419\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator<= (\fBVec4r\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components are less than or equal to the scalar\&. 
+.PP
+Definition at line \fB461\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator<= (\fBVec4r\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Determines whether all components of \fIa\fP  are less than or equal to those of \fIb\fP \&. 
+.PP
+Definition at line \fB380\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator== (\fBRatio\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar equals both components of the vector\&. 
+.PP
+Definition at line \fB405\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator== (\fBVec4r\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components equal the scalar\&. 
+.PP
+Definition at line \fB447\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator== (\fBVec4r\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Determines whether two vectors are equal component‑wise\&. 
+.PP
+Definition at line \fB368\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator> (\fBRatio\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar is strictly greater than both vector components\&. 
+.PP
+Definition at line \fB440\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator> (\fBVec4r\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components are strictly greater than the scalar\&. 
+.PP
+Definition at line \fB482\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator> (\fBVec4r\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Determines whether all components of \fIa\fP  are strictly greater than those of \fIb\fP \&. 
+.PP
+Definition at line \fB398\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator>= (\fBRatio\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar is greater than or equal to both vector components\&. 
+.PP
+Definition at line \fB426\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator>= (\fBVec4r\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components are greater than or equal to the scalar\&. 
+.PP
+Definition at line \fB468\fP of file \fBVec4r\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec4r\&.operator>= (\fBVec4r\fP a, \fBVec4r\fP b)\fR [static]\fP"
+
+.PP
+Determines whether all components of \fIa\fP  are greater than or equal to those of \fIb\fP \&. 
+.PP
+Definition at line \fB386\fP of file \fBVec4r\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.Vec4r\&.ToBytes ()"
+
+.PP
+Converts the vector into a deterministic byte sequence\&. This method is used by HashFactory to compute attribute‑driven hashes\&. The byte layout is stable and platform‑safe, ensuring consistent hashing across devices and backends\&. 
+.PP
+Implements \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.PP
+Definition at line \fB283\fP of file \fBVec4r\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "readonly \fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.Max = new \fBVec4r\fP(\fBRatio\&.MaxValue\fP)\fR [static]\fP"
+
+.PP
+Represents Vector(MAX,MAX,MAX)\&. 
+.PP
+Definition at line \fB88\fP of file \fBVec4r\&.cs\fP\&.
+.SS "readonly \fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.Min = new \fBVec4r\fP(\fBRatio\&.MinValue\fP)\fR [static]\fP"
+
+.PP
+Represents Vector(MIN,MIN,MIN)\&. 
+.PP
+Definition at line \fB83\fP of file \fBVec4r\&.cs\fP\&.
+.SS "readonly \fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.NegativeOne = new \fBVec4r\fP(\-\fBRatio\&.One\fP)\fR [static]\fP"
+
+.PP
+Represents Vector(-Ratio\&.One,-Ratio\&.One,-Ratio\&.One)\&. 
+.PP
+Definition at line \fB78\fP of file \fBVec4r\&.cs\fP\&.
+.SS "readonly \fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.One = new \fBVec4r\fP(\fBRatio\&.One\fP)\fR [static]\fP"
+
+.PP
+Represents Vector(\fBRatio\&.One\fP,\fBRatio\&.One\fP,\fBRatio\&.One\fP)\&. 
+.PP
+Definition at line \fB73\fP of file \fBVec4r\&.cs\fP\&.
+.SS "readonly \fBVec4r\fP SystemEx\&.Numeric\&.Vec4r\&.Zero = new \fBVec4r\fP(\fBRatio\&.Zero\fP)\fR [static]\fP"
+
+.PP
+Represents Vector(atio\&.Zero,atio\&.Zero,\fBRatio\&.Zero\fP)\&. 
+.PP
+Definition at line \fB69\fP of file \fBVec4r\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Numeric\&.Vec4r\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of components in this vector (always 4)\&. 
+.PP
+Definition at line \fB93\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Vec4r\&.W\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the W component\&. 
+.PP
+Definition at line \fB111\fP of file \fBVec4r\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Vec4r\&.X\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the X component\&. 
+.PP
+Definition at line \fB98\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Vec4r\&.Y\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the Y component\&. 
+.PP
+Definition at line \fB103\fP of file \fBVec4r\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Vec4r\&.Z\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the Z component\&. 
+.PP
+Definition at line \fB107\fP of file \fBVec4r\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

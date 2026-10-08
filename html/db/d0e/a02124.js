@@ -1,16 +1,8 @@
 var a02124 =
 [
-    [ "Enumerator", "d1/d60/a02128.html", "d1/d60/a02128" ],
-    [ "BitUIntSpan", "db/d0e/a02124_a93908228af9ba4639a4357c28269fcfb.html#a93908228af9ba4639a4357c28269fcfb", null ],
-    [ "ElementAt", "db/d0e/a02124_a2ae73912d76be4f97108fcdd7e7546a4.html#a2ae73912d76be4f97108fcdd7e7546a4", null ],
-    [ "ElementAt", "db/d0e/a02124_add89f39447663a29527419bc06dc07ac.html#add89f39447663a29527419bc06dc07ac", null ],
-    [ "GetEnumerator", "db/d0e/a02124_a121674a932468805c193ae9466d0a06c.html#a121674a932468805c193ae9466d0a06c", null ],
-    [ "GetMode", "db/d0e/a02124_ae5a4aa2d798dc11a0dbac8fa6d0c3972.html#ae5a4aa2d798dc11a0dbac8fa6d0c3972", null ],
-    [ "Slice", "db/d0e/a02124_a7bdbab2f3200dc0fa35e96510ca20b42.html#a7bdbab2f3200dc0fa35e96510ca20b42", null ],
-    [ "Slice", "db/d0e/a02124_a908d02ece986ee6c1dae9b1ed21357bc.html#a908d02ece986ee6c1dae9b1ed21357bc", null ],
-    [ "Bits", "db/d0e/a02124_a6dc88a96a6cd949922c50173bf625904.html#a6dc88a96a6cd949922c50173bf625904", null ],
-    [ "IsSigned", "db/d0e/a02124_aac778dc3820d6dbac5e49482dd05c8b0.html#aac778dc3820d6dbac5e49482dd05c8b0", null ],
-    [ "IsUnsigned", "db/d0e/a02124_a7d8d4b9a47aca3b170afacc5b8f3d9ea.html#a7d8d4b9a47aca3b170afacc5b8f3d9ea", null ],
-    [ "this[byte index]", "db/d0e/a02124_a6a5ccff6987cdae75b82b227c81314c1.html#a6a5ccff6987cdae75b82b227c81314c1", null ],
-    [ "ViewLength", "db/d0e/a02124_a5a262378a9216ba018799e3b3b521fcf.html#a5a262378a9216ba018799e3b3b521fcf", null ]
+    [ "Isaac32Engine", "db/d0e/a02124_a821d152010e0c0ca6beb8097f7035ad9.html#a821d152010e0c0ca6beb8097f7035ad9", null ],
+    [ "Isaac32Engine", "db/d0e/a02124_aa3c5977e4b18263faa7fea7742dca677.html#aa3c5977e4b18263faa7fea7742dca677", null ],
+    [ "Next", "db/d0e/a02124_afbaf87f5071d2b3a832f1f99b1ded7ac.html#afbaf87f5071d2b3a832f1f99b1ded7ac", null ],
+    [ "Seed", "db/d0e/a02124_a9360cfc655494f26804424ad6f28795f.html#a9360cfc655494f26804424ad6f28795f", null ],
+    [ "StartSeed", "db/d0e/a02124_a087e0f3dea33da533f15630a519b622e.html#a087e0f3dea33da533f15630a519b622e", null ]
 ];

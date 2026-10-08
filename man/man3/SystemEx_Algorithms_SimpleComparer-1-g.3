@@ -1,0 +1,76 @@
+.TH "SystemEx.Algorithms.SimpleComparer< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Algorithms.SimpleComparer< T > \- Provides a standard comparison implementation for values wrapped in \fBOptional<T>\fP where \fIT\fP  implements IComparable<T>\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Algorithms\&.ICompared< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompare\fP (Optional< T > x, Optional< T > y)"
+.br
+.RI "Compares two values using IComparable<T>\&.CompareTo(T)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a standard comparison implementation for values wrapped in \fBOptional<T>\fP where \fIT\fP  implements IComparable<T>\&. 
+
+The comparison delegates to Optional<T>\&.CompareTo(Optional<T>), which defines ordering semantics for present and non‑present values\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The value type being compared\&. Must implement IComparable<T>\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fIIComparable<T>\fP
+.PP
+Definition at line \fB35\fP of file \fBSimpleComparer\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCompareResult\fP SystemEx\&.Algorithms\&.SimpleComparer< T >\&.Compare (Optional< T > x, Optional< T > y)"
+
+.PP
+Compares two values using IComparable<T>\&.CompareTo(T)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The first value to compare\&. May be \fRnull\fP\&.
+.br
+\fIy\fP The second value to compare\&. May be \fRnull\fP\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBCompareResult\fP describing the ordering: 
+.PD 0
+.IP "\(bu" 2
+\fBCompareResult\&.AIsSmallerB\fP if \fRx\fP is \fRnull\fP or smaller\&. 
+.IP "\(bu" 2
+\fBCompareResult\&.AIsLargerB\fP if \fRx\fP is larger or \fRy\fP is \fRnull\fP\&. 
+.IP "\(bu" 2
+\fBCompareResult\&.Equal\fP if both values are equal\&. 
+.IP "\(bu" 2
+\fBCompareResult\&.Null\fP if both values are \fRnull\fP\&. 
+.PP
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Algorithms\&.ICompared< T >\fP\&.
+.PP
+Definition at line \fB52\fP of file \fBSimpleComparer\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

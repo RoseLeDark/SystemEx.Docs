@@ -1,0 +1,145 @@
+.TH "SystemEx.Numeric.IFloat< TBias >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.IFloat< TBias >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Numeric\&.IFloat\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Numeric\&.IFP8\fP, and \fBSystemEx\&.Numeric\&.IFloat< TSelf, TBias >\fP\&.
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "TBias \fBExponent\fP\fR [get]\fP"
+.br
+.RI "Gets the exponent field as stored in the encoded representation\&. "
+.ti -1c
+.RI "TBias \fBExponentBias\fP\fR [get]\fP"
+.br
+.RI "Exponent bias applied to the exponent field\&. Defines the offset used when converting between encoded exponent and real exponent\&. "
+.ti -1c
+.RI "TBias \fBExponentBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the exponent field\&. "
+.ti -1c
+.RI "TBias \fBHiddenBit\fP\fR [get]\fP"
+.br
+.RI "Gets the hidden bit (implicit leading mantissa bit)\&. For IEEE‑like formats this is typically \fR1\fP for normalized numbers and \fR0\fP for subnormals\&. "
+.ti -1c
+.RI "TBias \fBMantissa\fP\fR [get]\fP"
+.br
+.RI "Gets the mantissa (fraction) field as stored in the encoded representation\&. "
+.ti -1c
+.RI "TBias \fBMantissaBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the mantissa (fraction) field\&. "
+.ti -1c
+.RI "bool \fBSign\fP\fR [get]\fP"
+.br
+.RI "Gets the sign bit\&. \fRtrue\fP indicates a negative value\&. "
+.ti -1c
+.RI "TBias \fBSignBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the sign field\&. "
+.ti -1c
+.RI "TBias \fBToBase\fP\fR [get]\fP"
+.br
+.RI "Gets the underlying raw storage type used for bit extraction\&. Implementations typically return \fRushort\fP or \fRuint\fP depending on the float width\&. "
+.ti -1c
+.RI "TBias \fBTotalBits\fP\fR [get]\fP"
+.br
+.RI "Total number of bits in the floating‑point representation\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB23\fP of file \fBIFloat\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "TBias \fBSystemEx\&.Numeric\&.IFloat\fP< TBias >\&.Exponent\fR [get]\fP"
+
+.PP
+Gets the exponent field as stored in the encoded representation\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB72\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TBias \fBSystemEx\&.Numeric\&.IFloat\fP< TBias >\&.ExponentBias\fR [get]\fP"
+
+.PP
+Exponent bias applied to the exponent field\&. Defines the offset used when converting between encoded exponent and real exponent\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB50\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TBias \fBSystemEx\&.Numeric\&.IFloat\fP< TBias >\&.ExponentBits\fR [get]\fP"
+
+.PP
+Number of bits used for the exponent field\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB39\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TBias \fBSystemEx\&.Numeric\&.IFloat\fP< TBias >\&.HiddenBit\fR [get]\fP"
+
+.PP
+Gets the hidden bit (implicit leading mantissa bit)\&. For IEEE‑like formats this is typically \fR1\fP for normalized numbers and \fR0\fP for subnormals\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB62\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TBias \fBSystemEx\&.Numeric\&.IFloat\fP< TBias >\&.Mantissa\fR [get]\fP"
+
+.PP
+Gets the mantissa (fraction) field as stored in the encoded representation\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB78\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TBias \fBSystemEx\&.Numeric\&.IFloat\fP< TBias >\&.MantissaBits\fR [get]\fP"
+
+.PP
+Number of bits used for the mantissa (fraction) field\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB44\fP of file \fBIFloat\&.cs\fP\&.
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TBias >\&.Sign\fR [get]\fP"
+
+.PP
+Gets the sign bit\&. \fRtrue\fP indicates a negative value\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB67\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TBias \fBSystemEx\&.Numeric\&.IFloat\fP< TBias >\&.SignBits\fR [get]\fP"
+
+.PP
+Number of bits used for the sign field\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB34\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TBias \fBSystemEx\&.Numeric\&.IFloat\fP< TBias >\&.ToBase\fR [get]\fP"
+
+.PP
+Gets the underlying raw storage type used for bit extraction\&. Implementations typically return \fRushort\fP or \fRuint\fP depending on the float width\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB29\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TBias \fBSystemEx\&.Numeric\&.IFloat\fP< TBias >\&.TotalBits\fR [get]\fP"
+
+.PP
+Total number of bits in the floating‑point representation\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB55\fP of file \fBIFloat\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

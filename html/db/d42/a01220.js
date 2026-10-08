@@ -1,9 +1,23 @@
 var a01220 =
 [
-    [ "Clear", "db/d42/a01220_a13b963912d5c241db7c7a9079fa5b8e8.html#a13b963912d5c241db7c7a9079fa5b8e8", null ],
-    [ "Erase", "db/d42/a01220_a2f3f5c1c16d5c5b237447b407faf5c3b.html#a2f3f5c1c16d5c5b237447b407faf5c3b", null ],
-    [ "Erase", "db/d42/a01220_a11816da98e4af2aa85d41f537919625b.html#a11816da98e4af2aa85d41f537919625b", null ],
-    [ "Insert", "db/d42/a01220_ac52f1a0091d7559386231ef4a69e3719.html#ac52f1a0091d7559386231ef4a69e3719", null ],
-    [ "Insert", "db/d42/a01220_abd2d7be24a97a81fd99b24cc535a3913.html#abd2d7be24a97a81fd99b24cc535a3913", null ],
-    [ "Replace", "db/d42/a01220_add1da40627ac40bf9b90f20aa7e76d8f.html#add1da40627ac40bf9b90f20aa7e76d8f", null ]
+    [ "NumberRange", "db/d42/a01220_abddd15bdd5d34c705973107064e97711.html#abddd15bdd5d34c705973107064e97711", null ],
+    [ "NumberRange", "db/d42/a01220_a81ee37e28e59359b32cbfac9ded868bc.html#a81ee37e28e59359b32cbfac9ded868bc", null ],
+    [ "Contains", "db/d42/a01220_a580e6b62efff1b4f9c54a6a58fa98418.html#a580e6b62efff1b4f9c54a6a58fa98418", null ],
+    [ "GetEnumerator", "db/d42/a01220_afd36683f5baac70d0056b8a7f515faed.html#afd36683f5baac70d0056b8a7f515faed", null ],
+    [ "GetEnumerator", "db/d42/a01220_a33279f660436f1fd107186ef1a3b67dc.html#a33279f660436f1fd107186ef1a3b67dc", null ],
+    [ "GetHashCode", "db/d42/a01220_aa4dec563e0b7fe149b0ba2fa8c0e95ad.html#aa4dec563e0b7fe149b0ba2fa8c0e95ad", null ],
+    [ "GetRange", "db/d42/a01220_af13f6b4196d1a294a3dc43e688904044.html#af13f6b4196d1a294a3dc43e688904044", null ],
+    [ "Intersect", "db/d42/a01220_ad6170ada97b0252cbfa816e85a8d06ce.html#ad6170ada97b0252cbfa816e85a8d06ce", null ],
+    [ "IsAdjacent", "db/d42/a01220_a3c33cee7ae2209e89c0e7bd85db68ec4.html#a3c33cee7ae2209e89c0e7bd85db68ec4", null ],
+    [ "Normalize", "db/d42/a01220_ace355350c3f8869efaba7b1554ccc50d.html#ace355350c3f8869efaba7b1554ccc50d", null ],
+    [ "Overlaps", "db/d42/a01220_a8533379ce471a4d2d6e97dfaa17bdeb1.html#a8533379ce471a4d2d6e97dfaa17bdeb1", null ],
+    [ "ToString", "db/d42/a01220_a923011a03b84ffad17f68f2eef47bff1.html#a923011a03b84ffad17f68f2eef47bff1", null ],
+    [ "Union", "db/d42/a01220_ac9d3965c7724dcde9be5f4a54409d522.html#ac9d3965c7724dcde9be5f4a54409d522", null ],
+    [ "Begin", "db/d42/a01220_a7e91b8202061c3ad1ce607243f66d714.html#a7e91b8202061c3ad1ce607243f66d714", null ],
+    [ "End", "db/d42/a01220_a41bddcc44c5a64df2fbed9a60401f02c.html#a41bddcc44c5a64df2fbed9a60401f02c", null ],
+    [ "From", "db/d42/a01220_a07dcb0ffacba05726ade5b38faa0538d.html#a07dcb0ffacba05726ade5b38faa0538d", null ],
+    [ "IsSame", "db/d42/a01220_a635c13660c36adb1469f5773c7400b92.html#a635c13660c36adb1469f5773c7400b92", null ],
+    [ "IsValid", "db/d42/a01220_a4120a12caf3783228ec3c4c97cb5348b.html#a4120a12caf3783228ec3c4c97cb5348b", null ],
+    [ "Length", "db/d42/a01220_a466c84ca265a80ef7af31c3f5bf619df.html#a466c84ca265a80ef7af31c3f5bf619df", null ],
+    [ "To", "db/d42/a01220_a45f63b0f7a99449fd979ca70311f5354.html#a45f63b0f7a99449fd979ca70311f5354", null ]
 ];

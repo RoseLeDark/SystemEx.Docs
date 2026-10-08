@@ -1,0 +1,763 @@
+.TH "SystemEx.Threading.ThreadEx" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.ThreadEx \- Provides a managed thread wrapper with event‑based control mechanisms\&. \fBThreadEx\fP supports starting, stopping, pausing, resuming, joining, and sending custom events to the running thread\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Threading\&.LightThread\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBAbandon\fP ()"
+.br
+.RI "Aborts the active invoke context\&. "
+.ti -1c
+.RI "int \fBAbort\fP (bool hardt)"
+.br
+.RI "Requests termination of the running thread\&. Optionally interrupts the thread if \fIhardt\fP  is \fRtrue\fP\&. "
+.ti -1c
+.RI "int \fBAbortAndWait\fP (bool hardt=false, int timeoutMs=\-1)"
+.br
+.RI "Aborts the thread and waits for it to finish execution\&. "
+.ti -1c
+.RI "bool \fBCommit\fP (bool end=true)"
+.br
+.RI "Finalizes the active invoke context without adding a message, provided the commit window has not expired\&. "
+.ti -1c
+.RI "bool \fBCommit\fP (\fBThreadInvokeMessage\fP type, Object message, byte prio, bool end=false)"
+.br
+.RI "Commits a message into the active invoke context, provided the commit window has not expired\&. "
+.ti -1c
+.RI "bool \fBInvoke\fP (int msOpen=1000)"
+.br
+.RI "Begins a new invoke context by acquiring the context mutex, enabling the invoke-state bit, and opening a timed commit window\&. "
+.ti -1c
+.RI "bool \fBIsResume\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsSuspend\fP ()"
+.br
+.RI "Determines whether the thread is currently suspended\&. "
+.ti -1c
+.RI "int \fBJoin\fP (int timeOut=\-1)"
+.br
+.RI "Waits for the thread to finish execution or until the timeout expires\&. "
+.ti -1c
+.RI "int \fBKill\fP ()"
+.br
+.RI "Requests an immediate stop of the thread via interruption\&. "
+.ti -1c
+.RI "bool \fBResume\fP ()"
+.br
+.RI "Requests the thread to resume from a suspended state\&. "
+.ti -1c
+.RI "bool \fBSendEvent\fP (byte Event)"
+.br
+.RI "Sends a custom event to the running thread\&. Event bits 0–3 are reserved\&. "
+.ti -1c
+.RI "bool \fBStart\fP (Object? userData, int timeoutMS=\-1)"
+.br
+.RI "Starts the thread and waits until the thread signals that it has begun execution or until the optional timeout expires\&. "
+.ti -1c
+.RI "int \fBStop\fP ()"
+.br
+.RI "Requests a graceful stop of the thread\&. "
+.ti -1c
+.RI "bool \fBSuspend\fP ()"
+.br
+.RI "Requests the thread to enter a suspended state\&. "
+.ti -1c
+.RI "\fBThreadEx\fP (string strName, ThreadPriority prio, int stackSize)"
+.br
+.RI "Initializes a new \fBThreadEx\fP instance with the specified thread priority and optional stack size\&. The thread object is created but not started\&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static readonly byte \fBEVENTGROUP_BIT_CONTINUE\fP = 4"
+.br
+.ti -1c
+.RI "static readonly byte \fBEVENTGROUP_BIT_INVOKEMESSAGE\fP = 6"
+.br
+.ti -1c
+.RI "static readonly byte \fBEVENTGROUP_BIT_INVOKESTATE\fP = 5"
+.br
+.ti -1c
+.RI "static readonly byte \fBEVENTGROUP_BIT_JOINABLE\fP = 0"
+.br
+.ti -1c
+.RI "static readonly byte \fBEVENTGROUP_BIT_PAUSE\fP = 3"
+.br
+.ti -1c
+.RI "static readonly byte \fBEVENTGROUP_BIT_STARTED\fP = 1"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsEvent\fP (byte Event)"
+.br
+.RI "Checks whether the specified event bit is set\&. "
+.ti -1c
+.RI "bool \fBLockRunning\fP ()"
+.br
+.RI "Lock Running \fBLightLock\fP\&. "
+.ti -1c
+.RI "virtual void \fBOnExit\fP (\fBThreadEx\fP e, Object? userdata)"
+.br
+.RI "Called after the main loop finishes execution\&. "
+.ti -1c
+.RI "virtual int \fBOnRunning\fP (\fBThreadEx\fP e, Object? userdata)"
+.br
+.RI "Main execution loop\&. Handles pause/resume events and repeatedly invokes \fBOnTask\fP while the thread is running\&. "
+.ti -1c
+.RI "virtual bool \fBOnSetup\fP (\fBThreadEx\fP e, Object? userdata)"
+.br
+.RI "Called before the thread enters its main loop\&. "
+.ti -1c
+.RI "virtual void \fBOnStop\fP (\fBThreadEx\fP e, bool hardt)"
+.br
+.RI "Called when the thread is terminated\&. "
+.ti -1c
+.RI "void \fBUnlockRunning\fP ()"
+.br
+.RI "UnLock Running \fBLightLock\fP\&. "
+.ti -1c
+.RI "bool \fBWaitOfEvent\fP (byte Event, int timeout=1)"
+.br
+.RI "Waits for the specified event bit to be set or until the timeout expires\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBThreadExState\fP \fBm_eState\fP"
+.br
+.ti -1c
+.RI "volatile EventGroup< \fBFast_UInt\fP > \fBm_eventGroup\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBID\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Get the name of the thread\&. "
+.ti -1c
+.RI "Action< \fBThreadEx\fP, Object?>? \fBOnBegin\fP\fR [get, set]\fP"
+.br
+.RI "Occurs when the thread begins execution, before entering the main loop\&. "
+.ti -1c
+.RI "Action< \fBThreadEx\fP, Object?>? \fBOnCleanUp\fP\fR [get, set]\fP"
+.br
+.RI "Occurs when the thread finishes execution and performs cleanup\&. "
+.ti -1c
+.RI "Action< \fBThreadEx\fP, bool >? \fBOnKill\fP\fR [get, set]\fP"
+.br
+.RI "Occurs when the thread is terminated via \fBAbort\fP or \fBKill\fP\&. "
+.ti -1c
+.RI "Action< \fBThreadEx\fP, Object?>? \fBOnResume\fP\fR [get, set]\fP"
+.br
+.RI "Occurs when the thread resumes from a suspended state\&. "
+.ti -1c
+.RI "Func< \fBThreadEx\fP, Object?, int >? \fBOnTask\fP\fR [get, set]\fP"
+.br
+.RI "Occurs when the thread performs its main task loop\&. Called repeatedly while the thread is running and not suspended\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a managed thread wrapper with event‑based control mechanisms\&. \fBThreadEx\fP supports starting, stopping, pausing, resuming, joining, and sending custom events to the running thread\&. 
+
+The class uses \fBEventGroup<TFastType>\fP for thread state signaling and \fBLightLock\fP for synchronization\&. Several callback hooks allow custom behavior during setup, execution, pausing, cleanup, and termination\&.
+
+.PP
+\fBThreadEx\fP is designed for deterministic thread control without relying on heavy synchronization primitives\&. All state transitions are represented as bit flags inside an \fBEventGroup<Fast_Int>\fP\&.
+
+.PP
+Reserved event bits: 
+.PD 0
+.IP "\(bu" 2
+0 — Joinable 
+.IP "\(bu" 2
+1 — Started 
+.IP "\(bu" 2
+3 — Pause requested 
+.IP "\(bu" 2
+4 — Continue requested 
+.PP
+
+.PP
+Custom events may use bits ≥ 4\&. 
+.PP
+Definition at line \fB147\fP of file \fBThreadEx\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.ThreadEx\&.ThreadEx (string strName, ThreadPriority prio, int stackSize)"
+
+.PP
+Initializes a new \fBThreadEx\fP instance with the specified thread priority and optional stack size\&. The thread object is created but not started\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstrName\fP Rhe name
+.br
+\fIprio\fP The priority assigned to the underlying thread\&.
+.br
+\fIstackSize\fP Optional stack size in bytes\&. A value of 0 uses the system default\&. 
+.RE
+.PP
+
+.PP
+The thread entry point is ThreadStart(object)\&. 
+.PP
+Definition at line \fB238\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBOnExit()\fP, \fBOnRunning()\fP, \fBOnSetup()\fP, and \fBOnStop()\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.Abandon ()"
+
+.PP
+Aborts the active invoke context\&. If the invoke-state bit is set, the context is terminated immediately through checkEndContext using abort semantics\&. 
+.br
+ All queued messages are discarded, the invoke-state bit is cleared, the commit window timer is stopped and reset, and the context mutex is released\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an active invoke context was aborted; 
+.br
+ \fRfalse\fP if no invoke context was active\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB461\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "int SystemEx\&.Threading\&.ThreadEx\&.Abort (bool hardt)"
+
+.PP
+Requests termination of the running thread\&. Optionally interrupts the thread if \fIhardt\fP  is \fRtrue\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhardt\fP Indicates whether the thread should be interrupted via Thread\&.Interrupt\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Status code: 
+.PD 0
+.IP "\(bu" 2
+0 — Success 
+.IP "\(bu" 2
+1 — Thread not running 
+.IP "\(bu" 2
+42 — Abort called from the same thread 
+.PP
+.RE
+.PP
+
+.PP
+If the thread is suspended, a continue event is automatically issued\&. 
+.PP
+Definition at line \fB490\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBAbortAndWait()\fP\&.
+.SS "int SystemEx\&.Threading\&.ThreadEx\&.AbortAndWait (bool hardt = \fRfalse\fP, int timeoutMs = \fR\-1\fP)"
+
+.PP
+Aborts the thread and waits for it to finish execution\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhardt\fP Indicates whether the thread should be interrupted\&. 
+.br
+\fItimeoutMs\fP Maximum time in milliseconds to wait for the thread to finish\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Status code from \fBAbort(bool)\fP or the result of \fBJoin(int)\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB560\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.Commit (bool end = \fRtrue\fP)"
+
+.PP
+Finalizes the active invoke context without adding a message, provided the commit window has not expired\&. If the commit window is still open and \fIend\fP  is true, the invoke context is terminated\&. 
+.br
+ If the commit window has elapsed, checkEndContext handles the automatic context termination\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIend\fP Indicates whether the invoke context should be terminated\&. 
+.br
+ When \fRtrue\fP, the invoke-state bit is cleared, the commit window timer is stopped and reset, and the context mutex is released\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the invoke context was still active and the commit operation completed successfully; 
+.br
+ \fRfalse\fP if the commit window had already expired and the context was automatically terminated\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB375\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.Commit (\fBThreadInvokeMessage\fP type, Object message, byte prio, bool end = \fRfalse\fP)"
+
+.PP
+Commits a message into the active invoke context, provided the commit window has not expired\&. If the commit window is still open, the message is appended to the context queue with the specified priority\&. 
+.br
+ When \fIend\fP  is true, the invoke context is terminated after the message is committed\&.
+
+.PP
+If the commit window has already elapsed, the context is automatically closed by checkEndContext and no message is added\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP The message payload consisting of a \fBThreadInvokeMessage\fP identifier and an associated object\&. 
+.br
+\fIprio\fP The priority value assigned to the message\&. 
+.br
+\fIend\fP Indicates whether the invoke context should be terminated after committing the message\&. 
+.br
+ When \fRtrue\fP, the invoke-state bit is cleared, the commit window timer is stopped and reset, and the context mutex is released\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the message was successfully committed while the invoke context was still active; 
+.br
+ \fRfalse\fP if the commit window had already expired and the context was automatically closed\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB425\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.Invoke (int msOpen = \fR1000\fP)"
+
+.PP
+Begins a new invoke context by acquiring the context mutex, enabling the invoke-state bit, and opening a timed commit window\&. The commit window duration is defined by \fImsOpen\fP  and is measured using the thread-local commit stopwatch\&. 
+.br
+ While the invoke-state bit is set, commit operations may enqueue messages or finalize the context until the commit window expires\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fImsOpen\fP The duration of the commit window in milliseconds\&. 
+.br
+ Commit operations must occur within this time span; otherwise the context is automatically terminated by the running thread\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the context mutex was successfully acquired and the invoke context was started; 
+.br
+ \fRfalse\fP if the mutex could not be locked and the invoke context could not be initiated\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB341\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.IsEvent (byte Event)\fR [protected]\fP"
+
+.PP
+Checks whether the specified event bit is set\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIEvent\fP The event bit to check\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the bit is set; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB680\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBAbandon()\fP, \fBIsResume()\fP, and \fBIsSuspend()\fP\&.
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.IsResume ()"
+
+.PP
+\fBReturns\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Definition at line \fB670\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.IsSuspend ()"
+
+.PP
+Determines whether the thread is currently suspended\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the pause bit is set; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB662\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBAbort()\fP, and \fBOnRunning()\fP\&.
+.SS "int SystemEx\&.Threading\&.ThreadEx\&.Join (int timeOut = \fR\-1\fP)"
+
+.PP
+Waits for the thread to finish execution or until the timeout expires\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItimeOut\fP Maximum time in milliseconds to wait\&. A value of -1 indicates infinite wait\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+0 — Thread finished 
+.IP "\(bu" 2
+1 — Thread not running 
+.IP "\(bu" 2
+2 — Timeout 
+.IP "\(bu" 2
+42 — Join called from the same thread 
+.PP
+.RE
+.PP
+
+.PP
+Join uses the \fRJoinable\fP event bit to detect thread termination\&. 
+.PP
+Definition at line \fB588\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBAbortAndWait()\fP\&.
+.SS "int SystemEx\&.Threading\&.ThreadEx\&.Kill ()"
+
+.PP
+Requests an immediate stop of the thread via interruption\&. 
+.PP
+\fBReturns\fP
+.RS 4
+See \fBAbort(bool)\fP for return codes\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB543\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.LockRunning ()\fR [protected]\fP"
+
+.PP
+Lock Running \fBLightLock\fP\&. 
+.PP
+\fBReturns\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Definition at line \fB180\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Threading\&.LightThread\&.Signal()\fP, and \fBSystemEx\&.Threading\&.LightThread\&.Wait()\fP\&.
+.SS "virtual void SystemEx\&.Threading\&.ThreadEx\&.OnExit (\fBThreadEx\fP e, Object? userdata)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Called after the main loop finishes execution\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The thread instance\&.
+.br
+\fIuserdata\fP User data passed to the thread\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB847\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "virtual int SystemEx\&.Threading\&.ThreadEx\&.OnRunning (\fBThreadEx\fP e, Object? userdata)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Main execution loop\&. Handles pause/resume events and repeatedly invokes \fBOnTask\fP while the thread is running\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The thread instance\&.
+.br
+\fIuserdata\fP User data passed to the thread\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The return value stored in \fRm_retval\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB733\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "virtual bool SystemEx\&.Threading\&.ThreadEx\&.OnSetup (\fBThreadEx\fP e, Object? userdata)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Called before the thread enters its main loop\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The thread instance\&.
+.br
+\fIuserdata\fP User data passed to the thread\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the thread should continue into the main loop\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB706\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "virtual void SystemEx\&.Threading\&.ThreadEx\&.OnStop (\fBThreadEx\fP e, bool hardt)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Called when the thread is terminated\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The thread instance\&.
+.br
+\fIhardt\fP Indicates whether the thread was interrupted\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB719\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBAbort()\fP\&.
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.Resume ()"
+
+.PP
+Requests the thread to resume from a suspended state\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the thread is alive and running; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB625\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.SendEvent (byte Event)"
+
+.PP
+Sends a custom event to the running thread\&. Event bits 0–3 are reserved\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIEvent\fP The event bit to set\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the event was delivered; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIArgumentOutOfRangeException\fP Thrown if \fIEvent\fP  is less than 4\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB644\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBInvoke()\fP\&.
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.Start (Object? userData, int timeoutMS = \fR\-1\fP)"
+
+.PP
+Starts the thread and waits until the thread signals that it has begun execution or until the optional timeout expires\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIuserData\fP Arbitrary user data passed to all callback handlers\&. 
+.br
+\fItimeoutMS\fP Maximum time in milliseconds to wait for the thread to enter the running state\&. A value of -1 indicates an infinite wait\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the thread successfully started and signaled the \fRStarted\fP event; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+This method is thread‑safe and ensures that a thread cannot be started twice concurrently\&. 
+.PP
+Definition at line \fB284\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "int SystemEx\&.Threading\&.ThreadEx\&.Stop ()"
+
+.PP
+Requests a graceful stop of the thread\&. 
+.PP
+\fBReturns\fP
+.RS 4
+See \fBAbort(bool)\fP for return codes\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB536\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.Suspend ()"
+
+.PP
+Requests the thread to enter a suspended state\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the thread is alive and running; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Suspension is cooperative\&. The thread checks the pause bit inside its main loop\&. 
+.PP
+Definition at line \fB610\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.ThreadEx\&.UnlockRunning ()\fR [protected]\fP"
+
+.PP
+UnLock Running \fBLightLock\fP\&. 
+.PP
+Definition at line \fB187\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Threading\&.LightThread\&.Signal()\fP, and \fBSystemEx\&.Threading\&.LightThread\&.Wait()\fP\&.
+.SS "bool SystemEx\&.Threading\&.ThreadEx\&.WaitOfEvent (byte Event, int timeout = \fR1\fP)\fR [protected]\fP"
+
+.PP
+Waits for the specified event bit to be set or until the timeout expires\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIEvent\fP The event bit to wait for\&.
+.br
+\fItimeout\fP Timeout in milliseconds\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the event occurred; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB693\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBOnRunning()\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "readonly byte SystemEx\&.Threading\&.ThreadEx\&.EVENTGROUP_BIT_CONTINUE = 4\fR [static]\fP"
+
+.PP
+Definition at line \fB151\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "readonly byte SystemEx\&.Threading\&.ThreadEx\&.EVENTGROUP_BIT_INVOKEMESSAGE = 6\fR [static]\fP"
+
+.PP
+Definition at line \fB155\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "readonly byte SystemEx\&.Threading\&.ThreadEx\&.EVENTGROUP_BIT_INVOKESTATE = 5\fR [static]\fP"
+
+.PP
+Definition at line \fB153\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "readonly byte SystemEx\&.Threading\&.ThreadEx\&.EVENTGROUP_BIT_JOINABLE = 0\fR [static]\fP"
+
+.PP
+Definition at line \fB148\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "readonly byte SystemEx\&.Threading\&.ThreadEx\&.EVENTGROUP_BIT_PAUSE = 3\fR [static]\fP"
+
+.PP
+Definition at line \fB150\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "readonly byte SystemEx\&.Threading\&.ThreadEx\&.EVENTGROUP_BIT_STARTED = 1\fR [static]\fP"
+
+.PP
+Definition at line \fB149\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "\fBThreadExState\fP SystemEx\&.Threading\&.ThreadEx\&.m_eState\fR [protected]\fP"
+
+.PP
+Definition at line \fB175\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "volatile EventGroup<\fBFast_UInt\fP> SystemEx\&.Threading\&.ThreadEx\&.m_eventGroup\fR [protected]\fP"
+
+.PP
+Definition at line \fB164\fP of file \fBThreadEx\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Threading\&.ThreadEx\&.ID\fR [get]\fP"
+
+.PP
+Definition at line \fB218\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "string SystemEx\&.Threading\&.ThreadEx\&.Name\fR [get]\fP"
+
+.PP
+Get the name of the thread\&. 
+.PP
+Definition at line \fB223\fP of file \fBThreadEx\&.cs\fP\&.
+.SS "Action<\fBThreadEx\fP, Object?>? SystemEx\&.Threading\&.ThreadEx\&.OnBegin\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Occurs when the thread begins execution, before entering the main loop\&. 
+.PP
+Definition at line \fB201\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBOnSetup()\fP, and \fBThreadEx()\fP\&.
+.SS "Action<\fBThreadEx\fP, Object?>? SystemEx\&.Threading\&.ThreadEx\&.OnCleanUp\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Occurs when the thread finishes execution and performs cleanup\&. 
+.PP
+Definition at line \fB206\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBOnExit()\fP, and \fBThreadEx()\fP\&.
+.SS "Action<\fBThreadEx\fP, bool>? SystemEx\&.Threading\&.ThreadEx\&.OnKill\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Occurs when the thread is terminated via \fBAbort\fP or \fBKill\fP\&. 
+.PP
+Definition at line \fB216\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBOnStop()\fP, and \fBThreadEx()\fP\&.
+.SS "Action<\fBThreadEx\fP, Object?>? SystemEx\&.Threading\&.ThreadEx\&.OnResume\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Occurs when the thread resumes from a suspended state\&. 
+.PP
+Definition at line \fB211\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBOnRunning()\fP, and \fBThreadEx()\fP\&.
+.SS "Func<\fBThreadEx\fP, Object?, int>? SystemEx\&.Threading\&.ThreadEx\&.OnTask\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Occurs when the thread performs its main task loop\&. Called repeatedly while the thread is running and not suspended\&. 
+.PP
+Definition at line \fB196\fP of file \fBThreadEx\&.cs\fP\&.
+.PP
+Referenced by \fBOnRunning()\fP, and \fBThreadEx()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

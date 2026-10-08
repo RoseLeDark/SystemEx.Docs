@@ -1,8 +1,9 @@
 var a01549 =
 [
-    [ "Equals", "d5/dd3/a00902_gac4b3a71c3df481759f069a54aae7576c.html#gac4b3a71c3df481759f069a54aae7576c", null ],
-    [ "GetJobSlice", "d5/dd3/a00902_gac33207d64995ca7df73a176fdadac061.html#gac33207d64995ca7df73a176fdadac061", null ],
-    [ "GetValue", "d5/dd3/a00902_ga215d2b35ddea86a743aac8c4e4a3c221.html#ga215d2b35ddea86a743aac8c4e4a3c221", null ],
-    [ "SetOwner", "d5/dd3/a00902_gad987075955e0fcf6a5646c50daf884b5.html#gad987075955e0fcf6a5646c50daf884b5", null ],
-    [ "Slices", "d5/dd3/a00902_ga4f4449158f0b4009d79f8c56e378169a.html#ga4f4449158f0b4009d79f8c56e378169a", null ]
+    [ "Equals", "d7/d12/a00911_gaf46e58f5bd16ee4fe1f5e0d9287f8a9d.html#gaf46e58f5bd16ee4fe1f5e0d9287f8a9d", null ],
+    [ "Exists", "d7/d12/a00911_ga6f7f02fca6a3949149d250a6cf89ea5f.html#ga6f7f02fca6a3949149d250a6cf89ea5f", null ],
+    [ "Find", "d7/d12/a00911_ga5262677dae38944a4997a3fb039127f7.html#ga5262677dae38944a4997a3fb039127f7", null ],
+    [ "FindEx", "d7/d12/a00911_gad73cac37888fcefb9ab0ba9eec09cea3.html#gad73cac37888fcefb9ab0ba9eec09cea3", null ],
+    [ "GetHashCode", "d7/d12/a00911_ga55b8781cd225e0496a2c847c80fee6d9.html#ga55b8781cd225e0496a2c847c80fee6d9", null ],
+    [ "VectorSearch", "d7/d12/a00911_ga38277e5e007a0391711e8bf0feb04e4c.html#ga38277e5e007a0391711e8bf0feb04e4c", null ]
 ];

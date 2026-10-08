@@ -1,0 +1,464 @@
+.TH "SystemEx.AI.Backend.WebAIBackend< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI.Backend.WebAIBackend< T > \- backend implementation for \fBAI\fP models that communicate with remote Web‑API services using HTTP POST requests\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Optional< object > \fBGetValue\fP (string key)"
+.br
+.RI "Get Value from config\&. "
+.ti -1c
+.RI "bool \fBHasTool\fP (string toolName)"
+.br
+.RI "Web‑API backends do not support tools\&. "
+.ti -1c
+.RI "virtual bool \fBInitialization\fP (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)"
+.br
+.RI "Initialization the model\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP The configuration for this model\&.
+.br
+\fIenvironment\fP The enviroment for thie model\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP when init or \fRfalse\fP when not
+.RE
+.PP
+ "
+.ti -1c
+.RI "async Task< IModelResult< T > > \fBInvokeAsync\fP (string systemPrompt, IModelPromp< T > input)"
+.br
+.RI "Executes the model by sending a JSON payload to the remote Web‑API\&. "
+.ti -1c
+.RI "IReadOnlyList< object > \fBListTools\fP ()"
+.br
+.RI "Web‑API backends do not support tools\&. "
+.ti -1c
+.RI "virtual string \fBOnCreateURL\fP (WebAIBackendPayload< T > payload)"
+.br
+.RI "Creates the final URL used for the HTTP request\&. "
+.ti -1c
+.RI "bool \fBRegistTool\fP (IModelTool< T > tool)"
+.br
+.RI "Web‑API backends do not support tools\&. "
+.ti -1c
+.RI "virtual void \fBRelease\fP (bool wait)"
+.br
+.RI "Release the model\&. "
+.ti -1c
+.RI "void \fBSetConfig\fP (string key, object value)"
+.br
+.RI "Set config\&. "
+.ti -1c
+.RI "bool \fBUnregistTool\fP (string toolName)"
+.br
+.RI "Web‑API backends do not support tools\&. "
+.ti -1c
+.RI "\fBWebAIBackend\fP (string strURL, bool freeUsable=true)"
+.br
+.RI "Initializes a new Web‑API backend with the specified base URL\&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const string \fBWB_CONFIG_MAX_TOKENS\fP = 'WEBAI_MAX_TOKENS'"
+.br
+.ti -1c
+.RI "const string \fBWB_CONFIG_RESPONSE_FORMAT\fP = 'WEBAI_RESPONSE_FORMAT'"
+.br
+.ti -1c
+.RI "const string \fBWB_CONFIG_STREAM\fP = 'WEBAI_STREAM'"
+.br
+.ti -1c
+.RI "const string \fBWB_CONFIG_TEMPERATUR\fP = 'WEBAI_TEMPERATURE'"
+.br
+.ti -1c
+.RI "const string \fBWB_CONFIG_TOP_P\fP = 'WEBAI_TOP_P'"
+.br
+.ti -1c
+.RI "const string \fBWB_CONFIG_URL\fP = 'WB_BACKEND_CONFIG_URL'"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBTriple\fP< T, \fBMetaFormat\fP, object > \fBOnDeserialize\fP (string raw)"
+.br
+.RI "Deserializes the raw JSON response from the backend using JsonElement\&. "
+.ti -1c
+.RI "virtual StringContent \fBOnSerialize\fP (WebAIBackendPayload< T > payload)"
+.br
+.RI "Serializes the payload into JSON and wraps it in a StringContent suitable for HTTP POST requests\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBBackendName\fP\fR [get]\fP"
+.br
+.RI "The backend name used for metadata and diagnostics\&. "
+.ti -1c
+.RI "Map< \fBBackendCapabilities\fP, object > \fBCapabilities\fP\fR [get]\fP"
+.br
+.RI "Describes backend capabilities (text, chat, JSON, remote, etc\&.)\&. "
+.ti -1c
+.RI "Map< string, object > \fBConfiguration\fP\fR [get, set]\fP"
+.br
+.RI "Stores backend configuration values such as the base URL\&. "
+.ti -1c
+.RI "Map< \fBSystemEx\&.AI\&.Environment\fP, object > \fBEnviro\fP\fR [get, set]\fP"
+.br
+.RI "Stores backend environment\&. "
+.ti -1c
+.RI "bool \fBIsAvailable\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the backend is available\&. Always true for Web‑API based backends\&. "
+.ti -1c
+.RI "virtual string \fBModelName\fP = 'default'\fR [get, set]\fP"
+.br
+.RI "Web‑API Modelname\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+backend implementation for \fBAI\fP models that communicate with remote Web‑API services using HTTP POST requests\&. 
+
+This backend:
+.IP "\(bu" 2
+Serializes model input into UserFormat
+.IP "\(bu" 2
+Sends it to a remote endpoint
+.IP "\(bu" 2
+Receives responses
+.IP "\(bu" 2
+Deserializes the result into \fIT\fP 
+.PP
+
+.PP
+It is designed for free or public \fBAI\fP endpoints that do not require authentication or advanced runtime integration\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the model's output and raw prompt\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fInotnull\fP
+.PP
+Definition at line \fB46\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "Optional< object > SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.GetValue (string key)"
+
+.PP
+Get Value from config\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB104\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.HasTool (string toolName)"
+
+.PP
+Web‑API backends do not support tools\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB443\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "virtual bool SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Initialization (Map< string, object > configuration, Map< \fBEnvironment\fP, object > environment)\fR [virtual]\fP"
+
+.PP
+Initialization the model\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfiguration\fP The configuration for this model\&.
+.br
+\fIenvironment\fP The enviroment for thie model\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP when init or \fRfalse\fP when not
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB264\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "async Task< IModelResult< T > > SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.InvokeAsync (string systemPrompt, IModelPromp< T > input)"
+
+.PP
+Executes the model by sending a JSON payload to the remote Web‑API\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsystemPrompt\fP The system instruction for the model\&.
+.br
+\fIinput\fP The user prompt and context\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBModelResult<T>\fP containing:
+.IP "\(bu" 2
+The parsed output
+.IP "\(bu" 2
+Metadata
+.IP "\(bu" 2
+Raw JSON
+.IP "\(bu" 2
+Error information (if any) 
+.PP
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB291\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "IReadOnlyList< object > SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.ListTools ()"
+
+.PP
+Web‑API backends do not support tools\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB448\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "virtual string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.OnCreateURL (WebAIBackendPayload< T > payload)\fR [virtual]\fP"
+
+.PP
+Creates the final URL used for the HTTP request\&. This method is \fRvirtual\fP so that derived backends may customize how the request URL is constructed\&. Typical use cases include:
+.IP "\(bu" 2
+Appending query parameters
+.IP "\(bu" 2
+Switching between multiple endpoints
+.IP "\(bu" 2
+Adding API keys or version identifiers
+.IP "\(bu" 2
+Routing based on payload content
+.PP
+
+.PP
+The default implementation simply returns \fBWebAIBackendPayload<T>\&.URL\fP, making the backend functional without requiring subclass overrides\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIpayload\fP The payload that will be sent to the backend\&. This may contain additional information that derived classes can use to construct dynamic URLs\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The fully constructed URL used for the HTTP POST request\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB128\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "virtual \fBTriple\fP< T, \fBMetaFormat\fP, object > SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.OnDeserialize (string raw)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Deserializes the raw JSON response from the backend using JsonElement\&. This method expects the backend to return a JSON object containing an "output" field\&. The entire JSON document is preserved as a JsonElement so that callers can inspect additional metadata\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIraw\fP Raw JSON string returned by the backend\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pair containing:
+.IP "\(bu" 2
+The parsed output of type \fIT\fP 
+.IP "\(bu" 2
+The full JSON document as JsonElement 
+.PP
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIInvalidDataException\fP Thrown when the backend does not return an "output" field\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB159\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "virtual StringContent SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.OnSerialize (WebAIBackendPayload< T > payload)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Serializes the payload into JSON and wraps it in a StringContent suitable for HTTP POST requests\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpayload\fP The payload to serialize\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+JSON content for HTTP transmission\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB138\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "bool SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.RegistTool (IModelTool< T > tool)"
+
+.PP
+Web‑API backends do not support tools\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB433\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "virtual void SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Release (bool wait)\fR [virtual]\fP"
+
+.PP
+Release the model\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB276\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "void SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.SetConfig (string key, object value)"
+
+.PP
+Set config\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB97\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.UnregistTool (string toolName)"
+
+.PP
+Web‑API backends do not support tools\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB438\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WebAIBackend (string strURL, bool freeUsable = \fRtrue\fP)"
+
+.PP
+Initializes a new Web‑API backend with the specified base URL\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstrURL\fP \fBBase\fP URL of the remote \fBAI\fP service\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB222\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_MAX_TOKENS = 'WEBAI_MAX_TOKENS'\fR [static]\fP"
+
+.PP
+Definition at line \fB47\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "const string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_RESPONSE_FORMAT = 'WEBAI_RESPONSE_FORMAT'\fR [static]\fP"
+
+.PP
+Definition at line \fB50\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "const string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_STREAM = 'WEBAI_STREAM'\fR [static]\fP"
+
+.PP
+Definition at line \fB51\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "const string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_TEMPERATUR = 'WEBAI_TEMPERATURE'\fR [static]\fP"
+
+.PP
+Definition at line \fB48\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "const string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_TOP_P = 'WEBAI_TOP_P'\fR [static]\fP"
+
+.PP
+Definition at line \fB49\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "const string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.WB_CONFIG_URL = 'WB_BACKEND_CONFIG_URL'\fR [static]\fP"
+
+.PP
+Definition at line \fB52\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.BackendName\fR [get]\fP"
+
+.PP
+The backend name used for metadata and diagnostics\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB75\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "Map<\fBBackendCapabilities\fP, object> SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Capabilities\fR [get]\fP"
+
+.PP
+Describes backend capabilities (text, chat, JSON, remote, etc\&.)\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB62\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Configuration\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Stores backend configuration values such as the base URL\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB67\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+.SS "Map<\fBSystemEx\&.AI\&.Environment\fP, object> SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.Enviro\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Stores backend environment\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB70\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.IsAvailable\fR [get]\fP"
+
+.PP
+Indicates whether the backend is available\&. Always true for Web‑API based backends\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB81\fP of file \fBWebAIBackend\&.cs\fP\&.
+.SS "virtual string SystemEx\&.AI\&.Backend\&.WebAIBackend< T >\&.ModelName = 'default'\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Web‑API Modelname\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelBackend< T, TAI >\fP\&.
+.PP
+Definition at line \fB86\fP of file \fBWebAIBackend\&.cs\fP\&.
+.PP
+Referenced by \fBInvokeAsync()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,413 @@
+.TH "SystemEx.IO.RCUStream< TStream >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.IO.RCUStream< TStream > \- A Read-Copy-Update (RCU) wrapper around a Stream that provides lock-free read operations and exclusive write operations\&. Reader activity is tracked through an \fBEpoch\fP, while writers are synchronized using an \fBILock\fP\&. This ensures deterministic behavior in concurrent read/write scenarios without requiring external synchronization\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Stream, \fBSystemEx\&.IValueWriter\fP, and \fBSystemEx\&.IValueReader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override void \fBCopyTo\fP (Stream destination, int bufferSize)"
+.br
+.ti -1c
+.RI "override async Task \fBCopyToAsync\fP (Stream destination, int bufferSize, CancellationToken cancellationToken)"
+.br
+.ti -1c
+.RI "override void \fBFlush\fP ()"
+.br
+.ti -1c
+.RI "\fBRCUStream\fP (TStream stream, \fBILock\fP locker)"
+.br
+.RI "Initializes a new instance of the \fBRCUStream<TStream>\fP class using the specified underlying stream and writer lock\&. The stream is immediately ready for concurrent read operations and exclusive write operations according to RCU semantics\&. "
+.ti -1c
+.RI "override int \fBRead\fP (byte[] buffer, int offset, int count)"
+.br
+.ti -1c
+.RI "override async Task< int > \fBReadAsync\fP (byte[] buffer, int offset, int count, CancellationToken cancellationToken)"
+.br
+.ti -1c
+.RI "override int \fBReadByte\fP ()"
+.br
+.ti -1c
+.RI "double \fBReadDouble\fP (\fBEndian\fP endian, double ervlue=0)"
+.br
+.RI "Reads a double-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "float \fBReadFloat\fP (\fBEndian\fP endian, float ervlue=0)"
+.br
+.RI "Reads a single-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "int \fBReadInt\fP (\fBEndian\fP endian, int ervlue=0)"
+.br
+.RI "Reads a signed 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "long \fBReadLong\fP (\fBEndian\fP endian, long ervlue=0)"
+.br
+.RI "Reads a signed 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "short \fBReadShort\fP (\fBEndian\fP endian, short ervlue=0)"
+.br
+.RI "Reads a signed 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "uint \fBReadUInt\fP (\fBEndian\fP endian, uint ervlue=0)"
+.br
+.RI "Reads an unsigned 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "ulong \fBReadULong\fP (\fBEndian\fP endian, ulong ervlue=0)"
+.br
+.RI "Reads an unsigned 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "ushort \fBReadUShort\fP (\fBEndian\fP endian, ushort ervlue=0)"
+.br
+.RI "Reads an unsigned 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "override long \fBSeek\fP (long offset, SeekOrigin origin)"
+.br
+.ti -1c
+.RI "override void \fBSetLength\fP (long value)"
+.br
+.ti -1c
+.RI "override void \fBWrite\fP (byte[] buffer, int offset, int count)"
+.br
+.ti -1c
+.RI "void \fBWrite\fP (double value, \fBEndian\fP endian)"
+.br
+.RI "Writes a double-precision floating-point value using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (float value, \fBEndian\fP endian)"
+.br
+.RI "Writes a single-precision floating-point value using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (int value, \fBEndian\fP endian)"
+.br
+.RI "Writes a signed 32-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (long value, \fBEndian\fP endian)"
+.br
+.RI "Writes a signed 64-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (short value, \fBEndian\fP endian)"
+.br
+.RI "Writes a signed 16-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (uint value, \fBEndian\fP endian)"
+.br
+.RI "Writes an unsigned 32-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong value, \fBEndian\fP endian)"
+.br
+.RI "Writes an unsigned 64-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ushort value, \fBEndian\fP endian)"
+.br
+.RI "Writes an unsigned 16-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "override async Task \fBWriteAsync\fP (byte[] buffer, int offset, int count, CancellationToken cancellationToken)"
+.br
+.ti -1c
+.RI "override void \fBWriteByte\fP (byte value)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "override bool \fBCanRead\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "override bool \fBCanSeek\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "override bool \fBCanWrite\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "override long \fBLength\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "override long \fBPosition\fP\fR [get, set]\fP"
+.br
+.ti -1c
+.RI "\fBRCUStreamState\fP \fBState\fP\fR [get]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A Read-Copy-Update (RCU) wrapper around a Stream that provides lock-free read operations and exclusive write operations\&. Reader activity is tracked through an \fBEpoch\fP, while writers are synchronized using an \fBILock\fP\&. This ensures deterministic behavior in concurrent read/write scenarios without requiring external synchronization\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITStream\fP The underlying stream type being wrapped\&. Must derive from Stream\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITStream\fP : \fIStream\fP
+.PP
+Definition at line \fB50\fP of file \fBRCUStream\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override void SystemEx\&.IO\&.RCUStream< TStream >\&.CopyTo (Stream destination, int bufferSize)"
+
+.PP
+
+.PP
+Definition at line \fB158\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override async Task SystemEx\&.IO\&.RCUStream< TStream >\&.CopyToAsync (Stream destination, int bufferSize, CancellationToken cancellationToken)"
+
+.PP
+
+.PP
+Definition at line \fB165\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override void SystemEx\&.IO\&.RCUStream< TStream >\&.Flush ()"
+
+.PP
+
+.PP
+Definition at line \fB190\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "SystemEx\&.IO\&.RCUStream< TStream >\&.RCUStream (TStream stream, \fBILock\fP locker)"
+
+.PP
+Initializes a new instance of the \fBRCUStream<TStream>\fP class using the specified underlying stream and writer lock\&. The stream is immediately ready for concurrent read operations and exclusive write operations according to RCU semantics\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstream\fP The underlying stream to wrap\&.
+.br
+\fIlocker\fP The lock used to synchronize writer access\&. Readers remain lock-free\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB102\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override int SystemEx\&.IO\&.RCUStream< TStream >\&.Read (byte[] buffer, int offset, int count)"
+
+.PP
+
+.PP
+Definition at line \fB144\fP of file \fBRCUStream\&.cs\fP\&.
+.PP
+Referenced by \fBReadDouble()\fP, \fBReadFloat()\fP, \fBReadInt()\fP, \fBReadLong()\fP, \fBReadShort()\fP, \fBReadUInt()\fP, \fBReadULong()\fP, and \fBReadUShort()\fP\&.
+.SS "override async Task< int > SystemEx\&.IO\&.RCUStream< TStream >\&.ReadAsync (byte[] buffer, int offset, int count, CancellationToken cancellationToken)"
+
+.PP
+
+.PP
+Definition at line \fB153\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override int SystemEx\&.IO\&.RCUStream< TStream >\&.ReadByte ()"
+
+.PP
+
+.PP
+Definition at line \fB137\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "double SystemEx\&.IO\&.RCUStream< TStream >\&.ReadDouble (\fBEndian\fP endian, double ervlue = \fR0\fP)"
+
+.PP
+Reads a double-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB318\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "float SystemEx\&.IO\&.RCUStream< TStream >\&.ReadFloat (\fBEndian\fP endian, float ervlue = \fR0\fP)"
+
+.PP
+Reads a single-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB306\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "int SystemEx\&.IO\&.RCUStream< TStream >\&.ReadInt (\fBEndian\fP endian, int ervlue = \fR0\fP)"
+
+.PP
+Reads a signed 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB254\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "long SystemEx\&.IO\&.RCUStream< TStream >\&.ReadLong (\fBEndian\fP endian, long ervlue = \fR0\fP)"
+
+.PP
+Reads a signed 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB284\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "short SystemEx\&.IO\&.RCUStream< TStream >\&.ReadShort (\fBEndian\fP endian, short ervlue = \fR0\fP)"
+
+.PP
+Reads a signed 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB264\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "uint SystemEx\&.IO\&.RCUStream< TStream >\&.ReadUInt (\fBEndian\fP endian, uint ervlue = \fR0\fP)"
+
+.PP
+Reads an unsigned 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB244\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "ulong SystemEx\&.IO\&.RCUStream< TStream >\&.ReadULong (\fBEndian\fP endian, ulong ervlue = \fR0\fP)"
+
+.PP
+Reads an unsigned 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB295\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "ushort SystemEx\&.IO\&.RCUStream< TStream >\&.ReadUShort (\fBEndian\fP endian, ushort ervlue = \fR0\fP)"
+
+.PP
+Reads an unsigned 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB274\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override long SystemEx\&.IO\&.RCUStream< TStream >\&.Seek (long offset, SeekOrigin origin)"
+
+.PP
+
+.PP
+Definition at line \fB170\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override void SystemEx\&.IO\&.RCUStream< TStream >\&.SetLength (long value)"
+
+.PP
+
+.PP
+Definition at line \fB180\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override void SystemEx\&.IO\&.RCUStream< TStream >\&.Write (byte[] buffer, int offset, int count)"
+
+.PP
+
+.PP
+Definition at line \fB119\fP of file \fBRCUStream\&.cs\fP\&.
+.PP
+Referenced by \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, and \fBWrite()\fP\&.
+.SS "void SystemEx\&.IO\&.RCUStream< TStream >\&.Write (double value, \fBEndian\fP endian)"
+
+.PP
+Writes a double-precision floating-point value using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB239\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.RCUStream< TStream >\&.Write (float value, \fBEndian\fP endian)"
+
+.PP
+Writes a single-precision floating-point value using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB234\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.RCUStream< TStream >\&.Write (int value, \fBEndian\fP endian)"
+
+.PP
+Writes a signed 32-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB219\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.RCUStream< TStream >\&.Write (long value, \fBEndian\fP endian)"
+
+.PP
+Writes a signed 64-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB224\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.RCUStream< TStream >\&.Write (short value, \fBEndian\fP endian)"
+
+.PP
+Writes a signed 16-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB204\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.RCUStream< TStream >\&.Write (uint value, \fBEndian\fP endian)"
+
+.PP
+Writes an unsigned 32-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB214\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.RCUStream< TStream >\&.Write (ulong value, \fBEndian\fP endian)"
+
+.PP
+Writes an unsigned 64-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB229\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "void SystemEx\&.IO\&.RCUStream< TStream >\&.Write (ushort value, \fBEndian\fP endian)"
+
+.PP
+Writes an unsigned 16-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB209\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override async Task SystemEx\&.IO\&.RCUStream< TStream >\&.WriteAsync (byte[] buffer, int offset, int count, CancellationToken cancellationToken)"
+
+.PP
+
+.PP
+Definition at line \fB130\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override void SystemEx\&.IO\&.RCUStream< TStream >\&.WriteByte (byte value)"
+
+.PP
+
+.PP
+Definition at line \fB109\fP of file \fBRCUStream\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "override bool SystemEx\&.IO\&.RCUStream< TStream >\&.CanRead\fR [get]\fP"
+
+.PP
+
+.PP
+Definition at line \fB70\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override bool SystemEx\&.IO\&.RCUStream< TStream >\&.CanSeek\fR [get]\fP"
+
+.PP
+
+.PP
+Definition at line \fB66\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override bool SystemEx\&.IO\&.RCUStream< TStream >\&.CanWrite\fR [get]\fP"
+
+.PP
+
+.PP
+Definition at line \fB62\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override long SystemEx\&.IO\&.RCUStream< TStream >\&.Length\fR [get]\fP"
+
+.PP
+
+.PP
+Definition at line \fB73\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "override long SystemEx\&.IO\&.RCUStream< TStream >\&.Position\fR [get]\fP, \fR [set]\fP"
+
+.PP
+
+.PP
+Definition at line \fB76\fP of file \fBRCUStream\&.cs\fP\&.
+.SS "\fBRCUStreamState\fP SystemEx\&.IO\&.RCUStream< TStream >\&.State\fR [get]\fP"
+
+.PP
+
+.PP
+Definition at line \fB58\fP of file \fBRCUStream\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,298 @@
+.TH "SystemEx.Collections.Generic.ListIterator< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.ListIterator< T > \- A random‑access iterator for List<T> that also implements \fBIterrator<T>\fP to support foreach‑style enumeration\&. Provides forward, backward, and offset‑based movement\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.Iterrator< T >\fP, and IEnumerator\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBListIterator\fP< T > \fBAdvance\fP (long offset)"
+.br
+.RI "Advances the iterator by the specified offset and returns itself\&. "
+.ti -1c
+.RI "void \fBBack\fP ()"
+.br
+.RI "Moves the iterator one step backward unless it is already at the beginning\&. "
+.ti -1c
+.RI "\fBListIterator\fP< T > \fBClone\fP ()"
+.br
+.RI "Creates a deep clone of the iterator, including a copy of the underlying list\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBListIterator\fP< T > other)"
+.br
+.RI "Determines whether this iterator is equal to another iterator\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "void \fBForward\fP ()"
+.br
+.RI "Moves the iterator one step forward unless it is already at the end\&. "
+.ti -1c
+.RI "void \fBForward\fP (long i)"
+.br
+.RI "Moves the iterator N step forward\&. "
+.ti -1c
+.RI "IEnumerator< T > \fBGetEnumerator\fP ()"
+.br
+.RI "Returns this iterator as an enumerator\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.ti -1c
+.RI "\fBListIterator\fP (List< T > list, int index)"
+.br
+.RI "Creates a new iterator for the specified list at the given position\&. "
+.ti -1c
+.RI "bool \fBMoveNext\fP ()"
+.br
+.RI "Moves to the next element for foreach enumeration\&. "
+.ti -1c
+.RI "void \fBReset\fP ()"
+.br
+.RI "Reset is not supported for this iterator\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBListIterator\fP< T >? a, \fBListIterator\fP< T >? b)"
+.br
+.RI "Inequality operator for comparing two iterators\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBListIterator\fP< T >? a, \fBListIterator\fP< T >? b)"
+.br
+.RI "Equality operator for comparing two iterators\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "object IEnumerator\&. \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the current iterator position\&. Returns an \fBOptional<T>\fP that may be empty if the iterator is out of range\&. "
+.ti -1c
+.RI "Optional< T > \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the current iterator position\&. "
+.ti -1c
+.RI "long \fBIndex\fP\fR [get, set]\fP"
+.br
+.RI "Gets the current index within the list\&. "
+.ti -1c
+.RI "bool \fBIsBegin\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the iterator is positioned at the beginning\&. "
+.ti -1c
+.RI "bool \fBIsEnd\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the iterator has reached the end of the list\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A random‑access iterator for List<T> that also implements \fBIterrator<T>\fP to support foreach‑style enumeration\&. Provides forward, backward, and offset‑based movement\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The element type stored in the list\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB30\fP of file \fBListItterator\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBListIterator\fP< T > SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.Advance (long offset)"
+
+.PP
+Advances the iterator by the specified offset and returns itself\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIoffset\fP The number of positions to move\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The same iterator instance after movement\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB103\fP of file \fBListItterator\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.Back ()"
+
+.PP
+Moves the iterator one step backward unless it is already at the beginning\&. 
+.PP
+Definition at line \fB94\fP of file \fBListItterator\&.cs\fP\&.
+.SS "\fBListIterator\fP< T > SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.Clone ()"
+
+.PP
+Creates a deep clone of the iterator, including a copy of the underlying list\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A new iterator instance with its own list copy\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB133\fP of file \fBListItterator\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.Equals (\fBListIterator\fP< T > other)"
+
+.PP
+Determines whether this iterator is equal to another iterator\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The iterator to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if both iterators reference equal lists and positions\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB110\fP of file \fBListItterator\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBoperator==()\fP\&.
+.SS "override bool SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.Equals (object? obj)"
+
+.PP
+
+.PP
+Definition at line \fB114\fP of file \fBListItterator\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.Forward ()"
+
+.PP
+Moves the iterator one step forward unless it is already at the end\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.Iterrator< T >\fP\&.
+.PP
+Definition at line \fB78\fP of file \fBListItterator\&.cs\fP\&.
+.PP
+Referenced by \fBForward()\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.Forward (long i)"
+
+.PP
+Moves the iterator N step forward\&. 
+.PP
+Definition at line \fB84\fP of file \fBListItterator\&.cs\fP\&.
+.SS "IEnumerator< T > SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.GetEnumerator ()"
+
+.PP
+Returns this iterator as an enumerator\&. 
+.PP
+Definition at line \fB139\fP of file \fBListItterator\&.cs\fP\&.
+.SS "override int SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.GetHashCode ()"
+
+.PP
+
+.PP
+Definition at line \fB122\fP of file \fBListItterator\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.ListIterator (List< T > list, int index)"
+
+.PP
+Creates a new iterator for the specified list at the given position\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP The list to iterate over\&.
+.br
+\fIindex\fP The initial iterator position\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB46\fP of file \fBListItterator\&.cs\fP\&.
+.PP
+Referenced by \fBAdvance()\fP, \fBClone()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBoperator!=()\fP, and \fBoperator==()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.MoveNext ()"
+
+.PP
+Moves to the next element for foreach enumeration\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the iterator advanced; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB145\fP of file \fBListItterator\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.operator!= (\fBListIterator\fP< T >? a, \fBListIterator\fP< T >? b)\fR [static]\fP"
+
+.PP
+Inequality operator for comparing two iterators\&. 
+.PP
+Definition at line \fB165\fP of file \fBListItterator\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.operator== (\fBListIterator\fP< T >? a, \fBListIterator\fP< T >? b)\fR [static]\fP"
+
+.PP
+Equality operator for comparing two iterators\&. 
+.PP
+Definition at line \fB157\fP of file \fBListItterator\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.Reset ()"
+
+.PP
+Reset is not supported for this iterator\&. 
+.PP
+Definition at line \fB152\fP of file \fBListItterator\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "object IEnumerator\&. SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.Current\fR [get]\fP"
+
+.PP
+Gets the element at the current iterator position\&. Returns an \fBOptional<T>\fP that may be empty if the iterator is out of range\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.Iterrator< T >\fP\&.
+.PP
+Definition at line \fB65\fP of file \fBListItterator\&.cs\fP\&.
+.SS "Optional<T> SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.Current\fR [get]\fP"
+
+.PP
+Gets the element at the current iterator position\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.Iterrator< T >\fP\&.
+.PP
+Definition at line \fB53\fP of file \fBListItterator\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.Index\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets the current index within the list\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.Iterrator< T >\fP\&.
+.PP
+Definition at line \fB70\fP of file \fBListItterator\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.IsBegin\fR [get]\fP"
+
+.PP
+Indicates whether the iterator is positioned at the beginning\&. 
+.PP
+Definition at line \fB63\fP of file \fBListItterator\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.ListIterator< T >\&.IsEnd\fR [get]\fP"
+
+.PP
+Indicates whether the iterator has reached the end of the list\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.Iterrator< T >\fP\&.
+.PP
+Definition at line \fB57\fP of file \fBListItterator\&.cs\fP\&.
+.PP
+Referenced by \fBForward()\fP, and \fBMoveNext()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

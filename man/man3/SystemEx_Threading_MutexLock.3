@@ -1,0 +1,206 @@
+.TH "SystemEx.Threading.MutexLock" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.MutexLock \- A thin wrapper around operating‑system synchronization primitives (Mutex and EventWaitHandle)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Threading\&.ILock< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBLock\fP (\fBTimeOut\fP span)"
+.br
+.RI "Attempts to acquire the OS‑level mutex within the specified timeout\&. This operation may block the calling thread\&. "
+.ti -1c
+.RI "\fBMutexLock\fP (string name)"
+.br
+.RI "Initializes a new instance of the \fBMutexLock\fP class\&. Creates an OS‑level named mutex and a corresponding auto‑reset event\&. "
+.ti -1c
+.RI "bool \fBTryLock\fP ()"
+.br
+.RI "Attempts to acquire the OS‑level mutex\&. "
+.ti -1c
+.RI "bool \fBTryLock\fP (\fBTimeOut\fP span)"
+.br
+.RI "Attempts to acquire the OS‑level mutex within the specified timeout\&. This is functionally identical to Lock(TimeSpan)\&. "
+.ti -1c
+.RI "void \fBUnlock\fP ()"
+.br
+.RI "Releases the OS‑level mutex\&. Only the owning thread may call this method\&. "
+.ti -1c
+.RI "bool \fBWait\fP (\fBTimeOut\fP span, bool exitContext)"
+.br
+.RI "Waits on the associated event handle for the specified duration\&. The mutex is temporarily released before waiting and reacquired afterwards\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Mutex \fBHandle\fP\fR [get]\fP"
+.br
+.RI "Gets the underlying OS mutex handle\&. "
+.ti -1c
+.RI "bool \fBIsHeld\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the mutex is currently held by this instance\&. Note that this does not guarantee that the current thread is the owner, only that Lock(TimeSpan) or Lock(int) returned true\&. "
+.ti -1c
+.RI "bool \fBIsLocked\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Gets the name associated with this mutex instance\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A thin wrapper around operating‑system synchronization primitives (Mutex and EventWaitHandle)\&. 
+
+This class provides a blocking, kernel‑managed mutex lock\&. 
+.br
+ It is fundamentally different from \fBLightMutex<T>\fP, which is a non‑blocking, atomic spinlock‑based mutex implemented entirely in user space\&. 
+
+.PP
+\fBImportant:\fP This OS‑level mutex performs kernel transitions, may block threads, and does not use atomic operations\&. It should not be mixed or substituted with \fBLightMutex<T>\fP or \fBLightCountingSpinlock<T>\fP unless the synchronization model explicitly requires blocking behavior\&. 
+.PP
+Definition at line \fB38\fP of file \fBMutexLock\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.MutexLock\&.MutexLock (string name)"
+
+.PP
+Initializes a new instance of the \fBMutexLock\fP class\&. Creates an OS‑level named mutex and a corresponding auto‑reset event\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The base name used for the mutex and event handle\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB89\fP of file \fBMutexLock\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.MutexLock\&.Lock (\fBTimeOut\fP span)"
+
+.PP
+Attempts to acquire the OS‑level mutex within the specified timeout\&. This operation may block the calling thread\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIspan\fP The timeout duration\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the mutex was acquired; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB105\fP of file \fBMutexLock\&.cs\fP\&.
+.PP
+Referenced by \fBWait()\fP\&.
+.SS "bool SystemEx\&.Threading\&.MutexLock\&.TryLock ()"
+
+.PP
+Attempts to acquire the OS‑level mutex\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the mutex was acquired; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB114\fP of file \fBMutexLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.MutexLock\&.TryLock (\fBTimeOut\fP span)"
+
+.PP
+Attempts to acquire the OS‑level mutex within the specified timeout\&. This is functionally identical to Lock(TimeSpan)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIspan\fP The timeout duration\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the mutex was acquired; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB125\fP of file \fBMutexLock\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.MutexLock\&.Unlock ()"
+
+.PP
+Releases the OS‑level mutex\&. Only the owning thread may call this method\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB131\fP of file \fBMutexLock\&.cs\fP\&.
+.PP
+Referenced by \fBWait()\fP\&.
+.SS "bool SystemEx\&.Threading\&.MutexLock\&.Wait (\fBTimeOut\fP span, bool exitContext)"
+
+.PP
+Waits on the associated event handle for the specified duration\&. The mutex is temporarily released before waiting and reacquired afterwards\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIspan\fP The timeout duration\&.
+.br
+\fIexitContext\fP Ignored\&. Provided for compatibility with WaitHandle semantics\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the event was signaled; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB147\fP of file \fBMutexLock\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "Mutex SystemEx\&.Threading\&.MutexLock\&.Handle\fR [get]\fP"
+
+.PP
+Gets the underlying OS mutex handle\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock< T >\fP\&.
+.PP
+Definition at line \fB67\fP of file \fBMutexLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.MutexLock\&.IsHeld\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the mutex is currently held by this instance\&. Note that this does not guarantee that the current thread is the owner, only that Lock(TimeSpan) or Lock(int) returned true\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB79\fP of file \fBMutexLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.MutexLock\&.IsLocked\fR [get]\fP"
+
+.PP
+Definition at line \fB82\fP of file \fBMutexLock\&.cs\fP\&.
+.SS "string SystemEx\&.Threading\&.MutexLock\&.Name\fR [get]\fP"
+
+.PP
+Gets the name associated with this mutex instance\&. 
+.PP
+Definition at line \fB72\fP of file \fBMutexLock\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

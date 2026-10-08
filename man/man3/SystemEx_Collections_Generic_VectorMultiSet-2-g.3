@@ -1,0 +1,400 @@
+.TH "SystemEx.Collections.Generic.VectorMultiSet< T, TContainer >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.VectorMultiSet< T, TContainer > \- Equivalent to a std::flat_multiset, but implemented as an open, non-owning sorted view over any IContainerEx instance\&. The MultiSet struct does not store elements itself; it maintains ordering by sorting the referenced container using either a user-provided sorting delegate or a built-in BubbleSort fallback when no delegate is supplied\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBEquals\fP (\fBVectorMultiSet\fP< T, TContainer > other)"
+.br
+.RI "Compares this set with another set for structural equality\&. Both sets must contain the same number of elements and each element at the same position must be equal\&. The comparison assumes both containers are sorted and aligned\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long first, long last)"
+.br
+.RI "Removes a continuous range of elements from the underlying container\&. The range is defined by the start index \fIfirst\fP  and the end index \fIlast\fP \&. If the removal succeeds, the set is re-sorted to maintain ordering guarantees\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long index)"
+.br
+.RI "Removes the element at the specified index and re-sorts the remaining elements\&. "
+.ti -1c
+.RI "bool \fBErase\fP (T value)"
+.br
+.RI "Removes the first occurrence of the specified value from the set\&. The element is located using the internal finder\&. If the element exists, it is removed from the underlying container\&. After removal, the set is re-sorted to preserve ordering guarantees\&. "
+.ti -1c
+.RI "T[] \fBExtract\fP (long index)"
+.br
+.RI "Extracts all elements starting at the given index\&. The extracted elements are removed from the underlying container and returned as a new array\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long index, T value)"
+.br
+.RI "Inserts a value at the specified index and re-sorts the elements\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long start, long end, T value)"
+.br
+.RI "Inserts a value into a range and re-sorts the elements\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (T value)"
+.br
+.RI "Inserts a value into the container and re-sorts the elements\&. "
+.ti -1c
+.RI "bool \fBInsertRange\fP (long start, T[] values)"
+.br
+.RI "Inserts multiple values starting at the specified index and re-sorts the elements\&. "
+.ti -1c
+.RI "long \fBLowerBound\fP (T key)"
+.br
+.RI "Returns the index of the first element not less than key\&. If no such element exists, returns -1\&. "
+.ti -1c
+.RI "void \fBSwapIn\fP (\fBVectorMultiSet\fP< T, TContainer > other)"
+.br
+.RI "Moves all elements from this set into the specified target set\&. The elements are copied into a temporary array, removed from the underlying container of this set, and then inserted into the target set\&. After insertion, the target set is re-sorted to maintain ordering guarantees\&. This set becomes empty after the operation\&. "
+.ti -1c
+.RI "long \fBUpperBound\fP (T key)"
+.br
+.RI "Returns the index of the first element greater than key\&. If no such element exists, returns -1\&. "
+.ti -1c
+.RI "bool \fBValidate\fP ()"
+.br
+.RI "Validates the internal ordering of the set\&. The container must be sorted according to the comparison function\&. "
+.ti -1c
+.RI "\fBVectorMultiSet\fP (ref TContainer keys, ISimpleCompare< T > comparer, SortAction< ISimpleCompare< T >, TContainer >? sorter=null)"
+.br
+.RI "Creates a new sorted view over the given container\&. The container reference is stored and immediately sorted using the comparer and with an optional sort delegate\&. "
+.ti -1c
+.RI "\fBVectorMultiSet\fP (ref TContainer keys, SortAction< ISimpleCompare< T >, TContainer >? sorter=null)"
+.br
+.RI "Creates a new sorted view over the given container\&. The container reference is stored and immediately sorted using the comparer and with an optional sort delegate\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "long \fBCount\fP\fR [get]\fP"
+.br
+.RI "Returns the number of elements stored in the container\&. "
+.ti -1c
+.RI "Optional< T > \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Returns the current element of the underlying container\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the underlying container is empty\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the underlying container is full\&. "
+.ti -1c
+.RI "long \fBLength\fP\fR [get]\fP"
+.br
+.RI "Returns the total capacity of the underlying container\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Equivalent to a std::flat_multiset, but implemented as an open, non-owning sorted view over any IContainerEx instance\&. The MultiSet struct does not store elements itself; it maintains ordering by sorting the referenced container using either a user-provided sorting delegate or a built-in BubbleSort fallback when no delegate is supplied\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The element type stored in the container\&.
+.br
+\fITContainer\fP The container type that stores the elements\&. Must implement IContainerEx for the same element type\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITContainer\fP : \fIIVector<T>\fP
+.TP
+\fITContainer\fP : \fIISwappable<long>\fP
+.PP
+Definition at line \fB37\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Equals (\fBVectorMultiSet\fP< T, TContainer > other)"
+
+.PP
+Compares this set with another set for structural equality\&. Both sets must contain the same number of elements and each element at the same position must be equal\&. The comparison assumes both containers are sorted and aligned\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The set to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if both sets contain the same elements in the same order; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB388\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Erase (long first, long last)"
+
+.PP
+Removes a continuous range of elements from the underlying container\&. The range is defined by the start index \fIfirst\fP  and the end index \fIlast\fP \&. If the removal succeeds, the set is re-sorted to maintain ordering guarantees\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfirst\fP The starting index of the range to erase\&.
+.br
+\fIlast\fP The ending index of the range to erase\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the specified range was removed; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB255\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Erase (long index)"
+
+.PP
+Removes the element at the specified index and re-sorts the remaining elements\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index of the element to remove\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB239\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Erase (T value)"
+
+.PP
+Removes the first occurrence of the specified value from the set\&. The element is located using the internal finder\&. If the element exists, it is removed from the underlying container\&. After removal, the set is re-sorted to preserve ordering guarantees\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to erase\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the value was found and removed; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB270\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "T[] SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Extract (long index)"
+
+.PP
+Extracts all elements starting at the given index\&. The extracted elements are removed from the underlying container and returned as a new array\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP Start index of extraction\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new array containing all elements from index to the end\&. If the index is out of range, an empty array is returned\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB112\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Insert (long index, T value)"
+
+.PP
+Inserts a value at the specified index and re-sorts the elements\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index at which the value is inserted\&.
+.br
+\fIvalue\fP The value to insert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB158\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Insert (long start, long end, T value)"
+
+.PP
+Inserts a value into a range and re-sorts the elements\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP Start index of the range\&.
+.br
+\fIend\fP End index of the range\&.
+.br
+\fIvalue\fP The value to insert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB173\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Insert (T value)"
+
+.PP
+Inserts a value into the container and re-sorts the elements\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to insert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB144\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.InsertRange (long start, T[] values)"
+
+.PP
+Inserts multiple values starting at the specified index and re-sorts the elements\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP The index at which the range begins\&.
+.br
+\fIvalues\fP Array of values to insert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB187\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.LowerBound (T key)"
+
+.PP
+Returns the index of the first element not less than key\&. If no such element exists, returns -1\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definition at line \fB288\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.SwapIn (\fBVectorMultiSet\fP< T, TContainer > other)"
+
+.PP
+Moves all elements from this set into the specified target set\&. The elements are copied into a temporary array, removed from the underlying container of this set, and then inserted into the target set\&. After insertion, the target set is re-sorted to maintain ordering guarantees\&. This set becomes empty after the operation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The target set that receives all elements from this set\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB325\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.UpperBound (T key)"
+
+.PP
+Returns the index of the first element greater than key\&. If no such element exists, returns -1\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definition at line \fB350\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Validate ()"
+
+.PP
+Validates the internal ordering of the set\&. The container must be sorted according to the comparison function\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if the container is sorted; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB211\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.VectorMultiSet (ref TContainer keys, ISimpleCompare< T > comparer, SortAction< ISimpleCompare< T >, TContainer >? sorter = \fRnull\fP)"
+
+.PP
+Creates a new sorted view over the given container\&. The container reference is stored and immediately sorted using the comparer and with an optional sort delegate\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkeys\fP \fBReference\fP to the underlying container\&.
+.br
+\fIcomparer\fP Comparer used to order the elements\&.
+.br
+\fIsorter\fP Sort delegate, when null use bubble sort
+.RE
+.PP
+
+.PP
+Definition at line \fB94\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.VectorMultiSet (ref TContainer keys, SortAction< ISimpleCompare< T >, TContainer >? sorter = \fRnull\fP)"
+
+.PP
+Creates a new sorted view over the given container\&. The container reference is stored and immediately sorted using the comparer and with an optional sort delegate\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkeys\fP \fBReference\fP to the underlying container\&.
+.br
+\fIsorter\fP Sort delegate, when null use bubble sort
+.RE
+.PP
+
+.PP
+Definition at line \fB78\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBSwapIn()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "long SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Count\fR [get]\fP"
+
+.PP
+Returns the number of elements stored in the container\&. 
+.PP
+Definition at line \fB65\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "Optional<T> SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Current\fR [get]\fP"
+
+.PP
+Returns the current element of the underlying container\&. 
+.PP
+Definition at line \fB60\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Indicates whether the underlying container is empty\&. 
+.PP
+Definition at line \fB55\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.IsFull\fR [get]\fP"
+
+.PP
+Indicates whether the underlying container is full\&. 
+.PP
+Definition at line \fB50\fP of file \fBVectorMultiSet\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.VectorMultiSet< T, TContainer >\&.Length\fR [get]\fP"
+
+.PP
+Returns the total capacity of the underlying container\&. 
+.PP
+Definition at line \fB70\fP of file \fBVectorMultiSet\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,5187 @@
+.TH "Drawing" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Drawing \- Drawing
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.BlueColors\fP"
+.br
+.RI "Blue Colors Group\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.BrownColors\fP"
+.br
+.RI "Brown Colors Group\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.ColorCMY\fP"
+.br
+.RI "A color in the CMY (Cyan–Magenta–Yellow) color space using floating‑point components\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.ColorConverter\fP"
+.br
+.RI "Provides conversion utilities between different color spaces such as RGB, Linear RGB, XYZ, HSV, HSL, YUV, CMY and HDR\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.ColorGray\fP"
+.br
+.RI "The \fBColorGray\fP class represents a grayscale color using a single floating-point component\&. Only V Drom HSV is used to represent the gray value, where 0 represents black and 1 represents white\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.ColorHDR\fP"
+.br
+.RI "Represents a high‑dynamic‑range color in the HSV color space, where the value component can exceed the normalized range (0–1) and extend up to \fBMaxValue\fP\&. Provides hue‑aware interpolation, brightness manipulation, and arithmetic operations for HDR color processing\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.ColorHSL\fP"
+.br
+.RI "Represents a color in the HSL (Hue–Saturation–Lightness) color space using floating‑point components\&. 
+.br
+ Provides hue‑aware interpolation, component manipulation, arithmetic operations, and normalization utilities\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.Drawing\&.ColorHSV\fP"
+.br
+.RI "Represents a color in the HSV (Hue–Saturation–Value) color space using floating‑point components\&. 
+.br
+ Provides hue‑aware interpolation, component manipulation, arithmetic operations, and normalization utilities\&. <Note> The Main Color in this Libary</Note>\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.Drawing\&.ColorHWB\fP"
+.br
+.RI "Represents a color in the HWB (Hue, Whiteness, Blackness)\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.Drawing\&.ColorNCol\fP"
+.br
+.RI "Represents a compact N‑Color classification based on the HWB color model\&. The color is expressed using a hue segment index (0–5), a percentage within that segment (0–100), and the whiteness/blackness components\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.Drawing\&.ColorR10G10B10A2\fP"
+.br
+.RI "Represents a 10‑bit per channel RGB color (R10G10B10A2), stored internally as normalized floating‑point values (0–1)\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.Drawing\&.ColorR10G10B10FormatSchema\fP"
+.br
+.RI "A Scbema is used to serialize and deserialize a \fBColorR10G10B10A2\fP color to and from a binary representation\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.ColorR10G10B10Serializer\fP"
+.br
+.RI "The \fBColorR10G10B10FormatSchema\fP class defines the schema for serializing and deserializing a \fBColorR10G10B10A2\fP color to and from a binary representation\&. It specifies the total size, header size, endianness, and field offsets for the color data\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.Drawing\&.ColorR16G16B16\fP"
+.br
+.RI "Represents a color with 16‑bit precision per channel (R16G16B16), stored internally as normalized floating‑point values (0–1)\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.ColorR8G8B8\fP"
+.br
+.RI "Represents an RGB color using normalized float channels (0–1)\&. Provides basic color manipulation, brightness evaluation, contrast classification and interpolation utilities\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.Drawing\&.ColorXYZ\fP"
+.br
+.RI "Represents a color in the CIE XYZ color space using floating‑point components\&. Provides basic construction, comparison, and string formatting utilities\&. "
+.ti -1c
+.RI "struct \fBSystemEx\&.Drawing\&.ColorYUV\fP"
+.br
+.RI "Represents a YUV color using floating‑point components\&. Provides basic construction, comparison, and string formatting\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.CyanColors\fP"
+.br
+.RI "Cyan Colors Group\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.GreenColors\fP"
+.br
+.RI "Green Colors Group\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.GreyColors\fP"
+.br
+.RI "Grey ColorsGroup\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Drawing\&.ICanvas< T >\fP"
+.br
+.RI "Represents a mathematical 2D canvas storing color values of type \fIT\fP \&. This interface defines a deterministic data structure that models a rectangular grid of values\&. The canvas does not perform graphical drawing; instead, it provides structured access, mutation, and region‑based operations on its underlying data\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Drawing\&.ICanvasList< T >\fP"
+.br
+.RI "Represents a layered mathematical canvas system composed of multiple sub‑canvases\&. Each layer is a deterministic transformation applied on top of the base canvas, forming a purely mathematical composition model rather than a graphical drawing system\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Drawing\&.IColor< T >\fP"
+.br
+.RI "Represents a color in a specific color space and provides methods for color manipulation\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Drawing\&.ISubCanvas< T >\fP"
+.br
+.RI "Represents a mathematical sub‑canvas that participates as a layer within a layered canvas system\&. A sub‑canvas does not perform graphical drawing; instead, it defines deterministic transformation rules, visibility states, and optional masking that influence the final composed pixel buffer when requested through \fBICanvasList<T>\&.GetPixels\fP or \fBICanvasList<T>\&.SwapIn\fP\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.Light\fP"
+.br
+.RI "\fBBase\fP light class used for all light types in the \fBSystemEx\&.Drawing\fP namespace\&. Provides shared parameters such as position, direction, diffuse/ambient color and projection settings\&. Specific light types (spot, point, directional) extend this class with additional behavior\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.OrangeColors\fP"
+.br
+.RI "Orange Colors Group\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.PinkColors\fP"
+.br
+.RI "Pink Color Group\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.PointLight\fP"
+.br
+.RI "Point light implementation\&. Adds attenuation parameters controlling how light intensity decreases over distance\&. Typically contains constant, linear, and quadratic terms\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.PurpelColors\fP"
+.br
+.RI "Purpel Color Group\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.RedColors\fP"
+.br
+.RI "Red Colors Group\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.SpotLight\fP"
+.br
+.RI "Spot light implementation\&. Adds inner and outer cone angles (phi/theta) expressed as cosine values\&. These values are used for smooth falloff inside the spotlight cone\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.WhiteColors\fP"
+.br
+.RI "White ColorsGroup\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Drawing\&.YellowColors\fP"
+.br
+.RI "Yellow Colors Group\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSystemEx\&.Drawing\&.BlendMode\fP { \fBSystemEx\&.Drawing\&.BlendMode\&.Add\fP, \fBSystemEx\&.Drawing\&.BlendMode\&.Subtract\fP, \fBSystemEx\&.Drawing\&.BlendMode\&.Multiply\fP, \fBSystemEx\&.Drawing\&.BlendMode\&.Screen\fP, \fBSystemEx\&.Drawing\&.BlendMode\&.Overlay\fP, \fBSystemEx\&.Drawing\&.BlendMode\&.Replace\fP, \fBSystemEx\&.Drawing\&.BlendMode\&.Divide\fP, \fBSystemEx\&.Drawing\&.BlendMode\&.Light\fP, \fBSystemEx\&.Drawing\&.BlendMode\&.Dark\fP }"
+.br
+.RI "Specifies the mathematical blend operation used when combining a layer with the layers beneath it\&. These modes do not perform graphical drawing; instead, each mode defines a deterministic color transformation applied during layer composition when \fBICanvasList<T>\&.GetPixels\fP or \fBICanvasList<T>\&.SwapIn\fP is invoked\&. "
+.ti -1c
+.RI "enum \fBSystemEx\&.Drawing\&.ContrastLevel\fP { \fBSystemEx\&.Drawing\&.ContrastLevel\&.VeryLow\fP, \fBSystemEx\&.Drawing\&.ContrastLevel\&.Low\fP, \fBSystemEx\&.Drawing\&.ContrastLevel\&.High\fP, \fBSystemEx\&.Drawing\&.ContrastLevel\&.Perfect\fP }"
+.br
+.RI "Represents the qualitative contrast level between two colors\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorHDR\&.Addition\fP (\fBColorHDR\fP a)"
+.br
+.RI "Adds another HDR color to this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. "
+.ti -1c
+.RI "\fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorHDR\&.Addition\fP (float a, float b, float c)"
+.br
+.RI "Adds the specified HSV components to this HDR color\&. This is a convenience overload that constructs a temporary HDR color\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.Addition\fP (\fBColorHSV\fP a)"
+.br
+.RI "Adds another HSV color to this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.Addition\fP (float a, float b, float c)"
+.br
+.RI "Addition another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Addition\fP (\fBColorR16G16B16\fP value)"
+.br
+.RI "Adds another color to this one\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Addition\fP (float a, float b, float c)"
+.br
+.RI "Addition another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Addition\fP (\fBColorR8G8B8\fP value)"
+.br
+.RI "Adds another color to this one, channel by channel\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Addition\fP (float a, float b, float c)"
+.br
+.RI "Addition another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.IColor< T >\&.Addition\fP (float a, float b, float c)"
+.br
+.RI "Performs component-wise addition of three colors\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.IColor< T >\&.Addition\fP (T value)"
+.br
+.RI "Adds the specified color to this color\&. "
+.ti -1c
+.RI "int \fBSystemEx\&.Drawing\&.ICanvasList< T >\&.AddLayer\fP (ISubCanvas< T > layer, \fBBlendMode\fP mode)"
+.br
+.RI "Adds a new layer to the canvas list\&. The layer becomes part of the mathematical composition pipeline and will influence the final pixel buffer depending on its blend mode\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.AsNormalized\fP ()"
+.br
+.RI "Returns a version of the color with all channels clamped to 0–1\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.AsNormalized\fP ()"
+.br
+.RI "Returns a version of the color with all channels clamped to 0–1\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.AsScaled\fP ()"
+.br
+.RI "Returns a version of the color scaled so the brightest channel becomes 1\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.AsScaled\fP ()"
+.br
+.RI "Returns a version of the color scaled so the brightest channel becomes 1\&. "
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorHDR\&.Brightness\fP (float delta)"
+.br
+.RI "Adjusts the HDR brightness by the specified delta\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.Brightness\fP (float delta)"
+.br
+.RI "Adjusts the value (brightness) by the specified delta\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Brightness\fP ()"
+.br
+.RI "Computes the perceived brightness of the color\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Brightness\fP (float delta)"
+.br
+.RI "Adjusts the perceived brightness of the color\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Brightness\fP ()"
+.br
+.RI "Computes the perceived brightness of the color\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Brightness\fP (float delta)"
+.br
+.RI "Changes the perceived brightness of the color\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.IColor< T >\&.Brightness\fP (float delta)"
+.br
+.RI "Adjusts the brightness of the color\&. "
+.ti -1c
+.RI "static float \fBSystemEx\&.Drawing\&.ColorHDR\&.ClampHue\fP (float h)"
+.br
+.RI "Wraps a hue value into the range 0–360 degrees\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.Drawing\&.ICanvas< T >\&.Clear\fP ()"
+.br
+.RI "Clears the canvas by resetting all stored values to their default state\&. This operation affects only the mathematical buffer\&. "
+.ti -1c
+.RI "ICanvas< T > \fBSystemEx\&.Drawing\&.ICanvas< T >\&.Clone\fP ()"
+.br
+.RI "Creates a full mathematical clone of this canvas, duplicating all stored values\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorCMY\&.ColorCMY\fP (float c, float m, float y)"
+.br
+.RI "Initializes a new instance of the \fBColorCMY\fP class with the specified component values\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorCMY\&.ColorCMY\fP (float[] x)"
+.br
+.RI "The default constructor initializes the color to black (C=0, M=0, Y=0)\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorGray\&.ColorGray\fP (\fBColorHSV\fP hsv)"
+.br
+.RI "Creates a new \fBColorGray\fP instance from a \fBColorHSV\fP instance, using the value (V) component of the HSV color\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorGray\&.ColorGray\fP (float v)"
+.br
+.RI "Initializes a new instance of the \fBColorGray\fP class with the specified grayscale value\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorGray\&.ColorGray\fP (float[] x)"
+.br
+.RI "Initializes a new instance of the \fBColorGray\fP class with the specified grayscale value array\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorHDR\&.ColorHDR\fP (float h, float s, float v)"
+.br
+.RI "Initializes a new HDR color with the specified HSV components\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorHSL\&.ColorHSL\fP (float h, float s, float l)"
+.br
+.RI "Initializes a new HSL color with the specified component values\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorHSL\&.ColorHSL\fP (float[] x)"
+.br
+.RI "Initializes a new HSL color from an array of three floating‑point values\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorHSV\&.ColorHSV\fP (float h, float s, float v)"
+.br
+.RI "Initializes a new HSV color with the specified component values\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorHWB\&.ColorHWB\fP (float h, float whiteness, float blackness)"
+.br
+.RI "Initializes a new HWB color with the specified component values\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorHWB\&.ColorHWB\fP (float[] x)"
+.br
+.RI "Initializes a new HWB color from an array of component values\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorNCol\&.ColorNCol\fP (byte index, byte percent, float c, float l)"
+.br
+.RI "Erstellt eine neue N‑Color‑Struktur\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR10G10B10A2\&.ColorR10G10B10A2\fP (float r, float g, float b)"
+.br
+.RI "Creates a new R10G10B10A2 color from normalized float values (0–1)\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR10G10B10A2\&.ColorR10G10B10A2\fP (float r, float g, float b, float a)"
+.br
+.RI "Initializes a new R10G10B10A2 color from normalized float values (0–1)\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR10G10B10A2\&.ColorR10G10B10A2\fP (ushort r10, ushort g10, ushort b10, ushort a10)"
+.br
+.RI "Initializes a new R10G10B10A2 color from 10‑bit UNORM components (0–1023)\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR10G10B10FormatSchema\&.ColorR10G10B10FormatSchema\fP (\fBEndian\fP endian)"
+.br
+.RI "Initializes a new instance of the \fBColorR10G10B10FormatSchema\fP class with the specified endianness\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR10G10B10Serializer\&.ColorR10G10B10Serializer\fP (\fBIByteFormatSchema\fP schema, \fBEndian\fP endian)"
+.br
+.RI "Created a new \fBColorR10G10B10Serializer\fP with the specified schema and endianness\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR16G16B16\&.ColorR16G16B16\fP ()"
+.br
+.RI "Creates a black color (0,0,0)\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR16G16B16\&.ColorR16G16B16\fP (float gray)"
+.br
+.RI "Creates a grayscale color using a single intensity value\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR16G16B16\&.ColorR16G16B16\fP (float r, float g, float b)"
+.br
+.RI "Creates a color from normalized RGB components\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR16G16B16\&.ColorR16G16B16\fP (ushort r, ushort g, ushort b)"
+.br
+.RI "Creates a color from 16‑bit UNORM components (0–65535)\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8\fP ()"
+.br
+.RI "Creates a black color (0,0,0)\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8\fP (byte b)"
+.br
+.RI "Creates a grayscale color using a single byte value\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8\fP (byte r, byte g, byte b)"
+.br
+.RI "Creates a color from 8‑bit RGB components\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8\fP (float r, float g, float b)"
+.br
+.RI "Creates a color from normalized RGB components\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8\fP (float rgb)"
+.br
+.RI "Creates a grayscale color using a single intensity value\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8\fP (int rgb)"
+.br
+.RI "Creates a color from a packed 24‑bit RGB integer (0xRRGGBB)\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8\fP (System\&.Drawing\&.Color x)"
+.br
+.RI "Creates a color from a System\&.Drawing\&.Color\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorXYZ\&.ColorXYZ\fP (float x, float y, float z)"
+.br
+.RI "Initializes a new XYZ color with the specified component values\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorYUV\&.ColorYUV\fP (float y, float u, float v)"
+.br
+.RI "Initializes a new YUV color with the specified component values\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Drawing\&.ColorYUV\&.ColorYUV\fP (float[] x)"
+.br
+.RI "Initializes a new YUV color from an array of three floating‑point values\&. "
+.ti -1c
+.RI "int \fBSystemEx\&.Drawing\&.ColorHSV\&.CompareTo\fP (\fBColorHSV\fP other)"
+.br
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Contrast\fP (\fBColorR16G16B16\fP other)"
+.br
+.RI "Measures the visual contrast between this color and another\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Contrast\fP (\fBColorR8G8B8\fP other)"
+.br
+.RI "Measures the visual contrast between this color and another\&. "
+.ti -1c
+.RI "ICanvas< T > \fBSystemEx\&.Drawing\&.ICanvas< T >\&.CopyRegion\fP (int x, int y, int width, int height)"
+.br
+.RI "Creates a new canvas containing a rectangular region of this canvas\&. The region is copied mathematically; no rendering or blending occurs\&. "
+.ti -1c
+.RI "override? object \fBSystemEx\&.Drawing\&.ColorR10G10B10Serializer\&.CreateObjectFromEntrys\fP (Map< string, byte[]> entries, \fBEndian\fP endian)"
+.br
+.RI "Get the object from the given entries and endianness\&. "
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorHDR\&.Division\fP (\fBColorHDR\fP a)"
+.br
+.RI "Divides this HDR color by another, component by component\&. Hue is not affected\&. "
+.ti -1c
+.RI "\fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorHDR\&.Division\fP (float a, float b, float c)"
+.br
+.RI "Divides this HDR color by the specified HSV components\&. This is a convenience overload that constructs a temporary HDR color\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.Division\fP (\fBColorHSV\fP a)"
+.br
+.RI "Divides this color by another, component by component\&. Hue is not affected\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.Division\fP (float a, float b, float c)"
+.br
+.RI "Divisionication another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Division\fP (\fBColorR16G16B16\fP value)"
+.br
+.RI "Divides this color by another\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Division\fP (float a, float b, float c)"
+.br
+.RI "Division another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Division\fP (\fBColorR8G8B8\fP value)"
+.br
+.RI "Divides this color by another, channel by channel\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Division\fP (float a, float b, float c)"
+.br
+.RI "Division another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.IColor< T >\&.Division\fP (float a, float b, float c)"
+.br
+.RI "Performs component-wise division of three colors\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.IColor< T >\&.Division\fP (T value)"
+.br
+.RI "Divides this color by the specified color\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ColorHDR\&.Equals\fP (\fBColorHDR\fP? other)"
+.br
+.RI "Determines whether this instance is equal to another HDR color\&. "
+.ti -1c
+.RI "override bool \fBSystemEx\&.Drawing\&.ColorHDR\&.Equals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ColorHSL\&.Equals\fP (\fBColorHSL\fP? other)"
+.br
+.ti -1c
+.RI "override bool \fBSystemEx\&.Drawing\&.ColorHSL\&.Equals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ColorHSV\&.Equals\fP (\fBColorHSV\fP other)"
+.br
+.RI "Determines whether this instance is equal to another HSV color\&. "
+.ti -1c
+.RI "override bool \fBSystemEx\&.Drawing\&.ColorHSV\&.Equals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ColorHWB\&.Equals\fP (\fBColorHWB\fP other)"
+.br
+.RI "Determines whether this instance is equal to another HWB color\&. "
+.ti -1c
+.RI "override bool \fBSystemEx\&.Drawing\&.ColorHWB\&.Equals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ColorNCol\&.Equals\fP (\fBColorNCol\fP other)"
+.br
+.RI "Determines whether this instance is equal to another NCol color\&. "
+.ti -1c
+.RI "override bool \fBSystemEx\&.Drawing\&.ColorNCol\&.Equals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ColorR10G10B10A2\&.Equals\fP (\fBColorR10G10B10A2\fP other)"
+.br
+.RI "Determines whether this instance is equal to another R10G10B10A2 color\&. "
+.ti -1c
+.RI "override bool \fBSystemEx\&.Drawing\&.ColorR10G10B10A2\&.Equals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Equals\fP (\fBColorR16G16B16\fP other)"
+.br
+.RI "Determines whether this instance is equal to another YUV color\&. "
+.ti -1c
+.RI "override bool \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Equals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ColorXYZ\&.Equals\fP (\fBColorXYZ\fP other)"
+.br
+.RI "Determines whether this instance is equal to another XYZ color\&. "
+.ti -1c
+.RI "override bool \fBSystemEx\&.Drawing\&.ColorXYZ\&.Equals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ColorYUV\&.Equals\fP (\fBColorYUV\fP other)"
+.br
+.RI "Determines whether this instance is equal to another YUV color\&. "
+.ti -1c
+.RI "override bool \fBSystemEx\&.Drawing\&.ColorYUV\&.Equals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.Drawing\&.ICanvas< T >\&.Fill\fP (T objcolor)"
+.br
+.RI "Fills the entire canvas with the specified color value\&. This operation replaces all stored data deterministically and does not perform any graphical drawing\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.Drawing\&.ICanvas< T >\&.FillRect\fP (int x1, int y1, int x2, int y2)"
+.br
+.RI "Fills a rectangular region of the canvas with the specified color value\&. This modifies only the mathematical buffer and does not perform rendering\&. "
+.ti -1c
+.RI "Pair< int, int > \fBSystemEx\&.Drawing\&.ICanvas< T >\&.Find\fP (T color)"
+.br
+.RI "Searches the canvas for the first occurrence of the specified color value\&. Returns the coordinates of the match or \fR(-1, -1)\fP if no match is found\&. "
+.ti -1c
+.RI "int \fBSystemEx\&.Drawing\&.ICanvas< T >\&.FindLast\fP (T color)"
+.br
+.RI "Searches the canvas for the last occurrence of the specified color value\&. Returns the index in the underlying buffer or \fR-1\fP if no match is found\&. "
+.ti -1c
+.RI "override FixedVector< byte > \fBSystemEx\&.Drawing\&.ColorR10G10B10Serializer\&.GetBytesForEntry\fP (object obj, string name, \fBEndian\fP endian)"
+.br
+.RI "Gets the byte representation of the specified object for the given field name\&. ///\&. "
+.ti -1c
+.RI "override long \fBSystemEx\&.Drawing\&.ColorR10G10B10Serializer\&.GetEntrySize\fP (\fBCache\fP obj, string name, \fBEndian\fP endian)"
+.br
+.RI "Gets the size of the specified entry in the cache\&. ///\&. "
+.ti -1c
+.RI "override int \fBSystemEx\&.Drawing\&.ColorHDR\&.GetHashCode\fP ()"
+.br
+.RI "Returns a hash code based on the hue, saturation, and HDR value\&. "
+.ti -1c
+.RI "override int \fBSystemEx\&.Drawing\&.ColorHSL\&.GetHashCode\fP ()"
+.br
+.ti -1c
+.RI "override int \fBSystemEx\&.Drawing\&.ColorHSV\&.GetHashCode\fP ()"
+.br
+.RI "Returns a hash code based on the hue, saturation, and value components\&. "
+.ti -1c
+.RI "override int \fBSystemEx\&.Drawing\&.ColorHWB\&.GetHashCode\fP ()"
+.br
+.RI "Returns a hash code based on the H, W, and B components\&. "
+.ti -1c
+.RI "override int \fBSystemEx\&.Drawing\&.ColorNCol\&.GetHashCode\fP ()"
+.br
+.RI "Returns a hash code based on the C, L, and N components\&. "
+.ti -1c
+.RI "override int \fBSystemEx\&.Drawing\&.ColorR10G10B10A2\&.GetHashCode\fP ()"
+.br
+.RI "Returns a hash code based on the R, G, and B components\&. "
+.ti -1c
+.RI "override int \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.GetHashCode\fP ()"
+.br
+.RI "Returns a hash code based on the R, G, and B components\&. "
+.ti -1c
+.RI "override int \fBSystemEx\&.Drawing\&.ColorXYZ\&.GetHashCode\fP ()"
+.br
+.RI "Returns a hash code based on the X, Y, and Z components\&. "
+.ti -1c
+.RI "override int \fBSystemEx\&.Drawing\&.ColorYUV\&.GetHashCode\fP ()"
+.br
+.RI "Returns a hash code based on the Y, U, and V components\&. "
+.ti -1c
+.RI "\fBContrastLevel\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.GetKontrast\fP (\fBColorR16G16B16\fP other)"
+.br
+.RI "Classifies the contrast between this color and another\&. "
+.ti -1c
+.RI "\fBContrastLevel\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.GetKontrast\fP (\fBColorR8G8B8\fP other)"
+.br
+.RI "Classifies the contrast between this color and another\&. "
+.ti -1c
+.RI "ISubCanvas< T > \fBSystemEx\&.Drawing\&.ICanvasList< T >\&.GetLayer\fP (int index)"
+.br
+.RI "Retrieves the sub‑canvas at the specified index\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.GetNextContrastColor\fP ()"
+.br
+.RI "Generates a visually contrasting color\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.GetNextContrastColor\fP ()"
+.br
+.RI "Generates a color that visually contrasts with this one\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.ICanvas< T >\&.GetPixel\fP (int x, int y)"
+.br
+.RI "Returns the color value at the specified coordinates\&. This method provides direct access to the underlying mathematical buffer without performing any rendering\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.ICanvasList< T >\&.GetPixel\fP (int layer, int x, int y)"
+.br
+.RI "Retrieves the mathematically composed pixel value at the specified coordinates for the given layer index\&. "
+.ti -1c
+.RI "FixedVector< T > \fBSystemEx\&.Drawing\&.ICanvasList< T >\&.GetPixels\fP (int layer)"
+.br
+.RI "Returns the mathematically composed pixel buffer for the specified layer index\&. This canvas system is purely mathematical and does not perform real drawing; each layer represents a deterministic transformation applied on top of the layers beneath it\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ICanvasList< T >\&.IsShowing\fP (int index=0)"
+.br
+.RI "Gets the visibility state of the specified layer\&. Hidden layers do not contribute to the mathematical composition\&. "
+.ti -1c
+.RI "\fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorHDR\&.Lerp\fP (\fBColorHDR\fP value, float amount)"
+.br
+.RI "Performs a quadratic interpolation toward another HDR color\&. Hue interpolation follows the shortest path around the color wheel\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.Lerp\fP (\fBColorHSV\fP value, float amount)"
+.br
+.RI "Performs a quadratic interpolation toward another HSV color\&. 
+.br
+ Hue interpolation follows the shortest path around the color wheel\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Lerp\fP (\fBColorR16G16B16\fP value, float amount)"
+.br
+.RI "Blends this color toward another by the given amount\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Lerp\fP (\fBColorR8G8B8\fP value, float amount)"
+.br
+.RI "Blends this color toward another by the given amount\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.IColor< T >\&.Lerp\fP (T value, float amount)"
+.br
+.RI "Performs linear interpolation between this color and another color\&. "
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorHDR\&.LightIntensity\fP (float intensity)"
+.br
+.RI "Increases the HDR brightness by the specified intensity\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.LinearBrightness\fP ()"
+.br
+.RI "Computes the brightness using linear RGB\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.LinearBrightness\fP ()"
+.br
+.RI "Computes the brightness using linear RGB\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Max\fP (\fBColorR8G8B8\fP a, \fBColorR8G8B8\fP b)"
+.br
+.RI "Returns the brightest components of two colors\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Min\fP (\fBColorR8G8B8\fP a, \fBColorR8G8B8\fP b)"
+.br
+.RI "Returns the darkest components of two colors\&. "
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorHDR\&.Multiplication\fP (\fBColorHDR\fP a)"
+.br
+.RI "Multiplies this HDR color with another, component by component\&. Hue is not affected\&. "
+.ti -1c
+.RI "\fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorHDR\&.Multiplication\fP (float a, float b, float c)"
+.br
+.RI "Multiplies this HDR color by the specified HSV components\&. This is a convenience overload that constructs a temporary HDR color\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.Multiplication\fP (\fBColorHSV\fP a)"
+.br
+.RI "Multiplies this color with another, component by component\&. Hue is not affected\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.Multiplication\fP (float a, float b, float c)"
+.br
+.RI "Multiplication another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Multiplication\fP (\fBColorR16G16B16\fP value)"
+.br
+.RI "Multiplies this color with another\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Multiplication\fP (float a, float b, float c)"
+.br
+.RI "Multiplication another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Multiplication\fP (\fBColorR8G8B8\fP value)"
+.br
+.RI "Multiplies this color with another, channel by channel\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Multiplication\fP (float a, float b, float c)"
+.br
+.RI "Multiplication another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.IColor< T >\&.Multiplication\fP (float a, float b, float c)"
+.br
+.RI "Performs component-wise multiplication of three colors\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.IColor< T >\&.Multiplication\fP (T value)"
+.br
+.RI "Multiplies this color with the specified color\&. "
+.ti -1c
+.RI "static bool \fBSystemEx\&.Drawing\&.ColorHSV\&.operator!=\fP (\fBColorHSV\fP left, \fBColorHSV\fP right)"
+.br
+.ti -1c
+.RI "static bool \fBSystemEx\&.Drawing\&.ColorHSV\&.operator<\fP (\fBColorHSV\fP left, \fBColorHSV\fP right)"
+.br
+.ti -1c
+.RI "static bool \fBSystemEx\&.Drawing\&.ColorHSV\&.operator<=\fP (\fBColorHSV\fP left, \fBColorHSV\fP right)"
+.br
+.ti -1c
+.RI "static bool \fBSystemEx\&.Drawing\&.ColorHSV\&.operator==\fP (\fBColorHSV\fP left, \fBColorHSV\fP right)"
+.br
+.ti -1c
+.RI "static bool \fBSystemEx\&.Drawing\&.ColorHSV\&.operator>\fP (\fBColorHSV\fP left, \fBColorHSV\fP right)"
+.br
+.ti -1c
+.RI "static bool \fBSystemEx\&.Drawing\&.ColorHSV\&.operator>=\fP (\fBColorHSV\fP left, \fBColorHSV\fP right)"
+.br
+.ti -1c
+.RI "ISubCanvas< T > \fBSystemEx\&.Drawing\&.ICanvasList< T >\&.RemoveLayer\fP (int index)"
+.br
+.RI "Removes the layer at the specified index\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ICanvas< T >\&.Resize\fP (int size)"
+.br
+.RI "Resizes the canvas to the specified total size (Width × Height)\&. Existing values may be truncated or expanded depending on the implementation\&. This operation modifies only the mathematical buffer\&. "
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorHDR\&.Saturation\fP (float delta)"
+.br
+.RI "Adjusts the saturation by the specified delta\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.Saturation\fP (float delta)"
+.br
+.RI "Adjusts the saturation by the specified delta\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Saturation\fP (float delta)"
+.br
+.RI "Adjusts the perceived saturation of the color\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Saturation\fP (float delta)"
+.br
+.RI "Changes the perceived saturation of the color\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.IColor< T >\&.Saturation\fP (float delta)"
+.br
+.RI "Adjusts the saturation of the color\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ICanvasList< T >\&.SetShowing\fP (bool show, int index)"
+.br
+.RI "Sets the visibility state of the specified layer\&. A hidden layer does not participate in the mathematical composition when \fBGetPixels\fP is invoked\&. "
+.ti -1c
+.RI "virtual \fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorHDR\&.Subtraction\fP (\fBColorHDR\fP a)"
+.br
+.RI "Subtracts another HDR color from this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. "
+.ti -1c
+.RI "\fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorHDR\&.Subtraction\fP (float a, float b, float c)"
+.br
+.RI "Subtracts the specified HSV components from this HDR color\&. This is a convenience overload that constructs a temporary HDR color\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.Subtraction\fP (\fBColorHSV\fP a)"
+.br
+.RI "Subtracts another HSV color from this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.Subtraction\fP (float a, float b, float c)"
+.br
+.RI "Subtraction another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Subtraction\fP (\fBColorR16G16B16\fP value)"
+.br
+.RI "Subtracts another color from this one\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Subtraction\fP (float a, float b, float c)"
+.br
+.RI "Subtraction another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Subtraction\fP (\fBColorR8G8B8\fP value)"
+.br
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Subtraction\fP (float a, float b, float c)"
+.br
+.RI "Subtraction another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.IColor< T >\&.Subtraction\fP (float a, float b, float c)"
+.br
+.RI "Performs component-wise subtraction of three colors\&. "
+.ti -1c
+.RI "T \fBSystemEx\&.Drawing\&.IColor< T >\&.Subtraction\fP (T value)"
+.br
+.RI "Subtracts the specified color from this color\&. "
+.ti -1c
+.RI "int \fBSystemEx\&.Drawing\&.ICanvasList< T >\&.SwapIn\fP (int x, int y, int width, int height, ref ICanvas< T > toDraw)"
+.br
+.RI "Swaps the mathematically composed region of this canvas into another canvas\&. The region defined by \fIx\fP , \fIy\fP , \fIwidth\fP , and \fIheight\fP  is computed mathematically and then written into \fItoDraw\fP \&. "
+.ti -1c
+.RI "int \fBSystemEx\&.Drawing\&.ICanvasList< T >\&.SwapIn\fP (ref ICanvas< T > toDraw)"
+.br
+.RI "Swaps the entire mathematically composed canvas into another canvas\&. This transfers the full computed pixel buffer into \fItoDraw\fP \&. "
+.ti -1c
+.RI "static \fBColorGray\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorGray\fP (this \fBColorHSV\fP color)"
+.br
+.RI "Converts an HSV color to grayscale using the value component\&. "
+.ti -1c
+.RI "static \fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHDR\fP (this \fBColorHSV\fP x)"
+.br
+.RI "Converts an HSV color to HDR\&. "
+.ti -1c
+.RI "static \fBColorHDR\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHDR\fP (this \fBColorR8G8B8\fP x)"
+.br
+.RI "Converts an sRGB color to HDR via HSV\&. "
+.ti -1c
+.RI "static \fBColorHSL\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSL\fP (this \fBColorHSV\fP color)"
+.br
+.RI "Converts an HSV color to HSL\&. "
+.ti -1c
+.RI "static \fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV\fP (this \fBColorGray\fP color)"
+.br
+.RI "Converts an Gray color to HSV\&. "
+.ti -1c
+.RI "static \fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV\fP (this \fBColorHDR\fP color)"
+.br
+.RI "Converts an HDR color to HSV, clamping the value to 0–1\&. "
+.ti -1c
+.RI "static \fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV\fP (this \fBColorR16G16B16\fP color)"
+.br
+.RI "Converts a 16‑bit RGB color (R16G16B16) to HSV\&. Internally converts R16G16B16 → sRGB → HSV\&. "
+.ti -1c
+.RI "static \fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV\fP (this \fBColorR8G8B8\fP x)"
+.br
+.RI "Converts an sRGB color to HSV\&. "
+.ti -1c
+.RI "static \fBColorHWB\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHWB\fP (this \fBColorR8G8B8\fP color)"
+.br
+.RI "Converts an sRGB color to HWB\&. "
+.ti -1c
+.RI "static \fBColorNCol\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorNCol\fP (this \fBColorR8G8B8\fP color)"
+.br
+.RI "Converts an HSV color to sRGB\&. "
+.ti -1c
+.RI "static \fBColorR10G10B10A2\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR10G10B10\fP (this \fBColorNCol\fP color)"
+.br
+.RI "Converts an NCol color to RGB10\&. "
+.ti -1c
+.RI "static \fBColorR10G10B10A2\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR10G10B10\fP (this \fBColorR16G16B16\fP color)"
+.br
+.RI "Converts a 16‑bit RGB color (R16G16B16) to a 10‑bit RGB holder (R10G10B10)\&. No quantization is applied; values remain normalized floats\&. "
+.ti -1c
+.RI "static \fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16\fP (this \fBColorHSV\fP color)"
+.br
+.RI "Converts an HSV color to a 16‑bit RGB color (R16G16B16)\&. Internally converts HSV → sRGB → R16G16B16\&. "
+.ti -1c
+.RI "static \fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16\fP (this \fBColorNCol\fP color)"
+.br
+.RI "Converts an NCol color to RGB16\&. "
+.ti -1c
+.RI "static \fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16\fP (this \fBColorR10G10B10A2\fP color)"
+.br
+.RI "Converts a 10‑bit RGB holder (R10G10B10) to a 16‑bit RGB color (R16G16B16)\&. No quantization is applied; values remain normalized floats\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8\fP (this \fBColorCMY\fP color)"
+.br
+.RI "Converts a CMY color to sRGB\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8\fP (this \fBColorGray\fP color)"
+.br
+.RI "Converts a grayscale color to sRGB\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8\fP (this \fBColorHSV\fP color)"
+.br
+.RI "Converts an HSV color to sRGB\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8\fP (this \fBColorHWB\fP color)"
+.br
+.RI "Converts an HWB color to sRGB\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8\fP (this \fBColorNCol\fP color)"
+.br
+.RI "Converts an NCol color to sRGB\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8\fP (this \fBColorXYZ\fP c)"
+.br
+.RI "Converts a CIE XYZ color to sRGB using the D65 reference white\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8\fP (this \fBColorYUV\fP yuv)"
+.br
+.RI "Converts a YUV color to sRGB using the BT\&.601 conversion matrix\&. "
+.ti -1c
+.RI "static \fBColorXYZ\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorXYZ\fP (this \fBColorHSV\fP color)"
+.br
+.RI "Converts an HSV color to CIE XYZ\&. "
+.ti -1c
+.RI "static \fBColorXYZ\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorXYZ\fP (this \fBColorR8G8B8\fP rgb)"
+.br
+.RI "Converts an sRGB color to CIE XYZ using the D65 reference white\&. "
+.ti -1c
+.RI "static \fBColorR16G16B16\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToLinear\fP (this \fBColorR16G16B16\fP color)"
+.br
+.RI "Converts a 16‑bit RGB color (R16G16B16) from sRGB to linear RGB using the standard sRGB transfer function\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.ColorConverter\&.ToLinear\fP (this \fBColorR8G8B8\fP rgb)"
+.br
+.RI "Converts an sRGB color to linear RGB using the standard sRGB transfer function\&. "
+.ti -1c
+.RI "override string \fBSystemEx\&.Drawing\&.ColorHDR\&.ToString\fP ()"
+.br
+.RI "Returns a string representation of the HDR color\&. "
+.ti -1c
+.RI "override string \fBSystemEx\&.Drawing\&.ColorHSL\&.ToString\fP ()"
+.br
+.RI "Returns a string representation of the YUV color\&. "
+.ti -1c
+.RI "override string \fBSystemEx\&.Drawing\&.ColorHSV\&.ToString\fP ()"
+.br
+.RI "Returns a string representation of the HSV color\&. "
+.ti -1c
+.RI "override string \fBSystemEx\&.Drawing\&.ColorHWB\&.ToString\fP ()"
+.br
+.RI "Returns a string representation of the HWB color\&. "
+.ti -1c
+.RI "override string \fBSystemEx\&.Drawing\&.ColorNCol\&.ToString\fP ()"
+.br
+.RI "Returns a string representation of the NCOL color\&. "
+.ti -1c
+.RI "override string \fBSystemEx\&.Drawing\&.ColorR10G10B10A2\&.ToString\fP ()"
+.br
+.RI "Returns a string representation of the R10G10B10A2 color\&. "
+.ti -1c
+.RI "override string \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.ToString\fP ()"
+.br
+.RI "Returns a string representation of the color\&. "
+.ti -1c
+.RI "override string \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.ToString\fP ()"
+.br
+.RI "Returns a string representation of the color in normalized RGB format\&. "
+.ti -1c
+.RI "override string \fBSystemEx\&.Drawing\&.ColorXYZ\&.ToString\fP ()"
+.br
+.RI "Returns a string representation of the XYZ color\&. "
+.ti -1c
+.RI "override string \fBSystemEx\&.Drawing\&.ColorYUV\&.ToString\fP ()"
+.br
+.RI "Returns a string representation of the YUV color\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const float \fBSystemEx\&.Drawing\&.ColorR10G10B10A2\&.COLORINV\fP = 1f / 1023f"
+.br
+.RI "Gets the inverse of the color component range\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR10G10B10A2\&.A\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the alpha component\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.AliceBlue\fP\fR [get]\fP"
+.br
+.RI "AliceBlue #F0F8FF\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.AntiqueWhite\fP\fR [get]\fP"
+.br
+.RI "AntiqueWhite #FAEBD7\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.CyanColors\&.Aqua\fP\fR [get]\fP"
+.br
+.RI "Aqua #00FFFF\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.CyanColors\&.Aquamarine\fP\fR [get]\fP"
+.br
+.RI "Aquamarine #7FFFD4\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.Azure\fP\fR [get]\fP"
+.br
+.RI "Azure #F0FFFF\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR10G10B10A2\&.B\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the blue component\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.B\fP\fR [get]\fP"
+.br
+.RI "Gets the blue channel\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.Beige\fP\fR [get]\fP"
+.br
+.RI "Beige #F5F5DC\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.Bisque\fP\fR [get]\fP"
+.br
+.RI "Bisque #FFE4C4\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreyColors\&.Black\fP\fR [get]\fP"
+.br
+.RI "Black #000000\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorHWB\&.Blackness\fP\fR [get, set]\fP"
+.br
+.RI "The blackness component of the color, in the range [0, 1]\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.BlanchedAlmond\fP\fR [get]\fP"
+.br
+.RI "BlanchedAlmond #FFEBCD\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.Blue\fP\fR [get]\fP"
+.br
+.RI "Blue #0000FF\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Blue\fP\fR [get]\fP"
+.br
+.RI "Gets the blue channel\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Blue\fP\fR [get]\fP"
+.br
+.RI "Gets the blue channel\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.BlueViolet\fP\fR [get]\fP"
+.br
+.RI "BlueViolet #8A2BE2\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.Brown\fP\fR [get]\fP"
+.br
+.RI "Brown #A52A2A\&. "
+.ti -1c
+.RI "IEnumerable< T > \fBSystemEx\&.Drawing\&.ICanvas< T >\&.Buffer\fP\fR [get]\fP"
+.br
+.RI "Gets an enumerable view of the underlying buffer\&. The buffer contains the raw mathematical color values in row‑major order\&. No rendering or transformation occurs when accessing this property\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.BurlyWood\fP\fR [get]\fP"
+.br
+.RI "BurlyWood #DEB887\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorCMY\&.C\fP\fR [get, set]\fP"
+.br
+.RI "The cyan component of the color, in the range 0–1\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorNCol\&.C\fP\fR [get]\fP"
+.br
+.RI "Gets the whiteness component (0–100)\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.CadetBlue\fP\fR [get]\fP"
+.br
+.RI "CadetBlue #5F9EA0\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.Chartreuse\fP\fR [get]\fP"
+.br
+.RI "Chartreuse #7FFF00\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.Chocolate\fP\fR [get]\fP"
+.br
+.RI "Chocolate #D2691E\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.OrangeColors\&.Coral\fP\fR [get]\fP"
+.br
+.RI "Coral #FF7F50\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.CornflowerBlue\fP\fR [get]\fP"
+.br
+.RI "CornflowerBlue #6495ED\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.Cornsilk\fP\fR [get]\fP"
+.br
+.RI "Cornsilk #FFF8DC\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.RedColors\&.Crimson\fP\fR [get]\fP"
+.br
+.RI "Crimson #DC143C\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.CyanColors\&.Cyan\fP\fR [get]\fP"
+.br
+.RI "Cyan #00FFFF\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.DarkBlue\fP\fR [get]\fP"
+.br
+.RI "DarkBlue #00008B\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.DarkCyan\fP\fR [get]\fP"
+.br
+.RI "DarkCyan #008B8B\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.DarkGoldenRod\fP\fR [get]\fP"
+.br
+.RI "DarkGoldenRod #B8860B\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreyColors\&.DarkGray\fP\fR [get]\fP"
+.br
+.RI "DarkGray #A9A9A9\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.DarkGreen\fP\fR [get]\fP"
+.br
+.RI "DarkGreen #006400\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.YellowColors\&.DarkKhaki\fP\fR [get]\fP"
+.br
+.RI "DarkKhaki #BDB76B\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.DarkMagenta\fP\fR [get]\fP"
+.br
+.RI "DarkMagenta #8B008B\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.DarkOliveGreen\fP\fR [get]\fP"
+.br
+.RI "DarkOliveGreen #556B2F\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.OrangeColors\&.DarkOrange\fP\fR [get]\fP"
+.br
+.RI "DarkOrange #FF8C00\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.DarkOrchid\fP\fR [get]\fP"
+.br
+.RI "DarkOrchid #9932CC\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.RedColors\&.DarkRed\fP\fR [get]\fP"
+.br
+.RI "DarkRed #8B0000\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.RedColors\&.DarkSalmon\fP\fR [get]\fP"
+.br
+.RI "DarkSalmon #E9967A\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.DarkSeaGreen\fP\fR [get]\fP"
+.br
+.RI "DarkSeaGreen #8FBC8F\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.DarkSlateBlue\fP\fR [get]\fP"
+.br
+.RI "DarkSlateBlue #483D8B\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreyColors\&.DarkSlateGray\fP\fR [get]\fP"
+.br
+.RI "DarkSlateGray #2F4F4F\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.CyanColors\&.DarkTurquoise\fP\fR [get]\fP"
+.br
+.RI "DarkTurquoise #00CED1\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.DarkViolet\fP\fR [get]\fP"
+.br
+.RI "DarkViolet #9400D3\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PinkColors\&.DeepPink\fP\fR [get]\fP"
+.br
+.RI "DeepPink\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.DeepSkyBlue\fP\fR [get]\fP"
+.br
+.RI "DeepSkyBlue #00BFFF\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreyColors\&.DimGray\fP\fR [get]\fP"
+.br
+.RI "DimGray #696969\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.DodgerBlue\fP\fR [get]\fP"
+.br
+.RI "DodgerBlue #1E90FF\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ISubCanvas< T >\&.Enable\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets whether this sub‑canvas is enabled\&. Disabled sub‑canvases do not participate in mathematical composition and behave as if they were absent from the layer stack\&. "
+.ti -1c
+.RI "\fBEndian\fP \fBSystemEx\&.Drawing\&.ColorR10G10B10FormatSchema\&.Endian\fP\fR [get]\fP"
+.br
+.RI "The endianness used for all multi‑byte fields\&. This is specified when creating the schema\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.RedColors\&.FireBrick\fP\fR [get]\fP"
+.br
+.RI "FireBrick #B22222\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.FloralWhite\fP\fR [get]\fP"
+.br
+.RI "FloralWhite #FFFAF0\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.ForestGreen\fP\fR [get]\fP"
+.br
+.RI "ForestGreen #228B22\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.Fuchsia\fP\fR [get]\fP"
+.br
+.RI "Fuchsia #FF00FF\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR10G10B10A2\&.G\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the green component\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.G\fP\fR [get]\fP"
+.br
+.RI "Gets the green channel\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreyColors\&.Gainsboro\fP\fR [get]\fP"
+.br
+.RI "Gainsboro #DCDCDC\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.GhostWhite\fP\fR [get]\fP"
+.br
+.RI "GhostWhite #F8F8FF\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.YellowColors\&.Gold\fP\fR [get]\fP"
+.br
+.RI "Gold #FFD700\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.GoldenRod\fP\fR [get]\fP"
+.br
+.RI "GoldenRod #DAA520\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorGray\&.Gray\fP\fR [get]\fP"
+.br
+.RI "Gets the grayscale value\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreyColors\&.Gray\fP\fR [get]\fP"
+.br
+.RI "Gray #808080\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Green\fP\fR [get]\fP"
+.br
+.RI "Gets the green channel\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Green\fP\fR [get]\fP"
+.br
+.RI "Gets the green channel\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.Green\fP\fR [get]\fP"
+.br
+.RI "Green #008000\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.GreenYellow\fP\fR [get]\fP"
+.br
+.RI "GreenYellow #ADFF2F\&. "
+.ti -1c
+.RI "virtual float \fBSystemEx\&.Drawing\&.ColorHDR\&.H\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the hue component in degrees (0–360)\&. Values outside the range are wrapped automatically\&. "
+.ti -1c
+.RI "virtual float \fBSystemEx\&.Drawing\&.ColorHSL\&.H\fP\fR [get]\fP"
+.br
+.RI "Gets the hue component\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorHSV\&.H\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the hue component in degrees (0–360)\&. 
+.br
+ Values outside the range are wrapped automatically\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorHWB\&.H\fP\fR [get, set]\fP"
+.br
+.RI "The hue component of the color, in degrees (0–360)\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ISubCanvas< T >\&.HasMask\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets a value indicating whether the sub‑canvas uses a mask\&. When enabled, the mask determines which regions of the sub‑canvas contribute to the mathematical composition\&. "
+.ti -1c
+.RI "long \fBSystemEx\&.Drawing\&.ColorR10G10B10FormatSchema\&.HeaderSize\fP\fR [get]\fP"
+.br
+.RI "The size of the header portion in bytes\&. For \fBColorR10G10B10A2\fP, there is no header, so this is 0\&. "
+.ti -1c
+.RI "int \fBSystemEx\&.Drawing\&.ICanvas< T >\&.Height\fP\fR [get]\fP"
+.br
+.RI "Gets the height of the canvas in mathematical units (rows)\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.HoneyDew\fP\fR [get]\fP"
+.br
+.RI "HoneyDew #F0FFF0\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PinkColors\&.HotPink\fP\fR [get]\fP"
+.br
+.RI "HotPink\&. "
+.ti -1c
+.RI "byte \fBSystemEx\&.Drawing\&.ColorNCol\&.I\fP\fR [get, set]\fP"
+.br
+.RI "Gets the hue segment index (0–5)\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.RedColors\&.IndianRed\fP\fR [get]\fP"
+.br
+.RI "IndianRed #CD5C5C\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.Indigo\fP\fR [get]\fP"
+.br
+.RI "Indigo #4B0082\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.IsDark\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the color appears visually dark\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ISubCanvas< T >\&.IsDirty\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets whether the sub‑canvas is marked as dirty\&. A dirty state indicates that its mathematical content has changed and that dependent compositions may need to be recalculated\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.IsLight\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the color appears visually bright\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.Ivory\fP\fR [get]\fP"
+.br
+.RI "Ivory #FFFFF0\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.YellowColors\&.Khaki\fP\fR [get]\fP"
+.br
+.RI "Khaki #F0E68C\&. "
+.ti -1c
+.RI "virtual float \fBSystemEx\&.Drawing\&.ColorHSL\&.L\fP\fR [get]\fP"
+.br
+.RI "Gets the Lightness component\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorNCol\&.L\fP\fR [get]\fP"
+.br
+.RI "Gets the lightness component (0–100)\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.Lavender\fP\fR [get]\fP"
+.br
+.RI "Lavender #E6E6FA\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.LavenderBlush\fP\fR [get]\fP"
+.br
+.RI "LavenderBlush #FFF0F5\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.LawnGreen\fP\fR [get]\fP"
+.br
+.RI "LawnGreen #7CFC00\&. "
+.ti -1c
+.RI "Map< ISubCanvas< T >, \fBBlendMode\fP > \fBSystemEx\&.Drawing\&.ICanvasList< T >\&.Layers\fP\fR [get]\fP"
+.br
+.RI "Gets the collection of layers associated with this canvas list\&. Each layer is represented as an \fBISubCanvas<T>\fP paired with a \fBBlendMode\fP describing how the layer mathematically interacts with the layers beneath it\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.YellowColors\&.LemonChiffon\fP\fR [get]\fP"
+.br
+.RI "LemonChiffon #FFFACD\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.LightBlue\fP\fR [get]\fP"
+.br
+.RI "LightBlue #ADD8E6\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.RedColors\&.LightCoral\fP\fR [get]\fP"
+.br
+.RI "LightCoral #F08080\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.CyanColors\&.LightCyan\fP\fR [get]\fP"
+.br
+.RI "LightCyan #E0FFFF\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.YellowColors\&.LightGoldenRodYellow\fP\fR [get]\fP"
+.br
+.RI "LightGoldenRodYellow #FAFAD2\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreyColors\&.LightGray\fP\fR [get]\fP"
+.br
+.RI "LightGray #D3D3D3\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.LightGreen\fP\fR [get]\fP"
+.br
+.RI "LightGreen #90EE90\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PinkColors\&.LightPink\fP\fR [get]\fP"
+.br
+.RI "LightPink\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.RedColors\&.LightSalmon\fP\fR [get]\fP"
+.br
+.RI "LightSalmon\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.LightSeaGreen\fP\fR [get]\fP"
+.br
+.RI "LightSeaGreen #20B2AA\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.LightSkyBlue\fP\fR [get]\fP"
+.br
+.RI "LightSkyBlue #87CEFA\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreyColors\&.LightSlateGray\fP\fR [get]\fP"
+.br
+.RI "LightSlateGray #778899\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.LightSteelBlue\fP\fR [get]\fP"
+.br
+.RI "LightSteelBlue #B0C4DE\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.YellowColors\&.LightYellow\fP\fR [get]\fP"
+.br
+.RI "LightYellow #FFFFE0\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.Lime\fP\fR [get]\fP"
+.br
+.RI "Lime #00FF00\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.LimeGreen\fP\fR [get]\fP"
+.br
+.RI "LimeGreen #32CD32\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.Linen\fP\fR [get]\fP"
+.br
+.RI "Linen #FAF0E6\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorCMY\&.M\fP\fR [get, set]\fP"
+.br
+.RI "The magenta component of the color, in the range 0–1\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.Magenta\fP\fR [get]\fP"
+.br
+.RI "Magenta #FF00FF\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.Maroon\fP\fR [get]\fP"
+.br
+.RI "Maroon #800000\&. "
+.ti -1c
+.RI "ICanvas< \fBColorGray\fP > \fBSystemEx\&.Drawing\&.ISubCanvas< T >\&.Mask\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the grayscale mask applied to this sub‑canvas\&. The mask defines per‑pixel visibility weights, allowing selective inclusion or exclusion of regions during composition\&. A mask does not draw pixels; it modifies how the sub‑canvas mathematically interacts with underlying layers\&. "
+.ti -1c
+.RI "virtual float \fBSystemEx\&.Drawing\&.ColorHDR\&.MaxValue\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the maximum allowed HDR value\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.MediumAquaMarine\fP\fR [get]\fP"
+.br
+.RI "MediumAquaMarine #66CDAA\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.MediumBlue\fP\fR [get]\fP"
+.br
+.RI "MediumBlue #0000CD\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.MediumOrchid\fP\fR [get]\fP"
+.br
+.RI "MediumOrchid #BA55D3\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.MediumPurple\fP\fR [get]\fP"
+.br
+.RI "MediumPurple #9370DB\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.MediumSeaGreen\fP\fR [get]\fP"
+.br
+.RI "MediumSeaGreen #3CB371\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.MediumSlateBlue\fP\fR [get]\fP"
+.br
+.RI "MediumSlateBlue #7B68EE\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.MediumSpringGreen\fP\fR [get]\fP"
+.br
+.RI "MediumSpringGreen #00FA9A\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.CyanColors\&.MediumTurquoise\fP\fR [get]\fP"
+.br
+.RI "MediumTurquoise #48D1CC\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PinkColors\&.MediumVioletRed\fP\fR [get]\fP"
+.br
+.RI "MediumVioletRed\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.MidnightBlue\fP\fR [get]\fP"
+.br
+.RI "MidnightBlue #191970\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.MintCream\fP\fR [get]\fP"
+.br
+.RI "MintCream #F5FFFA\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.MistyRose\fP\fR [get]\fP"
+.br
+.RI "MistyRose #FFE4E1\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.YellowColors\&.Moccasin\fP\fR [get]\fP"
+.br
+.RI "Moccasin #FFE4B5\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.Drawing\&.ColorNCol\&.N\fP\fR [get]\fP"
+.br
+.RI "Gets the generated N‑Color name, e\&.g\&. "R20", "G55", "B03"\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.Drawing\&.ISubCanvas< T >\&.Name\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the name of the sub‑canvas\&. This is a user‑defined identifier useful for organizing, labeling, or referencing layers within a canvas list\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.NavajoWhite\fP\fR [get]\fP"
+.br
+.RI "NavajoWhite #FFDEAD\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.Navy\fP\fR [get]\fP"
+.br
+.RI "Navy #000080\&. "
+.ti -1c
+.RI "Map< string, long > \fBSystemEx\&.Drawing\&.ColorR10G10B10FormatSchema\&.Offsets\fP\fR [get]\fP"
+.br
+.RI "A read‑only mapping of field names to their byte offsets\&. For \fBColorR10G10B10A2\fP, there is only one field named "DEFAULT" at offset 0\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.OldLace\fP\fR [get]\fP"
+.br
+.RI "OldLace #FDF5E6\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.Olive\fP\fR [get]\fP"
+.br
+.RI "Olive #808000\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.OliveDrab\fP\fR [get]\fP"
+.br
+.RI "OliveDrab #6B8E23\&. "
+.ti -1c
+.RI "static \fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.One\fP\fR [get]\fP"
+.br
+.RI "A static property that returns a \fBColorHSV\fP instance representing white (H=0, S=0, V=1)\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.OrangeColors\&.Orange\fP\fR [get]\fP"
+.br
+.RI "Orange #FFA500\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.OrangeColors\&.OrangeRed\fP\fR [get]\fP"
+.br
+.RI "OrangeRed #FF4500\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.Orchid\fP\fR [get]\fP"
+.br
+.RI "Orchid #DA70D6\&. "
+.ti -1c
+.RI "byte \fBSystemEx\&.Drawing\&.ColorNCol\&.P\fP\fR [get, set]\fP"
+.br
+.RI "Gets the percentage position within the hue segment (0–100)\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.YellowColors\&.PaleGoldenRod\fP\fR [get]\fP"
+.br
+.RI "PaleGoldenRod #EEE8AA\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.PaleGreen\fP\fR [get]\fP"
+.br
+.RI "PaleGreen #98FB98\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.CyanColors\&.PaleTurquoise\fP\fR [get]\fP"
+.br
+.RI "PaleTurquoise #AFEEEE\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PinkColors\&.PaleVioletRed\fP\fR [get]\fP"
+.br
+.RI "PaleVioletRed\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.YellowColors\&.PapayaWhip\fP\fR [get]\fP"
+.br
+.RI "PapayaWhip #FFEFD5\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.YellowColors\&.PeachPuff\fP\fR [get]\fP"
+.br
+.RI "PeachPuff #FFDAB9\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.Peru\fP\fR [get]\fP"
+.br
+.RI "Peru #CD853F\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PinkColors\&.Pink\fP\fR [get]\fP"
+.br
+.RI "Pink\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.Plum\fP\fR [get]\fP"
+.br
+.RI "Plum #DDA0DD\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.PowderBlue\fP\fR [get]\fP"
+.br
+.RI "PowderBlue #B0E0E6\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.Purple\fP\fR [get]\fP"
+.br
+.RI "Purple #800080\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR10G10B10A2\&.R\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the red component\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.R\fP\fR [get]\fP"
+.br
+.RI "Gets the red channel\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.RebeccaPurple\fP\fR [get]\fP"
+.br
+.RI "RebeccaPurple #663399\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR16G16B16\&.Red\fP\fR [get]\fP"
+.br
+.RI "Gets the red channel\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.Red\fP\fR [get]\fP"
+.br
+.RI "Gets the red channel\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.RedColors\&.Red\fP\fR [get]\fP"
+.br
+.RI "Red #FF0000\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.RosyBrown\fP\fR [get]\fP"
+.br
+.RI "RosyBrown #BC8F8F\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.RoyalBlue\fP\fR [get]\fP"
+.br
+.RI "RoyalBlue #4169E1\&. "
+.ti -1c
+.RI "virtual float \fBSystemEx\&.Drawing\&.ColorHDR\&.S\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the saturation component in the range 0–1\&. "
+.ti -1c
+.RI "virtual float \fBSystemEx\&.Drawing\&.ColorHSL\&.S\fP\fR [get]\fP"
+.br
+.RI "Gets the saturation component\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorHSV\&.S\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the saturation component in the range 0–1\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.SaddleBrown\fP\fR [get]\fP"
+.br
+.RI "SaddleBrown #8B4513\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.RedColors\&.Salmon\fP\fR [get]\fP"
+.br
+.RI "Salmon #FA8072\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.SandyBrown\fP\fR [get]\fP"
+.br
+.RI "SandyBrown #F4A460\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.SeaGreen\fP\fR [get]\fP"
+.br
+.RI "SeaGreen #2E8B57\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.SeaShell\fP\fR [get]\fP"
+.br
+.RI "SeaShell #FFF5EE\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Drawing\&.ISubCanvas< T >\&.Showing\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets whether this sub‑canvas is visible\&. A hidden sub‑canvas remains present in the layer structure but does not contribute to the composed pixel buffer\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.Sienna\fP\fR [get]\fP"
+.br
+.RI "Sienna #A0522D\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreyColors\&.Silver\fP\fR [get]\fP"
+.br
+.RI "Silver #C0C0C0\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.SkyBlue\fP\fR [get]\fP"
+.br
+.RI "SkyBlue #87CEEB\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.SlateBlue\fP\fR [get]\fP"
+.br
+.RI "SlateBlue #6A5ACD\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreyColors\&.SlateGray\fP\fR [get]\fP"
+.br
+.RI "SlateGray #708090\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.Snow\fP\fR [get]\fP"
+.br
+.RI "Snow #FFFAFA\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.SpringGreen\fP\fR [get]\fP"
+.br
+.RI "SpringGreen #00FF7F\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BlueColors\&.SteelBlue\fP\fR [get]\fP"
+.br
+.RI "SteelBlue #4682B4\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.Tan\fP\fR [get]\fP"
+.br
+.RI "Tan #D2B48C\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.Teal\fP\fR [get]\fP"
+.br
+.RI "Teal #008080\&. "
+.ti -1c
+.RI "ISubCanvas< T > \fBSystemEx\&.Drawing\&.ICanvasList< T >\&.this[int index]\fP\fR [get]\fP"
+.br
+.RI "Gets the sub‑canvas at the specified index\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.Thistle\fP\fR [get]\fP"
+.br
+.RI "Thistle #D8BFD8\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.OrangeColors\&.Tomato\fP\fR [get]\fP"
+.br
+.RI "Tomato #FF6347\&. "
+.ti -1c
+.RI "long \fBSystemEx\&.Drawing\&.ColorR10G10B10FormatSchema\&.TotalSize\fP\fR [get]\fP"
+.br
+.RI "The total number of bytes required to represent a \fBColorR10G10B10A2\fP color in its packed binary form\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.CyanColors\&.Turquoise\fP\fR [get]\fP"
+.br
+.RI "Turquoise #40E0D0\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorYUV\&.U\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the U (chrominance blue) component\&. "
+.ti -1c
+.RI "virtual float \fBSystemEx\&.Drawing\&.ColorHDR\&.V\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the HDR value (brightness) component\&. The value is clamped to the range 0–\fBMaxValue\fP\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorHSV\&.V\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the value (brightness) component in the range 0–1\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorYUV\&.V\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the V (chrominance red) component\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.PurpelColors\&.Violet\fP\fR [get]\fP"
+.br
+.RI "Violet #EE82EE\&. "
+.ti -1c
+.RI "byte \fBSystemEx\&.Drawing\&.ISubCanvas< T >\&.Visible\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the visibility weight of the sub‑canvas\&. This value represents a mathematical transparency factor used during layer blending\&. Higher values increase the influence of the sub‑canvas on the final composition\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.BrownColors\&.Wheat\fP\fR [get]\fP"
+.br
+.RI "Wheat #F5DEB3\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.White\fP\fR [get]\fP"
+.br
+.RI "White #FFFFFF\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorHWB\&.Whiteness\fP\fR [get, set]\fP"
+.br
+.RI "The whiteness component of the color, in the range [0, 1]\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.WhiteColors\&.WhiteSmoke\fP\fR [get]\fP"
+.br
+.RI "WhiteSmoke #F5F5F5\&. "
+.ti -1c
+.RI "int \fBSystemEx\&.Drawing\&.ICanvas< T >\&.Width\fP\fR [get]\fP"
+.br
+.RI "Gets the width of the canvas in mathematical units (columns)\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorXYZ\&.X\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the X component of the XYZ color\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorCMY\&.Y\fP\fR [get, set]\fP"
+.br
+.RI "The yellow component of the color, in the range 0–1\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorXYZ\&.Y\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the Y component of the XYZ color\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorYUV\&.Y\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the Y (luma) component\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.YellowColors\&.Yellow\fP\fR [get]\fP"
+.br
+.RI "Yellow #FFFF00\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBSystemEx\&.Drawing\&.GreenColors\&.YellowGreen\fP\fR [get]\fP"
+.br
+.RI "YellowGreen #9ACD32\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Drawing\&.ColorXYZ\&.Z\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the Z component of the XYZ color\&. "
+.ti -1c
+.RI "static \fBColorHSV\fP \fBSystemEx\&.Drawing\&.ColorHSV\&.Zero\fP\fR [get]\fP"
+.br
+.RI "A static property that returns a \fBColorHSV\fP instance representing black (H=0, S=0, V=0)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.Drawing\&.BlendMode\fP"
+
+.PP
+Specifies the mathematical blend operation used when combining a layer with the layers beneath it\&. These modes do not perform graphical drawing; instead, each mode defines a deterministic color transformation applied during layer composition when \fBICanvasList<T>\&.GetPixels\fP or \fBICanvasList<T>\&.SwapIn\fP is invoked\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIAdd \fP
+Adds the layer’s color value to the underlying color\&. Useful for additive accumulation or brightness‑increasing transformations\&. 
+.TP
+\f(BISubtract \fP
+Subtracts the layer’s color value from the underlying color\&. Produces darker results and is often used for inverse or removal‑style effects\&. 
+.TP
+\f(BIMultiply \fP
+Multiplies the layer’s color value with the underlying color\&. This darkens the result and is commonly used for intensity modulation\&. 
+.TP
+\f(BIScreen \fP
+Applies the mathematical inverse of Multiply\&. Brightens the result by combining colors through reciprocal multiplication rules\&. 
+.TP
+\f(BIOverlay \fP
+Applies a conditional combination of Multiply and Screen depending on the underlying brightness\&. Produces contrast‑enhancing transformations\&. 
+.TP
+\f(BIReplace \fP
+Replaces the underlying color entirely with the layer’s color\&. This mode ignores all lower layers and acts as a direct override\&. 
+.TP
+\f(BIDivide \fP
+Divides the underlying color by the layer’s color\&. Produces brightening or contrast‑shifting effects depending on the color domain\&. 
+.TP
+\f(BILight \fP
+Selects the lighter value between the layer and the underlying color\&. Useful for highlight‑style transformations\&. 
+.TP
+\f(BIDark \fP
+Selects the darker value between the layer and the underlying color\&. Useful for shadow‑style or depth‑enhancing transformations\&. 
+.PP
+Definition at line \fB32\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.Drawing\&.ContrastLevel\fP"
+
+.PP
+Represents the qualitative contrast level between two colors\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIVeryLow \fP
+Colors are nearly identical with minimal visible difference\&. 
+.TP
+\f(BILow \fP
+Colors differ slightly with low visual separation\&. 
+.TP
+\f(BIHigh \fP
+Colors are clearly distinguishable\&. 
+.TP
+\f(BIPerfect \fP
+Maximum visual contrast between the colors\&. 
+.PP
+Definition at line \fB25\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Addition (\fBColorHDR\fP a)\fR [virtual]\fP"
+
+.PP
+Adds another HDR color to this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. 
+.PP
+Definition at line \fB79\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP\&.
+.SS "\fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Addition (float a, float b, float c)"
+
+.PP
+Adds the specified HSV components to this HDR color\&. This is a convenience overload that constructs a temporary HDR color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP Hue component\&.
+.br
+\fIb\fP Saturation component\&.
+.br
+\fIc\fP Value component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The modified HDR color\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB131\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Addition (\fBColorHSV\fP a)"
+
+.PP
+Adds another HSV color to this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. 
+.PP
+Definition at line \fB91\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Addition (float a, float b, float c)"
+
+.PP
+Addition another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB199\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Addition (\fBColorR16G16B16\fP value)"
+
+.PP
+Adds another color to this one\&. 
+.PP
+Definition at line \fB84\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Addition (float a, float b, float c)"
+
+.PP
+Addition another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB216\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Addition (\fBColorR8G8B8\fP value)"
+
+.PP
+Adds another color to this one, channel by channel\&. 
+.PP
+Definition at line \fB164\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Addition (float a, float b, float c)"
+
+.PP
+Addition another color in r, g, b channels with this one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The red color channel
+.br
+\fIb\fP The green color channel
+.br
+\fIc\fP The blue color channel
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+this
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB230\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "T SystemEx\&.Drawing\&.IColor< T >\&.Addition (float a, float b, float c)"
+
+.PP
+Performs component-wise addition of three colors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The first component value\&.
+.br
+\fIb\fP The second component value\&.
+.br
+\fIc\fP The third component value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The resulting color\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Drawing\&.ColorHDR\fP, \fBSystemEx\&.Drawing\&.ColorHSV\fP, \fBSystemEx\&.Drawing\&.ColorR16G16B16\fP, and \fBSystemEx\&.Drawing\&.ColorR8G8B8\fP\&.
+.SS "T SystemEx\&.Drawing\&.IColor< T >\&.Addition (T value)"
+
+.PP
+Adds the specified color to this color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The color to add\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The resulting color\&.
+.RE
+.PP
+
+.SS "int SystemEx\&.Drawing\&.ICanvasList< T >\&.AddLayer (ISubCanvas< T > layer, \fBBlendMode\fP mode)"
+
+.PP
+Adds a new layer to the canvas list\&. The layer becomes part of the mathematical composition pipeline and will influence the final pixel buffer depending on its blend mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlayer\fP The sub‑canvas to add as a layer\&.
+.br
+\fImode\fP The blend mode describing how the layer interacts with lower layers\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The index at which the layer was added\&.
+.RE
+.PP
+
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.AsNormalized ()"
+
+.PP
+Returns a version of the color with all channels clamped to 0–1\&. 
+.PP
+Definition at line \fB118\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.AsNormalized ()"
+
+.PP
+Returns a version of the color with all channels clamped to 0–1\&. 
+.PP
+Definition at line \fB204\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHWB()\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.AsScaled ()"
+
+.PP
+Returns a version of the color scaled so the brightest channel becomes 1\&. 
+.PP
+Definition at line \fB129\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.AsScaled ()"
+
+.PP
+Returns a version of the color scaled so the brightest channel becomes 1\&. 
+.PP
+Definition at line \fB214\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Brightness (float delta)\fR [virtual]\fP"
+
+.PP
+Adjusts the HDR brightness by the specified delta\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB71\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Brightness (float delta)"
+
+.PP
+Adjusts the value (brightness) by the specified delta\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB82\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.Brightness ()"
+
+.PP
+Computes the perceived brightness of the color\&. 
+.PP
+Definition at line \fB138\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBContrast()\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Brightness (float delta)"
+
+.PP
+Adjusts the perceived brightness of the color\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB202\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR8G8B8\&.Brightness ()"
+
+.PP
+Computes the perceived brightness of the color\&. 
+.PP
+Definition at line \fB267\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBContrast()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Brightness (float delta)"
+
+.PP
+Changes the perceived brightness of the color\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB151\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBContrast()\fP\&.
+.SS "T SystemEx\&.Drawing\&.IColor< T >\&.Brightness (float delta)"
+
+.PP
+Adjusts the brightness of the color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdelta\fP The amount to adjust the brightness\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The adjusted color\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Drawing\&.ColorHDR\fP, \fBSystemEx\&.Drawing\&.ColorHSV\fP, \fBSystemEx\&.Drawing\&.ColorR16G16B16\fP, and \fBSystemEx\&.Drawing\&.ColorR8G8B8\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorHDR\&.ClampHue (float h)\fR [static]\fP, \fR [protected]\fP"
+
+.PP
+Wraps a hue value into the range 0–360 degrees\&. 
+.PP
+Definition at line \fB171\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP, \fBLerp()\fP, and \fBSubtraction()\fP\&.
+.SS "void SystemEx\&.Drawing\&.ICanvas< T >\&.Clear ()"
+
+.PP
+Clears the canvas by resetting all stored values to their default state\&. This operation affects only the mathematical buffer\&. 
+.SS "ICanvas< T > SystemEx\&.Drawing\&.ICanvas< T >\&.Clone ()"
+
+.PP
+Creates a full mathematical clone of this canvas, duplicating all stored values\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A new canvas with identical content\&.
+.RE
+.PP
+
+.SS "SystemEx\&.Drawing\&.ColorCMY\&.ColorCMY (float c, float m, float y)"
+
+.PP
+Initializes a new instance of the \fBColorCMY\fP class with the specified component values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIc\fP The cyan component (0–1)\&.
+.br
+\fIm\fP The magenta component (0–1)\&.
+.br
+\fIy\fP The yellow component (0–1)\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB55\fP of file \fBColorCMY\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorCMY\&.ColorCMY (float[] x)"
+
+.PP
+The default constructor initializes the color to black (C=0, M=0, Y=0)\&. 
+.PP
+Definition at line \fB44\fP of file \fBColorCMY\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorGray\&.ColorGray (\fBColorHSV\fP hsv)"
+
+.PP
+Creates a new \fBColorGray\fP instance from a \fBColorHSV\fP instance, using the value (V) component of the HSV color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhsv\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB46\fP of file \fBColorGray\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorGray\&.ColorGray (float v)"
+
+.PP
+Initializes a new instance of the \fBColorGray\fP class with the specified grayscale value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIv\fP The grayscale value (0–1)\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB36\fP of file \fBColorGray\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorGray\&.ColorGray (float[] x)"
+
+.PP
+Initializes a new instance of the \fBColorGray\fP class with the specified grayscale value array\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The grayscale value array (0–1)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB41\fP of file \fBColorGray\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorHDR\&.ColorHDR (float h, float s, float v)"
+
+.PP
+Initializes a new HDR color with the specified HSV components\&. 
+.PP
+Definition at line \fB56\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP, \fBAddition()\fP, \fBBrightness()\fP, \fBDivision()\fP, \fBDivision()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBLerp()\fP, \fBLightIntensity()\fP, \fBMultiplication()\fP, \fBMultiplication()\fP, \fBSaturation()\fP, \fBSubtraction()\fP, and \fBSubtraction()\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorHSL\&.ColorHSL (float h, float s, float l)"
+
+.PP
+Initializes a new HSL color with the specified component values\&. 
+.PP
+Definition at line \fB62\fP of file \fBColorHSL\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorHSL\&.ColorHSL (float[] x)"
+
+.PP
+Initializes a new HSL color from an array of three floating‑point values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP An array containing H, S, and L in that order\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB54\fP of file \fBColorHSL\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBEquals()\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorHSV\&.ColorHSV (float h, float s, float v)"
+
+.PP
+Initializes a new HSV color with the specified component values\&. 
+.PP
+Definition at line \fB65\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP, \fBAddition()\fP, \fBBrightness()\fP, \fBDivision()\fP, \fBDivision()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBLerp()\fP, \fBMultiplication()\fP, \fBMultiplication()\fP, \fBSaturation()\fP, \fBSubtraction()\fP, and \fBSubtraction()\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorHWB\&.ColorHWB (float h, float whiteness, float blackness)"
+
+.PP
+Initializes a new HWB color with the specified component values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIh\fP The hue component (0–360)\&.
+.br
+\fIwhiteness\fP The whiteness component (0–1)\&.
+.br
+\fIblackness\fP The blackness component (0–1)\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB50\fP of file \fBColorHWB\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBEquals()\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorHWB\&.ColorHWB (float[] x)"
+
+.PP
+Initializes a new HWB color from an array of component values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP An array containing the hue, whiteness, and blackness components\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB60\fP of file \fBColorHWB\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorNCol\&.ColorNCol (byte index, byte percent, float c, float l)"
+
+.PP
+Erstellt eine neue N‑Color‑Struktur\&. 
+.PP
+Definition at line \fB66\fP of file \fBColorNCol\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBEquals()\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR10G10B10A2\&.ColorR10G10B10A2 (float r, float g, float b)"
+
+.PP
+Creates a new R10G10B10A2 color from normalized float values (0–1)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIr\fP The red component (0–1)\&.
+.br
+\fIg\fP The green component (0–1)\&.
+.br
+\fIb\fP The blue component (0–1)\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB177\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBEquals()\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR10G10B10A2\&.ColorR10G10B10A2 (float r, float g, float b, float a)"
+
+.PP
+Initializes a new R10G10B10A2 color from normalized float values (0–1)\&. 
+.PP
+Definition at line \fB181\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR10G10B10A2\&.ColorR10G10B10A2 (ushort r10, ushort g10, ushort b10, ushort a10)"
+
+.PP
+Initializes a new R10G10B10A2 color from 10‑bit UNORM components (0–1023)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIr10\fP The red component (0–1023)\&.
+.br
+\fIg10\fP The green component (0–1023)\&.
+.br
+\fIb10\fP The blue component (0–1023)\&.
+.br
+\fIa10\fP The alpha component (0–3)\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB195\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR10G10B10FormatSchema\&.ColorR10G10B10FormatSchema (\fBEndian\fP endian)"
+
+.PP
+Initializes a new instance of the \fBColorR10G10B10FormatSchema\fP class with the specified endianness\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB54\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR10G10B10Serializer\&.ColorR10G10B10Serializer (\fBIByteFormatSchema\fP schema, \fBEndian\fP endian)"
+
+.PP
+Created a new \fBColorR10G10B10Serializer\fP with the specified schema and endianness\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschema\fP The format schema for the color data\&.
+.br
+\fIendian\fP The endianness for the binary representation\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB74\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR16G16B16\&.ColorR16G16B16 ()"
+
+.PP
+Creates a black color (0,0,0)\&. 
+.PP
+Definition at line \fB52\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP, \fBAddition()\fP, \fBAsNormalized()\fP, \fBAsScaled()\fP, \fBBrightness()\fP, \fBContrast()\fP, \fBDivision()\fP, \fBDivision()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBGetKontrast()\fP, \fBGetNextContrastColor()\fP, \fBLerp()\fP, \fBMultiplication()\fP, \fBMultiplication()\fP, \fBSaturation()\fP, \fBSubtraction()\fP, and \fBSubtraction()\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR16G16B16\&.ColorR16G16B16 (float gray)"
+
+.PP
+Creates a grayscale color using a single intensity value\&. 
+.PP
+Definition at line \fB77\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR16G16B16\&.ColorR16G16B16 (float r, float g, float b)"
+
+.PP
+Creates a color from normalized RGB components\&. 
+.PP
+Definition at line \fB60\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR16G16B16\&.ColorR16G16B16 (ushort r, ushort g, ushort b)"
+
+.PP
+Creates a color from 16‑bit UNORM components (0–65535)\&. 
+.PP
+Definition at line \fB68\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 ()"
+
+.PP
+Creates a black color (0,0,0)\&. 
+.PP
+Definition at line \fB68\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP, \fBAddition()\fP, \fBAsNormalized()\fP, \fBAsScaled()\fP, \fBBrightness()\fP, \fBContrast()\fP, \fBDivision()\fP, \fBDivision()\fP, \fBGetKontrast()\fP, \fBGetNextContrastColor()\fP, \fBLerp()\fP, \fBLinearBrightness()\fP, \fBMax()\fP, \fBMin()\fP, \fBMultiplication()\fP, \fBMultiplication()\fP, \fBSaturation()\fP, and \fBSubtraction()\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 (byte b)"
+
+.PP
+Creates a grayscale color using a single byte value\&. 
+.PP
+Definition at line \fB89\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 (byte r, byte g, byte b)"
+
+.PP
+Creates a color from 8‑bit RGB components\&. 
+.PP
+Definition at line \fB98\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 (float r, float g, float b)"
+
+.PP
+Creates a color from normalized RGB components\&. 
+.PP
+Definition at line \fB115\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 (float rgb)"
+
+.PP
+Creates a grayscale color using a single intensity value\&. 
+.PP
+Definition at line \fB106\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 (int rgb)"
+
+.PP
+Creates a color from a packed 24‑bit RGB integer (0xRRGGBB)\&. 
+.PP
+Definition at line \fB77\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 (System\&.Drawing\&.Color x)"
+
+.PP
+Creates a color from a System\&.Drawing\&.Color\&. 
+.PP
+Definition at line \fB124\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorXYZ\&.ColorXYZ (float x, float y, float z)"
+
+.PP
+Initializes a new XYZ color with the specified component values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The X component\&.
+.br
+\fIy\fP The Y component\&.
+.br
+\fIz\fP The Z component\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB52\fP of file \fBColorXYZ\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBEquals()\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorYUV\&.ColorYUV (float y, float u, float v)"
+
+.PP
+Initializes a new YUV color with the specified component values\&. 
+.PP
+Definition at line \fB58\fP of file \fBColorYUV\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorYUV\&.ColorYUV (float[] x)"
+
+.PP
+Initializes a new YUV color from an array of three floating‑point values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP An array containing Y, U, and V in that order\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB50\fP of file \fBColorYUV\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBEquals()\fP\&.
+.SS "int SystemEx\&.Drawing\&.ColorHSV\&.CompareTo (\fBColorHSV\fP other)"
+
+.PP
+Definition at line \fB221\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.Contrast (\fBColorR16G16B16\fP other)"
+
+.PP
+Measures the visual contrast between this color and another\&. 
+.PP
+Definition at line \fB149\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBGetKontrast()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR8G8B8\&.Contrast (\fBColorR8G8B8\fP other)"
+
+.PP
+Measures the visual contrast between this color and another\&. 
+.PP
+Definition at line \fB280\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBGetKontrast()\fP\&.
+.SS "ICanvas< T > SystemEx\&.Drawing\&.ICanvas< T >\&.CopyRegion (int x, int y, int width, int height)"
+
+.PP
+Creates a new canvas containing a rectangular region of this canvas\&. The region is copied mathematically; no rendering or blending occurs\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The X coordinate of the region\&.
+.br
+\fIy\fP The Y coordinate of the region\&.
+.br
+\fIwidth\fP The width of the region\&.
+.br
+\fIheight\fP The height of the region\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new canvas containing the extracted region\&.
+.RE
+.PP
+
+.SS "override? object SystemEx\&.Drawing\&.ColorR10G10B10Serializer\&.CreateObjectFromEntrys (Map< string, byte[]> entries, \fBEndian\fP endian)\fR [protected]\fP"
+
+.PP
+Get the object from the given entries and endianness\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIentries\fP The map of entries\&.
+.br
+\fIendian\fP The endianness for the binary representation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The created object, or null if not found\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB123\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Division (\fBColorHDR\fP a)\fR [virtual]\fP"
+
+.PP
+Divides this HDR color by another, component by component\&. Hue is not affected\&. 
+.PP
+Definition at line \fB109\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBDivision()\fP\&.
+.SS "\fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Division (float a, float b, float c)"
+
+.PP
+Divides this HDR color by the specified HSV components\&. This is a convenience overload that constructs a temporary HDR color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP Hue component\&.
+.br
+\fIb\fP Saturation component\&.
+.br
+\fIc\fP Value component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The modified HDR color\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB164\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Division (\fBColorHSV\fP a)"
+
+.PP
+Divides this color by another, component by component\&. Hue is not affected\&. 
+.PP
+Definition at line \fB123\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBDivision()\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Division (float a, float b, float c)"
+
+.PP
+Divisionication another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB217\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Division (\fBColorR16G16B16\fP value)"
+
+.PP
+Divides this color by another\&. 
+.PP
+Definition at line \fB108\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBDivision()\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Division (float a, float b, float c)"
+
+.PP
+Division another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB234\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Division (\fBColorR8G8B8\fP value)"
+
+.PP
+Divides this color by another, channel by channel\&. 
+.PP
+Definition at line \fB194\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBDivision()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Division (float a, float b, float c)"
+
+.PP
+Division another color in r, g, b channels with this one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The red color channel
+.br
+\fIb\fP The green color channel
+.br
+\fIc\fP The blue color channel
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+this
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB260\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "T SystemEx\&.Drawing\&.IColor< T >\&.Division (float a, float b, float c)"
+
+.PP
+Performs component-wise division of three colors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The first component value\&.
+.br
+\fIb\fP The second component value\&.
+.br
+\fIc\fP The third component value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The resulting color\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Drawing\&.ColorHDR\fP, \fBSystemEx\&.Drawing\&.ColorHSV\fP, \fBSystemEx\&.Drawing\&.ColorR16G16B16\fP, and \fBSystemEx\&.Drawing\&.ColorR8G8B8\fP\&.
+.SS "T SystemEx\&.Drawing\&.IColor< T >\&.Division (T value)"
+
+.PP
+Divides this color by the specified color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The color to divide by\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The resulting color\&.
+.RE
+.PP
+
+.SS "bool SystemEx\&.Drawing\&.ColorHDR\&.Equals (\fBColorHDR\fP? other)"
+
+.PP
+Determines whether this instance is equal to another HDR color\&. 
+.PP
+Definition at line \fB196\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorHDR\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB206\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSL\&.Equals (\fBColorHSL\fP? other)"
+<summarH> Determines whether this instance is equal to another HSL color\&. </summarH> 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The color to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the components match; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB74\fP of file \fBColorHSL\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorHSL\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB89\fP of file \fBColorHSL\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.Equals (\fBColorHSV\fP other)"
+
+.PP
+Determines whether this instance is equal to another HSV color\&. 
+.PP
+Definition at line \fB156\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorHSV\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB166\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHWB\&.Equals (\fBColorHWB\fP other)"
+
+.PP
+Determines whether this instance is equal to another HWB color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The color to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the components match; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB73\fP of file \fBColorHWB\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorHWB\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB86\fP of file \fBColorHWB\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorNCol\&.Equals (\fBColorNCol\fP other)"
+
+.PP
+Determines whether this instance is equal to another NCol color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The color to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the components match; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB80\fP of file \fBColorNCol\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorNCol\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB89\fP of file \fBColorNCol\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorR10G10B10A2\&.Equals (\fBColorR10G10B10A2\fP other)"
+
+.PP
+Determines whether this instance is equal to another R10G10B10A2 color\&. 
+.PP
+Definition at line \fB206\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorR10G10B10A2\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB217\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorR16G16B16\&.Equals (\fBColorR16G16B16\fP other)"
+
+.PP
+Determines whether this instance is equal to another YUV color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The color to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the components match; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB245\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorR16G16B16\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB260\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorXYZ\&.Equals (\fBColorXYZ\fP other)"
+
+.PP
+Determines whether this instance is equal to another XYZ color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The color to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the components match; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB65\fP of file \fBColorXYZ\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorXYZ\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB74\fP of file \fBColorXYZ\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorYUV\&.Equals (\fBColorYUV\fP other)"
+
+.PP
+Determines whether this instance is equal to another YUV color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The color to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the components match; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB70\fP of file \fBColorYUV\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorYUV\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB85\fP of file \fBColorYUV\&.cs\fP\&.
+.SS "void SystemEx\&.Drawing\&.ICanvas< T >\&.Fill (T objcolor)"
+
+.PP
+Fills the entire canvas with the specified color value\&. This operation replaces all stored data deterministically and does not perform any graphical drawing\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobjcolor\fP The color value to assign to every element\&.
+.RE
+.PP
+
+.SS "void SystemEx\&.Drawing\&.ICanvas< T >\&.FillRect (int x1, int y1, int x2, int y2)"
+
+.PP
+Fills a rectangular region of the canvas with the specified color value\&. This modifies only the mathematical buffer and does not perform rendering\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx1\fP The starting X coordinate\&.
+.br
+\fIy1\fP The starting Y coordinate\&.
+.br
+\fIx2\fP The ending X coordinate\&.
+.br
+\fIy2\fP The ending Y coordinate\&.
+.RE
+.PP
+
+.SS "Pair< int, int > SystemEx\&.Drawing\&.ICanvas< T >\&.Find (T color)"
+
+.PP
+Searches the canvas for the first occurrence of the specified color value\&. Returns the coordinates of the match or \fR(-1, -1)\fP if no match is found\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcolor\fP The color value to search for\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pair containing the coordinates of the first match\&.
+.RE
+.PP
+
+.SS "int SystemEx\&.Drawing\&.ICanvas< T >\&.FindLast (T color)"
+
+.PP
+Searches the canvas for the last occurrence of the specified color value\&. Returns the index in the underlying buffer or \fR-1\fP if no match is found\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcolor\fP The color value to search for\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The buffer index of the last match\&.
+.RE
+.PP
+
+.SS "override FixedVector< byte > SystemEx\&.Drawing\&.ColorR10G10B10Serializer\&.GetBytesForEntry (object obj, string name, \fBEndian\fP endian)\fR [protected]\fP"
+
+.PP
+Gets the byte representation of the specified object for the given field name\&. ///\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobjx\fP The object to serialize\&.
+.br
+\fIname\fP The name of the field to serialize\&.
+.br
+\fIendian\fP The endianness for the binary representation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The byte array representing the serialized field, or null if not found\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB83\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "override long SystemEx\&.Drawing\&.ColorR10G10B10Serializer\&.GetEntrySize (\fBCache\fP obj, string name, \fBEndian\fP endian)\fR [protected]\fP"
+
+.PP
+Gets the size of the specified entry in the cache\&. ///\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The cache object\&.
+.br
+\fIname\fP The name of the entry\&.
+.br
+\fIendian\fP The endianness for the binary representation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The size of the entry, or -1 if not found\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB114\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorHDR\&.GetHashCode ()"
+
+.PP
+Returns a hash code based on the hue, saturation, and HDR value\&. 
+.PP
+Definition at line \fB218\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorHSL\&.GetHashCode ()"
+<summarH> Returns a hash code based on the H, S, and L components\&. </summarH> 
+.PP
+Definition at line \fB83\fP of file \fBColorHSL\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorHSV\&.GetHashCode ()"
+
+.PP
+Returns a hash code based on the hue, saturation, and value components\&. 
+.PP
+Definition at line \fB176\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorHWB\&.GetHashCode ()"
+
+.PP
+Returns a hash code based on the H, W, and B components\&. 
+.PP
+Definition at line \fB80\fP of file \fBColorHWB\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorNCol\&.GetHashCode ()"
+
+.PP
+Returns a hash code based on the C, L, and N components\&. 
+.PP
+Definition at line \fB96\fP of file \fBColorNCol\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorR10G10B10A2\&.GetHashCode ()"
+
+.PP
+Returns a hash code based on the R, G, and B components\&. 
+.PP
+Definition at line \fB227\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorR16G16B16\&.GetHashCode ()"
+
+.PP
+Returns a hash code based on the R, G, and B components\&. 
+.PP
+Definition at line \fB254\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorXYZ\&.GetHashCode ()"
+
+.PP
+Returns a hash code based on the X, Y, and Z components\&. 
+.PP
+Definition at line \fB81\fP of file \fBColorXYZ\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorYUV\&.GetHashCode ()"
+
+.PP
+Returns a hash code based on the Y, U, and V components\&. 
+.PP
+Definition at line \fB79\fP of file \fBColorYUV\&.cs\fP\&.
+.SS "\fBContrastLevel\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.GetKontrast (\fBColorR16G16B16\fP other)"
+
+.PP
+Classifies the contrast between this color and another\&. 
+.PP
+Definition at line \fB154\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBContrastLevel\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.GetKontrast (\fBColorR8G8B8\fP other)"
+
+.PP
+Classifies the contrast between this color and another\&. 
+.PP
+Definition at line \fB286\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "ISubCanvas< T > SystemEx\&.Drawing\&.ICanvasList< T >\&.GetLayer (int index)"
+
+.PP
+Retrieves the sub‑canvas at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index of the layer to retrieve\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The sub‑canvas at the given index\&.
+.RE
+.PP
+
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.GetNextContrastColor ()"
+
+.PP
+Generates a visually contrasting color\&. 
+.PP
+Definition at line \fB163\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.GetNextContrastColor ()"
+
+.PP
+Generates a color that visually contrasts with this one\&. 
+.PP
+Definition at line \fB303\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "T SystemEx\&.Drawing\&.ICanvas< T >\&.GetPixel (int x, int y)"
+
+.PP
+Returns the color value at the specified coordinates\&. This method provides direct access to the underlying mathematical buffer without performing any rendering\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The X coordinate\&.
+.br
+\fIy\fP The Y coordinate\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The color value at the given position\&.
+.RE
+.PP
+
+.SS "T SystemEx\&.Drawing\&.ICanvasList< T >\&.GetPixel (int layer, int x, int y)"
+
+.PP
+Retrieves the mathematically composed pixel value at the specified coordinates for the given layer index\&. The returned pixel is computed by folding the transformations of all layers from the specified layer down to the base canvas\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIlayer\fP The layer index to compose from\&.
+.br
+\fIx\fP The X coordinate\&.
+.br
+\fIy\fP The Y coordinate\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The composed pixel value at the given coordinates\&.
+.RE
+.PP
+
+.SS "FixedVector< T > SystemEx\&.Drawing\&.ICanvasList< T >\&.GetPixels (int layer)"
+
+.PP
+Returns the mathematically composed pixel buffer for the specified layer index\&. This canvas system is purely mathematical and does not perform real drawing; each layer represents a deterministic transformation applied on top of the layers beneath it\&. Layer index semantics: 
+.PD 0
+.IP "\(bu" 2
+\fRlayer = Length\fP — Returns the fully composed pixel buffer of this canvas, including all layers that have been added\&. This represents the final accumulated state of the entire layered canvas\&.   
+.IP "\(bu" 2
+\fRlayer = N\fP — Returns the pixel buffer resulting from combining all layers from \fRN\fP down to \fR1\fP, in order\&. The returned buffer reflects the mathematical accumulation of transformations up to the specified layer index, starting from that layer and folding downward into the base canvas\&.   
+.PP
+
+.PP
+Example: If the canvas contains 10 layers, calling \fRGetPixels(10)\fP produces the composed buffer of layers \fR10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1\fP\&. No rendering is performed; the result is computed entirely through deterministic layer composition rules\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIlayer\fP The layer index to compose from\&. \fRLength\fP returns the complete final canvas; values greater than zero return the accumulated mathematical result of all layers from the specified index down to the base canvas\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+An \fBFixedVector<T>\fP containing the composed pixel data for the requested layer range\&. 
+.RE
+.PP
+
+.SS "bool SystemEx\&.Drawing\&.ICanvasList< T >\&.IsShowing (int index = \fR0\fP)"
+
+.PP
+Gets the visibility state of the specified layer\&. Hidden layers do not contribute to the mathematical composition\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The layer index to query\&. \fR0\fP refers to the base canvas\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the layer is visible; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.SS "\fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Lerp (\fBColorHDR\fP value, float amount)"
+
+.PP
+Performs a quadratic interpolation toward another HDR color\&. Hue interpolation follows the shortest path around the color wheel\&. 
+.PP
+Definition at line \fB179\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Lerp (\fBColorHSV\fP value, float amount)"
+
+.PP
+Performs a quadratic interpolation toward another HSV color\&. 
+.br
+ Hue interpolation follows the shortest path around the color wheel\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The target color\&.
+.br
+\fIamount\fP Interpolation factor in the range 0–1\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB139\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Lerp (\fBColorR16G16B16\fP value, float amount)"
+
+.PP
+Blends this color toward another by the given amount\&. 
+.PP
+Definition at line \fB171\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Lerp (\fBColorR8G8B8\fP value, float amount)"
+
+.PP
+Blends this color toward another by the given amount\&. 
+.PP
+Definition at line \fB325\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "T SystemEx\&.Drawing\&.IColor< T >\&.Lerp (T value, float amount)"
+
+.PP
+Performs linear interpolation between this color and another color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP Ziel Value
+.br
+\fIamount\fP Interpolationsfaktor
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.LightIntensity (float intensity)\fR [virtual]\fP"
+
+.PP
+Increases the HDR brightness by the specified intensity\&. 
+.PP
+Definition at line \fB119\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.LinearBrightness ()"
+
+.PP
+Computes the brightness using linear RGB\&. 
+.PP
+Definition at line \fB143\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR8G8B8\&.LinearBrightness ()"
+
+.PP
+Computes the brightness using linear RGB\&. 
+.PP
+Definition at line \fB273\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Max (\fBColorR8G8B8\fP a, \fBColorR8G8B8\fP b)\fR [static]\fP"
+
+.PP
+Returns the brightest components of two colors\&. 
+.PP
+Definition at line \fB319\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBAsScaled()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHWB()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Min (\fBColorR8G8B8\fP a, \fBColorR8G8B8\fP b)\fR [static]\fP"
+
+.PP
+Returns the darkest components of two colors\&. 
+.PP
+Definition at line \fB313\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHWB()\fP\&.
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Multiplication (\fBColorHDR\fP a)\fR [virtual]\fP"
+
+.PP
+Multiplies this HDR color with another, component by component\&. Hue is not affected\&. 
+.PP
+Definition at line \fB99\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBMultiplication()\fP\&.
+.SS "\fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Multiplication (float a, float b, float c)"
+
+.PP
+Multiplies this HDR color by the specified HSV components\&. This is a convenience overload that constructs a temporary HDR color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP Hue component\&.
+.br
+\fIb\fP Saturation component\&.
+.br
+\fIc\fP Value component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The modified HDR color\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB153\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Multiplication (\fBColorHSV\fP a)"
+
+.PP
+Multiplies this color with another, component by component\&. Hue is not affected\&. 
+.PP
+Definition at line \fB113\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBMultiplication()\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Multiplication (float a, float b, float c)"
+
+.PP
+Multiplication another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB211\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Multiplication (\fBColorR16G16B16\fP value)"
+
+.PP
+Multiplies this color with another\&. 
+.PP
+Definition at line \fB100\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBMultiplication()\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Multiplication (float a, float b, float c)"
+
+.PP
+Multiplication another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB228\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Multiplication (\fBColorR8G8B8\fP value)"
+
+.PP
+Multiplies this color with another, channel by channel\&. 
+.PP
+Definition at line \fB184\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBMultiplication()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Multiplication (float a, float b, float c)"
+
+.PP
+Multiplication another color in r, g, b channels with this one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The red color channel
+.br
+\fIb\fP The green color channel
+.br
+\fIc\fP The blue color channel
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+this
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB250\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "T SystemEx\&.Drawing\&.IColor< T >\&.Multiplication (float a, float b, float c)"
+
+.PP
+Performs component-wise multiplication of three colors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The first component value\&.
+.br
+\fIb\fP The second component value\&.
+.br
+\fIc\fP The third component value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The resulting color\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Drawing\&.ColorHDR\fP, \fBSystemEx\&.Drawing\&.ColorHSV\fP, \fBSystemEx\&.Drawing\&.ColorR16G16B16\fP, and \fBSystemEx\&.Drawing\&.ColorR8G8B8\fP\&.
+.SS "T SystemEx\&.Drawing\&.IColor< T >\&.Multiplication (T value)"
+
+.PP
+Multiplies this color with the specified color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The color to multiply with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The resulting color\&.
+.RE
+.PP
+
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.operator!= (\fBColorHSV\fP left, \fBColorHSV\fP right)\fR [static]\fP"
+
+.PP
+Definition at line \fB230\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.operator< (\fBColorHSV\fP left, \fBColorHSV\fP right)\fR [static]\fP"
+
+.PP
+Definition at line \fB234\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.operator<= (\fBColorHSV\fP left, \fBColorHSV\fP right)\fR [static]\fP"
+
+.PP
+Definition at line \fB238\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.operator== (\fBColorHSV\fP left, \fBColorHSV\fP right)\fR [static]\fP"
+
+.PP
+Definition at line \fB226\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.operator> (\fBColorHSV\fP left, \fBColorHSV\fP right)\fR [static]\fP"
+
+.PP
+Definition at line \fB242\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorHSV\&.operator>= (\fBColorHSV\fP left, \fBColorHSV\fP right)\fR [static]\fP"
+
+.PP
+Definition at line \fB246\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "ISubCanvas< T > SystemEx\&.Drawing\&.ICanvasList< T >\&.RemoveLayer (int index)"
+
+.PP
+Removes the layer at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index of the layer to remove\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The removed layer instance\&.
+.RE
+.PP
+
+.SS "bool SystemEx\&.Drawing\&.ICanvas< T >\&.Resize (int size)"
+
+.PP
+Resizes the canvas to the specified total size (Width × Height)\&. Existing values may be truncated or expanded depending on the implementation\&. This operation modifies only the mathematical buffer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP The new total number of elements\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the resize succeeded; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Saturation (float delta)\fR [virtual]\fP"
+
+.PP
+Adjusts the saturation by the specified delta\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB64\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Saturation (float delta)"
+
+.PP
+Adjusts the saturation by the specified delta\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB74\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Saturation (float delta)"
+
+.PP
+Adjusts the perceived saturation of the color\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB188\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Saturation (float delta)"
+
+.PP
+Changes the perceived saturation of the color\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB137\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "T SystemEx\&.Drawing\&.IColor< T >\&.Saturation (float delta)"
+
+.PP
+Adjusts the saturation of the color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdelta\fP The amount to adjust the saturation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The adjusted color\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Drawing\&.ColorHDR\fP, \fBSystemEx\&.Drawing\&.ColorHSV\fP, \fBSystemEx\&.Drawing\&.ColorR16G16B16\fP, and \fBSystemEx\&.Drawing\&.ColorR8G8B8\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ICanvasList< T >\&.SetShowing (bool show, int index)"
+
+.PP
+Sets the visibility state of the specified layer\&. A hidden layer does not participate in the mathematical composition when \fBGetPixels\fP is invoked\&. Layer index semantics: \fR0\fP refers to the base canvas, \fR1\fP refers to the first added layer, \fR2\fP to the second, and so on\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIshow\fP Whether the layer should be included in composition\&.
+.br
+\fIindex\fP The layer index whose visibility is being changed\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the visibility was changed; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.SS "virtual \fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Subtraction (\fBColorHDR\fP a)\fR [virtual]\fP"
+
+.PP
+Subtracts another HDR color from this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. 
+.PP
+Definition at line \fB89\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBSubtraction()\fP\&.
+.SS "\fBColorHDR\fP SystemEx\&.Drawing\&.ColorHDR\&.Subtraction (float a, float b, float c)"
+
+.PP
+Subtracts the specified HSV components from this HDR color\&. This is a convenience overload that constructs a temporary HDR color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP Hue component\&.
+.br
+\fIb\fP Saturation component\&.
+.br
+\fIc\fP Value component\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The modified HDR color\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB142\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Subtraction (\fBColorHSV\fP a)"
+
+.PP
+Subtracts another HSV color from this one, component by component\&. Hue is wrapped, saturation and value are clamped\&. 
+.PP
+Definition at line \fB102\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBSubtraction()\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Subtraction (float a, float b, float c)"
+
+.PP
+Subtraction another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB205\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Subtraction (\fBColorR16G16B16\fP value)"
+
+.PP
+Subtracts another color from this one\&. 
+.PP
+Definition at line \fB92\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBSubtraction()\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Subtraction (float a, float b, float c)"
+
+.PP
+Subtraction another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB222\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Subtraction (\fBColorR8G8B8\fP value)"
+
+.PP
+Definition at line \fB174\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Subtraction (float a, float b, float c)"
+
+.PP
+Subtraction another color in r, g, b channels with this one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The red color channel
+.br
+\fIb\fP The green color channel
+.br
+\fIc\fP The blue color channel
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+this
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB240\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "T SystemEx\&.Drawing\&.IColor< T >\&.Subtraction (float a, float b, float c)"
+
+.PP
+Performs component-wise subtraction of three colors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The first component value\&.
+.br
+\fIb\fP The second component value\&.
+.br
+\fIc\fP The third component value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The resulting color\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Drawing\&.ColorHDR\fP, \fBSystemEx\&.Drawing\&.ColorHSV\fP, \fBSystemEx\&.Drawing\&.ColorR16G16B16\fP, and \fBSystemEx\&.Drawing\&.ColorR8G8B8\fP\&.
+.SS "T SystemEx\&.Drawing\&.IColor< T >\&.Subtraction (T value)"
+
+.PP
+Subtracts the specified color from this color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The color to subtract\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The resulting color\&.
+.RE
+.PP
+
+.SS "int SystemEx\&.Drawing\&.ICanvasList< T >\&.SwapIn (int x, int y, int width, int height, ref ICanvas< T > toDraw)"
+
+.PP
+Swaps the mathematically composed region of this canvas into another canvas\&. The region defined by \fIx\fP , \fIy\fP , \fIwidth\fP , and \fIheight\fP  is computed mathematically and then written into \fItoDraw\fP \&. No drawing occurs; the operation transfers computed pixel values\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The X coordinate of the region\&.
+.br
+\fIy\fP The Y coordinate of the region\&.
+.br
+\fIwidth\fP The width of the region\&.
+.br
+\fIheight\fP The height of the region\&.
+.br
+\fItoDraw\fP The target canvas receiving the computed pixels\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of pixels swapped\&.
+.RE
+.PP
+
+.SS "int SystemEx\&.Drawing\&.ICanvasList< T >\&.SwapIn (ref ICanvas< T > toDraw)"
+
+.PP
+Swaps the entire mathematically composed canvas into another canvas\&. This transfers the full computed pixel buffer into \fItoDraw\fP \&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItoDraw\fP The target canvas receiving the composed pixel buffer\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of pixels swapped\&.
+.RE
+.PP
+
+.SS "\fBColorGray\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorGray (this \fBColorHSV\fP color)\fR [static]\fP"
+
+.PP
+Converts an HSV color to grayscale using the value component\&. 
+.PP
+Definition at line \fB111\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorHDR\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorHDR (this \fBColorHSV\fP x)\fR [static]\fP"
+
+.PP
+Converts an HSV color to HDR\&. 
+.PP
+Definition at line \fB130\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorHDR\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorHDR (this \fBColorR8G8B8\fP x)\fR [static]\fP"
+
+.PP
+Converts an sRGB color to HDR via HSV\&. 
+.PP
+Definition at line \fB123\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorHSL\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorHSL (this \fBColorHSV\fP color)\fR [static]\fP"
+
+.PP
+Converts an HSV color to HSL\&. 
+.PP
+Definition at line \fB249\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV (this \fBColorGray\fP color)\fR [static]\fP"
+
+.PP
+Converts an Gray color to HSV\&. 
+.PP
+Definition at line \fB349\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV (this \fBColorHDR\fP color)\fR [static]\fP"
+
+.PP
+Converts an HDR color to HSV, clamping the value to 0–1\&. 
+.PP
+Definition at line \fB117\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV (this \fBColorR16G16B16\fP color)\fR [static]\fP"
+
+.PP
+Converts a 16‑bit RGB color (R16G16B16) to HSV\&. Internally converts R16G16B16 → sRGB → HSV\&. 
+.PP
+Definition at line \fB276\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV (this \fBColorR8G8B8\fP x)\fR [static]\fP"
+
+.PP
+Converts an sRGB color to HSV\&. 
+.PP
+Definition at line \fB136\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorHWB\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorHWB (this \fBColorR8G8B8\fP color)\fR [static]\fP"
+
+.PP
+Converts an sRGB color to HWB\&. 
+.PP
+Definition at line \fB164\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorNCol\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorNCol (this \fBColorR8G8B8\fP color)\fR [static]\fP"
+
+.PP
+Converts an HSV color to sRGB\&. 
+.PP
+Definition at line \fB307\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR10G10B10A2\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorR10G10B10 (this \fBColorNCol\fP color)\fR [static]\fP"
+
+.PP
+Converts an NCol color to RGB10\&. 
+.PP
+Definition at line \fB342\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR10G10B10A2\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorR10G10B10 (this \fBColorR16G16B16\fP color)\fR [static]\fP"
+
+.PP
+Converts a 16‑bit RGB color (R16G16B16) to a 10‑bit RGB holder (R10G10B10)\&. No quantization is applied; values remain normalized floats\&. 
+.PP
+Definition at line \fB294\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16 (this \fBColorHSV\fP color)\fR [static]\fP"
+
+.PP
+Converts an HSV color to a 16‑bit RGB color (R16G16B16)\&. Internally converts HSV → sRGB → R16G16B16\&. 
+.PP
+Definition at line \fB268\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16 (this \fBColorNCol\fP color)\fR [static]\fP"
+
+.PP
+Converts an NCol color to RGB16\&. 
+.PP
+Definition at line \fB335\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16 (this \fBColorR10G10B10A2\fP color)\fR [static]\fP"
+
+.PP
+Converts a 10‑bit RGB holder (R10G10B10) to a 16‑bit RGB color (R16G16B16)\&. No quantization is applied; values remain normalized floats\&. 
+.PP
+Definition at line \fB301\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8 (this \fBColorCMY\fP color)\fR [static]\fP"
+
+.PP
+Converts a CMY color to sRGB\&. 
+.PP
+Definition at line \fB99\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8 (this \fBColorGray\fP color)\fR [static]\fP"
+
+.PP
+Converts a grayscale color to sRGB\&. 
+.PP
+Definition at line \fB105\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8 (this \fBColorHSV\fP color)\fR [static]\fP"
+
+.PP
+Converts an HSV color to sRGB\&. 
+.PP
+Definition at line \fB221\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8 (this \fBColorHWB\fP color)\fR [static]\fP"
+
+.PP
+Converts an HWB color to sRGB\&. 
+.PP
+Definition at line \fB192\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8 (this \fBColorNCol\fP color)\fR [static]\fP"
+
+.PP
+Converts an NCol color to sRGB\&. 
+.PP
+Definition at line \fB320\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8 (this \fBColorXYZ\fP c)\fR [static]\fP"
+
+.PP
+Converts a CIE XYZ color to sRGB using the D65 reference white\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIc\fP The XYZ color\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The corresponding sRGB color\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB60\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8 (this \fBColorYUV\fP yuv)\fR [static]\fP"
+
+.PP
+Converts a YUV color to sRGB using the BT\&.601 conversion matrix\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIyuv\fP The YUV color\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The corresponding sRGB color\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB86\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorXYZ\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorXYZ (this \fBColorHSV\fP color)\fR [static]\fP"
+
+.PP
+Converts an HSV color to CIE XYZ\&. 
+.PP
+Definition at line \fB242\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorXYZ\fP SystemEx\&.Drawing\&.ColorConverter\&.ToColorXYZ (this \fBColorR8G8B8\fP rgb)\fR [static]\fP"
+
+.PP
+Converts an sRGB color to CIE XYZ using the D65 reference white\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrgb\fP The sRGB color to convert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB34\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorConverter\&.ToLinear (this \fBColorR16G16B16\fP color)\fR [static]\fP"
+
+.PP
+Converts a 16‑bit RGB color (R16G16B16) from sRGB to linear RGB using the standard sRGB transfer function\&. 
+.PP
+Definition at line \fB283\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorConverter\&.ToLinear (this \fBColorR8G8B8\fP rgb)\fR [static]\fP"
+
+.PP
+Converts an sRGB color to linear RGB using the standard sRGB transfer function\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrgb\fP The sRGB color\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The linear RGB representation\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB48\fP of file \fBColorConverter\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorHDR\&.ToString ()"
+
+.PP
+Returns a string representation of the HDR color\&. 
+.PP
+Definition at line \fB224\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorHSL\&.ToString ()"
+
+.PP
+Returns a string representation of the YUV color\&. 
+.PP
+Definition at line \fB97\fP of file \fBColorHSL\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorHSV\&.ToString ()"
+
+.PP
+Returns a string representation of the HSV color\&. 
+.PP
+Definition at line \fB193\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorHWB\&.ToString ()"
+
+.PP
+Returns a string representation of the HWB color\&. 
+.PP
+Definition at line \fB94\fP of file \fBColorHWB\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorNCol\&.ToString ()"
+
+.PP
+Returns a string representation of the NCOL color\&. 
+.PP
+Definition at line \fB103\fP of file \fBColorNCol\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorR10G10B10A2\&.ToString ()"
+
+.PP
+Returns a string representation of the R10G10B10A2 color\&. 
+.PP
+Definition at line \fB234\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorR16G16B16\&.ToString ()"
+
+.PP
+Returns a string representation of the color\&. 
+.PP
+Definition at line \fB182\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorR8G8B8\&.ToString ()"
+
+.PP
+Returns a string representation of the color in normalized RGB format\&. 
+.PP
+Definition at line \fB130\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorXYZ\&.ToString ()"
+
+.PP
+Returns a string representation of the XYZ color\&. 
+.PP
+Definition at line \fB88\fP of file \fBColorXYZ\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorYUV\&.ToString ()"
+
+.PP
+Returns a string representation of the YUV color\&. 
+.PP
+Definition at line \fB94\fP of file \fBColorYUV\&.cs\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const float SystemEx\&.Drawing\&.ColorR10G10B10A2\&.COLORINV = 1f / 1023f\fR [static]\fP"
+
+.PP
+Gets the inverse of the color component range\&. 
+.PP
+Definition at line \fB157\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SH "Properties"
+.PP 
+.SS "float SystemEx\&.Drawing\&.ColorR10G10B10A2\&.A\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the alpha component\&. 
+.PP
+Definition at line \fB169\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.PP
+Referenced by \fBColorR10G10B10A2()\fP, and \fBColorR10G10B10A2()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.AliceBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+AliceBlue #F0F8FF\&. 
+.PP
+Definition at line \fB319\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.AntiqueWhite\fR [static]\fP, \fR [get]\fP"
+
+.PP
+AntiqueWhite #FAEBD7\&. 
+.PP
+Definition at line \fB335\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.CyanColors\&.Aqua\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Aqua #00FFFF\&. 
+.PP
+Definition at line \fB287\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.CyanColors\&.Aquamarine\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Aquamarine #7FFFD4\&. 
+.PP
+Definition at line \fB295\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.Azure\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Azure #F0FFFF\&. 
+.PP
+Definition at line \fB317\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR10G10B10A2\&.B\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the blue component\&. 
+.PP
+Definition at line \fB167\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.PP
+Referenced by \fBColorR10G10B10A2()\fP, \fBColorR10G10B10A2()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.B\fR [get]\fP"
+
+.PP
+Gets the blue channel\&. 
+.PP
+Definition at line \fB47\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR10G10B10()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.Beige\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Beige #F5F5DC\&. 
+.PP
+Definition at line \fB327\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.Bisque\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Bisque #FFE4C4\&. 
+.PP
+Definition at line \fB31\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreyColors\&.Black\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Black #000000\&. 
+.PP
+Definition at line \fB366\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorHWB\&.Blackness\fR [get]\fP, \fR [set]\fP"
+
+.PP
+The blackness component of the color, in the range [0, 1]\&. 
+.PP
+Definition at line \fB42\fP of file \fBColorHWB\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.BlanchedAlmond\fR [static]\fP, \fR [get]\fP"
+
+.PP
+BlanchedAlmond #FFEBCD\&. 
+.PP
+Definition at line \fB29\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.Blue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Blue #0000FF\&. 
+.PP
+Definition at line \fB91\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.Blue\fR [get]\fP"
+
+.PP
+Gets the blue channel\&. 
+.PP
+Definition at line \fB38\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToLinear()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR8G8B8\&.Blue\fR [get]\fP"
+
+.PP
+Gets the blue channel\&. 
+.PP
+Definition at line \fB56\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR10G10B10()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorXYZ()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToLinear()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.BlueViolet\fR [static]\fP, \fR [get]\fP"
+
+.PP
+BlueViolet #8A2BE2\&. 
+.PP
+Definition at line \fB144\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.Brown\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Brown #A52A2A\&. 
+.PP
+Definition at line \fB59\fP of file \fBColors\&.cs\fP\&.
+.SS "IEnumerable<T> SystemEx\&.Drawing\&.ICanvas< T >\&.Buffer\fR [get]\fP"
+
+.PP
+Gets an enumerable view of the underlying buffer\&. The buffer contains the raw mathematical color values in row‑major order\&. No rendering or transformation occurs when accessing this property\&. 
+.PP
+Definition at line \fB62\fP of file \fBCanvas\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.BurlyWood\fR [static]\fP, \fR [get]\fP"
+
+.PP
+BurlyWood #DEB887\&. 
+.PP
+Definition at line \fB37\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorCMY\&.C\fR [get]\fP, \fR [set]\fP"
+
+.PP
+The cyan component of the color, in the range 0–1\&. 
+.PP
+Definition at line \fB32\fP of file \fBColorCMY\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorNCol\&.C\fR [get]\fP"
+
+.PP
+Gets the whiteness component (0–100)\&. 
+.PP
+Definition at line \fB56\fP of file \fBColorNCol\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.CadetBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+CadetBlue #5F9EA0\&. 
+.PP
+Definition at line \fB69\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.Chartreuse\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Chartreuse #7FFF00\&. 
+.PP
+Definition at line \fB238\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.Chocolate\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Chocolate #D2691E\&. 
+.PP
+Definition at line \fB51\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.OrangeColors\&.Coral\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Coral #FF7F50\&. 
+.PP
+Definition at line \fB196\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.CornflowerBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+CornflowerBlue #6495ED\&. 
+.PP
+Definition at line \fB83\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.Cornsilk\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Cornsilk #FFF8DC\&. 
+.PP
+Definition at line \fB27\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.RedColors\&.Crimson\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Crimson #DC143C\&. 
+.PP
+Definition at line \fB178\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.CyanColors\&.Cyan\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Cyan #00FFFF\&. 
+.PP
+Definition at line \fB289\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.DarkBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkBlue #00008B\&. 
+.PP
+Definition at line \fB95\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.DarkCyan\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkCyan #008B8B\&. 
+.PP
+Definition at line \fB276\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.DarkGoldenRod\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkGoldenRod #B8860B\&. 
+.PP
+Definition at line \fB47\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreyColors\&.DarkGray\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkGray #A9A9A9\&. 
+.PP
+Definition at line \fB354\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.DarkGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkGreen #006400\&. 
+.PP
+Definition at line \fB262\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.YellowColors\&.DarkKhaki\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkKhaki #BDB76B\&. 
+.PP
+Definition at line \fB228\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.DarkMagenta\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkMagenta #8B008B\&. 
+.PP
+Definition at line \fB146\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.DarkOliveGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkOliveGreen #556B2F\&. 
+.PP
+Definition at line \fB268\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.OrangeColors\&.DarkOrange\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkOrange #FF8C00\&. 
+.PP
+Definition at line \fB194\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.DarkOrchid\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkOrchid #9932CC\&. 
+.PP
+Definition at line \fB140\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.RedColors\&.DarkRed\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkRed #8B0000\&. 
+.PP
+Definition at line \fB184\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.RedColors\&.DarkSalmon\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkSalmon #E9967A\&. 
+.PP
+Definition at line \fB172\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.DarkSeaGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkSeaGreen #8FBC8F\&. 
+.PP
+Definition at line \fB272\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.DarkSlateBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkSlateBlue #483D8B\&. 
+.PP
+Definition at line \fB156\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreyColors\&.DarkSlateGray\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkSlateGray #2F4F4F\&. 
+.PP
+Definition at line \fB364\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.CyanColors\&.DarkTurquoise\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkTurquoise #00CED1\&. 
+.PP
+Definition at line \fB301\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.DarkViolet\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DarkViolet #9400D3\&. 
+.PP
+Definition at line \fB142\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PinkColors\&.DeepPink\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DeepPink\&. 
+.PP
+Definition at line \fB113\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.DeepSkyBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DeepSkyBlue #00BFFF\&. 
+.PP
+Definition at line \fB85\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreyColors\&.DimGray\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DimGray #696969\&. 
+.PP
+Definition at line \fB356\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.DodgerBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+DodgerBlue #1E90FF\&. 
+.PP
+Definition at line \fB87\fP of file \fBColors\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ISubCanvas< T >\&.Enable\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets whether this sub‑canvas is enabled\&. Disabled sub‑canvases do not participate in mathematical composition and behave as if they were absent from the layer stack\&. 
+.PP
+Definition at line \fB107\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "\fBEndian\fP SystemEx\&.Drawing\&.ColorR10G10B10FormatSchema\&.Endian\fR [get]\fP"
+
+.PP
+The endianness used for all multi‑byte fields\&. This is specified when creating the schema\&. 
+.PP
+Implements \fBSystemEx\&.IO\&.Provider\&.IByteFormatSchema\fP\&.
+.PP
+Definition at line \fB41\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.PP
+Referenced by \fBColorR10G10B10FormatSchema()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.RedColors\&.FireBrick\fR [static]\fP, \fR [get]\fP"
+
+.PP
+FireBrick #B22222\&. 
+.PP
+Definition at line \fB182\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.FloralWhite\fR [static]\fP, \fR [get]\fP"
+
+.PP
+FloralWhite #FFFAF0\&. 
+.PP
+Definition at line \fB331\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.ForestGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+ForestGreen #228B22\&. 
+.PP
+Definition at line \fB258\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.Fuchsia\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Fuchsia #FF00FF\&. 
+.PP
+Definition at line \fB134\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR10G10B10A2\&.G\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the green component\&. 
+.PP
+Definition at line \fB164\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.PP
+Referenced by \fBColorR10G10B10A2()\fP, \fBColorR10G10B10A2()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.G\fR [get]\fP"
+
+.PP
+Gets the green channel\&. 
+.PP
+Definition at line \fB44\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR10G10B10()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreyColors\&.Gainsboro\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gainsboro #DCDCDC\&. 
+.PP
+Definition at line \fB348\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.GhostWhite\fR [static]\fP, \fR [get]\fP"
+
+.PP
+GhostWhite #F8F8FF\&. 
+.PP
+Definition at line \fB321\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.YellowColors\&.Gold\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gold #FFD700\&. 
+.PP
+Definition at line \fB208\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.GoldenRod\fR [static]\fP, \fR [get]\fP"
+
+.PP
+GoldenRod #DAA520\&. 
+.PP
+Definition at line \fB45\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorGray\&.Gray\fR [get]\fP"
+
+.PP
+Gets the grayscale value\&. 
+.PP
+Definition at line \fB31\fP of file \fBColorGray\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreyColors\&.Gray\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gray #808080\&. 
+.PP
+Definition at line \fB358\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.Green\fR [get]\fP"
+
+.PP
+Gets the green channel\&. 
+.PP
+Definition at line \fB35\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToLinear()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR8G8B8\&.Green\fR [get]\fP"
+
+.PP
+Gets the green channel\&. 
+.PP
+Definition at line \fB53\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR10G10B10()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorXYZ()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToLinear()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.Green\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Green #008000\&. 
+.PP
+Definition at line \fB260\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.GreenYellow\fR [static]\fP, \fR [get]\fP"
+
+.PP
+GreenYellow #ADFF2F\&. 
+.PP
+Definition at line \fB236\fP of file \fBColors\&.cs\fP\&.
+.SS "virtual float SystemEx\&.Drawing\&.ColorHDR\&.H\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the hue component in degrees (0–360)\&. Values outside the range are wrapped automatically\&. 
+.PP
+Definition at line \fB39\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBColorHDR()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV()\fP\&.
+.SS "virtual float SystemEx\&.Drawing\&.ColorHSL\&.H\fR [get]\fP"
+
+.PP
+Gets the hue component\&. 
+.PP
+Definition at line \fB37\fP of file \fBColorHSL\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorHSV\&.H\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the hue component in degrees (0–360)\&. 
+.br
+ Values outside the range are wrapped automatically\&. 
+.PP
+Definition at line \fB50\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHDR()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSL()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorHWB\&.H\fR [get]\fP, \fR [set]\fP"
+
+.PP
+The hue component of the color, in degrees (0–360)\&. 
+.PP
+Definition at line \fB33\fP of file \fBColorHWB\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ISubCanvas< T >\&.HasMask\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets a value indicating whether the sub‑canvas uses a mask\&. When enabled, the mask determines which regions of the sub‑canvas contribute to the mathematical composition\&. 
+.PP
+Definition at line \fB143\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "long SystemEx\&.Drawing\&.ColorR10G10B10FormatSchema\&.HeaderSize\fR [get]\fP"
+
+.PP
+The size of the header portion in bytes\&. For \fBColorR10G10B10A2\fP, there is no header, so this is 0\&. 
+.PP
+Implements \fBSystemEx\&.IO\&.Provider\&.IByteFormatSchema\fP\&.
+.PP
+Definition at line \fB37\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "int SystemEx\&.Drawing\&.ICanvas< T >\&.Height\fR [get]\fP"
+
+.PP
+Gets the height of the canvas in mathematical units (rows)\&. 
+.PP
+Definition at line \fB50\fP of file \fBCanvas\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.HoneyDew\fR [static]\fP, \fR [get]\fP"
+
+.PP
+HoneyDew #F0FFF0\&. 
+.PP
+Definition at line \fB313\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PinkColors\&.HotPink\fR [static]\fP, \fR [get]\fP"
+
+.PP
+HotPink\&. 
+.PP
+Definition at line \fB111\fP of file \fBColors\&.cs\fP\&.
+.SS "byte SystemEx\&.Drawing\&.ColorNCol\&.I\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets the hue segment index (0–5)\&. 
+.PP
+Definition at line \fB41\fP of file \fBColorNCol\&.cs\fP\&.
+.PP
+Referenced by \fBColorNCol()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.RedColors\&.IndianRed\fR [static]\fP, \fR [get]\fP"
+
+.PP
+IndianRed #CD5C5C\&. 
+.PP
+Definition at line \fB176\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.Indigo\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Indigo #4B0082\&. 
+.PP
+Definition at line \fB160\fP of file \fBColors\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorR8G8B8\&.IsDark\fR [get]\fP"
+
+.PP
+Indicates whether the color appears visually dark\&. 
+.PP
+Definition at line \fB62\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ISubCanvas< T >\&.IsDirty\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets whether the sub‑canvas is marked as dirty\&. A dirty state indicates that its mathematical content has changed and that dependent compositions may need to be recalculated\&. 
+.PP
+Definition at line \fB121\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorR8G8B8\&.IsLight\fR [get]\fP"
+
+.PP
+Indicates whether the color appears visually bright\&. 
+.PP
+Definition at line \fB59\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.Ivory\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Ivory #FFFFF0\&. 
+.PP
+Definition at line \fB333\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.YellowColors\&.Khaki\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Khaki #F0E68C\&. 
+.PP
+Definition at line \fB226\fP of file \fBColors\&.cs\fP\&.
+.SS "virtual float SystemEx\&.Drawing\&.ColorHSL\&.L\fR [get]\fP"
+
+.PP
+Gets the Lightness component\&. 
+.PP
+Definition at line \fB47\fP of file \fBColorHSL\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorNCol\&.L\fR [get]\fP"
+
+.PP
+Gets the lightness component (0–100)\&. 
+.PP
+Definition at line \fB61\fP of file \fBColorNCol\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.Lavender\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Lavender #E6E6FA\&. 
+.PP
+Definition at line \fB124\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.LavenderBlush\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LavenderBlush #FFF0F5\&. 
+.PP
+Definition at line \fB339\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.LawnGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LawnGreen #7CFC00\&. 
+.PP
+Definition at line \fB240\fP of file \fBColors\&.cs\fP\&.
+.SS "Map<ISubCanvas<T>, \fBBlendMode\fP> SystemEx\&.Drawing\&.ICanvasList< T >\&.Layers\fR [get]\fP"
+
+.PP
+Gets the collection of layers associated with this canvas list\&. Each layer is represented as an \fBISubCanvas<T>\fP paired with a \fBBlendMode\fP describing how the layer mathematically interacts with the layers beneath it\&. Layers do not contain rendered pixel data; they define transformation rules that are applied when the composed buffer is requested\&. 
+.PP
+Definition at line \fB182\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.YellowColors\&.LemonChiffon\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LemonChiffon #FFFACD\&. 
+.PP
+Definition at line \fB214\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.LightBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightBlue #ADD8E6\&. 
+.PP
+Definition at line \fB75\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.RedColors\&.LightCoral\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightCoral #F08080\&. 
+.PP
+Definition at line \fB174\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.CyanColors\&.LightCyan\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightCyan #E0FFFF\&. 
+.PP
+Definition at line \fB291\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.YellowColors\&.LightGoldenRodYellow\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightGoldenRodYellow #FAFAD2\&. 
+.PP
+Definition at line \fB216\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreyColors\&.LightGray\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightGray #D3D3D3\&. 
+.PP
+Definition at line \fB350\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.LightGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightGreen #90EE90\&. 
+.PP
+Definition at line \fB248\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PinkColors\&.LightPink\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightPink\&. 
+.PP
+Definition at line \fB109\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.RedColors\&.LightSalmon\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightSalmon\&. 
+.PP
+Definition at line \fB168\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.LightSeaGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightSeaGreen #20B2AA\&. 
+.PP
+Definition at line \fB274\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.LightSkyBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightSkyBlue #87CEFA\&. 
+.PP
+Definition at line \fB79\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreyColors\&.LightSlateGray\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightSlateGray #778899\&. 
+.PP
+Definition at line \fB360\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.LightSteelBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightSteelBlue #B0C4DE\&. 
+.PP
+Definition at line \fB73\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.YellowColors\&.LightYellow\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LightYellow #FFFFE0\&. 
+.PP
+Definition at line \fB212\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.Lime\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Lime #00FF00\&. 
+.PP
+Definition at line \fB242\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.LimeGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+LimeGreen #32CD32\&. 
+.PP
+Definition at line \fB244\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.Linen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Linen #FAF0E6\&. 
+.PP
+Definition at line \fB337\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorCMY\&.M\fR [get]\fP, \fR [set]\fP"
+
+.PP
+The magenta component of the color, in the range 0–1\&. 
+.PP
+Definition at line \fB36\fP of file \fBColorCMY\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.Magenta\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Magenta #FF00FF\&. 
+.PP
+Definition at line \fB136\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.Maroon\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Maroon #800000\&. 
+.PP
+Definition at line \fB61\fP of file \fBColors\&.cs\fP\&.
+.SS "ICanvas<\fBColorGray\fP> SystemEx\&.Drawing\&.ISubCanvas< T >\&.Mask\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the grayscale mask applied to this sub‑canvas\&. The mask defines per‑pixel visibility weights, allowing selective inclusion or exclusion of regions during composition\&. A mask does not draw pixels; it modifies how the sub‑canvas mathematically interacts with underlying layers\&. 
+.PP
+Definition at line \fB152\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "virtual float SystemEx\&.Drawing\&.ColorHDR\&.MaxValue\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the maximum allowed HDR value\&. 
+.PP
+Definition at line \fB52\fP of file \fBColorHDR\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.MediumAquaMarine\fR [static]\fP, \fR [get]\fP"
+
+.PP
+MediumAquaMarine #66CDAA\&. 
+.PP
+Definition at line \fB270\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.MediumBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+MediumBlue #0000CD\&. 
+.PP
+Definition at line \fB93\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.MediumOrchid\fR [static]\fP, \fR [get]\fP"
+
+.PP
+MediumOrchid #BA55D3\&. 
+.PP
+Definition at line \fB138\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.MediumPurple\fR [static]\fP, \fR [get]\fP"
+
+.PP
+MediumPurple #9370DB\&. 
+.PP
+Definition at line \fB150\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.MediumSeaGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+MediumSeaGreen #3CB371\&. 
+.PP
+Definition at line \fB254\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.MediumSlateBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+MediumSlateBlue #7B68EE\&. 
+.PP
+Definition at line \fB152\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.MediumSpringGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+MediumSpringGreen #00FA9A\&. 
+.PP
+Definition at line \fB250\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.CyanColors\&.MediumTurquoise\fR [static]\fP, \fR [get]\fP"
+
+.PP
+MediumTurquoise #48D1CC\&. 
+.PP
+Definition at line \fB299\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PinkColors\&.MediumVioletRed\fR [static]\fP, \fR [get]\fP"
+
+.PP
+MediumVioletRed\&. 
+.PP
+Definition at line \fB117\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.MidnightBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+MidnightBlue #191970\&. 
+.PP
+Definition at line \fB99\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.MintCream\fR [static]\fP, \fR [get]\fP"
+
+.PP
+MintCream #F5FFFA\&. 
+.PP
+Definition at line \fB315\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.MistyRose\fR [static]\fP, \fR [get]\fP"
+
+.PP
+MistyRose #FFE4E1\&. 
+.PP
+Definition at line \fB341\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.YellowColors\&.Moccasin\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Moccasin #FFE4B5\&. 
+.PP
+Definition at line \fB220\fP of file \fBColors\&.cs\fP\&.
+.SS "string SystemEx\&.Drawing\&.ColorNCol\&.N\fR [get]\fP"
+
+.PP
+Gets the generated N‑Color name, e\&.g\&. "R20", "G55", "B03"\&. 
+.PP
+Definition at line \fB51\fP of file \fBColorNCol\&.cs\fP\&.
+.SS "string SystemEx\&.Drawing\&.ISubCanvas< T >\&.Name\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the name of the sub‑canvas\&. This is a user‑defined identifier useful for organizing, labeling, or referencing layers within a canvas list\&. 
+.PP
+Definition at line \fB128\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.NavajoWhite\fR [static]\fP, \fR [get]\fP"
+
+.PP
+NavajoWhite #FFDEAD\&. 
+.PP
+Definition at line \fB33\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.Navy\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Navy #000080\&. 
+.PP
+Definition at line \fB97\fP of file \fBColors\&.cs\fP\&.
+.SS "Map<string, long> SystemEx\&.Drawing\&.ColorR10G10B10FormatSchema\&.Offsets\fR [get]\fP"
+
+.PP
+A read‑only mapping of field names to their byte offsets\&. For \fBColorR10G10B10A2\fP, there is only one field named "DEFAULT" at offset 0\&. 
+.PP
+Implements \fBSystemEx\&.IO\&.Provider\&.IByteFormatSchema\fP\&.
+.PP
+Definition at line \fB47\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.PP
+Referenced by \fBColorR10G10B10FormatSchema()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.OldLace\fR [static]\fP, \fR [get]\fP"
+
+.PP
+OldLace #FDF5E6\&. 
+.PP
+Definition at line \fB329\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.Olive\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Olive #808000\&. 
+.PP
+Definition at line \fB53\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.OliveDrab\fR [static]\fP, \fR [get]\fP"
+
+.PP
+OliveDrab #6B8E23\&. 
+.PP
+Definition at line \fB266\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.One\fR [static]\fP, \fR [get]\fP"
+
+.PP
+A static property that returns a \fBColorHSV\fP instance representing white (H=0, S=0, V=1)\&. 
+.PP
+\fBReturns\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Definition at line \fB44\fP of file \fBColorHSV\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.OrangeColors\&.Orange\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Orange #FFA500\&. 
+.PP
+Definition at line \fB192\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.OrangeColors\&.OrangeRed\fR [static]\fP, \fR [get]\fP"
+
+.PP
+OrangeRed #FF4500\&. 
+.PP
+Definition at line \fB200\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.Orchid\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Orchid #DA70D6\&. 
+.PP
+Definition at line \fB130\fP of file \fBColors\&.cs\fP\&.
+.SS "byte SystemEx\&.Drawing\&.ColorNCol\&.P\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets the percentage position within the hue segment (0–100)\&. 
+.PP
+Definition at line \fB46\fP of file \fBColorNCol\&.cs\fP\&.
+.PP
+Referenced by \fBColorNCol()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.YellowColors\&.PaleGoldenRod\fR [static]\fP, \fR [get]\fP"
+
+.PP
+PaleGoldenRod #EEE8AA\&. 
+.PP
+Definition at line \fB224\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.PaleGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+PaleGreen #98FB98\&. 
+.PP
+Definition at line \fB246\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.CyanColors\&.PaleTurquoise\fR [static]\fP, \fR [get]\fP"
+
+.PP
+PaleTurquoise #AFEEEE\&. 
+.PP
+Definition at line \fB293\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PinkColors\&.PaleVioletRed\fR [static]\fP, \fR [get]\fP"
+
+.PP
+PaleVioletRed\&. 
+.PP
+Definition at line \fB115\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.YellowColors\&.PapayaWhip\fR [static]\fP, \fR [get]\fP"
+
+.PP
+PapayaWhip #FFEFD5\&. 
+.PP
+Definition at line \fB218\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.YellowColors\&.PeachPuff\fR [static]\fP, \fR [get]\fP"
+
+.PP
+PeachPuff #FFDAB9\&. 
+.PP
+Definition at line \fB222\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.Peru\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Peru #CD853F\&. 
+.PP
+Definition at line \fB49\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PinkColors\&.Pink\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Pink\&. 
+.PP
+Definition at line \fB107\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.Plum\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Plum #DDA0DD\&. 
+.PP
+Definition at line \fB128\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.PowderBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+PowderBlue #B0E0E6\&. 
+.PP
+Definition at line \fB77\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.Purple\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Purple #800080\&. 
+.PP
+Definition at line \fB148\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR10G10B10A2\&.R\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the red component\&. 
+.PP
+Definition at line \fB161\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.PP
+Referenced by \fBColorR10G10B10A2()\fP, \fBColorR10G10B10A2()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.R\fR [get]\fP"
+
+.PP
+Gets the red channel\&. 
+.PP
+Definition at line \fB41\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR10G10B10()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.RebeccaPurple\fR [static]\fP, \fR [get]\fP"
+
+.PP
+RebeccaPurple #663399\&. 
+.PP
+Definition at line \fB158\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.Red\fR [get]\fP"
+
+.PP
+Gets the red channel\&. 
+.PP
+Definition at line \fB32\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToLinear()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR8G8B8\&.Red\fR [get]\fP"
+
+.PP
+Gets the red channel\&. 
+.PP
+Definition at line \fB50\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR10G10B10()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR16G16B16()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorXYZ()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToLinear()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.RedColors\&.Red\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Red #FF0000\&. 
+.PP
+Definition at line \fB180\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.RosyBrown\fR [static]\fP, \fR [get]\fP"
+
+.PP
+RosyBrown #BC8F8F\&. 
+.PP
+Definition at line \fB41\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.RoyalBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+RoyalBlue #4169E1\&. 
+.PP
+Definition at line \fB89\fP of file \fBColors\&.cs\fP\&.
+.SS "virtual float SystemEx\&.Drawing\&.ColorHDR\&.S\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the saturation component in the range 0–1\&. 
+.PP
+Definition at line \fB48\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBColorHDR()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV()\fP\&.
+.SS "virtual float SystemEx\&.Drawing\&.ColorHSL\&.S\fR [get]\fP"
+
+.PP
+Gets the saturation component\&. 
+.PP
+Definition at line \fB42\fP of file \fBColorHSL\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorHSV\&.S\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the saturation component in the range 0–1\&. 
+.PP
+Definition at line \fB60\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHDR()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.SaddleBrown\fR [static]\fP, \fR [get]\fP"
+
+.PP
+SaddleBrown #8B4513\&. 
+.PP
+Definition at line \fB55\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.RedColors\&.Salmon\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Salmon #FA8072\&. 
+.PP
+Definition at line \fB170\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.SandyBrown\fR [static]\fP, \fR [get]\fP"
+
+.PP
+SandyBrown #F4A460\&. 
+.PP
+Definition at line \fB43\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.SeaGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+SeaGreen #2E8B57\&. 
+.PP
+Definition at line \fB256\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.SeaShell\fR [static]\fP, \fR [get]\fP"
+
+.PP
+SeaShell #FFF5EE\&. 
+.PP
+Definition at line \fB325\fP of file \fBColors\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ISubCanvas< T >\&.Showing\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets whether this sub‑canvas is visible\&. A hidden sub‑canvas remains present in the layer structure but does not contribute to the composed pixel buffer\&. 
+.PP
+Definition at line \fB114\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.Sienna\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Sienna #A0522D\&. 
+.PP
+Definition at line \fB57\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreyColors\&.Silver\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Silver #C0C0C0\&. 
+.PP
+Definition at line \fB352\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.SkyBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+SkyBlue #87CEEB\&. 
+.PP
+Definition at line \fB81\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.SlateBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+SlateBlue #6A5ACD\&. 
+.PP
+Definition at line \fB154\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreyColors\&.SlateGray\fR [static]\fP, \fR [get]\fP"
+
+.PP
+SlateGray #708090\&. 
+.PP
+Definition at line \fB362\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.Snow\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Snow #FFFAFA\&. 
+.PP
+Definition at line \fB311\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.SpringGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+SpringGreen #00FF7F\&. 
+.PP
+Definition at line \fB252\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BlueColors\&.SteelBlue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+SteelBlue #4682B4\&. 
+.PP
+Definition at line \fB71\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.Tan\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Tan #D2B48C\&. 
+.PP
+Definition at line \fB39\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.Teal\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Teal #008080\&. 
+.PP
+Definition at line \fB278\fP of file \fBColors\&.cs\fP\&.
+.SS "ISubCanvas<T> SystemEx\&.Drawing\&.ICanvasList< T >\&.this[int index]\fR [get]\fP"
+
+.PP
+Gets the sub‑canvas at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index of the sub‑canvas to retrieve\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The sub‑canvas at the given index\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB189\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.Thistle\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Thistle #D8BFD8\&. 
+.PP
+Definition at line \fB126\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.OrangeColors\&.Tomato\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Tomato #FF6347\&. 
+.PP
+Definition at line \fB198\fP of file \fBColors\&.cs\fP\&.
+.SS "long SystemEx\&.Drawing\&.ColorR10G10B10FormatSchema\&.TotalSize\fR [get]\fP"
+
+.PP
+The total number of bytes required to represent a \fBColorR10G10B10A2\fP color in its packed binary form\&. 
+.PP
+Implements \fBSystemEx\&.IO\&.Provider\&.IByteFormatSchema\fP\&.
+.PP
+Definition at line \fB33\fP of file \fBColorR10G10B10\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.CyanColors\&.Turquoise\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Turquoise #40E0D0\&. 
+.PP
+Definition at line \fB297\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorYUV\&.U\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the U (chrominance blue) component\&. 
+.PP
+Definition at line \fB39\fP of file \fBColorYUV\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "virtual float SystemEx\&.Drawing\&.ColorHDR\&.V\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the HDR value (brightness) component\&. The value is clamped to the range 0–\fBMaxValue\fP\&. 
+.PP
+Definition at line \fB44\fP of file \fBColorHDR\&.cs\fP\&.
+.PP
+Referenced by \fBColorHDR()\fP, \fBLightIntensity()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHSV()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorHSV\&.V\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the value (brightness) component in the range 0–1\&. 
+.PP
+Definition at line \fB55\fP of file \fBColorHSV\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorGray\&.ColorGray()\fP, \fBSystemEx\&.Drawing\&.ColorR8G8B8\&.GetNextContrastColor()\fP, \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorGray()\fP, and \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorHDR()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorYUV\&.V\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the V (chrominance red) component\&. 
+.PP
+Definition at line \fB44\fP of file \fBColorYUV\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.PurpelColors\&.Violet\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Violet #EE82EE\&. 
+.PP
+Definition at line \fB132\fP of file \fBColors\&.cs\fP\&.
+.SS "byte SystemEx\&.Drawing\&.ISubCanvas< T >\&.Visible\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the visibility weight of the sub‑canvas\&. This value represents a mathematical transparency factor used during layer blending\&. Higher values increase the influence of the sub‑canvas on the final composition\&. 
+.PP
+Definition at line \fB136\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.BrownColors\&.Wheat\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Wheat #F5DEB3\&. 
+.PP
+Definition at line \fB35\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.White\fR [static]\fP, \fR [get]\fP"
+
+.PP
+White #FFFFFF\&. 
+.PP
+Definition at line \fB309\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorHWB\&.Whiteness\fR [get]\fP, \fR [set]\fP"
+
+.PP
+The whiteness component of the color, in the range [0, 1]\&. 
+.PP
+Definition at line \fB37\fP of file \fBColorHWB\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.WhiteColors\&.WhiteSmoke\fR [static]\fP, \fR [get]\fP"
+
+.PP
+WhiteSmoke #F5F5F5\&. 
+.PP
+Definition at line \fB323\fP of file \fBColors\&.cs\fP\&.
+.SS "int SystemEx\&.Drawing\&.ICanvas< T >\&.Width\fR [get]\fP"
+
+.PP
+Gets the width of the canvas in mathematical units (columns)\&. 
+.PP
+Definition at line \fB55\fP of file \fBCanvas\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorXYZ\&.X\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the X component of the XYZ color\&. 
+.PP
+Definition at line \fB34\fP of file \fBColorXYZ\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorCMY\&.Y\fR [get]\fP, \fR [set]\fP"
+
+.PP
+The yellow component of the color, in the range 0–1\&. 
+.PP
+Definition at line \fB40\fP of file \fBColorCMY\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorXYZ\&.Y\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the Y component of the XYZ color\&. 
+.PP
+Definition at line \fB39\fP of file \fBColorXYZ\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorYUV\&.Y\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the Y (luma) component\&. 
+.PP
+Definition at line \fB34\fP of file \fBColorYUV\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.YellowColors\&.Yellow\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Yellow #FFFF00\&. 
+.PP
+Definition at line \fB210\fP of file \fBColors\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.GreenColors\&.YellowGreen\fR [static]\fP, \fR [get]\fP"
+
+.PP
+YellowGreen #9ACD32\&. 
+.PP
+Definition at line \fB264\fP of file \fBColors\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorXYZ\&.Z\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the Z component of the XYZ color\&. 
+.PP
+Definition at line \fB44\fP of file \fBColorXYZ\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Drawing\&.ColorConverter\&.ToColorR8G8B8()\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.ColorHSV\&.Zero\fR [static]\fP, \fR [get]\fP"
+
+.PP
+A static property that returns a \fBColorHSV\fP instance representing black (H=0, S=0, V=0)\&. 
+.PP
+\fBReturns\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Definition at line \fB38\fP of file \fBColorHSV\&.cs\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

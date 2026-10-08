@@ -1,0 +1,291 @@
+.TH "SystemEx.Result" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Result \- Represents a flexible multi-value result container that can hold successful values, multiple return objects, assertion messages, or exception information\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBResult\fP \fBAdd\fP (string message, object? value=null)"
+.br
+.RI "Adds a message and an optional value to the result\&. "
+.ti -1c
+.RI "bool \fBAssert\fP (bool condition, string text)"
+.br
+.RI "Evaluates an assertion and records a failure message if the condition is false\&. "
+.ti -1c
+.RI "void \fBCatch\fP (Exception ex)"
+.br
+.RI "Captures an exception, marks the result as failed, appends diagnostic information, and invokes the exception callback\&. "
+.ti -1c
+.RI "object? \fBGet\fP (int index=0)"
+.br
+.ti -1c
+.RI "Optional< T > \fBGetAs< T >\fP (int index=0)"
+.br
+.RI "Attempts to retrieve a stored value as the specified type\&. "
+.ti -1c
+.RI "\fBResult\fP ()"
+.br
+.RI "Initializes a new successful \fBResult\fP instance with a single empty slot\&. "
+.ti -1c
+.RI "\fBResult\fP (Exception exp)"
+.br
+.RI "Initializes a new failed \fBResult\fP instance containing the specified exception\&. "
+.ti -1c
+.RI "\fBResult\fP (object value)"
+.br
+.RI "Initializes a new successful \fBResult\fP instance containing a single value\&. "
+.ti -1c
+.RI "\fBResult\fP (object[] value)"
+.br
+.RI "Initializes a new successful \fBResult\fP instance containing multiple values\&. "
+.ti -1c
+.RI "void \fBThrow\fP ()"
+.br
+.RI "Throws the captured exception if one exists\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Action< bool, \fBResult\fP > \fBOnAssert\fP"
+.br
+.RI "Optional callback invoked when an assertion fails\&. "
+.ti -1c
+.RI "Action< Exception, \fBResult\fP > \fBOnException\fP"
+.br
+.RI "Optional callback invoked when an exception is captured\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of stored result items\&. "
+.ti -1c
+.RI "bool \fBIsException\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether an exception has been captured\&. "
+.ti -1c
+.RI "bool \fBIsSuccess\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the operation succeeded\&. "
+.ti -1c
+.RI "object? \fBthis[int index]\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets a result item at the specified index\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a flexible multi-value result container that can hold successful values, multiple return objects, assertion messages, or exception information\&. 
+
+\fBResult\fP is designed for compiler pipelines, mathematical operations, and general-purpose workflows where the exact return type may vary\&. It supports dynamic result expansion, optional type extraction, and structured exception handling\&. 
+
+.PP
+A result is considered successful when no exception has been captured and all assertions have passed\&. Exceptions and assertion failures are stored internally and can be inspected or re-thrown\&. 
+.PP
+Definition at line \fB38\fP of file \fBResult\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Result\&.Result ()"
+
+.PP
+Initializes a new successful \fBResult\fP instance with a single empty slot\&. 
+.PP
+Definition at line \fB103\fP of file \fBResult\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP\&.
+.SS "SystemEx\&.Result\&.Result (Exception exp)"
+
+.PP
+Initializes a new failed \fBResult\fP instance containing the specified exception\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIexp\fP The captured exception\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB116\fP of file \fBResult\&.cs\fP\&.
+.SS "SystemEx\&.Result\&.Result (object value)"
+
+.PP
+Initializes a new successful \fBResult\fP instance containing a single value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to store\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB134\fP of file \fBResult\&.cs\fP\&.
+.SS "SystemEx\&.Result\&.Result (object[] value)"
+
+.PP
+Initializes a new successful \fBResult\fP instance containing multiple values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP An array of objects to store\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB147\fP of file \fBResult\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBResult\fP SystemEx\&.Result\&.Add (string message, object? value = \fRnull\fP)"
+
+.PP
+Adds a message and an optional value to the result\&. 
+.PP
+Definition at line \fB231\fP of file \fBResult\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Runtime\&.ModulePreloader\&.Preload()\fP\&.
+.SS "bool SystemEx\&.Result\&.Assert (bool condition, string text)"
+
+.PP
+Evaluates an assertion and records a failure message if the condition is false\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcondition\fP The condition to evaluate\&.
+.br
+\fItext\fP The message to store on failure\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The evaluated condition\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB205\fP of file \fBResult\&.cs\fP\&.
+.SS "void SystemEx\&.Result\&.Catch (Exception ex)"
+
+.PP
+Captures an exception, marks the result as failed, appends diagnostic information, and invokes the exception callback\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIex\fP The exception to capture\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB188\fP of file \fBResult\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Runtime\&.ModulePreloader\&.Preload()\fP\&.
+.SS "object? SystemEx\&.Result\&.Get (int index = \fR0\fP)"
+
+.PP
+Definition at line \fB177\fP of file \fBResult\&.cs\fP\&.
+.SS "Optional< T > SystemEx\&.Result\&.GetAs< T > (int index = \fR0\fP)"
+
+.PP
+Attempts to retrieve a stored value as the specified type\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The desired type\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index of the stored item\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+An \fBOptional<T>\fP containing the value if the type matches; otherwise \fBOptional<T>\&.NONE\fP\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIIndexOutOfRangeException\fP Thrown when the index is outside the valid range\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB169\fP of file \fBResult\&.cs\fP\&.
+.SS "void SystemEx\&.Result\&.Throw ()"
+
+.PP
+Throws the captured exception if one exists\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fIException\fP The previously captured exception\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB224\fP of file \fBResult\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "Action<bool, \fBResult\fP> SystemEx\&.Result\&.OnAssert"
+
+.PP
+Optional callback invoked when an assertion fails\&. 
+.PP
+Definition at line \fB73\fP of file \fBResult\&.cs\fP\&.
+.PP
+Referenced by \fBAssert()\fP, \fBResult()\fP, \fBResult()\fP, \fBResult()\fP, and \fBResult()\fP\&.
+.SS "Action<Exception, \fBResult\fP> SystemEx\&.Result\&.OnException"
+
+.PP
+Optional callback invoked when an exception is captured\&. 
+.PP
+Definition at line \fB68\fP of file \fBResult\&.cs\fP\&.
+.PP
+Referenced by \fBCatch()\fP, \fBResult()\fP, \fBResult()\fP, \fBResult()\fP, and \fBResult()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Result\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of stored result items\&. 
+.PP
+Definition at line \fB55\fP of file \fBResult\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBAssert()\fP, \fBCatch()\fP, and \fBGetAs< T >()\fP\&.
+.SS "bool SystemEx\&.Result\&.IsException\fR [get]\fP"
+
+.PP
+Gets a value indicating whether an exception has been captured\&. 
+.PP
+Definition at line \fB63\fP of file \fBResult\&.cs\fP\&.
+.SS "bool SystemEx\&.Result\&.IsSuccess\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the operation succeeded\&. 
+.PP
+Definition at line \fB59\fP of file \fBResult\&.cs\fP\&.
+.SS "object? SystemEx\&.Result\&.this[int index]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets a result item at the specified index\&. Setting a value beyond the current count automatically expands the internal storage array\&. 
+
+.PP
+\fBExceptions\fP
+.RS 4
+\fIIndexOutOfRangeException\fP Thrown when attempting to read an index outside the valid range\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB86\fP of file \fBResult\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

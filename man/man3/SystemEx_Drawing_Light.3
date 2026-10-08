@@ -1,0 +1,157 @@
+.TH "SystemEx.Drawing.Light" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Drawing.Light \- \fBBase\fP light class used for all light types in the \fBSystemEx\&.Drawing\fP namespace\&. Provides shared parameters such as position, direction, diffuse/ambient color and projection settings\&. Specific light types (spot, point, directional) extend this class with additional behavior\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Drawing\&.PointLight\fP, and \fBSystemEx\&.Drawing\&.SpotLight\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLight\fP (\fBVec3f\fP position, \fBVec3f\fP direction, \fBColorR8G8B8\fP ambient, \fBColorR8G8B8\fP diffuse)"
+.br
+.ti -1c
+.RI "void \fBSetProjParams\fP (Projection projection)"
+.br
+.RI "Sets the projection parameters for lights that require a frustum (typically spot lights or shadow-casting lights)\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBColorHSV\fP \fBm_AmbientColor\fP"
+.br
+.RI "Ambient color contribution of the light\&. Used for low-frequency indirect lighting\&. "
+.ti -1c
+.RI "\fBColorHSV\fP \fBm_DiffuseColor\fP"
+.br
+.RI "Diffuse color contribution of the light\&. Defines the main visible light color\&. "
+.ti -1c
+.RI "\fBVec3f\fP \fBm_Direction\fP"
+.br
+.RI "Normalized world-space direction of the light\&. Used for directional and spot lights\&. "
+.ti -1c
+.RI "\fBVec3f\fP \fBm_Position\fP"
+.br
+.RI "World-space position of the light\&. "
+.ti -1c
+.RI "\fBVec3f\fP \fBm_Up\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBColorHSV\fP \fBAmbient\fP\fR [get, set]\fP"
+.br
+.ti -1c
+.RI "\fBColorHSV\fP \fBDiffuse\fP\fR [get, set]\fP"
+.br
+.ti -1c
+.RI "\fBVec3f\fP \fBDirection\fP\fR [get, set]\fP"
+.br
+.ti -1c
+.RI "\fBVec3f\fP \fBLookAt\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "\fBVec3f\fP \fBPosition\fP\fR [get, set]\fP"
+.br
+.ti -1c
+.RI "Projection \fBProjection\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "\fBVec3f\fP \fBUp\fP\fR [get, set]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBBase\fP light class used for all light types in the \fBSystemEx\&.Drawing\fP namespace\&. Provides shared parameters such as position, direction, diffuse/ambient color and projection settings\&. Specific light types (spot, point, directional) extend this class with additional behavior\&. 
+.PP
+Definition at line \fB32\fP of file \fBLight\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Drawing\&.Light\&.Light ()"
+
+.PP
+Definition at line \fB80\fP of file \fBLight\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.Light\&.Light (\fBVec3f\fP position, \fBVec3f\fP direction, \fBColorR8G8B8\fP ambient, \fBColorR8G8B8\fP diffuse)"
+
+.PP
+Definition at line \fB90\fP of file \fBLight\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Drawing\&.Light\&.SetProjParams (Projection projection)"
+
+.PP
+Sets the projection parameters for lights that require a frustum (typically spot lights or shadow-casting lights)\&. 
+.PP
+Definition at line \fB103\fP of file \fBLight\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.Light\&.m_AmbientColor\fR [protected]\fP"
+
+.PP
+Ambient color contribution of the light\&. Used for low-frequency indirect lighting\&. 
+.PP
+Definition at line \fB62\fP of file \fBLight\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.Light\&.m_DiffuseColor\fR [protected]\fP"
+
+.PP
+Diffuse color contribution of the light\&. Defines the main visible light color\&. 
+.PP
+Definition at line \fB56\fP of file \fBLight\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Drawing\&.Light\&.m_Direction\fR [protected]\fP"
+
+.PP
+Normalized world-space direction of the light\&. Used for directional and spot lights\&. 
+.PP
+Definition at line \fB48\fP of file \fBLight\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Drawing\&.Light\&.m_Position\fR [protected]\fP"
+
+.PP
+World-space position of the light\&. 
+.PP
+Definition at line \fB42\fP of file \fBLight\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Drawing\&.Light\&.m_Up\fR [protected]\fP"
+
+.PP
+Definition at line \fB50\fP of file \fBLight\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.Light\&.Ambient\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Definition at line \fB64\fP of file \fBLight\&.cs\fP\&.
+.SS "\fBColorHSV\fP SystemEx\&.Drawing\&.Light\&.Diffuse\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Definition at line \fB66\fP of file \fBLight\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Drawing\&.Light\&.Direction\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Definition at line \fB68\fP of file \fBLight\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Drawing\&.Light\&.LookAt\fR [get]\fP"
+
+.PP
+Definition at line \fB74\fP of file \fBLight\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Drawing\&.Light\&.Position\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Definition at line \fB70\fP of file \fBLight\&.cs\fP\&.
+.SS "Projection SystemEx\&.Drawing\&.Light\&.Projection\fR [get]\fP"
+
+.PP
+Definition at line \fB76\fP of file \fBLight\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Drawing\&.Light\&.Up\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Definition at line \fB72\fP of file \fBLight\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

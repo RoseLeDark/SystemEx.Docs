@@ -1,0 +1,62 @@
+.TH "SystemEx.Collections.Generic.ISwappable< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.ISwappable< T > \- Defines a container capability for swapping two elements\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\fP, \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSwap\fP (T i, T j)"
+.br
+.RI "Swaps the elements located at the given positions\&. Implementations must ensure that both indices are valid and that the operation is performed atomically with respect to the container's state\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines a container capability for swapping two elements\&. 
+
+Any container implementing \fBISwappable<T>\fP guarantees that it can exchange the items located at the specified positions\&. This interface is used by sorting algorithms, heap builders, and other data‑structure utilities that require in‑place element reordering\&.
+
+.PP
+Notes: 
+
+.PP
+The type parameter \fIT\fP  represents the index or position used by the container\&. In most \fBSystemEx\fP containers this is a \fRlong\fP\&. 
+
+.PP
+The interface does not impose any comparison or ordering semantics; it only provides structural mutation capability\&. Higher‑level algorithms (sorting, heapifying, priority queues) rely on this method to perform element exchanges\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The index type used by the container\&. Typically \fRlong\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB44\fP of file \fBISwappable\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Collections\&.Generic\&.ISwappable< T >\&.Swap (T i, T j)"
+
+.PP
+Swaps the elements located at the given positions\&. Implementations must ensure that both indices are valid and that the operation is performed atomically with respect to the container's state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi\fP The first index\&.
+.br
+\fIj\fP The second index\&.
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

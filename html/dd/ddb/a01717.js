@@ -1,10 +1,14 @@
 var a01717 =
 [
-    [ "Enable", "d4/d1c/a00903_ga9579d3a0ea6a29286adfcc7f6b856085.html#ga9579d3a0ea6a29286adfcc7f6b856085", null ],
-    [ "HasMask", "d4/d1c/a00903_ga62b6fd8c6a5ac8c760fa5b8cd3eb1908.html#ga62b6fd8c6a5ac8c760fa5b8cd3eb1908", null ],
-    [ "IsDirty", "d4/d1c/a00903_gaf2adc6e4054c97d6fa0f0685261661ee.html#gaf2adc6e4054c97d6fa0f0685261661ee", null ],
-    [ "Mask", "d4/d1c/a00903_ga56fdfd38066c28e8d983c1255476871a.html#ga56fdfd38066c28e8d983c1255476871a", null ],
-    [ "Name", "d4/d1c/a00903_ga72fc96a3c67e89fd28c93e48043d1620.html#ga72fc96a3c67e89fd28c93e48043d1620", null ],
-    [ "Showing", "d4/d1c/a00903_gacb6e2d50b36fca23004dc5edef974f8c.html#gacb6e2d50b36fca23004dc5edef974f8c", null ],
-    [ "Visible", "d4/d1c/a00903_ga2ab6c7233f76242b3f82b7c64e421713.html#ga2ab6c7233f76242b3f82b7c64e421713", null ]
+    [ "Addition", "df/da5/a00912_ga227a021d198fd59ee8520e61c850ae92.html#ga227a021d198fd59ee8520e61c850ae92", null ],
+    [ "Addition", "df/da5/a00912_ga74af940c1c2b18f5bb55f57fcd4d4472.html#ga74af940c1c2b18f5bb55f57fcd4d4472", null ],
+    [ "Brightness", "df/da5/a00912_gac73ac46a7d4b58a851130d6fa8baf71b.html#gac73ac46a7d4b58a851130d6fa8baf71b", null ],
+    [ "Division", "df/da5/a00912_gaaa3846ae23cd7968f33327eb617a4572.html#gaaa3846ae23cd7968f33327eb617a4572", null ],
+    [ "Division", "df/da5/a00912_ga21aa11031787f8334d8c080400ecc196.html#ga21aa11031787f8334d8c080400ecc196", null ],
+    [ "Lerp", "df/da5/a00912_ga3af3aefd30c7ddc53f205bd4d9b1fdf6.html#ga3af3aefd30c7ddc53f205bd4d9b1fdf6", null ],
+    [ "Multiplication", "df/da5/a00912_ga1c340e53b5a28100c4a7f7bae7b9146a.html#ga1c340e53b5a28100c4a7f7bae7b9146a", null ],
+    [ "Multiplication", "df/da5/a00912_ga23735542aac5fbeac1d1f3af673ae3b0.html#ga23735542aac5fbeac1d1f3af673ae3b0", null ],
+    [ "Saturation", "df/da5/a00912_ga3b5eafed3c47bea555a5889dd433b775.html#ga3b5eafed3c47bea555a5889dd433b775", null ],
+    [ "Subtraction", "df/da5/a00912_gaa73020d4e5585c206f49b1b06906785c.html#gaa73020d4e5585c206f49b1b06906785c", null ],
+    [ "Subtraction", "df/da5/a00912_ga2e68feb2f7121a89a66759cf655f0e7c.html#ga2e68feb2f7121a89a66759cf655f0e7c", null ]
 ];

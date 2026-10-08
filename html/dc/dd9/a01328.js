@@ -1,13 +1,12 @@
 var a01328 =
 [
-    [ "BinQueue", "dc/dd9/a01328_aff347aaa61dec60bbbc4d019cacf64a0.html#aff347aaa61dec60bbbc4d019cacf64a0", null ],
-    [ "Clear", "dc/dd9/a01328_a6c8d88a89895a7a87f8dff7fbe76215d.html#a6c8d88a89895a7a87f8dff7fbe76215d", null ],
-    [ "Dequeue", "dc/dd9/a01328_a173af5dab2808395f12000d225e4695d.html#a173af5dab2808395f12000d225e4695d", null ],
-    [ "Enqueue", "dc/dd9/a01328_a4d4f4b19b733d51472c44fbe2018ce76.html#a4d4f4b19b733d51472c44fbe2018ce76", null ],
-    [ "Count", "dc/dd9/a01328_a08e721ea105b6a44ad4464493c2a0d1e.html#a08e721ea105b6a44ad4464493c2a0d1e", null ],
-    [ "End", "dc/dd9/a01328_ab3164f38648e1a4de4624c7bab8b237d.html#ab3164f38648e1a4de4624c7bab8b237d", null ],
-    [ "Front", "dc/dd9/a01328_a543fff85e79b24021c7671052afaac29.html#a543fff85e79b24021c7671052afaac29", null ],
-    [ "IsEmpty", "dc/dd9/a01328_a0f5c1fef8463cbf8f63d661342c2733a.html#a0f5c1fef8463cbf8f63d661342c2733a", null ],
-    [ "IsFull", "dc/dd9/a01328_a89a43610fa05e085124b62ef0dd2011b.html#a89a43610fa05e085124b62ef0dd2011b", null ],
-    [ "Size", "dc/dd9/a01328_abff2dadc6c66f73b08adbdba18120711.html#abff2dadc6c66f73b08adbdba18120711", null ]
+    [ "ElementAt", "d3/d8a/a00899_ga139ffc7d110201187bcb370b524ae548.html#ga139ffc7d110201187bcb370b524ae548", null ],
+    [ "GetElementType", "d3/d8a/a00899_ga336cd4228393b18d99de78425f3b5496.html#ga336cd4228393b18d99de78425f3b5496", null ],
+    [ "Back", "d3/d8a/a00899_ga2ed6102a37664302a20cefb76c0dcb91.html#ga2ed6102a37664302a20cefb76c0dcb91", null ],
+    [ "Count", "d3/d8a/a00899_gaabbaf9ff83c2ec12cb53dc636e8c4d0c.html#gaabbaf9ff83c2ec12cb53dc636e8c4d0c", null ],
+    [ "Current", "d3/d8a/a00899_gaeb99c897fb9d8858670da11011227d77.html#gaeb99c897fb9d8858670da11011227d77", null ],
+    [ "Front", "d3/d8a/a00899_ga36a8d4ce218eb378ef140e51caaf8f33.html#ga36a8d4ce218eb378ef140e51caaf8f33", null ],
+    [ "IsEmpty", "d3/d8a/a00899_gaae07b83fc9240eb365fafdabb6fbf4d7.html#gaae07b83fc9240eb365fafdabb6fbf4d7", null ],
+    [ "IsFull", "d3/d8a/a00899_gae5386558bc66ec10ffe200fedb3b1038.html#gae5386558bc66ec10ffe200fedb3b1038", null ],
+    [ "Length", "d3/d8a/a00899_ga0bf6777da9c94ff79333c6ab72150e55.html#ga0bf6777da9c94ff79333c6ab72150e55", null ]
 ];

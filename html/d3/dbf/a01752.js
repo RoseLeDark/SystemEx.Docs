@@ -1,6 +1,8 @@
 var a01752 =
 [
-    [ "GetSchema", "d3/dbf/a01752_affd8fa86db36e9afd381bee227237b1c.html#affd8fa86db36e9afd381bee227237b1c", null ],
-    [ "Pack", "d3/dbf/a01752_a98f7a931080c05739983fefb38430587.html#a98f7a931080c05739983fefb38430587", null ],
-    [ "Unpack", "d3/dbf/a01752_ad84c30900c22a63584e72d35539e8d48.html#ad84c30900c22a63584e72d35539e8d48", null ]
+    [ "Compute", "d3/dbf/a01752_abdc4322cf61ea3e0f5c2d9ae76b6f974.html#abdc4322cf61ea3e0f5c2d9ae76b6f974", null ],
+    [ "ComputeLong", "d3/dbf/a01752_a50e9f622479ddba194aa02b525f40ede.html#a50e9f622479ddba194aa02b525f40ede", null ],
+    [ "CrC", "d3/dbf/a01752_a61467dd0a462afd2ab7ffa25761dc210.html#a61467dd0a462afd2ab7ffa25761dc210", null ],
+    [ "CrC", "d3/dbf/a01752_aa29574037f977e1e35424e46da481e95.html#aa29574037f977e1e35424e46da481e95", null ],
+    [ "Polynomial", "d3/dbf/a01752_a513c8a7ab6d6ae91a0d482fb9ab1c782.html#a513c8a7ab6d6ae91a0d482fb9ab1c782", null ]
 ];

@@ -1,0 +1,631 @@
+.TH "SystemEx.Collections.Generic.RCUCache" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.RCUCache \- Provides a Read‑Copy‑Update (RCU) wrapper around a \fBCache\fP instance\&. Readers operate lock‑free using epoch tracking, while writers acquire an exclusive lock to ensure consistent updates\&. This enables deterministic, high‑performance concurrent access to a byte‑addressable memory buffer\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.ICache\fP, \fBSystemEx\&.IValueReader\fP, and \fBSystemEx\&.IValueWriter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "See SetZero\&. "
+.ti -1c
+.RI "\fBRCUCache\fP (byte[] arr, \fBILock\fP locker, \fBCacheType\fP type)"
+.br
+.RI "Initializes a new \fBRCUCache\fP from a byte array\&. The underlying cache is wrapped with RCU semantics using the specified writer lock\&. "
+.ti -1c
+.RI "\fBRCUCache\fP (\fBCache\fP cache, \fBILock\fP locker)"
+.br
+.RI "Initializes a new \fBRCUCache\fP by copying an existing cache\&. The new instance uses RCU semantics with the specified writer lock\&. "
+.ti -1c
+.RI "\fBRCUCache\fP (FixedVector< byte > arr, \fBILock\fP locker, \fBCacheType\fP type)"
+.br
+.RI "Initializes a new \fBRCUCache\fP from a \fBFixedVector<T>\fP\&. The underlying cache is wrapped with RCU semantics using the specified writer lock\&. "
+.ti -1c
+.RI "\fBRCUCache\fP (long capacity, \fBCacheType\fP type=\fBCacheType\&.OnlySystem\fP)"
+.br
+.RI "Initializes a new \fBRCUCache\fP with the specified capacity and cache type\&. A lightweight lock is created automatically for writer synchronization\&. "
+.ti -1c
+.RI "\fBRCUCache\fP (long capacity, \fBILock\fP locker, \fBCacheType\fP type=\fBCacheType\&.OnlySystem\fP)"
+.br
+.RI "Initializes a new \fBRCUCache\fP with the specified capacity, writer lock, and cache type\&. Readers operate lock‑free using epoch tracking; writers use the provided lock\&. "
+.ti -1c
+.RI "int \fBRead\fP (byte[] buffer, int offset, int count)"
+.br
+.RI "Reads bytes into the specified buffer using lock‑free RCU semantics\&. The read operation is performed inside an epoch to ensure stability of the underlying memory during the operation\&. "
+.ti -1c
+.RI "byte \fBReadByte\fP (ulong position)"
+.br
+.RI "Reads a single byte from the specified position using lock‑free RCU semantics\&. The read is performed inside an epoch\&. "
+.ti -1c
+.RI "double \fBReadDouble\fP (\fBEndian\fP endian, double ervlue=0)"
+.br
+.RI "Reads a double-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "float \fBReadFloat\fP (\fBEndian\fP endian, float ervlue=0)"
+.br
+.RI "Reads a single-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "int \fBReadInt\fP (\fBEndian\fP endian, int ervlue=0)"
+.br
+.RI "Reads a signed 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "long \fBReadLong\fP (\fBEndian\fP endian, long ervlue=0)"
+.br
+.RI "Reads a signed 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "virtual ? byte[] \fBReadRange\fP (ulong position, uint count)"
+.br
+.RI "Reads a range of bytes starting at the specified position using lock‑free RCU semantics\&. The read is performed inside an epoch\&. "
+.ti -1c
+.RI "short \fBReadShort\fP (\fBEndian\fP endian, short ervlue=0)"
+.br
+.RI "Reads a signed 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "uint \fBReadUInt\fP (\fBEndian\fP endian, uint ervlue=0)"
+.br
+.RI "Reads an unsigned 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "ulong \fBReadULong\fP (\fBEndian\fP endian, ulong ervlue=0)"
+.br
+.RI "Reads an unsigned 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "ushort \fBReadUShort\fP (\fBEndian\fP endian, ushort ervlue=0)"
+.br
+.RI "Reads an unsigned 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. "
+.ti -1c
+.RI "ulong \fBSeek\fP (SeekOrigin org, int pos)"
+.br
+.RI "Moves the internal position according to the specified origin and offset using exclusive RCU semantics\&. Writers acquire the lock and ensure that no readers are active during the operation\&. "
+.ti -1c
+.RI "void \fBSetZero\fP ()"
+.br
+.RI "Set \fBCache\fP to Zero\&. "
+.ti -1c
+.RI "byte[] \fBToArray\fP ()"
+.br
+.RI "Returns a copy of the underlying cache buffer using exclusive RCU semantics\&. Writers acquire the lock and ensure that no readers are active\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBToArrayEx\fP ()"
+.br
+.RI "Returns a \fBFixedVector<T>\fP copy of the underlying cache using exclusive RCU semantics\&. "
+.ti -1c
+.RI "int \fBWrite\fP (byte[] buffer, int offset, int count)"
+.br
+.RI "Writes bytes from the specified buffer and advances the internal position using exclusive RCU semantics\&. Writers acquire the lock and ensure that no readers are active during the operation\&. "
+.ti -1c
+.RI "void \fBWrite\fP (double value, \fBEndian\fP endian)"
+.br
+.RI "Writes a double-precision floating-point value using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (float value, \fBEndian\fP endian)"
+.br
+.RI "Writes a single-precision floating-point value using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (int value, \fBEndian\fP endian)"
+.br
+.RI "Writes a signed 32-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (long value, \fBEndian\fP endian)"
+.br
+.RI "Writes a signed 64-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (short value, \fBEndian\fP endian)"
+.br
+.RI "Writes a signed 16-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (uint value, \fBEndian\fP endian)"
+.br
+.RI "Writes an unsigned 32-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, double value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, float value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, int value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, long value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, short value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, uint value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, ulong value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong position, ushort value, \fBEndian\fP endian)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ulong value, \fBEndian\fP endian)"
+.br
+.RI "Writes an unsigned 64-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWrite\fP (ushort value, \fBEndian\fP endian)"
+.br
+.RI "Writes an unsigned 16-bit integer using the specified endian format\&. "
+.ti -1c
+.RI "void \fBWriteByte\fP (byte value)"
+.br
+.RI "Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. "
+.ti -1c
+.RI "virtual ulong \fBWriteRange\fP (ulong position, byte[] data)"
+.br
+.RI "Writes a byte range into the underlying cache using exclusive RCU semantics\&. Writers acquire the lock and ensure that no readers are active\&. "
+.ti -1c
+.RI "ulong \fBWriteRange\fP (ulong position, FixedVector< byte > data)"
+.br
+.RI "Writes a byte range into the underlying cache using exclusive RCU semantics\&. Writers acquire the lock and ensure that no readers are active\&. "
+.ti -1c
+.RI "virtual ulong \fBWriteRange\fP (ulong start, ulong iend, byte[] data)"
+.br
+.RI "Writes a byte range into the underlying cache using exclusive RCU semantics\&. Writers acquire the lock and ensure that no readers are active\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBCanRead\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the cache is readable\&. "
+.ti -1c
+.RI "bool \fBCanWrite\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the cache is writable\&. "
+.ti -1c
+.RI "virtual ulong \fBFree\fP\fR [get]\fP"
+.br
+.RI "Gets the total free bytes\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the cache contains no data\&. "
+.ti -1c
+.RI "virtual ulong \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the total buffer length in bytes\&. "
+.ti -1c
+.RI "ulong \fBPosition\fP\fR [get, set]\fP"
+.br
+.RI "Gets and Set the current read/write position\&. "
+.ti -1c
+.RI "byte \fBthis[int adress]\fP\fR [get, set]\fP"
+.br
+.RI "Provides RCU‑safe indexed access to the underlying cache\&. Read operations enter an epoch and are lock‑free; write operations acquire the writer lock and ensure that no readers are active\&. "
+.ti -1c
+.RI "\fBCacheType\fP \fBType\fP\fR [get]\fP"
+.br
+.RI "Gets the configured cache type (read, write, or both)\&. "
+.ti -1c
+.RI "virtual ulong \fBUsed\fP\fR [get]\fP"
+.br
+.RI "Gets the total used bytes\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a Read‑Copy‑Update (RCU) wrapper around a \fBCache\fP instance\&. Readers operate lock‑free using epoch tracking, while writers acquire an exclusive lock to ensure consistent updates\&. This enables deterministic, high‑performance concurrent access to a byte‑addressable memory buffer\&. 
+.PP
+Definition at line \fB30\fP of file \fBRCUCache\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Collections\&.Generic\&.RCUCache\&.RCUCache (long capacity, \fBCacheType\fP type = \fR\fBCacheType::OnlySystem\fP\fP)"
+
+.PP
+Initializes a new \fBRCUCache\fP with the specified capacity and cache type\&. A lightweight lock is created automatically for writer synchronization\&. 
+.PP
+Definition at line \fB148\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.RCUCache\&.RCUCache (long capacity, \fBILock\fP locker, \fBCacheType\fP type = \fR\fBCacheType::OnlySystem\fP\fP)"
+
+.PP
+Initializes a new \fBRCUCache\fP with the specified capacity, writer lock, and cache type\&. Readers operate lock‑free using epoch tracking; writers use the provided lock\&. 
+.PP
+Definition at line \fB158\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.RCUCache\&.RCUCache (byte[] arr, \fBILock\fP locker, \fBCacheType\fP type)"
+
+.PP
+Initializes a new \fBRCUCache\fP from a byte array\&. The underlying cache is wrapped with RCU semantics using the specified writer lock\&. 
+.PP
+Definition at line \fB168\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.RCUCache\&.RCUCache (FixedVector< byte > arr, \fBILock\fP locker, \fBCacheType\fP type)"
+
+.PP
+Initializes a new \fBRCUCache\fP from a \fBFixedVector<T>\fP\&. The underlying cache is wrapped with RCU semantics using the specified writer lock\&. 
+.PP
+Definition at line \fB179\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.RCUCache\&.RCUCache (\fBCache\fP cache, \fBILock\fP locker)"
+
+.PP
+Initializes a new \fBRCUCache\fP by copying an existing cache\&. The new instance uses RCU semantics with the specified writer lock\&. 
+.PP
+Definition at line \fB189\fP of file \fBRCUCache\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Clear ()"
+
+.PP
+See SetZero\&. 
+.PP
+Definition at line \fB210\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.RCUCache\&.Read (byte[] buffer, int offset, int count)"
+
+.PP
+Reads bytes into the specified buffer using lock‑free RCU semantics\&. The read operation is performed inside an epoch to ensure stability of the underlying memory during the operation\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB445\fP of file \fBRCUCache\&.cs\fP\&.
+.PP
+Referenced by \fBReadDouble()\fP, \fBReadFloat()\fP, \fBReadInt()\fP, \fBReadLong()\fP, \fBReadShort()\fP, \fBReadUInt()\fP, \fBReadULong()\fP, and \fBReadUShort()\fP\&.
+.SS "byte SystemEx\&.Collections\&.Generic\&.RCUCache\&.ReadByte (ulong position)"
+
+.PP
+Reads a single byte from the specified position using lock‑free RCU semantics\&. The read is performed inside an epoch\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB454\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "double SystemEx\&.Collections\&.Generic\&.RCUCache\&.ReadDouble (\fBEndian\fP endian, double ervlue = \fR0\fP)"
+
+.PP
+Reads a double-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB544\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "float SystemEx\&.Collections\&.Generic\&.RCUCache\&.ReadFloat (\fBEndian\fP endian, float ervlue = \fR0\fP)"
+
+.PP
+Reads a single-precision floating-point value using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB532\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.RCUCache\&.ReadInt (\fBEndian\fP endian, int ervlue = \fR0\fP)"
+
+.PP
+Reads a signed 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB480\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.RCUCache\&.ReadLong (\fBEndian\fP endian, long ervlue = \fR0\fP)"
+
+.PP
+Reads a signed 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB510\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "virtual ? byte[] SystemEx\&.Collections\&.Generic\&.RCUCache\&.ReadRange (ulong position, uint count)\fR [virtual]\fP"
+
+.PP
+Reads a range of bytes starting at the specified position using lock‑free RCU semantics\&. The read is performed inside an epoch\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB463\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "short SystemEx\&.Collections\&.Generic\&.RCUCache\&.ReadShort (\fBEndian\fP endian, short ervlue = \fR0\fP)"
+
+.PP
+Reads a signed 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB490\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "uint SystemEx\&.Collections\&.Generic\&.RCUCache\&.ReadUInt (\fBEndian\fP endian, uint ervlue = \fR0\fP)"
+
+.PP
+Reads an unsigned 32-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB470\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "ulong SystemEx\&.Collections\&.Generic\&.RCUCache\&.ReadULong (\fBEndian\fP endian, ulong ervlue = \fR0\fP)"
+
+.PP
+Reads an unsigned 64-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB521\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "ushort SystemEx\&.Collections\&.Generic\&.RCUCache\&.ReadUShort (\fBEndian\fP endian, ushort ervlue = \fR0\fP)"
+
+.PP
+Reads an unsigned 16-bit integer using the specified endian format\&. Returns the fallback value if insufficient bytes are available\&. 
+.PP
+Implements \fBSystemEx\&.IValueReader\fP\&.
+.PP
+Definition at line \fB500\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "ulong SystemEx\&.Collections\&.Generic\&.RCUCache\&.Seek (SeekOrigin org, int pos)"
+
+.PP
+Moves the internal position according to the specified origin and offset using exclusive RCU semantics\&. Writers acquire the lock and ensure that no readers are active during the operation\&. 
+.PP
+Definition at line \fB224\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.SetZero ()"
+
+.PP
+Set \fBCache\fP to Zero\&. 
+.PP
+Definition at line \fB199\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "byte[] SystemEx\&.Collections\&.Generic\&.RCUCache\&.ToArray ()"
+
+.PP
+Returns a copy of the underlying cache buffer using exclusive RCU semantics\&. Writers acquire the lock and ensure that no readers are active\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB300\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Collections\&.Generic\&.RCUCache\&.ToArrayEx ()"
+
+.PP
+Returns a \fBFixedVector<T>\fP copy of the underlying cache using exclusive RCU semantics\&. 
+.PP
+Definition at line \fB312\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (byte[] buffer, int offset, int count)"
+
+.PP
+Writes bytes from the specified buffer and advances the internal position using exclusive RCU semantics\&. Writers acquire the lock and ensure that no readers are active during the operation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbuffer\fP The byte buffer to write
+.br
+\fIoffset\fP 
+.br
+\fIcount\fP Size of the buffer to write
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NUmber of bytes are written
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIInvalidOperationException\fP 
+.br
+\fIArgumentOutOfRangeException\fP 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB287\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (double value, \fBEndian\fP endian)"
+
+.PP
+Writes a double-precision floating-point value using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB436\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (float value, \fBEndian\fP endian)"
+
+.PP
+Writes a single-precision floating-point value using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB422\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (int value, \fBEndian\fP endian)"
+
+.PP
+Writes a signed 32-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB343\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (long value, \fBEndian\fP endian)"
+
+.PP
+Writes a signed 64-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB394\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (short value, \fBEndian\fP endian)"
+
+.PP
+Writes a signed 16-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB357\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (uint value, \fBEndian\fP endian)"
+
+.PP
+Writes an unsigned 32-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB329\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (ulong position, double value, \fBEndian\fP endian)"
+
+.PP
+Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. 
+.PP
+Definition at line \fB431\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (ulong position, float value, \fBEndian\fP endian)"
+
+.PP
+Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. 
+.PP
+Definition at line \fB417\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (ulong position, int value, \fBEndian\fP endian)"
+
+.PP
+Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. 
+.PP
+Definition at line \fB338\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (ulong position, long value, \fBEndian\fP endian)"
+
+.PP
+Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. 
+.PP
+Definition at line \fB389\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (ulong position, short value, \fBEndian\fP endian)"
+
+.PP
+Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. 
+.PP
+Definition at line \fB352\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (ulong position, uint value, \fBEndian\fP endian)"
+
+.PP
+Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. 
+.PP
+Definition at line \fB324\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (ulong position, ulong value, \fBEndian\fP endian)"
+
+.PP
+Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. 
+.PP
+Definition at line \fB403\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (ulong position, ushort value, \fBEndian\fP endian)"
+
+.PP
+Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. 
+.PP
+Definition at line \fB375\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (ulong value, \fBEndian\fP endian)"
+
+.PP
+Writes an unsigned 64-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB408\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.Write (ushort value, \fBEndian\fP endian)"
+
+.PP
+Writes an unsigned 16-bit integer using the specified endian format\&. 
+.PP
+Implements \fBSystemEx\&.IValueWriter\fP\&.
+.PP
+Definition at line \fB380\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.RCUCache\&.WriteByte (byte value)"
+
+.PP
+Writes a typed value at the specified position using endian‑aware conversion and exclusive RCU semantics\&. 
+.PP
+Definition at line \fB366\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "virtual ulong SystemEx\&.Collections\&.Generic\&.RCUCache\&.WriteRange (ulong position, byte[] data)\fR [virtual]\fP"
+
+.PP
+Writes a byte range into the underlying cache using exclusive RCU semantics\&. Writers acquire the lock and ensure that no readers are active\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB250\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "ulong SystemEx\&.Collections\&.Generic\&.RCUCache\&.WriteRange (ulong position, FixedVector< byte > data)"
+
+.PP
+Writes a byte range into the underlying cache using exclusive RCU semantics\&. Writers acquire the lock and ensure that no readers are active\&. 
+.PP
+Definition at line \fB265\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "virtual ulong SystemEx\&.Collections\&.Generic\&.RCUCache\&.WriteRange (ulong start, ulong iend, byte[] data)\fR [virtual]\fP"
+
+.PP
+Writes a byte range into the underlying cache using exclusive RCU semantics\&. Writers acquire the lock and ensure that no readers are active\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB237\fP of file \fBRCUCache\&.cs\fP\&.
+.PP
+Referenced by \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, and \fBWriteByte()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.RCUCache\&.CanRead\fR [get]\fP"
+
+.PP
+Indicates whether the cache is readable\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB118\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.RCUCache\&.CanWrite\fR [get]\fP"
+
+.PP
+Indicates whether the cache is writable\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB110\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "virtual ulong SystemEx\&.Collections\&.Generic\&.RCUCache\&.Free\fR [get]\fP"
+
+.PP
+Gets the total free bytes\&. 
+.PP
+Definition at line \fB69\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.RCUCache\&.IsEmpty\fR [get]\fP"
+
+.PP
+Indicates whether the cache contains no data\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB90\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "virtual ulong SystemEx\&.Collections\&.Generic\&.RCUCache\&.Length\fR [get]\fP"
+
+.PP
+Gets the total buffer length in bytes\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB59\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "ulong SystemEx\&.Collections\&.Generic\&.RCUCache\&.Position\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets and Set the current read/write position\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB128\fP of file \fBRCUCache\&.cs\fP\&.
+.PP
+Referenced by \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, \fBWrite()\fP, and \fBWriteByte()\fP\&.
+.SS "byte SystemEx\&.Collections\&.Generic\&.RCUCache\&.this[int adress]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Provides RCU‑safe indexed access to the underlying cache\&. Read operations enter an epoch and are lock‑free; write operations acquire the writer lock and ensure that no readers are active\&. 
+.PP
+Definition at line \fB40\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "\fBCacheType\fP SystemEx\&.Collections\&.Generic\&.RCUCache\&.Type\fR [get]\fP"
+
+.PP
+Gets the configured cache type (read, write, or both)\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ICache\fP\&.
+.PP
+Definition at line \fB100\fP of file \fBRCUCache\&.cs\fP\&.
+.SS "virtual ulong SystemEx\&.Collections\&.Generic\&.RCUCache\&.Used\fR [get]\fP"
+
+.PP
+Gets the total used bytes\&. 
+.PP
+Definition at line \fB79\fP of file \fBRCUCache\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

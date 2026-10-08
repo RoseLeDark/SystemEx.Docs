@@ -1,0 +1,222 @@
+.TH "SystemEx.Drawing" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Drawing
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBlueColors\fP"
+.br
+.RI "Blue Colors Group\&. "
+.ti -1c
+.RI "class \fBBrownColors\fP"
+.br
+.RI "Brown Colors Group\&. "
+.ti -1c
+.RI "class \fBColorCMY\fP"
+.br
+.RI "A color in the CMY (Cyan–Magenta–Yellow) color space using floating‑point components\&. "
+.ti -1c
+.RI "class \fBColorConverter\fP"
+.br
+.RI "Provides conversion utilities between different color spaces such as RGB, Linear RGB, XYZ, HSV, HSL, YUV, CMY and HDR\&. "
+.ti -1c
+.RI "class \fBColorGray\fP"
+.br
+.RI "The \fBColorGray\fP class represents a grayscale color using a single floating-point component\&. Only V Drom HSV is used to represent the gray value, where 0 represents black and 1 represents white\&. "
+.ti -1c
+.RI "class \fBColorHDR\fP"
+.br
+.RI "Represents a high‑dynamic‑range color in the HSV color space, where the value component can exceed the normalized range (0–1) and extend up to \fBMaxValue\fP\&. Provides hue‑aware interpolation, brightness manipulation, and arithmetic operations for HDR color processing\&. "
+.ti -1c
+.RI "class \fBColorHSL\fP"
+.br
+.RI "Represents a color in the HSL (Hue–Saturation–Lightness) color space using floating‑point components\&. 
+.br
+ Provides hue‑aware interpolation, component manipulation, arithmetic operations, and normalization utilities\&. "
+.ti -1c
+.RI "struct \fBColorHSV\fP"
+.br
+.RI "Represents a color in the HSV (Hue–Saturation–Value) color space using floating‑point components\&. 
+.br
+ Provides hue‑aware interpolation, component manipulation, arithmetic operations, and normalization utilities\&. "
+.ti -1c
+.RI "struct \fBColorHWB\fP"
+.br
+.RI "Represents a color in the HWB (Hue, Whiteness, Blackness)\&. "
+.ti -1c
+.RI "struct \fBColorNCol\fP"
+.br
+.RI "Represents a compact N‑Color classification based on the HWB color model\&. The color is expressed using a hue segment index (0–5), a percentage within that segment (0–100), and the whiteness/blackness components\&. "
+.ti -1c
+.RI "struct \fBColorR10G10B10A2\fP"
+.br
+.RI "Represents a 10‑bit per channel RGB color (R10G10B10A2), stored internally as normalized floating‑point values (0–1)\&. "
+.ti -1c
+.RI "struct \fBColorR10G10B10FormatSchema\fP"
+.br
+.RI "A Scbema is used to serialize and deserialize a \fBColorR10G10B10A2\fP color to and from a binary representation\&. "
+.ti -1c
+.RI "class \fBColorR10G10B10Serializer\fP"
+.br
+.RI "The \fBColorR10G10B10FormatSchema\fP class defines the schema for serializing and deserializing a \fBColorR10G10B10A2\fP color to and from a binary representation\&. It specifies the total size, header size, endianness, and field offsets for the color data\&. "
+.ti -1c
+.RI "struct \fBColorR16G16B16\fP"
+.br
+.RI "Represents a color with 16‑bit precision per channel (R16G16B16), stored internally as normalized floating‑point values (0–1)\&. "
+.ti -1c
+.RI "class \fBColorR8G8B8\fP"
+.br
+.RI "Represents an RGB color using normalized float channels (0–1)\&. Provides basic color manipulation, brightness evaluation, contrast classification and interpolation utilities\&. "
+.ti -1c
+.RI "struct \fBColorXYZ\fP"
+.br
+.RI "Represents a color in the CIE XYZ color space using floating‑point components\&. Provides basic construction, comparison, and string formatting utilities\&. "
+.ti -1c
+.RI "struct \fBColorYUV\fP"
+.br
+.RI "Represents a YUV color using floating‑point components\&. Provides basic construction, comparison, and string formatting\&. "
+.ti -1c
+.RI "class \fBCyanColors\fP"
+.br
+.RI "Cyan Colors Group\&. "
+.ti -1c
+.RI "class \fBGreenColors\fP"
+.br
+.RI "Green Colors Group\&. "
+.ti -1c
+.RI "class \fBGreyColors\fP"
+.br
+.RI "Grey ColorsGroup\&. "
+.ti -1c
+.RI "interface \fBICanvas< T >\fP"
+.br
+.RI "Represents a mathematical 2D canvas storing color values of type \fIT\fP \&. This interface defines a deterministic data structure that models a rectangular grid of values\&. The canvas does not perform graphical drawing; instead, it provides structured access, mutation, and region‑based operations on its underlying data\&. "
+.ti -1c
+.RI "interface \fBICanvasList< T >\fP"
+.br
+.RI "Represents a layered mathematical canvas system composed of multiple sub‑canvases\&. Each layer is a deterministic transformation applied on top of the base canvas, forming a purely mathematical composition model rather than a graphical drawing system\&. "
+.ti -1c
+.RI "interface \fBIColor< T >\fP"
+.br
+.RI "Represents a color in a specific color space and provides methods for color manipulation\&. "
+.ti -1c
+.RI "interface \fBISubCanvas< T >\fP"
+.br
+.RI "Represents a mathematical sub‑canvas that participates as a layer within a layered canvas system\&. A sub‑canvas does not perform graphical drawing; instead, it defines deterministic transformation rules, visibility states, and optional masking that influence the final composed pixel buffer when requested through \fBICanvasList<T>\&.GetPixels\fP or \fBICanvasList<T>\&.SwapIn\fP\&. "
+.ti -1c
+.RI "class \fBLight\fP"
+.br
+.RI "\fBBase\fP light class used for all light types in the \fBSystemEx\&.Drawing\fP namespace\&. Provides shared parameters such as position, direction, diffuse/ambient color and projection settings\&. Specific light types (spot, point, directional) extend this class with additional behavior\&. "
+.ti -1c
+.RI "class \fBOrangeColors\fP"
+.br
+.RI "Orange Colors Group\&. "
+.ti -1c
+.RI "class \fBPinkColors\fP"
+.br
+.RI "Pink Color Group\&. "
+.ti -1c
+.RI "class \fBPointLight\fP"
+.br
+.RI "Point light implementation\&. Adds attenuation parameters controlling how light intensity decreases over distance\&. Typically contains constant, linear, and quadratic terms\&. "
+.ti -1c
+.RI "class \fBPurpelColors\fP"
+.br
+.RI "Purpel Color Group\&. "
+.ti -1c
+.RI "class \fBRedColors\fP"
+.br
+.RI "Red Colors Group\&. "
+.ti -1c
+.RI "class \fBSpotLight\fP"
+.br
+.RI "Spot light implementation\&. Adds inner and outer cone angles (phi/theta) expressed as cosine values\&. These values are used for smooth falloff inside the spotlight cone\&. "
+.ti -1c
+.RI "class \fBWhiteColors\fP"
+.br
+.RI "White ColorsGroup\&. "
+.ti -1c
+.RI "class \fBYellowColors\fP"
+.br
+.RI "Yellow Colors Group\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBBlendMode\fP { \fBAdd\fP, \fBSubtract\fP, \fBMultiply\fP, \fBScreen\fP, \fBOverlay\fP, \fBReplace\fP, \fBDivide\fP, \fBLight\fP, \fBDark\fP }"
+.br
+.RI "Specifies the mathematical blend operation used when combining a layer with the layers beneath it\&. These modes do not perform graphical drawing; instead, each mode defines a deterministic color transformation applied during layer composition when \fBICanvasList<T>\&.GetPixels\fP or \fBICanvasList<T>\&.SwapIn\fP is invoked\&. "
+.ti -1c
+.RI "enum \fBContrastLevel\fP { \fBVeryLow\fP, \fBLow\fP, \fBHigh\fP, \fBPerfect\fP }"
+.br
+.RI "Represents the qualitative contrast level between two colors\&. "
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.Drawing\&.BlendMode\fP"
+
+.PP
+Specifies the mathematical blend operation used when combining a layer with the layers beneath it\&. These modes do not perform graphical drawing; instead, each mode defines a deterministic color transformation applied during layer composition when \fBICanvasList<T>\&.GetPixels\fP or \fBICanvasList<T>\&.SwapIn\fP is invoked\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIAdd \fP
+Adds the layer’s color value to the underlying color\&. Useful for additive accumulation or brightness‑increasing transformations\&. 
+.TP
+\f(BISubtract \fP
+Subtracts the layer’s color value from the underlying color\&. Produces darker results and is often used for inverse or removal‑style effects\&. 
+.TP
+\f(BIMultiply \fP
+Multiplies the layer’s color value with the underlying color\&. This darkens the result and is commonly used for intensity modulation\&. 
+.TP
+\f(BIScreen \fP
+Applies the mathematical inverse of Multiply\&. Brightens the result by combining colors through reciprocal multiplication rules\&. 
+.TP
+\f(BIOverlay \fP
+Applies a conditional combination of Multiply and Screen depending on the underlying brightness\&. Produces contrast‑enhancing transformations\&. 
+.TP
+\f(BIReplace \fP
+Replaces the underlying color entirely with the layer’s color\&. This mode ignores all lower layers and acts as a direct override\&. 
+.TP
+\f(BIDivide \fP
+Divides the underlying color by the layer’s color\&. Produces brightening or contrast‑shifting effects depending on the color domain\&. 
+.TP
+\f(BILight \fP
+Selects the lighter value between the layer and the underlying color\&. Useful for highlight‑style transformations\&. 
+.TP
+\f(BIDark \fP
+Selects the darker value between the layer and the underlying color\&. Useful for shadow‑style or depth‑enhancing transformations\&. 
+.PP
+Definition at line \fB30\fP of file \fBICanvasList\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.Drawing\&.ContrastLevel\fP"
+
+.PP
+Represents the qualitative contrast level between two colors\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIVeryLow \fP
+Colors are nearly identical with minimal visible difference\&. 
+.TP
+\f(BILow \fP
+Colors differ slightly with low visual separation\&. 
+.TP
+\f(BIHigh \fP
+Colors are clearly distinguishable\&. 
+.TP
+\f(BIPerfect \fP
+Maximum visual contrast between the colors\&. 
+.PP
+Definition at line \fB23\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,11 +1,15 @@
 var a01205 =
 [
-    [ "Write", "de/d61/a01205_abc8c2928bfbc6021a0fef12b3d34f2f8.html#abc8c2928bfbc6021a0fef12b3d34f2f8", null ],
-    [ "Write", "de/d61/a01205_aa43f93e2fd2ab34f4d3f1791d97c9df1.html#aa43f93e2fd2ab34f4d3f1791d97c9df1", null ],
-    [ "Write", "de/d61/a01205_af6d38cbd4f4397472995ba33fb93131b.html#af6d38cbd4f4397472995ba33fb93131b", null ],
-    [ "Write", "de/d61/a01205_abdafba73dd36bc6d68c4337a398897e3.html#abdafba73dd36bc6d68c4337a398897e3", null ],
-    [ "Write", "de/d61/a01205_a0cdd61069e191a5a86889a55d7d50579.html#a0cdd61069e191a5a86889a55d7d50579", null ],
-    [ "Write", "de/d61/a01205_ab20a2e68372024eda6713f98d718ae50.html#ab20a2e68372024eda6713f98d718ae50", null ],
-    [ "Write", "de/d61/a01205_a92636af95a445407f8bd63974703987b.html#a92636af95a445407f8bd63974703987b", null ],
-    [ "Write", "de/d61/a01205_aeefae8672b49307e2f0092415133fd78.html#aeefae8672b49307e2f0092415133fd78", null ]
+    [ "Contains", "de/d61/a01205_a07d2023132aa7ce6fc3bd3e1bf46ec24.html#a07d2023132aa7ce6fc3bd3e1bf46ec24", null ],
+    [ "GetRange", "de/d61/a01205_a39f8cc23849b2473bbe5b161258362c8.html#a39f8cc23849b2473bbe5b161258362c8", null ],
+    [ "Intersect", "de/d61/a01205_a20f9baa7b7e30520bbc507a047aad0b1.html#a20f9baa7b7e30520bbc507a047aad0b1", null ],
+    [ "IsAdjacent", "de/d61/a01205_a6d75f4b599538af14e0ff651c10ef745.html#a6d75f4b599538af14e0ff651c10ef745", null ],
+    [ "Overlaps", "de/d61/a01205_a361b62aca6eb8fc68770d86f5dbc708b.html#a361b62aca6eb8fc68770d86f5dbc708b", null ],
+    [ "Union", "de/d61/a01205_ac206e7fa0e7e60ffab22e4af76d56c92.html#ac206e7fa0e7e60ffab22e4af76d56c92", null ],
+    [ "Begin", "de/d61/a01205_a0f21d1549899559c44ea0d62094be9eb.html#a0f21d1549899559c44ea0d62094be9eb", null ],
+    [ "End", "de/d61/a01205_a9bbd1ce3b935bb164bbca917e3b8a48e.html#a9bbd1ce3b935bb164bbca917e3b8a48e", null ],
+    [ "From", "de/d61/a01205_ae275f6eb758dd085b845265ef1480d19.html#ae275f6eb758dd085b845265ef1480d19", null ],
+    [ "IsSame", "de/d61/a01205_a9e584fb545a58d310f3b9c43bfae65ab.html#a9e584fb545a58d310f3b9c43bfae65ab", null ],
+    [ "IsValid", "de/d61/a01205_a693d922264544cd26108d2e129166d50.html#a693d922264544cd26108d2e129166d50", null ],
+    [ "To", "de/d61/a01205_ae292c65780ca87bf2f6a8d4d1af728af.html#ae292c65780ca87bf2f6a8d4d1af728af", null ]
 ];

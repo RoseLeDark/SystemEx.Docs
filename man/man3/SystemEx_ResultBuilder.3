@@ -1,0 +1,186 @@
+.TH "SystemEx.ResultBuilder" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.ResultBuilder \- Provides a fluent builder for constructing complex \fBResult\fP objects across multiple processing steps, compiler stages, or mathematical operations\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBResultBuilder\fP \fBAdd\fP (object value)"
+.br
+.RI "Appends a value to the result\&. "
+.ti -1c
+.RI "\fBResultBuilder\fP \fBAssert\fP (bool condition, string message)"
+.br
+.RI "Evaluates an assertion and records a failure message if the condition is false\&. "
+.ti -1c
+.RI "\fBResultBuilder\fP \fBCatch\fP (Exception ex)"
+.br
+.RI "Appends an exception to the result without throwing it\&. "
+.ti -1c
+.RI "\fBResultBuilder\fP ()"
+.br
+.RI "Initializes a new \fBResultBuilder\fP with an empty result\&. "
+.ti -1c
+.RI "\fBResultBuilder\fP (\fBResult\fP existing)"
+.br
+.RI "Initializes a new \fBResultBuilder\fP using an existing \fBResult\fP instance\&. "
+.ti -1c
+.RI "\fBResult\fP \fBToResult\fP ()"
+.br
+.RI "Returns the constructed \fBResult\fP instance\&. "
+.ti -1c
+.RI "\fBResultBuilder\fP \fBTry\fP (Action action)"
+.br
+.RI "Executes an action and captures any thrown exception inside the result\&. "
+.ti -1c
+.RI "\fBResultBuilder\fP \fBTry\fP (Func< object > func)"
+.br
+.RI "Executes a function and appends its return value to the result\&. Any thrown exception is captured\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a fluent builder for constructing complex \fBResult\fP objects across multiple processing steps, compiler stages, or mathematical operations\&. 
+
+\fBResultBuilder\fP allows values, diagnostics, assertions, and exceptions to be accumulated progressively\&. It is designed for scenarios where the final output may contain multiple heterogeneous items or where the success state is determined by several independent operations\&. 
+
+.PP
+The builder never throws directly; instead, exceptions are captured inside the underlying \fBResult\fP instance\&. The caller may inspect or re-throw them using \fBResult\&.Throw\fP\&. 
+.PP
+Definition at line \fB39\fP of file \fBResultBuilder\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.ResultBuilder\&.ResultBuilder ()"
+
+.PP
+Initializes a new \fBResultBuilder\fP with an empty result\&. 
+.PP
+Definition at line \fB49\fP of file \fBResultBuilder\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBAssert()\fP, \fBCatch()\fP, \fBTry()\fP, and \fBTry()\fP\&.
+.SS "SystemEx\&.ResultBuilder\&.ResultBuilder (\fBResult\fP existing)"
+
+.PP
+Initializes a new \fBResultBuilder\fP using an existing \fBResult\fP instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIexisting\fP The result to wrap\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB59\fP of file \fBResultBuilder\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBResultBuilder\fP SystemEx\&.ResultBuilder\&.Add (object value)"
+
+.PP
+Appends a value to the result\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to append\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The current builder instance\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB69\fP of file \fBResultBuilder\&.cs\fP\&.
+.SS "\fBResultBuilder\fP SystemEx\&.ResultBuilder\&.Assert (bool condition, string message)"
+
+.PP
+Evaluates an assertion and records a failure message if the condition is false\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcondition\fP The condition to evaluate\&.
+.br
+\fImessage\fP The message to store on failure\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The current builder instance\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB113\fP of file \fBResultBuilder\&.cs\fP\&.
+.PP
+Referenced by \fBAssert()\fP\&.
+.SS "\fBResultBuilder\fP SystemEx\&.ResultBuilder\&.Catch (Exception ex)"
+
+.PP
+Appends an exception to the result without throwing it\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIex\fP The exception to capture\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The current builder instance\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB124\fP of file \fBResultBuilder\&.cs\fP\&.
+.PP
+Referenced by \fBCatch()\fP\&.
+.SS "\fBResult\fP SystemEx\&.ResultBuilder\&.ToResult ()"
+
+.PP
+Returns the constructed \fBResult\fP instance\&. 
+.PP
+Definition at line \fB133\fP of file \fBResultBuilder\&.cs\fP\&.
+.SS "\fBResultBuilder\fP SystemEx\&.ResultBuilder\&.Try (Action action)"
+
+.PP
+Executes an action and captures any thrown exception inside the result\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIaction\fP The action to execute\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The current builder instance\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB80\fP of file \fBResultBuilder\&.cs\fP\&.
+.SS "\fBResultBuilder\fP SystemEx\&.ResultBuilder\&.Try (Func< object > func)"
+
+.PP
+Executes a function and appends its return value to the result\&. Any thrown exception is captured\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfunc\fP The function to execute\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The current builder instance\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB95\fP of file \fBResultBuilder\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

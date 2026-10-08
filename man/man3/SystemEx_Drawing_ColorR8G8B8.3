@@ -1,0 +1,481 @@
+.TH "SystemEx.Drawing.ColorR8G8B8" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Drawing.ColorR8G8B8 \- Represents an RGB color using normalized float channels (0–1)\&. Provides basic color manipulation, brightness evaluation, contrast classification and interpolation utilities\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBAddition\fP (\fBColorR8G8B8\fP value)"
+.br
+.RI "Adds another color to this one, channel by channel\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBAddition\fP (float a, float b, float c)"
+.br
+.RI "Addition another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBAsNormalized\fP ()"
+.br
+.RI "Returns a version of the color with all channels clamped to 0–1\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBAsScaled\fP ()"
+.br
+.RI "Returns a version of the color scaled so the brightest channel becomes 1\&. "
+.ti -1c
+.RI "float \fBBrightness\fP ()"
+.br
+.RI "Computes the perceived brightness of the color\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBBrightness\fP (float delta)"
+.br
+.RI "Changes the perceived brightness of the color\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP ()"
+.br
+.RI "Creates a black color (0,0,0)\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP (byte b)"
+.br
+.RI "Creates a grayscale color using a single byte value\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP (byte r, byte g, byte b)"
+.br
+.RI "Creates a color from 8‑bit RGB components\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP (float r, float g, float b)"
+.br
+.RI "Creates a color from normalized RGB components\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP (float rgb)"
+.br
+.RI "Creates a grayscale color using a single intensity value\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP (int rgb)"
+.br
+.RI "Creates a color from a packed 24‑bit RGB integer (0xRRGGBB)\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP (System\&.Drawing\&.Color x)"
+.br
+.RI "Creates a color from a System\&.Drawing\&.Color\&. "
+.ti -1c
+.RI "float \fBContrast\fP (\fBColorR8G8B8\fP other)"
+.br
+.RI "Measures the visual contrast between this color and another\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBDivision\fP (\fBColorR8G8B8\fP value)"
+.br
+.RI "Divides this color by another, channel by channel\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBDivision\fP (float a, float b, float c)"
+.br
+.RI "Division another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBContrastLevel\fP \fBGetKontrast\fP (\fBColorR8G8B8\fP other)"
+.br
+.RI "Classifies the contrast between this color and another\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBGetNextContrastColor\fP ()"
+.br
+.RI "Generates a color that visually contrasts with this one\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBLerp\fP (\fBColorR8G8B8\fP value, float amount)"
+.br
+.RI "Blends this color toward another by the given amount\&. "
+.ti -1c
+.RI "float \fBLinearBrightness\fP ()"
+.br
+.RI "Computes the brightness using linear RGB\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBMultiplication\fP (\fBColorR8G8B8\fP value)"
+.br
+.RI "Multiplies this color with another, channel by channel\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBMultiplication\fP (float a, float b, float c)"
+.br
+.RI "Multiplication another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSaturation\fP (float delta)"
+.br
+.RI "Changes the perceived saturation of the color\&. "
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSubtraction\fP (\fBColorR8G8B8\fP value)"
+.br
+.ti -1c
+.RI "\fBColorR8G8B8\fP \fBSubtraction\fP (float a, float b, float c)"
+.br
+.RI "Subtraction another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns a string representation of the color in normalized RGB format\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Drawing\&.IColor< T >\fP
+.in +1c
+.ti -1c
+.RI "T \fBAddition\fP (T value)"
+.br
+.RI "Adds the specified color to this color\&. "
+.ti -1c
+.RI "T \fBDivision\fP (T value)"
+.br
+.RI "Divides this color by the specified color\&. "
+.ti -1c
+.RI "T \fBLerp\fP (T value, float amount)"
+.br
+.RI "Performs linear interpolation between this color and another color\&. "
+.ti -1c
+.RI "T \fBMultiplication\fP (T value)"
+.br
+.RI "Multiplies this color with the specified color\&. "
+.ti -1c
+.RI "T \fBSubtraction\fP (T value)"
+.br
+.RI "Subtracts the specified color from this color\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBMax\fP (\fBColorR8G8B8\fP a, \fBColorR8G8B8\fP b)"
+.br
+.RI "Returns the brightest components of two colors\&. "
+.ti -1c
+.RI "static \fBColorR8G8B8\fP \fBMin\fP (\fBColorR8G8B8\fP a, \fBColorR8G8B8\fP b)"
+.br
+.RI "Returns the darkest components of two colors\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "float \fBBlue\fP\fR [get]\fP"
+.br
+.RI "Gets the blue channel\&. "
+.ti -1c
+.RI "float \fBGreen\fP\fR [get]\fP"
+.br
+.RI "Gets the green channel\&. "
+.ti -1c
+.RI "bool \fBIsDark\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the color appears visually dark\&. "
+.ti -1c
+.RI "bool \fBIsLight\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the color appears visually bright\&. "
+.ti -1c
+.RI "float \fBRed\fP\fR [get]\fP"
+.br
+.RI "Gets the red channel\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents an RGB color using normalized float channels (0–1)\&. Provides basic color manipulation, brightness evaluation, contrast classification and interpolation utilities\&. 
+.PP
+Definition at line \fB42\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 ()"
+
+.PP
+Creates a black color (0,0,0)\&. 
+.PP
+Definition at line \fB66\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP, \fBAddition()\fP, \fBAsNormalized()\fP, \fBAsScaled()\fP, \fBBrightness()\fP, \fBContrast()\fP, \fBDivision()\fP, \fBDivision()\fP, \fBGetKontrast()\fP, \fBGetNextContrastColor()\fP, \fBLerp()\fP, \fBLinearBrightness()\fP, \fBMax()\fP, \fBMin()\fP, \fBMultiplication()\fP, \fBMultiplication()\fP, \fBSaturation()\fP, and \fBSubtraction()\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 (int rgb)"
+
+.PP
+Creates a color from a packed 24‑bit RGB integer (0xRRGGBB)\&. 
+.PP
+Definition at line \fB75\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 (byte b)"
+
+.PP
+Creates a grayscale color using a single byte value\&. 
+.PP
+Definition at line \fB87\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 (byte r, byte g, byte b)"
+
+.PP
+Creates a color from 8‑bit RGB components\&. 
+.PP
+Definition at line \fB96\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 (float rgb)"
+
+.PP
+Creates a grayscale color using a single intensity value\&. 
+.PP
+Definition at line \fB104\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 (float r, float g, float b)"
+
+.PP
+Creates a color from normalized RGB components\&. 
+.PP
+Definition at line \fB113\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR8G8B8\&.ColorR8G8B8 (System\&.Drawing\&.Color x)"
+
+.PP
+Creates a color from a System\&.Drawing\&.Color\&. 
+.PP
+Definition at line \fB122\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Addition (\fBColorR8G8B8\fP value)"
+
+.PP
+Adds another color to this one, channel by channel\&. 
+.PP
+Definition at line \fB162\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Addition (float a, float b, float c)"
+
+.PP
+Addition another color in r, g, b channels with this one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The red color channel
+.br
+\fIb\fP The green color channel
+.br
+\fIc\fP The blue color channel
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+this
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB228\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.AsNormalized ()"
+
+.PP
+Returns a version of the color with all channels clamped to 0–1\&. 
+.PP
+Definition at line \fB202\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.AsScaled ()"
+
+.PP
+Returns a version of the color scaled so the brightest channel becomes 1\&. 
+.PP
+Definition at line \fB212\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR8G8B8\&.Brightness ()"
+
+.PP
+Computes the perceived brightness of the color\&. 
+.PP
+Definition at line \fB265\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBContrast()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Brightness (float delta)"
+
+.PP
+Changes the perceived brightness of the color\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB149\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBContrast()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR8G8B8\&.Contrast (\fBColorR8G8B8\fP other)"
+
+.PP
+Measures the visual contrast between this color and another\&. 
+.PP
+Definition at line \fB278\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBGetKontrast()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Division (\fBColorR8G8B8\fP value)"
+
+.PP
+Divides this color by another, channel by channel\&. 
+.PP
+Definition at line \fB192\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBDivision()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Division (float a, float b, float c)"
+
+.PP
+Division another color in r, g, b channels with this one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The red color channel
+.br
+\fIb\fP The green color channel
+.br
+\fIc\fP The blue color channel
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+this
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB258\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBContrastLevel\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.GetKontrast (\fBColorR8G8B8\fP other)"
+
+.PP
+Classifies the contrast between this color and another\&. 
+.PP
+Definition at line \fB284\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.GetNextContrastColor ()"
+
+.PP
+Generates a color that visually contrasts with this one\&. 
+.PP
+Definition at line \fB301\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Lerp (\fBColorR8G8B8\fP value, float amount)"
+
+.PP
+Blends this color toward another by the given amount\&. 
+.PP
+Definition at line \fB323\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR8G8B8\&.LinearBrightness ()"
+
+.PP
+Computes the brightness using linear RGB\&. 
+.PP
+Definition at line \fB271\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Max (\fBColorR8G8B8\fP a, \fBColorR8G8B8\fP b)\fR [static]\fP"
+
+.PP
+Returns the brightest components of two colors\&. 
+.PP
+Definition at line \fB317\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBAsScaled()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Min (\fBColorR8G8B8\fP a, \fBColorR8G8B8\fP b)\fR [static]\fP"
+
+.PP
+Returns the darkest components of two colors\&. 
+.PP
+Definition at line \fB311\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Multiplication (\fBColorR8G8B8\fP value)"
+
+.PP
+Multiplies this color with another, channel by channel\&. 
+.PP
+Definition at line \fB182\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.PP
+Referenced by \fBMultiplication()\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Multiplication (float a, float b, float c)"
+
+.PP
+Multiplication another color in r, g, b channels with this one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The red color channel
+.br
+\fIb\fP The green color channel
+.br
+\fIc\fP The blue color channel
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+this
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB248\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Saturation (float delta)"
+
+.PP
+Changes the perceived saturation of the color\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB135\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Subtraction (\fBColorR8G8B8\fP value)"
+
+.PP
+Definition at line \fB172\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "\fBColorR8G8B8\fP SystemEx\&.Drawing\&.ColorR8G8B8\&.Subtraction (float a, float b, float c)"
+
+.PP
+Subtraction another color in r, g, b channels with this one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The red color channel
+.br
+\fIb\fP The green color channel
+.br
+\fIc\fP The blue color channel
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+this
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB238\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorR8G8B8\&.ToString ()"
+
+.PP
+Returns a string representation of the color in normalized RGB format\&. 
+.PP
+Definition at line \fB128\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "float SystemEx\&.Drawing\&.ColorR8G8B8\&.Blue\fR [get]\fP"
+
+.PP
+Gets the blue channel\&. 
+.PP
+Definition at line \fB54\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR8G8B8\&.Green\fR [get]\fP"
+
+.PP
+Gets the green channel\&. 
+.PP
+Definition at line \fB51\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorR8G8B8\&.IsDark\fR [get]\fP"
+
+.PP
+Indicates whether the color appears visually dark\&. 
+.PP
+Definition at line \fB60\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorR8G8B8\&.IsLight\fR [get]\fP"
+
+.PP
+Indicates whether the color appears visually bright\&. 
+.PP
+Definition at line \fB57\fP of file \fBColorR8G8B8\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR8G8B8\&.Red\fR [get]\fP"
+
+.PP
+Gets the red channel\&. 
+.PP
+Definition at line \fB48\fP of file \fBColorR8G8B8\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

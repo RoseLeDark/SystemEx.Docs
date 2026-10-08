@@ -1,0 +1,52 @@
+.TH "Threading" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Threading \- Threading
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "interface \fBSystemEx\&.Threading\&.ISpinlock< T >\fP"
+.br
+.RI "Extends \fBILock<T>\fP with spin‑lock‑specific diagnostics and metadata\&. Implementations of \fBISpinlock<T>\fP represent busy‑wait mutual exclusion primitives where threads repeatedly attempt to acquire the lock without yielding\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBSystemEx\&.Threading\&.ISpinlock< T >\&.IsHeldbyCurrent\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the lock is currently held by the calling thread\&. Implementations may require thread‑owner tracking to support this property\&. "
+.ti -1c
+.RI "bool \fBSystemEx\&.Threading\&.ISpinlock< T >\&.IsThreadOwnerTrackingEnabled\fP\fR [get]\fP"
+.br
+.RI "Indicates whether thread‑owner tracking is enabled for the underlying spin lock\&. When enabled, the lock records which thread currently owns it, allowing additional safety checks at the cost of extra overhead\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Properties"
+.PP 
+.SS "bool SystemEx\&.Threading\&.ISpinlock< T >\&.IsHeldbyCurrent\fR [get]\fP"
+
+.PP
+Indicates whether the lock is currently held by the calling thread\&. Implementations may require thread‑owner tracking to support this property\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.AtomicLock\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP, \fBSystemEx\&.Threading\&.LightFutex\fP, \fBSystemEx\&.Threading\&.LightMutex< T >\fP, \fBSystemEx\&.Threading\&.LightSpinlock< T >\fP, and \fBSystemEx\&.Threading\&.Spinlock\fP\&.
+.PP
+Definition at line \fB43\fP of file \fBISpinlock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ISpinlock< T >\&.IsThreadOwnerTrackingEnabled\fR [get]\fP"
+
+.PP
+Indicates whether thread‑owner tracking is enabled for the underlying spin lock\&. When enabled, the lock records which thread currently owns it, allowing additional safety checks at the cost of extra overhead\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.AtomicLock\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP, \fBSystemEx\&.Threading\&.LightFutex\fP, \fBSystemEx\&.Threading\&.LightSpinlock< T >\fP, and \fBSystemEx\&.Threading\&.Spinlock\fP\&.
+.PP
+Definition at line \fB50\fP of file \fBISpinlock\&.cs\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

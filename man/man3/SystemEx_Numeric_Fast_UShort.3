@@ -1,0 +1,666 @@
+.TH "SystemEx.Numeric.Fast_UShort" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Fast_UShort \- Represents an 16‑bit fast bit‑manipulation type\&. This struct provides low‑level operations for inspecting, modifying, rotating, masking, and counting bits inside a single ushort\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Numeric\&.IFastType< T >\fP, IComparable, and \fBSystemEx\&.IComparableEx< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFast_UShort\fP \fBAdd\fP (\fBFast_UShort\fP oth)"
+.br
+.RI "Addition\&. "
+.ti -1c
+.RI "void \fBAt\fP (byte pos, byte value)"
+.br
+.RI "Sets the bit at the specified position to the given value (0 or 1)\&. The bit is only modified if the new value differs from the current one\&. This avoids unnecessary writes and preserves performance\&. "
+.ti -1c
+.RI "\fBIFastType\fP< ushort > \fBCmpOne\fP ()"
+.br
+.RI "Produces the one's complement of the current value\&. All bits are inverted (bitwise NOT)\&. "
+.ti -1c
+.RI "\fBIFastType\fP< ushort > \fBCmpTwo\fP ()"
+.br
+.RI "Produces the two's complement of the current value\&. This is equivalent to (~value + 1) and is commonly used for subtraction in low‑level arithmetic\&. "
+.ti -1c
+.RI "\fBIFastType\fP< ushort > \fBCombine\fP (\fBIFastType\fP< ushort > other)"
+.br
+.RI "Combines this value with another Fast_Short using bitwise OR\&. All bits that are set in either value become set\&. "
+.ti -1c
+.RI "int IComparable< \fBFast_UShort\fP >\&. \fBCompareTo\fP (\fBFast_UShort\fP a)"
+.br
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (\fBFast_UShort\fP a)"
+.br
+.ti -1c
+.RI "ushort \fBCreateMask\fP (byte start, byte length)"
+.br
+.RI "Creates a bitmask with a given start position and length\&. The mask contains 'length' consecutive 1‑bits beginning at 'start'\&. "
+.ti -1c
+.RI "Pair< \fBFast_UShort\fP, \fBFast_UShort\fP > \fBDiv\fP (\fBFast_UShort\fP oth)"
+.br
+.RI "Division\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "bool \fBEquals\fP (ushort b)"
+.br
+.ti -1c
+.RI "\fBFast_UShort\fP ()"
+.br
+.RI "Initializes a new Fast_Short instance with an optional initial value\&. "
+.ti -1c
+.RI "\fBFast_UShort\fP (ushort value)"
+.br
+.RI "Initializes a new Fast_Short instance with an optional initial value\&. "
+.ti -1c
+.RI "void \fBFlip\fP (byte pos)"
+.br
+.RI "Flips (toggles) the bit at the specified position\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.ti -1c
+.RI "byte \fBIs\fP (byte pos)"
+.br
+.RI "Returns the bit at the specified position (0 or 1)\&. "
+.ti -1c
+.RI "byte \fBIsIt\fP ()"
+.br
+.RI "Counts the number of bits set to 1 in a 16‑bit unsigned value (ushort)\&. This method uses a branchless bit‑hack algorithm that avoids loops and provides excellent performance on all platforms\&. "
+.ti -1c
+.RI "byte \fBIsItNot\fP ()"
+.br
+.RI "Counts the number of bits set to 0\&. Equivalent to Count - \fBIsIt()\fP\&. "
+.ti -1c
+.RI "void \fBMask\fP (ushort mask)"
+.br
+.RI "Applies a bitmask to the current value using bitwise AND\&. Only bits that are 1 in the mask remain set\&. "
+.ti -1c
+.RI "\fBFast_UShort\fP \fBMul\fP (\fBFast_UShort\fP oth)"
+.br
+.RI "Multiplikation\&. "
+.ti -1c
+.RI "void \fBRotateLeft\fP (byte count)"
+.br
+.RI "Rotates the bits to the left by the specified count\&. Rotation is limited to 0–15 to ensure correct 16‑bit behavior\&. "
+.ti -1c
+.RI "void \fBRotateRight\fP (byte count)"
+.br
+.RI "Rotates the bits to the right by the specified count\&. Rotation is limited to 0–15 to ensure correct 16‑bit behavior\&. "
+.ti -1c
+.RI "\fBFast_UShort\fP \fBSub\fP (\fBFast_UShort\fP oth)"
+.br
+.RI "Subtraktion\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.ti -1c
+.RI "FixedVector< byte > \fBWhere\fP ()"
+.br
+.RI "Returns all bit positions where the bit is set to 1\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBWhereNot\fP ()"
+.br
+.RI "Returns all bit positions where the bit is set to 0\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Numeric\&.IFastType< T >\fP
+.in +1c
+.ti -1c
+.RI "void \fBMask\fP (T mask)"
+.br
+.RI "Applies a bitmask to the underlying value using bitwise AND\&. Only bits that are \fR1\fP in the mask remain set\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBMax\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBMin\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static implicit \fBoperator Fast_UShort\fP (\fBFast_Byte\fP value)"
+.br
+.ti -1c
+.RI "static implicit \fBoperator Fast_UShort\fP (int value)"
+.br
+.RI "Implicitly converts a int value into an \fBFast_UShort\fP\&. "
+.ti -1c
+.RI "static implicit \fBoperator Fast_UShort\fP (uint value)"
+.br
+.RI "Implicitly converts a uint value into an \fBFast_UShort\fP\&. "
+.ti -1c
+.RI "static implicit \fBoperator Fast_UShort\fP (ushort value)"
+.br
+.RI "Implicitly converts a byte value into an \fBFast_UShort\fP\&. "
+.ti -1c
+.RI "static \fBoperator int\fP (\fBFast_UShort\fP opt)"
+.br
+.RI "Explicitly extracts the underlying value from an \fBFast_UShort\fP\&. "
+.ti -1c
+.RI "static \fBoperator ushort\fP (\fBFast_UShort\fP opt)"
+.br
+.RI "Explicitly extracts the underlying value from an \fBFast_UShort\fP\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator%\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator&\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator*\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator+\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator++\fP (\fBFast_UShort\fP a)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator\-\fP (\fBFast_UShort\fP a)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator\-\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator\-\-\fP (\fBFast_UShort\fP a)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator/\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator<<\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator>>\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator^\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.ti -1c
+.RI "static \fBFast_UShort\fP \fBoperator|\fP (\fBFast_UShort\fP a, \fBFast_UShort\fP b)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "byte \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of bits available in this type (always 16)\&. "
+.ti -1c
+.RI "ushort \fBValue\fP\fR [get]\fP"
+.br
+.RI "Gets the raw underlying ushort value\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents an 16‑bit fast bit‑manipulation type\&. This struct provides low‑level operations for inspecting, modifying, rotating, masking, and counting bits inside a single ushort\&. 
+
+Fast_Short is intended for systems that require precise bit control, such as event groups, flag sets, embedded‑style logic, or any performance‑critical bitmask operations\&.
+
+.PP
+Users must understand bitwise operations, as incorrect usage can intentionally overwrite or corrupt the underlying value\&. 
+.PP
+Definition at line \fB37\fP of file \fBFast_UShort\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.Fast_UShort\&.Fast_UShort ()"
+
+.PP
+Initializes a new Fast_Short instance with an optional initial value\&. 
+.PP
+Definition at line \fB55\fP of file \fBFast_UShort\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBDiv()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBMul()\fP, \fBoperator Fast_UShort()\fP, \fBoperator Fast_UShort()\fP, \fBoperator Fast_UShort()\fP, \fBoperator int()\fP, \fBoperator ushort()\fP, \fBoperator!=()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, \fBoperator>()\fP, \fBoperator>=()\fP, and \fBSub()\fP\&.
+.SS "SystemEx\&.Numeric\&.Fast_UShort\&.Fast_UShort (ushort value)"
+
+.PP
+Initializes a new Fast_Short instance with an optional initial value\&. 
+.PP
+Definition at line \fB60\fP of file \fBFast_UShort\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.Add (\fBFast_UShort\fP oth)"
+
+.PP
+Addition\&. 
+.PP
+Definition at line \fB237\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_UShort\&.At (byte pos, byte value)"
+
+.PP
+Sets the bit at the specified position to the given value (0 or 1)\&. The bit is only modified if the new value differs from the current one\&. This avoids unnecessary writes and preserves performance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP Bit position (0–16)\&.
+.br
+\fIvalue\fP New bit value (0 or 1)\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB71\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBIFastType\fP< ushort > SystemEx\&.Numeric\&.Fast_UShort\&.CmpOne ()"
+
+.PP
+Produces the one's complement of the current value\&. All bits are inverted (bitwise NOT)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType< T >\fP\&.
+.PP
+Definition at line \fB86\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBIFastType\fP< ushort > SystemEx\&.Numeric\&.Fast_UShort\&.CmpTwo ()"
+
+.PP
+Produces the two's complement of the current value\&. This is equivalent to (~value + 1) and is commonly used for subtraction in low‑level arithmetic\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType< T >\fP\&.
+.PP
+Definition at line \fB92\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBIFastType\fP< ushort > SystemEx\&.Numeric\&.Fast_UShort\&.Combine (\fBIFastType\fP< ushort > other)"
+
+.PP
+Combines this value with another Fast_Short using bitwise OR\&. All bits that are set in either value become set\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType< T >\fP\&.
+.PP
+Definition at line \fB153\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "int IComparable< \fBFast_UShort\fP >\&. SystemEx\&.Numeric\&.Fast_UShort\&.CompareTo (\fBFast_UShort\fP a)"
+
+.PP
+Definition at line \fB268\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Numeric\&.Fast_UShort\&.CompareTo (\fBFast_UShort\fP a)"
+
+.PP
+Definition at line \fB262\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "ushort SystemEx\&.Numeric\&.Fast_UShort\&.CreateMask (byte start, byte length)"
+
+.PP
+Creates a bitmask with a given start position and length\&. The mask contains 'length' consecutive 1‑bits beginning at 'start'\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType< T >\fP\&.
+.PP
+Definition at line \fB140\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "Pair< \fBFast_UShort\fP, \fBFast_UShort\fP > SystemEx\&.Numeric\&.Fast_UShort\&.Div (\fBFast_UShort\fP oth)"
+
+.PP
+Division\&. 
+.PP
+Definition at line \fB255\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UShort\&.Equals (\fBFast_UShort\fP b)"
+
+.PP
+
+.PP
+Definition at line \fB389\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.Fast_UShort\&.Equals (object? obj)"
+
+.PP
+
+.PP
+Definition at line \fB382\fP of file \fBFast_UShort\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UShort\&.Equals (ushort b)"
+
+.PP
+Definition at line \fB393\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_UShort\&.Flip (byte pos)"
+
+.PP
+Flips (toggles) the bit at the specified position\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB97\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "override int SystemEx\&.Numeric\&.Fast_UShort\&.GetHashCode ()"
+
+.PP
+
+.PP
+Definition at line \fB398\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "byte SystemEx\&.Numeric\&.Fast_UShort\&.Is (byte pos)"
+
+.PP
+Returns the bit at the specified position (0 or 1)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB104\fP of file \fBFast_UShort\&.cs\fP\&.
+.PP
+Referenced by \fBWhere()\fP, and \fBWhereNot()\fP\&.
+.SS "byte SystemEx\&.Numeric\&.Fast_UShort\&.IsIt ()"
+
+.PP
+Counts the number of bits set to 1 in a 16‑bit unsigned value (ushort)\&. This method uses a branchless bit‑hack algorithm that avoids loops and provides excellent performance on all platforms\&. The algorithm is based on a well‑known parallel bit counting technique:
+.IP "1." 4
+Subtract shifted half‑bit groups\&.
+.IP "2." 4
+Collapse bit pairs into nibbles\&.
+.IP "3." 4
+Sum the nibbles to produce the final population count\&.
+.PP
+
+.PP
+This approach is significantly faster than iterating over all 16 bits, especially in performance‑critical or embedded‑style systems\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+The number of bits set to 1 in the underlying 16‑bit value\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB174\fP of file \fBFast_UShort\&.cs\fP\&.
+.PP
+Referenced by \fBWhere()\fP\&.
+.SS "byte SystemEx\&.Numeric\&.Fast_UShort\&.IsItNot ()"
+
+.PP
+Counts the number of bits set to 0\&. Equivalent to Count - \fBIsIt()\fP\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB198\fP of file \fBFast_UShort\&.cs\fP\&.
+.PP
+Referenced by \fBWhereNot()\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_UShort\&.Mask (ushort mask)"
+
+.PP
+Applies a bitmask to the current value using bitwise AND\&. Only bits that are 1 in the mask remain set\&. 
+.PP
+Definition at line \fB110\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.Max (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB275\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.Min (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB272\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.Mul (\fBFast_UShort\fP oth)"
+
+.PP
+Multiplikation\&. 
+.PP
+Definition at line \fB249\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.Fast_UShort\&.operator \fBFast_UShort\fP (\fBFast_Byte\fP value)\fR [static]\fP"
+
+.PP
+Definition at line \fB343\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.Fast_UShort\&.operator \fBFast_UShort\fP (int value)\fR [static]\fP"
+
+.PP
+Implicitly converts a int value into an \fBFast_UShort\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The int value to convert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB351\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.Fast_UShort\&.operator \fBFast_UShort\fP (uint value)\fR [static]\fP"
+
+.PP
+Implicitly converts a uint value into an \fBFast_UShort\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The uint value to convert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB359\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.Fast_UShort\&.operator \fBFast_UShort\fP (ushort value)\fR [static]\fP"
+
+.PP
+Implicitly converts a byte value into an \fBFast_UShort\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The byte value to convert\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB339\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Fast_UShort\&.operator int (\fBFast_UShort\fP opt)\fR [explicit]\fP, \fR [static]\fP"
+
+.PP
+Explicitly extracts the underlying value from an \fBFast_UShort\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIopt\fP The optional instance to extract from\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The stored value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB377\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Fast_UShort\&.operator ushort (\fBFast_UShort\fP opt)\fR [explicit]\fP, \fR [static]\fP"
+
+.PP
+Explicitly extracts the underlying value from an \fBFast_UShort\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIopt\fP The optional instance to extract from\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The stored value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB368\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UShort\&.operator!= (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB285\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator% (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB409\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator& (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB406\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator* (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB326\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator+ (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB306\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator++ (\fBFast_UShort\fP a)\fR [static]\fP"
+
+.PP
+Definition at line \fB322\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator\- (\fBFast_UShort\fP a)\fR [static]\fP"
+
+.PP
+Definition at line \fB314\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator\- (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB310\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator\-\- (\fBFast_UShort\fP a)\fR [static]\fP"
+
+.PP
+Definition at line \fB318\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator/ (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB330\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UShort\&.operator< (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB298\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator<< (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB419\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UShort\&.operator<= (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB290\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UShort\&.operator== (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB280\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UShort\&.operator> (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB302\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Fast_UShort\&.operator>= (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB294\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator>> (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB423\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator^ (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB415\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.operator| (\fBFast_UShort\fP a, \fBFast_UShort\fP b)\fR [static]\fP"
+
+.PP
+Definition at line \fB412\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_UShort\&.RotateLeft (byte count)"
+
+.PP
+Rotates the bits to the left by the specified count\&. Rotation is limited to 0–15 to ensure correct 16‑bit behavior\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB120\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "void SystemEx\&.Numeric\&.Fast_UShort\&.RotateRight (byte count)"
+
+.PP
+Rotates the bits to the right by the specified count\&. Rotation is limited to 0–15 to ensure correct 16‑bit behavior\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB130\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "\fBFast_UShort\fP SystemEx\&.Numeric\&.Fast_UShort\&.Sub (\fBFast_UShort\fP oth)"
+
+.PP
+Subtraktion\&. 
+.PP
+Definition at line \fB243\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "override string SystemEx\&.Numeric\&.Fast_UShort\&.ToString ()"
+
+.PP
+
+.PP
+Definition at line \fB402\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.Fast_UShort\&.Where ()"
+
+.PP
+Returns all bit positions where the bit is set to 1\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB203\fP of file \fBFast_UShort\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.Fast_UShort\&.WhereNot ()"
+
+.PP
+Returns all bit positions where the bit is set to 0\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB220\fP of file \fBFast_UShort\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "byte SystemEx\&.Numeric\&.Fast_UShort\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of bits available in this type (always 16)\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType\fP\&.
+.PP
+Definition at line \fB44\fP of file \fBFast_UShort\&.cs\fP\&.
+.PP
+Referenced by \fBCreateMask()\fP, \fBIsItNot()\fP, \fBRotateLeft()\fP, \fBRotateRight()\fP, \fBWhere()\fP, and \fBWhereNot()\fP\&.
+.SS "ushort SystemEx\&.Numeric\&.Fast_UShort\&.Value\fR [get]\fP"
+
+.PP
+Gets the raw underlying ushort value\&. 
+.PP
+Implements \fBSystemEx\&.Numeric\&.IFastType< T >\fP\&.
+.PP
+Definition at line \fB49\fP of file \fBFast_UShort\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

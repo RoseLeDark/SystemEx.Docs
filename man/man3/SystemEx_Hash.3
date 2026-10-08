@@ -1,0 +1,107 @@
+.TH "SystemEx.Hash" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Hash
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAdlerHash\fP"
+.br
+.RI "Implements the Adler hash algorithm\&. "
+.ti -1c
+.RI "class \fBBernsteinHash\fP"
+.br
+.RI "Simple non‑cryptographic hash function based on the Bernstein family of hash algorithms\&. "
+.ti -1c
+.RI "class \fBBlack3Hasher\fP"
+.br
+.RI "Public BLAKE3 hasher implementation used by the \fBSystemEx\fP hashing subsystem\&. "
+.ti -1c
+.RI "class \fBCRC32\fP"
+.br
+.RI "Implements a CRC‑32 checksum calculator using a configurable reflected polynomial\&. Supports both rolling and one‑shot hashing modes while remaining fully compatible with the \fBIHash\fP pipeline\&. "
+.ti -1c
+.RI "class \fBCRC32BZip2\fP"
+.br
+.RI "Implements the CRC‑32/BZIP2 checksum algorithm\&. Polynomial: 0x04C11DB7 (normal)\&. "
+.ti -1c
+.RI "class \fBCRC32C\fP"
+.br
+.RI "Implements the CRC‑32C (Castagnoli) checksum algorithm\&. Polynomial: 0x82F63B78 (reflected)\&. "
+.ti -1c
+.RI "class \fBCRC32IEEE\fP"
+.br
+.RI "Implements the standard CRC‑32 (IEEE 802\&.3, PKZip, PNG) checksum algorithm\&. Polynomial: 0xEDB88320 (reflected)\&. "
+.ti -1c
+.RI "class \fBCRC32Koopman\fP"
+.br
+.RI "Implements the CRC‑32K (Koopman) checksum algorithm\&. Polynomial: 0xEB31D82E (reflected)\&. "
+.ti -1c
+.RI "class \fBCRC32Mpeg2\fP"
+.br
+.RI "Implements the CRC‑32/MPEG‑2 checksum algorithm\&. Polynomial: 0x04C11DB7 (normal), Final XOR = 0\&. "
+.ti -1c
+.RI "class \fBCRC32Posix\fP"
+.br
+.RI "Implements the CRC‑32/POSIX checksum algorithm\&. Polynomial: 0x04C11DB7 (normal), Initial XOR = 0\&. "
+.ti -1c
+.RI "class \fBCRC64\fP"
+.br
+.RI "Implements a CRC‑64 checksum calculator using a configurable reflected polynomial\&. This class supports both rolling and one‑shot hashing modes while remaining fully compatible with the \fBIHash\fP pipeline\&. "
+.ti -1c
+.RI "class \fBCrC< TC32, TC64 >\fP"
+.br
+.RI "Provides a generic wrapper combining a CRC‑32 and a CRC‑64 hashing implementation\&. The generic parameters \fITC32\fP  and \fITC64\fP  specify the concrete CRC‑32 and CRC‑64 algorithm variants to use, allowing flexible configuration of polynomial families without modifying the pipeline\&. "
+.ti -1c
+.RI "class \fBFletcherHash\fP"
+.br
+.RI "Implements the Fletcher hash algorithm\&. "
+.ti -1c
+.RI "class \fBFnv1aHash\fP"
+.br
+.RI "Implements the FNV-1a hash algorithm\&. "
+.ti -1c
+.RI "class \fBGrøstlHash\fP"
+.br
+.RI "Implements the Grøstl-256 and Grøstl-512 hashing functions as part of the \fBSystemEx\fP low-level cryptographic subsystem\&. This class provides a fully self-contained, allocation-free, deterministic hash engine based on the original Grøstl specification (SHA-3 finalist)\&. "
+.ti -1c
+.RI "struct \fBHash32\fP"
+.br
+.RI "Represents a 32‑bit hash value produced by a \fBSystemEx\fP hashing algorithm\&. "
+.ti -1c
+.RI "struct \fBHash64\fP"
+.br
+.RI "Represents a 64‑bit hash value produced by a \fBSystemEx\fP hashing algorithm\&. "
+.ti -1c
+.RI "class \fBHashAlgorithmAttribute\fP"
+.br
+.RI "Declares which hashing algorithm a \fRHashable\fP type should use\&. "
+.ti -1c
+.RI "class \fBHashFactory\fP"
+.br
+.RI "Provides factory methods for computing 32‑bit and 64‑bit hashes for objects implementing \fBIHashable<T>\fP\&. "
+.ti -1c
+.RI "interface \fBIHash\fP"
+.br
+.RI "Interface for \fBSystemEx\fP hashing algorithms\&. "
+.ti -1c
+.RI "interface \fBIHashable< T >\fP"
+.br
+.RI "Defines a contract for objects that can be converted into a raw byte representation suitable for hashing, serialization, or low‑level processing\&. "
+.ti -1c
+.RI "class \fBRamakrishnaHash\fP"
+.br
+.RI "Implements the Ramakrishna hash algorithm\&. "
+.ti -1c
+.RI "class \fBWeinbergHash\fP"
+.br
+.RI "Implements the Weinberg hash algorithm\&. "
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

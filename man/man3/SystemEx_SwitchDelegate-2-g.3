@@ -1,0 +1,121 @@
+.TH "SystemEx.SwitchDelegate< TS, T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.SwitchDelegate< TS, T > \- Provides a multi‑branch delegate dispatcher driven by a switch‑condition\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInvoke\fP (T arg)"
+.br
+.RI "Invokes the delegate chain associated with the case selected by the condition function\&. If the selected case has no delegate, nothing happens\&. "
+.ti -1c
+.RI "void \fBSubscribe\fP (Action< IDelegate< T >, T > func, TS _case)"
+.br
+.RI "Subscribes a callback to the delegate chain associated with the given case\&. If the case does not exist yet, it is created\&. "
+.ti -1c
+.RI "\fBSwitchDelegate\fP (Func< T, TS > condition)"
+.br
+.RI "Initializes a new switch‑based delegate dispatcher\&. "
+.ti -1c
+.RI "\fBSwitchDelegate\fP (Func< T, TS > condition, Optional< Pair< Action< IDelegate< T >, T >, TS > > deft_case)"
+.br
+.RI "Initializes a new switch‑based delegate dispatcher\&. "
+.ti -1c
+.RI "void \fBUnSubscribe\fP (Action< IDelegate< T >, T > func, TS _case)"
+.br
+.RI "Removes a callback from the delegate chain associated with the given case\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a multi‑branch delegate dispatcher driven by a switch‑condition\&. 
+
+\fBSwitchDelegate<TS, T>\fP extends the concept of \fRIFDelegate<T>\fP by supporting an arbitrary number of conditional branches\&. Each branch is identified by a case key of type \fITS\fP  and holds its own delegate chain\&. 
+
+.PP
+When \fBInvoke\fP is called, the condition function selects the active case, and the corresponding delegate chain is executed\&. If no delegate is registered for the selected case, nothing is invoked\&. 
+
+.PP
+This type is useful for state‑based dispatching, multi‑mode processing, or any scenario where behavior depends on a discrete selector rather than a boolean condition\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITS\fP The switch key type used to identify delegate branches\&. Must be non‑nullable\&. 
+.br
+\fIT\fP The argument type passed to subscribed delegates\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITS\fP : \fInotnull\fP
+.PP
+Definition at line \fB51\fP of file \fBSwitchDelegate\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.SwitchDelegate< TS, T >\&.Invoke (T arg)"
+
+.PP
+Invokes the delegate chain associated with the case selected by the condition function\&. If the selected case has no delegate, nothing happens\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIarg\fP The argument passed to the selected delegate chain\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB99\fP of file \fBSwitchDelegate\&.cs\fP\&.
+.SS "void SystemEx\&.SwitchDelegate< TS, T >\&.Subscribe (Action< IDelegate< T >, T > func, TS _case)"
+
+.PP
+Subscribes a callback to the delegate chain associated with the given case\&. If the case does not exist yet, it is created\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfunc\fP The callback to subscribe\&.
+.br
+\fI_case\fP The case key identifying the delegate branch\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB86\fP of file \fBSwitchDelegate\&.cs\fP\&.
+.SS "SystemEx\&.SwitchDelegate< TS, T >\&.SwitchDelegate (Func< T, TS > condition)"
+
+.PP
+Initializes a new switch‑based delegate dispatcher\&. 
+.PP
+Definition at line \fB60\fP of file \fBSwitchDelegate\&.cs\fP\&.
+.SS "SystemEx\&.SwitchDelegate< TS, T >\&.SwitchDelegate (Func< T, TS > condition, Optional< Pair< Action< IDelegate< T >, T >, TS > > deft_case)"
+
+.PP
+Initializes a new switch‑based delegate dispatcher\&. 
+.PP
+Definition at line \fB68\fP of file \fBSwitchDelegate\&.cs\fP\&.
+.SS "void SystemEx\&.SwitchDelegate< TS, T >\&.UnSubscribe (Action< IDelegate< T >, T > func, TS _case)"
+
+.PP
+Removes a callback from the delegate chain associated with the given case\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfunc\fP The callback to remove\&.
+.br
+\fI_case\fP The case key identifying the delegate branch\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB116\fP of file \fBSwitchDelegate\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,10 +1,11 @@
 var a01248 =
 [
-    [ "Forward", "da/de0/a01248_a635f2244a32b61f5e13f7c39f7aa76ce.html#a635f2244a32b61f5e13f7c39f7aa76ce", null ],
-    [ "Forward", "da/de0/a01248_a32dc3cdfc0227d0a40f047b15faba8f4.html#a32dc3cdfc0227d0a40f047b15faba8f4", null ],
-    [ "ForwardIterrator", "da/de0/a01248_a3949f7992fdba71bface182b93563166.html#a3949f7992fdba71bface182b93563166", null ],
-    [ "Current", "da/de0/a01248_aded9f0c96559e403e7ab038fae206b5e.html#aded9f0c96559e403e7ab038fae206b5e", null ],
-    [ "Index", "da/de0/a01248_a2f7964fa0e990ba564cd6f300fe2b626.html#a2f7964fa0e990ba564cd6f300fe2b626", null ],
-    [ "IsEnd", "da/de0/a01248_ad761c15e87189d470cfc5dad85edb339.html#ad761c15e87189d470cfc5dad85edb339", null ],
-    [ "IsNext", "da/de0/a01248_a6b96b8879f90945c8bd38441c17dda66.html#a6b96b8879f90945c8bd38441c17dda66", null ]
+    [ "ResultBuilder", "da/de0/a01248_a9ec126b775fc938b4e27561d718378ef.html#a9ec126b775fc938b4e27561d718378ef", null ],
+    [ "ResultBuilder", "da/de0/a01248_aea1f39ac9cf438dd19c4140b6cca8f8d.html#aea1f39ac9cf438dd19c4140b6cca8f8d", null ],
+    [ "Add", "da/de0/a01248_ae269f08ad7ca01326d942d3461420e36.html#ae269f08ad7ca01326d942d3461420e36", null ],
+    [ "Assert", "da/de0/a01248_aded4b6c8522dc99fc8fafd2d57c126ff.html#aded4b6c8522dc99fc8fafd2d57c126ff", null ],
+    [ "Catch", "da/de0/a01248_a25c25c6744475d2791ffae8ddec3b525.html#a25c25c6744475d2791ffae8ddec3b525", null ],
+    [ "ToResult", "da/de0/a01248_adc1ec2888cdcd032c458c35568b00fe7.html#adc1ec2888cdcd032c458c35568b00fe7", null ],
+    [ "Try", "da/de0/a01248_af6cc535c081955832b515f964a62c3fc.html#af6cc535c081955832b515f964a62c3fc", null ],
+    [ "Try", "da/de0/a01248_ae6324d2a5ff2aa93eaa566deab66e011.html#ae6324d2a5ff2aa93eaa566deab66e011", null ]
 ];

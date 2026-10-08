@@ -1,0 +1,349 @@
+.TH "SystemEx.Collections.Generic.Stack< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Stack< T > \- A fixed‑size, backward‑growing stack implementation that supports multiple independent virtual stack layers sharing the same underlying buffer\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "FlexSpan< T > \fBAsFlexSpan\fP (\fBFlexSpanMode\fP mode=\fBFlexSpanMode\&.System\fP)"
+.br
+.RI "Creates a FlexSpan view over the valid portion of this array\&. The span does not copy data; it directly references the internal buffer\&. "
+.ti -1c
+.RI "FlexSpan< T > \fBAsFlexSpan\fP (long start, \fBFlexSpanMode\fP mode=\fBFlexSpanMode\&.System\fP)"
+.br
+.RI "Creates a FlexSpan view starting at the specified offset\&. The span references the internal buffer directly and does not allocate\&. "
+.ti -1c
+.RI "bool \fBPeek\fP (ref T item)"
+.br
+.RI "Retrieves the top element of the main stack without removing it\&. "
+.ti -1c
+.RI "bool \fBPeek\fP (ref T item, uint LayerID)"
+.br
+.RI "Retrieves the top element of the specified layer without removing it\&. "
+.ti -1c
+.RI "bool \fBPop\fP (out T? item)"
+.br
+.RI "Pops an element from the main stack\&. "
+.ti -1c
+.RI "bool \fBPop\fP (out T? item, uint LayerID)"
+.br
+.RI "Pops an element from the specified layer\&. "
+.ti -1c
+.RI "T?[] \fBPopRange\fP (int size, uint LayerID=100)"
+.br
+.RI "Pops a range of elements from either the main stack or a layer\&. "
+.ti -1c
+.RI "bool \fBPush\fP (T element)"
+.br
+.RI "Pushes an element onto the main stack\&. "
+.ti -1c
+.RI "bool \fBPush\fP (T item, uint LayerID)"
+.br
+.RI "Pushes an element onto the specified layer\&. "
+.ti -1c
+.RI "int \fBPushRange\fP (T[] items, uint LayerID=100)"
+.br
+.RI "Pushes a range of elements onto either the main stack or a layer\&. "
+.ti -1c
+.RI "void \fBResetFilter\fP ()"
+.br
+.RI "Resets the main stack boundaries to the full buffer range\&. "
+.ti -1c
+.RI "void \fBSetLayer\fP (uint id, int startLayer, int endLayer, bool enable)"
+.br
+.RI "Configures the boundaries and activation state of a layer\&. "
+.ti -1c
+.RI "void \fBSetLayerOn\fP (uint id, bool enable)"
+.br
+.RI "Enables or disables a specific layer\&. "
+.ti -1c
+.RI "\fBStack\fP (int size)"
+.br
+.RI "Creates a new stack with the specified capacity\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the current pointer of the main stack\&. "
+.ti -1c
+.RI "T[] \fBElements\fP\fR [get]\fP"
+.br
+.RI "Gets the underlying element buffer\&. "
+.ti -1c
+.RI "int \fBEnde\fP\fR [get]\fP"
+.br
+.RI "Gets the global lower boundary of the main stack\&. "
+.ti -1c
+.RI "int \fBEndFilter\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the lower boundary of the main stack\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the main stack is empty\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the main stack is full\&. "
+.ti -1c
+.RI "int \fBStart\fP\fR [get]\fP"
+.br
+.RI "Gets the global upper boundary of the main stack\&. "
+.ti -1c
+.RI "int \fBStartFilter\fP\fR [get]\fP"
+.br
+.RI "Gets the upper boundary of the main stack\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A fixed‑size, backward‑growing stack implementation that supports multiple independent virtual stack layers sharing the same underlying buffer\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of elements stored in the stack\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB68\fP of file \fBStack\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "FlexSpan< T > SystemEx\&.Collections\&.Generic\&.Stack< T >\&.AsFlexSpan (\fBFlexSpanMode\fP mode = \fR\fBFlexSpanMode::System\fP\fP)"
+
+.PP
+Creates a FlexSpan view over the valid portion of this array\&. The span does not copy data; it directly references the internal buffer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImode\fP The indexing mode of the span (System, Reverse, Ring)\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A FlexSpan that views the range [0 \&.\&. m_index)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB174\fP of file \fBStack\&.cs\fP\&.
+.SS "FlexSpan< T > SystemEx\&.Collections\&.Generic\&.Stack< T >\&.AsFlexSpan (long start, \fBFlexSpanMode\fP mode = \fR\fBFlexSpanMode::System\fP\fP)"
+
+.PP
+Creates a FlexSpan view starting at the specified offset\&. The span references the internal buffer directly and does not allocate\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP The starting index inside the internal array\&. 
+.br
+\fImode\fP The indexing mode of the span (System, Reverse, Ring)\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A FlexSpan that views the range [start \&.\&. m_index)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB191\fP of file \fBStack\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Stack< T >\&.Peek (ref T item)"
+
+.PP
+Retrieves the top element of the main stack without removing it\&. 
+.PP
+Definition at line \fB235\fP of file \fBStack\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Stack< T >\&.Peek (ref T item, uint LayerID)"
+
+.PP
+Retrieves the top element of the specified layer without removing it\&. 
+.PP
+Definition at line \fB310\fP of file \fBStack\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Stack< T >\&.Pop (out T? item)"
+
+.PP
+Pops an element from the main stack\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIitem\fP Receives the popped element\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if an element was popped; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB225\fP of file \fBStack\&.cs\fP\&.
+.PP
+Referenced by \fBPopRange()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Stack< T >\&.Pop (out T? item, uint LayerID)"
+
+.PP
+Pops an element from the specified layer\&. 
+.PP
+Definition at line \fB294\fP of file \fBStack\&.cs\fP\&.
+.SS "T?[] SystemEx\&.Collections\&.Generic\&.Stack< T >\&.PopRange (int size, uint LayerID = \fR100\fP)"
+
+.PP
+Pops a range of elements from either the main stack or a layer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP The number of elements to pop\&.
+.br
+\fILayerID\fP The layer index (0–3), or 100 for the main stack\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+An array of popped elements, or \fRnull\fP if invalid\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB271\fP of file \fBStack\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Stack< T >\&.Push (T element)"
+
+.PP
+Pushes an element onto the main stack\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the element was pushed; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB198\fP of file \fBStack\&.cs\fP\&.
+.PP
+Referenced by \fBPushRange()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Stack< T >\&.Push (T item, uint LayerID)"
+
+.PP
+Pushes an element onto the specified layer\&. 
+.PP
+Definition at line \fB208\fP of file \fBStack\&.cs\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.Stack< T >\&.PushRange (T[] items, uint LayerID = \fR100\fP)"
+
+.PP
+Pushes a range of elements onto either the main stack or a layer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIitems\fP The elements to push\&.
+.br
+\fILayerID\fP The layer index (0–3), or 100 for the main stack\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of successfully pushed elements\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB247\fP of file \fBStack\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Stack< T >\&.ResetFilter ()"
+
+.PP
+Resets the main stack boundaries to the full buffer range\&. 
+.PP
+Definition at line \fB138\fP of file \fBStack\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Stack< T >\&.SetLayer (uint id, int startLayer, int endLayer, bool enable)"
+
+.PP
+Configures the boundaries and activation state of a layer\&. 
+.PP
+Definition at line \fB329\fP of file \fBStack\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Stack< T >\&.SetLayerOn (uint id, bool enable)"
+
+.PP
+Enables or disables a specific layer\&. 
+.PP
+Definition at line \fB322\fP of file \fBStack\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Stack< T >\&.Stack (int size)"
+
+.PP
+Creates a new stack with the specified capacity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP The number of elements the stack can hold\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB148\fP of file \fBStack\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Collections\&.Generic\&.Stack< T >\&.Current\fR [get]\fP, \fR [protected]\fP"
+
+.PP
+Gets the current pointer of the main stack\&. 
+.PP
+Definition at line \fB113\fP of file \fBStack\&.cs\fP\&.
+.PP
+Referenced by \fBPeek()\fP, \fBPop()\fP, and \fBPush()\fP\&.
+.SS "T [] SystemEx\&.Collections\&.Generic\&.Stack< T >\&.Elements\fR [get]\fP, \fR [protected]\fP"
+
+.PP
+Gets the underlying element buffer\&. 
+.PP
+Definition at line \fB98\fP of file \fBStack\&.cs\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.Stack< T >\&.Ende\fR [get]\fP, \fR [protected]\fP"
+
+.PP
+Gets the global lower boundary of the main stack\&. 
+.PP
+Definition at line \fB103\fP of file \fBStack\&.cs\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.Stack< T >\&.EndFilter\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the lower boundary of the main stack\&. 
+.PP
+Definition at line \fB129\fP of file \fBStack\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Stack< T >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Indicates whether the main stack is empty\&. 
+.PP
+Definition at line \fB123\fP of file \fBStack\&.cs\fP\&.
+.PP
+Referenced by \fBPeek()\fP, and \fBPop()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Stack< T >\&.IsFull\fR [get]\fP"
+
+.PP
+Indicates whether the main stack is full\&. 
+.PP
+Definition at line \fB118\fP of file \fBStack\&.cs\fP\&.
+.PP
+Referenced by \fBPush()\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.Stack< T >\&.Start\fR [get]\fP, \fR [protected]\fP"
+
+.PP
+Gets the global upper boundary of the main stack\&. 
+.PP
+Definition at line \fB108\fP of file \fBStack\&.cs\fP\&.
+.SS "int SystemEx\&.Collections\&.Generic\&.Stack< T >\&.StartFilter\fR [get]\fP"
+
+.PP
+Gets the upper boundary of the main stack\&. 
+.PP
+Definition at line \fB134\fP of file \fBStack\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

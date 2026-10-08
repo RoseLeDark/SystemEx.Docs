@@ -1,0 +1,206 @@
+.TH "SystemEx.Threading.Epoch" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.Epoch \- Represents a lightweight Read-Copy-Update (RCU) epoch counter used to track active reader sections\&. Each call to \fBAssign\fP enters a reader epoch, and each call to \fBLeave\fP exits it\&. Writers may only proceed when the epoch value indicates that no readers are active\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBAssign\fP ()"
+.br
+.RI "Enters a reader epoch by incrementing the internal counter\&. "
+.ti -1c
+.RI "\fBEpoch\fP ()"
+.br
+.RI "Initializes a new \fBEpoch\fP instance with an initial reader count of zero\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBEpoch\fP other)"
+.br
+.RI "is this equal with other "
+.ti -1c
+.RI "override bool \fBEquals\fP (object obj)"
+.br
+.RI "is this equal with other "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.ti -1c
+.RI "void \fBLeave\fP ()"
+.br
+.RI "Leaves a reader epoch by decrementing the internal counter\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "\fBEpoch\fP as string\&. "
+.ti -1c
+.RI "string \fBToString\fP (IFormatProvider? provider)"
+.br
+.RI "\fBEpoch\fP as string\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBIsAfter\fP (\fBEpoch\fP a, \fBEpoch\fP b)"
+.br
+.RI "Determines whether epoch \fIa\fP  occurs after epoch \fIb\fP  based on their internal counter values\&. "
+.ti -1c
+.RI "static \fBoperator bool\fP (\fBEpoch\fP value)"
+.br
+.RI "Explicitly converts the epoch into a boolean value indicating whether active readers are present\&. "
+.ti -1c
+.RI "static bool \fBoperator false\fP (\fBEpoch\fP value)"
+.br
+.RI "Returns \fRfalse\fP when the epoch indicates no active readers\&. "
+.ti -1c
+.RI "static bool \fBoperator true\fP (\fBEpoch\fP value)"
+.br
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBEpoch\fP a, \fBEpoch\fP b)"
+.br
+.RI "is epoch a not same with b "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBEpoch\fP a, \fBEpoch\fP b)"
+.br
+.RI "is epoch a same with b "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBCanWrite\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether a writer may safely proceed\&. Writers are allowed only when no readers are active\&. "
+.ti -1c
+.RI "bool \fBIsTrue\fP\fR [get]\fP"
+.br
+.RI "Returns \fRtrue\fP when the epoch indicates active readers\&. "
+.ti -1c
+.RI "long \fBValue\fP\fR [get]\fP"
+.br
+.RI "Gets the current epoch value\&. A value greater than zero indicates that one or more readers are active\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a lightweight Read-Copy-Update (RCU) epoch counter used to track active reader sections\&. Each call to \fBAssign\fP enters a reader epoch, and each call to \fBLeave\fP exits it\&. Writers may only proceed when the epoch value indicates that no readers are active\&. 
+.PP
+Definition at line \fB29\fP of file \fBEpoch\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.Epoch\&.Epoch ()"
+
+.PP
+Initializes a new \fBEpoch\fP instance with an initial reader count of zero\&. 
+.PP
+Definition at line \fB53\fP of file \fBEpoch\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, \fBEquals()\fP, \fBIsAfter()\fP, \fBoperator bool()\fP, \fBoperator false()\fP, \fBoperator true()\fP, \fBoperator!=()\fP, and \fBoperator==()\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Threading\&.Epoch\&.Assign ()"
+
+.PP
+Enters a reader epoch by incrementing the internal counter\&. 
+.PP
+Definition at line \fB60\fP of file \fBEpoch\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Epoch\&.Equals (\fBEpoch\fP other)"
+
+.PP
+is this equal with other 
+.PP
+Definition at line \fB89\fP of file \fBEpoch\&.cs\fP\&.
+.SS "override bool SystemEx\&.Threading\&.Epoch\&.Equals (object obj)"
+
+.PP
+is this equal with other 
+.PP
+Definition at line \fB104\fP of file \fBEpoch\&.cs\fP\&.
+.SS "override int SystemEx\&.Threading\&.Epoch\&.GetHashCode ()"
+
+.PP
+Definition at line \fB112\fP of file \fBEpoch\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Epoch\&.IsAfter (\fBEpoch\fP a, \fBEpoch\fP b)\fR [static]\fP"
+
+.PP
+Determines whether epoch \fIa\fP  occurs after epoch \fIb\fP  based on their internal counter values\&. 
+.PP
+Definition at line \fB75\fP of file \fBEpoch\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.Epoch\&.Leave ()"
+
+.PP
+Leaves a reader epoch by decrementing the internal counter\&. 
+.PP
+Definition at line \fB67\fP of file \fBEpoch\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.Epoch\&.operator bool (\fBEpoch\fP value)\fR [explicit]\fP, \fR [static]\fP"
+
+.PP
+Explicitly converts the epoch into a boolean value indicating whether active readers are present\&. 
+.PP
+Definition at line \fB153\fP of file \fBEpoch\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Epoch\&.operator false (\fBEpoch\fP value)\fR [static]\fP"
+
+.PP
+Returns \fRfalse\fP when the epoch indicates no active readers\&. 
+.PP
+Definition at line \fB145\fP of file \fBEpoch\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Epoch\&.operator true (\fBEpoch\fP value)\fR [static]\fP"
+Returns \fRtrue\fP when the epoch indicates active readers\&. 
+.PP
+Definition at line \fB137\fP of file \fBEpoch\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Epoch\&.operator!= (\fBEpoch\fP a, \fBEpoch\fP b)\fR [static]\fP"
+
+.PP
+is epoch a not same with b 
+.PP
+Definition at line \fB130\fP of file \fBEpoch\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Epoch\&.operator== (\fBEpoch\fP a, \fBEpoch\fP b)\fR [static]\fP"
+
+.PP
+is epoch a same with b 
+.PP
+Definition at line \fB123\fP of file \fBEpoch\&.cs\fP\&.
+.SS "override string SystemEx\&.Threading\&.Epoch\&.ToString ()"
+
+.PP
+\fBEpoch\fP as string\&. 
+.PP
+Definition at line \fB97\fP of file \fBEpoch\&.cs\fP\&.
+.SS "string SystemEx\&.Threading\&.Epoch\&.ToString (IFormatProvider? provider)"
+
+.PP
+\fBEpoch\fP as string\&. 
+.PP
+Definition at line \fB82\fP of file \fBEpoch\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.Epoch\&.CanWrite\fR [get]\fP"
+
+.PP
+Gets a value indicating whether a writer may safely proceed\&. Writers are allowed only when no readers are active\&. 
+.PP
+Definition at line \fB42\fP of file \fBEpoch\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.Epoch\&.IsTrue\fR [get]\fP"
+
+.PP
+Returns \fRtrue\fP when the epoch indicates active readers\&. 
+.PP
+Definition at line \fB47\fP of file \fBEpoch\&.cs\fP\&.
+.SS "long SystemEx\&.Threading\&.Epoch\&.Value\fR [get]\fP"
+
+.PP
+Gets the current epoch value\&. A value greater than zero indicates that one or more readers are active\&. 
+.PP
+Definition at line \fB36\fP of file \fBEpoch\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP, \fBoperator==()\fP, \fBToString()\fP, and \fBToString()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

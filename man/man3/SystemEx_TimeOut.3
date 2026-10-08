@@ -1,0 +1,302 @@
+.TH "SystemEx.TimeOut" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.TimeOut \- Represents a timeout value that can be used to specify a duration for operations that may block or wait\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable, IComparable, and \fBSystemEx\&.IComparableEx< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int IComparable< TimeOut >\&. \fBCompareTo\fP (TimeOut other)"
+.br
+.RI "Compares the current \fBTimeOut\fP instance with another \fBTimeOut\fP instance\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (TimeOut other)"
+.br
+.RI "Compares the current \fBTimeOut\fP instance with another \fBTimeOut\fP instance\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Standard override for equality comparison\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (TimeOut other)"
+.br
+.RI "Compares two \fBTimeOut\fP instances for equality\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Returns a hash code for the \fBTimeOut\fP instance\&. "
+.ti -1c
+.RI "\fBTimeOut\fP (int ms)"
+.br
+.RI "Creates a \fBTimeOut\fP instance from a specified number of milliseconds\&. A negative value indicates an infinite timeout\&. "
+.ti -1c
+.RI "\fBTimeOut\fP (TimeSpan timeSpan)"
+.br
+.RI "Creates a \fBTimeOut\fP instance from a specified TimeSpan\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns a string representation of the \fBTimeOut\fP instance\&. "
+.ti -1c
+.RI "string \fBToString\fP (string? format, IFormatProvider? formatProvider)"
+.br
+.RI "Returns a string representation of the \fBTimeOut\fP instance using the specified format and format provider\&. "
+.ti -1c
+.RI "TimeSpan \fBToTimeSpan\fP ()"
+.br
+.RI "Get the underlying TimeSpan value of the timeout\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static implicit \fBoperator TimeOut\fP (int ms)"
+.br
+.RI "Implicitly converts an integer (milliseconds) to a \fBTimeOut\fP instance\&. "
+.ti -1c
+.RI "static implicit \fBoperator TimeOut\fP (TimeSpan timeSpan)"
+.br
+.RI "Implicitly converts a TimeSpan or an integer (milliseconds) to a \fBTimeOut\fP instance\&. "
+.ti -1c
+.RI "static implicit \fBoperator TimeSpan\fP (TimeOut timeout)"
+.br
+.RI "Implicitly converts a \fBTimeOut\fP instance to a TimeSpan\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (TimeOut a, TimeOut b)"
+.br
+.RI "Compares two \fBTimeOut\fP instances for inequality\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (TimeOut a, TimeOut b)"
+.br
+.RI "Compares two \fBTimeOut\fP instances to determine if one is less than the other\&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (TimeOut a, TimeOut b)"
+.br
+.RI "Compares two \fBTimeOut\fP instances to determine if one is less than or equal to the other\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (TimeOut a, TimeOut b)"
+.br
+.RI "Compares two \fBTimeOut\fP instances for equality\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (TimeOut a, TimeOut b)"
+.br
+.RI "Compares two \fBTimeOut\fP instances to determine if one is greater than the other\&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (TimeOut a, TimeOut b)"
+.br
+.RI "Compares two \fBTimeOut\fP instances to determine if one is greater than or equal to the other\&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static readonly TimeOut \fBInfinite\fP = new TimeOut(\-1)"
+.br
+.RI "Represents an infinite timeout, indicating that an operation should wait indefinitely\&. "
+.ti -1c
+.RI "static readonly TimeOut \fBZero\fP = new TimeOut(0)"
+.br
+.RI "Represents a zero timeout, indicating that an operation should not wait at all\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsInfinite\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the timeout is infinite (negative value)\&. "
+.ti -1c
+.RI "bool \fBIsZero\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the timeout is zero (no waiting)\&. "
+.ti -1c
+.RI "int \fBMilliseconds\fP\fR [get]\fP"
+.br
+.RI "Gets the total number of milliseconds represented by the timeout\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a timeout value that can be used to specify a duration for operations that may block or wait\&. 
+.PP
+Definition at line \fB21\fP of file \fBTimeout\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.TimeOut\&.TimeOut ()"
+
+.PP
+Definition at line \fB48\fP of file \fBTimeout\&.cs\fP\&.
+.SS "SystemEx\&.TimeOut\&.TimeOut (TimeSpan timeSpan)"
+
+.PP
+Creates a \fBTimeOut\fP instance from a specified TimeSpan\&. 
+.PP
+Definition at line \fB55\fP of file \fBTimeout\&.cs\fP\&.
+.SS "SystemEx\&.TimeOut\&.TimeOut (int ms)"
+
+.PP
+Creates a \fBTimeOut\fP instance from a specified number of milliseconds\&. A negative value indicates an infinite timeout\&. 
+.PP
+Definition at line \fB63\fP of file \fBTimeout\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int IComparable< TimeOut >\&. SystemEx\&.TimeOut\&.CompareTo (TimeOut other)"
+
+.PP
+Compares the current \fBTimeOut\fP instance with another \fBTimeOut\fP instance\&. 
+.PP
+Definition at line \fB106\fP of file \fBTimeout\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.TimeOut\&.CompareTo (TimeOut other)"
+
+.PP
+Compares the current \fBTimeOut\fP instance with another \fBTimeOut\fP instance\&. 
+.PP
+Definition at line \fB100\fP of file \fBTimeout\&.cs\fP\&.
+.SS "override bool SystemEx\&.TimeOut\&.Equals (object? obj)"
+
+.PP
+Standard override for equality comparison\&. 
+.PP
+Definition at line \fB80\fP of file \fBTimeout\&.cs\fP\&.
+.SS "bool SystemEx\&.TimeOut\&.Equals (TimeOut other)"
+
+.PP
+Compares two \fBTimeOut\fP instances for equality\&. 
+.PP
+Definition at line \fB88\fP of file \fBTimeout\&.cs\fP\&.
+.SS "override int SystemEx\&.TimeOut\&.GetHashCode ()"
+
+.PP
+Returns a hash code for the \fBTimeOut\fP instance\&. 
+.PP
+Definition at line \fB95\fP of file \fBTimeout\&.cs\fP\&.
+.SS "implicit SystemEx\&.TimeOut\&.operator TimeOut (int ms)\fR [static]\fP"
+
+.PP
+Implicitly converts an integer (milliseconds) to a \fBTimeOut\fP instance\&. 
+.PP
+Definition at line \fB118\fP of file \fBTimeout\&.cs\fP\&.
+.SS "implicit SystemEx\&.TimeOut\&.operator TimeOut (TimeSpan timeSpan)\fR [static]\fP"
+
+.PP
+Implicitly converts a TimeSpan or an integer (milliseconds) to a \fBTimeOut\fP instance\&. 
+.PP
+Definition at line \fB113\fP of file \fBTimeout\&.cs\fP\&.
+.SS "implicit SystemEx\&.TimeOut\&.operator TimeSpan (TimeOut timeout)\fR [static]\fP"
+
+.PP
+Implicitly converts a \fBTimeOut\fP instance to a TimeSpan\&. 
+.PP
+Definition at line \fB123\fP of file \fBTimeout\&.cs\fP\&.
+.SS "bool SystemEx\&.TimeOut\&.operator!= (TimeOut a, TimeOut b)\fR [static]\fP"
+
+.PP
+Compares two \fBTimeOut\fP instances for inequality\&. 
+.PP
+Definition at line \fB133\fP of file \fBTimeout\&.cs\fP\&.
+.SS "bool SystemEx\&.TimeOut\&.operator< (TimeOut a, TimeOut b)\fR [static]\fP"
+
+.PP
+Compares two \fBTimeOut\fP instances to determine if one is less than the other\&. 
+.PP
+Definition at line \fB138\fP of file \fBTimeout\&.cs\fP\&.
+.SS "bool SystemEx\&.TimeOut\&.operator<= (TimeOut a, TimeOut b)\fR [static]\fP"
+
+.PP
+Compares two \fBTimeOut\fP instances to determine if one is less than or equal to the other\&. 
+.PP
+Definition at line \fB146\fP of file \fBTimeout\&.cs\fP\&.
+.SS "bool SystemEx\&.TimeOut\&.operator== (TimeOut a, TimeOut b)\fR [static]\fP"
+
+.PP
+Compares two \fBTimeOut\fP instances for equality\&. 
+.PP
+Definition at line \fB128\fP of file \fBTimeout\&.cs\fP\&.
+.SS "bool SystemEx\&.TimeOut\&.operator> (TimeOut a, TimeOut b)\fR [static]\fP"
+
+.PP
+Compares two \fBTimeOut\fP instances to determine if one is greater than the other\&. 
+.PP
+Definition at line \fB142\fP of file \fBTimeout\&.cs\fP\&.
+.SS "bool SystemEx\&.TimeOut\&.operator>= (TimeOut a, TimeOut b)\fR [static]\fP"
+
+.PP
+Compares two \fBTimeOut\fP instances to determine if one is greater than or equal to the other\&. 
+.PP
+Definition at line \fB150\fP of file \fBTimeout\&.cs\fP\&.
+.SS "override string SystemEx\&.TimeOut\&.ToString ()"
+
+.PP
+Returns a string representation of the \fBTimeOut\fP instance\&. 
+.PP
+Definition at line \fB155\fP of file \fBTimeout\&.cs\fP\&.
+.SS "string SystemEx\&.TimeOut\&.ToString (string? format, IFormatProvider? formatProvider)"
+
+.PP
+Returns a string representation of the \fBTimeOut\fP instance using the specified format and format provider\&. 
+.PP
+Definition at line \fB161\fP of file \fBTimeout\&.cs\fP\&.
+.SS "TimeSpan SystemEx\&.TimeOut\&.ToTimeSpan ()"
+
+.PP
+Get the underlying TimeSpan value of the timeout\&. 
+.PP
+Definition at line \fB73\fP of file \fBTimeout\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "readonly TimeOut SystemEx\&.TimeOut\&.Infinite = new TimeOut(\-1)\fR [static]\fP"
+
+.PP
+Represents an infinite timeout, indicating that an operation should wait indefinitely\&. 
+.PP
+Definition at line \fB26\fP of file \fBTimeout\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Threading\&.LightConditionVariable\&.Broadcast()\fP, \fBSystemEx\&.Collections\&.Generic\&.RCUCache\&.Clear()\fP, \fBSystemEx\&.Threading\&.LightConditionVariable\&.Clear()\fP, \fBSystemEx\&.Threading\&.LockedObject< T >\&.Equals()\fP, \fBSystemEx\&.Threading\&.RCUObject< T >\&.Equals()\fP, \fBSystemEx\&.IO\&.RCUStream< TStream >\&.Flush()\fP, \fBSystemEx\&.Threading\&.RCUObject< T >\&.GetHashCode()\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\&.Lock()\fP, \fBSystemEx\&.Rand\&.SeedMixed\&.Mix< T >()\fP, \fBSystemEx\&.Collections\&.Generic\&.RCUCache\&.Seek()\fP, \fBSystemEx\&.IO\&.RCUStream< TStream >\&.Seek()\fP, \fBSystemEx\&.IO\&.RCUStream< TStream >\&.SetLength()\fP, \fBSystemEx\&.Collections\&.Generic\&.RCUCache\&.SetZero()\fP, \fBSystemEx\&.Threading\&.LightConditionVariable\&.Signal()\fP, \fBSystemEx\&.Collections\&.Generic\&.RCUCache\&.ToArray()\fP, \fBSystemEx\&.Collections\&.Generic\&.RCUCache\&.ToArrayEx()\fP, \fBSystemEx\&.Threading\&.RCUObject< T >\&.ToString()\fP, \fBSystemEx\&.Threading\&.LightThread\&.Wait()\fP, \fBSystemEx\&.Collections\&.Generic\&.RCUCache\&.Write()\fP, \fBSystemEx\&.IO\&.RCUStream< TStream >\&.Write()\fP, \fBSystemEx\&.IO\&.RCUStream< TStream >\&.WriteByte()\fP, \fBSystemEx\&.Collections\&.Generic\&.RCUCache\&.WriteRange()\fP, \fBSystemEx\&.Collections\&.Generic\&.RCUCache\&.WriteRange()\fP, and \fBSystemEx\&.Collections\&.Generic\&.RCUCache\&.WriteRange()\fP\&.
+.SS "readonly TimeOut SystemEx\&.TimeOut\&.Zero = new TimeOut(0)\fR [static]\fP"
+
+.PP
+Represents a zero timeout, indicating that an operation should not wait at all\&. 
+.PP
+Definition at line \fB31\fP of file \fBTimeout\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Threading\&.MutexLock\&.Wait()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.TimeOut\&.IsInfinite\fR [get]\fP"
+
+.PP
+Indicates whether the timeout is infinite (negative value)\&. 
+.PP
+Definition at line \fB36\fP of file \fBTimeout\&.cs\fP\&.
+.SS "bool SystemEx\&.TimeOut\&.IsZero\fR [get]\fP"
+
+.PP
+Indicates whether the timeout is zero (no waiting)\&. 
+.PP
+Definition at line \fB41\fP of file \fBTimeout\&.cs\fP\&.
+.SS "int SystemEx\&.TimeOut\&.Milliseconds\fR [get]\fP"
+
+.PP
+Gets the total number of milliseconds represented by the timeout\&. 
+.PP
+Definition at line \fB46\fP of file \fBTimeout\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Threading\&.AtomicLock\&.Lock()\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\&.Lock()\fP, \fBSystemEx\&.Threading\&.Spinlock\&.Lock()\fP, \fBSystemEx\&.Threading\&.LightThread\&.Wait()\fP, and \fBSystemEx\&.Threading\&.MutexLock\&.Wait()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,6 +1,9 @@
 var a01316 =
 [
-    [ "GetEnumerator", "d4/d49/a01316_aed872ec71779d39475b8a4018e4070e5.html#aed872ec71779d39475b8a4018e4070e5", null ],
-    [ "NodeSlice", "d4/d49/a01316_a6637e9ddcc668a80c34809e5ff8c5726.html#a6637e9ddcc668a80c34809e5ff8c5726", null ],
-    [ "End", "d4/d49/a01316_aa40d5519e94bec123b3c7a604a68f111.html#aa40d5519e94bec123b3c7a604a68f111", null ]
+    [ "Clear", "d4/d49/a01316_a13b963912d5c241db7c7a9079fa5b8e8.html#a13b963912d5c241db7c7a9079fa5b8e8", null ],
+    [ "Erase", "d4/d49/a01316_a2f3f5c1c16d5c5b237447b407faf5c3b.html#a2f3f5c1c16d5c5b237447b407faf5c3b", null ],
+    [ "Erase", "d4/d49/a01316_a11816da98e4af2aa85d41f537919625b.html#a11816da98e4af2aa85d41f537919625b", null ],
+    [ "Insert", "d4/d49/a01316_ac52f1a0091d7559386231ef4a69e3719.html#ac52f1a0091d7559386231ef4a69e3719", null ],
+    [ "Insert", "d4/d49/a01316_abd2d7be24a97a81fd99b24cc535a3913.html#abd2d7be24a97a81fd99b24cc535a3913", null ],
+    [ "Replace", "d4/d49/a01316_add1da40627ac40bf9b90f20aa7e76d8f.html#add1da40627ac40bf9b90f20aa7e76d8f", null ]
 ];

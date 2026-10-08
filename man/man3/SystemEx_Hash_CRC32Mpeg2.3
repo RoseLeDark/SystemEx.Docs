@@ -1,0 +1,70 @@
+.TH "SystemEx.Hash.CRC32Mpeg2" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Hash.CRC32Mpeg2 \- Implements the CRC‑32/MPEG‑2 checksum algorithm\&. Polynomial: 0x04C11DB7 (normal), Final XOR = 0\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Hash\&.CRC32\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCRC32Mpeg2\fP ()"
+.br
+.RI "Initializes a new instance of the \fBCRC32Mpeg2\fP class using the standard CRC‑32C polynomial\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Hash\&.CRC32\fP
+.in +1c
+.ti -1c
+.RI "\fBHash32\fP \fBCompute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes a CRC‑32 checksum over the specified input buffer\&. If a non‑zero seed is provided, the computation is performed as a one‑shot operation\&. If the seed is zero, the computation continues from the internal rolling CRC‑32 state\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes a 64‑bit hash value\&. CRC‑32 does not naturally produce 64‑bit output, so this method is not implemented\&. "
+.ti -1c
+.RI "\fBCRC32\fP ()"
+.br
+.RI "Initializes a new instance of the \fBCRC32\fP class and generates the lookup table required for CRC‑32 computation\&. "
+.ti -1c
+.RI "\fBCRC32\fP (uint polynomial)"
+.br
+.RI "Initializes a new instance of the \fBCRC32\fP class and generates the lookup table required for CRC‑32 computation, with custom polynomial\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Properties inherited from \fBSystemEx\&.Hash\&.CRC32\fP
+.in +1c
+.ti -1c
+.RI "uint \fBPolynomial\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the CRC‑32 polynomial used for table generation\&. Changing the polynomial regenerates the lookup table and resets the rolling CRC‑32 state\&. "
+.ti -1c
+.RI "uint \fBRollingState\fP\fR [get]\fP"
+.br
+.RI "Gets the current rolling CRC‑32 state maintained across successive \fBCompute\fP calls\&. This value represents the intermediate checksum after all data processed so far\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implements the CRC‑32/MPEG‑2 checksum algorithm\&. Polynomial: 0x04C11DB7 (normal), Final XOR = 0\&. 
+.PP
+Definition at line \fB221\fP of file \fBCRC32\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Hash\&.CRC32Mpeg2\&.CRC32Mpeg2 ()"
+
+.PP
+Initializes a new instance of the \fBCRC32Mpeg2\fP class using the standard CRC‑32C polynomial\&. 
+.PP
+Definition at line \fB226\fP of file \fBCRC32\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

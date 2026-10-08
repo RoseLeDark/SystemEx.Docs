@@ -1,0 +1,102 @@
+.TH "SystemEx.Runtime.Function< TReturn, TDelegate >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Runtime.Function< TReturn, TDelegate > \- Represents a loaded native module (DLL, SO, or DYLIB)\&. 
+.br
+ A \fBModule\fP encapsulates the operating system handle of the loaded library and provides helper methods for resolving exported functions and unloading the module\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IDisposable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "TReturn? \fBCall\fP (params object[] args)"
+.br
+.RI "Invokes the native function with the specified arguments and returns the result\&. "
+.ti -1c
+.RI "void \fBDispose\fP ()"
+.br
+.ti -1c
+.RI "TDelegate \fBGetDelegate\fP ()"
+.br
+.RI "Gets a managed delegate that wraps the native function pointer\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBDispose\fP (bool disposing)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Gets the name of the function as specified when loading it from the module\&. "
+.ti -1c
+.RI "IntPtr \fBPointer\fP\fR [get]\fP"
+.br
+.RI "Gets the raw pointer to the native function\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a loaded native module (DLL, SO, or DYLIB)\&. 
+.br
+ A \fBModule\fP encapsulates the operating system handle of the loaded library and provides helper methods for resolving exported functions and unloading the module\&. 
+.PP
+\fBType Constraints\fP
+.TP
+\fITDelegate\fP : \fIDelegate\fP
+.PP
+Definition at line \fB60\fP of file \fBModule\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "TReturn? SystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Call (params object[] args)"
+
+.PP
+Invokes the native function with the specified arguments and returns the result\&. 
+.PP
+Definition at line \fB98\fP of file \fBModule\&.cs\fP\&.
+.SS "void SystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Dispose ()"
+
+.PP
+Definition at line \fB108\fP of file \fBModule\&.cs\fP\&.
+.SS "virtual void SystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Dispose (bool disposing)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Definition at line \fB113\fP of file \fBModule\&.cs\fP\&.
+.SS "TDelegate SystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.GetDelegate ()"
+
+.PP
+Gets a managed delegate that wraps the native function pointer\&. 
+.PP
+Definition at line \fB88\fP of file \fBModule\&.cs\fP\&.
+.PP
+Referenced by \fBCall()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "string SystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Name\fR [get]\fP"
+
+.PP
+Gets the name of the function as specified when loading it from the module\&. 
+.PP
+Definition at line \fB69\fP of file \fBModule\&.cs\fP\&.
+.SS "IntPtr SystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Pointer\fR [get]\fP"
+
+.PP
+Gets the raw pointer to the native function\&. 
+.PP
+Definition at line \fB65\fP of file \fBModule\&.cs\fP\&.
+.PP
+Referenced by \fBGetDelegate()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

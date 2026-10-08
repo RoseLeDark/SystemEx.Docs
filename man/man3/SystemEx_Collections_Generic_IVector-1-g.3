@@ -1,0 +1,282 @@
+.TH "SystemEx.Collections.Generic.IVector< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.IVector< T > \- Defines the minimal functionality required for a generic vextzu used by the \fBSystemEx\fP collection framework\&. Implementations provide indexed access, insertion, replacement, removal, and structural duplication of stored elements\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.ILinearContainer< T >\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "IVector< T > \fBDuplicate\fP ()"
+.br
+.RI "Creates a structural duplicate of the container using its copy constructor\&. The returned instance is independent and does not reference the original storage\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long start, long end)"
+.br
+.RI "Removes all elements within the specified range\&. "
+.ti -1c
+.RI "bool \fBErase\fP (T value)"
+.br
+.RI "Removes the first occurrence of the specified value\&. "
+.ti -1c
+.RI "bool \fBGrow\fP ()"
+.br
+.RI "Attempts to increase the container's capacity\&. Implementations may grow automatically or fail depending on their configuration\&. "
+.ti -1c
+.RI "bool \fBInsertRange\fP (long start, T[] entrys)"
+.br
+.RI "Inserts multiple elements starting at the specified index\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (long start, long end, T entry)"
+.br
+.RI "Replaces all elements within the specified range\&. "
+.ti -1c
+.RI "bool \fBReplaceRange\fP (long start, T[] entrys)"
+.br
+.RI "Replaces multiple elements starting at the specified index\&. "
+.ti -1c
+.RI "T[] \fBToNative\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.ILinearContainer< T >\fP
+.in +1c
+.ti -1c
+.RI "bool \fBPushBack\fP (T entry)"
+.br
+.RI "Appends an element to the end of the container\&. Automatically grows the buffer if AutoGrow is enabled\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.IContainer< T >\fP
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clears the container by resetting the logical index\&. "
+.ti -1c
+.RI "bool \fBErase\fP ()"
+.br
+.RI "Removes the last element from the container\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long index)"
+.br
+.RI "Erase overloads are API stubs and always return true\&. Actual removal logic is handled by Remove() methods\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long index, T entry)"
+.br
+.RI "Inserts an element at the specified index, shifting elements to the right\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long start, long end, T entry)"
+.br
+.RI "Fills a range of indices with a single value\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (long index, T entry)"
+.br
+.RI "Replaces the element at the specified index\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP
+.in +1c
+.ti -1c
+.RI "Optional< T > \fBElementAt\fP (long index)"
+.br
+.RI "Returns the element at the specified index\&. "
+.ti -1c
+.RI "Type \fBGetElementType\fP ()"
+.br
+.RI "Returns the runtime type of the stored elements\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Properties inherited from \fBSystemEx\&.Collections\&.Generic\&.IReadOnlyContainer< T >\fP
+.in +1c
+.ti -1c
+.RI "Optional< T > \fBBack\fP\fR [get]\fP"
+.br
+.RI "Gets the Last element of the container\&. "
+.ti -1c
+.RI "long \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements currently stored in the container\&. "
+.ti -1c
+.RI "Optional< T > \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the current logical position\&. The meaning of the current position is implementation‑defined\&. "
+.ti -1c
+.RI "Optional< T > \fBFront\fP\fR [get]\fP"
+.br
+.RI "Gets the first element of the container\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the container contains no elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the container is full\&. "
+.ti -1c
+.RI "long \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the total capacity of the container, including unused slots\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines the minimal functionality required for a generic vextzu used by the \fBSystemEx\fP collection framework\&. Implementations provide indexed access, insertion, replacement, removal, and structural duplication of stored elements\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The element type stored in the container\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB26\fP of file \fBIVector\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "IVector< T > SystemEx\&.Collections\&.Generic\&.IVector< T >\&.Duplicate ()"
+
+.PP
+Creates a structural duplicate of the container using its copy constructor\&. The returned instance is independent and does not reference the original storage\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A new \fBIVector<T>\fP instance containing the same elements as the original container\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Collections\&.Generic\&.VectorSet< T, TContainer >\&.GetSorted()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.IVector< T >\&.Erase (long start, long end)"
+
+.PP
+Removes all elements within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP The start index of the range\&.
+.br
+\fIend\fP The end index of the range\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the range was removed; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.IVector< T >\&.Erase (T value)"
+
+.PP
+Removes the first occurrence of the specified value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP The value to remove\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the value was found and removed; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.IVector< T >\&.Grow ()"
+
+.PP
+Attempts to increase the container's capacity\&. Implementations may grow automatically or fail depending on their configuration\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if the container grew; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.IVector< T >\&.InsertRange (long start, T[] entrys)"
+
+.PP
+Inserts multiple elements starting at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP The insertion index\&.
+.br
+\fIentrys\fP The elements to insert\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the elements were inserted; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.IVector< T >\&.Replace (long start, long end, T entry)"
+
+.PP
+Replaces all elements within the specified range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP The start index of the range\&.
+.br
+\fIend\fP The end index of the range\&.
+.br
+\fIentry\fP The replacement element\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the range was replaced; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.IVector< T >\&.ReplaceRange (long start, T[] entrys)"
+
+.PP
+Replaces multiple elements starting at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstart\fP The start index\&.
+.br
+\fIentrys\fP The replacement elements\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the elements were replaced; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+.SS "T[] SystemEx\&.Collections\&.Generic\&.IVector< T >\&.ToNative ()"
+
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.FixedVector< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Vector< T >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

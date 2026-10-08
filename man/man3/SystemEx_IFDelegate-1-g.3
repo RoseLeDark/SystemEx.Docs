@@ -1,0 +1,135 @@
+.TH "SystemEx.IFDelegate< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.IFDelegate< T > \- Represents a conditional delegate dispatcher that routes invocation to one of two delegate branches based on a boolean condition\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clears both the \fRthen\fP and \fRelse\fP delegate branches\&. "
+.ti -1c
+.RI "\fBIFDelegate\fP (Func< T, bool > condition, IDelegate< T > thenDelegate, IDelegate< T > elseDelegate)"
+.br
+.RI "Initializes a new conditional delegate dispatcher\&. "
+.ti -1c
+.RI "void \fBInvoke\fP (T arg)"
+.br
+.RI "Invokes the appropriate delegate branch based on the condition\&. "
+.ti -1c
+.RI "void \fBSubscribe\fP (Action< IDelegate< T >, T > func, bool then)"
+.br
+.RI "Subscribes a callback function to either the \fRthen\fP or \fRelse\fP branch\&. "
+.ti -1c
+.RI "void \fBUnSubscribe\fP (Action< IDelegate< T >, T > func, bool then)"
+.br
+.RI "Removes a callback function from either the \fRthen\fP or \fRelse\fP branch\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBAddToThen\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets a value indicating whether new subscriptions should be added to the \fRthen\fP branch by default\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a conditional delegate dispatcher that routes invocation to one of two delegate branches based on a boolean condition\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The argument type passed to the delegates\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB28\fP of file \fBIFDelegate\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.IFDelegate< T >\&.Clear ()"
+
+.PP
+Clears both the \fRthen\fP and \fRelse\fP delegate branches\&. 
+.PP
+Definition at line \fB115\fP of file \fBIFDelegate\&.cs\fP\&.
+.SS "SystemEx\&.IFDelegate< T >\&.IFDelegate (Func< T, bool > condition, IDelegate< T > thenDelegate, IDelegate< T > elseDelegate)"
+
+.PP
+Initializes a new conditional delegate dispatcher\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcondition\fP A boolean function that determines which delegate branch is invoked\&. 
+.br
+\fIthenDelegate\fP The delegate invoked when the condition evaluates to \fRtrue\fP\&. 
+.br
+\fIelseDelegate\fP The delegate invoked when the condition evaluates to \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB62\fP of file \fBIFDelegate\&.cs\fP\&.
+.SS "void SystemEx\&.IFDelegate< T >\&.Invoke (T arg)"
+
+.PP
+Invokes the appropriate delegate branch based on the condition\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIarg\fP The argument passed to the selected delegate\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB90\fP of file \fBIFDelegate\&.cs\fP\&.
+.SS "void SystemEx\&.IFDelegate< T >\&.Subscribe (Action< IDelegate< T >, T > func, bool then)"
+
+.PP
+Subscribes a callback function to either the \fRthen\fP or \fRelse\fP branch\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfunc\fP The callback function to subscribe\&.
+.br
+\fIthen\fP If \fRtrue\fP, the callback is added to the \fRthen\fP branch; otherwise it is added to the \fRelse\fP branch\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB79\fP of file \fBIFDelegate\&.cs\fP\&.
+.SS "void SystemEx\&.IFDelegate< T >\&.UnSubscribe (Action< IDelegate< T >, T > func, bool then)"
+
+.PP
+Removes a callback function from either the \fRthen\fP or \fRelse\fP branch\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfunc\fP The callback function to remove\&.
+.br
+\fIthen\fP If \fRtrue\fP, the callback is removed from the \fRthen\fP branch; otherwise it is removed from the \fRelse\fP branch\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB105\fP of file \fBIFDelegate\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.IFDelegate< T >\&.AddToThen\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets a value indicating whether new subscriptions should be added to the \fRthen\fP branch by default\&. 
+.PP
+Definition at line \fB48\fP of file \fBIFDelegate\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

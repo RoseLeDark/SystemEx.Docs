@@ -1,0 +1,179 @@
+.TH "AlgorithmsCompute" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AlgorithmsCompute \- AlgorithmsCompute
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSystemEx\&.Algorithms\&.Compute\&.CosineDistanceF\fP"
+.br
+.RI "Implements cosine similarity for \fBICVector\fP instances\&. 
+.br
+ Returns a normalized similarity score in the range [-1, 1]\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Algorithms\&.Compute\&.ICDistance\fP"
+.br
+.RI "Represents a computational distance metric operating on \fBICVector\fP instances\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Algorithms\&.Compute\&.IClassifier< T >\fP"
+.br
+.RI "Represents a simple classifier that maps an input value to a \fBTriple\fP decision (True, False, Nin)\&. 
+.br
+ Used for lightweight rule‑based or threshold‑based classification\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Algorithms\&.Compute\&.ICVector\fP"
+.br
+.RI "Represents a read‑only computational vector with a fixed dimension\&. 
+.br
+ Provides indexed access to floating‑point components\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Algorithms\&.Compute\&.IModel< TInput, TOutput >\fP"
+.br
+.RI "Represents a generic computational model that transforms an input value into an output value\&. 
+.br
+ Used for lightweight algorithmic or mathematical models within the \fBCompute\fP namespace\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Algorithms\&.Compute\&.ISimilarity< T >\fP"
+.br
+.RI "Represents a similarity evaluator that determines whether two values are similar, dissimilar, or indeterminate using a \fBTriple\fP decision\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Algorithms\&.Compute\&.IThreshold\fP"
+.br
+.RI "Represents a threshold evaluator that maps a floating‑point value to a \fBTriple\fP decision based on configured limits\&. "
+.ti -1c
+.RI "interface \fBSystemEx\&.Algorithms\&.Compute\&.ITokenizer\fP"
+.br
+.RI "Represents a tokenizer capable of splitting text into tokens\&. 
+.br
+ (Currently not implemented\&.)\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Algorithms\&.Compute\&.ThresholdClassifier\fP"
+.br
+.RI "Implements a threshold‑based classifier using two boundaries: "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTriple\fP \fBSystemEx\&.Algorithms\&.Compute\&.IClassifier< T >\&.Classify\fP (T input)"
+.br
+.RI "Classifies the given input and returns a three‑state decision\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Algorithms\&.Compute\&.CosineDistanceF\&.Compute\fP (\fBICVector\fP a, \fBICVector\fP b)"
+.br
+.RI "Computes the cosine similarity between two vectors\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Algorithms\&.Compute\&.ICDistance\&.Compute\fP (\fBICVector\fP a, \fBICVector\fP b)"
+.br
+.RI "Computes the distance (or similarity score) between two vectors\&. "
+.ti -1c
+.RI "TOutput \fBSystemEx\&.Algorithms\&.Compute\&.IModel< TInput, TOutput >\&.Evaluate\fP (TInput input)"
+.br
+.RI "Evaluates the model using the specified input and returns the result\&. "
+.ti -1c
+.RI "\fBTriple\fP \fBSystemEx\&.Algorithms\&.Compute\&.IThreshold\&.Evaluate\fP (float value)"
+.br
+.RI "Evaluates the given value and returns a threshold‑based decision\&. "
+.ti -1c
+.RI "\fBTriple\fP \fBSystemEx\&.Algorithms\&.Compute\&.ThresholdClassifier\&.Evaluate\fP (float value)"
+.br
+.RI "Evaluates the given value and returns a three‑state threshold decision\&. "
+.ti -1c
+.RI "\fBTriple\fP \fBSystemEx\&.Algorithms\&.Compute\&.ISimilarity< T >\&.IsSimilar\fP (T a, T b)"
+.br
+.RI "Evaluates the similarity between two values\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Algorithms\&.Compute\&.ThresholdClassifier\&.ThresholdClassifier\fP (float trueThreshold, float falseThreshold)"
+.br
+.RI "Initializes a new threshold classifier with the specified true and false limits\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBSystemEx\&.Algorithms\&.Compute\&.ICVector\&.Dimension\fP\fR [get]\fP"
+.br
+.RI "Gets the number of dimensions of the vector\&. "
+.ti -1c
+.RI "float \fBSystemEx\&.Algorithms\&.Compute\&.ICVector\&.this[int index]\fP\fR [get]\fP"
+.br
+.RI "Gets the component value at the specified index\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Class Documentation"
+.PP 
+.SH "interface SystemEx::Algorithms::Compute::ITokenizer"
+.PP 
+Represents a tokenizer capable of splitting text into tokens\&. 
+.br
+ (Currently not implemented\&.)\&. 
+.PP
+Definition at line \fB26\fP of file \fBITokenizer\&.cs\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBTriple\fP SystemEx\&.Algorithms\&.Compute\&.IClassifier< T >\&.Classify (T input)"
+
+.PP
+Classifies the given input and returns a three‑state decision\&. 
+.SS "float SystemEx\&.Algorithms\&.Compute\&.CosineDistanceF\&.Compute (\fBICVector\fP a, \fBICVector\fP b)"
+
+.PP
+Computes the cosine similarity between two vectors\&. 
+.PP
+Definition at line \fB32\fP of file \fBCosineDistance\&.cs\fP\&.
+.SS "float SystemEx\&.Algorithms\&.Compute\&.ICDistance\&.Compute (\fBICVector\fP a, \fBICVector\fP b)"
+
+.PP
+Computes the distance (or similarity score) between two vectors\&. 
+.SS "TOutput SystemEx\&.Algorithms\&.Compute\&.IModel< TInput, TOutput >\&.Evaluate (TInput input)"
+
+.PP
+Evaluates the model using the specified input and returns the result\&. 
+.SS "\fBTriple\fP SystemEx\&.Algorithms\&.Compute\&.IThreshold\&.Evaluate (float value)"
+
+.PP
+Evaluates the given value and returns a threshold‑based decision\&. 
+.PP
+Implemented in \fBSystemEx\&.Algorithms\&.Compute\&.ThresholdClassifier\fP\&.
+.SS "\fBTriple\fP SystemEx\&.Algorithms\&.Compute\&.ThresholdClassifier\&.Evaluate (float value)"
+
+.PP
+Evaluates the given value and returns a three‑state threshold decision\&. 
+.PP
+Implements \fBSystemEx\&.Algorithms\&.Compute\&.IThreshold\fP\&.
+.PP
+Definition at line \fB46\fP of file \fBThresholdClassifier\&.cs\fP\&.
+.SS "\fBTriple\fP SystemEx\&.Algorithms\&.Compute\&.ISimilarity< T >\&.IsSimilar (T a, T b)"
+
+.PP
+Evaluates the similarity between two values\&. 
+.SS "SystemEx\&.Algorithms\&.Compute\&.ThresholdClassifier\&.ThresholdClassifier (float trueThreshold, float falseThreshold)"
+
+.PP
+Initializes a new threshold classifier with the specified true and false limits\&. 
+.PP
+Definition at line \fB39\fP of file \fBThresholdClassifier\&.cs\fP\&.
+.SH "Properties"
+.PP 
+.SS "int SystemEx\&.Algorithms\&.Compute\&.ICVector\&.Dimension\fR [get]\fP"
+
+.PP
+Gets the number of dimensions of the vector\&. 
+.PP
+Definition at line \fB35\fP of file \fBICVector \&.cs\fP\&.
+.SS "float SystemEx\&.Algorithms\&.Compute\&.ICVector\&.this[int index]\fR [get]\fP"
+
+.PP
+Gets the component value at the specified index\&. 
+.PP
+Definition at line \fB40\fP of file \fBICVector \&.cs\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

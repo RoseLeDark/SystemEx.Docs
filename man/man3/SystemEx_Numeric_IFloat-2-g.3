@@ -1,0 +1,523 @@
+.TH "SystemEx.Numeric.IFloat< TSelf, TBias >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.IFloat< TSelf, TBias > \- Defines the structural layout and behavioral contract of a custom floating‑point format\&. Implementations describe how a binary floating‑point number is encoded into sign, exponent, and mantissa fields, including exponent bias, hidden bit rules, and total bit width\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP, IEquatable, IComparable, IComparable, \fBSystemEx\&.IComparableEx< T >\fP, \fBSystemEx\&.Hash\&.IHashable< T >\fP, and \fBSystemEx\&.IByteSerializable< TSelf >\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.IBigFloat< TSelf >\fP, \fBSystemEx\&.Numeric\&.ICDouble< TSelf >\fP, \fBSystemEx\&.Numeric\&.ICFloat< TSelf >\fP, \fBSystemEx\&.Numeric\&.ICQuad< TSelf >\fP, \fBSystemEx\&.Numeric\&.IFP8< TSelf >\fP, \fBSystemEx\&.Numeric\&.IHalf< TSelf >\fP, and \fBSystemEx\&.Numeric\&.IMini< TSelf >\fP\&.
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static TSelf \fBAbs\fP (TSelf value)"
+.br
+.RI "Returns the absolute value of the given floating‑point number\&. "
+.ti -1c
+.RI "static TSelf \fBAdd\fP (TSelf a, TSelf b)"
+.br
+.RI "Adds two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBCeil\fP (TSelf value)"
+.br
+.RI "Returns the smallest integer greater than or equal to the value\&. "
+.ti -1c
+.RI "static TSelf \fBClamp\fP (TSelf x, TSelf min, TSelf max)"
+.br
+.RI "Clamps the value to the inclusive range [min, max]\&. "
+.ti -1c
+.RI "static TSelf \fBDiv\fP (TSelf a, TSelf b)"
+.br
+.RI "Divides one floating‑point value by another\&. "
+.ti -1c
+.RI "static TSelf \fBFloor\fP (TSelf value)"
+.br
+.RI "Returns the largest integer less than or equal to the value\&. "
+.ti -1c
+.RI "static bool \fBIsFinite\fP (TSelf value)"
+.br
+.RI "Determines whether the value is finite (not NaN or infinity)\&. "
+.ti -1c
+.RI "static bool \fBIsInfinity\fP (TSelf value)"
+.br
+.RI "Determines whether the value is positive or negative infinity\&. "
+.ti -1c
+.RI "static bool \fBIsInteger\fP (TSelf value)"
+.br
+.RI "Determines whether the value represents an integer (mantissa zero)\&. "
+.ti -1c
+.RI "static bool \fBIsNaN\fP (TSelf value)"
+.br
+.RI "Determines whether the value is a NaN (not‑a‑number)\&. "
+.ti -1c
+.RI "static bool \fBIsNegative\fP (TSelf value)"
+.br
+.RI "Determines whether the value is negative\&. "
+.ti -1c
+.RI "static bool \fBIsNormal\fP (TSelf value)"
+.br
+.RI "Determines whether the value is a normalized floating‑point number\&. "
+.ti -1c
+.RI "static bool \fBIsSubnormal\fP (TSelf value)"
+.br
+.RI "Determines whether the value is subnormal (exponent field zero but mantissa non‑zero)\&. "
+.ti -1c
+.RI "static bool \fBIsZero\fP (TSelf value)"
+.br
+.RI "Determines whether the value is zero (positive or negative)\&. "
+.ti -1c
+.RI "static TSelf \fBMax\fP (TSelf a, TSelf b)"
+.br
+.RI "Returns the larger of two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBMin\fP (TSelf a, TSelf b)"
+.br
+.RI "Returns the smaller of two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBMul\fP (TSelf a, TSelf b)"
+.br
+.RI "Multiplies two floating‑point values\&. "
+.ti -1c
+.RI "static TSelf \fBNegate\fP (TSelf value)"
+.br
+.RI "Returns the negation of the given floating‑point number\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether two floating‑point values are not equal\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is strictly less than \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is less than or equal to \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether two floating‑point values are equal\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is strictly greater than \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (TSelf a, TSelf b)"
+.br
+.RI "Determines whether \fIa\fP  is greater than or equal to \fIb\fP \&. "
+.ti -1c
+.RI "static TSelf \fBSignum\fP (TSelf value)"
+.br
+.RI "Returns the sign of the value: −1, 0, or +1\&. "
+.ti -1c
+.RI "static TSelf \fBTrunc\fP (TSelf value)"
+.br
+.RI "Truncates the fractional part of the value\&. "
+.in -1c
+
+Static Public Member Functions inherited from \fBSystemEx\&.IByteSerializable< TSelf >\fP
+.in +1c
+.ti -1c
+.RI "static TSelf \fBFromBytes\fP (byte[] bytes, long offset, \fBEndian\fP endian)"
+.br
+.RI "Creates an instance of \fITSelf\fP  from a byte array\&. The method reads the encoded representation starting at the specified \fIoffset\fP  using the given \fIendian\fP  order\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "static TSelf \fBE\fP\fR [get]\fP"
+.br
+.RI "Represents Euler’s number \fRe\fP\&. "
+.ti -1c
+.RI "static TSelf \fBEpsilon\fP\fR [get]\fP"
+.br
+.RI "Represents the smallest positive increment representable by the format\&. "
+.ti -1c
+.RI "static TSelf \fBMaxValue\fP\fR [get]\fP"
+.br
+.RI "Largest representable positive value\&. "
+.ti -1c
+.RI "static TSelf \fBMinValue\fP\fR [get]\fP"
+.br
+.RI "Smallest representable negative value\&. "
+.ti -1c
+.RI "static TSelf \fBNaN\fP\fR [get]\fP"
+.br
+.RI "Represents a quiet NaN value\&. "
+.ti -1c
+.RI "static TSelf \fBNaN2\fP\fR [get]\fP"
+.br
+.RI "Represents an alternative NaN encoding (implementation‑specific)\&. "
+.ti -1c
+.RI "static TSelf \fBNegativeInfinity\fP\fR [get]\fP"
+.br
+.RI "Represents negative infinity\&. "
+.ti -1c
+.RI "static TSelf \fBNegativeOne\fP\fR [get]\fP"
+.br
+.RI "Represents the floating‑point value negative one\&. "
+.ti -1c
+.RI "static TSelf \fBNegativeZero\fP\fR [get]\fP"
+.br
+.RI "Represents negative zero (sign bit set, exponent and mantissa zero)\&. "
+.ti -1c
+.RI "static TSelf \fBOne\fP\fR [get]\fP"
+.br
+.RI "Represents the floating‑point value one\&. "
+.ti -1c
+.RI "static TSelf \fBPi\fP\fR [get]\fP"
+.br
+.RI "Represents π\&. "
+.ti -1c
+.RI "static TSelf \fBPositiveInfinity\fP\fR [get]\fP"
+.br
+.RI "Represents positive infinity\&. "
+.ti -1c
+.RI "static TSelf \fBTau\fP\fR [get]\fP"
+.br
+.RI "Represents τ = 2π\&. "
+.ti -1c
+.RI "static TSelf \fBZero\fP\fR [get]\fP"
+.br
+.RI "Represents the floating‑point value zero\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Numeric\&.IFloat< TBias >\fP
+.in +1c
+.ti -1c
+.RI "TBias \fBExponent\fP\fR [get]\fP"
+.br
+.RI "Gets the exponent field as stored in the encoded representation\&. "
+.ti -1c
+.RI "TBias \fBExponentBias\fP\fR [get]\fP"
+.br
+.RI "Exponent bias applied to the exponent field\&. Defines the offset used when converting between encoded exponent and real exponent\&. "
+.ti -1c
+.RI "TBias \fBExponentBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the exponent field\&. "
+.ti -1c
+.RI "TBias \fBHiddenBit\fP\fR [get]\fP"
+.br
+.RI "Gets the hidden bit (implicit leading mantissa bit)\&. For IEEE‑like formats this is typically \fR1\fP for normalized numbers and \fR0\fP for subnormals\&. "
+.ti -1c
+.RI "TBias \fBMantissa\fP\fR [get]\fP"
+.br
+.RI "Gets the mantissa (fraction) field as stored in the encoded representation\&. "
+.ti -1c
+.RI "TBias \fBMantissaBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the mantissa (fraction) field\&. "
+.ti -1c
+.RI "bool \fBSign\fP\fR [get]\fP"
+.br
+.RI "Gets the sign bit\&. \fRtrue\fP indicates a negative value\&. "
+.ti -1c
+.RI "TBias \fBSignBits\fP\fR [get]\fP"
+.br
+.RI "Number of bits used for the sign field\&. "
+.ti -1c
+.RI "TBias \fBToBase\fP\fR [get]\fP"
+.br
+.RI "Gets the underlying raw storage type used for bit extraction\&. Implementations typically return \fRushort\fP or \fRuint\fP depending on the float width\&. "
+.ti -1c
+.RI "TBias \fBTotalBits\fP\fR [get]\fP"
+.br
+.RI "Total number of bits in the floating‑point representation\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Hash\&.IHashable< T >\fP
+.in +1c
+.ti -1c
+.RI "FixedVector< byte > \fBToBytes\fP ()"
+.br
+.RI "Converts this instance into a deterministic byte array\&. The returned data is used as input for hashing algorithms\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IByteSerializable< TSelf >\fP
+.in +1c
+.ti -1c
+.RI "byte[] \fBToBytes\fP (\fBEndian\fP endian)"
+.br
+.RI "Encodes the current instance into a newly allocated byte array using the specified \fIendian\fP  order\&. "
+.ti -1c
+.RI "void \fBToBytes\fP (ref byte[] destination, long offset, \fBEndian\fP endian)"
+.br
+.RI "Writes the binary representation of the current instance into an existing \fIdestination\fP  buffer at the specified \fIoffset\fP \&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines the structural layout and behavioral contract of a custom floating‑point format\&. Implementations describe how a binary floating‑point number is encoded into sign, exponent, and mantissa fields, including exponent bias, hidden bit rules, and total bit width\&. 
+
+\fBIFloat<TSelf, TBias>\fP abstracts the representation of non‑IEEE floating formats such as \fR\fBHalf16\fP\fP, \fR\fBHalf16b\fP\fP, \fRBFloat16\fP, or any other custom 16‑bit or N‑bit float\&. It provides: 
+
+.PP
+.PD 0
+.IP "\(bu" 2
+Structural metadata (bit counts, bias, hidden bit)\&.   
+.IP "\(bu" 2
+Field extraction (sign, exponent, mantissa)\&.   
+.IP "\(bu" 2
+Classification (zero, infinity, NaN, subnormal, normal, integer)\&.   
+.IP "\(bu" 2
+Arithmetic operations (add, multiply, divide, unary ops)\&.   
+.IP "\(bu" 2
+Comparison operators and ordering semantics\&.   
+.IP "\(bu" 2
+Serialization support via \fBIByteSerializable<TSelf>\fP\&.   
+.PP
+
+.PP
+Implementations must be \fRstruct\fP types and self‑referential (\fITSelf\fP )\&. This ensures value‑type semantics and prevents boxing during arithmetic or comparison operations\&. 
+.PP
+\fBType Constraints\fP
+.TP
+\fITSelf\fP : \fIstruct\fP
+.TP
+\fITSelf\fP : \fI\fBIFloat\fP\fP
+.TP
+\fITSelf\fP : \fITSelf\fP
+.TP
+\fITSelf\fP : \fITBias\fP
+.PP
+Definition at line \fB133\fP of file \fBIFloat\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Abs (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Returns the absolute value of the given floating‑point number\&. 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Add (TSelf a, TSelf b)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Adds two floating‑point values\&. 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Ceil (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Returns the smallest integer greater than or equal to the value\&. 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Clamp (TSelf x, TSelf min, TSelf max)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Clamps the value to the inclusive range [min, max]\&. 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Div (TSelf a, TSelf b)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Divides one floating‑point value by another\&. 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Floor (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Returns the largest integer less than or equal to the value\&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.IsFinite (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether the value is finite (not NaN or infinity)\&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.IsInfinity (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether the value is positive or negative infinity\&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.IsInteger (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether the value represents an integer (mantissa zero)\&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.IsNaN (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether the value is a NaN (not‑a‑number)\&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.IsNegative (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether the value is negative\&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.IsNormal (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether the value is a normalized floating‑point number\&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.IsSubnormal (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether the value is subnormal (exponent field zero but mantissa non‑zero)\&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.IsZero (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether the value is zero (positive or negative)\&. 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Max (TSelf a, TSelf b)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Returns the larger of two floating‑point values\&. 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Min (TSelf a, TSelf b)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Returns the smaller of two floating‑point values\&. 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Mul (TSelf a, TSelf b)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Multiplies two floating‑point values\&. 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Negate (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Returns the negation of the given floating‑point number\&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.operator!= (TSelf a, TSelf b)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether two floating‑point values are not equal\&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.operator< (TSelf a, TSelf b)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether \fIa\fP  is strictly less than \fIb\fP \&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.operator<= (TSelf a, TSelf b)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether \fIa\fP  is less than or equal to \fIb\fP \&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.operator== (TSelf a, TSelf b)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether two floating‑point values are equal\&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.operator> (TSelf a, TSelf b)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether \fIa\fP  is strictly greater than \fIb\fP \&. 
+.SS "bool \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.operator>= (TSelf a, TSelf b)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Determines whether \fIa\fP  is greater than or equal to \fIb\fP \&. 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Signum (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Returns the sign of the value: −1, 0, or +1\&. 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Trunc (TSelf value)\fR [static]\fP, \fR [abstract]\fP"
+
+.PP
+Truncates the fractional part of the value\&. 
+.SH "Property Documentation"
+.PP 
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.E\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Represents Euler’s number \fRe\fP\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB188\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Epsilon\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Represents the smallest positive increment representable by the format\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB183\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.MaxValue\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Largest representable positive value\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB208\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.MinValue\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Smallest representable negative value\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB203\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.NaN\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Represents a quiet NaN value\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB173\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.NaN2\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Represents an alternative NaN encoding (implementation‑specific)\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB178\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.NegativeInfinity\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Represents negative infinity\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB168\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.NegativeOne\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Represents the floating‑point value negative one\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB153\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.NegativeZero\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Represents negative zero (sign bit set, exponent and mantissa zero)\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB158\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.One\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Represents the floating‑point value one\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB148\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Pi\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Represents π\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB198\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.PositiveInfinity\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Represents positive infinity\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB163\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Tau\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Represents τ = 2π\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB193\fP of file \fBIFloat\&.cs\fP\&.
+.SS "TSelf \fBSystemEx\&.Numeric\&.IFloat\fP< TSelf, TBias >\&.Zero\fR [static]\fP, \fR [get]\fP, \fR [abstract]\fP"
+
+.PP
+Represents the floating‑point value zero\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Float32\fP, \fBSystemEx\&.Numeric\&.Float64\fP, \fBSystemEx\&.Numeric\&.FloatE4M3\fP, \fBSystemEx\&.Numeric\&.FloatE5M2\fP, \fBSystemEx\&.Numeric\&.FloatUE4M3\fP, \fBSystemEx\&.Numeric\&.FloatUE5M2\fP, \fBSystemEx\&.Numeric\&.Half16\fP, and \fBSystemEx\&.Numeric\&.Half16b\fP\&.
+.PP
+Definition at line \fB143\fP of file \fBIFloat\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

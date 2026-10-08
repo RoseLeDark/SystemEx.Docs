@@ -1,0 +1,343 @@
+.TH "SystemEx.FlexSpan< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.FlexSpan< T > \- A lightweight view over an array supporting System, Reverse, and Ring (circular) indexing\&. FlexSpan does not allocate and provides ref-return access to elements\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBEnumerator\fP"
+.br
+.RI "\fBEnumerator\fP for FlexSpan\&. Supports forward, reverse, and ring traversal\&. "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBCopyTo\fP (\fBFlexSpan\fP< T > destination)"
+.br
+.RI "Copies this FlexSpan's view into another FlexSpan\&. "
+.ti -1c
+.RI "void IDisposable\&. \fBDispose\fP ()"
+.br
+.RI "No resources to dispose\&. "
+.ti -1c
+.RI "ref T \fBElementAt\fP (long index)"
+.br
+.RI "Returns a reference to the element at the given index according to the current mode\&. System = forward indexing Reverse = reverse indexing Ring = circular indexing (wrap-around)\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "void \fBFill\fP (T value)"
+.br
+.RI "Fills the view with a given value\&. "
+.ti -1c
+.RI "\fBFlexSpan\fP (ref T[] array, long start, long length, \fBFlexSpanMode\fP mode)"
+.br
+.RI "Creates a FlexSpan over an array with a defined view length\&. "
+.ti -1c
+.RI "\fBFlexSpan\fP (ref T[] reference, long start, \fBFlexSpanMode\fP mode)"
+.br
+.RI "Creates a FlexSpan over an array starting at a given index\&. "
+.ti -1c
+.RI "\fBEnumerator\fP \fBGetEnumerator\fP ()"
+.br
+.RI "Returns an enumerator for the span\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.ti -1c
+.RI "bool \fBMoveNext\fP ()"
+.br
+.RI "Moves to the next element in the span\&. "
+.ti -1c
+.RI "void IEnumerator\&. \fBReset\fP ()"
+.br
+.RI "Resets the enumerator to the initial position\&. Ring mode resets to index 0; other modes reset to -1\&. "
+.ti -1c
+.RI "\fBFlexSpan\fP< T > \fBSlice\fP (int start, \fBFlexSpanMode\fP? mode=null)"
+.br
+.RI "Creates a new FlexSpan starting at the given offset\&. "
+.ti -1c
+.RI "\fBFlexSpan\fP< T > \fBSlice\fP (int start, int length, \fBFlexSpanMode\fP? mode=null)"
+.br
+.RI "Creates a new FlexSpan with a given offset and length\&. "
+.ti -1c
+.RI "Vector< T > \fBToArray\fP ()"
+.br
+.RI "Copies the view into a new Array{T}\&. "
+.ti -1c
+.RI "bool \fBTryCopyTo\fP (\fBFlexSpan\fP< T > destination)"
+.br
+.RI "Attempts to copy the view into another FlexSpan\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBFlexSpan\fP< T > left, \fBFlexSpan\fP< T > right)"
+.br
+.RI "Structural not equality comparison\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBFlexSpan\fP< T > left, \fBFlexSpan\fP< T > right)"
+.br
+.RI "Structural equality comparison\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "object IEnumerator\&. \fBCurrent\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "T IEnumerator< T >\&. \fBCurrent\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "ref T \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the current enumerator position\&. "
+.ti -1c
+.RI "static \fBFlexSpan\fP< T > \fBEmpty\fP\fR [get]\fP"
+.br
+.RI "Returns an empty FlexSpan\&. "
+.ti -1c
+.RI "long \fBEnd\fP\fR [get]\fP"
+.br
+.RI "End index of the view (exclusive)\&. "
+.ti -1c
+.RI "bool \fBHasNext\fP\fR [get]\fP"
+.br
+.RI "Indicates whether another element can be produced\&. Ring mode always returns true (infinite iteration)\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "True if the span has zero length\&. "
+.ti -1c
+.RI "long \fBLength\fP\fR [get]\fP"
+.br
+.RI "Total length of the underlying array\&. "
+.ti -1c
+.RI "\fBFlexSpanMode\fP \fBMode\fP\fR [get]\fP"
+.br
+.RI "Get the current mode\&. "
+.ti -1c
+.RI "long \fBStart\fP\fR [get]\fP"
+.br
+.RI "Start index of the view\&. "
+.ti -1c
+.RI "ref T \fBthis[long index]\fP\fR [get]\fP"
+.br
+.RI "Provides ref-access to the element at the given index within the view\&. "
+.ti -1c
+.RI "long \fBViewLength\fP\fR [get]\fP"
+.br
+.RI "Length of the view (End - Start)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A lightweight view over an array supporting System, Reverse, and Ring (circular) indexing\&. FlexSpan does not allocate and provides ref-return access to elements\&. 
+.PP
+Definition at line \fB40\fP of file \fBFlexSpan\&.cs\fP\&.
+.SH "Class Documentation"
+.PP 
+.SH "struct SystemEx::FlexSpan-1-g::Enumerator"
+.PP 
+\fBEnumerator\fP for FlexSpan\&. Supports forward, reverse, and ring traversal\&. 
+.PP
+Definition at line \fB45\fP of file \fBFlexSpan\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.FlexSpan< T >\&.CopyTo (\fBFlexSpan\fP< T > destination)"
+
+.PP
+Copies this FlexSpan's view into another FlexSpan\&. 
+.PP
+Definition at line \fB292\fP of file \fBFlexSpan\&.cs\fP\&.
+.PP
+Referenced by \fBTryCopyTo()\fP\&.
+.SS "void IDisposable\&. SystemEx\&.FlexSpan< T >\&.Dispose ()"
+
+.PP
+No resources to dispose\&. 
+.PP
+Definition at line \fB120\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "ref T SystemEx\&.FlexSpan< T >\&.ElementAt (long index)"
+
+.PP
+Returns a reference to the element at the given index according to the current mode\&. System = forward indexing Reverse = reverse indexing Ring = circular indexing (wrap-around)\&. 
+.PP
+Definition at line \fB332\fP of file \fBFlexSpan\&.cs\fP\&.
+.PP
+Referenced by \fBCopyTo()\fP, \fBFill()\fP, and \fBToArray()\fP\&.
+.SS "override bool SystemEx\&.FlexSpan< T >\&.Equals (object? obj)"
+
+.PP
+Definition at line \fB257\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "void SystemEx\&.FlexSpan< T >\&.Fill (T value)"
+
+.PP
+Fills the view with a given value\&. 
+.PP
+Definition at line \fB318\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "SystemEx\&.FlexSpan< T >\&.FlexSpan (ref T[] array, long start, long length, \fBFlexSpanMode\fP mode)"
+
+.PP
+Creates a FlexSpan over an array with a defined view length\&. 
+.PP
+Definition at line \fB204\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "SystemEx\&.FlexSpan< T >\&.FlexSpan (ref T[] reference, long start, \fBFlexSpanMode\fP mode)"
+
+.PP
+Creates a FlexSpan over an array starting at a given index\&. 
+.PP
+Definition at line \fB187\fP of file \fBFlexSpan\&.cs\fP\&.
+.PP
+Referenced by \fBCopyTo()\fP, \fBoperator!=()\fP, \fBoperator==()\fP, \fBSlice()\fP, \fBSlice()\fP, and \fBTryCopyTo()\fP\&.
+.SS "\fBEnumerator\fP SystemEx\&.FlexSpan< T >\&.GetEnumerator ()"
+
+.PP
+Returns an enumerator for the span\&. 
+.PP
+Definition at line \fB267\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "override int SystemEx\&.FlexSpan< T >\&.GetHashCode ()"
+
+.PP
+Definition at line \fB261\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.FlexSpan< T >\&.MoveNext ()"
+
+.PP
+Moves to the next element in the span\&. 
+.PP
+Definition at line \fB86\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.FlexSpan< T >\&.operator!= (\fBFlexSpan\fP< T > left, \fBFlexSpan\fP< T > right)\fR [static]\fP"
+
+.PP
+Structural not equality comparison\&. 
+.PP
+Definition at line \fB253\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.FlexSpan< T >\&.operator== (\fBFlexSpan\fP< T > left, \fBFlexSpan\fP< T > right)\fR [static]\fP"
+
+.PP
+Structural equality comparison\&. 
+.PP
+Definition at line \fB243\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "void IEnumerator\&. SystemEx\&.FlexSpan< T >\&.Reset ()"
+
+.PP
+Resets the enumerator to the initial position\&. Ring mode resets to index 0; other modes reset to -1\&. 
+.PP
+Definition at line \fB115\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "\fBFlexSpan\fP< T > SystemEx\&.FlexSpan< T >\&.Slice (int start, \fBFlexSpanMode\fP? mode = \fRnull\fP)"
+
+.PP
+Creates a new FlexSpan starting at the given offset\&. 
+.PP
+Definition at line \fB230\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "\fBFlexSpan\fP< T > SystemEx\&.FlexSpan< T >\&.Slice (int start, int length, \fBFlexSpanMode\fP? mode = \fRnull\fP)"
+
+.PP
+Creates a new FlexSpan with a given offset and length\&. 
+.PP
+Definition at line \fB237\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "Vector< T > SystemEx\&.FlexSpan< T >\&.ToArray ()"
+
+.PP
+Copies the view into a new Array{T}\&. 
+.PP
+Definition at line \fB273\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.FlexSpan< T >\&.TryCopyTo (\fBFlexSpan\fP< T > destination)"
+
+.PP
+Attempts to copy the view into another FlexSpan\&. 
+.PP
+Definition at line \fB303\fP of file \fBFlexSpan\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "object IEnumerator\&. SystemEx\&.FlexSpan< T >\&.Current\fR [get]\fP"
+
+.PP
+
+.PP
+Definition at line \fB109\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "T IEnumerator<T>\&. SystemEx\&.FlexSpan< T >\&.Current\fR [get]\fP"
+
+.PP
+
+.PP
+Definition at line \fB106\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "ref T SystemEx\&.FlexSpan< T >\&.Current\fR [get]\fP"
+
+.PP
+Gets the element at the current enumerator position\&. 
+.PP
+Definition at line \fB100\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "\fBFlexSpan\fP<T> SystemEx\&.FlexSpan< T >\&.Empty\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Returns an empty FlexSpan\&. 
+.PP
+Definition at line \fB222\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "long SystemEx\&.FlexSpan< T >\&.End\fR [get]\fP"
+
+.PP
+End index of the view (exclusive)\&. 
+.PP
+Definition at line \fB171\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "bool SystemEx\&.FlexSpan< T >\&.HasNext\fR [get]\fP"
+
+.PP
+Indicates whether another element can be produced\&. Ring mode always returns true (infinite iteration)\&. 
+.PP
+Definition at line \fB60\fP of file \fBFlexSpan\&.cs\fP\&.
+.PP
+Referenced by \fBMoveNext()\fP\&.
+.SS "bool SystemEx\&.FlexSpan< T >\&.IsEmpty\fR [get]\fP"
+
+.PP
+True if the span has zero length\&. 
+.PP
+Definition at line \fB151\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "long SystemEx\&.FlexSpan< T >\&.Length\fR [get]\fP"
+
+.PP
+Total length of the underlying array\&. 
+.PP
+Definition at line \fB156\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "\fBFlexSpanMode\fP SystemEx\&.FlexSpan< T >\&.Mode\fR [get]\fP"
+
+.PP
+Get the current mode\&. 
+.PP
+Definition at line \fB175\fP of file \fBFlexSpan\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Random\&.NextBytes()\fP\&.
+.SS "long SystemEx\&.FlexSpan< T >\&.Start\fR [get]\fP"
+
+.PP
+Start index of the view\&. 
+.PP
+Definition at line \fB166\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "ref T SystemEx\&.FlexSpan< T >\&.this[long index]\fR [get]\fP"
+
+.PP
+Provides ref-access to the element at the given index within the view\&. 
+.PP
+Definition at line \fB179\fP of file \fBFlexSpan\&.cs\fP\&.
+.SS "long SystemEx\&.FlexSpan< T >\&.ViewLength\fR [get]\fP"
+
+.PP
+Length of the view (End - Start)\&. 
+.PP
+Definition at line \fB161\fP of file \fBFlexSpan\&.cs\fP\&.
+.PP
+Referenced by \fBCopyTo()\fP, \fBElementAt()\fP, and \fBFill()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,168 @@
+.TH "SystemEx.Threading.LightLock" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.LightLock \- Provides a minimal wrapper around Monitor to offer lightweight mutual exclusion\&. \fBLightLock\fP is intended for short, low‑overhead critical sections where a full synchronization primitive would be unnecessary\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Threading\&.ILock< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLightLock\fP ()"
+.br
+.RI "Initializes a new instance of the \fBLightLock\fP struct\&. A dedicated lock object is created for use with Monitor\&. "
+.ti -1c
+.RI "bool \fBLock\fP (\fBTimeOut\fP span)"
+.br
+.RI "Attempts to enter the critical section by acquiring the internal lock\&. This overload accepts a TimeSpan timeout and uses Monitor\&.TryEnter(object, TimeSpan, ref bool) to determine whether the lock was successfully taken\&. "
+.ti -1c
+.RI "bool \fBTryLock\fP ()"
+.br
+.RI "Attempts to acquire the lock using a TimeSpan timeout\&. This method is functionally identical to Lock(TimeSpan) but semantically expresses a non‑blocking intent\&. "
+.ti -1c
+.RI "void \fBUnlock\fP ()"
+.br
+.RI "Releases the internal lock\&. Every successful call to Lock(TimeSpan) or Lock(int) must be paired with a corresponding call to \fBUnlock\fP to avoid deadlocks\&. "
+.ti -1c
+.RI "bool \fBWait\fP (\fBTimeOut\fP span, bool exitContext)"
+.br
+.RI "Temporarily releases the lock and suspends the current thread until a pulse notification is received or the specified timeout expires\&. Upon completion, the lock is automatically reacquired\&. This method wraps Monitor\&.Wait(object, TimeSpan, bool)\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "object \fBHandle\fP\fR [get]\fP"
+.br
+.RI "Gets the underlying lock handle used by Monitor\&. "
+.ti -1c
+.RI "bool \fBIsHeld\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the lock is currently held by the calling thread\&. This flag is updated whenever Lock(TimeSpan) or TryLock(TimeSpan) succeeds or when \fBUnlock\fP is invoked\&. "
+.ti -1c
+.RI "bool \fBIsLocked\fP\fR [get]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a minimal wrapper around Monitor to offer lightweight mutual exclusion\&. \fBLightLock\fP is intended for short, low‑overhead critical sections where a full synchronization primitive would be unnecessary\&. 
+.PP
+Definition at line \fB25\fP of file \fBLightLock\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.LightLock\&.LightLock ()"
+
+.PP
+Initializes a new instance of the \fBLightLock\fP struct\&. A dedicated lock object is created for use with Monitor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstrName\fP Optional human‑readable name used for diagnostics or debugging\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB50\fP of file \fBLightLock\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.LightLock\&.Lock (\fBTimeOut\fP span)"
+
+.PP
+Attempts to enter the critical section by acquiring the internal lock\&. This overload accepts a TimeSpan timeout and uses Monitor\&.TryEnter(object, TimeSpan, ref bool) to determine whether the lock was successfully taken\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIspan\fP The maximum duration to wait for the lock\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the lock was acquired; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB65\fP of file \fBLightLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightLock\&.TryLock ()"
+
+.PP
+Attempts to acquire the lock using a TimeSpan timeout\&. This method is functionally identical to Lock(TimeSpan) but semantically expresses a non‑blocking intent\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIspan\fP Maximum duration to wait for the lock\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the lock was acquired; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB113\fP of file \fBLightLock\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.LightLock\&.Unlock ()"
+
+.PP
+Releases the internal lock\&. Every successful call to Lock(TimeSpan) or Lock(int) must be paired with a corresponding call to \fBUnlock\fP to avoid deadlocks\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB82\fP of file \fBLightLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightLock\&.Wait (\fBTimeOut\fP span, bool exitContext)"
+
+.PP
+Temporarily releases the lock and suspends the current thread until a pulse notification is received or the specified timeout expires\&. Upon completion, the lock is automatically reacquired\&. This method wraps Monitor\&.Wait(object, TimeSpan, bool)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIspan\fP Maximum time to wait for a pulse\&.
+.br
+\fIexitContext\fP Indicates whether the synchronization context should be exited before waiting\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the wait completed due to a pulse; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB102\fP of file \fBLightLock\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "object SystemEx\&.Threading\&.LightLock\&.Handle\fR [get]\fP"
+
+.PP
+Gets the underlying lock handle used by Monitor\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock< T >\fP\&.
+.PP
+Definition at line \fB32\fP of file \fBLightLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightLock\&.IsHeld\fR [get]\fP"
+
+.PP
+Indicates whether the lock is currently held by the calling thread\&. This flag is updated whenever Lock(TimeSpan) or TryLock(TimeSpan) succeeds or when \fBUnlock\fP is invoked\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB38\fP of file \fBLightLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightLock\&.IsLocked\fR [get]\fP"
+
+.PP
+Definition at line \fB41\fP of file \fBLightLock\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

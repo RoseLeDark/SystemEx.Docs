@@ -1,0 +1,132 @@
+.TH "SystemEx.Hash.GrøstlHash" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Hash.GrøstlHash \- Implements the Grøstl-256 and Grøstl-512 hashing functions as part of the \fBSystemEx\fP low-level cryptographic subsystem\&. This class provides a fully self-contained, allocation-free, deterministic hash engine based on the original Grøstl specification (SHA-3 finalist)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Hash\&.IHash\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBPaddingState\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHash32\fP \fBCompute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes a 32-bit hash value based on the Grøstl-256 digest for the specified input buffer, with optional seed mixing and endian-aware extraction\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes a 64-bit hash value based on the Grøstl-512 digest for the specified input buffer, with optional seed mixing and endian-aware extraction\&. "
+.ti -1c
+.RI "\fBGrøstlHash\fP (\fBEndian\fP endian)"
+.br
+.RI "Craate a new instance\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implements the Grøstl-256 and Grøstl-512 hashing functions as part of the \fBSystemEx\fP low-level cryptographic subsystem\&. This class provides a fully self-contained, allocation-free, deterministic hash engine based on the original Grøstl specification (SHA-3 finalist)\&. 
+
+The implementation is designed for systems programming scenarios where predictable behavior, portability, and runtime independence are required\&. All operations are performed using fixed-size buffers, explicit state transformations, and constant-time primitives where applicable\&.
+
+.PP
+GroestlHash exposes two public hashing interfaces: 
+.PD 0
+.IP "\(bu" 2
+\fBCompute\fP — Produces a 32-bit hash derived from the full Grøstl-256 digest\&. 
+.IP "\(bu" 2
+\fBComputeLong\fP — Produces a 64-bit hash derived from the full Grøstl-512 digest\&. 
+.PP
+
+.PP
+Both variants support endian-aware extraction and optional seed mixing, enabling integration into heterogeneous environments, custom keying schemes, and internal hashing pipelines\&.
+
+.PP
+This class is intended for: 
+.PD 0
+.IP "\(bu" 2
+Deterministic hashing inside low-level frameworks 
+.IP "\(bu" 2
+Internal key generation and seeding mechanisms 
+.IP "\(bu" 2
+Data integrity checks and non-cryptographic fingerprinting 
+.IP "\(bu" 2
+Embedded or isolated verification modules 
+.PP
+
+.PP
+Definition at line \fB59\fP of file \fBGrøstlHash\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Hash\&.GrøstlHash\&.GrøstlHash (\fBEndian\fP endian)"
+
+.PP
+Craate a new instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The suing endian for creating a hash
+.RE
+.PP
+
+.PP
+Definition at line \fB71\fP of file \fBGrøstlHash\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBHash32\fP SystemEx\&.Hash\&.GrøstlHash\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes a 32-bit hash value based on the Grøstl-256 digest for the specified input buffer, with optional seed mixing and endian-aware extraction\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input byte sequence to be hashed\&. This is treated as an opaque binary buffer and processed according to the Grøstl-256 specification, including padding and compression\&. The full 256-bit digest is computed internally and then reduced to a 32-bit value\&. 
+.br
+\fIseed\fP An optional 21-bit seed value that is XOR-mixed into the final hash result\&. This allows callers to derive distinct hash domains, build keyed hash variants, or introduce additional application-specific entropy without altering the core Grøstl-256 computation\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBHash32\fP instance containing the 32-bit hash value derived from the Grøstl-256 digest of \fIinput\fP , after endian-aware extraction and XOR-mixing with \fIseed\fP \&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB453\fP of file \fBGrøstlHash\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.GrøstlHash\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes a 64-bit hash value based on the Grøstl-512 digest for the specified input buffer, with optional seed mixing and endian-aware extraction\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input byte sequence to be hashed\&. This is treated as an opaque binary buffer and processed according to the Grøstl-512 specification, including padding and compression\&. The full 512-bit digest is computed internally and then reduced to a 64-bit value\&. 
+.br
+\fIseed\fP An optional 64-bit seed value that is XOR-mixed into the final hash result\&. This allows callers to derive distinct hash domains, build keyed hash variants, or introduce additional application-specific entropy without altering the core Grøstl-512 computation\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBHash64\fP instance containing the 64-bit hash value derived from the Grøstl-512 digest of \fIinput\fP , after endian-aware extraction and XOR-mixing with \fIseed\fP \&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB420\fP of file \fBGrøstlHash\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

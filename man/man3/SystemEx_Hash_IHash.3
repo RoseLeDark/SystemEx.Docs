@@ -1,0 +1,52 @@
+.TH "SystemEx.Hash.IHash" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Hash.IHash \- Interface for \fBSystemEx\fP hashing algorithms\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Hash\&.AdlerHash\fP, \fBSystemEx\&.Hash\&.BernsteinHash\fP, \fBSystemEx\&.Hash\&.Black3Hasher\fP, \fBSystemEx\&.Hash\&.CRC32\fP, \fBSystemEx\&.Hash\&.CRC64\fP, \fBSystemEx\&.Hash\&.CrC< TC32, TC64 >\fP, \fBSystemEx\&.Hash\&.FletcherHash\fP, \fBSystemEx\&.Hash\&.Fnv1aHash\fP, \fBSystemEx\&.Hash\&.GrøstlHash\fP, \fBSystemEx\&.Hash\&.RamakrishnaHash\fP, and \fBSystemEx\&.Hash\&.WeinbergHash\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHash32\fP \fBCompute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes a 32‑bit hash over the given byte vector using the specified seed and endian mode\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes a 64‑bit hash over the given byte vector using the specified seed and endian mode\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interface for \fBSystemEx\fP hashing algorithms\&. 
+
+A hasher consumes a byte vector (\fBVector<T>\fP) and produces either a 32‑bit or 64‑bit hash\&. 
+.br
+
+.PP
+Implementations must be endian‑aware and iterator‑driven, following the \fBSystemEx\fP data model\&. They may be instantiated dynamically via \fBHashAlgorithmAttribute\fP\&. 
+.PP
+Definition at line \fB83\fP of file \fBIHash\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBHash32\fP SystemEx\&.Hash\&.IHash\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes a 32‑bit hash over the given byte vector using the specified seed and endian mode\&. 
+.PP
+Implemented in \fBSystemEx\&.Hash\&.AdlerHash\fP, \fBSystemEx\&.Hash\&.BernsteinHash\fP, \fBSystemEx\&.Hash\&.Black3Hasher\fP, \fBSystemEx\&.Hash\&.CrC< TC32, TC64 >\fP, \fBSystemEx\&.Hash\&.CRC32\fP, \fBSystemEx\&.Hash\&.CRC64\fP, \fBSystemEx\&.Hash\&.FletcherHash\fP, \fBSystemEx\&.Hash\&.Fnv1aHash\fP, \fBSystemEx\&.Hash\&.GrøstlHash\fP, \fBSystemEx\&.Hash\&.RamakrishnaHash\fP, and \fBSystemEx\&.Hash\&.WeinbergHash\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.IHash\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes a 64‑bit hash over the given byte vector using the specified seed and endian mode\&. 
+.PP
+Implemented in \fBSystemEx\&.Hash\&.AdlerHash\fP, \fBSystemEx\&.Hash\&.BernsteinHash\fP, \fBSystemEx\&.Hash\&.Black3Hasher\fP, \fBSystemEx\&.Hash\&.CrC< TC32, TC64 >\fP, \fBSystemEx\&.Hash\&.CRC32\fP, \fBSystemEx\&.Hash\&.CRC64\fP, \fBSystemEx\&.Hash\&.FletcherHash\fP, \fBSystemEx\&.Hash\&.Fnv1aHash\fP, \fBSystemEx\&.Hash\&.GrøstlHash\fP, \fBSystemEx\&.Hash\&.RamakrishnaHash\fP, and \fBSystemEx\&.Hash\&.WeinbergHash\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

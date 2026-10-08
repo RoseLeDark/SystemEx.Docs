@@ -1,0 +1,207 @@
+.TH "SystemEx.Threading.LightFutex" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.LightFutex \- Provides a lightweight reentrant futex-like synchronization primitive\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLightFutex\fP ()"
+.br
+.RI "Initializes a new instance of the \fBLightFutex\fP struct\&. The futex starts in the free state (\fR-1\fP)\&. "
+.ti -1c
+.RI "bool \fBLock\fP (int ms)"
+.br
+.RI "Attempts to acquire the futex within the specified timeout in milliseconds\&. "
+.ti -1c
+.RI "bool \fBLock\fP (\fBTimeOut\fP span)"
+.br
+.RI "Attempts to acquire the futex within the specified timeout\&. "
+.ti -1c
+.RI "bool \fBTryLock\fP ()"
+.br
+.RI "Attempts to acquire the futex without blocking longer than one millisecond\&. "
+.ti -1c
+.RI "void \fBUnlock\fP ()"
+.br
+.RI "Releases the futex if the current thread is the owner\&. "
+.ti -1c
+.RI "bool \fBWait\fP (\fBTimeOut\fP span, bool exitContext)"
+.br
+.RI "Waits on the internal wait handle for the specified duration\&. This method does not interact with the futex state\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "object \fBHandle\fP\fR [get]\fP"
+.br
+.RI "Gets a handle representing the futex state\&. This value is informational only\&. "
+.ti -1c
+.RI "bool \fBIsHeld\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the futex is currently held by any thread\&. "
+.ti -1c
+.RI "bool \fBIsHeldbyCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the current thread is the owner of the futex\&. "
+.ti -1c
+.RI "bool \fBIsThreadOwnerTrackingEnabled\fP\fR [get]\fP"
+.br
+.RI "Indicates that this futex supports thread‑owner tracking\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a lightweight reentrant futex-like synchronization primitive\&. 
+
+A \fR\fBLightFutex\fP\fP combines a fast userspace lock word with an optional kernel-assisted wait path via AutoResetEvent\&. The lock is reentrant for the owning thread: if the current thread already holds the futex, additional lock attempts succeed immediately without modifying the internal state\&. 
+
+.PP
+The futex is considered free when \fRm_state == -1\fP\&. Any non-negative value represents the thread ID of the owning thread\&. 
+.PP
+Definition at line \fB34\fP of file \fBLightFutex\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.LightFutex\&.LightFutex ()"
+
+.PP
+Initializes a new instance of the \fBLightFutex\fP struct\&. The futex starts in the free state (\fR-1\fP)\&. 
+.PP
+Definition at line \fB62\fP of file \fBLightFutex\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.LightFutex\&.Lock (int ms)"
+
+.PP
+Attempts to acquire the futex within the specified timeout in milliseconds\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIms\fP Timeout in milliseconds\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the futex was acquired or reentered by the owning thread; otherwise, \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB75\fP of file \fBLightFutex\&.cs\fP\&.
+.PP
+Referenced by \fBLock()\fP, and \fBTryLock()\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightFutex\&.Lock (\fBTimeOut\fP span)"
+
+.PP
+Attempts to acquire the futex within the specified timeout\&. If the futex is already held, the call succeeds only if the current thread is the owner (reentrant acquisition)\&. Otherwise, the fast userspace CAS path is attempted\&. If contention persists, the thread enters the wait path until signaled or the timeout expires\&. 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIspan\fP The maximum time to wait for the futex\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the futex was acquired or reentered; otherwise, \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB92\fP of file \fBLightFutex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightFutex\&.TryLock ()"
+
+.PP
+Attempts to acquire the futex without blocking longer than one millisecond\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the futex was acquired or reentered; otherwise, \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB120\fP of file \fBLightFutex\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.LightFutex\&.Unlock ()"
+
+.PP
+Releases the futex if the current thread is the owner\&. The futex is reset to the free state (\fR-1\fP) and one waiting thread is signaled\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB131\fP of file \fBLightFutex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightFutex\&.Wait (\fBTimeOut\fP span, bool exitContext)"
+
+.PP
+Waits on the internal wait handle for the specified duration\&. This method does not interact with the futex state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIspan\fP The maximum time to wait\&.
+.br
+\fIexitContext\fP Ignored\&. Provided for interface compatibility\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the wait handle was signaled; otherwise, \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB149\fP of file \fBLightFutex\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "object SystemEx\&.Threading\&.LightFutex\&.Handle\fR [get]\fP"
+
+.PP
+Gets a handle representing the futex state\&. This value is informational only\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock< T >\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBLightFutex\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightFutex\&.IsHeld\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the futex is currently held by any thread\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB56\fP of file \fBLightFutex\&.cs\fP\&.
+.PP
+Referenced by \fBLock()\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightFutex\&.IsHeldbyCurrent\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the current thread is the owner of the futex\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.PP
+Definition at line \fB41\fP of file \fBLightFutex\&.cs\fP\&.
+.PP
+Referenced by \fBLock()\fP, and \fBUnlock()\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightFutex\&.IsThreadOwnerTrackingEnabled\fR [get]\fP"
+
+.PP
+Indicates that this futex supports thread‑owner tracking\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.PP
+Definition at line \fB46\fP of file \fBLightFutex\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

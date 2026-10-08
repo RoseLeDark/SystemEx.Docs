@@ -1,0 +1,135 @@
+.TH "SystemEx.Device.Intertropt.UnmanagedObject" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Device.Intertropt.UnmanagedObject \- Represents a pinned unmanaged memory block used by \fBSystemEx\fP backends\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IDisposable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDispose\fP ()"
+.br
+.RI "Releases the pinned memory block\&. 
+.br
+ This must be called once the native kernel no longer needs the pointer\&. "
+.ti -1c
+.RI "\fBUnmanagedObject\fP (GCHandle handle, byte[] data)"
+.br
+.RI "Create a new instance\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "byte[] \fBData\fP\fR [get, set]\fP"
+.br
+.RI "The raw byte data\&. "
+.ti -1c
+.RI "GCHandle \fBHandle\fP\fR [get, set]\fP"
+.br
+.RI "The pinned data\&. "
+.ti -1c
+.RI "IntPtr \fBPoint\fP\fR [get, set]\fP"
+.br
+.RI "A stable unmanaged pointer\&. "
+.ti -1c
+.RI "int \fBSize\fP\fR [get, set]\fP"
+.br
+.RI "The size of the memory block\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a pinned unmanaged memory block used by \fBSystemEx\fP backends\&. 
+
+This structure is essential for passing raw pointers to native code\&. When a byte array is pinned using GCHandle, the garbage collector is prevented from relocating it\&. This guarantees that the unmanaged pointer (\fBPoint\fP) remains stable for the entire duration of the native kernel execution\&. 
+
+.PP
+\fBSystemEx\fP uses \fBUnmanagedObject\fP as the bridge between managed buffers (\fRbyte[]\fP) and native compute kernels\&. 
+.br
+ It provides: 
+.PD 0
+.IP "\(bu" 2
+A stable unmanaged pointer 
+.IP "\(bu" 2
+The raw byte data 
+.IP "\(bu" 2
+The size of the memory block 
+.IP "\(bu" 2
+Automatic cleanup via \fBDispose\fP 
+.PP
+
+.PP
+This type is lightweight and disposable\&. Backends create it when a buffer is shared with native code and release it once the kernel finishes execution\&. 
+.PP
+Definition at line \fB51\fP of file \fBRamSharedBackend\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Device\&.Intertropt\&.UnmanagedObject\&.UnmanagedObject (GCHandle handle, byte[] data)"
+
+.PP
+Create a new instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP GCHandle
+.br
+\fIdata\fP The raw byte data
+.RE
+.PP
+
+.PP
+Definition at line \fB75\fP of file \fBRamSharedBackend\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Device\&.Intertropt\&.UnmanagedObject\&.Dispose ()"
+
+.PP
+Releases the pinned memory block\&. 
+.br
+ This must be called once the native kernel no longer needs the pointer\&. 
+.PP
+Definition at line \fB86\fP of file \fBRamSharedBackend\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "byte [] SystemEx\&.Device\&.Intertropt\&.UnmanagedObject\&.Data\fR [get]\fP, \fR [set]\fP"
+
+.PP
+The raw byte data\&. 
+.PP
+Definition at line \fB59\fP of file \fBRamSharedBackend\&.cs\fP\&.
+.PP
+Referenced by \fBUnmanagedObject()\fP\&.
+.SS "GCHandle SystemEx\&.Device\&.Intertropt\&.UnmanagedObject\&.Handle\fR [get]\fP, \fR [set]\fP"
+
+.PP
+The pinned data\&. 
+.PP
+Definition at line \fB55\fP of file \fBRamSharedBackend\&.cs\fP\&.
+.PP
+Referenced by \fBDispose()\fP, and \fBUnmanagedObject()\fP\&.
+.SS "IntPtr SystemEx\&.Device\&.Intertropt\&.UnmanagedObject\&.Point\fR [get]\fP, \fR [set]\fP"
+
+.PP
+A stable unmanaged pointer\&. 
+.PP
+Definition at line \fB63\fP of file \fBRamSharedBackend\&.cs\fP\&.
+.PP
+Referenced by \fBUnmanagedObject()\fP\&.
+.SS "int SystemEx\&.Device\&.Intertropt\&.UnmanagedObject\&.Size\fR [get]\fP, \fR [set]\fP"
+
+.PP
+The size of the memory block\&. 
+.PP
+Definition at line \fB67\fP of file \fBRamSharedBackend\&.cs\fP\&.
+.PP
+Referenced by \fBUnmanagedObject()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

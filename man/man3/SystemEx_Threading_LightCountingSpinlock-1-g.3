@@ -1,0 +1,225 @@
+.TH "SystemEx.Threading.LightCountingSpinlock< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.LightCountingSpinlock< T > \- Implements a counting spinlock, a non‑blocking synchronization primitive that allows a bounded number of threads to enter a critical section concurrently\&. Unlike traditional binary spinlocks, which permit only a single thread at a time, a counting spinlock maintains an atomic counter representing the current available capacity\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Threading\&.LightMutex< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLightCountingSpinlock\fP (int minCapacity, int maxCapacity, string name='CountingSpinlock')"
+.br
+.RI "Initializes a new instance of the \fBLightCountingSpinlock<T>\fP with the specified minimum and maximum capacity\&. "
+.ti -1c
+.RI "virtual bool \fBLock\fP (int millisecondsTimeout=\-1)"
+.br
+.RI "Attempts to acquire capacity using busy‑wait atomic operations\&. "
+.ti -1c
+.RI "virtual bool \fBLock\fP (\fBTimeOut\fP span)"
+.br
+.RI "Attempts to acquire capacity using busy‑wait atomic operations\&. "
+.ti -1c
+.RI "virtual bool \fBTryLock\fP ()"
+.br
+.RI "Attempts to acquire capacity without blocking\&. "
+.ti -1c
+.RI "virtual void \fBUnlock\fP ()"
+.br
+.RI "Releases capacity by performing an atomic increment\&. "
+.ti -1c
+.RI "virtual bool \fBWait\fP (\fBTimeOut\fP span, bool exitContext)"
+.br
+.RI "Counting spinlocks do not support wait/pulse semantics\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "T? \fBm_value\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBHandle\fP\fR [get]\fP"
+.br
+.RI "Gets the current counter value representing available capacity\&. "
+.ti -1c
+.RI "bool \fBIsHeld\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the lock is currently saturated (no capacity left)\&. "
+.ti -1c
+.RI "virtual bool \fBIsHeldbyCurrent\fP\fR [get]\fP"
+.br
+.RI "Counting spinlocks do not track thread ownership\&. This property always returns \fRfalse\fP\&. "
+.ti -1c
+.RI "virtual bool \fBIsThreadOwnerTrackingEnabled\fP\fR [get]\fP"
+.br
+.RI "Indicates whether thread‑owner tracking is enabled\&. Counting spinlocks do not support owner tracking\&. "
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Gets the descriptive name assigned to this lock instance\&. "
+.ti -1c
+.RI "virtual ? T \fBValue\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the protected value\&. Access is permitted only when the calling thread has successfully acquired capacity\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implements a counting spinlock, a non‑blocking synchronization primitive that allows a bounded number of threads to enter a critical section concurrently\&. Unlike traditional binary spinlocks, which permit only a single thread at a time, a counting spinlock maintains an atomic counter representing the current available capacity\&. 
+
+The lock is initialized with a minimum and maximum capacity\&. Each thread attempting to enter performs an atomic decrement on the counter: 
+
+.PP
+.PD 0
+.IP "\(bu" 2
+If the resulting value is greater than or equal to \fRminCapacity\fP, the thread successfully enters the critical section\&.   
+.IP "\(bu" 2
+If the value drops below \fRminCapacity\fP, the thread is denied access and must spin‑wait until capacity becomes available again\&.   
+.PP
+
+.PP
+When a thread exits the critical section, it performs an atomic increment, returning capacity to the lock and allowing waiting threads to proceed\&. 
+
+.PP
+Counting spinlocks are strictly non‑blocking and do not yield or sleep while waiting\&. This makes them suitable for extremely short critical sections, high‑performance kernel operations, interrupt handlers, and other environments where blocking is forbidden\&. 
+
+.PP
+Typical use cases include: 
+
+.PP
+.PD 0
+.IP "\(bu" 2
+Bounded resource pools 
+.IP "\(bu" 2
+Fixed‑size worker queues 
+.IP "\(bu" 2
+Throttling parallel operations 
+.IP "\(bu" 2
+High‑frequency CPU‑bound tasks 
+.PP
+
+.PP
+Because waiting threads actively spin, excessive contention can degrade system performance\&. Counting spinlocks should therefore be used only when critical sections are extremely short and contention is expected to be low\&. 
+.PP
+Definition at line \fB76\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.LightCountingSpinlock (int minCapacity, int maxCapacity, string name = \fR'CountingSpinlock'\fP)"
+
+.PP
+Initializes a new instance of the \fBLightCountingSpinlock<T>\fP with the specified minimum and maximum capacity\&. 
+.PP
+Definition at line \fB137\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.SS "virtual bool SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.Lock (int millisecondsTimeout = \fR\-1\fP)\fR [virtual]\fP"
+
+.PP
+Attempts to acquire capacity using busy‑wait atomic operations\&. 
+.PP
+Definition at line \fB154\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.PP
+Referenced by \fBLock()\fP\&.
+.SS "virtual bool SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.Lock (\fBTimeOut\fP span)\fR [virtual]\fP"
+
+.PP
+Attempts to acquire capacity using busy‑wait atomic operations\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Reimplemented in \fBSystemEx\&.Threading\&.LightMutex< T >\fP\&.
+.PP
+Definition at line \fB227\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.SS "virtual bool SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.TryLock ()\fR [virtual]\fP"
+
+.PP
+Attempts to acquire capacity without blocking\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB252\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.SS "virtual void SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.Unlock ()\fR [virtual]\fP"
+
+.PP
+Releases capacity by performing an atomic increment\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Reimplemented in \fBSystemEx\&.Threading\&.LightMutex< T >\fP\&.
+.PP
+Definition at line \fB241\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.SS "virtual bool SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.Wait (\fBTimeOut\fP span, bool exitContext)\fR [virtual]\fP"
+
+.PP
+Counting spinlocks do not support wait/pulse semantics\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB268\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "T? SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.m_value\fR [protected]\fP"
+
+.PP
+Definition at line \fB81\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.Handle\fR [get]\fP"
+
+.PP
+Gets the current counter value representing available capacity\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock< T >\fP\&.
+.PP
+Definition at line \fB110\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.IsHeld\fR [get]\fP"
+
+.PP
+Indicates whether the lock is currently saturated (no capacity left)\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB93\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.PP
+Referenced by \fBLock()\fP\&.
+.SS "virtual bool SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.IsHeldbyCurrent\fR [get]\fP"
+
+.PP
+Counting spinlocks do not track thread ownership\&. This property always returns \fRfalse\fP\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.PP
+Definition at line \fB99\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.SS "virtual bool SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.IsThreadOwnerTrackingEnabled\fR [get]\fP"
+
+.PP
+Indicates whether thread‑owner tracking is enabled\&. Counting spinlocks do not support owner tracking\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.PP
+Definition at line \fB105\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.SS "string SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.Name\fR [get]\fP"
+
+.PP
+Gets the descriptive name assigned to this lock instance\&. 
+.PP
+Definition at line \fB88\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+.SS "virtual ? T SystemEx\&.Threading\&.LightCountingSpinlock< T >\&.Value\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the protected value\&. Access is permitted only when the calling thread has successfully acquired capacity\&. 
+.PP
+Definition at line \fB117\fP of file \fBLightCountingSpinlock\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

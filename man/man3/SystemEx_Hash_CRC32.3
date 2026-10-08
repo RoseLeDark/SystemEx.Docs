@@ -1,0 +1,113 @@
+.TH "SystemEx.Hash.CRC32" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Hash.CRC32 \- Implements a CRC‑32 checksum calculator using a configurable reflected polynomial\&. Supports both rolling and one‑shot hashing modes while remaining fully compatible with the \fBIHash\fP pipeline\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Hash\&.CRC32BZip2\fP, \fBSystemEx\&.Hash\&.CRC32C\fP, \fBSystemEx\&.Hash\&.CRC32IEEE\fP, \fBSystemEx\&.Hash\&.CRC32Koopman\fP, \fBSystemEx\&.Hash\&.CRC32Mpeg2\fP, and \fBSystemEx\&.Hash\&.CRC32Posix\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHash32\fP \fBCompute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes a CRC‑32 checksum over the specified input buffer\&. If a non‑zero seed is provided, the computation is performed as a one‑shot operation\&. If the seed is zero, the computation continues from the internal rolling CRC‑32 state\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes a 64‑bit hash value\&. CRC‑32 does not naturally produce 64‑bit output, so this method is not implemented\&. "
+.ti -1c
+.RI "\fBCRC32\fP ()"
+.br
+.RI "Initializes a new instance of the \fBCRC32\fP class and generates the lookup table required for CRC‑32 computation\&. "
+.ti -1c
+.RI "\fBCRC32\fP (uint polynomial)"
+.br
+.RI "Initializes a new instance of the \fBCRC32\fP class and generates the lookup table required for CRC‑32 computation, with custom polynomial\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "uint \fBPolynomial\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the CRC‑32 polynomial used for table generation\&. Changing the polynomial regenerates the lookup table and resets the rolling CRC‑32 state\&. "
+.ti -1c
+.RI "uint \fBRollingState\fP\fR [get]\fP"
+.br
+.RI "Gets the current rolling CRC‑32 state maintained across successive \fBCompute\fP calls\&. This value represents the intermediate checksum after all data processed so far\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implements a CRC‑32 checksum calculator using a configurable reflected polynomial\&. Supports both rolling and one‑shot hashing modes while remaining fully compatible with the \fBIHash\fP pipeline\&. 
+.PP
+Definition at line \fB27\fP of file \fBCRC32\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Hash\&.CRC32\&.CRC32 ()"
+
+.PP
+Initializes a new instance of the \fBCRC32\fP class and generates the lookup table required for CRC‑32 computation\&. 
+.PP
+Definition at line \fB79\fP of file \fBCRC32\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.CRC32\&.CRC32 (uint polynomial)"
+
+.PP
+Initializes a new instance of the \fBCRC32\fP class and generates the lookup table required for CRC‑32 computation, with custom polynomial\&. 
+.PP
+Definition at line \fB92\fP of file \fBCRC32\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBHash32\fP SystemEx\&.Hash\&.CRC32\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes a CRC‑32 checksum over the specified input buffer\&. If a non‑zero seed is provided, the computation is performed as a one‑shot operation\&. If the seed is zero, the computation continues from the internal rolling CRC‑32 state\&. This design allows CRC‑32 to operate in both streaming (rolling) and one‑shot modes without modifying the \fBIHash\fP pipeline\&. 
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB109\fP of file \fBCRC32\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.CRC32\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes a 64‑bit hash value\&. CRC‑32 does not naturally produce 64‑bit output, so this method is not implemented\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fINotImplementedException\fP Always thrown, as CRC‑32 is a 32‑bit algorithm\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB125\fP of file \fBCRC32\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "uint SystemEx\&.Hash\&.CRC32\&.Polynomial\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the CRC‑32 polynomial used for table generation\&. Changing the polynomial regenerates the lookup table and resets the rolling CRC‑32 state\&. 
+.PP
+Definition at line \fB47\fP of file \fBCRC32\&.cs\fP\&.
+.SS "uint SystemEx\&.Hash\&.CRC32\&.RollingState\fR [get]\fP"
+
+.PP
+Gets the current rolling CRC‑32 state maintained across successive \fBCompute\fP calls\&. This value represents the intermediate checksum after all data processed so far\&. The rolling state allows the CRC‑32 algorithm to operate in streaming mode without modifying the \fBIHash\fP pipeline interface\&.
+
+.PP
+If \fBCompute\fP is invoked with a seed value of zero, the computation continues from the existing rolling state\&. If a non‑zero seed is provided, the rolling state is replaced with the newly computed checksum\&.
+
+.PP
+This property exposes the internal CRC‑32 accumulator for diagnostic or pipeline‑level inspection, but does not alter hashing behavior\&. 
+.PP
+Definition at line \fB73\fP of file \fBCRC32\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

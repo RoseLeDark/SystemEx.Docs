@@ -1,4 +1,0 @@
-var a00964 =
-[
-    [ "Compare", "da/d17/a00964_ac7a4117822a9c46f2a890143a602982a.html#ac7a4117822a9c46f2a890143a602982a", null ]
-];

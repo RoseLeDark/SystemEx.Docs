@@ -1,0 +1,424 @@
+.TH "SystemEx.Drawing.ColorR16G16B16" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Drawing.ColorR16G16B16 \- Represents a color with 16‑bit precision per channel (R16G16B16), stored internally as normalized floating‑point values (0–1)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Drawing\&.IColor< T >\fP, and IEquatable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBAddition\fP (\fBColorR16G16B16\fP value)"
+.br
+.RI "Adds another color to this one\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBAddition\fP (float a, float b, float c)"
+.br
+.RI "Addition another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBAsNormalized\fP ()"
+.br
+.RI "Returns a version of the color with all channels clamped to 0–1\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBAsScaled\fP ()"
+.br
+.RI "Returns a version of the color scaled so the brightest channel becomes 1\&. "
+.ti -1c
+.RI "float \fBBrightness\fP ()"
+.br
+.RI "Computes the perceived brightness of the color\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBBrightness\fP (float delta)"
+.br
+.RI "Adjusts the perceived brightness of the color\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP ()"
+.br
+.RI "Creates a black color (0,0,0)\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP (float gray)"
+.br
+.RI "Creates a grayscale color using a single intensity value\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP (float r, float g, float b)"
+.br
+.RI "Creates a color from normalized RGB components\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP (ushort r, ushort g, ushort b)"
+.br
+.RI "Creates a color from 16‑bit UNORM components (0–65535)\&. "
+.ti -1c
+.RI "float \fBContrast\fP (\fBColorR16G16B16\fP other)"
+.br
+.RI "Measures the visual contrast between this color and another\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBDivision\fP (\fBColorR16G16B16\fP value)"
+.br
+.RI "Divides this color by another\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBDivision\fP (float a, float b, float c)"
+.br
+.RI "Division another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBColorR16G16B16\fP other)"
+.br
+.RI "Determines whether this instance is equal to another YUV color\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Returns a hash code based on the R, G, and B components\&. "
+.ti -1c
+.RI "\fBContrastLevel\fP \fBGetKontrast\fP (\fBColorR16G16B16\fP other)"
+.br
+.RI "Classifies the contrast between this color and another\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBGetNextContrastColor\fP ()"
+.br
+.RI "Generates a visually contrasting color\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBLerp\fP (\fBColorR16G16B16\fP value, float amount)"
+.br
+.RI "Blends this color toward another by the given amount\&. "
+.ti -1c
+.RI "float \fBLinearBrightness\fP ()"
+.br
+.RI "Computes the brightness using linear RGB\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBMultiplication\fP (\fBColorR16G16B16\fP value)"
+.br
+.RI "Multiplies this color with another\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBMultiplication\fP (float a, float b, float c)"
+.br
+.RI "Multiplication another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSaturation\fP (float delta)"
+.br
+.RI "Adjusts the perceived saturation of the color\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSubtraction\fP (\fBColorR16G16B16\fP value)"
+.br
+.RI "Subtracts another color from this one\&. "
+.ti -1c
+.RI "\fBColorR16G16B16\fP \fBSubtraction\fP (float a, float b, float c)"
+.br
+.RI "Subtraction another color in r, g, b channels with this one\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns a string representation of the color\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Drawing\&.IColor< T >\fP
+.in +1c
+.ti -1c
+.RI "T \fBAddition\fP (T value)"
+.br
+.RI "Adds the specified color to this color\&. "
+.ti -1c
+.RI "T \fBDivision\fP (T value)"
+.br
+.RI "Divides this color by the specified color\&. "
+.ti -1c
+.RI "T \fBLerp\fP (T value, float amount)"
+.br
+.RI "Performs linear interpolation between this color and another color\&. "
+.ti -1c
+.RI "T \fBMultiplication\fP (T value)"
+.br
+.RI "Multiplies this color with the specified color\&. "
+.ti -1c
+.RI "T \fBSubtraction\fP (T value)"
+.br
+.RI "Subtracts the specified color from this color\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "float \fBB\fP\fR [get]\fP"
+.br
+.RI "Gets the blue channel\&. "
+.ti -1c
+.RI "float \fBBlue\fP\fR [get]\fP"
+.br
+.RI "Gets the blue channel\&. "
+.ti -1c
+.RI "float \fBG\fP\fR [get]\fP"
+.br
+.RI "Gets the green channel\&. "
+.ti -1c
+.RI "float \fBGreen\fP\fR [get]\fP"
+.br
+.RI "Gets the green channel\&. "
+.ti -1c
+.RI "float \fBR\fP\fR [get]\fP"
+.br
+.RI "Gets the red channel\&. "
+.ti -1c
+.RI "float \fBRed\fP\fR [get]\fP"
+.br
+.RI "Gets the red channel\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a color with 16‑bit precision per channel (R16G16B16), stored internally as normalized floating‑point values (0–1)\&. 
+.PP
+Definition at line \fB24\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Drawing\&.ColorR16G16B16\&.ColorR16G16B16 ()"
+
+.PP
+Creates a black color (0,0,0)\&. 
+.PP
+Definition at line \fB50\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP, \fBAddition()\fP, \fBAsNormalized()\fP, \fBAsScaled()\fP, \fBBrightness()\fP, \fBContrast()\fP, \fBDivision()\fP, \fBDivision()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBGetKontrast()\fP, \fBGetNextContrastColor()\fP, \fBLerp()\fP, \fBMultiplication()\fP, \fBMultiplication()\fP, \fBSaturation()\fP, \fBSubtraction()\fP, and \fBSubtraction()\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR16G16B16\&.ColorR16G16B16 (float r, float g, float b)"
+
+.PP
+Creates a color from normalized RGB components\&. 
+.PP
+Definition at line \fB58\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR16G16B16\&.ColorR16G16B16 (ushort r, ushort g, ushort b)"
+
+.PP
+Creates a color from 16‑bit UNORM components (0–65535)\&. 
+.PP
+Definition at line \fB66\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "SystemEx\&.Drawing\&.ColorR16G16B16\&.ColorR16G16B16 (float gray)"
+
+.PP
+Creates a grayscale color using a single intensity value\&. 
+.PP
+Definition at line \fB75\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Addition (\fBColorR16G16B16\fP value)"
+
+.PP
+Adds another color to this one\&. 
+.PP
+Definition at line \fB82\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBAddition()\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Addition (float a, float b, float c)"
+
+.PP
+Addition another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB214\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.AsNormalized ()"
+
+.PP
+Returns a version of the color with all channels clamped to 0–1\&. 
+.PP
+Definition at line \fB116\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.AsScaled ()"
+
+.PP
+Returns a version of the color scaled so the brightest channel becomes 1\&. 
+.PP
+Definition at line \fB127\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.Brightness ()"
+
+.PP
+Computes the perceived brightness of the color\&. 
+.PP
+Definition at line \fB136\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBContrast()\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Brightness (float delta)"
+
+.PP
+Adjusts the perceived brightness of the color\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB200\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.Contrast (\fBColorR16G16B16\fP other)"
+
+.PP
+Measures the visual contrast between this color and another\&. 
+.PP
+Definition at line \fB147\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBGetKontrast()\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Division (\fBColorR16G16B16\fP value)"
+
+.PP
+Divides this color by another\&. 
+.PP
+Definition at line \fB106\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBDivision()\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Division (float a, float b, float c)"
+
+.PP
+Division another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB232\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "bool SystemEx\&.Drawing\&.ColorR16G16B16\&.Equals (\fBColorR16G16B16\fP other)"
+
+.PP
+Determines whether this instance is equal to another YUV color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The color to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the components match; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB243\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override bool SystemEx\&.Drawing\&.ColorR16G16B16\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. 
+.PP
+Definition at line \fB258\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "override int SystemEx\&.Drawing\&.ColorR16G16B16\&.GetHashCode ()"
+
+.PP
+Returns a hash code based on the R, G, and B components\&. 
+.PP
+Definition at line \fB252\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBContrastLevel\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.GetKontrast (\fBColorR16G16B16\fP other)"
+
+.PP
+Classifies the contrast between this color and another\&. 
+.PP
+Definition at line \fB152\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.GetNextContrastColor ()"
+
+.PP
+Generates a visually contrasting color\&. 
+.PP
+Definition at line \fB161\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Lerp (\fBColorR16G16B16\fP value, float amount)"
+
+.PP
+Blends this color toward another by the given amount\&. 
+.PP
+Definition at line \fB169\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.LinearBrightness ()"
+
+.PP
+Computes the brightness using linear RGB\&. 
+.PP
+Definition at line \fB141\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Multiplication (\fBColorR16G16B16\fP value)"
+
+.PP
+Multiplies this color with another\&. 
+.PP
+Definition at line \fB98\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBMultiplication()\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Multiplication (float a, float b, float c)"
+
+.PP
+Multiplication another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB226\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Saturation (float delta)"
+
+.PP
+Adjusts the perceived saturation of the color\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB186\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Subtraction (\fBColorR16G16B16\fP value)"
+
+.PP
+Subtracts another color from this one\&. 
+.PP
+Definition at line \fB90\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBSubtraction()\fP\&.
+.SS "\fBColorR16G16B16\fP SystemEx\&.Drawing\&.ColorR16G16B16\&.Subtraction (float a, float b, float c)"
+
+.PP
+Subtraction another color in r, g, b channels with this one\&. 
+.PP
+Implements \fBSystemEx\&.Drawing\&.IColor< T >\fP\&.
+.PP
+Definition at line \fB220\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "override string SystemEx\&.Drawing\&.ColorR16G16B16\&.ToString ()"
+
+.PP
+Returns a string representation of the color\&. 
+.PP
+Definition at line \fB180\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.B\fR [get]\fP"
+
+.PP
+Gets the blue channel\&. 
+.PP
+Definition at line \fB45\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.Blue\fR [get]\fP"
+
+.PP
+Gets the blue channel\&. 
+.PP
+Definition at line \fB36\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.G\fR [get]\fP"
+
+.PP
+Gets the green channel\&. 
+.PP
+Definition at line \fB42\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.Green\fR [get]\fP"
+
+.PP
+Gets the green channel\&. 
+.PP
+Definition at line \fB33\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.R\fR [get]\fP"
+
+.PP
+Gets the red channel\&. 
+.PP
+Definition at line \fB39\fP of file \fBColorR16G16B16\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "float SystemEx\&.Drawing\&.ColorR16G16B16\&.Red\fR [get]\fP"
+
+.PP
+Gets the red channel\&. 
+.PP
+Definition at line \fB30\fP of file \fBColorR16G16B16\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

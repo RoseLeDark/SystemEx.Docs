@@ -1,0 +1,190 @@
+.TH "SystemEx.Numeric.IFastType" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.IFastType \- Provides a low‑level, bit‑precise manipulation interface for any value that can be interpreted as a contiguous sequence of bits\&. Implementations expose direct access to individual bit positions, bit counting, rotation, and mask‑based operations without imposing a specific underlying numeric type\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Numeric\&.IFastType< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBAt\fP (byte pos, byte value)"
+.br
+.RI "Sets the bit at the specified position to \fR0\fP or \fR1\fP\&. "
+.ti -1c
+.RI "void \fBFlip\fP (byte pos)"
+.br
+.RI "Toggles (flips) the bit at the specified position\&. "
+.ti -1c
+.RI "byte \fBIs\fP (byte pos)"
+.br
+.RI "Returns the bit at the specified position as \fR0\fP or \fR1\fP\&. "
+.ti -1c
+.RI "byte \fBIsIt\fP ()"
+.br
+.RI "Counts the number of bits set to \fR1\fP in the underlying value\&. "
+.ti -1c
+.RI "byte \fBIsItNot\fP ()"
+.br
+.RI "Counts the number of bits set to \fR0\fP in the underlying value\&. Equivalent to \fRCount - \fBIsIt()\fP\fP\&. "
+.ti -1c
+.RI "void \fBRotateLeft\fP (byte count)"
+.br
+.RI "Rotates all bits to the left by the specified count\&. Rotation wraps around the bit range and preserves all bits\&. "
+.ti -1c
+.RI "void \fBRotateRight\fP (byte count)"
+.br
+.RI "Rotates all bits to the right by the specified count\&. Rotation wraps around the bit range and preserves all bits\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBWhere\fP ()"
+.br
+.RI "Returns a collection of all bit positions where the bit is \fR1\fP\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBWhereNot\fP ()"
+.br
+.RI "Returns a collection of all bit positions where the bit is \fR0\fP\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "byte \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the total number of bits exposed by the implementation\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a low‑level, bit‑precise manipulation interface for any value that can be interpreted as a contiguous sequence of bits\&. Implementations expose direct access to individual bit positions, bit counting, rotation, and mask‑based operations without imposing a specific underlying numeric type\&. 
+
+\fBIFastType\fP is designed for high‑performance bit operations where predictable behavior, zero‑allocation access, and explicit control over bit patterns are required\&. Typical use cases include: 
+
+.PP
+.PD 0
+.IP "\(bu" 2
+flag sets and event masks 
+.IP "\(bu" 2
+embedded‑style bitfield logic 
+.IP "\(bu" 2
+numeric inspection (IEEE‑754 fields, custom formats) 
+.IP "\(bu" 2
+cryptographic or hashing primitives 
+.IP "\(bu" 2
+low‑level simulation or hardware‑style operations 
+.PP
+
+.PP
+The interface is intentionally minimal and does not assume any particular storage type (integer, floating‑point, struct)\&. Implementations define how the underlying bits are accessed and modified\&. 
+.PP
+Definition at line \fB52\fP of file \fBFastType\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Numeric\&.IFastType\&.At (byte pos, byte value)"
+
+.PP
+Sets the bit at the specified position to \fR0\fP or \fR1\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP The bit position to modify\&.
+.br
+\fIvalue\fP The new bit value\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "void SystemEx\&.Numeric\&.IFastType\&.Flip (byte pos)"
+
+.PP
+Toggles (flips) the bit at the specified position\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP The bit position to flip\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "byte SystemEx\&.Numeric\&.IFastType\&.Is (byte pos)"
+
+.PP
+Returns the bit at the specified position as \fR0\fP or \fR1\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP The bit position to inspect\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "byte SystemEx\&.Numeric\&.IFastType\&.IsIt ()"
+
+.PP
+Counts the number of bits set to \fR1\fP in the underlying value\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "byte SystemEx\&.Numeric\&.IFastType\&.IsItNot ()"
+
+.PP
+Counts the number of bits set to \fR0\fP in the underlying value\&. Equivalent to \fRCount - \fBIsIt()\fP\fP\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "void SystemEx\&.Numeric\&.IFastType\&.RotateLeft (byte count)"
+
+.PP
+Rotates all bits to the left by the specified count\&. Rotation wraps around the bit range and preserves all bits\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcount\fP The number of positions to rotate\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "void SystemEx\&.Numeric\&.IFastType\&.RotateRight (byte count)"
+
+.PP
+Rotates all bits to the right by the specified count\&. Rotation wraps around the bit range and preserves all bits\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcount\fP The number of positions to rotate\&.
+.RE
+.PP
+
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.IFastType\&.Where ()"
+
+.PP
+Returns a collection of all bit positions where the bit is \fR1\fP\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.IFastType\&.WhereNot ()"
+
+.PP
+Returns a collection of all bit positions where the bit is \fR0\fP\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "byte SystemEx\&.Numeric\&.IFastType\&.Count\fR [get]\fP"
+
+.PP
+Gets the total number of bits exposed by the implementation\&. 
+.PP
+Implemented in \fBSystemEx\&.Numeric\&.Fast_Byte\fP, \fBSystemEx\&.Numeric\&.Fast_Int\fP, \fBSystemEx\&.Numeric\&.Fast_UInt\fP, \fBSystemEx\&.Numeric\&.Fast_ULong\fP, and \fBSystemEx\&.Numeric\&.Fast_UShort\fP\&.
+.PP
+Definition at line \fB56\fP of file \fBFastType\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

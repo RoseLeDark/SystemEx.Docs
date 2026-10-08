@@ -1,0 +1,145 @@
+.TH "SystemEx.Threading.AtomicLock" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.AtomicLock \- A minimal user‑mode spin lock based on an atomic integer\&. The lock stores the managed thread ID of the owning thread\&. A value of \fR0\fP means the lock is free\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBLock\fP (\fBTimeOut\fP ms)"
+.br
+.RI "Attempts to acquire the lock within the specified timeout\&. Throws an exception if another thread already owns the lock\&. "
+.ti -1c
+.RI "bool \fBTryLock\fP ()"
+.br
+.RI "Attempts to acquire the lock without throwing exceptions\&. Returns \fRtrue\fP if the lock was acquired; otherwise \fRfalse\fP\&. "
+.ti -1c
+.RI "void \fBUnlock\fP ()"
+.br
+.RI "Releases the lock if the calling thread is the owner\&. "
+.ti -1c
+.RI "bool \fBWait\fP (\fBTimeOut\fP span, bool exitContext)"
+.br
+.RI "Not implemented\&. Always returns \fRfalse\fP\&. Included only to satisfy the \fBILock<T>\fP interface\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBHandle\fP\fR [get]\fP"
+.br
+.RI "Gets the raw integer value representing the current lock state\&. A value of \fR0\fP means unlocked; otherwise it contains the managed thread ID of the owning thread\&. "
+.ti -1c
+.RI "bool \fBIsHeld\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the lock is currently held by any thread\&. "
+.ti -1c
+.RI "bool \fBIsHeldbyCurrent\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the calling thread currently owns the lock\&. "
+.ti -1c
+.RI "bool \fBIsLocked\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "bool \fBIsThreadOwnerTrackingEnabled\fP\fR [get]\fP"
+.br
+.RI "Indicates whether thread‑owner tracking is enabled for the underlying spin lock\&. When enabled, the lock records which thread currently owns it, allowing additional safety checks at the cost of extra overhead\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A minimal user‑mode spin lock based on an atomic integer\&. The lock stores the managed thread ID of the owning thread\&. A value of \fR0\fP means the lock is free\&. 
+
+This lock is designed for very short critical sections where kernel-level synchronization would be too expensive\&. It uses Interlocked\&.Exchange(ref int, int) to acquire the lock and Thread\&.SpinWait(int) for contention handling\&.
+
+.PP
+The lock is non‑reentrant, non‑fair, and does not block the thread\&. Instead, it spins until the lock becomes available or until a timeout expires\&. This makes it suitable for high‑performance user‑mode synchronization primitives such as barriers\&.
+
+.PP
+Ownership is determined by comparing the stored thread ID with Thread\&.CurrentThread\&.ManagedThreadId\&. Only the owning thread is allowed to release the lock\&. 
+.PP
+Definition at line \fB39\fP of file \fBAtomicLock\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.AtomicLock\&.Lock (\fBTimeOut\fP ms)"
+
+.PP
+Attempts to acquire the lock within the specified timeout\&. Throws an exception if another thread already owns the lock\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB66\fP of file \fBAtomicLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.AtomicLock\&.TryLock ()"
+
+.PP
+Attempts to acquire the lock without throwing exceptions\&. Returns \fRtrue\fP if the lock was acquired; otherwise \fRfalse\fP\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB74\fP of file \fBAtomicLock\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.AtomicLock\&.Unlock ()"
+
+.PP
+Releases the lock if the calling thread is the owner\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB80\fP of file \fBAtomicLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.AtomicLock\&.Wait (\fBTimeOut\fP span, bool exitContext)"
+
+.PP
+Not implemented\&. Always returns \fRfalse\fP\&. Included only to satisfy the \fBILock<T>\fP interface\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB88\fP of file \fBAtomicLock\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Threading\&.AtomicLock\&.Handle\fR [get]\fP"
+
+.PP
+Gets the raw integer value representing the current lock state\&. A value of \fR0\fP means unlocked; otherwise it contains the managed thread ID of the owning thread\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock< T >\fP\&.
+.PP
+Definition at line \fB47\fP of file \fBAtomicLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.AtomicLock\&.IsHeld\fR [get]\fP"
+
+.PP
+Indicates whether the lock is currently held by any thread\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ILock\fP\&.
+.PP
+Definition at line \fB51\fP of file \fBAtomicLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.AtomicLock\&.IsHeldbyCurrent\fR [get]\fP"
+
+.PP
+Indicates whether the calling thread currently owns the lock\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.PP
+Definition at line \fB55\fP of file \fBAtomicLock\&.cs\fP\&.
+.PP
+Referenced by \fBUnlock()\fP\&.
+.SS "bool SystemEx\&.Threading\&.AtomicLock\&.IsLocked\fR [get]\fP"
+
+.PP
+Definition at line \fB60\fP of file \fBAtomicLock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.AtomicLock\&.IsThreadOwnerTrackingEnabled\fR [get]\fP"
+
+.PP
+Indicates whether thread‑owner tracking is enabled for the underlying spin lock\&. When enabled, the lock records which thread currently owns it, allowing additional safety checks at the cost of extra overhead\&. 
+.PP
+Implements \fBSystemEx\&.Threading\&.ISpinlock< T >\fP\&.
+.PP
+Definition at line \fB57\fP of file \fBAtomicLock\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

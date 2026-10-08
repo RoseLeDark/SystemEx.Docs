@@ -1,0 +1,740 @@
+.TH "SystemEx.Collections.Generic.TupleMap< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.TupleMap< T > \- A sparse, linear container that stores elements as \fBTuple<T>\fP objects, each consisting of a single key of type \fIT\fP  and an arbitrary number of additional values\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEnumerable, IEnumerable, \fBSystemEx\&.Collections\&.Generic\&.ITraverse< T >\fP, and ICollection\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBAdd\fP (Tuple< T > item)"
+.br
+.RI "Adds an element to the tuplemap\&. "
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clears the map by resetting the logical index and reinitializing the buffers\&. "
+.ti -1c
+.RI "bool \fBContains\fP (Tuple< T > item)"
+.br
+.RI "Determines whether the specified item exists\&. "
+.ti -1c
+.RI "bool \fBContainsKey\fP (T Key)"
+.br
+.RI "Determines whether any element has the specified key\&. "
+.ti -1c
+.RI "bool \fBContainsValue< TU >\fP (TU value)"
+.br
+.RI "Determines whether any element has the specified value\&. "
+.ti -1c
+.RI "Pair< bool, long > \fBCopyFrom\fP (TupleMap< T > source, ulong sourceOffset, ulong destinationOffset, ulong count)"
+.br
+.RI "Copies a range of elements from another map into this tuplemap\&. Automatically grows the buffer if required\&. "
+.ti -1c
+.RI "void \fBCopyTo\fP (Tuple< T >[] array, int arrayIndex)"
+.br
+.RI "Copies the internal buffer to an external array\&. "
+.ti -1c
+.RI "Pair< bool, long > \fBCopyTo\fP (TupleMap< T > vector, ulong VectorIndex)"
+.br
+.RI "Copies a range of elements to another map starting at the specified index\&. "
+.ti -1c
+.RI "Pair< bool, long > \fBCopyTo\fP (uint sourceOffset, TupleMap< T > destination, ulong destinationOffset, ulong count)"
+.br
+.RI "Copies a range of elements to another tuplemap\&. "
+.ti -1c
+.RI "Tuple< T > \fBElementAt\fP (long index)"
+.br
+.RI "Returns the element at the specified index\&. "
+.ti -1c
+.RI "bool \fBErase\fP ()"
+.br
+.RI "Removes the last active element\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long index)"
+.br
+.RI "Removes the element at the specified index\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long start, long end)"
+.br
+.RI "Removes all elements in the specified range\&. "
+.ti -1c
+.RI "bool \fBErase\fP (Tuple< T > value)"
+.br
+.RI "Removes the specified tuple\&. "
+.ti -1c
+.RI "IEnumerable< Tuple< T > > \fBFind\fP (T Key)"
+.br
+.RI "Finds all entries matching the specified key\&. "
+.ti -1c
+.RI "Optional< Tuple< T > > \fBGet\fP (T key)"
+.br
+.ti -1c
+.RI "Optional< TU > \fBGet< TU >\fP (T Key)"
+.br
+.RI "Retrieves the value associated with the specified key\&. "
+.ti -1c
+.RI "Type \fBGetElementType\fP ()"
+.br
+.RI "Gets the element type stored in the tuplemap\&. "
+.ti -1c
+.RI "IEnumerator< Tuple< T > > \fBGetEnumerator\fP ()"
+.br
+.RI "Enumerates all active elements in the tuplemap\&. "
+.ti -1c
+.RI "bool \fBGrow\fP ()"
+.br
+.RI "Grows the internal buffer by \fBGrowSize\fP if automatic growth is enabled\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long index, Tuple< T > entry)"
+.br
+.RI "Inserts an element at the specified index, shifting elements to the right\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long start, long end, Tuple< T > entry)"
+.br
+.RI "Inserts an element at the specified index, shifting elements to the right\&. "
+.ti -1c
+.RI "bool \fBInsertRange\fP (int start, IEnumerable< Tuple< T > > items)"
+.br
+.RI "Inserts a range of elements starting at the specified index\&. "
+.ti -1c
+.RI "bool \fBInsertRange\fP (long start, Tuple< T >[] entrys)"
+.br
+.RI "Inserts a range of elements starting at the specified index\&. "
+.ti -1c
+.RI "bool \fBPushBack\fP (Tuple< T > entry)"
+.br
+.RI "Appends a key–value pair to the end of the tuplemap\&. "
+.ti -1c
+.RI "void \fBPushBack\fP (TupleMap< T > other)"
+.br
+.RI "Appends all active elements from another tuplemap\&. "
+.ti -1c
+.RI "bool \fBPushFront\fP (Tuple< T > entry)"
+.br
+.RI "Inserts a key–value pair at the front of the tuplemap\&. "
+.ti -1c
+.RI "bool \fBRemove\fP (T key)"
+.br
+.RI "Removes the element with the specified key\&. "
+.ti -1c
+.RI "bool \fBRemove\fP (Tuple< T > item)"
+.br
+.RI "Removes the specified key–value pair\&. "
+.ti -1c
+.RI "void \fBRemoveAt\fP (int pos)"
+.br
+.RI "Removes the element at the specified index\&. "
+.ti -1c
+.RI "void \fBRemoveAt\fP (int start, int iend)"
+.br
+.RI "Removes all elements in the specified range\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (long index, Tuple< T > entry)"
+.br
+.RI "Replaces the element at the specified index\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (long start, long end, Tuple< T > entry)"
+.br
+.RI "Replaces a range of elements with the specified entry\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (T key, Tuple< T > entry)"
+.br
+.RI "Replaces the value associated with the specified key\&. "
+.ti -1c
+.RI "bool \fBReplaceRange\fP (long start, Tuple< T >[] entrys)"
+.br
+.RI "Replaces a range of elements with the specified entries\&. "
+.ti -1c
+.RI "void \fBSwap\fP (long i, long j)"
+.br
+.RI "Swaps two elements in the map, including their active/inactive state\&. "
+.ti -1c
+.RI "Tuple< T >[] \fBToNative\fP ()"
+.br
+.RI "Returns a copy of the internal buffer\&. "
+.ti -1c
+.RI "void \fBTraverse\fP (\fBTraversMode\fP mode, long startIndex, long endIndex, Action< Tuple< T > > func)"
+.br
+.RI "Traverses a range of elements using the specified traversal mode\&. "
+.ti -1c
+.RI "bool \fBTryGeValue< TU >\fP (T key, [MaybeNullWhen(false)] out TU? value)"
+.br
+.RI "Attempts to retrieve a value by key\&. "
+.ti -1c
+.RI "\fBTupleMap\fP (IEnumerable< Tuple< T > > e, int growSize=16)"
+.br
+.ti -1c
+.RI "\fBTupleMap\fP (long size)"
+.br
+.ti -1c
+.RI "\fBTupleMap\fP (long size, int growSize=16)"
+.br
+.ti -1c
+.RI "\fBTupleMap\fP (Tuple< T >[] e, int growSize=16)"
+.br
+.ti -1c
+.RI "\fBTupleMap\fP (TupleMap< T > other)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.ITraverse< T >\fP
+.in +1c
+.ti -1c
+.RI "void \fBTraverse\fP (\fBTraversMode\fP mode, long startIndex, long endIndex, Action< T > func)"
+.br
+.RI "Traverses a range of elements using the specified traversal mode\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBAutoGrow\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets a value indicating whether the map should automatically grow when full\&. "
+.ti -1c
+.RI "Tuple< T > \fBBack\fP\fR [get]\fP"
+.br
+.RI "Gets the last active element in the tuplemap\&. "
+.ti -1c
+.RI "long \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of active elements stored in the tuplemap\&. "
+.ti -1c
+.RI "Tuple< T >? \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the current logical position (m_index)\&. "
+.ti -1c
+.RI "Tuple< T >? \fBFirst\fP\fR [get]\fP"
+.br
+.RI "Gets the first active element in the tuplemap\&. "
+.ti -1c
+.RI "Tuple< T > \fBFront\fP\fR [get]\fP"
+.br
+.RI "Gets the first active element in the tuplemap\&. "
+.ti -1c
+.RI "long \fBGrowSize\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the automatic growth size\&. When positive, the map grows by this amount whenever additional capacity is required\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the map contains no active elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the map is full\&. "
+.ti -1c
+.RI "bool \fBIsReadOnly\fP\fR [get]\fP"
+.br
+.RI "Always false; the map supports modification\&. "
+.ti -1c
+.RI "ICollection< T > \fBKeys\fP\fR [get]\fP"
+.br
+.RI "Gets a collection containing all active keys in the tuple\&. "
+.ti -1c
+.RI "Tuple< T >? \fBLast\fP\fR [get]\fP"
+.br
+.RI "Gets the last active element in the tuplemap\&. "
+.ti -1c
+.RI "long \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the number of allocated slots in the internal buffer\&. "
+.ti -1c
+.RI "long \fBSize\fP\fR [get]\fP"
+.br
+.RI "Gets the theoretical maximum logical size of the tuple\&. "
+.ti -1c
+.RI "Optional< Tuple< T > > \fBthis[T key]\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the value associated with the specified key\&. If the key does not exist, a new entry is appended\&. "
+.ti -1c
+.RI "ICollection< ICollection< Object > > \fBValues\fP\fR [get]\fP"
+.br
+.RI "Gets a collection containing all active Values in the tuple\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A sparse, linear container that stores elements as \fBTuple<T>\fP objects, each consisting of a single key of type \fIT\fP  and an arbitrary number of additional values\&. 
+
+Unlike \fBMap<T, TU>\fP, which stores fixed two‑value pairs, \fBTupleMap<T>\fP supports variable‑length, heterogeneous value sequences per key\&. This makes it suitable for scenarios where each key represents a record, row, or structured entry with multiple fields\&. 
+
+.PP
+The container behaves like a sparse vector: inactive slots remain allocated but are ignored during traversal, lookup, and enumeration\&. This design enables efficient slicing, copying, and low‑level operations without compacting or reallocating the underlying storage\&. 
+
+.PP
+Automatic growth is controlled through \fBGrowSize\fP and \fBAutoGrow\fP\&. When enabled, the internal buffer expands automatically to accommodate additional tuples\&. 
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fInotnull\fP
+.PP
+Definition at line \fB53\fP of file \fBTupleMap\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Add (Tuple< T > item)"
+
+.PP
+Adds an element to the tuplemap\&. 
+.PP
+Definition at line \fB804\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Clear ()"
+
+.PP
+Clears the map by resetting the logical index and reinitializing the buffers\&. 
+.PP
+Definition at line \fB589\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Contains (Tuple< T > item)"
+
+.PP
+Determines whether the specified item exists\&. 
+.PP
+Definition at line \fB837\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.ContainsKey (T Key)"
+
+.PP
+Determines whether any element has the specified key\&. 
+.PP
+Definition at line \fB755\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBInsert()\fP, \fBPushBack()\fP, and \fBPushFront()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.ContainsValue< TU > (TU value)"
+
+.PP
+Determines whether any element has the specified value\&. 
+.PP
+Definition at line \fB770\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "Pair< bool, long > SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.CopyFrom (TupleMap< T > source, ulong sourceOffset, ulong destinationOffset, ulong count)"
+
+.PP
+Copies a range of elements from another map into this tuplemap\&. Automatically grows the buffer if required\&. 
+.PP
+Definition at line \fB669\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.CopyTo (Tuple< T >[] array, int arrayIndex)"
+
+.PP
+Copies the internal buffer to an external array\&. 
+.PP
+Definition at line \fB854\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "Pair< bool, long > SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.CopyTo (TupleMap< T > vector, ulong VectorIndex)"
+
+.PP
+Copies a range of elements to another map starting at the specified index\&. 
+.PP
+Definition at line \fB629\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBCopyTo()\fP\&.
+.SS "Pair< bool, long > SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.CopyTo (uint sourceOffset, TupleMap< T > destination, ulong destinationOffset, ulong count)"
+
+.PP
+Copies a range of elements to another tuplemap\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsourceOffset\fP Offset in the source tuplemap\&.
+.br
+\fIdestination\fP Destination tuplemap\&.
+.br
+\fIdestinationOffset\fP Offset in the destination tuplemap\&.
+.br
+\fIcount\fP Number of elements to copy\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pair indicating success and number of copied elements\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB641\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "Tuple< T > SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.ElementAt (long index)"
+
+.PP
+Returns the element at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index to retrieve\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The element at the given index\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIArgumentOutOfRangeException\fP Thrown when the index is outside the allocated range\&. 
+.br
+\fIException\fP Thrown when the slot is inactive\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB573\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Erase ()"
+
+.PP
+Removes the last active element\&. 
+.PP
+Definition at line \fB492\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBErase()\fP, \fBRemove()\fP, \fBRemoveAt()\fP, and \fBRemoveAt()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Erase (long index)"
+
+.PP
+Removes the element at the specified index\&. 
+.PP
+Definition at line \fB504\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Erase (long start, long end)"
+
+.PP
+Removes all elements in the specified range\&. 
+.PP
+Definition at line \fB515\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Erase (Tuple< T > value)"
+
+.PP
+Removes the specified tuple\&. 
+.PP
+Definition at line \fB531\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "IEnumerable< Tuple< T > > SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Find (T Key)"
+
+.PP
+Finds all entries matching the specified key\&. 
+.PP
+Definition at line \fB367\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "Optional< Tuple< T > > SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Get (T key)"
+
+.PP
+Definition at line \fB447\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "Optional< TU > SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Get< TU > (T Key)"
+
+.PP
+Retrieves the value associated with the specified key\&. 
+.PP
+Definition at line \fB786\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "Type SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.GetElementType ()"
+
+.PP
+Gets the element type stored in the tuplemap\&. 
+.PP
+Definition at line \fB749\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "IEnumerator< Tuple< T > > SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.GetEnumerator ()"
+
+.PP
+Enumerates all active elements in the tuplemap\&. 
+.PP
+Definition at line \fB598\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Grow ()"
+
+.PP
+Grows the internal buffer by \fBGrowSize\fP if automatic growth is enabled\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if the buffer was successfully resized; otherwise false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB582\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBPushBack()\fP, \fBReplace()\fP, and \fBReplace()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Insert (long index, Tuple< T > entry)"
+
+.PP
+Inserts an element at the specified index, shifting elements to the right\&. 
+.PP
+Definition at line \fB336\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBInsertRange()\fP, and \fBInsertRange()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Insert (long start, long end, Tuple< T > entry)"
+
+.PP
+Inserts an element at the specified index, shifting elements to the right\&. 
+.PP
+Definition at line \fB392\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.InsertRange (int start, IEnumerable< Tuple< T > > items)"
+
+.PP
+Inserts a range of elements starting at the specified index\&. 
+.PP
+Definition at line \fB380\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.InsertRange (long start, Tuple< T >[] entrys)"
+
+.PP
+Inserts a range of elements starting at the specified index\&. 
+.PP
+Definition at line \fB397\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.PushBack (Tuple< T > entry)"
+
+.PP
+Appends a key–value pair to the end of the tuplemap\&. 
+.PP
+Definition at line \fB288\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, and \fBPushBack()\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.PushBack (TupleMap< T > other)"
+
+.PP
+Appends all active elements from another tuplemap\&. 
+.PP
+Definition at line \fB878\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.PushFront (Tuple< T > entry)"
+
+.PP
+Inserts a key–value pair at the front of the tuplemap\&. 
+.PP
+Definition at line \fB304\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Remove (T key)"
+
+.PP
+Removes the element with the specified key\&. 
+.PP
+Definition at line \fB822\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Remove (Tuple< T > item)"
+
+.PP
+Removes the specified key–value pair\&. 
+.PP
+Definition at line \fB818\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.RemoveAt (int pos)"
+
+.PP
+Removes the element at the specified index\&. 
+.PP
+Definition at line \fB808\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.RemoveAt (int start, int iend)"
+
+.PP
+Removes all elements in the specified range\&. 
+.PP
+Definition at line \fB813\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Replace (long index, Tuple< T > entry)"
+
+.PP
+Replaces the element at the specified index\&. 
+.PP
+Definition at line \fB408\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBReplaceRange()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Replace (long start, long end, Tuple< T > entry)"
+
+.PP
+Replaces a range of elements with the specified entry\&. 
+.PP
+Definition at line \fB463\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Replace (T key, Tuple< T > entry)"
+
+.PP
+Replaces the value associated with the specified key\&. 
+.PP
+Definition at line \fB433\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.ReplaceRange (long start, Tuple< T >[] entrys)"
+
+.PP
+Replaces a range of elements with the specified entries\&. 
+.PP
+Definition at line \fB481\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Swap (long i, long j)"
+
+.PP
+Swaps two elements in the map, including their active/inactive state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi\fP Index of the first element\&.
+.br
+\fIj\fP Index of the second element\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB549\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "Tuple< T >[] SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.ToNative ()"
+
+.PP
+Returns a copy of the internal buffer\&. 
+.PP
+Definition at line \fB717\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Traverse (\fBTraversMode\fP mode, long startIndex, long endIndex, Action< Tuple< T > > func)"
+
+.PP
+Traverses a range of elements using the specified traversal mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImode\fP Traversal direction (forwards or backwards)\&.
+.br
+\fIstartIndex\fP Start index of traversal\&.
+.br
+\fIendIndex\fP End index of traversal\&.
+.br
+\fIfunc\fP Callback invoked for each active element\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB610\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.TryGeValue< TU > (T key, [MaybeNullWhen(false)] out TU? value)"
+
+.PP
+Attempts to retrieve a value by key\&. 
+.PP
+Definition at line \fB860\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.TupleMap (IEnumerable< Tuple< T > > e, int growSize = \fR16\fP)"
+
+.PP
+Definition at line \fB184\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.TupleMap (long size)"
+
+.PP
+Definition at line \fB158\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.TupleMap (long size, int growSize = \fR16\fP)"
+
+.PP
+Definition at line \fB163\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.TupleMap (Tuple< T >[] e, int growSize = \fR16\fP)"
+
+.PP
+Definition at line \fB172\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.TupleMap (TupleMap< T > other)"
+
+.PP
+Definition at line \fB199\fP of file \fBTupleMap\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.AutoGrow\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets a value indicating whether the map should automatically grow when full\&. 
+.PP
+Definition at line \fB143\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBCopyFrom()\fP, \fBGrow()\fP, \fBInsert()\fP, \fBPushBack()\fP, \fBPushFront()\fP, and \fBReplace()\fP\&.
+.SS "Tuple<T> SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Back\fR [get]\fP"
+
+.PP
+Gets the last active element in the tuplemap\&. 
+.PP
+Definition at line \fB127\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of active elements stored in the tuplemap\&. 
+.PP
+Definition at line \fB148\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBContainsKey()\fP, \fBContainsValue< TU >()\fP, \fBErase()\fP, \fBGet< TU >()\fP, \fBRemove()\fP, and \fBTryGeValue< TU >()\fP\&.
+.SS "Tuple<T>? SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Current\fR [get]\fP"
+
+.PP
+Gets the element at the current logical position (m_index)\&. This is primarily useful during manual iteration or when treating the vector as a stack-like structure\&. Accessing Current when the vector is empty or m_index is out of range is undefined\&. 
+.PP
+Definition at line \fB217\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "Tuple<T>? SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.First\fR [get]\fP"
+
+.PP
+Gets the first active element in the tuplemap\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fIInvalidOperationException\fP Thrown when the map contains no active elements\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB224\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBFind()\fP, and \fBReplace()\fP\&.
+.SS "Tuple<T> SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Front\fR [get]\fP"
+
+.PP
+Gets the first active element in the tuplemap\&. 
+.PP
+Definition at line \fB123\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.GrowSize\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the automatic growth size\&. When positive, the map grows by this amount whenever additional capacity is required\&. 
+.PP
+Definition at line \fB132\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBCopyFrom()\fP, \fBGrow()\fP, \fBInsert()\fP, \fBPushFront()\fP, and \fBReplace()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the map contains no active elements\&. 
+.PP
+Definition at line \fB156\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBElementAt()\fP, \fBErase()\fP, and \fBErase()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.IsFull\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the map is full\&. 
+.PP
+Definition at line \fB152\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.IsReadOnly\fR [get]\fP"
+
+.PP
+Always false; the map supports modification\&. 
+.PP
+Definition at line \fB267\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "ICollection<T> SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Keys\fR [get]\fP"
+
+.PP
+Gets a collection containing all active keys in the tuple\&. 
+.PP
+Definition at line \fB86\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "Tuple<T>? SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Last\fR [get]\fP"
+
+.PP
+Gets the last active element in the tuplemap\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fIInvalidOperationException\fP Thrown when the map contains no active elements\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB245\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Length\fR [get]\fP"
+
+.PP
+Gets the number of allocated slots in the internal buffer\&. 
+.PP
+Definition at line \fB119\fP of file \fBTupleMap\&.cs\fP\&.
+.PP
+Referenced by \fBClear()\fP, \fBContains()\fP, \fBCopyFrom()\fP, \fBCopyTo()\fP, \fBElementAt()\fP, \fBErase()\fP, \fBErase()\fP, \fBGrow()\fP, \fBPushBack()\fP, and \fBPushFront()\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Size\fR [get]\fP"
+
+.PP
+Gets the theoretical maximum logical size of the tuple\&. 
+.PP
+Definition at line \fB76\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "Optional<Tuple<T> > SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.this[T key]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the value associated with the specified key\&. If the key does not exist, a new entry is appended\&. 
+.PP
+Definition at line \fB272\fP of file \fBTupleMap\&.cs\fP\&.
+.SS "ICollection< ICollection<Object> > SystemEx\&.Collections\&.Generic\&.TupleMap< T >\&.Values\fR [get]\fP"
+
+.PP
+Gets a collection containing all active Values in the tuple\&. 
+.PP
+Definition at line \fB99\fP of file \fBTupleMap\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

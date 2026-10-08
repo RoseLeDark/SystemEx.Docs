@@ -1,0 +1,145 @@
+.TH "SystemEx.Collections.Generic.Slices< T, TContainer >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Slices< T, TContainer > \- Provides a deterministic multi-thread slicing model over a container\&. A slice represents a continuous range of elements inside the container\&. Each slice can be exclusively owned by exactly one thread\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBEquals\fP (\fBSlices\fP< T, TContainer > other)"
+.br
+.ti -1c
+.RI "SubSlice< T, TContainer >? \fBGetJobSlice\fP (int sliceID, int thread_id)"
+.br
+.RI "Retrieves a SubSlice by index and attempts to assign ownership to the requesting thread\&. If the slice is already owned, \fRnull\fP is returned\&. "
+.ti -1c
+.RI "bool \fBGetValue\fP (SubSlice< T, TContainer > slice, int index, out T? value)"
+.br
+.RI "Reads a value from the container through a SubSlice\&. Reading is only permitted if the calling thread owns the slice\&. The index is a slice-relative index\&. "
+.ti -1c
+.RI "\fBResult\fP \fBSetOwner\fP (SubSlice< T, TContainer > slice, int thread_id)"
+.br
+.RI "Assigns ownership of a SubSlice to a thread if the slice is currently unowned\&. Ownership is exclusive: only one thread may own a slice at any time\&. "
+.ti -1c
+.RI "\fBSlices\fP (ref TContainer con, int sliceLen)"
+.br
+.RI "Constructs a new Slices instance by dividing the container into fixed-size SubSlices\&. The last SubSlice may contain fewer elements if the container size is not divisible by \fIsliceLen\fP \&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a deterministic multi-thread slicing model over a container\&. A slice represents a continuous range of elements inside the container\&. Each slice can be exclusively owned by exactly one thread\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Element type stored in the container\&.
+.br
+\fITContainer\fP Container type implementing \fBIVector<T>\fP\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITContainer\fP : \fIIVector<T>\fP
+.PP
+Definition at line \fB129\fP of file \fBVectorSlice\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.Slices< T, TContainer >\&.Equals (\fBSlices\fP< T, TContainer > other)"
+
+.PP
+
+.PP
+Definition at line \fB250\fP of file \fBVectorSlice\&.cs\fP\&.
+.SS "SubSlice< T, TContainer >? SystemEx\&.Collections\&.Generic\&.Slices< T, TContainer >\&.GetJobSlice (int sliceID, int thread_id)"
+
+.PP
+Retrieves a SubSlice by index and attempts to assign ownership to the requesting thread\&. If the slice is already owned, \fRnull\fP is returned\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsliceID\fP \fBIndex\fP of the slice to retrieve\&.
+.br
+\fIthread_id\fP Thread ID requesting ownership\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The owned SubSlice if ownership was granted; otherwise \fRnull\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB205\fP of file \fBVectorSlice\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Slices< T, TContainer >\&.GetValue (SubSlice< T, TContainer > slice, int index, out T? value)"
+
+.PP
+Reads a value from the container through a SubSlice\&. Reading is only permitted if the calling thread owns the slice\&. The index is a slice-relative index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIslice\fP The SubSlice providing access\&.
+.br
+\fIindex\fP slice-relative index
+.br
+\fIvalue\fP Output value if the read succeeds\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the thread owns the slice and the index lies inside the slice; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB231\fP of file \fBVectorSlice\&.cs\fP\&.
+.SS "\fBResult\fP SystemEx\&.Collections\&.Generic\&.Slices< T, TContainer >\&.SetOwner (SubSlice< T, TContainer > slice, int thread_id)"
+
+.PP
+Assigns ownership of a SubSlice to a thread if the slice is currently unowned\&. Ownership is exclusive: only one thread may own a slice at any time\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIslice\fP The SubSlice to claim\&.
+.br
+\fIthread_id\fP The requesting thread ID\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if ownership was successfully assigned; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB188\fP of file \fBVectorSlice\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Slices< T, TContainer >\&.Slices (ref TContainer con, int sliceLen)"
+
+.PP
+Constructs a new Slices instance by dividing the container into fixed-size SubSlices\&. The last SubSlice may contain fewer elements if the container size is not divisible by \fIsliceLen\fP \&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcon\fP \fBReference\fP to the underlying container\&.
+.br
+\fIsliceLen\fP Number of elements per SubSlice\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB155\fP of file \fBVectorSlice\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

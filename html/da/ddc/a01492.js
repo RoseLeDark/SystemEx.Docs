@@ -1,9 +1,9 @@
 var a01492 =
 [
-    [ "UnmanagedObject", "da/ddc/a01492.html#a14aed2b1cfea656d65436290df59874a", null ],
-    [ "Dispose", "da/ddc/a01492.html#a956659ae97324e807929f60c7d83486f", null ],
-    [ "Data", "da/ddc/a01492.html#a301a6542499c4ac865e5157b412d9551", null ],
-    [ "Handle", "da/ddc/a01492.html#a1d1977cb3ec2a3b9645dd44c451733d8", null ],
-    [ "Point", "da/ddc/a01492.html#a6c32525df6e515c3530726169834949b", null ],
-    [ "Size", "da/ddc/a01492.html#a55af49dd8668c7415aaa9b1faa544351", null ]
+    [ "StrippedCache", "d3/d8a/a00899_gaedd6d2db8ba958464aadc7a7f0294aea.html#gaedd6d2db8ba958464aadc7a7f0294aea", null ],
+    [ "AsFlexSpan", "d3/d8a/a00899_ga8934fd6b80c0e3a7aa08f651168a920f.html#ga8934fd6b80c0e3a7aa08f651168a920f", null ],
+    [ "ToArray", "d3/d8a/a00899_gaaf3345a692bc99e21ecdb1b25b6bdc74.html#gaaf3345a692bc99e21ecdb1b25b6bdc74", null ],
+    [ "WriteRange", "d3/d8a/a00899_ga9606104852f651b28396a7cdebe22484.html#ga9606104852f651b28396a7cdebe22484", null ],
+    [ "WriteRange", "d3/d8a/a00899_gaa221c7108e09f7a87c04cbda06ba096d.html#gaa221c7108e09f7a87c04cbda06ba096d", null ],
+    [ "Length", "d3/d8a/a00899_gae204b6a18b09c458e073dbef28295bbc.html#gae204b6a18b09c458e073dbef28295bbc", null ]
 ];

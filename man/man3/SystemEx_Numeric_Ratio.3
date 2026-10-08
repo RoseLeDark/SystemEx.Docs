@@ -1,0 +1,777 @@
+.TH "SystemEx.Numeric.Ratio" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Ratio \- Represents a rational number using a signed 64‑bit numerator and denominator\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable, IComparable, \fBSystemEx\&.IComparableEx< T >\fP, IComparer, and \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBCompare\fP (\fBRatio\fP x, \fBRatio\fP y)"
+.br
+.RI "Compares two ratios\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (\fBRatio\fP a)"
+.br
+.RI "Compares this ratio to another ratio\&. "
+.ti -1c
+.RI "int IComparable< \fBRatio\fP >\&. \fBCompareTo\fP (\fBRatio\fP other)"
+.br
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "bool \fBEquals\fP (\fBRatio\fP other)"
+.br
+.RI "Determines whether this ratio is equal to another ratio\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Computes a hash code for this object\&. "
+.ti -1c
+.RI "\fBRatio\fP \fBInverse\fP ()"
+.br
+.RI "Returns the multiplicative inverse of this ratio (denominator/numerator)\&. "
+.ti -1c
+.RI "\fBRatio\fP \fBNormalize\fP ()"
+.br
+.RI "Returns a normalized version of this ratio by dividing numerator and denominator by their greatest common divisor\&. "
+.ti -1c
+.RI "\fBRatio\fP ()"
+.br
+.RI "Initializes a new ratio with the value 1/1\&. "
+.ti -1c
+.RI "\fBRatio\fP (long num, long den)"
+.br
+.RI "Initializes a new ratio with the specified numerator and denominator\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBToBytes\fP ()"
+.br
+.RI "Converts this instance into a deterministic byte array\&. The returned data is used as input for hashing algorithms\&. "
+.ti -1c
+.RI "decimal \fBToDecimal\fP ()"
+.br
+.RI "Converts the ratio to a decimal\&. "
+.ti -1c
+.RI "double \fBToDouble\fP ()"
+.br
+.RI "Converts the ratio to a double\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Converts the ratio to a string in the form "numerator/denominator"\&. If the denominator is 1, only the numerator is returned\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static implicit \fBoperator decimal\fP (\fBRatio\fP f)"
+.br
+.RI "Converts a ratio to a decimal\&. "
+.ti -1c
+.RI "static implicit \fBoperator double\fP (\fBRatio\fP f)"
+.br
+.RI "Converts a ratio to a double\&. "
+.ti -1c
+.RI "static implicit \fBoperator Ratio\fP (int n)"
+.br
+.RI "Converts an integer to a ratio (n/1)\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBRatio\fP a, \fBRatio\fP b)"
+.br
+.RI "Determines whether two ratios differ\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBoperator*\fP (\fBRatio\fP a, \fBRatio\fP b)"
+.br
+.RI "Multiplies two ratios\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBoperator+\fP (\fBRatio\fP a)"
+.br
+.RI "Returns the ratio unchanged\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBoperator+\fP (\fBRatio\fP a, \fBRatio\fP b)"
+.br
+.RI "Adds two ratios\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBoperator\-\fP (\fBRatio\fP a)"
+.br
+.RI "Negates the ratio\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBoperator\-\fP (\fBRatio\fP a, \fBRatio\fP b)"
+.br
+.RI "Subtracts one ratio from another\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBoperator/\fP (\fBRatio\fP a, \fBRatio\fP b)"
+.br
+.RI "Divides one ratio by another\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBRatio\fP a, \fBRatio\fP b)"
+.br
+.RI "Determines whether one ratio is strictly less than another\&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBRatio\fP a, \fBRatio\fP b)"
+.br
+.RI "Determines whether one ratio is less than or equal to another\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBRatio\fP a, \fBRatio\fP b)"
+.br
+.RI "Determines whether two ratios are exactly equal\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBRatio\fP a, \fBRatio\fP b)"
+.br
+.RI "Determines whether one ratio is strictly greater than another\&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBRatio\fP a, \fBRatio\fP b)"
+.br
+.RI "Determines whether one ratio is greater than or equal to another\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "static \fBRatio\fP \fBAtto\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix atto (10^-18)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBCenti\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix centi (10^-2)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBDeca\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix deca (10^1)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBDeci\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix deci (10^-1)\&. "
+.ti -1c
+.RI "long \fBDenominator\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the denominator of the ratio\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBEighth\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 1/8\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBExa\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix exa (10^18)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBFemto\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix femto (10^-15)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBFifth\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 1/5\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBFourFifths\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 4/5\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBGiga\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix giga (10^9)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBHalf\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 1/2\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBHecto\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix hecto (10^2)\&. "
+.ti -1c
+.RI "bool \fBIsInteger\fP\fR [get]\fP"
+.br
+.RI "Gets whether the ratio represents an integer value (denominator == 1)\&. "
+.ti -1c
+.RI "bool \fBIsNegative\fP\fR [get]\fP"
+.br
+.RI "Gets whether the ratio is negative (denominator < 0)\&. "
+.ti -1c
+.RI "bool \fBIsPositive\fP\fR [get]\fP"
+.br
+.RI "Gets whether the ratio is positive (denominator > 0)\&. "
+.ti -1c
+.RI "bool \fBIsRational\fP\fR [get]\fP"
+.br
+.RI "Gets whether the ratio is a non‑integer rational number (denominator != 1)\&. "
+.ti -1c
+.RI "bool \fBIsZero\fP\fR [get]\fP"
+.br
+.RI "Gets whether the ratio equals zero\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBKilo\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix kilo (10^3)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBMaxValue\fP\fR [get]\fP"
+.br
+.RI "The largest representable ratio value, using long\&.MaxValue as numerator\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBMega\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix mega (10^6)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBMicro\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix micro (10^-6)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBMilli\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix milli (10^-3)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBMinValue\fP\fR [get]\fP"
+.br
+.RI "The smallest representable ratio value, using long\&.MinValue as numerator\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBNano\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix nano (10^-9)\&. "
+.ti -1c
+.RI "long \fBNumerator\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the numerator of the ratio\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBOne\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 1/1\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBPeta\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix peta (10^15)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBPico\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix pico (10^-12)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBQuarter\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 1/4\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBSixteenth\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 1/16\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBTenth\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 1/10\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBTera\fP\fR [get]\fP"
+.br
+.RI "Represents the SI prefix tera (10^12)\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBThird\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 1/3\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBThreeFifths\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 3/5\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBThreeQuarters\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 3/4\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBTwoFifths\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 2/5\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBTwoThirds\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 2/3\&. "
+.ti -1c
+.RI "static \fBRatio\fP \fBZero\fP\fR [get]\fP"
+.br
+.RI "Represents the ratio 0/1\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a rational number using a signed 64‑bit numerator and denominator\&. 
+
+A \fBRatio\fP stores an exact fractional value without automatic reduction\&. This allows the representation of structural fractions such as gear ratios (e\&.g\&., 20/60 is preserved and not simplified to 1/3)\&. 
+
+.PP
+The type provides full rational arithmetic, comparison operators, normalization, conversion to floating‑point types, and serialization support\&. 
+.br
+ Negative denominators are normalized internally so that the denominator is always positive\&. 
+
+.PP
+The struct is sequentially laid out for deterministic memory representation and supports hashing via the \fBHashAlgorithmAttribute\fP\&. 
+.PP
+Definition at line \fB48\fP of file \fBRatio\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.Ratio\&.Ratio ()"
+
+.PP
+Initializes a new ratio with the value 1/1\&. 
+.PP
+Definition at line \fB254\fP of file \fBRatio\&.cs\fP\&.
+.PP
+Referenced by \fBCompare()\fP, \fBCompareTo()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBInverse()\fP, \fBNormalize()\fP, \fBoperator decimal()\fP, \fBoperator double()\fP, \fBoperator Ratio()\fP, \fBoperator!=()\fP, \fBoperator*()\fP, \fBoperator+()\fP, \fBoperator+()\fP, \fBoperator\-()\fP, \fBoperator\-()\fP, \fBoperator/()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, \fBoperator>()\fP, and \fBoperator>=()\fP\&.
+.SS "SystemEx\&.Numeric\&.Ratio\&.Ratio (long num, long den)"
+
+.PP
+Initializes a new ratio with the specified numerator and denominator\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInum\fP The numerator\&.
+.br
+\fIden\fP The denominator\&. 
+.br
+ Must not be zero\&. 
+.br
+ Negative denominators are normalized\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIDivideByZeroException\fP Thrown when \fIden\fP  is zero\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB272\fP of file \fBRatio\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int SystemEx\&.Numeric\&.Ratio\&.Compare (\fBRatio\fP x, \fBRatio\fP y)"
+
+.PP
+Compares two ratios\&. 
+.PP
+Definition at line \fB472\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Numeric\&.Ratio\&.CompareTo (\fBRatio\fP a)"
+
+.PP
+Compares this ratio to another ratio\&. 
+.PP
+Definition at line \fB465\fP of file \fBRatio\&.cs\fP\&.
+.SS "int IComparable< \fBRatio\fP >\&. SystemEx\&.Numeric\&.Ratio\&.CompareTo (\fBRatio\fP other)"
+
+.PP
+Definition at line \fB476\fP of file \fBRatio\&.cs\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.Ratio\&.Equals (object? obj)"
+
+.PP
+
+.PP
+Definition at line \fB433\fP of file \fBRatio\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Ratio\&.Equals (\fBRatio\fP other)"
+
+.PP
+Determines whether this ratio is equal to another ratio\&. 
+.PP
+Definition at line \fB427\fP of file \fBRatio\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "override int SystemEx\&.Numeric\&.Ratio\&.GetHashCode ()"
+
+.PP
+Computes a hash code for this object\&. The primary hash is generated using HashFactory and the \fBHashAlgorithmAttribute\fP applied to this struct\&. 
+.br
+ If hashing fails (rare), a fallback XOR‑based hash is used\&. 
+.PP
+Definition at line \fB504\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Inverse ()"
+
+.PP
+Returns the multiplicative inverse of this ratio (denominator/numerator)\&. 
+.PP
+Definition at line \fB294\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Normalize ()"
+
+.PP
+Returns a normalized version of this ratio by dividing numerator and denominator by their greatest common divisor\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A reduced ratio with the same value\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB302\fP of file \fBRatio\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.Ratio\&.operator decimal (\fBRatio\fP f)\fR [static]\fP"
+
+.PP
+Converts a ratio to a decimal\&. 
+.PP
+Definition at line \fB458\fP of file \fBRatio\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.Ratio\&.operator double (\fBRatio\fP f)\fR [static]\fP"
+
+.PP
+Converts a ratio to a double\&. 
+.PP
+Definition at line \fB451\fP of file \fBRatio\&.cs\fP\&.
+.SS "implicit SystemEx\&.Numeric\&.Ratio\&.operator \fBRatio\fP (int n)\fR [static]\fP"
+
+.PP
+Converts an integer to a ratio (n/1)\&. 
+.PP
+Definition at line \fB444\fP of file \fBRatio\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Ratio\&.operator!= (\fBRatio\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Determines whether two ratios differ\&. 
+.PP
+Definition at line \fB388\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.operator* (\fBRatio\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Multiplies two ratios\&. 
+.PP
+Definition at line \fB347\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.operator+ (\fBRatio\fP a)\fR [static]\fP"
+
+.PP
+Returns the ratio unchanged\&. 
+.PP
+Definition at line \fB374\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.operator+ (\fBRatio\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Adds two ratios\&. 
+.PP
+Definition at line \fB340\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.operator\- (\fBRatio\fP a)\fR [static]\fP"
+
+.PP
+Negates the ratio\&. 
+.PP
+Definition at line \fB367\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.operator\- (\fBRatio\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Subtracts one ratio from another\&. 
+.PP
+Definition at line \fB360\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.operator/ (\fBRatio\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Divides one ratio by another\&. 
+.PP
+Definition at line \fB354\fP of file \fBRatio\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Ratio\&.operator< (\fBRatio\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Determines whether one ratio is strictly less than another\&. 
+.PP
+Definition at line \fB394\fP of file \fBRatio\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Ratio\&.operator<= (\fBRatio\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Determines whether one ratio is less than or equal to another\&. 
+.PP
+Definition at line \fB400\fP of file \fBRatio\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Ratio\&.operator== (\fBRatio\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Determines whether two ratios are exactly equal\&. 
+.PP
+Definition at line \fB381\fP of file \fBRatio\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Ratio\&.operator> (\fBRatio\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Determines whether one ratio is strictly greater than another\&. 
+.PP
+Definition at line \fB412\fP of file \fBRatio\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Ratio\&.operator>= (\fBRatio\fP a, \fBRatio\fP b)\fR [static]\fP"
+
+.PP
+Determines whether one ratio is greater than or equal to another\&. 
+.PP
+Definition at line \fB406\fP of file \fBRatio\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.Ratio\&.ToBytes ()"
+
+.PP
+Converts this instance into a deterministic byte array\&. The returned data is used as input for hashing algorithms\&. 
+.PP
+Implements \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.PP
+Definition at line \fB486\fP of file \fBRatio\&.cs\fP\&.
+.SS "decimal SystemEx\&.Numeric\&.Ratio\&.ToDecimal ()"
+
+.PP
+Converts the ratio to a decimal\&. 
+.PP
+Definition at line \fB288\fP of file \fBRatio\&.cs\fP\&.
+.PP
+Referenced by \fBoperator decimal()\fP\&.
+.SS "double SystemEx\&.Numeric\&.Ratio\&.ToDouble ()"
+
+.PP
+Converts the ratio to a double\&. 
+.PP
+Definition at line \fB282\fP of file \fBRatio\&.cs\fP\&.
+.PP
+Referenced by \fBoperator double()\fP\&.
+.SS "override string SystemEx\&.Numeric\&.Ratio\&.ToString ()"
+
+.PP
+Converts the ratio to a string in the form "numerator/denominator"\&. If the denominator is 1, only the numerator is returned\&. 
+.PP
+Definition at line \fB419\fP of file \fBRatio\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Atto\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix atto (10^-18)\&. 
+.PP
+Definition at line \fB53\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Centi\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix centi (10^-2)\&. 
+.PP
+Definition at line \fB77\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Deca\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix deca (10^1)\&. 
+.PP
+Definition at line \fB85\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Deci\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix deci (10^-1)\&. 
+.PP
+Definition at line \fB81\fP of file \fBRatio\&.cs\fP\&.
+.SS "long SystemEx\&.Numeric\&.Ratio\&.Denominator\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the denominator of the ratio\&. A value of zero is not allowed and throws DivideByZeroException\&. Negative denominators are normalized by flipping the sign of both numerator and denominator\&. 
+.PP
+Definition at line \fB215\fP of file \fBRatio\&.cs\fP\&.
+.PP
+Referenced by \fBoperator<()\fP, and \fBToString()\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Eighth\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 1/8\&. 
+.PP
+Definition at line \fB164\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Exa\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix exa (10^18)\&. 
+.PP
+Definition at line \fB114\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Femto\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix femto (10^-15)\&. 
+.PP
+Definition at line \fB57\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Fifth\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 1/5\&. 
+.PP
+Definition at line \fB179\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.FourFifths\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 4/5\&. 
+.PP
+Definition at line \fB194\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Giga\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix giga (10^9)\&. 
+.PP
+Definition at line \fB101\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Half\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 1/2\&. 
+.PP
+Definition at line \fB139\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Hecto\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix hecto (10^2)\&. 
+.PP
+Definition at line \fB89\fP of file \fBRatio\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Ratio\&.IsInteger\fR [get]\fP"
+
+.PP
+Gets whether the ratio represents an integer value (denominator == 1)\&. 
+.PP
+Definition at line \fB248\fP of file \fBRatio\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Ratio\&.IsNegative\fR [get]\fP"
+
+.PP
+Gets whether the ratio is negative (denominator < 0)\&. 
+.PP
+Definition at line \fB233\fP of file \fBRatio\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Ratio\&.IsPositive\fR [get]\fP"
+
+.PP
+Gets whether the ratio is positive (denominator > 0)\&. 
+.PP
+Definition at line \fB228\fP of file \fBRatio\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Ratio\&.IsRational\fR [get]\fP"
+
+.PP
+Gets whether the ratio is a non‑integer rational number (denominator != 1)\&. 
+.PP
+Definition at line \fB243\fP of file \fBRatio\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Ratio\&.IsZero\fR [get]\fP"
+
+.PP
+Gets whether the ratio equals zero\&. 
+.PP
+Definition at line \fB238\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Kilo\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix kilo (10^3)\&. 
+.PP
+Definition at line \fB93\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.MaxValue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+The largest representable ratio value, using long\&.MaxValue as numerator\&. 
+.PP
+Definition at line \fB134\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Mega\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix mega (10^6)\&. 
+.PP
+Definition at line \fB97\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Micro\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix micro (10^-6)\&. 
+.PP
+Definition at line \fB69\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Milli\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix milli (10^-3)\&. 
+.PP
+Definition at line \fB73\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.MinValue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+The smallest representable ratio value, using long\&.MinValue as numerator\&. 
+.PP
+Definition at line \fB129\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Nano\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix nano (10^-9)\&. 
+.PP
+Definition at line \fB65\fP of file \fBRatio\&.cs\fP\&.
+.SS "long SystemEx\&.Numeric\&.Ratio\&.Numerator\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the numerator of the ratio\&. 
+.PP
+Definition at line \fB202\fP of file \fBRatio\&.cs\fP\&.
+.PP
+Referenced by \fBoperator<()\fP, \fBoperator==()\fP, and \fBToString()\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.One\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 1/1\&. 
+.PP
+Definition at line \fB119\fP of file \fBRatio\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.Vec2r\&.Vec2r()\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Peta\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix peta (10^15)\&. 
+.PP
+Definition at line \fB109\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Pico\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix pico (10^-12)\&. 
+.PP
+Definition at line \fB61\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Quarter\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 1/4\&. 
+.PP
+Definition at line \fB154\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Sixteenth\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 1/16\&. 
+.PP
+Definition at line \fB169\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Tenth\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 1/10\&. 
+.PP
+Definition at line \fB174\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Tera\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the SI prefix tera (10^12)\&. 
+.PP
+Definition at line \fB105\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Third\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 1/3\&. 
+.PP
+Definition at line \fB144\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.ThreeFifths\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 3/5\&. 
+.PP
+Definition at line \fB189\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.ThreeQuarters\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 3/4\&. 
+.PP
+Definition at line \fB159\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.TwoFifths\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 2/5\&. 
+.PP
+Definition at line \fB184\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.TwoThirds\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 2/3\&. 
+.PP
+Definition at line \fB149\fP of file \fBRatio\&.cs\fP\&.
+.SS "\fBRatio\fP SystemEx\&.Numeric\&.Ratio\&.Zero\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Represents the ratio 0/1\&. 
+.PP
+Definition at line \fB124\fP of file \fBRatio\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.Vec3r\&.Vec3r()\fP, and \fBSystemEx\&.Numeric\&.Vec4r\&.Vec4r()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

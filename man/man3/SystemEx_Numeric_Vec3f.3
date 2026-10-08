@@ -1,0 +1,723 @@
+.TH "SystemEx.Numeric.Vec3f" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Vec3f \- Represents a 3‑component floating‑point vector\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IComparable, \fBSystemEx\&.IComparableEx< T >\fP, IComparable, IEquatable, and \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBCompareTo\fP (object? obj)"
+.br
+.RI "Compares this vector to another object\&. "
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (\fBVec3f\fP a)"
+.br
+.RI "Compares two vectors lexicographically\&. "
+.ti -1c
+.RI "int IComparable< \fBVec3f\fP >\&. \fBCompareTo\fP (\fBVec3f\fP other)"
+.br
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.RI "Determines whether this instance is equal to another object\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBVec3f\fP other)"
+.br
+.RI "Determines whether this instance is equal to another \fBHalf16\fP value, using the same semantics as the \fBoperator ==(Vec3f,Vec3f)\fP\&. "
+.ti -1c
+.RI "float \fBGet\fP (int index)"
+.br
+.RI "Gets a component by index (0 = X, 1 = Y)\&. "
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.RI "Computes a hash code for this vector\&. "
+.ti -1c
+.RI "FixedVector< byte > \fBToBytes\fP ()"
+.br
+.RI "Converts the vector into a deterministic byte sequence\&. "
+.ti -1c
+.RI "\fBVec3f\fP ()"
+.br
+.RI "Initializes a zero vector (0,0)\&. "
+.ti -1c
+.RI "\fBVec3f\fP (float _f)"
+.br
+.RI "Initializes both components with the same value\&. "
+.ti -1c
+.RI "\fBVec3f\fP (float _x, float _y, float _z)"
+.br
+.RI "Initializes a vector with explicit X and Y values\&. "
+.ti -1c
+.RI "\fBVec3f\fP (float[] lpvec)"
+.br
+.RI "Initializes the vector from a float array\&. "
+.ti -1c
+.RI "\fBVec3f\fP (Vec3f vec)"
+.br
+.RI "Copy constructor\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.IComparableEx< T >\fP
+.in +1c
+.ti -1c
+.RI "\fBCompareResult\fP \fBCompareTo\fP (T a)"
+.br
+.RI "Compares this instance with the specified value and returns a \fBCompareResult\fP describing the relationship between them\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static float \fBAngle\fP (\fBVec3f\fP v1, \fBVec3f\fP v2)"
+.br
+.RI "Computes the angle between two vectors\&. "
+.ti -1c
+.RI "static float \fBDot\fP (\fBVec3f\fP v1, \fBVec3f\fP v2)"
+.br
+.RI "Computes the dot product of two vectors\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBInterpolateCoords\fP (\fBVec3f\fP v1, \fBVec3f\fP v2, float p)"
+.br
+.RI "Linearly interpolates between two vectors\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBInterpolateNormal\fP (\fBVec3f\fP v1, \fBVec3f\fP v2, float p)"
+.br
+.RI "Interpolates and normalizes the result\&. "
+.ti -1c
+.RI "static float \fBLenght\fP (\fBVec3f\fP v)"
+.br
+.RI "Computes the squared length of the vector\&. "
+.ti -1c
+.RI "static float \fBLenghtSqrt\fP (\fBVec3f\fP v)"
+.br
+.RI "Computes the Euclidean length of the vector\&. "
+.ti -1c
+.RI "static bool \fBNearEqual\fP (\fBVec3f\fP v1, \fBVec3f\fP v2, float epsilon)"
+.br
+.RI "Checks whether two vectors are approximately equal\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBNormalize\fP (\fBVec3f\fP v, bool ex=false)"
+.br
+.RI "Normalizes the vector\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (float a, \fBVec3f\fP b)"
+.br
+.RI "Determines whether a scalar differs from any component of the vector\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBVec3f\fP a, float b)"
+.br
+.RI "Determines whether any vector component differs from the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBVec3f\fP a, \fBVec3f\fP b)"
+.br
+.RI "Determines whether two vectors differ in any component\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBoperator*\fP (float a, \fBVec3f\fP b)"
+.br
+.RI "Multiplies a scalar with each component of the vector\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBoperator*\fP (\fBVec3f\fP a, float b)"
+.br
+.RI "Multiplies both components of the vector by a scalar\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBoperator*\fP (\fBVec3f\fP a, \fBVec3f\fP b)"
+.br
+.RI "Multiplies two vectors component‑wise\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBoperator+\fP (float a, \fBVec3f\fP b)"
+.br
+.RI "Adds a scalar to each component of the vector\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBoperator+\fP (\fBVec3f\fP a, float b)"
+.br
+.RI "Adds a scalar to both components of the vector\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBoperator+\fP (\fBVec3f\fP a, \fBVec3f\fP b)"
+.br
+.RI "Adds two vectors component‑wise\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBoperator\-\fP (float a, \fBVec3f\fP b)"
+.br
+.RI "Subtracts each component of the vector from a scalar\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBoperator\-\fP (\fBVec3f\fP a, float b)"
+.br
+.RI "Subtracts a scalar from both components of the vector\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBoperator\-\fP (\fBVec3f\fP a, \fBVec3f\fP b)"
+.br
+.RI "Subtracts two vectors component‑wise\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBoperator/\fP (float a, \fBVec3f\fP b)"
+.br
+.RI "Divides a scalar by each component of the vector\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBoperator/\fP (\fBVec3f\fP a, float b)"
+.br
+.RI "Divides both components of the vector by a scalar\&. "
+.ti -1c
+.RI "static \fBVec3f\fP \fBoperator/\fP (\fBVec3f\fP a, \fBVec3f\fP b)"
+.br
+.RI "Divides two vectors component‑wise\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (float a, \fBVec3f\fP b)"
+.br
+.RI "Determines whether a scalar is strictly less than both vector components\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBVec3f\fP a, float b)"
+.br
+.RI "Determines whether both vector components are strictly less than the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBVec3f\fP a, \fBVec3f\fP b)"
+.br
+.RI "Determines whether all components of \fIa\fP  are strictly less than those of \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (float a, \fBVec3f\fP b)"
+.br
+.RI "Determines whether a scalar is less than or equal to both vector components\&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBVec3f\fP a, float b)"
+.br
+.RI "Determines whether both vector components are less than or equal to the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBVec3f\fP a, \fBVec3f\fP b)"
+.br
+.RI "Determines whether all components of \fIa\fP  are less than or equal to those of \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (float a, \fBVec3f\fP b)"
+.br
+.RI "Determines whether a scalar equals both components of the vector\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBVec3f\fP a, float b)"
+.br
+.RI "Determines whether both vector components equal the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBVec3f\fP a, \fBVec3f\fP b)"
+.br
+.RI "Determines whether two vectors are equal component‑wise\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (float a, \fBVec3f\fP b)"
+.br
+.RI "Determines whether a scalar is strictly greater than both vector components\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBVec3f\fP a, float b)"
+.br
+.RI "Determines whether both vector components are strictly greater than the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBVec3f\fP a, \fBVec3f\fP b)"
+.br
+.RI "Determines whether all components of \fIa\fP  are strictly greater than those of \fIb\fP \&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (float a, \fBVec3f\fP b)"
+.br
+.RI "Determines whether a scalar is greater than or equal to both vector components\&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBVec3f\fP a, float b)"
+.br
+.RI "Determines whether both vector components are greater than or equal to the scalar\&. "
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBVec3f\fP a, \fBVec3f\fP b)"
+.br
+.RI "Determines whether all components of \fIa\fP  are greater than or equal to those of \fIb\fP \&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static readonly \fBVec3f\fP \fBMax\fP = new \fBVec3f\fP(float\&.MaxValue, float\&.MaxValue, float\&.MaxValue)"
+.br
+.RI "Represents Vector(MAX,MAX,MAX)\&. "
+.ti -1c
+.RI "static readonly \fBVec3f\fP \fBMin\fP = new \fBVec3f\fP(float\&.MinValue, float\&.MinValue, float\&.MinValue)"
+.br
+.RI "Represents Vector(MIN,MIN,MIN)\&. "
+.ti -1c
+.RI "static readonly \fBVec3f\fP \fBNegativeOne\fP = new \fBVec3f\fP(\-1f, \-1f, \-1f)"
+.br
+.RI "Represents Vector(-1,-1,-1)\&. "
+.ti -1c
+.RI "static readonly \fBVec3f\fP \fBOne\fP = new \fBVec3f\fP(1f, 1f, 1f)"
+.br
+.RI "Represents Vector(1,1,1)\&. "
+.ti -1c
+.RI "static readonly \fBVec3f\fP \fBZero\fP = new \fBVec3f\fP(0,0,0)"
+.br
+.RI "Represents Vector(0,0,0)\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of components in this vector (always 3)\&. "
+.ti -1c
+.RI "float \fBX\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the X component\&. "
+.ti -1c
+.RI "float \fBY\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the Y component\&. "
+.ti -1c
+.RI "float \fBZ\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the Z component\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a 3‑component floating‑point vector\&. 
+
+\fBVec3f\fP is a lightweight numeric type used throughout \fBSystemEx\fP for geometry, math utilities, device operations, and compute kernels\&. It stores two float values (\fRX\fP and \fRY\fP) in a sequential memory layout, making it compatible with native interop and high‑performance compute backends\&. 
+
+.PP
+The struct is annotated with \fBHashAlgorithmAttribute\fP to enable attribute‑driven hashing via HashFactory\&. 
+.br
+ \fBBernsteinHash\fP is used because it is fast, byte‑linear, and ideal for small fixed‑size numeric types such as vectors\&. 
+
+.PP
+\fBVec3f\fP implements multiple comparison and hashing interfaces: 
+.PD 0
+.IP "\(bu" 2
+IComparable and IComparable<T> for ordering 
+.IP "\(bu" 2
+IEquatable<T> for equality checks 
+.IP "\(bu" 2
+\fBIHashable<T>\fP for deterministic byte‑level hashing 
+.PP
+This makes the type suitable for use in dictionaries, sorting, spatial hashing, and compute pipelines\&. 
+.PP
+Definition at line \fB61\fP of file \fBvec3f\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.Vec3f\&.Vec3f ()"
+
+.PP
+Initializes a zero vector (0,0)\&. 
+.PP
+Definition at line \fB112\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBAngle()\fP, \fBCompareTo()\fP, \fBCompareTo()\fP, \fBDot()\fP, \fBEquals()\fP, \fBEquals()\fP, \fBInterpolateCoords()\fP, \fBInterpolateNormal()\fP, \fBLenght()\fP, \fBLenghtSqrt()\fP, \fBNearEqual()\fP, \fBNormalize()\fP, \fBoperator!=()\fP, \fBoperator!=()\fP, \fBoperator!=()\fP, \fBoperator*()\fP, \fBoperator*()\fP, \fBoperator*()\fP, \fBoperator+()\fP, \fBoperator+()\fP, \fBoperator+()\fP, \fBoperator\-()\fP, \fBoperator\-()\fP, \fBoperator\-()\fP, \fBoperator/()\fP, \fBoperator/()\fP, \fBoperator/()\fP, \fBoperator<()\fP, \fBoperator<()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator<=()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, \fBoperator==()\fP, \fBoperator==()\fP, \fBoperator>()\fP, \fBoperator>()\fP, \fBoperator>()\fP, \fBoperator>=()\fP, \fBoperator>=()\fP, \fBoperator>=()\fP, and \fBVec3f()\fP\&.
+.SS "SystemEx\&.Numeric\&.Vec3f\&.Vec3f (float _x, float _y, float _z)"
+
+.PP
+Initializes a vector with explicit X and Y values\&. 
+.PP
+Definition at line \fB119\fP of file \fBvec3f\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Vec3f\&.Vec3f (float _f)"
+
+.PP
+Initializes both components with the same value\&. 
+.PP
+Definition at line \fB129\fP of file \fBvec3f\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Vec3f\&.Vec3f (Vec3f vec)"
+
+.PP
+Copy constructor\&. 
+.PP
+Definition at line \fB138\fP of file \fBvec3f\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Vec3f\&.Vec3f (float[] lpvec)"
+
+.PP
+Initializes the vector from a float array\&. 
+.PP
+Definition at line \fB147\fP of file \fBvec3f\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "float SystemEx\&.Numeric\&.Vec3f\&.Angle (\fBVec3f\fP v1, \fBVec3f\fP v2)\fR [static]\fP"
+
+.PP
+Computes the angle between two vectors\&. 
+.PP
+Definition at line \fB187\fP of file \fBvec3f\&.cs\fP\&.
+.SS "int SystemEx\&.Numeric\&.Vec3f\&.CompareTo (object? obj)"
+
+.PP
+Compares this vector to another object\&. 
+.PP
+Definition at line \fB246\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP\&.
+.SS "\fBCompareResult\fP SystemEx\&.Numeric\&.Vec3f\&.CompareTo (\fBVec3f\fP a)"
+
+.PP
+Compares two vectors lexicographically\&. 
+.PP
+Definition at line \fB255\fP of file \fBvec3f\&.cs\fP\&.
+.SS "int IComparable< \fBVec3f\fP >\&. SystemEx\&.Numeric\&.Vec3f\&.CompareTo (\fBVec3f\fP other)"
+
+.PP
+Definition at line \fB294\fP of file \fBvec3f\&.cs\fP\&.
+.SS "float SystemEx\&.Numeric\&.Vec3f\&.Dot (\fBVec3f\fP v1, \fBVec3f\fP v2)\fR [static]\fP"
+
+.PP
+Computes the dot product of two vectors\&. 
+.PP
+Definition at line \fB180\fP of file \fBvec3f\&.cs\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.Vec3f\&.Equals (object? obj)"
+
+.PP
+Determines whether this instance is equal to another object\&. The object is considered equal if it is a \fBVec3f\fP and compares equal using \fBEquals(Vec3f)\fP\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The object to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if \fIobj\fP  is a \fBVec3f\fP and equal to this instance; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB289\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.Equals (\fBVec3f\fP other)"
+
+.PP
+Determines whether this instance is equal to another \fBHalf16\fP value, using the same semantics as the \fBoperator ==(Vec3f,Vec3f)\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the values are equal; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB274\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Vec3f\&.Get (int index)"
+
+.PP
+Gets a component by index (0 = X, 1 = Y)\&. 
+.PP
+Definition at line \fB156\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBToBytes()\fP\&.
+.SS "override int SystemEx\&.Numeric\&.Vec3f\&.GetHashCode ()"
+
+.PP
+Computes a hash code for this vector\&. The primary hash is generated using HashFactory and the \fBHashAlgorithmAttribute\fP applied to this struct\&. 
+.br
+ If hashing fails (rare), a fallback XOR‑based hash is used\&. 
+.PP
+Definition at line \fB236\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.InterpolateCoords (\fBVec3f\fP v1, \fBVec3f\fP v2, float p)\fR [static]\fP"
+
+.PP
+Linearly interpolates between two vectors\&. 
+.PP
+Definition at line \fB196\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.InterpolateNormal (\fBVec3f\fP v1, \fBVec3f\fP v2, float p)\fR [static]\fP"
+
+.PP
+Interpolates and normalizes the result\&. 
+.PP
+Definition at line \fB203\fP of file \fBvec3f\&.cs\fP\&.
+.SS "float SystemEx\&.Numeric\&.Vec3f\&.Lenght (\fBVec3f\fP v)\fR [static]\fP"
+
+.PP
+Computes the squared length of the vector\&. 
+.PP
+Definition at line \fB170\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.Quatf\&.CompareTo()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Vec3f\&.LenghtSqrt (\fBVec3f\fP v)\fR [static]\fP"
+
+.PP
+Computes the Euclidean length of the vector\&. 
+.PP
+Definition at line \fB175\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.Quatf\&.Exponent()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.FromAxis()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.Logarithm()\fP, and \fBNormalize()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.NearEqual (\fBVec3f\fP v1, \fBVec3f\fP v2, float epsilon)\fR [static]\fP"
+
+.PP
+Checks whether two vectors are approximately equal\&. 
+.PP
+Definition at line \fB210\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.Normalize (\fBVec3f\fP v, bool ex = \fRfalse\fP)\fR [static]\fP"
+
+.PP
+Normalizes the vector\&. 
+.PP
+Definition at line \fB219\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.Quatf\&.GetRotationAxis()\fP, and \fBInterpolateNormal()\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator!= (float a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar differs from any component of the vector\&. 
+.PP
+Definition at line \fB433\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator!= (\fBVec3f\fP a, float b)\fR [static]\fP"
+
+.PP
+Determines whether any vector component differs from the scalar\&. 
+.PP
+Definition at line \fB475\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator!= (\fBVec3f\fP a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Determines whether two vectors differ in any component\&. 
+.PP
+Definition at line \fB395\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.operator* (float a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Multiplies a scalar with each component of the vector\&. 
+.PP
+Definition at line \fB377\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.operator* (\fBVec3f\fP a, float b)\fR [static]\fP"
+
+.PP
+Multiplies both components of the vector by a scalar\&. 
+.PP
+Definition at line \fB359\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.operator* (\fBVec3f\fP a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Multiplies two vectors component‑wise\&. 
+.PP
+Definition at line \fB335\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.operator+ (float a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Adds a scalar to each component of the vector\&. 
+.PP
+Definition at line \fB383\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.operator+ (\fBVec3f\fP a, float b)\fR [static]\fP"
+
+.PP
+Adds a scalar to both components of the vector\&. 
+.PP
+Definition at line \fB341\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.operator+ (\fBVec3f\fP a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Adds two vectors component‑wise\&. 
+.PP
+Definition at line \fB317\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.operator\- (float a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Subtracts each component of the vector from a scalar\&. 
+.PP
+Definition at line \fB365\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.operator\- (\fBVec3f\fP a, float b)\fR [static]\fP"
+
+.PP
+Subtracts a scalar from both components of the vector\&. 
+.PP
+Definition at line \fB347\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.operator\- (\fBVec3f\fP a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Subtracts two vectors component‑wise\&. 
+.PP
+Definition at line \fB323\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.operator/ (float a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Divides a scalar by each component of the vector\&. 
+.PP
+Definition at line \fB371\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.operator/ (\fBVec3f\fP a, float b)\fR [static]\fP"
+
+.PP
+Divides both components of the vector by a scalar\&. 
+.PP
+Definition at line \fB353\fP of file \fBvec3f\&.cs\fP\&.
+.SS "\fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.operator/ (\fBVec3f\fP a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Divides two vectors component‑wise\&. 
+.PP
+Definition at line \fB329\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator< (float a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar is strictly less than both vector components\&. 
+.PP
+Definition at line \fB454\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator< (\fBVec3f\fP a, float b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components are strictly less than the scalar\&. 
+.PP
+Definition at line \fB496\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator< (\fBVec3f\fP a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Determines whether all components of \fIa\fP  are strictly less than those of \fIb\fP \&. 
+.PP
+Definition at line \fB413\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator<= (float a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar is less than or equal to both vector components\&. 
+.PP
+Definition at line \fB440\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator<= (\fBVec3f\fP a, float b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components are less than or equal to the scalar\&. 
+.PP
+Definition at line \fB482\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator<= (\fBVec3f\fP a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Determines whether all components of \fIa\fP  are less than or equal to those of \fIb\fP \&. 
+.PP
+Definition at line \fB401\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator== (float a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar equals both components of the vector\&. 
+.PP
+Definition at line \fB426\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator== (\fBVec3f\fP a, float b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components equal the scalar\&. 
+.PP
+Definition at line \fB468\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator== (\fBVec3f\fP a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Determines whether two vectors are equal component‑wise\&. 
+.PP
+Definition at line \fB389\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator> (float a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar is strictly greater than both vector components\&. 
+.PP
+Definition at line \fB461\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator> (\fBVec3f\fP a, float b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components are strictly greater than the scalar\&. 
+.PP
+Definition at line \fB503\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator> (\fBVec3f\fP a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Determines whether all components of \fIa\fP  are strictly greater than those of \fIb\fP \&. 
+.PP
+Definition at line \fB419\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator>= (float a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Determines whether a scalar is greater than or equal to both vector components\&. 
+.PP
+Definition at line \fB447\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator>= (\fBVec3f\fP a, float b)\fR [static]\fP"
+
+.PP
+Determines whether both vector components are greater than or equal to the scalar\&. 
+.PP
+Definition at line \fB489\fP of file \fBvec3f\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Vec3f\&.operator>= (\fBVec3f\fP a, \fBVec3f\fP b)\fR [static]\fP"
+
+.PP
+Determines whether all components of \fIa\fP  are greater than or equal to those of \fIb\fP \&. 
+.PP
+Definition at line \fB407\fP of file \fBvec3f\&.cs\fP\&.
+.SS "FixedVector< byte > SystemEx\&.Numeric\&.Vec3f\&.ToBytes ()"
+
+.PP
+Converts the vector into a deterministic byte sequence\&. This method is used by HashFactory to compute attribute‑driven hashes\&. The byte layout is stable and platform‑safe, ensuring consistent hashing across devices and backends\&. 
+.PP
+Implements \fBSystemEx\&.Hash\&.IHashable< T >\fP\&.
+.PP
+Definition at line \fB306\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBToBytes()\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "readonly \fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.Max = new \fBVec3f\fP(float\&.MaxValue, float\&.MaxValue, float\&.MaxValue)\fR [static]\fP"
+
+.PP
+Represents Vector(MAX,MAX,MAX)\&. 
+.PP
+Definition at line \fB88\fP of file \fBvec3f\&.cs\fP\&.
+.SS "readonly \fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.Min = new \fBVec3f\fP(float\&.MinValue, float\&.MinValue, float\&.MinValue)\fR [static]\fP"
+
+.PP
+Represents Vector(MIN,MIN,MIN)\&. 
+.PP
+Definition at line \fB83\fP of file \fBvec3f\&.cs\fP\&.
+.SS "readonly \fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.NegativeOne = new \fBVec3f\fP(\-1f, \-1f, \-1f)\fR [static]\fP"
+
+.PP
+Represents Vector(-1,-1,-1)\&. 
+.PP
+Definition at line \fB78\fP of file \fBvec3f\&.cs\fP\&.
+.SS "readonly \fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.One = new \fBVec3f\fP(1f, 1f, 1f)\fR [static]\fP"
+
+.PP
+Represents Vector(1,1,1)\&. 
+.PP
+Definition at line \fB73\fP of file \fBvec3f\&.cs\fP\&.
+.SS "readonly \fBVec3f\fP SystemEx\&.Numeric\&.Vec3f\&.Zero = new \fBVec3f\fP(0,0,0)\fR [static]\fP"
+
+.PP
+Represents Vector(0,0,0)\&. 
+.PP
+Definition at line \fB69\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.Quatf\&.FromAxis()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.IsIdentity()\fP, and \fBSystemEx\&.Numeric\&.Quatf\&.Logarithm()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SystemEx\&.Numeric\&.Vec3f\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of components in this vector (always 3)\&. 
+.PP
+Definition at line \fB93\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBToBytes()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Vec3f\&.X\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the X component\&. 
+.PP
+Definition at line \fB98\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.Quatf\&.Conjugate()\fP, \fBSystemEx\&.Numeric\&.DQuatf\&.FromRotationTranslation()\fP, \fBSystemEx\&.Numeric\&.DQuatf\&.FromRotationTranslationConjugated()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.Lenght()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.LenghtSqrt()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.operator*()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.operator+()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.operator\-()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.operator\-()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.Quatf()\fP, \fBSystemEx\&.Numeric\&.DQuatf\&.RotationTranslation()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.Slerp()\fP, \fBSystemEx\&.Numeric\&.DQuatf\&.Transform()\fP, and \fBSystemEx\&.Numeric\&.DQuatf\&.Translation()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Vec3f\&.Y\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the Y component\&. 
+.PP
+Definition at line \fB103\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.Quatf\&.Conjugate()\fP, \fBSystemEx\&.Numeric\&.DQuatf\&.FromRotationTranslation()\fP, \fBSystemEx\&.Numeric\&.DQuatf\&.FromRotationTranslationConjugated()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.Lenght()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.LenghtSqrt()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.operator*()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.operator+()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.operator\-()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.operator\-()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.Quatf()\fP, \fBSystemEx\&.Numeric\&.DQuatf\&.RotationTranslation()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.Slerp()\fP, \fBSystemEx\&.Numeric\&.DQuatf\&.Transform()\fP, and \fBSystemEx\&.Numeric\&.DQuatf\&.Translation()\fP\&.
+.SS "float SystemEx\&.Numeric\&.Vec3f\&.Z\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the Z component\&. 
+.PP
+Definition at line \fB107\fP of file \fBvec3f\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.Quatf\&.Conjugate()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.DotProduct()\fP, \fBEquals()\fP, \fBSystemEx\&.Numeric\&.DQuatf\&.FromRotationTranslation()\fP, \fBSystemEx\&.Numeric\&.DQuatf\&.FromRotationTranslationConjugated()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.Lenght()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.LenghtSqrt()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.operator*()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.operator+()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.operator\-()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.operator\-()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.Quatf()\fP, \fBSystemEx\&.Numeric\&.DQuatf\&.RotationTranslation()\fP, \fBSystemEx\&.Numeric\&.Quatf\&.Slerp()\fP, \fBSystemEx\&.Numeric\&.DQuatf\&.Transform()\fP, and \fBSystemEx\&.Numeric\&.DQuatf\&.Translation()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

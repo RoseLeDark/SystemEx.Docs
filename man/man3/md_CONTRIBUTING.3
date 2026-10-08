@@ -1,0 +1,130 @@
+.TH "md_CONTRIBUTING" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_CONTRIBUTING \- 🤝 SystemEx Contributing 
+.PP
+
+
+.PP
+Thank you for your interest in contributing to \fBSystemEx\fP\&. 
+.br
+ This document explains how to report issues, propose improvements, and submit pull requests\&.
+.SH "How to Contribute"
+.PP
+.SS "1\&. Reporting Issues"
+When opening an issue, please include:
+
+.PP
+.IP "\(bu" 2
+A clear description of the problem 
+.br
+
+.IP "\(bu" 2
+Reproduction steps (if applicable) 
+.br
+
+.IP "\(bu" 2
+Expected vs\&. actual behavior 
+.br
+
+.IP "\(bu" 2
+Relevant code snippets or logs 
+.br
+
+.PP
+
+.PP
+Clear reports help maintainers understand and address issues efficiently\&.
+.SS "2\&. Proposing Changes"
+Before submitting large changes or refactors, please open a discussion or issue\&. 
+.br
+ \fBSystemEx\fP is highly modular and low‑level; major changes can introduce subtle regressions\&.
+
+.PP
+Small patches, documentation improvements, and targeted fixes are always welcome\&.
+.SS "3\&. Pull Requests"
+Pull requests should:
+
+.PP
+.IP "\(bu" 2
+Be focused and minimal 
+.br
+
+.IP "\(bu" 2
+Include a description of the change 
+.br
+
+.IP "\(bu" 2
+Avoid unnecessary formatting changes 
+.br
+
+.IP "\(bu" 2
+Respect existing architecture and module boundaries 
+.br
+
+.IP "\(bu" 2
+Not introduce deep cross‑dependencies between subsystems 
+.br
+
+.PP
+.SH "Architectural Notes"
+.PP
+\fBSystemEx\fP intentionally avoids tight coupling between modules\&. 
+.br
+ Some structures exist in multiple forms (e\&.g\&., \fRMap<TKey, TValue>\fP based on \fRPair<TKey, TValue>[]\fP) to keep subsystems isolated and easier to debug\&.
+
+.PP
+This is a deliberate design choice\&.
+.SH "Experimental Features and Development Flags"
+.PP
+\fBSystemEx\fP contains optional experimental code guarded by the build flag \fRUSE_DEVBUILD_UNSTABLE\fP\&. These sections include work‑in‑progress modules, unstable APIs, debugging utilities, or partially implemented subsystems\&. They are intentionally excluded from normal builds to keep the repository stable and free from unfinished code paths\&.
+
+.PP
+If you want to contribute to experimental areas, you must explicitly enable the flag in your build configuration:
+
+.PP
+.IP "\(bu" 2
+For MSBuild: add \fR<DefineConstants>USE_DEVBUILD_UNSTABLE</DefineConstants>\fP
+.IP "\(bu" 2
+For command‑line builds: pass \fR/p:DefineConstants=USE_DEVBUILD_UNSTABLE\fP
+.IP "\(bu" 2
+For IDE builds: add the symbol to your project’s build settings
+.PP
+
+.PP
+When contributing to experimental code:
+
+.PP
+.IP "\(bu" 2
+Expect incomplete or placeholder implementations 
+.br
+
+.IP "\(bu" 2
+Expect rapid changes and refactors 
+.br
+
+.IP "\(bu" 2
+Do not rely on experimental APIs for production code 
+.br
+
+.IP "\(bu" 2
+Keep experimental contributions isolated and well‑scoped 
+.br
+
+.IP "\(bu" 2
+Avoid introducing dependencies from stable modules into unstable ones 
+.br
+
+.PP
+
+.PP
+Experimental features may be removed, rewritten, or replaced without notice\&. They exist solely to support active development and prototyping\&.
+.SH "🕒 Response Times"
+.PP
+\fBSystemEx\fP is maintained by a single author (pronouns: dey/deren/dem/dem)\&. 
+.br
+ Responses or reviews may occasionally be delayed, but all constructive contributions are appreciated\&.
+
+.PP
+Thank you for helping improve \fBSystemEx\fP\&. 

@@ -1,16 +1,12 @@
 var a02333 =
 [
-    [ "Enumerator", "d7/d52/a02337.html", "d7/d52/a02337" ],
-    [ "BitULongSpan", "d7/dbe/a02333_a286dd7eff389aa3fdf83d103816479a4.html#a286dd7eff389aa3fdf83d103816479a4", null ],
-    [ "ElementAt", "d7/dbe/a02333_a2a14ef3e509fedc7ea1b86f1134b568c.html#a2a14ef3e509fedc7ea1b86f1134b568c", null ],
-    [ "ElementAt", "d7/dbe/a02333_ae35c25e41460aeaa39b28d36b7df67f9.html#ae35c25e41460aeaa39b28d36b7df67f9", null ],
-    [ "GetEnumerator", "d7/dbe/a02333_aa4450c0e5156dd4d254b32a5ee781cf7.html#aa4450c0e5156dd4d254b32a5ee781cf7", null ],
-    [ "GetMode", "d7/dbe/a02333_aed8de63abccb60d605191c9ca5ac929b.html#aed8de63abccb60d605191c9ca5ac929b", null ],
-    [ "Slice", "d7/dbe/a02333_af07513d51463d1b3a1d4ab9cb56a4535.html#af07513d51463d1b3a1d4ab9cb56a4535", null ],
-    [ "Slice", "d7/dbe/a02333_ae1b066cd275849387e139bf1eb9b199b.html#ae1b066cd275849387e139bf1eb9b199b", null ],
-    [ "Bits", "d7/dbe/a02333_a184a633aaf6748757d8491aa11a87951.html#a184a633aaf6748757d8491aa11a87951", null ],
-    [ "IsSigned", "d7/dbe/a02333_a0a0dfa841d68e4b7fe91662e410a5339.html#a0a0dfa841d68e4b7fe91662e410a5339", null ],
-    [ "IsUnsigned", "d7/dbe/a02333_a30da750e04b00630cbff4df0655e7004.html#a30da750e04b00630cbff4df0655e7004", null ],
-    [ "this[byte index]", "d7/dbe/a02333_a13c0b421771b7d1db1d8d4009b47eaea.html#a13c0b421771b7d1db1d8d4009b47eaea", null ],
-    [ "ViewLength", "d7/dbe/a02333_ae7816c932038385345262f99d41ce850.html#ae7816c932038385345262f99d41ce850", null ]
+    [ "MutexLock", "d7/dbe/a02333_ac4c14023cf86bf2b02cf25a3216499d8.html#ac4c14023cf86bf2b02cf25a3216499d8", null ],
+    [ "Lock", "d7/dbe/a02333_a87d57a9df3c60b702ff18f16c0b7c88f.html#a87d57a9df3c60b702ff18f16c0b7c88f", null ],
+    [ "TryLock", "d7/dbe/a02333_a1d604438e1a11749ab509315aa65abad.html#a1d604438e1a11749ab509315aa65abad", null ],
+    [ "TryLock", "d7/dbe/a02333_ad18e472d240fa059fdb26bce943396a4.html#ad18e472d240fa059fdb26bce943396a4", null ],
+    [ "Unlock", "d7/dbe/a02333_a3dbb914bbfa86d7ac9523eb4d7dfc29d.html#a3dbb914bbfa86d7ac9523eb4d7dfc29d", null ],
+    [ "Wait", "d7/dbe/a02333_a547d0134fd7aa9fd2063e78eb0014831.html#a547d0134fd7aa9fd2063e78eb0014831", null ],
+    [ "Handle", "d7/dbe/a02333_aeb83a5d5e1049a4d391604e11b6e1ad6.html#aeb83a5d5e1049a4d391604e11b6e1ad6", null ],
+    [ "IsHeld", "d7/dbe/a02333_a9599947120244261578958dea476b0b3.html#a9599947120244261578958dea476b0b3", null ],
+    [ "Name", "d7/dbe/a02333_ac2ed5db7552b570df6ad95b211eef766.html#ac2ed5db7552b570df6ad95b211eef766", null ]
 ];

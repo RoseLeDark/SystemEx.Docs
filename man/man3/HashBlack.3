@@ -1,0 +1,604 @@
+.TH "HashBlack" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HashBlack \- HashBlack
+.PP
+ \- Internal BLAKE3 hasher implementation\&. This class manages the chaining values, chunk state, and compression stack required for incremental hashing\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.Black\&.Black3\fP"
+.br
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\fP"
+.br
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.Black\&.Black3CompressScalar\fP"
+.br
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.Black\&.Black3Infos\fP"
+.br
+.ti -1c
+.RI "class \fBSystemEx\&.Hash\&.Black\&.Black3Utils\fP"
+.br
+.ti -1c
+.RI "struct \fBSystemEx\&.Hash\&.Black\&.Blacke3_Output\fP"
+.br
+.RI "Internal BLAKE3 output node used during tree hashing\&. Stores chaining values, block data, and compression parameters\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.Black\&.Black3\&.Black3\fP ()"
+.br
+.RI "Initializes a new BLAKE3 hasher in unkeyed mode\&. Equivalent to \fRblake3_hasher_init()\fP\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.Black\&.Black3\&.Black3\fP (byte[] key)"
+.br
+.RI "Initializes a new BLAKE3 hasher in keyed mode\&. Equivalent to \fRblake3_hasher_init_keyed()\fP\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Black3ChunkState\fP (UInt32[] key, Blake3Flags flags, Black3 parent)"
+.br
+.RI "Initializes a new chunk state with the given key, flags, and parent hasher\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.Black\&.Blacke3_Output\&.Blacke3_Output\fP ()"
+.br
+.RI "Initializes an empty output node with default buffers\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Hash\&.Black\&.Blacke3_Output\&.Blacke3_Output\fP (byte[] block, uint[] key, Blake3Flags flags)"
+.br
+.RI "Initializes a parent output node using the given block, key, and flags\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.Hash\&.Black\&.Blacke3_Output\&.ChainingValue\fP (byte[] cv)"
+.br
+.RI "Computes the next chaining value by compressing the current node and writes the result into the provided buffer\&. "
+.ti -1c
+.RI "static int \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.Clz\fP (ulong x)"
+.br
+.RI "Counts leading zeros in a 64‑bit value\&. "
+.ti -1c
+.RI "static UInt32 \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.CounterHigh\fP (UInt64 counter)"
+.br
+.RI "Returns the high 32 bits of a 64‑bit counter\&. "
+.ti -1c
+.RI "static UInt32 \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.CounterLow\fP (UInt64 counter)"
+.br
+.RI "Returns the low 32 bits of a 64‑bit counter\&. "
+.ti -1c
+.RI "Blacke3_Output \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Finalize\fP ()"
+.br
+.RI "Finalizes the current chunk and produces a BLAKE3 output node\&. "
+.ti -1c
+.RI "static uint \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.HighestOne\fP (UInt64 x)"
+.br
+.RI "Returns the index of the highest set bit\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.Hash\&.Black\&.Blacke3_Output\&.Init\fP (UInt32[] inputCv, byte[] block, ulong counter, uint blockLen, Blake3Flags flags)"
+.br
+.RI "Initializes the output node with chaining values, block data, counter, block length, and compression flags\&. "
+.ti -1c
+.RI "static void \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.LoadBlockWords\fP (byte[] block, UInt32[] block_words)"
+.br
+.RI "Loads sixteen 32‑bit block words from a byte array\&. "
+.ti -1c
+.RI "static void \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.LoadKeyWords\fP (byte[] key, uint[] key_words)"
+.br
+.RI "Loads eight 32‑bit key words from a byte array\&. "
+.ti -1c
+.RI "static uint \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.PopCnt\fP (ulong x)"
+.br
+.RI "Counts the number of set bits in a 64‑bit value\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Reset\fP (uint[] key, ulong chunk_counter)"
+.br
+.RI "Resets the chunk state for the next chunk\&. "
+.ti -1c
+.RI "static UInt32 \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.Rotr32\fP (UInt32 w, Int32 c)"
+.br
+.RI "Rotates a 32‑bit word right by the given count\&. "
+.ti -1c
+.RI "static UInt64 \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.RoundDown2Power2\fP (UInt64 x)"
+.br
+.RI "Rounds a value down to the nearest power of two\&. "
+.ti -1c
+.RI "static void \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.Store32\fP (byte[] dst, UInt32 w)"
+.br
+.RI "Stores a 32‑bit word into a byte array in little‑endian order\&. "
+.ti -1c
+.RI "static void \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.StoreCVWords\fP (byte[] bout, UInt32[] cv_words)"
+.br
+.RI "Stores eight chaining‑value words into a byte array in little‑endian order\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Update\fP (byte[] input)"
+.br
+.RI "Updates the chunk with new input data\&. Handles filling, finalizing, and resetting the chunk when full\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const byte \fBSystemEx\&.Hash\&.Black\&.Black3Infos\&.BLAKE3_BLOCK_LEN\fP = 64"
+.br
+.RI "Size of a single BLAKE3 block in bytes\&. "
+.ti -1c
+.RI "const ushort \fBSystemEx\&.Hash\&.Black\&.Black3Infos\&.BLAKE3_CHUNK_LEN\fP = 1024"
+.br
+.RI "Size of a BLAKE3 chunk in bytes\&. "
+.ti -1c
+.RI "const int \fBSystemEx\&.Hash\&.Black\&.Black3Infos\&.BLAKE3_CV_STACK_LEN\fP = (\fBBLAKE3_MAX_DEPTH\fP + 1) * \fBBLAKE3_OUT_LEN\fP"
+.br
+.RI "Total size of the chaining‑value stack\&. "
+.ti -1c
+.RI "const byte \fBSystemEx\&.Hash\&.Black\&.Black3Infos\&.BLAKE3_KEY_LEN\fP = 32"
+.br
+.RI "Size of the BLAKE3 key in bytes\&. "
+.ti -1c
+.RI "const byte \fBSystemEx\&.Hash\&.Black\&.Black3Infos\&.BLAKE3_MAX_DEPTH\fP = 54"
+.br
+.RI "Maximum depth of the BLAKE3 tree hashing structure\&. "
+.ti -1c
+.RI "const byte \fBSystemEx\&.Hash\&.Black\&.Black3Infos\&.BLAKE3_OUT_LEN\fP = 32"
+.br
+.RI "Size of a BLAKE3 output chaining value in bytes\&. "
+.ti -1c
+.RI "static UInt32[] \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.IV\fP"
+.br
+.RI "Initialization vector (IV) used by BLAKE3\&. "
+.ti -1c
+.RI "byte[] \fBSystemEx\&.Hash\&.Black\&.Blacke3_Output\&.m_block\fP"
+.br
+.RI "The block buffer used for compression\&. "
+.ti -1c
+.RI "uint \fBSystemEx\&.Hash\&.Black\&.Blacke3_Output\&.m_blockLen\fP"
+.br
+.RI "Length of the block in bytes\&. "
+.ti -1c
+.RI "byte \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.m_blocks_compressed\fP"
+.br
+.RI "Number of full blocks already compressed in this chunk\&. "
+.ti -1c
+.RI "byte[] \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.m_buf\fP"
+.br
+.RI "Block buffer used to accumulate chunk data\&. "
+.ti -1c
+.RI "int \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.m_buf_len\fP"
+.br
+.RI "Number of bytes currently stored in the buffer\&. "
+.ti -1c
+.RI "UInt64 \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.m_chunk_counter\fP"
+.br
+.RI "Counter identifying the current chunk index\&. "
+.ti -1c
+.RI "ulong \fBSystemEx\&.Hash\&.Black\&.Blacke3_Output\&.m_counter\fP"
+.br
+.RI "The chunk counter associated with this output node\&. "
+.ti -1c
+.RI "UInt32[] \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.m_cv\fP"
+.br
+.RI "Current chaining value (8 x 32‑bit words)\&. "
+.ti -1c
+.RI "UInt32[] \fBSystemEx\&.Hash\&.Black\&.Blacke3_Output\&.m_cv\fP"
+.br
+.RI "The current chaining value words (8 x 32‑bit)\&. "
+.ti -1c
+.RI "Blake3Flags \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.m_flags\fP"
+.br
+.RI "Compression flags for this chunk\&. "
+.ti -1c
+.RI "Blake3Flags \fBSystemEx\&.Hash\&.Black\&.Blacke3_Output\&.m_flags\fP"
+.br
+.RI "Compression flags controlling how this node is processed\&. "
+.ti -1c
+.RI "static byte[,] \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.MSG_SCHEDULE\fP"
+.br
+.RI "Message schedule used for BLAKE3 rounds\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "static string \fBSystemEx\&.Hash\&.Black\&.Black3Utils\&.BLakeString\fP\fR [get]\fP"
+.br
+.RI "Returns the internal BLAKE3 version string\&. "
+.ti -1c
+.RI "int \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Length\fP\fR [get]\fP"
+.br
+.RI "Gets the total number of bytes processed in this chunk\&. "
+.ti -1c
+.RI "Blake3Flags \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.StartFlag\fP\fR [get]\fP"
+.br
+.RI "Gets the CHUNK_START flag if this is the first block in the chunk\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internal BLAKE3 hasher implementation\&. This class manages the chaining values, chunk state, and compression stack required for incremental hashing\&. 
+
+Internal BLAKE3 flag definitions used during chunk and tree hashing\&.
+
+.PP
+Internal utility helpers for the BLAKE3 hashing subsystem\&.
+
+.PP
+Internal BLAKE3 constant definitions used by the hashing subsystem\&.
+
+.PP
+Internal scalar BLAKE3 compression implementation\&.
+
+.PP
+Internal state manager for a single BLAKE3 chunk\&.
+
+.PP
+This type is not intended for public use\&. It provides the internal logic behind the \fBSystemEx\fP BLAKE3 wrapper and exposes only the minimal API needed by higher‑level hashing components\&. 
+
+.PP
+This class tracks the chaining value, chunk counter, block buffer, buffer length, and compression flags required during incremental hashing\&. It handles chunk filling, finalization, and resetting according to the BLAKE3 specification\&. 
+
+.PP
+All members are internal and used only by the SystemEx\&.Hash\&.Black3 hashing subsystem\&. 
+
+.PP
+This class provides the portable fallback version of the BLAKE3 compression function\&. It operates entirely on 32‑bit words and does not use SIMD instructions\&. All methods are internal and intended only for the \fBSystemEx\fP hashing subsystem\&. 
+
+.PP
+This class provides fixed sizes and limits required by the portable compression implementation, including block length, key length, chunk size, output size, and maximum tree depth\&. 
+
+.PP
+These values are part of the BLAKE3 specification and should not be modified\&. The type is internal and used only by the \fBSystemEx\fP hashing components\&. 
+
+.PP
+This class provides constants, message schedules, bit operations, key loading, block loading, and chaining‑value storage helpers used by the portable scalar compression implementation\&. 
+
+.PP
+All members are internal and intended only for use inside the SystemEx\&.Hash\&.Black3 module\&. 
+
+.PP
+These flags control how each block or chunk is interpreted by the compression function, including start/end markers, parent node processing, keyed hashing, and key derivation modes\&. 
+
+.PP
+This enum is internal and used only by the SystemEx\&.Hash\&.Black3 hashing subsystem\&. 
+.SH "Function Documentation"
+.PP 
+.SS "SystemEx\&.Hash\&.Black\&.Black3\&.Black3 ()"
+
+.PP
+Initializes a new BLAKE3 hasher in unkeyed mode\&. Equivalent to \fRblake3_hasher_init()\fP\&. 
+.PP
+Definition at line \fB65\fP of file \fBBlack3\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.Black\&.Black3\&.Black3 (byte[] key)"
+
+.PP
+Initializes a new BLAKE3 hasher in keyed mode\&. Equivalent to \fRblake3_hasher_init_keyed()\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The 256‑bit key used for keyed hashing\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIArgumentException\fP Thrown when the key is smaller than the required size\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB84\fP of file \fBBlack3\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Black3ChunkState (UInt32[] key, Blake3Flags flags, Black3 parent)"
+
+.PP
+Initializes a new chunk state with the given key, flags, and parent hasher\&. 
+.PP
+Definition at line \fB90\fP of file \fBBlack3ChunkState\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.Black\&.Blacke3_Output\&.Blacke3_Output ()"
+
+.PP
+Initializes an empty output node with default buffers\&. 
+.PP
+Definition at line \fB70\fP of file \fBBlack3_Output\&.cs\fP\&.
+.SS "SystemEx\&.Hash\&.Black\&.Blacke3_Output\&.Blacke3_Output (byte[] block, uint[] key, Blake3Flags flags)"
+
+.PP
+Initializes a parent output node using the given block, key, and flags\&. 
+.PP
+Definition at line \fB77\fP of file \fBBlack3_Output\&.cs\fP\&.
+.SS "void SystemEx\&.Hash\&.Black\&.Blacke3_Output\&.ChainingValue (byte[] cv)"
+
+.PP
+Computes the next chaining value by compressing the current node and writes the result into the provided buffer\&. 
+.PP
+Definition at line \fB99\fP of file \fBBlack3_Output\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Hash\&.Black3Hasher\&.Compute()\fP, \fBSystemEx\&.Hash\&.Black3Hasher\&.ComputeLong()\fP, and \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Update()\fP\&.
+.SS "int SystemEx\&.Hash\&.Black\&.Black3Utils\&.Clz (ulong x)\fR [static]\fP"
+
+.PP
+Counts leading zeros in a 64‑bit value\&. 
+.PP
+Definition at line \fB74\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "UInt32 SystemEx\&.Hash\&.Black\&.Black3Utils\&.CounterHigh (UInt64 counter)\fR [static]\fP"
+
+.PP
+Returns the high 32 bits of a 64‑bit counter\&. 
+.PP
+Definition at line \fB100\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "UInt32 SystemEx\&.Hash\&.Black\&.Black3Utils\&.CounterLow (UInt64 counter)\fR [static]\fP"
+
+.PP
+Returns the low 32 bits of a 64‑bit counter\&. 
+.PP
+Definition at line \fB96\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "Blacke3_Output SystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Finalize ()"
+
+.PP
+Finalizes the current chunk and produces a BLAKE3 output node\&. 
+.PP
+Definition at line \fB192\fP of file \fBBlack3ChunkState\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Hash\&.Black3Hasher\&.Compute()\fP, \fBSystemEx\&.Hash\&.Black3Hasher\&.ComputeLong()\fP, and \fBUpdate()\fP\&.
+.SS "uint SystemEx\&.Hash\&.Black\&.Black3Utils\&.HighestOne (UInt64 x)\fR [static]\fP"
+
+.PP
+Returns the index of the highest set bit\&. 
+.PP
+Definition at line \fB84\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "void SystemEx\&.Hash\&.Black\&.Blacke3_Output\&.Init (UInt32[] inputCv, byte[] block, ulong counter, uint blockLen, Blake3Flags flags)"
+
+.PP
+Initializes the output node with chaining values, block data, counter, block length, and compression flags\&. 
+.PP
+Definition at line \fB84\fP of file \fBBlack3_Output\&.cs\fP\&.
+.PP
+Referenced by \fBBlacke3_Output()\fP\&.
+.SS "void SystemEx\&.Hash\&.Black\&.Black3Utils\&.LoadBlockWords (byte[] block, UInt32[] block_words)\fR [static]\fP"
+
+.PP
+Loads sixteen 32‑bit block words from a byte array\&. 
+.PP
+Definition at line \fB139\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "void SystemEx\&.Hash\&.Black\&.Black3Utils\&.LoadKeyWords (byte[] key, uint[] key_words)\fR [static]\fP"
+
+.PP
+Loads eight 32‑bit key words from a byte array\&. 
+.PP
+Definition at line \fB124\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "uint SystemEx\&.Hash\&.Black\&.Black3Utils\&.PopCnt (ulong x)\fR [static]\fP"
+
+.PP
+Counts the number of set bits in a 64‑bit value\&. 
+.PP
+Definition at line \fB108\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "void SystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Reset (uint[] key, ulong chunk_counter)"
+
+.PP
+Resets the chunk state for the next chunk\&. 
+.PP
+Definition at line \fB176\fP of file \fBBlack3ChunkState\&.cs\fP\&.
+.PP
+Referenced by \fBUpdate()\fP\&.
+.SS "UInt32 SystemEx\&.Hash\&.Black\&.Black3Utils\&.Rotr32 (UInt32 w, Int32 c)\fR [static]\fP"
+
+.PP
+Rotates a 32‑bit word right by the given count\&. 
+.PP
+Definition at line \fB88\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "UInt64 SystemEx\&.Hash\&.Black\&.Black3Utils\&.RoundDown2Power2 (UInt64 x)\fR [static]\fP"
+
+.PP
+Rounds a value down to the nearest power of two\&. 
+.PP
+Definition at line \fB92\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "void SystemEx\&.Hash\&.Black\&.Black3Utils\&.Store32 (byte[] dst, UInt32 w)\fR [static]\fP"
+
+.PP
+Stores a 32‑bit word into a byte array in little‑endian order\&. 
+.PP
+Definition at line \fB104\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "void SystemEx\&.Hash\&.Black\&.Black3Utils\&.StoreCVWords (byte[] bout, UInt32[] cv_words)\fR [static]\fP"
+
+.PP
+Stores eight chaining‑value words into a byte array in little‑endian order\&. 
+.PP
+Definition at line \fB163\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "void SystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Update (byte[] input)"
+
+.PP
+Updates the chunk with new input data\&. Handles filling, finalizing, and resetting the chunk when full\&. 
+.PP
+Definition at line \fB108\fP of file \fBBlack3ChunkState\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Hash\&.Black3Hasher\&.Compute()\fP, and \fBSystemEx\&.Hash\&.Black3Hasher\&.ComputeLong()\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const byte SystemEx\&.Hash\&.Black\&.Black3Infos\&.BLAKE3_BLOCK_LEN = 64\fR [static]\fP"
+
+.PP
+Size of a single BLAKE3 block in bytes\&. 
+.PP
+Definition at line \fB46\fP of file \fBBlack3Infos\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Reset()\fP\&.
+.SS "const ushort SystemEx\&.Hash\&.Black\&.Black3Infos\&.BLAKE3_CHUNK_LEN = 1024\fR [static]\fP"
+
+.PP
+Size of a BLAKE3 chunk in bytes\&. 
+.PP
+Definition at line \fB51\fP of file \fBBlack3Infos\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Update()\fP\&.
+.SS "const int SystemEx\&.Hash\&.Black\&.Black3Infos\&.BLAKE3_CV_STACK_LEN = (\fBBLAKE3_MAX_DEPTH\fP + 1) * \fBBLAKE3_OUT_LEN\fP\fR [static]\fP"
+
+.PP
+Total size of the chaining‑value stack\&. 
+.PP
+Definition at line \fB66\fP of file \fBBlack3Infos\&.cs\fP\&.
+.SS "const byte SystemEx\&.Hash\&.Black\&.Black3Infos\&.BLAKE3_KEY_LEN = 32\fR [static]\fP"
+
+.PP
+Size of the BLAKE3 key in bytes\&. 
+.PP
+Definition at line \fB41\fP of file \fBBlack3Infos\&.cs\fP\&.
+.SS "const byte SystemEx\&.Hash\&.Black\&.Black3Infos\&.BLAKE3_MAX_DEPTH = 54\fR [static]\fP"
+
+.PP
+Maximum depth of the BLAKE3 tree hashing structure\&. 
+.PP
+Definition at line \fB56\fP of file \fBBlack3Infos\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Hash\&.Black\&.Black3\&.Black3()\fP, and \fBSystemEx\&.Hash\&.Black\&.Black3\&.Black3()\fP\&.
+.SS "const byte SystemEx\&.Hash\&.Black\&.Black3Infos\&.BLAKE3_OUT_LEN = 32\fR [static]\fP"
+
+.PP
+Size of a BLAKE3 output chaining value in bytes\&. 
+.PP
+Definition at line \fB61\fP of file \fBBlack3Infos\&.cs\fP\&.
+.SS "UInt32 [] SystemEx\&.Hash\&.Black\&.Black3Utils\&.IV\fR [static]\fP"
+\fBInitial value:\fP
+.nf
+= {  0x6A09E667, 0xBB67AE85, 0x3C6EF372, 0xA54FF53A,
+               0x510E527F, 0x9B05688C, 0x1F83D9AB, 0x5BE0CD19 
+            }
+.PP
+.fi
+
+.PP
+Initialization vector (IV) used by BLAKE3\&. 
+.PP
+Definition at line \fB41\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "byte [] SystemEx\&.Hash\&.Black\&.Blacke3_Output\&.m_block"
+
+.PP
+The block buffer used for compression\&. 
+.PP
+Definition at line \fB56\fP of file \fBBlack3_Output\&.cs\fP\&.
+.PP
+Referenced by \fBBlacke3_Output()\fP, \fBChainingValue()\fP, and \fBInit()\fP\&.
+.SS "uint SystemEx\&.Hash\&.Black\&.Blacke3_Output\&.m_blockLen"
+
+.PP
+Length of the block in bytes\&. 
+.PP
+Definition at line \fB61\fP of file \fBBlack3_Output\&.cs\fP\&.
+.PP
+Referenced by \fBChainingValue()\fP, and \fBInit()\fP\&.
+.SS "byte SystemEx\&.Hash\&.Black\&.Black3ChunkState\&.m_blocks_compressed"
+
+.PP
+Number of full blocks already compressed in this chunk\&. 
+.PP
+Definition at line \fB65\fP of file \fBBlack3ChunkState\&.cs\fP\&.
+.PP
+Referenced by \fBBlack3ChunkState()\fP, and \fBReset()\fP\&.
+.SS "byte [] SystemEx\&.Hash\&.Black\&.Black3ChunkState\&.m_buf"
+
+.PP
+Block buffer used to accumulate chunk data\&. 
+.PP
+Definition at line \fB55\fP of file \fBBlack3ChunkState\&.cs\fP\&.
+.PP
+Referenced by \fBBlack3ChunkState()\fP, \fBFinalize()\fP, \fBReset()\fP, and \fBUpdate()\fP\&.
+.SS "int SystemEx\&.Hash\&.Black\&.Black3ChunkState\&.m_buf_len"
+
+.PP
+Number of bytes currently stored in the buffer\&. 
+.PP
+Definition at line \fB60\fP of file \fBBlack3ChunkState\&.cs\fP\&.
+.PP
+Referenced by \fBBlack3ChunkState()\fP, \fBFinalize()\fP, \fBReset()\fP, and \fBUpdate()\fP\&.
+.SS "UInt64 SystemEx\&.Hash\&.Black\&.Black3ChunkState\&.m_chunk_counter"
+
+.PP
+Counter identifying the current chunk index\&. 
+.PP
+Definition at line \fB50\fP of file \fBBlack3ChunkState\&.cs\fP\&.
+.PP
+Referenced by \fBBlack3ChunkState()\fP, \fBFinalize()\fP, \fBReset()\fP, and \fBUpdate()\fP\&.
+.SS "ulong SystemEx\&.Hash\&.Black\&.Blacke3_Output\&.m_counter"
+
+.PP
+The chunk counter associated with this output node\&. 
+.PP
+Definition at line \fB51\fP of file \fBBlack3_Output\&.cs\fP\&.
+.PP
+Referenced by \fBChainingValue()\fP, and \fBInit()\fP\&.
+.SS "UInt32 [] SystemEx\&.Hash\&.Black\&.Black3ChunkState\&.m_cv"
+
+.PP
+Current chaining value (8 x 32‑bit words)\&. 
+.PP
+Definition at line \fB45\fP of file \fBBlack3ChunkState\&.cs\fP\&.
+.PP
+Referenced by \fBBlack3ChunkState()\fP, \fBFinalize()\fP, and \fBReset()\fP\&.
+.SS "UInt32 [] SystemEx\&.Hash\&.Black\&.Blacke3_Output\&.m_cv"
+
+.PP
+The current chaining value words (8 x 32‑bit)\&. 
+.PP
+Definition at line \fB46\fP of file \fBBlack3_Output\&.cs\fP\&.
+.PP
+Referenced by \fBBlacke3_Output()\fP, \fBChainingValue()\fP, and \fBInit()\fP\&.
+.SS "Blake3Flags SystemEx\&.Hash\&.Black\&.Black3ChunkState\&.m_flags"
+
+.PP
+Compression flags for this chunk\&. 
+.PP
+Definition at line \fB70\fP of file \fBBlack3ChunkState\&.cs\fP\&.
+.PP
+Referenced by \fBBlack3ChunkState()\fP, and \fBFinalize()\fP\&.
+.SS "Blake3Flags SystemEx\&.Hash\&.Black\&.Blacke3_Output\&.m_flags"
+
+.PP
+Compression flags controlling how this node is processed\&. 
+.PP
+Definition at line \fB66\fP of file \fBBlack3_Output\&.cs\fP\&.
+.PP
+Referenced by \fBChainingValue()\fP, and \fBInit()\fP\&.
+.SS "byte [,] SystemEx\&.Hash\&.Black\&.Black3Utils\&.MSG_SCHEDULE\fR [static]\fP"
+\fBInitial value:\fP
+.nf
+                        = {
+    {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15},
+    {2, 6, 3, 10, 7, 0, 4, 13, 1, 11, 12, 5, 9, 14, 15, 8},
+    {3, 4, 10, 12, 13, 2, 7, 14, 6, 5, 9, 0, 11, 15, 8, 1},
+    {10, 7, 12, 9, 14, 3, 13, 15, 4, 0, 11, 2, 5, 8, 1, 6},
+    {12, 13, 9, 11, 15, 10, 14, 8, 7, 2, 5, 3, 0, 1, 6, 4},
+    {9, 14, 11, 5, 8, 12, 15, 1, 13, 3, 0, 10, 2, 6, 4, 7},
+    {11, 15, 5, 0, 1, 9, 8, 6, 14, 10, 2, 12, 3, 4, 7, 13},
+}
+.PP
+.fi
+
+.PP
+Message schedule used for BLAKE3 rounds\&. 
+.PP
+Definition at line \fB47\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SH "Properties"
+.PP 
+.SS "string SystemEx\&.Hash\&.Black\&.Black3Utils\&.BLakeString\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Returns the internal BLAKE3 version string\&. 
+.PP
+Definition at line \fB120\fP of file \fBBlack3Utils\&.cs\fP\&.
+.SS "int SystemEx\&.Hash\&.Black\&.Black3ChunkState\&.Length\fR [get]\fP"
+
+.PP
+Gets the total number of bytes processed in this chunk\&. 
+.PP
+Definition at line \fB80\fP of file \fBBlack3ChunkState\&.cs\fP\&.
+.SS "Blake3Flags SystemEx\&.Hash\&.Black\&.Black3ChunkState\&.StartFlag\fR [get]\fP"
+
+.PP
+Gets the CHUNK_START flag if this is the first block in the chunk\&. 
+.PP
+Definition at line \fB85\fP of file \fBBlack3ChunkState\&.cs\fP\&.
+.PP
+Referenced by \fBFinalize()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

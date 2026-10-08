@@ -1,11 +1,13 @@
 var a01616 =
 [
-    [ "ColorXYZ", "db/dad/a01616.html#a39a3ae0dd212c74b312a22675f4412ec", null ],
-    [ "Equals", "db/dad/a01616.html#a13e1615994895b6c4e1f729993da9c11", null ],
-    [ "Equals", "db/dad/a01616.html#afa46c9dbdcb0a373e1bab091f2ca928c", null ],
-    [ "GetHashCode", "db/dad/a01616.html#a0f64c5bfbff2c423b111cea14c3b0980", null ],
-    [ "ToString", "db/dad/a01616.html#ad16f6ebd767aa2a97e824ba26d585e6a", null ],
-    [ "X", "db/dad/a01616.html#af429e13fcc02fa5f8da728c742b02061", null ],
-    [ "Y", "db/dad/a01616.html#a625fa6b600c3b34aeac4109e7d47f152", null ],
-    [ "Z", "db/dad/a01616.html#a02f8a1aafc8a9967457fcc1e71be559f", null ]
+    [ "ColorNCol", "d9/db0/a00900_ga4edab6b6590c74060680729267a61fe3.html#ga4edab6b6590c74060680729267a61fe3", null ],
+    [ "Equals", "d9/db0/a00900_gad2e22e397e22105cdb8c9379358f5cb4.html#gad2e22e397e22105cdb8c9379358f5cb4", null ],
+    [ "Equals", "d9/db0/a00900_ga17bc255e558afe47f920e500378039ce.html#ga17bc255e558afe47f920e500378039ce", null ],
+    [ "GetHashCode", "d9/db0/a00900_gafda66e2785c75763d48b0bb20613d564.html#gafda66e2785c75763d48b0bb20613d564", null ],
+    [ "ToString", "d9/db0/a00900_gaa92a0d020af23accb14206702c56d199.html#gaa92a0d020af23accb14206702c56d199", null ],
+    [ "C", "d9/db0/a00900_ga8d4632823dbae580b5e0c1d986b29098.html#ga8d4632823dbae580b5e0c1d986b29098", null ],
+    [ "I", "d9/db0/a00900_ga27d55e4cd3e78bb6c9bafdec582cdcef.html#ga27d55e4cd3e78bb6c9bafdec582cdcef", null ],
+    [ "L", "d9/db0/a00900_ga912615c4122a02d491047bd8de996f26.html#ga912615c4122a02d491047bd8de996f26", null ],
+    [ "N", "d9/db0/a00900_gad6ee4712864b315c2bca106bed42070c.html#gad6ee4712864b315c2bca106bed42070c", null ],
+    [ "P", "d9/db0/a00900_gae2efe66d0db81de207b0b01bb653a9d2.html#gae2efe66d0db81de207b0b01bb653a9d2", null ]
 ];

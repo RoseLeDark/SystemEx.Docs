@@ -1,0 +1,429 @@
+.TH "SystemEx.Numeric.Int4" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric.Int4 \- Represents a signed 4‑bit integer stored inside a \fBFast_Byte\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInt4\fP \fBAdd\fP (\fBInt4\fP oth)"
+.br
+.RI "Adds another \fBInt4\fP to this instance using explicit bitwise ripple‑carry addition\&. Temporary bits 5–7 are used for carry propagation\&. "
+.ti -1c
+.RI "\fBInt4\fP \fBDiv\fP (\fBInt4\fP oth, ref \fBInt4\fP rest)"
+.br
+.RI "Divides this \fBInt4\fP by another using repeated subtraction\&. The remainder is returned through the \fIrest\fP  parameter\&. "
+.ti -1c
+.RI "override bool \fBEquals\fP (object? obj)"
+.br
+.ti -1c
+.RI "override int \fBGetHashCode\fP ()"
+.br
+.ti -1c
+.RI "\fBInt4\fP ()"
+.br
+.RI "Initializes a new \fBInt4\fP with all bits cleared\&. "
+.ti -1c
+.RI "\fBInt4\fP (bool sign, byte value)"
+.br
+.RI "Initializes a new \fBInt4\fP using explicit sign and magnitude bits\&. "
+.ti -1c
+.RI "\fBInt4\fP (Int4 otj)"
+.br
+.RI "Initializes a new \fBInt4\fP by copying another instance\&. "
+.ti -1c
+.RI "\fBInt4\fP \fBMul\fP (\fBInt4\fP oth)"
+.br
+.RI "Multiplies this \fBInt4\fP by another using repeated addition\&. "
+.ti -1c
+.RI "\fBInt4\fP \fBSub\fP (\fBInt4\fP oth)"
+.br
+.RI "Subtracts another \fBInt4\fP from this instance using explicit bitwise borrow‑based subtraction\&. Temporary bits 5–7 are used for borrow propagation\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBoperator!=\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.ti -1c
+.RI "static \fBInt4\fP \fBoperator%\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.RI "Computes the remainder of a division between two \fBInt4\fP values\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBoperator&\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.RI "Performs a bitwise AND between two \fBInt4\fP values\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBoperator*\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.RI "Multiplies two \fBInt4\fP values\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBoperator+\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.RI "Adds two \fBInt4\fP values\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBoperator++\fP (\fBInt4\fP a)"
+.br
+.RI "Increments the value by one\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBoperator\-\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.RI "Subtracts one \fBInt4\fP from another\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBoperator\-\-\fP (\fBInt4\fP a)"
+.br
+.RI "Decrements the value by one\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBoperator/\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.RI "Divides one \fBInt4\fP by another\&. "
+.ti -1c
+.RI "static bool \fBoperator<\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator<=\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator==\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.ti -1c
+.RI "static bool \fBoperator>=\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.ti -1c
+.RI "static \fBInt4\fP \fBoperator^\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.RI "Performs a bitwise XOR between two \fBInt4\fP values\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBoperator|\fP (\fBInt4\fP a, \fBInt4\fP b)"
+.br
+.RI "Performs a bitwise OR between two \fBInt4\fP values\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "static \fBInt4\fP \fBFour\fP\fR [get]\fP"
+.br
+.RI "Gets the value +4\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBMaxValue\fP\fR [get]\fP"
+.br
+.RI "Gets the largest representable \fBInt4\fP value (+7)\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBMinValue\fP\fR [get]\fP"
+.br
+.RI "Gets the smallest representable \fBInt4\fP value (−8)\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBNegativeFour\fP\fR [get]\fP"
+.br
+.RI "Gets the value −4\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBNegativeOne\fP\fR [get]\fP"
+.br
+.RI "Gets the value −1\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBNegativeTwo\fP\fR [get]\fP"
+.br
+.RI "Gets the value −2\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBNegativeZero\fP\fR [get]\fP"
+.br
+.RI "Gets the negative zero (−0)\&. This value is representable but not distinct in arithmetic operations\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBOne\fP\fR [get]\fP"
+.br
+.RI "Gets the value +1\&. "
+.ti -1c
+.RI "static byte \fBSignBit\fP\fR [get]\fP"
+.br
+.RI "Gets the number of sign bits used by the format (1)\&. "
+.ti -1c
+.RI "static byte \fBTotalBits\fP\fR [get]\fP"
+.br
+.RI "Gets the total number of bits used by the \fBInt4\fP format (4)\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBTwo\fP\fR [get]\fP"
+.br
+.RI "Gets the value +2\&. "
+.ti -1c
+.RI "static byte \fBValueBits\fP\fR [get]\fP"
+.br
+.RI "Gets the number of magnitude bits used by the format (3)\&. "
+.ti -1c
+.RI "static \fBInt4\fP \fBZero\fP\fR [get]\fP"
+.br
+.RI "Gets the value zero (+0)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a signed 4‑bit integer stored inside a \fBFast_Byte\fP\&. 
+
+The format uses 1 sign bit (bit 3) and 3 magnitude bits (bits 0–2), providing a value range from −8 to +7\&. All arithmetic operations are implemented through explicit bitwise logic using temporary bits inside the underlying \fBFast_Byte\fP instance\&. 
+.PP
+Definition at line \fB29\fP of file \fBInt4\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Numeric\&.Int4\&.Int4 ()"
+
+.PP
+Initializes a new \fBInt4\fP with all bits cleared\&. 
+.PP
+Definition at line \fB102\fP of file \fBInt4\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBDiv()\fP, \fBEquals()\fP, \fBInt4()\fP, \fBMul()\fP, \fBoperator!=()\fP, \fBoperator%()\fP, \fBoperator&()\fP, \fBoperator*()\fP, \fBoperator+()\fP, \fBoperator++()\fP, \fBoperator\-()\fP, \fBoperator\-\-()\fP, \fBoperator/()\fP, \fBoperator<()\fP, \fBoperator<=()\fP, \fBoperator==()\fP, \fBoperator>()\fP, \fBoperator>=()\fP, \fBoperator^()\fP, \fBoperator|()\fP, and \fBSub()\fP\&.
+.SS "SystemEx\&.Numeric\&.Int4\&.Int4 (bool sign, byte value)"
+
+.PP
+Initializes a new \fBInt4\fP using explicit sign and magnitude bits\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsign\fP True for negative values, false for positive\&.
+.br
+\fIvalue\fP The 3‑bit magnitude (0–7)\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB110\fP of file \fBInt4\&.cs\fP\&.
+.SS "SystemEx\&.Numeric\&.Int4\&.Int4 (Int4 otj)"
+
+.PP
+Initializes a new \fBInt4\fP by copying another instance\&. 
+.PP
+Definition at line \fB127\fP of file \fBInt4\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.Add (\fBInt4\fP oth)"
+
+.PP
+Adds another \fBInt4\fP to this instance using explicit bitwise ripple‑carry addition\&. Temporary bits 5–7 are used for carry propagation\&. 
+.PP
+Definition at line \fB135\fP of file \fBInt4\&.cs\fP\&.
+.PP
+Referenced by \fBMul()\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.Div (\fBInt4\fP oth, ref \fBInt4\fP rest)"
+
+.PP
+Divides this \fBInt4\fP by another using repeated subtraction\&. The remainder is returned through the \fIrest\fP  parameter\&. 
+.PP
+Definition at line \fB220\fP of file \fBInt4\&.cs\fP\&.
+.PP
+Referenced by \fBoperator%()\fP, and \fBoperator/()\fP\&.
+.SS "override bool SystemEx\&.Numeric\&.Int4\&.Equals (object? obj)"
+
+.PP
+
+.PP
+Definition at line \fB340\fP of file \fBInt4\&.cs\fP\&.
+.SS "override int SystemEx\&.Numeric\&.Int4\&.GetHashCode ()"
+
+.PP
+
+.PP
+Definition at line \fB347\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.Mul (\fBInt4\fP oth)"
+
+.PP
+Multiplies this \fBInt4\fP by another using repeated addition\&. 
+.PP
+Definition at line \fB203\fP of file \fBInt4\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Int4\&.operator!= (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB240\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.operator% (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+Computes the remainder of a division between two \fBInt4\fP values\&. 
+.PP
+Definition at line \fB297\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.operator& (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+Performs a bitwise AND between two \fBInt4\fP values\&. 
+.PP
+Definition at line \fB306\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.operator* (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+Multiplies two \fBInt4\fP values\&. 
+.PP
+Definition at line \fB284\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.operator+ (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+Adds two \fBInt4\fP values\&. 
+.PP
+Definition at line \fB264\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.operator++ (\fBInt4\fP a)\fR [static]\fP"
+
+.PP
+Increments the value by one\&. 
+.PP
+Definition at line \fB279\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.operator\- (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+Subtracts one \fBInt4\fP from another\&. 
+.PP
+Definition at line \fB269\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.operator\-\- (\fBInt4\fP a)\fR [static]\fP"
+
+.PP
+Decrements the value by one\&. 
+.PP
+Definition at line \fB274\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.operator/ (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+Divides one \fBInt4\fP by another\&. 
+.PP
+Definition at line \fB289\fP of file \fBInt4\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Int4\&.operator< (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB253\fP of file \fBInt4\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Int4\&.operator<= (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB245\fP of file \fBInt4\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Int4\&.operator== (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB235\fP of file \fBInt4\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Int4\&.operator> (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB257\fP of file \fBInt4\&.cs\fP\&.
+.SS "bool SystemEx\&.Numeric\&.Int4\&.operator>= (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+
+.PP
+Definition at line \fB249\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.operator^ (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+Performs a bitwise XOR between two \fBInt4\fP values\&. 
+.PP
+Definition at line \fB330\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.operator| (\fBInt4\fP a, \fBInt4\fP b)\fR [static]\fP"
+
+.PP
+Performs a bitwise OR between two \fBInt4\fP values\&. 
+.PP
+Definition at line \fB318\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.Sub (\fBInt4\fP oth)"
+
+.PP
+Subtracts another \fBInt4\fP from this instance using explicit bitwise borrow‑based subtraction\&. Temporary bits 5–7 are used for borrow propagation\&. 
+.PP
+Definition at line \fB169\fP of file \fBInt4\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.Four\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the value +4\&. 
+.PP
+Definition at line \fB92\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.MaxValue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the largest representable \fBInt4\fP value (+7)\&. 
+.PP
+Definition at line \fB41\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.MinValue\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the smallest representable \fBInt4\fP value (−8)\&. 
+.PP
+Definition at line \fB36\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.NegativeFour\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the value −4\&. 
+.PP
+Definition at line \fB97\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.NegativeOne\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the value −1\&. 
+.PP
+Definition at line \fB77\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.NegativeTwo\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the value −2\&. 
+.PP
+Definition at line \fB87\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.NegativeZero\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the negative zero (−0)\&. This value is representable but not distinct in arithmetic operations\&. 
+.PP
+Definition at line \fB67\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.One\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the value +1\&. 
+.PP
+Definition at line \fB72\fP of file \fBInt4\&.cs\fP\&.
+.PP
+Referenced by \fBoperator++()\fP, and \fBoperator\-\-()\fP\&.
+.SS "byte SystemEx\&.Numeric\&.Int4\&.SignBit\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the number of sign bits used by the format (1)\&. 
+.PP
+Definition at line \fB46\fP of file \fBInt4\&.cs\fP\&.
+.SS "byte SystemEx\&.Numeric\&.Int4\&.TotalBits\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the total number of bits used by the \fBInt4\fP format (4)\&. 
+.PP
+Definition at line \fB56\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.Two\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the value +2\&. 
+.PP
+Definition at line \fB82\fP of file \fBInt4\&.cs\fP\&.
+.SS "byte SystemEx\&.Numeric\&.Int4\&.ValueBits\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the number of magnitude bits used by the format (3)\&. 
+.PP
+Definition at line \fB51\fP of file \fBInt4\&.cs\fP\&.
+.SS "\fBInt4\fP SystemEx\&.Numeric\&.Int4\&.Zero\fR [static]\fP, \fR [get]\fP"
+
+.PP
+Gets the value zero (+0)\&. 
+.PP
+Definition at line \fB61\fP of file \fBInt4\&.cs\fP\&.
+.PP
+Referenced by \fBDiv()\fP, \fBoperator%()\fP, \fBoperator&()\fP, \fBoperator/()\fP, \fBoperator^()\fP, and \fBoperator|()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

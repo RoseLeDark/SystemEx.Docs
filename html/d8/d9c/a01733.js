@@ -1,7 +1,6 @@
 var a01733 =
 [
-    [ "m_cosHalfPhi", "d8/d9c/a01733_a81f2f7b288607031378793286ef58ff1.html#a81f2f7b288607031378793286ef58ff1", null ],
-    [ "m_cosHalfTheta", "d8/d9c/a01733_a8750e586978604edb36030be40ea2454.html#a8750e586978604edb36030be40ea2454", null ],
-    [ "InnerConeAngle", "d8/d9c/a01733_a95bdad770319994c1c46ef279b0a8748.html#a95bdad770319994c1c46ef279b0a8748", null ],
-    [ "OuterConeAngle", "d8/d9c/a01733_ae98212b902247b226637c0f78fe9ec07.html#ae98212b902247b226637c0f78fe9ec07", null ]
+    [ "AdlerHash", "d9/dfb/a00913_ga8235075b6d394ed5c2db8070875e3c38.html#ga8235075b6d394ed5c2db8070875e3c38", null ],
+    [ "Compute", "d9/dfb/a00913_gaa80a96796abfe116d7d7dac947f2d055.html#gaa80a96796abfe116d7d7dac947f2d055", null ],
+    [ "ComputeLong", "d9/dfb/a00913_ga06d35da8313f902a101c5d44ec12ca75.html#ga06d35da8313f902a101c5d44ec12ca75", null ]
 ];

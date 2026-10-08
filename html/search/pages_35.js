@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🤝_20systemex_20contributing_0',['🤝 SystemEx Contributing',['../d8/db7/a02450.html',1,'']]]
+  ['🚧_20status_0',['🚧 Status',['../index.html#autotoc_md-status',1,'']]]
 ];

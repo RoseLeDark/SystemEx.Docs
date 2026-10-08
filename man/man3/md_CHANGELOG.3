@@ -1,0 +1,1665 @@
+.TH "md_CHANGELOG" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_CHANGELOG \- 📝 SystemEx Changelog 
+.PP
+
+.SH "⭐ [0\&.95\&.6023-rc4] 08\&.10\&.2026 — internal Preview for 1\&.0 → Lacking"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Added \fREmpty\fP:
+.IP "  \(bu" 4
+Represents a reusable empty-value marker type for generic APIs and result pipelines\&.
+.PP
+
+.IP "\(bu" 2
+Added \fRTimeout<T>\fP: Provides a generic timeout abstraction with support for finite and infinite timeout values\&. Includes helper utilities for timeout validation and timeout-state checks\&.
+.IP "\(bu" 2
+Added \fRReference\fP: Provides a base class for reference-counted objects\&. Supports deterministic lifetime tracking through explicit reference management\&.
+.IP "\(bu" 2
+Added \fRThreadSafeIndex\fP: Provides an atomic thread-safe index helper for concurrent container and synchronization scenarios\&.
+.IP "\(bu" 2
+Added cache-backed stack support: Introduced stack operations for reference-based cache implementations\&.
+.IP "\(bu" 2
+Added \fRModulePreloader\fP: Provides preloading support for native modules before runtime invocation\&.
+.IP "\(bu" 2
+Added \fRFunction<TReturn, TDelegate>\fP: Strongly typed wrapper around native function bindings and delegate-based invocation\&.
+.IP "\(bu" 2
+Added debug metadata support to \fRIValueReader\fP implementations: Read operations can now expose additional diagnostic metadata for debugging and inspection\&.
+.IP "\(bu" 2
+Added utility helpers for \fRTriple<T>\fP: Additional logical and comparison helper functions (\fRAnd\fP, \fROr\fP, comparison helpers, and related utilities)\&.
+.IP "\(bu" 2
+Added \fR\fBVersion\&.cs\fP\fP: Represents a mutable version identifier with major, minor, and build components and additional build metadata\&. 
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+\fRCompareResult\fP was moved to the root namespace \fR\fBSystemEx\fP\fP\&. Simplifies discoverability and reduces unnecessary namespace dependencies\&.
+.IP "\(bu" 2
+\fRRCUHistory\fP now uses \fRByteIndex\fP addressing internally\&. Improves consistency with the cache and memory subsystem\&.
+.IP "\(bu" 2
+\fRResult\fP can now contain and aggregate other \fRResult\fP instances\&. Enables hierarchical result composition and nested processing pipelines\&.
+.IP "\(bu" 2
+Updated operator support across several utility and value types\&. Improved consistency of arithmetic and comparison semantics\&.
+.PP
+.SS "Improved"
+.IP "\(bu" 2
+Improved \fREpoch\fP: Added \fRGetHashCode()\fP implementation\&. Added \fRoperator true\fP and \fRoperator false\fP\&.
+.IP "\(bu" 2
+Fixed epoch evaluation and RCU validation logic\&. Resolved several issues affecting RCU state checks and epoch handling\&.
+.IP "\(bu" 2
+Updated XML documentation and inline comments across the framework\&.
+.PP
+.SS "Removed"
+.IP "\(bu" 2
+Removed the legacy node system\&. Preparation for a redesigned node architecture, in Future version I will added a new version, sry
+.PP
+.SS "Build"
+.IP "\(bu" 2
+Added build and repository maintenance infrastructure\&.
+.IP "  \(bu" 4
+Added build configuration files\&.
+.IP "  \(bu" 4
+Updated push automation scripts\&.
+.IP "  \(bu" 4
+Updated repository ignore rules (\fR\&.gitignore\fP) for build artifacts and generated files\&.
+.PP
+
+.PP
+.SS "Fixed"
+.IP "\(bu" 2
+Fixed various bugs across \fRResult\fP, \fRResultBuilder\fP, \fRBigDecimal\fP, and the RCU subsystem\&.
+.IP "\(bu" 2
+Corrected exponent conversion issues in \fRBigDecimal\fP\&.
+.IP "\(bu" 2
+Fixed assertion indexing issues in \fRResult\fP\&.
+.IP "\(bu" 2
+Improved stability of fluent result-building operations\&.
+.PP
+
+.PP
+.PP
+.SH "⭐ [0\&.95\&.5645‑rc1] 31\&.08\&.2026 — internal Preview for 1\&.0 → Lacking"
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+Rename namespace \fR\fBSystemEx\&.Random\fP\fP to \fR\fBSystemEx\&.Rand\fP\fP
+.IP "\(bu" 2
+\fRIsaac32Engine\fP is now in \fR\fBSystemEx\&.Rand\&.Engine\fP\fP and impl \fRIRandomEngine\fP
+.IP "\(bu" 2
+\fRIsaac32Engine\fP and \fRMTwisterEngine\fP used now his own Seed impl - his namens ends with {EngineName}Seed
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Added to \fR\fBSystemEx\&.Rand\fP\fP:
+.IP "  \(bu" 4
+Added \fRGenericRand\fP: Provides a simple interface for generating random numbers using varibale Engines algorithm\&.
+.IP "  \(bu" 4
+Added \fRIRandomEngine\fP: Defines the contract for a deterministic 32-bit random number generator engine\&. Implementations provide a reproducible sequence of unsigned 32-bit values
+.IP "  \(bu" 4
+Added new Random engine: \fRMTwisterEngine\fP Implements the MT19937 32-bit Mersenne Twister random number generator\&.
+.PP
+
+.IP "\(bu" 2
+Added \fR\fBSystemEx\&.Random\fP\fP: Provides a high‑level wrapper around the Base Class Library (BCL) System\&.Random and added usale functions\&.
+.IP "\(bu" 2
+Added \fRSystemEx\&.Threading\&.LightMMQueue\fP: A bounded lock‑free multi‑producer, multi‑consumer (MPMC) queue\&.
+.PP
+
+.PP
+.PP
+.SH "[0\&.95\&.5000‑rc1] 31\&.08\&.2026 — internal Preview for 1\&.0 → Lacking"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Added full UE‑Float suite:
+.IP "  \(bu" 4
+\fRFloatUE5M2b32\fP — 32‑Bit UE‑Format mit 5‑Bit Exponent, 2‑Bit Mantissa, block‑kompatibel
+.IP "  \(bu" 4
+\fRFloatUE5M2\fP — kompakte UE‑Variante für Low‑Precision‑Pipelines
+.IP "  \(bu" 4
+\fRFloatUE4M3\fP — 4‑Bit Exponent, 3‑Bit Mantissa, optimiert für Embedded‑DSP
+.IP "  \(bu" 4
+\fRFloatUE4M3MX\fP — MX‑Block‑Version mit gemeinsamem Exponent
+.IP "  \(bu" 4
+\fRFloatE5M2\fP — klassisches E5M2‑Format mit deterministischer Rundung
+.IP "  \(bu" 4
+\fRFloatE4M3\fP — E4M3‑Format mit SystemEx‑konformer Normalisierung
+.PP
+
+.IP "\(bu" 2
+Added full standard float suite:
+.IP "  \(bu" 4
+\fRFloat32\fP — deterministische IEEE‑754‑kompatible Implementierung
+.IP "  \(bu" 4
+\fRFloat64\fP — präzise 64‑Bit‑Float‑Engine mit SystemEx‑Rounding
+.PP
+
+.IP "\(bu" 2
+Added generic UMX‑float:
+.IP "  \(bu" 4
+\fRFloat8UMX<T>\fP — 8‑Bit MX‑Float mit generischem Basistyp und gemeinsamem Exponent
+.PP
+
+.IP "\(bu" 2
+Added \fRINT4\fP:
+.IP "  \(bu" 4
+Minimaler 4‑Bit signed Zweierkomplement‑Typ
+.IP "  \(bu" 4
+Vollständig bitweise implementiert über \fRFast_Byte\fP
+.IP "  \(bu" 4
+Add/Sub/Mul/Div rein bitlogisch (Carry in Bit 5, Temp‑Bits 6–7)
+.IP "  \(bu" 4
+Vollständige Operatorunterstützung (\fR+ - * / % & | ^ < > <= >= == !=\fP)
+.PP
+
+.IP "\(bu" 2
+Added interface:
+.IP "  \(bu" 4
+\fRIP8UMXEnable<TBase>\fP — aktiviert UMX‑Block‑Funktionalität für generische Basistypen
+.PP
+
+.IP "\(bu" 2
+Added \fRLightFutex\fP: Provides a lightweight reentrant futex-like synchronization primitive\&.
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+Updated \fRIFloat\fP:
+.IP "  \(bu" 4
+\fRBiddenBit\fP ist jetzt vom Typ \fRTSelf\fP statt \fRushort\fP
+.IP "  \(bu" 4
+Ermöglicht konsistente Self‑Type‑Propagation über alle Float‑Formate
+.IP "  \(bu" 4
+Verbessert generische Kompatibilität mit UMX‑Blöcken und UE‑Formaten
+.PP
+
+.PP
+.SS "Improved"
+.IP "\(bu" 2
+Unified naming and documentation across all UE‑Float and MX‑Float classes
+.IP "\(bu" 2
+Enhanced determinism of rounding and normalization in all new float formats
+.IP "\(bu" 2
+Improved internal consistency of exponent/mantissa handling across UE‑Suite
+.IP "\(bu" 2
+Strengthened generic compatibility for UMX‑Float‑Pipeline (\fRFloat8UMX<T>\fP)
+.PP
+
+.PP
+.PP
+.SH "[0\&.95\&.3545‑rc1] 28\&.08\&.2026 — internal Preview for 1\&.0 → Lacking"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Added full generic CRC wrapper \fRCrC<TC32, TC64>\fP:
+.IP "  \(bu" 4
+Allows pairing any CRC‑32 and CRC‑64 variant in a single hasher
+.IP "  \(bu" 4
+Fully compatible with \fRIHash\fP pipeline (Compute + ComputeLong)
+.IP "  \(bu" 4
+Supports simultaneous polynomial configuration via \fRPair<Optional<uint>, Optional<ulong>>\fP
+.IP "  \(bu" 4
+Rolling state maintained independently for both CRC engines
+.PP
+
+.IP "\(bu" 2
+Added specialized CRC‑32 variants:
+.IP "  \(bu" 4
+\fRCRC32IEEE\fP (0xEDB88320)
+.IP "  \(bu" 4
+\fRCRC32C\fP (Castagnoli, 0x82F63B78)
+.IP "  \(bu" 4
+\fRCRC32Koopman\fP (0xEB31D82E)
+.IP "  \(bu" 4
+\fRCRC32BZip2\fP (0x04C11DB7)
+.IP "  \(bu" 4
+\fRCRC32Mpeg2\fP (0x04C11DB7, FinalXor = 0)
+.IP "  \(bu" 4
+\fRCRC32Posix\fP (0x04C11DB7, InitialXor = 0)
+.IP "  \(bu" 4
+All variants implemented as sealed subclasses with deterministic polynomial injection
+.PP
+
+.IP "\(bu" 2
+Added specialized CRC‑64 variants:
+.IP "  \(bu" 4
+\fRCRC64Ecma\fP (0xC96C5795D7870F42)
+.IP "  \(bu" 4
+\fRCRC64Iso\fP (0x000000000000001B)
+.IP "  \(bu" 4
+\fRCRC64We\fP (0x42F0E1EBA9EA3693)
+.IP "  \(bu" 4
+\fRCRC64Xz\fP (0x42F0E1EBA9EA3693)
+.IP "  \(bu" 4
+All variants implemented as sealed subclasses with consistent rolling behavior
+.PP
+
+.IP "\(bu" 2
+Added full XML documentation for:
+.IP "  \(bu" 4
+\fRCrC<TC32, TC64>\fP
+.IP "  \(bu" 4
+All CRC‑32 and CRC‑64 variant classes
+.IP "  \(bu" 4
+Missing BigDecimal members (\fRPrecision\fP, tuple‑constructor, \fRGetHashCode\fP)
+.IP "  \(bu" 4
+Internal rational constructor (\fRBigDecimal(BigInteger numerator, BigInteger denominator)\fP)
+.PP
+
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+Updated \fRCRC32\fP and \fRCRC64\fP base classes:
+.IP "  \(bu" 4
+Polynomial setter now resets rolling state deterministically
+.IP "  \(bu" 4
+Unified table generation semantics across all CRC variants
+.IP "  \(bu" 4
+Normalized documentation to match \fBSystemEx\fP style guidelines
+.PP
+
+.IP "\(bu" 2
+Revised BigDecimal comparison logic documentation:
+.IP "  \(bu" 4
+Clarified exponent alignment behavior
+.IP "  \(bu" 4
+Added detailed explanation of precision‑based exponent adjustment
+.IP "  \(bu" 4
+Improved readability of \fRCompareTo(BigDecimal)\fP XML comments
+.PP
+
+.IP "\(bu" 2
+Updated BigDecimal hashing:
+.IP "  \(bu" 4
+\fRGetHashCode()\fP now explicitly documented as normalization‑based
+.IP "  \(bu" 4
+Ensures canonical hash generation independent of mantissa/exponent representation
+.PP
+
+.PP
+.SS "Improved"
+.IP "\(bu" 2
+Consistent naming and documentation across all CRC variant classes
+.IP "\(bu" 2
+Unified rolling semantics for CRC‑32 and CRC‑64 engines
+.IP "\(bu" 2
+Improved clarity of BigDecimal internal constructors and normalization behavior
+.IP "\(bu" 2
+Enhanced maintainability of hash subsystem through generic CRC composition
+.PP
+
+.PP
+.PP
+.SH "[0\&.95\&.xxx] 26\&.08\&.2026 intern Preview for 1\&.0 -> Lacking"
+.PP
+.SS "Rename"
+.IP "\(bu" 2
+Rename Latch To LightLatch and add ConditionVariable support
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Add Thread Invoke System
+.IP "\(bu" 2
+Add readmes at all examples
+.PP
+.SH "[0\&.93\&.1957] 25\&.08\&.2026 intern Preview for 1\&.0 -> Lacking"
+.PP
+!! Very importend remnove AutoGrow Bug from All Collections !! PushBack and AutoGrow now Working !!
+.SS "Remove"
+.IP "\(bu" 2
+Marked Islocked in ILocked as Obsolete and add IsHeld in ILocked
+.IP "\(bu" 2
+Remove IsHeld from ISpinLock
+.IP "\(bu" 2
+Reomve bugs (Randown and other)
+.PP
+.SS "Added"
+.IP "\(bu" 2
+AtomicLock a SpinLock user mode running SpinLock with ThreadOwnerTrackingEnabled
+.IP "\(bu" 2
+Add Running Examples - see github Examples
+.PP
+
+.PP
+.PP
+.SH "[0\&.92\&.1902] 24\&.08\&.2026 intern Preview for 1\&.0 -> Lacking"
+.PP
+.SS "Correcture"
+.IP "\(bu" 2
+Remove from ILock\&.TryLock the argument TimeSpan\&. Now ist TryLock != Lock
+.IP "\(bu" 2
+Update Result, can nocw habdle null\&. \fRthis [int index]\fP return object? and add function \fRGet(int index = 0)\fP return object?
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Added in \fBSystemEx\&.Threading\fP
+.IP "  \(bu" 4
+\fRLatch\fP: A one‑shot countdown synchronization primitive that releases all waiting threads once its counter reaches zero and remains permanently open afterward\&.
+.IP "  \(bu" 4
+\fRBarrier\fP: A reusable multi‑phase synchronization barrier that blocks threads until a specified number of arrivals is reached, then executes a completion step and advances to the next phase\&.
+.IP "  \(bu" 4
+\fRRCUObject<T>\fP: Represents a minimal Read-Copy-Update (RCU) container that provides lock-free read access and exclusive write access to a protected value\&.
+.PP
+
+.IP "\(bu" 2
+Added in \fBSystemEx\fP:
+.IP "  \(bu" 4
+\fRIValueWriter\fP & \fRIValueWriter<T>\fP: Provides endian-aware write operations for genric/primitive numeric types\&.
+.IP "  \(bu" 4
+\fRIValueReader\fP & \fRIValueReader<T>\fP: Provides endian-aware reader operations for genric/primitive numeric types
+.PP
+
+.IP "\(bu" 2
+Added in \fBSystemEx\&.IO\fP:
+.IP "  \(bu" 4
+\fRRCUStream<TStream>\fP:A Read-Copy-Update (RCU) wrapper around a System\&.IO\&.Stream that provides lock-free read operations and exclusive write operations\&. \fRRCUStream<TStream>\fP implt \fRIValueWriter\fP and \fRIValueReader\fP\&.
+.PP
+
+.IP "\(bu" 2
+Added in \fBSystemEx\&.Collections\&.Generic\fP:
+.IP "  \(bu" 4
+\fRRCUCache\fP: Provides a Read‑Copy‑Update (RCU) wrapper around a Cache instance\&.
+.PP
+
+.PP
+.SS "Remove"
+.IP "\(bu" 2
+Remove \fRLongLenght\fP from Cache - redudance with \fRlong Lenght\fP
+.IP "\(bu" 2
+Remove \fRWrite(value \&.\&.\&. )\fP and \fRRead{Uint, int \&.\&.\&.\&.}\fP from ICache and Cache and RCUCache implt now \fRICache\fP, \fRIValueWriter\fP and \fRIValueReader\fP\&. 
+.PP
+.SS "Update Coution"
+.IP "\(bu" 2
+namespace \fRSystemEx\&.Algorithms\&.Interfaces\fP and \fR\fBSystemEx\&.Algorithms\fP\fP are marged to \fR\fBSystemEx\&.Algorithms\fP\fP\&. !!
+.PP
+.SH "[0\&.90\&.1785] 18\&.08\&.2026 intern Preview for 1\&.0 -> Lacking"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Added Half16hb (Google Half 16 floa type) and basic structs for more float types
+.IP "\(bu" 2
+Added:
+.IP "  \(bu" 4
+\fRvec2h\fP (Half16) and \fRvec2hb\fP (Half16b)
+.IP "  \(bu" 4
+\fRvec3h\fP (Half16) and \fRvec3hb\fP (Half16b)
+.IP "  \(bu" 4
+\fRvec4h\fP (Half16) and \fRvec4hb\fP (Half16b)
+.PP
+
+.IP "\(bu" 2
+Added conversion from Float to Half16 and Half16b and to float
+.IP "\(bu" 2
+Added professional low‑level bit‑span-types \fRBitIntSpan\fP, \fRBitLongSpan\fP unsigned and signed version in FlexSpan style with reverse, ringbuffer and AsSpan System mode\&. Becarful by Ring mode
+.IP "\(bu" 2
+Added \fR\fBSystemEx\&.Numeric\&.Ratio\fP\fP: Represents a rational number using a signed 64‑bit numerator and denominator\&. A Ratio stores an exact fractional value without automatic reduction\&. This allows the representation of structural fractions such as gear ratios\&.
+.IP "\(bu" 2
+Added:
+.IP "  \(bu" 4
+\fRvec2r\fP (Ratio)
+.IP "  \(bu" 4
+\fRvec3r\fP (Ratio)
+.IP "  \(bu" 4
+\fRvec4r\fP (Ratio)
+.PP
+
+.IP "\(bu" 2
+Added \fRSystemEx\&.MathR\fP for Ratio Math Utils with:
+.IP "  \(bu" 4
+\fRPow\fP: Raises a ratio to an integer power exactly\&.
+.IP "  \(bu" 4
+\fRDegreesToRadians\fP: Converts degrees to radians\&.
+.IP "  \(bu" 4
+\fRRadiansToDegrees\fP: Converts radians to degrees\&.
+.IP "  \(bu" 4
+\fRDegreesToTurns\fP: Converts degrees to turns (full rotations)\&. deg / 360;
+.IP "  \(bu" 4
+\fRTurnsToDegrees\fP: Converts turns (full rotations) to degrees\&.
+.IP "  \(bu" 4
+\fRSign\fP: Returns the sign of this ratio as a interger\&. The result is -1, 0, or 1 depending on the value of the ratio\&.
+.IP "  \(bu" 4
+\fRAbs\fP: Returns the absolute value of the giving ratio : ABS(Numerator), ABS(Denominator)
+.IP "  \(bu" 4
+\fRClamp\fP: Clamps this ratio between the specified minimum and maximum values\&.
+.IP "  \(bu" 4
+\fRMin\fP, \fRMax\fP, \fRMinMax\fP:
+.IP "  \(bu" 4
+\fRSqrt\fP with new return Type Result: Computes the square root of a \fR\fBSystemEx\&.Numeric\&.Ratio\fP\fP and returns the result inside a \fR\fBSystemEx\&.Result\fP\fP object\&. The method distinguishes between rational and irrational square roots\&.
+.PP
+
+.IP "\(bu" 2
+Added \fR\fBSystemEx\&.Result\fP\fP: Represents a flexible multi-value result container that can hold successful values, multiple return objects, assertion messages, or exception information\&.
+.IP "\(bu" 2
+Added \fR\fBSystemEx\&.ResultBuilder\fP\fP: Provides a fluent builder for constructing complex Result objects across multiple processing steps, compiler stages, or mathematical operations\&.
+.IP "\(bu" 2
+Added \fRSystemEx\&.FlexSpan\fP View to all basic Types - int, long, float , double\&. Be careful with Ring Mode and Foreache without a break condition\&.
+.IP "\(bu" 2
+Added TupleMap<T>: A flexible tuple structure where the first element acts as a stable key and additional values are stored in an expandable object array, enabling structured multi‑value mappings\&.
+.PP
+.SH "Update"
+.PP
+Remove many bugs
+
+.PP
+This Release is the first Preview to 1\&.0
+
+.PP
+!! Updatet README and Add other usable md Files
+.SH "[0\&.70\&.658] 30\&.07\&.2026 -> Lacking"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Added \fRSafeCounter\fP with operator suite (++, --, +, -, ==, !=) with full atomic semantics\&.
+.IP "\(bu" 2
+Added new Interrfaces \fRISpinlock<T>\fP, \fRILock<T>\fP and \fRILock\fP : unified locking abstraction for atomic and OS‑level synchronization\&.
+.IP "\(bu" 2
+Added new Light atomic based Locks based on \fRILock<T>\fP and SafeCounter:
+.IP "  \(bu" 4
+\fRLightCountingSpinlock<T>\fP: atomic multi‑capacity spinlock with deterministic decrement/increment semantics\&.
+.IP "  \(bu" 4
+\fRLightMutex<T>\fP based on \fRLightCountingSpinlock<T>\fP: binary spinlock with strict owner‑tracking built on top of LightCountingSpinlock<T>\&.
+.PP
+
+.IP "\(bu" 2
+Added \fRMutexLock\fP OS‑level blocking mutex wrapper; kernel‑managed, not interchangeable with atomic spinlock‑based locks\&.
+.IP "\(bu" 2
+Added \fRSpinlock\fP thin wrapper around System\&.Threading\&.SpinLock exposing a busy‑wait mutual exclusion primitive via \fRISpinlock<T>\fP\&.
+.IP "\(bu" 2
+Added new Iterrator System for IContainerEx System, the old in SystemEx\&.Collections\&.Generic\&.Interfaces are Obsolete and remove in version 1\&.0
+.IP "  \(bu" 4
+Added a \fRRandomAccessIterator<T, Array<T>> Begin\fP, \fRRandomAccessIterator<T, Array<T>> End\fP, \fRRandomAccessIterator<T, Array<T>> ReverseBegin\fP and \fRRandomAccessIterator<T, Array<T>> ReverseEnd\fP to \fRArray<T>\fP and \fRVector<T>\fP Objects
+.PP
+
+.IP "\(bu" 2
+Added to \fRSortActions \fP helper: simple heap‑based min/max sort placing minimum at the start and maximum at the end\&.
+.PP
+.SS "Added – SystemEx\&.AI"
+.IP "\(bu" 2
+Introduced the \fR\fBSystemEx\&.AI\fP\fP subsystem, providing a unified abstraction layer for AI model invocation within \fBSystemEx\fP\&.
+.IP "\(bu" 2
+Added \fRModel<TPrompt, TResult>\fP as the base contract for all AI models, defining prompt handling, backend routing, configuration management, and result processing\&.
+.IP "\(bu" 2
+Added \fRIModelBackend<T>\fP to standardize backend communication, including request construction, parameter merging, and transport‑agnostic execution\&.
+.IP "\(bu" 2
+Added \fRWebAIBackend<T>\fP implementing \fRIModelBackend<T>\fP for HTTP‑based AI endpoints (e\&.g\&., OpenAI‑compatible APIs)\&. Supports configurable model selection, streaming, response formatting, and backend‑specific parameters\&.
+.IP "\(bu" 2
+Added \fRModelPromp<T>\fP and \fRModelResult<T>\fP to formalize prompt input and result output, including context propagation, metadata, and optional session identifiers\&.
+.IP "\(bu" 2
+Added \fRWebAIModel\fP, a lightweight front‑facing wrapper around \fRWebAIBackend<T>\fP, providing model switching, configuration helpers (temperature, top‑p, max‑tokens, response‑format), and simplified usage for applications\&.
+.IP "\(bu" 2
+The subsystem is backend‑agnostic and allows future integration of additional AI backends (local inference, custom gateways, etc\&.) without modifying model‑level code\&.
+.IP "\(bu" 2
+Added \fRExample/AI/\fP directory containing a minimal working example (\fRMain\&.cs\fP) and bilingual documentation (\fRREADME\&.en\&.md\fP, \fRREADME\&.de\&.md\fP) demonstrating how to integrate Microsoft AITools using the \fR\fBSystemEx\&.AI\fP\fP abstraction layer\&.
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+Renamed \fRSimpleThread\fP → \fRLightThread\fP for naming consistency\&.
+.IP "\(bu" 2
+Renamed \fRSimpleConditionVariable\fP → \fRLightConditionVariable\fP\&.
+.IP "\(bu" 2
+\fRDequeue<T>\fP is now auto‑growable and includes new utility functions\&.
+.IP "\(bu" 2
+\fRMap\fP addes more functions: TryGet, GetOrDefault , add Erase anbd Remove functions
+.PP
+.SS "Note"
+This release contains several internal adjustments required for the ongoing integration of \fR\fBSystemEx\&.AI\fP\fP\&. 
+.br
+ Some components have been temporarily simplified or restructured and will be restored or finalized in upcoming versions once the new architecture is fully consolidated\&. 
+.br
+ The public API remains stable; only internal behavior may differ slightly until the next release\&.
+
+.PP
+.PP
+ 
+.SH "[0\&.59\&.164] 21\&.07\&.2026 -> Lacking"
+.PP
+.SS "Remove"
+.IP "\(bu" 2
+13\&.07\&.2026 Remove Array<T> old, FixedArray, SortedArray and Hashable 
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+14\&.07\&.2026 Add to Vector<T> AsSet, AsMultiSet, AsUnorderedSet, AsUnorderedMultiSetSet, As AsFind and AsSearch as static functions, easer to use
+.IP "\(bu" 2
+15\&.07\&.2026 Rename FastVector to Array and add AsSet, AsMultiSet, AsUnorderedSet, AsUnorderedMultiSetSet, As AsFind and AsSearch as static functions, easer to use
+.IP "\(bu" 2
+21\&.07\&.2026 \fBFexedVector<T>\fP renamed to \fBArray<T>\fP and Update in all other objects
+.IP "\(bu" 2
+
+.PP
+.SS "Added"
+.IP "\(bu" 2
+15\&.07\&.2026 Add Fast_Types (Fast_Interger, Fast_Short, Fast_Byte, Fast_Float)
+.IP "\(bu" 2
+21\&.07\&.2026 Add Seed Pipeline for \fBSystemEx\&.Random\fP System \fRISeed\fP, \fRTimedBasedSeed\fP, \fRValueBasedSeed\fP and SeedMixer for mixing multiple Seeds
+.IP "\(bu" 2
+21\&.07\&.2026 Add Slices View with SubSlices for JobQueueue in the Future with Worker Threads
+.IP "\(bu" 2
+21\&.07\&.2026 Add \fR SubSlice\fP and \fRSlices\fP Provides a deterministic multi-thread slicing model over a container\&. A slice represents a continuous range of elements inside the container\&. Each slice can be exclusively owned by exactly one thread\&.
+.PP
+.SH "[0\&.55\&.05] - 13\&.07\&.2026 -> Lacking"
+.PP
+.SS "CAUTION Very Important"
+.IP "\(bu" 2
+Marked all Array<T> types as obsolate !!! and:
+.IP "  \(bu" 4
+Add \fRVector<T> : IContainerEx<T>\fP: A dynamic Vector implementation that supports optional auto-growth, indexed access, insertion, removal, traversal, and basic search operations\&. see c++ std::vector<T>
+.IP "  \(bu" 4
+Add \fRref struct Set<T, TContainer>\fP:Defines a sorting action used by the Set wrapper\&. See c++ std::flat_set
+.IP "  \(bu" 4
+Add \fRref struct Find<T, TContainer> where TContainer : IContainerEx<T>\fP: Provides search operations over a container implementing IContainerEx<T>\&. This struct performs non‑modifying lookups such as first/last occurrence, existence checks and counting matches\&. for replace and easyble use\&. See Example: Example\\VectorSet\&.cs and Example\\VectorFind\&.cs 
+.PP
+
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Added \fRHalf16\fP, a fully deterministic IEEE‑754 binary16 implementation with complete bit‑level arithmetic\&.
+.IP "\(bu" 2
+Added \fRBlake3Hasher\fP (testing)\&.
+.IP "\(bu" 2
+Added new conversion helpers for all basic primitive types (\fRToUInt\fP, \fRToInt\fP, \fRToUShort\fP, …), including offset‑based variants that allow reading values from a \fRbyte[]\fP starting at a specific index\&.
+.IP "\(bu" 2
+Added \fRIComparableEx<T>\fP, providing a strongly typed comparison contract compatible with \fRIComparable<T>\fP via integer‑backed \fRCompareResult\fP\&.
+.IP "\(bu" 2
+Added \fRIHashable<T>\fP, a minimal interface for deterministic byte‑level serialization used by \fBSystemEx\fP hashing algorithms\&.
+.IP "\(bu" 2
+Added fully documented \fRHashFactory\fP with support for attribute‑driven hash algorithm selection (\fRHashAlgorithmAttribute\fP) and automatic hasher instantiation via \fRActivator\fP\&.
+.IP "\(bu" 2
+Added namespace \fR\fBSystemEx\&.Numeric\fP\fP containing the following numeric types:
+.IP "  \(bu" 4
+\fRvec2f\fP, \fRvec2d\fP, \fRvec2i\fP
+.IP "  \(bu" 4
+\fRvec3f\fP, \fRvec3d\fP, \fRvec3i\fP
+.IP "  \(bu" 4
+\fRvec4f\fP, \fRvec4d\fP, \fRvec4i\fP
+.IP "  \(bu" 4
+\fRquadf\fP, \fRquadd\fP // - \fRmat44f\fP, \fRmat44d\fP // - \fRrect\fP // - \fRplane\fP
+.PP
+
+.IP "\(bu" 2
+Added \fRGetEndian()\fP to the \fRConversion\fP utilities to detect the system’s native endianness, allowing conversions to swap endianness only when necessary (e\&.g\&., inside \fRToBytes(Endian endian)\fP)\&.
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+Removed the \fREndian\fP parameter from \fRIHash\&.Compute\fP and \fRIHash\&.ComputeLong\fP\&. Endianness is now defined solely by the hash object’s constructor\&.
+.IP "\(bu" 2
+\fRRamSharedBackend\&.ReciveFromHardwareBuffer\fP now returns a copied buffer instead of the internal backend buffer to improve memory safety and prevent unintended external modifications\&.
+.PP
+.SS "Deprecated – Hashable (scheduled for removal in version 0\&.60)"
+.IP "\(bu" 2
+The abstract base class Hashable has been marked as obsolete and is scheduled for complete removal in \fBSystemEx\fP 0\&.60\&.
+.IP "\(bu" 2
+The class‑based hashing system is no longer recommended and has been superseded by the new attribute‑driven hashing architecture based on:
+.IP "  \(bu" 4
+IHashable<T> for deterministic byte serialization
+.IP "  \(bu" 4
+HashFactory for algorithm selection and hash computation
+.PP
+
+.IP "\(bu" 2
+The new hashing pipeline supports both classes and structs, avoids inheritance constraints, and provides a cleaner, more modular design\&.
+.IP "\(bu" 2
+Marked all Array<T> types as obsolate !!!
+.PP
+
+.PP
+.PP
+.SH "[0\&.50\&.00] - 03\&.07\&.2026 -> Lacking"
+.PP
+.SS "Major Documentation Milestone"
+A significant version jump was made intentionally\&. 
+.br
+ With this release, the entire public API of \fBSystemEx\fP — including the mathematical canvas system, layer model, blend modes, hash engines, and all related interfaces — has been fully documented and formalized\&.
+
+.PP
+This marks the completion of approximately half of the planned major‑release scope\&. The version number reflects this structural maturity rather than incremental feature changes\&.
+.SS "Added"
+.IP "\(bu" 2
+Full XML documentation for all canvas interfaces (\fRICanvas\fP, \fRISubCanvas\fP, \fRICanvasList\fP)
+.IP "\(bu" 2
+Complete documentation for all hash engines (Groestl, Adler, etc\&.)
+.IP "\(bu" 2
+Formalized mathematical layer model and blend mode semantics
+.IP "\(bu" 2
+Unified terminology across the entire \fBSystemEx\fP framework
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+API surface stabilized and prepared for 1\&.0
+.IP "\(bu" 2
+Internal consistency improvements across all canvas and hash components
+.PP
+.SS "Notes"
+The jump from \fR0\&.12\&.04\fP to \fR0\&.50\&.00\fP is intentional and represents reaching the halfway point toward the 1\&.0 major release\&.
+.SS "Codename Update: Ignoring → Lacking"
+The codename for the 0\&.x development cycle has been updated from \fBIgnoring\fP to \fBLacking\fP\&.
+
+.PP
+All \fBSystemEx\fP development codenames follow the theme of “Missing”, reflecting the project’s purpose of providing features, structures, and utilities that are missing in the \&.NET ecosystem\&.
+
+.PP
+.IP "\(bu" 2
+\fBIgnoring\fP represented the early phase where documentation, structure, and formal API descriptions were intentionally ignored while core functionality was being built\&.
+.IP "\(bu" 2
+\fBLacking\fP represents the next phase: the system is functionally complete, but still lacking documentation, clarity, and formal definitions\&.
+.PP
+
+.PP
+With version \fB0\&.50\&.00\fP, the documentation milestone has been reached, marking the end of the “Lacking” phase\&. All subsequent 0\&.50\&.x versions will continue under this codename until the remaining missing structural components are completed\&.
+
+.PP
+.PP
+.SH "[0\&.12\&.04] – 2026‑07‑01 -> Ignoring"
+.PP
+.SS "Added"
+\fRSystem\&.FlexSpan<T>\fP — a unified view type for array‑based memory\&.** 
+.br
+ FlexSpan implements three indexing modes: 
+.br
+.IP "\(bu" 2
+\fRSystemSpan\fP (forward indexing) 
+.br
+
+.IP "\(bu" 2
+\fRReverseSpan\fP (reverse indexing) 
+.br
+
+.IP "\(bu" 2
+\fRRingSpan\fP (circular indexing)
+.PP
+
+.PP
+FlexSpan operates directly on \fBraw \fRT[]\fP buffers\fP without allocation and provides ref‑return access to elements\&. 
+.br
+ It is now integrated across all \fB\fBSystemEx\&.Collections\fP\fP types that use array‑backed storage (Stack, Array, FixedArray, Cache, StrippedCache)\&. 
+.br
+
+.PP
+Map‑based collections are not yet supported because they use \fRList<T>\fP internally\&. 
+.br
+ A dedicated \fBFlexListSpan\fP type will be added later to enable FlexSpan‑style views over list‑backed containers\&.
+
+.PP
+.IP "\(bu" 2
+Added new sorting algorithms under \fRSystemEx\&.Utils\&.Algorithm\fP:
+.IP "  \(bu" 4
+\fRQuickSort\fP – Hoare‑partition, tail‑recursion‑eliminated variant\&. 
+.br
+
+.IP "  \(bu" 4
+\fRHeapSort\fP – Deterministic down‑heap implementation\&. 
+.br
+
+.IP "  \(bu" 4
+\fRInsertionSort\fP – Optimized for small spans and rope chunks\&. 
+.br
+
+.IP "  \(bu" 4
+\fRIsSorted\fP – Predicate‑based sortedness check\&.
+.IP "  \(bu" 4
+\fRGrøstlHash\fP - Implements the Grøstl-256 and Grøstl-512 hashing functions\&. This class provides a fully self-contained, allocation-free, deterministic hash engine based on the original Grøstl specification (SHA-3 finalist)\&.
+.PP
+
+.IP "\(bu" 2
+Added new tree structures under \fRSystemEx\&.Model\&.Tree\fP:
+.IP "  \(bu" 4
+\fRRBTree\fP – Intrusive red‑black tree with rotation and validation hooks\&. 
+.br
+
+.IP "  \(bu" 4
+\fRRBTreeNode\fP – Node type supporting color, parent, and directional links\&. 
+.br
+
+.IP "  \(bu" 4
+\fRRBTreeIterator\fP – Deterministic iterator for intrusive tree traversal\&.
+.IP "  \(bu" 4
+\fRGenericNode\fP – Base node type acting solely as a value holder\&. 
+.br
+
+.IP "  \(bu" 4
+\fRGroupedNode\fP – Non‑intrusive grouped node storing a value and an expandable collection of associated \fRGenericNode<T>\fP instances\&. 
+.br
+
+.IP "  \(bu" 4
+\fRLinkedNode\fP – Intrusive doubly‑linked node with forward and backward links\&. 
+.br
+
+.IP "  \(bu" 4
+\fRLinkedNodeSlice\fP – Represents a slice over intrusive node structures\&. 
+.br
+
+.IP "  \(bu" 4
+\fRLinkedNodeWithSibling\fP – Doubly‑linked node supporting sibling relationships\&. 
+.br
+
+.IP "  \(bu" 4
+\fRLinkedNodeRange\fP – Iterator‑based range over intrusive node structures\&. 
+.br
+
+.IP "  \(bu" 4
+\fRNode\fP – Intrusive singly‑linked node storing a value and a single forward link\&.
+.PP
+
+.IP "\(bu" 2
+Added new random number generators under \fRSystemEx\&.Utils\&.Random\fP:
+.IP "  \(bu" 4
+\fRRandX\fP – Fast non‑cryptographic generator family\&. 
+.br
+
+.IP "  \(bu" 4
+\fRISAAC\fP – Full ISAAC implementation with 256‑entry state and golden‑ratio seeding\&. 
+.br
+
+.IP "  \(bu" 4
+\fRRandUtils\fP – Unified API for endian‑aware random generation\&.
+.PP
+
+.IP "\(bu" 2
+Added new hash suite under \fRSystemEx\&.Utils\&.Hash\fP: 
+.br
+.IP "  \(bu" 4
+\fRFNV1aHash\fP Classic fast hash; excellent for small keys and general‑purpose hashing\&.
+.IP "  \(bu" 4
+\fRWeinbergHash\fP Lightweight integer hash with good avalanche behavior for map/set keys\&.
+.IP "  \(bu" 4
+\fRRamakrishnaHash\fP Simple multiplicative hash; ideal for embedded or deterministic systems\&.
+.IP "  \(bu" 4
+\fRBernsteinHash\fP Known as DJB2; stable, predictable, widely used in string hashing\&.
+.IP "  \(bu" 4
+\fRAdlerHash\fP Fast checksum‑style hash; useful for quick integrity checks\&.
+.IP "  \(bu" 4
+\fRFlatscherHash\fP High‑diffusion integer hash; suited for randomized indexing and table scattering\&. 
+.PP
+
+.PP
+.SS "Planned"
+.IP "\(bu" 2
+Poly1305 – lightweight, high‑security MAC/hash based on simple arithmetic operations; easy to implement without external dependencies\&.
+.IP "\(bu" 2
+HighwayHash – fast keyed hash with strong avalanche behavior; ideal for secure map/set hashing and low‑collision key generation\&.
+.IP "\(bu" 2
+BLAKE2s – modern cryptographic hash with high performance and simpler structure than BLAKE3; suitable for general crypto hashing without external libraries\&.
+.PP
+.SS "Fixed"
+.IP "\(bu" 2
+Corrected an issue in the array constructor\&.
+.PP
+
+.PP
+.PP
+.SH "[0\&.10\&.15] 30\&.06\&.2026 -> Ignoring"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Added \fRlong‑based iterator navigation\fP:
+.IP "  \(bu" 4
+\fRNodeIterrator<T>\&.Advance(long offset)\fP
+.IP "  \(bu" 4
+\fRNodeIterrator<T>\&.AdvanceRest\fP (long)
+.IP "  \(bu" 4
+\fRNodeIterrator<T>(Node<T> current, long index)\fP
+.PP
+
+.IP "\(bu" 2
+Added \fRlong‑based node navigation\fP:
+.IP "  \(bu" 4
+\fRNode<T>\&.GetAt(long index, out long r)\fP
+.IP "  \(bu" 4
+\fRNode<T>\&.At(long index)\fP
+.IP "  \(bu" 4
+\fRNode<T>\&.Offset(long offset)\fP
+.IP "  \(bu" 4
+\fRNode<T>\&.SetAt(long index, T value)\fP
+.PP
+
+.IP "\(bu" 2
+Added \fRDistance(bool ToEnd)\fP overload for directional chain length measurement
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+Replaced old \fRm_pChilds\fP Prev/Next sentinel‑model with \fRnullable Prev/Next\fP via:
+.IP "  \(bu" 4
+\fRFixedArray<Node<T>?> m_pNodex\fP
+.IP "  \(bu" 4
+\fRPrev\fP / \fRNext\fP now nullable
+.IP "  \(bu" 4
+\fRHasPrev\fP / \fRHasNext\fP now check for \fRnull\fP
+.PP
+
+.IP "\(bu" 2
+Updated chain navigation:
+.IP "  \(bu" 4
+\fRRoot()\fP and \fRLast()\fP rewritten to use nullable Prev/Next
+.PP
+
+.IP "\(bu" 2
+Updated removal logic:
+.IP "  \(bu" 4
+New \fRRemove()\fP implementation with explicit handling of:
+.IP "    \(bu" 6
+isolated node 
+.br
+
+.IP "    \(bu" 6
+head node 
+.br
+
+.IP "    \(bu" 6
+tail node 
+.br
+
+.IP "    \(bu" 6
+middle node 
+.br
+
+.PP
+
+.IP "  \(bu" 4
+Optional isolation under \fR#if TRACE\fP
+.PP
+
+.IP "\(bu" 2
+Updated splice logic:
+.IP "  \(bu" 4
+\fRSplice(ref first, ref last)\fP now detaches current node and reinserts \fR[first\&.\&.last]\fP
+.IP "  \(bu" 4
+\fRthis\&.Prev = null\fP and \fRthis\&.Next = null\fP after splice
+.PP
+
+.IP "\(bu" 2
+Updated insertion logic:
+.IP "  \(bu" 4
+\fRInsertLast(Node<T>)\fP rewritten to use nullable Prev/Next
+.PP
+
+.IP "\(bu" 2
+Updated traversal routines:
+.IP "  \(bu" 4
+\fRTraversPreorder\fP / \fRTraversPostorder\fP now traverse:
+.IP "    \(bu" 6
+\fRm_pNodex[PREV]\fP
+.IP "    \(bu" 6
+\fRm_pNodex[NEXT]\fP
+.IP "    \(bu" 6
+all siblings via \fRforeach\fP
+.PP
+
+.PP
+
+.PP
+.SS "Deprecated"
+.IP "\(bu" 2
+Marked \fRInsertRagen(ref Node<T>, ref Node<T>)\fP as obsolete 
+.br
+ → replaced by \fRInsertRange(ref Node<T>, ref Node<T>)\fP
+.PP
+.SS "Fixed"
+.IP "\(bu" 2
+Correct remainder handling in \fRGetAt(long index, out long r)\fP
+.IP "\(bu" 2
+Correct Prev/Next rewiring in \fRRemove()\fP for all four structural cases
+.IP "\(bu" 2
+Correct traversal behavior in \fRTraversListForward\fP / \fRTraversListBackward\fP
+.IP "\(bu" 2
+Correct iterator equality and hash code behavior
+.PP
+
+.PP
+.PP
+.SH "[0\&.10\&.12] 29\&.06\&.206 -> Ignoring"
+.PP
+.SS "Very Important"
+.IP "\(bu" 2
+\fRRenamed \fPRamKernel\fR → \fPNativeRAMKernel<TDelegate>`\fR \\ilinebr<br> New unified kernel base class replacing the old RAM‑only implementation\&. \\ilinebr<br> See example: \fPExamples/ExampleRamKernelAdd\&.cs`\&.
+.IP "\(bu" 2
+\fRRemoved all legacy platform kernel loaders\fP 
+.br
+ (\fRWindowsKernelLoader\fP, \fRLinuxKernelLoader\fP, \fRMacKernelLoader\fP, \fRNoSupportKernelLoader\fP) 
+.br
+ Replaced by new module‑centric loader architecture\&.
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Introduced full native module system under \fR\fBSystemEx\&.Runtime\fP\fP:
+.IP "  \(bu" 4
+\fRModule\fP (DLL/SO/DYLIB abstraction with handle + function lookup)
+.IP "  \(bu" 4
+\fRNativeHost\fP (module cache, unload, delegate binding)
+.PP
+
+.IP "\(bu" 2
+Add platform loader backends under \fR\fBSystemEx\&.Runtime\&.InteropServices\&.Platform\fP\fP:
+.IP "  \(bu" 4
+\fRWindowsProcLoader\fP
+.IP "  \(bu" 4
+\fRLinuxProcLoader\fP
+.IP "  \(bu" 4
+\fRMacProcLoader\fP
+.IP "  \(bu" 4
+\fRNoSupportProcLoader\fP (simulated backend)
+.PP
+
+.IP "\(bu" 2
+Add new kernel base class \fRNativeRAMKernel<TDelegate>\fP:
+.IP "  \(bu" 4
+Backend‑neutral kernel lifecycle (\fRCreate\fP, \fRBeginRun\fP, \fRRun\fP, \fREndRun\fP)
+.IP "  \(bu" 4
+Automatic buffer lock/unlock
+.IP "  \(bu" 4
+Delegate‑based native function invocation
+.IP "  \(bu" 4
+Backend hooks (\fROnCreate\fP, \fROnBegin\fP, \fROnRun\fP, \fROnEnd\fP, \fROnAddBuffer\fP)
+.PP
+
+.IP "\(bu" 2
+Add example kernel: 
+.br
+.IP "  \(bu" 4
+\fRExampleRamKernelAdd\fP demonstrating the new API\&.
+.PP
+
+.IP "\(bu" 2
+Add \fRBernsteinhash\fP and \fRMurmurHash\fP, murmur with Little and Big Endian Support
+.IP "\(bu" 2
+Update \fRExamples\\ExampleHasher\&.cs\fP
+.IP "\(bu" 2
+Add to Iterator:
+.IP "  \(bu" 4
+IRandomAccessIterator<T> Advance<T> ( IRandomAccessIterator<T> first, int n )
+.IP "  \(bu" 4
+IRandomAccessIterator<T> Next<T> ( IRandomAccessIterator<T> it, int n )
+.IP "  \(bu" 4
+IRandomAccessIterator<T> Prev<T> ( IRandomAccessIterator<T> it, int n )
+.IP "  \(bu" 4
+IForwardIterator<T> Next<T> ( IForwardIterator<T> first, int n )
+.IP "  \(bu" 4
+IForwardIterator<T> Advance<T> ( IForwardIterator<T> first, int n )
+.IP "  \(bu" 4
+public static bool Empty<T>(IIterator<T> first, IIterator<T> last) (Last and end is the same
+.PP
+
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+Replaced unmanaged call pipeline:
+.IP "  \(bu" 4
+Old: \fRKernelLoader\&.call(\&.\&.\&.)\fP
+.IP "  \(bu" 4
+New: delegate binding via \fRMarshal\&.GetDelegateForFunctionPointer<T>()\fP
+.PP
+
+.IP "\(bu" 2
+Updated RAM backend to use unified module + loader system\&.
+.IP "\(bu" 2
+Updated namespaces:
+.IP "  \(bu" 4
+\fR\fBSystemEx\&.Device\&.Intertropt\fP\fP → \fRSystemEx\&.Device\&.Interop\fP
+.IP "  \(bu" 4
+New runtime loaders under \fR\fBSystemEx\&.Runtime\&.InteropServices\&.Platform\fP\fP
+.PP
+
+.IP "\(bu" 2
+Updated buffer lifecycle to match new kernel execution model\&.
+.PP
+.SS "Improved"
+.IP "\(bu" 2
+Unified module loading across Windows/Linux/macOS\&.
+.IP "\(bu" 2
+Clear separation between:
+.IP "  \(bu" 4
+module loading
+.IP "  \(bu" 4
+function resolution
+.IP "  \(bu" 4
+kernel lifecycle
+.IP "  \(bu" 4
+buffer lifecycle
+.PP
+
+.IP "\(bu" 2
+More consistent behavior with future GPU backends\&.
+.IP "\(bu" 2
+Cleaner example code and documentation\&.
+.PP
+.SS "Removed"
+.IP "\(bu" 2
+\fRRamKernel\fP
+.IP "\(bu" 2
+All \fRKernelLoader\fP platform variants
+.IP "\(bu" 2
+Old Begin/Run/End RAM kernel implementation
+.IP "\(bu" 2
+Old unmanaged call logic
+.PP
+.SS "Notes"
+.IP "\(bu" 2
+This update contains \fRbreaking changes\fP\&. All code using \fRRamKernel\fP or \fRKernelLoader\fP must migrate to \fRNativeRAMKernel<TDelegate>\fP\&.
+.PP
+
+.PP
+.PP
+.SH "[0\&.9\&.64] 23\&.06\&.2026 -> Ignoring"
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+\fRpublic int Length { get; }\fP → \fRpublic ulong Length { get; }\fP
+.IP "\(bu" 2
+\fRCache<T>\fP is now fully ulong‑addressed instead of int‑based
+.IP "\(bu" 2
+Renamed \fRITerator\fP → \fRIIterator\fP (updated across all dependent iterator‑based classes)
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Added \fRFree\fP and \fRUsed\fP properties to \fRCache<T>\fP with new internal member \fRm_maxUsedAddress\fP 
+.br
+
+.IP "\(bu" 2
+Added \fRClear()\fP implementation to reset cache content and usage state 
+.br
+
+.IP "\(bu" 2
+Added \fRRange\fP, \fRNumberRange\fP and forward iterator \fRNumberRangeIterator<T>\fP 
+.br
+
+.IP "\(bu" 2
+Added \fRNumberRangeStepper<T>\fP: cursor‑based stepper over normalized numeric ranges (fixed increments, forward/backward stepping, reset, enumeration) 
+.br
+
+.IP "\(bu" 2
+Added \fRTypeBuffer<T>\fP and \fRITypeBuffer<T>\fP to \fR\fBSystemEx\&.Collections\&.Generic\fP\fP A typed view over a raw \fRCache\fP that exposes elements of an unmanaged type \fIT\fP 
+.PP
+
+.PP
+.PP
+.SH "[0\&.9\&.6] 21\&.06\&.2026"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Introduced new HWB and NCol color models under \fR\fBSystemEx\&.Drawing\fP\fP:
+.IP "  \(bu" 4
+Added \fRColorHWB\fP with hue/whiteness/blackness representation
+.IP "  \(bu" 4
+Added \fRColorNCol\fP hue‑index color model with percent‑based hue interpolation
+.IP "  \(bu" 4
+Added full conversion pipeline:
+.IP "    \(bu" 6
+\fRColorR8G8B8 → ColorHWB\fP
+.IP "    \(bu" 6
+\fRColorHWB → ColorR8G8B8\fP
+.IP "    \(bu" 6
+\fRColorR8G8B8 → ColorNCol\fP
+.IP "    \(bu" 6
+\fRColorNCol → ColorR8G8B8\fP
+.IP "    \(bu" 6
+\fRColorNCol → ColorR16G16B16\fP
+.IP "    \(bu" 6
+\fRColorNCol → ColorR10G10B10\fP
+.PP
+
+.PP
+
+.IP "\(bu" 2
+Added new canvas abstraction:
+.IP "  \(bu" 4
+Introduced \fRICanvas<T>\fP interface
+.IP "  \(bu" 4
+Added support for region copy, fill, clear, resize and color search
+.PP
+
+.IP "\(bu" 2
+Added new byte‑serialization infrastructure:
+.IP "  \(bu" 4
+Added \fRByteSeriablizeProvider\fP
+.IP "  \(bu" 4
+Added \fRIByteSerialize\fP, \fRIHasByteSchema\fP
+.IP "  \(bu" 4
+Added \fRRawByteProvider\fP
+.IP "  \(bu" 4
+Added \fRColorR10G10B10FormatSchema\fP and serializer implementation
+.PP
+
+.IP "\(bu" 2
+Added new constructors to \fRCache\fP:
+.IP "  \(bu" 4
+\fRCache(byte[], CacheType)\fP
+.IP "  \(bu" 4
+\fRCache(Array<byte>, CacheType)\fP
+.IP "  \(bu" 4
+Added \fRToArrayEx()\fP for direct \fRArray<byte>\fP access
+.PP
+
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+Updated \fRMap\fP and \fRIMap\fP:
+.IP "  \(bu" 4
+Added \fRAdd(key, value)\fP overload
+.IP "  \(bu" 4
+Added \fRRemove(key)\fP
+.IP "  \(bu" 4
+Added \fRTryGeValue(key, out value)\fP
+.IP "  \(bu" 4
+Added \fRKeys\fP and \fRValues\fP collections
+.IP "  \(bu" 4
+Extended \fRMap<T,TU>\fP to implement \fRIReadOnlyMap<T,TU>\fP
+.PP
+
+.IP "\(bu" 2
+Updated color classes:
+.IP "  \(bu" 4
+Fixed namespace typo in \fRColorHSL\fP
+.IP "  \(bu" 4
+Corrected constructor names in \fRColorCMY\fP
+.IP "  \(bu" 4
+Replaced \fRMath\&.Clamp\fP with \fRSystem\&.Math\&.Clamp\fP for consistency
+.IP "  \(bu" 4
+Added float‑based arithmetic helpers to \fRColorHSV\fP
+.PP
+
+.IP "\(bu" 2
+Updated \fRColorConverter\fP:
+.IP "  \(bu" 4
+Added HWB and NCol conversion logic
+.IP "  \(bu" 4
+Improved sRGB conversion accuracy
+.IP "  \(bu" 4
+Added additional RGB16/RGB10 conversion helpers
+.PP
+
+.IP "\(bu" 2
+Renamed \fRUtils/Utils\&.cs\fP → \fR\fBUtils/Conversion\&.cs\fP\fP
+.PP
+.SS "Improved`"
+.IP "\(bu" 2
+More consistent color conversion pipeline across all color models
+.IP "\(bu" 2
+Unified clamping and normalization behavior in HSV/HSL/CMY models
+.IP "\(bu" 2
+Improved documentation and XML comments across multiple files
+.IP "\(bu" 2
+Cleaner separation between read‑only and mutable map interfaces
+.PP
+.SS "Fixed"
+.IP "\(bu" 2
+Fixed incorrect index usage in \fRColorCMY(float[] x)\fP
+.IP "\(bu" 2
+Fixed namespace mismatch in \fRColorHSL\fP
+.IP "\(bu" 2
+Fixed missing \fRSystem\&.\fP prefix for \fRMath\&.Clamp\fP in HSV operations
+.IP "\(bu" 2
+Fixed minor documentation errors and typos across drawing and collection modules
+.IP "\(bu" 2
+Removed unused \fRm_currentCache\fP field from \fRStrippedCache\fP
+.PP
+
+.PP
+.PP
+.SH "[0\&.9\&.5] 18\&.06\&.2026"
+.PP
+.SS "Very Important"
+.IP "\(bu" 2
+Namespace: \fRSystemEx\&.Collection\&.Generic\fP To \fR\fBSystemEx\&.Collections\&.Generic\fP\fP 
+.PP
+.SS "Add"
+.IP "\(bu" 2
+Add class \fRCluster<T>\fP at \fR\fBSystemEx\&.Collections\&.Generic\fP\fP Represents a cluster node in a weighted graph structure\&.
+.IP "\(bu" 2
+Add class \fRCacheStream<TCache>\fP at \fR\fBSystemEx\&.IO\fP\fPA Stream wrapper around a \fRCache<T>\fP instance\&. 
+.br
+
+.IP "\(bu" 2
+Add Color Classes to \fR\fBSystemEx\&.Drawing\fP\fP - ColorHSL, ColorHSV, ColorRGB, ColorGray, \&.\&.\&. Start with build in next Version are ready 
+.PP
+.SS "Docu"
+.IP "\(bu" 2
+The Doku in \fR\fBSystemEx\&.Collections\&.Generic\fP\fP, \fR\fBSystemEx\&.IO\fP\fP, \fRSysrtemEx\fP and \fRSysrtemEx\&.Utils\fP is ready
+.PP
+
+.PP
+.PP
+.SH "[0\&.8\&.5] 04\&.06\&.2026"
+.PP
+.SS "Very Important"
+.IP "\(bu" 2
+\fRMajor namespace restructuring\fP to reflect the engine architecture and clarify responsibilities across collections, device memory, and interop layers\&.
+.IP "\(bu" 2
+This release contains \fRbreaking changes\fP: update all \fRusing\fP/imports to the new namespaces\&.
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+Moved device memory types (\fRDeviceBuffer\fP, \fRDeviceSharedBuffer<TDeviceSharedBackend>\fP) to \fR\fBSystemEx\&.Device\&.Memory\fP\fP\&.
+.IP "\(bu" 2
+Moved native interop and backend implementations (\fRUnmanagedObject\fP, \fRRamSharedBackend\fP, \fRIDeviceSharedBackend\fP, platform kernel loaders) to \fRSystemEx\&.Device\&.Interop\fP\&.
+.IP "\(bu" 2
+Kept kernel and execution interfaces (\fRIKernel<TBackend>\fP, \fRRamKernel\fP, kernel lifecycle orchestration) under \fR\fBSystemEx\&.Device\fP\fP\&.
+.PP
+
+.PP
+Removed legacy \fRSystemEx\&.Device\&.Memory\&.Missings\fP layout and deprecated \fRSystem\&.Memory\&.Missings\fP placements; types have been relocated to the new namespaces above\&.
+.IP "\(bu" 2
+Updated internal references and XML docs to reflect new namespace locations\&.
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Migration guidance notes and quick reference mapping for common types:
+.IP "  \(bu" 4
+\fRSystemEx\&.Device\&.Memory\&.Missings\&.RamSharedBackend\fP → \fRSystemEx\&.Device\&.Interop\&.RamSharedBackend\fP
+.IP "  \(bu" 4
+\fRSystemEx\&.Device\&.Memory\&.DeviceSharedBuffer\fP → \fRSystemEx\&.Device\&.Memory\&.DeviceSharedBuffer\fP
+.IP "  \(bu" 4
+\fRSystemEx\&.Collections\&.Generic\&.SharedCache\fP → \fR\fBSystemEx\&.Collections\&.Generic\&.Cache\fP\fP (and related cache types)
+.PP
+
+.IP "\(bu" 2
+Add a Map for ITuples \fRSystemEx\&.Collections\&.Generic\&.TupleMap\fP, \fRSystemEx\&.Collections\&.Generic\&.MultiTupleMap\fP and \fRSystemEx\&.Collections\&.Generic\&.SortedTupleMap\fP
+.IP "\(bu" 2
+Add \fR\fBSystemEx\&.Collections\&.Generic\&.StrippedCache\fP\fP (segmented virtual cache over N sub‑caches; global addressing, byte‑wise distribution)\&.
+.IP "\(bu" 2
+Added full support for:
+.IP "  \(bu" 4
+WriteRange(ulong position, byte[] data)
+.IP "  \(bu" 4
+WriteRange(ulong start, ulong end, byte[] data)
+.IP "  \(bu" 4
+ToArray(int index) for exporting individual cache segments\&.
+.IP "  \(bu" 4
+Added unsigned‑safe global addressing logic for multi‑cache memory systems\&.
+.IP "  \(bu" 4
+Added overflow‑safe Seek logic compatible with segmented caches\&.
+.PP
+
+.IP "\(bu" 2
+Add \fRSystemEx\&.Collection\&.Generic\&.MirroredCache\fP (dual‑cache pair; writes to A and mirrored A‑reverse; consistent read/write symmetry)\&.
+.PP
+.SS "Improved"
+.IP "\(bu" 2
+Clear separation of concerns between collection‑level caches and device‑level memory/backends\&.
+.IP "\(bu" 2
+Improved discoverability and consistency for public APIs across Collections, Device, and Interop subsystems\&.
+.IP "\(bu" 2
+Simplified developer mental model for where to place new types: Collections for logical cache/data structures; Device\&.Memory for managed device memory abstractions; Device\&.Interop for native/backends\&.
+.IP "\(bu" 2
+Improved Seek implementation to be fully ulong‑safe and handle negative offsets without overflow\&.
+.IP "\(bu" 2
+Improved internal consistency between Cache and StrippedCache semantics (global vs\&. local addressing)\&.
+.IP "\(bu" 2
+Improved index validation for segmented cache exports (ToArray(index))\&.
+.IP "\(bu" 2
+
+.PP
+.SS "Fixed"
+.IP "\(bu" 2
+Resolved ambiguous type collisions caused by previous overlapping namespaces\&.
+.IP "\(bu" 2
+Fixed incorrect index comparison in ToArray(int index) (unsigned‑correct boundary check)\&.
+.IP "\(bu" 2
+Fixed potential overflow in SeekOrigin\&.Current and SeekOrigin\&.End when negative offsets were cast to ulong\&.
+.IP "\(bu" 2
+Fixed incorrect cast from ulong to long in cache index validation\&. 
+.PP
+.SS "Notes / Migration"
+.IP "\(bu" 2
+\fRBreaking change:\fP update all \fRusing\fP directives and project references to the new namespaces\&. 
+.br
+ Example mappings:
+.IP "  \(bu" 4
+\fRusing SystemEx\&.Device\&.Memory\&.Missings;\fP → \fRusing \fBSystemEx\&.Device\&.Memory\fP;\fP
+.IP "  \(bu" 4
+\fRusing SystemEx\&.Collection\&.Generic;\fP (old cache location) → \fRusing \fBSystemEx\&.Collections\&.Generic\fP;\fP
+.IP "  \(bu" 4
+\fRusing \fBSystemEx\&.Device\&.Intertropt\fP;\fP → \fRusing SystemEx\&.Device\&.Interop;\fP
+.PP
+
+.IP "\(bu" 2
+Search your codebase for the old namespace tokens (\fRMissings\fP, \fRIntertropt\fP, \fRSystem\&.Memory\&.Missings\fP) and replace with the new targets\&.
+.PP
+
+.PP
+.PP
+.SH "[0\&.8\&.1] 04\&.06\&.2026"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Introduced full RAM backend under \fRSystem\&.Memory\&.Missings\fP:
+.IP "  \(bu" 4
+Added \fRRamSharedBackend\fP implementing \fRIDeviceSharedBackend\fP
+.IP "  \(bu" 4
+Added \fRRamUnmanagedObject\fP for unmanaged buffer handling:
+.IP "    \(bu" 6
+Stores pinned GCHandle
+.IP "    \(bu" 6
+Exposes native pointer via \fRIntPtr\fP
+.IP "    \(bu" 6
+Holds buffer size
+.IP "    \(bu" 6
+Deterministic disposal for pin/unpin lifecycle
+.PP
+
+.IP "  \(bu" 4
+Added RAM‑based hardware buffer creation:
+.IP "    \(bu" 6
+\fRCreateWriteHardwareBuffer(byte[], out object)\fP
+.IP "    \(bu" 6
+\fRCreateReadHardwareBuffer(int, out object)\fP
+.IP "    \(bu" 6
+\fRCloseHardwareBuffer(ref object)\fP
+.IP "    \(bu" 6
+\fRReciveFromHardwareBuffer(out byte[], ref object)\fP
+.PP
+
+.PP
+
+.IP "\(bu" 2
+Added \fRRamKernel\fP:
+.IP "  \(bu" 4
+Supports multi‑buffer binding via \fRAddBuffer\fP
+.IP "  \(bu" 4
+Executes native DLL kernels via \fRExecuteKernel(IntPtr[], int[], int)\fP
+.IP "  \(bu" 4
+Collects pointers and sizes from all attached RAM buffers
+.IP "  \(bu" 4
+Fully compatible mit Begin/Run/End‑Flow der bestehenden Kernel‑API
+.PP
+
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+Moved \fRSharedCache\fP / \fRDeviceSharedCache\fP aus \fRSystem\&.Collections\&.Generic\&.Missings\fP nach \fRSystem\&.Memory\&.Missings\fP und in \fRDeviceSharedBuffer\fP überführt
+.IP "\(bu" 2
+Replaced previous MemoryHandle‑based RAM pinning with explicit GCHandle pinning
+.IP "\(bu" 2
+Unified hardware buffer representation:
+.IP "  \(bu" 4
+\fRDeviceSharedBuffer\fP now always exposes a \fRRamUnmanagedObject\fP for RAM backends
+.PP
+
+.IP "\(bu" 2
+Simplified RAM buffer lifecycle:
+.IP "  \(bu" 4
+Pinning occurs exactly once during Begin()
+.IP "  \(bu" 4
+Unpinning handled exclusively through \fRRamUnmanagedObject\&.Dispose()\fP
+.PP
+
+.PP
+.SS "Improved"
+.IP "\(bu" 2
+Clear separation between managed cache (\fRDeviceBuffer\fP) and unmanaged hardware buffer
+.IP "\(bu" 2
+Consistent pointer and size access for all RAM kernel operations
+.IP "\(bu" 2
+Improved Begin/End semantics:
+.IP "  \(bu" 4
+Begin() creates pinned unmanaged buffer
+.IP "  \(bu" 4
+End() copies data back depending on \fRSharedCacheType\fP
+.PP
+
+.IP "\(bu" 2
+More consistent behavior with GPU backends through unified kernel interface
+.PP
+.SS "Fixed"
+.IP "\(bu" 2
+Fixed missing unpin in \fRReciveFromHardwareBuffer\fP
+.IP "\(bu" 2
+Fixed invalid hardware buffer state after End()
+.IP "\(bu" 2
+Fixed potential GCHandle leaks during repeated Begin/End cycles
+.IP "\(bu" 2
+Fixed incorrect buffer size propagation to native kernel calls
+.PP
+
+.PP
+.PP
+.SH "[0\&.7\&.0] 03\&.06\&.2026"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Introduced \fRRandPasswordLevel\fP enum (\fRSimple = 16\fP, \fRStrong = 32\fP)
+.IP "\(bu" 2
+Added \fRRandPassword(int length, FixedArray<char> allowed, Endian endian)\fP:
+.IP "  \(bu" 4
+Zero‑allocation inner loop
+.IP "  \(bu" 4
+Endian‑aware random character generation
+.IP "  \(bu" 4
+Filtering via \fRFixedArray<char>\&.TryGet\fP
+.PP
+
+.IP "\(bu" 2
+Added \fRstring\&.Rand(RandPasswordLevel level, Endian endian)\fP extension:
+.IP "  \(bu" 4
+Uses predefined password character sets
+.IP "  \(bu" 4
+Supports Simple and Strong password generation
+.PP
+
+.IP "\(bu" 2
+Added \fRStrongPasswordChars\fP set with safe, universal symbols
+.PP
+.SS "Improved"
+.IP "\(bu" 2
+\fRRandChar\fP now used with \fR(char)0\fP to \fR(char)short\&.MaxValue\fP for stable UTF‑16 safe range
+.IP "\(bu" 2
+Unified password generation logic across all levels
+.PP
+.SS "Notes"
+.IP "\(bu" 2
+Password generation is fully deterministic per Endian mode
+.IP "\(bu" 2
+No allocations inside the generation loop
+.PP
+
+.PP
+.PP
+.SH "[0\&.6\&.5]"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Introduced \fRSharedCache\fP for hardware‑shared memory operations:
+.IP "  \(bu" 4
+Supports \fRReadOnly\fP, \fRWriteOnly\fP, and \fRReadWrite\fP modes via \fRSharedCacheType\fP
+.IP "  \(bu" 4
+Automatic pinning of hardware buffers using \fRMemoryHandle\fP
+.IP "  \(bu" 4
+\fRBegin()\fP copies cache data into the hardware buffer when writable
+.IP "  \(bu" 4
+\fREnd(offset, code)\fP triggers callback into the parent \fRCache\fP and releases the pin
+.IP "  \(bu" 4
+Exposes \fRCanRead\fP, \fRCanWrite\fP, and \fRIsReadWrite\fP capability flags
+.IP "  \(bu" 4
+Internal \fRMakeHardwareBuffer(int size)\fP for pinned byte‑array allocation
+.IP "  \(bu" 4
+Extended \fRSystem\&.Missings\&.Binary\fP utilities:
+.IP "  \(bu" 4
+Endian‑aware primitive conversions (\fRToBytes\fP/\fRToInt\fP/\fRToUInt\fP/\fRToShort\fP)
+.IP "  \(bu" 4
+Generic unmanaged serialization: \fRToBytes<T>(T value, Endian)\fP
+.IP "  \(bu" 4
+Generic unmanaged array serialization: \fRToBytes<T>(T[] array)\fP
+.IP "  \(bu" 4
+Generic unmanaged deserialization: \fRFromBytes<T>(byte[])\fP
+.IP "  \(bu" 4
+Unmanaged array deserialization: \fRFromBytesArray<T>(byte[])\fP
+.IP "  \(bu" 4
+\fRToBoundary(uint, uint)\fP for alignment calculations
+.IP "  \(bu" 4
+\fRSizeCalc(string)\fP for parsing size strings (\fR4K\fP, \fR16M\fP, \fR2G\fP, etc\&.)
+.PP
+
+.IP "\(bu" 2
+Added \fRRandUtils\fP under \fRSystem\&.Missings\&.Utils\fP:
+.IP "  \(bu" 4
+Random byte array generation (\fRGetArray(size)\fP and ranged version)
+.IP "  \(bu" 4
+Endian‑aware random conversions:
+.IP "    \(bu" 6
+\fRshort Rand(this short, Endian)\fP
+.IP "    \(bu" 6
+\fRint Rand(this int, Endian)\fP
+.IP "    \(bu" 6
+\fRlong Rand(this long, Endian)\fP
+.IP "    \(bu" 6
+\fRulong Rand(this ulong, Endian)\fP
+.PP
+
+.IP "  \(bu" 4
+Full range‑mapped random generation for 64‑bit values:
+.IP "    \(bu" 6
+\fRRandLong(long min, long max, Endian)\fP
+.IP "    \(bu" 6
+\fRRandULong(ulong min, ulong max, Endian)\fP
+.PP
+
+.IP "  \(bu" 4
+Combined high/low 32‑bit random generation for 64‑bit values
+.IP "  \(bu" 4
+Ensures correct endian interpretation using \fRSystem\&.Missings\&.Binary\fP utilities
+.IP "  \(bu" 4
+Added struct layout validation under \fRSystem\&.Missings\&.Binary\&.Layout\fP:
+.IP "    \(bu" 6
+\fRLayout\&.Check<T>(uint expectedUnmanagedSize)\fP
+.IP "    \(bu" 6
+Throws \fRMissingStructLayoutSequentialException\fP if \fR[StructLayout(LayoutKind\&.Sequential)]\fP is missing
+.PP
+
+.PP
+
+.PP
+.SS "Improved"
+.IP "\(bu" 2
+Unified all random integer generation to use endian‑aware byte conversion
+.IP "\(bu" 2
+Ensured consistent range mapping for signed and unsigned 64‑bit values
+.IP "\(bu" 2
+Added argument validation for all min/max random operations
+.PP
+.SS "Fixed"
+.IP "\(bu" 2
+Corrected handling of reversed min/max arguments in \fRRandLong\fP
+.IP "\(bu" 2
+Ensured random byte arrays always fill the requested size
+.PP
+
+.PP
+.PP
+.SH "[0\&.6\&.1]"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Introduced a full low-level cache subsystem under \fRSystem\&.Collections\&.Generic\&.Missings\fP
+.IP "\(bu" 2
+Added \fRCache\fP class providing:
+.IP "  \(bu" 4
+Raw byte buffer management using custom \fRArray<byte>\fP
+.IP "  \(bu" 4
+Seek operations (\fRSeekOrigin\&.Begin\fP, \fRCurrent\fP, \fREnd\fP)
+.IP "  \(bu" 4
+Direct indexed byte access (\fRcache[position]\fP)
+.IP "  \(bu" 4
+Endian-aware read/write operations:
+.IP "    \(bu" 6
+\fRWriteUInt32\fP, \fRWriteInt32\fP, \fRWriteInt16\fP
+.IP "    \(bu" 6
+\fRReadUInt32\fP, \fRReadInt32\fP, \fRReadInt16\fP
+.PP
+
+.IP "  \(bu" 4
+Generic byte block read/write (\fRRead(position, count)\fP and \fRWrite(position, buffer)\fP)
+.IP "  \(bu" 4
+Conversion to managed array via \fRToArray()\fP
+.IP "  \(bu" 4
+Internal locking mechanism preventing modification while shared
+.IP "  \(bu" 4
+\fRCacheType\fP support (\fRToDevice\fP, \fRFromDevice\fP, \fRBoth\fP)
+.PP
+
+.IP "\(bu" 2
+Added shared-memory support via \fRSharedCache\fP:
+.IP "  \(bu" 4
+\fRCache\&.ToShared()\fP now returns a \fRSharedCache\fP instance depending on \fRCacheType\fP
+.IP "  \(bu" 4
+Shared caches pin memory for hardware/driver access
+.IP "  \(bu" 4
+Automatic callback into \fRCache\&.SharedCallBack\fP when hardware releases the buffer
+.IP "  \(bu" 4
+Proper lock/unlock semantics with \fRIsLocked\fP state tracking
+.IP "  \(bu" 4
+\fRCacheIsSharedException\fP thrown when attempting to access locked cache data
+.PP
+
+.IP "\(bu" 2
+Added \fRCacheIsSharedException\fP for invalid access during shared state
+.PP
+.SS "Improved"
+.IP "\(bu" 2
+Integrated endian conversion utilities from \fRSystem\&.Missings\&.Binary\&.Utils\fP
+.IP "\(bu" 2
+Unified all integer read/write operations to use the new endian helpers
+.IP "\(bu" 2
+Ensured safe bounds checking for all read/write operations
+.IP "\(bu" 2
+Improved internal locking using custom \fRLock\fP object
+.PP
+.SS "Fixed"
+.IP "\(bu" 2
+Corrected boundary checks for read/write operations
+.IP "\(bu" 2
+Ensured shared cache always unlocks on callback, even on error paths
+.IP "\(bu" 2
+Fixed incorrect handling of negative seek offsets
+.PP
+
+.PP
+.PP
+.SH "[0\&.5\&.8]"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+NodeIterator: intrusive Iterator für Next/Prev Traversal
+.IP "\(bu" 2
+NodeRange: Iterator-basierter Bereich (begin/end)
+.IP "\(bu" 2
+NodeSlice: Teilbereich eines Node-Bereichs
+.IP "\(bu" 2
+NodeChain: Verkettete Iterator-Views
+.IP "\(bu" 2
+GroupNode: Node mit eigener interner LinkedList
+.IP "\(bu" 2
+StarNode: Node mit Child-Fanout
+.IP "\(bu" 2
+TraversOrder: Preorder, Inorder, Postorder, ListOrder, ReverseListOrder
+.IP "\(bu" 2
+GlobalSuppressions für Naming/Design-Regeln
+.PP
+.SS "Changed"
+.IP "\(bu" 2
+Iterator\&.Equals nutzt Value-Identity für ListIterator
+.IP "\(bu" 2
+Iterator\&.Equals nutzt Reference-Identity für NodeIterator
+.IP "\(bu" 2
+Verbesserte Advance/Offset/At-Methoden
+.PP
+.SS "Fixed"
+.IP "\(bu" 2
+Clone() für Iteratoren nutzt korrekte Semantik
+.IP "\(bu" 2
+Node\&.HasNext/HasPrev für zirkuläre intrusive Listen korrigiert
+.PP
+
+.PP
+.PP
+.SH "[0\&.5\&.0] – 2026-06-03"
+.PP
+.SS "Added"
+.IP "\(bu" 2
+Erste öffentliche Version
+.IP "\(bu" 2
+Grundlegende Collections (Map, Queue, Stack, BinQueue, FixedMap)
+.IP "\(bu" 2
+IArray, ITuple, Quad, Pair
+.IP "\(bu" 2
+Basis-Iteratoren 
+.PP
+

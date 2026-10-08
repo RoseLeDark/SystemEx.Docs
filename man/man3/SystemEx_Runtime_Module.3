@@ -1,0 +1,199 @@
+.TH "SystemEx.Runtime.Module" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Runtime.Module \- Represents a loaded native module (DLL, SO, or DYLIB)\&. 
+.br
+ A \fBModule\fP encapsulates the operating system handle of the loaded library and provides helper methods for resolving exported functions and unloading the module\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Function< TReturn, TDelegate >? \fBLoadFunc< TReturn, TDelegate >\fP (string func)"
+.br
+.RI "Resolves a function exported by the native module using the active platform backend loader\&. "
+.ti -1c
+.RI "\fBModule\fP (nint v, string strPath)"
+.br
+.RI "Initializes a new \fBModule\fP instance using the specified native handle and file path\&. 
+.br
+ The constructor extracts the module's file name and directory path for informational purposes\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static ? \fBModule\fP \fBLoadModule\fP (string name)"
+.br
+.RI "Loads a module by searching platform‑specific library paths\&. 
+.br
+ The backend resolves the correct file location using mechanisms such as \fRLD_LIBRARY_PATH\fP, \fRDYLD_LIBRARY_PATH\fP, or Windows search rules\&. "
+.ti -1c
+.RI "static ? \fBModule\fP \fBLoadModule\fP (string name, string path)"
+.br
+.RI "Loads a module from an explicit directory and file name\&. 
+.br
+ This method constructs the full path and attempts to load the module using the platform‑specific loader\&. "
+.ti -1c
+.RI "static int \fBUnload\fP (\fBModule\fP module)"
+.br
+.RI "Unloads the specified module using the platform‑specific backend\&. 
+.br
+ This method is internal because unloading is managed by the runtime and should not be performed directly by user code\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "nint \fBHandle\fP\fR [get, set]\fP"
+.br
+.RI "Gets the native handle of the loaded module\&. 
+.br
+ This value corresponds to the OS‑specific library handle returned by \fRLoadLibrary\fP (Windows), \fRdlopen\fP (Linux), or \fRdlopen\fP (macOS)\&. "
+.ti -1c
+.RI "string \fBName\fP\fR [get]\fP"
+.br
+.RI "Gets the file name of the loaded module (e\&.g\&., \fRkernel\&.dll\fP, \fRlibfoo\&.so\fP, \fRlibbar\&.dylib\fP)\&. "
+.ti -1c
+.RI "string \fBPath\fP\fR [get]\fP"
+.br
+.RI "Gets the directory path where the module file resides\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a loaded native module (DLL, SO, or DYLIB)\&. 
+.br
+ A \fBModule\fP encapsulates the operating system handle of the loaded library and provides helper methods for resolving exported functions and unloading the module\&. 
+.PP
+Definition at line \fB131\fP of file \fBModule\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Runtime\&.Module\&.Module (nint v, string strPath)"
+
+.PP
+Initializes a new \fBModule\fP instance using the specified native handle and file path\&. 
+.br
+ The constructor extracts the module's file name and directory path for informational purposes\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIv\fP The native module handle\&.
+.br
+\fIstrPath\fP The full path to the loaded module file\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB150\fP of file \fBModule\&.cs\fP\&.
+.PP
+Referenced by \fBLoadModule()\fP, \fBLoadModule()\fP, and \fBUnload()\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "Function< TReturn, TDelegate >? SystemEx\&.Runtime\&.Module\&.LoadFunc< TReturn, TDelegate > (string func)"
+
+.PP
+Resolves a function exported by the native module using the active platform backend loader\&. 
+.PP
+\fBType Constraints\fP
+.TP
+\fITDelegate\fP : \fIDelegate\fP
+.PP
+Definition at line \fB249\fP of file \fBModule\&.cs\fP\&.
+.SS "? \fBModule\fP SystemEx\&.Runtime\&.Module\&.LoadModule (string name)\fR [static]\fP"
+
+.PP
+Loads a module by searching platform‑specific library paths\&. 
+.br
+ The backend resolves the correct file location using mechanisms such as \fRLD_LIBRARY_PATH\fP, \fRDYLD_LIBRARY_PATH\fP, or Windows search rules\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The module file name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new \fBModule\fP instance if loading succeeds; otherwise \fRnull\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB212\fP of file \fBModule\&.cs\fP\&.
+.SS "? \fBModule\fP SystemEx\&.Runtime\&.Module\&.LoadModule (string name, string path)\fR [static]\fP"
+
+.PP
+Loads a module from an explicit directory and file name\&. 
+.br
+ This method constructs the full path and attempts to load the module using the platform‑specific loader\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The module file name\&.
+.br
+\fIpath\fP The directory containing the module\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new \fBModule\fP instance if loading succeeds; otherwise \fRnull\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB192\fP of file \fBModule\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.LoadModule()\fP, and \fBSystemEx\&.Runtime\&.ModulePreloader\&.Preload()\fP\&.
+.SS "int SystemEx\&.Runtime\&.Module\&.Unload (\fBModule\fP module)\fR [static]\fP"
+
+.PP
+Unloads the specified module using the platform‑specific backend\&. 
+.br
+ This method is internal because unloading is managed by the runtime and should not be performed directly by user code\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImodule\fP The module to unload\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Zero on success, or a non‑zero error code depending on the backend\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB178\fP of file \fBModule\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.FreeModule()\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "nint SystemEx\&.Runtime\&.Module\&.Handle\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets the native handle of the loaded module\&. 
+.br
+ This value corresponds to the OS‑specific library handle returned by \fRLoadLibrary\fP (Windows), \fRdlopen\fP (Linux), or \fRdlopen\fP (macOS)\&. 
+.PP
+Definition at line \fB140\fP of file \fBModule\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.FreeLibrary()\fP, \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.FreeLibrary()\fP, \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.LoadFunction()\fP, and \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.LoadFunction()\fP\&.
+.SS "string SystemEx\&.Runtime\&.Module\&.Name\fR [get]\fP"
+
+.PP
+Gets the file name of the loaded module (e\&.g\&., \fRkernel\&.dll\fP, \fRlibfoo\&.so\fP, \fRlibbar\&.dylib\fP)\&. 
+.PP
+Definition at line \fB162\fP of file \fBModule\&.cs\fP\&.
+.SS "string SystemEx\&.Runtime\&.Module\&.Path\fR [get]\fP"
+
+.PP
+Gets the directory path where the module file resides\&. 
+.PP
+Definition at line \fB167\fP of file \fBModule\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

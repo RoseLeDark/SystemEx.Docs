@@ -1,0 +1,100 @@
+.TH "SystemEx.Threading.ISpinlock< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.ISpinlock< T > \- Extends \fBILock<T>\fP with spin‑lock‑specific diagnostics and metadata\&. Implementations of \fBISpinlock<T>\fP represent busy‑wait mutual exclusion primitives where threads repeatedly attempt to acquire the lock without yielding\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Threading\&.ILock< T >\fP\&.
+.PP
+Inherited by \fBSystemEx\&.Threading\&.AtomicLock\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP, \fBSystemEx\&.Threading\&.LightFutex\fP, \fBSystemEx\&.Threading\&.LightSpinlock< T >\fP, and \fBSystemEx\&.Threading\&.Spinlock\fP\&.
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsHeldbyCurrent\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the lock is currently held by the calling thread\&. Implementations may require thread‑owner tracking to support this property\&. "
+.ti -1c
+.RI "bool \fBIsThreadOwnerTrackingEnabled\fP\fR [get]\fP"
+.br
+.RI "Indicates whether thread‑owner tracking is enabled for the underlying spin lock\&. When enabled, the lock records which thread currently owns it, allowing additional safety checks at the cost of extra overhead\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Threading\&.ILock< T >\fP
+.in +1c
+.ti -1c
+.RI "T \fBHandle\fP\fR [get]\fP"
+.br
+.RI "Gets the underlying synchronization handle associated with this lock\&. "
+.in -1c
+
+Properties inherited from \fBSystemEx\&.Threading\&.ILock\fP
+.in +1c
+.ti -1c
+.RI "bool \fBIsHeld\fP\fR [get]\fP"
+.br
+.RI "Indicates whether the lock is currently held by the calling thread\&. Implementations must update this flag whenever the lock is acquired or released\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBSystemEx\&.Threading\&.ILock\fP
+.in +1c
+.ti -1c
+.RI "bool \fBLock\fP (\fBTimeOut\fP ms)"
+.br
+.RI "Attempts to acquire the lock using a millisecond timeout\&. A negative value indicates an immediate, non‑blocking attempt\&. Positive values specify the maximum duration to wait for the lock\&. "
+.ti -1c
+.RI "bool \fBTryLock\fP ()"
+.br
+.RI "Attempts to acquire the lock without implying a blocking intent\&. This method is semantically equivalent to\&. "
+.ti -1c
+.RI "void \fBUnlock\fP ()"
+.br
+.RI "Releases the lock\&. Every successful call to Lock(int) or Lock(TimeSpan) must be paired with a corresponding call to \fBUnlock\fP to avoid deadlocks or inconsistent state\&. "
+.ti -1c
+.RI "bool \fBWait\fP (\fBTimeOut\fP span, bool exitContext)"
+.br
+.RI "Temporarily releases the lock and suspends the current thread until a notification is received or the specified timeout expires\&. Upon completion, the lock is automatically reacquired\&. This method provides a generalized wait‑and‑reacquire pattern similar to Monitor\&.Wait(object, TimeOut, bool)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Extends \fBILock<T>\fP with spin‑lock‑specific diagnostics and metadata\&. Implementations of \fBISpinlock<T>\fP represent busy‑wait mutual exclusion primitives where threads repeatedly attempt to acquire the lock without yielding\&. 
+
+This interface exposes additional state information commonly associated with spin locks, such as whether the lock is currently held and whether the calling thread owns the lock\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The underlying handle type used by the spin lock implementation\&. Typically System\&.Threading\&.SpinLock\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB36\fP of file \fBISpinlock\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Threading\&.ISpinlock< T >\&.IsHeldbyCurrent\fR [get]\fP"
+
+.PP
+Indicates whether the lock is currently held by the calling thread\&. Implementations may require thread‑owner tracking to support this property\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.AtomicLock\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP, \fBSystemEx\&.Threading\&.LightFutex\fP, \fBSystemEx\&.Threading\&.LightMutex< T >\fP, \fBSystemEx\&.Threading\&.LightSpinlock< T >\fP, and \fBSystemEx\&.Threading\&.Spinlock\fP\&.
+.PP
+Definition at line \fB43\fP of file \fBISpinlock\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.ISpinlock< T >\&.IsThreadOwnerTrackingEnabled\fR [get]\fP"
+
+.PP
+Indicates whether thread‑owner tracking is enabled for the underlying spin lock\&. When enabled, the lock records which thread currently owns it, allowing additional safety checks at the cost of extra overhead\&. 
+.PP
+Implemented in \fBSystemEx\&.Threading\&.AtomicLock\fP, \fBSystemEx\&.Threading\&.LightCountingSpinlock< T >\fP, \fBSystemEx\&.Threading\&.LightFutex\fP, \fBSystemEx\&.Threading\&.LightSpinlock< T >\fP, and \fBSystemEx\&.Threading\&.Spinlock\fP\&.
+.PP
+Definition at line \fB50\fP of file \fBISpinlock\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

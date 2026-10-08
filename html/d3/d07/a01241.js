@@ -1,17 +1,9 @@
 var a01241 =
 [
-    [ "Result", "d3/d07/a01241_aa3bad7eee94f9059ba29410144b69cf8.html#aa3bad7eee94f9059ba29410144b69cf8", null ],
-    [ "Result", "d3/d07/a01241_a977612a02fff9f958e86244eaa49418f.html#a977612a02fff9f958e86244eaa49418f", null ],
-    [ "Result", "d3/d07/a01241_a9a536e793fbb20bb2310f0656a202fbe.html#a9a536e793fbb20bb2310f0656a202fbe", null ],
-    [ "Result", "d3/d07/a01241_aabdff2063c05fc07e80e72d3e0acfe5f.html#aabdff2063c05fc07e80e72d3e0acfe5f", null ],
-    [ "Assert", "d3/d07/a01241_ae31e70624c3a0aab5fe086d991a61c94.html#ae31e70624c3a0aab5fe086d991a61c94", null ],
-    [ "Catch", "d3/d07/a01241_a03dea5df41918a5919fec03c141caedf.html#a03dea5df41918a5919fec03c141caedf", null ],
-    [ "GetAs< T >", "d3/d07/a01241_ac46bd5398f8ce60e95f3efe2851b710a.html#ac46bd5398f8ce60e95f3efe2851b710a", null ],
-    [ "Throw", "d3/d07/a01241_ab04ae4c5b170a232314320cac5f55cdb.html#ab04ae4c5b170a232314320cac5f55cdb", null ],
-    [ "OnAssert", "d3/d07/a01241_a1ce5dc5cef71a1ecb2817bcddb9c1f2e.html#a1ce5dc5cef71a1ecb2817bcddb9c1f2e", null ],
-    [ "OnException", "d3/d07/a01241_a4e51a239790ec726dfcbf277a40839b0.html#a4e51a239790ec726dfcbf277a40839b0", null ],
-    [ "Count", "d3/d07/a01241_a536ca33c8ca26ae1bf7734653c38f668.html#a536ca33c8ca26ae1bf7734653c38f668", null ],
-    [ "IsException", "d3/d07/a01241_a84bbd1b415bcaaa94b6cdad9bb144636.html#a84bbd1b415bcaaa94b6cdad9bb144636", null ],
-    [ "IsSuccess", "d3/d07/a01241_afc44f440ea2077e489696b799122b8e3.html#afc44f440ea2077e489696b799122b8e3", null ],
-    [ "this[int index]", "d3/d07/a01241_a95dfb803efcfa2bdc81d6098520f282e.html#a95dfb803efcfa2bdc81d6098520f282e", null ]
+    [ "Forward", "d3/d07/a01241_ab442ebbf9ee3ba8e9d764e257bf09680.html#ab442ebbf9ee3ba8e9d764e257bf09680", null ],
+    [ "Forward", "d3/d07/a01241_a74ffbc1f838d2a6798e5ed5096dcf16b.html#a74ffbc1f838d2a6798e5ed5096dcf16b", null ],
+    [ "NumberRangeIterator", "d3/d07/a01241_ac5ae0e92e797407936354e5c48b4b17e.html#ac5ae0e92e797407936354e5c48b4b17e", null ],
+    [ "Current", "d3/d07/a01241_a92fb7f1616cb50b08ce87d159e31828f.html#a92fb7f1616cb50b08ce87d159e31828f", null ],
+    [ "Index", "d3/d07/a01241_a00f039d47db5dcaace912d38cfd23963.html#a00f039d47db5dcaace912d38cfd23963", null ],
+    [ "IsEnd", "d3/d07/a01241_a6596c3a7fa884cfae8725fee73e0e37c.html#a6596c3a7fa884cfae8725fee73e0e37c", null ]
 ];

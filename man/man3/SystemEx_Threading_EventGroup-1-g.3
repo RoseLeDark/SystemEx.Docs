@@ -1,0 +1,147 @@
+.TH "SystemEx.Threading.EventGroup< TFastType >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Threading.EventGroup< TFastType > \- Represents a lightweight event group based on a fast bit‑storage type\&. \fBEventGroup<TFastType>\fP allows individual bit positions to be set, cleared, flipped, queried, or waited on\&. The underlying bit container is provided by \fITFastType\fP , which must implement \fBIFastType\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClear\fP (byte pos)"
+.br
+.RI "Clears the bit at the specified position (sets it to 0)\&. "
+.ti -1c
+.RI "\fBEventGroup\fP ()"
+.br
+.RI "Initializes a new \fBEventGroup<TFastType>\fP instance with the default bit container and a new lightweight lock\&. "
+.ti -1c
+.RI "void \fBFlip\fP (byte pos)"
+.br
+.RI "Flips the bit at the specified position (0 becomes 1, 1 becomes 0)\&. "
+.ti -1c
+.RI "bool \fBIsSet\fP (byte pos)"
+.br
+.RI "Determines whether the bit at the specified position is set\&. "
+.ti -1c
+.RI "void \fBSet\fP (byte pos)"
+.br
+.RI "Sets the bit at the specified position to 1\&. "
+.ti -1c
+.RI "bool \fBWait\fP (byte pos, int timeoutMs=\-1)"
+.br
+.RI "Waits until the bit at the specified position becomes set or until the optional timeout expires\&. This method performs a lightweight busy‑wait loop using Thread\&.Yield to reduce contention\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a lightweight event group based on a fast bit‑storage type\&. \fBEventGroup<TFastType>\fP allows individual bit positions to be set, cleared, flipped, queried, or waited on\&. The underlying bit container is provided by \fITFastType\fP , which must implement \fBIFastType\fP\&. 
+
+This class is thread‑safe and uses \fBLightLock\fP to synchronize access to the bit field\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITFastType\fP A fast bit‑storage type implementing \fBIFastType\fP\&. The type must provide methods for reading, writing, and flipping individual bit positions\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITFastType\fP : \fIIFastType\fP
+.PP
+Definition at line \fB35\fP of file \fBEventGroup\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Threading\&.EventGroup< TFastType >\&.Clear (byte pos)"
+
+.PP
+Clears the bit at the specified position (sets it to 0)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP The bit position to clear\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB63\fP of file \fBEventGroup\&.cs\fP\&.
+.SS "SystemEx\&.Threading\&.EventGroup< TFastType >\&.EventGroup ()"
+
+.PP
+Initializes a new \fBEventGroup<TFastType>\fP instance with the default bit container and a new lightweight lock\&. 
+.PP
+Definition at line \fB44\fP of file \fBEventGroup\&.cs\fP\&.
+.SS "void SystemEx\&.Threading\&.EventGroup< TFastType >\&.Flip (byte pos)"
+
+.PP
+Flips the bit at the specified position (0 becomes 1, 1 becomes 0)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP The bit position to flip\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB72\fP of file \fBEventGroup\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.EventGroup< TFastType >\&.IsSet (byte pos)"
+
+.PP
+Determines whether the bit at the specified position is set\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP The bit position to check\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the bit is set; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB84\fP of file \fBEventGroup\&.cs\fP\&.
+.PP
+Referenced by \fBWait()\fP\&.
+.SS "void SystemEx\&.Threading\&.EventGroup< TFastType >\&.Set (byte pos)"
+
+.PP
+Sets the bit at the specified position to 1\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP The bit position to set\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB53\fP of file \fBEventGroup\&.cs\fP\&.
+.SS "bool SystemEx\&.Threading\&.EventGroup< TFastType >\&.Wait (byte pos, int timeoutMs = \fR\-1\fP)"
+
+.PP
+Waits until the bit at the specified position becomes set or until the optional timeout expires\&. This method performs a lightweight busy‑wait loop using Thread\&.Yield to reduce contention\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP The bit position to wait for\&.
+.br
+\fItimeoutMs\fP The maximum number of milliseconds to wait\&. A value of -1 indicates an infinite wait\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the bit was set before the timeout elapsed; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB104\fP of file \fBEventGroup\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

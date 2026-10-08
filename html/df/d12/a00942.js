@@ -1,4 +1,9 @@
 var a00942 =
 [
-    [ "Compare", "df/d12/a00942.html#a7feda1e00b7eb92dace0a2bb11020424", null ]
+    [ "Backend", "d1/ddd/a00943.html", "d1/ddd/a00943" ],
+    [ "InteropServices", "d1/db0/a00945.html", "d1/db0/a00945" ],
+    [ "Function&lt; TReturn, TDelegate &gt;", "de/d8e/a02213.html", "de/d8e/a02213" ],
+    [ "Module", "da/da2/a02217.html", "da/da2/a02217" ],
+    [ "ModuleInfo", "dd/dd6/a02221.html", null ],
+    [ "ModulePreloader", "d4/dc0/a02225.html", "d4/dc0/a02225" ]
 ];

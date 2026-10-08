@@ -1,13 +1,13 @@
 var a02245 =
 [
-    [ "LightFutex", "da/d14/a02245_a678f60b2577b86630b5be6e6f5bcbb9b.html#a678f60b2577b86630b5be6e6f5bcbb9b", null ],
-    [ "Lock", "da/d14/a02245_acc48bb93f12678b19d0486552d5099b1.html#acc48bb93f12678b19d0486552d5099b1", null ],
-    [ "Lock", "da/d14/a02245_a13a2bd11f757db7430be62c32b5d62ba.html#a13a2bd11f757db7430be62c32b5d62ba", null ],
-    [ "TryLock", "da/d14/a02245_a5f7d30cabf951d5e2b98ae43ecf9bd38.html#a5f7d30cabf951d5e2b98ae43ecf9bd38", null ],
-    [ "Unlock", "da/d14/a02245_a6a301ea473556f75a578a525dbf6a457.html#a6a301ea473556f75a578a525dbf6a457", null ],
-    [ "Wait", "da/d14/a02245_a0b0473d11bb523d1c48ffecac19bc804.html#a0b0473d11bb523d1c48ffecac19bc804", null ],
-    [ "Handle", "da/d14/a02245_ad9de45603f6f09bb8bcab48c7bcc58ac.html#ad9de45603f6f09bb8bcab48c7bcc58ac", null ],
-    [ "IsHeld", "da/d14/a02245_a77b7f2f392f68991efdd7dec995d2ce5.html#a77b7f2f392f68991efdd7dec995d2ce5", null ],
-    [ "IsHeldbyCurrent", "da/d14/a02245_a2e20e5914c1baeed6f51e1466468a5ee.html#a2e20e5914c1baeed6f51e1466468a5ee", null ],
-    [ "IsThreadOwnerTrackingEnabled", "da/d14/a02245_a94fd998ba1cfcb88a909090b71b742ee.html#a94fd998ba1cfcb88a909090b71b742ee", null ]
+    [ "Epoch", "da/d14/a02245_aad39e9ee4c2ef04eec2a8ced636bf76b.html#aad39e9ee4c2ef04eec2a8ced636bf76b", null ],
+    [ "Assign", "da/d14/a02245_ab05ff23f6dbfcfbd27bf9de2e19f7e4c.html#ab05ff23f6dbfcfbd27bf9de2e19f7e4c", null ],
+    [ "Equals", "da/d14/a02245_a8beca329cec978b8c24626506fb9677f.html#a8beca329cec978b8c24626506fb9677f", null ],
+    [ "Equals", "da/d14/a02245_ad9570f13ef95ecc10886710a053909d7.html#ad9570f13ef95ecc10886710a053909d7", null ],
+    [ "Leave", "da/d14/a02245_a96699059d6fd4e2cfdae33be9b1f82c1.html#a96699059d6fd4e2cfdae33be9b1f82c1", null ],
+    [ "ToString", "da/d14/a02245_a2dfd8dca6e939fde9f89f58207f64dcc.html#a2dfd8dca6e939fde9f89f58207f64dcc", null ],
+    [ "ToString", "da/d14/a02245_ad82efe66cd4b1d44befe11075d3d1e01.html#ad82efe66cd4b1d44befe11075d3d1e01", null ],
+    [ "CanWrite", "da/d14/a02245_aab012f4399fe28faaa9a5402f8ed0ff3.html#aab012f4399fe28faaa9a5402f8ed0ff3", null ],
+    [ "IsTrue", "da/d14/a02245_a88c9077b9ce9d479672b50da6d506257.html#a88c9077b9ce9d479672b50da6d506257", null ],
+    [ "Value", "da/d14/a02245_a6f31ba716f09983722d3cdfd20f0ad11.html#a6f31ba716f09983722d3cdfd20f0ad11", null ]
 ];

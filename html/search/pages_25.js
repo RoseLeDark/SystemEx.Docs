@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['❓systemex_20faq_0',['❓SystemEx FAQ',['../da/d74/a02451.html',1,'']]]
+  ['✨_20core_20philosophy_0',['✨ Core Philosophy',['../index.html#autotoc_md-core-philosophy',1,'']]]
 ];

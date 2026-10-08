@@ -1,9 +1,18 @@
 var a01001 =
 [
-    [ "Error", "d3/d8a/a00899_ga1d5e57ee688ba685af96ddb5642883b6.html#ga1d5e57ee688ba685af96ddb5642883b6", null ],
-    [ "Metadata", "d3/d8a/a00899_ga35812bce83254927128a5dc4316a8295.html#ga35812bce83254927128a5dc4316a8295", null ],
-    [ "Raw", "d3/d8a/a00899_gaa26a0871e6da9cfe10f6561915d31fa2.html#gaa26a0871e6da9cfe10f6561915d31fa2", null ],
-    [ "Result", "d3/d8a/a00899_gab8df99bde139215e00a017d1bc85faef.html#gab8df99bde139215e00a017d1bc85faef", null ],
-    [ "Success", "d3/d8a/a00899_gade34b72dda896f19c7101729f28ca7e4.html#gade34b72dda896f19c7101729f28ca7e4", null ],
-    [ "Timestamp", "d3/d8a/a00899_gaf1eafc5608f6b4e0b2c413cb170ac4fc.html#gaf1eafc5608f6b4e0b2c413cb170ac4fc", null ]
+    [ "GetValue", "d0/d85/a00908_ga966d76879c5b070dfcd667dca9e9d6c0.html#ga966d76879c5b070dfcd667dca9e9d6c0", null ],
+    [ "HasTool", "d0/d85/a00908_ga3e74782f0777866d0db420da9f0c8133.html#ga3e74782f0777866d0db420da9f0c8133", null ],
+    [ "Initialization", "d0/d85/a00908_ga0d443dc61ff7dc2047d34338bc8190af.html#ga0d443dc61ff7dc2047d34338bc8190af", null ],
+    [ "InvokeAsync", "d0/d85/a00908_ga8072a0dbdf473036b3fd02232ecce929.html#ga8072a0dbdf473036b3fd02232ecce929", null ],
+    [ "ListTools", "d0/d85/a00908_ga1955034d9e4f2add6e3f8a7581e1245b.html#ga1955034d9e4f2add6e3f8a7581e1245b", null ],
+    [ "RegistTool", "d0/d85/a00908_ga4407f75a55dec2d0e333af3cfd56911c.html#ga4407f75a55dec2d0e333af3cfd56911c", null ],
+    [ "Release", "d0/d85/a00908_ga932578883b9a059cb96c62b78f8df100.html#ga932578883b9a059cb96c62b78f8df100", null ],
+    [ "SetConfig", "d0/d85/a00908_ga9031316fafbf4c148c1c928a75afb521.html#ga9031316fafbf4c148c1c928a75afb521", null ],
+    [ "UnregistTool", "d0/d85/a00908_ga00e138864afd432862892e6848a27b3a.html#ga00e138864afd432862892e6848a27b3a", null ],
+    [ "BackendName", "d0/d85/a00908_gaf58a4677ec12237c0359bcd61b1c8201.html#gaf58a4677ec12237c0359bcd61b1c8201", null ],
+    [ "Capabilities", "d0/d85/a00908_ga55982204116113339a259c0981188406.html#ga55982204116113339a259c0981188406", null ],
+    [ "Configuration", "d0/d85/a00908_ga6cad2240bf25c65963347a1e8cfed704.html#ga6cad2240bf25c65963347a1e8cfed704", null ],
+    [ "Enviro", "d0/d85/a00908_ga2153a19c30f1ce5270d10222f82c0b3d.html#ga2153a19c30f1ce5270d10222f82c0b3d", null ],
+    [ "IsAvailable", "d0/d85/a00908_ga841edbe912bdfefea9f1d5a2bd9f6196.html#ga841edbe912bdfefea9f1d5a2bd9f6196", null ],
+    [ "ModelName", "d0/d85/a00908_ga52bb590aeb282e07ffd3dc7c4f796438.html#ga52bb590aeb282e07ffd3dc7c4f796438", null ]
 ];

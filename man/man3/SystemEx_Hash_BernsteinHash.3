@@ -1,0 +1,122 @@
+.TH "SystemEx.Hash.BernsteinHash" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Hash.BernsteinHash \- Simple non‑cryptographic hash function based on the Bernstein family of hash algorithms\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Hash\&.IHash\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBernsteinHash\fP (\fBEndian\fP endian)"
+.br
+.RI "Craate a new instance\&. "
+.ti -1c
+.RI "\fBHash32\fP \fBCompute\fP (FixedVector< byte > input, uint seed)"
+.br
+.RI "Computes a simple 32‑bit hash from the given byte sequence\&. "
+.ti -1c
+.RI "\fBHash64\fP \fBComputeLong\fP (FixedVector< byte > input, ulong seed)"
+.br
+.RI "Computes a simple 64‑bit hash from the given byte sequence\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Simple non‑cryptographic hash function based on the Bernstein family of hash algorithms\&. 
+
+This implementation provides both 32‑bit and 64‑bit variants and supports seeding, allowing deterministic or randomized hash streams depending on the caller\&.
+
+.PP
+Characteristics:
+.IP "\(bu" 2
+Very fast
+.IP "\(bu" 2
+Deterministic
+.IP "\(bu" 2
+Suitable for hash tables, indexing, lightweight hashing
+.IP "\(bu" 2
+Not intended for cryptographic use
+.PP
+
+.PP
+The algorithm uses a classic multiply‑and‑xor mixing step: hash = (hash * M) ^ byte where M is a constant chosen for diffusion\&. 
+.PP
+Definition at line \fB43\fP of file \fBBernsteinHash\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SystemEx\&.Hash\&.BernsteinHash\&.BernsteinHash (\fBEndian\fP endian)"
+
+.PP
+Craate a new instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIendian\fP The suing endian for creating a hash
+.RE
+.PP
+
+.PP
+Definition at line \fB52\fP of file \fBBernsteinHash\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBHash32\fP SystemEx\&.Hash\&.BernsteinHash\&.Compute (FixedVector< byte > input, uint seed)"
+
+.PP
+Computes a simple 32‑bit hash from the given byte sequence\&. The hash starts with the provided \fIseed\fP  and mixes each byte using a small multiplier (31), similar to traditional Bernstein/DJB hash variants\&.
+
+.PP
+\fBEndian\fP does not affect this algorithm directly; it is included for interface compatibility with other \fBSystemEx\fP hashers\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed Bernstein hash as a \fBHash32\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB68\fP of file \fBBernsteinHash\&.cs\fP\&.
+.SS "\fBHash64\fP SystemEx\&.Hash\&.BernsteinHash\&.ComputeLong (FixedVector< byte > input, ulong seed)"
+
+.PP
+Computes a simple 64‑bit hash from the given byte sequence\&. The hash starts with the provided \fIseed\fP  and mixes each byte using a larger multiplier (1315423911), a common constant used in JSHash‑style Bernstein derivatives to improve diffusion in 64‑bit space\&.
+
+.PP
+\fBEndian\fP does not affect this algorithm directly; it is included for interface compatibility with other \fBSystemEx\fP hashers\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP The input data to hash\&.
+.br
+\fIseed\fP The seed value for the hash computation\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The computed Bernstein hash as a \fBHash64\fP object\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Hash\&.IHash\fP\&.
+.PP
+Definition at line \fB95\fP of file \fBBernsteinHash\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

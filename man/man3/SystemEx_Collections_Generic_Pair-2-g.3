@@ -1,0 +1,238 @@
+.TH "SystemEx.Collections.Generic.Pair< T, TU >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Pair< T, TU > \- A lightweight, serializable two‑element tuple consisting of a strongly typed key and value\&. Implements \fBIPair<T, TU>\fP and provides typed comparison helpers as well as ITuple compatibility\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.Collections\&.Generic\&.IPair< T, TU >\fP, and IComparable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBCompareTo\fP (\fBPair\fP< T, TU > other)"
+.br
+.ti -1c
+.RI "readonly bool \fBEqualFirst\fP (T other)"
+.br
+.RI "Determines whether the first element equals the specified value\&. "
+.ti -1c
+.RI "bool \fBEquals\fP (\fBPair\fP< T, TU > other)"
+.br
+.RI "Determines whether this pair is equal to another pair by comparing both the first and second elements\&. "
+.ti -1c
+.RI "readonly bool \fBEqualSecond\fP (TU other)"
+.br
+.RI "Determines whether the second element equals the specified value\&. "
+.ti -1c
+.RI "readonly Optional< object > \fBGet\fP (int index)"
+.br
+.RI "Retrieves the element at the specified index\&. Index 0 returns the key, index 1 returns the value\&. "
+.ti -1c
+.RI "\fBPair\fP (T first, TU second)"
+.br
+.RI "Creates a new pair with the specified key and value\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns a string representation of the pair in the form \fR[key, value]\fP\&. Uses a stack‑allocated buffer for performance\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP
+.in +1c
+.ti -1c
+.RI "bool \fBEqualFirst\fP (TKey key)"
+.br
+.RI "Determines whether the first element of the tuple is equal to the specified key\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "readonly int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements in the tuple (always 2)\&. "
+.ti -1c
+.RI "T \fBFirst\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the first element of the pair\&. "
+.ti -1c
+.RI "TU \fBSecond\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the second element of the pair\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A lightweight, serializable two‑element tuple consisting of a strongly typed key and value\&. Implements \fBIPair<T, TU>\fP and provides typed comparison helpers as well as ITuple compatibility\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the first element (key)\&.
+.br
+\fITU\fP The type of the second element (value)\&.
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fInotnull\fP
+.PP
+Definition at line \fB30\fP of file \fBPair\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int SystemEx\&.Collections\&.Generic\&.Pair< T, TU >\&.CompareTo (\fBPair\fP< T, TU > other)"
+
+.PP
+
+.PP
+Definition at line \fB118\fP of file \fBPair\&.cs\fP\&.
+.SS "readonly bool SystemEx\&.Collections\&.Generic\&.Pair< T, TU >\&.EqualFirst (T other)"
+
+.PP
+Determines whether the first element equals the specified value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare against the first element\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if equal; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB92\fP of file \fBPair\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Pair< T, TU >\&.Equals (\fBPair\fP< T, TU > other)"
+
+.PP
+Determines whether this pair is equal to another pair by comparing both the first and second elements\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The pair to compare with\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if both elements match; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB75\fP of file \fBPair\&.cs\fP\&.
+.SS "readonly bool SystemEx\&.Collections\&.Generic\&.Pair< T, TU >\&.EqualSecond (TU other)"
+
+.PP
+Determines whether the second element equals the specified value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The value to compare against the second element\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if equal; otherwise \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IPair< T, TU >\fP\&.
+.PP
+Definition at line \fB99\fP of file \fBPair\&.cs\fP\&.
+.PP
+Referenced by \fBEquals()\fP\&.
+.SS "readonly Optional< object > SystemEx\&.Collections\&.Generic\&.Pair< T, TU >\&.Get (int index)"
+
+.PP
+Retrieves the element at the specified index\&. Index 0 returns the key, index 1 returns the value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index of the element (0 or 1)\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The element at the given index\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIArgumentOutOfRangeException\fP Thrown when the index is not 0 or 1\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB110\fP of file \fBPair\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Pair< T, TU >\&.Pair (T first, TU second)"
+
+.PP
+Creates a new pair with the specified key and value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfirst\fP The first element (key)\&.
+.br
+\fIsecond\fP The second element (value)\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB64\fP of file \fBPair\&.cs\fP\&.
+.PP
+Referenced by \fBCompareTo()\fP, and \fBEquals()\fP\&.
+.SS "override string SystemEx\&.Collections\&.Generic\&.Pair< T, TU >\&.ToString ()"
+
+.PP
+Returns a string representation of the pair in the form \fR[key, value]\fP\&. Uses a stack‑allocated buffer for performance\&. 
+.PP
+Definition at line \fB83\fP of file \fBPair\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "readonly int SystemEx\&.Collections\&.Generic\&.Pair< T, TU >\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of elements in the tuple (always 2)\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB53\fP of file \fBPair\&.cs\fP\&.
+.PP
+Referenced by \fBGet()\fP\&.
+.SS "T SystemEx\&.Collections\&.Generic\&.Pair< T, TU >\&.First\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the first element of the pair\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.ITuple< TKey >\fP\&.
+.PP
+Definition at line \fB57\fP of file \fBPair\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.BigDecimal\&.BigDecimal()\fP, \fBCompareTo()\fP, \fBSystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.EnqueueRange()\fP, \fBEquals()\fP, \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\&.find()\fP, \fBSystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\&.FromBytes()\fP, \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Insert()\fP, \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.PushBack()\fP, \fBSystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.PushFront()\fP, and \fBSystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\&.ToBytes< U >()\fP\&.
+.SS "TU SystemEx\&.Collections\&.Generic\&.Pair< T, TU >\&.Second\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the second element of the pair\&. 
+.PP
+Implements \fBSystemEx\&.Collections\&.Generic\&.IPair< T, TU >\fP\&.
+.PP
+Definition at line \fB45\fP of file \fBPair\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Numeric\&.BigDecimal\&.BigDecimal()\fP, \fBSystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\&.EnqueueRange()\fP, \fBEquals()\fP, \fBSystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\&.FromBytes()\fP, and \fBSystemEx\&.IO\&.Provider\&.ByteSeriablizeProvider\&.ToBytes< U >()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

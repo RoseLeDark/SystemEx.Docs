@@ -1,0 +1,840 @@
+.TH "SystemEx.Collections.Generic.Map< T, TU >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.Map< T, TU > \- Represents a sparse, linear key–value container\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEnumerable, IEnumerable, ITraverse, and ICollection\&.
+.PP
+Inherited by \fBSystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBAdd\fP (Pair< T, TU > item)"
+.br
+.RI "Adds an element to the map\&. "
+.ti -1c
+.RI "\fBMap\fP< T, TU > \fBAsSegment\fP (long start, long length)"
+.br
+.RI "Creates a logical segment view over the map using the same underlying buffer\&. "
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "Clears the map by resetting the logical index and reinitializing the buffers\&. "
+.ti -1c
+.RI "bool \fBContains\fP (Pair< T, TU > item)"
+.br
+.RI "Determines whether the specified key–value pair exists\&. "
+.ti -1c
+.RI "bool \fBContainsKey\fP (T Key)"
+.br
+.RI "Determines whether any element has the specified key\&. "
+.ti -1c
+.RI "bool \fBContainsValue\fP (TU value)"
+.br
+.RI "Determines whether any element has the specified value\&. "
+.ti -1c
+.RI "Pair< bool, long > \fBCopyFrom\fP (\fBMap\fP< T, TU > source, ulong sourceOffset, ulong destinationOffset, ulong count)"
+.br
+.RI "Copies a range of elements from another map into this map\&. Automatically grows the buffer if required\&. "
+.ti -1c
+.RI "Pair< bool, long > \fBCopyTo\fP (\fBMap\fP< T, TU > vector, ulong VectorIndex)"
+.br
+.RI "Copies a range of elements to another map starting at the specified index\&. "
+.ti -1c
+.RI "void \fBCopyTo\fP (Pair< T, TU >[] array, int arrayIndex)"
+.br
+.RI "Copies the internal buffer to an external array\&. "
+.ti -1c
+.RI "Pair< bool, long > \fBCopyTo\fP (uint sourceOffset, \fBMap\fP< T, TU > destination, ulong destinationOffset, ulong count)"
+.br
+.RI "Copies a range of elements to another map\&. "
+.ti -1c
+.RI "Pair< T, TU > \fBElementAt\fP (long index)"
+.br
+.RI "Returns the element at the specified index\&. "
+.ti -1c
+.RI "bool \fBErase\fP ()"
+.br
+.RI "Removes the last active element\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long index)"
+.br
+.RI "Removes the element at the specified index\&. "
+.ti -1c
+.RI "bool \fBErase\fP (long start, long end)"
+.br
+.RI "Removes all elements in the specified range\&. "
+.ti -1c
+.RI "bool \fBErase\fP (Pair< T, TU > value)"
+.br
+.RI "Removes the specified key–value pair\&. "
+.ti -1c
+.RI "IEnumerable< Pair< T, TU > > \fBFind\fP (T Key)"
+.br
+.RI "Finds all entries matching the specified key\&. "
+.ti -1c
+.RI "Optional< TU > \fBGet\fP (T Key)"
+.br
+.RI "Retrieves the value associated with the specified key\&. "
+.ti -1c
+.RI "Type \fBGetElementType\fP ()"
+.br
+.RI "Gets the element type stored in the map\&. "
+.ti -1c
+.RI "IEnumerator< Pair< T, TU > > \fBGetEnumerator\fP ()"
+.br
+.RI "Enumerates all active elements in the map\&. "
+.ti -1c
+.RI "TU \fBGetOrDefault\fP (T key, TU v2)"
+.br
+.RI "Retrieves a value or returns a fallback if the key does not exist\&. "
+.ti -1c
+.RI "bool \fBGrow\fP ()"
+.br
+.RI "Grows the internal buffer by \fBGrowSize\fP if automatic growth is enabled\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long index, Pair< T, TU > entry)"
+.br
+.RI "Inserts an element at the specified index, shifting elements to the right\&. "
+.ti -1c
+.RI "bool \fBInsert\fP (long start, long end, Pair< T, TU > entry)"
+.br
+.RI "Inserts an element at the specified index, shifting elements to the right\&. "
+.ti -1c
+.RI "bool \fBInsertRange\fP (int start, IEnumerable< Pair< T, TU > > items)"
+.br
+.RI "Inserts a range of elements starting at the specified index\&. "
+.ti -1c
+.RI "bool \fBInsertRange\fP (long start, Pair< T, TU >[] entrys)"
+.br
+.RI "Inserts a range of elements starting at the specified index\&. "
+.ti -1c
+.RI "\fBMap\fP ()"
+.br
+.RI "Create a empty map with 8 entrys\&. "
+.ti -1c
+.RI "\fBMap\fP (IEnumerable< Pair< T, TU > > e, int growSize=16)"
+.br
+.RI "Initializes a new map from an enumerable sequence of pairs\&. "
+.ti -1c
+.RI "\fBMap\fP (long size, int growSize=16)"
+.br
+.RI "Initializes a new map with the specified initial capacity\&. "
+.ti -1c
+.RI "\fBMap\fP (Map< T, TU > other)"
+.br
+.RI "Initializes a new map by copying another map instance\&. "
+.ti -1c
+.RI "\fBMap\fP (Pair< T, TU >[] e, int growSize=16)"
+.br
+.RI "Initializes a new map by copying an existing array of pairs\&. "
+.ti -1c
+.RI "void \fBPushBack\fP (\fBMap\fP< T, TU > other)"
+.br
+.RI "Appends all active elements from another map\&. "
+.ti -1c
+.RI "bool \fBPushBack\fP (Pair< T, TU > entry)"
+.br
+.RI "Appends a key–value pair to the end of the map\&. "
+.ti -1c
+.RI "bool \fBPushBack\fP (T key, TU value)"
+.br
+.RI "Appends a key–value pair to the end of the map\&. "
+.ti -1c
+.RI "bool \fBPushFront\fP (Pair< T, TU > entry)"
+.br
+.RI "Inserts a key–value pair at the front of the map\&. "
+.ti -1c
+.RI "bool \fBPushFront\fP (T key, TU value)"
+.br
+.RI "Inserts a key–value pair at the front of the map\&. "
+.ti -1c
+.RI "bool \fBRemove\fP (Pair< T, TU > item)"
+.br
+.RI "Removes the specified key–value pair\&. "
+.ti -1c
+.RI "bool \fBRemove\fP (T key)"
+.br
+.RI "Removes the element with the specified key\&. "
+.ti -1c
+.RI "void \fBRemoveAt\fP (int pos)"
+.br
+.RI "Removes the element at the specified index\&. "
+.ti -1c
+.RI "void \fBRemoveAt\fP (int start, int iend)"
+.br
+.RI "Removes all elements in the specified range\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (long index, Pair< T, TU > entry)"
+.br
+.RI "Replaces the element at the specified index\&. "
+.ti -1c
+.RI "bool \fBReplace\fP (long start, long end, Pair< T, TU > entry)"
+.br
+.RI "Replaces a range of elements with the specified entry\&. "
+.ti -1c
+.RI "virtual bool \fBReplace\fP (T key, Optional< TU > value)"
+.br
+.RI "Replaces the value associated with the specified key\&. "
+.ti -1c
+.RI "bool \fBReplaceRange\fP (long start, Pair< T, TU >[] entrys)"
+.br
+.RI "Replaces a range of elements with the specified entries\&. "
+.ti -1c
+.RI "void \fBSet\fP (T v, TU value)"
+.br
+.RI "Sets a value for the specified key (not implemented)\&. "
+.ti -1c
+.RI "void \fBSwap\fP (long i, long j)"
+.br
+.RI "Swaps two elements in the map, including their active/inactive state\&. "
+.ti -1c
+.RI "Pair< T, TU >[] \fBToNative\fP ()"
+.br
+.RI "Returns a copy of the internal buffer\&. "
+.ti -1c
+.RI "void \fBTraverse\fP (\fBTraversMode\fP mode, long startIndex, long endIndex, Action< Pair< T, TU > > func)"
+.br
+.RI "Traverses a range of elements using the specified traversal mode\&. "
+.ti -1c
+.RI "bool \fBTryGetValue\fP (T key, out TU? value)"
+.br
+.RI "Attempts to retrieve a value by key\&. "
+.ti -1c
+.RI "bool \fBTryGeValue\fP (T key, [MaybeNullWhen(false)] out TU value)"
+.br
+.RI "Attempts to retrieve a value by key\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBintContainsKey\fP (T Key)"
+.br
+.RI "Determines whether any element has the specified key\&. For PushBack and MultiMap\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBAutoGrow\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets a value indicating whether the map should automatically grow when full\&. "
+.ti -1c
+.RI "Pair< T, TU > \fBBack\fP\fR [get]\fP"
+.br
+.RI "Gets the last active element in the map\&. "
+.ti -1c
+.RI "long \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of active elements stored in the map\&. "
+.ti -1c
+.RI "Pair< T, TU >? \fBCurrent\fP\fR [get]\fP"
+.br
+.RI "Gets the element at the current logical position (m_index)\&. "
+.ti -1c
+.RI "Pair< T, TU >? \fBFirst\fP\fR [get]\fP"
+.br
+.RI "Gets the first active element in the map\&. "
+.ti -1c
+.RI "Pair< T, TU > \fBFront\fP\fR [get]\fP"
+.br
+.RI "Gets the first active element in the map\&. "
+.ti -1c
+.RI "long \fBGrowSize\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the automatic growth size\&. When positive, the map grows by this amount whenever additional capacity is required\&. "
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the map contains no active elements\&. "
+.ti -1c
+.RI "bool \fBIsFull\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the map is full and cannot grow\&. "
+.ti -1c
+.RI "bool \fBIsReadOnly\fP\fR [get]\fP"
+.br
+.RI "Always false; the map supports modification\&. "
+.ti -1c
+.RI "ICollection< T > \fBKeys\fP\fR [get]\fP"
+.br
+.RI "Gets a collection containing all active keys in the map\&. "
+.ti -1c
+.RI "Pair< T, TU >? \fBLast\fP\fR [get]\fP"
+.br
+.RI "Gets the last active element in the map\&. "
+.ti -1c
+.RI "long \fBLength\fP\fR [get]\fP"
+.br
+.RI "Gets the number of allocated slots in the internal buffer\&. "
+.ti -1c
+.RI "long \fBSize\fP\fR [get]\fP"
+.br
+.RI "Gets the theoretical maximum logical size of the map\&. "
+.ti -1c
+.RI "Optional< TU > \fBthis[T key]\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the value associated with the specified key\&. If the key does not exist, a new entry is appended\&. "
+.ti -1c
+.RI "ICollection< TU > \fBValues\fP\fR [get]\fP"
+.br
+.RI "Gets a collection containing all active values in the map\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a sparse, linear key–value container\&. 
+
+Automatic growth is controlled through \fBGrowSize\fP and \fBAutoGrow\fP\&. When enabled, the internal buffer expands automatically to accommodate new elements\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Key type\&. Must be non‑nullable\&.
+.br
+\fITU\fP Value type\&.
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fInotnull\fP
+.PP
+Definition at line \fB46\fP of file \fBLightMap\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Add (Pair< T, TU > item)"
+
+.PP
+Adds an element to the map\&. 
+.PP
+Definition at line \fB852\fP of file \fBLightMap\&.cs\fP\&.
+.SS "\fBMap\fP< T, TU > SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.AsSegment (long start, long length)"
+
+.PP
+Creates a logical segment view over the map using the same underlying buffer\&. 
+.PP
+Definition at line \fB300\fP of file \fBLightMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Clear ()"
+
+.PP
+Clears the map by resetting the logical index and reinitializing the buffers\&. 
+.PP
+Definition at line \fB625\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Contains (Pair< T, TU > item)"
+
+.PP
+Determines whether the specified key–value pair exists\&. 
+.PP
+Definition at line \fB885\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.ContainsKey (T Key)"
+
+.PP
+Determines whether any element has the specified key\&. 
+.PP
+Definition at line \fB791\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBReplace()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.ContainsValue (TU value)"
+
+.PP
+Determines whether any element has the specified value\&. 
+.PP
+Definition at line \fB820\fP of file \fBLightMap\&.cs\fP\&.
+.SS "Pair< bool, long > SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.CopyFrom (\fBMap\fP< T, TU > source, ulong sourceOffset, ulong destinationOffset, ulong count)"
+
+.PP
+Copies a range of elements from another map into this map\&. Automatically grows the buffer if required\&. 
+.PP
+Definition at line \fB705\fP of file \fBLightMap\&.cs\fP\&.
+.SS "Pair< bool, long > SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.CopyTo (\fBMap\fP< T, TU > vector, ulong VectorIndex)"
+
+.PP
+Copies a range of elements to another map starting at the specified index\&. 
+.PP
+Definition at line \fB665\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBCopyTo()\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.CopyTo (Pair< T, TU >[] array, int arrayIndex)"
+
+.PP
+Copies the internal buffer to an external array\&. 
+.PP
+Definition at line \fB902\fP of file \fBLightMap\&.cs\fP\&.
+.SS "Pair< bool, long > SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.CopyTo (uint sourceOffset, \fBMap\fP< T, TU > destination, ulong destinationOffset, ulong count)"
+
+.PP
+Copies a range of elements to another map\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsourceOffset\fP Offset in the source map\&.
+.br
+\fIdestination\fP Destination map\&.
+.br
+\fIdestinationOffset\fP Offset in the destination map\&.
+.br
+\fIcount\fP Number of elements to copy\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pair indicating success and number of copied elements\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB677\fP of file \fBLightMap\&.cs\fP\&.
+.SS "Pair< T, TU > SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.ElementAt (long index)"
+
+.PP
+Returns the element at the specified index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index to retrieve\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The element at the given index\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIArgumentOutOfRangeException\fP Thrown when the index is outside the allocated range\&. 
+.br
+\fIException\fP Thrown when the slot is inactive\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB608\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\&.find()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Erase ()"
+
+.PP
+Removes the last active element\&. 
+.PP
+Definition at line \fB527\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBErase()\fP, \fBRemove()\fP, \fBRemoveAt()\fP, and \fBRemoveAt()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Erase (long index)"
+
+.PP
+Removes the element at the specified index\&. 
+.PP
+Definition at line \fB539\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Erase (long start, long end)"
+
+.PP
+Removes all elements in the specified range\&. 
+.PP
+Definition at line \fB550\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Erase (Pair< T, TU > value)"
+
+.PP
+Removes the specified key–value pair\&. 
+.PP
+Definition at line \fB566\fP of file \fBLightMap\&.cs\fP\&.
+.SS "IEnumerable< Pair< T, TU > > SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Find (T Key)"
+
+.PP
+Finds all entries matching the specified key\&. 
+.PP
+Definition at line \fB414\fP of file \fBLightMap\&.cs\fP\&.
+.SS "Optional< TU > SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Get (T Key)"
+
+.PP
+Retrieves the value associated with the specified key\&. 
+.PP
+Definition at line \fB834\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBGetOrDefault()\fP, and \fBTryGetValue()\fP\&.
+.SS "Type SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.GetElementType ()"
+
+.PP
+Gets the element type stored in the map\&. 
+.PP
+Definition at line \fB785\fP of file \fBLightMap\&.cs\fP\&.
+.SS "IEnumerator< Pair< T, TU > > SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.GetEnumerator ()"
+
+.PP
+Enumerates all active elements in the map\&. 
+.PP
+Definition at line \fB634\fP of file \fBLightMap\&.cs\fP\&.
+.SS "TU SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.GetOrDefault (T key, TU v2)"
+
+.PP
+Retrieves a value or returns a fallback if the key does not exist\&. 
+.PP
+Definition at line \fB956\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Grow ()"
+
+.PP
+Grows the internal buffer by \fBGrowSize\fP if automatic growth is enabled\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if the buffer was successfully resized; otherwise false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB617\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBPushBack()\fP, \fBReplace()\fP, and \fBReplace()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Insert (long index, Pair< T, TU > entry)"
+
+.PP
+Inserts an element at the specified index, shifting elements to the right\&. 
+.PP
+Definition at line \fB383\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBInsertRange()\fP, and \fBInsertRange()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Insert (long start, long end, Pair< T, TU > entry)"
+
+.PP
+Inserts an element at the specified index, shifting elements to the right\&. 
+.PP
+Definition at line \fB437\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.InsertRange (int start, IEnumerable< Pair< T, TU > > items)"
+
+.PP
+Inserts a range of elements starting at the specified index\&. 
+.PP
+Definition at line \fB425\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.InsertRange (long start, Pair< T, TU >[] entrys)"
+
+.PP
+Inserts a range of elements starting at the specified index\&. 
+.PP
+Definition at line \fB442\fP of file \fBLightMap\&.cs\fP\&.
+.SS "virtual bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.intContainsKey (T Key)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Determines whether any element has the specified key\&. For PushBack and MultiMap\&. 
+.PP
+Reimplemented in \fBSystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\fP\&.
+.PP
+Definition at line \fB805\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBInsert()\fP, \fBPushBack()\fP, and \fBPushFront()\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Map ()"
+
+.PP
+Create a empty map with 8 entrys\&. 
+.PP
+Definition at line \fB232\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBAsSegment()\fP, \fBCopyFrom()\fP, \fBCopyTo()\fP, \fBCopyTo()\fP, \fBMap()\fP, and \fBPushBack()\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Map (IEnumerable< Pair< T, TU > > e, int growSize = \fR16\fP)"
+
+.PP
+Initializes a new map from an enumerable sequence of pairs\&. 
+.PP
+Definition at line \fB269\fP of file \fBLightMap\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Map (long size, int growSize = \fR16\fP)"
+
+.PP
+Initializes a new map with the specified initial capacity\&. 
+.PP
+Definition at line \fB244\fP of file \fBLightMap\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Map (Map< T, TU > other)"
+
+.PP
+Initializes a new map by copying another map instance\&. 
+.PP
+Definition at line \fB287\fP of file \fBLightMap\&.cs\fP\&.
+.SS "SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Map (Pair< T, TU >[] e, int growSize = \fR16\fP)"
+
+.PP
+Initializes a new map by copying an existing array of pairs\&. 
+.PP
+Definition at line \fB256\fP of file \fBLightMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.PushBack (\fBMap\fP< T, TU > other)"
+
+.PP
+Appends all active elements from another map\&. 
+.PP
+Definition at line \fB947\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.PushBack (Pair< T, TU > entry)"
+
+.PP
+Appends a key–value pair to the end of the map\&. 
+.PP
+Definition at line \fB326\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.PushBack (T key, TU value)"
+
+.PP
+Appends a key–value pair to the end of the map\&. 
+.PP
+Definition at line \fB319\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBAdd()\fP, \fBSystemEx\&.AI\&.Model< T, TTOOL >\&.Initialization()\fP, \fBPushBack()\fP, \fBPushBack()\fP, and \fBSystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\&.Replace()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.PushFront (Pair< T, TU > entry)"
+
+.PP
+Inserts a key–value pair at the front of the map\&. 
+.PP
+Definition at line \fB351\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.PushFront (T key, TU value)"
+
+.PP
+Inserts a key–value pair at the front of the map\&. 
+.PP
+Definition at line \fB344\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBPushFront()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Remove (Pair< T, TU > item)"
+
+.PP
+Removes the specified key–value pair\&. 
+.PP
+Definition at line \fB866\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Remove (T key)"
+
+.PP
+Removes the element with the specified key\&. 
+.PP
+Definition at line \fB870\fP of file \fBLightMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.RemoveAt (int pos)"
+
+.PP
+Removes the element at the specified index\&. 
+.PP
+Definition at line \fB856\fP of file \fBLightMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.RemoveAt (int start, int iend)"
+
+.PP
+Removes all elements in the specified range\&. 
+.PP
+Definition at line \fB861\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Replace (long index, Pair< T, TU > entry)"
+
+.PP
+Replaces the element at the specified index\&. 
+.PP
+Definition at line \fB472\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Replace (long start, long end, Pair< T, TU > entry)"
+
+.PP
+Replaces a range of elements with the specified entry\&. 
+.PP
+Definition at line \fB498\fP of file \fBLightMap\&.cs\fP\&.
+.SS "virtual bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Replace (T key, Optional< TU > value)\fR [virtual]\fP"
+
+.PP
+Replaces the value associated with the specified key\&. 
+.PP
+Reimplemented in \fBSystemEx\&.Collections\&.Generic\&.MultiMap< T, TU >\fP\&.
+.PP
+Definition at line \fB453\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBReplaceRange()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.ReplaceRange (long start, Pair< T, TU >[] entrys)"
+
+.PP
+Replaces a range of elements with the specified entries\&. 
+.PP
+Definition at line \fB516\fP of file \fBLightMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Set (T v, TU value)"
+
+.PP
+Sets a value for the specified key (not implemented)\&. 
+.PP
+Definition at line \fB941\fP of file \fBLightMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Swap (long i, long j)"
+
+.PP
+Swaps two elements in the map, including their active/inactive state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi\fP Index of the first element\&.
+.br
+\fIj\fP Index of the second element\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB584\fP of file \fBLightMap\&.cs\fP\&.
+.SS "Pair< T, TU >[] SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.ToNative ()"
+
+.PP
+Returns a copy of the internal buffer\&. 
+.PP
+Definition at line \fB753\fP of file \fBLightMap\&.cs\fP\&.
+.SS "void SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Traverse (\fBTraversMode\fP mode, long startIndex, long endIndex, Action< Pair< T, TU > > func)"
+
+.PP
+Traverses a range of elements using the specified traversal mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImode\fP Traversal direction (forwards or backwards)\&.
+.br
+\fIstartIndex\fP Start index of traversal\&.
+.br
+\fIendIndex\fP End index of traversal\&.
+.br
+\fIfunc\fP Callback invoked for each active element\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB646\fP of file \fBLightMap\&.cs\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.TryGetValue (T key, out TU? value)"
+
+.PP
+Attempts to retrieve a value by key\&. 
+.PP
+Definition at line \fB924\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.AI\&.Tools\&.DateDifferenceTool\&.ExecuteAsync()\fP, and \fBSystemEx\&.AI\&.Tools\&.DateTimeTool\&.ExecuteAsync()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.TryGeValue (T key, [MaybeNullWhen(false)] out TU value)"
+
+.PP
+Attempts to retrieve a value by key\&. 
+.PP
+Definition at line \fB908\fP of file \fBLightMap\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.AutoGrow\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets a value indicating whether the map should automatically grow when full\&. 
+.PP
+Definition at line \fB137\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBCopyFrom()\fP, \fBGrow()\fP, \fBInsert()\fP, \fBPushBack()\fP, \fBPushFront()\fP, and \fBReplace()\fP\&.
+.SS "Pair<T, TU> SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Back\fR [get]\fP"
+
+.PP
+Gets the last active element in the map\&. 
+.PP
+Definition at line \fB120\fP of file \fBLightMap\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of active elements stored in the map\&. 
+.PP
+Definition at line \fB142\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBContainsKey()\fP, \fBContainsValue()\fP, \fBErase()\fP, \fBGet()\fP, \fBintContainsKey()\fP, \fBRemove()\fP, \fBReplace()\fP, and \fBTryGeValue()\fP\&.
+.SS "Pair<T, TU>? SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Current\fR [get]\fP"
+
+.PP
+Gets the element at the current logical position (m_index)\&. This is primarily useful during manual iteration or when treating the vector as a stack-like structure\&. Accessing Current when the vector is empty or m_index is out of range is undefined\&. 
+.PP
+Definition at line \fB159\fP of file \fBLightMap\&.cs\fP\&.
+.SS "Pair<T, TU>? SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.First\fR [get]\fP"
+
+.PP
+Gets the first active element in the map\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fIInvalidOperationException\fP Thrown when the map contains no active elements\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB167\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBFind()\fP, and \fBToNative()\fP\&.
+.SS "Pair<T, TU> SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Front\fR [get]\fP"
+
+.PP
+Gets the first active element in the map\&. 
+.PP
+Definition at line \fB115\fP of file \fBLightMap\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.GrowSize\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the automatic growth size\&. When positive, the map grows by this amount whenever additional capacity is required\&. 
+.PP
+Definition at line \fB126\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBCopyFrom()\fP, \fBGrow()\fP, \fBInsert()\fP, \fBMap()\fP, \fBMap()\fP, \fBMap()\fP, \fBMap()\fP, \fBMap()\fP, \fBPushFront()\fP, and \fBReplace()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.IsEmpty\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the map contains no active elements\&. 
+.PP
+Definition at line \fB150\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBElementAt()\fP, \fBErase()\fP, and \fBErase()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.IsFull\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the map is full and cannot grow\&. 
+.PP
+Definition at line \fB146\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBPushBack()\fP\&.
+.SS "bool SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.IsReadOnly\fR [get]\fP"
+
+.PP
+Always false; the map supports modification\&. 
+.PP
+Definition at line \fB211\fP of file \fBLightMap\&.cs\fP\&.
+.SS "ICollection<T> SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Keys\fR [get]\fP"
+
+.PP
+Gets a collection containing all active keys in the map\&. 
+.PP
+Definition at line \fB96\fP of file \fBLightMap\&.cs\fP\&.
+.SS "Pair<T, TU>? SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Last\fR [get]\fP"
+
+.PP
+Gets the last active element in the map\&. 
+.PP
+\fBExceptions\fP
+.RS 4
+\fIInvalidOperationException\fP Thrown when the map contains no active elements\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB189\fP of file \fBLightMap\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Length\fR [get]\fP"
+
+.PP
+Gets the number of allocated slots in the internal buffer\&. 
+.PP
+Definition at line \fB110\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBClear()\fP, \fBContains()\fP, \fBCopyFrom()\fP, \fBCopyTo()\fP, \fBElementAt()\fP, \fBErase()\fP, \fBErase()\fP, \fBGrow()\fP, \fBMap()\fP, and \fBPushFront()\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Size\fR [get]\fP"
+
+.PP
+Gets the theoretical maximum logical size of the map\&. 
+.PP
+Definition at line \fB77\fP of file \fBLightMap\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Collections\&.Generic\&.Cluster< T >\&.find()\fP\&.
+.SS "Optional<TU> SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.this[T key]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the value associated with the specified key\&. If the key does not exist, a new entry is appended\&. 
+.PP
+Definition at line \fB217\fP of file \fBLightMap\&.cs\fP\&.
+.SS "ICollection<TU> SystemEx\&.Collections\&.Generic\&.Map< T, TU >\&.Values\fR [get]\fP"
+
+.PP
+Gets a collection containing all active values in the map\&. 
+.PP
+Definition at line \fB82\fP of file \fBLightMap\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

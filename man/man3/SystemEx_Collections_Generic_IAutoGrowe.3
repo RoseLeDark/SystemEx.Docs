@@ -1,0 +1,71 @@
+.TH "SystemEx.Collections.Generic.IAutoGrowe" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Collections.Generic.IAutoGrowe \- Defines a contract for collections that can automatically grow their internal storage when additional capacity is required\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBSystemEx\&.Collections\&.Generic\&.Deque< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\fP, \fBSystemEx\&.Collections\&.Generic\&.Queue< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBGrow\fP ()"
+.br
+.RI "Attempts to increase the collection's capacity according to \fBGrowSize\fP\&. Returns \fRtrue\fP if the growth succeeded\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBAutoGrow\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets a value indicating whether the collection should automatically grow when full\&. "
+.ti -1c
+.RI "long \fBGrowSize\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the number of elements by which the collection grows when additional capacity is needed\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines a contract for collections that can automatically grow their internal storage when additional capacity is required\&. 
+
+Implementations use \fBGrowSize\fP to determine how much the underlying buffer should expand and \fBAutoGrow\fP to control whether growth occurs implicitly during insertion\&. 
+
+.PP
+The \fBGrow\fP method performs the actual capacity increase and returns \fRtrue\fP if the operation succeeded\&. 
+.PP
+Definition at line \fB40\fP of file \fBIAutoGrowe\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.IAutoGrowe\&.Grow ()"
+
+.PP
+Attempts to increase the collection's capacity according to \fBGrowSize\fP\&. Returns \fRtrue\fP if the growth succeeded\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Deque< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\fP, \fBSystemEx\&.Collections\&.Generic\&.Queue< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.Collections\&.Generic\&.IAutoGrowe\&.AutoGrow\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets a value indicating whether the collection should automatically grow when full\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Deque< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\fP, \fBSystemEx\&.Collections\&.Generic\&.Queue< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\fP\&.
+.PP
+Definition at line \fB50\fP of file \fBIAutoGrowe\&.cs\fP\&.
+.SS "long SystemEx\&.Collections\&.Generic\&.IAutoGrowe\&.GrowSize\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the number of elements by which the collection grows when additional capacity is needed\&. 
+.PP
+Implemented in \fBSystemEx\&.Collections\&.Generic\&.Deque< T >\fP, \fBSystemEx\&.Collections\&.Generic\&.PriorityQueue< TElement, TPriority >\fP, \fBSystemEx\&.Collections\&.Generic\&.Queue< T >\fP, and \fBSystemEx\&.Collections\&.Generic\&.Sparsed< T >\fP\&.
+.PP
+Definition at line \fB45\fP of file \fBIAutoGrowe\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,16 +1,14 @@
 var a02309 =
 [
-    [ "Enumerator", "d4/d16/a02313.html", "d4/d16/a02313" ],
-    [ "BitIntSpan", "dc/dd6/a02309_ac85a041b084ac1da9e88d8269bbb1947.html#ac85a041b084ac1da9e88d8269bbb1947", null ],
-    [ "ElementAt", "dc/dd6/a02309_a4638c947118bf3c66b5322ba9b750f04.html#a4638c947118bf3c66b5322ba9b750f04", null ],
-    [ "ElementAt", "dc/dd6/a02309_a7ba1dcffbf61ce12608fbad1173bbbd3.html#a7ba1dcffbf61ce12608fbad1173bbbd3", null ],
-    [ "GetEnumerator", "dc/dd6/a02309_a58f12e4d307eb1471f972d8ebc5cce0f.html#a58f12e4d307eb1471f972d8ebc5cce0f", null ],
-    [ "GetMode", "dc/dd6/a02309_aa98ca38a8111ebd7d09cb56c887fae48.html#aa98ca38a8111ebd7d09cb56c887fae48", null ],
-    [ "Slice", "dc/dd6/a02309_a4e6d317d02af829ec289764d8a379527.html#a4e6d317d02af829ec289764d8a379527", null ],
-    [ "Slice", "dc/dd6/a02309_ac36ef907317fd1428390094573dd9f3a.html#ac36ef907317fd1428390094573dd9f3a", null ],
-    [ "Bits", "dc/dd6/a02309_aa3583735ac98bd0c654669c7d54ae7bb.html#aa3583735ac98bd0c654669c7d54ae7bb", null ],
-    [ "IsSigned", "dc/dd6/a02309_a1db112e8c5528923906a2e9fb574fb21.html#a1db112e8c5528923906a2e9fb574fb21", null ],
-    [ "IsUnsigned", "dc/dd6/a02309_aa3d300f4f8a7d71f078cc740c2ed5545.html#aa3d300f4f8a7d71f078cc740c2ed5545", null ],
-    [ "this[byte index]", "dc/dd6/a02309_a8a35f2feada62d69871b4e5c88744941.html#a8a35f2feada62d69871b4e5c88744941", null ],
-    [ "ViewLength", "dc/dd6/a02309_a591c370a3f6fd5b4a4e412c67ce39892.html#a591c370a3f6fd5b4a4e412c67ce39892", null ]
+    [ "Clear", "dc/dd6/a02309_a1cca50b38936f44a78fe12d1504961bc.html#a1cca50b38936f44a78fe12d1504961bc", null ],
+    [ "Dequeue", "dc/dd6/a02309_a45ee8f134103ad021854b1bc0fe4db40.html#a45ee8f134103ad021854b1bc0fe4db40", null ],
+    [ "Enqueue", "dc/dd6/a02309_abd883e231c08eb7ab1014a5fbf82f781.html#abd883e231c08eb7ab1014a5fbf82f781", null ],
+    [ "LightMMQueue", "dc/dd6/a02309_a819084c051a6099e29ee88b6ff669903.html#a819084c051a6099e29ee88b6ff669903", null ],
+    [ "Peek", "dc/dd6/a02309_a3ee7495feadab1dcc496056179cc250d.html#a3ee7495feadab1dcc496056179cc250d", null ],
+    [ "Capacity", "dc/dd6/a02309_a4e95d3e641798b2488cc309667620c8d.html#a4e95d3e641798b2488cc309667620c8d", null ],
+    [ "Count", "dc/dd6/a02309_a02222d17b011edd4d0ddee8b8f6674cf.html#a02222d17b011edd4d0ddee8b8f6674cf", null ],
+    [ "IsEmpty", "dc/dd6/a02309_adeb436698ebde05fb24165cf8707b208.html#adeb436698ebde05fb24165cf8707b208", null ],
+    [ "IsFull", "dc/dd6/a02309_a658eaab082a9e33c45e370daf203d884.html#a658eaab082a9e33c45e370daf203d884", null ],
+    [ "SupportMultiConsumer", "dc/dd6/a02309_a606161b7e54b639eaed5890421f4f21e.html#a606161b7e54b639eaed5890421f4f21e", null ],
+    [ "SupportMultiProducer", "dc/dd6/a02309_a10c5312a065dd6900be88fde60bb2613.html#a10c5312a065dd6900be88fde60bb2613", null ]
 ];

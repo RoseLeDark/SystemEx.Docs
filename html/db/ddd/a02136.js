@@ -1,10 +1,13 @@
 var a02136 =
 [
-    [ "Dispose", "db/ddd/a02136_a5def48982cdae6e68a5c0a7bc39380d7.html#a5def48982cdae6e68a5c0a7bc39380d7", null ],
-    [ "MoveNext", "db/ddd/a02136_a62c8a7b04ee9fb460c76b1981826f187.html#a62c8a7b04ee9fb460c76b1981826f187", null ],
-    [ "Reset", "db/ddd/a02136_a8f8cf861445a88ca8f1ddc22ebd62596.html#a8f8cf861445a88ca8f1ddc22ebd62596", null ],
-    [ "Current", "db/ddd/a02136_abc621f0f98d925d44856813269c47e40.html#abc621f0f98d925d44856813269c47e40", null ],
-    [ "Current", "db/ddd/a02136_a9642f3e21aaadd6bde79b55fdf9136d3.html#a9642f3e21aaadd6bde79b55fdf9136d3", null ],
-    [ "Current", "db/ddd/a02136_a418189de36172e301f16ae61f0473ca7.html#a418189de36172e301f16ae61f0473ca7", null ],
-    [ "HasNext", "db/ddd/a02136_a91fa413db5681ae2d67c6a6c39eb92ef.html#a91fa413db5681ae2d67c6a6c39eb92ef", null ]
+    [ "Next", "db/ddd/a02136_add46b96927852f08ec3115ed1a5abd32.html#add46b96927852f08ec3115ed1a5abd32", null ],
+    [ "Next", "db/ddd/a02136_a58667144dfe33b5b9d883174435a0cec.html#a58667144dfe33b5b9d883174435a0cec", null ],
+    [ "Next32", "db/ddd/a02136_a755512f9f3806f4dc1d88bd0570ed929.html#a755512f9f3806f4dc1d88bd0570ed929", null ],
+    [ "Next64", "db/ddd/a02136_a3667b8f0c2bfde01dac54ac755abf65b.html#a3667b8f0c2bfde01dac54ac755abf65b", null ],
+    [ "NextByte", "db/ddd/a02136_a3df4f2278477802709dec97e83cb2da3.html#a3df4f2278477802709dec97e83cb2da3", null ],
+    [ "NextBytes", "db/ddd/a02136_a4fdfd9ecb4c2b6db544edd6f7fbf75f8.html#a4fdfd9ecb4c2b6db544edd6f7fbf75f8", null ],
+    [ "NextChar", "db/ddd/a02136_a48f68361dd0427f8b9373ef89bbcb4d0.html#a48f68361dd0427f8b9373ef89bbcb4d0", null ],
+    [ "NextHashSeed32", "db/ddd/a02136_ab4d2950b697ec65cd78961497c67337f.html#ab4d2950b697ec65cd78961497c67337f", null ],
+    [ "NextHashSeed64", "db/ddd/a02136_a65d828bf906379ca226eb6558acdc42a.html#a65d828bf906379ca226eb6558acdc42a", null ],
+    [ "NextString", "db/ddd/a02136_a2c675b7b202c955c4dffc338a745b421.html#a2c675b7b202c955c4dffc338a745b421", null ]
 ];

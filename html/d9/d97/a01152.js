@@ -1,14 +1,7 @@
 var a01152 =
 [
-    [ "CompareTo", "d9/d97/a01152_a71bc58a3db7e02ab12e82b2040f8cdf3.html#a71bc58a3db7e02ab12e82b2040f8cdf3", null ],
-    [ "CompareTo", "d9/d97/a01152_a68d6f65ecf518e35a4dc284c07e093b8.html#a68d6f65ecf518e35a4dc284c07e093b8", null ],
-    [ "Equals", "d9/d97/a01152_a8887102e3937aabf0ff8b43583129dc1.html#a8887102e3937aabf0ff8b43583129dc1", null ],
-    [ "GetHashCode", "d9/d97/a01152_a7bd372c79ee17e1e42a1fdf1c3238dcd.html#a7bd372c79ee17e1e42a1fdf1c3238dcd", null ],
-    [ "Nullable", "d9/d97/a01152_adfd5bc2c15238e6eccabb1908769e2f9.html#adfd5bc2c15238e6eccabb1908769e2f9", null ],
-    [ "Optional", "d9/d97/a01152_ae29e07318aa44935421cda45cbde4871.html#ae29e07318aa44935421cda45cbde4871", null ],
-    [ "Optional", "d9/d97/a01152_a091b68ac9c1a46fbea2655940f3f2083.html#a091b68ac9c1a46fbea2655940f3f2083", null ],
-    [ "HasValue", "d9/d97/a01152_a595e22df09165c217a508435511ac0ce.html#a595e22df09165c217a508435511ac0ce", null ],
-    [ "IsNull", "d9/d97/a01152_a2e814fb2976fe97446c4fd40ad54a0d6.html#a2e814fb2976fe97446c4fd40ad54a0d6", null ],
-    [ "IsSome", "d9/d97/a01152_ad50ac3985a6e78ce3a9736713b4a15c0.html#ad50ac3985a6e78ce3a9736713b4a15c0", null ],
-    [ "Value", "d9/d97/a01152_a51e0011c11e5ac42a4cc163376e18c0f.html#a51e0011c11e5ac42a4cc163376e18c0f", null ]
+    [ "Clear", "d9/d97/a01152_afc565ee3ce5ee3db966a39c70ac9e014.html#afc565ee3ce5ee3db966a39c70ac9e014", null ],
+    [ "Invoke", "d9/d97/a01152_ac20a99fedc7fcf89401d56470fd8417f.html#ac20a99fedc7fcf89401d56470fd8417f", null ],
+    [ "Subscribe", "d9/d97/a01152_a8c4ab99918c002305efcbfb4fd1d42fd.html#a8c4ab99918c002305efcbfb4fd1d42fd", null ],
+    [ "UnSubscribe", "d9/d97/a01152_a956753899154eb16a41feba37eb60427.html#a956753899154eb16a41feba37eb60427", null ]
 ];

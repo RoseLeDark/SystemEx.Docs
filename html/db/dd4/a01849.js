@@ -1,4 +1,6 @@
 var a01849 =
 [
-    [ "ToBytes", "d8/d0a/a00904_ga8fb21dffeeea89fddd6e1e70e62402b7.html#ga8fb21dffeeea89fddd6e1e70e62402b7", null ]
+    [ "Hash32", "d9/dfb/a00913_ga4f6183e5a9af1b6afd3b802163db42c5.html#ga4f6183e5a9af1b6afd3b802163db42c5", null ],
+    [ "ToString", "d9/dfb/a00913_ga086f590d51b2ed317be65f5d59317da0.html#ga086f590d51b2ed317be65f5d59317da0", null ],
+    [ "Value", "d9/dfb/a00913_ga9613405987f5a0b89e7262cc6a5b0123.html#ga9613405987f5a0b89e7262cc6a5b0123", null ]
 ];

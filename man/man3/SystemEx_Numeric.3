@@ -1,0 +1,442 @@
+.TH "SystemEx.Numeric" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.Numeric
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAxisAngle< TV, T >\fP"
+.br
+.RI "Represents a rotation in 3D space using an axis‑angle pair\&. "
+.ti -1c
+.RI "struct \fBBigDecimal\fP"
+.br
+.RI "Represents an arbitrary‑precision decimal number stored in scientific notation using a BigInteger mantissa and a base‑10 exponent\&. "
+.ti -1c
+.RI "class \fBConversition\fP"
+.br
+.RI "Provides extension methods for converting between different vector types (float, double, int) and dimensions (2D, 3D, 4D)\&. "
+.ti -1c
+.RI "struct \fBDQuatf\fP"
+.br
+.RI "Dual quaternion using single-precision floating point values\&. Represents a rigid 3D transformation consisting of rotation (real part) and translation (dual part)\&. Provides stable, non-drifting transformations compared to matrix-based approaches\&. "
+.ti -1c
+.RI "struct \fBFast_Byte\fP"
+.br
+.RI "Represents an 8‑bit fast bit‑manipulation type\&. This struct provides low‑level operations for inspecting, modifying, rotating, masking, and counting bits inside a single byte\&. "
+.ti -1c
+.RI "struct \fBFast_Float\fP"
+.br
+.RI "Provides low-level IEEE‑754 bit inspection and manipulation for 32‑bit floating-point values\&. This type follows the naming and structural conventions of the Fast_Type family, but is specialized for floating-point analysis rather than general-purpose bitmask operations\&. "
+.ti -1c
+.RI "struct \fBFast_Int\fP"
+.br
+.RI "Represents an 16‑bit fast bit‑manipulation type\&. This struct provides low‑level operations for inspecting, modifying, rotating, masking, and counting bits inside a single int\&. "
+.ti -1c
+.RI "struct \fBFast_UInt\fP"
+.br
+.RI "Represents an 16‑bit fast bit‑manipulation type\&. This struct provides low‑level operations for inspecting, modifying, rotating, masking, and counting bits inside a single uint\&. "
+.ti -1c
+.RI "struct \fBFast_ULong\fP"
+.br
+.RI "Represents an 64‑bit fast bit‑manipulation type\&. This struct provides low‑level operations for inspecting, modifying, rotating, masking, and counting bits inside a single ulong\&. "
+.ti -1c
+.RI "struct \fBFast_UShort\fP"
+.br
+.RI "Represents an 16‑bit fast bit‑manipulation type\&. This struct provides low‑level operations for inspecting, modifying, rotating, masking, and counting bits inside a single ushort\&. "
+.ti -1c
+.RI "struct \fBFloat32\fP"
+.br
+.RI "Represents a 32‑bit IEEE‑754 single‑precision floating‑point value\&. "
+.ti -1c
+.RI "struct \fBFloat64\fP"
+.br
+.RI "Represents a 64‑bit IEEE‑754 single‑precision floating‑point value\&. "
+.ti -1c
+.RI "class \fBFloat8UMX< T >\fP"
+.br
+.RI "Represents a generic FP8 MX‑block consisting of 32 FP8 elements of type \fIT\fP  sharing a common block exponent\&. "
+.ti -1c
+.RI "struct \fBFloatE4M3\fP"
+.br
+.RI "Represents an FP8 value encoded in the industry‑standard E4M3 format\&. "
+.ti -1c
+.RI "struct \fBFloatE5M2\fP"
+.br
+.RI "Represents an FP8 value encoded in the industry‑standard E4M3 format\&. "
+.ti -1c
+.RI "struct \fBFloatUE4M3\fP"
+.br
+.RI "Represents an FP8 value encoded in the industry‑standard E4M3 format\&. "
+.ti -1c
+.RI "class \fBFloatUE4M3b32\fP"
+.br
+.RI "Represents a 32‑element MX‑block of \fBFloatUE4M3\fP values using \fBFloat8UMX<T>\fP as the underlying generic FP8 MX engine\&. "
+.ti -1c
+.RI "struct \fBFloatUE5M2\fP"
+.br
+.RI "Represents an unsigned FP8 floating‑point value in E5M2 format\&. "
+.ti -1c
+.RI "class \fBFloatUE5M2b32\fP"
+.br
+.RI "Represents a 32‑element MX‑block of \fBFloatUE5M2\fP values using \fBFloat8UMX<T>\fP as the underlying generic FP8 MX engine\&. "
+.ti -1c
+.RI "struct \fBHalf16\fP"
+.br
+.RI "Represents a 16‑bit IEEE‑754 binary16 floating‑point value with full bit‑level control over sign, exponent, and mantissa\&. "
+.ti -1c
+.RI "struct \fBHalf16b\fP"
+.br
+.RI "This value type represents A \fBHalf16b\fP value\&. See https://cloud.google.com/blog/products/ai-machine-learning/bfloat16-the-secret-to-high-performance-on-cloud-tpus for details,\&. "
+.ti -1c
+.RI "interface \fBIBigFloat< TSelf >\fP"
+.br
+.RI "Defines an extended‑precision floating‑point format based on \fBIFloat<TSelf, TBias>\fP\&. "
+.ti -1c
+.RI "interface \fBICDouble< TSelf >\fP"
+.br
+.RI "Defines a 64‑bit floating‑point format based on \fBIFloat<TSelf, TBias>\fP\&. "
+.ti -1c
+.RI "interface \fBICFloat< TSelf >\fP"
+.br
+.RI "Defines a 32‑bit floating‑point format based on \fBIFloat<TSelf, TBias>\fP\&. "
+.ti -1c
+.RI "interface \fBICQuad< TSelf >\fP"
+.br
+.ti -1c
+.RI "interface \fBIDQuatv< TQ, T >\fP"
+.br
+.RI "Generic interface for dual quaternions\&. TQ represents the quaternion type (rotation + dual part), T represents the vector type used for translation\&. Provides the essential operations required for dual-quaternion-based rigid transformations\&. "
+.ti -1c
+.RI "interface \fBIFastType\fP"
+.br
+.RI "Provides a low‑level, bit‑precise manipulation interface for any value that can be interpreted as a contiguous sequence of bits\&. Implementations expose direct access to individual bit positions, bit counting, rotation, and mask‑based operations without imposing a specific underlying numeric type\&. "
+.ti -1c
+.RI "interface \fBIFastType< T >\fP"
+.br
+.RI "Extends \fBIFastType\fP with typed access to the underlying storage value\&. Implementations define how the raw value is represented (e\&.g\&., uint, ulong, ushort, double, long), enabling bit‑level inspection and mutation of arbitrary numeric formats\&. "
+.ti -1c
+.RI "interface \fBIFloat\fP"
+.br
+.ti -1c
+.RI "interface \fBIFloat< TBias >\fP"
+.br
+.ti -1c
+.RI "interface \fBIFloat< TSelf, TBias >\fP"
+.br
+.RI "Defines the structural layout and behavioral contract of a custom floating‑point format\&. Implementations describe how a binary floating‑point number is encoded into sign, exponent, and mantissa fields, including exponent bias, hidden bit rules, and total bit width\&. "
+.ti -1c
+.RI "interface \fBIFP8\fP"
+.br
+.ti -1c
+.RI "interface \fBIFP8< TSelf >\fP"
+.br
+.RI "Defines an 8‑bit floating‑point format based on \fBIFloat<TSelf, TBias>\fP\&. "
+.ti -1c
+.RI "interface \fBIHalf< TSelf >\fP"
+.br
+.RI "Defines a 16‑bit floating‑point format based on \fBIFloat<TSelf, TBias>\fP\&. "
+.ti -1c
+.RI "interface \fBIMini< TSelf >\fP"
+.br
+.RI "Defines an 8‑bit floating‑point format based on \fBIFloat<TSelf, TBias>\fP\&. "
+.ti -1c
+.RI "struct \fBInt4\fP"
+.br
+.RI "Represents a signed 4‑bit integer stored inside a \fBFast_Byte\fP\&. "
+.ti -1c
+.RI "interface \fBIP8UMXEnable< Tbase >\fP"
+.br
+.RI "Provides FP8‑format specific parameters required for MX‑block arithmetic\&. "
+.ti -1c
+.RI "struct \fBProjection\fP"
+.br
+.RI "Represents a basic geometric projection descriptor containing field‑of‑view, aspect ratio, and near/far clipping planes\&. "
+.ti -1c
+.RI "struct \fBQuatd\fP"
+.br
+.RI "Represents a doubleing‑point quaternion used for 3D rotations\&. "
+.ti -1c
+.RI "struct \fBQuatf\fP"
+.br
+.RI "Represents a floating‑point quaternion used for 3D rotations\&. "
+.ti -1c
+.RI "struct \fBRatio\fP"
+.br
+.RI "Represents a rational number using a signed 64‑bit numerator and denominator\&. "
+.ti -1c
+.RI "struct \fBUint256\fP"
+.br
+.RI "Represents a 256‑bit unsigned integer composed of two 128‑bit halves\&. "
+.ti -1c
+.RI "struct \fBVec2d\fP"
+.br
+.RI "Represents a 2‑component doubleing‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec2f\fP"
+.br
+.RI "Represents a 2‑component floating‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec2h\fP"
+.br
+.RI "Represents a 2‑component Half16‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec2hb\fP"
+.br
+.RI "Represents a 2‑component floating‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec2i\fP"
+.br
+.RI "Represents a 2‑component inting‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec2r\fP"
+.br
+.RI "Represents a 2‑component \fBRatio\fP vector\&. "
+.ti -1c
+.RI "struct \fBVec3d\fP"
+.br
+.RI "Represents a 3‑component doubleing‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec3f\fP"
+.br
+.RI "Represents a 3‑component floating‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec3h\fP"
+.br
+.RI "Represents a 3‑component Half16ing‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec3hb\fP"
+.br
+.RI "Represents a 3‑component Half16bing‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec3i\fP"
+.br
+.RI "Represents a 3‑component inting‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec3r\fP"
+.br
+.RI "Represents a 3‑component \fBRatio\fP vector\&. "
+.ti -1c
+.RI "struct \fBVec4d\fP"
+.br
+.RI "Represents a 4‑component doubleing‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec4f\fP"
+.br
+.RI "Represents a 4‑component floating‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec4h\fP"
+.br
+.RI "Represents a 4‑component Half16ing‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec4hb\fP"
+.br
+.RI "Represents a 4‑component Half16bing‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec4i\fP"
+.br
+.RI "Represents a 2‑component inting‑point vector\&. "
+.ti -1c
+.RI "struct \fBVec4r\fP"
+.br
+.RI "Represents a 4‑component \fBRatio\fP vector\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBCompareType\fP { \fBCompareType\&.Skalar\fP, \fBCompareType\&.Norm\fP, \fBCompareType\&.Rotation\fP }"
+.br
+.RI "Defines the comparison mode used by \fBQuatf\fP\&. "
+.ti -1c
+.RI "enum \fBMantisseRoundMode\fP { \fBModerate\fP = 13, \fBPrecise\fP = 14, \fBVeryPrecise\fP = 15, \fBUltraPrecise\fP = 16, \fBExtremePrecise\fP = 18, \fBMaxPrecision\fP = 20 }"
+.br
+.RI "Defines the rounding precision used during float-to-Half16 conversion\&. The value represents the number of temporary mantissa bits used before packing into the final 10‑bit \fBHalf16\fP mantissa\&. "
+.ti -1c
+.RI "enum \fBSIUnit\fP { \fBOhm\fP, \fBAmpere\fP, \fBVolt\fP, \fBFarad\fP, \fBHenry\fP, \fBMeter\fP, \fBGram\fP, \fBJoule\fP, \fBWatt\fP, \fBHertz\fP }"
+.br
+.RI "Defines the set of supported SI engineering units for formatting \fBBigDecimal\fP values\&. These units correspond to standard physical quantities used throughout scientific, electrical, mechanical, and general technical disciplines\&. "
+.ti -1c
+.RI "enum \fBUSUnit\fP { \fBInch\fP, \fBFoot\fP, \fBYard\fP, \fBMile\fP, \fBOunce\fP, \fBPound\fP, \fBCup\fP, \fBPint\fP, \fBQuart\fP, \fBGallon\fP, \fBPSI\fP, \fBBTU\fP, \fBHorsepower\fP }"
+.br
+.RI "Defines the set of supported U\&.S\&. customary engineering units used for formatting and interpreting \fBBigDecimal\fP values\&. These units represent common American measurement systems frequently encountered in mechanical, civil, automotive, industrial, and HVAC engineering\&. "
+.in -1c
+.SH "Class Documentation"
+.PP 
+.SH "struct SystemEx::Numeric::Uint256"
+.PP 
+Represents a 256‑bit unsigned integer composed of two 128‑bit halves\&. 
+
+\fBUint256\fP is a structural container used by high‑precision floating‑point formats and extended numeric systems\&. It stores the lower and upper 128‑bit segments explicitly, enabling deterministic bit‑level operations, custom floating‑point encodings, and arbitrary‑precision arithmetic\&. 
+
+.PP
+The type does not implement arithmetic itself; it is intended as a raw storage primitive for \fBIBigFloat<TSelf>\fP and other extended numeric abstractions\&. 
+.PP
+Definition at line \fB36\fP of file \fBIHalf\&.cs\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+Int128 \fIHigh\fP The upper 128‑bit segment of the value\&. 
+.br
+.PP
+Int128 \fILow\fP The lower 128‑bit segment of the value\&. 
+.br
+.PP
+.RE
+.PP
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSystemEx\&.Numeric\&.CompareType\fP"
+
+.PP
+Defines the comparison mode used by \fBQuatf\fP\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BISkalar \fP
+Compares quaternions by their scalar component \fRw\fP\&. 
+.TP
+\f(BINorm \fP
+Compares quaternions by their norm (length)\&. 
+.TP
+\f(BIRotation \fP
+Compares quaternions by their rotation angle\&. 
+.PP
+Definition at line \fB34\fP of file \fBQuatf\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.Numeric\&.MantisseRoundMode\fP"
+
+.PP
+Defines the rounding precision used during float-to-Half16 conversion\&. The value represents the number of temporary mantissa bits used before packing into the final 10‑bit \fBHalf16\fP mantissa\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIModerate \fP
+Classic IEEE‑754 style rounding\&. 
+.br
+ Uses 13 temporary mantissa bits\&. 
+.br
+ Provides moderate precision\&. 
+.TP
+\f(BIPrecise \fP
+ONNX‑style rounding with improved precision\&. 
+.br
+ Uses 14 temporary mantissa bits\&. 
+.TP
+\f(BIVeryPrecise \fP
+Higher precision rounding\&. 
+.br
+ Uses 15 temporary mantissa bits\&. 
+.TP
+\f(BIUltraPrecise \fP
+Advanced high‑precision rounding\&. 
+.br
+ Uses 16 temporary mantissa bits\&. 
+.TP
+\f(BIExtremePrecise \fP
+Extremely high precision rounding\&. 
+.br
+ Uses 18 temporary mantissa bits\&. 
+.TP
+\f(BIMaxPrecision \fP
+Maximum rounding precision available\&. 
+.br
+ Uses 20 temporary mantissa bits\&. 
+.PP
+Definition at line \fB24\fP of file \fBConversition\&.Float\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.Numeric\&.SIUnit\fP"
+
+.PP
+Defines the set of supported SI engineering units for formatting \fBBigDecimal\fP values\&. These units correspond to standard physical quantities used throughout scientific, electrical, mechanical, and general technical disciplines\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIOhm \fP
+Ohm (Ω)\&. The SI unit of electrical resistance, used extensively in electronics, circuit design, signal processing, and power systems\&. 
+.TP
+\f(BIAmpere \fP
+Ampere (A)\&. The SI base unit of electric current, fundamental in electrical engineering, electromagnetism, and power distribution\&. 
+.TP
+\f(BIVolt \fP
+Volt (V)\&. The SI unit of electric potential and electromotive force, used in circuit analysis, power systems, and electronic device design\&. 
+.TP
+\f(BIFarad \fP
+Farad (F)\&. The SI unit of capacitance, widely used in electronics, signal filtering, energy storage, and RF engineering\&. 
+.TP
+\f(BIHenry \fP
+Henry (H)\&. The SI unit of inductance, used in electromagnetics, transformer design, power electronics, and RF systems\&. 
+.TP
+\f(BIMeter \fP
+Meter (m)\&. The SI base unit of length, used across physics, engineering, construction, manufacturing, and scientific measurement\&. 
+.TP
+\f(BIGram \fP
+Gram (g)\&. The SI unit of mass (derived from kilogram), used in chemistry, material science, laboratory measurement, and industrial processes\&. 
+.TP
+\f(BIJoule \fP
+Joule (J)\&. The SI unit of energy, used in thermodynamics, mechanics, electrical systems, and general physics\&. 
+.TP
+\f(BIWatt \fP
+Watt (W)\&. The SI unit of power, representing energy per unit time\&. Used in electrical engineering, mechanics, HVAC, and energy systems\&. 
+.TP
+\f(BIHertz \fP
+Hertz (Hz)\&. The SI unit of frequency, used in signal processing, communications, acoustics, control systems, and physics\&. 
+.PP
+Definition at line \fB118\fP of file \fBBigDecimal\&.String\&.cs\fP\&.
+.SS "enum \fBSystemEx\&.Numeric\&.USUnit\fP"
+
+.PP
+Defines the set of supported U\&.S\&. customary engineering units used for formatting and interpreting \fBBigDecimal\fP values\&. These units represent common American measurement systems frequently encountered in mechanical, civil, automotive, industrial, and HVAC engineering\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIInch \fP
+Inch (in)\&. A fundamental U\&.S\&. length unit widely used in manufacturing, machining, construction, and mechanical engineering\&. 
+.TP
+\f(BIFoot \fP
+Foot (ft)\&. Equal to 12 inches\&. Commonly used in construction, surveying, architecture, and general engineering applications\&. 
+.TP
+\f(BIYard \fP
+Yard (yd)\&. Equal to 3 feet or 36 inches\&. Used in textiles, manufacturing, and certain civil engineering contexts\&. 
+.TP
+\f(BIMile \fP
+Mile (mi)\&. A large-scale U\&.S\&. length unit used for geographic distances, transportation engineering, and navigation\&. 
+.TP
+\f(BIOunce \fP
+Ounce (oz)\&. A small U\&.S\&. mass unit used in everyday measurements, packaging, and lightweight material specifications\&. 
+.TP
+\f(BIPound \fP
+Pound (lb)\&. A standard U\&.S\&. mass unit equal to 16 ounces\&. Widely used in mechanical engineering, material science, and industrial applications\&. 
+.TP
+\f(BICup \fP
+Cup\&. A U\&.S\&. volume unit equal to 8 fluid ounces\&. Commonly used in food science, chemistry labs, and consumer product measurements\&. 
+.TP
+\f(BIPint \fP
+Pint (pt)\&. A U\&.S\&. volume unit equal to 16 fluid ounces\&. Used in food production, chemical mixtures, and fluid handling\&. 
+.TP
+\f(BIQuart \fP
+Quart (qt)\&. A U\&.S\&. volume unit equal to 32 fluid ounces or one quarter of a gallon\&. Used in automotive fluids, chemical processing, and food manufacturing\&. 
+.TP
+\f(BIGallon \fP
+Gallon (gal)\&. A large U\&.S\&. volume unit equal to 128 fluid ounces\&. Common in automotive engineering, HVAC systems, fuel measurement, and industrial fluid handling\&. 
+.TP
+\f(BIPSI \fP
+PSI (pounds per square inch)\&. A standard U\&.S\&. pressure unit widely used in automotive engineering, hydraulics, pneumatics, and industrial systems\&. 
+.TP
+\f(BIBTU \fP
+BTU (British Thermal Unit)\&. A U\&.S\&. energy unit used extensively in HVAC, heating systems, thermodynamics, and energy engineering\&. 
+.TP
+\f(BIHorsepower \fP
+Horsepower (hp)\&. A U\&.S\&. power unit used in automotive engineering, mechanical systems, and industrial machinery performance ratings\&. 
+.PP
+Definition at line \fB28\fP of file \fBBigDecimal\&.String\&.cs\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

@@ -1,0 +1,429 @@
+.TH "Runtime" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Runtime \- Runtime
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSystemEx\&.Runtime\&.Function< TReturn, TDelegate >\fP"
+.br
+.RI "Represents a loaded native module (DLL, SO, or DYLIB)\&. 
+.br
+ A \fBModule\fP encapsulates the operating system handle of the loaded library and provides helper methods for resolving exported functions and unloading the module\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Runtime\&.Module\fP"
+.br
+.RI "Represents a loaded native module (DLL, SO, or DYLIB)\&. 
+.br
+ A \fBModule\fP encapsulates the operating system handle of the loaded library and provides helper methods for resolving exported functions and unloading the module\&. "
+.ti -1c
+.RI "class \fBSystemEx\&.Runtime\&.InteropServices\&.NativeHost\fP"
+.br
+.RI "Provides a high‑level management layer for native modules and their exported functions\&. 
+.br
+ NativeHost maintains an internal cache of loaded modules to avoid redundant loading operations and to ensure that multiple components referencing the same library share a single module instance\&. 
+.br
+ It also provides helper methods for resolving native function pointers and converting them into managed delegates\&. "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBProcLoader\fP = SystemEx\&.Runtime\&.InteropServices\&.Platform\&.WindowsProcLoader"
+.br
+.RI "Used on Windows\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "TReturn? \fBSystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Call\fP (params object[] args)"
+.br
+.RI "Invokes the native function with the specified arguments and returns the result\&. "
+.ti -1c
+.RI "void \fBSystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Dispose\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBSystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Dispose\fP (bool disposing)"
+.br
+.ti -1c
+.RI "static bool \fBSystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.FreeModule\fP (\fBModule\fP module)"
+.br
+.RI "Frees a previously loaded module and removes it from the internal cache\&. 
+.br
+ If the module is not currently tracked, the method returns \fRfalse\fP\&. 
+.br
+ The underlying OS handle is released using Module\&.Unload(Module)\&. "
+.ti -1c
+.RI "TDelegate \fBSystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.GetDelegate\fP ()"
+.br
+.RI "Gets a managed delegate that wraps the native function pointer\&. "
+.ti -1c
+.RI "static ? T \fBSystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.GetFunction< T >\fP (\fBModule\fP? module, string func)"
+.br
+.RI "Resolves a native function from the specified module and converts the resulting function pointer into a managed delegate of type \fIT\fP \&. 
+.br
+ The conversion is performed using Marshal\&.GetDelegateForFunctionPointer<T>(IntPtr)\&. "
+.ti -1c
+.RI "static ? T \fBSystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.GetFunction< T >\fP (string module, string func)"
+.br
+.RI "Resolves a native function from a module identified by its path\&. 
+.br
+ If the module is loaded, the function is resolved and converted into a managed delegate of type \fIT\fP \&. 
+.br
+ If the module is not found, \fRnull\fP is returned\&. "
+.ti -1c
+.RI "Function< TReturn, TDelegate >? \fBSystemEx\&.Runtime\&.Module\&.LoadFunc< TReturn, TDelegate >\fP (string func)"
+.br
+.RI "Resolves a function exported by the native module using the active platform backend loader\&. "
+.ti -1c
+.RI "static ? \fBModule\fP \fBSystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.LoadModule\fP (string strPath)"
+.br
+.RI "Loads a native module from the specified path\&. 
+.br
+ If the module has already been loaded previously, the cached instance is returned instead of loading it again\&. 
+.br
+ This prevents duplicate OS handles and improves performance\&. "
+.ti -1c
+.RI "static ? \fBModule\fP \fBSystemEx\&.Runtime\&.Module\&.LoadModule\fP (string name)"
+.br
+.RI "Loads a module by searching platform‑specific library paths\&. 
+.br
+ The backend resolves the correct file location using mechanisms such as \fRLD_LIBRARY_PATH\fP, \fRDYLD_LIBRARY_PATH\fP, or Windows search rules\&. "
+.ti -1c
+.RI "static ? \fBModule\fP \fBSystemEx\&.Runtime\&.Module\&.LoadModule\fP (string name, string path)"
+.br
+.RI "Loads a module from an explicit directory and file name\&. 
+.br
+ This method constructs the full path and attempts to load the module using the platform‑specific loader\&. "
+.ti -1c
+.RI "\fBSystemEx\&.Runtime\&.Module\&.Module\fP (nint v, string strPath)"
+.br
+.RI "Initializes a new \fBModule\fP instance using the specified native handle and file path\&. 
+.br
+ The constructor extracts the module's file name and directory path for informational purposes\&. "
+.ti -1c
+.RI "static int \fBSystemEx\&.Runtime\&.Module\&.Unload\fP (\fBModule\fP module)"
+.br
+.RI "Unloads the specified module using the platform‑specific backend\&. 
+.br
+ This method is internal because unloading is managed by the runtime and should not be performed directly by user code\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "nint \fBSystemEx\&.Runtime\&.Module\&.Handle\fP\fR [get, set]\fP"
+.br
+.RI "Gets the native handle of the loaded module\&. 
+.br
+ This value corresponds to the OS‑specific library handle returned by \fRLoadLibrary\fP (Windows), \fRdlopen\fP (Linux), or \fRdlopen\fP (macOS)\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Name\fP\fR [get]\fP"
+.br
+.RI "Gets the name of the function as specified when loading it from the module\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.Runtime\&.Module\&.Name\fP\fR [get]\fP"
+.br
+.RI "Gets the file name of the loaded module (e\&.g\&., \fRkernel\&.dll\fP, \fRlibfoo\&.so\fP, \fRlibbar\&.dylib\fP)\&. "
+.ti -1c
+.RI "string \fBSystemEx\&.Runtime\&.Module\&.Path\fP\fR [get]\fP"
+.br
+.RI "Gets the directory path where the module file resides\&. "
+.ti -1c
+.RI "IntPtr \fBSystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Pointer\fP\fR [get]\fP"
+.br
+.RI "Gets the raw pointer to the native function\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBSystemEx\fP Runtime \fBInteropServices\fP \fBPlatform\fP NoSupportProcLoader \fBProcLoader\fP = SystemEx\&.Runtime\&.InteropServices\&.Platform\&.WindowsProcLoader"
+
+.PP
+Used on Windows\&. Used when no PLatform supported\&.
+
+.PP
+Used on Mac\&.
+
+.PP
+Used on Linux\&. 
+.PP
+Definition at line \fB31\fP of file \fBModule\&.cs\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "TReturn? SystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Call (params object[] args)"
+
+.PP
+Invokes the native function with the specified arguments and returns the result\&. 
+.PP
+Definition at line \fB98\fP of file \fBModule\&.cs\fP\&.
+.SS "void SystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Dispose ()"
+
+.PP
+Definition at line \fB108\fP of file \fBModule\&.cs\fP\&.
+.SS "virtual void SystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Dispose (bool disposing)\fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Definition at line \fB113\fP of file \fBModule\&.cs\fP\&.
+.SS "bool SystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.FreeModule (\fBModule\fP module)\fR [static]\fP"
+
+.PP
+Frees a previously loaded module and removes it from the internal cache\&. 
+.br
+ If the module is not currently tracked, the method returns \fRfalse\fP\&. 
+.br
+ The underlying OS handle is released using Module\&.Unload(Module)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImodule\fP The module instance to unload\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the module was found and successfully removed; otherwise \fRfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB76\fP of file \fBNativeHost \&.cs\fP\&.
+.SS "TDelegate SystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.GetDelegate ()"
+
+.PP
+Gets a managed delegate that wraps the native function pointer\&. 
+.PP
+Definition at line \fB88\fP of file \fBModule\&.cs\fP\&.
+.PP
+Referenced by \fBCall()\fP\&.
+.SS "? T SystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.GetFunction< T > (\fBModule\fP? module, string func)\fR [static]\fP"
+
+.PP
+Resolves a native function from the specified module and converts the resulting function pointer into a managed delegate of type \fIT\fP \&. 
+.br
+ The conversion is performed using Marshal\&.GetDelegateForFunctionPointer<T>(IntPtr)\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The delegate type representing the function signature\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fImodule\fP The module from which the function is resolved\&.
+.br
+\fIfunc\fP The name of the exported native function\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A managed delegate bound to the native function, or \fRnull\fP if the module is \fRnull\fP or the function cannot be found\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fIDelegate\fP
+.PP
+Definition at line \fB128\fP of file \fBNativeHost \&.cs\fP\&.
+.SS "? T SystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.GetFunction< T > (string module, string func)\fR [static]\fP"
+
+.PP
+Resolves a native function from a module identified by its path\&. 
+.br
+ If the module is loaded, the function is resolved and converted into a managed delegate of type \fIT\fP \&. 
+.br
+ If the module is not found, \fRnull\fP is returned\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The delegate type representing the function signature\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fImodule\fP The module path used as cache key\&.
+.br
+\fIfunc\fP The name of the exported native function\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A managed delegate bound to the native function, or \fRnull\fP if the module or function cannot be resolved\&. 
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fIT\fP : \fIDelegate\fP
+.PP
+Definition at line \fB105\fP of file \fBNativeHost \&.cs\fP\&.
+.PP
+Referenced by \fBGetFunction< T >()\fP\&.
+.SS "Function< TReturn, TDelegate >? SystemEx\&.Runtime\&.Module\&.LoadFunc< TReturn, TDelegate > (string func)"
+
+.PP
+Resolves a function exported by the native module using the active platform backend loader\&. 
+.PP
+\fBType Constraints\fP
+.TP
+\fITDelegate\fP : \fIDelegate\fP
+.PP
+Definition at line \fB249\fP of file \fBModule\&.cs\fP\&.
+.SS "? \fBModule\fP SystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.LoadModule (string strPath)\fR [static]\fP"
+
+.PP
+Loads a native module from the specified path\&. 
+.br
+ If the module has already been loaded previously, the cached instance is returned instead of loading it again\&. 
+.br
+ This prevents duplicate OS handles and improves performance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstrPath\fP The full path to the native module\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBModule\fP instance representing the loaded library, or \fRnull\fP if loading fails\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB53\fP of file \fBNativeHost \&.cs\fP\&.
+.SS "? \fBModule\fP SystemEx\&.Runtime\&.Module\&.LoadModule (string name)\fR [static]\fP"
+
+.PP
+Loads a module by searching platform‑specific library paths\&. 
+.br
+ The backend resolves the correct file location using mechanisms such as \fRLD_LIBRARY_PATH\fP, \fRDYLD_LIBRARY_PATH\fP, or Windows search rules\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The module file name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new \fBModule\fP instance if loading succeeds; otherwise \fRnull\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB212\fP of file \fBModule\&.cs\fP\&.
+.SS "? \fBModule\fP SystemEx\&.Runtime\&.Module\&.LoadModule (string name, string path)\fR [static]\fP"
+
+.PP
+Loads a module from an explicit directory and file name\&. 
+.br
+ This method constructs the full path and attempts to load the module using the platform‑specific loader\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The module file name\&.
+.br
+\fIpath\fP The directory containing the module\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new \fBModule\fP instance if loading succeeds; otherwise \fRnull\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB192\fP of file \fBModule\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.LoadModule()\fP, and \fBSystemEx\&.Runtime\&.ModulePreloader\&.Preload()\fP\&.
+.SS "SystemEx\&.Runtime\&.Module\&.Module (nint v, string strPath)"
+
+.PP
+Initializes a new \fBModule\fP instance using the specified native handle and file path\&. 
+.br
+ The constructor extracts the module's file name and directory path for informational purposes\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIv\fP The native module handle\&.
+.br
+\fIstrPath\fP The full path to the loaded module file\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB150\fP of file \fBModule\&.cs\fP\&.
+.PP
+Referenced by \fBLoadModule()\fP, \fBLoadModule()\fP, and \fBUnload()\fP\&.
+.SS "int SystemEx\&.Runtime\&.Module\&.Unload (\fBModule\fP module)\fR [static]\fP"
+
+.PP
+Unloads the specified module using the platform‑specific backend\&. 
+.br
+ This method is internal because unloading is managed by the runtime and should not be performed directly by user code\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImodule\fP The module to unload\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Zero on success, or a non‑zero error code depending on the backend\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB178\fP of file \fBModule\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Runtime\&.InteropServices\&.NativeHost\&.FreeModule()\fP\&.
+.SH "Properties"
+.PP 
+.SS "nint SystemEx\&.Runtime\&.Module\&.Handle\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets the native handle of the loaded module\&. 
+.br
+ This value corresponds to the OS‑specific library handle returned by \fRLoadLibrary\fP (Windows), \fRdlopen\fP (Linux), or \fRdlopen\fP (macOS)\&. 
+.PP
+Definition at line \fB140\fP of file \fBModule\&.cs\fP\&.
+.PP
+Referenced by \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.FreeLibrary()\fP, \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.FreeLibrary()\fP, \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.LinuxProcLoader\&.LoadFunction()\fP, and \fBSystemEx\&.Runtime\&.InteropServices\&.Platform\&.MacProcLoader\&.LoadFunction()\fP\&.
+.SS "string SystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Name\fR [get]\fP"
+
+.PP
+Gets the name of the function as specified when loading it from the module\&. 
+.PP
+Definition at line \fB69\fP of file \fBModule\&.cs\fP\&.
+.SS "string SystemEx\&.Runtime\&.Module\&.Name\fR [get]\fP"
+
+.PP
+Gets the file name of the loaded module (e\&.g\&., \fRkernel\&.dll\fP, \fRlibfoo\&.so\fP, \fRlibbar\&.dylib\fP)\&. 
+.PP
+Definition at line \fB162\fP of file \fBModule\&.cs\fP\&.
+.SS "string SystemEx\&.Runtime\&.Module\&.Path\fR [get]\fP"
+
+.PP
+Gets the directory path where the module file resides\&. 
+.PP
+Definition at line \fB167\fP of file \fBModule\&.cs\fP\&.
+.SS "IntPtr SystemEx\&.Runtime\&.Function< TReturn, TDelegate >\&.Pointer\fR [get]\fP"
+
+.PP
+Gets the raw pointer to the native function\&. 
+.PP
+Definition at line \fB65\fP of file \fBModule\&.cs\fP\&.
+.PP
+Referenced by \fBGetDelegate()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

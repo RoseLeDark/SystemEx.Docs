@@ -1,0 +1,454 @@
+.TH "SystemEx.AI.ModelPromp< T >" 3 "Version 0.95.6023-rc4 Lacking" "SystemEX" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemEx.AI.ModelPromp< T > \- Represents a concrete implementation of \fBIModelPromp<T>\fP used to encapsulate model input, contextual metadata, session information, execution parameters, and optional tags\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBAddContext\fP (string key, object value)"
+.br
+.RI "Adds or replaces a context value associated with the specified key\&. "
+.ti -1c
+.RI "void \fBAddParameter\fP (string key, object value)"
+.br
+.RI "Adds or replaces a parameter value associated with the specified key\&. "
+.ti -1c
+.RI "void \fBAddTag\fP (string key, object value)"
+.br
+.RI "Adds or replaces a tag value associated with the specified key\&. "
+.ti -1c
+.RI "bool \fBHasContext\fP (string key)"
+.br
+.RI "Determines whether a context entry with the specified key exists\&. "
+.ti -1c
+.RI "bool \fBHasParameter\fP (string key)"
+.br
+.RI "Determines whether a parameter entry with the specified key exists\&. "
+.ti -1c
+.RI "bool \fBHasTag\fP (string key)"
+.br
+.RI "Determines whether a tag entry with the specified key exists\&. "
+.ti -1c
+.RI "\fBModelPromp\fP (T prompt, Map< string, object > context, Optional< string > sessionId, Optional< Map< string, object > > parameters)"
+.br
+.RI "Initializes a new prompt using explicit context and parameter maps\&. "
+.ti -1c
+.RI "\fBModelPromp\fP (T prompt, Map< string, object > context, Optional< string > sessionId, Optional< Map< string, object > > parameters, bool cancel, Optional< Map< string, object > > tags)"
+.br
+.RI "Initializes a new prompt with full control over context, parameters, tags, and cancellation state\&. "
+.ti -1c
+.RI "\fBModelPromp\fP (T prompt, Optional< string > sessionId)"
+.br
+.RI "Initializes a new prompt with the specified raw value and session identifier\&. Context, parameters, and tags are created empty\&. "
+.ti -1c
+.RI "bool \fBRemoveContext\fP (string key)"
+.br
+.RI "Removes a context entry if it exists\&. "
+.ti -1c
+.RI "bool \fBRemoveParameter\fP (string key)"
+.br
+.RI "Removes a parameter entry if it exists\&. "
+.ti -1c
+.RI "bool \fBRemoveTag\fP (string key)"
+.br
+.RI "Removes a tag entry if it exists\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns a human‑readable representation of the prompt, including prompt value, session identifier, cancellation state, context, parameters, and tags\&. "
+.ti -1c
+.RI "bool \fBTryGetContext\fP (string key, out object? value)"
+.br
+.RI "Attempts to retrieve a context value\&. "
+.ti -1c
+.RI "bool \fBTryGetParameter\fP (string key, out object? value)"
+.br
+.RI "Attempts to retrieve a parameter value\&. "
+.ti -1c
+.RI "bool \fBTryGetTag\fP (string key, out object? value)"
+.br
+.RI "Attempts to retrieve a tag value\&. "
+.ti -1c
+.RI "\fBModelPromp\fP< T > \fBWithContext\fP (string key, object value)"
+.br
+.RI "Creates a new prompt instance with an updated context value\&. "
+.ti -1c
+.RI "\fBModelPromp\fP< T > \fBWithParameter\fP (string key, object value)"
+.br
+.RI "Creates a new prompt instance with an updated parameter value\&. The original instance remains unchanged\&. "
+.ti -1c
+.RI "\fBModelPromp\fP< T > \fBWithTag\fP (string key, object value)"
+.br
+.RI "Creates a new prompt instance with an updated tag value\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBCancel\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the prompt should be cancelled before reaching the backend\&. Useful for pre‑processing tools or pipeline guards\&. "
+.ti -1c
+.RI "Map< string, object > \fBContext\fP\fR [get]\fP"
+.br
+.RI "Gets a metadata map containing contextual information such as temperature, top‑p, tool hints, memory handles, or session‑level settings\&. "
+.ti -1c
+.RI "Map< string, object > \fBParameters\fP\fR [get]\fP"
+.br
+.RI "Gets a map of backend‑specific parameters that may influence execution, routing, or tool behavior\&. "
+.ti -1c
+.RI "T \fBPrompt\fP\fR [get]\fP"
+.br
+.RI "Gets the raw prompt data supplied to the model\&. This may represent text, tokens, binary data, or any other prompt format\&. "
+.ti -1c
+.RI "Optional< string > \fBSessionId\fP\fR [get]\fP"
+.br
+.RI "Gets the optional session identifier used to maintain conversational continuity across multiple model invocations\&. "
+.ti -1c
+.RI "Map< string, object > \fBTags\fP\fR [get]\fP"
+.br
+.RI "Gets a tag map used for classification, annotation, or pipeline‑level processing\&. Tags do not affect model execution directly but may be used by tools or middleware\&. "
+.ti -1c
+.RI "object \fBthis[string parameter]\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets a backend parameter by name\&. 
+.br
+ Provides convenient indexed access to \fBParameters\fP\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIparameter\fP The parameter key\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The associated parameter value\&.
+.RE
+.PP
+ "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a concrete implementation of \fBIModelPromp<T>\fP used to encapsulate model input, contextual metadata, session information, execution parameters, and optional tags\&. 
+
+\fBModelPromp<T>\fP is the standard prompt container used by all IModelBackend implementations\&. It provides a mutable structure for building and enriching prompts before they are passed into the model pipeline, while also supporting functional-style cloning through the \fRWith*\fP methods\&. 
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The underlying prompt type (e\&.g\&., text, tokens, binary data, AST, etc\&.)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB42\fP of file \fBModelPrompt\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SystemEx\&.AI\&.ModelPromp< T >\&.AddContext (string key, object value)"
+
+.PP
+Adds or replaces a context value associated with the specified key\&. 
+.PP
+Definition at line \fB129\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "void SystemEx\&.AI\&.ModelPromp< T >\&.AddParameter (string key, object value)"
+
+.PP
+Adds or replaces a parameter value associated with the specified key\&. 
+.PP
+Definition at line \fB157\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "void SystemEx\&.AI\&.ModelPromp< T >\&.AddTag (string key, object value)"
+
+.PP
+Adds or replaces a tag value associated with the specified key\&. 
+.PP
+Definition at line \fB183\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.HasContext (string key)"
+
+.PP
+Determines whether a context entry with the specified key exists\&. 
+.PP
+Definition at line \fB142\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.HasParameter (string key)"
+
+.PP
+Determines whether a parameter entry with the specified key exists\&. 
+.PP
+Definition at line \fB167\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.HasTag (string key)"
+
+.PP
+Determines whether a tag entry with the specified key exists\&. 
+.PP
+Definition at line \fB193\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "SystemEx\&.AI\&.ModelPromp< T >\&.ModelPromp (T prompt, Map< string, object > context, Optional< string > sessionId, Optional< Map< string, object > > parameters)"
+
+.PP
+Initializes a new prompt using explicit context and parameter maps\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIprompt\fP The raw prompt value\&.
+.br
+\fIcontext\fP The contextual metadata map\&.
+.br
+\fIsessionId\fP Optional session identifier\&.
+.br
+\fIparameters\fP Optional parameter map; if null, an empty map is created\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB86\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "SystemEx\&.AI\&.ModelPromp< T >\&.ModelPromp (T prompt, Map< string, object > context, Optional< string > sessionId, Optional< Map< string, object > > parameters, bool cancel, Optional< Map< string, object > > tags)"
+
+.PP
+Initializes a new prompt with full control over context, parameters, tags, and cancellation state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIprompt\fP The raw prompt value\&.
+.br
+\fIcontext\fP The contextual metadata map\&.
+.br
+\fIsessionId\fP Optional session identifier\&.
+.br
+\fIparameters\fP Optional parameter map\&.
+.br
+\fIcancel\fP Indicates whether the prompt should be cancelled\&.
+.br
+\fItags\fP Optional tag map\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB105\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "SystemEx\&.AI\&.ModelPromp< T >\&.ModelPromp (T prompt, Optional< string > sessionId)"
+
+.PP
+Initializes a new prompt with the specified raw value and session identifier\&. Context, parameters, and tags are created empty\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIprompt\fP The raw prompt value\&.
+.br
+\fIsessionId\fP Optional session identifier\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB68\fP of file \fBModelPrompt\&.cs\fP\&.
+.PP
+Referenced by \fBWithContext()\fP, \fBWithParameter()\fP, and \fBWithTag()\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.RemoveContext (string key)"
+
+.PP
+Removes a context entry if it exists\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if the entry was removed; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB137\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.RemoveParameter (string key)"
+
+.PP
+Removes a parameter entry if it exists\&. 
+.PP
+Definition at line \fB162\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.RemoveTag (string key)"
+
+.PP
+Removes a tag entry if it exists\&. 
+.PP
+Definition at line \fB188\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "override string SystemEx\&.AI\&.ModelPromp< T >\&.ToString ()"
+
+.PP
+Returns a human‑readable representation of the prompt, including prompt value, session identifier, cancellation state, context, parameters, and tags\&. 
+.PP
+Definition at line \fB262\fP of file \fBModelPrompt\&.cs\fP\&.
+.PP
+Referenced by \fBToString()\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.TryGetContext (string key, out object? value)"
+
+.PP
+Attempts to retrieve a context value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The context key\&.
+.br
+\fIvalue\fP The retrieved value, if present\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the value exists; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB152\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.TryGetParameter (string key, out object? value)"
+
+.PP
+Attempts to retrieve a parameter value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The parameter key\&.
+.br
+\fIvalue\fP The retrieved value, if present\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the value exists; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB177\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.TryGetTag (string key, out object? value)"
+
+.PP
+Attempts to retrieve a tag value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The tag key\&.
+.br
+\fIvalue\fP The retrieved value, if present\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the value exists; otherwise false\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB203\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "\fBModelPromp\fP< T > SystemEx\&.AI\&.ModelPromp< T >\&.WithContext (string key, object value)"
+
+.PP
+Creates a new prompt instance with an updated context value\&. 
+.PP
+Definition at line \fB244\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "\fBModelPromp\fP< T > SystemEx\&.AI\&.ModelPromp< T >\&.WithParameter (string key, object value)"
+
+.PP
+Creates a new prompt instance with an updated parameter value\&. The original instance remains unchanged\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The parameter key\&.
+.br
+\fIvalue\fP The new value\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A new \fBModelPromp<T>\fP instance\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB212\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "\fBModelPromp\fP< T > SystemEx\&.AI\&.ModelPromp< T >\&.WithTag (string key, object value)"
+
+.PP
+Creates a new prompt instance with an updated tag value\&. 
+.PP
+Definition at line \fB228\fP of file \fBModelPrompt\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool SystemEx\&.AI\&.ModelPromp< T >\&.Cancel\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the prompt should be cancelled before reaching the backend\&. Useful for pre‑processing tools or pipeline guards\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB60\fP of file \fBModelPrompt\&.cs\fP\&.
+.PP
+Referenced by \fBModelPromp()\fP, \fBModelPromp()\fP, \fBModelPromp()\fP, \fBToString()\fP, \fBWithContext()\fP, \fBWithParameter()\fP, and \fBWithTag()\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.ModelPromp< T >\&.Context\fR [get]\fP"
+
+.PP
+Gets a metadata map containing contextual information such as temperature, top‑p, tool hints, memory handles, or session‑level settings\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB52\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.ModelPromp< T >\&.Parameters\fR [get]\fP"
+
+.PP
+Gets a map of backend‑specific parameters that may influence execution, routing, or tool behavior\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB56\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "T SystemEx\&.AI\&.ModelPromp< T >\&.Prompt\fR [get]\fP"
+
+.PP
+Gets the raw prompt data supplied to the model\&. This may represent text, tokens, binary data, or any other prompt format\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB50\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "Optional<string> SystemEx\&.AI\&.ModelPromp< T >\&.SessionId\fR [get]\fP"
+
+.PP
+Gets the optional session identifier used to maintain conversational continuity across multiple model invocations\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB54\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "Map<string, object> SystemEx\&.AI\&.ModelPromp< T >\&.Tags\fR [get]\fP"
+
+.PP
+Gets a tag map used for classification, annotation, or pipeline‑level processing\&. Tags do not affect model execution directly but may be used by tools or middleware\&. 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB58\fP of file \fBModelPrompt\&.cs\fP\&.
+.SS "object SystemEx\&.AI\&.ModelPromp< T >\&.this[string parameter]\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets a backend parameter by name\&. 
+.br
+ Provides convenient indexed access to \fBParameters\fP\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIparameter\fP The parameter key\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The associated parameter value\&.
+.RE
+.PP
+ 
+.PP
+Implements \fBSystemEx\&.AI\&.IModelPromp< T >\fP\&.
+.PP
+Definition at line \fB117\fP of file \fBModelPrompt\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SystemEX from the source code\&.

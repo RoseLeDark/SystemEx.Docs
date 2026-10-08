@@ -1,14 +1,16 @@
 var searchData=
 [
-  ['unacceptable_20behavior_0',['2. Unacceptable Behavior',['../dc/d4e/a02449.html#autotoc_md2-unacceptable-behavior',1,'']]],
-  ['update_1',['Update',['../d0/dbb/a02448.html#update',1,'']]],
-  ['update_20coution_2',['Update Coution',['../d0/dbb/a02448.html#update-coution',1,'']]],
-  ['update_3a_20ignoring_20→_20lacking_3',['Codename Update: Ignoring → Lacking',['../d0/dbb/a02448.html#codename-update-ignoring--lacking',1,'']]],
-  ['use_20if_20use_5fdevbuild_5funstable_20blocks_4',['Why does SystemEx use &lt;span class=&quot;tt&quot;&gt;#if USE_DEVBUILD_UNSTABLE&lt;/span&gt; blocks?',['../da/d74/a02451.html#why-does-systemex-use-if-use_devbuild_unstable-blocks',1,'']]],
-  ['use_5fdevbuild_5funstable_5',['&lt;span class=&quot;tt&quot;&gt;USE_DEVBUILD_UNSTABLE&lt;/span&gt;',['../d3/d6c/a02446.html#use_devbuild_unstable',1,'']]],
-  ['use_5fdevbuild_5funstable_20blocks_6',['Why does SystemEx use &lt;span class=&quot;tt&quot;&gt;#if USE_DEVBUILD_UNSTABLE&lt;/span&gt; blocks?',['../da/d74/a02451.html#why-does-systemex-use-if-use_devbuild_unstable-blocks',1,'']]],
-  ['used_20incorrectly_7',['Why is BitView dangerous when used incorrectly?',['../da/d74/a02451.html#why-is-bitview-dangerous-when-used-incorrectly',1,'']]],
-  ['utils_8',['🧰 SystemEx.Utils',['../index.html#autotoc_md-systemexutils',1,'']]],
-  ['utils_20bits_9',['Utils Bits',['../index.html#autotoc_md-systemexutilsbits',1,'🧰 SystemEx.Utils.Bits'],['../d3/d6c/a02446.html#systemexutils--utilsbits',1,'SystemEx.Utils / Utils.Bits']]],
-  ['utils_20utils_20bits_10',['SystemEx.Utils / Utils.Bits',['../d3/d6c/a02446.html#systemexutils--utilsbits',1,'']]]
+  ['task_20and_20threadpool_0',['Why does SystemEx avoid .NET Task and ThreadPool?',['../d1/d94/a02505.html#why-does-systemex-avoid-net-task-and-threadpool',1,'']]],
+  ['technical_20collaboration_20guidelines_1',['3. Technical Collaboration Guidelines',['../d1/d5d/a02503.html#autotoc_md3-technical-collaboration-guidelines',1,'']]],
+  ['the_20colors_20split_20into_20multiple_20classes_20instead_20of_20one_20big_20list_2',['Why are the colors split into multiple classes instead of one big list?',['../d1/d94/a02505.html#why-are-the-colors-split-into-multiple-classes-instead-of-one-big-list',1,'']]],
+  ['the_20random_20subsystem_20custom_3',['Why is the random subsystem custom?',['../d1/d94/a02505.html#why-is-the-random-subsystem-custom',1,'']]],
+  ['there_20so_20many_20numeric_20types_4',['Why are there so many numeric types?',['../d1/d94/a02505.html#why-are-there-so-many-numeric-types',1,'']]],
+  ['threadex_5',['Why does SystemEx include ThreadEx?',['../d1/d94/a02505.html#why-does-systemex-include-threadex',1,'']]],
+  ['threading_6',['Threading',['../index.html#autotoc_md-systemexthreading',1,'🧵 SystemEx.Threading'],['../d4/dad/a02500.html#systemexthreading',1,'SystemEx.Threading']]],
+  ['threadpool_7',['Why does SystemEx avoid .NET Task and ThreadPool?',['../d1/d94/a02505.html#why-does-systemex-avoid-net-task-and-threadpool',1,'']]],
+  ['times_8',['🕒 Response Times',['../d3/df4/a02504.html#autotoc_md-response-times',1,'']]],
+  ['to_20contribute_9',['How to Contribute',['../d3/df4/a02504.html#how-to-contribute',1,'']]],
+  ['to_20nuget_10',['Publishing to NuGet',['../d9/de2/a02508.html#publishing-to-nuget',1,'']]],
+  ['types_11',['Types',['../index.html#matrix-types',1,'Matrix Types'],['../index.html#scalar-types',1,'Scalar Types'],['../index.html#vector-types',1,'Vector Types']]],
+  ['types_12',['Why are there so many numeric types?',['../d1/d94/a02505.html#why-are-there-so-many-numeric-types',1,'']]]
 ];

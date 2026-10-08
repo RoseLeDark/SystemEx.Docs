@@ -1,6 +1,7 @@
 var a01708 =
 [
-    [ "HashAlgorithmAttribute", "de/d5c/a01708_a4a26a6ec3b1a5e9023c08ee010fa9670.html#a4a26a6ec3b1a5e9023c08ee010fa9670", null ],
-    [ "Endian", "de/d5c/a01708_a8bb5a53ef927077daa8c1df02af73b41.html#a8bb5a53ef927077daa8c1df02af73b41", null ],
-    [ "HasherType", "de/d5c/a01708_a631aae3c5509226dd1a7c03799707da2.html#a631aae3c5509226dd1a7c03799707da2", null ]
+    [ "m_cosHalfPhi", "de/d5c/a01708_a81f2f7b288607031378793286ef58ff1.html#a81f2f7b288607031378793286ef58ff1", null ],
+    [ "m_cosHalfTheta", "de/d5c/a01708_a8750e586978604edb36030be40ea2454.html#a8750e586978604edb36030be40ea2454", null ],
+    [ "InnerConeAngle", "de/d5c/a01708_a95bdad770319994c1c46ef279b0a8748.html#a95bdad770319994c1c46ef279b0a8748", null ],
+    [ "OuterConeAngle", "de/d5c/a01708_ae98212b902247b226637c0f78fe9ec07.html#ae98212b902247b226637c0f78fe9ec07", null ]
 ];
