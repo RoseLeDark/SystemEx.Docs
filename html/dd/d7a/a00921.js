@@ -1,26 +1,6 @@
 var a00921 =
 [
-    [ "Black", "dd/dcf/a00922.html", null ],
-    [ "AdlerHash", "df/d9a/a01715.html", "df/d9a/a01715" ],
-    [ "BernsteinHash", "d6/d56/a01719.html", "d6/d56/a01719" ],
-    [ "Black3Hasher", "d7/db4/a01747.html", "d7/db4/a01747" ],
-    [ "CRC32", "d2/d7d/a01755.html", "d2/d7d/a01755" ],
-    [ "CRC32BZip2", "d7/d02/a01771.html", "d7/d02/a01771" ],
-    [ "CRC32C", "d9/d27/a01763.html", "d9/d27/a01763" ],
-    [ "CRC32IEEE", "db/de5/a01759.html", "db/de5/a01759" ],
-    [ "CRC32Koopman", "d1/dab/a01767.html", "d1/dab/a01767" ],
-    [ "CRC32Mpeg2", "d1/d6b/a01775.html", "d1/d6b/a01775" ],
-    [ "CRC32Posix", "d5/df4/a01779.html", "d5/df4/a01779" ],
-    [ "CRC64", "da/da5/a01783.html", "da/da5/a01783" ],
-    [ "CrC&lt; TC32, TC64 &gt;", "d5/db3/a01751.html", "d5/db3/a01751" ],
-    [ "FletcherHash", "d3/dfd/a01803.html", "d3/dfd/a01803" ],
-    [ "Fnv1aHash", "df/d5b/a01807.html", "df/d5b/a01807" ],
-    [ "GrøstlHash", "d2/d31/a01811.html", "d2/d31/a01811" ],
-    [ "Hash32", "d0/db3/a01831.html", "d0/db3/a01831" ],
-    [ "Hash64", "da/dcd/a01835.html", "da/dcd/a01835" ],
-    [ "HashAlgorithmAttribute", "d7/d10/a01819.html", "d7/d10/a01819" ],
-    [ "IHash", "d2/d2c/a01839.html", "d2/d2c/a01839" ],
-    [ "IHashable&lt; T &gt;", "d9/d88/a01823.html", "d9/d88/a01823" ],
-    [ "RamakrishnaHash", "d9/d75/a01843.html", "d9/d75/a01843" ],
-    [ "WeinbergHash", "d3/d19/a01847.html", "d3/d19/a01847" ]
+    [ "IDeviceSharedBackend", "da/dcf/a01558.html", "da/dcf/a01558" ],
+    [ "RamSharedBackend", "d1/d9b/a01566.html", "d1/d9b/a01566" ],
+    [ "UnmanagedObject", "d2/dc1/a01562.html", "d2/dc1/a01562" ]
 ];

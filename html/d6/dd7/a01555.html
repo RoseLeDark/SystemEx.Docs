@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: SystemEx.Device.Intertropt.IDeviceSharedBackend Interface Reference" />
+<meta property="og:title" content="SystemEX: Member List" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: SystemEx.Device.Intertropt.IDeviceSharedBackend Interface Reference" />
+<meta name="twitter:title" content="SystemEX: Member List" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: SystemEx.Device.Intertropt.IDeviceSharedBackend Interface Reference</title>
+<title>SystemEX: Member List</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -96,7 +96,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('d6/dd7/a01555.html','../../','d0/db9/a01552'); });
+$(function(){initNavTree('da/dcf/a01558.html','../../',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -122,65 +122,22 @@ $(function(){initNavTree('d6/dd7/a01555.html','../../','d0/db9/a01552'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Device.Intertropt.IDeviceSharedBackend Interface Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Device.Intertropt.IDeviceSharedBackend Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Defines the low‑level backend interface used by <code>DeviceSharedBuffer</code> and related shared‑memory abstractions. <br  />
- A backend represents a hardware‑specific buffer implementation such as RAM, OpenCL, Vulkan, CUDA, or any custom device memory. <br  />
- Each backend is responsible for creating, writing, reading, and closing its own hardware buffer handle.  
- <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Device.Intertropt.IDeviceSharedBackend:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d1d/a01554.svg" width="242" height="571"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Device.Intertropt.IDeviceSharedBackend:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d2c/a01553.svg" width="242" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a9f914e66eb1f111f799049c827bef125" id="r_a9f914e66eb1f111f799049c827bef125"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../d6/dd7/a01555_a9f914e66eb1f111f799049c827bef125.html#a9f914e66eb1f111f799049c827bef125">CloseHardwareBuffer</a> (ref object hardwareBuffer)</td></tr>
-<tr class="memdesc:a9f914e66eb1f111f799049c827bef125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases and invalidates the backend‑specific hardware buffer handle. <br  />
- After this call, the buffer must no longer be used.  <br /></td></tr>
-<tr class="memitem:a833aff35554009c28025b975f13d4dfe" id="r_a833aff35554009c28025b975f13d4dfe"><td class="memItemLeft">long&#160;</td><td class="memItemRight"><a class="el" href="../../d6/dd7/a01555_a833aff35554009c28025b975f13d4dfe.html#a833aff35554009c28025b975f13d4dfe">CreateReadHardwareBuffer</a> (int size, out object hardwareBuffer)</td></tr>
-<tr class="memdesc:a833aff35554009c28025b975f13d4dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a hardware buffer intended for reading operations. <br  />
- The backend allocates a device‑specific buffer of the given size and returns an opaque handle via <em>hardwareBuffer</em> .  <br /></td></tr>
-<tr class="memitem:ae46d08af2aeec81c004385b0eba87bb9" id="r_ae46d08af2aeec81c004385b0eba87bb9"><td class="memItemLeft">long&#160;</td><td class="memItemRight"><a class="el" href="../../d6/dd7/a01555_ae46d08af2aeec81c004385b0eba87bb9.html#ae46d08af2aeec81c004385b0eba87bb9">CreateWriteHardwareBuffer</a> (byte[] cache, out object hardwareBuffer)</td></tr>
-<tr class="memdesc:ae46d08af2aeec81c004385b0eba87bb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a hardware buffer intended for writing operations and initializes it with the provided cache data. <br  />
- The backend allocates a device‑specific buffer and uploads the data.  <br /></td></tr>
-<tr class="memitem:ad1a998c4c1c2bcf87d3cc71848521729" id="r_ad1a998c4c1c2bcf87d3cc71848521729"><td class="memItemLeft">long&#160;</td><td class="memItemRight"><a class="el" href="../../d6/dd7/a01555_ad1a998c4c1c2bcf87d3cc71848521729.html#ad1a998c4c1c2bcf87d3cc71848521729">ReciveFromHardwareBuffer</a> (out byte[] data, ref object hardwareBuffer)</td></tr>
-<tr class="memdesc:ad1a998c4c1c2bcf87d3cc71848521729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the hardware buffer into a managed byte array. <br  />
- The backend determines how the buffer is accessed and how much data is returned.  <br /></td></tr>
-</table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Defines the low‑level backend interface used by <code>DeviceSharedBuffer</code> and related shared‑memory abstractions. <br  />
- A backend represents a hardware‑specific buffer implementation such as RAM, OpenCL, Vulkan, CUDA, or any custom device memory. <br  />
- Each backend is responsible for creating, writing, reading, and closing its own hardware buffer handle. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d4c/a00851_source.html#l00028">28</a> of file <a class="el" href="../../df/d4c/a00851_source.html">IDeviceSharedBackend.cs</a>.</p>
-</div><hr/>The documentation for this interface was generated from the following file:<ul>
-<li><a class="el" href="../../df/d4c/a00851_source.html">IDeviceSharedBackend.cs</a></li>
-</ul>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="../../da/dcf/a01558.html">SystemEx.Device.Intertropt.IDeviceSharedBackend</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="../../da/dcf/a01558_a9f914e66eb1f111f799049c827bef125.html#a9f914e66eb1f111f799049c827bef125">CloseHardwareBuffer</a>(ref object hardwareBuffer)</td><td class="entry"><a class="el" href="../../da/dcf/a01558.html">SystemEx.Device.Intertropt.IDeviceSharedBackend</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../da/dcf/a01558_a833aff35554009c28025b975f13d4dfe.html#a833aff35554009c28025b975f13d4dfe">CreateReadHardwareBuffer</a>(int size, out object hardwareBuffer)</td><td class="entry"><a class="el" href="../../da/dcf/a01558.html">SystemEx.Device.Intertropt.IDeviceSharedBackend</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../da/dcf/a01558_ae46d08af2aeec81c004385b0eba87bb9.html#ae46d08af2aeec81c004385b0eba87bb9">CreateWriteHardwareBuffer</a>(byte[] cache, out object hardwareBuffer)</td><td class="entry"><a class="el" href="../../da/dcf/a01558.html">SystemEx.Device.Intertropt.IDeviceSharedBackend</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../da/dcf/a01558_ad1a998c4c1c2bcf87d3cc71848521729.html#ad1a998c4c1c2bcf87d3cc71848521729">ReciveFromHardwareBuffer</a>(out byte[] data, ref object hardwareBuffer)</td><td class="entry"><a class="el" href="../../da/dcf/a01558.html">SystemEx.Device.Intertropt.IDeviceSharedBackend</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
-<div id="page-nav" class="page-nav-panel">
-<div id="page-nav-resize-handle"></div>
-<div id="page-nav-tree">
-<div id="page-nav-contents">
-</div><!-- page-nav-contents -->
-</div><!-- page-nav-tree -->
-</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d5/d89/a00907.html">SystemEx</a></li><li class="navelem"><a href="../../d4/ddc/a00917.html">Device</a></li><li class="navelem"><a href="../../d0/ddf/a00918.html">Intertropt</a></li><li class="navelem"><a href="../../d6/dd7/a01555.html">IDeviceSharedBackend</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

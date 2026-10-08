@@ -1,46 +1,19 @@
 var a00901 =
 [
-    [ "SystemEx.Hash.Black.Black3.Black3", "d0/dac/a00901_ga89a3de62fd40740373a4198be5e341c7.html#ga89a3de62fd40740373a4198be5e341c7", null ],
-    [ "SystemEx.Hash.Black.Black3.Black3", "d0/dac/a00901_ga63f0803ce35d3b1c2d1b33f09c4f6577.html#ga63f0803ce35d3b1c2d1b33f09c4f6577", null ],
-    [ "SystemEx.Hash.Black.Black3ChunkState.Black3ChunkState", "d0/dac/a00901_gaf3d3da05e8b848610b61d4fabe1eb90f.html#gaf3d3da05e8b848610b61d4fabe1eb90f", null ],
-    [ "SystemEx.Hash.Black.Blacke3_Output.Blacke3_Output", "d0/dac/a00901_ga374ece86330d93aa089995a9c75471de.html#ga374ece86330d93aa089995a9c75471de", null ],
-    [ "SystemEx.Hash.Black.Blacke3_Output.Blacke3_Output", "d0/dac/a00901_gac42a3788773196ae62618e460e3bfb10.html#gac42a3788773196ae62618e460e3bfb10", null ],
-    [ "SystemEx.Hash.Black.Blacke3_Output.ChainingValue", "d0/dac/a00901_gaea6426b97abb80318484b1ffff9fd3d6.html#gaea6426b97abb80318484b1ffff9fd3d6", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.Clz", "d0/dac/a00901_gafb0e3c58fc8e6a61ba77fb47a713f2f7.html#gafb0e3c58fc8e6a61ba77fb47a713f2f7", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.CounterHigh", "d0/dac/a00901_gaa2bb143fa99c33b2a795a68f9d760a7c.html#gaa2bb143fa99c33b2a795a68f9d760a7c", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.CounterLow", "d0/dac/a00901_gad35d0072e17969129d41720a2dd1863d.html#gad35d0072e17969129d41720a2dd1863d", null ],
-    [ "SystemEx.Hash.Black.Black3ChunkState.Finalize", "d0/dac/a00901_gaaae23a8c9fc732c8a119ff17b3f3c581.html#gaaae23a8c9fc732c8a119ff17b3f3c581", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.HighestOne", "d0/dac/a00901_ga3c25d4b1959073e72952cc0108be2be6.html#ga3c25d4b1959073e72952cc0108be2be6", null ],
-    [ "SystemEx.Hash.Black.Blacke3_Output.Init", "d0/dac/a00901_ga836f986f80fe57890c2f577e222cb5e6.html#ga836f986f80fe57890c2f577e222cb5e6", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.LoadBlockWords", "d0/dac/a00901_ga19bb13e79ed802aecdab906259140a2d.html#ga19bb13e79ed802aecdab906259140a2d", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.LoadKeyWords", "d0/dac/a00901_ga6952a2a0d4753685236e4602eb8628bb.html#ga6952a2a0d4753685236e4602eb8628bb", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.PopCnt", "d0/dac/a00901_ga18a2651a745174f8db2d2da38a345288.html#ga18a2651a745174f8db2d2da38a345288", null ],
-    [ "SystemEx.Hash.Black.Black3ChunkState.Reset", "d0/dac/a00901_ga6538c26cd74691a6dd09a9325f57b220.html#ga6538c26cd74691a6dd09a9325f57b220", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.Rotr32", "d0/dac/a00901_ga9ed640126417286dd12d6ca0a4ef87bc.html#ga9ed640126417286dd12d6ca0a4ef87bc", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.RoundDown2Power2", "d0/dac/a00901_ga9820a5b12d54229535cbcc42bb6c0ae7.html#ga9820a5b12d54229535cbcc42bb6c0ae7", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.Store32", "d0/dac/a00901_gaf6c80989697b1a0ee71571514260fe3d.html#gaf6c80989697b1a0ee71571514260fe3d", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.StoreCVWords", "d0/dac/a00901_ga17d82ad19dcd35a622c35fbe84f0d449.html#ga17d82ad19dcd35a622c35fbe84f0d449", null ],
-    [ "SystemEx.Hash.Black.Black3ChunkState.Update", "d0/dac/a00901_gad063ded936037bfad41b240beedd71ae.html#gad063ded936037bfad41b240beedd71ae", null ],
-    [ "SystemEx.Hash.Black.Black3Infos.BLAKE3_BLOCK_LEN", "d0/dac/a00901_ga43d1f580fe61d8c11cab8b18c361a004.html#ga43d1f580fe61d8c11cab8b18c361a004", null ],
-    [ "SystemEx.Hash.Black.Black3Infos.BLAKE3_CHUNK_LEN", "d0/dac/a00901_ga9e97375a78a812129f38295e1900bcd3.html#ga9e97375a78a812129f38295e1900bcd3", null ],
-    [ "SystemEx.Hash.Black.Black3Infos.BLAKE3_CV_STACK_LEN", "d0/dac/a00901_gacd9fd3c4247e1344f7d49200aab9ac13.html#gacd9fd3c4247e1344f7d49200aab9ac13", null ],
-    [ "SystemEx.Hash.Black.Black3Infos.BLAKE3_KEY_LEN", "d0/dac/a00901_ga881163c2f2eb536f9b635407fd8aea37.html#ga881163c2f2eb536f9b635407fd8aea37", null ],
-    [ "SystemEx.Hash.Black.Black3Infos.BLAKE3_MAX_DEPTH", "d0/dac/a00901_gaa5800cd8eac48daab266a5cac18214a5.html#gaa5800cd8eac48daab266a5cac18214a5", null ],
-    [ "SystemEx.Hash.Black.Black3Infos.BLAKE3_OUT_LEN", "d0/dac/a00901_ga650940c64925bc35386d957514dd78cd.html#ga650940c64925bc35386d957514dd78cd", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.IV", "d0/dac/a00901_ga2488f67b1478d508a8c8427a6cda10da.html#ga2488f67b1478d508a8c8427a6cda10da", null ],
-    [ "SystemEx.Hash.Black.Blacke3_Output.m_block", "d0/dac/a00901_ga72d939a9589eece02ba13598d5a8a942.html#ga72d939a9589eece02ba13598d5a8a942", null ],
-    [ "SystemEx.Hash.Black.Blacke3_Output.m_blockLen", "d0/dac/a00901_ga481452f513e003fcbe027f09cc0a16f7.html#ga481452f513e003fcbe027f09cc0a16f7", null ],
-    [ "SystemEx.Hash.Black.Black3ChunkState.m_blocks_compressed", "d0/dac/a00901_ga6de8442d6ed927095aadac94ed0e80b3.html#ga6de8442d6ed927095aadac94ed0e80b3", null ],
-    [ "SystemEx.Hash.Black.Black3ChunkState.m_buf", "d0/dac/a00901_ga7ac14ca86074c9f7bbc2a4d1cf573c16.html#ga7ac14ca86074c9f7bbc2a4d1cf573c16", null ],
-    [ "SystemEx.Hash.Black.Black3ChunkState.m_buf_len", "d0/dac/a00901_ga3480e80b100860ec86c91d21ac82872e.html#ga3480e80b100860ec86c91d21ac82872e", null ],
-    [ "SystemEx.Hash.Black.Black3ChunkState.m_chunk_counter", "d0/dac/a00901_ga0ee0377af6615b890389a80888bbf158.html#ga0ee0377af6615b890389a80888bbf158", null ],
-    [ "SystemEx.Hash.Black.Blacke3_Output.m_counter", "d0/dac/a00901_gabe154c0ff0a3b53acdce6d1d7569407d.html#gabe154c0ff0a3b53acdce6d1d7569407d", null ],
-    [ "SystemEx.Hash.Black.Black3ChunkState.m_cv", "d0/dac/a00901_gacd2eb4adcb3d18592f6635a660617076.html#gacd2eb4adcb3d18592f6635a660617076", null ],
-    [ "SystemEx.Hash.Black.Blacke3_Output.m_cv", "d0/dac/a00901_ga3a8d5c73d33cd4b7106f876ec5e7c6e3.html#ga3a8d5c73d33cd4b7106f876ec5e7c6e3", null ],
-    [ "SystemEx.Hash.Black.Black3ChunkState.m_flags", "d0/dac/a00901_gaebbad8d5396bf53de2f7f2ef78ee938f.html#gaebbad8d5396bf53de2f7f2ef78ee938f", null ],
-    [ "SystemEx.Hash.Black.Blacke3_Output.m_flags", "d0/dac/a00901_ga561d50d23be9344316d5e1be46ac2b48.html#ga561d50d23be9344316d5e1be46ac2b48", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.MSG_SCHEDULE", "d0/dac/a00901_gae6072db9df7153c39abf926c7f58e2e8.html#gae6072db9df7153c39abf926c7f58e2e8", null ],
-    [ "SystemEx.Hash.Black.Black3Utils.BLakeString", "d0/dac/a00901_ga50cb5890702f48889ac7ff895139aca0.html#ga50cb5890702f48889ac7ff895139aca0", null ],
-    [ "SystemEx.Hash.Black.Black3ChunkState.Length", "d0/dac/a00901_gad10b26d4664f50634ac2bdfe22edacf0.html#gad10b26d4664f50634ac2bdfe22edacf0", null ],
-    [ "SystemEx.Hash.Black.Black3ChunkState.StartFlag", "d0/dac/a00901_ga955a15b0edbe58708a7483d50d1c18e8.html#ga955a15b0edbe58708a7483d50d1c18e8", null ]
+    [ "SystemEx.Algorithms.ICompared&lt; T &gt;", "db/d32/a01122.html", [
+      [ "Compare", "d0/dac/a00901_gaa320a5824c4caa7a60039a61107ea307.html#gaa320a5824c4caa7a60039a61107ea307", null ]
+    ] ],
+    [ "SystemEx.Algorithms.ISearchProvider&lt; T, TContainer &gt;", "db/d1e/a01126.html", [
+      [ "Find", "d0/dac/a00901_ga092769eeb911bad5d898ad5e9b8b3964.html#ga092769eeb911bad5d898ad5e9b8b3964", null ],
+      [ "Find", "d0/dac/a00901_ga5fb9025025ebc7f0c4301dd3ec10a57b.html#ga5fb9025025ebc7f0c4301dd3ec10a57b", null ],
+      [ "Where", "d0/dac/a00901_gac34e730969ccef8a0cd660ac96215695.html#gac34e730969ccef8a0cd660ac96215695", null ]
+    ] ],
+    [ "SystemEx.Algorithms.ISimpleCompare&lt; T &gt;", "d0/d61/a01130.html", [
+      [ "Compare", "d0/dac/a00901_gadd89811e074da32305dbf56e1aeebdad.html#gadd89811e074da32305dbf56e1aeebdad", null ]
+    ] ],
+    [ "SystemEx.Algorithms.ICompared-1-g.Compare", "d0/dac/a00901_gaa320a5824c4caa7a60039a61107ea307.html#gaa320a5824c4caa7a60039a61107ea307", null ],
+    [ "SystemEx.Algorithms.ISimpleCompare-1-g.Compare", "d0/dac/a00901_gadd89811e074da32305dbf56e1aeebdad.html#gadd89811e074da32305dbf56e1aeebdad", null ],
+    [ "SystemEx.Algorithms.ISearchProvider-2-g.Find", "d0/dac/a00901_ga092769eeb911bad5d898ad5e9b8b3964.html#ga092769eeb911bad5d898ad5e9b8b3964", null ],
+    [ "SystemEx.Algorithms.ISearchProvider-2-g.Find", "d0/dac/a00901_ga5fb9025025ebc7f0c4301dd3ec10a57b.html#ga5fb9025025ebc7f0c4301dd3ec10a57b", null ],
+    [ "SystemEx.Algorithms.ISearchProvider-2-g.Where", "d0/dac/a00901_gac34e730969ccef8a0cd660ac96215695.html#gac34e730969ccef8a0cd660ac96215695", null ]
 ];

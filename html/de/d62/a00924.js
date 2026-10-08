@@ -1,7 +1,26 @@
 var a00924 =
 [
-    [ "ByteSeriablizeProvider", "d1/de9/a01855.html", "d1/de9/a01855" ],
-    [ "IByteFormatSchema", "d3/dce/a01859.html", "d3/dce/a01859" ],
-    [ "IByteSerialize&lt; T, TSchema &gt;", "d4/d12/a01863.html", "d4/d12/a01863" ],
-    [ "IIsByteSeriablize", "d1/de6/a01867.html", null ]
+    [ "Black", "dc/d36/a00925.html", null ],
+    [ "AdlerHash", "db/d7f/a01718.html", "db/d7f/a01718" ],
+    [ "BernsteinHash", "d5/d29/a01722.html", "d5/d29/a01722" ],
+    [ "Black3Hasher", "dc/d3a/a01750.html", "dc/d3a/a01750" ],
+    [ "CRC32", "d9/de3/a01758.html", "d9/de3/a01758" ],
+    [ "CRC32BZip2", "d9/d02/a01774.html", "d9/d02/a01774" ],
+    [ "CRC32C", "d0/d79/a01766.html", "d0/d79/a01766" ],
+    [ "CRC32IEEE", "dd/d40/a01762.html", "dd/d40/a01762" ],
+    [ "CRC32Koopman", "d4/dfe/a01770.html", "d4/dfe/a01770" ],
+    [ "CRC32Mpeg2", "df/d21/a01778.html", "df/d21/a01778" ],
+    [ "CRC32Posix", "dd/dec/a01782.html", "dd/dec/a01782" ],
+    [ "CRC64", "db/d4b/a01786.html", "db/d4b/a01786" ],
+    [ "CrC&lt; TC32, TC64 &gt;", "d9/d37/a01754.html", "d9/d37/a01754" ],
+    [ "FletcherHash", "db/db2/a01806.html", "db/db2/a01806" ],
+    [ "Fnv1aHash", "df/d3a/a01810.html", "df/d3a/a01810" ],
+    [ "GrøstlHash", "d6/dfc/a01814.html", "d6/dfc/a01814" ],
+    [ "Hash32", "d6/dbe/a01834.html", "d6/dbe/a01834" ],
+    [ "Hash64", "db/d09/a01838.html", "db/d09/a01838" ],
+    [ "HashAlgorithmAttribute", "d1/dba/a01822.html", "d1/dba/a01822" ],
+    [ "IHash", "db/d5a/a01842.html", "db/d5a/a01842" ],
+    [ "IHashable&lt; T &gt;", "d2/d45/a01826.html", "d2/d45/a01826" ],
+    [ "RamakrishnaHash", "d4/df4/a01846.html", "d4/df4/a01846" ],
+    [ "WeinbergHash", "da/d18/a01850.html", "da/d18/a01850" ]
 ];

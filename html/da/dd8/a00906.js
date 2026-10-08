@@ -1,9 +1,15 @@
 var a00906 =
 [
-    [ "SystemEx.Threading.ISpinlock&lt; T &gt;", "d5/d95/a02267.html", [
-      [ "IsHeldbyCurrent", "da/dd8/a00906_gabfcff75a2cc5fa089c80903db57b463a.html#gabfcff75a2cc5fa089c80903db57b463a", null ],
-      [ "IsThreadOwnerTrackingEnabled", "da/dd8/a00906_ga36af22fe7b3b0f27309b896921bd7dc6.html#ga36af22fe7b3b0f27309b896921bd7dc6", null ]
+    [ "SystemEx.Rand.HashedSeed", "df/de7/a02142.html", [
+      [ "HashedSeed", "da/dd8/a00906_ga47121a04f962fd83f5bcc06b9daca605.html#ga47121a04f962fd83f5bcc06b9daca605", null ],
+      [ "GetSeed", "da/dd8/a00906_gaa335a8fabc80c041923c06eebd0bf3a0.html#gaa335a8fabc80c041923c06eebd0bf3a0", null ],
+      [ "Update", "da/dd8/a00906_ga4c3d6d32521271fa08b01017bb7f64dd.html#ga4c3d6d32521271fa08b01017bb7f64dd", null ],
+      [ "Length", "da/dd8/a00906_ga5dce37c8be35f7bfce88d396f395477f.html#ga5dce37c8be35f7bfce88d396f395477f", null ],
+      [ "this[int index]", "da/dd8/a00906_ga32ef40ec4adea950f9f776a31e86a5c3.html#ga32ef40ec4adea950f9f776a31e86a5c3", null ]
     ] ],
-    [ "SystemEx.Threading.ISpinlock-1-g.IsHeldbyCurrent", "da/dd8/a00906_gabfcff75a2cc5fa089c80903db57b463a.html#gabfcff75a2cc5fa089c80903db57b463a", null ],
-    [ "SystemEx.Threading.ISpinlock-1-g.IsThreadOwnerTrackingEnabled", "da/dd8/a00906_ga36af22fe7b3b0f27309b896921bd7dc6.html#ga36af22fe7b3b0f27309b896921bd7dc6", null ]
+    [ "SystemEx.Rand.HashedSeed.GetSeed", "da/dd8/a00906_gaa335a8fabc80c041923c06eebd0bf3a0.html#gaa335a8fabc80c041923c06eebd0bf3a0", null ],
+    [ "SystemEx.Rand.HashedSeed.HashedSeed", "da/dd8/a00906_ga47121a04f962fd83f5bcc06b9daca605.html#ga47121a04f962fd83f5bcc06b9daca605", null ],
+    [ "SystemEx.Rand.HashedSeed.Update", "da/dd8/a00906_ga4c3d6d32521271fa08b01017bb7f64dd.html#ga4c3d6d32521271fa08b01017bb7f64dd", null ],
+    [ "SystemEx.Rand.HashedSeed.Length", "da/dd8/a00906_ga5dce37c8be35f7bfce88d396f395477f.html#ga5dce37c8be35f7bfce88d396f395477f", null ],
+    [ "SystemEx.Rand.HashedSeed.this[int index]", "da/dd8/a00906_ga32ef40ec4adea950f9f776a31e86a5c3.html#ga32ef40ec4adea950f9f776a31e86a5c3", null ]
 ];

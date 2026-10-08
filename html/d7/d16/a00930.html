@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: SystemEx.Runtime.Backend Namespace Reference" />
+<meta property="og:title" content="SystemEX: SystemEx.Rand Namespace Reference" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: SystemEx.Runtime.Backend Namespace Reference" />
+<meta name="twitter:title" content="SystemEX: SystemEx.Rand Namespace Reference" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: SystemEx.Runtime.Backend Namespace Reference</title>
+<title>SystemEX: SystemEx.Rand Namespace Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -122,9 +122,55 @@ $(function(){initNavTree('d7/d16/a00930.html','../../',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Runtime.Backend Namespace Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Rand Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:GenericRand_3C_20TEngine_20_3E" id="r_GenericRand_3C_20TEngine_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../db/df6/a02138.html">GenericRand&lt; TEngine &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a simple interface for generating random numbers using varibale Engines algorithm.  <a href="../../db/df6/a02138.html#details">More...</a><br /></td></tr>
+<tr class="memitem:HashedSeed" id="r_HashedSeed"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../df/de7/a02142.html">HashedSeed</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a seed implementation based on a 32‑bit hash value. The hash may originate from any hashing algorithm available in <a class="el" href="../../d4/d12/a00910.html">SystemEx</a>, including Bernstein, FNV‑1a, Murmur, Blake3, XXH3, and other supported hash functions.  <a href="../../df/de7/a02142.html#details">More...</a><br /></td></tr>
+<tr class="memitem:ISeed" id="r_ISeed"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d8/de7/a02146.html">ISeed</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a generic seed source for random number generators. Implementations provide an array of 32‑bit seed values, support indexed access, and may update their internal state when required.  <a href="../../d8/de7/a02146.html#details">More...</a><br /></td></tr>
+<tr class="memitem:ISeed_3C_20T_20_3E" id="r_ISeed_3C_20T_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d4/d5d/a02150.html">ISeed&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends <a class="el" href="../../d8/de7/a02146.html" title="Represents a generic seed source for random number generators. Implementations provide an array of 32...">ISeed</a> with a typed update mechanism. This generic interface allows seed implementations to accept external values that influence or mutate the internal seed state. The type parameter defines the kind of input used for updating the seed.  <a href="../../d4/d5d/a02150.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Randx" id="r_Randx"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d9/d8d/a02154.html">Randx</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the high-level random number generator implementation using the <a class="el" href="../../da/da0/a02126.html" title="Represents the ISAAC 32-bit random number generator.">Isaac32Engine</a> as the underlying engine. This variant is compiled when <code>DEFAULT_RANDENGIEN_MTWIST</code> is not defined.  <a href="../../d9/d8d/a02154.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SeedMixed" id="r_SeedMixed"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../dc/dae/a02158.html">SeedMixed</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a composite seed that can be dynamically mixed with other seeds using a variety of mathematical operations. <a class="el" href="../../dc/dae/a02158.html" title="Represents a composite seed that can be dynamically mixed with other seeds using a variety of mathema...">SeedMixed</a> acts as a wrapper around an existing <a class="el" href="../../d8/de7/a02146.html" title="Represents a generic seed source for random number generators. Implementations provide an array of 32...">ISeed</a> instance and provides thread‑safe mixing functionality suitable for all random engines in <a class="el" href="../../d4/d12/a00910.html">SystemEx</a>.  <a href="../../dc/dae/a02158.html#details">More...</a><br /></td></tr>
+<tr class="memitem:TimeBasedSeed" id="r_TimeBasedSeed"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d7/d26/a02162.html">TimeBasedSeed</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a time‑based seed implementation using DateTime as the update source. The seed consists of multiple 32‑bit values derived from the current timestamp, system tick count, and optionally a GUID hash.  <a href="../../d7/d26/a02162.html#details">More...</a><br /></td></tr>
+<tr class="memitem:ValueBasedSeed" id="r_ValueBasedSeed"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../de/d38/a02166.html">ValueBasedSeed</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a seed implementation based on a simple integer value. The input integer is expanded into multiple 32‑bit components using bitwise and arithmetic transformations. This seed type is suitable for all random engines in <a class="el" href="../../d4/d12/a00910.html">SystemEx</a>.  <a href="../../de/d38/a02166.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a510344f1a252d2977cd2d44f7149550d" id="r_a510344f1a252d2977cd2d44f7149550d"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550d">SeedMix</a> : byte { <br />
+&#160;&#160;<a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da97675eb3f268048604dc5155511a2a4d">XOR</a>
+, <a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da7c5531bbefed0945814f874baf9e0e0f">Addition</a>
+, <a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da6eb8b8b560161603402c0238b3a7d8b0">Subtraction</a>
+, <a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da27d1a1f7b7c2180e5b20ce9e3d00e2dd">Multiplication</a>
+, <br />
+&#160;&#160;<a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550dac33315685a0cba3ce53be378b3c7874b">And</a>
+, <a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da3a2d5fe857d8f9541136a124c2edec6c">Or</a>
+, <a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550dad9382145a142cc7df5f733332c9cb812">ShiftLeft</a>
+, <a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550daf17de5e0ea7a357b755aa9deeaf38f86">ShiftRight</a>
+, <br />
+&#160;&#160;<a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da87fd674d30ebe08d41293f51d4f62066">RotateLeft</a>
+, <a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550dac54517388223d2f20c61580c6f8d224f">RotateRight</a>
+, <a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550daa74c05d080620f087c4e523977230666">Not</a>
+, <a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da30fc6bbba82125243ecf4ddb27fee645">Minimal</a>
+, <br />
+&#160;&#160;<a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550dac2f493254b06a46832e043f236296ad3">Maximal</a>
+, <a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550dab1897515d548a960afe49ecf66a29021">Average</a>
+, <a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da03c2e7e41ffc181a4e84080b4710e81e">New</a>
+, <a class="el" href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da8f9bfe9d1345237cb3b2b205864da075">User</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a510344f1a252d2977cd2d44f7149550d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the available mixing strategies used to combine two random seeds. These operations are purely mathematical and intended for non‑cryptographic random number generation. Each mode describes how the corresponding seed values are combined to produce a new mixed seed.  <a href="../../d7/d16/a00930_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550d">More...</a><br /></td></tr>
+</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -138,7 +184,7 @@ $(function(){initNavTree('d7/d16/a00930.html','../../',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d5/d89/a00907.html">SystemEx</a></li><li class="navelem"><a href="../../dc/d92/a00929.html">Runtime</a></li><li class="navelem"><a href="../../d7/d16/a00930.html">Backend</a></li>
+    <li class="navelem"><a href="../../d4/d12/a00910.html">SystemEx</a></li><li class="navelem"><a href="../../d7/d16/a00930.html">Rand</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

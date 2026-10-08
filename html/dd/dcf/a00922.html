@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: SystemEx.Hash.Black Namespace Reference" />
+<meta property="og:title" content="SystemEX: SystemEx.Device.Memory Namespace Reference" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: SystemEx.Hash.Black Namespace Reference" />
+<meta name="twitter:title" content="SystemEX: SystemEx.Device.Memory Namespace Reference" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: SystemEx.Hash.Black Namespace Reference</title>
+<title>SystemEX: SystemEx.Device.Memory Namespace Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -122,19 +122,30 @@ $(function(){initNavTree('dd/dcf/a00922.html','../../',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Hash.Black Namespace Reference</div></div>
+  <div class="headertitle"><div class="title">SystemEx.Device.Memory Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:Black3" id="r_Black3"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>Black3</b></td></tr>
-<tr class="memitem:Black3ChunkState" id="r_Black3ChunkState"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>Black3ChunkState</b></td></tr>
-<tr class="memitem:Black3CompressScalar" id="r_Black3CompressScalar"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>Black3CompressScalar</b></td></tr>
-<tr class="memitem:Black3Infos" id="r_Black3Infos"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>Black3Infos</b></td></tr>
-<tr class="memitem:Black3Utils" id="r_Black3Utils"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><b>Black3Utils</b></td></tr>
-<tr class="memitem:Blacke3_5FOutput" id="r_Blacke3_5FOutput"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><b>Blacke3_Output</b></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal BLAKE3 output node used during tree hashing. Stores chaining values, block data, and compression parameters. <br /></td></tr>
+<tr class="memitem:DeviceBuffer" id="r_DeviceBuffer"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d5/d75/a01570.html">DeviceBuffer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a cache that can be shared with a hardware backend through <a class="el" href="../../d9/df5/a01574.html" title="Represents a shared memory bridge between a DeviceBuffer and a hardware‑specific backend implementing...">DeviceSharedBuffer&lt;TDeviceSharedBackend&gt;</a>. <br  />
+ A <a class="el" href="../../d5/d75/a01570.html" title="Represents a cache that can be shared with a hardware backend through DeviceSharedBuffer&lt;TDeviceShare...">DeviceBuffer</a> behaves like a normal <a class="el" href="../../d4/d10/a01278_a0d5a8ddfb7750ad928b7478f30ec139c.html#a0d5a8ddfb7750ad928b7478f30ec139c" title="Initializes a new cache with the specified capacity and type.">Cache</a>, but supports locking and shared‑memory synchronization for device kernels.  <a href="../../d5/d75/a01570.html#details">More...</a><br /></td></tr>
+<tr class="memitem:DeviceSharedBuffer_3C_20TDeviceSharedBackend_20_3E" id="r_DeviceSharedBuffer_3C_20TDeviceSharedBackend_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="../../d9/df5/a01574.html">DeviceSharedBuffer&lt; TDeviceSharedBackend &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a shared memory bridge between a <a class="el" href="../../d5/d75/a01570.html" title="Represents a cache that can be shared with a hardware backend through DeviceSharedBuffer&lt;TDeviceShare...">DeviceBuffer</a> and a hardware‑specific backend implementing <a class="el" href="../../da/dcf/a01558.html" title="Defines the low‑level backend interface used by DeviceSharedBuffer and related shared‑memory abstract...">IDeviceSharedBackend</a>. <br  />
+ Manages the lifecycle of a hardware buffer, including creation, upload, download, and cleanup, depending on the configured <a class="el" href="../../dd/dcf/a00922_afe9097376e02d22abaa66e70bb692c87.html#afe9097376e02d22abaa66e70bb692c87" title="Specifies how a shared cache interacts with the hardware backend.   Determines the direction of data ...">SharedCacheType</a>.  <a href="../../d9/df5/a01574.html#details">More...</a><br /></td></tr>
+<tr class="memitem:IKernel_3C_20TIDeviceSharedBackend_20_3E" id="r_IKernel_3C_20TIDeviceSharedBackend_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d1/d88/a01578.html">IKernel&lt; TIDeviceSharedBackend &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the interface for a compute kernel that operates on one or more <a class="el" href="../../d9/df5/a01574.html" title="Represents a shared memory bridge between a DeviceBuffer and a hardware‑specific backend implementing...">DeviceSharedBuffer&lt;TDeviceSharedBackend&gt;</a> instances. <br  />
+ A kernel represents a unit of computation that may run on different backends such as RAM, OpenCL, Vulkan, CUDA, or custom hardware.  <a href="../../d1/d88/a01578.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:afe9097376e02d22abaa66e70bb692c87" id="r_afe9097376e02d22abaa66e70bb692c87"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="../../dd/dcf/a00922_afe9097376e02d22abaa66e70bb692c87.html#afe9097376e02d22abaa66e70bb692c87">SharedCacheType</a> : byte { <a class="el" href="../../dd/dcf/a00922_afe9097376e02d22abaa66e70bb692c87.html#afe9097376e02d22abaa66e70bb692c87a131fb182a881796e7606ed6da27f1197">ReadOnly</a>
+, <a class="el" href="../../dd/dcf/a00922_afe9097376e02d22abaa66e70bb692c87.html#afe9097376e02d22abaa66e70bb692c87a53dfe5089ae9e65887cb0215cb0098f5">WriteOnly</a>
+, <a class="el" href="../../dd/dcf/a00922_afe9097376e02d22abaa66e70bb692c87.html#afe9097376e02d22abaa66e70bb692c87a70a2a84088d405a2e3f1e3accaa16723">ReadWrite</a>
+ }</td></tr>
+<tr class="memdesc:afe9097376e02d22abaa66e70bb692c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies how a shared cache interacts with the hardware backend. <br  />
+ Determines the direction of data flow between the managed cache and the device‑specific hardware buffer.  <a href="../../dd/dcf/a00922_afe9097376e02d22abaa66e70bb692c87.html#afe9097376e02d22abaa66e70bb692c87">More...</a><br /></td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -149,7 +160,7 @@ Classes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d5/d89/a00907.html">SystemEx</a></li><li class="navelem"><a href="../../dd/d7a/a00921.html">Hash</a></li><li class="navelem"><a href="../../dd/dcf/a00922.html">Black</a></li>
+    <li class="navelem"><a href="../../d4/d12/a00910.html">SystemEx</a></li><li class="navelem"><a href="../../d6/d82/a00920.html">Device</a></li><li class="navelem"><a href="../../dd/dcf/a00922.html">Memory</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

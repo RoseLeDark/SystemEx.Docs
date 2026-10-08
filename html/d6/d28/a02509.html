@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: Build &amp; Publish Guide" />
+<meta property="og:title" content="SystemEX: 🤝 SystemEx Contributing" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: Build &amp; Publish Guide" />
+<meta name="twitter:title" content="SystemEX: 🤝 SystemEx Contributing" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: Build &amp; Publish Guide</title>
+<title>SystemEX: 🤝 SystemEx Contributing</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -122,44 +122,82 @@ $(function(){initNavTree('d6/d28/a02509.html','../../',''); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Build &amp; Publish Guide </div></div>
+  <div class="headertitle"><div class="title">🤝 SystemEx Contributing </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="build--publish-guide"></a></p>
-<p>The build output is located in <span class="tt">build/net10.0/</span>.</p>
-<h1 class="doxsection"><a class="anchor" id="building-locally"></a>
-Building Locally</h1>
-<h2 class="doxsection"><a class="anchor" id="windows-powershell"></a>
-Windows (PowerShell)</h2>
-<div class="fragment"><div class="line">./Build.ps1</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="linux--unix-make"></a>
-Linux / Unix (Make)</h2>
-<div class="fragment"><div class="line">make</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="publishing-to-nuget"></a>
-Publishing to NuGet</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1-pre-publish-checklist"></a>
-1. Pre-Publish Checklist</h2>
-<p>Before publishing a new version, ensure the following files are updated:</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md-systemex-contributing"></a></p>
+<p>Thank you for your interest in contributing to <a class="el" href="../../d4/d12/a00910.html">SystemEx</a>. <br  />
+ This document explains how to report issues, propose improvements, and submit pull requests.</p>
+<h1 class="doxsection"><a class="anchor" id="how-to-contribute"></a>
+How to Contribute</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1-reporting-issues"></a>
+1. Reporting Issues</h2>
+<p>When opening an issue, please include:</p>
 <ul>
-<li><b><span class="tt">CHANGELOG.md</span></b>: Document the changes for the new release.</li>
-<li><b><span class="tt">nuget/version.txt</span></b>: Update with the target version string.</li>
-<li><b><span class="tt">nuget/ReleaseNotes.md</span></b>: Add the current changelog entry. <blockquote class="doxtable">
-<p>📌 <b>Note:</b> Do not modify any lines below the <span class="tt">---</span> separator in <span class="tt">ReleaseNotes.md</span>. </p>
-</blockquote>
+<li>A clear description of the problem <br  />
+</li>
+<li>Reproduction steps (if applicable) <br  />
+</li>
+<li>Expected vs. actual behavior <br  />
+</li>
+<li>Relevant code snippets or logs <br  />
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md2-api-key-setup"></a>
-2. API Key Setup</h2>
-<ol type="1">
-<li>Create a file named <span class="tt">API.txt</span> in the <span class="tt">nuget/</span> directory (<span class="tt">nuget/API.txt</span>) and paste your NuGet API key into it.</li>
-<li><b>Security Warning:</b> Ensure that <span class="tt">API.txt</span> (along with your <span class="tt">.snk</span> files) is listed in your <span class="tt">.gitignore</span>. Your credentials and private keys must <b>under no circumstances</b> be committed or pushed online!</li>
-</ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md3-run-build--push"></a>
-3. Run Build &amp; Push</h2>
-<p>Execute the following commands in your terminal:</p>
-<div class="fragment"><div class="line">make </div>
-<div class="line">make push API_KEY=$(cat ./nuget/API.txt)</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+<p>Clear reports help maintainers understand and address issues efficiently.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md2-proposing-changes"></a>
+2. Proposing Changes</h2>
+<p>Before submitting large changes or refactors, please open a discussion or issue. <br  />
+ <a class="el" href="../../d4/d12/a00910.html">SystemEx</a> is highly modular and low‑level; major changes can introduce subtle regressions.</p>
+<p>Small patches, documentation improvements, and targeted fixes are always welcome.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md3-pull-requests"></a>
+3. Pull Requests</h2>
+<p>Pull requests should:</p>
+<ul>
+<li>Be focused and minimal <br  />
+</li>
+<li>Include a description of the change <br  />
+</li>
+<li>Avoid unnecessary formatting changes <br  />
+</li>
+<li>Respect existing architecture and module boundaries <br  />
+</li>
+<li>Not introduce deep cross‑dependencies between subsystems <br  />
+</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="architectural-notes"></a>
+Architectural Notes</h1>
+<p><a class="el" href="../../d4/d12/a00910.html">SystemEx</a> intentionally avoids tight coupling between modules. <br  />
+ Some structures exist in multiple forms (e.g., <span class="tt">Map&lt;TKey, TValue&gt;</span> based on <span class="tt">Pair&lt;TKey, TValue&gt;[]</span>) to keep subsystems isolated and easier to debug.</p>
+<p>This is a deliberate design choice.</p>
+<h1 class="doxsection"><a class="anchor" id="experimental-features-and-development-flags"></a>
+Experimental Features and Development Flags</h1>
+<p><a class="el" href="../../d4/d12/a00910.html">SystemEx</a> contains optional experimental code guarded by the build flag <span class="tt">USE_DEVBUILD_UNSTABLE</span>. These sections include work‑in‑progress modules, unstable APIs, debugging utilities, or partially implemented subsystems. They are intentionally excluded from normal builds to keep the repository stable and free from unfinished code paths.</p>
+<p>If you want to contribute to experimental areas, you must explicitly enable the flag in your build configuration:</p>
+<ul>
+<li>For MSBuild: add <span class="tt">&lt;DefineConstants&gt;USE_DEVBUILD_UNSTABLE&lt;/DefineConstants&gt;</span></li>
+<li>For command‑line builds: pass <span class="tt">/p:DefineConstants=USE_DEVBUILD_UNSTABLE</span></li>
+<li>For IDE builds: add the symbol to your project’s build settings</li>
+</ul>
+<p>When contributing to experimental code:</p>
+<ul>
+<li>Expect incomplete or placeholder implementations <br  />
+</li>
+<li>Expect rapid changes and refactors <br  />
+</li>
+<li>Do not rely on experimental APIs for production code <br  />
+</li>
+<li>Keep experimental contributions isolated and well‑scoped <br  />
+</li>
+<li>Avoid introducing dependencies from stable modules into unstable ones <br  />
+</li>
+</ul>
+<p>Experimental features may be removed, rewritten, or replaced without notice. They exist solely to support active development and prototyping.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md-response-times"></a>
+🕒 Response Times</h1>
+<p><a class="el" href="../../d4/d12/a00910.html">SystemEx</a> is maintained by a single author (pronouns: dey/deren/dem/dem). <br  />
+ Responses or reviews may occasionally be delayed, but all constructive contributions are appreciated.</p>
+<p>Thank you for helping improve <a class="el" href="../../d4/d12/a00910.html">SystemEx</a>. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

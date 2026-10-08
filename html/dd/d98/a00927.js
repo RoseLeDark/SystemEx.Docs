@@ -1,30 +1,7 @@
 var a00927 =
 [
-    [ "Engine", "dd/d38/a00928.html", "dd/d38/a00928" ],
-    [ "GenericRand&lt; TEngine &gt;", "df/daa/a02135.html", "df/daa/a02135" ],
-    [ "HashedSeed", "d0/d13/a02139.html", "d0/d13/a02139" ],
-    [ "ISeed", "d8/d08/a02143.html", "d8/d08/a02143" ],
-    [ "ISeed&lt; T &gt;", "d3/d28/a02147.html", "d3/d28/a02147" ],
-    [ "Randx", "dd/d99/a02151.html", "dd/d99/a02151" ],
-    [ "SeedMixed", "d0/d89/a02155.html", "d0/d89/a02155" ],
-    [ "TimeBasedSeed", "d4/d9b/a02159.html", "d4/d9b/a02159" ],
-    [ "ValueBasedSeed", "dc/d6c/a02163.html", "dc/d6c/a02163" ],
-    [ "SeedMix", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550d", [
-      [ "XOR", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da97675eb3f268048604dc5155511a2a4d", null ],
-      [ "Addition", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da7c5531bbefed0945814f874baf9e0e0f", null ],
-      [ "Subtraction", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da6eb8b8b560161603402c0238b3a7d8b0", null ],
-      [ "Multiplication", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da27d1a1f7b7c2180e5b20ce9e3d00e2dd", null ],
-      [ "And", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550dac33315685a0cba3ce53be378b3c7874b", null ],
-      [ "Or", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da3a2d5fe857d8f9541136a124c2edec6c", null ],
-      [ "ShiftLeft", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550dad9382145a142cc7df5f733332c9cb812", null ],
-      [ "ShiftRight", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550daf17de5e0ea7a357b755aa9deeaf38f86", null ],
-      [ "RotateLeft", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da87fd674d30ebe08d41293f51d4f62066", null ],
-      [ "RotateRight", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550dac54517388223d2f20c61580c6f8d224f", null ],
-      [ "Not", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550daa74c05d080620f087c4e523977230666", null ],
-      [ "Minimal", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da30fc6bbba82125243ecf4ddb27fee645", null ],
-      [ "Maximal", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550dac2f493254b06a46832e043f236296ad3", null ],
-      [ "Average", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550dab1897515d548a960afe49ecf66a29021", null ],
-      [ "New", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da03c2e7e41ffc181a4e84080b4710e81e", null ],
-      [ "User", "dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da8f9bfe9d1345237cb3b2b205864da075", null ]
-    ] ]
+    [ "ByteSeriablizeProvider", "d4/d7f/a01858.html", "d4/d7f/a01858" ],
+    [ "IByteFormatSchema", "d0/d4a/a01862.html", "d0/d4a/a01862" ],
+    [ "IByteSerialize&lt; T, TSchema &gt;", "d3/d7e/a01866.html", "d3/d7e/a01866" ],
+    [ "IIsByteSeriablize", "d3/d77/a01870.html", null ]
 ];

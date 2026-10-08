@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: 🏗️ Build &amp; Publish Guide" />
+<meta property="og:title" content="SystemEX: 🚨 Security Policy" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: 🏗️ Build &amp; Publish Guide" />
+<meta name="twitter:title" content="SystemEX: 🚨 Security Policy" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: 🏗️ Build &amp; Publish Guide</title>
+<title>SystemEX: 🚨 Security Policy</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -122,44 +122,58 @@ $(function(){initNavTree('d0/dff/a02506.html','../../',''); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">🏗️ Build &amp; Publish Guide </div></div>
+  <div class="headertitle"><div class="title">🚨 Security Policy </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="️-build--publish-guide"></a></p>
-<p>The build output is located in <span class="tt">build/net10.0/</span>.</p>
-<h1 class="doxsection"><a class="anchor" id="building-locally"></a>
-Building Locally</h1>
-<h2 class="doxsection"><a class="anchor" id="windows-powershell"></a>
-Windows (PowerShell)</h2>
-<div class="fragment"><div class="line">./Build.ps1</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="linux--unix-make"></a>
-Linux / Unix (Make)</h2>
-<div class="fragment"><div class="line">make</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="publishing-to-nuget"></a>
-Publishing to NuGet</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1-pre-publish-checklist"></a>
-1. Pre-Publish Checklist</h2>
-<p>Before publishing a new version, ensure the following files are updated:</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md-security-policy"></a></p>
+<h1 class="doxsection"><a class="anchor" id="supported-versions"></a>
+Supported Versions</h1>
+<p><a class="el" href="../../d4/d12/a00910.html">SystemEx</a> is a hobby project under active development. <br  />
+ Security‑related issues will be addressed as time permits.</p>
+<h1 class="doxsection"><a class="anchor" id="reporting-a-vulnerability"></a>
+Reporting a Vulnerability</h1>
+<p>If you discover a security vulnerability, please report it privately:</p>
+<p><b>Email:</b> <a href="#" onclick="location.href='mai'+'lto:'+'amb'+'er'+'sop'+'hi'+'a.s'+'ch'+'roe'+'ck'+'@ma'+'il'+'.de'; return false;">amber<span class="obfuscator">.nosp@m.</span>soph<span class="obfuscator">.nosp@m.</span>ia.sc<span class="obfuscator">.nosp@m.</span>hroe<span class="obfuscator">.nosp@m.</span>ck@ma<span class="obfuscator">.nosp@m.</span>il.d<span class="obfuscator">.nosp@m.</span>e</a> <br  />
+ <b>Maintainer:</b> Amber‑Sophia Schröck (pronouns: dey/deren/dem/dem)</p>
+<p>Please include:</p>
 <ul>
-<li><b><span class="tt">CHANGELOG.md</span></b>: Document the changes for the new release.</li>
-<li><b><span class="tt">nuget/version.txt</span></b>: Update with the target version string.</li>
-<li><b><span class="tt">nuget/ReleaseNotes.md</span></b>: Add the current changelog entry. <blockquote class="doxtable">
-<p>📌 <b>Note:</b> Do not modify any lines below the <span class="tt">---</span> separator in <span class="tt">ReleaseNotes.md</span>. </p>
-</blockquote>
+<li>A clear description of the issue <br  />
 </li>
+<li>Steps to reproduce <br  />
+</li>
+<li>Potential impact <br  />
+</li>
+<li>Suggested mitigation (if any)</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md2-api-key-setup"></a>
-2. API Key Setup</h2>
+<h1 class="doxsection"><a class="anchor" id="scope"></a>
+Scope</h1>
+<p>Security concerns may include:</p>
+<ul>
+<li>Unsafe memory operations <br  />
+</li>
+<li>Interop misuse (Linux/macOS/Windows dynamic loading) <br  />
+</li>
+<li>Random engine misuse (ISAAC, Randx) <br  />
+</li>
+<li>Threading primitives (spinlocks, EventGroup) <br  />
+</li>
+<li>IO handling (CacheStream, WriteStream)</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="response-process"></a>
+Response Process</h1>
 <ol type="1">
-<li>Create a file named <span class="tt">API.txt</span> in the <span class="tt">nuget/</span> directory (<span class="tt">nuget/API.txt</span>) and paste your NuGet API key into it.</li>
-<li><b>Security Warning:</b> Ensure that <span class="tt">API.txt</span> (along with your <span class="tt">.snk</span> files) is listed in your <span class="tt">.gitignore</span>. Your credentials and private keys must <b>under no circumstances</b> be committed or pushed online!</li>
+<li>The maintainer reviews the report. <br  />
+</li>
+<li>The issue is reproduced and validated. <br  />
+</li>
+<li>A fix is prepared and tested. <br  />
+</li>
+<li>A patch release or commit is published. <br  />
+</li>
+<li>The reporter is notified.</li>
 </ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md3-run-build--push"></a>
-3. Run Build &amp; Push</h2>
-<p>Execute the following commands in your terminal:</p>
-<div class="fragment"><div class="line">make </div>
-<div class="line">make push API_KEY=$(cat ./nuget/API.txt)</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+<p>Thank you for helping keep <a class="el" href="../../d4/d12/a00910.html">SystemEx</a> safe and reliable. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

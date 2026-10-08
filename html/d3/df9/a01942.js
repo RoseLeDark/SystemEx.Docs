@@ -1,0 +1,26 @@
+var a01942 =
+[
+    [ "FloatE4M3", "d3/df9/a01942_ad97fe2cc668a6096fbd7069a06040a5b.html#ad97fe2cc668a6096fbd7069a06040a5b", null ],
+    [ "FloatE4M3", "d3/df9/a01942_a9f66093bbf763872da5a804163a91995.html#a9f66093bbf763872da5a804163a91995", null ],
+    [ "FloatE4M3", "d3/df9/a01942_a51e2ac3803ba0a4cd4cb017b4db2f88e.html#a51e2ac3803ba0a4cd4cb017b4db2f88e", null ],
+    [ "CompareTo", "d3/df9/a01942_a528945ddece55db913d8b154960fd575.html#a528945ddece55db913d8b154960fd575", null ],
+    [ "CompareTo", "d3/df9/a01942_a25aa07d65cb913fee0e8eb9cbf8cfea6.html#a25aa07d65cb913fee0e8eb9cbf8cfea6", null ],
+    [ "CompareTo", "d3/df9/a01942_a98c05c7f98e498df1e5188730ded220f.html#a98c05c7f98e498df1e5188730ded220f", null ],
+    [ "Equals", "d3/df9/a01942_a5be082068ca69c49f67f3581cbc5ef14.html#a5be082068ca69c49f67f3581cbc5ef14", null ],
+    [ "Equals", "d3/df9/a01942_a1ca5d9bbf8b0b83a59450ed745108e4c.html#a1ca5d9bbf8b0b83a59450ed745108e4c", null ],
+    [ "GetHashCode", "d3/df9/a01942_a3c3a6b06730a11403f832d024f54e6c9.html#a3c3a6b06730a11403f832d024f54e6c9", null ],
+    [ "ToBytes", "d3/df9/a01942_aa71aba4ef2cc24eca91dc7200ba74710.html#aa71aba4ef2cc24eca91dc7200ba74710", null ],
+    [ "ToBytes", "d3/df9/a01942_afc4e59a8a176661e38939fb249bcca19.html#afc4e59a8a176661e38939fb249bcca19", null ],
+    [ "ToBytes", "d3/df9/a01942_a4325b2fdfc9dcbb8c7ff43eba2b3b95d.html#a4325b2fdfc9dcbb8c7ff43eba2b3b95d", null ],
+    [ "Exponent", "d3/df9/a01942_acc20a7a38aa0154dcc7495a4190174ba.html#acc20a7a38aa0154dcc7495a4190174ba", null ],
+    [ "ExponentBias", "d3/df9/a01942_a2a64f2b018b5a5f1c81eadcefa84f967.html#a2a64f2b018b5a5f1c81eadcefa84f967", null ],
+    [ "ExponentBits", "d3/df9/a01942_a778b30c992baf5edb7f6d36813a58096.html#a778b30c992baf5edb7f6d36813a58096", null ],
+    [ "HiddenBit", "d3/df9/a01942_af3f8e186e05929d6babe4b14e7a0d5cf.html#af3f8e186e05929d6babe4b14e7a0d5cf", null ],
+    [ "Mantissa", "d3/df9/a01942_a32befdfd18d8ae35abe6a47edaabb6e0.html#a32befdfd18d8ae35abe6a47edaabb6e0", null ],
+    [ "MantissaBits", "d3/df9/a01942_aeefc4adf4ee4050f6f7b63b57a140628.html#aeefc4adf4ee4050f6f7b63b57a140628", null ],
+    [ "NSign", "d3/df9/a01942_a0279c95bc7a5879e836821c919baa1d7.html#a0279c95bc7a5879e836821c919baa1d7", null ],
+    [ "Sign", "d3/df9/a01942_abed8d7d6f8224006a186d6c64e9a04d2.html#abed8d7d6f8224006a186d6c64e9a04d2", null ],
+    [ "SignBits", "d3/df9/a01942_aa35f58514ebb61bcb3fee99ce142b84c.html#aa35f58514ebb61bcb3fee99ce142b84c", null ],
+    [ "ToBase", "d3/df9/a01942_a058211f838933715ef0f32415969f03a.html#a058211f838933715ef0f32415969f03a", null ],
+    [ "TotalBits", "d3/df9/a01942_a5420144dcdef2c2e7c0cf1b47ff76b16.html#a5420144dcdef2c2e7c0cf1b47ff76b16", null ]
+];

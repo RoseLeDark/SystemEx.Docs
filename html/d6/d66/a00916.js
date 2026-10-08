@@ -1,4 +1,4 @@
 var a00916 =
 [
-    [ "UniqueDeque&lt; T &gt;", "d7/d42/a01463.html", "d7/d42/a01463" ]
+    [ "NumberRangeStepper", "d0/d58/a01230.html", "d0/d58/a01230" ]
 ];

@@ -123,19 +123,19 @@ $(function(){initNavTree('d4/d6a/a00704_source.html','../../',''); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>System.Text;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="../../d8/d19/a00935.html">    5</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d8/d19/a00935.html">SystemEx.Threading.intern</a> {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="../../d5/d54/a00938.html">    5</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d5/d54/a00938.html">SystemEx.Threading.intern</a> {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>     <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class </span>RCUGlobalDomain&lt;T&gt; {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          <span class="keyword">private</span> <a class="code hl_struct" href="../../d2/d9a/a02227.html">Epoch</a> m_globalEpoch;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          <span class="keyword">private</span> <a class="code hl_struct" href="../../dd/d67/a02230.html">Epoch</a> m_globalEpoch;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>          <span class="keyword">private</span> RCUHistory&lt;T&gt; m_history;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>          <span class="keyword">public</span> RCUGlobalDomain () {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>               m_globalEpoch = <span class="keyword">new</span> <a class="code hl_struct" href="../../d2/d9a/a02227.html">Epoch</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>               m_globalEpoch = <span class="keyword">new</span> <a class="code hl_struct" href="../../dd/d67/a02230.html">Epoch</a>();</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>               m_history = <span class="keyword">new</span> RCUHistory&lt;T&gt;();</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>          }</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>          <span class="keyword">public</span> <span class="keywordtype">void</span> Push ( T? entry ) {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>               <span class="keyword">using</span> ( var _lock = <span class="keyword">new</span> <a class="code hl_struct" href="../../d7/da1/a02231.html">UniqueEpoch</a>(ref m_globalEpoch) ) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>               <span class="keyword">using</span> ( var _lock = <span class="keyword">new</span> <a class="code hl_struct" href="../../d8/d6f/a02234.html">UniqueEpoch</a>(ref m_globalEpoch) ) {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    m_history.Push(entry);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>               }</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>          }</div>
@@ -148,9 +148,9 @@ $(function(){initNavTree('d4/d6a/a00704_source.html','../../',''); });
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>     }</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
 </div>
-<div class="ttc" id="aa00935_html"><div class="ttname"><a href="../../d8/d19/a00935.html">SystemEx.Threading.intern</a></div><div class="ttdef"><b>Definition</b> <a href="#l00005">RCUDomain.cs:5</a></div></div>
-<div class="ttc" id="aa02227_html"><div class="ttname"><a href="../../d2/d9a/a02227.html">SystemEx.Threading.Epoch</a></div><div class="ttdoc">Represents a lightweight Read-Copy-Update (RCU) epoch counter used to track active reader sections....</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dba/a00773_source.html#l00029">Epoch.cs:29</a></div></div>
-<div class="ttc" id="aa02231_html"><div class="ttname"><a href="../../d7/da1/a02231.html">SystemEx.Threading.UniqueEpoch</a></div><div class="ttdoc">Provides an RAII-style scoped reader epoch for RCU-based objects. The epoch is incremented when the i...</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dba/a00773_source.html#l00166">Epoch.cs:166</a></div></div>
+<div class="ttc" id="aa00938_html"><div class="ttname"><a href="../../d5/d54/a00938.html">SystemEx.Threading.intern</a></div><div class="ttdef"><b>Definition</b> <a href="#l00005">RCUDomain.cs:5</a></div></div>
+<div class="ttc" id="aa02230_html"><div class="ttname"><a href="../../dd/d67/a02230.html">SystemEx.Threading.Epoch</a></div><div class="ttdoc">Represents a lightweight Read-Copy-Update (RCU) epoch counter used to track active reader sections....</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dba/a00773_source.html#l00029">Epoch.cs:29</a></div></div>
+<div class="ttc" id="aa02234_html"><div class="ttname"><a href="../../d8/d6f/a02234.html">SystemEx.Threading.UniqueEpoch</a></div><div class="ttdoc">Provides an RAII-style scoped reader epoch for RCU-based objects. The epoch is incremented when the i...</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dba/a00773_source.html#l00166">Epoch.cs:166</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

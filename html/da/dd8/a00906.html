@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: Threading" />
+<meta property="og:title" content="SystemEX: Random" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: Threading" />
+<meta name="twitter:title" content="SystemEX: Random" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: Threading</title>
+<title>SystemEX: Random</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -122,21 +122,30 @@ $(function(){initNavTree('da/dd8/a00906.html','../../',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Threading </div></div>
+  <div class="headertitle"><div class="title">Random </div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:SystemEx_2EThreading_2EISpinlock_3C_20T_20_3E" id="r_SystemEx_2EThreading_2EISpinlock_3C_20T_20_3E"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d5/d95/a02267.html">SystemEx.Threading.ISpinlock&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends <a class="el" href="../../d6/dd2/a02243.html" title="Extends ILock by exposing the underlying synchronization handle. This is useful for advanced scenario...">ILock&lt;T&gt;</a> with spin‑lock‑specific diagnostics and metadata. Implementations of <a class="el" href="../../d5/d95/a02267.html" title="Extends ILock&lt;T&gt; with spin‑lock‑specific diagnostics and metadata. Implementations of ISpinlock&lt;T&gt; re...">ISpinlock&lt;T&gt;</a> represent busy‑wait mutual exclusion primitives where threads repeatedly attempt to acquire the lock without yielding.  <a href="../../d5/d95/a02267.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SystemEx_2ERand_2EHashedSeed" id="r_SystemEx_2ERand_2EHashedSeed"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../df/de7/a02142.html">SystemEx.Rand.HashedSeed</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a seed implementation based on a 32‑bit hash value. The hash may originate from any hashing algorithm available in <a class="el" href="../../d4/d12/a00910.html">SystemEx</a>, including Bernstein, FNV‑1a, Murmur, Blake3, XXH3, and other supported hash functions.  <a href="../../df/de7/a02142.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaa335a8fabc80c041923c06eebd0bf3a0" id="r_gaa335a8fabc80c041923c06eebd0bf3a0"><td class="memItemLeft">uint[]&#160;</td><td class="memItemRight"><a class="el" href="../../da/dd8/a00906_gaa335a8fabc80c041923c06eebd0bf3a0.html#gaa335a8fabc80c041923c06eebd0bf3a0">SystemEx.Rand.HashedSeed.GetSeed</a> ()</td></tr>
+<tr class="memdesc:gaa335a8fabc80c041923c06eebd0bf3a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying seed values as an array of 32‑bit unsigned integers. The returned array defines the complete state of the seed at the time of access.<dl class="section return"><dt>Returns</dt><dd>A uint array containing the current seed values. </dd></dl>
+  <br /></td></tr>
+<tr class="memitem:ga47121a04f962fd83f5bcc06b9daca605" id="r_ga47121a04f962fd83f5bcc06b9daca605"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="../../da/dd8/a00906_ga47121a04f962fd83f5bcc06b9daca605.html#ga47121a04f962fd83f5bcc06b9daca605">SystemEx.Rand.HashedSeed.HashedSeed</a> (<a class="el" href="../../d6/dbe/a01834.html">Hash32</a> hash)</td></tr>
+<tr class="memdesc:ga47121a04f962fd83f5bcc06b9daca605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new <a class="el" href="../../df/de7/a02142.html" title="Provides a seed implementation based on a 32‑bit hash value. The hash may originate from any hashing ...">HashedSeed</a> using the specified hash. The seed is immediately populated using <a class="el" href="../../da/dd8/a00906_ga4c3d6d32521271fa08b01017bb7f64dd.html#ga4c3d6d32521271fa08b01017bb7f64dd" title="Updates the seed using the specified Hash32 value. The hash is expanded into four distinct 32‑bit val...">Update(Hash32)</a>.  <br /></td></tr>
+<tr class="memitem:ga4c3d6d32521271fa08b01017bb7f64dd" id="r_ga4c3d6d32521271fa08b01017bb7f64dd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="../../da/dd8/a00906_ga4c3d6d32521271fa08b01017bb7f64dd.html#ga4c3d6d32521271fa08b01017bb7f64dd">SystemEx.Rand.HashedSeed.Update</a> (<a class="el" href="../../d6/dbe/a01834.html">Hash32</a> value)</td></tr>
+<tr class="memdesc:ga4c3d6d32521271fa08b01017bb7f64dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the seed using the specified <a class="el" href="../../d6/dbe/a01834.html" title="Represents a 32‑bit hash value produced by a SystemEx hashing algorithm.">Hash32</a> value. The hash is expanded into four distinct 32‑bit values using bitwise and arithmetic transformations. This method does not compute the hash;.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-prop-members" class="groupheader"><a id="prop-members" name="prop-members"></a>
 Properties</h2></td></tr>
-<tr class="memitem:gabfcff75a2cc5fa089c80903db57b463a" id="r_gabfcff75a2cc5fa089c80903db57b463a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../da/dd8/a00906_gabfcff75a2cc5fa089c80903db57b463a.html#gabfcff75a2cc5fa089c80903db57b463a">SystemEx.Threading.ISpinlock&lt; T &gt;.IsHeldbyCurrent</a><code> [get]</code></td></tr>
-<tr class="memdesc:gabfcff75a2cc5fa089c80903db57b463a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the lock is currently held by the calling thread. Implementations may require thread‑owner tracking to support this property.  <br /></td></tr>
-<tr class="memitem:ga36af22fe7b3b0f27309b896921bd7dc6" id="r_ga36af22fe7b3b0f27309b896921bd7dc6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../da/dd8/a00906_ga36af22fe7b3b0f27309b896921bd7dc6.html#ga36af22fe7b3b0f27309b896921bd7dc6">SystemEx.Threading.ISpinlock&lt; T &gt;.IsThreadOwnerTrackingEnabled</a><code> [get]</code></td></tr>
-<tr class="memdesc:ga36af22fe7b3b0f27309b896921bd7dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether thread‑owner tracking is enabled for the underlying spin lock. When enabled, the lock records which thread currently owns it, allowing additional safety checks at the cost of extra overhead.  <br /></td></tr>
+<tr class="memitem:ga5dce37c8be35f7bfce88d396f395477f" id="r_ga5dce37c8be35f7bfce88d396f395477f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../da/dd8/a00906_ga5dce37c8be35f7bfce88d396f395477f.html#ga5dce37c8be35f7bfce88d396f395477f">SystemEx.Rand.HashedSeed.Length</a><code> [get]</code></td></tr>
+<tr class="memdesc:ga5dce37c8be35f7bfce88d396f395477f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of 32‑bit values contained in the seed. This corresponds to the length of the array returned by <a class="el" href="../../d8/de7/a02146_a015b6211e4a5cc8b71afbb6c1c1587a0.html#a015b6211e4a5cc8b71afbb6c1c1587a0" title="Returns the underlying seed values as an array of 32‑bit unsigned integers. The returned array define...">GetSeed</a>.  <br /></td></tr>
+<tr class="memitem:ga32ef40ec4adea950f9f776a31e86a5c3" id="r_ga32ef40ec4adea950f9f776a31e86a5c3"><td class="memItemLeft">uint&#160;</td><td class="memItemRight"><a class="el" href="../../da/dd8/a00906_ga32ef40ec4adea950f9f776a31e86a5c3.html#ga32ef40ec4adea950f9f776a31e86a5c3">SystemEx.Rand.HashedSeed.this[int index]</a><code> [get, set]</code></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"></div></div><!-- contents -->

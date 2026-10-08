@@ -5,17 +5,17 @@
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="SystemEX: SystemEx.Hash.IHashable&lt; T &gt; Interface Template Reference" />
+<meta property="og:title" content="SystemEX: Member List" />
 <meta property="og:image" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
 <meta property="og:description" content="SystemEX Additional generic collection types missing in .net" />
 <meta property="og:url" content="https://github.com/RoseLeDark/System.Collections.Generic.Missings" />
 <!-- END opengraph metadata -->
 <!-- BEGIN twitter metadata -->
 <meta name="twitter:image:src" content="https://roseledark.github.io/SystemEx.Docs/Logo_256.png" />
-<meta name="twitter:title" content="SystemEX: SystemEx.Hash.IHashable&lt; T &gt; Interface Template Reference" />
+<meta name="twitter:title" content="SystemEX: Member List" />
 <meta name="twitter:description" content="SystemEX Additional generic collection types missing in .net" />
 <!-- END twitter metadata -->
-<title>SystemEX: SystemEx.Hash.IHashable&lt; T &gt; Interface Template Reference</title>
+<title>SystemEX: Member List</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -96,7 +96,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('d9/d88/a01823.html','../../','d5/dd6/a01820'); });
+$(function(){initNavTree('d2/d45/a01826.html','../../',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -122,70 +122,19 @@ $(function(){initNavTree('d9/d88/a01823.html','../../','d5/dd6/a01820'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SystemEx.Hash.IHashable&lt; T &gt; Interface Template Reference<div class="ingroups"><a class="el" href="../../d9/db0/a00900.html">Hash</a></div></div></div>
+  <div class="headertitle"><div class="title">SystemEx.Hash.IHashable&lt; T &gt; Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Defines a contract for objects that can be converted into a raw byte representation suitable for hashing, serialization, or low‑level processing.  
- <a href="#details">More...</a></p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for SystemEx.Hash.IHashable&lt; T &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d1/dba/a01822.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SystemEx.Hash.IHashable&lt; T &gt;:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d3d/a01821.svg" width="212" height="96"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ga8fb21dffeeea89fddd6e1e70e62402b7" id="r_ga8fb21dffeeea89fddd6e1e70e62402b7"><td class="memItemLeft">FixedVector&lt; byte &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d9/db0/a00900_ga8fb21dffeeea89fddd6e1e70e62402b7.html#ga8fb21dffeeea89fddd6e1e70e62402b7">ToBytes</a> ()</td></tr>
-<tr class="memdesc:ga8fb21dffeeea89fddd6e1e70e62402b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance into a deterministic byte array. The returned data is used as input for hashing algorithms.  <br /></td></tr>
-</table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Defines a contract for objects that can be converted into a raw byte representation suitable for hashing, serialization, or low‑level processing. </p>
-<p>The interface is intentionally minimal: any type implementing <code>IHashable&lt;T&gt;</code> must provide a deterministic and stable <a class="el" href="../../d9/db0/a00900_ga8fb21dffeeea89fddd6e1e70e62402b7.html#ga8fb21dffeeea89fddd6e1e70e62402b7" title="Converts this instance into a deterministic byte array. The returned data is used as input for hashin...">ToBytes</a> method. The returned byte sequence is used by <a class="el" href="../../d5/d89/a00907.html">SystemEx</a> hashing algorithms and must remain consistent across platforms and runtime sessions. </p>
-<p><b>Example:</b><br  />
- A type implementing both <code>IHashable&lt;T&gt;</code> and a hash attribute: </p>
-<div class="fragment"><div class="line">[HashAlgorithm(typeof(Bernstein))]</div>
-<div class="line"><span class="keyword">public</span> <span class="keyword">class </span>Foo : IHashable&amp;lt;Foo&amp;gt;</div>
-<div class="line">{</div>
-<div class="line">    <span class="keyword">public</span> FixedVector&amp;lt;<span class="keywordtype">byte</span>&amp;gt; <a class="code hl_function" href="../../d9/db0/a00900_ga8fb21dffeeea89fddd6e1e70e62402b7.html#ga8fb21dffeeea89fddd6e1e70e62402b7">ToBytes</a>()</div>
-<div class="line">    {</div>
-<div class="line">        <span class="comment">// Convert internal fields into a deterministic byte array.</span></div>
-<div class="line">        <span class="keywordflow">return</span> <span class="keyword">new</span> FixedVector&amp;lt;<span class="keywordtype">byte</span>&amp;gt;( ... );</div>
-<div class="line">    }</div>
-<div class="line">}</div>
-<div class="ttc" id="aa00900_ga8fb21dffeeea89fddd6e1e70e62402b7_html_ga8fb21dffeeea89fddd6e1e70e62402b7"><div class="ttname"><a href="../../d9/db0/a00900_ga8fb21dffeeea89fddd6e1e70e62402b7.html#ga8fb21dffeeea89fddd6e1e70e62402b7">SystemEx.Hash.IHashable-1-g.ToBytes</a></div><div class="ttdeci">FixedVector&lt; byte &gt; ToBytes()</div><div class="ttdoc">Converts this instance into a deterministic byte array. The returned data is used as input for hashin...</div></div>
-</div><!-- fragment --><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type that provides its own byte representation. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/dd6/a00272_source.html#l00059">59</a> of file <a class="el" href="../../d9/dd6/a00272_source.html">HashFactory.cs</a>.</p>
-</div><hr/>The documentation for this interface was generated from the following file:<ul>
-<li><a class="el" href="../../d9/dd6/a00272_source.html">HashFactory.cs</a></li>
-</ul>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="../../d2/d45/a01826.html">SystemEx.Hash.IHashable&lt; T &gt;</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="../../d4/d1c/a00903_ga8fb21dffeeea89fddd6e1e70e62402b7.html#ga8fb21dffeeea89fddd6e1e70e62402b7">ToBytes</a>()</td><td class="entry"><a class="el" href="../../d2/d45/a01826.html">SystemEx.Hash.IHashable&lt; T &gt;</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
-<div id="page-nav" class="page-nav-panel">
-<div id="page-nav-resize-handle"></div>
-<div id="page-nav-tree">
-<div id="page-nav-contents">
-</div><!-- page-nav-contents -->
-</div><!-- page-nav-tree -->
-</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d5/d89/a00907.html">SystemEx</a></li><li class="navelem"><a href="../../dd/d7a/a00921.html">Hash</a></li><li class="navelem"><a href="../../d9/d88/a01823.html">IHashable&lt; T &gt;</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

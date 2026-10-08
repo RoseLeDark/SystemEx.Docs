@@ -1,4 +1,4 @@
 var namespaces_dup =
 [
-    [ "SystemEx", "d5/d89/a00907.html", "d5/d89/a00907" ]
+    [ "SystemEx", "d4/d12/a00910.html", "d4/d12/a00910" ]
 ];
