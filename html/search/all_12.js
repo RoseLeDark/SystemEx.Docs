@@ -12,7 +12,7 @@ var searchData=
   ['hash32_3c_20t_20_3e_9',['Hash32&lt; T &gt;',['../d9/db0/a00900_ga0dc94fec45e08db1c9cb930caa6af391.html#ga0dc94fec45e08db1c9cb930caa6af391',1,'SystemEx::Hash::HashFactory']]],
   ['hash64_10',['Hash64',['../da/dcd/a01835.html',1,'SystemEx.Hash.Hash64'],['../d9/db0/a00900_gad70d6749552e6e733112b3af96bd9b90.html#gad70d6749552e6e733112b3af96bd9b90',1,'SystemEx.Hash.Hash64.Hash64()']]],
   ['hash64_3c_20t_20_3e_11',['Hash64&lt; T &gt;',['../d9/db0/a00900_gaaf38440bd3b9e413e014035aeb63bdc5.html#gaaf38440bd3b9e413e014035aeb63bdc5',1,'SystemEx::Hash::HashFactory']]],
-  ['hashable_20scheduled_20for_20removal_20in_20version_200_2060_12',['Deprecated – Hashable (scheduled for removal in version 0.60)',['../db/d09/a02502.html#deprecated--hashable-scheduled-for-removal-in-version-060',1,'']]],
+  ['hashable_20scheduled_20for_20removal_20in_20version_200_2060_12',['Deprecated – Hashable (scheduled for removal in version 0.60)',['../d1/d5d/a02503.html#deprecated--hashable-scheduled-for-removal-in-version-060',1,'']]],
   ['hashalgorithmattribute_13',['HashAlgorithmAttribute',['../d7/d10/a01819.html',1,'SystemEx.Hash.HashAlgorithmAttribute'],['../d9/db0/a00900_ga4a26a6ec3b1a5e9023c08ee010fa9670.html#ga4a26a6ec3b1a5e9023c08ee010fa9670',1,'SystemEx.Hash.HashAlgorithmAttribute.HashAlgorithmAttribute()']]],
   ['hashblack_14',['HashBlack',['../d0/dac/a00901.html',1,'']]],
   ['hashedseed_15',['HashedSeed',['../d0/d13/a02139.html',1,'SystemEx.Rand.HashedSeed'],['../d4/d1c/a00903_ga47121a04f962fd83f5bcc06b9daca605.html#ga47121a04f962fd83f5bcc06b9daca605',1,'SystemEx.Rand.HashedSeed.HashedSeed()']]],
@@ -36,6 +36,6 @@ var searchData=
   ['high_33',['High',['../d8/d38/a00926.html#a8d407e0bcafbc7520ade125655bdf352',1,'SystemEx.Numeric.Uint256.High'],['../d6/d82/a00920_a1738673316f8d96453eda571bae3f460.html#a1738673316f8d96453eda571bae3f460a655d20c1ca69519ca647684edbb2db35',1,'SystemEx.Drawing.High']]],
   ['highestone_34',['HighestOne',['../d0/dac/a00901_ga3c25d4b1959073e72952cc0108be2be6.html#ga3c25d4b1959073e72952cc0108be2be6',1,'SystemEx::Hash::Black::Black3Utils']]],
   ['horsepower_35',['Horsepower',['../d9/dca/a01879_aa17108cce022f30c77a9eec4d6ad9c58.html#aa17108cce022f30c77a9eec4d6ad9c58',1,'SystemEx.Numeric.BigDecimal.Horsepower'],['../d8/d38/a00926_a9e2f43b0219e53c5e2c92037f0e3b55b.html#a9e2f43b0219e53c5e2c92037f0e3b55ba15933fcdb31c55b521d4fffd5c112568',1,'SystemEx.Numeric.Horsepower']]],
-  ['how_20can_20i_20contribute_36',['How can I contribute?',['../d1/d94/a02505.html#how-can-i-contribute',1,'']]],
-  ['how_20to_20contribute_37',['How to Contribute',['../d3/df4/a02504.html#how-to-contribute',1,'']]]
+  ['how_20can_20i_20contribute_36',['How can I contribute?',['../d9/de2/a02508.html#how-can-i-contribute',1,'']]],
+  ['how_20to_20contribute_37',['How to Contribute',['../d1/d94/a02505.html#how-to-contribute',1,'']]]
 ];

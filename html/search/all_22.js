@@ -4,5 +4,5 @@ var searchData=
   ['x64_1',['x64',['../d5/d89/a00907_a04ec4aa7c63955936522f4c97bdecc1f.html#a04ec4aa7c63955936522f4c97bdecc1fa9c16d991c79c6330e655aa29ea623492',1,'SystemEx']]],
   ['x86_2',['x86',['../d5/d89/a00907_a04ec4aa7c63955936522f4c97bdecc1f.html#a04ec4aa7c63955936522f4c97bdecc1fa8a9da7865483c5fd359f3acef178d26d',1,'SystemEx']]],
   ['xor_3',['XOR',['../dd/d42/a01259_aaeb991d66947084bb8e95a5b8554375e.html#aaeb991d66947084bb8e95a5b8554375e',1,'SystemEx.Triple.XOR()'],['../dd/d98/a00927_a510344f1a252d2977cd2d44f7149550d.html#a510344f1a252d2977cd2d44f7149550da97675eb3f268048604dc5155511a2a4d',1,'SystemEx.Rand.XOR']]],
-  ['xxx_2026_2008_202026_20intern_20preview_20for_201_200_20lacking_4',['[0.95.xxx] 26.08.2026 intern Preview for 1.0 -&amp;gt; Lacking',['../db/d09/a02502.html#autotoc_md095xxx-26082026-intern-preview-for-10---lacking',1,'']]]
+  ['xxx_2026_2008_202026_20intern_20preview_20for_201_200_20lacking_4',['[0.95.xxx] 26.08.2026 intern Preview for 1.0 -&amp;gt; Lacking',['../d1/d5d/a02503.html#autotoc_md095xxx-26082026-intern-preview-for-10---lacking',1,'']]]
 ];

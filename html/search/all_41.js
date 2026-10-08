@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['🧵_20systemex_20threading_0',['🧵 SystemEx.Threading',['../index.html#autotoc_md-systemexthreading',1,'']]]
+  ['🧰_20systemex_20utils_0',['🧰 SystemEx.Utils',['../index.html#autotoc_md-systemexutils',1,'']]],
+  ['🧰_20systemex_20utils_20bits_1',['🧰 SystemEx.Utils.Bits',['../index.html#autotoc_md-systemexutilsbits',1,'']]]
 ];
